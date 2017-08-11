@@ -1,3 +1,5 @@
+git config --global user.name "tianrking"
+git config --global user.email "zyx@8a8.xyz"
 git add -A
 git commit -m "new"
 git push -u origin master 
