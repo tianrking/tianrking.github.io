@@ -1,1 +1,16 @@
-
+<html>
+<body>
+<head>
+<style type="text/css">
+p.a1.black
+{ 
+background: black url(/i/eg_bg_03.gif) no-repeat fixed center; 
+}
+p.a2.black
+{ 
+background: black url(/i/eg_bg_03.gif) no-repeat fixed center; 
+}
+</style>
+</head>
+<p class="a1.black">这是1些文本。</p>
+<p class="a2.black">这是2些文本。</p>
