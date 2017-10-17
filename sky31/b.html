@@ -5,17 +5,20 @@
 <body>
 <div id="container_1">
 	 <div id="toubu_l" >
-		<img src="https://g.sky31.com/images/g_logo.png">
+		<img src="./logo.png">
 	</div>
 	<div id="toubu_m">
 		<a>拱拱</a>
 	</div>
 	<div id="toubu_r">
 		<ul>
-			<li title="拱拱Android版"><a href="#" onclick="sorry()"><img src="https://user-images.githubusercontent.com/10758833/31620070-dad3d40e-b2c8-11e7-9f2d-a1c32ea4680d.png">&nbspAndroid</a></li>
-			<li title="拱拱IOS版"><a href="#" onclick="sorry()"><img src="https://user-images.githubusercontent.com/10758833/31620069-d9bb6118-b2c8-11e7-9e4d-aed71ecbf0e8.png">&nbspiPhone</a></li>
-			<li title="拱拱UWP版"><a href="#" onclick="sorry()"><img src="https://user-images.githubusercontent.com/10758833/31620078-e30ce372-b2c8-11e7-892d-386158b27ac8.png">&nbspWP</a></li>
+			<li title="拱拱Android版"><a href="#" onclick="sorry()"><img src="./android.png">&nbspAndroid</a></li>
+			<li title="拱拱IOS版"><a href="#" onclick="sorry()"><img src="./ios.png">&nbspiPhone</a></li>
+			<li title="拱拱UWP版"><a href="#" onclick="sorry()"><img src="./wp.png">&nbspWP</a></li>
 		</ul>
+		<div id="body_r">
+			<img src="./phone.png">
+		</div>
 	</div>
 	
 </div>
@@ -28,12 +31,58 @@
 			<span id="wtf3">&nbsp&nbspBeta&nbsp&nbsp</span>
 		</p1>
 	</div>
+	
+	<div id="body_l_2">
+		<p1>
+			_________________________________________
+		</p1>
+	</div>
+	<div id="body_1_3">
+		<p1>
+			湘大变得如此简单
+		</p1>
+	</div>
+	<div id="body_1_4_1">
+		<div id="download">
+			<a href="#" onclick="sorry()">立即下载</a>
+		</div>
+	</div>
+	<div id="body_1_4_2">
+		<img border-radius="10px" width="75px" height="75px"	src="./QR code.png">
+	</div>
+	<div id="bottom_root">
+		<div id="fieldx">
+			<img src="./ellipse1.png"><br>
+			<p>湘大专属</p>
+			<p>湘大变得如此简单</p>
+		</div>
+		<div id="fieldx">
+			<img src="./ellipse2.png"><br>
+			<p>湘大专属</p>
+			<p>湘大变得如此简单</p>
+		</div>
+		<div id="fieldx">
+			<img src="./ellipse3.png"><br>
+			<p>湘大专属</p>
+			<p>湘大变得如此简单</p>
+		</div>
+		<div id="fieldx">
+			<img src="./ellipse3.png"><br>
+			<p>湘大专属</p>
+			<p>湘大变得如此简单</p>
+		</div>
+		 <div id="footer"><p>版权所有@<a href="https://keybase.io/tianrking">tianrking</a></p></div>
+	</div>
 </div>
 </body>
 <script type="text/javascript">
 function sorry()
-  {
-  alert("WTF!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+   {
+  var name=prompt("请输入您的名字","?????????")
+  if (name!=null && name!="")
+    {
+    alert("愚蠢的人才会认为里面有惊喜");
+    }
   }
 </script>
 <style type="text/css">
@@ -79,12 +128,95 @@ function sorry()
 	#body_l_1{
 		margin-top:200x;
 		width:50%;
-		
 		}
 	#wtf1{margin-top:5px;margin-left:180px;margin-right:8px; color:white;font-family:"不存在的";font-size:50px;font-weight:normal;}
 	#wtf2{margin-top:15px;margin-left:5px;margin-right:5px;color:white;font-family:"扯犊子";font-size:20px;font-weight:normal;}
 	#wtf3{margin-top:15px;margin-left:10px;background-color:red;font-size:20px;color:white;}
-
+	#wtf4{margin-left:180px;margin-right:8px; color:white;font-family:"不存在的";font-size:50px;font-weight:normal;}
+	#body_l_2 {text-align:left;width:50%;height:10px;}
+	#body_l_2 p1{margin-top:1px;margin-left:180px;text-decoration:underline;color:white;font-size:15px;}
+	#body_1_3 {margin-top:20px;width:50%;}
+	#body_1_3 p1{margin-left:180px;color:white;font-size:30px;}
+	#body_1_4_1 {float:left;width:20%;height:80px;}
+	#body_1_4_1 a {
+    float: left;
+	margin-top:30px;
+    margin-left:180px;
+	width: 100%;
+    height: 100%;
+	font-family:body_1_4部分是抄的不会写那框框带超链接的想不到替代方式;
+    text-align: center;
+    line-height: 70px;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 10px;
+    background: #fb6c6d;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+	}
+	#body_1_4_2 {margin-left:450px;margin-top:29px;width:20%;height:80px;}
+	#body_r img{margin-top:30px;height:400px;width:50%;margin-bottom:2px;}
+	#body_r {
+		float:right;
+		
+		argin-right:50px;
+		width:90%;
+		height:800px;
+		}
+	#bottom_root{
+		margin-top:80px;
+		margin-left:1%;
+		margin-right:1%;
+		width:98%;
+		background-color:white ;
+		height:500px;
+	}
+	#bottom_root_r{
+		margin-top:80px;
+		margin-left:10%;
+		float:left;
+		background-color:white ;
+		height:500px;
+	}
+	
+	#fieldx{
+        margin-top:50px;
+		margin-bottom:5px;
+        margin-left:5px;
+        float:left;
+        width:24%;
+        text-align:center;
+      
+        }
+	#left4{
+		background-color:white;
+		margin-bottom:15px;
+		margin-left:30px;
+		float:left;
+		width:65%;
+		weight:300px;
+		
+		text-align:left;
+		marin-lift:1px;
+		}
+	#footer{
+		background-color:black;
+		margin-bottom:15px;
+		margin-left:30px;
+		float:left;
+		width:100%;
+		weight:300px;
+		color:33FF00;
+		text-align:center;
+		marin-lift:1px;
+		}
+	#footer a{color:66FF00;}
+	.jiacu{
+		font-size:30px;
+		}
+		-->
 </style>
 </html>
 
