@@ -3,3 +3,6 @@ git checkout -b source
 git commit -m "backup"
 git push -u github source
 git push -u coding source
+git push -u gitlab source
+git push -u bitbucket source
+
