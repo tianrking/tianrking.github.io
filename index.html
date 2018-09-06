@@ -312,6 +312,188 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zyx.8a8.xyz/2018/09/06/数据库系统概述（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tianrking">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/trk.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="w0x7ce 😁">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/06/数据库系统概述（一）/" itemprop="url">数据库系统概述（一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-06T15:03:13+08:00">
+                2018-09-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库原理及应用教程/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库原理及应用教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-1-信息、数据、数据处理与数据管理"><a href="#1-1-信息、数据、数据处理与数据管理" class="headerlink" title="1.1 信息、数据、数据处理与数据管理"></a>1.1 信息、数据、数据处理与数据管理</h1><h2 id="1-1-1数据与信息"><a href="#1-1-1数据与信息" class="headerlink" title="1.1.1数据与信息"></a>1.1.1数据与信息</h2><blockquote>
+<p>  <strong>1</strong>. 信息的定义：信息是人脑对显示世界事物存在的方式、运动状态以及事物之间联系的抽象反映。<br>  <strong>2</strong>. 信息的特征:</p>
+<ul>
+<li>信息源于物质和能量。</li>
+<li>信息是可以感知的。</li>
+<li>信息是可储存、加工、传递和再生的。<br><strong>3</strong>. 数据的定义 ： 数据是由用来记录信息的可识别的符号组成的，是信息的具体表现形式。<br><strong>4</strong>. 数据的表现形式 ： 可用多种不同的数据形式表示同一种信息，而信息不随数据形式的不同而改变。<br><strong>5</strong>. 数据与信息的联系 ： 信息  =  数据  +  语义</li>
+</ul>
+</blockquote>
+<h2 id="1-1-2数据处理与数据管理"><a href="#1-1-2数据处理与数据管理" class="headerlink" title="1.1.2数据处理与数据管理"></a>1.1.2数据处理与数据管理</h2><blockquote>
+<p>  数据处理是将数据转化成信息的过程，包括对数据的收集、管理、加工利用乃至信息输出等一系列活动。<br>目的：</p>
+<ul>
+<li>从大量的原始数据中抽取和推导出有价值的信息，作为决策的依据。</li>
+<li>借助计算机科学地保存和管理大量复杂的数据，以便人们能够方便地充分利用这些信息资源。<br>在数据处理中，主要包括</li>
+<li>分类</li>
+<li>组织</li>
+<li>编码</li>
+<li>存储</li>
+<li>维护</li>
+<li>检索</li>
+</ul>
+</blockquote>
+<h1 id="1-2-数据库技术产生、发展"><a href="#1-2-数据库技术产生、发展" class="headerlink" title="1.2 数据库技术产生、发展"></a>1.2 数据库技术产生、发展</h1><h2 id="1-人工管理阶段"><a href="#1-人工管理阶段" class="headerlink" title="1.人工管理阶段"></a>1.人工管理阶段</h2><blockquote>
+<p>  1.数据没有专门存储设备<br>  2.数据没有专门管理软件<br>  3.数据不共享<br>  4.数据不具有独立性</p>
+</blockquote>
+<h2 id="2-文件系统阶段"><a href="#2-文件系统阶段" class="headerlink" title="2.文件系统阶段"></a>2.文件系统阶段</h2><blockquote>
+<p>  1.数据以文件形式长期保存<br>  2.由文件系统管理数据<br>  3.程序与数据间有一定独立性<br>  4.文件形式已经多样化<br>  5.数据具有一定的共享性</p>
+</blockquote>
+<h2 id="与人工管理阶段相比-文件系统阶段对数据的管理有了很大的进步-但一些根本性问题仍没有彻底解决"><a href="#与人工管理阶段相比-文件系统阶段对数据的管理有了很大的进步-但一些根本性问题仍没有彻底解决" class="headerlink" title="与人工管理阶段相比 文件系统阶段对数据的管理有了很大的进步 但一些根本性问题仍没有彻底解决"></a>与人工管理阶段相比 文件系统阶段对数据的管理有了很大的进步 但一些根本性问题仍没有彻底解决</h2><ul>
+<li>数据共享性差、冗余度大</li>
+<li>数据不一致性</li>
+<li>数据独立性差</li>
+<li>数据间联系弱</li>
+</ul>
+<h2 id="3-数据库系统阶段"><a href="#3-数据库系统阶段" class="headerlink" title="3.数据库系统阶段"></a>3.数据库系统阶段</h2><ul>
+<li>结构化的数据及其联系的集合：<br>数据库系统中的数据不再仅仅针对某个应用，而是面向全组织，不仅数据内部是结构化的，整体也是结构化的；<br>不仅描述了数据的本身，也描述了数据间的有机联系。<br>较好地反映了现实世界事物之间的自然联系。</li>
+<li><p>数据共享性高、冗余度低：<br>不同用户、不同应用可同时存取数据库中的数据，每个用户</p>
+</li>
+<li><blockquote>
+</blockquote>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zyx.8a8.xyz/2018/09/05/数据库系统概述/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1448,7 +1630,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1459,7 +1641,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
