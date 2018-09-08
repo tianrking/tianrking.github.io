@@ -105,18 +105,18 @@
 
 
 
-<meta name="description" content="1.6 数据库管理系统 （未完待续）1.6.1 DBMS的主要功能 数据定义功能:  DBMS提供数据定义语言（DDL），定义数据的模式、外模式、内模式三级模式结构，定义模式/内模式、外模式/模式二级映像，定义有关的约束条件。（DBMS应包括DDL的编译程序，DDL定义的各种模式需要通过相应的模式翻译程序转换为机器内部代码表示形式，保存在数据字典（DD））  DBMS提供结构化查询语言（SQL），">
+<meta name="description" content="1.6 数据库管理系统 1.6.1 DBMS的主要功能 数据定义功能:DBMS提供数据定义语言（DDL），定义数据的模式、外模式、内模式三级模式结构，定义模式/内模式、外模式/模式二级映像，定义有关的约束条件。（DBMS应包括DDL的编译程序，DDL定义的各种模式需要通过相应的模式翻译程序转换为机器内部代码表示形式，保存在数据字典（DD））DBMS提供结构化查询语言（SQL），提供Create、D">
 <meta name="keywords" content="主修">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库系统概述（二）">
 <meta property="og:url" content="https://zyx.8a8.xyz/2018/09/06/数据库系统概述（二）/index.html">
 <meta property="og:site_name" content="w0x7ce 😁">
-<meta property="og:description" content="1.6 数据库管理系统 （未完待续）1.6.1 DBMS的主要功能 数据定义功能:  DBMS提供数据定义语言（DDL），定义数据的模式、外模式、内模式三级模式结构，定义模式/内模式、外模式/模式二级映像，定义有关的约束条件。（DBMS应包括DDL的编译程序，DDL定义的各种模式需要通过相应的模式翻译程序转换为机器内部代码表示形式，保存在数据字典（DD））  DBMS提供结构化查询语言（SQL），">
+<meta property="og:description" content="1.6 数据库管理系统 1.6.1 DBMS的主要功能 数据定义功能:DBMS提供数据定义语言（DDL），定义数据的模式、外模式、内模式三级模式结构，定义模式/内模式、外模式/模式二级映像，定义有关的约束条件。（DBMS应包括DDL的编译程序，DDL定义的各种模式需要通过相应的模式翻译程序转换为机器内部代码表示形式，保存在数据字典（DD））DBMS提供结构化查询语言（SQL），提供Create、D">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-07T11:00:38.807Z">
+<meta property="og:updated_time" content="2018-09-08T11:50:08.600Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库系统概述（二）">
-<meta name="twitter:description" content="1.6 数据库管理系统 （未完待续）1.6.1 DBMS的主要功能 数据定义功能:  DBMS提供数据定义语言（DDL），定义数据的模式、外模式、内模式三级模式结构，定义模式/内模式、外模式/模式二级映像，定义有关的约束条件。（DBMS应包括DDL的编译程序，DDL定义的各种模式需要通过相应的模式翻译程序转换为机器内部代码表示形式，保存在数据字典（DD））  DBMS提供结构化查询语言（SQL），">
+<meta name="twitter:description" content="1.6 数据库管理系统 1.6.1 DBMS的主要功能 数据定义功能:DBMS提供数据定义语言（DDL），定义数据的模式、外模式、内模式三级模式结构，定义模式/内模式、外模式/模式二级映像，定义有关的约束条件。（DBMS应包括DDL的编译程序，DDL定义的各种模式需要通过相应的模式翻译程序转换为机器内部代码表示形式，保存在数据字典（DD））DBMS提供结构化查询语言（SQL），提供Create、D">
 
 
 
@@ -425,25 +425,99 @@
       
 
       
-        <h1 id="1-6-数据库管理系统-（未完待续）"><a href="#1-6-数据库管理系统-（未完待续）" class="headerlink" title="1.6 数据库管理系统 （未完待续）"></a>1.6 数据库管理系统 （未完待续）</h1><h3 id="1-6-1-DBMS的主要功能"><a href="#1-6-1-DBMS的主要功能" class="headerlink" title="1.6.1 DBMS的主要功能"></a>1.6.1 DBMS的主要功能</h3><ul>
-<li>数据定义功能:<br>  DBMS提供数据定义语言（DDL），定义数据的模式、外模式、内模式三级模式结构，定义模式/内模式、外模式/模式二级映像，定义有关的约束条件。（DBMS应包括DDL的编译程序，DDL定义的各种模式需要通过相应的模式翻译程序转换为机器内部代码表示形式，保存在数据字典（DD））<br>  DBMS提供结构化查询语言（SQL），提供Create、Drop、Alter等语句可分别用来建立、删除和修改数据库。</li>
-<li>数据操纵功能：<br>  DBMS提供数据操纵语言（DML），实现对数据库的基本操作，包括检索、更新（包括插入、修改和删除）<pre><code>DBMS包括DML编译程序或解释程序，DML分为两类：
-    自主型或自含型
-    宿主型
+        <h1 id="1-6-数据库管理系统"><a href="#1-6-数据库管理系统" class="headerlink" title="1.6 数据库管理系统"></a>1.6 数据库管理系统</h1><ul>
+<li><h3 id="1-6-1-DBMS的主要功能"><a href="#1-6-1-DBMS的主要功能" class="headerlink" title="1.6.1 DBMS的主要功能"></a>1.6.1 DBMS的主要功能</h3><ul>
+<li>数据定义功能:<br>DBMS提供数据定义语言（DDL），定义数据的模式、外模式、内模式三级模式结构，定义模式/内模式、外模式/模式二级映像，定义有关的约束条件。（DBMS应包括DDL的编译程序，DDL定义的各种模式需要通过相应的模式翻译程序转换为机器内部代码表示形式，保存在数据字典（DD））<br>DBMS提供结构化查询语言（SQL），提供Create、Drop、Alter等语句可分别用来建立、删除和修改数据库。</li>
+<li>数据操纵功能：<br>DBMS提供数据操纵语言（DML），实现对数据库的基本操作，包括检索、更新（包括插入、修改和删除）<br>  DBMS包括DML编译程序或解释程序，DML分为两类：<pre><code>自主型或自含型
+宿主型
 </code></pre></li>
-<li>数据库运行管理功能：<br>  DBMS对数据库的控制主要通过四个方面实现：<br>  1.数据的安全性控制<br>  2.数据的完整性控制<br>  3.多用户环境下的数据并发性控制<br>  4.数据库的恢复</li>
-<li><p>数据库的建立和维护功能：<br>  数据库的建立：数据库的初始数据的装入与数据转换。<br>  数据库的维护：数据库的转储、恢复、重组织、重构造、系统性能监视与分析。</p>
-<p>  由DBMS的各个实用程序分别完成</p>
+<li>数据库运行管理功能：<br>DBMS对数据库的控制主要通过四个方面实现：<br>1.数据的安全性控制<br>2.数据的完整性控制<br>3.多用户环境下的数据并发性控制<br>4.数据库的恢复</li>
+<li><p>数据库的建立和维护功能：<br>数据库的建立：数据库的初始数据的装入与数据转换。<br>数据库的维护：数据库的转储、恢复、重组织、重构造、系统性能监视与分析。</p>
+<p>由DBMS的各个实用程序分别完成</p>
 </li>
-<li><p>数据通信接口：<br>  DBMS提供与其他软件进行通信的功能。</p>
+<li><p>数据通信接口：<br>DBMS提供与其他软件进行通信的功能。</p>
 </li>
-<li>数据组织、存储和管理：<br>  DBMS负责对数据库中需要存放的各种数据（如数据字典、用户数据、存取路径等）的组织、存储和管理工作，确定以何种文件结构和存取方式物理地组织这些数据，以提高存储空间利用率和对数据库进行增、删、查、改的效率。</li>
+<li>数据组织、存储和管理：<br>DBMS负责对数据库中需要存放的各种数据（如数据字典、用户数据、存取路径等）的组织、存储和管理工作，确定以何种文件结构和存取方式物理地组织这些数据，以提高存储空间利用率和对数据库进行增、删、查、改的效率。</li>
 </ul>
-<h3 id="1-6-2-DBMS的组成"><a href="#1-6-2-DBMS的组成" class="headerlink" title="1.6.2 DBMS的组成"></a>1.6.2 DBMS的组成</h3><pre><code>1.语言编译处理程序：
-（1）数据定义语言DDL编译程序
-（2）数据操纵语言DML编译程序
-2.系统运行控制程序：
-DBMS提供了一系列的运行控制程序，负责数据库系统运行过程中的控制与管理
+</li>
+<li><h3 id="1-6-2-DBMS的组成"><a href="#1-6-2-DBMS的组成" class="headerlink" title="1.6.2 DBMS的组成"></a>1.6.2 DBMS的组成</h3><ul>
+<li><h5 id="1-语言编译处理程序："><a href="#1-语言编译处理程序：" class="headerlink" title="1.语言编译处理程序："></a>1.语言编译处理程序：</h5>   （1）数据定义语言DDL编译程序<br>  （2）数据操纵语言DML编译程序</li>
+<li><h5 id="2-系统运行控制程序："><a href="#2-系统运行控制程序：" class="headerlink" title="2.系统运行控制程序："></a>2.系统运行控制程序：</h5><p>   DBMS提供了一系列的运行控制程序，负责数据库系统运行过程中的控制与管理，主要包括：<br>  （1）系统总控程序：</p>
+<pre><code>用于控制和协调各程序的活动，它是DBMS运行程序的核心。
+</code></pre><p>  （2）安全性控制程序：</p>
+<pre><code>防止未被授权的用户存取数据库中的数据。
+</code></pre><p>  （3）完整性控制程序：</p>
+<pre><code>检查完整性约束条件，确保进入数据库中的数据的正确性、有效性和相容性。
+</code></pre><p>  （4）并发控制程序：</p>
+<pre><code>协调多用户、多任务环境下各应用程序对数据库的并发操作，保证数据的一致性。
+</code></pre><p>  （5）数据存取和更新程序：</p>
+<pre><code>实施对数据库数据的检索、插入、修改和删除等操作。
+</code></pre><p>  （6） 通信控制程序：</p>
+<pre><code>实现用户程序与DBMS间的通信。
+</code></pre><p>  除此之外，DBMS还有文件读写与维护程序、缓冲区管理程序、存取路径管理程序、事物管理程序运行日志管理程序等。所有这些程序在数据库系统运行过程中协同操作，监视着对数据库的所有操作，控制、管理数据库资源等。</p>
+</li>
+<li><h5 id="3-系统建立、维护程序："><a href="#3-系统建立、维护程序：" class="headerlink" title="3.系统建立、维护程序："></a>3.系统建立、维护程序：</h5><p>  （1）装配程序：完成初始数据库的数据装入<br>  （2）重组程序：当数据库性能降低时（如查询速度过慢），需要重新组织数据库，重新装入数据。<br>  （3）系统恢复程序：当数据库系统收到破坏时，将数据库系统恢复到以前某个正确的状态。</p>
+<ul>
+<li><h5 id="4-数据字典："><a href="#4-数据字典：" class="headerlink" title="4.数据字典："></a>4.数据字典：</h5>数据字典（DD）用来描述数据库中有关信息的数据目录，包括数据库的三级模式、数据类型、用户名和用户权限等有关数据库系统的信息，起着系统状态目录表的作用，帮助用户、DBA和DBMS本身使用和管理数据库。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h3 id="1-6-3-DBMS的数据存取过程"><a href="#1-6-3-DBMS的数据存取过程" class="headerlink" title="1.6.3 DBMS的数据存取过程"></a>1.6.3 DBMS的数据存取过程</h3><p>  （1）用户使用某种特定的数据操作语言向DBMS发出存取请求。<br>  （2）DBMS接受请求并将该请求解释转换成及其代码指令。<br>  （3）DBMS以此检查外模式、外模式/模式映像、模式、模式/内模式映像及储存结构定义。<br>  （4）DBMS对存储数据库执行必要的存取操作。<br>  （5）从对数据库的存取操作中接受结果。<br>  （6）对得到的结果进行必要的处理，如格式转换等。<br>  （7）将处理的结果返回给用户。</p>
+<p>  上述存取过程中还包括安全控制、完整性控制，以确保数据的正确性、有效性和一致性。</p>
+</li>
+</ul>
+<h1 id="1-7-数据模型"><a href="#1-7-数据模型" class="headerlink" title="1.7 数据模型"></a>1.7 数据模型</h1><ul>
+<li><h3 id="1-7-1-数据模型的概念及分类"><a href="#1-7-1-数据模型的概念及分类" class="headerlink" title="1.7.1 数据模型的概念及分类"></a>1.7.1 数据模型的概念及分类</h3><ul>
+<li><h5 id="1-数据处理的抽象与转换"><a href="#1-数据处理的抽象与转换" class="headerlink" title="1. 数据处理的抽象与转换"></a>1. 数据处理的抽象与转换</h5>  数据模型是现实世界的两级抽象的结果。在数据处理中，数据加工经历了现实世界、信息世界和计算机世界三个不同的世界，经历了两级抽象和转换。</li>
+<li><h5 id="2-数据类型的分类"><a href="#2-数据类型的分类" class="headerlink" title="2.数据类型的分类"></a>2.数据类型的分类</h5><p><strong>根据模型应用的不同目的，可以将这些模型划分为两个不同的抽象级别。</strong><br>第一类模型—概念模型（信息模型）：</p>
+<blockquote>
+<p>他是用户的观点与数据和信息的建模，是对现实世界的事物及其联系的第一级抽象，它不依赖于具体的计算机系统，不涉及信息在计算机内如何表示、如何处理问题，只是用来描述某个特定组织所关心的信息结构。<br><strong>概念模型属于信息世界中的模型，不是一个DBMS支持的数据模型，而是概念级的模型</strong></p>
+</blockquote>
+<p>第二类模型是逻辑模型（数据模型）和物理模型：</p>
+<blockquote>
+<p>逻辑模型是属于计算机世界中的模型，这一类模型是按计算机观点对数据建模，是对现实世界的第二级抽象，由严格的形式化定义，以便于在计算机中实现。任何一个DBMS都是根据某种逻辑模型有针对性地设计出来的，即数据库是按DBMS规定的数据模型组织建立起来的，因此逻辑模型主要用于DBMS实现。从概念模型到逻辑模型的转换可以由数据库设计人员完成，也可以与数据设计工具协助设计人员完成。</p>
+</blockquote>
+<p>  比较成熟地应用在数据库系统中的逻辑模型主要包括层次模型、网状模型、关系模型、面向对象模型等。<br>  物理模型是对数据最底层的抽象，它描述数据在磁盘或磁带上的存储方式和存取方法，是面向计算机系统的。物理模型的具体实现是D  BMS的任务，用户一般不必考虑物理级细节。从逻辑模型到物理模型的转换是由DBMS自动完成的。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="1-7-2-数据模型的组成要素"><a href="#1-7-2-数据模型的组成要素" class="headerlink" title="1.7.2 数据模型的组成要素"></a>1.7.2 数据模型的组成要素</h3><ul>
+<li><h5 id="1-数据结构"><a href="#1-数据结构" class="headerlink" title="1.数据结构"></a>1.数据结构</h5><ul>
+<li>数据结构或数据组织结构，描述了数据库的组成对象以及对象间的联系，也就是说数据结构一方面描述的是数据对象的类型、内容和性质等，另一方面描述了数据对象间的联系。因此，数据模型通常由数据结构、数据操作和数据完整性约束三个要素组成。   </li>
+</ul>
+</li>
+<li><h5 id="2-数据操作"><a href="#2-数据操作" class="headerlink" title="2.数据操作"></a>2.数据操作</h5><ul>
+<li>数据操作是指对数据库中的各种数据允许执行的集合的操作，包括操作及相应的操作规则，描述了数据库的动态特性。数据库有查询和更新两类操作。数据模型必须定义这些操作的具体含义、操作符号、操作规则（如优先级）以及实现操作的语言。</li>
+</ul>
+</li>
+<li><h5 id="3-数据的完整性约束"><a href="#3-数据的完整性约束" class="headerlink" title="3.数据的完整性约束"></a>3.数据的完整性约束</h5><ul>
+<li>数据的完整性约束条件是一组完整性规则的集合。完整性规则是给定的数据模型中数据及其联系所具有制约和依存规则，用以限定符合数据模型的数据库状态以及状态的变化，以确保数据的正确、有效、相容 。<br><strong>一方面，数据模型应该反映和规定本数据模型必须遵守的基本的和通用的完整性约束条件；另一方面，数据模型还应该提供定义完整性约束条件机制，以反映具体应用所涉及的数据必须遵守的特定的语义约束条件。</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="1-8-三个世界及其有关概念"><a href="#1-8-三个世界及其有关概念" class="headerlink" title="1.8  三个世界及其有关概念"></a>1.8  三个世界及其有关概念</h1><ul>
+<li><h5 id="1-8-1-现实世界"><a href="#1-8-1-现实世界" class="headerlink" title="1.8.1 现实世界"></a>1.8.1 现实世界</h5><ul>
+<li>客观存在的世界。事物之间是相互联系的，而这种联系可能是多方面的，但人们只选择那些感兴趣的联系，无需选择所有的联系。</li>
+</ul>
+</li>
+<li><h5 id="1-8-2-信息世界"><a href="#1-8-2-信息世界" class="headerlink" title="1.8.2 信息世界"></a>1.8.2 信息世界</h5><ul>
+<li><h6 id="1-信息世界及其有关概念"><a href="#1-信息世界及其有关概念" class="headerlink" title="1.信息世界及其有关概念"></a>1.信息世界及其有关概念</h6>  （1） 实体<br>  （2） 属性<br>  （3）实体型<br>  （4）实体集<br> （5）码<br> （6）域<br> （7）联系</li>
+<li><h6 id="2-两个实体型间的联系"><a href="#2-两个实体型间的联系" class="headerlink" title="2. 两个实体型间的联系"></a>2. 两个实体型间的联系</h6>  （1）<br>  （2）<br>  （3）</li>
+<li><h6 id="3-两个以上实体型间的联系"><a href="#3-两个以上实体型间的联系" class="headerlink" title="3.两个以上实体型间的联系"></a>3.两个以上实体型间的联系</h6></li>
+<li><h6 id="4-单个实体型内部的联系"><a href="#4-单个实体型内部的联系" class="headerlink" title="4.单个实体型内部的联系"></a>4.单个实体型内部的联系</h6></li>
+</ul>
+</li>
+<li><h5 id="1-8-3-计算机世界"><a href="#1-8-3-计算机世界" class="headerlink" title="1.8.3 计算机世界"></a>1.8.3 计算机世界</h5><p>  （1）字段 标记实体属性的命名单位称为字段<br>  （2）记录：<br>  （3） 文件：<br>  （4）关键字：</p>
+</li>
+</ul>
+<pre><code>现实世界        信息世界        计算机世界
+事物总体        实体集          文件
+事物个体        实体            记录
+特征            属性            字段
+事物之间联系    实体模型        数据模型
 </code></pre>
       
     </div>
@@ -677,7 +751,7 @@ DBMS提供了一系列的运行控制程序，负责数据库系统运行过程�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-6-数据库管理系统-（未完待续）"><span class="nav-number">1.</span> <span class="nav-text">1.6 数据库管理系统 （未完待续）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-1-DBMS的主要功能"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.6.1 DBMS的主要功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-2-DBMS的组成"><span class="nav-number">1.0.2.</span> <span class="nav-text">1.6.2 DBMS的组成</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-6-数据库管理系统"><span class="nav-number">1.</span> <span class="nav-text">1.6 数据库管理系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-1-DBMS的主要功能"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.6.1 DBMS的主要功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-2-DBMS的组成"><span class="nav-number">1.0.2.</span> <span class="nav-text">1.6.2 DBMS的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-语言编译处理程序："><span class="nav-number">1.0.2.0.1.</span> <span class="nav-text">1.语言编译处理程序：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-系统运行控制程序："><span class="nav-number">1.0.2.0.2.</span> <span class="nav-text">2.系统运行控制程序：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-系统建立、维护程序："><span class="nav-number">1.0.2.0.3.</span> <span class="nav-text">3.系统建立、维护程序：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-数据字典："><span class="nav-number">1.0.2.0.4.</span> <span class="nav-text">4.数据字典：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-3-DBMS的数据存取过程"><span class="nav-number">1.0.3.</span> <span class="nav-text">1.6.3 DBMS的数据存取过程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-7-数据模型"><span class="nav-number">2.</span> <span class="nav-text">1.7 数据模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7-1-数据模型的概念及分类"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.7.1 数据模型的概念及分类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-数据处理的抽象与转换"><span class="nav-number">2.0.1.0.1.</span> <span class="nav-text">1. 数据处理的抽象与转换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-数据类型的分类"><span class="nav-number">2.0.1.0.2.</span> <span class="nav-text">2.数据类型的分类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7-2-数据模型的组成要素"><span class="nav-number">2.0.2.</span> <span class="nav-text">1.7.2 数据模型的组成要素</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-数据结构"><span class="nav-number">2.0.2.0.1.</span> <span class="nav-text">1.数据结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-数据操作"><span class="nav-number">2.0.2.0.2.</span> <span class="nav-text">2.数据操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-数据的完整性约束"><span class="nav-number">2.0.2.0.3.</span> <span class="nav-text">3.数据的完整性约束</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-8-三个世界及其有关概念"><span class="nav-number">3.</span> <span class="nav-text">1.8  三个世界及其有关概念</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-8-1-现实世界"><span class="nav-number">3.0.0.0.1.</span> <span class="nav-text">1.8.1 现实世界</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-8-2-信息世界"><span class="nav-number">3.0.0.0.2.</span> <span class="nav-text">1.8.2 信息世界</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-信息世界及其有关概念"><span class="nav-number">3.0.0.0.2.1.</span> <span class="nav-text">1.信息世界及其有关概念</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-两个实体型间的联系"><span class="nav-number">3.0.0.0.2.2.</span> <span class="nav-text">2. 两个实体型间的联系</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-两个以上实体型间的联系"><span class="nav-number">3.0.0.0.2.3.</span> <span class="nav-text">3.两个以上实体型间的联系</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-单个实体型内部的联系"><span class="nav-number">3.0.0.0.2.4.</span> <span class="nav-text">4.单个实体型内部的联系</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-8-3-计算机世界"><span class="nav-number">3.0.0.0.3.</span> <span class="nav-text">1.8.3 计算机世界</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
