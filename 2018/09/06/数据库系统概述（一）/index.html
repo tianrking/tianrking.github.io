@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=zh>
+<html>
 <head>
     <!-- so meta -->
     <meta charset="utf-8">
@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://zyx.8a8.xyz/2018/09/06/数据库系统概述（一）/index.html">
 <meta property="og:site_name" content="w0x7ce 😁">
 <meta property="og:description" content="1.1 信息、数据、数据处理与数据管理1.1.1数据与信息 1. 信息的定义：信息是人脑对显示世界事物存在的方式、运动状态以及事物之间联系的抽象反映。 2. 信息的特征:    信息源于物质和能量。  信息是可以感知的。  信息是可储存、加工、传递和再生的。   3. 数据的定义 ： 数据是由用来记录信息的可识别的符号组成的，是信息的具体表现形式。  4. 数据的表现形式 ： 可用多种不同的数据形">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-09-07T10:58:27.274Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库系统概述（一）">
@@ -59,13 +59,17 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/">首页</a></li>
+          <li><a href="/">Home</a></li>
          
-          <li><a href="/about/">关于</a></li>
+          <li><a href="/about/">About</a></li>
          
-          <li><a href="/archives/">归档</a></li>
+          <li><a href="/archives/">archives</a></li>
          
-          <li><a href="/">项目</a></li>
+          <li><a href="/tags/ || tags">tags</a></li>
+         
+          <li><a href="/news/">news</a></li>
+         
+          <li><a href="/实验课">实验课</a></li>
         
       </ul>
     </span>
@@ -81,10 +85,10 @@
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">上一篇</span>
-      <span id="i-next" class="info" style="display:none;">下一篇</span>
-      <span id="i-top" class="info" style="display:none;">返回顶部</span>
-      <span id="i-share" class="info" style="display:none;">分享文章</span>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
     <br/>
     <div id="share" style="display: none">
@@ -286,13 +290,17 @@
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/">首页</a></li>
+          <li><a href="/">Home</a></li>
          
-          <li><a href="/about/">关于</a></li>
+          <li><a href="/about/">About</a></li>
          
-          <li><a href="/archives/">归档</a></li>
+          <li><a href="/archives/">archives</a></li>
          
-          <li><a href="/">项目</a></li>
+          <li><a href="/tags/ || tags">tags</a></li>
+         
+          <li><a href="/news/">news</a></li>
+         
+          <li><a href="/实验课">实验课</a></li>
         
       </ul>
     </div>
@@ -318,10 +326,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
 
   </div>
@@ -336,13 +344,17 @@
     <nav>
       <ul>
          
-          <li><a href="/">首页</a></li>
+          <li><a href="/">Home</a></li>
          
-          <li><a href="/about/">关于</a></li>
+          <li><a href="/about/">About</a></li>
          
-          <li><a href="/archives/">归档</a></li>
+          <li><a href="/archives/">archives</a></li>
          
-          <li><a href="/">项目</a></li>
+          <li><a href="/tags/ || tags">tags</a></li>
+         
+          <li><a href="/news/">news</a></li>
+         
+          <li><a href="/实验课">实验课</a></li>
         
       </ul>
     </nav>
