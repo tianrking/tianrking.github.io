@@ -178,12 +178,12 @@
 <!-- Theme Background Related-->
 
     <style>
-      body{
+      body {
         background-color: #F5F5F5;
       }
 
       /* blog_info bottom background */
-      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text {
         background-color: #fff;
       }
     </style>
@@ -361,6 +361,18 @@
     -->
 
     <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">Read this article on other devices</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAAB50lEQVR42u3aQZLCQAgFUO9/6ZntbNLywRqNvF5ZMab6ZYHQ8Pj5ivXAwMDAwMDAwPgYxqO8/t5/9YTz9fMz63vAwMDYyXgS2i4YV789w87Pr+wBAwNjMyMNspVwmfKCPWBgYGAcg2wl7NZDKgYGBsb/B9xzsnib/w0MDIyPZKThslLcpi/ln2pxDAyMGzJ6jYHXfn5bfwMDA+PjGfGIQ9jOrCSOb5gZwcDAuBWjksadr9fDdy9ZjIctMDAwvo7xpFAsHOjX70nTzaCIxcDAWMlIi8z0GK7SNnjSbMDAwFjJ6G0ibWROmqAYGBg7GfX07lUNyPr9T3aFgYGxhjEh1VsC8zvjIhYDA+OLGPXB08pWegG6OfaKgYGxhjFpA1QwvVSyhMTAwFjG6I071L/ttTwxMDAwzknYfHirN+oatAowMDDWMCbH9L2G5eTFYWBg7GT0jt4qw2HpERsGBgZGmhqWjubD9C4disXAwMDorfTorTeoWhrox8DAWMNIA9+koK0Uq83GAAYGxgJGfdxhMv5VGqHAwMDAODImzcvJ4Voa3DEwMDDSsYk0+UsD7uUTMDAwMFpF5uS4LQ7rGBgYKxmTgjMoPsepJwYGxk7GvDHQG7AYvQ4MDIw1jPsuDAwMDAwMDIy3rl8kD3Oo4o1qDQAAAABJRU5ErkJggg==">
+    
+</ul>
+
     
 
     <!-- Tags (bookmark) -->
@@ -732,7 +744,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
         <!--Copyright-->
         <div id="copyright">
-            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>w0x7ce 😁
+            Copyright&nbsp;©&nbsp;2018&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>w0x7ce 😁
             
         </div>
 
@@ -831,6 +843,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 <!-- Bing Background -->
+
+<script type="text/ls-javascript" id="Bing-Background-script">
+    queue.offer(function(){
+        $('body').attr('data-original', 'https://api.i-meto.com/bing?');
+    });
+</script>
 
 
 <script type="text/ls-javascript" id="lazy-load">

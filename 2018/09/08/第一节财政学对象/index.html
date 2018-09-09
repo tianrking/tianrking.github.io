@@ -178,12 +178,12 @@
 <!-- Theme Background Related-->
 
     <style>
-      body{
+      body {
         background-color: #F5F5F5;
       }
 
       /* blog_info bottom background */
-      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text {
         background-color: #fff;
       }
     </style>
@@ -427,6 +427,18 @@
     -->
 
     <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">Read this article on other devices</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC1ElEQVR42u3aQW7jMBAEQP//07vXAAsr3RxtIpPFUxDLFouXxszw9efI9cLGxsbGxsbGxsZ+JPsVr3+f//qfb14ZPHP9/Ls9JHvGxsbGPoGdb2LCfoe5Rq4dIjY2NvaZ7OvQao/j+snro7l+fm3P2NjY2NjzIiEPufYQsbGxsbHXIqQNm7Vi5kG5jY2Njf14dtvEaUcISSAlR/MLvTRsbGzsx7PbQe8T/v6F+TY2Njb2I9ntug6ntpE0GffWO8fGxsbelJ2XEG1rKWes/X47csbGxsbelV18rRz9Ttr6k2uabw8XGxsb+zB20tZfG8SuASalDjY2Nvbe7HkDaG3E2x70ZOiLjY2NfQ67bf3Pn5+0t+oWGDY2Nvam7LwxlBQkk0s2banTliXY2NjYu7LzH80vYiZFTjvcbcuSYr6NjY2N/eHsUZtmqX3/PwqSm6ci2NjY2B/Fbl/z82XM2huxsbGxT2O3pOtDyQuMvN2/NtLAxsbGPoGdx9g8SJLNte2nvCGFjY2NvTc7X/OrM3kQrsXY2zdiY2Njb8p+3bTWgmftKudiEYWNjY19ALu9arPWTvoZZD0ewMbGxv5wdtskage381FEXuQUAYaNjY29ETsfBuSfJq2i9lJOEqjY2NjYZ7Lb9n1brswjMzkgbGxs7DPZbVDdVRjksZccTdJ+wsbGxt6bncdVG2Z5/LTfuuGmEjY2NvYW7EmzPo/AyZHlAfbN72BjY2Nvym7DbG0YkJQZa58W13qwsbGxj2GvtePbsXHya/mA+YbxADY2NvbHstuGUQubD5VzXl2BYWNjY2/EnodWjinaQHG8RfvBxsbGPoBdXEmPL83k203CKY9YbGxsbOz29XN8fplyrSzBxsbGxl4b6M4LnslwFxsbG/s0dt7WX7twk7eB8pZTMZzAxsbG3pp916B3rfC4K8CuwxUbGxt7V/Y5CxsbGxsbGxsbG/sx6y8uaSCC/qSAhwAAAABJRU5ErkJggg==">
+    
+</ul>
+
     
 
     <!-- Tags (bookmark) -->
@@ -848,7 +860,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
         <!--Copyright-->
         <div id="copyright">
-            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>w0x7ce 😁
+            Copyright&nbsp;©&nbsp;2018&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>w0x7ce 😁
             
         </div>
 
@@ -947,6 +959,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 <!-- Bing Background -->
+
+<script type="text/ls-javascript" id="Bing-Background-script">
+    queue.offer(function(){
+        $('body').attr('data-original', 'https://api.i-meto.com/bing?');
+    });
+</script>
 
 
 <script type="text/ls-javascript" id="lazy-load">
