@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.0 -->
+    <script>
+        window.materialVersion = "1.5.0"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Title -->
+    
+    <title>
+        
+            第二章 货币市场 | 
+        
+        w0x7c3
+    </title>
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="tianrking">
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",辅修">
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="w0x7c3">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: green !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: green !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: green !important;
+  }
+
+  .toTop {
+    background: #green !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #green;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #green;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #green;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body {
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text {
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icon -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://zyx.8a8.xyz">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="第二章 货币市场 | w0x7c3">
+    <meta property="og:image" content="https://zyx.8a8.xyz/img/favicon.png" />
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="辅修"> 
+
+    
+        <meta property="article:published_time" content="Mon Sep 24 2018 13:35:02 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Sep 24 2018 15:35:45 GMT+0800" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="第二章 货币市场 | w0x7c3">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://zyx.8a8.xyz/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://zyx.8a8.xyz" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://zyx.8a8.xyz/2018/09/24/第二章-货币市场/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://zyx.8a8.xyz/2018/09/24/第二章-货币市场/index.html",
+    "headline": "第二章 货币市场",
+    "datePublished": "Mon Sep 24 2018 13:35:02 GMT+0800",
+    "dateModified": "Mon Sep 24 2018 15:35:45 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "tianrking",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/logo.png"
+        },
+        "description": "I am back && 备战 sac xd "
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "w0x7c3",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",辅修",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+        <script>
+    var _hmt = _hmt || [];
+    (function() {var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?b4da296e1b6d674c6aa558d2a501264b';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+        <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1274632088&web_id=1274632088" language="JavaScript"></script>
+</div>
+    
+
+    <!-- Custom Head -->
+    
+
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第一节-货币市场概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">第一节 货币市场概述</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、货币市场的定义及特征"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">一、货币市场的定义及特征</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、货币市场的功能"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">二、货币市场的功能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三、货币市场效率"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">三、货币市场效率</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第二节-同行拆借市场"><span class="post-toc-number">2.</span> <span class="post-toc-text">第二节 同行拆借市场</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、同业发生拆借的原因"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">一、同业发生拆借的原因</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、同业拆借市场的形成与发展"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">二、同业拆借市场的形成与发展</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三、同行拆借市场的交易原理"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">三、同行拆借市场的交易原理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#四、同业拆借市场主要构成要素"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">四、同业拆借市场主要构成要素</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#五、同业拆借市场的特点"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">五、同业拆借市场的特点</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第三节-证券回购市场"><span class="post-toc-number">3.</span> <span class="post-toc-text">第三节 证券回购市场</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、证券回购市场的运行机制"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">一、证券回购市场的运行机制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、证券回购市场的要素"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">二、证券回购市场的要素</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三、证券回购市场的风险"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">三、证券回购市场的风险</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第四节-银行承兑汇票市场"><span class="post-toc-number">4.</span> <span class="post-toc-text">第四节 银行承兑汇票市场</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、银行承兑汇票的原理"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">一、银行承兑汇票的原理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、银行承兑汇票市场的运行机制"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">二、银行承兑汇票市场的运行机制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（一）银行承兑汇票的一级市场"><span class="post-toc-number">4.2.1.</span> <span class="post-toc-text">（一）银行承兑汇票的一级市场</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-银行承兑汇票的二级市场"><span class="post-toc-number">4.2.2.</span> <span class="post-toc-text">(二) 银行承兑汇票的二级市场</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三、银行承兑汇票的价值分析"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">三、银行承兑汇票的价值分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（一）从银行角度看"><span class="post-toc-number">4.3.1.</span> <span class="post-toc-text">（一）从银行角度看</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（二）从借款人角度看"><span class="post-toc-number">4.3.2.</span> <span class="post-toc-text">（二）从借款人角度看</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（三）从投资者角度看"><span class="post-toc-number">4.3.3.</span> <span class="post-toc-text">（三）从投资者角度看</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第五节-商业票据市场"><span class="post-toc-number">5.</span> <span class="post-toc-text">第五节 商业票据市场</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、-商业票据市场的起源与发展"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">一、 商业票据市场的起源与发展</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、-商业拍哦据的特性和种类"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">二、 商业拍哦据的特性和种类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三、商业票据市场的运行机制"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">三、商业票据市场的运行机制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（一）商业票据的发行方式"><span class="post-toc-number">5.3.1.</span> <span class="post-toc-text">（一）商业票据的发行方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（二）商业票据的信用评级"><span class="post-toc-number">5.3.2.</span> <span class="post-toc-text">（二）商业票据的信用评级</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（三）商业票据的发行价格"><span class="post-toc-number">5.3.3.</span> <span class="post-toc-text">（三）商业票据的发行价格</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#四、商业票据市场的价值分析"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">四、商业票据市场的价值分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（一）从发行人角度"><span class="post-toc-number">5.4.1.</span> <span class="post-toc-text">（一）从发行人角度</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#（二）从投资者角度"><span class="post-toc-number">5.4.2.</span> <span class="post-toc-text">（二）从投资者角度</span></a></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                第二章 货币市场
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/logo.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>tianrking</strong>
+        <span>Sep 24, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">Read this article on other devices</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC10lEQVR42u3aQY4bMQwEQP//08l1gWTtbtKAPaOaU2DYkmr20CGpx58jnwc2NjY2NjY2Njb2V7If8fPz+7/99t+V21/957i/nCE/MzY2NvYJ7GTj50fJ10wAya/qM2NjY2MfwE5CK/mkDafNJ8WZsbGxsbHjIMmPkgTkrBzCxsbGxp6xkxexaU5hY2NjY++bSs+32WDy4cEHemnY2NjYX8/eDHo/9e8Pz7exsbGxv4bdPm20zIqTfMfi5NjY2Ng3ZedXZBJwPu7Nm0d5dL2hAsPGxsa+LDuPh7ZESfbalBzF7tjY2Ng3Zc82SMKjHSokq81GDtjY2NjnsNsx6qZISL7ZjpmHAYaNjY19C/Zm9BuFR9lyaq/yvGHQi42NjX1ZdgtoX03SYMpfaFL2DAe92NjY2Ldg5/+53w8A9s2jfGCAjY2NfQI7b9a0w4B8lzzqnu+CjY2NfRq7jaskTtqyoR1O5Jd7sLGxsc9hJ0vPmlD59Z288ZTvhY2NjX0Ou23QtOx2cNueLVoHGxsb+9bsGWa2fR6Hm7IEGxsbG7u9KJkXLW1M7l8uNjY29sns2VHaUW4yPJitiY2NjX0CexMz7SXLR/DkTaV2NWxsbOwT2PmhNwXDrBTZxyQ2Njb2XdntMHXT7p99nkfs8M4pNjY29sXZ+9ZPtGX8Qp//Nh9F17mNjY2NfVn2PkJm7aSkmGn/MKvLl9jY2Ni3Y8+uRb43zPIWVVTkYGNjY9+UnbfdZ5Ezi8BZ8+jFatjY2Ng3ZbdPHm/5d2bt/jfnNjY2NvZl2fuQ2JQH+a/asFzlNjY2NvYF2bMD7VtIUVs/CLAo6rCxsbEPYLdH3FzcedfgIQFjY2NjY7ctpHddpmyvBL1YDRsbGxs7acEvGkObCIxKGmxsbOwD2Pum0uylzK5j5mGGjY2NfQK7HfS28TO8Llm2t16EHzY2NvZN2ec82NjY2NjY2NjY2F/z/AU2J3IUFEOnzAAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/辅修/">辅修</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;Views
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=第二章 货币市场&url=https://zyx.8a8.xyz/2018/09/24/第二章-货币市场/index.html&pic=https://zyx.8a8.xyz/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=第二章 货币市场&url=https://zyx.8a8.xyz/2018/09/24/第二章-货币市场/index.html&via=tianrking" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://zyx.8a8.xyz/2018/09/24/第二章-货币市场/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://zyx.8a8.xyz/2018/09/24/第二章-货币市场/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://zyx.8a8.xyz/2018/09/24/第二章-货币市场/index.html&title=第二章 货币市场" target="_blank">
+            <li class="mdl-menu__item">
+                Share to LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=w0x7c3&title=第二章 货币市场&summary=&pics=https://zyx.8a8.xyz/img/favicon.png&url=https://zyx.8a8.xyz/2018/09/24/第二章-货币市场/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://zyx.8a8.xyz/2018/09/24/第二章-货币市场/index.html&text=第二章 货币市场" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Telegram
+            </li>
+        </a>
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="第一节-货币市场概述"><a href="#第一节-货币市场概述" class="headerlink" title="第一节 货币市场概述"></a>第一节 货币市场概述</h1><h2 id="一、货币市场的定义及特征"><a href="#一、货币市场的定义及特征" class="headerlink" title="一、货币市场的定义及特征"></a>一、货币市场的定义及特征</h2><p><strong>货币市场是一年期以内的短期金融工具交易所形成的供求关系及其机制的总和</strong></p>
+<ol>
+<li>期限短、流动性高</li>
+<li>低风险、低收益</li>
+<li>交易量大</li>
+</ol>
+<h2 id="二、货币市场的功能"><a href="#二、货币市场的功能" class="headerlink" title="二、货币市场的功能"></a>二、货币市场的功能</h2><p><strong>货币市场既从微观上为银行、企业提供灵活的手段，使他们在对资金的安全性、流动性、盈利性相统一的管理上更方便灵活，又为中央银行实施货币政策以调控宏观经济提供手段，为保证金融市场的发展发挥巨大作用。</strong></p>
+<ul>
+<li>（一）为政府、企业调剂短期资金余缺，满足短期资金需求，优化资源配置</li>
+<li>（二）货币市场是商业银行等金融机构进行流通性管理的市场</li>
+<li>（三）政策传导功能</li>
+<li>（四）生成市场基准利率，形成金融市场的基础价格</li>
+<li></li>
+</ul>
+<h2 id="三、货币市场效率"><a href="#三、货币市场效率" class="headerlink" title="三、货币市场效率"></a>三、货币市场效率</h2><p><strong>一个有效率的货币市场应该是一个具有广度、深度、弹性的市场。</strong>货币市场的广度是指货币市场参与者多样化；货币市场的深度是指货币市场交易的活跃程度；货币市场的弹性则是指货币市场在应付突发事件及大手笔成交之后价格的迅速的调整能能力。</p>
+<h1 id="第二节-同行拆借市场"><a href="#第二节-同行拆借市场" class="headerlink" title="第二节 同行拆借市场"></a>第二节 同行拆借市场</h1><p><strong>同行拆解市场是指具有准入资格的金融机构之间以货币借贷的方式临时性资金通融的市场作为货币市场中最基础和最重要的组成部分，同行拆借市场交易量非常大，能对社会资金周转和货币流通产生重大影响，拆借率也是利率体系中最具影响力的利率之一，也是各国金融管理部门进行监管的重点</strong></p>
+<h2 id="一、同业发生拆借的原因"><a href="#一、同业发生拆借的原因" class="headerlink" title="一、同业发生拆借的原因"></a>一、同业发生拆借的原因</h2><ul>
+<li>（一）法定存款准备金不足</li>
+<li>（二）备付金不足</li>
+<li>（三）结算资金不足</li>
+<li>（四）临时性其它资金不足</li>
+</ul>
+<h2 id="二、同业拆借市场的形成与发展"><a href="#二、同业拆借市场的形成与发展" class="headerlink" title="二、同业拆借市场的形成与发展"></a>二、同业拆借市场的形成与发展</h2><p><strong>同行拆借市场产生于存款准备金政策的实施，伴随着中央银行业务和商业银行业务的发展而发展</strong></p>
+<h2 id="三、同行拆借市场的交易原理"><a href="#三、同行拆借市场的交易原理" class="headerlink" title="三、同行拆借市场的交易原理"></a>三、同行拆借市场的交易原理</h2><p><strong>同行拆借市场主要是银行等金融机构之间相互借贷在中央银行存款账户上的准备金余额用以调剂准备金头寸的市场。</strong></p>
+<h2 id="四、同业拆借市场主要构成要素"><a href="#四、同业拆借市场主要构成要素" class="headerlink" title="四、同业拆借市场主要构成要素"></a>四、同业拆借市场主要构成要素</h2><ul>
+<li>（一）市场参与者</li>
+<li>（二）拆借期限</li>
+<li>（三）拆借利息</li>
+</ul>
+<h2 id="五、同业拆借市场的特点"><a href="#五、同业拆借市场的特点" class="headerlink" title="五、同业拆借市场的特点"></a>五、同业拆借市场的特点</h2><ul>
+<li>（1）拆借期限短，其目的是救急而非救穷长期资金短缺</li>
+<li>（2）交易金额巨大</li>
+<li>（3）拆借手续简便快捷</li>
+<li>（4）市场化、无形化程度高</li>
+<li>（5）同业拆借率一般比普通贷款低</li>
+</ul>
+<h1 id="第三节-证券回购市场"><a href="#第三节-证券回购市场" class="headerlink" title="第三节 证券回购市场"></a>第三节 证券回购市场</h1><p><strong>证券回购，也叫售出与回购协议，是交易双方在进行证券买卖同时，就约定在未来某一时刻将进行一笔反向交易而达成的协议，即交易双方约定在未来某一时刻，证券出售者以某一个约定的价格将证券从其交易对受众买回的一种交易方式</strong></p>
+<h2 id="一、证券回购市场的运行机制"><a href="#一、证券回购市场的运行机制" class="headerlink" title="一、证券回购市场的运行机制"></a>一、证券回购市场的运行机制</h2><ul>
+<li>正回购（融资） Π+</li>
+<li>逆回购（融券） Π-<br><strong><em>一笔即期与远期交易的组合</em></strong></li>
+</ul>
+<h2 id="二、证券回购市场的要素"><a href="#二、证券回购市场的要素" class="headerlink" title="二、证券回购市场的要素"></a>二、证券回购市场的要素</h2><p><strong>证券回购市场的要素包括可流通证券的种类和价格、证券回购期限、保证金比例、回购利率、交易对手等</strong></p>
+<ul>
+<li>（一）可流通证券的种类与交易定价（证券价格是决定证券回购交易额的关键因素）</li>
+<li>（二）证券回购的期限</li>
+<li>（三）保证金的比例<ol>
+<li>证券回购的期限</li>
+<li>证券价格的易变性</li>
+<li>证券回购的利率<br> 国库券利率 &lt; 证券回购利率 &lt; 银行承兑汇票利率 &lt; 可转让定期存单利率 &lt; 拆借市场利率   </li>
+</ol>
+</li>
+</ul>
+<h2 id="三、证券回购市场的风险"><a href="#三、证券回购市场的风险" class="headerlink" title="三、证券回购市场的风险"></a>三、证券回购市场的风险</h2><p><strong>证券回购市场虽然有较高的流动性，以及质地较好的质押担保物，但同样具有风险</strong></p>
+<ul>
+<li>（一） 信用风险<br>  如果到约定期限后交易商无力回购政府债券等证券，客户只有保留这些抵押品；但如果侍奉债券利率上升，手中持有的债券价格就会下跌，客户所拥有的债券价值就会小于其借出的资金价值。<br>  （设置保证金、根据证券抵押品的市值随时调整方法）</li>
+<li>（二） 定价风险<br>  在证券回购协议早期发展中，主要采用的是竞价定价法，主要是从方便交易计算的角度来考虑的，即为了避免用作担保的证券价格变动产生的收益，再加上此期间应得的利息后出现零头的现象。然而，这种方法有利于证券购买者，不利于证券出售者。当证券回购的交易出现在两次领息期间时，证券价格中不包含本次到期的利息，这就意味着证券出售者出售证券所得到的资金要少于他在现货市场上出售证券的收入。因而出现了很明显的套利机会。</li>
+</ul>
+<h1 id="第四节-银行承兑汇票市场"><a href="#第四节-银行承兑汇票市场" class="headerlink" title="第四节 银行承兑汇票市场"></a>第四节 银行承兑汇票市场</h1><h2 id="一、银行承兑汇票的原理"><a href="#一、银行承兑汇票的原理" class="headerlink" title="一、银行承兑汇票的原理"></a>一、银行承兑汇票的原理</h2><p><strong>银行承兑汇票是在一般商业活动中产生的，后来本广泛用于国际结算。在国际贸易中，双方签订协议后，进口商申请本国银行开出商品信用证，表示开证行原以为进口商进行信用保证，并授权国外出口商可以开出以开征为付款人的汇票</strong><br>在国际贸易中运用银行承兑汇票至少具有如下三方面的优点：</p>
+<ul>
+<li>（一）出口商可以立即获得贷款进行生产，避免由货物装运引起的时间耽搁</li>
+<li>（二）由于乙国银行以本国货币支付给出口商，避免了国际贸易中的不同货币结算上的麻烦及汇率风险</li>
+<li>（三）由于财力雄厚、信誉卓越的银行对贷款的支付作担保，出口商无需花费财力和时间去调查进口商的信用情况</li>
+</ul>
+<h2 id="二、银行承兑汇票市场的运行机制"><a href="#二、银行承兑汇票市场的运行机制" class="headerlink" title="二、银行承兑汇票市场的运行机制"></a>二、银行承兑汇票市场的运行机制</h2><h3 id="（一）银行承兑汇票的一级市场"><a href="#（一）银行承兑汇票的一级市场" class="headerlink" title="（一）银行承兑汇票的一级市场"></a>（一）银行承兑汇票的一级市场</h3><ul>
+<li>出票</li>
+<li>承兑</li>
+</ul>
+<h3 id="二-银行承兑汇票的二级市场"><a href="#二-银行承兑汇票的二级市场" class="headerlink" title="(二) 银行承兑汇票的二级市场"></a>(二) 银行承兑汇票的二级市场</h3><h2 id="三、银行承兑汇票的价值分析"><a href="#三、银行承兑汇票的价值分析" class="headerlink" title="三、银行承兑汇票的价值分析"></a>三、银行承兑汇票的价值分析</h2><h3 id="（一）从银行角度看"><a href="#（一）从银行角度看" class="headerlink" title="（一）从银行角度看"></a>（一）从银行角度看</h3><blockquote>
+<p>对承兑银行而言，银行承兑汇票与吸收存款，然后再向进口商发放一笔用于购买进口商品的贷款相似。</p>
+</blockquote>
+<h3 id="（二）从借款人角度看"><a href="#（二）从借款人角度看" class="headerlink" title="（二）从借款人角度看"></a>（二）从借款人角度看</h3><blockquote>
+<p>从贷款人角度来看，利用银行承兑汇票筹集门槛较低、成本较低</p>
+</blockquote>
+<h3 id="（三）从投资者角度看"><a href="#（三）从投资者角度看" class="headerlink" title="（三）从投资者角度看"></a>（三）从投资者角度看</h3><blockquote>
+<p>从投资者角度看，投资银行承兑汇票具有较好的收益性、安全性、流动性。</p>
+</blockquote>
+<h1 id="第五节-商业票据市场"><a href="#第五节-商业票据市场" class="headerlink" title="第五节 商业票据市场"></a>第五节 商业票据市场</h1><p><strong>商业票据是一种短期的无担保券，是大公司为了筹集短期资金或弥补短期资金缺口，以贴现方式在货币市场发行的、承诺将来的一定时期偿付证券本息的凭证</strong></p>
+<h2 id="一、-商业票据市场的起源与发展"><a href="#一、-商业票据市场的起源与发展" class="headerlink" title="一、 商业票据市场的起源与发展"></a>一、 商业票据市场的起源与发展</h2><h2 id="二、-商业拍哦据的特性和种类"><a href="#二、-商业拍哦据的特性和种类" class="headerlink" title="二、 商业拍哦据的特性和种类"></a>二、 商业拍哦据的特性和种类</h2><ul>
+<li><p>(一) 商业票据的特性</p>
+<blockquote>
+<p>票据是具有一定权利的特性，包括付款请求权和追索权<br>票据的权利与义务是不存在任何原因的，只要持票人拿到票据后，就已经取得票据所赋予的全部权力<br>各国的票据法都要求对票据的任何形式和内容标准化和模式化<br>票据是可流动的证券。除了票据本身的限制外，票据可以凭背书和交付而转让的</p>
+</blockquote>
+</li>
+<li><p>(二) 商业票据的分类</p>
+<ol>
+<li>按照其性质不同，可以分为本票和汇票</li>
+<li>按出票人不同，可以分为银行汇票和商业汇票</li>
+<li>按承兑人不同，可以分为商业承兑汇票和银行承兑汇票</li>
+<li>按付款时间不同，可以分为即期汇票和远期汇票</li>
+<li>按有无附属单据，可以分为光票和跟单汇票</li>
+</ol>
+</li>
+</ul>
+<h2 id="三、商业票据市场的运行机制"><a href="#三、商业票据市场的运行机制" class="headerlink" title="三、商业票据市场的运行机制"></a>三、商业票据市场的运行机制</h2><p><strong><em>商业票据的发行机制包括票据发行方式、信用评级、发行价格的确定等方面</em></strong></p>
+<h3 id="（一）商业票据的发行方式"><a href="#（一）商业票据的发行方式" class="headerlink" title="（一）商业票据的发行方式"></a>（一）商业票据的发行方式</h3><blockquote>
+<p>直接发行、通过证券交易商发行<br>（一般发行人可以分为 <strong>非金融公司</strong> 、 <strong>金融机构</strong>）</p>
+</blockquote>
+<ol>
+<li>“可定承诺包销”，发行人将要发行的商业票据一次性出售给证券交易商，由后者包销商业票据，并承担市场风险。</li>
+<li>“随卖随买”，证券交易商只有在卖出商业票据时才向发行人返还扣除了的发行佣金后的发行款，卖出多少，返还多少。</li>
+<li>“公开利率推销”，以上两种方式结合。</li>
+</ol>
+<h3 id="（二）商业票据的信用评级"><a href="#（二）商业票据的信用评级" class="headerlink" title="（二）商业票据的信用评级"></a>（二）商业票据的信用评级</h3><ol>
+<li>总体流动性分析</li>
+<li>备用流动性分析</li>
+<li>额外信用支持分析</li>
+</ol>
+<h3 id="（三）商业票据的发行价格"><a href="#（三）商业票据的发行价格" class="headerlink" title="（三）商业票据的发行价格"></a>（三）商业票据的发行价格</h3><ul>
+<li>商业票据发行价格主要取决于以下因素：<ol>
+<li>发行者的信用等级</li>
+<li>同期银行借贷利率和其它货币市场利率</li>
+<li>商业票据的期限</li>
+<li>发行商业票据的非利息成本</li>
+</ol>
+</li>
+</ul>
+<h2 id="四、商业票据市场的价值分析"><a href="#四、商业票据市场的价值分析" class="headerlink" title="四、商业票据市场的价值分析"></a>四、商业票据市场的价值分析</h2><p>商业票据的优势与吸引力</p>
+<h3 id="（一）从发行人角度"><a href="#（一）从发行人角度" class="headerlink" title="（一）从发行人角度"></a>（一）从发行人角度</h3><ol>
+<li>融资成本相对较低</li>
+<li>融资效率较高</li>
+</ol>
+<h3 id="（二）从投资者角度"><a href="#（二）从投资者角度" class="headerlink" title="（二）从投资者角度"></a>（二）从投资者角度</h3><ol>
+<li>风险可控</li>
+<li>收益较高</li>
+<li>方案条款设计灵活</li>
+</ol>
+
+        <div id="aplayer-PxXhvAVr" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-PxXhvAVr"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "紅顏舊",
+              author: "YungAn's Erhu Fantasy",
+              url: "/root-images/瑯琊榜插曲-紅顏舊 二胡版 by 永安 Nirvana in Fire - Aging of a Beauty (Erhu Cover).mp3",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            This blog is under a <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 4.0 Unported License</a>
+                        </strong>
+                        <br>
+                        <strong>Link to this article: </strong><a href="https://zyx.8a8.xyz/2018/09/24/第二章-货币市场/">https://zyx.8a8.xyz/2018/09/24/第二章-货币市场/</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" class="comment"></div>
+<script>
+    window.onload = function() {
+        new Valine({
+            av: AV, // source from av-min.js
+            el: '.comment',
+            app_id: "kybfOHCGRQwDpV7Hi1U6jwuy-gzGzoHsz",
+            app_key: "vqBgB3BHsdBQiFtL7zdqDYRn",
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+        });
+    }
+</script>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/10/08/香港/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/09/23/第二章-财务报表分析基础/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/logo.png" alt="tianrking's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        tian.r.king@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">22</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                Categories
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/城市规划原理/">城市规划原理<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数字地形测量学/">数字地形测量学<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据库原理及应用教程/">数据库原理及应用教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/财务报表分析/">财务报表分析<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/财政学/">财政学<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/金融工程/">金融工程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/金融市场学/">金融市场学<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/history" title="history">
+                
+                history
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/news" title="news">
+                
+                news
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/nothing" title="实验课">
+                
+                实验课
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/这是最好的年代,人们不需要工具" title="tools">
+                
+                tools
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/tianruiwang" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/tianrking" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://plus.google.com/+TianruiKing" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/tianrking" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2018&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>w0x7c3
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/valine@1.1.1/dist/Valine.min.js"></script>
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+<script type="text/ls-javascript" id="Bing-Background-script">
+    queue.offer(function(){
+        $('body').attr('data-original', 'https://api.i-meto.com/bing?travel');
+    });
+</script>
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
