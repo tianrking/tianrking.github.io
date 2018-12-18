@@ -247,7 +247,7 @@
 
     
         <meta property="article:published_time" content="Tue Dec 18 2018 19:08:48 GMT+0800" />
-        <meta property="article:modified_time" content="Tue Dec 18 2018 19:32:38 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Dec 18 2018 20:53:13 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +274,7 @@
     "mainEntityOfPage": "https://zyx.8a8.xyz/2018/12/18/数据库实验记录/index.html",
     "headline": "数据库实验记录",
     "datePublished": "Tue Dec 18 2018 19:08:48 GMT+0800",
-    "dateModified": "Tue Dec 18 2018 19:32:38 GMT+0800",
+    "dateModified": "Tue Dec 18 2018 20:53:13 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "tianrking",
@@ -538,20 +538,23 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        
-        <div id="aplayer-nsVQUFPN" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <p>use br<br>—查找这样的图书类别：要求类别中最高的图书定价不低于按类别分组的图书的平均定价的2 倍<br>–select bsort from book group by bsort having max(bprice)&gt;=all(select 2<em>avg(bprice) from book group by bsort)<br>—验证<br>–select 2</em>avg(bprice),bsort,max(bprice) from book group by bsort<br>—求机械工业出版社出版的各类图书的平均定价，分别用GROUP BY<br>–select avg(bprice),bsort from book  where (bpublish=’机械工业出版社’) group by bsort<br>—验证<br>—select bprice,bsort from book  where (bpublish=’机械工业出版社’)<br>—列出计算机类图书的书号、名称及价格，最后求出册数和总价格。<br>–select bname,bprice from book where bsort like ‘计算机’<br>–select count(*) from book where bsort=’计算机’<br>–select sum(bprice) from book where bsort like ‘计算机’<br>–查询计算机类和机械工业出版社出版的图书。<br>–select distinct bpublish from book  where( bsort like ‘%计算机%’ or bsort like ‘%机械工业出版%’ )</p>
+<p>显示所有专业号为‘001’，并且在服务器显示之前，暂停  1  分钟<br>timefor delay ‘00:01’<br>select * from course where spno=’001’</p>
+<p>把所有计算机转学学生的联系电话删掉，所有专业号为‘001’的学生<br>的入学时间删掉，所有专业专业号为‘003.’的学生的班级号改为‘001’，<br>其他的学生删掉其籍贯。（case）<br>update student<br>set entime = (case spno<br>    when ‘001’ then null else entime end)<br>     classno = (case spn<br>    when ‘003’ then ‘001’ else classno end)<br>    native = (case spno when ‘001’ native case class when ‘003’ then native else null end )</p>
+
+        <div id="aplayer-WINJiXCB" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-nsVQUFPN"),
+            element: document.getElementById("aplayer-WINJiXCB"),
             narrow: false,
             autoplay: true,
             showlrc: false,
             music: {
               title: "明月天涯",
               author: "水玥兒",
-              url: "/root-images/水玥兒 - 明月天涯（Cover 五音Jw）.mp3",
+              url: "/root-images/水玥兒-明月天涯(Cover五音Jw).mp3",
               pic: "",
               lrc: ""
             }
