@@ -41,7 +41,7 @@
     
     <title>
         
-            新的学期 | 
+            稍微有点意思的财政学 | 
         
         w0x7c3
     </title>
@@ -53,7 +53,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="tianrking">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",抱佛脚">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -240,18 +240,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://zyx.8a8.xyz">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="新的学期 | w0x7c3">
+    <meta property="og:title" content="稍微有点意思的财政学 | w0x7c3">
     <meta property="og:image" content="https://zyx.8a8.xyz/img/favicon.png" />
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="抱佛脚"> 
 
     
-        <meta property="article:published_time" content="Sun Sep 02 2018 20:04:32 GMT+0800" />
-        <meta property="article:modified_time" content="Wed Sep 05 2018 13:23:59 GMT+0800" />
+        <meta property="article:published_time" content="Tue Jan 01 2019 18:10:06 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Jan 01 2019 18:49:21 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="新的学期 | w0x7c3">
+    <meta name="twitter:title" content="稍微有点意思的财政学 | w0x7c3">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="https://zyx.8a8.xyz/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -259,7 +259,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://zyx.8a8.xyz/2018/09/02/新的学期/index.html" />
+        <link rel="canonical" href="https://zyx.8a8.xyz/2019/01/01/稍微有点意思的财政学/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -271,10 +271,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://zyx.8a8.xyz/2018/09/02/新的学期/index.html",
-    "headline": "新的学期",
-    "datePublished": "Sun Sep 02 2018 20:04:32 GMT+0800",
-    "dateModified": "Wed Sep 05 2018 13:23:59 GMT+0800",
+    "mainEntityOfPage": "https://zyx.8a8.xyz/2019/01/01/稍微有点意思的财政学/index.html",
+    "headline": "稍微有点意思的财政学",
+    "datePublished": "Tue Jan 01 2019 18:10:06 GMT+0800",
+    "dateModified": "Tue Jan 01 2019 18:49:21 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "tianrking",
@@ -292,7 +292,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": "",
+    "keywords": ",抱佛脚",
     "description": "",
 }
 </script>
@@ -321,6 +321,8 @@
     <!-- Custom Head -->
     
 
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
 </head>
 
 
@@ -365,6 +367,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#绪论"><span class="post-toc-number">1.</span> <span class="post-toc-text">绪论</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#财政产生的条件及最早出现的财政范畴"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">财政产生的条件及最早出现的财政范畴</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第一章"><span class="post-toc-number">2.</span> <span class="post-toc-text">第一章</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#财政"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">财政</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#市场失灵"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">市场失灵</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#公共物品"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">公共物品</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#公共需要"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">公共需要</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#资源配置"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">资源配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#经济稳定和发展"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">经济稳定和发展</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1、市场失灵和市场缺陷的主要表现"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">1、市场失灵和市场缺陷的主要表现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2、区分公共物品与私人物品的两个基本标准"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">2、区分公共物品与私人物品的两个基本标准</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3、财政的资源配置职能"><span class="post-toc-number">2.9.</span> <span class="post-toc-text">3、财政的资源配置职能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4、财政的收入分配职能"><span class="post-toc-number">2.10.</span> <span class="post-toc-text">4、财政的收入分配职能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5、财政的经济稳定和发展职能"><span class="post-toc-number">2.11.</span> <span class="post-toc-text">5、财政的经济稳定和发展职能</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第二章"><span class="post-toc-number">3.</span> <span class="post-toc-text">第二章</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本概念"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">基本概念</span></a></li></ol></li></ol>
+    </ul>
+    
 
 
 
@@ -394,7 +405,7 @@
         
     
             <p class="article-headline-p">
-                新的学期
+                稍微有点意思的财政学
             </p>
         </div>
 
@@ -413,7 +424,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>tianrking</strong>
-        <span>Sep 02, 2018</span>
+        <span>Jan 01, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -435,13 +446,22 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">Read this article on other devices</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACY0lEQVR42u3awW4jIRAEUP//TyfXlTaeVNEDGVmPUxTbmDcHaFfz+vro8cLDw8PDw8PDw3sY7xWPf9//w6Rv3v//p65nmKwNDw8P7yTvl602WFyOv8ZM1oaHh4d3ntceBu2ryXLna8PDw8N7Gi/frK8L36Qcx8PDw/sMXvKftTDi+p14eHh4z+RNIoa8XM7xf5C14OHh4cW8tQbYmb//rL+Hh4eH94bXjjxcOBP1/jAbHh4e3mbeu404iQAmEcPaBa/rNeDh4eGd4V1PtHYRqt3624dYl9R4eHh423htQLB2DOSwtbAYDw8PbzdvsvXny50/ght+MeDh4eFt4+ULrbfsoHTOC+i3q8LDw8M7wkuCgDZObYv1tvGGh4eH9wTevORdC4LviiHw8PDwzvDaBlje1lq7UjBvv+Hh4eGd4bXtqGQTvyvmqANiPDw8vM28OiRdiiFaTPtdeHh4eCd5k0sAa5dQ8wNgLQjGw8PDO8MbbcRlZLAWNIxiXDw8PLwNvHmxu8bOD4AiXMbDw8PbzGsb+ZPwd1Km56EJHh4e3m7eZKHzo6W9UJV8Fg8PD+8ML79idVeI0B4hxfVZPDw8vM28tR//beurXW47Ax4eHt5JXjuSr6mb/WXksdjfw8PDw7uJN9nE1wruux5KkVLj4eHhbeAlh0Eev7YXtto5F8MIPDw8vA28vD2fXz5og9rJ4YSHh4f3TF6Ln8TBa+EFHh4e3vN5a0dFHtrWV7Lw8PDwDvLy5SaPIymL25AimQcPDw/vDG9+QSoJf9s2WFu44+Hh4Z3hfd7Aw8PDw8PDw8N7wPgGw/cXcuFjMyIAAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC4UlEQVR42u3a0W7jMAwEwPz/T/deD7jWWZK+wqHGT0ESWRoH6FakXl9HXi9sbGxsbGxsbGzsR7Jf8fXTqG8m+Ov95A6T2QujsLGxsVez3/zp/4dR/c71sq55+RquXdjY2NgnsK+XVV1QEkKT8CuvGRsbGxs7ZuefVkMIGxsbG3vOzmOpuv3IC1jY2NjY2JOiUjKqWgzqtQd+tZaGjY2N/Xh2PvFzXv9qfxsbGxv7wezelUfUpH1bLUK9WTM2Njb2UnY1PHoFo+ux1dJVb5uEjY2NvZWdLyt5WNVm8LxclcyOjY2NvZtdDYlq4en6sVbbBpMfDBsbG/tMdrKgPNjyIzu9ZsAbCzY2NvZqdl486n3zrkM5yahCgGFjY2OvYOfFmrx41GsYzN8vtwewsbGxV7B7m4rqxqP3QHsB9uNYbGxs7KXsXhO3R02KStVGQuHhYmNjYx/Anh+FvDfk8gZDtJXCxsbGXsrubQOuF1oNrV57+HosNjY29mns/LhkL4Sqhzt7YVYOMGxsbOwV7OTf+l5cTQIpWUkesdjY2Ni72UnMNA87xtuSebEp2kphY2NjL2VPGrfJNqD6KOezjLoi2NjY2B/Ivnf70Svc52HZO6yDjY2NvZtdPXxTLdPnd6u+LjeqsbGxsQ9gV+OnV/rplaLyVjE2Njb2mey8jVpt1vbKSdXZo6DFxsbGXsruTZOU46/vNg+w8vvY2NjYS9mTIs5ke5A0GPJWdBSc2NjY2EvZefGo2lhNAi/H56OiohI2Njb2Inav3Vv95g3F/WKJqnDmFBsbG/vD2a/4umubkfDmh+aj3MbGxsZexJ6ER47PS0iTtvGoK4KNjY394ez88GUSbL3g6TWAm1sRbGxs7CPZvXJPfucE3FstNjY2NnZ1W1KNunlr4c2M2NjY2Aew84j6f4GUF5XybQk2Njb2Cey8ZFP9NC/l5+3bXjsBGxsbeyv7nAsbGxsbGxsbGxv7MdcfoVSv8pmNygMAAAAASUVORK5CYII=">
     
 </ul>
 
     
 
     <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/抱佛脚/">抱佛脚</a>
+    </ul>
     
 
     <!-- Share -->
@@ -467,7 +487,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=新的学期&url=https://zyx.8a8.xyz/2018/09/02/新的学期/index.html&pic=https://zyx.8a8.xyz/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=稍微有点意思的财政学&url=https://zyx.8a8.xyz/2019/01/01/稍微有点意思的财政学/index.html&pic=https://zyx.8a8.xyz/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 Share to Weibo
             </li>
@@ -476,7 +496,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=新的学期&url=https://zyx.8a8.xyz/2018/09/02/新的学期/index.html&via=tianrking" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=稍微有点意思的财政学&url=https://zyx.8a8.xyz/2019/01/01/稍微有点意思的财政学/index.html&via=tianrking" target="_blank">
             <li class="mdl-menu__item">
                 Share to Twitter
             </li>
@@ -485,7 +505,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://zyx.8a8.xyz/2018/09/02/新的学期/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://zyx.8a8.xyz/2019/01/01/稍微有点意思的财政学/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to Facebook
             </li>
@@ -494,7 +514,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://zyx.8a8.xyz/2018/09/02/新的学期/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://zyx.8a8.xyz/2019/01/01/稍微有点意思的财政学/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to Google+
             </li>
@@ -503,7 +523,7 @@
 
     <!-- Share LinkedIn -->
     
-        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://zyx.8a8.xyz/2018/09/02/新的学期/index.html&title=新的学期" target="_blank">
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://zyx.8a8.xyz/2019/01/01/稍微有点意思的财政学/index.html&title=稍微有点意思的财政学" target="_blank">
             <li class="mdl-menu__item">
                 Share to LinkedIn
             </li>
@@ -512,7 +532,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=w0x7c3&title=新的学期&summary=&pics=https://zyx.8a8.xyz/img/favicon.png&url=https://zyx.8a8.xyz/2018/09/02/新的学期/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=w0x7c3&title=稍微有点意思的财政学&summary=&pics=https://zyx.8a8.xyz/img/favicon.png&url=https://zyx.8a8.xyz/2019/01/01/稍微有点意思的财政学/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to QQ
             </li>
@@ -521,7 +541,7 @@
 
     <!-- Share Telegram -->
     
-        <a class="post_share-link" href="https://telegram.me/share/url?url=https://zyx.8a8.xyz/2018/09/02/新的学期/index.html&text=新的学期" target="_blank">
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://zyx.8a8.xyz/2019/01/01/稍微有点意思的财政学/index.html&text=稍微有点意思的财政学" target="_blank">
             <li class="mdl-menu__item">
                 Share to Telegram
             </li>
@@ -536,7 +556,90 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        
+        <h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><h2 id="财政产生的条件及最早出现的财政范畴"><a href="#财政产生的条件及最早出现的财政范畴" class="headerlink" title="财政产生的条件及最早出现的财政范畴"></a>财政产生的条件及最早出现的财政范畴</h2><p>财政的产生有两个条件：一是经济条件，即剩余产品；二是政治条件，即国家。财政随着国家的产生而产生，又随着国家的发展而发展。不同的社会时期，由生产关系的基本特征、国家的政治制度和经济制度的特点所决定，国家财政具有不同的特点。财政既是分配范畴，又是历史范畴。</p>
+<h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h2 id="财政"><a href="#财政" class="headerlink" title="财政"></a>财政</h2><p>财政是一种国家（或政府）的经济行为或经济现象</p>
+<h2 id="市场失灵"><a href="#市场失灵" class="headerlink" title="市场失灵"></a>市场失灵</h2><p>是指市场不能有效地提供社会所需要的公共物品和公共服务，一般只能由政府或国家财政来解决。<br><strong>市场缺陷</strong> 是指完全竞争市场运行结果被认为不完善的方面。</p>
+<h2 id="公共物品"><a href="#公共物品" class="headerlink" title="公共物品"></a>公共物品</h2><p>每个人消费这种物品不会导致他人对该物品消费的减少。</p>
+<h2 id="公共需要"><a href="#公共需要" class="headerlink" title="公共需要"></a>公共需要</h2><p>区别于个人消费需要，是不能由市场所满足的需要，是具有非排他性，非竞争性的需要。</p>
+<blockquote>
+<p>特征：（相对于私人个别需要而言）</p>
+<ul>
+<li>①是社会成员共同的需要，是必须由政府集中执行和组织才能满足的需要；</li>
+<li>②满足公共需要的物品，是为社会全体成员所享用的，不是为某一部分社会成员所单独享用的，社会成员对公共物品的享用不具有排他性、竞争性，人人都能平等享用；</li>
+<li>③社会成员享用为满足公共需要的公共物品与其所支付的代价是不对称的；</li>
+<li>④满足公共需要的公共物品具有外部经济效应； </li>
+<li>⑤满足公共需要的物质手段只能来自社会产品的剩余部分。</li>
+</ul>
+</blockquote>
+<h2 id="资源配置"><a href="#资源配置" class="headerlink" title="资源配置"></a>资源配置</h2><p>在各个部门合理分配生产资料和劳动力，运用有限的资源形成一定的资产结构、产业结构以及技术结构和地区结构，达到优化资源结构的目标。</p>
+<h2 id="经济稳定和发展"><a href="#经济稳定和发展" class="headerlink" title="经济稳定和发展"></a>经济稳定和发展</h2><p>经济稳定是指充分就业、物价稳定和国际收支平衡。<br>发展是指通过物质生产的不断增长来满足人们不断增长的基本需要.</p>
+<h2 id="1、市场失灵和市场缺陷的主要表现"><a href="#1、市场失灵和市场缺陷的主要表现" class="headerlink" title="1、市场失灵和市场缺陷的主要表现"></a>1、市场失灵和市场缺陷的主要表现</h2><ul>
+<li>①市场垄断</li>
+<li>②信息不充分和不对称</li>
+<li>③外部效应与公共物品</li>
+<li>④收入分配不公</li>
+<li>⑤经济波动　<h2 id="2、区分公共物品与私人物品的两个基本标准"><a href="#2、区分公共物品与私人物品的两个基本标准" class="headerlink" title="2、区分公共物品与私人物品的两个基本标准"></a>2、区分公共物品与私人物品的两个基本标准</h2>公共物品作为私人物品的对称，具有以下特征:</li>
+</ul>
+<ul>
+<li>效用的不可分割性；</li>
+<li>消费的非排他性；</li>
+<li>取得方式的非竞争性；<ul>
+<li>提供目的的非盈利性<h2 id="3、财政的资源配置职能"><a href="#3、财政的资源配置职能" class="headerlink" title="3、财政的资源配置职能"></a>3、财政的资源配置职能</h2>是在各个部门合理分配生产资料和劳动力，运用有限的资源形成一定的资产结构、产业结构以及技术结构和地区结构，达到优化资源结构的目标。<blockquote>
+<p> 财政配置的机制和手段：</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>①合理确定财政收支占GDP的比例；</li>
+<li>②优化财政支出结构；</li>
+<li>③合理安排政府投资的规模、结构，保证国家重点建设；</li>
+<li>④通过政府投资、税收和补贴，调节社会投资方向，提高社会投资整体效率；</li>
+<li>⑤提高财政配置本身的效率。<h2 id="4、财政的收入分配职能"><a href="#4、财政的收入分配职能" class="headerlink" title="4、财政的收入分配职能"></a>4、财政的收入分配职能</h2><strong>收入分配的目标是实现公平分配，而公平分配包括经济公平和社会公平两个层次。</strong><blockquote>
+<p>   财政实现收入分配职能的机制和手段主要有：</p>
+</blockquote>
+</li>
+<li>①划清市场分配与财政分配的界限和范围；</li>
+<li>②规范工资制度；</li>
+<li>③加强税收调节；</li>
+<li>④通过转移性支出，使每个社会成员得以维持起码的生活水平和福利水平<h2 id="5、财政的经济稳定和发展职能"><a href="#5、财政的经济稳定和发展职能" class="headerlink" title="5、财政的经济稳定和发展职能"></a>5、财政的经济稳定和发展职能</h2><blockquote>
+<p>经济稳定和发展的含义：</p>
+</blockquote>
+</li>
+<li>经济稳定是指充分就业、物价稳定和国际收支平衡。</li>
+<li>发展是指通过物质生产的不断增长来满足人们不断增长的基本需要。</li>
+</ul>
+<blockquote>
+<p>财政实现稳定和发展职能的机制和手段：</p>
+<ul>
+<li>①保持社会总供给与总需求的大体平衡；</li>
+<li>②发挥某些财政制度的自动稳定功能；</li>
+<li>③通过必要财政手段的实施加快公共设施的发展；</li>
+<li>④切实保证纯社会公共需要的满足。</li>
+</ul>
+</blockquote>
+<h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><strong>购买性支出</strong>: 是指政府支出货币资金时，以商品或劳务作为补偿的一类支出。<br><strong>转移性支出</strong>: 指政府支出货币资金时，不以商品或劳务作为补偿的一类支出。包括补助支出、捐赠支出、债务利息支出。<br><strong>经常性支出</strong>: 维持公共部门正常运转或保障人们基本生活所必需的支出。<br><strong>免费搭车</strong>: 想不花代价而指望从别人花费中得到好处的动机所引起的问题。又称免费搭车。它使公共物品无法通过市场买卖来进行消费。<br><strong>价格听证制度</strong>：<br><strong>公共定价</strong>:<br>基本理论<br>1、按财政支出与经济活动的关系分类及其对经济分析的意义<br>2、一般来说，纯公共物品只能由政府来提供，请思考是否有其他方式？<br>3、简述准公共物品的提供方式及其选择。</p>
+
+        <div id="aplayer-FRhDkumO" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-FRhDkumO"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "사랑은 언제나 그립다",
+              author: "甘雨",
+              url: "/root-images/甘雨-사랑은언제나그립다.mp3",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
                     <p><strong>
@@ -544,7 +647,7 @@
                             This blog is under a <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 4.0 Unported License</a>
                         </strong>
                         <br>
-                        <strong>Link to this article: </strong><a href="https://zyx.8a8.xyz/2018/09/02/新的学期/">https://zyx.8a8.xyz/2018/09/02/新的学期/</a>
+                        <strong>Link to this article: </strong><a href="https://zyx.8a8.xyz/2019/01/01/稍微有点意思的财政学/">https://zyx.8a8.xyz/2019/01/01/稍微有点意思的财政学/</a>
                     </p>
                 </blockquote>
         
@@ -579,19 +682,19 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/09/02/禅茶人生/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Newer
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2018/12/23/非常糟糕的一次录音/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
