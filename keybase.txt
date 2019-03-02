@@ -6,59 +6,9 @@ I hereby claim:
 
   * I am an admin of https://zyx.8a8.xyz
   * I am tianrking (https://keybase.io/tianrking) on keybase.
-  * I have a public key with fingerprint 504D 6F1D 0E3B 5AF9 FF81  7E1A DEE4 DE24 E0A1 DB7E
+  * I lose the key with fingerprint 504D 6F1D 0E3B 5AF9 FF81  7E1A DEE4 DE24 E0A1 DB7E
 
 To do so, I am signing this object:
-
-{
-  "body": {
-    "key": {
-      "eldest_kid": "0101a455412aef5ab1fce3029183bc4aa57ba8f9def236868eb2a6de26d7e0cd5e440a",
-      "fingerprint": "504d6f1d0e3b5af9ff817e1adee4de24e0a1db7e",
-      "host": "keybase.io",
-      "key_id": "dee4de24e0a1db7e",
-      "kid": "0101a455412aef5ab1fce3029183bc4aa57ba8f9def236868eb2a6de26d7e0cd5e440a",
-      "uid": "bfbf4f4b1f5c21e8ef649d1f72059319",
-      "username": "tianrking"
-    },
-    "service": {
-      "hostname": "zyx.8a8.xyz",
-      "protocol": "https:"
-    },
-    "type": "web_service_binding",
-    "version": 1
-  },
-  "ctime": 1551530376,
-  "expire_in": 157680000,
-  "prev": "dd824be3224d36a13d811b3655caffc31d95d6cd006da3c61d46ae9b86be2cac",
-  "seqno": 71,
-  "tag": "signature"
-}
-
-which yields the signature:
-
------BEGIN PGP MESSAGE-----
-Version: Keybase OpenPGP v2.1.0
-Comment: https://keybase.io/crypto
-
-yMIpAnicrZJbSBVBGMfPqbQ6qEhEhF3QJRHz0s7uzuzuoTAjVCLsomaYdJrZmfFs
-5tnT2dXO0VS0MHsJFI0SDCUOhfZWUSRRWSElIfrQhSDsLaIbBtJDULtSbz02L8N8
-8/v/5/99zJP05b6A334O3w5u6zH9048uNfvqWxO9bQKxaEIItgmNbGljJyiznVCj
-SYWgIAIRYAVCBUiYcYgJ4AaTRUkHmkwMBWOoEqxxnTIuyUhDGiMSRpRJiKpMNChk
-iiJioVDgZqSBxaIxM+K4tlBUKOKAikwmEHOdcw2oDGDKmOKKFSZiQInKXGHYsj2F
-G45gmxWblltzD6GleP/g/3Pu5iU7wglXuOK6QEMCTGMcKToFXJVEqMtA90CbxSK4
-ibm0Y+JIrNFtWGgvFNxyi2kwb7JeK3+Q1kS8WMNacTzR6mqjMcuxDOuEexF2nKgd
-9IROIuqRpxgJ/fEIETNCPdtCoYXFbNOKCEHgkoZjeqYAQgBlUVZRocDiUTPGQqZH
-QBVporu8d1iLNzWqSQphsiQpVEYYyFQDgMgIQgNzbsiA6pAig4oiolg2EKAKwkwn
-GiJMMrAheF2djFhCUAVuTtzgetpmQwQ7zTEmtE8+rF/h8wd8qSnLvA/mC6zO/Pvt
-5hZW/qrtKahJdgxs0NLSv892dJQVDPXkql9LVwQ/hqdE9WPn3oMTwyMzi7eqEvs7
-A1JzRf+C7d93OeNuTu26iQ/ZJUe2F6VPnjxwjlanjRxp2lETqNiUP/ltVfjBofjc
-wst7Y9WvuiqPH50Z7z89NNFXfD6rautU+tDcoyxYfqbEKvh0BcyPPOhCKWuls6U/
-3tyc0rszlI3JLZt/3s4LxFsnD+VeT67ZPZ6Kul/fH8jMX1zufzwWdqavJY/xaPbg
-+wvj83cCe9anva1DN959qd9a3TVaVp9Tcbg85djFhfHp2Zxk7p1deVePpzaONFTW
-PJ0aLkkJvHg2ulhXRK727vw8S2b6sn8DlY47rQ==
-=p6rW
------END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.
@@ -66,3 +16,22 @@ appending to this document.
 View my publicly-auditable identity here: https://keybase.io/tianrking
 
 ==================================================================
+iiiiiiiiiiiiiii  uck 
+ii
+ii 
+ii
+ii
+ii
+ii
+iiiiiiiiiiiiiii
+ii
+ii
+ii
+ii
+ii
+ii
+ii
+ii
+ii
+ii
+ii
