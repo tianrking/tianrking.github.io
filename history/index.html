@@ -283,6 +283,8 @@
     <!-- Custom Head -->
     
 
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
 </head>
 
 
@@ -640,7 +642,28 @@
 </tr>
 </tbody>
 </table>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="/media/mp3/房東的貓 - 【春風十里】.mp3"></iframe>
+
+        <div id="aplayer-XNfnoErB" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-XNfnoErB"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "房東的貓",
+              author: "春風十里",
+              url: "/media/mp3/房東的貓 - 【春風十里】.mp3",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
                     <p><strong>
