@@ -39,7 +39,7 @@
     
     <title>
         
-            财政学对象（一） | 
+            第一章 数据结构概论 | 
         
         w0x7c3
     </title>
@@ -51,7 +51,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="tianrking">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content=",辅修">
+    <meta name="keywords" content=",主修">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -238,18 +238,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://zyx.8a8.xyz">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="财政学对象（一） | w0x7c3">
+    <meta property="og:title" content="第一章 数据结构概论 | w0x7c3">
     <meta property="og:image" content="https://zyx.8a8.xyz/img/favicon.png" />
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="辅修"> 
+    <meta property="og:article:tag" content="主修"> 
 
     
-        <meta property="article:published_time" content="Sat Sep 22 2018 18:05:05 GMT+0800" />
-        <meta property="article:modified_time" content="Sat Sep 22 2018 18:24:30 GMT+0800" />
+        <meta property="article:published_time" content="Sun Mar 03 2019 12:53:52 GMT+0800" />
+        <meta property="article:modified_time" content="Sun Mar 03 2019 17:04:39 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="财政学对象（一） | w0x7c3">
+    <meta name="twitter:title" content="第一章 数据结构概论 | w0x7c3">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="https://zyx.8a8.xyz/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -257,7 +257,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/index.html" />
+        <link rel="canonical" href="https://zyx.8a8.xyz/2019/03/03/第一章-数据结构概论/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -269,10 +269,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/index.html",
-    "headline": "财政学对象（一）",
-    "datePublished": "Sat Sep 22 2018 18:05:05 GMT+0800",
-    "dateModified": "Sat Sep 22 2018 18:24:30 GMT+0800",
+    "mainEntityOfPage": "https://zyx.8a8.xyz/2019/03/03/第一章-数据结构概论/index.html",
+    "headline": "第一章 数据结构概论",
+    "datePublished": "Sun Mar 03 2019 12:53:52 GMT+0800",
+    "dateModified": "Sun Mar 03 2019 17:04:39 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "tianrking",
@@ -290,7 +290,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",辅修",
+    "keywords": ",主修",
     "description": "",
 }
 </script>
@@ -319,8 +319,6 @@
     <!-- Custom Head -->
     
 
-<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
-<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
 </head>
 
 
@@ -371,7 +369,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#（一）财政的基本含义"><span class="post-toc-number">1.</span> <span class="post-toc-text">（一）财政的基本含义</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#（二）财政的基本特征"><span class="post-toc-number">2.</span> <span class="post-toc-text">（二）财政的基本特征</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基本概念和常用术语"><span class="post-toc-number">1.</span> <span class="post-toc-text">基本概念和常用术语</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-数据结构研究的内容"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. 数据结构研究的内容</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-数据的逻辑结构"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. 数据的逻辑结构</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-数据储存结构"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3.数据储存结构</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-数据的运算"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">4.数据的运算</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-数据类型"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">5.数据类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-抽象数据类型-Abstract-Data-Type"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">6.抽象数据类型(Abstract Data Type)</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#算法描述"><span class="post-toc-number">2.</span> <span class="post-toc-text">算法描述</span></a></li></ol>
     </ul>
     
 
@@ -391,10 +389,10 @@
     <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/root-images/czx.jpg)">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/root-images/sjjg.jpg)">
     
             <p class="article-headline-p">
-                财政学对象（一）
+                第一章 数据结构概论
             </p>
         </div>
 
@@ -413,7 +411,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>tianrking</strong>
-        <span>Sep 22, 2018</span>
+        <span>Mar 03, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -435,7 +433,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">Read this article on other devices</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC10lEQVR42u3aQW4jMQwEQP//07vXAIHH3dQYsaWaU5CMZZVyaJDU49+RzwMbGxsbGxsbGxv7I9mP+Pn5/u8VXnxl8M71+7/3kO8ZGxsb+wR2vonrg3i22tOtXP5+5RCxsbGxz2S3oZXj26NpV4s+hY2NjY19Cb4+mjxykk9hY2NjY98VYOu8WeGBjY2NjX1Xcz9pCbWBtNK6emMvDRsbG/vj2bNB79/+/GfzbWxsbOwPY7dP3kJaKU7yoCp2jo2Njb0pO2/95wOAljFbP1dgY2Njn8DOr9QkLZ6VZtP6Nc2n+8fGxsY+jJ1E1ywCZ4BZkYONjY19JvuuwGjDbOV9bGxsbOyV+Fkfwd67k7f00rCxsbE/mJ23e9oxcHsc12smQ+V6vo2NjY29BTuPomRDSREyG+62ZUmd29jY2Nhfy062mLeT8k3fW5DUTSVsbGzsjdgrly/z6GqjbqU4wcbGxj6T3Q562yZR22ya7eHFp7CxsbGPYbeMts2UR87s8hA2Njb2aez2mUXaymh5FqVRLw0bGxt7C/ZKITEMklEpkpccxXwbGxsbezt2UlS0YZPH273IpfEANjY29hey2yjKx8OzyzorV4KKAMPGxsbeiD27mtMOcWeDhFmgYmNjY5/GTtr3eYS0TaU85Np9YmNjY5/AHjZoythLDmg2rkhKI2xsbOwT2G1DP2nlt/GzUvwMbyphY2Njb8Fuo2XWvp9tNC9XonWwsbGxN2XPwuwdBczsr8W1HmxsbOxj2G3xkFzfaZv7+cDgtvEANjY29teyZw2jlWZQG5k5r67AsLGxsTdit8VJEjBtIbESb9HhYmNjYx/Azge3+aWZ9nplvmY7ZsbGxsbGng0M1ltCd5Ul2NjY2Nh56TIrJGYHnTe5sLGxsU9gt239dgCct4HyllPxb8DGxsbemr3Ssrnrgs56gL1oZmFjY2Nvyj7nwcbGxsbGxsbGxv6Y5z9RaT9xWa3C4AAAAABJRU5ErkJggg==">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC6ElEQVR42u3aUY7jOAwFwNz/0t0HaFj9SDqII5W/BovEUWmA4fKRr58jnxc2NjY2NjY2Njb2I9mv+Pn7+csfuPhW9fNX36qeGRsbG/sE9j//9C8BV8dNGOvPJ7+YnBkbGxv7HHZyiLwI5Rf3vovGxsbGxl5/JmkPehdXvURsbGxs7PIr4sOtv5uXKGxsbGzsu0KlHJY3KvlvfSxLw8bGxn48uzrofcKfPzDfxsbGxn4ku/rkcU9ebObfjd6PjY2NvSl7Hf3/UxKKx6qGR5MQqpmlYWNjY38huzrKzWOj6uHecQXY2NjYJ7DvOlyyQF8th/k6flJQsbGxsXdl91qFfL0yL4f5pfTCJmxsbOy92ZPQf1LeJvFWUjKxsbGxz2FfXUFeotZvKK/XFJf4sbGxsU9m58FQPspdF6r8EqtDiPLOKTY2NvZG7OpSThIhrd+Zr+lX46rLK8PGxsbemt1rIXrj4Xnbk1xlYb6NjY2NvQU7aR7ytqF6rNEiziRUwsbGxt6I3WsV7g2MJgFW9N+xsbGxN2UnV9CL/icLOtUCFr0HGxsb+0h2tfBELUEQY+VBVXM8gI2Njb0Ru9ps9FqUuwbAo78YbGxs7IPZk1ZhFAMN1jdvKGDY2NjYX8Wuxky90pWXnMnST3lTCRsbG3sLdhLoJCOEZDwwX7Js/i42Njb2puwcM4l+CiF+a00zCq2wsbGxj2FPFi6r6/jVctgrqNjY2Nh7s6uhf15yktWc/Jp6bRI2Njb2CeykjL1vvb66iJkva2JjY2Ofye41D+uGIR8kV0cFSROFjY2NfQL7FT/V//XvtRCTwXO5A8PGxsbeiF09ej4GzhuJSXmLhsHY2NjYB7B7YU0vkJq/s3pabGxsbOx1eJRE/JNGpdp+3FzAsLGxsbdj5+OBvO3pXWXhirGxsbEPYOfD3YT3jgWg6iAZGxsb+xx2NbJJjlUtb5OBRHQ2bGxs7E3Z5zzY2NjY2NjY2NjYj3l+AU5F4/Z5W8anAAAAAElFTkSuQmCC">
     
 </ul>
 
@@ -449,7 +447,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/辅修/">辅修</a>
+        <a class="post_tag-link" href="/tags/主修/">主修</a>
     </ul>
     
 
@@ -476,7 +474,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=财政学对象（一）&url=https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/index.html&pic=https://zyx.8a8.xyz/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=第一章 数据结构概论&url=https://zyx.8a8.xyz/2019/03/03/第一章-数据结构概论/index.html&pic=https://zyx.8a8.xyz/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 Share to Weibo
             </li>
@@ -485,7 +483,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=财政学对象（一）&url=https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/index.html&via=tianrking" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=第一章 数据结构概论&url=https://zyx.8a8.xyz/2019/03/03/第一章-数据结构概论/index.html&via=tianrking" target="_blank">
             <li class="mdl-menu__item">
                 Share to Twitter
             </li>
@@ -494,7 +492,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://zyx.8a8.xyz/2019/03/03/第一章-数据结构概论/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to Facebook
             </li>
@@ -503,7 +501,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://zyx.8a8.xyz/2019/03/03/第一章-数据结构概论/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to Google+
             </li>
@@ -512,7 +510,7 @@
 
     <!-- Share LinkedIn -->
     
-        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/index.html&title=财政学对象（一）" target="_blank">
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://zyx.8a8.xyz/2019/03/03/第一章-数据结构概论/index.html&title=第一章 数据结构概论" target="_blank">
             <li class="mdl-menu__item">
                 Share to LinkedIn
             </li>
@@ -521,7 +519,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=w0x7c3&title=财政学对象（一）&summary=&pics=https://zyx.8a8.xyz/img/favicon.png&url=https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=w0x7c3&title=第一章 数据结构概论&summary=&pics=https://zyx.8a8.xyz/img/favicon.png&url=https://zyx.8a8.xyz/2019/03/03/第一章-数据结构概论/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to QQ
             </li>
@@ -530,7 +528,7 @@
 
     <!-- Share Telegram -->
     
-        <a class="post_share-link" href="https://telegram.me/share/url?url=https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/index.html&text=财政学对象（一）" target="_blank">
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://zyx.8a8.xyz/2019/03/03/第一章-数据结构概论/index.html&text=第一章 数据结构概论" target="_blank">
             <li class="mdl-menu__item">
                 Share to Telegram
             </li>
@@ -545,70 +543,61 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="（一）财政的基本含义"><a href="#（一）财政的基本含义" class="headerlink" title="（一）财政的基本含义"></a>（一）财政的基本含义</h1><ul>
-<li><p>来源：</p>
-</li>
-<li><p>财政是一种国家（或政府的）经济行为或经济现象</p>
+        <h1 id="基本概念和常用术语"><a href="#基本概念和常用术语" class="headerlink" title="基本概念和常用术语"></a>基本概念和常用术语</h1><h2 id="1-数据结构研究的内容"><a href="#1-数据结构研究的内容" class="headerlink" title="1. 数据结构研究的内容"></a>1. 数据结构研究的内容</h2><ul>
+<li>数据: 数据是描述客观事物的数值、字符以及能输入计算机中并被计算机处理的符号的组合。(数据是抽象化了的数据，包括数字、字符、图形、图像、声音等) </li>
+<li>数据元素: 数据元素是数据的基本单位。</li>
+<li>数据对象: 具有相同特性的数据元素的集合，是数据的子集</li>
+<li>结构: 结构指的是数据元素之间的相互关系，数据的组织形式</li>
+<li>结点: 结构中的数据元素</li>
+<li><p>数据结构: </p>
+<ol>
+<li>数据元素之间的逻辑关系  逻辑结构</li>
+<li>数据元素及其关系再计算机储存器内的表示，称为数据的存储结构</li>
+<li>数据的运算，即对数据施加的操作</li>
+</ol>
+<h2 id="2-数据的逻辑结构"><a href="#2-数据的逻辑结构" class="headerlink" title="2. 数据的逻辑结构"></a>2. 数据的逻辑结构</h2></li>
+<li><p>数据的逻辑结构 </p>
+<blockquote>
+<p>表中任一个结点，与它相邻且在它前面的结点称为直接前驱，这种直接前驱最多只有一个；与表中任一结点相邻且在其后面的结点称为直接后继，直接后继最多只有一个。第一个结点没有直接前驱，称为开始结点；最后一个结点没有直接后继，称为终端结点。</p>
+</blockquote>
+<p>  1.线性结构: 有且仅有一个开始结点和一个终端结点，并且所有结点都最多只有一个直接前驱和一个直接后继。线性表是线性结构<br>  2.非线性结构: 一个结点可能有多个直接前驱和直接后继(广义表、树、图)</p>
 </li>
 </ul>
-<h1 id="（二）财政的基本特征"><a href="#（二）财政的基本特征" class="headerlink" title="（二）财政的基本特征"></a>（二）财政的基本特征</h1><ul>
-<li><ol>
-<li><strong>阶段性与公共性</strong></li>
-</ol>
-</li>
-<li><ol start="2">
-<li><strong>强制性与非直接偿还性</strong></li>
-</ol>
-</li>
-<li><ol start="3">
-<li><strong>收入和支出的对称性</strong></li>
-</ol>
-</li>
-<li>简略的财政概括：<ul>
-<li>财政是政府（国家）集中一部分国民生产总值（国民收入）</li>
-<li>用于满足公共需要的收支活动（分配主体，分配对象）</li>
-<li>资源配置、收入分配、经济稳定和发展</li>
-<li>保障社会和谐稳定和实现国家的长治久安</li>
+<h2 id="3-数据储存结构"><a href="#3-数据储存结构" class="headerlink" title="3.数据储存结构"></a>3.数据储存结构</h2><p>数据的存储结构是逻辑结构用计算机语言的实现(映像)，它是依赖于计算机语言的。</p>
+<ul>
+<li>四种基本的存储方法</li>
 </ul>
-</li>
+<ol>
+<li>顺序存储: 吧逻辑上相邻的结点存储再物理位置相邻的存储单元里</li>
+<li>链式存储: 用一组不一定连续的存储单元存储逻辑上相邻的结点，结点见的逻辑关系是由附加的指针域来表示的。</li>
+<li>索引存储: 存储结点信息的同时，建立附加的索引表。表中索引项的一般形式是含有关键字和地址，关键字是能唯一标识一个结点的数据项。</li>
+<li>散列存储: 根据结点的关键字直接计算出该结点的存储地址</li>
+</ol>
+<ul>
+<li>同一种逻辑结构采用不同的存储方法，可以得到不同的存储结构，逻辑结构、数据的存储结构及数据的运算应看成一个整体。</li>
 </ul>
-<blockquote>
-<p>资源配置职能：</p>
-</blockquote>
-<pre><code>资源配置的含义是在各个部门合理分配生产资料和劳动力，运用有限的资源形成一定的资产结构、产生结构以及技术结构和地区结构，达到优化资源结构的目标。
-</code></pre><blockquote>
-<p>机制和手段：<br>        （1）合理确定财政收支占GDP比例。<br>        （2）优化财政支出结构。<br>        （3）合理安排政府投资的规模、结构，保证国家重点建设。<br>        （4）通过政府投资、税收政策和财政补贴等手段，带动和促进民间投资，吸引外资和对外贸易，提高增长率。<br>        （5）提高财政资源本身的效率。</p>
+<h2 id="4-数据的运算"><a href="#4-数据的运算" class="headerlink" title="4.数据的运算"></a>4.数据的运算</h2><blockquote>
+<p>数据的运算是定义在数据的逻辑结构上的，每种逻辑结构都有一个运算的集合，常用的运算有检索、插入、删除、更新、排序等。</p>
 </blockquote>
 <blockquote>
-<p>收入分配职能：<br>        （1）划清市场分配和财政分配的界限和范围，凡属于市场分配的范围，财政不能越界。<br>        （2）规范工资制度<br>        （3）加强税收调节<br>        （4）通过转移性支出</p>
+<p>对线性表的插入、删除运算限制在表的一端进行，成为栈；对线性表的插入运算限制再表的一端，删除运算限制在表的另一端，称为队列</p>
 </blockquote>
-<blockquote>
-<p>经济稳定与发展职能：  充分就业、物价稳定、国际收支平衡<br>        (1) 经济稳定的目标集中体现为社会总供给和社会总需求的大体平衡<br>        (2) 在财富实践中，可以通过一种制度性安排，发挥某种“自动稳定”作用（累进税制度、失业救济金制度）<br>        (3) 通过投资、补贴和税收等多方面安排，加快农业、能源、交通运输、邮电通信等公共设施发展，消除经济增长中的瓶颈，并支持第三产业的兴起，加快产业结构的转换，保证国民经济稳定与高速的最优结合。<br>        (4) 财政首先应切实保证民生性的社会公共需要。</p>
-</blockquote>
-<blockquote>
-<p>保障社会和谐稳定和实现国家长治久安职能：<br>        任何一个国家只有建立健全的财政，国家才能百事兴旺，政府才能顺畅运行。</p>
-</blockquote>
-
-        <div id="aplayer-SASiMqAB" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content"></pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-SASiMqAB"),
-            narrow: false,
-            autoplay: true,
-            showlrc: false,
-            music: {
-              title: "洋紫荆",
-              author: "许冠杰",
-              url: "/root-images/yangzijing.mp3",
-              pic: "",
-              lrc: ""
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>
+<h2 id="5-数据类型"><a href="#5-数据类型" class="headerlink" title="5.数据类型"></a>5.数据类型</h2><ul>
+<li>一个值的集合和定义在这个值集上的一组操作的总称</li>
+</ul>
+<ol>
+<li>原子类型: 值不可分解</li>
+<li>结构类型: 其值可由若干个分量按某种结构组成，它的分量可以是非结构型的</li>
+</ol>
+<h2 id="6-抽象数据类型-Abstract-Data-Type"><a href="#6-抽象数据类型-Abstract-Data-Type" class="headerlink" title="6.抽象数据类型(Abstract Data Type)"></a>6.抽象数据类型(Abstract Data Type)</h2><p>抽象数据的组织和与之相关的操作</p>
+<h1 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h1><ol>
+<li>输入: 算法开始前必须对算法中用到的变量初始化。一个算法的输入可以包含零个或多个数据</li>
+<li>输出:算法至少有一个或多个输出</li>
+<li>有穷性:算法中每一条指令的执行次数是有限的，算法必须再执行有限步之后结束</li>
+<li>确定性:算法中每一条指令的含义都必须明确，无二义性</li>
+<li>可行性:算法是可行的，算法中描述的操作都可以通过有限次的基本运算来实现</li>
+</ol>
+<p><strong>执行算法所消耗的时间，即时间复杂性。</strong><br><strong>执行算法所耗费的存储空间（辅助空间  空间复杂性）</strong><br><strong>算法应易于理解、易于编程、易于调试，即可读性和可操作性</strong><br><strong>*一个算法所消耗的时间，应该是算法中每条语句的执行时间之和。每条语句执行的次数称为频度**</strong></p>
 
         
                 <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
@@ -617,7 +606,7 @@
                             This blog is under a <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 4.0 Unported License</a>
                         </strong>
                         <br>
-                        <strong>Link to this article: </strong><a href="https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/">https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/</a>
+                        <strong>Link to this article: </strong><a href="https://zyx.8a8.xyz/2019/03/03/第一章-数据结构概论/">https://zyx.8a8.xyz/2019/03/03/第一章-数据结构概论/</a>
                     </p>
                 </blockquote>
         
@@ -672,8 +661,8 @@
 
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'https://zyx.8a8.xyz/2019/03/03/第一章-数据结构概论/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://zyx.8a8.xyz/2019/03/03/第一章-数据结构概论/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
@@ -722,21 +711,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/09/22/财政学对象-二/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Newer
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/09/16/财务报表分析概论/" id="post_nav-older" class="next-content">
+        <a href="/2019/01/13/scrapy/" id="post_nav-older" class="next-content">
             Older
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

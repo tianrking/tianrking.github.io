@@ -39,7 +39,7 @@
     
     <title>
         
-            财政学对象（一） | 
+            Categories: 数据结构C++语言描述 | 
         
         w0x7c3
     </title>
@@ -51,7 +51,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="tianrking">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content=",辅修">
+    <meta name="keywords" content="">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -100,9 +100,6 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
-            
-                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -238,18 +235,15 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://zyx.8a8.xyz">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="财政学对象（一） | w0x7c3">
+    <meta property="og:title" content="Categories: 数据结构C++语言描述 | w0x7c3">
     <meta property="og:image" content="https://zyx.8a8.xyz/img/favicon.png" />
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="辅修"> 
-
     
-        <meta property="article:published_time" content="Sat Sep 22 2018 18:05:05 GMT+0800" />
-        <meta property="article:modified_time" content="Sat Sep 22 2018 18:24:30 GMT+0800" />
+
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="财政学对象（一） | w0x7c3">
+    <meta name="twitter:title" content="Categories: 数据结构C++语言描述 | w0x7c3">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="https://zyx.8a8.xyz/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -257,43 +251,13 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/index.html" />
+        <link rel="canonical" href="https://zyx.8a8.xyz/categories/数据结构C-语言描述/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "mainEntityOfPage": "https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/index.html",
-    "headline": "财政学对象（一）",
-    "datePublished": "Sat Sep 22 2018 18:05:05 GMT+0800",
-    "dateModified": "Sat Sep 22 2018 18:24:30 GMT+0800",
-    "author": {
-        "@type": "Person",
-        "name": "tianrking",
-        "image": {
-            "@type": "ImageObject",
-            "url": "/img/logo.png"
-        },
-        "description": "I am back "
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "w0x7c3",
-        "logo": {
-            "@type":"ImageObject",
-            "url": "/img/favicon.png"
-        }
-    },
-    "keywords": ",辅修",
-    "description": "",
-}
-</script>
 
 
     
@@ -319,8 +283,6 @@
     <!-- Custom Head -->
     
 
-<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
-<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
 </head>
 
 
@@ -342,413 +304,98 @@
                         </button>
                     
 
-                    <!-- Post TOC -->
-
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
     
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
-    </div>
-    -->
+    <div class="locate-thumbnail-symbol"></div>
 
-
-    <!-- Left aligned menu below button -->
+    <!-- Pin on top -->
     
-    
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#（一）财政的基本含义"><span class="post-toc-number">1.</span> <span class="post-toc-text">（一）财政的基本含义</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#（二）财政的基本特征"><span class="post-toc-number">2.</span> <span class="post-toc-text">（二）财政的基本特征</span></a></li></ol>
-    </ul>
+        
     
 
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
+    <!-- Normal Post -->
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/root-images/czx.jpg)">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/root-images/sjjg.jpg">
     
-            <p class="article-headline-p">
-                财政学对象（一）
-            </p>
-        </div>
 
-
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/logo.png" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>tianrking</strong>
-        <span>Sep 22, 2018</span>
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2019/03/03/第一章-数据结构概论/">第一章 数据结构概论</a></p>
     </div>
 
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">devices other</i>
-    <span class="visuallyhidden">devices other</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
-    <li class="mdl-menu__item">Read this article on other devices</li>
-    
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC10lEQVR42u3aQW4jMQwEQP//07vXAIHH3dQYsaWaU5CMZZVyaJDU49+RzwMbGxsbGxsbGxv7I9mP+Pn5/u8VXnxl8M71+7/3kO8ZGxsb+wR2vonrg3i22tOtXP5+5RCxsbGxz2S3oZXj26NpV4s+hY2NjY19Cb4+mjxykk9hY2NjY98VYOu8WeGBjY2NjX1Xcz9pCbWBtNK6emMvDRsbG/vj2bNB79/+/GfzbWxsbOwPY7dP3kJaKU7yoCp2jo2Njb0pO2/95wOAljFbP1dgY2Njn8DOr9QkLZ6VZtP6Nc2n+8fGxsY+jJ1E1ywCZ4BZkYONjY19JvuuwGjDbOV9bGxsbOyV+Fkfwd67k7f00rCxsbE/mJ23e9oxcHsc12smQ+V6vo2NjY29BTuPomRDSREyG+62ZUmd29jY2Nhfy062mLeT8k3fW5DUTSVsbGzsjdgrly/z6GqjbqU4wcbGxj6T3Q562yZR22ya7eHFp7CxsbGPYbeMts2UR87s8hA2Njb2aez2mUXaymh5FqVRLw0bGxt7C/ZKITEMklEpkpccxXwbGxsbezt2UlS0YZPH273IpfEANjY29hey2yjKx8OzyzorV4KKAMPGxsbeiD27mtMOcWeDhFmgYmNjY5/GTtr3eYS0TaU85Np9YmNjY5/AHjZoythLDmg2rkhKI2xsbOwT2G1DP2nlt/GzUvwMbyphY2Njb8Fuo2XWvp9tNC9XonWwsbGxN2XPwuwdBczsr8W1HmxsbOxj2G3xkFzfaZv7+cDgtvEANjY29teyZw2jlWZQG5k5r67AsLGxsTdit8VJEjBtIbESb9HhYmNjYx/Azge3+aWZ9nplvmY7ZsbGxsbGng0M1ltCd5Ul2NjY2Nh56TIrJGYHnTe5sLGxsU9gt239dgCct4HyllPxb8DGxsbemr3Ssrnrgs56gL1oZmFjY2Nvyj7nwcbGxsbGxsbGxv6Y5z9RaT9xWa3C4AAAAABJRU5ErkJggg==">
-    
-</ul>
-
-    
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/辅修/">辅修</a>
-    </ul>
-    
-
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-
-    
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            <!-- Busuanzi Views -->
-            <a class="post_share-link" href="#">
-                <li class="mdl-menu__item">
-                    <span id="busuanzi_container_page_pv">
-                        <span id="busuanzi_value_page_pv"></span>&nbsp;Views
-                    </span>
-                </li>
-            </a>
+            
         
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=财政学对象（一）&url=https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/index.html&pic=https://zyx.8a8.xyz/img/favicon.png&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                Share to Weibo
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=财政学对象（一）&url=https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/index.html&via=tianrking" target="_blank">
-            <li class="mdl-menu__item">
-                Share to Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                Share to Facebook
-            </li>
-        </a>
-    
-
-    <!-- Share Google+ -->
-    
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                Share to Google+
-            </li>
-        </a>
-    
-
-    <!-- Share LinkedIn -->
-    
-        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/index.html&title=财政学对象（一）" target="_blank">
-            <li class="mdl-menu__item">
-                Share to LinkedIn
-            </li>
-        </a>
-    
-
-    <!-- Share QQ -->
-    
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=w0x7c3&title=财政学对象（一）&summary=&pics=https://zyx.8a8.xyz/img/favicon.png&url=https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                Share to QQ
-            </li>
-        </a>
-    
-
-    <!-- Share Telegram -->
-    
-        <a class="post_share-link" href="https://telegram.me/share/url?url=https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/index.html&text=财政学对象（一）" target="_blank">
-            <li class="mdl-menu__item">
-                Share to Telegram
-            </li>
-        </a>
-    
-</ul>
-
-</div>
-
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <h1 id="（一）财政的基本含义"><a href="#（一）财政的基本含义" class="headerlink" title="（一）财政的基本含义"></a>（一）财政的基本含义</h1><ul>
-<li><p>来源：</p>
-</li>
-<li><p>财政是一种国家（或政府的）经济行为或经济现象</p>
-</li>
-</ul>
-<h1 id="（二）财政的基本特征"><a href="#（二）财政的基本特征" class="headerlink" title="（二）财政的基本特征"></a>（二）财政的基本特征</h1><ul>
-<li><ol>
-<li><strong>阶段性与公共性</strong></li>
-</ol>
-</li>
-<li><ol start="2">
-<li><strong>强制性与非直接偿还性</strong></li>
-</ol>
-</li>
-<li><ol start="3">
-<li><strong>收入和支出的对称性</strong></li>
-</ol>
-</li>
-<li>简略的财政概括：<ul>
-<li>财政是政府（国家）集中一部分国民生产总值（国民收入）</li>
-<li>用于满足公共需要的收支活动（分配主体，分配对象）</li>
-<li>资源配置、收入分配、经济稳定和发展</li>
-<li>保障社会和谐稳定和实现国家的长治久安</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>资源配置职能：</p>
-</blockquote>
-<pre><code>资源配置的含义是在各个部门合理分配生产资料和劳动力，运用有限的资源形成一定的资产结构、产生结构以及技术结构和地区结构，达到优化资源结构的目标。
-</code></pre><blockquote>
-<p>机制和手段：<br>        （1）合理确定财政收支占GDP比例。<br>        （2）优化财政支出结构。<br>        （3）合理安排政府投资的规模、结构，保证国家重点建设。<br>        （4）通过政府投资、税收政策和财政补贴等手段，带动和促进民间投资，吸引外资和对外贸易，提高增长率。<br>        （5）提高财政资源本身的效率。</p>
-</blockquote>
-<blockquote>
-<p>收入分配职能：<br>        （1）划清市场分配和财政分配的界限和范围，凡属于市场分配的范围，财政不能越界。<br>        （2）规范工资制度<br>        （3）加强税收调节<br>        （4）通过转移性支出</p>
-</blockquote>
-<blockquote>
-<p>经济稳定与发展职能：  充分就业、物价稳定、国际收支平衡<br>        (1) 经济稳定的目标集中体现为社会总供给和社会总需求的大体平衡<br>        (2) 在财富实践中，可以通过一种制度性安排，发挥某种“自动稳定”作用（累进税制度、失业救济金制度）<br>        (3) 通过投资、补贴和税收等多方面安排，加快农业、能源、交通运输、邮电通信等公共设施发展，消除经济增长中的瓶颈，并支持第三产业的兴起，加快产业结构的转换，保证国民经济稳定与高速的最优结合。<br>        (4) 财政首先应切实保证民生性的社会公共需要。</p>
-</blockquote>
-<blockquote>
-<p>保障社会和谐稳定和实现国家长治久安职能：<br>        任何一个国家只有建立健全的财政，国家才能百事兴旺，政府才能顺畅运行。</p>
-</blockquote>
-
-        <div id="aplayer-SASiMqAB" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content"></pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-SASiMqAB"),
-            narrow: false,
-            autoplay: true,
-            showlrc: false,
-            music: {
-              title: "洋紫荆",
-              author: "许冠杰",
-              url: "/root-images/yangzijing.mp3",
-              pic: "",
-              lrc: ""
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>
-
-        
-                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
-                    <p><strong>
-                         
-                            This blog is under a <a href="/creativecommons.html" target="_blank">CC BY-NC-SA 4.0 Unported License</a>
-                        </strong>
-                        <br>
-                        <strong>Link to this article: </strong><a href="https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/">https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/</a>
-                    </p>
-                </blockquote>
-        
-    
-
-    
-</div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-    <!-- 使用 DISQUS_CLICK -->
-<div id="disqus-comment">
-    <div id="disqus_thread"></div>
-
-<!-- add animation -->
-<style>
-	.disqus_click_btn {
-            line-height: 30px;
-            margin: 0;
-            min-width: 50px;
-            padding: 0 14px;
-            display: inline-block;
-            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-            font-size: 14px;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 0;
-            overflow: hidden;
-            will-change: box-shadow;
-            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
-            outline: 0;
-            cursor: pointer;
-            text-decoration: none;
-            text-align: center;
-            vertical-align: middle;
-            border: 0;
-            background: rgba(158, 158, 158, .2);
-            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
-            color: #fff;
-            background-color: #green;
-            text-shadow: 0
-        }
-</style>
-	
-<div class="btn_click_load"> 
-    <button class="disqus_click_btn" style="display: none">Read Comments (Make sure disq.us, disquscdn.com and disqus.com can load properly)</button>
-</div>
-
-<script type="text/javascript">
-    var disqus_config = function () {
-        this.page.url = 'https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'https://zyx.8a8.xyz/2018/09/22/第一节财政学对象/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-</script>
-
-<script type="text/ls-javascript" id="disqus-lazy-load-script">
-    $.ajax({
-        url: 'https://disqus.com/next/config.json',
-        timeout: 4000,
-        type: 'GET',
-        success: (function() {
-            var d = document;
-            var s = d.createElement('script');
-            s.src = '//https-zyx-8a8-xyz.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', + new Date());
-            (d.head || d.body).appendChild(s);
-            $('.btn_click_load').css('display','none');
-        })(),
-        error: function() {
-          $('.btn_click_load').css('display','block');
-        }
-    });
-    $('.btn_click_load').click(function() {  //click to load comments
-        (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document;
-            var s = d.createElement('script');
-            s.src = '//https-zyx-8a8-xyz.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', + new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-        $('.btn_click_load').css('display','none');
-    });
-</script>
-  	
-
-</div>
-<style>
-    #disqus-comment{
-        background-color: #eee;
-        padding: 2pc;
-    }
-</style>
-
-                
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2019/03/03/第一章-数据结构概论/" target="_self">Read more</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
             </div>
+            <div>
+                <strong>tianrking</strong>
+                <span>Mar 03, 2019</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+          
+              <!-- Category -->
+              <span class="post_entry-category">
+                  <a class="post_category-link" href="/categories/数据结构C-语言描述/">数据结构C++语言描述</a>
+              </span>
+            
 
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
-        <a href="/2018/09/22/财政学对象-二/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Newer
-        </a>
-    
+            
 
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
+            
 
-    <!-- Next Nav -->
-    
-        <a href="/2018/09/16/财务报表分析概论/" id="post_nav-older" class="next-content">
-            Older
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
         </div>
     </div>
+</div>
 
+            
+            
+        
+    
+
+    
+
+    
+        <script type="text/ls-javascript" id="thumbnail-script">
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 19 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
+</script>
+
+    
+</div>
 
 
                     
@@ -1119,10 +766,6 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
-        
-            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
-        
-    
 
 
 
@@ -1135,11 +778,6 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
-        
-            $(function() {
-                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
-                prettyPrint();
-                })
         
     
     
