@@ -245,7 +245,7 @@
 
     
         <meta property="article:published_time" content="Mon Mar 04 2019 18:58:54 GMT+0800" />
-        <meta property="article:modified_time" content="Mon Mar 04 2019 20:34:44 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Mar 04 2019 20:45:04 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -272,7 +272,7 @@
     "mainEntityOfPage": "https://zyx.8a8.xyz/2019/03/04/第3章-线性表/index.html",
     "headline": "第3章 线性表",
     "datePublished": "Mon Mar 04 2019 18:58:54 GMT+0800",
-    "dateModified": "Mon Mar 04 2019 20:34:44 GMT+0800",
+    "dateModified": "Mon Mar 04 2019 20:45:04 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "tianrking",
@@ -565,31 +565,32 @@
 <li><p>构造函数的定义</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class T&gt;</span><br><span class="line">SeqList&lt;T&gt;::SeqList(int MaxListSize)</span><br><span class="line">&#123;</span><br><span class="line">	MaxSize=MaxListSize;</span><br><span class="line">	data=new T[MaxSize]; 	//申请一块动态连续的内存区</span><br><span class="line">	length=0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>取表中第i个元素</p>
+<li><p>取表中第i个元素   O（1）</p>
 </li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class T&gt;</span><br><span class="line">bool SeqList&lt;T&gt;::GetElem(int i,T &amp;x)</span><br><span class="line">&#123;	//取表中第i个元素值存入x中</span><br><span class="line">	if(i&lt;1||i&gt;length)</span><br><span class="line">		return false;</span><br><span class="line">	x=data[i-1];</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="3">
-<li>查找值为x的元素 </li>
+<li>查找值为x的元素 O(length)</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">template &lt;class T&gt;</span><br><span class="line">int SeqList&lt;T&gt;::LocateElem(T x)</span><br><span class="line">&#123;	//返回x在表中的位置，如果x不在表中，则返回0</span><br><span class="line">	for(int i=0;i&lt;length;i++)</span><br><span class="line">		if(data[i]==x)</span><br><span class="line">			return ++i;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="4">
 <li>插入运算</li>
 </ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class T&gt;</span><br><span class="line">void SeqList&lt;T&gt;::InsertElem(int i,T x)</span><br><span class="line">&#123;	//在表第i个元素之前插入x</span><br><span class="line">	if(i&lt;1||i&gt;length+1)&#123;</span><br><span class="line">		cout&lt;&lt;&quot;position error&quot;&lt;&lt;endl;</span><br><span class="line">		return;				//给定位置不合理，退出程序</span><br><span class="line">	&#125;</span><br><span class="line">	for (int j=length - 1 ; j&gt;=i-1;j--)</span><br><span class="line">		data[j+1]=data[j]; // 从最好一个元素开始逐一后移</span><br><span class="line">	data[i-1]=x;	//插入新元素x</span><br><span class="line">	length++;	//实际表加长1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <div id="aplayer-iXEJFMcy" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-bbZcEZzd" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-iXEJFMcy"),
+            element: document.getElementById("aplayer-bbZcEZzd"),
             narrow: false,
             autoplay: true,
             showlrc: false,
             music: {
-              title: "WE ARE THE WORLD",
-              author: "Michael Jackson",
-              url: "/media/mp3/″The Greatest Showman_ - The Piano Medley - Costantino Carrara.mp3",
+              title: "나선의 달",
+              author: "Sereno",
+              url: "/media/mp3/Sereno - 나선의 달.mp3",
               pic: "",
               lrc: ""
             }
