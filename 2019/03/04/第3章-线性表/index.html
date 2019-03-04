@@ -245,7 +245,7 @@
 
     
         <meta property="article:published_time" content="Mon Mar 04 2019 18:58:54 GMT+0800" />
-        <meta property="article:modified_time" content="Mon Mar 04 2019 20:30:10 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Mar 04 2019 20:34:44 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -272,7 +272,7 @@
     "mainEntityOfPage": "https://zyx.8a8.xyz/2019/03/04/第3章-线性表/index.html",
     "headline": "第3章 线性表",
     "datePublished": "Mon Mar 04 2019 18:58:54 GMT+0800",
-    "dateModified": "Mon Mar 04 2019 20:30:10 GMT+0800",
+    "dateModified": "Mon Mar 04 2019 20:34:44 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "tianrking",
@@ -559,7 +559,8 @@
 <li><p><strong>线性表的机内表示称为线性表的顺序存储结构，只要确定了线性表的起始位置，线性表中任意一个结点都可随机存取，顺序表是一种随机存取结构</strong></p>
 </li>
 </ul>
-<p><strong>顺序表c++类定义</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//list.h</span><br><span class="line">template&lt;class T&gt;</span><br><span class="line">class SeqList&#123;</span><br><span class="line">    public：</span><br><span class="line">		friend void Converts(SeqList&lt;T&gt; &amp;L);       //线性表逆置友元函数</span><br><span class="line">		SeqList(int MaxListSize=100);			   //构造函数，默认表长为100</span><br><span class="line">		~SeqList()&#123;delete[] data;&#125;				   //析构函数</span><br><span class="line">		bool ListEmpty()&#123;return length == 0;&#125;</span><br><span class="line">		int ListLength()&#123;return length;&#125;</span><br><span class="line">		bool GetElem(int i,T x);				   //第i个元素存入x中</span><br><span class="line">		int LocateElem(T x);					   //返回x所在的位置</span><br><span class="line">		void InsertElem(int i,T x);				   //在第i个元素之前插入x</span><br><span class="line">		void DeleteElem(int i,T &amp;x);			   //删除第i个元素，将值存到x</span><br><span class="line">		void PrintList();						   //输出表的内容</span><br><span class="line">	</span><br><span class="line">	private:</span><br><span class="line">		int length;</span><br><span class="line">		int MaxSize;</span><br><span class="line">		T *data;</span><br><span class="line">		</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p><strong>顺序表c++类定义</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//list.h</span><br><span class="line">template&lt;class T&gt;</span><br><span class="line">class SeqList&#123;</span><br><span class="line">    public：</span><br><span class="line">		friend void Converts(SeqList&lt;T&gt; &amp;L);    //线性表逆置友元函数</span><br><span class="line">		SeqList(int MaxListSize=100);			//构造函数，默认表长为100</span><br><span class="line">		~SeqList()&#123;delete[] data;&#125;				//析构函数</span><br><span class="line">		bool ListEmpty()&#123;return length == 0;&#125;</span><br><span class="line">		int ListLength()&#123;return length;&#125;</span><br><span class="line">		bool GetElem(int i,T x);				//第i个元素存入x中</span><br><span class="line">		int LocateElem(T x);					//返回x所在的位置</span><br><span class="line">		void InsertElem(int i,T x);				//在第i个元素之前插入x</span><br><span class="line">		void DeleteElem(int i,T &amp;x);			//删除第i个元素，将值存到x</span><br><span class="line">		void PrintList();					   //输出表的内容</span><br><span class="line">	</span><br><span class="line">	private:</span><br><span class="line">		int length;</span><br><span class="line">		int MaxSize;</span><br><span class="line">		T *data;</span><br><span class="line">		</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h2 id="3-2-2-顺序表上基本运算的实现"><a href="#3-2-2-顺序表上基本运算的实现" class="headerlink" title="3.2.2 顺序表上基本运算的实现"></a>3.2.2 顺序表上基本运算的实现</h2><ol>
 <li><p>构造函数的定义</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class T&gt;</span><br><span class="line">SeqList&lt;T&gt;::SeqList(int MaxListSize)</span><br><span class="line">&#123;</span><br><span class="line">	MaxSize=MaxListSize;</span><br><span class="line">	data=new T[MaxSize]; 	//申请一块动态连续的内存区</span><br><span class="line">	length=0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -576,12 +577,12 @@
 <li>插入运算</li>
 </ol>
 
-        <div id="aplayer-HsPWPKWq" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-iXEJFMcy" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-HsPWPKWq"),
+            element: document.getElementById("aplayer-iXEJFMcy"),
             narrow: false,
             autoplay: true,
             showlrc: false,
