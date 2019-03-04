@@ -245,7 +245,7 @@
 
     
         <meta property="article:published_time" content="Mon Mar 04 2019 18:58:54 GMT+0800" />
-        <meta property="article:modified_time" content="Mon Mar 04 2019 20:49:48 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Mar 04 2019 21:02:02 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -272,7 +272,7 @@
     "mainEntityOfPage": "https://zyx.8a8.xyz/2019/03/04/第3章-线性表/index.html",
     "headline": "第3章 线性表",
     "datePublished": "Mon Mar 04 2019 18:58:54 GMT+0800",
-    "dateModified": "Mon Mar 04 2019 20:49:48 GMT+0800",
+    "dateModified": "Mon Mar 04 2019 21:02:02 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "tianrking",
@@ -577,13 +577,25 @@
 <li>插入运算</li>
 </ol>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">SeqList</span>&lt;T&gt;:</span>:InsertElem(<span class="keyword">int</span> i,T x)</span><br><span class="line">&#123;	<span class="comment">//在表第i个元素之前插入x</span></span><br><span class="line">	<span class="keyword">if</span>(i&lt;<span class="number">1</span>||i&gt;length+<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">"position error"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span>;				<span class="comment">//给定位置不合理，退出程序</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j=length - <span class="number">1</span> ; j&gt;=i<span class="number">-1</span>;j--)</span><br><span class="line">		data[j+<span class="number">1</span>]=data[j]; <span class="comment">// 从最好一个元素开始逐一后移</span></span><br><span class="line">	data[i<span class="number">-1</span>]=x;	<span class="comment">//插入新元素x</span></span><br><span class="line">	length++;	<span class="comment">//实际表加长1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>删除运算  O(n)</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">SeqList</span>&lt;T&gt;:</span>:DeleteElem(<span class="keyword">int</span> i,T &amp;x)</span><br><span class="line">&#123;	<span class="comment">//在顺序表中删除第i个元素，并返回被删除元素</span></span><br><span class="line">	<span class="keyword">if</span>(i&lt;<span class="number">1</span>||i&gt;length)&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">"position error"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span>;	 	<span class="comment">//给定位置不合理，退出程序</span></span><br><span class="line">	&#125;</span><br><span class="line">	x=data[i<span class="number">-1</span>];   <span class="comment">//返回被删除的元素</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;length;j++)</span><br><span class="line">		data[j<span class="number">-1</span>]=data[j];</span><br><span class="line">	length--;		<span class="comment">//实际表长减1</span></span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>顺序表的输出</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class T&gt;</span><br><span class="line">void SeqList&lt;T&gt;::PrintList()</span><br><span class="line">&#123;</span><br><span class="line">	for(int i=0;i&lt;length;i++)</span><br><span class="line">		cout&lt;&lt;data[i]&lt;&lt;&quot; &quot;;</span><br><span class="line">	cout&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li>顺序表的逆置 O（n）</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class T&gt;</span><br><span class="line">void Converts(SeqList&lt;T&gt; &amp;L)</span><br><span class="line">&#123;</span><br><span class="line">	int x;</span><br><span class="line">	int i,k;</span><br><span class="line">	k=length/2;</span><br><span class="line">	for(i=0;i&lt;k;i++)&#123;</span><br><span class="line">		x=L.data[i];</span><br><span class="line">		L.data[i]=L.data[L.length-i-1];</span><br><span class="line">		L.data[L.length-i-1] = x;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <div id="aplayer-yEvYnMNF" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-rBszOgoZ" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-yEvYnMNF"),
+            element: document.getElementById("aplayer-rBszOgoZ"),
             narrow: false,
             autoplay: true,
             showlrc: false,
