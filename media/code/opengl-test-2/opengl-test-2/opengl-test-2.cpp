@@ -131,7 +131,7 @@ void Displayx(void)
 int main(int argc, char *argv[])
 {
 	system("color B");
-	cout << "I can fix what stupid does,however cannot fix stupid" << endl;
+	cout << "HOLA" << endl;
 	glutInit(&argc, argv);//对GLUT进行初始化，这个函数必须在其它的GLUT使用之前调用一次
 	glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE); //设置显示方式
 	glutInitWindowPosition(100, 100);
@@ -143,7 +143,7 @@ int main(int argc, char *argv[])
 	{
 		cout << "Plz wait for a moment :)  10s "<<endl<<"Then Plz enter time 4 rotate:___\b\b\b";
 		cin >> ooo;
-		cout << "Enter the stupid speed:___(Hz)\b\b\b\b\b\b\b";
+		cout << "Enter the  speed:___(Hz)\b\b\b\b\b\b\b";
 		cin >> nnn;
 		
 		glutDisplayFunc(&Displayx); //当需要画图时，请调用myDisplay函数
@@ -153,7 +153,7 @@ int main(int argc, char *argv[])
 	else
 	{
 		int x2 = ::MessageBox(NULL, TEXT("Quit？"), TEXT("0.0"), MB_OK);
-		cout << "Idiot";
+		cout << ":)";
 		return 0;
 	}
 

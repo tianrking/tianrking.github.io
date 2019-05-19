@@ -1,3 +1,4 @@
-﻿  opengl-test-2.cpp
-d:\source\repos\opengl-test-2\opengl-test-2\opengl-test-2.cpp(17): warning C4101: 'i': unreferenced local variable
-  opengl-test-2.vcxproj -> D:\source\repos\opengl-test-2\Debug\opengl-test-2.exe
+﻿  pch.cpp
+  opengl-test-2.cpp
+C:\Users\tianr\OneDrive\桌面\MyBlog\source\media\code\opengl-test-2\opengl-test-2\opengl-test-2.cpp(17): warning C4101: 'i': unreferenced local variable
+  opengl-test-2.vcxproj -> C:\Users\tianr\OneDrive\桌面\MyBlog\source\media\code\opengl-test-2\Debug\opengl-test-2.exe
