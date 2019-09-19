@@ -1,0 +1,67 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>canvas { width: 100%; height: 100% }</style>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+</head>
+<body>
+    <script>
+        var scene = new THREE.Scene(); // 场景
+        
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000); // 透视相机
+        
+        var renderer = new THREE.WebGLRenderer();  // 渲染器
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);  // 设置渲染器的大小为窗口的内宽度，也就是内容区的宽度
+        
+        document.body.appendChild(renderer.domElement);
+        var geometry = new THREE.CubeGeometry(1,1,1);
+        var material = new THREE.MeshBasicMaterial({color: 0x00ff00});
+        var cube = new THREE.Mesh(geometry, material); scene.add(cube);
+         var cube1 = new THREE.Mesh(geometry, material); scene.add(cube1);
+          var cube2 = new THREE.Mesh(geometry, material); scene.add(cube2);
+           var cube3 = new THREE.Mesh(geometry, material); scene.add(cube3);
+            var cube4 = new THREE.Mesh(geometry, material); scene.add(cube4);
+             var cube5 = new THREE.Mesh(geometry, material); scene.add(cube5);
+    camera.position.z = 20;
+        function render() {
+            renderer.clear();
+            
+            requestAnimationFrame(render);
+            cube.rotation.x += 0.1;
+            cube.rotation.y += 0.1;
+            cube.position.x +=0;
+            cube.position.y +=0;
+
+            cube1.rotation.x += 0.1;
+            cube1.rotation.y += 0.1;
+            cube1.position.x +=0.01;
+            cube1.position.y +=0.01;
+
+             cube2.rotation.x += 0.1;
+            cube2.rotation.y += 0.1;
+            cube2.position.x +=0.01;
+            cube2.position.y -=0.01;
+
+             cube3.rotation.x += 0.1;
+            cube3.rotation.y += 0.1;
+            cube3.position.x -=0.01;
+            cube3.position.y -=0.01;
+
+             cube4.rotation.x += 0.1;
+            cube4.rotation.y += 0.1;
+            cube4.position.x -=0.01;
+            cube4.position.y +=0.01;
+          
+            renderer.render(scene, camera);
+           
+        }
+        render();
+
+        
+    </script>
+</body>
+</html>
