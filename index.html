@@ -1,1674 +1,1667 @@
 <!DOCTYPE html>
-<html style="display: none;" lang="en">
-    <head>
-    <meta charset="utf-8">
-    <!--
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.5.0 -->
-    <script>
-        window.materialVersion = "1.5.0"
-        // Delete localstorage with these tags
-        window.oldVersion = [
-            'codestartv1',
-            '1.3.4',
-            '1.4.0',
-            '1.4.0b1'
-        ]
-    </script>
+<html lang="zh-Hant-HK">
+<head>
 
-    <!-- dns prefetch -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-
-
-
-    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Title -->
-    
-    <title>
-        
-        w0x7c3
-    </title>
-
-    <!-- Meta & Info -->
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="theme-color" content="#0097A7">
-    <meta name="author" content="tianrking">
-    <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="">
-
-    <!-- Import lsloader -->
-    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
-
-    <!-- Import queue -->
-    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
-    <link rel="icon" sizes="192x192" href="/img/favicon.png">
-    <link rel="apple-touch-icon" href="/img/favicon.png">
-
-    <!--iOS -->
-    <meta name="apple-mobile-web-app-title" content="Title">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="480">
-
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="w0x7c3">
-
-    <!-- Site Verification -->
-    
-    
-
-    <!-- RSS -->
-    
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-
-        
-            <script src="/js/ie-blocker.en.js"></script>
-        
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
     <![endif]-->
 
-    <!-- Import CSS -->
-    
-        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-        
-            
-        
-
-    
-
-    
-
-    <!-- Config CSS -->
-
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    overflow-x: hidden !important;
-  }
-  
-  code {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  }
-
-  a {
-    color: #00838F;
-  }
-
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: green !important;
-  }
-
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: green !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: green !important;
-  }
-
-  .toTop {
-    background: #green !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #green;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #green;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #green;
-  }
-
-  .post-toc a:hover {
-    color: #00838F;
-    text-decoration: underline;
-  }
-
-</style>
-
-
-<!-- Theme Background Related-->
-
-    <style>
-      body {
-        background-color: #F5F5F5;
-      }
-
-      /* blog_info bottom background */
-      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text {
-        background-color: #fff;
-      }
-    </style>
-
-
-
-
-<!-- Fade Effect -->
-
-    <style>
-      .fade {
-        transition: all 800ms linear;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        opacity: 1;
-      }
-
-      .fade.out{
-        opacity: 0;
-      }
-    </style>
-
-
-<!-- Import Font -->
-<!-- Import Roboto -->
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-
-
-<!-- Import Material Icon -->
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
-
-
-    <!-- Import jQuery -->
-    
-        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
-    
-
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://tianrking.github.io">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="w0x7c3">
-    <meta property="og:image" content="https://tianrking.github.io/img/favicon.png" />
-    <meta property="og:description" content="">
-    
-
-    
-
-    <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="w0x7c3">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="https://tianrking.github.io/img/favicon.png">
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://tianrking.github.io" />
-
-    <!-- Add canonical link for SEO -->
-    
-        <link rel="canonical" href="https://tianrking.github.io" />
-    
-
-    <!-- Structured-data for SEO -->
-    
-        
-<script type="application/ld+json">
-{
-    "@context": "http://schema.org",
-    "@type": "Website",
-    "publisher": {
-        "@type": "Organization",
-        "name": "w0x7c3",
-        "logo": "/img/favicon.png"
-    },
-    "url": "https://tianrking.github.io",
-    "image": {
-        "@type": "ImageObject",
-        "url": "/img/favicon.png"
-    },
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://tianrking.github.io"
-    },
-    "description": ""
-}
-</script>
-
-
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="tianrking" />
 
 
     
-
-    <!-- Analytics -->
-    
-    
-        <script>
-    var _hmt = _hmt || [];
-    (function() {var hm = document.createElement('script');
-    hm.src = 'https://hm.baidu.com/hm.js?b4da296e1b6d674c6aa558d2a501264b';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-    
-    
-        <div style="display: none;">
-    <script src="//s95.cnzz.com/z_stat.php?id=1274632088&web_id=1274632088" language="JavaScript"></script>
-</div>
-    
-
-    <!-- Custom Head -->
-    
-
-</head>
-
-
-    
-        <body id="scheme-Paradox" class="lazy">
-            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-                
-
-                <!-- Main Container -->
-                <main class="material-layout__content" id="main">
-
-                    <!-- Top Anchor -->
-                    <div id="top"></div>
-
-                    
-                        <!-- Hamburger Button -->
-                        <button class="MD-burger-icon sidebar-toggle">
-                            <span class="MD-burger-layer"></span>
-                        </button>
-                    
-
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-        <!-- Paradox Header -->
-        <!-- Daily pic -->
-<div class="mdl-card mdl-shadow--2dp daily-pic mdl-cell mdl-cell--8-col index-top-block">
-
-    <!-- Pic & Slogan -->
-    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/daily_pic.png)">
-        <p class="index-top-block-slogan"><a href="#">
-        
-            
-                I can fix WHAT STUPID DOES,however cannot fix STUPID 
-            
-        
-        </a></p>
-    </div>
-
-    <!-- Avatar & Name -->
-    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-        <!-- Author Avatar -->
-        <div id="author-avatar">
-            <img src="/img/logo.png" width="32px" height="32px" alt="avatar">
-        </div>
-        <div>
-            <strong>tianrking</strong>
-        </div>
-    </div>
-</div>
-
-        <!-- Blog info -->
-<div class="mdl-card mdl-shadow--2dp something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop index-top-block">
-
-    <!-- Search -->
     
 
 
+<meta property="og:type" content="website">
+<meta property="og:title" content="w0x7c3">
+<meta property="og:url" content="https://tianrking.github.io/index.html">
+<meta property="og:site_name" content="w0x7c3">
+<meta property="og:locale" content="zh-Hant-HK">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="w0x7c3">
 
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
-    <!-- Local -->
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" method="post" action="">
-        <label id="search-label" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent mdl-shadow--4dp" for="search">
-            <i class="material-icons mdl-color-text--white" role="presentation">search</i>
-        </label>
 
-        <form autocomplete="off" id="search-form" class="mdl-textfield__expandable-holder">
-            <input type="text" id="search" class="form-control mdl-textfield__input search-input" name="q" results="0" placeholder=""/>
-            <label id="search-form-label" class="mdl-textfield__label" for="search"></label>
-        </form>
-    </div>
-    <div id="local-search-result"></div>
+    <link rel="alternate" href="/atom.xml" title="w0x7c3" type="application/atom+xml">
 
 
 
-    <!-- LOGO -->
-    <div class="something-else-logo mdl-color--white mdl-color-text--grey-600">
-        <a href="#" target="_blank">
-            <img src="/img/trk.jpg" alt="logo" />
-        </a>
-    </div>
+    <link rel="shortcut icon" href="/favicon.png">
 
-    <!-- Infomation -->
-    <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
-        <!-- Blog Title -->
-        <div>
-            <strong>w0x7c3</strong>
-        </div>
-        <div class="section-spacer"></div>
 
-        <!-- Pages -->
-        <button id="show-pages-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">view_carousel</i>
-            <span class="visuallyhidden">Pages</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="show-pages-button">
-            
-                <a class="index_share-link" href="/about" title="About">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        About
-                    </li>
-                </a>
-            
-                <a class="index_share-link" href="/meow" title="meow">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        meow
-                    </li>
-                </a>
-            
-                <a class="index_share-link" href="/whoami" title="whoami">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        whoami
-                    </li>
-                </a>
-            
-                <a class="index_share-link" href="/nothing" title="实验课">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        实验课
-                    </li>
-                </a>
-            
-                <a class="index_share-link" href="/tool" title="tools">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        tools
-                    </li>
-                </a>
-            
-        </ul>
 
-        <!-- Menu -->
-        <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">more_vert</i>
-            <span class="visuallyhidden">show menu</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="menubtn">
-            
-                <!-- All Site UV -->
-                <a class="index_share-link" href="#">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        <span id="busuanzi_container_site_uv">
-                            <span id="busuanzi_value_site_uv"></span>&nbsp;Views
-                        </span>
-                    </li>
-                </a>
-            
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
 
-            
 
-            
-                <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=w0x7c3&url=https://tianrking.github.io&pic=https://tianrking.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        Share to Weibo
-                    </li>
-                </a>
-            
 
-            
-                <a class="index_share-link" href="https://twitter.com/intent/tweet?text=w0x7c3&url=https://tianrking.github.io&via=tianrking" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        Share to Twitter
-                    </li>
-                </a>
-            
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
 
-            
-                <a class="index_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://tianrking.github.io" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        Share to Facebook
-                    </li>
-                </a>
-            
 
-            
-                <a class="index_share-link" href="https://plus.google.com/share?url=https://tianrking.github.io" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        Share to Google+
-                    </li>
-                </a>
-            
 
-            
-                <a class="index_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://tianrking.github.io&title=w0x7c3" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        Share to LinkedIn
-                    </li>
-                </a>
-            
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
 
-            
 
-            
-                <a class="post_share-link" href="https://telegram.me/share/url?url=https://tianrking.github.io&text=w0x7c3" target="_blank">
-                    <li class="mdl-menu__item">
-                        Share to Telegram
-                    </li>
-                </a>
-            
-        </ul>
-    </div>
-</div>
+<link rel="stylesheet" href="/css/style.css">
 
-    
-    <div class="locate-thumbnail-symbol"></div>
 
-    <!-- Pin on top -->
-    
-        
-    
+    <style> .article { opacity: 0;} </style>
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/09/19/香港特别行政区撤回逃犯条例/">香港特别行政区撤回逃犯条例</a></p>
-    </div>
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/09/19/香港特别行政区撤回逃犯条例/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 19, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/Anti-Extradition/">Anti-Extradition</a>
-              </span>
-            
 
-            
+<title>w0x7c3</title>
 
-            
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/09/12/Vue-Hello-World/">Vue Hello World</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/09/12/Vue-Hello-World/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 12, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/09/09/摄影测量学/">摄影测量学</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/09/09/摄影测量学/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 09, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/09/08/中央银行制度的形成与发展/">中央银行制度的形成与发展</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/09/08/中央银行制度的形成与发展/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 08, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/中央银行学/">中央银行学</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/09/06/土地权属调查/">土地权属调查</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/09/06/土地权属调查/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 06, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/09/02/地籍测量学-绪论/">地籍测量学 绪论</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/09/02/地籍测量学-绪论/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 02, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/测绘工程/">测绘工程</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/07/24/绪论-1/">绪论</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/07/24/绪论-1/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Jul 24, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/金融学-论文/">金融学 论文</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/07/21/地图语言/">地图语言</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/07/21/地图语言/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Jul 21, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/地图学原理与方法/">地图学原理与方法</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/07/20/地图与地图学的基本知识/">地图与地图学的基本知识</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/07/20/地图与地图学的基本知识/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Jul 20, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/地图学原理与方法/">地图学原理与方法</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/07/19/First-dessert/">贸易战下我国商业银行个人理财业务现存问题与防范探讨</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/07/19/First-dessert/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Jul 19, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
-        </nav>
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: true,
+        isPost: false,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
     }
 </script>
 
-    
-</div>
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
 
 
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">tianrking</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
                     
-                        <!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay"></div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜單</li>
+                        <li>標籤</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
 
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
-    <div id="sidebar-main">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags">Meow</a></li>
+                        
+                            <li><a href="/about/">About</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:tian.r.king@gmail.com" title="Email"></a>
+                            
+                                <a class="fa Facebook" href="https://www.facebook.com/tianrking" title="Facebook"></a>
+                            
+                                <a class="fa Google" href="https://plus.google.com/+TianruiKing" title="Google"></a>
+                            
+                                <a class="fa Twitter" href="https://twitter.com/tianruiwang" title="Twitter"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anti-Extradition/">Anti-Extradition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/主修/">主修</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/地籍测量学/">地籍测量学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/抱佛脚/">抱佛脚</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/论文/">论文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贸易战下我国商业银行个人理财业务现存问题与防范探讨/">贸易战下我国商业银行个人理财业务现存问题与防范探讨</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/辅修/">辅修</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
 
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons">clear_all</i>
-        <span class="mdl-button__ripple-container">
-            <span class="mdl-ripple">
-            </span>
-        </span>
-    </button>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">tianrking</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">tianrking</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags">Meow</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:tian.r.king@gmail.com" title="Email"></a>
+                            
+                                <a class="fa Facebook" target="_blank" href="https://www.facebook.com/tianrking" title="Facebook"></a>
+                            
+                                <a class="fa Google" target="_blank" href="https://plus.google.com/+TianruiKing" title="Google"></a>
+                            
+                                <a class="fa Twitter" target="_blank" href="https://twitter.com/tianruiwang" title="Twitter"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="標籤" friends="友情鏈接" about="關於我"/>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-香港特别行政区撤回逃犯条例" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/09/19/香港特别行政区撤回逃犯条例/" class="article-date">
+      <time datetime="2019-09-19T10:08:57.000Z" itemprop="datePublished">09-19-2019</time>
+</a>
 
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/logo.png" alt="tianrking's avatar">
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/19/香港特别行政区撤回逃犯条例/">香港特别行政区撤回逃犯条例</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>早于 Sep 4,2019 中国香港特别行政区政府正式撤回《逃犯條例》, 并确认无暴动性定义.<br>此为全段讲话内容 已翻译为简体.<br>因大陆媒体报道存在偏差,故于敏感时期传入墙内,望大家理性爱国,客观看待同胞们在经历的事情.</p>
+<p>#本人积极维护一个中国原则.</p>
+<p>#视频托管于oracle kr</p>
+<video src="http://132.145.93.32/%e6%9e%97%e9%84%ad%e6%9c%88%e5%a8%a5%ef%bc%9a%e9%a6%99%e6%b8%af%e7%89%b9%e5%8d%80%e6%94%bf%e5%ba%9c%e6%ad%a3%e5%bc%8f%e6%92%a4%e5%9b%9e%e4%bf%ae%e8%a8%82%e3%80%8a%e9%80%83%e7%8a%af%e6%a2%9d%e4%be%8b%e3%80%8b%ef%bc%8d%20BBC%20News%20%e4%b8%ad%e6%96%87.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"><br>your browser does not support the video tag<br></video>
+
+
+<p>林鄭月娥的讲话全文：</p>
+<p>///////////////////////////////////////////////////////////////////////</p>
+<p>各位香港市民：</p>
+<p>逃犯条例修订所引起的示威和冲突，已持续两个多月对很多香港人来说，我们这个城市变得很陌生 - 一次又一次的暴力事件，造成许多市民，警察和记者受伤;一向安全，有效率的机场和港铁，被人恶意破坏，造成混乱;道路和隧道突然会被堵塞;旅客担心香港还是否安全，不愿来港旅游和经商;家人，朋友之间因不同见解而反目，持不同意见的人在街上，在学校，在网上遭受欺凌，甚至互相攻击。</p>
+<p>这两个多月发生的事，令每一个香港人都感到震惊和伤心，亦令大家对香港感到焦虑和痛心。大家都很焦急，希望可以尽快走出目前的困局。</p>
+<p>对于示威人士提出的「五大诉求」，我们在不同场合都回应过 - </p>
+<p>一，有关撤回条例草案，我在六月十五日已经宣布暂缓条例草案，之后亦表明，修例工作已经完全停止，条例草案明年七月便会自动失效;</p>
+<p>二，有关成立独立调查委员会，政府认为有关警方执法行动，应该按既定机制，交由专责的独立监警会处理，而不应该另设独立监查会员会。监警会除了处理有关警方的投诉，亦正按照其法定职权，详细审视六月九日开始，发生的一连串大型公众活动，市民很关注的七月二十一日元朗袭击事件是其中一个重点。审视工作的目标是重组事实，评估警方的处理，并提出改善建议监警会已经成立国际专家小组，协助委员会工作，报告的内容和建议都会公开。</p>
+<p>三，有关示威活动的定性，我们多次重申，法律程序上不存在“暴动定性”。律政司已清楚指出，每宗案件的刑事检控决定，都是按证据，按法律，按“检控守则”作出;</p>
+<p>四，有关要求释放所有被捕人士，不检控，不追究违法的人，这些要求是法治社会所不能接受的。根据“基本法”，律政司的刑事检控决定，必须不受任何干涉，否则有违香港的法治精神;</p>
+<p>五，有关双普选，这是“基本法”订下的最终目标。要实现这个目标，社会需要在法理的基础上，在平和及互信的氛围下，以务实的态度进行讨论，否则只会令社会更加撕裂。</p>
+<p>这五点回应是平衡了不同因素而提出，我知道，我们的回应未足以平息社会上许多人的怨气，但不断升级的暴力，持续冲击社会秩序，又能否解决目前的困局呢？请大家想一想，我们是否应该透过对话，为香港寻找出路？</p>
+<p>很多人说，展开对话要有基础。作为行政长官，我有责任尽一切努力，在种种局限下寻找社会向前行的机会。我现在提出四项行动，希望作为社会向前行的起点。</p>
+<p>第一，特区政府会正式撤回条例草案，完全释除市民的疑虑。保安局局长会在立法会复会后，按“议事规则”动议撤回条例草案。</p>
+<p>第二，我们会全力支持监警会的工作。除了邀请海外专家，我已委任两位新成员加入监警会，他们是余黎青萍女士和林定国资深大律师。我向大家承诺，政府会认真跟进监警会日后提交的报告建议。</p>
+<p>第三，由今个月开始，我和所有司局长，会走入社区与市民对话，让社会各个阶层，不同政治立场，不同背景的人士，透过对话平台，将种种不满直接说出来，一起去探讨解决方法;</p>
+<p>第四，我会邀请社会领袖，专家和学者，就社会深层次问题进行独立研究及检讨，向政府提出建议。经过两个多月因修例工作引起的冲突，大家都意识到，我们眼前的矛盾是反映了长期积压的政治，经济和社会问题，例如房屋和土地供应，贫富悬殊，社会公义，青年人的机遇，以至公众参与决策等。我们的对话平台，亦可以让大家一起探讨这些问题。</p>
+<p>各位市民，持续出现的暴力正动摇香港法治的根基，极少数人挑战「一国两制」，冲击中央政府驻港机构，污损国旗，国徽，将香港推向危险的境地。无论市民对政府或对社会现况有多大的不满，暴力绝对不是解决问题的方法。目前，最迫切的就是要遏止暴力，捍卫法治，重建社会秩序。政府会对所有违法及暴力行为，严正执法。</p>
+<p>我和团队很希望，今天提出的四项行动，可以为打破困局行出一步，以对话代替对立，为社会带来改变。</p>
+<p>////////////////////////////////////////////////////////////////////</p>
+<video src="http://132.145.93.32/%e6%9e%97%e9%84%ad%e6%9c%88%e5%a8%a5%ef%bc%9a%e9%a6%99%e6%b8%af%e7%89%b9%e5%8d%80%e6%94%bf%e5%ba%9c%e6%ad%a3%e5%bc%8f%e6%92%a4%e5%9b%9e%e4%bf%ae%e8%a8%82%e3%80%8a%e9%80%83%e7%8a%af%e6%a2%9d%e4%be%8b%e3%80%8b%ef%bc%8d%20BBC%20News%20%e4%b8%ad%e6%96%87.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"><br>your browser does not support the video tag<br></video>
+
+
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Anti-Extradition/">Anti-Extradition</a>
     </div>
 
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        tian.r.king@gmail.com
-        <b class="caret"></b>
-    </a>
-</div>
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anti-Extradition/">Anti-Extradition</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
 
 
-        <!-- Sidebar Navigation  -->
-        <ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-            
-                <li>
-                    <a href="#" target="_blank" title="Email Me">
-                        
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        
-                        Email Me
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
 
-    <!-- Homepage -->
-    
-        <li id="sidebar-first-li">
-            <a href="/">
-                
-                    <i class="material-icons sidebar-material-icons">home</i>
-                
-                Home
-            </a>
-        </li>
-        
-    
 
-    <!-- Archives  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">inbox</i>
-                
-                    Archives
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">April 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">January 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">22</span></a>
-            </ul>
-        </li>
-        
-    
 
-    <!-- Categories  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
-                
-                Categories
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-                <li>
-                <a class="sidebar_archives-link" href="/categories/Anti-Extradition/">Anti-Extradition<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/中央银行学/">中央银行学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/主修/">主修<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/保险学/">保险学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/国际金融/">国际金融<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/地图学原理与方法/">地图学原理与方法<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/城市规划原理/">城市规划原理<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/宏观经济学/">宏观经济学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数字地形测量学/">数字地形测量学<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据库原理及应用教程/">数据库原理及应用教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构/">数据结构<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构C-语言描述/">数据结构C++语言描述<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/测绘工程/">测绘工程<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/误差理论与测量平差基础/">误差理论与测量平差基础<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/财务报表分析/">财务报表分析<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/财政学/">财政学<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/金融学-论文/">金融学 论文<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/金融工程/">金融工程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/金融市场学/">金融市场学<span class="sidebar_archives-count">3</span></a>
-            </ul>
-        </li>
-        
-    
 
-    <!-- Pages  -->
-    
-        <li>
-            <a href="/about" title="About">
-                
-                    <i class="material-icons sidebar-material-icons">person</i>
-                
-                About
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/meow" title="meow">
-                
-                meow
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/whoami" title="whoami">
-                
-                whoami
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/nothing" title="实验课">
-                
-                实验课
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/tool" title="tools">
-                
-                tools
-            </a>
-        </li>
-        
-    
 
-    <!-- Article Number  -->
+
+
+  
+    <article id="post-Vue-Hello-World" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/09/12/Vue-Hello-World/" class="article-date">
+      <time datetime="2019-09-12T15:12:46.000Z" itemprop="datePublished">09-12-2019</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/12/Vue-Hello-World/">Vue Hello World</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><clientonly></clientonly></p>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+
+<div id="app"><br>  <p></p><br></div>
+
+<div><script>alert(“a”);</script></div>
+
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue.js!'
+  }
+})
+</script>
+
+<p><br>
+        <div id="aplayer-hwHuOeDP" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-hwHuOeDP"),
+            narrow: false,
+            autoplay: false,
+            showlrc: false,
+            music: {
+              title: "",
+              author: "/media/mp3/.mp3",
+              url: "autoplay",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-摄影测量学" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/09/09/摄影测量学/" class="article-date">
+      <time datetime="2019-09-09T03:51:11.000Z" itemprop="datePublished">09-09-2019</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/09/摄影测量学/">摄影测量学</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+        <div id="aplayer-IgYKODGT" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-IgYKODGT"),
+            narrow: false,
+            autoplay: false,
+            showlrc: false,
+            music: {
+              title: "",
+              author: "/media/mp3/.mp3",
+              url: "autoplay",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-中央银行制度的形成与发展" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/09/08/中央银行制度的形成与发展/" class="article-date">
+      <time datetime="2019-09-08T10:08:31.000Z" itemprop="datePublished">09-08-2019</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/08/中央银行制度的形成与发展/">中央银行制度的形成与发展</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="中央银行制度的形成与发展"><a href="#中央银行制度的形成与发展" class="headerlink" title="中央银行制度的形成与发展"></a>中央银行制度的形成与发展</h1><h2 id="中央银行的历史背景"><a href="#中央银行的历史背景" class="headerlink" title="中央银行的历史背景"></a>中央银行的历史背景</h2><p>1656年瑞典银行成立 1661年发行欧洲首张银行券 …</p>
+<ol>
+<li>商品经济的发展</li>
+<li><p>银行业的兴起与发展</p>
+<ul>
+<li>1656年设立的瑞典银行和1694年设立的英格兰银行,是最早发展成中央银行的银行</li>
+</ul>
+</li>
+<li><p>货币信用关系的广泛发展(货币 信用 经济)</p>
+<ul>
+<li>经济商品化程度加深</li>
+<li>银行业发展规模扩大</li>
+</ul>
+</li>
+<li>商品经济新矛盾新问题的显现<ul>
+<li>银行券的分散发行与普遍接受之间矛盾</li>
+<li>票据交换和清算业务量迅速扩大与清算效率低下之间的矛盾</li>
+<li>金融秩序混乱,缺乏监督</li>
+<li>银行破产,经济受到严重冲击<h2 id="中央银行产生的客观经济需要"><a href="#中央银行产生的客观经济需要" class="headerlink" title="中央银行产生的客观经济需要"></a>中央银行产生的客观经济需要</h2></li>
+</ul>
+</li>
+<li>统一货币发行的客观需要<ul>
+<li>同一地区有多种银行券同时流通</li>
+<li>发行银行的实力 资信情况 经营状况 分支机构设立状况不同,被接受程度和使用范围是不同的</li>
+<li>竞争加剧,经营不善的银行无法保证自己发行的银行券及时兑现</li>
+<li>宏观上看,信用货币的发行与流通虽然给商品经济带来了比金属货币流通时更为便利的条件,使银行突破了金属货币量的限制</li>
+</ul>
+</li>
+<li>统一票据交换和清算的客观需要</li>
+<li>保证银行支付能力的客观需要</li>
+<li>金融业稳健运行的客观需要</li>
+<li>为政府服务的需要</li>
+</ol>
+<h2 id="中央银行制度的初步形成"><a href="#中央银行制度的初步形成" class="headerlink" title="中央银行制度的初步形成"></a>中央银行制度的初步形成</h2><pre><code>由信誉好 实力强的商业银行逐步演变而来,在演变过程中,政府根据客观需要赋予商业银行某些特权;政府直接组建中央银行(美国联邦储蓄体系)
+</code></pre><h2 id="中央银行制度的普及发展"><a href="#中央银行制度的普及发展" class="headerlink" title="中央银行制度的普及发展"></a>中央银行制度的普及发展</h2><h2 id="中央银行制度的形成与发展-1"><a href="#中央银行制度的形成与发展-1" class="headerlink" title="中央银行制度的形成与发展"></a>中央银行制度的形成与发展</h2><ol>
+<li>清政府   大清银行</li>
+<li>革命</li>
+<li>民国</li>
+<li>中华苏维埃</li>
+<li>新中国<ul>
+<li>1948 12 01 中国人民银行(石家庄 华北银行 北海银行 西北农业银行)</li>
+<li>第一阶段 1978年前 只有中国人民银行一家银行</li>
+<li>第二阶段 1979-1983 双重职能剥离</li>
+<li>第三阶段 1983 9 17 国务院发布&lt;关于中国人民银行专门行使钟扬银行职能的决定&gt;</li>
+<li>1984 1 1 中国工商银行成立(中国人民银行承担的工商界带 城乡储蓄等非中央银行业务规划给中国工商银行)</li>
+<li>1995 3 18 第八届全国人民代表大会第三次会议通过了&lt;中华人民共和国中国人民银行法&gt; (第一部金融法)</li>
+</ul>
+</li>
+</ol>
+<h1 id="中央银行的性质与职能"><a href="#中央银行的性质与职能" class="headerlink" title="中央银行的性质与职能"></a>中央银行的性质与职能</h1><h2 id="中央银行的性质"><a href="#中央银行的性质" class="headerlink" title="中央银行的性质"></a>中央银行的性质</h2><ol>
+<li>从钟扬银行业务活动特点来看,钟扬银行与商业银行不同,是特殊的金融机构.</li>
+<li>从中央银行发挥的作用来看,钟扬银行独占货币发行权</li>
+<li>钟扬银行还具有国家管理机关的性质<ul>
+<li>代表国家制定和执行统一的货币政策</li>
+<li>代表国家运用货币政策对宏观经济进行干预</li>
+<li>代表国家参加国际金融活动,制定对外金融发展战略</li>
+</ul>
+</li>
+</ol>
+<p><strong>中央银行是特殊的金融机构,为商业银行等普通的金融机构和政府服务;是宏观管理部门代表国家制定和实施货币政策 监督管理金融业 规范与维护金融秩序 调控金融和经济运行</strong></p>
+<h2 id="中央银行的职能"><a href="#中央银行的职能" class="headerlink" title="中央银行的职能"></a>中央银行的职能</h2><ol>
+<li>发行的银行<ul>
+<li>中央银行垄断货币发行权的意义<ol>
+<li>垄断货币发行权是中央银行最基本 最重要的标志</li>
+<li>垄断货币发行权是统一货币发行与流通的基本保证</li>
+<li>垄断货币发行权是稳定货币币值的基本条件</li>
+<li>垄断货币发行是中央银行发挥其全部职能的基础</li>
+</ol>
+</li>
+<li>中央银行垄断货币发行的基本职责<ol>
+<li>根据经济发展需要 掌握货币发行 调节货币的流通</li>
+<li>掌握货币发行准备 控制信用规模 调节货币供给量</li>
+<li>根据流通的需要 印刷 铸造或销毁货币<br><strong>“发行的银行”是中央银行实施金融宏观调控的重要基础</strong></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>银行的银行</p>
+<ol>
+<li>集中存款准备金</li>
+<li>充当金融机构的”最后贷款人”</li>
+<li>组织 参与和管理 全国清算</li>
+</ol>
+</li>
+<li><p>政府的银行</p>
+<ol>
+<li>代理国库</li>
+<li>代理政府债券的发行</li>
+<li>为政府融通资金提供特定信贷支持</li>
+<li>持有和经营管理国际储备</li>
+<li>代表政府参加国籍金融组织活动</li>
+<li>制定和实施货币政策</li>
+<li>对金融业实施监督管理</li>
+<li>为政府提供经济金融情报和决策建议 发布经济金融信息</li>
+</ol>
+</li>
+</ol>
+
+        <div id="aplayer-ZrLqURIK" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-ZrLqURIK"),
+            narrow: false,
+            autoplay: false,
+            showlrc: false,
+            music: {
+              title: "",
+              author: "/media/mp3/.mp3",
+              url: "autoplay",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/中央银行学/">中央银行学</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/辅修/">辅修</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-土地权属调查" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/09/06/土地权属调查/" class="article-date">
+      <time datetime="2019-09-06T04:13:19.000Z" itemprop="datePublished">09-06-2019</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/06/土地权属调查/">土地权属调查</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="第二章-土地權屬調查"><a href="#第二章-土地權屬調查" class="headerlink" title="第二章 土地權屬調查"></a>第二章 土地權屬調查</h1><p>##1. 試述我國土地權屬的性質及其權屬單位<br>土地產權是土地制度的核心,土地制度對於土地權利的種種約束表現爲土地產權的約束.土地產權也像其他財產權一樣,必須得到法律的保證.<br><strong>土地權屬是指土地產權的歸屬</strong>,是存在於土地之中的排他性完全權力.包括<strong>土地所有權</strong> <strong>土地使用權</strong> <strong>地役權等多項權力</strong></p>
+<p>##2. 土地權屬的確認方式有哪幾種?如何確認土地權屬?</p>
+<ul>
+<li><p>確認方式種類</p>
+<ol>
+<li>文件確認</li>
+<li>慣用確認</li>
+<li>協商確認</li>
+<li>仲裁確認</li>
+</ol>
+</li>
+<li><p>確認方式</p>
+<ul>
+<li>農村地區(含城市地區)土地所有權和使用權的確認</li>
+<li>城市土地使用權的確認<ol>
+<li>單位用地紅綫圖</li>
+<li>房地產證書</li>
+<li>土地使用權合同書 協議書 換地書</li>
+<li>証(撥)地批准書和合同書</li>
+<li>有償使用合同書(協議書)和國有土地使用權證書</li>
+<li>其他法律文件</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="簡述地塊和宗地的概念及其劃分的原則"><a href="#簡述地塊和宗地的概念及其劃分的原則" class="headerlink" title="簡述地塊和宗地的概念及其劃分的原則"></a>簡述地塊和宗地的概念及其劃分的原則</h2><p><strong>地塊</strong>是可辨認出同類屬性的最小土地單元.<br>地塊在空間上是連續的<br>地塊的空間位置是固定的,界綫是相對明確的<br>地塊的”同類屬性”既可以是某一種屬性,也可以是某一類屬性的集合</p>
+<p><strong>宗地</strong>是指權力上具有同一屬性的地塊,即同一土地權利相連成片的用地範圍<br>宗地具有固定的位置和明確的權利界限,並可同時辨認出確定的權利 利用 質量 和 時態 等土地基本要素</p>
+<h2 id="論述土地權屬界址-邊界形式-和邊界類型"><a href="#論述土地權屬界址-邊界形式-和邊界類型" class="headerlink" title="論述土地權屬界址 邊界形式 和邊界類型"></a>論述土地權屬界址 邊界形式 和邊界類型</h2><p>土地權屬界址(簡稱界址) 包括 界址綫 界址點 界標</p>
+<p>界綫類型</p>
+<ol>
+<li>行政界限</li>
+<li>土地管理區域界限</li>
+<li>地塊界限</li>
+</ol>
+<p>界綫形式</p>
+<ol>
+<li>普通界限</li>
+<li>法律界限</li>
+<li>自然界限</li>
+</ol>
+<h2 id="簡述土地權屬調查的内容和基本程序"><a href="#簡述土地權屬調查的内容和基本程序" class="headerlink" title="簡述土地權屬調查的内容和基本程序"></a>簡述土地權屬調查的内容和基本程序</h2><h3 id="權屬調查的内容"><a href="#權屬調查的内容" class="headerlink" title="權屬調查的内容"></a>權屬調查的内容</h3><ol>
+<li>土地權屬的狀況</li>
+<li>界址調查</li>
+<li>宗地草圖繪製</li>
+<li>地籍調查表填寫<h3 id="土地權屬調查的程序"><a href="#土地權屬調查的程序" class="headerlink" title="土地權屬調查的程序"></a>土地權屬調查的程序</h3></li>
+<li>街道(地籍區)和街坊(地籍子區)的劃分.</li>
+<li>土地權屬資料的收集 分析 處理</li>
+<li><p>預編地籍號</p>
+</li>
+<li><p>發放通知書</p>
+</li>
+<li>實地調查</li>
+<li>資料整理</li>
+</ol>
+<h2 id="簡述界址點設定的辦法"><a href="#簡述界址點設定的辦法" class="headerlink" title="簡述界址點設定的辦法"></a>簡述界址點設定的辦法</h2><ol>
+<li>界址綫拐點,相鄰宗地的地址綫交叉處應設定界址點</li>
+<li>在一條直綫界址綫上存在多種界址綫類別時,如既有圍墻又有墻壁,滴水綫,籬笆等,變化出可根據需要設定界址綫</li>
+<li>在圍墻 道路 溝渠 田埂處的界址點,要確認界址綫在標志物的位置(如内 中 外)</li>
+</ol>
+<h2 id="土地權屬界限的爭議如何調查處理"><a href="#土地權屬界限的爭議如何調查處理" class="headerlink" title="土地權屬界限的爭議如何調查處理"></a>土地權屬界限的爭議如何調查處理</h2><h2 id="試對宗地草圖進行論述"><a href="#試對宗地草圖進行論述" class="headerlink" title="試對宗地草圖進行論述"></a>試對宗地草圖進行論述</h2><p><strong>宗地草圖</strong>是描述宗地位置 界址點 綫 和 相鄰宗地關係的草編記錄 </p>
+<ol>
+<li>宗地草圖記錄的内容<ul>
+<li>本宗地號和門牌號,權利人名稱和相鄰宗地的宗地號 門牌號 權利人名稱</li>
+<li>本宗地界址點 界址點序號及界址綫 宗地内地物 及宗地外緊靠界址點綫的地物等</li>
+<li>界址邊長 界址點與臨近地物的相關距離和條件距離</li>
+<li>確定宗地界址點位置 界址邊長方位所必須的建築物或構築物</li>
+<li>概略指北針和比例尺 丈量著 丈量日期</li>
+</ul>
+</li>
+</ol>
+<ol start="2">
+<li><p>宗地草圖的特徵</p>
+<ul>
+<li>是宗地的原始描述</li>
+<li>圖上數據是實量的 精度高</li>
+<li>所繪宗地草圖是近似的,相鄰宗地草圖不能拼接</li>
+</ul>
+</li>
+</ol>
+<ol start="3">
+<li><p>宗地草圖的作用</p>
+<ul>
+<li>是地籍資料中的原始資料</li>
+<li>配合低級調查表 爲測定界址點坐標和製作宗地圖提供了初始信息</li>
+<li>可為界址點的維護 回復 和解決權屬糾紛提供依據</li>
+</ul>
+</li>
+</ol>
+
+        <div id="aplayer-yoqgVgAw" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-yoqgVgAw"),
+            narrow: false,
+            autoplay: false,
+            showlrc: false,
+            music: {
+              title: "",
+              author: "/media/mp3/.mp3",
+              url: "autoplay",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-地籍测量学-绪论" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/09/02/地籍测量学-绪论/" class="article-date">
+      <time datetime="2019-09-02T09:59:33.000Z" itemprop="datePublished">09-02-2019</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/02/地籍测量学-绪论/">地籍测量学 绪论</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><h2 id="1-现代地籍-多用途地籍-的含义是什么"><a href="#1-现代地籍-多用途地籍-的含义是什么" class="headerlink" title="1. 现代地籍(多用途地籍) 的含义是什么 ?"></a>1. 现代地籍(多用途地籍) 的含义是什么 ?</h2><p> <strong>地籍是由国家建立和管理的</strong><br> <strong>土地权属是地籍的核心</strong><br> <strong>以地块为基础建立地籍</strong><br> <strong>地籍必须描述地块内附着物的状况</strong><br> <strong>对于每一块土地,都必须描述其权属 利用 位置 数量 质量 等五个要素</strong><br> <strong>对于一个区域(如县级行政管理区域),地籍簿册是由土地调查册 土地登记册 土地统计册</strong></p>
+<h2 id="2-地籍信息回答了土地及其附着物的哪六个基本问题"><a href="#2-地籍信息回答了土地及其附着物的哪六个基本问题" class="headerlink" title="2. 地籍信息回答了土地及其附着物的哪六个基本问题 ?"></a>2. 地籍信息回答了土地及其附着物的哪六个基本问题 ?</h2><p><strong>“是谁的”  具体指权利人与土地之间的法律关系(归属)</strong><br><strong>“在哪里”  具体指土地的空间位置</strong><br><strong>“有多少”  具体指对土地数量的描述</strong><br><strong>“在什么时候” 具体指土地权利和利用的发生 转移 消灭 等事件的时间</strong><br><strong>“为什么”  具体指土地权利和利用的存在依据及其有关说明</strong><br><strong>“怎么样”  具体指权利人占有 使用 处分土地 和取得土地收益的权力 义务 和限制</strong></p>
+<h2 id="3-试述现代地籍的功能"><a href="#3-试述现代地籍的功能" class="headerlink" title="3. 试述现代地籍的功能"></a>3. 试述现代地籍的功能</h2><ol>
+<li><strong>地理性功能</strong></li>
+<li><strong>经济功能</strong></li>
+<li><strong>产权保护功能</strong></li>
+<li><strong>土地利用管理功能</strong></li>
+<li><strong>决策功能</strong></li>
+<li><strong>管理功能</strong></li>
+</ol>
+<h2 id="4-试述地籍的分类"><a href="#4-试述地籍的分类" class="headerlink" title="4. 试述地籍的分类"></a>4. 试述地籍的分类</h2><ol>
+<li><p>按地籍的用途划分</p>
+<ul>
+<li>税收地籍</li>
+<li>产权地籍</li>
+<li>多用途地籍</li>
+<li></li>
+</ul>
+</li>
+<li><p>按地籍的特点和任务划分</p>
+<ul>
+<li>初始地籍</li>
+<li>日常地籍</li>
+</ul>
+</li>
+<li><p>按地籍的区域划分</p>
+<ul>
+<li>城镇地籍</li>
+<li>农村地籍</li>
+</ul>
+</li>
+</ol>
+<h2 id="5-地籍调查的目的-内容-原则-是什么"><a href="#5-地籍调查的目的-内容-原则-是什么" class="headerlink" title="5. 地籍调查的目的 内容 原则 是什么"></a>5. 地籍调查的目的 内容 原则 是什么</h2><p>地籍调查的基本目的 在于为土地登记 土地统计 土地利用规划 土地税收 城市规划 房产管理 以及其他国民经济各部门提供基础资料.<br>地籍调查的根本姆迪是维护土地制度 保护土地产权 制定土地政策 合理利用土地 等 提供基础资料 </p>
+<p>地籍调查的内容:</p>
+<ol>
+<li>功能不同<ul>
+<li>税收地籍调查的内容: 以财政目的为主的税收地籍调查  土地权力状况(纳税人情况 单位 地址 ..)  计算税收依据(纳税的土地类型 土地面积 土地等级)</li>
+<li>产权地籍调查的内容: 以产权保护为目的的产权地籍 地图权属 土地利用状况 其他要素 </li>
+<li>多用途地籍调查内容: 土地权属(权利人状况 权源 权力性质 权利限制) 土地位置(地理位置 权属界址) 土地数量(土地面积 建筑占地面积 总建筑面积) 土地质量(土地等级 基准地价 建筑物结构 层数 各种房地产价格 ) 土地利用状况(类型 容积率 建筑密度 建筑间距 各类别面积比例)</li>
+</ul>
+</li>
+</ol>
+<ol start="2">
+<li><p>制度不同</p>
+<ul>
+<li><strong>土地权属调查</strong>  土地所有权调查 国有土地使用权调查 集体土地使用权调查 抵押权和地役权等其他土地权利调查 等</li>
+<li><strong>土地利用调查</strong>  图斑地类调查 地物补测 调查底图标绘与整饰 调查手簿填写 等</li>
+<li><strong>地籍测量</strong>   地籍控制测量 界址测量 地籍图测绘 面积测算与汇总</li>
+</ul>
+</li>
+<li><p>地籍调查的原则</p>
+<ul>
+<li>实事求是原则</li>
+<li>全面调查原则</li>
+<li>一查多用原则</li>
+<li>技术先进原则 </li>
+</ul>
+</li>
+</ol>
+<h2 id="7-地籍要素包括哪些内容"><a href="#7-地籍要素包括哪些内容" class="headerlink" title="7. 地籍要素包括哪些内容"></a>7. 地籍要素包括哪些内容</h2><pre><code>权属 利用 位置 数量 质量
+</code></pre><h2 id="8-地籍调查结束后应上交哪些资料"><a href="#8-地籍调查结束后应上交哪些资料" class="headerlink" title="8. 地籍调查结束后应上交哪些资料"></a>8. 地籍调查结束后应上交哪些资料</h2><ol>
+<li>表册成果</li>
+<li>图件成果</li>
+<li>数据成果</li>
+<li>文字成果</li>
+</ol>
+<h2 id="9-同其他测绘相比较-地籍测量有哪些特点"><a href="#9-同其他测绘相比较-地籍测量有哪些特点" class="headerlink" title="9. 同其他测绘相比较,地籍测量有哪些特点"></a>9. 同其他测绘相比较,地籍测量有哪些特点</h2><h2 id="12-试论述地籍测量学的任务-研究的内容和对象"><a href="#12-试论述地籍测量学的任务-研究的内容和对象" class="headerlink" title="12. 试论述地籍测量学的任务 研究的内容和对象"></a>12. 试论述地籍测量学的任务 研究的内容和对象</h2><ul>
+<li>地籍测量学的研究对象:<br>  土地空间位置及其形状和大小(具体指地块的空间位置及其形状和大小)</li>
+<li>地籍测量学的主要任务:<br>  确定地块的位置 面积,保持土地利用过程中所发生的地块的分割 合并 产权转移 和利用类别变化的现势性 准确性</li>
+<li>地籍测量的研究内容:<br>  地籍测量的理论框架 地籍测绘技术体系及其标准化 土地的划分技术与方法 土地信息采集与表达的技术继承 及其可视化 土地利用的动态监测技术与方法 高新测绘技术(3S)在土地管理中的应用    </li>
 </ul>
 
-
-        <!-- Sidebar Footer -->
-        <!--
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
-
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :)
--->
-
-<!-- Sidebar Divider -->
-
-    <div class="sidebar-divider"></div>
-
-
-<!-- Theme Material -->
-
-    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-            Theme - Material
-            <span class="sidebar-badge badge-circle">i</span>
+        <div id="aplayer-eSxpnfGo" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
         </div>
-    </a>
-
-
-<!-- Help & Support -->
-<!--
-
--->
-
-<!-- Feedback -->
-<!--
-
--->
-
-<!-- About Theme -->
-<!--
-
--->
-
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-eSxpnfGo"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "",
+              author: "Oogway's Legacy",
+              url: "/media/mp3/Oogway's Legacy.mp3",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/测绘工程/">测绘工程</a>
     </div>
 
-    <!-- Sidebar Image -->
-    
 
-</aside>
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/地籍测量学/">地籍测量学</a></li></ul>
+    </div>
 
-                    
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
 
-                    
-                        <!-- Footer Top Button -->
-                        <div id="back-to-top" class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
 
-                    
 
-                    <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-    
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-        <a href="https://twitter.com/tianruiwang" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
-                <span class="visuallyhidden">Twitter</span>
-            </button><!--
-     --></a>
-    
 
-    <!-- Facebook -->
-    
-        <a href="https://www.facebook.com/tianrking" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
-                <span class="visuallyhidden">Facebook</span>
-            </button><!--
-     --></a>
-    
 
-    <!-- Google + -->
-    
-        <a href="https://plus.google.com/+TianruiKing" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
-                <span class="visuallyhidden">Google Plus</span>
-            </button><!--
-     --></a>
-    
 
-    <!-- Weibo -->
-    
 
-    <!-- Instagram -->
-    
 
-    <!-- Tumblr -->
-    
 
-    <!-- Github -->
-    
-        <a href="https://github.com/tianrking" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
-                <span class="visuallyhidden">Github</span>
-            </button><!--
-     --></a>
-    
+  
+    <article id="post-绪论-1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/24/绪论-1/" class="article-date">
+      <time datetime="2019-07-24T04:06:17.000Z" itemprop="datePublished">07-24-2019</time>
+</a>
 
-    <!-- LinkedIn -->
-    
 
-    <!-- Zhihu -->
+    </div>
+  
+  <div class="article-inner">
     
-
-    <!-- Bilibili -->
-    
-
-    <!-- Telegram -->
+      <input type="hidden" class="isFancy" />
     
     
-    <!-- V2EX -->
-    
-</div>
-
-
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©&nbsp;2018&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>w0x7c3
-            
-        </div>
-
-        <!-- Paradox Footer Right Section -->
-
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
-
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
-
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-            </div>
-        </div>
-    
-</footer>
-
-
-                    <!-- Import JS File -->
-
-    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
-
-
-
-    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
-
-
-
-    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
-
-
-<script type="text/ls-javascript" id="NProgress-script">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    $('#nprogress .bar').css({
-        'background': '#29d'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#29d',
-        'border-left-color': '#29d'
-    });
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
-</script>
-
-
-
-
-
-
-
-    <!-- Busuanzi -->
-    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-   <!-- 使用 DISQUS js 代码 -->
-
-
-
-
-
-    <!-- Swiftye -->
-    
-
-    <!-- Local Search-->
-    
-        <script type="text/ls-javascript" id="search-local-js-script">
-    var searchFunc = function(path, search_id, content_id) {
-        'use strict';
-        $.ajax({
-            url: path,
-            dataType: 'xml',
-            success: function( xmlResponse ) {
-                // get the contents from search data
-                var datas = $( 'entry', xmlResponse ).map(function() {
-                    return {
-                        title: $( 'title', this ).text(),
-                        content: $('content',this).text(),
-                        url: $( 'url' , this).text()
-                    };
-                }).get();
-                var $input = document.getElementById(search_id);
-                var $resultContent = document.getElementById(content_id);
-                $input.addEventListener('input', function() {
-                    var str='<ul class=\"search-result-list\">';
-                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                    $resultContent.innerHTML = '';
-                    if (this.value.trim().length <= 0) {
-                        return;
-                    }
-                    // perform local searching
-                    datas.forEach(function(data) {
-                        var isMatch = true;
-                        var content_index = [];
-                        var data_title = data.title.trim().toLowerCase();
-                        var data_content = data.content.trim().replace(/<[^>]+>/g,'').toLowerCase();
-                        var data_url = data.url;
-                        var index_title = -1;
-                        var index_content = -1;
-                        var first_occur = -1;
-                        // only match artiles with not empty titles and contents
-                        if(data_title !== '' && data_content !== '') {
-                            keywords.forEach(function(keyword, i) {
-                                index_title = data_title.indexOf(keyword);
-                                index_content = data_content.indexOf(keyword);
-                                if( index_title < 0 && index_content < 0 ) {
-                                    isMatch = false;
-                                } else {
-                                    if (index_content < 0) {
-                                        index_content = 0;
-                                    }
-                                    if (i === 0) {
-                                        first_occur = index_content;
-                                    }
-                                }
-                            });
-                        }
-                        // show search results
-                        if (isMatch) {
-                            str += '<li><a href="'+ data_url +'" class="search-result-title" target="_blank">'+ data_title;
-                            var content = data.content.trim().replace(/<[^>]+>/g, '');
-                            if (first_occur >= 0) {
-                                // cut out characters
-                                var start = first_occur - 6;
-                                var end = first_occur + 6;
-                                if (start < 0) {
-                                    start = 0;
-                                }
-                                if (start === 0) {
-                                    end = 10;
-                                }
-                                if (end > content.length) {
-                                    end = content.length;
-                                }
-                                var match_content = content.substr(start, end);
-                                // highlight all keywords
-                                keywords.forEach(function(keyword) {
-                                    var regS = new RegExp(keyword, 'gi');
-                                    match_content = match_content.replace(regS, '<em class="search-keyword">'+keyword+'</em>');
-                                })
-                                str += '<p class="search-result">' + match_content + '...</p>' +'</a>';
-                            }
-                        }
-                    });
-                    $resultContent.innerHTML = str;
-                });
-            }
-        });
-    }
-</script>
-
-
-        <script type="text/ls-javascript" id="search-input-script">
-            var inputArea = document.querySelector('#search');
-            var getSearchFile = function() {
-                var path = 'search.xml';
-                searchFunc(path, 'search', 'local-search-result');
-            }
-
-            if(inputArea) {
-                inputArea.onfocus = function() {
-                    getSearchFile();
-                }
-            }
-        </script>
-    
-
-
-<!-- UC Browser Compatible -->
-<script>
-	var agent = navigator.userAgent.toLowerCase();
-	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
-	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-	}
-</script>
-
-<!-- Import prettify js  -->
-
-    
-
-
-
-<!-- Window Load -->
-<!-- add class for prettify -->
-<script type="text/ls-javascript" id="window-load">
-    $(window).on('load', function() {
-        // Post_Toc parent position fixed
-        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
-    });
-
-    
+      <header class="article-header">
         
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/24/绪论-1/">绪论</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h2><ol>
+<li>研究背景</li>
+</ol>
+<p>1.2 研究意义<br>1.3 国内外文献综述<br>1.4 研究思路及创新点<br>1.5 论文的不足</p>
+
+        <div id="aplayer-jwPyLpdi" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-jwPyLpdi"),
+            narrow: false,
+            autoplay: false,
+            showlrc: false,
+            music: {
+              title: "",
+              author: "/media/mp3/.mp3",
+              url: "autoplay",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/金融学-论文/">金融学 论文</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/贸易战下我国商业银行个人理财业务现存问题与防范探讨/">贸易战下我国商业银行个人理财业务现存问题与防范探讨</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-地图语言" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/21/地图语言/" class="article-date">
+      <time datetime="2019-07-21T03:43:26.000Z" itemprop="datePublished">07-21-2019</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
-</script>
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/21/地图语言/">地图语言</a>
+    </h1>
+  
 
-<!-- MathJax Load-->
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="地图内容要素的特征有哪些"><a href="#地图内容要素的特征有哪些" class="headerlink" title="地图内容要素的特征有哪些"></a>地图内容要素的特征有哪些</h2><ol>
+<li>空间分布特征</li>
+</ol>
+<ul>
+<li><p>点状要素</p>
+<ul>
+<li>集群式分布</li>
+<li>沿特定方向分布</li>
+<li>散列式分布</li>
+</ul>
+</li>
+<li><p>线状要素</p>
+</li>
+<li><p>面状要素</p>
+</li>
+</ul>
+<ol start="2">
+<li>属性特征及时间特征</li>
+</ol>
+<ul>
+<li>属性特征<ul>
+<li>质量特征</li>
+<li>数量特征</li>
+</ul>
+</li>
+<li>时间特征</li>
+</ul>
+<h2 id="地图符号与一般符号相比-有何特点"><a href="#地图符号与一般符号相比-有何特点" class="headerlink" title="地图符号与一般符号相比,有何特点"></a>地图符号与一般符号相比,有何特点</h2><pre><code>既能提供对象的信息,又能反应其空间结构.
+</code></pre><ol>
+<li>地图符号是空间信息和视觉形象的复合体</li>
+<li>地图符号有一定的约束性</li>
+<li>地图符号可以等价变换</li>
+</ol>
+<h2 id="什么是量表法-量表法有哪几种类型"><a href="#什么是量表法-量表法有哪几种类型" class="headerlink" title="什么是量表法? 量表法有哪几种类型?"></a>什么是量表法? 量表法有哪几种类型?</h2><ol>
+<li>定名量表</li>
+<li>顺序量表</li>
+<li>间距量表</li>
+<li>比率量表</li>
+</ol>
+<h2 id="地图符号的功能有哪些"><a href="#地图符号的功能有哪些" class="headerlink" title="地图符号的功能有哪些"></a>地图符号的功能有哪些</h2><ol>
+<li>地图符号是地理空间信息的传递手段</li>
+<li>地图符号是地理空间信息的抽象概括</li>
+<li>地图符号可以赋予可视化极大的表现力</li>
+<li>地图符号能再现课题的空间模型</li>
+</ol>
+<h2 id="地图符号的基本视觉变量有哪些"><a href="#地图符号的基本视觉变量有哪些" class="headerlink" title="地图符号的基本视觉变量有哪些"></a>地图符号的基本视觉变量有哪些</h2><ol>
+<li>形状变量</li>
+<li>尺寸变量</li>
+<li>方向变量</li>
+<li>亮度变量</li>
+<li>密度变量</li>
+<li>色彩变量</li>
+</ol>
+<h2 id="色彩的三属性是什么-色彩的视觉心理反映有哪些"><a href="#色彩的三属性是什么-色彩的视觉心理反映有哪些" class="headerlink" title="色彩的三属性是什么? 色彩的视觉心理反映有哪些?"></a>色彩的三属性是什么? 色彩的视觉心理反映有哪些?</h2><ol>
+<li>色相</li>
+<li>明度</li>
+<li>饱和度</li>
+</ol>
+<p>温度感与膨胀感</p>
+<h2 id="地图色彩的作用是什么"><a href="#地图色彩的作用是什么" class="headerlink" title="地图色彩的作用是什么"></a>地图色彩的作用是什么</h2><h2 id="地图注记有哪几种类型-地图主机配置的基本原则和方法是什么"><a href="#地图注记有哪几种类型-地图主机配置的基本原则和方法是什么" class="headerlink" title="地图注记有哪几种类型? 地图主机配置的基本原则和方法是什么?"></a>地图注记有哪几种类型? 地图主机配置的基本原则和方法是什么?</h2>
+        <div id="aplayer-mXZANJBe" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-mXZANJBe"),
+            narrow: false,
+            autoplay: false,
+            showlrc: false,
+            music: {
+              title: "",
+              author: "/media/mp3/.mp3",
+              url: "autoplay",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/地图学原理与方法/">地图学原理与方法</a>
+    </div>
 
 
-<!-- Bing Background -->
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主修/">主修</a></li></ul>
+    </div>
 
-<script type="text/ls-javascript" id="Bing-Background-script">
-    queue.offer(function(){
-        $('body').attr('data-original', 'https://api.i-meto.com/bing?travel');
-    });
-</script>
-
-
-<script type="text/ls-javascript" id="lazy-load">
-    // Offer LazyLoad
-    queue.offer(function(){
-        $('.lazy').lazyload({
-            effect : 'show'
-        });
-    });
-
-    // Start Queue
-    $(document).ready(function(){
-        setInterval(function(){
-            queue.execNext();
-        },200);
-    });
-</script>
-
-<!-- Custom Footer -->
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
 
 
 
-<script>
-    (function(){
-        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
 
-        for (var i = 0; i < scriptList.length; ++i) {
-            var item = scriptList[i];
-            lsloader.runInlineScript(item.id,item.id);
-        }
-    })()
-console.log('\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
-</script>
 
-                </main>
+
+
+
+
+  
+    <article id="post-地图与地图学的基本知识" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/20/地图与地图学的基本知识/" class="article-date">
+      <time datetime="2019-07-20T03:44:47.000Z" itemprop="datePublished">07-20-2019</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/20/地图与地图学的基本知识/">地图与地图学的基本知识</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="地图的三个基本特征是什么-地图的定义是什么"><a href="#地图的三个基本特征是什么-地图的定义是什么" class="headerlink" title="地图的三个基本特征是什么? 地图的定义是什么?"></a>地图的三个基本特征是什么? 地图的定义是什么?</h2><ol>
+<li>地图平面与地球曲面之间的矛盾</li>
+<li>地表原貌与地图抽象性之间的矛盾(产生符号法则)</li>
+<li><p>地理要素(现象)的复杂性与地图的概括性之间的矛盾</p>
+<p>地图是根据构成地图数学基础的数学法则.构成地图可视化基础的符号法则和构成地图内容地理基础的综合法则将地球表面缩绘到平面上的表象,反映了各种自然和社会现象的空间分布.组合.联系及其在时空中的变化和发展</p>
+<p><strong>现代地图定义: 地图是根据由数学方法确定的构成地图数学基础的数学法则和构成地图内容地理基础的制图综合法则记录空间地理环境信息的载体,是传递空间地理环境信息的工具,能但应各种自然和社会现象的多维信息.空间分布.组合.联系和制约及其在时空中的变化和发展</strong></p>
+</li>
+</ol>
+<h2 id="地图的四大功能是什么-从地图功能的角度如何理解地图概念"><a href="#地图的四大功能是什么-从地图功能的角度如何理解地图概念" class="headerlink" title="地图的四大功能是什么? 从地图功能的角度如何理解地图概念?"></a>地图的四大功能是什么? 从地图功能的角度如何理解地图概念?</h2><ol>
+<li>地图模拟功能</li>
+<li>地图的信息负载功能</li>
+<li>地图的信息传递功能</li>
+<li><p>地图的空间认知功能s</p>
+<p>Q2??</p>
+</li>
+</ol>
+<h2 id="地图构成的要素包括哪三个部分"><a href="#地图构成的要素包括哪三个部分" class="headerlink" title="地图构成的要素包括哪三个部分"></a>地图构成的要素包括哪三个部分</h2><ol>
+<li><p>数学要素</p>
+<ul>
+<li>坐标网</li>
+<li>地图比例尺</li>
+<li>测量控制点</li>
+</ul>
+</li>
+<li><p>地理要素</p>
+<ul>
+<li>自然地理要素<ul>
+<li>地貌要素</li>
+<li>植被要素</li>
+<li>水系要素</li>
+</ul>
+</li>
+<li>社会经济要素<ul>
+<li>居民地</li>
+<li>交通运输网</li>
+<li>境界及行政中心</li>
+<li>经济标志</li>
+</ul>
+</li>
+<li>其他要素 </li>
+</ul>
+</li>
+<li><p>辅助要素 (图廓外要素)</p>
+<ul>
+<li>读图工具()<ul>
+<li>图例</li>
+<li>图解比例尺</li>
+<li>坡度尺</li>
+<li>三北方向图</li>
+<li>图幅接合表</li>
+<li>政治行政区划略图 </li>
+</ul>
+</li>
+<li>参考资料</li>
+</ul>
+</li>
+</ol>
+<h2 id="地图有几种分幅方法-各有何优缺点"><a href="#地图有几种分幅方法-各有何优缺点" class="headerlink" title="地图有几种分幅方法? 各有何优缺点?"></a>地图有几种分幅方法? 各有何优缺点?</h2><ol>
+<li><p>矩形分幅</p>
+<ul>
+<li><p>每幅地图的图廓都是一个矩形,因此相邻图幅是以直线划分的.矩形分幅分为拼接和不拼接两种.</p>
+</li>
+<li><p>相邻屠夫之间结合紧密,便于拼接使用(不拼接除外);各图幅的印刷面积可以相对平衡,有利于充分利用纸张和胶印机的版面;图廓线没有明确的地理坐标,图幅缺少准确的地理概念,整个制图区域只能一次投影</p>
+</li>
+</ul>
+</li>
+<li><p>经纬线分幅</p>
+<ul>
+<li>每幅地图的图廓线都由经线和纬线构成.我国的基本比例尺地图就是按经纬线分幅的</li>
+<li>每幅图都有明确的地理位置概念,适用于很大的区域范围(全国.大洲.全球)的地图分幅;当经纬线是曲线时,图幅拼接不方便,随着维度升高,相同经差.纬差所包围的面积不断缩小,因而实际图幅不断变小,不利于有效地利用纸张和胶印机的版面,为了克服这一缺点一般在高纬度地区采用”合幅”的方式 </li>
+</ul>
+</li>
+</ol>
+<h2 id="地图按内容-主题-如何分类-什么是普通地图-什么是专题地图"><a href="#地图按内容-主题-如何分类-什么是普通地图-什么是专题地图" class="headerlink" title="地图按内容(主题)如何分类? 什么是普通地图? 什么是专题地图?"></a>地图按内容(主题)如何分类? 什么是普通地图? 什么是专题地图?</h2><ol>
+<li><p>普通地图</p>
+<ul>
+<li>以相对平衡的详细程度表示水系.地貌和土质.植被.居民地.交通运输网.境界.等基本地理要素地图.比较全面地反映制图区域的自然环境.地区条件和社会经济的一般状况,也可以反映出自然.社会经济诸方面的相互联系的基本规律</li>
+</ul>
+</li>
+<li><p>专题地图</p>
+<ul>
+<li>根据专业方面的需要,以一种或几种地理要素为主题的地图.作为地图主题的要素,应表示得很详细,而其他要素则被视反应主题的需要,作为地理基础有选择地表示.</li>
+</ul>
+</li>
+</ol>
+<h2 id="地图学的基本特性是什么-现代地图学的一般定义是什么"><a href="#地图学的基本特性是什么-现代地图学的一般定义是什么" class="headerlink" title="地图学的基本特性是什么?现代地图学的一般定义是什么?"></a>地图学的基本特性是什么?现代地图学的一般定义是什么?</h2><ol>
+<li><p>地图学的科学特性</p>
+<ul>
+<li>地图学是描述和表达地球空间数据场和信息流的科学,具有认识论和方法论的特色</li>
+</ul>
+</li>
+<li><p>地图学的技术特性</p>
+</li>
+<li>地图学的工程特性</li>
+</ol>
+<p>地图学具有科学.技术和工程特性,是一门研究利用地图图形或数字化方式科学地.抽象概括地反映自然界和人类社会各种要素(现象)的空间分布.相互联系.空间关系及其在时空中的变化,对地理环境空间信息进行数据获取.只能抽象.存储.管理.分析.处理和可视化,并建立相应的空间信息系统(地理信息系统),以图形或数字方式传输地理环境空间信息的科学与技术</p>
+<h2 id="现代地图学科学体系构成是什么"><a href="#现代地图学科学体系构成是什么" class="headerlink" title="现代地图学科学体系构成是什么?"></a>现代地图学科学体系构成是什么?</h2><ol>
+<li>整体性</li>
+<li>层次性</li>
+<li>关联性</li>
+<li>开放性</li>
+</ol>
+<p>理论地图学.地图制图学(地理信息)学.地图(地理信息)应用学</p>
+<h2 id="地图学的主要发展趋势是什么"><a href="#地图学的主要发展趋势是什么" class="headerlink" title="地图学的主要发展趋势是什么?"></a>地图学的主要发展趋势是什么?</h2><ol>
+<li>创新的地图学理论体系将逐步形成</li>
+<li>创新的地图学技术提将进一步提升</li>
+<li>创新的地图学应用服务体系将进一步充实和完善</li>
+</ol>
+<h2 id="地图应用的情况"><a href="#地图应用的情况" class="headerlink" title="地图应用的情况"></a>地图应用的情况</h2>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/地图学原理与方法/">地图学原理与方法</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主修/">主修</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-First-dessert" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/19/First-dessert/" class="article-date">
+      <time datetime="2019-07-19T07:28:22.000Z" itemprop="datePublished">07-19-2019</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/19/First-dessert/">贸易战下我国商业银行个人理财业务现存问题与防范探讨</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>贸易战下我国商业银行个人理财业务现存问题与防范探讨</strong></p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h2><ul>
+<li>1.1 研究背景</li>
+<li>1.2 研究意义</li>
+<li>1.3 国内外文献综述</li>
+<li>1.4 研究思路及创新点</li>
+<li>1.5 论文的不足</li>
+</ul>
+<h2 id="第二章-我国商业银行个人理财业务概述"><a href="#第二章-我国商业银行个人理财业务概述" class="headerlink" title="第二章 我国商业银行个人理财业务概述"></a>第二章 我国商业银行个人理财业务概述</h2><ul>
+<li>2.1 商业银行个人理财业务 <ul>
+<li>2.1.1 业务概述</li>
+<li>2.1.2 相关概念界定</li>
+</ul>
+</li>
+<li>2.2 产品市场<ul>
+<li>2.2.1 特征</li>
+<li>2.2.2 发展原因</li>
+<li>2.2.3 制约因素</li>
+</ul>
+</li>
+<li>2.3 当代理财业务的监管<ul>
+<li>2.3.1 监管原因</li>
+<li>2.3.2 监管体系</li>
+<li>2.3.3 执行效果</li>
+</ul>
+</li>
+<li>2.4 个人理财业务的发展<ul>
+<li>2.4.1 传统理财业务现状 </li>
+<li>2.4.2 浅谈中美.日韩贸易战下个人理财业务发展趋势</li>
+</ul>
+</li>
+<li>2.5 本章小结</li>
+</ul>
+<h2 id="第三章-贸易战烽烟下个人理财业务现存问题"><a href="#第三章-贸易战烽烟下个人理财业务现存问题" class="headerlink" title="第三章 贸易战烽烟下个人理财业务现存问题"></a>第三章 贸易战烽烟下个人理财业务现存问题</h2><ul>
+<li>3.1 个人理财业务运作<ul>
+<li>3.1.1 运作模式与销售机制</li>
+<li>3.1.2 理财模式定位问题</li>
+<li>3.1.3 从业人员信息获取能力与操作风险</li>
+</ul>
+</li>
+<li>3.2 投资选择的宏观因素干扰<ul>
+<li>3.2.1 不可预料的地缘政治因素变动</li>
+<li>3.2.2 法律风险或影响加剧</li>
+<li>3.2.3 利率汇率风险</li>
+<li>3.2.4 声誉风险</li>
+</ul>
+</li>
+<li>3.3 销售产品的难言之隐<ul>
+<li>3.3.1 理财品种少</li>
+<li>3.3.2 产品同质化高</li>
+</ul>
+</li>
+<li>3.4 我国商业银行与外资银行竞争问题</li>
+<li>3.5 本章小结</li>
+</ul>
+<h2 id="第四章-浅谈贸易战下商业银行理财业务防范对策"><a href="#第四章-浅谈贸易战下商业银行理财业务防范对策" class="headerlink" title="第四章 浅谈贸易战下商业银行理财业务防范对策"></a>第四章 浅谈贸易战下商业银行理财业务防范对策</h2><ul>
+<li>4.1 推进混业经营完善组织结构与运营体系</li>
+<li>4.2 培养具有时代气息的高水平金融人才</li>
+<li>4.3 提高理财产品创新力度,丰富个人理财业务种类</li>
+<li>4.4 跨行业信息沟通与定向金融服务</li>
+<li>4.5 近代我国商业银行发展的启示</li>
+<li>4.6 部分发达国家和地区经验借鉴</li>
+<li>4.7 本章小结</li>
+</ul>
+<h2 id="第五章-总结与展望"><a href="#第五章-总结与展望" class="headerlink" title="第五章 总结与展望"></a>第五章 总结与展望</h2><ul>
+<li>5.1 主要研究结论</li>
+<li>5.2 研究启示</li>
+<li>5.3 展望</li>
+</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2>
+        <div id="aplayer-HdtcLnec" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-HdtcLnec"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "In Autumn, the Leaves Came to Our House",
+              author: "Fariborz Lachini",
+              url: "/media/mp3/Fariborz Lachini - In Autumn, the Leaves Came to Our House.mp3",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/论文/">论文</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
+  
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2019 tianrking
             </div>
-        </body>
+            <div class="footer-right">
+               
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到訪數"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本頁閱讀量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
     
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回頂部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看評論"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="轉到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+             post: ".article-entry a[href], .copyright a[href]", 
+             tags: ".article-tag a", 
+             categories: ".article-category a, a.tag-list-link", 
+             articleNav: "#article-nav a, #post-nav-button a", 
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+             menu: ".header-menu a", 
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
 </html>

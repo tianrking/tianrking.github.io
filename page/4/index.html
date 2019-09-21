@@ -1,1370 +1,1956 @@
 <!DOCTYPE html>
-<html style="display: none;" lang="en">
-    <head>
-    <meta charset="utf-8">
-    <!--
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.5.0 -->
-    <script>
-        window.materialVersion = "1.5.0"
-        // Delete localstorage with these tags
-        window.oldVersion = [
-            'codestartv1',
-            '1.3.4',
-            '1.4.0',
-            '1.4.0b1'
-        ]
-    </script>
+<html lang="zh-Hant-HK">
+<head>
 
-    <!-- dns prefetch -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-
-
-
-    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Title -->
-    
-    <title>
-        
-        w0x7c3
-    </title>
-
-    <!-- Meta & Info -->
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="theme-color" content="#0097A7">
-    <meta name="author" content="tianrking">
-    <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="">
-
-    <!-- Import lsloader -->
-    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
-
-    <!-- Import queue -->
-    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
-    <link rel="icon" sizes="192x192" href="/img/favicon.png">
-    <link rel="apple-touch-icon" href="/img/favicon.png">
-
-    <!--iOS -->
-    <meta name="apple-mobile-web-app-title" content="Title">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="480">
-
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="w0x7c3">
-
-    <!-- Site Verification -->
-    
-    
-
-    <!-- RSS -->
-    
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-
-        
-            <script src="/js/ie-blocker.en.js"></script>
-        
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
     <![endif]-->
 
-    <!-- Import CSS -->
-    
-        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-        
-            
-        
-
-    
-
-    
-
-    <!-- Config CSS -->
-
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    overflow-x: hidden !important;
-  }
-  
-  code {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  }
-
-  a {
-    color: #00838F;
-  }
-
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: green !important;
-  }
-
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: green !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: green !important;
-  }
-
-  .toTop {
-    background: #green !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #green;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #green;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #green;
-  }
-
-  .post-toc a:hover {
-    color: #00838F;
-    text-decoration: underline;
-  }
-
-</style>
-
-
-<!-- Theme Background Related-->
-
-    <style>
-      body {
-        background-color: #F5F5F5;
-      }
-
-      /* blog_info bottom background */
-      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text {
-        background-color: #fff;
-      }
-    </style>
-
-
-
-
-<!-- Fade Effect -->
-
-    <style>
-      .fade {
-        transition: all 800ms linear;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        opacity: 1;
-      }
-
-      .fade.out{
-        opacity: 0;
-      }
-    </style>
-
-
-<!-- Import Font -->
-<!-- Import Roboto -->
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-
-
-<!-- Import Material Icon -->
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
-
-
-    <!-- Import jQuery -->
-    
-        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
-    
-
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://tianrking.github.io">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="w0x7c3">
-    <meta property="og:image" content="https://tianrking.github.io/img/favicon.png" />
-    <meta property="og:description" content="">
-    
-
-    
-
-    <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="w0x7c3">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="https://tianrking.github.io/img/favicon.png">
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://tianrking.github.io" />
-
-    <!-- Add canonical link for SEO -->
-    
-        <link rel="canonical" href="https://tianrking.github.io/page/4/index.html" />
-    
-
-    <!-- Structured-data for SEO -->
-    
-        
-
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="tianrking" />
 
 
     
-
-    <!-- Analytics -->
-    
-    
-        <script>
-    var _hmt = _hmt || [];
-    (function() {var hm = document.createElement('script');
-    hm.src = 'https://hm.baidu.com/hm.js?b4da296e1b6d674c6aa558d2a501264b';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-    
-    
-        <div style="display: none;">
-    <script src="//s95.cnzz.com/z_stat.php?id=1274632088&web_id=1274632088" language="JavaScript"></script>
-</div>
     
 
-    <!-- Custom Head -->
-    
 
-</head>
+<meta property="og:type" content="website">
+<meta property="og:title" content="w0x7c3">
+<meta property="og:url" content="https://tianrking.github.io/page/4/index.html">
+<meta property="og:site_name" content="w0x7c3">
+<meta property="og:locale" content="zh-Hant-HK">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="w0x7c3">
 
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
-    
-        <body id="scheme-Paradox" class="lazy">
-            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-                
 
-                <!-- Main Container -->
-                <main class="material-layout__content" id="main">
+    <link rel="alternate" href="/atom.xml" title="w0x7c3" type="application/atom+xml">
 
-                    <!-- Top Anchor -->
-                    <div id="top"></div>
 
-                    
-                        <!-- Hamburger Button -->
-                        <button class="MD-burger-icon sidebar-toggle">
-                            <span class="MD-burger-layer"></span>
-                        </button>
-                    
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+    <link rel="shortcut icon" href="/favicon.png">
 
-    <!-- Pin on top -->
-    
-        
-    
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/root-images/czx.jpg">
-    
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/22/第一节财政学对象/">财政学对象（一）</a></p>
-    </div>
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/22/第一节财政学对象/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 22, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/财政学/">财政学</a>
-              </span>
-            
 
-            
 
-            
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
 
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/16/财务报表分析概论/">财务报表分析概论</a></p>
-    </div>
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/16/财务报表分析概论/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 16, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/财务报表分析/">财务报表分析</a>
-              </span>
-            
 
-            
+<link rel="stylesheet" href="/css/style.css">
 
-            
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
+    <style> .article { opacity: 0;} </style>
 
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/root-images/jrgc.jpg">
-    
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/16/第二章-金融工程方法论/">第二章 金融工程方法论</a></p>
-    </div>
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/16/第二章-金融工程方法论/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 16, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/金融工程/">金融工程</a>
-              </span>
-            
 
-            
+<title>w0x7c3</title>
 
-            
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/root-images/szdxclx.jpg">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/16/第一章-测量坐标系与高程-三/">第一章 测量坐标系与高程（三）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/16/第一章-测量坐标系与高程-三/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 16, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/数字地形测量学/">数字地形测量学</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/root-images/jrscx.jpg">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/15/金融市场概述/">金融市场概述 </a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/15/金融市场概述/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 15, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/金融市场学/">金融市场学</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/root-images/jrgc.jpg">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/10/第一章-金融工程概论/">第一章 金融工程概论</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/10/第一章-金融工程概论/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 10, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/金融工程/">金融工程</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/root-images/czx.jpg">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/08/财政学对象 (一)/">第一节财政学对象</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/08/财政学对象 (一)/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 08, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/财政学/">财政学</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/root-images/czx.jpg">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/08/财政学导论/">财政学导论</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/08/财政学导论/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 08, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/财政学/">财政学</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/root-images/csghyl.jpg">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/06/一-城市与城镇化/">一 城市与城镇化</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/06/一-城市与城镇化/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 06, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/城市规划原理/">城市规划原理</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/root-images/sjkyljyyjc.jpg">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/06/数据库系统概述（二）/">数据库系统概述（二）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/06/数据库系统概述（二）/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 06, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/数据库原理及应用教程/">数据库原理及应用教程</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <a class="extend prev" rel="prev" href="/page/3/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
-        </nav>
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: true,
+        isPost: false,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
     }
 </script>
 
-    
-</div>
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
 
 
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">tianrking</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
                     
-                        <!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay"></div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜單</li>
+                        <li>標籤</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
 
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
-    <div id="sidebar-main">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags">Meow</a></li>
+                        
+                            <li><a href="/about/">About</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:tian.r.king@gmail.com" title="Email"></a>
+                            
+                                <a class="fa Facebook" href="https://www.facebook.com/tianrking" title="Facebook"></a>
+                            
+                                <a class="fa Google" href="https://plus.google.com/+TianruiKing" title="Google"></a>
+                            
+                                <a class="fa Twitter" href="https://twitter.com/tianruiwang" title="Twitter"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anti-Extradition/">Anti-Extradition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/主修/">主修</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/地籍测量学/">地籍测量学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/抱佛脚/">抱佛脚</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/论文/">论文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贸易战下我国商业银行个人理财业务现存问题与防范探讨/">贸易战下我国商业银行个人理财业务现存问题与防范探讨</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/辅修/">辅修</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
 
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons">clear_all</i>
-        <span class="mdl-button__ripple-container">
-            <span class="mdl-ripple">
-            </span>
-        </span>
-    </button>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">tianrking</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">tianrking</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags">Meow</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:tian.r.king@gmail.com" title="Email"></a>
+                            
+                                <a class="fa Facebook" target="_blank" href="https://www.facebook.com/tianrking" title="Facebook"></a>
+                            
+                                <a class="fa Google" target="_blank" href="https://plus.google.com/+TianruiKing" title="Google"></a>
+                            
+                                <a class="fa Twitter" target="_blank" href="https://twitter.com/tianruiwang" title="Twitter"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="標籤" friends="友情鏈接" about="關於我"/>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-第一节财政学对象" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/22/第一节财政学对象/" class="article-date">
+      <time datetime="2018-09-22T10:05:05.000Z" itemprop="datePublished">09-22-2018</time>
+</a>
 
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/logo.png" alt="tianrking's avatar">
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/22/第一节财政学对象/">财政学对象（一）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="（一）财政的基本含义"><a href="#（一）财政的基本含义" class="headerlink" title="（一）财政的基本含义"></a>（一）财政的基本含义</h1><ul>
+<li><p>来源：</p>
+</li>
+<li><p>财政是一种国家（或政府的）经济行为或经济现象</p>
+</li>
+</ul>
+<h1 id="（二）财政的基本特征"><a href="#（二）财政的基本特征" class="headerlink" title="（二）财政的基本特征"></a>（二）财政的基本特征</h1><ul>
+<li><ol>
+<li><strong>阶段性与公共性</strong></li>
+</ol>
+</li>
+<li><ol start="2">
+<li><strong>强制性与非直接偿还性</strong></li>
+</ol>
+</li>
+<li><ol start="3">
+<li><strong>收入和支出的对称性</strong></li>
+</ol>
+</li>
+<li>简略的财政概括：<ul>
+<li>财政是政府（国家）集中一部分国民生产总值（国民收入）</li>
+<li>用于满足公共需要的收支活动（分配主体，分配对象）</li>
+<li>资源配置、收入分配、经济稳定和发展</li>
+<li>保障社会和谐稳定和实现国家的长治久安</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>资源配置职能：</p>
+</blockquote>
+<pre><code>资源配置的含义是在各个部门合理分配生产资料和劳动力，运用有限的资源形成一定的资产结构、产生结构以及技术结构和地区结构，达到优化资源结构的目标。
+</code></pre><blockquote>
+<p>机制和手段：<br>        （1）合理确定财政收支占GDP比例。<br>        （2）优化财政支出结构。<br>        （3）合理安排政府投资的规模、结构，保证国家重点建设。<br>        （4）通过政府投资、税收政策和财政补贴等手段，带动和促进民间投资，吸引外资和对外贸易，提高增长率。<br>        （5）提高财政资源本身的效率。</p>
+</blockquote>
+<blockquote>
+<p>收入分配职能：<br>        （1）划清市场分配和财政分配的界限和范围，凡属于市场分配的范围，财政不能越界。<br>        （2）规范工资制度<br>        （3）加强税收调节<br>        （4）通过转移性支出</p>
+</blockquote>
+<blockquote>
+<p>经济稳定与发展职能：  充分就业、物价稳定、国际收支平衡<br>        (1) 经济稳定的目标集中体现为社会总供给和社会总需求的大体平衡<br>        (2) 在财富实践中，可以通过一种制度性安排，发挥某种“自动稳定”作用（累进税制度、失业救济金制度）<br>        (3) 通过投资、补贴和税收等多方面安排，加快农业、能源、交通运输、邮电通信等公共设施发展，消除经济增长中的瓶颈，并支持第三产业的兴起，加快产业结构的转换，保证国民经济稳定与高速的最优结合。<br>        (4) 财政首先应切实保证民生性的社会公共需要。</p>
+</blockquote>
+<blockquote>
+<p>保障社会和谐稳定和实现国家长治久安职能：<br>        任何一个国家只有建立健全的财政，国家才能百事兴旺，政府才能顺畅运行。</p>
+</blockquote>
+
+        <div id="aplayer-SnuvGpun" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-SnuvGpun"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "洋紫荆",
+              author: "许冠杰",
+              url: "/root-images/yangzijing.mp3",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/财政学/">财政学</a>
     </div>
 
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        tian.r.king@gmail.com
-        <b class="caret"></b>
-    </a>
-</div>
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/辅修/">辅修</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
 
 
-        <!-- Sidebar Navigation  -->
-        <ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-            
-                <li>
-                    <a href="#" target="_blank" title="Email Me">
-                        
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        
-                        Email Me
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
 
-    <!-- Homepage -->
-    
-        <li id="sidebar-first-li">
-            <a href="/">
-                
-                    <i class="material-icons sidebar-material-icons">home</i>
-                
-                Home
-            </a>
-        </li>
-        
-    
 
-    <!-- Archives  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">inbox</i>
-                
-                    Archives
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">April 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">January 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">22</span></a>
-            </ul>
-        </li>
-        
-    
 
-    <!-- Categories  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
-                
-                Categories
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-                <li>
-                <a class="sidebar_archives-link" href="/categories/Anti-Extradition/">Anti-Extradition<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/中央银行学/">中央银行学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/主修/">主修<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/保险学/">保险学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/国际金融/">国际金融<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/地图学原理与方法/">地图学原理与方法<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/城市规划原理/">城市规划原理<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/宏观经济学/">宏观经济学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数字地形测量学/">数字地形测量学<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据库原理及应用教程/">数据库原理及应用教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构/">数据结构<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构C-语言描述/">数据结构C++语言描述<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/测绘工程/">测绘工程<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/误差理论与测量平差基础/">误差理论与测量平差基础<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/财务报表分析/">财务报表分析<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/财政学/">财政学<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/金融学-论文/">金融学 论文<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/金融工程/">金融工程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/金融市场学/">金融市场学<span class="sidebar_archives-count">3</span></a>
-            </ul>
-        </li>
-        
-    
 
-    <!-- Pages  -->
-    
-        <li>
-            <a href="/about" title="About">
-                
-                    <i class="material-icons sidebar-material-icons">person</i>
-                
-                About
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/meow" title="meow">
-                
-                meow
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/whoami" title="whoami">
-                
-                whoami
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/nothing" title="实验课">
-                
-                实验课
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/tool" title="tools">
-                
-                tools
-            </a>
-        </li>
-        
-    
 
-    <!-- Article Number  -->
+
+
+  
+    <article id="post-财务报表分析概论" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/16/财务报表分析概论/" class="article-date">
+      <time datetime="2018-09-16T11:48:14.000Z" itemprop="datePublished">09-16-2018</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/16/财务报表分析概论/">财务报表分析概论</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="第一章-财务报表分析概论"><a href="#第一章-财务报表分析概论" class="headerlink" title="第一章 财务报表分析概论"></a>第一章 财务报表分析概论</h1><p>1.了解财务报表分析的起源和演变<br>2.了解报表分析的概念、作用和内容<br>3.熟悉财务报表分析的基本方法<br>4.了解财务报表分析的框架和本书的分析路径</p>
+<h2 id="第一节-财务报表分析的起源和演进"><a href="#第一节-财务报表分析的起源和演进" class="headerlink" title="第一节 财务报表分析的起源和演进"></a>第一节 财务报表分析的起源和演进</h2><h3 id="一、信用分析"><a href="#一、信用分析" class="headerlink" title="一、信用分析"></a>一、信用分析</h3><h3 id="二、投资分析"><a href="#二、投资分析" class="headerlink" title="二、投资分析"></a>二、投资分析</h3><h3 id="三、内部分析"><a href="#三、内部分析" class="headerlink" title="三、内部分析"></a>三、内部分析</h3><blockquote>
+<p>（1）内部分析的目标更加多元化，资料的可获得性也优于外部分析人员，这就为扩大分析领域、提高分析效果、发展分析技术提供了前提条件；<br>（2）内部分析的内容和手段不断扩大和优化，越来越成为财务报表分析的重心。</p>
+</blockquote>
+<h2 id="第二节-财务报表分析的概念、主体和目的"><a href="#第二节-财务报表分析的概念、主体和目的" class="headerlink" title="第二节 财务报表分析的概念、主体和目的"></a>第二节 财务报表分析的概念、主体和目的</h2><h3 id="一、财务报表分析的概念"><a href="#一、财务报表分析的概念" class="headerlink" title="一、财务报表分析的概念"></a>一、财务报表分析的概念</h3><ul>
+<li>狭义：<blockquote>
+<p>仅以企业对外提供的财务报表为主要依据，运用比率分析等手段，对企业的偿债能力、盈利能力与营运能力加以判断，并有重点、有针对性地对有关项目进行质量分析，从而对企业整体财务状况质量进行评价，为报表使用者的经济决策提供财务信息支持的一种分析活动。 </p>
+</blockquote>
+</li>
+<li>广义<blockquote>
+<p>在狭义基础上还强调依据企业财务报表之外的其他信息来源（包括公开和不公开的财务信息与分非财务信息），进行更广泛的企业战略制定与实施情况分析、管理特征与质量分析、行业竞争格局与自身竞争优势分析（地域、资源、政策、行业、人才、管理等）、未来风险与挑战分析、发展前景与投资价值分析等等</p>
+</blockquote>
+<h3 id="二、财务报表分析的主体目的"><a href="#二、财务报表分析的主体目的" class="headerlink" title="二、财务报表分析的主体目的"></a>二、财务报表分析的主体目的</h3><strong>财务报表分析的主体是与企业存在现实或潜在的利益关系，处于某些目的而对企业的财务报表展开分析的组织或个人。通常情况下，财务报表分析的主体与财务信息使用者大体相同，均属于企业的利益相关者。不同财务报表分析主体的利益倾向存在明显差异，与企业的利益关系也各不相同，这就决定了他们在对企业财务报表分析时必然有不同的分析目的和侧重点。</strong><ol>
+<li>企业所有者<blockquote>
+<p>所有者或股东作为企业的投资人，是企业收益的最终获得者和风险的最终承担者。</p>
+</blockquote>
+</li>
+<li>企业债权人<blockquote>
+<p>出让资金使用权的方式或提供其它资产的方式向企业投入资源的自然人或法人，如商业银行、供应商、企业债券持有人</p>
+</blockquote>
+</li>
+<li>企业经营者<blockquote>
+<p>接受企业所有者的委托的经营管理者</p>
+</blockquote>
+</li>
+<li>政府职能机构<blockquote>
+<p>工商、税务、财政以及各级国有资产监督管理委员会等对企业有监管职能的各政府职能部门</p>
+</blockquote>
+</li>
+<li>社会中介机构<blockquote>
+<p>会计事务所、律师事务所、资产评估事务所、资信聘雇公司以及各类咨询机构</p>
+</blockquote>
+</li>
+<li>其它财务报表分析主体<blockquote>
+<p>企业的客户、员工、竞争对手、社会群众等</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="第三节-财务报表分析的基本方法"><a href="#第三节-财务报表分析的基本方法" class="headerlink" title="第三节 财务报表分析的基本方法"></a>第三节 财务报表分析的基本方法</h2><h3 id="一、结构分析法"><a href="#一、结构分析法" class="headerlink" title="一、结构分析法"></a>一、结构分析法</h3><blockquote>
+<p>（垂直分析法、纵向分析法、共同比分析法）<br>以财务报表中的某个总体指标作为100%，再计算出其各组成项目占该总体指标的百分比，从而比较各个项目百分比的增减变动，揭示各个项目的相对低位和总体结构关系，以利于分析比较同意报表内容内各项目变动的适当性，判断有关财务活动的变化趋势。<br>结构分析法既可用于静态的结构分析，也可用于动态的趋势分析</p>
+</blockquote>
+<h3 id="二、趋势分析法"><a href="#二、趋势分析法" class="headerlink" title="二、趋势分析法"></a>二、趋势分析法</h3><blockquote>
+<p>（水平分析法、横向分析法）将两期或连续多期的财务报表中的相同指标进行对比，确定其增减变动的方向、数额和幅度，以说明企业财务状况和经营成果的变动趋势的一种方法。趋势分析的目的在于：</p>
+<ol>
+<li>确定引起财务状况与经营成果变动的主要项目</li>
+<li>确定变动趋势的性质是否有利</li>
+<li>预测将来的发展趋势</li>
+</ol>
+</blockquote>
+<p>常见的分析方法：</p>
+<ul>
+<li>绝对数分析法</li>
+<li>环比分析法</li>
+<li>定基分析法<h3 id="三、比率分析法"><a href="#三、比率分析法" class="headerlink" title="三、比率分析法"></a>三、比率分析法</h3><blockquote>
+<p>把某些彼此存在关联的项目加以对比，计算出比率，据此以确定经济活动变动程度的分析方法。</p>
+</blockquote>
+</li>
+</ul>
+<p>其作用为：</p>
+<ul>
+<li>由于比率是相对数，采用这种方法能够把某些条件下的不可比指标变为可以比较的指标，将复杂的财务信息加以简化，以利于分析</li>
+<li>揭示了报告期内各有关项目（有时还包括表外项目，如附注中的项目）之间的关联性，实际上产生了许多再决策中更有用的新信息。<h3 id="四、比较分析法"><a href="#四、比较分析法" class="headerlink" title="四、比较分析法"></a>四、比较分析法</h3><blockquote>
+<p>通过比较不同的数据，发现规律性的东西并找出与被比较对象的差别的一种分析方法。用于比较的可以是绝对数，也可以是相对数，其主要作用在于揭示指标间客观存在的差距，并为进一步分析指明方向。</p>
+</blockquote>
+</li>
+</ul>
+<p>常用的比较标准有：</p>
+<ul>
+<li>基期标准</li>
+<li>预期标准</li>
+<li>行业标准</li>
+</ul>
+<h3 id="五、项目质量分析法"><a href="#五、项目质量分析法" class="headerlink" title="五、项目质量分析法"></a>五、项目质量分析法</h3><p>主要是通过对财务报表各项目的规模、结构以及状态进行分析，还原企业所发生的经营活动和理财活动，并根据各项目自身特征和管理要求，结合企业具体经营环境和经营战略，对各项目的质量进行评价。再此基础上，还可以对企业整体的资产质量、资本结构质量、利润质量以及现金流量质量进行分析与评价，最终对企业财务状况质量做出整体判断。</p>
+<h2 id="第四节-财务报表分析的框架与路径"><a href="#第四节-财务报表分析的框架与路径" class="headerlink" title="第四节 财务报表分析的框架与路径"></a>第四节 财务报表分析的框架与路径</h2><h3 id="一、财务报表分析的框架"><a href="#一、财务报表分析的框架" class="headerlink" title="一、财务报表分析的框架"></a>一、财务报表分析的框架</h3><h4 id="（一）-需求导向的财务报表分析框架"><a href="#（一）-需求导向的财务报表分析框架" class="headerlink" title="（一） 需求导向的财务报表分析框架"></a>（一） 需求导向的财务报表分析框架</h4><ul>
+<li>1  基于投资决策的财务报表分析框架</li>
+<li>2  基于信贷决策的财务报表分析框架</li>
+<li>3  基于管理决策的财务报表分析框架</li>
+</ul>
+<h4 id="（二）-本书财务报表分析框架"><a href="#（二）-本书财务报表分析框架" class="headerlink" title="（二） 本书财务报表分析框架"></a>（二） 本书财务报表分析框架</h4><h3 id="二、本书对财务报表分析路径的选择"><a href="#二、本书对财务报表分析路径的选择" class="headerlink" title="二、本书对财务报表分析路径的选择"></a>二、本书对财务报表分析路径的选择</h3><ul>
+<li>背景分析<blockquote>
+<p>企业经营背景与行业分析<br>企业股权结构分析<br>企业自身对经营活动及经营战略的描述<br>企业竞争优势与未来挑战<br>侦测法规环境等</p>
+</blockquote>
+</li>
+<li>会计分析<blockquote>
+<p>关注审计报告的类型及措辞</p>
+</blockquote>
+</li>
+<li>财务分析<blockquote>
+<p>财务状况质量分析<br>资本结构质量与资本引入战略<br>资产质量与资源配置战略<br>利润质量与战略实施效果<br>现金流量质量与战略支撑能力</p>
+</blockquote>
+</li>
+<li>财务状况质量整体评价</li>
+<li>企业质量评价和企业发展前景预测</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:right"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+ 
+        <div id="aplayer-SFBlMSDH" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-SFBlMSDH"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "-",
+              author: "Sweet Rain",
+              url: "/root-images/xiayudelinyindao.mp3",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/财务报表分析/">财务报表分析</a>
+    </div>
+
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-第二章-金融工程方法论" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/16/第二章-金融工程方法论/" class="article-date">
+      <time datetime="2018-09-16T10:49:54.000Z" itemprop="datePublished">09-16-2018</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/16/第二章-金融工程方法论/">第二章 金融工程方法论</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="第二章-金融工程概论"><a href="#第二章-金融工程概论" class="headerlink" title="第二章 金融工程概论"></a>第二章 金融工程概论</h1><ul>
+<li><h3 id="第一节-无套利分析法"><a href="#第一节-无套利分析法" class="headerlink" title="第一节 无套利分析法"></a>第一节 无套利分析法</h3><ul>
+<li><h4 id="一、套利的基本概念"><a href="#一、套利的基本概念" class="headerlink" title="一、套利的基本概念"></a>一、套利的基本概念</h4><blockquote>
+<p>套利是指利用资产在空间和时间上的价格差以获得无风险收益为目的的操作。严格套利是指在某项金融资产的交易过程中，交易者可以在不需要初期投资支出的条件下，在期末获取无风险收益</p>
+</blockquote>
+</li>
+<li><h4 id="二、无套利定价原理"><a href="#二、无套利定价原理" class="headerlink" title="二、无套利定价原理"></a>二、无套利定价原理</h4><ol>
+<li>远期外汇定价</li>
+<li>确定远期利率</li>
+<li>证券价格分析</li>
+</ol>
+</li>
+<li><h4 id="三、无套利定价原理的特征"><a href="#三、无套利定价原理的特征" class="headerlink" title="三、无套利定价原理的特征"></a>三、无套利定价原理的特征</h4><p>1.无套利定价原理首先要求套利活动应当在无风险的状态下进行。但是在现实的交易活动中，由于要做到完全没有任何风险实际上非常困难。所以交易者在具体套利时一般不强求把风险降到零，因而实际的套利活动有相当大的部分是带有风险的套利。<br>2.无套利定价的关键环节是恰当地运用复制技术，即选择一组证券来“复制”另外一组证券。</p>
+<ul>
+<li>如果有两个金融资产的现金流相同，但其收益率不一样，他们的市场价格必定不同。这时通过对价格高者做空头、对价格低者做多头，就能实现套利。套利活动的存在会推动市场走向均衡，并使两者的收益率相等。因此，在金融市场上，获取相同资产的资金成本一定相等。具有完全相同的现金流特征的两项资产被认为完全相同，因而它们之间可以相互复制，且可以相互复制的资产在市场上交易时必定有相同的价格，否则存在套利机会，即市场是不均衡的。</li>
+</ul>
+<ol start="3">
+<li>无风险套利活动起初一般是零投资组合，即开始时套利者不需要任何资金的投入，在投资期间也没有任何的维持成本。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p>  <strong>从理论上说，当金融市场出现无风险套利机会时，在没有卖空限制的情况下，每一个投资者都可以构筑五现代的无风险套利组合来赚取无限大的利润。</strong>这种巨额的套利头寸必定影响金融市场的供求关系，成为推动市场价格变化的力量，价格的变动会迅速消除套利机会。理论上，只需要少数套利者（甚至一位套利者）就可以使金融市场上失衡的资产价格迅速回到均衡状态。</p>
+<ul>
+<li><h4 id="四、无套利定价法的应用"><a href="#四、无套利定价法的应用" class="headerlink" title="四、无套利定价法的应用"></a>四、无套利定价法的应用</h4><ul>
+<li>.金融工具的复制</li>
+<li><p>金融工具的合成</p>
+</li>
+<li><h3 id="第二节-风险中性定价法"><a href="#第二节-风险中性定价法" class="headerlink" title="第二节 风险中性定价法"></a>第二节 风险中性定价法</h3><ul>
+<li><h4 id="风险中性定价原理"><a href="#风险中性定价原理" class="headerlink" title="风险中性定价原理"></a>风险中性定价原理</h4></li>
+</ul>
+</li>
+<li><h3 id="第三节-状态复制定价法"><a href="#第三节-状态复制定价法" class="headerlink" title="第三节 状态复制定价法"></a>第三节 状态复制定价法</h3></li>
+<li><h3 id="第四节-积木分析法"><a href="#第四节-积木分析法" class="headerlink" title="第四节 积木分析法"></a>第四节 积木分析法</h3></li>
+</ul>
+</li>
 </ul>
 
-
-        <!-- Sidebar Footer -->
-        <!--
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
-
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :)
--->
-
-<!-- Sidebar Divider -->
-
-    <div class="sidebar-divider"></div>
-
-
-<!-- Theme Material -->
-
-    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-            Theme - Material
-            <span class="sidebar-badge badge-circle">i</span>
+        <div id="aplayer-UScLGPoz" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
         </div>
-    </a>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-UScLGPoz"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "",
+              author: "",
+              url: "/root-images/나예요(Inst.).mp3",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
 
-
-<!-- Help & Support -->
-<!--
-
--->
-
-<!-- Feedback -->
-<!--
-
--->
-
-<!-- About Theme -->
-<!--
-
--->
-
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/金融工程/">金融工程</a>
     </div>
 
-    <!-- Sidebar Image -->
-    
 
-</aside>
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/辅修/">辅修</a></li></ul>
+    </div>
 
-                    
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
 
-                    
-                        <!-- Footer Top Button -->
-                        <div id="back-to-top" class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
 
-                    
 
-                    <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-    
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-        <a href="https://twitter.com/tianruiwang" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
-                <span class="visuallyhidden">Twitter</span>
-            </button><!--
-     --></a>
-    
 
-    <!-- Facebook -->
-    
-        <a href="https://www.facebook.com/tianrking" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
-                <span class="visuallyhidden">Facebook</span>
-            </button><!--
-     --></a>
-    
 
-    <!-- Google + -->
-    
-        <a href="https://plus.google.com/+TianruiKing" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
-                <span class="visuallyhidden">Google Plus</span>
-            </button><!--
-     --></a>
-    
 
-    <!-- Weibo -->
-    
 
-    <!-- Instagram -->
-    
 
-    <!-- Tumblr -->
-    
 
-    <!-- Github -->
-    
-        <a href="https://github.com/tianrking" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
-                <span class="visuallyhidden">Github</span>
-            </button><!--
-     --></a>
-    
+  
+    <article id="post-第一章-测量坐标系与高程-三" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/16/第一章-测量坐标系与高程-三/" class="article-date">
+      <time datetime="2018-09-16T09:40:11.000Z" itemprop="datePublished">09-16-2018</time>
+</a>
 
-    <!-- LinkedIn -->
-    
 
-    <!-- Zhihu -->
+    </div>
+  
+  <div class="article-inner">
     
-
-    <!-- Bilibili -->
-    
-
-    <!-- Telegram -->
+      <input type="hidden" class="isFancy" />
     
     
-    <!-- V2EX -->
-    
-</div>
-
-
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©&nbsp;2018&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>w0x7c3
-            
-        </div>
-
-        <!-- Paradox Footer Right Section -->
-
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
-
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
-
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-            </div>
-        </div>
-    
-</footer>
-
-
-                    <!-- Import JS File -->
-
-    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
-
-
-
-    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
-
-
-
-    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
-
-
-<script type="text/ls-javascript" id="NProgress-script">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    $('#nprogress .bar').css({
-        'background': '#29d'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#29d',
-        'border-left-color': '#29d'
-    });
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
-</script>
-
-
-
-
-
-
-
-    <!-- Busuanzi -->
-    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-   <!-- 使用 DISQUS js 代码 -->
-
-
-
-
-
-
-<!-- UC Browser Compatible -->
-<script>
-	var agent = navigator.userAgent.toLowerCase();
-	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
-	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-	}
-</script>
-
-<!-- Import prettify js  -->
-
-    
-
-
-
-<!-- Window Load -->
-<!-- add class for prettify -->
-<script type="text/ls-javascript" id="window-load">
-    $(window).on('load', function() {
-        // Post_Toc parent position fixed
-        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
-    });
-
-    
+      <header class="article-header">
         
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/16/第一章-测量坐标系与高程-三/">第一章 测量坐标系与高程（三）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="1-3-地图投影和高斯平面直角坐标系"><a href="#1-3-地图投影和高斯平面直角坐标系" class="headerlink" title="1.3 地图投影和高斯平面直角坐标系"></a>1.3 地图投影和高斯平面直角坐标系</h1><h2 id="一、地图投影描述"><a href="#一、地图投影描述" class="headerlink" title="一、地图投影描述"></a>一、地图投影描述</h2><blockquote>
+<p>x=f1(L,B)<br>y=f2(L,B)</p>
+</blockquote>
+<p>地图投影的几何概念是：将参考椭球面上的点投影到投影面上，再将投影面沿母线切开展为平面。从本质上来讲，地图投影就是按一定的条件确定大地坐标和平面直角坐标之间的一一对应关系。</p>
+<blockquote>
+<p>常用地图投影面: 圆柱面（圆柱投影）、圆锥面（圆锥投影）、平面（方位投影）。<br>投影变形： 角度变形、长度变形、面积变形<br>按照投影变形分类：等角投影、等面积投影、任意投影</p>
+</blockquote>
+<h2 id="二、高斯平面直角坐标系"><a href="#二、高斯平面直角坐标系" class="headerlink" title="二、高斯平面直角坐标系"></a>二、高斯平面直角坐标系</h2><h3 id="1-高斯投影"><a href="#1-高斯投影" class="headerlink" title="1.高斯投影"></a>1.高斯投影</h3><p><a href="https://zh.wikipedia.org/wiki/%E6%A8%AA%E8%BD%B4%E5%A2%A8%E5%8D%A1%E6%89%98%E6%8A%95%E5%BD%B1" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/%E6%A8%AA%E8%BD%B4%E5%A2%A8%E5%8D%A1%E6%89%98%E6%8A%95%E5%BD%B1</a></p>
+<h3 id="2-高斯投影特性"><a href="#2-高斯投影特性" class="headerlink" title="2.高斯投影特性"></a>2.高斯投影特性</h3><p>高斯投影是正投一种，投影前后的角度相等。高斯投影还具有以下特点。</p>
+<ol>
+<li>中央子午线投影后为直线，且长度不变。距离中央子午线越远的子午线，投影后弯曲程度越大，长度变形也越大。</li>
+<li>椭球面上除中央子午线外，其它子午线投影后均向中央子午线弯曲，并向两级收敛，对称于中央子午线和赤道。</li>
+<li>在椭球面上对称于赤道的纬圈，投影后仍为对称的曲线，并与子午线的投影曲线互相垂直且凹向两极。<h3 id="3、高斯平面直角坐标"><a href="#3、高斯平面直角坐标" class="headerlink" title="3、高斯平面直角坐标"></a>3、高斯平面直角坐标</h3><blockquote>
+<p>在投影面上，中央子午线和赤道的投影都是直线。以中央子午线和赤道的交点O作为坐标原点，一中央子午线的投影为坐标轴X，规定X轴向北为正；以赤道的投影为横坐标轴Y，Y轴向东为正，这样便形成了高斯平面直角坐标系</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="4、投影带划分"><a href="#4、投影带划分" class="headerlink" title="4、投影带划分"></a>4、投影带划分</h3><blockquote>
+<p>我国通常采用6°带和3°带两种分带方法。测图比例尺小于1:1万时，一般采用6°分带；<br>测图比例尺大于等于1:1万时采用3°分带。在工程测量中，有时也采用任意带投影，即把中央子午线放在测区中央的高斯投影。在高精度测量时也可采用小于3°分带投影。</p>
+</blockquote>
+<blockquote>
+<p>6°分带划分是从首子午线开始，自西向东经差6°的范围为一带，一次将参考椭球面分为60带，其相应的带号依次为1，2，3，…，60。<br>若6°带号为n，则各种中央子午线的经度L0 为：</p>
+</blockquote>
+<pre><code>L0 = n * 6° - 3°
+</code></pre><blockquote>
+<p>为了使3°带的坐标系与6°带坐标系之间的换算减少，因此，3°带的划分是从东经1°30′开始，自西向东每隔经差3°的范围为一带，依次将参考椭球面分成120°带，其相应的带号分别为 1，2，3，…，120 。若3°带号为n′ 则各带中央子午线的经度L0′为</p>
+</blockquote>
+<pre><code>L0′ = n′ * 3°
+</code></pre><p>6°带的带号n与3°带的带号n′的关系为： n′ = 2*n - 1</p>
+<h3 id="5、国家统一坐标"><a href="#5、国家统一坐标" class="headerlink" title="5、国家统一坐标"></a>5、国家统一坐标</h3><blockquote>
+<p>为了避免y坐标值出现负值，规定在y坐标值加<strong>500km</strong>，这样就使x、y值均为正值。习惯上，把y坐标加500km并冠以带号的坐标称为国家统一坐标，而把没有加500km和带号的坐标成为自然坐标</p>
+</blockquote>
+<p>  设位于19°带的点A1和20°带的点A2的自然坐标的y坐标值分别为：</p>
+<pre><code>A1：Y1= 189632.4m
+A2：Y2=-105734.8m
+</code></pre><p>  则相应的国家同意坐标的y坐标值为：</p>
+<pre><code>A1：Y1= 19  689632.4m
+A2：Y2= 20  394265.2m
+</code></pre><h3 id="6、邻带坐标换算"><a href="#6、邻带坐标换算" class="headerlink" title="6、邻带坐标换算"></a>6、邻带坐标换算</h3><h3 id="7-、距离变化"><a href="#7-、距离变化" class="headerlink" title="7 、距离变化"></a>7 、距离变化</h3><h3 id="8、方向变化"><a href="#8、方向变化" class="headerlink" title="8、方向变化"></a>8、方向变化</h3><h1 id="1-4-高程系统"><a href="#1-4-高程系统" class="headerlink" title="1.4 高程系统"></a>1.4 高程系统</h1><h2 id="一、-概述"><a href="#一、-概述" class="headerlink" title="一、 概述"></a>一、 概述</h2><blockquote>
+<p>高程：就是点到基准面的垂直距离。根据所选基准面的不同，高程有所不同。（H）</p>
+</blockquote>
+<h2 id="二、-高程基准"><a href="#二、-高程基准" class="headerlink" title="二、 高程基准"></a>二、 高程基准</h2><ol>
+<li>验潮站</li>
+<li>高程基准面</li>
+</ol>
+<h2 id="三、-高程系统"><a href="#三、-高程系统" class="headerlink" title="三、 高程系统"></a>三、 高程系统</h2><ol>
+<li>1956年黄海高程</li>
+<li>1985国家高程系统</li>
+</ol>
+<h2 id="四、高程与高差"><a href="#四、高程与高差" class="headerlink" title="四、高程与高差"></a>四、高程与高差</h2><p>地面上两点间的高程之差成为高差。</p>
+<pre><code>Hab=Hb-Ha
+Hba=Ha-Hb
+</code></pre><h1 id="1-5-方位角"><a href="#1-5-方位角" class="headerlink" title="1.5 方位角"></a>1.5 方位角</h1><h2 id="一、-真方位角"><a href="#一、-真方位角" class="headerlink" title="一、 真方位角"></a>一、 真方位角</h2><h2 id="二、-坐标方位角"><a href="#二、-坐标方位角" class="headerlink" title="二、 坐标方位角"></a>二、 坐标方位角</h2><h2 id="三、磁方位角"><a href="#三、磁方位角" class="headerlink" title="三、磁方位角"></a>三、磁方位角</h2><h2 id="四、方位角的相互关系"><a href="#四、方位角的相互关系" class="headerlink" title="四、方位角的相互关系"></a>四、方位角的相互关系</h2><h1 id="1-6-用于水平面代替水准面的限度"><a href="#1-6-用于水平面代替水准面的限度" class="headerlink" title="1.6 用于水平面代替水准面的限度"></a>1.6 用于水平面代替水准面的限度</h1><h2 id="一、水准面曲率对水平距离的影响"><a href="#一、水准面曲率对水平距离的影响" class="headerlink" title="一、水准面曲率对水平距离的影响"></a>一、水准面曲率对水平距离的影响</h2><h2 id="二、水准面曲率对水平角的影响"><a href="#二、水准面曲率对水平角的影响" class="headerlink" title="二、水准面曲率对水平角的影响"></a>二、水准面曲率对水平角的影响</h2><h2 id="三、水准面曲率对高差的影响"><a href="#三、水准面曲率对高差的影响" class="headerlink" title="三、水准面曲率对高差的影响"></a>三、水准面曲率对高差的影响</h2> 
+        <div id="aplayer-axZDwUhz" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-axZDwUhz"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "-",
+              author: "Sweet Rain",
+              url: "/root-images/xiayudelinyindao.mp3",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/数字地形测量学/">数字地形测量学</a>
+    </div>
+
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-金融市场概述" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/15/金融市场概述/" class="article-date">
+      <time datetime="2018-09-15T11:44:39.000Z" itemprop="datePublished">09-15-2018</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
-</script>
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/15/金融市场概述/">金融市场概述 </a>
+    </h1>
+  
 
-<!-- MathJax Load-->
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="第一节-金融市场定义与要素"><a href="#第一节-金融市场定义与要素" class="headerlink" title="第一节  金融市场定义与要素"></a>第一节  金融市场定义与要素</h1><h2 id="一-、-金融资产与金融产品"><a href="#一-、-金融资产与金融产品" class="headerlink" title="一 、 金融资产与金融产品"></a>一 、 金融资产与金融产品</h2><h3 id="（一）-金融资产"><a href="#（一）-金融资产" class="headerlink" title="（一） 金融资产"></a>（一） 金融资产</h3><ul>
+<li>金融资产的概念: 一切代表未来收益与资产合法权益的要求权的凭证，是一种索取实物资产的权益。</li>
+<li>金融资产的价格与风险: <ol>
+<li>购买力风险，通货膨胀风险</li>
+<li>信用风险，违约风险</li>
+<li>汇率风险，汇率变动导致金融资产价值的不确定性（交易风险、折算风险）</li>
+</ol>
+</li>
+<li>金融资产的作用<br>  部分人手中多余的资金转移到那些需要资金的投资者手中，促进资本形成；<br>  将有形资产产生的风险在投资供求双方间重新配置。</li>
+<li>金融资产的分类<br>   债务性资产（债券和存款单）和权益性资产（股票、期货、期权、互换）<h3 id="二-金融产品"><a href="#二-金融产品" class="headerlink" title="(二)  金融产品"></a>(二)  金融产品</h3></li>
+<li>金融产品指资金融通过程中的各种媒体，包括货币、黄金、外汇、有价证券</li>
+<li>金融产品是金融市场的买卖对象，供求双方通过市场竞争原则形成金融产品价格，最终完成交易，达到转移资金的目的</li>
+<li>金融产品通常是由金融机构发行、具有较高信用、有一定期限的标准化产品，这四其区别于金融资产的主要特征。</li>
+</ul>
+<h2 id="二-、-金融市场"><a href="#二-、-金融市场" class="headerlink" title="二 、 金融市场"></a>二 、 金融市场</h2><h3 id="一-金融市场定义"><a href="#一-金融市场定义" class="headerlink" title="(一) 金融市场定义"></a>(一) 金融市场定义</h3><ul>
+<li>金融市场是指以金融资产为交易对象而形成的供求关系及其机制的总和。<h3 id="（二）-金融市场的特征"><a href="#（二）-金融市场的特征" class="headerlink" title="（二） 金融市场的特征"></a>（二） 金融市场的特征</h3><ol>
+<li>商品的单一性和价格的相对一致性</li>
+<li>交易价格表现为资金的合理收益率</li>
+<li>交易目的的表现让渡或获得一段时期内一定数量资金的使用权</li>
+<li>交易场所表现为有形或无形<h3 id="三-金融市场的地位"><a href="#三-金融市场的地位" class="headerlink" title="(三)  金融市场的地位"></a>(三)  金融市场的地位</h3></li>
+</ol>
+</li>
+<li>要素市场</li>
+<li>产品市场</li>
+<li>金融市场</li>
+</ul>
+<blockquote>
+<p>价格机制是其运行的基础，而完善的法规制度、先进的交易手段则是其顺利运行的保障</p>
+</blockquote>
+<h2 id="三、-金融市场要素"><a href="#三、-金融市场要素" class="headerlink" title="三、 金融市场要素"></a>三、 金融市场要素</h2><h3 id="（一）金融市场主体"><a href="#（一）金融市场主体" class="headerlink" title="（一）金融市场主体"></a>（一）金融市场主体</h3><ol>
+<li>政府部门</li>
+<li>工商企业</li>
+<li>居民</li>
+<li>存款性金融机构</li>
+</ol>
+<ul>
+<li>商业银行</li>
+<li>储蓄机构</li>
+<li>信用合作社</li>
+</ul>
+<ol start="5">
+<li>非存款性金融机构</li>
+</ol>
+<ul>
+<li>保险公司</li>
+<li>养老基金</li>
+<li>投资银行</li>
+<li>投资基金</li>
+</ul>
+<ol start="6">
+<li>中央银行</li>
+</ol>
+<h3 id="（二）金融市场客体"><a href="#（二）金融市场客体" class="headerlink" title="（二）金融市场客体"></a>（二）金融市场客体</h3><ol>
+<li>金融工具及其特征<blockquote>
+<p>金融工具是金融市场的交易载体，是在金融市场上可交易的金融资产。<br>金融工具的数量和质量是决定金融市场效率和活力的关键因素。</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>（1）期限性： 债务人在特定期限内必须清偿特定的金融工具的债务余额的时间决定</li>
+<li>（2）收益性：金融工具能够定期或不定期地给持有人带来价值增值的特性</li>
+<li>（3）流动性： 金融工具转变成现金而不遭受损失的能力</li>
+<li>（4）安全性风险性：投资于金融工具的本金和收益能够安全收回而不遭受损失的可能性</li>
+</ul>
+<ol start="2">
+<li>金融工具的分类</li>
+</ol>
+<ul>
+<li>（1） 按其发行者的性质或融资方式：<blockquote>
+<p>直接金融工具：工商企业、个人政府所发行或签发的商业票据、股票、债券。<br>间接金融工具：银行等金融机构所发行的银行券、银行本票、可转让定期存单、票据。<br>这些金融工具是由融资单位通过银行等金融机构发行完成资金融通的目的。</p>
+</blockquote>
+</li>
+<li>（2）按期限划分： 短期信用工具、长期信用工具、不定期信用工具</li>
+<li>（3）按金融工具索取权的性质划分： 股权证券（股票）、债权证券（债券）</li>
+<li>（4）按是否与实际信用活动直接相关： 原生金融工具、衍生金融工具</li>
+</ul>
+<h3 id="（三）金融中介"><a href="#（三）金融中介" class="headerlink" title="（三）金融中介"></a>（三）金融中介</h3><ol>
+<li>金融中介的基本概念<blockquote>
+<p>金融中介是指在金融市场资金融通过程中，在资金供求者之间起媒介或桥梁作用的个人或机构</p>
+</blockquote>
+</li>
+<li>金融中介产生的缘由<blockquote>
+<p>信息经济学和交易成本理论者认为是不确定性及交易成本的存在导致了金融中介机构的出现，并使金融中介机构具有了降低交易成本，消除不确定性及由此导致的风险和种种功能<br>第一类信息不对称是相对于其它投资者来说的，企业家对他们的投资具有信息优势。其他投资者为获取信息，需要耗费一定的资源<br>第二类信息不对称是关于投资项目的已实现利润。企业家能够毫不费力地了解投资项目的利润，而其它投资者需要消费一定的时间和金钱，昂贵的信息产品是市场失败的一种典型情况。当与经济发展相关的投资水平，大大超出任何投资者的储蓄时，市场失败就表现为信息重复产生或者没有投资。</p>
+</blockquote>
+</li>
+<li>金融机构的基本功能<blockquote>
+<p>（1）充当信用中介<br>（2）提供支付机制<br>（3）充当期限中介<br>（4）分散投资以降低风险<br>（5）降低签约与信息处理成本</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="（四）-金融市场运行机制"><a href="#（四）-金融市场运行机制" class="headerlink" title="（四） 金融市场运行机制"></a>（四） 金融市场运行机制</h3><ol>
+<li>供求机制：供求机制是指商品的供求关系与价格、竞争等因素之间相互制约和联系发挥作用的机制</li>
+<li>价格机制：价格机制是市场机制中的基本机制，也是市场机制中最敏感、最有效的调节机制</li>
+<li>利率机制<blockquote>
+<p>市场总需求&gt;总供给   -&gt; 物价 + -&gt; 利率 + -&gt; 储蓄 + -&gt; 投资需求+ -&gt; 生产 + -&gt;居民消费-      总需求=总供给</p>
+</blockquote>
+</li>
+<li>风险机制：客观性、隐蔽性、可能性、普遍性、度量性、系统性、与收益的对立统一性<blockquote>
+<p>风险机制是市场机制的基础机制，风险机制同时也是市场运行的约束机制</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="第二节-金融市场的功能"><a href="#第二节-金融市场的功能" class="headerlink" title="第二节 金融市场的功能"></a>第二节 金融市场的功能</h1><ul>
+<li>聚敛功能：金融市场引导众多分散的小额资金汇聚成为可以投入社会再生产的资金集合功能</li>
+<li>配置功能：</li>
+</ul>
+<ol>
+<li>资源配置</li>
+<li>财富再分配</li>
+<li>风险再分配</li>
+</ol>
+<ul>
+<li>调节功能：金融市场对宏观经济的调节作用</li>
+<li>反映功能：</li>
+</ul>
+<ol>
+<li>由于证券买卖大部分都在证券交易所进行，人们可以随时通过有形的市场了解到各种上市证券的交易行情，并根据以判断投资机会。</li>
+<li>金融市场的交易见解和直接的反映国家货币供应量的变动。</li>
+<li>由于证券交易的需要，金融市场有大发展动态</li>
+<li>计容市场有着广泛而即使的手机和传播信息的通信网络，则很难刚刚世界金融市场已连成一体。</li>
+</ol>
+<p><strong>从微观层面来讲，金融市场的功能还包括价格发现、提供流动性、降低交易成本、示范作用等。</strong></p>
+<h1 id="第三节-金融市场分类"><a href="#第三节-金融市场分类" class="headerlink" title="第三节 金融市场分类"></a>第三节 金融市场分类</h1><h2 id="一、物划分：货币市场、资本市场、外汇市场、黄金市场"><a href="#一、物划分：货币市场、资本市场、外汇市场、黄金市场" class="headerlink" title="一、物划分：货币市场、资本市场、外汇市场、黄金市场"></a>一、物划分：货币市场、资本市场、外汇市场、黄金市场</h2><ul>
+<li>货币市场：期限在一年及一年以下的金融资产为交易标的物的短期金融市场</li>
+<li>资本市场：期限在一年以上的金融资产交易市场，主要是债券市场和股票市场</li>
+<li>外汇市场：短期金融资产交易场所</li>
+</ul>
+<ol>
+<li>通过外汇市场的外汇储备买卖和货币兑换业务，使各国间债券债务关系的货币清偿和资本的国际流动得以形成，实现购买力的国际转移。<br>2.<br>3.<br>4.</li>
+</ol>
+<ul>
+<li>黄金市场：专门集中黄金买卖的交易中心或场所<h2 id="二、按中介特征划分：直接金融市场与简介金融市场"><a href="#二、按中介特征划分：直接金融市场与简介金融市场" class="headerlink" title="二、按中介特征划分：直接金融市场与简介金融市场"></a>二、按中介特征划分：直接金融市场与简介金融市场</h2></li>
+<li>直接金融市场</li>
+<li>间接金融市场</li>
+</ul>
+<h2 id="三、按金融资产的发行和流通特征划分：初级市场、二级市场、第三市场、第四市场"><a href="#三、按金融资产的发行和流通特征划分：初级市场、二级市场、第三市场、第四市场" class="headerlink" title="三、按金融资产的发行和流通特征划分：初级市场、二级市场、第三市场、第四市场"></a>三、按金融资产的发行和流通特征划分：初级市场、二级市场、第三市场、第四市场</h2><ul>
+<li>初级市场</li>
+<li>二级市场</li>
+<li>第三市场</li>
+<li>第四市场</li>
+</ul>
+<h2 id="四、按成交与定价的方式划分：公开市场与议价市场"><a href="#四、按成交与定价的方式划分：公开市场与议价市场" class="headerlink" title="四、按成交与定价的方式划分：公开市场与议价市场"></a>四、按成交与定价的方式划分：公开市场与议价市场</h2><h2 id="五、按有无固定场所划分：有形市场与无形市场"><a href="#五、按有无固定场所划分：有形市场与无形市场" class="headerlink" title="五、按有无固定场所划分：有形市场与无形市场"></a>五、按有无固定场所划分：有形市场与无形市场</h2><h2 id="六、按交割方式划分：-现货市场与衍生市场"><a href="#六、按交割方式划分：-现货市场与衍生市场" class="headerlink" title="六、按交割方式划分： 现货市场与衍生市场"></a>六、按交割方式划分： 现货市场与衍生市场</h2><ul>
+<li>现货市场</li>
+<li>衍生市场<h2 id="七、按地域划分：国内金融市场和国际金融市场"><a href="#七、按地域划分：国内金融市场和国际金融市场" class="headerlink" title="七、按地域划分：国内金融市场和国际金融市场"></a>七、按地域划分：国内金融市场和国际金融市场</h2></li>
+</ul>
+<h1 id="第四节-金融创新与金融市场发展趋势"><a href="#第四节-金融创新与金融市场发展趋势" class="headerlink" title="第四节 金融创新与金融市场发展趋势"></a>第四节 金融创新与金融市场发展趋势</h1><h2 id="一、金融创新的基本概念"><a href="#一、金融创新的基本概念" class="headerlink" title="一、金融创新的基本概念"></a>一、金融创新的基本概念</h2><ol>
+<li>新产品出现</li>
+<li>新工艺应用</li>
+<li>新资源开发</li>
+<li>新市场开拓</li>
+<li>新的生产组织与管理方式的确立（组织创新）</li>
+</ol>
+<blockquote>
+<p>金融创新是指金融领域内部通过各种要素的重新组合和创造性变革所造成或引进的新事物<br>金融创新的种类有：金融制度创新、金融组织结构创新、金融企业经营管理创新、金融业务创新</p>
+</blockquote>
+<h2 id="二、金融创新的动因"><a href="#二、金融创新的动因" class="headerlink" title="二、金融创新的动因"></a>二、金融创新的动因</h2><ul>
+<li>顺应需求的变化</li>
+<li>顺应供给的变化</li>
+<li>规避既有法律法规</li>
+</ul>
+<h2 id="三、金融创新工具的分类"><a href="#三、金融创新工具的分类" class="headerlink" title="三、金融创新工具的分类"></a>三、金融创新工具的分类</h2><ul>
+<li>所有权凭证</li>
+<li>投融资工具</li>
+<li>衍生金融工具</li>
+<li>组合金融工具</li>
+</ul>
+<h2 id="四、金融创新对金融和经济的影响"><a href="#四、金融创新对金融和经济的影响" class="headerlink" title="四、金融创新对金融和经济的影响"></a>四、金融创新对金融和经济的影响</h2><ul>
+<li>对金融和经济发展的推动作用</li>
+</ul>
+<ol>
+<li>高了金融机构的运作效率</li>
+<li>提高了金融市场的运作效率</li>
+<li>增强了金融产业发展能力</li>
+<li>金融作用力大为增强</li>
+</ol>
+<ul>
+<li>产生的新矛盾和挑战<blockquote>
+<p>金融创新使货币供求机制、总量和结构乃至特征都发生了深刻变化，对金融运作和宏观调控影响很大<br>在很大程度上改变了货币政策的决策、操作、传到及其结果，对货币政策的实施产生了一定的不利影响<br>金融风险有增无减，金融业的稳定性下降<br>金融市场出现过度投机和泡沫膨胀的不良影响<br>-</p>
+</blockquote>
+<h2 id="五、金融创新推动下的世界金融市场发展的新趋势"><a href="#五、金融创新推动下的世界金融市场发展的新趋势" class="headerlink" title="五、金融创新推动下的世界金融市场发展的新趋势"></a>五、金融创新推动下的世界金融市场发展的新趋势</h2></li>
+</ul>
+<h3 id="（一）金融全球恶化的表现形式"><a href="#（一）金融全球恶化的表现形式" class="headerlink" title="（一）金融全球恶化的表现形式"></a>（一）金融全球恶化的表现形式</h3><ol>
+<li>从微观层次来看金融全球化就是金融活动的全球化</li>
+</ol>
+<ul>
+<li>随着投资行为和融资行为的全球化–&gt;资本流动全球化</li>
+<li>金融机构全球化</li>
+<li>计容市场全球化</li>
+</ul>
+<ol>
+<li>从宏观来看，金融全球化表现为金融管理与合作的一体化进程加快</li>
+</ol>
+<ul>
+<li>金融政策关联化：一个国家特别是主要发达国家的金融政策调整，将会引起金融市场的连锁反应，并可能迫使许多国家在金融政策方面做出相应的调整。</li>
+<li>金融风险全球化：金融全球化对“金融脆弱–金融危机“演化机制的促进，使金融脆弱向金融危机转化速度大大加快了。</li>
+<li>金融监管全球化：金融监管全球化包括金融规则统一化、监管机制统一化、会计准则统一化、信息披露的透明度标准统一化，从而实现金融协调和监管的全球化。<h3 id="（二）金融全球化的影响"><a href="#（二）金融全球化的影响" class="headerlink" title="（二）金融全球化的影响"></a>（二）金融全球化的影响</h3></li>
+</ul>
+<ol>
+<li>金融全球化的积极意义</li>
+</ol>
+<ul>
+<li>有利于资金在全球范围内的高效配置</li>
+<li>有利于国际投资和贸易的快速发展</li>
+<li>有利于全球金融体制与融资结构的整合</li>
+</ul>
+<ol start="2">
+<li>金融全球化的负面效应</li>
+</ol>
+<ul>
+<li>金融资产价格过度波动，强化了金融市场的脆弱性</li>
+<li>削弱了各国货币政策的自主性，从而降低了金融政策的效力</li>
+<li>金融全球化使国际金融的动荡产生波及效应和放大效应</li>
+</ul>
+
+        <div id="aplayer-CTZMTJON" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-CTZMTJON"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "星河",
+              author: "曹思义",
+              url: "/root-images/xinghe.mp3",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/金融市场学/">金融市场学</a>
+    </div>
 
 
-<!-- Bing Background -->
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/辅修/">辅修</a></li></ul>
+    </div>
 
-<script type="text/ls-javascript" id="Bing-Background-script">
-    queue.offer(function(){
-        $('body').attr('data-original', 'https://api.i-meto.com/bing?travel');
-    });
-</script>
-
-
-<script type="text/ls-javascript" id="lazy-load">
-    // Offer LazyLoad
-    queue.offer(function(){
-        $('.lazy').lazyload({
-            effect : 'show'
-        });
-    });
-
-    // Start Queue
-    $(document).ready(function(){
-        setInterval(function(){
-            queue.execNext();
-        },200);
-    });
-</script>
-
-<!-- Custom Footer -->
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
 
 
 
-<script>
-    (function(){
-        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
 
-        for (var i = 0; i < scriptList.length; ++i) {
-            var item = scriptList[i];
-            lsloader.runInlineScript(item.id,item.id);
-        }
-    })()
-console.log('\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
-</script>
 
-                </main>
+
+
+
+
+  
+    <article id="post-第一章-金融工程概论" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/10/第一章-金融工程概论/" class="article-date">
+      <time datetime="2018-09-10T01:07:23.000Z" itemprop="datePublished">09-10-2018</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/10/第一章-金融工程概论/">第一章 金融工程概论</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="金融工程概论"><a href="#金融工程概论" class="headerlink" title="金融工程概论"></a>金融工程概论</h1><ul>
+<li><h3 id="第一节-金融工程的概念、特点与功能"><a href="#第一节-金融工程的概念、特点与功能" class="headerlink" title="第一节 金融工程的概念、特点与功能"></a>第一节 金融工程的概念、特点与功能</h3><p>  1.金融工程的基本概念：金融信息化</p>
+<ul>
+<li>诊断</li>
+<li>研究和设计</li>
+<li>开发</li>
+<li>管理</li>
+<li>狭义金融工程:<br><strong>利用数学、计算机及信息网络等现代化工具，在现有基本金融产品和交易方式的基础上，对各种金融产品的收益、流动性、风险性进行各种形式的组合分解，以重组拆分的设计手段设计出符合客户需要的金融产品。</strong></li>
+<li>广义金融工程:<br>  <strong>指一切利用工程化手段来解决金融问题，包括金融技术和服务的开发以及程序化的全过程，即金融工程不仅包括金融产品设计，还包括金融产品的定价、交易方式、营销策略以及金融风险等各个方面。</strong><br>2.金融工程的核心概念：金融创新与实践<blockquote>
+<p>金融工程是从微观领域的金融问题为出发点，创新和创造性地寻找解决问题的思维方式和办法的。该学科的核心概念可以理解为一组关于金融如何创新的概念，核心部分是金融创新与实践，包括金融产品创新和金融技术进步革新。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><h5 id="金融工程特点"><a href="#金融工程特点" class="headerlink" title="金融工程特点"></a>金融工程特点</h5><p>  1.实用化的特点：实践性、灵活性、可操作性<br>  2.综合化的特点：跨学科、交叉性、互补性<br>  3.最优化的特点：目的性、盈利性和抗风险性<br>  4.数量化的特点：严密性、准确性、可计算性<br>  5.创造性的特点：发散性、创新性、主管能动性</p>
+</li>
+<li><h5 id="金融工程的基本功能"><a href="#金融工程的基本功能" class="headerlink" title="金融工程的基本功能"></a>金融工程的基本功能</h5><p>  1.完善金融市场<br>  2.降低交易成本<br>  3.减少代理成本<br>  4.增加流动性</p>
+</li>
+<li><h5 id="金融工程与金融创新"><a href="#金融工程与金融创新" class="headerlink" title="金融工程与金融创新"></a>金融工程与金融创新</h5><p>  三个层次：<br>  1.创造全新的基元<br>  2.用基元组合创造新型产品<br>  3.用基元组合复制现有产品</p>
+</li>
+<li><h3 id="第二节-金融工程的发展及动因"><a href="#第二节-金融工程的发展及动因" class="headerlink" title="第二节 金融工程的发展及动因"></a>第二节 金融工程的发展及动因</h3><ul>
+<li>扩大了金融工程交易的空间，加速了信息传输速度，缩短了交易时间，使结算方式电子化，降低了交易成本，提高了金融市场效率；</li>
+<li>解决了复杂金融交易建模问题，提供了解决各种财务金融问题、设计和开发各种新型金融产品的手段。</li>
+<li>增加了股票市场短期价格的波动性，加快了金融变量的变动速度，从而增加了风险，金融风险的增加又提高了对金融工程的需求。</li>
+<li>利用遥感卫星、气象卫星等尖端技术对世界范围内的农作物生长进行估测，对未来谷物等农作物品种价格变化做出迅速、准确的反应，为期货市场快速提供准确信息。</li>
+</ul>
+</li>
+<li><h5 id="金融工程产生和发展的微观因素及内在原因"><a href="#金融工程产生和发展的微观因素及内在原因" class="headerlink" title="金融工程产生和发展的微观因素及内在原因"></a>金融工程产生和发展的微观因素及内在原因</h5><p>  1.增加流动性的需要<br>  2.企业进行风险管理的需要<br>  3.降低委托代理成本问题的需要</p>
+</li>
+<li><h5 id="金融工程产生和发展的宏观因素及外在动因"><a href="#金融工程产生和发展的宏观因素及外在动因" class="headerlink" title="金融工程产生和发展的宏观因素及外在动因"></a>金融工程产生和发展的宏观因素及外在动因</h5><p>  1.价格波动性<br>  2.世界经济一体化<br>  3.税收的不对称性<br>  4.微电子技术和通信技术的进步<br>  5.金融理论的发展</p>
+</li>
+<li><h3 id="第三节-金融工程的研究内容"><a href="#第三节-金融工程的研究内容" class="headerlink" title="第三节 金融工程的研究内容"></a>第三节 金融工程的研究内容</h3><ul>
+<li><p>金融工程的知识结构</p>
+<ol>
+<li>现代金融理论</li>
+<li>现代工程学及其方法论：系统工程、数学建模与运筹学、数值计算、仿真模拟技术等现代化理论和决策手段。</li>
+<li>现代信息技术</li>
+</ol>
+</li>
+<li><p>金融工程学研究的范围</p>
+<ol>
+<li>金融产品的设计与开发<br> （1）新型金融工具的研究与开发<br> （2）新型金融服务的研究与开发<br> （3）设计系统化的金融工程解决方案</li>
+<li>资产定价的原理及方法<br> （1）资本资产定价的基本理论  CAPM、APT<br> （2）资本资产定价理论的发展  CCAPM、BAPM、BPT<br> （3）其他有关重要的现代金融理论 MM<br>3.风险分析和管理方法<br> （1）风险类型、特征及其识别方法<br> （2）设计新的风险计算方法<br> （3）设计新的风险控制方法<br> （4）设计新的风险管理技术<br>4.金融组合与运营策略<br> （1）套期保值<br> （2）投基策略<br> （3）套利策略<br> （4）纳税筹划与合理避税</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><h3 id="第四节-金融工程的应用领域"><a href="#第四节-金融工程的应用领域" class="headerlink" title="第四节 金融工程的应用领域"></a>第四节 金融工程的应用领域</h3><ul>
+<li><h5 id="金融工程在公司理财和企业管理中的应用"><a href="#金融工程在公司理财和企业管理中的应用" class="headerlink" title="金融工程在公司理财和企业管理中的应用"></a>金融工程在公司理财和企业管理中的应用</h5><ol>
+<li>金融工程给企业理财提供了新的思路</li>
+<li>金融工程为企业理财提供了新的方法与工具</li>
+<li>金融工程在企业理财中的应用导致财务工程的产生</li>
+<li>资本结构的优化与动态优化</li>
+<li>投资决策与管理的科学化</li>
+<li>激励制度的完善化</li>
+</ol>
+</li>
+<li><h5 id="金融工程在风险控制与管理中的应用"><a href="#金融工程在风险控制与管理中的应用" class="headerlink" title="金融工程在风险控制与管理中的应用"></a>金融工程在风险控制与管理中的应用</h5><ol>
+<li>对价格风险的控制</li>
+<li>对数量风险的控制</li>
+<li>对兼并风险的抵御和控制</li>
+<li>对代理风险的抵御与控制</li>
+<li>对信用风险的防范与控制</li>
+</ol>
+<ul>
+<li><h5 id="金融工程在投资银行和证券业中的应用"><a href="#金融工程在投资银行和证券业中的应用" class="headerlink" title="金融工程在投资银行和证券业中的应用"></a>金融工程在投资银行和证券业中的应用</h5><p>1.专用金融工具的制定与开发<br>2.多样化的投资与货币管理<br>3.证券及衍生产品的交易优化<br>4.为并购提供综合性方案</p>
+</li>
+<li><h5 id="金融工程在银行业构建风险管理体系中的应用"><a href="#金融工程在银行业构建风险管理体系中的应用" class="headerlink" title="金融工程在银行业构建风险管理体系中的应用"></a>金融工程在银行业构建风险管理体系中的应用</h5><ol>
+<li>信贷风险的管理与控制</li>
+<li>利率风险的管理与控制</li>
+<li>汇率风险的管理与控制</li>
+<li>流动性风险的管理与控制</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        <div id="aplayer-cvVUBWvS" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-cvVUBWvS"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "洋紫荆",
+              author: "",
+              url: "/root-images/yangzijing.mp3",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/金融工程/">金融工程</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/辅修/">辅修</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-财政学对象 (一)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/08/财政学对象 (一)/" class="article-date">
+      <time datetime="2018-09-08T09:31:05.000Z" itemprop="datePublished">09-08-2018</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/08/财政学对象 (一)/">第一节财政学对象</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="（一）财政的基本含义"><a href="#（一）财政的基本含义" class="headerlink" title="（一）财政的基本含义"></a>（一）财政的基本含义</h1><ul>
+<li><p>来源：</p>
+</li>
+<li><p>财政是一种国家（或政府的）经济行为或经济现象</p>
+</li>
+</ul>
+<h1 id="（二）财政的基本特征"><a href="#（二）财政的基本特征" class="headerlink" title="（二）财政的基本特征"></a>（二）财政的基本特征</h1><ul>
+<li><ol>
+<li><strong>阶段性与公共性</strong></li>
+</ol>
+</li>
+<li><ol start="2">
+<li><strong>强制性与非直接偿还性</strong></li>
+</ol>
+</li>
+<li><ol start="3">
+<li><strong>收入和支出的对称性</strong></li>
+</ol>
+</li>
+<li>简略的财政概括：<ul>
+<li>财政是政府（国家）集中一部分国民生产总值（国民收入）</li>
+<li>用于满足公共需要的收支活动（分配主体，分配对象）</li>
+<li>资源配置、收入分配、经济稳定和发展</li>
+<li>保障社会和谐稳定和实现国家的长治久安</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>资源配置职能：</p>
+</blockquote>
+<pre><code>资源配置的含义是在各个部门合理分配生产资料和劳动力，运用有限的资源形成一定的资产结构、产生结构以及技术结构和地区结构，达到优化资源结构的目标。
+</code></pre><blockquote>
+<p>机制和手段：<br>        （1）合理确定财政收支占GDP比例。<br>        （2）优化财政支出结构。<br>        （3）合理安排政府投资的规模、结构，保证国家重点建设。<br>        （4）创新财政资源的配置形式。</p>
+</blockquote>
+
+        <div id="aplayer-UMKhpxTz" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-UMKhpxTz"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "洋紫荆",
+              author: "许冠杰",
+              url: "/root-images/yangzijing.mp3",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/财政学/">财政学</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/辅修/">辅修</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-财政学导论" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/08/财政学导论/" class="article-date">
+      <time datetime="2018-09-08T08:56:19.000Z" itemprop="datePublished">09-08-2018</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/08/财政学导论/">财政学导论</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <blockquote>
+<p>支出 ： 财政支出规模与结构经常性支出、财政投资性支出、财政转移性支出<br>收入：收入规模与构成分析： 税收 国债<br>管理：国家预算和预算管理体制<br>平衡：财政平和和赤字、财政政策，开放经济下的财政问题</p>
+</blockquote>
+<h3 id="1-财政的产生与发展"><a href="#1-财政的产生与发展" class="headerlink" title="1. 财政的产生与发展"></a>1. 财政的产生与发展</h3><pre><code>1. 财政是一个历史范畴，随着国家的产生而产生，他是社会发展到一定阶段的产物；财政是随着人类社会进步，社会生产力水平提高而发展起来的。
+（生产力水平提高-&gt;剩余产品的出现日益增多-&gt;私有制-&gt;阶级-&gt;国家-&gt;财政（捐税) )
+2. 财政的产生有两个条件：
+ 一是 经济条件，即剩余产品；
+ 二是 政治条件，国家财政随着国家的产生而产生，又随着国家发展而发展。
+ 不同的社会时期，由生产关系的基本特征、国家的政治制度和经济制度的特点所决定，国家财政具有不同的特点。
+
+ **财政即是分配的范畴，又是历史的范畴**
+</code></pre><h3 id="2-财政的研究对象（宏观经济学范畴）"><a href="#2-财政的研究对象（宏观经济学范畴）" class="headerlink" title="2. 财政的研究对象（宏观经济学范畴）"></a>2. 财政的研究对象（宏观经济学范畴）</h3><pre><code>现代公共财政学是从与政府预算有关的组织政府收入、安排政府支出、提供公共品、矫正市场失灵、调节资源配置以及收入分配等方面。    （概括、分析政府经济行为的一门应用经济学。）
+
+将一般经济理论引向进一步升华，另一方面对财政业务进行理论性分析。
+
+财政学的主要任务是阐明财政的基本理论、基本原理和基本知识。
+
+分析财政学与经济的关系，是财政学的一条根本线索。
+
+财政学研究的是政府通过公共部门所从事的活动对整个国民经济的映像及政府活动的适当范围和方式。
+</code></pre><blockquote>
+<p>  <strong>财政活动主要可以具体化为财政收入和支出</strong></p>
+</blockquote>
+<h3 id="3-财政学的形成与发展-（待修改）"><a href="#3-财政学的形成与发展-（待修改）" class="headerlink" title="3. 财政学的形成与发展  （待修改）"></a>3. 财政学的形成与发展  （待修改）</h3><ul>
+<li>形成时期 （20世纪50年代）</li>
+<li>建设时期 （20世纪60年代）</li>
+<li>xxxx </li>
+</ul>
+<h6 id="西方财政学的形成与发展"><a href="#西方财政学的形成与发展" class="headerlink" title="西方财政学的形成与发展"></a>西方财政学的形成与发展</h6><ul>
+<li>三个时期<ul>
+<li>亚当斯密 &lt;&lt;国民财富的性质和原因&gt;&gt;</li>
+<li></li>
+<li></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>西方财政扩大到公共不敏经济领域</strong>，研究通过财政体制和财政政策来消除物价波动、通货膨胀、就业危机和经济衰退。实现经济稳定发展、充分就业，物价稳定和国际收支平衡的宏观经济目标。</li>
+</ul>
+<h3 id="财政产生条件及最早出现的财政范畴（最初的财政形式）"><a href="#财政产生条件及最早出现的财政范畴（最初的财政形式）" class="headerlink" title="财政产生条件及最早出现的财政范畴（最初的财政形式）"></a>财政产生条件及最早出现的财政范畴（最初的财政形式）</h3>
+        <div id="aplayer-aovhqUPo" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-aovhqUPo"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "袋鼠法庭",
+              author: "capital cities",
+              url: "/root-images/kangaroo-court.mp3",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/财政学/">财政学</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/辅修/">辅修</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-一-城市与城镇化" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/06/一-城市与城镇化/" class="article-date">
+      <time datetime="2018-09-06T12:57:59.000Z" itemprop="datePublished">09-06-2018</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/06/一-城市与城镇化/">一 城市与城镇化</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="1-城市的产生与定义"><a href="#1-城市的产生与定义" class="headerlink" title="1 城市的产生与定义"></a>1 城市的产生与定义</h1><ul>
+<li><strong>居民点的形成</strong><br>  采集经济生活（穴居、树居  无固定居民点）-&gt; 母系社会原始群落-&gt;农业、畜牧业相继出现(人类第一次劳动大分工)-&gt; 农业称为主要生产方式，逐渐产生居名点(新石器)-&gt;石头、土木等建筑材料筑成墙、栅栏（防御性构筑，城池雏形）<br>  人们的生活和农业均离不开水，原始居民点大豆靠近河流、湖泊，而且大多位于向阳的河岸台地上。<br>  <strong><em>我国黄河中下游、埃及的尼罗河下游、西亚的两河流域都是农业发展较早的地区，这些地区的农业居民点以及在居民点的基础上发展起来的城市也出现得最早</em></strong></li>
+<li><strong>城市的形成</strong><br>  城市是伴随着私有制和等级分化，在原始社会向奴隶制社会过渡时期出现的。 (物资交换形式是从易物开始的)</li>
+<li><p><strong>城镇与城市的界定</strong></p>
+<blockquote>
+<p>（1）产业构成<br>  （2）人口数量<br>  （3）职能 </p>
+</blockquote>
+<blockquote>
+<p>城镇是以从事非农活动人口为主体的居民点，在产业构成上不同于村庄；<br>   相对于村庄，城镇一般聚居更多的人口；<br>   城镇一般是工业、商业、交通和文教的集中地，是一定地域的政治、经济、文化的中心。</p>
+</blockquote>
+<pre><code>城镇一般拥有较高的人口密度和建筑密度，在警官说不同于村庄；城镇一般拥有相对于村庄更为完备的市政设施和公共设施。
+</code></pre><p>  <strong>按照行政区划标准，我国的城镇可以划分为：</strong></p>
+<pre><code>1. 直辖市
+2. 市
+3. 镇
+按照行政管辖的不同还可以进一步划分为： 地级市、县级市;
+建制镇无可争议地是城镇的一种类型。
+</code></pre></li>
+</ul>
+<h1 id="2-城市的发展"><a href="#2-城市的发展" class="headerlink" title="2 城市的发展"></a>2 城市的发展</h1><ul>
+<li><h3 id="1-古代城市的发展"><a href="#1-古代城市的发展" class="headerlink" title="1.古代城市的发展"></a>1.古代城市的发展</h3><ul>
+<li><h5 id="1-1-城市与防御要求"><a href="#1-1-城市与防御要求" class="headerlink" title="1.1 城市与防御要求"></a>1.1 城市与防御要求</h5>  人类最初的固定居名点，就具防御要求。最初是防止野兽的侵袭，后来由于原始部落之间的战争，进而加强了防御功能。</li>
+<li><h5 id="1-2-社会形态发展与城市布局"><a href="#1-2-社会形态发展与城市布局" class="headerlink" title="1.2 社会形态发展与城市布局"></a>1.2 社会形态发展与城市布局</h5><blockquote>
+<p>社会的阶级分化与对立在城市建设方面也有明显的反应。<br>  在中国的古代城市中，统治阶级专用的宫城局中心位置并占有很大的面积。<br>  商都“殷”城以宫廷区为中心；近宫外围是若干居住聚落（邑），居民多为奴隶主和部分自由民，各邑之间空隙地段大多数为农业用地         居住聚落的外围为散布的手工业作坊，也有居穴，居穴可能是手工业奴隶栖息之所，再外围疏松地环布居邑，以务农为主，居住有下         等自由民和农业奴隶，还有小部分奴隶主</p>
+</blockquote>
+</li>
+<li><h5 id="1-3-政治体制对城市的影响"><a href="#1-3-政治体制对城市的影响" class="headerlink" title="1.3 政治体制对城市的影响"></a>1.3 政治体制对城市的影响</h5><blockquote>
+<p>中国封建社会，自秦始皇统一全国，实行郡县制后直至清王朝大多数朝代是统一的中央集权的国家。各朝代的都城规模都很大。</p>
+<pre><code>中国封建城市中心的中心是政权统治的中心。如宫殿、官府衙门。而欧洲封建城市的中心往往是神权统治的中心 --- 教堂。
+</code></pre></blockquote>
+</li>
+<li><h5 id="1-4-经济发展对城市的影响"><a href="#1-4-经济发展对城市的影响" class="headerlink" title="1.4 经济发展对城市的影响"></a>1.4 经济发展对城市的影响</h5><blockquote>
+<p>中国的城市是政治、经济生活的中心。<br>  欧中的政治中心往往在城堡，经济中心在城市。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><h3 id="2-近代城市的发展"><a href="#2-近代城市的发展" class="headerlink" title="2. 近代城市的发展"></a>2. 近代城市的发展</h3><ul>
+<li><h5 id="2-1-城市工业的发展与人口的聚集"><a href="#2-1-城市工业的发展与人口的聚集" class="headerlink" title="2.1  城市工业的发展与人口的聚集"></a>2.1  城市工业的发展与人口的聚集</h5>  工业化吸收了大量农业人口，使之转化为城市人口，城市扩展也屯斌了周围的农业用地，失去土地的农民流入城市成为工人，这些都加速了城镇化。</li>
+<li><h5 id="2-2-工业化带来的城市布局变化"><a href="#2-2-工业化带来的城市布局变化" class="headerlink" title="2.2 工业化带来的城市布局变化"></a>2.2 工业化带来的城市布局变化</h5>  城市类型有所增加，出现了港口贸易城市、矿业城市、交通枢纽城市，或以某种产业为主的城市。原来的一些大城市则发展成为工业、商业、金融、贸易等综合功能经济中心。</li>
+<li><h5 id="2-3-城市与环境"><a href="#2-3-城市与环境" class="headerlink" title="2.3 城市与环境"></a>2.3 城市与环境</h5>  城市空间范围的拓展意味着市民与城郊田野的距离增加，城市越大市民接触自然环境的机会就越小。城市居民生活水平提高也会产生大量的生活污水及固体废弃物，致使城市在物质生活水平提高的同时，也对环境造成了负面效应。</li>
+<li><h5 id="2-4-科学技术发展带来城市的聚集效益及高质量城市生活"><a href="#2-4-科学技术发展带来城市的聚集效益及高质量城市生活" class="headerlink" title="2.4 科学技术发展带来城市的聚集效益及高质量城市生活"></a>2.4 科学技术发展带来城市的聚集效益及高质量城市生活</h5>  生产和人口聚集，促使城市发展，带来了前所未有的生产力的聚集，创造了巨大的物质财富。<br>  工业社会使城市高度发展，是社会经济发展的必然结果，是社会进步的表现，但同时也出现了由于工业化及人口增加生产的土地问题、住房问题交通问题、环境污染问题及社会问题等。<br>  中国进入农业社会比西方早，进入工业社会比西方晚。</li>
+</ul>
+</li>
+<li><h3 id="3-第二次世界大战后的城市发展"><a href="#3-第二次世界大战后的城市发展" class="headerlink" title="3. 第二次世界大战后的城市发展"></a>3. 第二次世界大战后的城市发展</h3><pre><code>城市集中发展带来了较高的经济收益，提升了人们的物质、文化生活质量。同时也使城市居民变得原理自然，城市成为人类改造自然   最彻底的地方，带来了大量生态环境问题。
+城市对外交通也有很大变化，航空、汽车取代了火车、轮船的远程或市际客运的地位。
+第二、第三产业在城市中的集中，产业门类的增加与分工协作，使城市具有强大的聚集效应，使得城市的规模不断扩张。
+第二次世界大战后世界经济的发展，世界经济的一体化趋势、跨国公司企业集团的发展，使一些发达的城镇密集地区的影响更大。
+人工能源及加工工业的集中造成城市的发展和城市规模的扩大，这构成了工业社会城市的发展模式。
+</code></pre><h1 id="3-城镇化"><a href="#3-城镇化" class="headerlink" title="3 城镇化"></a>3 城镇化</h1></li>
+<li><h5 id="1-城镇化的含义"><a href="#1-城镇化的含义" class="headerlink" title="1 城镇化的含义"></a>1 城镇化的含义</h5><p> 城镇化这一个概念最简单的解释就是农业人口和农用土地向非农人口和城市用地转化的现象及过程，具体包括以下几个方面：<br> （1）人口职业的转变: 农业转变为非农业的第二，第三产业，表现为农业人口不断减少，非农人口不断增加。<br> （2）产业结构的转变：工业革命后工业不断发展，第二、第三产业的比重不断提高，第一产业的比重相对下降，工业化的发展也带来农业生产的现代化，农村多余人口专项城市的第二、第三产业。<br> （3）土地及地域空间的变化：农业用地转化为非农业用地，由比较分散、低密度的居住形式转变为较集中成片的、密度较高的居住形式，从与自然环境接近的空间转变为以人工环境为主的空间形态。</p>
+<pre><code>城镇化也可以称为城市化，因为城市与镇均是城市型居民点，均以第二、第三产业为主，其区别仅是文字使用习惯或其规模的不同。
+城镇化水平指城镇人口占总人口的比重。
+人口按其从事的职业一般可分为农业人口与非农人口（第二、第三产业人口）。按目前的户籍管理办法又可分为城镇人口与农村人口。
+</code></pre></li>
+<li><h5 id="2-城镇化进程的表现特征"><a href="#2-城镇化进程的表现特征" class="headerlink" title="2 城镇化进程的表现特征"></a>2 城镇化进程的表现特征</h5><p> （1）城镇化是城市人口占总人口的比重不断上升。城镇化首先表现为大批乡村人口进入城市，城市人口在总人口比重逐步提高。<br> （2）城镇化是产业结构转变的过程。随着城镇化的推进，原来从事传统低效的第一产业的劳动力转向从事现代化高效的第二、第三产业，产业结构逐步升级转换，国家和区域创造财富的能力不断提高。<br> （3）城镇化水平高，不仅是建立在第二、第三产业发展的基础上，也是农业现代化的结果。农业人口的减少在农业发展的基础上，农业人口的剩余是城镇化的推动力。</p>
+</li>
+<li><h5 id="3-世界城镇化的历史过程"><a href="#3-世界城镇化的历史过程" class="headerlink" title="3 世界城镇化的历史过程"></a>3 世界城镇化的历史过程</h5><pre><code> (1）起步阶段：
+   生产力水平尚低，城镇化的速度较缓慢，较长的时期才能达到城市人口占总人口的30%左右。
+（2）加速阶段：
+   当城镇化超过30%时，进入了快速提升阶段。由于经济实力明显增加，城镇化速度加快，在不长的时期内，城市人口占总人口的比     例达到60%或以上 。
+（3）稳定阶段：
+   农业现代化的过程已基本完成，农村剩余劳动力已基本上转化为城市人口。随着城市中工业的发展和技术的进步，一部分工业人      口又转向第三产业。
+</code></pre><p> <strong>从时间上说，城镇化发展的历史进程在各个国家存在着极大的不平衡</strong></p>
+</li>
+<li><h5 id="4-中国的城镇化道路"><a href="#4-中国的城镇化道路" class="headerlink" title="4 中国的城镇化道路"></a>4 中国的城镇化道路</h5><ul>
+<li><strong>城镇化按时社会经济发展的结果，是历史的必然趋势</strong></li>
+</ul>
+<ul>
+<li>我国城镇化水平在东、中、西部存在较大的差异。城镇化水平的差异在相当长时间内长期存在。</li>
+</ul>
+<ul>
+<li>从当前发展趋势来看，中国城镇化已经步入城镇化加速发展的第二阶段，在世界范围而言，中国政治经理的是人类历史上规模最大、速度最快的一次城镇化浪潮。我国正在经历的大规模快速城镇化之路如何去走无疑也将对国家整体的永续发展产生重要的影响，未来的城镇化过程必须走向理性、健康和永续。</li>
+</ul>
+<ul>
+<li>中国是一个幅员辽阔的大国，不同地区之间的社会经济发展条件和环境条件都存在着巨大的差异，因此，试图用一项统一的标准来衡量中国城镇化和城市发展，并以此来制定城镇化政策必然无法满足不同地区的发展需求。</li>
+</ul>
+<ul>
+<li>城镇化作为一种现象并不是人类社会发展的目标，仅仅将目光落在城镇化上反而忽略了人民环境发展所真正追求的目标，即实现城市及<br>其区域的永续与和谐发展，使人们能够充分享受人民环境发展和社会进步带来的积极效果。</li>
+</ul>
+<ul>
+<li><strong>未来的中国城镇化模式应该是一种多元化的模式，即改变过去仅仅以规模作为政策标准的方法。未来的城市和区域发展应当是超越单个城市的传统思维，走向区域协调，从更大区域范围来思索永续关系的城镇化发展道路，走向和谐的城市区域，这将是中国城镇化未来发展的必由之路</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><pre><code>正确选择中国未来的城镇化道路关系到国家发展的前途，未来的中国城镇化发展应当是立足于城乡区域的协调发展，走向理性、健康、永续、和谐。
+</code></pre>
+        <div id="aplayer-OCJsQWFH" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-OCJsQWFH"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "Snow before Spring",
+              author: "羽肿",
+              url: "/root-images/Snow_before_Spring.mp3",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/城市规划原理/">城市规划原理</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主修/">主修</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统概述（二）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/06/数据库系统概述（二）/" class="article-date">
+      <time datetime="2018-09-06T11:36:05.000Z" itemprop="datePublished">09-06-2018</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/06/数据库系统概述（二）/">数据库系统概述（二）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="1-6-数据库管理系统"><a href="#1-6-数据库管理系统" class="headerlink" title="1.6 数据库管理系统"></a>1.6 数据库管理系统</h1><ul>
+<li><h3 id="1-6-1-DBMS的主要功能"><a href="#1-6-1-DBMS的主要功能" class="headerlink" title="1.6.1 DBMS的主要功能"></a>1.6.1 DBMS的主要功能</h3><ul>
+<li>数据定义功能:<br>DBMS提供数据定义语言（DDL），定义数据的模式、外模式、内模式三级模式结构，定义模式/内模式、外模式/模式二级映像，定义有关的约束条件。（DBMS应包括DDL的编译程序，DDL定义的各种模式需要通过相应的模式翻译程序转换为机器内部代码表示形式，保存在数据字典（DD））<br>DBMS提供结构化查询语言（SQL），提供Create、Drop、Alter等语句可分别用来建立、删除和修改数据库。</li>
+<li>数据操纵功能：<br>DBMS提供数据操纵语言（DML），实现对数据库的基本操作，包括检索、更新（包括插入、修改和删除）<br>  DBMS包括DML编译程序或解释程序，DML分为两类：<pre><code>自主型或自含型
+宿主型
+</code></pre></li>
+<li>数据库运行管理功能：<br>DBMS对数据库的控制主要通过四个方面实现：<br>1.数据的安全性控制<br>2.数据的完整性控制<br>3.多用户环境下的数据并发性控制<br>4.数据库的恢复</li>
+<li><p>数据库的建立和维护功能：<br>数据库的建立：数据库的初始数据的装入与数据转换。<br>数据库的维护：数据库的转储、恢复、重组织、重构造、系统性能监视与分析。</p>
+<p>由DBMS的各个实用程序分别完成</p>
+</li>
+<li><p>数据通信接口：<br>DBMS提供与其他软件进行通信的功能。</p>
+</li>
+<li>数据组织、存储和管理：<br>DBMS负责对数据库中需要存放的各种数据（如数据字典、用户数据、存取路径等）的组织、存储和管理工作，确定以何种文件结构和存取方式物理地组织这些数据，以提高存储空间利用率和对数据库进行增、删、查、改的效率。</li>
+</ul>
+</li>
+<li><h3 id="1-6-2-DBMS的组成"><a href="#1-6-2-DBMS的组成" class="headerlink" title="1.6.2 DBMS的组成"></a>1.6.2 DBMS的组成</h3><ul>
+<li><h5 id="1-语言编译处理程序："><a href="#1-语言编译处理程序：" class="headerlink" title="1.语言编译处理程序："></a>1.语言编译处理程序：</h5>   （1）数据定义语言DDL编译程序<br>  （2）数据操纵语言DML编译程序</li>
+<li><h5 id="2-系统运行控制程序："><a href="#2-系统运行控制程序：" class="headerlink" title="2.系统运行控制程序："></a>2.系统运行控制程序：</h5><p>   DBMS提供了一系列的运行控制程序，负责数据库系统运行过程中的控制与管理，主要包括：<br>  （1）系统总控程序：</p>
+<pre><code>用于控制和协调各程序的活动，它是DBMS运行程序的核心。
+</code></pre><p>  （2）安全性控制程序：</p>
+<pre><code>防止未被授权的用户存取数据库中的数据。
+</code></pre><p>  （3）完整性控制程序：</p>
+<pre><code>检查完整性约束条件，确保进入数据库中的数据的正确性、有效性和相容性。
+</code></pre><p>  （4）并发控制程序：</p>
+<pre><code>协调多用户、多任务环境下各应用程序对数据库的并发操作，保证数据的一致性。
+</code></pre><p>  （5）数据存取和更新程序：</p>
+<pre><code>实施对数据库数据的检索、插入、修改和删除等操作。
+</code></pre><p>  （6） 通信控制程序：</p>
+<pre><code>实现用户程序与DBMS间的通信。
+</code></pre><p>  除此之外，DBMS还有文件读写与维护程序、缓冲区管理程序、存取路径管理程序、事物管理程序运行日志管理程序等。所有这些程序在数据库系统运行过程中协同操作，监视着对数据库的所有操作，控制、管理数据库资源等。</p>
+</li>
+<li><h5 id="3-系统建立、维护程序："><a href="#3-系统建立、维护程序：" class="headerlink" title="3.系统建立、维护程序："></a>3.系统建立、维护程序：</h5><p>  （1）装配程序：完成初始数据库的数据装入<br>  （2）重组程序：当数据库性能降低时（如查询速度过慢），需要重新组织数据库，重新装入数据。<br>  （3）系统恢复程序：当数据库系统收到破坏时，将数据库系统恢复到以前某个正确的状态。</p>
+<ul>
+<li><h5 id="4-数据字典："><a href="#4-数据字典：" class="headerlink" title="4.数据字典："></a>4.数据字典：</h5>数据字典（DD）用来描述数据库中有关信息的数据目录，包括数据库的三级模式、数据类型、用户名和用户权限等有关数据库系统的信息，起着系统状态目录表的作用，帮助用户、DBA和DBMS本身使用和管理数据库。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h3 id="1-6-3-DBMS的数据存取过程"><a href="#1-6-3-DBMS的数据存取过程" class="headerlink" title="1.6.3 DBMS的数据存取过程"></a>1.6.3 DBMS的数据存取过程</h3><p>  （1）用户使用某种特定的数据操作语言向DBMS发出存取请求。<br>  （2）DBMS接受请求并将该请求解释转换成及其代码指令。<br>  （3）DBMS以此检查外模式、外模式/模式映像、模式、模式/内模式映像及储存结构定义。<br>  （4）DBMS对存储数据库执行必要的存取操作。<br>  （5）从对数据库的存取操作中接受结果。<br>  （6）对得到的结果进行必要的处理，如格式转换等。<br>  （7）将处理的结果返回给用户。</p>
+<p>  上述存取过程中还包括安全控制、完整性控制，以确保数据的正确性、有效性和一致性。</p>
+</li>
+</ul>
+<h1 id="1-7-数据模型"><a href="#1-7-数据模型" class="headerlink" title="1.7 数据模型"></a>1.7 数据模型</h1><ul>
+<li><h3 id="1-7-1-数据模型的概念及分类"><a href="#1-7-1-数据模型的概念及分类" class="headerlink" title="1.7.1 数据模型的概念及分类"></a>1.7.1 数据模型的概念及分类</h3><ul>
+<li><h5 id="1-数据处理的抽象与转换"><a href="#1-数据处理的抽象与转换" class="headerlink" title="1. 数据处理的抽象与转换"></a>1. 数据处理的抽象与转换</h5>  数据模型是现实世界的两级抽象的结果。在数据处理中，数据加工经历了现实世界、信息世界和计算机世界三个不同的世界，经历了两级抽象和转换。</li>
+<li><h5 id="2-数据类型的分类"><a href="#2-数据类型的分类" class="headerlink" title="2.数据类型的分类"></a>2.数据类型的分类</h5><p><strong>根据模型应用的不同目的，可以将这些模型划分为两个不同的抽象级别。</strong><br>第一类模型—概念模型（信息模型）：</p>
+<blockquote>
+<p>他是用户的观点与数据和信息的建模，是对现实世界的事物及其联系的第一级抽象，它不依赖于具体的计算机系统，不涉及信息在计算机内如何表示、如何处理问题，只是用来描述某个特定组织所关心的信息结构。<br><strong>概念模型属于信息世界中的模型，不是一个DBMS支持的数据模型，而是概念级的模型</strong></p>
+</blockquote>
+<p>第二类模型是逻辑模型（数据模型）和物理模型：</p>
+<blockquote>
+<p>逻辑模型是属于计算机世界中的模型，这一类模型是按计算机观点对数据建模，是对现实世界的第二级抽象，由严格的形式化定义，以便于在计算机中实现。任何一个DBMS都是根据某种逻辑模型有针对性地设计出来的，即数据库是按DBMS规定的数据模型组织建立起来的，因此逻辑模型主要用于DBMS实现。从概念模型到逻辑模型的转换可以由数据库设计人员完成，也可以与数据设计工具协助设计人员完成。</p>
+</blockquote>
+<p>  比较成熟地应用在数据库系统中的逻辑模型主要包括层次模型、网状模型、关系模型、面向对象模型等。<br>  物理模型是对数据最底层的抽象，它描述数据在磁盘或磁带上的存储方式和存取方法，是面向计算机系统的。物理模型的具体实现是D  BMS的任务，用户一般不必考虑物理级细节。从逻辑模型到物理模型的转换是由DBMS自动完成的。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="1-7-2-数据模型的组成要素"><a href="#1-7-2-数据模型的组成要素" class="headerlink" title="1.7.2 数据模型的组成要素"></a>1.7.2 数据模型的组成要素</h3><ul>
+<li><h5 id="1-数据结构"><a href="#1-数据结构" class="headerlink" title="1.数据结构"></a>1.数据结构</h5><ul>
+<li>数据结构或数据组织结构，描述了数据库的组成对象以及对象间的联系，也就是说数据结构一方面描述的是数据对象的类型、内容和性质等，另一方面描述了数据对象间的联系。因此，数据模型通常由数据结构、数据操作和数据完整性约束三个要素组成。   </li>
+</ul>
+</li>
+<li><h5 id="2-数据操作"><a href="#2-数据操作" class="headerlink" title="2.数据操作"></a>2.数据操作</h5><ul>
+<li>数据操作是指对数据库中的各种数据允许执行的集合的操作，包括操作及相应的操作规则，描述了数据库的动态特性。数据库有查询和更新两类操作。数据模型必须定义这些操作的具体含义、操作符号、操作规则（如优先级）以及实现操作的语言。</li>
+</ul>
+</li>
+<li><h5 id="3-数据的完整性约束"><a href="#3-数据的完整性约束" class="headerlink" title="3.数据的完整性约束"></a>3.数据的完整性约束</h5><ul>
+<li>数据的完整性约束条件是一组完整性规则的集合。完整性规则是给定的数据模型中数据及其联系所具有制约和依存规则，用以限定符合数据模型的数据库状态以及状态的变化，以确保数据的正确、有效、相容 。<br><strong>一方面，数据模型应该反映和规定本数据模型必须遵守的基本的和通用的完整性约束条件；另一方面，数据模型还应该提供定义完整性约束条件机制，以反映具体应用所涉及的数据必须遵守的特定的语义约束条件。</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="1-8-三个世界及其有关概念"><a href="#1-8-三个世界及其有关概念" class="headerlink" title="1.8  三个世界及其有关概念"></a>1.8  三个世界及其有关概念</h1><ul>
+<li><h5 id="1-8-1-现实世界"><a href="#1-8-1-现实世界" class="headerlink" title="1.8.1 现实世界"></a>1.8.1 现实世界</h5><ul>
+<li>客观存在的世界。事物之间是相互联系的，而这种联系可能是多方面的，但人们只选择那些感兴趣的联系，无需选择所有的联系。</li>
+</ul>
+</li>
+<li><h5 id="1-8-2-信息世界"><a href="#1-8-2-信息世界" class="headerlink" title="1.8.2 信息世界"></a>1.8.2 信息世界</h5><ul>
+<li><h6 id="1-信息世界及其有关概念"><a href="#1-信息世界及其有关概念" class="headerlink" title="1.信息世界及其有关概念"></a>1.信息世界及其有关概念</h6>  （1） 实体<br>  （2） 属性<br>  （3）实体型<br>  （4）实体集<br> （5）码<br> （6）域<br> （7）联系</li>
+<li><h6 id="2-两个实体型间的联系"><a href="#2-两个实体型间的联系" class="headerlink" title="2. 两个实体型间的联系"></a>2. 两个实体型间的联系</h6>  （1）<br>  （2）<br>  （3）</li>
+<li><h6 id="3-两个以上实体型间的联系"><a href="#3-两个以上实体型间的联系" class="headerlink" title="3.两个以上实体型间的联系"></a>3.两个以上实体型间的联系</h6></li>
+<li><h6 id="4-单个实体型内部的联系"><a href="#4-单个实体型内部的联系" class="headerlink" title="4.单个实体型内部的联系"></a>4.单个实体型内部的联系</h6></li>
+</ul>
+</li>
+<li><h5 id="1-8-3-计算机世界"><a href="#1-8-3-计算机世界" class="headerlink" title="1.8.3 计算机世界"></a>1.8.3 计算机世界</h5><p>  （1）字段 标记实体属性的命名单位称为字段<br>  （2）记录：<br>  （3） 文件：<br>  （4）关键字：</p>
+</li>
+</ul>
+<pre><code>现实世界        信息世界        计算机世界
+事物总体        实体集          文件
+事物个体        实体            记录
+特征            属性            字段
+事物之间联系    实体模型        数据模型
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/数据库原理及应用教程/">数据库原理及应用教程</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主修/">主修</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+    </nav>
+  
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2019 tianrking
             </div>
-        </body>
+            <div class="footer-right">
+               
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到訪數"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本頁閱讀量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
     
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回頂部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看評論"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="轉到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+             post: ".article-entry a[href], .copyright a[href]", 
+             tags: ".article-tag a", 
+             categories: ".article-category a, a.tag-list-link", 
+             articleNav: "#article-nav a, #post-nav-button a", 
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+             menu: ".header-menu a", 
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
 </html>

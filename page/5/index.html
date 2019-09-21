@@ -1,1238 +1,1041 @@
 <!DOCTYPE html>
-<html style="display: none;" lang="en">
-    <head>
-    <meta charset="utf-8">
-    <!--
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.5.0 -->
-    <script>
-        window.materialVersion = "1.5.0"
-        // Delete localstorage with these tags
-        window.oldVersion = [
-            'codestartv1',
-            '1.3.4',
-            '1.4.0',
-            '1.4.0b1'
-        ]
-    </script>
+<html lang="zh-Hant-HK">
+<head>
 
-    <!-- dns prefetch -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-
-
-
-    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Title -->
-    
-    <title>
-        
-        w0x7c3
-    </title>
-
-    <!-- Meta & Info -->
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="theme-color" content="#0097A7">
-    <meta name="author" content="tianrking">
-    <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="">
-
-    <!-- Import lsloader -->
-    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
-
-    <!-- Import queue -->
-    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
-    <link rel="icon" sizes="192x192" href="/img/favicon.png">
-    <link rel="apple-touch-icon" href="/img/favicon.png">
-
-    <!--iOS -->
-    <meta name="apple-mobile-web-app-title" content="Title">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="480">
-
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="w0x7c3">
-
-    <!-- Site Verification -->
-    
-    
-
-    <!-- RSS -->
-    
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-
-        
-            <script src="/js/ie-blocker.en.js"></script>
-        
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
     <![endif]-->
 
-    <!-- Import CSS -->
-    
-        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-        
-            
-        
-
-    
-
-    
-
-    <!-- Config CSS -->
-
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    overflow-x: hidden !important;
-  }
-  
-  code {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  }
-
-  a {
-    color: #00838F;
-  }
-
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: green !important;
-  }
-
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: green !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: green !important;
-  }
-
-  .toTop {
-    background: #green !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #green;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #green;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #green;
-  }
-
-  .post-toc a:hover {
-    color: #00838F;
-    text-decoration: underline;
-  }
-
-</style>
-
-
-<!-- Theme Background Related-->
-
-    <style>
-      body {
-        background-color: #F5F5F5;
-      }
-
-      /* blog_info bottom background */
-      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text {
-        background-color: #fff;
-      }
-    </style>
-
-
-
-
-<!-- Fade Effect -->
-
-    <style>
-      .fade {
-        transition: all 800ms linear;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        opacity: 1;
-      }
-
-      .fade.out{
-        opacity: 0;
-      }
-    </style>
-
-
-<!-- Import Font -->
-<!-- Import Roboto -->
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-
-
-<!-- Import Material Icon -->
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
-
-
-    <!-- Import jQuery -->
-    
-        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
-    
-
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://tianrking.github.io">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="w0x7c3">
-    <meta property="og:image" content="https://tianrking.github.io/img/favicon.png" />
-    <meta property="og:description" content="">
-    
-
-    
-
-    <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="w0x7c3">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="https://tianrking.github.io/img/favicon.png">
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://tianrking.github.io" />
-
-    <!-- Add canonical link for SEO -->
-    
-        <link rel="canonical" href="https://tianrking.github.io/page/5/index.html" />
-    
-
-    <!-- Structured-data for SEO -->
-    
-        
-
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="tianrking" />
 
 
     
-
-    <!-- Analytics -->
-    
-    
-        <script>
-    var _hmt = _hmt || [];
-    (function() {var hm = document.createElement('script');
-    hm.src = 'https://hm.baidu.com/hm.js?b4da296e1b6d674c6aa558d2a501264b';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-    
-    
-        <div style="display: none;">
-    <script src="//s95.cnzz.com/z_stat.php?id=1274632088&web_id=1274632088" language="JavaScript"></script>
-</div>
     
 
-    <!-- Custom Head -->
-    
 
-</head>
+<meta property="og:type" content="website">
+<meta property="og:title" content="w0x7c3">
+<meta property="og:url" content="https://tianrking.github.io/page/5/index.html">
+<meta property="og:site_name" content="w0x7c3">
+<meta property="og:locale" content="zh-Hant-HK">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="w0x7c3">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
 
-    
-        <body id="scheme-Paradox" class="lazy">
-            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-                
+    <link rel="alternate" href="/atom.xml" title="w0x7c3" type="application/atom+xml">
 
-                <!-- Main Container -->
-                <main class="material-layout__content" id="main">
 
-                    <!-- Top Anchor -->
-                    <div id="top"></div>
 
-                    
-                        <!-- Hamburger Button -->
-                        <button class="MD-burger-icon sidebar-toggle">
-                            <span class="MD-burger-layer"></span>
-                        </button>
-                    
+    <link rel="shortcut icon" href="/favicon.png">
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
 
-    <!-- Pin on top -->
-    
-        
-    
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/root-images/sjkyljyyjc.jpg">
-    
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/06/数据库系统概述（一）/">数据库系统概述（一）</a></p>
-    </div>
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/06/数据库系统概述（一）/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 06, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/数据库原理及应用教程/">数据库原理及应用教程</a>
-              </span>
-            
 
-            
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
 
-            
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
 
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/root-images/szdxclx.jpg">
-    
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/04/第一章-测量坐标系与高程-二/">第一章 测量坐标系与高程(二)</a></p>
-    </div>
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/04/第一章-测量坐标系与高程-二/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 04, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/数字地形测量学/">数字地形测量学</a>
-              </span>
-            
+<link rel="stylesheet" href="/css/style.css">
 
-            
 
-            
+    <style> .article { opacity: 0;} </style>
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
 
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/root-images/szdxclx.jpg">
-    
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/04/第一章-测量坐标系与高程-一/">第一章    测量坐标系与高程(一)</a></p>
-    </div>
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/04/第一章-测量坐标系与高程-一/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 04, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/数字地形测量学/">数字地形测量学</a>
-              </span>
-            
+<title>w0x7c3</title>
 
-            
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
 
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/root-images/szdxclx.jpg">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/03/绪论/">绪论</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/03/绪论/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 03, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/数字地形测量学/">数字地形测量学</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/03/Magic-Travel/">Magic Travel</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/03/Magic-Travel/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 03, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/02/梦回涿鹿/">梦回涿鹿</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/02/梦回涿鹿/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 02, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/02/禅茶人生/">禅茶人生</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/02/禅茶人生/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 02, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/09/02/新的学期/">新的学期</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/09/02/新的学期/" target="_self">Read more</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/logo.png" width="44px" height="44px" alt="tianrking's avatar">
-            </div>
-            <div>
-                <strong>tianrking</strong>
-                <span>Sep 02, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <a class="extend prev" rel="prev" href="/page/4/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
-        </nav>
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: true,
+        isPost: false,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
     }
 </script>
 
-    
-</div>
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
 
 
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">tianrking</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
                     
-                        <!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay"></div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜單</li>
+                        <li>標籤</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
 
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
-    <div id="sidebar-main">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags">Meow</a></li>
+                        
+                            <li><a href="/about/">About</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:tian.r.king@gmail.com" title="Email"></a>
+                            
+                                <a class="fa Facebook" href="https://www.facebook.com/tianrking" title="Facebook"></a>
+                            
+                                <a class="fa Google" href="https://plus.google.com/+TianruiKing" title="Google"></a>
+                            
+                                <a class="fa Twitter" href="https://twitter.com/tianruiwang" title="Twitter"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anti-Extradition/">Anti-Extradition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/主修/">主修</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/地籍测量学/">地籍测量学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/抱佛脚/">抱佛脚</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/论文/">论文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贸易战下我国商业银行个人理财业务现存问题与防范探讨/">贸易战下我国商业银行个人理财业务现存问题与防范探讨</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/辅修/">辅修</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
 
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons">clear_all</i>
-        <span class="mdl-button__ripple-container">
-            <span class="mdl-ripple">
-            </span>
-        </span>
-    </button>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">tianrking</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">tianrking</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags">Meow</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:tian.r.king@gmail.com" title="Email"></a>
+                            
+                                <a class="fa Facebook" target="_blank" href="https://www.facebook.com/tianrking" title="Facebook"></a>
+                            
+                                <a class="fa Google" target="_blank" href="https://plus.google.com/+TianruiKing" title="Google"></a>
+                            
+                                <a class="fa Twitter" target="_blank" href="https://twitter.com/tianruiwang" title="Twitter"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="標籤" friends="友情鏈接" about="關於我"/>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-数据库系统概述（一）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/06/数据库系统概述（一）/" class="article-date">
+      <time datetime="2018-09-06T07:03:13.000Z" itemprop="datePublished">09-06-2018</time>
+</a>
 
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/logo.png" alt="tianrking's avatar">
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/06/数据库系统概述（一）/">数据库系统概述（一）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="1-1-信息、数据、数据处理与数据管理"><a href="#1-1-信息、数据、数据处理与数据管理" class="headerlink" title="1.1 信息、数据、数据处理与数据管理"></a>1.1 信息、数据、数据处理与数据管理</h1><h2 id="1-1-1数据与信息"><a href="#1-1-1数据与信息" class="headerlink" title="1.1.1数据与信息"></a>1.1.1数据与信息</h2><ul>
+<li><strong>1</strong>. 信息的定义：信息是人脑对显示世界事物存在的方式、运动状态以及事物之间联系的抽象反映。</li>
+<li><p><strong>2</strong>. 信息的特征:</p>
+<blockquote>
+<p>  信息源于物质和能量。<br>  信息是可以感知的。<br>  信息是可储存、加工、传递和再生的。</p>
+</blockquote>
+</li>
+<li><p><strong>3</strong>. 数据的定义 ： 数据是由用来记录信息的可识别的符号组成的，是信息的具体表现形式。</p>
+</li>
+<li><strong>4</strong>. 数据的表现形式 ： 可用多种不同的数据形式表示同一种信息，而信息不随数据形式的不同而改变。 </li>
+<li><strong>5</strong>. 数据与信息的联系 ： 信息  =  数据  +  语义<h2 id="1-1-2数据处理与数据管理"><a href="#1-1-2数据处理与数据管理" class="headerlink" title="1.1.2数据处理与数据管理"></a>1.1.2数据处理与数据管理</h2></li>
+<li><p>数据处理是将数据转化成信息的过程，包括对数据的收集、管理、加工利用乃至信息输出等一系列活动。<br>目的：</p>
+<blockquote>
+<p>  从大量的原始数据中抽取和推导出有价值的信息，作为决策的依据。<br>  借助计算机科学地保存和管理大量复杂的数据，以便人们能够方便地充分利用这些信息资源。</p>
+</blockquote>
+</li>
+<li><p>在数据处理中，主要包括</p>
+<blockquote>
+<p>  分类<br>  组织<br>  编码<br>  存储<br>  维护<br>  检索</p>
+</blockquote>
+<h1 id="1-2-数据库技术产生、发展"><a href="#1-2-数据库技术产生、发展" class="headerlink" title="1.2 数据库技术产生、发展"></a>1.2 数据库技术产生、发展</h1><h4 id="1-人工管理阶段"><a href="#1-人工管理阶段" class="headerlink" title="1.人工管理阶段"></a>1.人工管理阶段</h4><pre><code>1.数据没有专门存储设备
+2.数据没有专门管理软件
+3.数据不共享
+4.数据不具有独立性
+</code></pre><h4 id="2-文件系统阶段"><a href="#2-文件系统阶段" class="headerlink" title="2.文件系统阶段"></a>2.文件系统阶段</h4><pre><code>1.数据以文件形式长期保存
+2.由文件系统管理数据
+3.程序与数据间有一定独立性
+4.文件形式已经多样化
+5.数据具有一定的共享性
+</code></pre><h4 id="与人工管理阶段相比-文件系统阶段对数据的管理有了很大的进步-但一些根本性问题仍没有彻底解决"><a href="#与人工管理阶段相比-文件系统阶段对数据的管理有了很大的进步-但一些根本性问题仍没有彻底解决" class="headerlink" title="与人工管理阶段相比 文件系统阶段对数据的管理有了很大的进步 但一些根本性问题仍没有彻底解决"></a>与人工管理阶段相比 文件系统阶段对数据的管理有了很大的进步 但一些根本性问题仍没有彻底解决</h4><ol>
+<li>数据共享性差、冗余度大</li>
+<li>数据不一致性</li>
+<li>数据独立性差</li>
+<li>数据间联系弱</li>
+</ol>
+</li>
+</ul>
+<h4 id="3-数据库系统阶段"><a href="#3-数据库系统阶段" class="headerlink" title="3.数据库系统阶段"></a>3.数据库系统阶段</h4><ul>
+<li>结构化的数据及其联系的集合：<br>数据库系统中的数据不再仅仅针对某个应用，而是面向全组织，不仅数据内部是结构化的，整体也是结构化的；<br>不仅描述了数据的本身，也描述了数据间的有机联系。<br>较好地反映了现实世界事物之间的自然联系。</li>
+<li>数据共享性高、冗余度低：<br>不同用户、不同应用可同时存取数据库中的数据，每个用户或应用只使用数据库中的一部分数据，<br>用户和程序不像在文件系统中那样各自建立自己对应的数据文件，而是从数据库中存取其中的数据子集，<br>同一个数据可能在物理存储上只存一次，但可以把它映射到不同的逻辑文件里，这就是数据库系统提高数据共享、减少数据冗余的根本所在。</li>
+<li>数据独立性高：<br>1.数据逻辑结构、存储结构以及存取方式的改变不影响应用程序。<ol start="2">
+<li><ul>
+<li>在数据库系统中，整个数据库的结构可分成三级：<ul>
+<li>用户逻辑结构</li>
+<li>数据库逻辑结构</li>
+<li>物理结构<ul>
+<li>数据独立性分为两级：</li>
+</ul>
+</li>
+<li>物理独立性</li>
+<li>逻辑独立性<ul>
+<li>数据逻辑独立性：<br>当数据库逻辑结构（如修改数据定义、增加新的数据类型、改变数据间的关系等）发生改变时，通过修改映射，用户的逻辑结构以及应用程序不用改变。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>有统一的数据管理和控制功能：<ul>
+<li>数据库管理系统提供四个方面的数据控制功能:<blockquote>
+<p>数据安全性<br>数据完整性<br>并发<br>数据恢复</p>
+</blockquote>
+<h1 id="1-3-数据库系统的组成"><a href="#1-3-数据库系统的组成" class="headerlink" title="1.3 数据库系统的组成"></a>1.3 数据库系统的组成</h1>  1.数据库<br>  数据库是储存在计算机内、有组织的、可共享的数据和数据对象（如表、视图、存储过程和触发器等）的集合，这种集合按一定的数据模型（或机构）组织、描述并长期存储，同时能以安全和可靠的方法进行数据的检索和存储。<br>  数据库有如下两个特点<br> （1）集成性<br> （2）共享性<br>  2.用户：<br>  用户是指使用数据库的人，他们可以对数据库进行存储、维护和检索等操作，分为如下三类：<br>  （1）第一类用户：最终用户<br>  （2）第二类用户：应用程序员<br>  （3）第三类用户：数据库管理员（DBA）<pre><code>DBA主要职责如下：
+（1）参与数据库设计的全过程，决定整个数据库的结构和信息内容。
+（2）决定数据库的存储结构和存取策略，已获得较高的存取效率和存储空间利用率。
+（3）帮助应用程序员使用数据库。
+（4）定义数据的安全性和完整性约束条件，负责分配各个应用程序对数据库的存取权限，确保数据的安全性和完整性。
+（5）监控数据库的使用和运行，DBA负责定义和实施适当的数据库备份和恢复策略（最短时间恢复正确，准确地修改数据结构）
+（6）改进和重构数据库，DBA负责监视数据库运行期间的空间利用率、处理效率等性能指标，利用数据库管理系统提供的监视和分析程序对数据库运行情况进行记录、统计分析，并根据实际情况不断改进数据库设计，不断提高系统性能；另外，还要不断根据用户需求情况的变化，对数据库进行重新构造。
+</code></pre>  3.软件系统：<br>  （1）操作系统 OS<br>  （2）数据库管理系统 DBMS<br>   (3) 应用开发工具<br>  （4）应用系统<br>  4.硬件系统：<pre><code>cpu、内存、大容量存储设备、输入/输出设备、外部设备。 数据库管理系统（DBMS）在整个计算机系统中关系如下：
+  硬件-&gt;操作系统-&gt;DBMS、编译系统-&gt;应用开发工具-&gt;应用系统
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h1 id="1-4-数据库系统的内部体系结构"><a href="#1-4-数据库系统的内部体系结构" class="headerlink" title="1.4 数据库系统的内部体系结构"></a>1.4 数据库系统的内部体系结构</h1><h4 id="1-4-1-数据库的三级模式结构"><a href="#1-4-1-数据库的三级模式结构" class="headerlink" title="1.4.1 数据库的三级模式结构"></a>1.4.1 数据库的三级模式结构</h4><ul>
+<li>数据库系统模式的概念：<br>  数据是按一定的数据模型（结构组织起来的），而在数据模型中有”型”、”值”的概念。<br>  型：对某一类数据的结构和属性的说明<br>  值： 是”型”的一个具体赋值<br>  <strong>模式</strong> : 是数据库中全体的逻辑结构和特征的描述，仅设计型的描述，而不涉及具体的值。模式的一个具体值称为模式的一个实例。同一个模式可以有很多实例。</li>
+<li>数据库系统的三级模式结构<blockquote>
+<p><strong>1</strong>.模式（概念模式）：</p>
+<pre><code>数据库中全体数据的逻辑结构和特征描述，处于三级模式结构的中间层，不涉及数据的物理存储细节和硬件环境，与具体应用程序、所使用的应用开发工具及高级程序设计语言无关（一个数据库只有一个模式，是数据库的整体逻辑，对现实世界的抽象，所有信息按照用户需求而形成的一个整体）
+</code></pre><p><strong>2</strong>.外模式（子模式、用户模式）：</p>
+<pre><code>是三级结构最外层，是数据库用户能看到并允许使用的那部分数据的逻辑解耦和特征的描述，是与某一应用有关的数据的逻辑表示，也是数据库用户的数据视图（用户视图）
+(一个数据库可以有多个外模式，不同用户对应的外模式的描述也可能不同，同一个外模式也可以为多个应用系统所使用)
+</code></pre><p><strong>3</strong>.内模式（存储模式、物理模式）：</p>
+<pre><code>是三级系统最内层，也是最靠近物理存储的一层，与实际存储数据有关的一层。
+（对数据库存储结构的描述，是数据在数据库内部的表示方式）
+</code></pre></blockquote>
+</li>
+<li>总结：<br>  1.一个数据库系统，实际存在的只是物理级数据库，即内模式，它是数据访问的基础。<br>  2.概念数据库只不过是物理级数据库的一种抽象描述，用户级数据库是用户与数据库的接口。<br>  3.DBMS的中心工作之一就是完成三级数据库模式间的转换，把用户对数据库的操作转化到物理级去执行。<br>  **在数据库系统中，外模式可以有多个，而模式、内模式只能各有一个。内模式是整个数据库实际存储的表示，模式是整个数据库实际存储的抽象表示，外模式是逻辑模式的某一部分的抽象表示。</li>
+</ul>
+<h4 id="1-4-2-数据库系统的二级映像与数据独立性"><a href="#1-4-2-数据库系统的二级映像与数据独立性" class="headerlink" title="1.4.2 数据库系统的二级映像与数据独立性"></a>1.4.2 数据库系统的二级映像与数据独立性</h4><ul>
+<li>外模式/模式映像</li>
+<li>模式/内模式映像</li>
+</ul>
+<h4 id="1-4-3-数据库系统的三级模式与二级映像优点"><a href="#1-4-3-数据库系统的三级模式与二级映像优点" class="headerlink" title="1.4.3 数据库系统的三级模式与二级映像优点"></a>1.4.3 数据库系统的三级模式与二级映像优点</h4><pre><code>（1）保证数据的独立性：
+    模式与内模式分开，保证了数据的物理独立性；
+    外模式与模式分开，保证了数据的逻辑独立性。
+（2）简化了用户接口：
+    按照外模式编写应用程序或输入命令，而不需了解数据库内部的存储结构，方便用户使用系统。
+（3）有利于数据共享：
+    在不同的外模式下可由多个用户共享系统中数据，减少了数据冗余。
+（4）有利于数据的安全保密：
+    在外模式下根据要求进行操作，只能对限定的数据操作，保证了其他数据安全。
+</code></pre><h1 id="1-5-数据库系统的外部体系结构"><a href="#1-5-数据库系统的外部体系结构" class="headerlink" title="1.5 数据库系统的外部体系结构"></a>1.5 数据库系统的外部体系结构</h1><ul>
+<li>单用户结构的数据库系统（桌面型数据库系统）：<br>  特点：应用程序、DBMS、数据库都装在一台计算机上，由一个用户独立占用，不同计算机不能共享数据。<br>  适用：未联网用户、个人用户。</li>
+<li>主从式结构的数据库系统：<br>  特点：应用程序、DBMS、数据库都集中存放在一个大型主机上，所有处理任务由这个大型主机来完成，而连于主机上的终端，只是作为主机的输入/输出设备，每个用户都感觉自己独占主机的全部配置。<br>  优点：结构简单、易于管理与维护。<br>  缺点：所有处理任务由主机完成，对主机的性能要求较高。当终端数量太多时，主机的处理任务和数据吞吐任务过重，容易形成瓶颈，使系统性能下降；当主机遭受攻击而出现故障时，整个系统无法使用。（对主机的可靠性要求较高）</li>
+<li><p>分布式结构的数据库系统：<br>  描述：数据库中的数据在逻辑上是一个整体，但在物理上却分布在计算机网络的不同结点上。<br>  特点：<br>  （1）数据在物理上是分布的： </p>
+<pre><code>数据库中的数据不集中存放在一台服务器是，而是分布在不同地域的服务器上，每台服务器被称为结点。
+</code></pre><p>  （2）所有数据在逻辑上是一个整体：</p>
+<pre><code>数据库中的数据在物理上是分布的，但在逻辑上却互相关联，是相互联系的整体。
+</code></pre><p>  （3）接点水分布存储的数据相对独立：在普通用户看来，整个数据库系统仍然是集中的整体，用户不关注数据的分片存储，也不关心物理数据的具体分布，完全由网络数据库在分布式文件系统的支持下完成。<br>  优点：可以利用多台服务器并发地处理数据，从而提高计算型数据处理任务的效率。<br>  缺点：数据的分布式存储给数据处理任务的协调与维护带来困难，当用户需要经常访问过程数据时，系统效率明显地受到网络流量的制约。<br>  总结：分布式数据库系统是分布式网络技术与数据库技术相结合的产物，是分布在计算机网络上的多个逻辑相关的数据库的集合。</p>
+</li>
+<li><p>客户机/服务器结构的数据库系统：<br>  描述：在主从式和分布式结构的基础上，把DBMS的功能与应用程序分开，网络上某个（些）结点专门用于执行DBMS功能，完成数据的管理功能，称为数据库服务器，其他结点上的计算机安装DBMS的应用开发工具和相关数据库应用程序，称为客户机。<br>  优点：<br>  （1）网络运行效率大大提高<br>  （2）应用程序的运行和计算处理工作由客户机完成。既减少了与服务器不必要的通信开销，也减轻了服务器的处理工作，从而减轻了服务器的负载。<br>  缺点： 维护升级很不方便，需要在每个客户机上安装客户机程序，而且当应用程序修改后，就必须在所有安装程序的客户机上升级次应用程序</p>
+</li>
+<li><p>浏览器/服务器结构的数据库系统<br>  描述：客户机端仅安装通用浏览器软件，实现用户的输入/输出，而应用程序不安装在客户机端，而是安装在介于客户机和数据库服务器之间的另外一个称为应用服务器的服务器端，即将客户端运行的应用程序转移到应用服务器上。<br>  特点： 三层结构</p>
+<blockquote>
+<p>客户机 -&gt;应用服务器 —&gt; 数据库服务器</p>
+</blockquote>
+<p>  优点：有小弟克服了客户机/服务器的结构的不足，客户机只要能运行浏览器即可，其配置与维护也相对很容易。浏览器/服务器结构在Internet中得到了最广泛的应用。Web 服务器即为应用服务器。</p>
+</li>
+</ul>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=28160237&auto=0&height=66"></iframe>
+
+
+
+
+
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/数据库原理及应用教程/">数据库原理及应用教程</a>
     </div>
 
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        tian.r.king@gmail.com
-        <b class="caret"></b>
-    </a>
-</div>
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主修/">主修</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
 
 
-        <!-- Sidebar Navigation  -->
-        <ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-            
-                <li>
-                    <a href="#" target="_blank" title="Email Me">
-                        
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        
-                        Email Me
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
 
-    <!-- Homepage -->
-    
-        <li id="sidebar-first-li">
-            <a href="/">
-                
-                    <i class="material-icons sidebar-material-icons">home</i>
-                
-                Home
-            </a>
-        </li>
-        
-    
 
-    <!-- Archives  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">inbox</i>
-                
-                    Archives
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="sidebar_archives-link" href="/archives/2019/09/">September 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">July 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">May 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">April 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">March 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">January 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">October 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">22</span></a>
-            </ul>
-        </li>
-        
-    
 
-    <!-- Categories  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
-                
-                Categories
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-                <li>
-                <a class="sidebar_archives-link" href="/categories/Anti-Extradition/">Anti-Extradition<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/中央银行学/">中央银行学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/主修/">主修<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/保险学/">保险学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/国际金融/">国际金融<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/地图学原理与方法/">地图学原理与方法<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/城市规划原理/">城市规划原理<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/宏观经济学/">宏观经济学<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数字地形测量学/">数字地形测量学<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据库原理及应用教程/">数据库原理及应用教程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构/">数据结构<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据结构C-语言描述/">数据结构C++语言描述<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/测绘工程/">测绘工程<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/误差理论与测量平差基础/">误差理论与测量平差基础<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/财务报表分析/">财务报表分析<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/财政学/">财政学<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/金融学-论文/">金融学 论文<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/金融工程/">金融工程<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/金融市场学/">金融市场学<span class="sidebar_archives-count">3</span></a>
-            </ul>
-        </li>
-        
-    
 
-    <!-- Pages  -->
-    
-        <li>
-            <a href="/about" title="About">
-                
-                    <i class="material-icons sidebar-material-icons">person</i>
-                
-                About
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/meow" title="meow">
-                
-                meow
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/whoami" title="whoami">
-                
-                whoami
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/nothing" title="实验课">
-                
-                实验课
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/tool" title="tools">
-                
-                tools
-            </a>
-        </li>
-        
-    
 
-    <!-- Article Number  -->
+
+
+  
+    <article id="post-第一章-测量坐标系与高程-二" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/04/第一章-测量坐标系与高程-二/" class="article-date">
+      <time datetime="2018-09-04T15:43:22.000Z" itemprop="datePublished">09-04-2018</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/04/第一章-测量坐标系与高程-二/">第一章 测量坐标系与高程(二)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="1-2-测量坐标系-未完待续。。"><a href="#1-2-测量坐标系-未完待续。。" class="headerlink" title="1.2 测量坐标系 #   (未完待续。。)"></a>1.2 测量坐标系 #   (未完待续。。)</h1><ul>
+<li><h2 id="常用坐标系定义"><a href="#常用坐标系定义" class="headerlink" title="常用坐标系定义"></a>常用坐标系定义</h2></li>
+<li><h3 id="大地坐标系"><a href="#大地坐标系" class="headerlink" title="大地坐标系"></a>大地坐标系</h3><ul>
+<li>大地坐标系是<strong>椭球面坐标</strong>，它的基准面是<strong>参考椭球面</strong>，基准线是<strong>法线</strong>。</li>
+<li>大地子午面与参考椭球面的交线称为大地子午线或大地经线。</li>
+<li>英国格林尼治平均天文台的子午面称为大地首子午面或大地经线。<br>(通过艾黎仪器中心的经线为起始子午线，全球精度用它作为零点)</li>
+<li>大地坐标系中，任意M点的大地坐标的分量定义如下：</li>
+<li>大地精度L: 过M点的大地子午面与大地起始子午面之间的夹角。由大地起始子午面向东量称为东经，向西量称为西经，其取值范围各为     0~180 .</li>
+<li>大地纬度B: 过M点的法线(与参考椭球面正交的直线)和大地赤道面的夹角。纬度由大地赤道面向北量称为北纬，向南量称为南纬，其取值范围各为 0~90 .</li>
+<li>大地高H: M点的法线至参考椭球面的距离<br><strong><em>大地坐标和大地高只能推算，而不能直接测量</em></strong></li>
+</ul>
+</li>
+<li><h3 id="空间直角坐标系"><a href="#空间直角坐标系" class="headerlink" title="空间直角坐标系"></a>空间直角坐标系</h3></li>
+</ul>
+<ul>
+<li><h3 id="平面直角坐标系"><a href="#平面直角坐标系" class="headerlink" title="平面直角坐标系"></a>平面直角坐标系</h3><ul>
+<li>测量中采用的平面直角坐标系统:</li>
+</ul>
+<ol>
+<li>高斯平面直角坐标系<br>2 . 独立平面直角坐标系</li>
+<li>建筑施工坐标系</li>
+</ol>
+</li>
+<li><h2 id="我国常用的坐标系统"><a href="#我国常用的坐标系统" class="headerlink" title="我国常用的坐标系统"></a>我国常用的坐标系统</h2><ol>
+<li>1954年北京坐标系</li>
+<li>1980年国家大地坐标系</li>
+<li>2000国家大地坐标系</li>
+<li>WGS-84坐标系</li>
+<li>独立坐标系</li>
+</ol>
+</li>
 </ul>
 
-
-        <!-- Sidebar Footer -->
-        <!--
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
-
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :)
--->
-
-<!-- Sidebar Divider -->
-
-    <div class="sidebar-divider"></div>
-
-
-<!-- Theme Material -->
-
-    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-            Theme - Material
-            <span class="sidebar-badge badge-circle">i</span>
-        </div>
-    </a>
-
-
-<!-- Help & Support -->
-<!--
-
--->
-
-<!-- Feedback -->
-<!--
-
--->
-
-<!-- About Theme -->
-<!--
-
--->
-
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/数字地形测量学/">数字地形测量学</a>
     </div>
 
-    <!-- Sidebar Image -->
-    
 
-</aside>
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主修/">主修</a></li></ul>
+    </div>
 
-                    
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
 
-                    
-                        <!-- Footer Top Button -->
-                        <div id="back-to-top" class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
 
-                    
 
-                    <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-    
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-        <a href="https://twitter.com/tianruiwang" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
-                <span class="visuallyhidden">Twitter</span>
-            </button><!--
-     --></a>
-    
 
-    <!-- Facebook -->
-    
-        <a href="https://www.facebook.com/tianrking" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
-                <span class="visuallyhidden">Facebook</span>
-            </button><!--
-     --></a>
-    
 
-    <!-- Google + -->
-    
-        <a href="https://plus.google.com/+TianruiKing" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
-                <span class="visuallyhidden">Google Plus</span>
-            </button><!--
-     --></a>
-    
 
-    <!-- Weibo -->
-    
 
-    <!-- Instagram -->
-    
 
-    <!-- Tumblr -->
-    
 
-    <!-- Github -->
-    
-        <a href="https://github.com/tianrking" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
-                <span class="visuallyhidden">Github</span>
-            </button><!--
-     --></a>
-    
+  
+    <article id="post-第一章-测量坐标系与高程-一" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/04/第一章-测量坐标系与高程-一/" class="article-date">
+      <time datetime="2018-09-04T15:28:44.000Z" itemprop="datePublished">09-04-2018</time>
+</a>
 
-    <!-- LinkedIn -->
-    
 
-    <!-- Zhihu -->
+    </div>
+  
+  <div class="article-inner">
     
-
-    <!-- Bilibili -->
-    
-
-    <!-- Telegram -->
+      <input type="hidden" class="isFancy" />
     
     
-    <!-- V2EX -->
-    
-</div>
-
-
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©&nbsp;2018&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>w0x7c3
-            
-        </div>
-
-        <!-- Paradox Footer Right Section -->
-
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
-
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
-
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-            </div>
-        </div>
-    
-</footer>
-
-
-                    <!-- Import JS File -->
-
-    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
-
-
-
-    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
-
-
-
-    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
-
-
-<script type="text/ls-javascript" id="NProgress-script">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    $('#nprogress .bar').css({
-        'background': '#29d'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#29d',
-        'border-left-color': '#29d'
-    });
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
-</script>
-
-
-
-
-
-
-
-    <!-- Busuanzi -->
-    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-   <!-- 使用 DISQUS js 代码 -->
-
-
-
-
-
-
-<!-- UC Browser Compatible -->
-<script>
-	var agent = navigator.userAgent.toLowerCase();
-	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
-	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-	}
-</script>
-
-<!-- Import prettify js  -->
-
-    
-
-
-
-<!-- Window Load -->
-<!-- add class for prettify -->
-<script type="text/ls-javascript" id="window-load">
-    $(window).on('load', function() {
-        // Post_Toc parent position fixed
-        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
-    });
-
-    
+      <header class="article-header">
         
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/04/第一章-测量坐标系与高程-一/">第一章    测量坐标系与高程(一)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p> 1.1 地球形状和大小 #</p>
+<ul>
+<li><h2 id="地球的自然表面"><a href="#地球的自然表面" class="headerlink" title="地球的自然表面"></a>地球的自然表面</h2><ul>
+<li>地球是一个接近于两级扁平、沿赤道略微隆起的“扁球体”。</li>
+</ul>
+</li>
+<li><h2 id="大地水准面"><a href="#大地水准面" class="headerlink" title="大地水准面"></a>大地水准面</h2><ul>
+<li>处于静止平衡状态的平均海水面向陆地内部延伸所形成的封闭曲面称为大地水准面。</li>
+<li>大地水准面包围的形体称为大地体。</li>
+<li><strong>外业</strong><ul>
+<li>铅垂线 </li>
+<li>大地水准面</li>
+</ul>
+</li>
+<li><strong>内业</strong><ul>
+<li>法线</li>
+<li>参考椭球面</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h2 id="参考椭球面"><a href="#参考椭球面" class="headerlink" title="参考椭球面"></a>参考椭球面</h2><ul>
+<li>地球椭球体的大小是由长半径a、短半b和偏率f来确定的，称为地球椭球体元素:<br>f=$$\frac{a-b}{a}$$</li>
+<li>地球椭球体元素值是通过大量的测量结果推算出来的。</li>
+<li>人们把形状、大小和定位都已经确定了的地球椭球体称为参考椭球体。</li>
+<li>参考椭球体的表面称为参考椭球面。</li>
+<li><p>参考椭球定位原则：<br>在一个国家或地区范围内使参考椭球面与大地水准面最为结合，其方法是首先使参考椭球体中心与大地体重合，并在一个国家或地区范围内适当选定一个地面点，使得该点处参考椭球面与大地水准面重合。<br><strong><em>这个用于参考椭球定位的点</em></strong>,称为<strong>大地原点</strong>，参考椭球面是测量计算的<strong>基准面</strong>，其法线是测量计算的<strong>基准线</strong>。<br> <strong>（法线与铅垂线重合、参考椭球面与大地水准面重合)</strong></p>
+</li>
+<li><p>R = $$\frac{a+a+b}{3}$$ =6371 km</p>
+</li>
+</ul>
+</li>
+</ul>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=28786838&auto=0&height=66"></iframe>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/数字地形测量学/">数字地形测量学</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主修/">主修</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-绪论" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/03/绪论/" class="article-date">
+      <time datetime="2018-09-03T04:53:50.000Z" itemprop="datePublished">09-03-2018</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
-</script>
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/03/绪论/">绪论</a>
+    </h1>
+  
 
-<!-- MathJax Load-->
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><h2 id="1-地形测量学的内容"><a href="#1-地形测量学的内容" class="headerlink" title="1.  地形测量学的内容"></a>1.  地形测量学的内容</h2><ul>
+<li><strong><em>主要内容 :</em></strong><br>.<br>..  <strong>地形测量包括控制测量和碎部测量</strong><br>1 . <strong>根据国家大地控制网，建立测图控制网测定一定输料的平面和高程控制点，计算控制点的平面坐标和高程，供碎部测量使用。</strong><br>2 . <strong>在控制测量的基础上利用各种测量方法测定各种地物、地貌特征点的平面位置和高程，确定地形要素名称、数量和质量等特征，利用地形符号绘制各种比例尺的地形图。</strong><br>3 . <strong>利用地形图进行量算和空间分析,为工程建设规划设计提供资料</strong><br>4 . <strong>应用测量误差理论分析测量误差来源和积累，建立测量质量检查和验收关系。</strong><br>5 . <strong>掌握地形测量使用的测量仪器(目前有水准仪、全站仪、全球导航卫星系统接收机)的原理、操作和维护。</strong><br>.<br>..  <strong>碎部测量的两种基本方法</strong><br>1 . <strong>地面测绘地形图</strong><br>2 . <strong>航空摄影测量测绘地形图</strong><br>. </li>
+<li><strong>重要意义</strong><br>… <strong>…地形测量常常被人们认为是经济建设和国防建设的基础工程,地形图是基本的空间地理信息</strong><br>1 . <strong>在国民经济和社会发展规划中地形测量信息是重要的基础信息，各种规划及地籍管理，首先要有地形图和地籍图</strong><br>2 . <strong>在国防建设中，地形图是战略部署的重要资料之一，是现代化大规模诸多兵种协同作战的重要保障</strong><h2 id="2-地形测量的发展状况"><a href="#2-地形测量的发展状况" class="headerlink" title="2.  地形测量的发展状况"></a>2.  地形测量的发展状况</h2><ul>
+<li><strong>广义的数字测图包括</strong><br>1 . <strong>利用全站仪或其他测量仪器进行野外数字化测图</strong><br>2 . <strong>利用数字化仪对纸质地形图的数字化</strong><br>3 . <strong>利用航摄、遥感像片进行数字化测图等方法</strong><br>-</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/数字地形测量学/">数字地形测量学</a>
+    </div>
 
 
-<!-- Bing Background -->
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主修/">主修</a></li></ul>
+    </div>
 
-<script type="text/ls-javascript" id="Bing-Background-script">
-    queue.offer(function(){
-        $('body').attr('data-original', 'https://api.i-meto.com/bing?travel');
-    });
-</script>
-
-
-<script type="text/ls-javascript" id="lazy-load">
-    // Offer LazyLoad
-    queue.offer(function(){
-        $('.lazy').lazyload({
-            effect : 'show'
-        });
-    });
-
-    // Start Queue
-    $(document).ready(function(){
-        setInterval(function(){
-            queue.execNext();
-        },200);
-    });
-</script>
-
-<!-- Custom Footer -->
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
 
 
 
-<script>
-    (function(){
-        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
 
-        for (var i = 0; i < scriptList.length; ++i) {
-            var item = scriptList[i];
-            lsloader.runInlineScript(item.id,item.id);
-        }
-    })()
-console.log('\n %c © Material Theme | Version: 1.5.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
-</script>
 
-                </main>
+
+
+
+
+  
+    <article id="post-Magic-Travel" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/03/Magic-Travel/" class="article-date">
+      <time datetime="2018-09-03T04:43:02.000Z" itemprop="datePublished">09-03-2018</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/03/Magic-Travel/">Magic Travel</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=28690484&auto=0&height=66"></iframe>
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-梦回涿鹿" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/02/梦回涿鹿/" class="article-date">
+      <time datetime="2018-09-02T15:05:43.000Z" itemprop="datePublished">09-02-2018</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/02/梦回涿鹿/">梦回涿鹿</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>Good Night 😀</strong></p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=481870484&auto=0&height=66"></iframe>
+
+<p><img src="/root-images/Deepin_20180902225931.png" alt="avatar"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-禅茶人生" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/02/禅茶人生/" class="article-date">
+      <time datetime="2018-09-02T13:21:18.000Z" itemprop="datePublished">09-02-2018</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/02/禅茶人生/">禅茶人生</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=30413351&auto=0&height=66"></iframe>
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-新的学期" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/02/新的学期/" class="article-date">
+      <time datetime="2018-09-02T12:04:32.000Z" itemprop="datePublished">09-02-2018</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/02/新的学期/">新的学期</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+    </nav>
+  
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2019 tianrking
             </div>
-        </body>
+            <div class="footer-right">
+               
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到訪數"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本頁閱讀量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
     
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回頂部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看評論"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="轉到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+             post: ".article-entry a[href], .copyright a[href]", 
+             tags: ".article-tag a", 
+             categories: ".article-category a, a.tag-list-link", 
+             articleNav: "#article-nav a, #post-nav-button a", 
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+             menu: ".header-menu a", 
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
 </html>
