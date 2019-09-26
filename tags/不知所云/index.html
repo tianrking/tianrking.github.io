@@ -15,17 +15,13 @@
 
 
 
-<meta name="description" content="Three框架                               div#canvas-frame {                 border: none;                 cursor: pointer;                 width: 100%;                 height: 600">
 <meta property="og:type" content="website">
 <meta property="og:title" content="w0x7c3">
-<meta property="og:url" content="https://tianrking.github.io/media/code/002.html">
+<meta property="og:url" content="https://tianrking.github.io/tags/不知所云/index.html">
 <meta property="og:site_name" content="w0x7c3">
-<meta property="og:description" content="Three框架                               div#canvas-frame {                 border: none;                 cursor: pointer;                 width: 100%;                 height: 600">
 <meta property="og:locale" content="zh-Hant-HK">
-<meta property="og:updated_time" content="2019-09-12T16:25:17.290Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="w0x7c3">
-<meta name="twitter:description" content="Three框架                               div#canvas-frame {                 border: none;                 cursor: pointer;                 width: 100%;                 height: 600">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +53,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>w0x7c3</title>
+<title>Tag: 不知所云 | w0x7c3</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -69,7 +65,7 @@
         isHome: false,
         isPost: false,
         isArchive: false,
-        isTag: false,
+        isTag: true,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -238,186 +234,56 @@
     </div>
     <link class="menu-list" tags="標籤" friends="友情鏈接" about="關於我"/>
 </nav>
-      <div class="body-wrap"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/media/code/002.html" class="article-date">
-      <time datetime="2019-09-26T12:48:17.032Z" itemprop="datePublished">09-26-2019</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2019/09/26/哎/" class="archive-article-date">
+      <time datetime="2019-09-26T12:45:12.000Z" itemprop="datePublished">09-26</time>
 </a>
 
 
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <style>
-    .article-meta { display: none; }
-    #container .article .article-title { padding-right: 0; }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover { border-left: none; }
-    .article-title { font-size: 1.6em }
-    .article-entry hr { margin: 0;}
-    .article-meta,
-    #container .article-info-post.article-info { display: none;}
-    #container .article .article-title { padding: 0; }
-</style>
-
-
-          
-        <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Three框架</title>
-        <script src="js/Three.js"></script>
-        <style type="text/css">
-            div#canvas-frame {
-                border: none;
-                cursor: pointer;
-                width: 100%;
-                height: 600px;
-                background-color: #EEEEEE;
-            }
-
-        </style>
-        <script>
-            var renderer;
-            function initThree() {
-                width = document.getElementById('canvas-frame').clientWidth;
-                height = document.getElementById('canvas-frame').clientHeight;
-                renderer = new THREE.WebGLRenderer({
-                    antialias : true
-                });
-                renderer.setSize(width, height);
-                document.getElementById('canvas-frame').appendChild(renderer.domElement);
-                renderer.setClearColor(0xFFFFFF, 1.0);
-            }
-
-            var camera;
-            function initCamera() {
-                camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
-                camera.position.x = 0;
-                camera.position.y = 1000;
-                camera.position.z = 0;
-                camera.up.x = 0;
-                camera.up.y = 0;
-                camera.up.z = 1;
-                camera.lookAt({
-                    x : 0,
-                    y : 0,
-                    z : 0
-                });
-            }
-
-            var scene;
-            function initScene() {
-                scene = new THREE.Scene();
-            }
-
-            var light;
-            function initLight() {
-                light = new THREE.DirectionalLight(0xFF0000, 1.0, 0);
-                light.position.set(100, 100, 200);
-                scene.add(light);
-            }
-
-            var cube;
-            function initObject() {
-                var geometry = new THREE.Geometry();
-                geometry.vertices.push( new THREE.Vector3( - 500, 0, 0 ) );
-                geometry.vertices.push( new THREE.Vector3( 500, 0, 0 ) );
-
-                for ( var i = 0; i <= 20; i ++ ) {
-
-                    var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0x000000, opacity: 0.2 } ) );
-                    line.position.z = ( i * 50 ) - 500;
-                    scene.add( line );
-
-                    var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0x000000, opacity: 0.2 } ) );
-                    line.position.x = ( i * 50 ) - 500;
-                    line.rotation.y = 90 * Math.PI / 180;
-                    scene.add( line );
-
-                }
-            }
-
-            function threeStart() {
-                initThree();
-                initCamera();
-                initScene();
-                initLight();
-                initObject();
-                renderer.clear();
-                renderer.render(scene, camera);
-            }
-
-        </script>
-    </head>
-
-    <body onload="threeStart();">
-        <div id="canvas-frame"></div>
-    </body>
-</html>
-      
-    </div>
-    
-  </div>
-  
-    
-
-
-  
-</article>
-
-
-
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
         </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"　| w0x7c3　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
-    
+         
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/09/26/哎/">哎</a>
+    </h1>
+  
+
+        <div class="article-info info-on-archive">
+          
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/不知所云/">不知所云</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
 
     
-</div>
 
-
-
-
-
-
-
-    
-
-
-
-
-
-    <script>
-        
-    </script>
 </div>
       <footer id="footer">
     <div class="outer">
