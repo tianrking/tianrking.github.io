@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="tianrking" />
+
+
+
+<meta name="description" content="实验一建表与简单操纵1😃😃😃 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778create database EDUCon (	name = &amp;ap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库实验记录">
+<meta property="og:url" content="https://tianrking.github.io/2018/12/18/数据库实验记录/index.html">
+<meta property="og:site_name" content="w0x7c3">
+<meta property="og:description" content="实验一建表与简单操纵1😃😃😃 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778create database EDUCon (	name = &amp;ap">
+<meta property="og:locale" content="zh-Hant-HK">
+<meta property="og:updated_time" content="2018-12-18T13:20:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据库实验记录">
+<meta name="twitter:description" content="实验一建表与简单操纵1😃😃😃 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778create database EDUCon (	name = &amp;ap">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="w0x7c3" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>数据库实验记录 | w0x7c3</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">tianrking</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜單</li>
+                        <li>標籤</li>
+                        
+                        
+                        <li>關於我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">Home</a></li>
+                        
+                            <li><a href="/archives/">Posts</a></li>
+                        
+                            <li><a href="/tags">Tags</a></li>
+                        
+                            <li><a href="/meow/">Meow</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:tian.r.king@gmail.com" title="Email"></a>
+                            
+                                <a class="fa Facebook" href="https://www.facebook.com/tianrking" title="Facebook"></a>
+                            
+                                <a class="fa Google" href="https://plus.google.com/+TianruiKing" title="Google"></a>
+                            
+                                <a class="fa Twitter" href="https://twitter.com/tianruiwang" title="Twitter"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anti-Extradition/">Anti-Extradition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R-chord/">R-chord</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/不知所云/">不知所云</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/主修/">主修</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/地籍测量学/">地籍测量学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/地籍測量學/">地籍測量學</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/抱佛脚/">抱佛脚</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/袁詠琳/">袁詠琳</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/论文/">论文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贸易战下我国商业银行个人理财业务现存问题与防范探讨/">贸易战下我国商业银行个人理财业务现存问题与防范探讨</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/辅修/">辅修</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">做普普通通的人,幹普普通通的事</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">tianrking</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">tianrking</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives/">Posts</a></li>
+                
+                    <li><a href="/tags">Tags</a></li>
+                
+                    <li><a href="/meow/">Meow</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:tian.r.king@gmail.com" title="Email"></a>
+                            
+                                <a class="fa Facebook" target="_blank" href="https://www.facebook.com/tianrking" title="Facebook"></a>
+                            
+                                <a class="fa Google" target="_blank" href="https://plus.google.com/+TianruiKing" title="Google"></a>
+                            
+                                <a class="fa Twitter" target="_blank" href="https://twitter.com/tianruiwang" title="Twitter"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="標籤" friends="友情鏈接" about="關於我"/>
+</nav>
+      <div class="body-wrap"><article id="post-数据库实验记录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/12/18/数据库实验记录/" class="article-date">
+      <time datetime="2018-12-18T11:08:48.000Z" itemprop="datePublished">12-18-2018</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据库实验记录
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="实验一"><a href="#实验一" class="headerlink" title="实验一"></a>实验一</h1><h2 id="建表与简单操纵"><a href="#建表与简单操纵" class="headerlink" title="建表与简单操纵"></a>建表与简单操纵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">😃😃😃</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">create database EDUC</span><br><span class="line">on </span><br><span class="line">(</span><br><span class="line">	name = &apos;student_data&apos;,</span><br><span class="line">	filename = &apos;/var/opt/mssql/tudent_data.mdf&apos;,</span><br><span class="line">	size = 10,</span><br><span class="line">	filegrowth = 5%,</span><br><span class="line">	maxsize = 50</span><br><span class="line">	)</span><br><span class="line">log on</span><br><span class="line">(</span><br><span class="line">	name = &apos;student_log&apos;,</span><br><span class="line">	filename = &apos;/var/opt/mssql/student_log.ldf&apos;,</span><br><span class="line">	size = 2,</span><br><span class="line">	maxsize = 5,</span><br><span class="line">	filegrowth = 1</span><br><span class="line">	)</span><br><span class="line">create table  student</span><br><span class="line">(</span><br><span class="line">	sno char(8) not null constraint PK_student primary key ,</span><br><span class="line">	sname char(8) not null ,</span><br><span class="line">	sex char(2),</span><br><span class="line">	native char (20),</span><br><span class="line">	birthday smalldatetime ,</span><br><span class="line">	dno char(6) ,</span><br><span class="line">	entime smalldatetime,</span><br><span class="line">	home varchar(40),</span><br><span class="line">	tel varchar(40),</span><br><span class="line">	)</span><br><span class="line">create table course</span><br><span class="line">(</span><br><span class="line">	cno char(10) not null primary key , --class id</span><br><span class="line">	spno char(8) , -- major</span><br><span class="line">	cname char(20) not null , -- class name</span><br><span class="line">	experiment tinyint,    --ex time sy</span><br><span class="line">	lecture tinyint    --le time</span><br><span class="line">	)</span><br><span class="line">create table student_course</span><br><span class="line">(</span><br><span class="line">	sno char(8) not null primary key,</span><br><span class="line">	cno char(10) not null ,</span><br><span class="line">	score tinyint </span><br><span class="line">	)</span><br><span class="line">create table teacher</span><br><span class="line">(</span><br><span class="line">	tno char(8) not null primary key,</span><br><span class="line">	tname char(8) not null ,</span><br><span class="line">	sex char(2) ,</span><br><span class="line">	birthday smalldatetime ,</span><br><span class="line">	dno char(6) ,</span><br><span class="line">	pno tinyint ,</span><br><span class="line">	home varchar(40),</span><br><span class="line">	tel varchar(40),</span><br><span class="line">	)</span><br><span class="line">create table teacher_course</span><br><span class="line">(</span><br><span class="line">	tno char(8) not null constraint T_Force foreign key references teacher(tno),</span><br><span class="line">	classno char(4),</span><br><span class="line">	cno char(10) not null constraint C_Force foreign key references course(cno),</span><br><span class="line">	classtime varchar(40),</span><br><span class="line">	classroom varchar(40),</span><br><span class="line">	weektime tinyint,</span><br><span class="line">	)</span><br><span class="line"></span><br><span class="line">alter table course add year datetime</span><br><span class="line"></span><br><span class="line">alter table course alter column year smalldatetime</span><br><span class="line"></span><br><span class="line">alter table course add constraint year check(year between 2004 and 2012)</span><br><span class="line"></span><br><span class="line">alter table course drop year</span><br><span class="line"></span><br><span class="line">alter table course drop column year</span><br><span class="line"></span><br><span class="line">insert into student (sno,sname,sex,birthday,dno,entime,home,tel)</span><br><span class="line">values (&apos;800130&apos;,&apos;w0x7c3&apos;,&apos;m&apos;,&apos;1998-11-02 &apos;,&apos;idiot&apos;,&apos;2017-09-01&apos;,&apos;Jin&apos;,&apos;+17654000663&apos;)</span><br><span class="line"></span><br><span class="line">update student set native=&apos;Jining Shandong&apos; where sname=&apos;w0x7c3&apos;</span><br></pre></td></tr></table></figure>
+<h1 id="实验二"><a href="#实验二" class="headerlink" title="实验二"></a>实验二</h1><h2 id="建表"><a href="#建表" class="headerlink" title="建表"></a>建表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">create database BR</span><br><span class="line">on</span><br><span class="line">(</span><br><span class="line">	name = &apos;book_reader_data&apos;,</span><br><span class="line">	filename = &apos;/var/opt/mssql/book_reader.mdf&apos;,</span><br><span class="line">	size = 10 ,</span><br><span class="line">	filegrowth = 5%,</span><br><span class="line">	maxsize = 50</span><br><span class="line">	)</span><br><span class="line">log on </span><br><span class="line">(</span><br><span class="line">	name = &apos;book_reader_log&apos;,</span><br><span class="line">	filename = &apos;/var/opt/mssql/book_reader.ldf&apos;,</span><br><span class="line">	size = 2,</span><br><span class="line">	maxsize = 5,</span><br><span class="line">	filegrowth = 1</span><br><span class="line">	)</span><br><span class="line">create table book </span><br><span class="line">(</span><br><span class="line">	bno char(10) constraint bkey primary key not null,</span><br><span class="line">	bsort char(12) ,</span><br><span class="line">	bpublish char(50) not null,</span><br><span class="line">	author char (20) ,</span><br><span class="line">	bname char(50) not null,</span><br><span class="line">	bprice money(8) ,</span><br><span class="line">	)</span><br><span class="line">create table reader</span><br><span class="line">(</span><br><span class="line">	rnu char(10) not null constraint rkey primary key ,</span><br><span class="line">	rname char(8) not null,</span><br><span class="line">	rwork char(50) ,</span><br><span class="line">	rsex char(2) constraint csex check(rsex==&apos;男&apos; or rsex == &apos;女&apos;) ,</span><br><span class="line">	rtel char(15),</span><br><span class="line">	)	</span><br><span class="line">create table borrow</span><br><span class="line">(</span><br><span class="line">	number char(10) primary key ,</span><br><span class="line">	bnu char(10),</span><br><span class="line">	rnu	char(10),</span><br><span class="line">	bdata datetime ,</span><br><span class="line">	)</span><br><span class="line">~~~	</span><br><span class="line"></span><br><span class="line">##插入数据</span><br></pre></td></tr></table></figure>
+<p>insert into book (bno,bsort,bpublish,author,bname,bprice)<br>values (‘1001’,’计算机’,’机械工业出版社’,’王民’,’数据结构’,’80’)<br>insert into book (bno,bsort,bpublish,author,bname,bprice)<br>values (‘1002’,’计算机’,’机械工业出版社’,’张建平’,’计算机应用’,’20’)<br>insert into book (bno,bsort,bpublish,author,bname,bprice)<br>values (‘1003’,’计算机’,’电子工业出版社’,’王敏’,’数据库技术’,’15’)<br>insert into book (bno,bsort,bpublish,author,bname,bprice)<br>values (‘1004’,’计算机’,’电子工业出版社’,’谭浩强’,’c语言’,’25’)<br>insert into book (bno,bsort,bpublish,author,bname,bprice)<br>values (‘1005’,’英语’,’中国人民大学出版社’,’张锦芯’,’应用作文写作’,’25’)<br>insert into book (bno,bsort,bpublish,author,bname,bprice)<br>values (‘1006’,’管理’,’高等教育出版社’,’Robison’,’管理学’,’15’)<br>insert into book (bno,bsort,bpublish,author,bname,bprice)<br>values (‘1007’,’管理’,’机械工业出版社’,’Fayol’,’工业管理’,’70’)<br>insert into book (bno,bsort,bpublish,author,bname,bprice)<br>values (‘1008’,’数学’,’机械工业出版社’,’李平’,’线性代数’,’50’)<br>insert into book (bno,bsort,bpublish,author,bname,bprice)<br>values (‘1009’,’管理’,’机械工业出版社’,’Durark’,’公司的概念’,’14’)<br>insert into book (bno,bsort,bpublish,author,bname,bprice)<br>values (‘1010’,’数学’,’机械工业出版社’,’徐新国’,’统计学’,’15’)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">~~~	</span><br><span class="line">insert into borrow (number,bnu,rnu)</span><br><span class="line">values (&apos;1&apos;,&apos;1001&apos;,&apos;1003&apos;)</span><br><span class="line">insert into borrow (number,bnu,rnu)</span><br><span class="line">values (&apos;2&apos;,&apos;1002&apos;,&apos;1004&apos;)</span><br><span class="line">insert into borrow (number,bnu,rnu)</span><br><span class="line">values (&apos;3&apos;,&apos;1003&apos;,&apos;1005&apos;)</span><br><span class="line">insert into borrow (number,bnu,rnu)</span><br><span class="line">values (&apos;4&apos;,&apos;1004&apos;,&apos;1006&apos;)</span><br><span class="line">insert into borrow (number,bnu,rnu)</span><br><span class="line">values (&apos;5&apos;,&apos;1005&apos;,&apos;1007&apos;)</span><br><span class="line">insert into borrow (number,bnu,rnu)</span><br><span class="line">values (&apos;6&apos;,&apos;1006&apos;,&apos;1008&apos;)</span><br><span class="line">insert into borrow (number,bnu,rnu)</span><br><span class="line">values (&apos;7&apos;,&apos;1007&apos;,&apos;1009&apos;)</span><br><span class="line">insert into borrow (number,bnu,rnu)</span><br><span class="line">values (&apos;8&apos;,&apos;1008&apos;,&apos;1010&apos;)</span><br><span class="line">insert into borrow (number,bnu,rnu)</span><br><span class="line">values (&apos;9&apos;,&apos;1009&apos;,&apos;1011&apos;)</span><br><span class="line">insert into borrow (number,bnu,rnu)</span><br><span class="line">values (&apos;10&apos;,&apos;1010&apos;,&apos;1012&apos;)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">insert into reader (rnu,rname,rwork,rsex,rtel)</span><br><span class="line">values (&apos;1001&apos;,&apos;丁一&apos;,&apos;数学院&apos;,&apos;男&apos;,&apos;81234567&apos;)</span><br><span class="line">insert into reader (rnu,rname,rwork,rsex,rtel)</span><br><span class="line">values (&apos;1002&apos;,&apos;赵二&apos;,&apos;经济学院&apos;,&apos;男&apos;,&apos;82234567&apos;)</span><br><span class="line">insert into reader (rnu,rname,rwork,rsex,rtel)</span><br><span class="line">values (&apos;1003&apos;,&apos;张三&apos;,&apos;管理学院&apos;,&apos;女&apos;,&apos;83234567&apos;)</span><br><span class="line">insert into reader (rnu,rname,rwork,rsex,rtel)</span><br><span class="line">values (&apos;1004&apos;,&apos;李四&apos;,&apos;文学院&apos;,&apos;男&apos;,&apos;84234567&apos;)</span><br><span class="line">insert into reader (rnu,rname,rwork,rsex,rtel)</span><br><span class="line">values (&apos;1005&apos;,&apos;王五&apos;,&apos;历史文化学院&apos;,&apos;女&apos;,&apos;85234567&apos;)</span><br><span class="line">insert into reader (rnu,rname,rwork,rsex,rtel)</span><br><span class="line">values (&apos;1006&apos;,&apos;孙六&apos;,&apos;物理学院&apos;,&apos;男&apos;,&apos;86234567&apos;)</span><br><span class="line">insert into reader (rnu,rname,rwork,rsex,rtel)</span><br><span class="line">values (&apos;1007&apos;,&apos;周七&apos;,&apos;生命科学院&apos;,&apos;女&apos;,&apos;87234567&apos;)</span><br><span class="line">insert into reader (rnu,rname,rwork,rsex,rtel)</span><br><span class="line">values (&apos;1008&apos;,&apos;徐八&apos;,&apos;化学院&apos;,&apos;男&apos;,&apos;88234567&apos;)</span><br><span class="line">insert into reader (rnu,rname,rwork,rsex,rtel)</span><br><span class="line">values (&apos;1009&apos;,&apos;宋九&apos;,&apos;信息学院&apos;,&apos;女&apos;,&apos;89234567&apos;)</span><br><span class="line">insert into reader (rnu,rname,rwork,rsex,rtel)</span><br><span class="line">values (&apos;1010&apos;,&apos;刘十&apos;,&apos;计算机学院&apos;,&apos;女&apos;,&apos;90234567&apos;)</span><br></pre></td></tr></table></figure>
+<p>##操纵<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">use br</span><br><span class="line">---查找这样的图书类别：要求类别中最高的图书定价不低于按类别分组的图书的平均定价的2 倍</span><br><span class="line">--select bsort from book group by bsort having max(bprice)&gt;=all(select 2*avg(bprice) from book group by bsort)</span><br><span class="line">---验证</span><br><span class="line">--select 2*avg(bprice),bsort,max(bprice) from book group by bsort</span><br><span class="line">---求机械工业出版社出版的各类图书的平均定价，分别用GROUP BY</span><br><span class="line">--select avg(bprice),bsort from book  where (bpublish=&apos;机械工业出版社&apos;) group by bsort</span><br><span class="line">---验证</span><br><span class="line">---select bprice,bsort from book  where (bpublish=&apos;机械工业出版社&apos;) </span><br><span class="line">---列出计算机类图书的书号、名称及价格，最后求出册数和总价格。</span><br><span class="line">--select bname,bprice from book where bsort like &apos;计算机&apos; </span><br><span class="line">--select count(*) from book where bsort=&apos;计算机&apos;</span><br><span class="line">--select sum(bprice) from book where bsort like &apos;计算机&apos;</span><br><span class="line">--查询计算机类和机械工业出版社出版的图书。</span><br><span class="line">--select distinct bpublish from book  where( bsort like &apos;%计算机%&apos; or bsort like &apos;%机械工业出版%&apos; )</span><br></pre></td></tr></table></figure></p>
+<p>#实验三</p>
+<h2 id="建表-1"><a href="#建表-1" class="headerlink" title="建表"></a>建表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">create database en_tools</span><br><span class="line">on</span><br><span class="line">(</span><br><span class="line">	name=&apos;en-tools_data&apos;,</span><br><span class="line">	filename=&apos;/var/opt/mssql/en-tools.ldf&apos;,</span><br><span class="line">	size=10,</span><br><span class="line">	filegrowth=5%,</span><br><span class="line">	maxsize=50</span><br><span class="line">	)</span><br><span class="line">log on</span><br><span class="line">(</span><br><span class="line">	name=&apos;en-tools_log&apos;,</span><br><span class="line">	filename=&apos;/var/opt/mssql/en-tools.mdf&apos;,</span><br><span class="line">	size=2,</span><br><span class="line">	maxsize=5,</span><br><span class="line">	filegrowth=1</span><br><span class="line">	)</span><br><span class="line">create table S</span><br><span class="line">(</span><br><span class="line">	sno char(5) constraint S_pk primary key,</span><br><span class="line">	sname char(20) ,</span><br><span class="line">	scity char(20) ,</span><br><span class="line">	stel char(20) ,</span><br><span class="line">	)</span><br><span class="line">create table J</span><br><span class="line">(</span><br><span class="line">	jno char(5) constraint J_pk primary key,</span><br><span class="line">	jname char(50) ,</span><br><span class="line">	jmaster char(10) ,</span><br><span class="line">	jplan char(8),</span><br><span class="line">	)</span><br><span class="line">create table P</span><br><span class="line">(</span><br><span class="line">	pno char(5) constraint P_pk primary key,</span><br><span class="line">	pname char(50),</span><br><span class="line">	ptype char(10),</span><br><span class="line">	plocal char(20),</span><br><span class="line">	pcolor char(10),</span><br><span class="line">	)</span><br><span class="line">create table SPJ</span><br><span class="line">(</span><br><span class="line">	spj_sno char(5),</span><br><span class="line">	spj_jno char(5),</span><br><span class="line">	spj_pno char(5),</span><br><span class="line">	spj_count int(4),</span><br><span class="line">	constraint SPJ_pk primary key(spj_jno,spj_count,spj_sno)</span><br><span class="line">	)</span><br></pre></td></tr></table></figure>
+<h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">insert into S(sno,sname,scity,stel)</span><br><span class="line">values(&apos;S1&apos;,&apos;北京供应商&apos;,&apos;北京&apos;,&apos;0108888888&apos;)</span><br><span class="line">insert into S(sno,sname,scity,stel)</span><br><span class="line">values(&apos;S2&apos;,&apos;天津供应商&apos;,&apos;天津&apos;,&apos;022888888&apos;)</span><br><span class="line">insert into S(sno,sname,scity,stel)</span><br><span class="line">values(&apos;S3&apos;,&apos;重庆供应商&apos;,&apos;重庆&apos;,&apos;023888888&apos;)</span><br><span class="line">insert into S(sno,sname,scity,stel)</span><br><span class="line">values(&apos;S4&apos;,&apos;上海供应商1&apos;,&apos;上海&apos;,&apos;021888888&apos;)</span><br><span class="line">insert into S(sno,sname,scity,stel)</span><br><span class="line">values(&apos;S5&apos;,&apos;广州供应商&apos;,&apos;广州&apos;,&apos;020888888&apos;)</span><br><span class="line">insert into S(sno,sname,scity,stel)</span><br><span class="line">values(&apos;S6&apos;,&apos;上海供应商2&apos;,&apos;上海&apos;,&apos;0216666666&apos;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">insert into J (jno,jname,jmaster,jplan)</span><br><span class="line">values(&apos;J1&apos;,&apos;工程1&apos;,&apos;丁一&apos;,&apos;200000&apos;)</span><br><span class="line">insert into J (jno,jname,jmaster,jplan)</span><br><span class="line">values(&apos;J2&apos;,&apos;工程2&apos;,&apos;赵二&apos;,&apos;60000&apos;)</span><br><span class="line">insert into J (jno,jname,jmaster,jplan)</span><br><span class="line">values(&apos;J3&apos;,&apos;工程3&apos;,&apos;张三&apos;,&apos;70000&apos;)</span><br><span class="line">insert into J (jno,jname,jmaster,jplan)</span><br><span class="line">values(&apos;J4&apos;,&apos;工程4&apos;,&apos;李四&apos;,&apos;80000&apos;)</span><br><span class="line">insert into J (jno,jname,jmaster,jplan)</span><br><span class="line">values(&apos;J5&apos;,&apos;工程5&apos;,&apos;王五&apos;,&apos;150000&apos;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">insert into P(pno,pname,ptype,plocal,pcolor)</span><br><span class="line">values(&apos;P1&apos;,&apos;螺丝&apos;,&apos;中&apos;,&apos;济南&apos;,&apos;红色&apos;)</span><br><span class="line">insert into P(pno,pname,ptype,plocal,pcolor)</span><br><span class="line">values(&apos;P2&apos;,&apos;主板&apos;,&apos;集成&apos;,&apos;深圳&apos;,&apos;绿色&apos;)</span><br><span class="line">insert into P(pno,pname,ptype,plocal,pcolor)</span><br><span class="line">values(&apos;P3&apos;,&apos;显卡&apos;,&apos;独立&apos;,&apos;香港&apos;,&apos;蓝色&apos;)</span><br><span class="line">insert into P(pno,pname,ptype,plocal,pcolor)</span><br><span class="line">values(&apos;P4&apos;,&apos;声卡&apos;,&apos;集成&apos;,&apos;天津&apos;,&apos;红色&apos;)</span><br><span class="line">insert into P(pno,pname,ptype,plocal,pcolor)</span><br><span class="line">values(&apos;P5&apos;,&apos;网卡&apos;,&apos;100M&apos;,&apos;上海&apos;,&apos;黑色&apos;)</span><br><span class="line">insert into P(pno,pname,ptype,plocal,pcolor)</span><br><span class="line">values(&apos;P6&apos;,&apos;鼠标&apos;,&apos;无线&apos;,&apos;上海&apos;,&apos;黑色&apos;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">insert into SPJ(spj_sno,spj_jno,spj_pno,spj_count)</span><br><span class="line">values(&apos;S1&apos;,&apos;J2&apos;,&apos;P4&apos;,&apos;50&apos;)</span><br><span class="line">insert into SPJ(spj_sno,spj_jno,spj_pno,spj_count)</span><br><span class="line">values(&apos;S2&apos;,&apos;J3&apos;,&apos;P5&apos;,&apos;100&apos;)</span><br><span class="line">insert into SPJ(spj_sno,spj_jno,spj_pno,spj_count)</span><br><span class="line">values(&apos;S3&apos;,&apos;J2&apos;,&apos;P6&apos;,&apos;500&apos;)</span><br><span class="line">insert into SPJ(spj_sno,spj_jno,spj_pno,spj_count)</span><br><span class="line">values(&apos;S4&apos;,&apos;J1&apos;,&apos;P3&apos;,&apos;150&apos;)</span><br><span class="line">insert into SPJ(spj_sno,spj_jno,spj_pno,spj_count)</span><br><span class="line">values(&apos;S4&apos;,&apos;J5&apos;,&apos;P1&apos;,&apos;200&apos;)</span><br><span class="line">insert into SPJ(spj_sno,spj_jno,spj_pno,spj_count)</span><br><span class="line">values(&apos;S5&apos;,&apos;J4&apos;,&apos;P6&apos;,&apos;100&apos;)</span><br><span class="line">insert into SPJ(spj_sno,spj_jno,spj_pno,spj_count)</span><br><span class="line">values(&apos;S6&apos;,&apos;J&apos;,&apos;P2&apos;,&apos;90&apos;)</span><br></pre></td></tr></table></figure>
+<h2 id="操纵"><a href="#操纵" class="headerlink" title="操纵"></a>操纵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">select sno as 供应商代码 , sname as 姓名 from s </span><br><span class="line">where sno in (select spj_sno from SPJ </span><br><span class="line">				where spj_sno = &apos;J4&apos; and spj_pno in (</span><br><span class="line">				select pno from p</span><br><span class="line">				where pcolor = &apos;红色&apos;)</span><br><span class="line">				)</span><br><span class="line">select jno as 工程代码 from S,SPJ </span><br><span class="line">where not exist(select * from SPJ </span><br><span class="line">				where S.sno=SPJ.spj_sno and scity=&apos;上海&apos;)</span><br><span class="line">select jno as 工程代码 from J,</span><br><span class="line">select distinct spj_jno from spj where spj_sno like &apos;s5&apos;</span><br></pre></td></tr></table></figure>
+<p>#实验四</p>
+<h2 id="操纵-1"><a href="#操纵-1" class="headerlink" title="操纵"></a>操纵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">显示所有专业号为‘001’，并且在服务器显示之前，暂停  1  分钟</span><br><span class="line">timefor delay &apos;00:01&apos;</span><br><span class="line">select * from course where spno=&apos;001&apos;</span><br><span class="line"></span><br><span class="line">把所有计算机转学学生的联系电话删掉，所有专业号为‘001’的学生</span><br><span class="line">的入学时间删掉，所有专业专业号为‘003.’的学生的班级号改为‘001’，</span><br><span class="line">其他的学生删掉其籍贯。（case）</span><br><span class="line">update student </span><br><span class="line">set entime = (case spno </span><br><span class="line">	when &apos;001&apos; then null else entime end)</span><br><span class="line"> 	classno = (case spn</span><br><span class="line">	when &apos;003&apos; then &apos;001&apos; else classno end)</span><br><span class="line">	native = (case spno when &apos;001&apos; native case class when &apos;003&apos; then native else null end )</span><br></pre></td></tr></table></figure>
+
+        <div id="aplayer-UEwWtNGo" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-UEwWtNGo"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "明月天涯",
+              author: "水玥兒",
+              url: "/root-images/水玥兒-明月天涯(Cover五音Jw).mp3",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文標題:</span><a href="/2018/12/18/数据库实验记录/">数据库实验记录</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主頁">tianrking</a></p>
+        <p><span>發布時間:</span>2018-12-18, 19:08:48</p>
+        <p><span>最後更新:</span>2018-12-18, 21:20:50</p>
+        <p>
+            <span>原始鏈接:</span><a class="post-url" href="/2018/12/18/数据库实验记录/" title="数据库实验记录">https://tianrking.github.io/2018/12/18/数据库实验记录/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://tianrking.github.io/2018/12/18/数据库实验记录/　　作者: tianrking" title="點擊複製文章鏈接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>許可協議:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"姓名標示-非商業性-相同方式分享 4.0 國際"</a> 轉載請保留原文鏈接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2019/01/01/稍微有点意思的财政学/">
+                    稍微有点意思的财政学
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/10/26/SQL-w0x7c3/">
+                    SQL(w0x7c3)
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目錄</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#实验一"><span class="toc-number">1.</span> <span class="toc-text">实验一</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#建表与简单操纵"><span class="toc-number">1.1.</span> <span class="toc-text">建表与简单操纵</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实验二"><span class="toc-number">2.</span> <span class="toc-text">实验二</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#建表"><span class="toc-number">2.1.</span> <span class="toc-text">建表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#建表-1"><span class="toc-number">2.2.</span> <span class="toc-text">建表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入数据"><span class="toc-number">2.3.</span> <span class="toc-text">插入数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操纵"><span class="toc-number">2.4.</span> <span class="toc-text">操纵</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操纵-1"><span class="toc-number">2.5.</span> <span class="toc-text">操纵</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隱藏目錄"  title="點擊按鈕隱藏或者顯示文章目錄">
+
+    <script>
+        yiliaConfig.toc = ["隱藏目錄", "顯示目錄", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"数据库实验记录　| w0x7c3　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2019/01/01/稍微有点意思的财政学/" title="上一篇: 稍微有点意思的财政学">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/10/26/SQL-w0x7c3/" title="下一篇: SQL(w0x7c3)">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/11/02/HOCC何韻詩-鋼鐵是怎樣煉成的/">HOCC何韻詩 鋼鐵是怎樣煉成的</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/30/土地利用現狀調查/">地籍測量學 習題 习题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/04/袁詠琳-Cindy-Yen【終於勇敢了Brave】/">袁詠琳 Cindy Yen【終於勇敢了Brave】</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/03/R-chord-Cool/">R-chord Cool</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/26/哎/">哎</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/19/香港特别行政区撤回逃犯条例/">香港特别行政区撤回逃犯条例</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/12/Vue-Hello-World/">Vue Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/09/摄影测量学/">摄影测量学</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/08/中央银行制度的形成与发展/">中央银行制度的形成与发展</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/06/土地权属调查/">土地权属调查</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/02/地籍测量学-绪论/">地籍测量学 绪论</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/24/绪论-1/">绪论</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/21/地图语言/">地图语言</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/20/地图与地图学的基本知识/">地图与地图学的基本知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/19/First-dessert/">贸易战下我国商业银行个人理财业务现存问题与防范探讨</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/09/商業銀行導論/">商業銀行導論</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/28/計算機圖形學/">計算機圖形學</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/03/宏观经济政策实践/">宏观经济政策实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/02/国际收支/">国际收支</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/23/字符串/">字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/23/第三章-保险合同/">第三章 保险合同</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/19/stupid/">stupid</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/04/第3章-线性表/">第3章 线性表</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/03/测量误差理论/">测量误差理论</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/03/第一章-数据结构概论/">第一章 数据结构概论</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/13/scrapy/">scrapy</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/01/稍微有点意思的财政学/">稍微有点意思的财政学</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/18/数据库实验记录/">数据库实验记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/26/SQL-w0x7c3/">SQL(w0x7c3)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/22/第三章-债券市场/">第三章 债券市场</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/08/香港/">独行4天，爱上远离繁华的“香港” （未完待续）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/24/第二章-货币市场/">第二章 货币市场</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/23/第二章-财务报表分析基础/">第二章 财务报表分析基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/22/第二章-财政支出概论/">第二章 财政支出概论</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/22/财政学对象-二/">财政学对象(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/22/第一节财政学对象/">财政学对象（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/16/财务报表分析概论/">财务报表分析概论</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/16/第二章-金融工程方法论/">第二章 金融工程方法论</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/16/第一章-测量坐标系与高程-三/">第一章 测量坐标系与高程（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/15/金融市场概述/">金融市场概述 </a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/第一章-金融工程概论/">第一章 金融工程概论</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/08/财政学对象 (一)/">第一节财政学对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/08/财政学导论/">财政学导论</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/06/一-城市与城镇化/">一 城市与城镇化</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/06/数据库系统概述（二）/">数据库系统概述（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/06/数据库系统概述（一）/">数据库系统概述（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/04/第一章-测量坐标系与高程-二/">第一章 测量坐标系与高程(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/04/第一章-测量坐标系与高程-一/">第一章    测量坐标系与高程(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/03/绪论/">绪论</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/03/Magic-Travel/">Magic Travel</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/02/梦回涿鹿/">梦回涿鹿</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/02/禅茶人生/">禅茶人生</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/02/新的学期/">新的学期</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017-2019 tianrking
+            </div>
+            <div class="footer-right">
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274632088'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1274632088' type='text/javascript'%3E%3C/script%3E"));</script>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到訪數"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本頁閱讀量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+	
+	<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("08/13/2017 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+
+	
+</footer>
+
+
+
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回頂部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看評論"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="轉到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+             friends: "#js-friends a", 
+            
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

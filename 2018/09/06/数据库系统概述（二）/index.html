@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="tianrking" />
+
+
+
+<meta name="description" content="1.6 数据库管理系统 1.6.1 DBMS的主要功能 数据定义功能:DBMS提供数据定义语言（DDL），定义数据的模式、外模式、内模式三级模式结构，定义模式/内模式、外模式/模式二级映像，定义有关的约束条件。（DBMS应包括DDL的编译程序，DDL定义的各种模式需要通过相应的模式翻译程序转换为机器内部代码表示形式，保存在数据字典（DD））DBMS提供结构化查询语言（SQL），提供Create、D">
+<meta name="keywords" content="主修">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库系统概述（二）">
+<meta property="og:url" content="https://tianrking.github.io/2018/09/06/数据库系统概述（二）/index.html">
+<meta property="og:site_name" content="w0x7c3">
+<meta property="og:description" content="1.6 数据库管理系统 1.6.1 DBMS的主要功能 数据定义功能:DBMS提供数据定义语言（DDL），定义数据的模式、外模式、内模式三级模式结构，定义模式/内模式、外模式/模式二级映像，定义有关的约束条件。（DBMS应包括DDL的编译程序，DDL定义的各种模式需要通过相应的模式翻译程序转换为机器内部代码表示形式，保存在数据字典（DD））DBMS提供结构化查询语言（SQL），提供Create、D">
+<meta property="og:locale" content="zh-Hant-HK">
+<meta property="og:updated_time" content="2018-09-10T01:50:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据库系统概述（二）">
+<meta name="twitter:description" content="1.6 数据库管理系统 1.6.1 DBMS的主要功能 数据定义功能:DBMS提供数据定义语言（DDL），定义数据的模式、外模式、内模式三级模式结构，定义模式/内模式、外模式/模式二级映像，定义有关的约束条件。（DBMS应包括DDL的编译程序，DDL定义的各种模式需要通过相应的模式翻译程序转换为机器内部代码表示形式，保存在数据字典（DD））DBMS提供结构化查询语言（SQL），提供Create、D">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="w0x7c3" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>数据库系统概述（二） | w0x7c3</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">tianrking</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜單</li>
+                        <li>標籤</li>
+                        
+                        
+                        <li>關於我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">Home</a></li>
+                        
+                            <li><a href="/archives/">Posts</a></li>
+                        
+                            <li><a href="/tags">Tags</a></li>
+                        
+                            <li><a href="/meow/">Meow</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:tian.r.king@gmail.com" title="Email"></a>
+                            
+                                <a class="fa Facebook" href="https://www.facebook.com/tianrking" title="Facebook"></a>
+                            
+                                <a class="fa Google" href="https://plus.google.com/+TianruiKing" title="Google"></a>
+                            
+                                <a class="fa Twitter" href="https://twitter.com/tianruiwang" title="Twitter"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anti-Extradition/">Anti-Extradition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R-chord/">R-chord</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/不知所云/">不知所云</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/主修/">主修</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/地籍测量学/">地籍测量学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/地籍測量學/">地籍測量學</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/抱佛脚/">抱佛脚</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/袁詠琳/">袁詠琳</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/论文/">论文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贸易战下我国商业银行个人理财业务现存问题与防范探讨/">贸易战下我国商业银行个人理财业务现存问题与防范探讨</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/辅修/">辅修</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">做普普通通的人,幹普普通通的事</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">tianrking</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">tianrking</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives/">Posts</a></li>
+                
+                    <li><a href="/tags">Tags</a></li>
+                
+                    <li><a href="/meow/">Meow</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:tian.r.king@gmail.com" title="Email"></a>
+                            
+                                <a class="fa Facebook" target="_blank" href="https://www.facebook.com/tianrking" title="Facebook"></a>
+                            
+                                <a class="fa Google" target="_blank" href="https://plus.google.com/+TianruiKing" title="Google"></a>
+                            
+                                <a class="fa Twitter" target="_blank" href="https://twitter.com/tianruiwang" title="Twitter"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="標籤" friends="友情鏈接" about="關於我"/>
+</nav>
+      <div class="body-wrap"><article id="post-数据库系统概述（二）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/06/数据库系统概述（二）/" class="article-date">
+      <time datetime="2018-09-06T11:36:05.000Z" itemprop="datePublished">09-06-2018</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据库系统概述（二）
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/数据库原理及应用教程/">数据库原理及应用教程</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主修/">主修</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="1-6-数据库管理系统"><a href="#1-6-数据库管理系统" class="headerlink" title="1.6 数据库管理系统"></a>1.6 数据库管理系统</h1><ul>
+<li><h3 id="1-6-1-DBMS的主要功能"><a href="#1-6-1-DBMS的主要功能" class="headerlink" title="1.6.1 DBMS的主要功能"></a>1.6.1 DBMS的主要功能</h3><ul>
+<li>数据定义功能:<br>DBMS提供数据定义语言（DDL），定义数据的模式、外模式、内模式三级模式结构，定义模式/内模式、外模式/模式二级映像，定义有关的约束条件。（DBMS应包括DDL的编译程序，DDL定义的各种模式需要通过相应的模式翻译程序转换为机器内部代码表示形式，保存在数据字典（DD））<br>DBMS提供结构化查询语言（SQL），提供Create、Drop、Alter等语句可分别用来建立、删除和修改数据库。</li>
+<li>数据操纵功能：<br>DBMS提供数据操纵语言（DML），实现对数据库的基本操作，包括检索、更新（包括插入、修改和删除）<br>  DBMS包括DML编译程序或解释程序，DML分为两类：<pre><code>自主型或自含型
+宿主型
+</code></pre></li>
+<li>数据库运行管理功能：<br>DBMS对数据库的控制主要通过四个方面实现：<br>1.数据的安全性控制<br>2.数据的完整性控制<br>3.多用户环境下的数据并发性控制<br>4.数据库的恢复</li>
+<li><p>数据库的建立和维护功能：<br>数据库的建立：数据库的初始数据的装入与数据转换。<br>数据库的维护：数据库的转储、恢复、重组织、重构造、系统性能监视与分析。</p>
+<p>由DBMS的各个实用程序分别完成</p>
+</li>
+<li><p>数据通信接口：<br>DBMS提供与其他软件进行通信的功能。</p>
+</li>
+<li>数据组织、存储和管理：<br>DBMS负责对数据库中需要存放的各种数据（如数据字典、用户数据、存取路径等）的组织、存储和管理工作，确定以何种文件结构和存取方式物理地组织这些数据，以提高存储空间利用率和对数据库进行增、删、查、改的效率。</li>
+</ul>
+</li>
+<li><h3 id="1-6-2-DBMS的组成"><a href="#1-6-2-DBMS的组成" class="headerlink" title="1.6.2 DBMS的组成"></a>1.6.2 DBMS的组成</h3><ul>
+<li><h5 id="1-语言编译处理程序："><a href="#1-语言编译处理程序：" class="headerlink" title="1.语言编译处理程序："></a>1.语言编译处理程序：</h5>   （1）数据定义语言DDL编译程序<br>  （2）数据操纵语言DML编译程序</li>
+<li><h5 id="2-系统运行控制程序："><a href="#2-系统运行控制程序：" class="headerlink" title="2.系统运行控制程序："></a>2.系统运行控制程序：</h5><p>   DBMS提供了一系列的运行控制程序，负责数据库系统运行过程中的控制与管理，主要包括：<br>  （1）系统总控程序：</p>
+<pre><code>用于控制和协调各程序的活动，它是DBMS运行程序的核心。
+</code></pre><p>  （2）安全性控制程序：</p>
+<pre><code>防止未被授权的用户存取数据库中的数据。
+</code></pre><p>  （3）完整性控制程序：</p>
+<pre><code>检查完整性约束条件，确保进入数据库中的数据的正确性、有效性和相容性。
+</code></pre><p>  （4）并发控制程序：</p>
+<pre><code>协调多用户、多任务环境下各应用程序对数据库的并发操作，保证数据的一致性。
+</code></pre><p>  （5）数据存取和更新程序：</p>
+<pre><code>实施对数据库数据的检索、插入、修改和删除等操作。
+</code></pre><p>  （6） 通信控制程序：</p>
+<pre><code>实现用户程序与DBMS间的通信。
+</code></pre><p>  除此之外，DBMS还有文件读写与维护程序、缓冲区管理程序、存取路径管理程序、事物管理程序运行日志管理程序等。所有这些程序在数据库系统运行过程中协同操作，监视着对数据库的所有操作，控制、管理数据库资源等。</p>
+</li>
+<li><h5 id="3-系统建立、维护程序："><a href="#3-系统建立、维护程序：" class="headerlink" title="3.系统建立、维护程序："></a>3.系统建立、维护程序：</h5><p>  （1）装配程序：完成初始数据库的数据装入<br>  （2）重组程序：当数据库性能降低时（如查询速度过慢），需要重新组织数据库，重新装入数据。<br>  （3）系统恢复程序：当数据库系统收到破坏时，将数据库系统恢复到以前某个正确的状态。</p>
+<ul>
+<li><h5 id="4-数据字典："><a href="#4-数据字典：" class="headerlink" title="4.数据字典："></a>4.数据字典：</h5>数据字典（DD）用来描述数据库中有关信息的数据目录，包括数据库的三级模式、数据类型、用户名和用户权限等有关数据库系统的信息，起着系统状态目录表的作用，帮助用户、DBA和DBMS本身使用和管理数据库。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h3 id="1-6-3-DBMS的数据存取过程"><a href="#1-6-3-DBMS的数据存取过程" class="headerlink" title="1.6.3 DBMS的数据存取过程"></a>1.6.3 DBMS的数据存取过程</h3><p>  （1）用户使用某种特定的数据操作语言向DBMS发出存取请求。<br>  （2）DBMS接受请求并将该请求解释转换成及其代码指令。<br>  （3）DBMS以此检查外模式、外模式/模式映像、模式、模式/内模式映像及储存结构定义。<br>  （4）DBMS对存储数据库执行必要的存取操作。<br>  （5）从对数据库的存取操作中接受结果。<br>  （6）对得到的结果进行必要的处理，如格式转换等。<br>  （7）将处理的结果返回给用户。</p>
+<p>  上述存取过程中还包括安全控制、完整性控制，以确保数据的正确性、有效性和一致性。</p>
+</li>
+</ul>
+<h1 id="1-7-数据模型"><a href="#1-7-数据模型" class="headerlink" title="1.7 数据模型"></a>1.7 数据模型</h1><ul>
+<li><h3 id="1-7-1-数据模型的概念及分类"><a href="#1-7-1-数据模型的概念及分类" class="headerlink" title="1.7.1 数据模型的概念及分类"></a>1.7.1 数据模型的概念及分类</h3><ul>
+<li><h5 id="1-数据处理的抽象与转换"><a href="#1-数据处理的抽象与转换" class="headerlink" title="1. 数据处理的抽象与转换"></a>1. 数据处理的抽象与转换</h5>  数据模型是现实世界的两级抽象的结果。在数据处理中，数据加工经历了现实世界、信息世界和计算机世界三个不同的世界，经历了两级抽象和转换。</li>
+<li><h5 id="2-数据类型的分类"><a href="#2-数据类型的分类" class="headerlink" title="2.数据类型的分类"></a>2.数据类型的分类</h5><p><strong>根据模型应用的不同目的，可以将这些模型划分为两个不同的抽象级别。</strong><br>第一类模型—概念模型（信息模型）：</p>
+<blockquote>
+<p>他是用户的观点与数据和信息的建模，是对现实世界的事物及其联系的第一级抽象，它不依赖于具体的计算机系统，不涉及信息在计算机内如何表示、如何处理问题，只是用来描述某个特定组织所关心的信息结构。<br><strong>概念模型属于信息世界中的模型，不是一个DBMS支持的数据模型，而是概念级的模型</strong></p>
+</blockquote>
+<p>第二类模型是逻辑模型（数据模型）和物理模型：</p>
+<blockquote>
+<p>逻辑模型是属于计算机世界中的模型，这一类模型是按计算机观点对数据建模，是对现实世界的第二级抽象，由严格的形式化定义，以便于在计算机中实现。任何一个DBMS都是根据某种逻辑模型有针对性地设计出来的，即数据库是按DBMS规定的数据模型组织建立起来的，因此逻辑模型主要用于DBMS实现。从概念模型到逻辑模型的转换可以由数据库设计人员完成，也可以与数据设计工具协助设计人员完成。</p>
+</blockquote>
+<p>  比较成熟地应用在数据库系统中的逻辑模型主要包括层次模型、网状模型、关系模型、面向对象模型等。<br>  物理模型是对数据最底层的抽象，它描述数据在磁盘或磁带上的存储方式和存取方法，是面向计算机系统的。物理模型的具体实现是D  BMS的任务，用户一般不必考虑物理级细节。从逻辑模型到物理模型的转换是由DBMS自动完成的。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="1-7-2-数据模型的组成要素"><a href="#1-7-2-数据模型的组成要素" class="headerlink" title="1.7.2 数据模型的组成要素"></a>1.7.2 数据模型的组成要素</h3><ul>
+<li><h5 id="1-数据结构"><a href="#1-数据结构" class="headerlink" title="1.数据结构"></a>1.数据结构</h5><ul>
+<li>数据结构或数据组织结构，描述了数据库的组成对象以及对象间的联系，也就是说数据结构一方面描述的是数据对象的类型、内容和性质等，另一方面描述了数据对象间的联系。因此，数据模型通常由数据结构、数据操作和数据完整性约束三个要素组成。   </li>
+</ul>
+</li>
+<li><h5 id="2-数据操作"><a href="#2-数据操作" class="headerlink" title="2.数据操作"></a>2.数据操作</h5><ul>
+<li>数据操作是指对数据库中的各种数据允许执行的集合的操作，包括操作及相应的操作规则，描述了数据库的动态特性。数据库有查询和更新两类操作。数据模型必须定义这些操作的具体含义、操作符号、操作规则（如优先级）以及实现操作的语言。</li>
+</ul>
+</li>
+<li><h5 id="3-数据的完整性约束"><a href="#3-数据的完整性约束" class="headerlink" title="3.数据的完整性约束"></a>3.数据的完整性约束</h5><ul>
+<li>数据的完整性约束条件是一组完整性规则的集合。完整性规则是给定的数据模型中数据及其联系所具有制约和依存规则，用以限定符合数据模型的数据库状态以及状态的变化，以确保数据的正确、有效、相容 。<br><strong>一方面，数据模型应该反映和规定本数据模型必须遵守的基本的和通用的完整性约束条件；另一方面，数据模型还应该提供定义完整性约束条件机制，以反映具体应用所涉及的数据必须遵守的特定的语义约束条件。</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="1-8-三个世界及其有关概念"><a href="#1-8-三个世界及其有关概念" class="headerlink" title="1.8  三个世界及其有关概念"></a>1.8  三个世界及其有关概念</h1><ul>
+<li><h5 id="1-8-1-现实世界"><a href="#1-8-1-现实世界" class="headerlink" title="1.8.1 现实世界"></a>1.8.1 现实世界</h5><ul>
+<li>客观存在的世界。事物之间是相互联系的，而这种联系可能是多方面的，但人们只选择那些感兴趣的联系，无需选择所有的联系。</li>
+</ul>
+</li>
+<li><h5 id="1-8-2-信息世界"><a href="#1-8-2-信息世界" class="headerlink" title="1.8.2 信息世界"></a>1.8.2 信息世界</h5><ul>
+<li><h6 id="1-信息世界及其有关概念"><a href="#1-信息世界及其有关概念" class="headerlink" title="1.信息世界及其有关概念"></a>1.信息世界及其有关概念</h6>  （1） 实体<br>  （2） 属性<br>  （3）实体型<br>  （4）实体集<br> （5）码<br> （6）域<br> （7）联系</li>
+<li><h6 id="2-两个实体型间的联系"><a href="#2-两个实体型间的联系" class="headerlink" title="2. 两个实体型间的联系"></a>2. 两个实体型间的联系</h6>  （1）<br>  （2）<br>  （3）</li>
+<li><h6 id="3-两个以上实体型间的联系"><a href="#3-两个以上实体型间的联系" class="headerlink" title="3.两个以上实体型间的联系"></a>3.两个以上实体型间的联系</h6></li>
+<li><h6 id="4-单个实体型内部的联系"><a href="#4-单个实体型内部的联系" class="headerlink" title="4.单个实体型内部的联系"></a>4.单个实体型内部的联系</h6></li>
+</ul>
+</li>
+<li><h5 id="1-8-3-计算机世界"><a href="#1-8-3-计算机世界" class="headerlink" title="1.8.3 计算机世界"></a>1.8.3 计算机世界</h5><p>  （1）字段 标记实体属性的命名单位称为字段<br>  （2）记录：<br>  （3） 文件：<br>  （4）关键字：</p>
+</li>
+</ul>
+<pre><code>现实世界        信息世界        计算机世界
+事物总体        实体集          文件
+事物个体        实体            记录
+特征            属性            字段
+事物之间联系    实体模型        数据模型
+</code></pre>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文標題:</span><a href="/2018/09/06/数据库系统概述（二）/">数据库系统概述（二）</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主頁">tianrking</a></p>
+        <p><span>發布時間:</span>2018-09-06, 19:36:05</p>
+        <p><span>最後更新:</span>2018-09-10, 09:50:51</p>
+        <p>
+            <span>原始鏈接:</span><a class="post-url" href="/2018/09/06/数据库系统概述（二）/" title="数据库系统概述（二）">https://tianrking.github.io/2018/09/06/数据库系统概述（二）/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://tianrking.github.io/2018/09/06/数据库系统概述（二）/　　作者: tianrking" title="點擊複製文章鏈接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>許可協議:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"姓名標示-非商業性-相同方式分享 4.0 國際"</a> 轉載請保留原文鏈接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/09/06/一-城市与城镇化/">
+                    一 城市与城镇化
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/09/06/数据库系统概述（一）/">
+                    数据库系统概述（一）
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目錄</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-6-数据库管理系统"><span class="toc-number">1.</span> <span class="toc-text">1.6 数据库管理系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-1-DBMS的主要功能"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.6.1 DBMS的主要功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-2-DBMS的组成"><span class="toc-number">1.0.2.</span> <span class="toc-text">1.6.2 DBMS的组成</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-语言编译处理程序："><span class="toc-number">1.0.2.0.1.</span> <span class="toc-text">1.语言编译处理程序：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-系统运行控制程序："><span class="toc-number">1.0.2.0.2.</span> <span class="toc-text">2.系统运行控制程序：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-系统建立、维护程序："><span class="toc-number">1.0.2.0.3.</span> <span class="toc-text">3.系统建立、维护程序：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-数据字典："><span class="toc-number">1.0.2.0.4.</span> <span class="toc-text">4.数据字典：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-3-DBMS的数据存取过程"><span class="toc-number">1.0.3.</span> <span class="toc-text">1.6.3 DBMS的数据存取过程</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-7-数据模型"><span class="toc-number">2.</span> <span class="toc-text">1.7 数据模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-1-数据模型的概念及分类"><span class="toc-number">2.0.1.</span> <span class="toc-text">1.7.1 数据模型的概念及分类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-数据处理的抽象与转换"><span class="toc-number">2.0.1.0.1.</span> <span class="toc-text">1. 数据处理的抽象与转换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-数据类型的分类"><span class="toc-number">2.0.1.0.2.</span> <span class="toc-text">2.数据类型的分类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-2-数据模型的组成要素"><span class="toc-number">2.0.2.</span> <span class="toc-text">1.7.2 数据模型的组成要素</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-数据结构"><span class="toc-number">2.0.2.0.1.</span> <span class="toc-text">1.数据结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-数据操作"><span class="toc-number">2.0.2.0.2.</span> <span class="toc-text">2.数据操作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-数据的完整性约束"><span class="toc-number">2.0.2.0.3.</span> <span class="toc-text">3.数据的完整性约束</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-8-三个世界及其有关概念"><span class="toc-number">3.</span> <span class="toc-text">1.8  三个世界及其有关概念</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-8-1-现实世界"><span class="toc-number">3.0.0.0.1.</span> <span class="toc-text">1.8.1 现实世界</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-8-2-信息世界"><span class="toc-number">3.0.0.0.2.</span> <span class="toc-text">1.8.2 信息世界</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-信息世界及其有关概念"><span class="toc-number">3.0.0.0.2.1.</span> <span class="toc-text">1.信息世界及其有关概念</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-两个实体型间的联系"><span class="toc-number">3.0.0.0.2.2.</span> <span class="toc-text">2. 两个实体型间的联系</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-两个以上实体型间的联系"><span class="toc-number">3.0.0.0.2.3.</span> <span class="toc-text">3.两个以上实体型间的联系</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-单个实体型内部的联系"><span class="toc-number">3.0.0.0.2.4.</span> <span class="toc-text">4.单个实体型内部的联系</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-8-3-计算机世界"><span class="toc-number">3.0.0.0.3.</span> <span class="toc-text">1.8.3 计算机世界</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隱藏目錄"  title="點擊按鈕隱藏或者顯示文章目錄">
+
+    <script>
+        yiliaConfig.toc = ["隱藏目錄", "顯示目錄", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"数据库系统概述（二）　| w0x7c3　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/09/06/一-城市与城镇化/" title="上一篇: 一 城市与城镇化">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/09/06/数据库系统概述（一）/" title="下一篇: 数据库系统概述（一）">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/11/02/HOCC何韻詩-鋼鐵是怎樣煉成的/">HOCC何韻詩 鋼鐵是怎樣煉成的</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/30/土地利用現狀調查/">地籍測量學 習題 习题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/04/袁詠琳-Cindy-Yen【終於勇敢了Brave】/">袁詠琳 Cindy Yen【終於勇敢了Brave】</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/03/R-chord-Cool/">R-chord Cool</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/26/哎/">哎</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/19/香港特别行政区撤回逃犯条例/">香港特别行政区撤回逃犯条例</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/12/Vue-Hello-World/">Vue Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/09/摄影测量学/">摄影测量学</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/08/中央银行制度的形成与发展/">中央银行制度的形成与发展</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/06/土地权属调查/">土地权属调查</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/02/地籍测量学-绪论/">地籍测量学 绪论</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/24/绪论-1/">绪论</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/21/地图语言/">地图语言</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/20/地图与地图学的基本知识/">地图与地图学的基本知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/19/First-dessert/">贸易战下我国商业银行个人理财业务现存问题与防范探讨</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/09/商業銀行導論/">商業銀行導論</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/28/計算機圖形學/">計算機圖形學</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/03/宏观经济政策实践/">宏观经济政策实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/02/国际收支/">国际收支</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/23/字符串/">字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/23/第三章-保险合同/">第三章 保险合同</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/19/stupid/">stupid</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/04/第3章-线性表/">第3章 线性表</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/03/测量误差理论/">测量误差理论</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/03/第一章-数据结构概论/">第一章 数据结构概论</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/13/scrapy/">scrapy</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/01/稍微有点意思的财政学/">稍微有点意思的财政学</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/18/数据库实验记录/">数据库实验记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/26/SQL-w0x7c3/">SQL(w0x7c3)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/22/第三章-债券市场/">第三章 债券市场</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/08/香港/">独行4天，爱上远离繁华的“香港” （未完待续）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/24/第二章-货币市场/">第二章 货币市场</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/23/第二章-财务报表分析基础/">第二章 财务报表分析基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/22/第二章-财政支出概论/">第二章 财政支出概论</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/22/财政学对象-二/">财政学对象(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/22/第一节财政学对象/">财政学对象（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/16/财务报表分析概论/">财务报表分析概论</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/16/第二章-金融工程方法论/">第二章 金融工程方法论</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/16/第一章-测量坐标系与高程-三/">第一章 测量坐标系与高程（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/15/金融市场概述/">金融市场概述 </a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/10/第一章-金融工程概论/">第一章 金融工程概论</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/08/财政学对象 (一)/">第一节财政学对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/08/财政学导论/">财政学导论</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/06/一-城市与城镇化/">一 城市与城镇化</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/06/数据库系统概述（二）/">数据库系统概述（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/06/数据库系统概述（一）/">数据库系统概述（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/04/第一章-测量坐标系与高程-二/">第一章 测量坐标系与高程(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/04/第一章-测量坐标系与高程-一/">第一章    测量坐标系与高程(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/03/绪论/">绪论</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/03/Magic-Travel/">Magic Travel</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/02/梦回涿鹿/">梦回涿鹿</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/02/禅茶人生/">禅茶人生</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/02/新的学期/">新的学期</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017-2019 tianrking
+            </div>
+            <div class="footer-right">
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274632088'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1274632088' type='text/javascript'%3E%3C/script%3E"));</script>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到訪數"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本頁閱讀量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+	
+	<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("08/13/2017 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+
+	
+</footer>
+
+
+
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回頂部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看評論"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="轉到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+             friends: "#js-friends a", 
+            
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
