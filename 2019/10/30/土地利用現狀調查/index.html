@@ -540,12 +540,12 @@
 </ol>
 <h2 id="試述控制面積的量算方法"><a href="#試述控制面積的量算方法" class="headerlink" title="試述控制面積的量算方法"></a>試述控制面積的量算方法</h2><p> 遵循“整体到局部，层层控制，分级测算，块块检核，逐级按比例平差”的原则，即分级控制，分级测算，分级平差</p>
 <h2 id="土地面積量算與平差的原則是什麽"><a href="#土地面積量算與平差的原則是什麽" class="headerlink" title="土地面積量算與平差的原則是什麽"></a>土地面積量算與平差的原則是什麽</h2><h2 id="簡述獨立宗地面積量算的項目與關係"><a href="#簡述獨立宗地面積量算的項目與關係" class="headerlink" title="簡述獨立宗地面積量算的項目與關係"></a>簡述獨立宗地面積量算的項目與關係</h2><h2 id="簡述公用宗地面積量算的項目與關係"><a href="#簡述公用宗地面積量算的項目與關係" class="headerlink" title="簡述公用宗地面積量算的項目與關係"></a>簡述公用宗地面積量算的項目與關係</h2><h2 id="試述土地面積分攤的原則和方法"><a href="#試述土地面積分攤的原則和方法" class="headerlink" title="試述土地面積分攤的原則和方法"></a>試述土地面積分攤的原則和方法</h2><h1 id="十-日常地籍調查"><a href="#十-日常地籍調查" class="headerlink" title="十 日常地籍調查"></a>十 日常地籍調查</h1><h2 id="什麽是日常地籍調查"><a href="#什麽是日常地籍調查" class="headerlink" title="什麽是日常地籍調查"></a>什麽是日常地籍調查</h2><h2 id="日常地籍調查前-主要應準備哪些資料"><a href="#日常地籍調查前-主要應準備哪些資料" class="headerlink" title="日常地籍調查前 主要應準備哪些資料"></a>日常地籍調查前 主要應準備哪些資料</h2><h2 id="什麽是界址點的鑒定-試述鑒定測量的作業程序"><a href="#什麽是界址點的鑒定-試述鑒定測量的作業程序" class="headerlink" title="什麽是界址點的鑒定 試述鑒定測量的作業程序"></a>什麽是界址點的鑒定 試述鑒定測量的作業程序</h2><h2 id="試述土地利用變更調查的技術流程"><a href="#試述土地利用變更調查的技術流程" class="headerlink" title="試述土地利用變更調查的技術流程"></a>試述土地利用變更調查的技術流程</h2><h2 id="什麽是土地利用動態遙感檢測-一般采用哪兩種方法進行監測-簡述其優缺點"><a href="#什麽是土地利用動態遙感檢測-一般采用哪兩種方法進行監測-簡述其優缺點" class="headerlink" title="什麽是土地利用動態遙感檢測? 一般采用哪兩種方法進行監測 簡述其優缺點"></a>什麽是土地利用動態遙感檢測? 一般采用哪兩種方法進行監測 簡述其優缺點</h2><h2 id="試述確定土地利用變化類型的方法"><a href="#試述確定土地利用變化類型的方法" class="headerlink" title="試述確定土地利用變化類型的方法"></a>試述確定土地利用變化類型的方法</h2><h2 id="什麽是土地分割測量-何種情況下需要進行土地分割測量"><a href="#什麽是土地分割測量-何種情況下需要進行土地分割測量" class="headerlink" title="什麽是土地分割測量? 何種情況下需要進行土地分割測量?"></a>什麽是土地分割測量? 何種情況下需要進行土地分割測量?</h2><h1 id="十一-數字地籍測量"><a href="#十一-數字地籍測量" class="headerlink" title="十一 數字地籍測量"></a>十一 數字地籍測量</h1>
-        <div id="aplayer-nhTvwlwd" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-YWANAvtQ" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-nhTvwlwd"),
+            element: document.getElementById("aplayer-YWANAvtQ"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -716,7 +716,33 @@
             </div>
         
     </div>
+	
+	<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("08/13/2017 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+
+	
 </footer>
+
+
+
     </div>
     
 <script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>

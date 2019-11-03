@@ -325,12 +325,12 @@
 <li><strong>西方财政扩大到公共不敏经济领域</strong>，研究通过财政体制和财政政策来消除物价波动、通货膨胀、就业危机和经济衰退。实现经济稳定发展、充分就业，物价稳定和国际收支平衡的宏观经济目标。</li>
 </ul>
 <h3 id="财政产生条件及最早出现的财政范畴（最初的财政形式）"><a href="#财政产生条件及最早出现的财政范畴（最初的财政形式）" class="headerlink" title="财政产生条件及最早出现的财政范畴（最初的财政形式）"></a>财政产生条件及最早出现的财政范畴（最初的财政形式）</h3>
-        <div id="aplayer-DxUvfPWA" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-xiXdEuNv" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-DxUvfPWA"),
+            element: document.getElementById("aplayer-xiXdEuNv"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -502,7 +502,33 @@
             </div>
         
     </div>
+	
+	<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("08/13/2017 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+
+	
 </footer>
+
+
+
     </div>
     
 <script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>

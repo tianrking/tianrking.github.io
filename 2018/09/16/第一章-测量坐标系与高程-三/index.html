@@ -333,12 +333,12 @@ A2：Y2= 20  394265.2m
 <pre><code>Hab=Hb-Ha
 Hba=Ha-Hb
 </code></pre><h1 id="1-5-方位角"><a href="#1-5-方位角" class="headerlink" title="1.5 方位角"></a>1.5 方位角</h1><h2 id="一、-真方位角"><a href="#一、-真方位角" class="headerlink" title="一、 真方位角"></a>一、 真方位角</h2><h2 id="二、-坐标方位角"><a href="#二、-坐标方位角" class="headerlink" title="二、 坐标方位角"></a>二、 坐标方位角</h2><h2 id="三、磁方位角"><a href="#三、磁方位角" class="headerlink" title="三、磁方位角"></a>三、磁方位角</h2><h2 id="四、方位角的相互关系"><a href="#四、方位角的相互关系" class="headerlink" title="四、方位角的相互关系"></a>四、方位角的相互关系</h2><h1 id="1-6-用于水平面代替水准面的限度"><a href="#1-6-用于水平面代替水准面的限度" class="headerlink" title="1.6 用于水平面代替水准面的限度"></a>1.6 用于水平面代替水准面的限度</h1><h2 id="一、水准面曲率对水平距离的影响"><a href="#一、水准面曲率对水平距离的影响" class="headerlink" title="一、水准面曲率对水平距离的影响"></a>一、水准面曲率对水平距离的影响</h2><h2 id="二、水准面曲率对水平角的影响"><a href="#二、水准面曲率对水平角的影响" class="headerlink" title="二、水准面曲率对水平角的影响"></a>二、水准面曲率对水平角的影响</h2><h2 id="三、水准面曲率对高差的影响"><a href="#三、水准面曲率对高差的影响" class="headerlink" title="三、水准面曲率对高差的影响"></a>三、水准面曲率对高差的影响</h2> 
-        <div id="aplayer-NZYQNOMl" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-oavsXqTK" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-NZYQNOMl"),
+            element: document.getElementById("aplayer-oavsXqTK"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -509,7 +509,33 @@ Hba=Ha-Hb
             </div>
         
     </div>
+	
+	<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("08/13/2017 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+
+	
 </footer>
+
+
+
     </div>
     
 <script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>

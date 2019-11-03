@@ -327,12 +327,12 @@
 （3）社会成员享用社会公共需要也要付出代价（如交税或付费），但这里的规则不是等价交换原则，各社会成员的付出与其所得是不对称的，不能说谁多付就多享用，少付出就少享用，不付出就不得享用。
 （4）满足公共需要是政府的职责，所以，满足公共需要的物质手段，职能是通过政府征税和收费支撑的由国家机关和公共部门提供的公共物品。
 </code></pre><h3 id="（三）公共需要覆盖的范围更广"><a href="#（三）公共需要覆盖的范围更广" class="headerlink" title="（三）公共需要覆盖的范围更广"></a>（三）公共需要覆盖的范围更广</h3><h3 id="（四）-社会的公共需要是共同的，但又是历史的、特殊的"><a href="#（四）-社会的公共需要是共同的，但又是历史的、特殊的" class="headerlink" title="（四） 社会的公共需要是共同的，但又是历史的、特殊的"></a>（四） 社会的公共需要是共同的，但又是历史的、特殊的</h3>
-        <div id="aplayer-RFAvpTFJ" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-znLzBtDh" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-RFAvpTFJ"),
+            element: document.getElementById("aplayer-znLzBtDh"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -503,7 +503,33 @@
             </div>
         
     </div>
+	
+	<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("08/13/2017 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+
+	
 </footer>
+
+
+
     </div>
     
 <script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>

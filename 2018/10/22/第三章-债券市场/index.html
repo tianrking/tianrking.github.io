@@ -373,12 +373,12 @@
 <h3 id="二、金融债券与吸收存款的区别"><a href="#二、金融债券与吸收存款的区别" class="headerlink" title="二、金融债券与吸收存款的区别"></a>二、金融债券与吸收存款的区别</h3><p>1.筹资的目的不同<br>2.筹资的机制不同<br>3.筹资的效率不同<br>4.所筹集的基金的稳定性不同<br>5.资金流动性不同<br>6.吸收存款收到准备金率的影响</p>
 <h3 id="三、金融债券分类"><a href="#三、金融债券分类" class="headerlink" title="三、金融债券分类"></a>三、金融债券分类</h3><p>1.根据利息的支付方式，金融债券可以分为附息金融债券和贴现金融债券<br>2.根据发行条件，金融债券可以分为普通金融债券和累进利息金融债券<br>3.按照发行机构的不同，金融债券可以分为央票、证券公司债券、证券公司短期融资债务、商业银行次债、保险公司</p>
 
-        <div id="aplayer-dYmVanDJ" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-bhDUBLrr" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-dYmVanDJ"),
+            element: document.getElementById("aplayer-bhDUBLrr"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -549,7 +549,33 @@
             </div>
         
     </div>
+	
+	<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("08/13/2017 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+
+	
 </footer>
+
+
+
     </div>
     
 <script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
