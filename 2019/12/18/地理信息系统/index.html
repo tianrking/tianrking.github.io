@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="w0x7c3">
 <meta property="og:description" content="它在 美索不达尼亚平原 亚细亚海边贝壳 太平洋的海滩 印第安人的珍珠项链里 阳光成为一切的一切 让自由成为自由 财富成为财富 欲望成为欲望 战争成为战争既非亲情也非友情 有些因信用绝情 有些因信用坍塌 2.3空間尺度尺度: 在概念上是指研究者選擇觀察(測)世界的窗口觀測尺度: 研究的區域大小或空間範圍比例尺的表述: 數字 文字 圖解操作尺度: 對空間實體、現象的數據進行處理操作時應采用的最佳尺度，">
 <meta property="og:locale" content="zh-Hant-HK">
-<meta property="og:updated_time" content="2019-12-24T12:19:34.434Z">
+<meta property="og:updated_time" content="2019-12-24T14:06:41.559Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="地理信息系统">
 <meta name="twitter:description" content="它在 美索不达尼亚平原 亚细亚海边贝壳 太平洋的海滩 印第安人的珍珠项链里 阳光成为一切的一切 让自由成为自由 财富成为财富 欲望成为欲望 战争成为战争既非亲情也非友情 有些因信用绝情 有些因信用坍塌 2.3空間尺度尺度: 在概念上是指研究者選擇觀察(測)世界的窗口觀測尺度: 研究的區域大小或空間範圍比例尺的表述: 數字 文字 圖解操作尺度: 對空間實體、現象的數據進行處理操作時應采用的最佳尺度，">
@@ -484,13 +484,84 @@
 </ol>
 <p>属性数据分类: 根据系统的功能以及相应的国际、国家和行业空间信息分类规范和标准，将具有不同空间特征和语义的空间要素区别开来的过程，是为了在空间数据的逻辑结构上将数据组织为不同的信息层，并标识空间要素的类别</p>
 <p>空间数据一般采用线分类法对空间实体进行分类 P152</p>
+<p>属性数据的编码: 确定属性数据的代码的方法和过程。代码是一个或一组有序的易于被计算机或人识别与处理的符号，是计算机鉴别和查找信息的主要依据。编码直接产物就是代码，而分类分级则是编码的基础。</p>
+<p>属性数据编码一般要基于以下几个原则: </p>
+<ol>
+<li>编码的系统性和科学性</li>
+<li>编码的一致性和唯一性</li>
+<li>编码的标准化和通用性</li>
+<li>编码的简洁性</li>
+<li>编码的可扩展性</li>
+</ol>
+<p>属性数据编码的方案制定: 力求规范化、标准化，有可遵循标准的尽量依标准。<br>【若没有试用的标准可遵循，可依照以下编码的一般方法，制造出有一定适用性的编码标准】</p>
+<ol>
+<li>列出全部制图对象清单</li>
+<li>制定对象分类、分级原则和指标，将制图对象进行分类、分级。</li>
+<li>拟定分类代码系统</li>
+<li>代码及其格式。设定代码使用的字符和数字、码位长度、码位分配</li>
+<li>建立代码和编码对象的对照表。(编码最终成果档案，是数据输入计算机进行编码的依据)</li>
+</ol>
+<p>层次分类编码: 按照分类对象的从属和层次关系为排列顺序的一种代码，它的优点是能明确表述出分类对象的类别，代码结构有严格的隶属关系。 P154<br>多源分类编码法: 独立分类编码法，对于一个特定的分类目标，根据诸多不同的分类依据分别进行编码，各位数字代码之间并没有隶属关系。</p>
+<p>拓补生成: 在图形修改完毕后，需要对图形要素建立正确的拓补关系。【建立拓补关系时只需要关注实体之间的联系、相邻关系，而节点的位置、弧段的具体形状等非拓补属性则不影响拓补的建立过程】P171</p>
+<ol>
+<li>点线拓补关系的建立 P171</li>
+<li>多边形拓补关系的建立 P172</li>
+<li>网络拓补关系的建立</li>
+</ol>
+<p>数据压缩: 从取得的数据集合中抽取一个子集，这个子集作为一个新的信息源，在规定的精度范围内最好滴逼近原集合，而又取得尽可能大的压缩化</p>
+<ol>
+<li>栅格数据的压缩<ul>
+<li>栅格数据量的减少，这是与栅格数据结构密切相关的话题。其压缩技术有游程长度编码、块状编码、四叉树法</li>
+</ul>
+</li>
+<li>矢量数据的压缩<ul>
+<li>矢量数据压缩的目的是删除冗余数据，减少数据的存储量，节省存储空间，加快后续处理的速度。【压缩的主要任务是根据线性要素中心轴线和面状要素的边界线的特征，减少弧段矢量坐标串中顶点的个数】</li>
+</ul>
+<ol>
+<li>间隔取点法</li>
+<li>垂距法和偏角法</li>
+<li>分裂法</li>
+</ol>
+</li>
+</ol>
+<p>数据质量评价与控制: P176</p>
+<ol>
+<li>误差(error)</li>
+<li>精确度(accuracy)</li>
+<li>偏差(bias)</li>
+<li>精密度(precision)</li>
+<li>不确定性(uncertainty)</li>
+</ol>
+<p>空间数据质量的评价<br>评价指标:</p>
+<ol>
+<li>完备性</li>
+<li>逻辑一致性</li>
+<li>位置准确度</li>
+<li>时间准确度</li>
+<li>专题准确度</li>
+</ol>
+<p>评价方法:</p>
+<ol>
+<li>直接评价法</li>
+<li>间接评价法</li>
+</ol>
+<p>空间数据质量控制的方法:</p>
+<ol>
+<li>传统的手工方法</li>
+<li>元数据方法</li>
+<li>地理相关法</li>
+</ol>
+<p>元数据的作用:(metadata) 关于数据的数据。在空间地理信息中用于描述地理数据集的内容、质量、表示方式、空间参考、管理方式以及数据集的其他特征</p>
+<ol>
+<li>帮助</li>
+</ol>
 
-        <div id="aplayer-GJwApYlh" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-wtuDaShM" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-GJwApYlh"),
+            element: document.getElementById("aplayer-wtuDaShM"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -515,7 +586,7 @@
         <p><span>本文標題:</span><a href="/2019/12/18/地理信息系统/">地理信息系统</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主頁">tianrking</a></p>
         <p><span>發布時間:</span>2019-12-18, 22:59:58</p>
-        <p><span>最後更新:</span>2019-12-24, 20:19:34</p>
+        <p><span>最後更新:</span>2019-12-24, 22:06:41</p>
         <p>
             <span>原始鏈接:</span><a class="post-url" href="/2019/12/18/地理信息系统/" title="地理信息系统">https://tianrking.github.io/2019/12/18/地理信息系统/</a>
             <span class="copy-path" data-clipboard-text="原文: https://tianrking.github.io/2019/12/18/地理信息系统/　　作者: tianrking" title="點擊複製文章鏈接"><i class="fa fa-clipboard"></i></span>
