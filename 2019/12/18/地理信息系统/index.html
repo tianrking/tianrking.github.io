@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="w0x7c3">
 <meta property="og:description" content="它在 美索不达尼亚平原 亚细亚海边贝壳 太平洋的海滩 印第安人的珍珠项链里 阳光成为一切的一切 让自由成为自由 财富成为财富 欲望成为欲望 战争成为战争既非亲情也非友情 有些因信用绝情 有些因信用坍塌 2.3空間尺度尺度: 在概念上是指研究者選擇觀察(測)世界的窗口觀測尺度: 研究的區域大小或空間範圍比例尺的表述: 數字 文字 圖解操作尺度: 對空間實體、現象的數據進行處理操作時應采用的最佳尺度，">
 <meta property="og:locale" content="zh-Hant-HK">
-<meta property="og:updated_time" content="2019-12-25T13:38:24.150Z">
+<meta property="og:updated_time" content="2019-12-25T14:29:33.086Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="地理信息系统">
 <meta name="twitter:description" content="它在 美索不达尼亚平原 亚细亚海边贝壳 太平洋的海滩 印第安人的珍珠项链里 阳光成为一切的一切 让自由成为自由 财富成为财富 欲望成为欲望 战争成为战争既非亲情也非友情 有些因信用绝情 有些因信用坍塌 2.3空間尺度尺度: 在概念上是指研究者選擇觀察(測)世界的窗口觀測尺度: 研究的區域大小或空間範圍比例尺的表述: 數字 文字 圖解操作尺度: 對空間實體、現象的數據進行處理操作時應采用的最佳尺度，">
@@ -91,8 +91,6 @@
 
 
 
-<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
-<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
 </head>
 <body>
   <div id="container">
@@ -636,28 +634,62 @@
 <li>c</li>
 </ol>
 <h2 id="分级统计信息"><a href="#分级统计信息" class="headerlink" title="分级统计信息"></a>分级统计信息</h2><p><strong>分级</strong>是对数据进行加工处理的一种重要方法，通过分级可以把数据划分成不同的级别，体现数据自身特征，为应用研究及专题制图提供基础</p>
-<h3 id="分级概念"><a href="#分级概念" class="headerlink" title="分级概念"></a>分级概念</h3><p>数据分级根据一定的方法或标准把数据分成不同的级别，也就是把一个数据集化</p>
-
-        <div id="aplayer-WCBPmCli" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content"></pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-WCBPmCli"),
-            narrow: false,
-            autoplay: false,
-            showlrc: false,
-            music: {
-              title: "",
-              author: "/media/mp3/.mp3",
-              url: "autoplay",
-              pic: "",
-              lrc: ""
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>
+<h3 id="分级概念"><a href="#分级概念" class="headerlink" title="分级概念"></a>分级概念</h3><p>数据分级根据一定的方法或标准把数据分成不同的级别，也就是把一个数据集划分成不同的子集【还可以设置分级精度和分级数目】</p>
+<p>数据分级的根本目的:</p>
+<ol>
+<li>分级后，图面制图效果好，有利于用户读图</li>
+<li>用不同的分级方法来突出显示制图区域内不同的地貌特征</li>
+</ol>
+<p>分级原则:</p>
+<ol>
+<li>科学性</li>
+<li>完整性</li>
+<li>适用性</li>
+<li>美观性</li>
+</ol>
+<p>分级的统计方法:</p>
+<ol>
+<li>按使用分级方法的多少可分为单一分级法，复合分级法</li>
+<li>按极差是否相等可分为等值分级法和不等值分级法</li>
+<li>按确定极差的方法可以分为自定义分级法和模式分级法<ul>
+<li>自定义分级</li>
+<li>模式分级:<ol>
+<li>等间距分级</li>
+<li>分位数分级</li>
+<li>等面积分级</li>
+<li>标准差分级</li>
+<li>自然裂点法</li>
+<li>其他分级方法</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="空间插值"><a href="#空间插值" class="headerlink" title="空间插值"></a>空间插值</h2><p>空间插值是进行数据外推的基本方法</p>
+<ol>
+<li>从分布规律角度: 基于规则分布数据的内插方法，基于不规则分布的内插方法、适合于等高线数据的内插方法</li>
+<li>从内插函数与参考点的关系方面: 纯二位插值方法(曲面通过所有采样点) 曲面拟合插值方法(曲面不通过参考点)</li>
+<li>从内插曲面的数学性质来看: 多项式内插 样条内插 最小二乘配置内插 </li>
+<li>从对地形曲面理解的角度: 克里金法 多层曲面叠加法 加权平均法 分形内插法</li>
+<li>从内差点分布范围: 整体内插 局部内插 逐点内插</li>
+</ol>
+<h3 id="整体内插"><a href="#整体内插" class="headerlink" title="整体内插"></a>整体内插</h3><p><strong>整体内插，就是在整个区域用一个数学函数来表达地形曲面</strong></p>
+<ol>
+<li>整体内插函数保凸性较差</li>
+<li>不容易得到稳定的数值解解</li>
+<li>多项式系数物理意义不明显</li>
+<li>解算速度安慢且对计算机容量要求高</li>
+<li>不能提供内插区域的局部地形特征</li>
+</ol>
+<h3 id="局部分块内插"><a href="#局部分块内插" class="headerlink" title="局部分块内插"></a>局部分块内插</h3><p><strong>利用数学曲面来模拟实际地形表面，是地形表达的一个常用的手段</strong>P287</p>
+<ol>
+<li>线性内插和双线性内插</li>
+<li>二元样条函数内插</li>
+</ol>
+<p>
+			<script>
+				console.error("Error: [hexo-tag-aplayer] Specified asset file not found (“/m</p>)");
+			</script></p>
       
     </div>
     
@@ -668,7 +700,7 @@
         <p><span>本文標題:</span><a href="/2019/12/18/地理信息系统/">地理信息系统</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主頁">tianrking</a></p>
         <p><span>發布時間:</span>2019-12-18, 22:59:58</p>
-        <p><span>最後更新:</span>2019-12-25, 21:38:24</p>
+        <p><span>最後更新:</span>2019-12-25, 22:29:33</p>
         <p>
             <span>原始鏈接:</span><a class="post-url" href="/2019/12/18/地理信息系统/" title="地理信息系统">https://tianrking.github.io/2019/12/18/地理信息系统/</a>
             <span class="copy-path" data-clipboard-text="原文: https://tianrking.github.io/2019/12/18/地理信息系统/　　作者: tianrking" title="點擊複製文章鏈接"><i class="fa fa-clipboard"></i></span>
@@ -698,7 +730,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目錄</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2-3空間尺度"><span class="toc-number">1.</span> <span class="toc-text">2.3空間尺度</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-空間數據模型"><span class="toc-number">2.</span> <span class="toc-text">3.空間數據模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#空间关系查询-【拓补关系查询-缓冲区查询】"><span class="toc-number">2.1.</span> <span class="toc-text">空间关系查询:【拓补关系查询 缓冲区查询】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#拓补关系查询"><span class="toc-number">2.1.1.</span> <span class="toc-text">拓补关系查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓冲区查询"><span class="toc-number">2.1.2.</span> <span class="toc-text">缓冲区查询</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GIS基本空间分析"><span class="toc-number">3.</span> <span class="toc-text">GIS基本空间分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DEM与数字地形分析"><span class="toc-number">4.</span> <span class="toc-text">DEM与数字地形分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数字地形分析"><span class="toc-number">4.1.</span> <span class="toc-text">数字地形分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本银子分析"><span class="toc-number">4.2.</span> <span class="toc-text">基本银子分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#地形特征分析"><span class="toc-number">4.3.</span> <span class="toc-text">地形特征分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#流域分析"><span class="toc-number">4.3.1.</span> <span class="toc-text">流域分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DEFINE"><span class="toc-number">4.3.1.1.</span> <span class="toc-text">DEFINE</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可视性分析"><span class="toc-number">4.3.2.</span> <span class="toc-text">可视性分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#空间统计分析"><span class="toc-number">5.</span> <span class="toc-text">空间统计分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#探索性数据分析"><span class="toc-number">5.1.</span> <span class="toc-text">探索性数据分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本分析工具"><span class="toc-number">5.1.1.</span> <span class="toc-text">基本分析工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分级统计信息"><span class="toc-number">5.2.</span> <span class="toc-text">分级统计信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分级概念"><span class="toc-number">5.2.1.</span> <span class="toc-text">分级概念</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2-3空間尺度"><span class="toc-number">1.</span> <span class="toc-text">2.3空間尺度</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-空間數據模型"><span class="toc-number">2.</span> <span class="toc-text">3.空間數據模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#空间关系查询-【拓补关系查询-缓冲区查询】"><span class="toc-number">2.1.</span> <span class="toc-text">空间关系查询:【拓补关系查询 缓冲区查询】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#拓补关系查询"><span class="toc-number">2.1.1.</span> <span class="toc-text">拓补关系查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓冲区查询"><span class="toc-number">2.1.2.</span> <span class="toc-text">缓冲区查询</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GIS基本空间分析"><span class="toc-number">3.</span> <span class="toc-text">GIS基本空间分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DEM与数字地形分析"><span class="toc-number">4.</span> <span class="toc-text">DEM与数字地形分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数字地形分析"><span class="toc-number">4.1.</span> <span class="toc-text">数字地形分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本银子分析"><span class="toc-number">4.2.</span> <span class="toc-text">基本银子分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#地形特征分析"><span class="toc-number">4.3.</span> <span class="toc-text">地形特征分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#流域分析"><span class="toc-number">4.3.1.</span> <span class="toc-text">流域分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DEFINE"><span class="toc-number">4.3.1.1.</span> <span class="toc-text">DEFINE</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可视性分析"><span class="toc-number">4.3.2.</span> <span class="toc-text">可视性分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#空间统计分析"><span class="toc-number">5.</span> <span class="toc-text">空间统计分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#探索性数据分析"><span class="toc-number">5.1.</span> <span class="toc-text">探索性数据分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本分析工具"><span class="toc-number">5.1.1.</span> <span class="toc-text">基本分析工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分级统计信息"><span class="toc-number">5.2.</span> <span class="toc-text">分级统计信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分级概念"><span class="toc-number">5.2.1.</span> <span class="toc-text">分级概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#空间插值"><span class="toc-number">5.3.</span> <span class="toc-text">空间插值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#整体内插"><span class="toc-number">5.3.1.</span> <span class="toc-text">整体内插</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#局部分块内插"><span class="toc-number">5.3.2.</span> <span class="toc-text">局部分块内插</span></a></li></ol></li></ol></li></ol>
         
     </div>
     <style>
