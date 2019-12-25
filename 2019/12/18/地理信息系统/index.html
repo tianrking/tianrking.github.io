@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="w0x7c3">
 <meta property="og:description" content="它在 美索不达尼亚平原 亚细亚海边贝壳 太平洋的海滩 印第安人的珍珠项链里 阳光成为一切的一切 让自由成为自由 财富成为财富 欲望成为欲望 战争成为战争既非亲情也非友情 有些因信用绝情 有些因信用坍塌 2.3空間尺度尺度: 在概念上是指研究者選擇觀察(測)世界的窗口觀測尺度: 研究的區域大小或空間範圍比例尺的表述: 數字 文字 圖解操作尺度: 對空間實體、現象的數據進行處理操作時應采用的最佳尺度，">
 <meta property="og:locale" content="zh-Hant-HK">
-<meta property="og:updated_time" content="2019-12-24T14:06:41.559Z">
+<meta property="og:updated_time" content="2019-12-25T12:42:20.763Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="地理信息系统">
 <meta name="twitter:description" content="它在 美索不达尼亚平原 亚细亚海边贝壳 太平洋的海滩 印第安人的珍珠项链里 阳光成为一切的一切 让自由成为自由 财富成为财富 欲望成为欲望 战争成为战争既非亲情也非友情 有些因信用绝情 有些因信用坍塌 2.3空間尺度尺度: 在概念上是指研究者選擇觀察(測)世界的窗口觀測尺度: 研究的區域大小或空間範圍比例尺的表述: 數字 文字 圖解操作尺度: 對空間實體、現象的數據進行處理操作時應采用的最佳尺度，">
@@ -534,16 +534,16 @@
 </ol>
 <p>空间数据质量的评价<br>评价指标:</p>
 <ol>
-<li>完备性</li>
-<li>逻辑一致性</li>
-<li>位置准确度</li>
-<li>时间准确度</li>
-<li>专题准确度</li>
+<li>完备性: 要素、要素属性、要素关系的存在和缺失</li>
+<li>逻辑一致性: 对数据结构、属性关系的逻辑规则的依附度【概念一致 值域一致 格式一致 拓补一致】</li>
+<li>位置准确度: 要素位置的准确度</li>
+<li>时间准确度: 要素时间属性和时间关系的准确度</li>
+<li>专题准确度: 定量属性的正确性 要素的分类分级 以及其他关系</li>
 </ol>
 <p>评价方法:</p>
 <ol>
-<li>直接评价法</li>
-<li>间接评价法</li>
+<li>直接评价法(验收度量): 【】</li>
+<li>间接评价法(): 基于外部知识的数据集质量评价方法 【】</li>
 </ol>
 <p>空间数据质量控制的方法:</p>
 <ol>
@@ -553,15 +553,68 @@
 </ol>
 <p>元数据的作用:(metadata) 关于数据的数据。在空间地理信息中用于描述地理数据集的内容、质量、表示方式、空间参考、管理方式以及数据集的其他特征</p>
 <ol>
-<li>帮助</li>
+<li>帮助用户了解和分析数据【丰富的引导信息 存数据得到的分析 综述 索引 】</li>
+<li>空间数据质量控制: 【统计数据 空间数据】</li>
+<li>在数据集成中的应用: 【元数据记录了 数据格式 空间坐标体系 数据的表达形式 数据类型 数据使用软硬件环境 数据使用规范 数据标准】</li>
+<li>数据存储和功能实现: 【元数据系统用于数据库的管理 可实现数据库的设计和系统资源利用方面开支的合理分配，避免数据冗余】</li>
 </ol>
+<p>元数据子集:<br>主要: 标识信息 数据质量信息 空间数据组织信息 空间参考系统信息 实体和属性信息 发行信息 元数据参考信息<br>次要: 引用文献(引证)信息 时间信息 联系信息</p>
+<p>元数据元素是元数据的关键术语，是<strong>最基本的</strong>单元<br>CSDGM标准规定了3种性质的子集、实体、元素【必须的；一定条件下必须的；可选的】</p>
+<p>空间数据查询与空间度量: 地理信息系统最基本的功能之一<br><strong>在地理信息系统中。为进行深层次的分析，往往需要查询定位空间对象，并用一些简单的量测值对地理分布或现象进行描述。</strong><br><strong>空间分析首先始于空间数据查询和度量，是空格键分析的基础</strong></p>
+<hr>
+<p>查询过程可以分为3类:</p>
+<ol>
+<li>直接复原数据库中的数据及所含信息，来回答人们提出的一些比较简单的问题</li>
+<li>通过一些逻辑运算完成一定约束条件下的查询</li>
+<li>根据数据库中现有的数据模型，进行有机的组合狗再出复合模型，模拟现实世界的一些系统现象的结构、功能</li>
+</ol>
+<p>空间数据查询的方式主要有两大类: “属性查图形” “图形查属性”<br>空间数据查询的内容: 查询空间对象的属性，空间位置，空间分布，几何特征，以及和其他空间对象的空间关系</p>
+<p>属性查询: 【简单的属性查询 基于SQL语言的属性查询】<br>图形查询: 【】</p>
+<h2 id="空间关系查询-【拓补关系查询-缓冲区查询】"><a href="#空间关系查询-【拓补关系查询-缓冲区查询】" class="headerlink" title="空间关系查询:【拓补关系查询 缓冲区查询】"></a>空间关系查询:【拓补关系查询 缓冲区查询】</h2><h3 id="拓补关系查询"><a href="#拓补关系查询" class="headerlink" title="拓补关系查询"></a>拓补关系查询</h3><ol>
+<li>邻接关系查询: 邻接关系查询可以是点与点(线与线 面与面)的邻接关系查询</li>
+<li>包含关系查询: 查询某一面状地物包含的某一类地物，或者查询包含某一类地物的面状地物【被包含可以是点 线 面】</li>
+<li>关联关系查询: 空间不同元素之间拓补关系的查询</li>
+</ol>
+<h3 id="缓冲区查询"><a href="#缓冲区查询" class="headerlink" title="缓冲区查询"></a>缓冲区查询</h3><p><strong>缓冲区是根据数据库中的点、线、面地理实体，自动建立其周围一定宽度范围的多边形，来表征特定地理实体对邻域的影响范围</strong><br><strong>缓冲区查询实在不破坏原有空间目标关系的情况下，只检索缓冲区范围内涉及的空间目标</strong></p>
+<h1 id="GIS基本空间分析"><a href="#GIS基本空间分析" class="headerlink" title="GIS基本空间分析"></a>GIS基本空间分析</h1><p>空间分析是从空间数据中获取有关地理对象的空间位置、分布、形态、形成和演变信息的分析技术，是地理信息系统的核心功能之一。<br>特有【提取 表达 传输】<br>GIS基本空间分析包括:</p>
+<ol>
+<li>叠置分析</li>
+<li>缓冲区分析</li>
+<li>窗口分析</li>
+<li>网络分析</li>
+</ol>
+<h1 id="DEM与数字地形分析"><a href="#DEM与数字地形分析" class="headerlink" title="DEM与数字地形分析"></a>DEM与数字地形分析</h1><p>数字高程模型(DEM): 通过有限的地形高程数据实现对地形曲面的数字化(即地球表面形态的数字化表示)数字高程常采用<strong>绝对高程</strong>(大地水准面起算的高度)<br>数字地形分析(DTA): 数字高程模型上进行地形属性计算和特征提取的数字处理技术</p>
+<p>地形属性根据地形要素的关系特征和计算特征归纳为:</p>
+<ul>
+<li>地形曲面参数</li>
+<li>地形形态特征</li>
+<li>地形统计特征</li>
+<li>复合地形属性</li>
+</ul>
+<ol>
+<li>提取地面因子【坡度 坡向 平面曲率 破面曲率 地形起伏度 粗糙度 切割深度】</li>
+<li>提取特征地形要素: 【水文分析 可视域分析】</li>
+<li>地形统计特征分析:【应用统计方法对描述地形特征的各种可量化的银子或参数进行相关 回归 趋势面 聚类 找出各因子或参数的变化规律和内在联系】</li>
+</ol>
+<h2 id="数字地形分析"><a href="#数字地形分析" class="headerlink" title="数字地形分析"></a>数字地形分析</h2><p>地形分析是对地形环境认知的一种重要手段,传统的地形分析是基于二维平面地图进行的。</p>
+<p>斜坡因子【坡度 坡向 坡度变化率 坡向变化率】<br>面积因子【表面积 投影面积 剖面积】<br>体积因子【山体体积 挖填体积】<br>面元因子【相对高差 粗糙度 凹凸系数 高程变异】</p>
+<ul>
+<li>基本银子分析:<ol>
+<li>坡度</li>
+<li>坡向</li>
+<li>曲率</li>
+<li>宏观地形因子【地形起伏度 地形表面粗糙度 地表切割深度 】</li>
+</ol>
+</li>
+</ul>
+<p>地形特征点提取: 【山顶 凹陷点 脊点 谷点 鞍点 平地点 】</p>
 
-        <div id="aplayer-lZMvddQB" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-nnFabICh" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-lZMvddQB"),
+            element: document.getElementById("aplayer-nnFabICh"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -586,7 +639,7 @@
         <p><span>本文標題:</span><a href="/2019/12/18/地理信息系统/">地理信息系统</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主頁">tianrking</a></p>
         <p><span>發布時間:</span>2019-12-18, 22:59:58</p>
-        <p><span>最後更新:</span>2019-12-24, 22:06:41</p>
+        <p><span>最後更新:</span>2019-12-25, 20:42:20</p>
         <p>
             <span>原始鏈接:</span><a class="post-url" href="/2019/12/18/地理信息系统/" title="地理信息系统">https://tianrking.github.io/2019/12/18/地理信息系统/</a>
             <span class="copy-path" data-clipboard-text="原文: https://tianrking.github.io/2019/12/18/地理信息系统/　　作者: tianrking" title="點擊複製文章鏈接"><i class="fa fa-clipboard"></i></span>
@@ -616,7 +669,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目錄</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2-3空間尺度"><span class="toc-number">1.</span> <span class="toc-text">2.3空間尺度</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-空間數據模型"><span class="toc-number">2.</span> <span class="toc-text">3.空間數據模型</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2-3空間尺度"><span class="toc-number">1.</span> <span class="toc-text">2.3空間尺度</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-空間數據模型"><span class="toc-number">2.</span> <span class="toc-text">3.空間數據模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#空间关系查询-【拓补关系查询-缓冲区查询】"><span class="toc-number">2.1.</span> <span class="toc-text">空间关系查询:【拓补关系查询 缓冲区查询】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#拓补关系查询"><span class="toc-number">2.1.1.</span> <span class="toc-text">拓补关系查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓冲区查询"><span class="toc-number">2.1.2.</span> <span class="toc-text">缓冲区查询</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GIS基本空间分析"><span class="toc-number">3.</span> <span class="toc-text">GIS基本空间分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DEM与数字地形分析"><span class="toc-number">4.</span> <span class="toc-text">DEM与数字地形分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数字地形分析"><span class="toc-number">4.1.</span> <span class="toc-text">数字地形分析</span></a></li></ol></li></ol>
         
     </div>
     <style>
