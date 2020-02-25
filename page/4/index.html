@@ -243,6 +243,327 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-数据库实验记录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/12/18/数据库实验记录/" class="article-date">
+      <time datetime="2018-12-18T11:08:48.000Z" itemprop="datePublished">12-18-2018</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/18/数据库实验记录/">数据库实验记录</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="实验一"><a href="#实验一" class="headerlink" title="实验一"></a>实验一</h1><h2 id="建表与简单操纵"><a href="#建表与简单操纵" class="headerlink" title="建表与简单操纵"></a>建表与简单操纵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">😃😃😃</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">create database EDUC</span><br><span class="line">on </span><br><span class="line">(</span><br><span class="line">	name = &apos;student_data&apos;,</span><br><span class="line">	filename = &apos;/var/opt/mssql/tudent_data.mdf&apos;,</span><br><span class="line">	size = 10,</span><br><span class="line">	filegrowth = 5%,</span><br><span class="line">	maxsize = 50</span><br><span class="line">	)</span><br><span class="line">log on</span><br><span class="line">(</span><br><span class="line">	name = &apos;student_log&apos;,</span><br><span class="line">	filename = &apos;/var/opt/mssql/student_log.ldf&apos;,</span><br><span class="line">	size = 2,</span><br><span class="line">	maxsize = 5,</span><br><span class="line">	filegrowth = 1</span><br><span class="line">	)</span><br><span class="line">create table  student</span><br><span class="line">(</span><br><span class="line">	sno char(8) not null constraint PK_student primary key ,</span><br><span class="line">	sname char(8) not null ,</span><br><span class="line">	sex char(2),</span><br><span class="line">	native char (20),</span><br><span class="line">	birthday smalldatetime ,</span><br><span class="line">	dno char(6) ,</span><br><span class="line">	entime smalldatetime,</span><br><span class="line">	home varchar(40),</span><br><span class="line">	tel varchar(40),</span><br><span class="line">	)</span><br><span class="line">create table course</span><br><span class="line">(</span><br><span class="line">	cno char(10) not null primary key , --class id</span><br><span class="line">	spno char(8) , -- major</span><br><span class="line">	cname char(20) not null , -- class name</span><br><span class="line">	experiment tinyint,    --ex time sy</span><br><span class="line">	lecture tinyint    --le time</span><br><span class="line">	)</span><br><span class="line">create table student_course</span><br><span class="line">(</span><br><span class="line">	sno char(8) not null primary key,</span><br><span class="line">	cno char(10) not null ,</span><br><span class="line">	score tinyint </span><br><span class="line">	)</span><br><span class="line">create table teacher</span><br><span class="line">(</span><br><span class="line">	tno char(8) not null primary key,</span><br><span class="line">	tname char(8) not null ,</span><br><span class="line">	sex char(2) ,</span><br><span class="line">	birthday smalldatetime ,</span><br><span class="line">	dno char(6) ,</span><br><span class="line">	pno tinyint ,</span><br><span class="line">	home varchar(40),</span><br><span class="line">	tel varchar(40),</span><br><span class="line">	)</span><br><span class="line">create table teacher_course</span><br><span class="line">(</span><br><span class="line">	tno char(8) not null constraint T_Force foreign key references teacher(tno),</span><br><span class="line">	classno char(4),</span><br><span class="line">	cno char(10) not null constraint C_Force foreign key references course(cno),</span><br><span class="line">	classtime varchar(40),</span><br><span class="line">	classroom varchar(40),</span><br><span class="line">	weektime tinyint,</span><br><span class="line">	)</span><br><span class="line"></span><br><span class="line">alter table course add year datetime</span><br><span class="line"></span><br><span class="line">alter table course alter column year smalldatetime</span><br><span class="line"></span><br><span class="line">alter table course add constraint year check(year between 2004 and 2012)</span><br><span class="line"></span><br><span class="line">alter table course drop year</span><br><span class="line"></span><br><span class="line">alter table course drop column year</span><br><span class="line"></span><br><span class="line">insert into student (sno,sname,sex,birthday,dno,entime,home,tel)</span><br><span class="line">values (&apos;800130&apos;,&apos;w0x7c3&apos;,&apos;m&apos;,&apos;1998-11-02 &apos;,&apos;idiot&apos;,&apos;2017-09-01&apos;,&apos;Jin&apos;,&apos;+17654000663&apos;)</span><br><span class="line"></span><br><span class="line">update student set native=&apos;Jining Shandong&apos; where sname=&apos;w0x7c3&apos;</span><br></pre></td></tr></table></figure>
+<h1 id="实验二"><a href="#实验二" class="headerlink" title="实验二"></a>实验二</h1><h2 id="建表"><a href="#建表" class="headerlink" title="建表"></a>建表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">create database BR</span><br><span class="line">on</span><br><span class="line">(</span><br><span class="line">	name = &apos;book_reader_data&apos;,</span><br><span class="line">	filename = &apos;/var/opt/mssql/book_reader.mdf&apos;,</span><br><span class="line">	size = 10 ,</span><br><span class="line">	filegrowth = 5%,</span><br><span class="line">	maxsize = 50</span><br><span class="line">	)</span><br><span class="line">log on </span><br><span class="line">(</span><br><span class="line">	name = &apos;book_reader_log&apos;,</span><br><span class="line">	filename = &apos;/var/opt/mssql/book_reader.ldf&apos;,</span><br><span class="line">	size = 2,</span><br><span class="line">	maxsize = 5,</span><br><span class="line">	filegrowth = 1</span><br><span class="line">	)</span><br><span class="line">create table book </span><br><span class="line">(</span><br><span class="line">	bno char(10) constraint bkey primary key not null,</span><br><span class="line">	bsort char(12) ,</span><br><span class="line">	bpublish char(50) not null,</span><br><span class="line">	author char (20) ,</span><br><span class="line">	bname char(50) not null,</span><br><span class="line">	bprice money(8) ,</span><br><span class="line">	)</span><br><span class="line">create table reader</span><br><span class="line">(</span><br><span class="line">	rnu char(10) not null constraint rkey primary key ,</span><br><span class="line">	rname char(8) not null,</span><br><span class="line">	rwork char(50) ,</span><br><span class="line">	rsex char(2) constraint csex check(rsex==&apos;男&apos; or rsex == &apos;女&apos;) ,</span><br><span class="line">	rtel char(15),</span><br><span class="line">	)	</span><br><span class="line">create table borrow</span><br><span class="line">(</span><br><span class="line">	number char(10) primary key ,</span><br><span class="line">	bnu char(10),</span><br><span class="line">	rnu	char(10),</span><br><span class="line">	bdata datetime ,</span><br><span class="line">	)</span><br><span class="line">~~~	</span><br><span class="line"></span><br><span class="line">##插入数据</span><br></pre></td></tr></table></figure>
+<p>insert into book (bno,bsort,bpublish,author,bname,bprice)<br>values (‘1001’,’计算机’,’机械工业出版社’,’王民’,’数据结构’,’80’)<br>insert into book (bno,bsort,bpublish,author,bname,bprice)<br>values (‘1002’,’计算机’,’机械工业出版社’,’张建平’,’计算机应用’,’20’)<br>insert into book (bno,bsort,bpublish,author,bname,bprice)<br>values (‘1003’,’计算机’,’电子工业出版社’,’王敏’,’数据库技术’,’15’)<br>insert into book (bno,bsort,bpublish,author,bname,bprice)<br>values (‘1004’,’计算机’,’电子工业出版社’,’谭浩强’,’c语言’,’25’)<br>insert into book (bno,bsort,bpublish,author,bname,bprice)<br>values (‘1005’,’英语’,’中国人民大学出版社’,’张锦芯’,’应用作文写作’,’25’)<br>insert into book (bno,bsort,bpublish,author,bname,bprice)<br>values (‘1006’,’管理’,’高等教育出版社’,’Robison’,’管理学’,’15’)<br>insert into book (bno,bsort,bpublish,author,bname,bprice)<br>values (‘1007’,’管理’,’机械工业出版社’,’Fayol’,’工业管理’,’70’)<br>insert into book (bno,bsort,bpublish,author,bname,bprice)<br>values (‘1008’,’数学’,’机械工业出版社’,’李平’,’线性代数’,’50’)<br>insert into book (bno,bsort,bpublish,author,bname,bprice)<br>values (‘1009’,’管理’,’机械工业出版社’,’Durark’,’公司的概念’,’14’)<br>insert into book (bno,bsort,bpublish,author,bname,bprice)<br>values (‘1010’,’数学’,’机械工业出版社’,’徐新国’,’统计学’,’15’)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">~~~	</span><br><span class="line">insert into borrow (number,bnu,rnu)</span><br><span class="line">values (&apos;1&apos;,&apos;1001&apos;,&apos;1003&apos;)</span><br><span class="line">insert into borrow (number,bnu,rnu)</span><br><span class="line">values (&apos;2&apos;,&apos;1002&apos;,&apos;1004&apos;)</span><br><span class="line">insert into borrow (number,bnu,rnu)</span><br><span class="line">values (&apos;3&apos;,&apos;1003&apos;,&apos;1005&apos;)</span><br><span class="line">insert into borrow (number,bnu,rnu)</span><br><span class="line">values (&apos;4&apos;,&apos;1004&apos;,&apos;1006&apos;)</span><br><span class="line">insert into borrow (number,bnu,rnu)</span><br><span class="line">values (&apos;5&apos;,&apos;1005&apos;,&apos;1007&apos;)</span><br><span class="line">insert into borrow (number,bnu,rnu)</span><br><span class="line">values (&apos;6&apos;,&apos;1006&apos;,&apos;1008&apos;)</span><br><span class="line">insert into borrow (number,bnu,rnu)</span><br><span class="line">values (&apos;7&apos;,&apos;1007&apos;,&apos;1009&apos;)</span><br><span class="line">insert into borrow (number,bnu,rnu)</span><br><span class="line">values (&apos;8&apos;,&apos;1008&apos;,&apos;1010&apos;)</span><br><span class="line">insert into borrow (number,bnu,rnu)</span><br><span class="line">values (&apos;9&apos;,&apos;1009&apos;,&apos;1011&apos;)</span><br><span class="line">insert into borrow (number,bnu,rnu)</span><br><span class="line">values (&apos;10&apos;,&apos;1010&apos;,&apos;1012&apos;)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">insert into reader (rnu,rname,rwork,rsex,rtel)</span><br><span class="line">values (&apos;1001&apos;,&apos;丁一&apos;,&apos;数学院&apos;,&apos;男&apos;,&apos;81234567&apos;)</span><br><span class="line">insert into reader (rnu,rname,rwork,rsex,rtel)</span><br><span class="line">values (&apos;1002&apos;,&apos;赵二&apos;,&apos;经济学院&apos;,&apos;男&apos;,&apos;82234567&apos;)</span><br><span class="line">insert into reader (rnu,rname,rwork,rsex,rtel)</span><br><span class="line">values (&apos;1003&apos;,&apos;张三&apos;,&apos;管理学院&apos;,&apos;女&apos;,&apos;83234567&apos;)</span><br><span class="line">insert into reader (rnu,rname,rwork,rsex,rtel)</span><br><span class="line">values (&apos;1004&apos;,&apos;李四&apos;,&apos;文学院&apos;,&apos;男&apos;,&apos;84234567&apos;)</span><br><span class="line">insert into reader (rnu,rname,rwork,rsex,rtel)</span><br><span class="line">values (&apos;1005&apos;,&apos;王五&apos;,&apos;历史文化学院&apos;,&apos;女&apos;,&apos;85234567&apos;)</span><br><span class="line">insert into reader (rnu,rname,rwork,rsex,rtel)</span><br><span class="line">values (&apos;1006&apos;,&apos;孙六&apos;,&apos;物理学院&apos;,&apos;男&apos;,&apos;86234567&apos;)</span><br><span class="line">insert into reader (rnu,rname,rwork,rsex,rtel)</span><br><span class="line">values (&apos;1007&apos;,&apos;周七&apos;,&apos;生命科学院&apos;,&apos;女&apos;,&apos;87234567&apos;)</span><br><span class="line">insert into reader (rnu,rname,rwork,rsex,rtel)</span><br><span class="line">values (&apos;1008&apos;,&apos;徐八&apos;,&apos;化学院&apos;,&apos;男&apos;,&apos;88234567&apos;)</span><br><span class="line">insert into reader (rnu,rname,rwork,rsex,rtel)</span><br><span class="line">values (&apos;1009&apos;,&apos;宋九&apos;,&apos;信息学院&apos;,&apos;女&apos;,&apos;89234567&apos;)</span><br><span class="line">insert into reader (rnu,rname,rwork,rsex,rtel)</span><br><span class="line">values (&apos;1010&apos;,&apos;刘十&apos;,&apos;计算机学院&apos;,&apos;女&apos;,&apos;90234567&apos;)</span><br></pre></td></tr></table></figure>
+<p>##操纵<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">use br</span><br><span class="line">---查找这样的图书类别：要求类别中最高的图书定价不低于按类别分组的图书的平均定价的2 倍</span><br><span class="line">--select bsort from book group by bsort having max(bprice)&gt;=all(select 2*avg(bprice) from book group by bsort)</span><br><span class="line">---验证</span><br><span class="line">--select 2*avg(bprice),bsort,max(bprice) from book group by bsort</span><br><span class="line">---求机械工业出版社出版的各类图书的平均定价，分别用GROUP BY</span><br><span class="line">--select avg(bprice),bsort from book  where (bpublish=&apos;机械工业出版社&apos;) group by bsort</span><br><span class="line">---验证</span><br><span class="line">---select bprice,bsort from book  where (bpublish=&apos;机械工业出版社&apos;) </span><br><span class="line">---列出计算机类图书的书号、名称及价格，最后求出册数和总价格。</span><br><span class="line">--select bname,bprice from book where bsort like &apos;计算机&apos; </span><br><span class="line">--select count(*) from book where bsort=&apos;计算机&apos;</span><br><span class="line">--select sum(bprice) from book where bsort like &apos;计算机&apos;</span><br><span class="line">--查询计算机类和机械工业出版社出版的图书。</span><br><span class="line">--select distinct bpublish from book  where( bsort like &apos;%计算机%&apos; or bsort like &apos;%机械工业出版%&apos; )</span><br></pre></td></tr></table></figure></p>
+<p>#实验三</p>
+<h2 id="建表-1"><a href="#建表-1" class="headerlink" title="建表"></a>建表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">create database en_tools</span><br><span class="line">on</span><br><span class="line">(</span><br><span class="line">	name=&apos;en-tools_data&apos;,</span><br><span class="line">	filename=&apos;/var/opt/mssql/en-tools.ldf&apos;,</span><br><span class="line">	size=10,</span><br><span class="line">	filegrowth=5%,</span><br><span class="line">	maxsize=50</span><br><span class="line">	)</span><br><span class="line">log on</span><br><span class="line">(</span><br><span class="line">	name=&apos;en-tools_log&apos;,</span><br><span class="line">	filename=&apos;/var/opt/mssql/en-tools.mdf&apos;,</span><br><span class="line">	size=2,</span><br><span class="line">	maxsize=5,</span><br><span class="line">	filegrowth=1</span><br><span class="line">	)</span><br><span class="line">create table S</span><br><span class="line">(</span><br><span class="line">	sno char(5) constraint S_pk primary key,</span><br><span class="line">	sname char(20) ,</span><br><span class="line">	scity char(20) ,</span><br><span class="line">	stel char(20) ,</span><br><span class="line">	)</span><br><span class="line">create table J</span><br><span class="line">(</span><br><span class="line">	jno char(5) constraint J_pk primary key,</span><br><span class="line">	jname char(50) ,</span><br><span class="line">	jmaster char(10) ,</span><br><span class="line">	jplan char(8),</span><br><span class="line">	)</span><br><span class="line">create table P</span><br><span class="line">(</span><br><span class="line">	pno char(5) constraint P_pk primary key,</span><br><span class="line">	pname char(50),</span><br><span class="line">	ptype char(10),</span><br><span class="line">	plocal char(20),</span><br><span class="line">	pcolor char(10),</span><br><span class="line">	)</span><br><span class="line">create table SPJ</span><br><span class="line">(</span><br><span class="line">	spj_sno char(5),</span><br><span class="line">	spj_jno char(5),</span><br><span class="line">	spj_pno char(5),</span><br><span class="line">	spj_count int(4),</span><br><span class="line">	constraint SPJ_pk primary key(spj_jno,spj_count,spj_sno)</span><br><span class="line">	)</span><br></pre></td></tr></table></figure>
+<h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">insert into S(sno,sname,scity,stel)</span><br><span class="line">values(&apos;S1&apos;,&apos;北京供应商&apos;,&apos;北京&apos;,&apos;0108888888&apos;)</span><br><span class="line">insert into S(sno,sname,scity,stel)</span><br><span class="line">values(&apos;S2&apos;,&apos;天津供应商&apos;,&apos;天津&apos;,&apos;022888888&apos;)</span><br><span class="line">insert into S(sno,sname,scity,stel)</span><br><span class="line">values(&apos;S3&apos;,&apos;重庆供应商&apos;,&apos;重庆&apos;,&apos;023888888&apos;)</span><br><span class="line">insert into S(sno,sname,scity,stel)</span><br><span class="line">values(&apos;S4&apos;,&apos;上海供应商1&apos;,&apos;上海&apos;,&apos;021888888&apos;)</span><br><span class="line">insert into S(sno,sname,scity,stel)</span><br><span class="line">values(&apos;S5&apos;,&apos;广州供应商&apos;,&apos;广州&apos;,&apos;020888888&apos;)</span><br><span class="line">insert into S(sno,sname,scity,stel)</span><br><span class="line">values(&apos;S6&apos;,&apos;上海供应商2&apos;,&apos;上海&apos;,&apos;0216666666&apos;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">insert into J (jno,jname,jmaster,jplan)</span><br><span class="line">values(&apos;J1&apos;,&apos;工程1&apos;,&apos;丁一&apos;,&apos;200000&apos;)</span><br><span class="line">insert into J (jno,jname,jmaster,jplan)</span><br><span class="line">values(&apos;J2&apos;,&apos;工程2&apos;,&apos;赵二&apos;,&apos;60000&apos;)</span><br><span class="line">insert into J (jno,jname,jmaster,jplan)</span><br><span class="line">values(&apos;J3&apos;,&apos;工程3&apos;,&apos;张三&apos;,&apos;70000&apos;)</span><br><span class="line">insert into J (jno,jname,jmaster,jplan)</span><br><span class="line">values(&apos;J4&apos;,&apos;工程4&apos;,&apos;李四&apos;,&apos;80000&apos;)</span><br><span class="line">insert into J (jno,jname,jmaster,jplan)</span><br><span class="line">values(&apos;J5&apos;,&apos;工程5&apos;,&apos;王五&apos;,&apos;150000&apos;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">insert into P(pno,pname,ptype,plocal,pcolor)</span><br><span class="line">values(&apos;P1&apos;,&apos;螺丝&apos;,&apos;中&apos;,&apos;济南&apos;,&apos;红色&apos;)</span><br><span class="line">insert into P(pno,pname,ptype,plocal,pcolor)</span><br><span class="line">values(&apos;P2&apos;,&apos;主板&apos;,&apos;集成&apos;,&apos;深圳&apos;,&apos;绿色&apos;)</span><br><span class="line">insert into P(pno,pname,ptype,plocal,pcolor)</span><br><span class="line">values(&apos;P3&apos;,&apos;显卡&apos;,&apos;独立&apos;,&apos;香港&apos;,&apos;蓝色&apos;)</span><br><span class="line">insert into P(pno,pname,ptype,plocal,pcolor)</span><br><span class="line">values(&apos;P4&apos;,&apos;声卡&apos;,&apos;集成&apos;,&apos;天津&apos;,&apos;红色&apos;)</span><br><span class="line">insert into P(pno,pname,ptype,plocal,pcolor)</span><br><span class="line">values(&apos;P5&apos;,&apos;网卡&apos;,&apos;100M&apos;,&apos;上海&apos;,&apos;黑色&apos;)</span><br><span class="line">insert into P(pno,pname,ptype,plocal,pcolor)</span><br><span class="line">values(&apos;P6&apos;,&apos;鼠标&apos;,&apos;无线&apos;,&apos;上海&apos;,&apos;黑色&apos;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">insert into SPJ(spj_sno,spj_jno,spj_pno,spj_count)</span><br><span class="line">values(&apos;S1&apos;,&apos;J2&apos;,&apos;P4&apos;,&apos;50&apos;)</span><br><span class="line">insert into SPJ(spj_sno,spj_jno,spj_pno,spj_count)</span><br><span class="line">values(&apos;S2&apos;,&apos;J3&apos;,&apos;P5&apos;,&apos;100&apos;)</span><br><span class="line">insert into SPJ(spj_sno,spj_jno,spj_pno,spj_count)</span><br><span class="line">values(&apos;S3&apos;,&apos;J2&apos;,&apos;P6&apos;,&apos;500&apos;)</span><br><span class="line">insert into SPJ(spj_sno,spj_jno,spj_pno,spj_count)</span><br><span class="line">values(&apos;S4&apos;,&apos;J1&apos;,&apos;P3&apos;,&apos;150&apos;)</span><br><span class="line">insert into SPJ(spj_sno,spj_jno,spj_pno,spj_count)</span><br><span class="line">values(&apos;S4&apos;,&apos;J5&apos;,&apos;P1&apos;,&apos;200&apos;)</span><br><span class="line">insert into SPJ(spj_sno,spj_jno,spj_pno,spj_count)</span><br><span class="line">values(&apos;S5&apos;,&apos;J4&apos;,&apos;P6&apos;,&apos;100&apos;)</span><br><span class="line">insert into SPJ(spj_sno,spj_jno,spj_pno,spj_count)</span><br><span class="line">values(&apos;S6&apos;,&apos;J&apos;,&apos;P2&apos;,&apos;90&apos;)</span><br></pre></td></tr></table></figure>
+<h2 id="操纵"><a href="#操纵" class="headerlink" title="操纵"></a>操纵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">select sno as 供应商代码 , sname as 姓名 from s </span><br><span class="line">where sno in (select spj_sno from SPJ </span><br><span class="line">				where spj_sno = &apos;J4&apos; and spj_pno in (</span><br><span class="line">				select pno from p</span><br><span class="line">				where pcolor = &apos;红色&apos;)</span><br><span class="line">				)</span><br><span class="line">select jno as 工程代码 from S,SPJ </span><br><span class="line">where not exist(select * from SPJ </span><br><span class="line">				where S.sno=SPJ.spj_sno and scity=&apos;上海&apos;)</span><br><span class="line">select jno as 工程代码 from J,</span><br><span class="line">select distinct spj_jno from spj where spj_sno like &apos;s5&apos;</span><br></pre></td></tr></table></figure>
+<p>#实验四</p>
+<h2 id="操纵-1"><a href="#操纵-1" class="headerlink" title="操纵"></a>操纵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">显示所有专业号为‘001’，并且在服务器显示之前，暂停  1  分钟</span><br><span class="line">timefor delay &apos;00:01&apos;</span><br><span class="line">select * from course where spno=&apos;001&apos;</span><br><span class="line"></span><br><span class="line">把所有计算机转学学生的联系电话删掉，所有专业号为‘001’的学生</span><br><span class="line">的入学时间删掉，所有专业专业号为‘003.’的学生的班级号改为‘001’，</span><br><span class="line">其他的学生删掉其籍贯。（case）</span><br><span class="line">update student </span><br><span class="line">set entime = (case spno </span><br><span class="line">	when &apos;001&apos; then null else entime end)</span><br><span class="line"> 	classno = (case spn</span><br><span class="line">	when &apos;003&apos; then &apos;001&apos; else classno end)</span><br><span class="line">	native = (case spno when &apos;001&apos; native case class when &apos;003&apos; then native else null end )</span><br></pre></td></tr></table></figure>
+
+        <div id="aplayer-yjmSVkDD" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-yjmSVkDD"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "明月天涯",
+              author: "水玥兒",
+              url: "/root-images/水玥兒-明月天涯(Cover五音Jw).mp3",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-SQL-w0x7c3" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/10/26/SQL-w0x7c3/" class="article-date">
+      <time datetime="2018-10-26T14:46:55.000Z" itemprop="datePublished">10-26-2018</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/26/SQL-w0x7c3/">SQL(w0x7c3)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <pre><code>select sno,sn,age from s
+select * from sc
+select sn name, sno,age from s /*select sn as name ,sno ,age*/
+/*条件查询*/
+select SNo,score from sc where cno=&apos;c1&apos;   
+select sno,cno,score from sc where score &gt; 85
+select SNo,score from sc where( cno=&apos;c1&apos; or cno=&apos;c2&apos;) and score &gt; 85 
+/**/
+select tno,tn,prof from t where sal between 1000 and 1500
+select tno,tn,prof from t where sal not between 1000 and 1500
+
+select tno,tn from t where tn like &apos;张%&apos;
+select tno,tn from t where tn like &apos;%&apos;
+select tno,tn from t where tn like &apos;_雪&apos;
+
+/*avg() sum() max() min() count() */
+select sum(score) as totalscore ,avg(score) as avgscore from sc where sno=&apos;s1&apos;
+
+/* c1最高分 最低分 之间相差分数 */
+select max(score) as MaxScore ,min (score) as MixScore ,Max(Score)-Min(Score) as diff       from sc where (cno=&apos;c1&apos;) 
+
+select count(*) from  s where dept=&apos;计算机&apos; 
+/*distinct消除重复行 count对null不计算 对0计算*/
+select count(distinct dept) as deptnum from s 
+
+select count(*) from s where dept=&apos;计算机&apos;
+
+/* Group by 分组查询 */
+select tno,count (*) as C_Num from tc Group by tno
+
+select Sno , count (*) as sc_num from sc group by sno having (count(*) &gt;=2 )
+
+
+select sno,cno,score from sc where cno in (&apos;c2&apos;,&apos;c3&apos;,&apos;c4&apos;,&apos;c5&apos;) order by sno,score desc
+
+select X.TN,X.sal as Sal_a,Y.Sal as Sal_b from T as x,T as Y where X.Sal&gt; Y.Sal and Y.TN=&apos;刘伟&apos;
+
+/*返回一个值的普通子查询*/
+select tno,tn from t where prof =( Select prof From T where Tn=&apos;刘伟&apos;)
+
+/*返回一组值的普通子查询*/
+
+/*Any*/
+select tn from t where (tno = any (select tno from tc where cno=&apos;c5&apos;))
+/*In可以代替 &apos;=any&apos;*/
+/*all*/
+select tn,sal from t where (sal &gt; all(select sal from t where dept=&apos;计算机&apos;))
+
+select Tn,Sal from T where (Sal &gt; (Select Max(sal) from t where dept=&apos;计算机&apos;)) and (Dept &lt;&gt; &apos;计算机&apos;)
+
+
+/*相关子查询*/
+
+/*not in 代替 &lt;&gt; all*/
+
+/*查看选修所有课程的学生姓名 【搜索不存在没有选课信息学生的姓名】*/
+select sn from s where (not exists (select * from c where not exists( select * from sc where sno=s.sno and cno=c.cno)))
+
+
+/*存储查询结构到表中*/
+select sno as 学号 ,sum(score ) as 总分 into #cal_table from sc group by sno 
+
+/*数据表数据操纵*/
+
+insert into s (sno,sn,age,sex,dept) values (&apos;s7&apos;,&apos;插入哥&apos;,21,&apos;男&apos;,&apos;失业群众&apos;)
+
+/*添加一行记录的部分数据值*/
+insert into sc (sno,cno) values (&apos;s7&apos;,&apos;c1&apos;)
+
+
+/*添加多行记录*/  
+/*                    點解                              */
+ /*                    點解                              */
+  /*                    點解                              */
+    /*                    點解                              */
+      /*                    點解                              */
+        /*                    點解                              */
+          /*                    點解                              */
+          /*                    點解                              */
+     /*                    點解                              */
+
+create table avgval
+(
+    department varchar(20),
+    average smallint
+)
+insert into avgval select dept,avg (sal) from t group by dept
+
+  /*                    點解                              */
+ /*                    點解                              */
+  /*                    點解                              */
+    /*                    點解                              */
+      /*                    點解                              */
+        /*                    點解                              */
+          /*                    點解                              */
+          /*                    點解                              */
+     /*                    點解                              */
+
+
+/*用sql命令修改数据*/
+
+
+/*把刘伟老师转移到信息系*/
+  update t set dept=&apos;信息&apos; where tn= &apos;刘伟&apos; 
+
+/* 将所有学生的年龄增加一岁*/
+
+/*mmp 修改失败？？？？？？？ */
+         /*mmp 修改失败？？？？？？？ */
+              /*mmp 修改失败？？？？？？？ */
+update s set age=age-1 
+            /*mmp 修改失败？？？？？？？ */
+        /*mmp 修改失败？？？？？？？ */
+/*mmp 修改失败？？？？？？？ */
+
+update t set sal=1.2 * sal where (Prof = &apos;讲师&apos; ) and (sal &lt;= 1000)
+
+
+
+
+ /*未测试   未测试*/
+        /* 未测试   未测试*/ 
+          /* 未测试   未测试*/ 
+
+    /* 把讲授c5课程的教师的岗位津贴增加100元 */
+update t set Comm = Comm + 100 where (tno in (select tno from t, tc where t.tno = tc.tno and tc.cno = &apos;c5&apos;))
+      /* 把所有教师的工资提高到平均工资的1.2倍*/
+update t set sal = ( select 1.2 * avg (sal)) from t)    
+
+
+
+        /* 删除数据 */ 
+delete from where tn = &apos;刘伟&apos;
+      /* 删除所有老师的授课记录 */
+delete from tc 
+    /*删除刘伟老师授课*/
+delete from tc where (tno =( select tno from t where tn=&apos;刘伟&apos;))
+
+
+      /*视图*/
+
+
+
+      / * 未测试   未测试*/ 
+      /* 未测试   未测试*/ 
+/*未测试   未测试*/
+   /* 视图 */
+         /* 视图 */
+              /*创建一个计算机系教师情况的视图Sub_T*/
+create view Sub_T AS select Tno ,Tn ,Prof from t where dept = &apos;计算机&apos;
+              / * 创建一个学生平均成绩视图S_Avg */
+create view S_avg(Sno,Avg) as select sno,avg (Score) from sc group by sno
+
+    /* 视图 */
+ /* 视图 */
+</code></pre>
+        <div id="aplayer-YzUhzjZp" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-YzUhzjZp"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "One Sweet Day",
+              author: "Mariah Care",
+              url: "/root-images/onesweetday.mp3",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-第三章-债券市场" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -360,12 +681,12 @@
 <h3 id="二、金融债券与吸收存款的区别"><a href="#二、金融债券与吸收存款的区别" class="headerlink" title="二、金融债券与吸收存款的区别"></a>二、金融债券与吸收存款的区别</h3><p>1.筹资的目的不同<br>2.筹资的机制不同<br>3.筹资的效率不同<br>4.所筹集的基金的稳定性不同<br>5.资金流动性不同<br>6.吸收存款收到准备金率的影响</p>
 <h3 id="三、金融债券分类"><a href="#三、金融债券分类" class="headerlink" title="三、金融债券分类"></a>三、金融债券分类</h3><p>1.根据利息的支付方式，金融债券可以分为附息金融债券和贴现金融债券<br>2.根据发行条件，金融债券可以分为普通金融债券和累进利息金融债券<br>3.按照发行机构的不同，金融债券可以分为央票、证券公司债券、证券公司短期融资债务、商业银行次债、保险公司</p>
 
-        <div id="aplayer-lNufOqkD" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-GhaLoEUE" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-lNufOqkD"),
+            element: document.getElementById("aplayer-GhaLoEUE"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -488,12 +809,12 @@
 </ul>
 <h1 id="旅行游记"><a href="#旅行游记" class="headerlink" title="旅行游记"></a>旅行游记</h1><h2 id="Day-1-国庆节"><a href="#Day-1-国庆节" class="headerlink" title="Day 1 国庆节"></a>Day 1 国庆节</h2><p><strong><em>10.1.2018</em></strong><br>罗湖口岸过关</p>
 
-        <div id="aplayer-CKQIfXOO" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-FiVhkEEP" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-CKQIfXOO"),
+            element: document.getElementById("aplayer-FiVhkEEP"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -690,12 +1011,12 @@
 <li>方案条款设计灵活</li>
 </ol>
 
-        <div id="aplayer-vbunkYDS" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-sCrDEjsm" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-vbunkYDS"),
+            element: document.getElementById("aplayer-sCrDEjsm"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -813,12 +1134,12 @@
 </ol>
 <h3 id="（二）中期财务报告：以中期为基础编制的财务报告"><a href="#（二）中期财务报告：以中期为基础编制的财务报告" class="headerlink" title="（二）中期财务报告：以中期为基础编制的财务报告"></a>（二）中期财务报告：以中期为基础编制的财务报告</h3><p><strong>中期财务报告至少应当包含资产负债表、利润表、现金流量表以及报表附注等内容</strong><br>1.资产负债表、利润表、现金流量表和附注是中期财务报告应当编制的法定内容，对其他财务报表或者相关信息，如所有者（股东）权益变动表等，企业可以根据需要自行决定<br>2.中期资产负债表、利润表和现金流量表的格式和内容，应当与上年度财务表一致。但如果当年新施行的会计准则对财务报表的格式和内容做了修改，中期财务报表应当按照修改后的报表格式和内容编制，与此同时，在中期财务报告中提供的上年度比较财务报表的格式和内容也应当做相应的调整<br>3.中期财务报告中的附注相对于年度财务报告中的附注而言是适当简化的，中期财务报表附注的编制应当遵循重要性规则。</p>
 <h2 id="第二节-制约企业报表编制的基本会计假设-（未完待续）"><a href="#第二节-制约企业报表编制的基本会计假设-（未完待续）" class="headerlink" title="第二节 制约企业报表编制的基本会计假设 （未完待续）"></a>第二节 制约企业报表编制的基本会计假设 （未完待续）</h2><h2 id="一、会计主体假设"><a href="#一、会计主体假设" class="headerlink" title="一、会计主体假设"></a>一、会计主体假设</h2><h2 id="二、持续经营假设"><a href="#二、持续经营假设" class="headerlink" title="二、持续经营假设"></a>二、持续经营假设</h2><h2 id="三、会计分期假设"><a href="#三、会计分期假设" class="headerlink" title="三、会计分期假设"></a>三、会计分期假设</h2><h2 id="四、货币计量假设"><a href="#四、货币计量假设" class="headerlink" title="四、货币计量假设"></a>四、货币计量假设</h2><h1 id="第三节-制约企业报表编制的一般原则"><a href="#第三节-制约企业报表编制的一般原则" class="headerlink" title="第三节 制约企业报表编制的一般原则"></a>第三节 制约企业报表编制的一般原则</h1><h2 id="一、客观性原则"><a href="#一、客观性原则" class="headerlink" title="一、客观性原则"></a>一、客观性原则</h2><h2 id="二、相关性原则"><a href="#二、相关性原则" class="headerlink" title="二、相关性原则"></a>二、相关性原则</h2><h2 id="三、明晰性原则"><a href="#三、明晰性原则" class="headerlink" title="三、明晰性原则"></a>三、明晰性原则</h2><h2 id="四、可比性原则"><a href="#四、可比性原则" class="headerlink" title="四、可比性原则"></a>四、可比性原则</h2><h2 id="五、实质重于形式原则"><a href="#五、实质重于形式原则" class="headerlink" title="五、实质重于形式原则"></a>五、实质重于形式原则</h2><h2 id="六、重要性原则"><a href="#六、重要性原则" class="headerlink" title="六、重要性原则"></a>六、重要性原则</h2><h2 id="七、谨慎性原则"><a href="#七、谨慎性原则" class="headerlink" title="七、谨慎性原则"></a>七、谨慎性原则</h2><h2 id="八、及时性原则"><a href="#八、及时性原则" class="headerlink" title="八、及时性原则"></a>八、及时性原则</h2>
-        <div id="aplayer-TwKPkDtp" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-VnJfIFhg" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-TwKPkDtp"),
+            element: document.getElementById("aplayer-VnJfIFhg"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -939,12 +1260,12 @@
 2. 二部定价法
 3. 负荷定价法
 </code></pre><h3 id="（三）自然垄断行业的公共定价"><a href="#（三）自然垄断行业的公共定价" class="headerlink" title="（三）自然垄断行业的公共定价"></a>（三）自然垄断行业的公共定价</h3><h1 id="第四节-财政支出效益的分析与评价-（未完待续）"><a href="#第四节-财政支出效益的分析与评价-（未完待续）" class="headerlink" title="第四节 财政支出效益的分析与评价 （未完待续）"></a>第四节 财政支出效益的分析与评价 （未完待续）</h1>
-        <div id="aplayer-jwzKVNAq" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-PvOBvwfW" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-jwzKVNAq"),
+            element: document.getElementById("aplayer-PvOBvwfW"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -1064,12 +1385,12 @@
 （3）社会成员享用社会公共需要也要付出代价（如交税或付费），但这里的规则不是等价交换原则，各社会成员的付出与其所得是不对称的，不能说谁多付就多享用，少付出就少享用，不付出就不得享用。
 （4）满足公共需要是政府的职责，所以，满足公共需要的物质手段，职能是通过政府征税和收费支撑的由国家机关和公共部门提供的公共物品。
 </code></pre><h3 id="（三）公共需要覆盖的范围更广"><a href="#（三）公共需要覆盖的范围更广" class="headerlink" title="（三）公共需要覆盖的范围更广"></a>（三）公共需要覆盖的范围更广</h3><h3 id="（四）-社会的公共需要是共同的，但又是历史的、特殊的"><a href="#（四）-社会的公共需要是共同的，但又是历史的、特殊的" class="headerlink" title="（四） 社会的公共需要是共同的，但又是历史的、特殊的"></a>（四） 社会的公共需要是共同的，但又是历史的、特殊的</h3>
-        <div id="aplayer-AhhQeAZg" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-QUqUPpOc" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-AhhQeAZg"),
+            element: document.getElementById("aplayer-QUqUPpOc"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -1190,12 +1511,12 @@
 <p>保障社会和谐稳定和实现国家长治久安职能：<br>        任何一个国家只有建立健全的财政，国家才能百事兴旺，政府才能顺畅运行。</p>
 </blockquote>
 
-        <div id="aplayer-FwHoEIah" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-cnJHqYCU" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-FwHoEIah"),
+            element: document.getElementById("aplayer-cnJHqYCU"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -1384,12 +1705,12 @@
 </tbody>
 </table>
  
-        <div id="aplayer-umnyFNtW" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-GBAvUvkH" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-umnyFNtW"),
+            element: document.getElementById("aplayer-GBAvUvkH"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -1413,259 +1734,6 @@
       
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/财务报表分析/">财务报表分析</a>
-    </div>
-
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-第二章-金融工程方法论" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/09/16/第二章-金融工程方法论/" class="article-date">
-      <time datetime="2018-09-16T10:49:54.000Z" itemprop="datePublished">09-16-2018</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/16/第二章-金融工程方法论/">第二章 金融工程方法论</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="第二章-金融工程概论"><a href="#第二章-金融工程概论" class="headerlink" title="第二章 金融工程概论"></a>第二章 金融工程概论</h1><ul>
-<li><h3 id="第一节-无套利分析法"><a href="#第一节-无套利分析法" class="headerlink" title="第一节 无套利分析法"></a>第一节 无套利分析法</h3><ul>
-<li><h4 id="一、套利的基本概念"><a href="#一、套利的基本概念" class="headerlink" title="一、套利的基本概念"></a>一、套利的基本概念</h4><blockquote>
-<p>套利是指利用资产在空间和时间上的价格差以获得无风险收益为目的的操作。严格套利是指在某项金融资产的交易过程中，交易者可以在不需要初期投资支出的条件下，在期末获取无风险收益</p>
-</blockquote>
-</li>
-<li><h4 id="二、无套利定价原理"><a href="#二、无套利定价原理" class="headerlink" title="二、无套利定价原理"></a>二、无套利定价原理</h4><ol>
-<li>远期外汇定价</li>
-<li>确定远期利率</li>
-<li>证券价格分析</li>
-</ol>
-</li>
-<li><h4 id="三、无套利定价原理的特征"><a href="#三、无套利定价原理的特征" class="headerlink" title="三、无套利定价原理的特征"></a>三、无套利定价原理的特征</h4><p>1.无套利定价原理首先要求套利活动应当在无风险的状态下进行。但是在现实的交易活动中，由于要做到完全没有任何风险实际上非常困难。所以交易者在具体套利时一般不强求把风险降到零，因而实际的套利活动有相当大的部分是带有风险的套利。<br>2.无套利定价的关键环节是恰当地运用复制技术，即选择一组证券来“复制”另外一组证券。</p>
-<ul>
-<li>如果有两个金融资产的现金流相同，但其收益率不一样，他们的市场价格必定不同。这时通过对价格高者做空头、对价格低者做多头，就能实现套利。套利活动的存在会推动市场走向均衡，并使两者的收益率相等。因此，在金融市场上，获取相同资产的资金成本一定相等。具有完全相同的现金流特征的两项资产被认为完全相同，因而它们之间可以相互复制，且可以相互复制的资产在市场上交易时必定有相同的价格，否则存在套利机会，即市场是不均衡的。</li>
-</ul>
-<ol start="3">
-<li>无风险套利活动起初一般是零投资组合，即开始时套利者不需要任何资金的投入，在投资期间也没有任何的维持成本。</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-<p>  <strong>从理论上说，当金融市场出现无风险套利机会时，在没有卖空限制的情况下，每一个投资者都可以构筑五现代的无风险套利组合来赚取无限大的利润。</strong>这种巨额的套利头寸必定影响金融市场的供求关系，成为推动市场价格变化的力量，价格的变动会迅速消除套利机会。理论上，只需要少数套利者（甚至一位套利者）就可以使金融市场上失衡的资产价格迅速回到均衡状态。</p>
-<ul>
-<li><h4 id="四、无套利定价法的应用"><a href="#四、无套利定价法的应用" class="headerlink" title="四、无套利定价法的应用"></a>四、无套利定价法的应用</h4><ul>
-<li>.金融工具的复制</li>
-<li><p>金融工具的合成</p>
-</li>
-<li><h3 id="第二节-风险中性定价法"><a href="#第二节-风险中性定价法" class="headerlink" title="第二节 风险中性定价法"></a>第二节 风险中性定价法</h3><ul>
-<li><h4 id="风险中性定价原理"><a href="#风险中性定价原理" class="headerlink" title="风险中性定价原理"></a>风险中性定价原理</h4></li>
-</ul>
-</li>
-<li><h3 id="第三节-状态复制定价法"><a href="#第三节-状态复制定价法" class="headerlink" title="第三节 状态复制定价法"></a>第三节 状态复制定价法</h3></li>
-<li><h3 id="第四节-积木分析法"><a href="#第四节-积木分析法" class="headerlink" title="第四节 积木分析法"></a>第四节 积木分析法</h3></li>
-</ul>
-</li>
-</ul>
-
-        <div id="aplayer-wyYPeMnw" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content"></pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-wyYPeMnw"),
-            narrow: false,
-            autoplay: true,
-            showlrc: false,
-            music: {
-              title: "",
-              author: "",
-              url: "/root-images/나예요(Inst.).mp3",
-              pic: "",
-              lrc: ""
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/金融工程/">金融工程</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/辅修/">辅修</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-第一章-测量坐标系与高程-三" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/09/16/第一章-测量坐标系与高程-三/" class="article-date">
-      <time datetime="2018-09-16T09:40:11.000Z" itemprop="datePublished">09-16-2018</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/16/第一章-测量坐标系与高程-三/">第一章 测量坐标系与高程（三）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="1-3-地图投影和高斯平面直角坐标系"><a href="#1-3-地图投影和高斯平面直角坐标系" class="headerlink" title="1.3 地图投影和高斯平面直角坐标系"></a>1.3 地图投影和高斯平面直角坐标系</h1><h2 id="一、地图投影描述"><a href="#一、地图投影描述" class="headerlink" title="一、地图投影描述"></a>一、地图投影描述</h2><blockquote>
-<p>x=f1(L,B)<br>y=f2(L,B)</p>
-</blockquote>
-<p>地图投影的几何概念是：将参考椭球面上的点投影到投影面上，再将投影面沿母线切开展为平面。从本质上来讲，地图投影就是按一定的条件确定大地坐标和平面直角坐标之间的一一对应关系。</p>
-<blockquote>
-<p>常用地图投影面: 圆柱面（圆柱投影）、圆锥面（圆锥投影）、平面（方位投影）。<br>投影变形： 角度变形、长度变形、面积变形<br>按照投影变形分类：等角投影、等面积投影、任意投影</p>
-</blockquote>
-<h2 id="二、高斯平面直角坐标系"><a href="#二、高斯平面直角坐标系" class="headerlink" title="二、高斯平面直角坐标系"></a>二、高斯平面直角坐标系</h2><h3 id="1-高斯投影"><a href="#1-高斯投影" class="headerlink" title="1.高斯投影"></a>1.高斯投影</h3><p><a href="https://zh.wikipedia.org/wiki/%E6%A8%AA%E8%BD%B4%E5%A2%A8%E5%8D%A1%E6%89%98%E6%8A%95%E5%BD%B1" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/%E6%A8%AA%E8%BD%B4%E5%A2%A8%E5%8D%A1%E6%89%98%E6%8A%95%E5%BD%B1</a></p>
-<h3 id="2-高斯投影特性"><a href="#2-高斯投影特性" class="headerlink" title="2.高斯投影特性"></a>2.高斯投影特性</h3><p>高斯投影是正投一种，投影前后的角度相等。高斯投影还具有以下特点。</p>
-<ol>
-<li>中央子午线投影后为直线，且长度不变。距离中央子午线越远的子午线，投影后弯曲程度越大，长度变形也越大。</li>
-<li>椭球面上除中央子午线外，其它子午线投影后均向中央子午线弯曲，并向两级收敛，对称于中央子午线和赤道。</li>
-<li>在椭球面上对称于赤道的纬圈，投影后仍为对称的曲线，并与子午线的投影曲线互相垂直且凹向两极。<h3 id="3、高斯平面直角坐标"><a href="#3、高斯平面直角坐标" class="headerlink" title="3、高斯平面直角坐标"></a>3、高斯平面直角坐标</h3><blockquote>
-<p>在投影面上，中央子午线和赤道的投影都是直线。以中央子午线和赤道的交点O作为坐标原点，一中央子午线的投影为坐标轴X，规定X轴向北为正；以赤道的投影为横坐标轴Y，Y轴向东为正，这样便形成了高斯平面直角坐标系</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="4、投影带划分"><a href="#4、投影带划分" class="headerlink" title="4、投影带划分"></a>4、投影带划分</h3><blockquote>
-<p>我国通常采用6°带和3°带两种分带方法。测图比例尺小于1:1万时，一般采用6°分带；<br>测图比例尺大于等于1:1万时采用3°分带。在工程测量中，有时也采用任意带投影，即把中央子午线放在测区中央的高斯投影。在高精度测量时也可采用小于3°分带投影。</p>
-</blockquote>
-<blockquote>
-<p>6°分带划分是从首子午线开始，自西向东经差6°的范围为一带，一次将参考椭球面分为60带，其相应的带号依次为1，2，3，…，60。<br>若6°带号为n，则各种中央子午线的经度L0 为：</p>
-</blockquote>
-<pre><code>L0 = n * 6° - 3°
-</code></pre><blockquote>
-<p>为了使3°带的坐标系与6°带坐标系之间的换算减少，因此，3°带的划分是从东经1°30′开始，自西向东每隔经差3°的范围为一带，依次将参考椭球面分成120°带，其相应的带号分别为 1，2，3，…，120 。若3°带号为n′ 则各带中央子午线的经度L0′为</p>
-</blockquote>
-<pre><code>L0′ = n′ * 3°
-</code></pre><p>6°带的带号n与3°带的带号n′的关系为： n′ = 2*n - 1</p>
-<h3 id="5、国家统一坐标"><a href="#5、国家统一坐标" class="headerlink" title="5、国家统一坐标"></a>5、国家统一坐标</h3><blockquote>
-<p>为了避免y坐标值出现负值，规定在y坐标值加<strong>500km</strong>，这样就使x、y值均为正值。习惯上，把y坐标加500km并冠以带号的坐标称为国家统一坐标，而把没有加500km和带号的坐标成为自然坐标</p>
-</blockquote>
-<p>  设位于19°带的点A1和20°带的点A2的自然坐标的y坐标值分别为：</p>
-<pre><code>A1：Y1= 189632.4m
-A2：Y2=-105734.8m
-</code></pre><p>  则相应的国家同意坐标的y坐标值为：</p>
-<pre><code>A1：Y1= 19  689632.4m
-A2：Y2= 20  394265.2m
-</code></pre><h3 id="6、邻带坐标换算"><a href="#6、邻带坐标换算" class="headerlink" title="6、邻带坐标换算"></a>6、邻带坐标换算</h3><h3 id="7-、距离变化"><a href="#7-、距离变化" class="headerlink" title="7 、距离变化"></a>7 、距离变化</h3><h3 id="8、方向变化"><a href="#8、方向变化" class="headerlink" title="8、方向变化"></a>8、方向变化</h3><h1 id="1-4-高程系统"><a href="#1-4-高程系统" class="headerlink" title="1.4 高程系统"></a>1.4 高程系统</h1><h2 id="一、-概述"><a href="#一、-概述" class="headerlink" title="一、 概述"></a>一、 概述</h2><blockquote>
-<p>高程：就是点到基准面的垂直距离。根据所选基准面的不同，高程有所不同。（H）</p>
-</blockquote>
-<h2 id="二、-高程基准"><a href="#二、-高程基准" class="headerlink" title="二、 高程基准"></a>二、 高程基准</h2><ol>
-<li>验潮站</li>
-<li>高程基准面</li>
-</ol>
-<h2 id="三、-高程系统"><a href="#三、-高程系统" class="headerlink" title="三、 高程系统"></a>三、 高程系统</h2><ol>
-<li>1956年黄海高程</li>
-<li>1985国家高程系统</li>
-</ol>
-<h2 id="四、高程与高差"><a href="#四、高程与高差" class="headerlink" title="四、高程与高差"></a>四、高程与高差</h2><p>地面上两点间的高程之差成为高差。</p>
-<pre><code>Hab=Hb-Ha
-Hba=Ha-Hb
-</code></pre><h1 id="1-5-方位角"><a href="#1-5-方位角" class="headerlink" title="1.5 方位角"></a>1.5 方位角</h1><h2 id="一、-真方位角"><a href="#一、-真方位角" class="headerlink" title="一、 真方位角"></a>一、 真方位角</h2><h2 id="二、-坐标方位角"><a href="#二、-坐标方位角" class="headerlink" title="二、 坐标方位角"></a>二、 坐标方位角</h2><h2 id="三、磁方位角"><a href="#三、磁方位角" class="headerlink" title="三、磁方位角"></a>三、磁方位角</h2><h2 id="四、方位角的相互关系"><a href="#四、方位角的相互关系" class="headerlink" title="四、方位角的相互关系"></a>四、方位角的相互关系</h2><h1 id="1-6-用于水平面代替水准面的限度"><a href="#1-6-用于水平面代替水准面的限度" class="headerlink" title="1.6 用于水平面代替水准面的限度"></a>1.6 用于水平面代替水准面的限度</h1><h2 id="一、水准面曲率对水平距离的影响"><a href="#一、水准面曲率对水平距离的影响" class="headerlink" title="一、水准面曲率对水平距离的影响"></a>一、水准面曲率对水平距离的影响</h2><h2 id="二、水准面曲率对水平角的影响"><a href="#二、水准面曲率对水平角的影响" class="headerlink" title="二、水准面曲率对水平角的影响"></a>二、水准面曲率对水平角的影响</h2><h2 id="三、水准面曲率对高差的影响"><a href="#三、水准面曲率对高差的影响" class="headerlink" title="三、水准面曲率对高差的影响"></a>三、水准面曲率对高差的影响</h2> 
-        <div id="aplayer-oAGfXvrV" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content"></pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-oAGfXvrV"),
-            narrow: false,
-            autoplay: true,
-            showlrc: false,
-            music: {
-              title: "-",
-              author: "Sweet Rain",
-              url: "/root-images/xiayudelinyindao.mp3",
-              pic: "",
-              lrc: ""
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/数字地形测量学/">数字地形测量学</a>
     </div>
 
 
