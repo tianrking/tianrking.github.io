@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="w0x7c3">
 <meta property="og:description" content="图像增强概述问题背景: 曝光不足或过度的照片-需要增强处理 医学图像-拍摄条件不好-需要增强处理 图像Fourier频谱看不清-需要增强处理 图像有雾-需要增强处理 车牌识别系统 车牌识别预处理-车牌图像需要增强处理 人脸识别预处理-人脸图像需要增强处理 指纹识别预处理-指纹图像需要增强处理  图像增强的目的 改善图像的视觉效果，或者使图像更适合于人或机器进行分析处理 通过图像增强，可以减少图像中">
 <meta property="og:locale" content="zh-Hant-HK">
-<meta property="og:updated_time" content="2020-03-11T11:41:28.030Z">
+<meta property="og:updated_time" content="2020-03-11T12:30:25.357Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="05图像增强概述-黄朝兵">
 <meta name="twitter:description" content="图像增强概述问题背景: 曝光不足或过度的照片-需要增强处理 医学图像-拍摄条件不好-需要增强处理 图像Fourier频谱看不清-需要增强处理 图像有雾-需要增强处理 车牌识别系统 车牌识别预处理-车牌图像需要增强处理 人脸识别预处理-人脸图像需要增强处理 指纹识别预处理-指纹图像需要增强处理  图像增强的目的 改善图像的视觉效果，或者使图像更适合于人或机器进行分析处理 通过图像增强，可以减少图像中">
@@ -324,6 +324,15 @@
 <li>Butterworth高通滤波器较平滑，边缘失真小，二<br>阶Butterworth高通滤波器只有轻微振铃现象。</li>
 <li>高斯高通滤波器没有振铃现象，完全平滑。</li>
 </ol>
+<h2 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h2><ol>
+<li>空间域增强<br>空间域增强是指在空间域中，通过线性或非线性变换来增强构成图像的像素。增强的方<br>法主要分为点处理和模板处理两大类。<br>点处理是作用于单个像素的空间域处理方法，包括图像灰度变换、直方图处理和伪彩色<br>处理等技术；模板处理是作用于像素邻域的处理方法，包括图像平滑和图像锐化等技术。</li>
+<li>频率域图像增强<br>频率域图像增强是增强技术的重要组成部分，通过傅里叶变换，可以把空间域混叠的成<br>分在频率域中分离开来，从而提取或滤去相应的图像成分，达到增强图像的目的。这一过程<br>中的核心基础即为傅里叶变换。<br>频率域图像增强技术包括频率域平滑技术（低通滤波）、频率域锐化技术（高通滤波）<br>和同态滤波等技术。</li>
+<li>直接灰度变换<br>直接灰度变换对每一个像素单独处理，从而增强图像。直接灰度变换包括线性变换技术、<br>分段线性变换、反转变换、对数变换、幂次变换和灰度切分等。</li>
+<li>直方图修正技术<br>1）概念<br>灰度级直方图是图像的一种统计表达，它反映了该图中不同灰度级出现的统计概率。灰<br>度级[0,L-1]范围的数字图像的直方图具有如下离散函数。<br>( ) k hk n  （5.1）<br>式中，k 是第 k 级灰度； k n 是图像中灰度级为 k 的像素个数。进行归一化，则概率<br>() / Pr k k nn  ，n 为图像中像素的总数。<br>图像的视觉效果与直方图有对应关系，即直方图的形状和改变对视觉的感知影响很大，<br>因此采用直方图变换的方式可以增强图像。<br>2）方法<br>（1）直方图均衡（Histogram Equalization）<br>目标直方图为均匀分布的直方图修正技术，它采用累计直方图技术来完成。<br>（2）直方图规定化（Histogram Specification）<br>目标直方图可以是任意形式，因此具有相当高的灵活性。</li>
+<li>空间域模板平滑滤波<br>任何一幅原始图像，在其获取和传输等过程中，会受到各种噪声的干扰，使图像恶化、<br>质量下降、图像模糊、特征淹没，对图像分析不利。<br>为了抑制噪声改善图像质量所进行的处理称图像平滑或去噪，可采用 N  N 模板对图像<br>平滑滤波。</li>
+<li>频率域平滑、频率域锐化把图像转换到频率域中，采用频率域低通或高通滤波，对图像进行平滑或锐化。</li>
+<li>同态滤波<br>实际的噪声图像往往不是加性噪声，而是乘性或卷积运算。同态滤波先对上述非线性混<br>杂信号做某种数学运算（如对数运算），变换成加性的，然后用线性滤波方法处理，最后做<br>逆运算，恢复处理后图像。这种方法适用于非线性、噪声与信号频谱不重叠的情况。</li>
+</ol>
 
       
     </div>
@@ -335,7 +344,7 @@
         <p><span>本文標題:</span><a href="/2020/03/10/05图像增强概述-黄朝兵/">05图像增强概述-黄朝兵</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主頁">tianrking</a></p>
         <p><span>發布時間:</span>2020-03-10, 15:23:38</p>
-        <p><span>最後更新:</span>2020-03-11, 19:41:28</p>
+        <p><span>最後更新:</span>2020-03-11, 20:30:25</p>
         <p>
             <span>原始鏈接:</span><a class="post-url" href="/2020/03/10/05图像增强概述-黄朝兵/" title="05图像增强概述-黄朝兵">https://tianrking.github.io/2020/03/10/05图像增强概述-黄朝兵/</a>
             <span class="copy-path" data-clipboard-text="原文: https://tianrking.github.io/2020/03/10/05图像增强概述-黄朝兵/　　作者: tianrking" title="點擊複製文章鏈接"><i class="fa fa-clipboard"></i></span>
@@ -365,7 +374,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目錄</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#图像增强概述"><span class="toc-number">1.</span> <span class="toc-text">图像增强概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题背景"><span class="toc-number">1.1.</span> <span class="toc-text">问题背景:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图像增强的目的"><span class="toc-number">1.2.</span> <span class="toc-text">图像增强的目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图像增强的评价标准"><span class="toc-number">1.3.</span> <span class="toc-text">图像增强的评价标准</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图像增强方法的分类"><span class="toc-number">1.4.</span> <span class="toc-text">图像增强方法的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空间域增强-基于灰度变换的图像增强"><span class="toc-number">1.5.</span> <span class="toc-text">空间域增强- 基于灰度变换的图像增强</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空间域增强-非线性变换"><span class="toc-number">1.6.</span> <span class="toc-text">空间域增强-非线性变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空间域增强-空间滤波增强"><span class="toc-number">1.7.</span> <span class="toc-text">空间域增强-空间滤波增强</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基于直方图处理的图像增强"><span class="toc-number">2.</span> <span class="toc-text">基于直方图处理的图像增强</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#灰度图像的直方图"><span class="toc-number">2.1.</span> <span class="toc-text">灰度图像的直方图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#直方图均衡化-思想"><span class="toc-number">2.2.</span> <span class="toc-text">直方图均衡化-思想</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#空间滤波增强"><span class="toc-number">3.</span> <span class="toc-text">空间滤波增强</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念"><span class="toc-number">3.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空间域平滑滤波器"><span class="toc-number">3.2.</span> <span class="toc-text">空间域平滑滤波器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空间域锐化滤波器"><span class="toc-number">3.3.</span> <span class="toc-text">空间域锐化滤波器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#频率域锐化滤波器"><span class="toc-number">4.</span> <span class="toc-text">频率域锐化滤波器</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#图像增强概述"><span class="toc-number">1.</span> <span class="toc-text">图像增强概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题背景"><span class="toc-number">1.1.</span> <span class="toc-text">问题背景:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图像增强的目的"><span class="toc-number">1.2.</span> <span class="toc-text">图像增强的目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图像增强的评价标准"><span class="toc-number">1.3.</span> <span class="toc-text">图像增强的评价标准</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图像增强方法的分类"><span class="toc-number">1.4.</span> <span class="toc-text">图像增强方法的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空间域增强-基于灰度变换的图像增强"><span class="toc-number">1.5.</span> <span class="toc-text">空间域增强- 基于灰度变换的图像增强</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空间域增强-非线性变换"><span class="toc-number">1.6.</span> <span class="toc-text">空间域增强-非线性变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空间域增强-空间滤波增强"><span class="toc-number">1.7.</span> <span class="toc-text">空间域增强-空间滤波增强</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基于直方图处理的图像增强"><span class="toc-number">2.</span> <span class="toc-text">基于直方图处理的图像增强</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#灰度图像的直方图"><span class="toc-number">2.1.</span> <span class="toc-text">灰度图像的直方图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#直方图均衡化-思想"><span class="toc-number">2.2.</span> <span class="toc-text">直方图均衡化-思想</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#空间滤波增强"><span class="toc-number">3.</span> <span class="toc-text">空间滤波增强</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念"><span class="toc-number">3.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空间域平滑滤波器"><span class="toc-number">3.2.</span> <span class="toc-text">空间域平滑滤波器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空间域锐化滤波器"><span class="toc-number">3.3.</span> <span class="toc-text">空间域锐化滤波器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#频率域锐化滤波器"><span class="toc-number">4.</span> <span class="toc-text">频率域锐化滤波器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重点"><span class="toc-number">5.</span> <span class="toc-text">重点</span></a></li></ol>
         
     </div>
     <style>

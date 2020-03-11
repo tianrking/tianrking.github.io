@@ -322,6 +322,15 @@
 <li>Butterworth高通滤波器较平滑，边缘失真小，二<br>阶Butterworth高通滤波器只有轻微振铃现象。</li>
 <li>高斯高通滤波器没有振铃现象，完全平滑。</li>
 </ol>
+<h2 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h2><ol>
+<li>空间域增强<br>空间域增强是指在空间域中，通过线性或非线性变换来增强构成图像的像素。增强的方<br>法主要分为点处理和模板处理两大类。<br>点处理是作用于单个像素的空间域处理方法，包括图像灰度变换、直方图处理和伪彩色<br>处理等技术；模板处理是作用于像素邻域的处理方法，包括图像平滑和图像锐化等技术。</li>
+<li>频率域图像增强<br>频率域图像增强是增强技术的重要组成部分，通过傅里叶变换，可以把空间域混叠的成<br>分在频率域中分离开来，从而提取或滤去相应的图像成分，达到增强图像的目的。这一过程<br>中的核心基础即为傅里叶变换。<br>频率域图像增强技术包括频率域平滑技术（低通滤波）、频率域锐化技术（高通滤波）<br>和同态滤波等技术。</li>
+<li>直接灰度变换<br>直接灰度变换对每一个像素单独处理，从而增强图像。直接灰度变换包括线性变换技术、<br>分段线性变换、反转变换、对数变换、幂次变换和灰度切分等。</li>
+<li>直方图修正技术<br>1）概念<br>灰度级直方图是图像的一种统计表达，它反映了该图中不同灰度级出现的统计概率。灰<br>度级[0,L-1]范围的数字图像的直方图具有如下离散函数。<br>( ) k hk n  （5.1）<br>式中，k 是第 k 级灰度； k n 是图像中灰度级为 k 的像素个数。进行归一化，则概率<br>() / Pr k k nn  ，n 为图像中像素的总数。<br>图像的视觉效果与直方图有对应关系，即直方图的形状和改变对视觉的感知影响很大，<br>因此采用直方图变换的方式可以增强图像。<br>2）方法<br>（1）直方图均衡（Histogram Equalization）<br>目标直方图为均匀分布的直方图修正技术，它采用累计直方图技术来完成。<br>（2）直方图规定化（Histogram Specification）<br>目标直方图可以是任意形式，因此具有相当高的灵活性。</li>
+<li>空间域模板平滑滤波<br>任何一幅原始图像，在其获取和传输等过程中，会受到各种噪声的干扰，使图像恶化、<br>质量下降、图像模糊、特征淹没，对图像分析不利。<br>为了抑制噪声改善图像质量所进行的处理称图像平滑或去噪，可采用 N  N 模板对图像<br>平滑滤波。</li>
+<li>频率域平滑、频率域锐化把图像转换到频率域中，采用频率域低通或高通滤波，对图像进行平滑或锐化。</li>
+<li>同态滤波<br>实际的噪声图像往往不是加性噪声，而是乘性或卷积运算。同态滤波先对上述非线性混<br>杂信号做某种数学运算（如对数运算），变换成加性的，然后用线性滤波方法处理，最后做<br>逆运算，恢复处理后图像。这种方法适用于非线性、噪声与信号频谱不重叠的情况。</li>
+</ol>
 
       
     </div>
@@ -1128,12 +1137,12 @@
 <li>将2019年9月10日转换成儒略日</li>
 </ol>
 
-        <div id="aplayer-AIRhYTMj" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-FmVeXFzo" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-AIRhYTMj"),
+            element: document.getElementById("aplayer-FmVeXFzo"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -1254,12 +1263,12 @@
 <li>在图像处理领域，近年来引入了一些新的理论并提出了一些新的算法，如 Wavelet、<br>Fractal、Morphology、遗传算法和神经网络等。对于这些理论在未来图像处理理论与技术上的作用应给予充分的注意，并积极地加以研究。</li>
 </ul>
 
-        <div id="aplayer-QzppgLJr" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-QVMlHuXh" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-QzppgLJr"),
+            element: document.getElementById("aplayer-QVMlHuXh"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -1367,12 +1376,12 @@
 </ol>
 <p>理想的电子元件: 电阻 电容 电感</p>
 
-        <div id="aplayer-oidRucxc" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-fQaxbAoq" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-oidRucxc"),
+            element: document.getElementById("aplayer-fQaxbAoq"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -1526,12 +1535,12 @@
 <li></li>
 </ol>
 
-        <div id="aplayer-SzSdeaZs" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-rmUfFJsC" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-SzSdeaZs"),
+            element: document.getElementById("aplayer-rmUfFJsC"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -2077,12 +2086,12 @@
 </li>
 </ol>
 
-        <div id="aplayer-DloqEgnf" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-QhMdQslB" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-DloqEgnf"),
+            element: document.getElementById("aplayer-QhMdQslB"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -2173,12 +2182,12 @@
 <p>5.讨论<br>如以上示例所示，SfM的明显后勤优势（有限的硬件需求和可移植性）至少在以下方面具有优势：<br>部分，与“数据就绪”相比，被冗长的处理时间所抵消<br>TLS或GPS之类的方法。关键点描述符提取，匹配，<br>稀疏和密集的重建算法在计算上<br>苛刻。例如，典型照片集的总处理时间<br>在此使用，编号为400至600张图像（在2272×1740处）<br>像素分辨率），在64位系统（具有<br>2.8 GHz CPU，512 MB GPU和6 GB RAM这严重依赖<br>图像纹理的复杂性，可以通过减小图像大小来改善，尽管这会导致图像纹理的减小。<br>返回的关键点描述符的数量，并最终减少点<br>密度。不可避免地，为任何地球科学应用选择SfM必须考虑到这种巨大的后处理负荷以及<br>选择调查方法最终将权衡一些因素<br>影响因素，包括成本，可访问性，经验以及在数据分辨率和覆盖范围方面的适用性。<br>使用SfM生成的数据集的绝对大小，就此而言<br>那些是从诸如TLS之类的联合遥感方法派生的<br>重大的信息管理问题（Rychkov等，2012）。<br>当前一代的GIS在很大程度上为<br>为此，高分辨率点云的有效可视化和分析受到可用于此目的的有限软件范围的严重限制。使用点云抽取<br>本文所述的方法提供了缩小规模的有用策略<br>这些密集数据，同时保留有关子网格的信息<br>变化性。但是，在对这些抽取数据进行统计分析时<br>可以提供有用的见解，例如量化表面粗糙度，<br>此步骤不可避免地导致地形复杂性的不必要损失。预计将来计算能力会有所提高<br>将减少运行时间并促进使用原始的高分辨率<br>将照片集输入SfM处理，同时出现<br>低成本或免费提供的软件产品（例如MeshLab）<br>轻松操纵远远超过&gt; 106点的点云<br>改善数据处理和方法的一般可访问性。</p>
 <p>这种方法的简约性质也使其适用于空中<br>调查。平台包括风筝，比空气轻的飞艇和<br>无人飞行器（UAV）同样便携，相对便宜并且能够携带基本的和先进的摄影设备（例如Smith等，2009； Vericat等，2009；<br>Niethammer et al。，2012），从而大大增加了潜在的面积覆盖率。此外，航空数据集还有潜力<br>减少甚至消除“死地”问题（狼和<br>Dewitt，2000），从而图像前景中的对象会掩盖背景中的对象，从而导致巨大的数据空白。<br>此问题不仅适用于SfM方法，还适用于所有<br>点云获取方法受到视线的高度限制。对于<br>地形简单的地形（例如，冲刷扇和低谷的洪泛区），空中进场将特别有利。但是，与立体重建一样，陡峭或近乎垂直的地形对于SfM技术而言可能是成问题的。<br>正在进行进一步的工作以评估这种方法。<br>第4节中介绍的示例应用程序非常适合<br>SfM技术的应用。最小的植被覆盖<br>在中尺度和微观尺度上相对复杂的异质形貌有助于提取适当数量的<br>关键点描述符，以实现一致的密集点云覆盖。同样，该方法非常适合在干旱至半干旱地区应用<br>环境。相反，该方法对于河岸景观等地形重建的适用性可能会受到限制，<br>鉴于目前，只有无水的表面才适合重建，在茂密植被的地区，点密度很可能受到限制，并且准确性值得怀疑。<br>6。结论<br>本文概述了一种新颖的低成本，地面，近距离地面摄影测量和计算机视觉方法<br>获得适合建模中微尺度地形的高分辨率空间数据。 SfM方法的本质消除了<br>手动识别图像控制之前的要求<br>处理，而不是使用自动照相机姿态估计算法来同时解析3D照相机位置和场景<br>几何;这是该技术的极其重要的优势<br>超越传统的数字摄影测量方法。但是，由于<br>原始SfM输出固定在相对坐标系中，特别是<br>建立GCP网络应花费时间和精力，以促进向绝对坐标系的转化<br>以及度量数据的提取。考虑到空中方法的假设有效性，地面数据收集<br>尽管如此，本文介绍的方法还是传统人工地形测量的一种有效的，财务上可行的替代方法<br>摄影测量技术，特别是在偏远或无法进入的地区的实际应用。</p>
 
-        <div id="aplayer-FmbsdNBN" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-JLRwbjui" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-FmbsdNBN"),
+            element: document.getElementById("aplayer-JLRwbjui"),
             narrow: false,
             autoplay: false,
             showlrc: false,
