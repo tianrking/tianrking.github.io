@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="tianrking" />
+
+
+    
+    
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="w0x7c3">
+<meta property="og:url" content="https://tianrking.github.io/page/10/index.html">
+<meta property="og:site_name" content="w0x7c3">
+<meta property="og:locale" content="zh-Hant-HK">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="w0x7c3">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="w0x7c3" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <style> .article { opacity: 0;} </style>
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>w0x7c3</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: true,
+        isPost: false,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">tianrking</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜單</li>
+                        <li>標籤</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">Home</a></li>
+                        
+                            <li><a href="/archives/">Posts</a></li>
+                        
+                            <li><a href="/tags">Tags</a></li>
+                        
+                            <li><a href="/meow/">Meow</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:tian.r.king@gmail.com" title="Email"></a>
+                            
+                                <a class="fa Facebook" href="https://www.facebook.com/tianrking" title="Facebook"></a>
+                            
+                                <a class="fa Google" href="https://plus.google.com/+TianruiKing" title="Google"></a>
+                            
+                                <a class="fa Twitter" href="https://twitter.com/tianruiwang" title="Twitter"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anti-Extradition/">Anti-Extradition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R-chord/">R-chord</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/主修/">主修</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/卫星导航定位原理及应用/">卫星导航定位原理及应用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/地籍測量學/">地籍測量學</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/抱佛脚/">抱佛脚</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/袁詠琳/">袁詠琳</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/论文/">论文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/论文目录/">论文目录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贸易战下我国商业银行个人理财业务现存问题与防范探讨/">贸易战下我国商业银行个人理财业务现存问题与防范探讨</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/辅修/">辅修</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">tianrking</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">tianrking</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives/">Posts</a></li>
+                
+                    <li><a href="/tags">Tags</a></li>
+                
+                    <li><a href="/meow/">Meow</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:tian.r.king@gmail.com" title="Email"></a>
+                            
+                                <a class="fa Facebook" target="_blank" href="https://www.facebook.com/tianrking" title="Facebook"></a>
+                            
+                                <a class="fa Google" target="_blank" href="https://plus.google.com/+TianruiKing" title="Google"></a>
+                            
+                                <a class="fa Twitter" target="_blank" href="https://twitter.com/tianruiwang" title="Twitter"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="標籤" friends="友情鏈接" about="關於我"/>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-宏观经济政策实践" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/03/宏观经济政策实践/" class="article-date">
+      <time datetime="2019-04-03T09:55:21.000Z" itemprop="datePublished">04-03-2019</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/03/宏观经济政策实践/">宏观经济政策实践</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="经济政策目标"><a href="#经济政策目标" class="headerlink" title="经济政策目标"></a>经济政策目标</h1><p>国家或政府为了增进社会经济福利而制定的解决经济问题的指导原则和措施，是政府为了达到一定的经济目的而对经济活动有意识的干预。</p>
+<p>宏观经济政策的目标: 充分就业、价格稳定、经济持续均匀增长和国际收支平衡</p>
+<ol>
+<li><strong>充分就业是宏观经济政策的第一目标。广泛意义上是指一切生产要素（包含劳动）都有机会以自己愿意的报酬参加生产状态。</strong></li>
+</ol>
+<p>失业率指失业者人数对劳动力人数的比率</p>
+<p>劳动力与人口的比率可称为劳动力的参与率 </p>
+<p><strong>摩擦失业</strong>是指在生产过程中由于难以避免的摩擦造成的短期、局部性失业，劳动力流通性不足、工种转换的困难等所引致的失业。<br><strong>自愿失业</strong>是指工人不愿意接受现行工资水平而形成的失业。<br><strong>非自愿失业</strong>是指愿意接受现行工资但仍找不到工作的失业。<br><strong>结构性失业</strong>指经济结构变化等原因造成的失业。<br><strong>周期性失业</strong>指经济周期中的衰退或萧条时因需求下降造成的失业。<br>奥肯定律来描述GDP变化和失业率变化之间存在的一种相当稳定的关系。GDP每增加2%，失业率大约下降1个百分点。<br><strong>自然失业率是指在没有货币因素干扰的情况下，让劳动市场和商品市场自发供求力量发生作用时，总需求和总供给处于均衡状态的失业率</strong></p>
+<ol start="2">
+<li><strong>价格稳定是宏观经济政策的第二个目标。价格稳定是指价格总水平的稳定，他是一个宏观经济概念</strong><br>（CPI） （GPI） （GDP deflator ）</li>
+<li><strong>宏观经济政策的第三个目标是经济持续均衡增长。经济增长是指在一个特定时期内经济社会所生产的人云产量和人均收入的持续增长</strong></li>
+<li><strong>平衡国际收支</strong></li>
+</ol>
+<h1 id="财政政策"><a href="#财政政策" class="headerlink" title="财政政策"></a>财政政策</h1><p> 为促进就业水平提高减轻经济波动防止通货膨胀，实现稳定增长而对政府支出、税收和借债水平所进行的选择，或对政府收入和支出水平所作的决策。</p>
+<ol>
+<li>财政的构成与财政政策工具<br><strong>政府购买</strong>是指政府对商品和劳务的购买。如购买军需品、机关办公用品、政府雇员报酬、公共项目工程所需的支出等都属于政府购买。<br><strong>政府转移支付</strong>是政府在社会福利保险、贫困救济和不住等方面的支出。<br><strong>税收:</strong>强制性、无偿性、固定性。<br><strong>公债是政府对公众的债务，或公众对政府的债权</strong></li>
+<li>自动稳定与斟酌使用</li>
+</ol>
+<ul>
+<li>自动调节指西方财政制度本身有着自动地抑制经济波动的作用，即自动稳定器；主动调节指政府有意思第实行所谓反周期的相机决策的积极财政政策。<br><strong>自动稳定器（内在稳定器）：</strong>经济系统本身存在一种会减少各种干扰对国民收入冲击的机制，能够在经济繁荣时期自动抑制通货膨行，在经济衰退时期自动减轻萧条，无需政府采取任何行动。<br><strong>政府税收的自动变化</strong><br><strong>政府支出的自动变化</strong><br><strong>农产品价格的维持制度</strong></li>
+<li>斟酌使用的财政政策<br><strong>政府要审时度势，主动采取一些财政措施，变动支出水平或税收以稳定总需求水平，使之接近物价稳定的充分就业水平</strong><br><strong>补偿性财政政策:</strong>交替使用的扩张性和紧缩性财政政策。</li>
+</ul>
+<ol start="3">
+<li><p>功能财政和预算盈余<br><strong>预算赤字是政府财政支出大于收入的差额</strong><br><strong>预算盈余是政府收入超过支出的余额</strong><br><strong>周期平衡预算是政府收支在一个经济周期中保持平衡</strong></p>
+</li>
+<li><p>充分就业预算盈余与财政政策方向<br><strong>充分就业预算盈余</strong>指既定的政府预算在充分就业的国民收入水平即潜在的国民收入水平上所产生的政府预算盈余<br>充分就业预算盈余概念提出的作用:<br>收入水平固定在充分就业的水平上，消除经济中收入水平周期性波动对预算状况的影响，从而就能更准确地反映财政政策对预算状况的影响，并为判断财政政策是扩张性的还是紧缩性的提供了一个较为准确的依据。 <strong>充分就业预算盈余增加了或赤字减少了，财政政策就是紧缩的。</strong><br>政策制定者充分注重充分就业问题，充分就业为目标确定预算规模从而确定财政政策。</p>
+</li>
+<li><p>赤字与公债<br><strong>相机抉择的财政政策：</strong>政府税收和支出的变动是由政府的行为故意造成的。</p>
+</li>
+<li><p>西方财政的分级管理模式<br>根据吗财权和事权相一致原则，西方国家普遍采取分级管理的财政体制。税收被分为中间税、财政税、中央与地方税</p>
+<p>1961肯尼迪政府减税 </p>
+</li>
+</ol>
+<h1 id="货币政策"><a href="#货币政策" class="headerlink" title="货币政策"></a>货币政策</h1><ol>
+<li><p>商业银行: 负债业务、资产业务、中间业务<br>中央银行： 一国最高的金融当局，统筹管理全国的金融活动，实施货币政策以及影响经济。作为发行的银行发行国家货币；作为银行的银行为商业银行提供贷款（票据再贴现、抵押贷款等办法），集中保管商业银行的存款准备金，为商业银行集中办理全国结算业务；作为国家的银行代理国库、童工政府所需资金<br>代表政府与外国发生金融业务关系、执行货币政策，监督管理全国金融市场活动</p>
+</li>
+<li><p>存款创造和货币供给<br><strong>活期存款:</strong> 不用事先通知就可随时提取的银行存款。<br>D=R/rd<br><strong>中央银行新增一笔原始货币供给将是活期存款综合（货币供给量）扩大为新增原始货币供给量的1/rd倍  (货币创造乘数) 法定存款准备率越大，乘数就越小</strong><br><strong>存款扩张</strong>的基础是商业银行的准备金总额（包括法定和超额的）加上非银行部门持有的通货，可称为基础货币或货币基础。由于它会派生出货币，因此是一种高能量的或者说活动力强大的货币（高能货币、强力货币）</p>
+</li>
+<li><p>债权价格与市场利息率的关系<br>【】</p>
+</li>
+<li><p>货币政策及其工具<br><strong>中央银行通过控制货币供应量以及通过货币供应量来调节利率进而影响投资和整个经济以达到一定的经济目标的行为就是货币政策</strong></p>
+</li>
+</ol>
+<ul>
+<li>再提现率政策: 中央银行对商业银行及其他金融机构放款利率 </li>
+<li>公开市场业务: 中央银行在金融市场上公开买卖政府债券以控制货币供给和利率的政策行为</li>
+<li>法定准备金率</li>
+<li>道义劝告： 中央银行运用自己在金融体系中特殊的地位和威望，通过对银行及其他金融机构的劝告影响贷款和投资方向，以达到控制信用的目的。</li>
+</ul>
+<ol start="5">
+<li><p>货币政策起作用的其他途径</p>
+<p>沃尔克紧缩货币治通胀</p>
+<p><strong>”单一规则“</strong>的货币政策是指排除利息率、借贷流量、自由准备金等因素，仅以一定的货币存量作为控制经济唯一因素的货币政策。</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/宏观经济学/">宏观经济学</a>
+    </div>
+
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-国际收支" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/02/国际收支/" class="article-date">
+      <time datetime="2019-04-02T07:19:57.000Z" itemprop="datePublished">04-02-2019</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/02/国际收支/">国际收支</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="国际收支概述"><a href="#国际收支概述" class="headerlink" title="国际收支概述"></a>国际收支概述</h1><h2 id="国际收支概念"><a href="#国际收支概念" class="headerlink" title="国际收支概念"></a>国际收支概念</h2><p>开放经济雨封闭经济的最主要区别就在于开放经济存在对外经济交往，而国际收支是反映一国对外经济交往全貌的一项重要分析工具。<br>1.国际收支记录的是国际经济交易。所谓交易是两个机构单位之间通过共同协议或法律实施产生的。<br><strong>交换:</strong>一方提供一项经济价值，以换取另一方具有对应经济价值的项目。货物和服务的购买、资产购置、雇员报酬、股息等都属于交换。交换有时称为互惠交易或有偿交易。<br><strong>转移:</strong>一方提供（或获取）一项经济价值，而没有获取（或提供）具有对应经济价值的项目，如税、债务减免捐赠、各类个人转移等。<br>涉及转移的交易也称之为非互惠交易或无偿交易。转移账户旨在为无偿流量提供对应分录。</p>
+<p>2.国际收支所记录的经济交易是发生在一国居民和非居民之间的交易。只有当交易的一方为本国居民，而交易的另一方为本国的非居民的时候，该项交易才记录到一国的国际收支。</p>
+<p>3.国际收支是一个流量概念，而不是一个存量概念，一国的国际收支记录的是一个时期内该国各项国际经济交易增减变动的发生额，而非在某一个时点上的余额。</p>
+<h2 id="国际收支平衡表的标准构成"><a href="#国际收支平衡表的标准构成" class="headerlink" title="国际收支平衡表的标准构成"></a>国际收支平衡表的标准构成</h2><p>依照BPM6，国际收支平衡表由经常账户、资本账户和金融账户三大账户构成。</p>
+<h3 id="经常账户"><a href="#经常账户" class="headerlink" title="经常账户"></a>经常账户</h3><p><strong>反应一国与他国之间实际资源的转移及其相应的收入流</strong>，因此与一国国民收入账户联系密切。<br>1.货物和服务:记录货物和服务在一国居民与非居民之间的交易</p>
+<ul>
+<li>货物 1.国际收支口径的一般商品 2.转手买卖 3.非货币现金</li>
+<li>服务 </li>
+</ul>
+<p>2.初次收入:初次收入反映的是机构单位因其对生产过程中所做的贡献或向其他机构单位提供金融资产和出租自然资源而获得的回报。</p>
+<ul>
+<li>雇员报酬表示个人在与企业的雇佣关系中因对生产过程的劳务投入而获得的酬金回报。</li>
+<li>投资收益是提供金融资产所得到的回报，包括股息和准公司的收益提取、再投资收益和利息</li>
+</ul>
+<p>3.二次收入<br><strong>记录居民与非居民之间的经常转移</strong></p>
+<ul>
+<li>资本转移： 资产所有权从一方到另一方的转移，或使一方或双方获得处置资产的转移，或债权人减免负债的转移。因非现金资产（非存货）的处置或获得而产生的现金转移也是资本转移。</li>
+<li>经常转移: 资本转移之外的都是经常转移。</li>
+</ul>
+<p>二次收入与初次收入共同影响国民可支配总收入。资本转移使交易一方或双方的资产存量相应变化，而不影响可支配收入，因此记入资本账户。</p>
+<h3 id="资本账户"><a href="#资本账户" class="headerlink" title="资本账户"></a>资本账户</h3><p>资本账户记录的是居民与非居民之间的非生产非金融资产的取得和处置。</p>
+<p>非生产非金融资产包括:自然资源，土地、矿产权、林业权、水资源、渔业权、大气空间和电磁光谱；契约、租约、和许可；营销资产(商誉)，品牌、报刊名称、商标、标志和域名等</p>
+<p>资本转移同样也分为政府资本转移和私人资本转移两个方面包括债务豁免等。</p>
+<h3 id="金融账户"><a href="#金融账户" class="headerlink" title="金融账户"></a>金融账户</h3><p>金融账户记录发生于居民与非居民之间的金融资产与负债交易，反映资本的流出入。</p>
+<p>金融账户采用净额记录的原因： 1.金融市场的交易量大 2.金融账户关注的是由于交易而产生的对外金融债权和负债的净变化 3.对于某些项目类别和某些金融工具，可能无法按总额报告数据。</p>
+<p>金融账户的总差额称为净贷款（+）/净借款（-） </p>
+<ol>
+<li>直接投资<br>直接投资是跨境投资的一种，是一经济体居民通过投资对另一经济体的居民企业（直接投资企业）实施了管理上的控制（50%以上表决权）或重要影响（10%~50%表决权）。或与这种关系有关系的投资。</li>
+</ol>
+<p>直接投资根据金融工具形式的不同分为:</p>
+<ul>
+<li>股权和投资基金份额</li>
+<li>债务工具:关联企业间贷款</li>
+</ul>
+<ol start="2">
+<li><p>证券投资</p>
+</li>
+<li><p>金融衍生工具和雇员认股权</p>
+</li>
+</ol>
+<p>4.其他投资</p>
+<p>5.储备资产</p>
+<h3 id="误差与遗漏净额"><a href="#误差与遗漏净额" class="headerlink" title="误差与遗漏净额"></a>误差与遗漏净额</h3><p>平衡统计记录误差</p>
+<h1 id="国际投资头寸"><a href="#国际投资头寸" class="headerlink" title="国际投资头寸"></a>国际投资头寸</h1><p>某个时点上一个经济体居民对非居民的金融资产和负债价值和构成，反映一个经济体的对外金融资产和负债存量，两者差额为净国际投资头寸。<br>（正为净债权国，负为净债务国）</p>
+<h2 id="国际投资头寸表的标准构成"><a href="#国际投资头寸表的标准构成" class="headerlink" title="国际投资头寸表的标准构成"></a>国际投资头寸表的标准构成</h2><p>按照金融资产和负债的功能类别分为直接投资、证券投资、金融衍生工具和雇员认股权、其他投资和储备资产</p>
+<h2 id="国际投资头寸变动与国际收支的关系"><a href="#国际投资头寸变动与国际收支的关系" class="headerlink" title="国际投资头寸变动与国际收支的关系"></a>国际投资头寸变动与国际收支的关系</h2><p>初期头寸+期间交易+期间数量的其他变化+期间的重新定值=期末头寸</p>
+<h1 id="一国国际收支状况的分析"><a href="#一国国际收支状况的分析" class="headerlink" title="一国国际收支状况的分析"></a>一国国际收支状况的分析</h1><h2 id="自主性交易和融通性交易"><a href="#自主性交易和融通性交易" class="headerlink" title="自主性交易和融通性交易"></a>自主性交易和融通性交易</h2><p>自主性交易（事前交易、线上项目）: 基于商业（利润）动机或其他的考虑而独立发生的交易，这些交易所产生的外汇收支并不必然相等，由此可能形成对外汇的超额需求或超额供给，进而导致外汇波动<br>融通性交易（补偿性交易、事后交易、线下项目）: 不是为自身理由而交易，而是为了弥补自主性交易收支的不平衡而进行的交易。</p>
+<p>重要的差额: 贸易差额、经常账户差额、资本账户差额、金融账户差额、综合差额<br><strong>CB+KB+NE&amp;O=FB</strong><br>忽略国际收支中误差与遗漏净额以及较小的资本账户差额<br><strong>CB=FB</strong></p>
+<p>综合差额:<br><strong>OB=CB+KB+FB=-RB</strong> RB 储备账户差额</p>
+<p>NE&amp;O:<br>借方较大: 资本外流，严重时称<strong>资本外逃</strong><br>贷方较大: 资本内流</p>
+<p>HOT MONEY</p>
+<h2 id="国际收支账户与国民收入账户之间的关系"><a href="#国际收支账户与国民收入账户之间的关系" class="headerlink" title="国际收支账户与国民收入账户之间的关系"></a>国际收支账户与国民收入账户之间的关系</h2><h3 id="国民收入核算"><a href="#国民收入核算" class="headerlink" title="国民收入核算"></a>国民收入核算</h3><p>三部门<br>Y=C+I+G<br>四部门<br>Y=C+I+G+(X-M)</p>
+<p>高级开放经济:</p>
+<p>GNP=GDP+NFP<br>Y=C+I+G+X-M+NFP<br>Y=C+I+G+X-M+NFP+NT<br>CB=X-M+NFP+NT<br>Y=C+I+G+CB</p>
+<h3 id="国际收支账户与国民收入账户之间的关系-1"><a href="#国际收支账户与国民收入账户之间的关系-1" class="headerlink" title="国际收支账户与国民收入账户之间的关系"></a>国际收支账户与国民收入账户之间的关系</h3><p>Yd=C+I+G+X-M-T<br>Let Yd-C=S<br>Hense X-M=(S-I)+(T-G)</p>
+<p><strong>经常账户差额等于该国私人部门的净储蓄加上该国政府部门的财政盈余或赤字。要想使得一国经常账户得到改善，必须增加私人储蓄、减少私人投资，或者增加政府税收、减少政府支出</strong></p>
+<h1 id="一国国际收支失衡调节"><a href="#一国国际收支失衡调节" class="headerlink" title="一国国际收支失衡调节"></a>一国国际收支失衡调节</h1><h2 id="国际收支失衡的原因和影响"><a href="#国际收支失衡的原因和影响" class="headerlink" title="国际收支失衡的原因和影响"></a>国际收支失衡的原因和影响</h2><ol>
+<li>周期性因素</li>
+<li>结构性因素</li>
+<li>货币性因素</li>
+<li>收入性因素</li>
+<li>投机性因素</li>
+</ol>
+<p>大量逆差: 外汇供给短缺，本币贬值压力，市场上的短期资本有外流的倾向，可能导致国际收支平衡表进一步恶化，出现货币危机；<br>外汇收入减少，若该国动用其外汇储备贼会导致对内货币供给减少，一方面影响该国商品市场所需生产原料的进口，另一方面会造成国内货币的紧缩，促使r上升，i减少，国内商品需求减少，失业率变高，恶化财政状况；<br>通过国际储备来弥补持续性高额逆差，国际储备大量流失，降低该国在国际上的对外信用；<br>若通过对外借款解决国际收支逆差的情况有可能出现国家债务危机</p>
+<p>大量顺差: 顺差给本币带来升值压力，若该国政府为减轻压力购入外币被动投放基础货币，会带来国内货币供给增长过快和通货膨胀的压力，对货币调控的自主性和有效性形成一定的制约；<br>国内总供给与总需求平衡遭到破坏，对资源型出口国意味着大量资源流向外向型经济部门，不利于产业结构和地区结构的调整；<br>一国国际收支顺差意味着主要的贸易伙伴国逆差，容易引起国际经济交往中的贸易摩擦和冲突，导致国际贸易成本的上升，不利于地区和国际经济的发展</p>
+<h2 id="国际收支失衡的自动调节"><a href="#国际收支失衡的自动调节" class="headerlink" title="国际收支失衡的自动调节"></a>国际收支失衡的自动调节</h2><ol>
+<li>David Hume价格-铸币流动机制(国际金本位制度下的国际收支自动调节机制)</li>
+<li>纸币本位固定汇率下的国际收支自动平衡调节机制： 利率调节机制 收入调节机制(现金余额的调节机制)</li>
+<li>浮动汇率制度下的国际收支自动调节机制 <strong>J 曲线效应</strong></li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/国际金融/">国际金融</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/辅修/">辅修</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-字符串" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/23/字符串/" class="article-date">
+      <time datetime="2019-03-23T12:09:54.000Z" itemprop="datePublished">03-23-2019</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/23/字符串/">字符串</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#pragma once</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">class SeqString</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	SeqString();</span><br><span class="line">	~SeqString();</span><br><span class="line">	SeqString(int MaxStrSize = 256);</span><br><span class="line">	SeqString(char *);</span><br><span class="line">	SeqString(SeqString &amp;t);</span><br><span class="line">	int StrLength();</span><br><span class="line">	int StrCom(SeqString t);</span><br><span class="line">	void StrCon(SeqString s, SeqString t);</span><br><span class="line">	int index(SeqString t);</span><br><span class="line">	void SubStr(SeqString s, int start, int len);</span><br><span class="line">	friend void Insert(SeqString &amp;S, SeqString S1, int i);</span><br><span class="line"></span><br><span class="line">	void PrintStr() &#123;</span><br><span class="line">		std::cout &lt;&lt; str &lt;&lt; std::endl;</span><br><span class="line">	&#125;</span><br><span class="line">private:</span><br><span class="line">	int MaxSize;</span><br><span class="line">	char *str;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#include &quot;pch.h&quot;</span><br><span class="line">#include &quot;str.h&quot;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">SeqString::SeqString()</span><br><span class="line">&#123;</span><br><span class="line">	MaxSize = 256;</span><br><span class="line">	str = new char[MaxSize];</span><br><span class="line">	for (int i = 0; i &lt; MaxSize; i++) &#123;</span><br><span class="line">		str[i] = &apos;\0&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">SeqString::SeqString(SeqString &amp;t)</span><br><span class="line">&#123;</span><br><span class="line">	int Len = t.StrLength();</span><br><span class="line">	str = new char[Len];</span><br><span class="line">	int i;</span><br><span class="line">	for (i = 0; i &lt; Len; i++) &#123;</span><br><span class="line">		str[i] = t.str[i];</span><br><span class="line">	&#125;</span><br><span class="line">	str[i] = &apos;\0&apos;;</span><br><span class="line">&#125;</span><br><span class="line">/*</span><br><span class="line">SeqString::SeqString(SeqString &amp;t)</span><br><span class="line">&#123;</span><br><span class="line">	str=new char[Len];</span><br><span class="line">	strcpy(str,t.str);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">SeqString::SeqString(char *t)</span><br><span class="line">&#123;</span><br><span class="line">	MaxSize = strlen(t) + 1;</span><br><span class="line">	str = new char[MaxSize];</span><br><span class="line">	//strcpy(str, t.str);</span><br><span class="line">	int i;</span><br><span class="line">	for (i = 0; i &lt; MaxSize-1; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		str[i] = *(t + i);</span><br><span class="line">	&#125;</span><br><span class="line">	str[i] = &apos;\0&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">SeqString::~SeqString()</span><br><span class="line">&#123;</span><br><span class="line">	delete str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int SeqString::StrLength()</span><br><span class="line">&#123;</span><br><span class="line">	int i = 0;</span><br><span class="line">	for (;; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if (str[i] == &apos;\0&apos;)</span><br><span class="line">			return i;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int SeqString::index(SeqString T)</span><br><span class="line">&#123;</span><br><span class="line">	int i, j, k;</span><br><span class="line">	int m = T.StrLength();</span><br><span class="line">	int n = StrLength();</span><br><span class="line">	for (i = 0; i &lt; n - m; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		j = 0; k = i;</span><br><span class="line">		while(j&lt;m&amp;&amp;str[k++]==T.str[j++])</span><br><span class="line">		&#123;</span><br><span class="line">			;</span><br><span class="line">		&#125;</span><br><span class="line">		if (j == m)</span><br><span class="line">			return i;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	return -1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void SeqString::SubStr(SeqString s, int start, int len)</span><br><span class="line">&#123;</span><br><span class="line">	int length = s.StrLength();</span><br><span class="line">	if (start &gt;= 0 &amp;&amp; start &lt;= length - 1 &amp;&amp; len &gt;= 0 &amp;&amp; len &lt;= length - start + 1) &#123;</span><br><span class="line">		int i;</span><br><span class="line">		for (i = 0; i &lt; len; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			str[i] = s.str[start + i];</span><br><span class="line">		&#125;</span><br><span class="line">		str[i] = &apos;\0&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">		cout &lt;&lt; &quot;parameter error&quot; &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void SeqString::StrCon(SeqString s, SeqString t)</span><br><span class="line">&#123;</span><br><span class="line">	int slen = strlen(s.str);</span><br><span class="line">	int len = slen + strlen(t.str) + 1;</span><br><span class="line">	int i;</span><br><span class="line">	for (i = slen; i &lt; len; i++)</span><br><span class="line">		str[i] = t.str[i - slen];</span><br><span class="line">	str[i] = &apos;\0&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int SeqString::StrCom(SeqString t1)</span><br><span class="line">&#123;</span><br><span class="line">	char *s, *t;</span><br><span class="line">	s = str; t = t1.str;</span><br><span class="line">	for (; *s == *t&amp;&amp;s != &apos;\0&apos;; s++, t++);</span><br><span class="line">	return *s - *t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Insert(SeqString &amp;S, SeqString S1, int i)</span><br><span class="line">&#123;</span><br><span class="line">	int j, len1, len2;</span><br><span class="line">	len1 = S.StrLength(); len2 = S1.StrLength();</span><br><span class="line">	if (i &gt; len1)</span><br><span class="line">		cout &lt;&lt; &quot;Crossing&quot; &lt;&lt; endl;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		for (j = len1 - 1; j &gt;= 1; j--)</span><br><span class="line">			S.str[len2 + j] = S.str[j];</span><br><span class="line">		for (j = 0; j &lt; len2; j++)</span><br><span class="line">			S.str[i + j - 1] = S1.str[j];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/数据结构/">数据结构</a>
+    </div>
+
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
+    </nav>
+  
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017-2020 tianrking
+            </div>
+            <div class="footer-right">
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274632088'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1274632088' type='text/javascript'%3E%3C/script%3E"));</script>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到訪數"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本頁閱讀量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+	
+	<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("08/13/2017 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+
+	
+</footer>
+
+
+
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回頂部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看評論"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="轉到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+             friends: "#js-friends a", 
+            
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

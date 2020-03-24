@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="tianrking" />
+
+
+    
+    
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="w0x7c3">
+<meta property="og:url" content="https://tianrking.github.io/page/19/index.html">
+<meta property="og:site_name" content="w0x7c3">
+<meta property="og:locale" content="zh-Hant-HK">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="w0x7c3">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="w0x7c3" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <style> .article { opacity: 0;} </style>
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>w0x7c3</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: true,
+        isPost: false,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">tianrking</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜單</li>
+                        <li>標籤</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">Home</a></li>
+                        
+                            <li><a href="/archives/">Posts</a></li>
+                        
+                            <li><a href="/tags">Tags</a></li>
+                        
+                            <li><a href="/meow/">Meow</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:tian.r.king@gmail.com" title="Email"></a>
+                            
+                                <a class="fa Facebook" href="https://www.facebook.com/tianrking" title="Facebook"></a>
+                            
+                                <a class="fa Google" href="https://plus.google.com/+TianruiKing" title="Google"></a>
+                            
+                                <a class="fa Twitter" href="https://twitter.com/tianruiwang" title="Twitter"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anti-Extradition/">Anti-Extradition</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/R-chord/">R-chord</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/主修/">主修</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/卫星导航定位原理及应用/">卫星导航定位原理及应用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/地籍測量學/">地籍測量學</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/抱佛脚/">抱佛脚</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/袁詠琳/">袁詠琳</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/论文/">论文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/论文目录/">论文目录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贸易战下我国商业银行个人理财业务现存问题与防范探讨/">贸易战下我国商业银行个人理财业务现存问题与防范探讨</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/辅修/">辅修</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">tianrking</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">tianrking</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives/">Posts</a></li>
+                
+                    <li><a href="/tags">Tags</a></li>
+                
+                    <li><a href="/meow/">Meow</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:tian.r.king@gmail.com" title="Email"></a>
+                            
+                                <a class="fa Facebook" target="_blank" href="https://www.facebook.com/tianrking" title="Facebook"></a>
+                            
+                                <a class="fa Google" target="_blank" href="https://plus.google.com/+TianruiKing" title="Google"></a>
+                            
+                                <a class="fa Twitter" target="_blank" href="https://twitter.com/tianruiwang" title="Twitter"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="標籤" friends="友情鏈接" about="關於我"/>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-数据库系统概述（二）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/06/数据库系统概述（二）/" class="article-date">
+      <time datetime="2018-09-06T11:36:05.000Z" itemprop="datePublished">09-06-2018</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/06/数据库系统概述（二）/">数据库系统概述（二）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="1-6-数据库管理系统"><a href="#1-6-数据库管理系统" class="headerlink" title="1.6 数据库管理系统"></a>1.6 数据库管理系统</h1><ul>
+<li><h3 id="1-6-1-DBMS的主要功能"><a href="#1-6-1-DBMS的主要功能" class="headerlink" title="1.6.1 DBMS的主要功能"></a>1.6.1 DBMS的主要功能</h3><ul>
+<li>数据定义功能:<br>DBMS提供数据定义语言（DDL），定义数据的模式、外模式、内模式三级模式结构，定义模式/内模式、外模式/模式二级映像，定义有关的约束条件。（DBMS应包括DDL的编译程序，DDL定义的各种模式需要通过相应的模式翻译程序转换为机器内部代码表示形式，保存在数据字典（DD））<br>DBMS提供结构化查询语言（SQL），提供Create、Drop、Alter等语句可分别用来建立、删除和修改数据库。</li>
+<li>数据操纵功能：<br>DBMS提供数据操纵语言（DML），实现对数据库的基本操作，包括检索、更新（包括插入、修改和删除）<br>  DBMS包括DML编译程序或解释程序，DML分为两类：<pre><code>自主型或自含型
+宿主型
+</code></pre></li>
+<li>数据库运行管理功能：<br>DBMS对数据库的控制主要通过四个方面实现：<br>1.数据的安全性控制<br>2.数据的完整性控制<br>3.多用户环境下的数据并发性控制<br>4.数据库的恢复</li>
+<li><p>数据库的建立和维护功能：<br>数据库的建立：数据库的初始数据的装入与数据转换。<br>数据库的维护：数据库的转储、恢复、重组织、重构造、系统性能监视与分析。</p>
+<p>由DBMS的各个实用程序分别完成</p>
+</li>
+<li><p>数据通信接口：<br>DBMS提供与其他软件进行通信的功能。</p>
+</li>
+<li>数据组织、存储和管理：<br>DBMS负责对数据库中需要存放的各种数据（如数据字典、用户数据、存取路径等）的组织、存储和管理工作，确定以何种文件结构和存取方式物理地组织这些数据，以提高存储空间利用率和对数据库进行增、删、查、改的效率。</li>
+</ul>
+</li>
+<li><h3 id="1-6-2-DBMS的组成"><a href="#1-6-2-DBMS的组成" class="headerlink" title="1.6.2 DBMS的组成"></a>1.6.2 DBMS的组成</h3><ul>
+<li><h5 id="1-语言编译处理程序："><a href="#1-语言编译处理程序：" class="headerlink" title="1.语言编译处理程序："></a>1.语言编译处理程序：</h5>   （1）数据定义语言DDL编译程序<br>  （2）数据操纵语言DML编译程序</li>
+<li><h5 id="2-系统运行控制程序："><a href="#2-系统运行控制程序：" class="headerlink" title="2.系统运行控制程序："></a>2.系统运行控制程序：</h5><p>   DBMS提供了一系列的运行控制程序，负责数据库系统运行过程中的控制与管理，主要包括：<br>  （1）系统总控程序：</p>
+<pre><code>用于控制和协调各程序的活动，它是DBMS运行程序的核心。
+</code></pre><p>  （2）安全性控制程序：</p>
+<pre><code>防止未被授权的用户存取数据库中的数据。
+</code></pre><p>  （3）完整性控制程序：</p>
+<pre><code>检查完整性约束条件，确保进入数据库中的数据的正确性、有效性和相容性。
+</code></pre><p>  （4）并发控制程序：</p>
+<pre><code>协调多用户、多任务环境下各应用程序对数据库的并发操作，保证数据的一致性。
+</code></pre><p>  （5）数据存取和更新程序：</p>
+<pre><code>实施对数据库数据的检索、插入、修改和删除等操作。
+</code></pre><p>  （6） 通信控制程序：</p>
+<pre><code>实现用户程序与DBMS间的通信。
+</code></pre><p>  除此之外，DBMS还有文件读写与维护程序、缓冲区管理程序、存取路径管理程序、事物管理程序运行日志管理程序等。所有这些程序在数据库系统运行过程中协同操作，监视着对数据库的所有操作，控制、管理数据库资源等。</p>
+</li>
+<li><h5 id="3-系统建立、维护程序："><a href="#3-系统建立、维护程序：" class="headerlink" title="3.系统建立、维护程序："></a>3.系统建立、维护程序：</h5><p>  （1）装配程序：完成初始数据库的数据装入<br>  （2）重组程序：当数据库性能降低时（如查询速度过慢），需要重新组织数据库，重新装入数据。<br>  （3）系统恢复程序：当数据库系统收到破坏时，将数据库系统恢复到以前某个正确的状态。</p>
+<ul>
+<li><h5 id="4-数据字典："><a href="#4-数据字典：" class="headerlink" title="4.数据字典："></a>4.数据字典：</h5>数据字典（DD）用来描述数据库中有关信息的数据目录，包括数据库的三级模式、数据类型、用户名和用户权限等有关数据库系统的信息，起着系统状态目录表的作用，帮助用户、DBA和DBMS本身使用和管理数据库。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h3 id="1-6-3-DBMS的数据存取过程"><a href="#1-6-3-DBMS的数据存取过程" class="headerlink" title="1.6.3 DBMS的数据存取过程"></a>1.6.3 DBMS的数据存取过程</h3><p>  （1）用户使用某种特定的数据操作语言向DBMS发出存取请求。<br>  （2）DBMS接受请求并将该请求解释转换成及其代码指令。<br>  （3）DBMS以此检查外模式、外模式/模式映像、模式、模式/内模式映像及储存结构定义。<br>  （4）DBMS对存储数据库执行必要的存取操作。<br>  （5）从对数据库的存取操作中接受结果。<br>  （6）对得到的结果进行必要的处理，如格式转换等。<br>  （7）将处理的结果返回给用户。</p>
+<p>  上述存取过程中还包括安全控制、完整性控制，以确保数据的正确性、有效性和一致性。</p>
+</li>
+</ul>
+<h1 id="1-7-数据模型"><a href="#1-7-数据模型" class="headerlink" title="1.7 数据模型"></a>1.7 数据模型</h1><ul>
+<li><h3 id="1-7-1-数据模型的概念及分类"><a href="#1-7-1-数据模型的概念及分类" class="headerlink" title="1.7.1 数据模型的概念及分类"></a>1.7.1 数据模型的概念及分类</h3><ul>
+<li><h5 id="1-数据处理的抽象与转换"><a href="#1-数据处理的抽象与转换" class="headerlink" title="1. 数据处理的抽象与转换"></a>1. 数据处理的抽象与转换</h5>  数据模型是现实世界的两级抽象的结果。在数据处理中，数据加工经历了现实世界、信息世界和计算机世界三个不同的世界，经历了两级抽象和转换。</li>
+<li><h5 id="2-数据类型的分类"><a href="#2-数据类型的分类" class="headerlink" title="2.数据类型的分类"></a>2.数据类型的分类</h5><p><strong>根据模型应用的不同目的，可以将这些模型划分为两个不同的抽象级别。</strong><br>第一类模型—概念模型（信息模型）：</p>
+<blockquote>
+<p>他是用户的观点与数据和信息的建模，是对现实世界的事物及其联系的第一级抽象，它不依赖于具体的计算机系统，不涉及信息在计算机内如何表示、如何处理问题，只是用来描述某个特定组织所关心的信息结构。<br><strong>概念模型属于信息世界中的模型，不是一个DBMS支持的数据模型，而是概念级的模型</strong></p>
+</blockquote>
+<p>第二类模型是逻辑模型（数据模型）和物理模型：</p>
+<blockquote>
+<p>逻辑模型是属于计算机世界中的模型，这一类模型是按计算机观点对数据建模，是对现实世界的第二级抽象，由严格的形式化定义，以便于在计算机中实现。任何一个DBMS都是根据某种逻辑模型有针对性地设计出来的，即数据库是按DBMS规定的数据模型组织建立起来的，因此逻辑模型主要用于DBMS实现。从概念模型到逻辑模型的转换可以由数据库设计人员完成，也可以与数据设计工具协助设计人员完成。</p>
+</blockquote>
+<p>  比较成熟地应用在数据库系统中的逻辑模型主要包括层次模型、网状模型、关系模型、面向对象模型等。<br>  物理模型是对数据最底层的抽象，它描述数据在磁盘或磁带上的存储方式和存取方法，是面向计算机系统的。物理模型的具体实现是D  BMS的任务，用户一般不必考虑物理级细节。从逻辑模型到物理模型的转换是由DBMS自动完成的。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="1-7-2-数据模型的组成要素"><a href="#1-7-2-数据模型的组成要素" class="headerlink" title="1.7.2 数据模型的组成要素"></a>1.7.2 数据模型的组成要素</h3><ul>
+<li><h5 id="1-数据结构"><a href="#1-数据结构" class="headerlink" title="1.数据结构"></a>1.数据结构</h5><ul>
+<li>数据结构或数据组织结构，描述了数据库的组成对象以及对象间的联系，也就是说数据结构一方面描述的是数据对象的类型、内容和性质等，另一方面描述了数据对象间的联系。因此，数据模型通常由数据结构、数据操作和数据完整性约束三个要素组成。   </li>
+</ul>
+</li>
+<li><h5 id="2-数据操作"><a href="#2-数据操作" class="headerlink" title="2.数据操作"></a>2.数据操作</h5><ul>
+<li>数据操作是指对数据库中的各种数据允许执行的集合的操作，包括操作及相应的操作规则，描述了数据库的动态特性。数据库有查询和更新两类操作。数据模型必须定义这些操作的具体含义、操作符号、操作规则（如优先级）以及实现操作的语言。</li>
+</ul>
+</li>
+<li><h5 id="3-数据的完整性约束"><a href="#3-数据的完整性约束" class="headerlink" title="3.数据的完整性约束"></a>3.数据的完整性约束</h5><ul>
+<li>数据的完整性约束条件是一组完整性规则的集合。完整性规则是给定的数据模型中数据及其联系所具有制约和依存规则，用以限定符合数据模型的数据库状态以及状态的变化，以确保数据的正确、有效、相容 。<br><strong>一方面，数据模型应该反映和规定本数据模型必须遵守的基本的和通用的完整性约束条件；另一方面，数据模型还应该提供定义完整性约束条件机制，以反映具体应用所涉及的数据必须遵守的特定的语义约束条件。</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="1-8-三个世界及其有关概念"><a href="#1-8-三个世界及其有关概念" class="headerlink" title="1.8  三个世界及其有关概念"></a>1.8  三个世界及其有关概念</h1><ul>
+<li><h5 id="1-8-1-现实世界"><a href="#1-8-1-现实世界" class="headerlink" title="1.8.1 现实世界"></a>1.8.1 现实世界</h5><ul>
+<li>客观存在的世界。事物之间是相互联系的，而这种联系可能是多方面的，但人们只选择那些感兴趣的联系，无需选择所有的联系。</li>
+</ul>
+</li>
+<li><h5 id="1-8-2-信息世界"><a href="#1-8-2-信息世界" class="headerlink" title="1.8.2 信息世界"></a>1.8.2 信息世界</h5><ul>
+<li><h6 id="1-信息世界及其有关概念"><a href="#1-信息世界及其有关概念" class="headerlink" title="1.信息世界及其有关概念"></a>1.信息世界及其有关概念</h6>  （1） 实体<br>  （2） 属性<br>  （3）实体型<br>  （4）实体集<br> （5）码<br> （6）域<br> （7）联系</li>
+<li><h6 id="2-两个实体型间的联系"><a href="#2-两个实体型间的联系" class="headerlink" title="2. 两个实体型间的联系"></a>2. 两个实体型间的联系</h6>  （1）<br>  （2）<br>  （3）</li>
+<li><h6 id="3-两个以上实体型间的联系"><a href="#3-两个以上实体型间的联系" class="headerlink" title="3.两个以上实体型间的联系"></a>3.两个以上实体型间的联系</h6></li>
+<li><h6 id="4-单个实体型内部的联系"><a href="#4-单个实体型内部的联系" class="headerlink" title="4.单个实体型内部的联系"></a>4.单个实体型内部的联系</h6></li>
+</ul>
+</li>
+<li><h5 id="1-8-3-计算机世界"><a href="#1-8-3-计算机世界" class="headerlink" title="1.8.3 计算机世界"></a>1.8.3 计算机世界</h5><p>  （1）字段 标记实体属性的命名单位称为字段<br>  （2）记录：<br>  （3） 文件：<br>  （4）关键字：</p>
+</li>
+</ul>
+<pre><code>现实世界        信息世界        计算机世界
+事物总体        实体集          文件
+事物个体        实体            记录
+特征            属性            字段
+事物之间联系    实体模型        数据模型
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/数据库原理及应用教程/">数据库原理及应用教程</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主修/">主修</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据库系统概述（一）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/06/数据库系统概述（一）/" class="article-date">
+      <time datetime="2018-09-06T07:03:13.000Z" itemprop="datePublished">09-06-2018</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/06/数据库系统概述（一）/">数据库系统概述（一）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="1-1-信息、数据、数据处理与数据管理"><a href="#1-1-信息、数据、数据处理与数据管理" class="headerlink" title="1.1 信息、数据、数据处理与数据管理"></a>1.1 信息、数据、数据处理与数据管理</h1><h2 id="1-1-1数据与信息"><a href="#1-1-1数据与信息" class="headerlink" title="1.1.1数据与信息"></a>1.1.1数据与信息</h2><ul>
+<li><strong>1</strong>. 信息的定义：信息是人脑对显示世界事物存在的方式、运动状态以及事物之间联系的抽象反映。</li>
+<li><p><strong>2</strong>. 信息的特征:</p>
+<blockquote>
+<p>  信息源于物质和能量。<br>  信息是可以感知的。<br>  信息是可储存、加工、传递和再生的。</p>
+</blockquote>
+</li>
+<li><p><strong>3</strong>. 数据的定义 ： 数据是由用来记录信息的可识别的符号组成的，是信息的具体表现形式。</p>
+</li>
+<li><strong>4</strong>. 数据的表现形式 ： 可用多种不同的数据形式表示同一种信息，而信息不随数据形式的不同而改变。 </li>
+<li><strong>5</strong>. 数据与信息的联系 ： 信息  =  数据  +  语义<h2 id="1-1-2数据处理与数据管理"><a href="#1-1-2数据处理与数据管理" class="headerlink" title="1.1.2数据处理与数据管理"></a>1.1.2数据处理与数据管理</h2></li>
+<li><p>数据处理是将数据转化成信息的过程，包括对数据的收集、管理、加工利用乃至信息输出等一系列活动。<br>目的：</p>
+<blockquote>
+<p>  从大量的原始数据中抽取和推导出有价值的信息，作为决策的依据。<br>  借助计算机科学地保存和管理大量复杂的数据，以便人们能够方便地充分利用这些信息资源。</p>
+</blockquote>
+</li>
+<li><p>在数据处理中，主要包括</p>
+<blockquote>
+<p>  分类<br>  组织<br>  编码<br>  存储<br>  维护<br>  检索</p>
+</blockquote>
+<h1 id="1-2-数据库技术产生、发展"><a href="#1-2-数据库技术产生、发展" class="headerlink" title="1.2 数据库技术产生、发展"></a>1.2 数据库技术产生、发展</h1><h4 id="1-人工管理阶段"><a href="#1-人工管理阶段" class="headerlink" title="1.人工管理阶段"></a>1.人工管理阶段</h4><pre><code>1.数据没有专门存储设备
+2.数据没有专门管理软件
+3.数据不共享
+4.数据不具有独立性
+</code></pre><h4 id="2-文件系统阶段"><a href="#2-文件系统阶段" class="headerlink" title="2.文件系统阶段"></a>2.文件系统阶段</h4><pre><code>1.数据以文件形式长期保存
+2.由文件系统管理数据
+3.程序与数据间有一定独立性
+4.文件形式已经多样化
+5.数据具有一定的共享性
+</code></pre><h4 id="与人工管理阶段相比-文件系统阶段对数据的管理有了很大的进步-但一些根本性问题仍没有彻底解决"><a href="#与人工管理阶段相比-文件系统阶段对数据的管理有了很大的进步-但一些根本性问题仍没有彻底解决" class="headerlink" title="与人工管理阶段相比 文件系统阶段对数据的管理有了很大的进步 但一些根本性问题仍没有彻底解决"></a>与人工管理阶段相比 文件系统阶段对数据的管理有了很大的进步 但一些根本性问题仍没有彻底解决</h4><ol>
+<li>数据共享性差、冗余度大</li>
+<li>数据不一致性</li>
+<li>数据独立性差</li>
+<li>数据间联系弱</li>
+</ol>
+</li>
+</ul>
+<h4 id="3-数据库系统阶段"><a href="#3-数据库系统阶段" class="headerlink" title="3.数据库系统阶段"></a>3.数据库系统阶段</h4><ul>
+<li>结构化的数据及其联系的集合：<br>数据库系统中的数据不再仅仅针对某个应用，而是面向全组织，不仅数据内部是结构化的，整体也是结构化的；<br>不仅描述了数据的本身，也描述了数据间的有机联系。<br>较好地反映了现实世界事物之间的自然联系。</li>
+<li>数据共享性高、冗余度低：<br>不同用户、不同应用可同时存取数据库中的数据，每个用户或应用只使用数据库中的一部分数据，<br>用户和程序不像在文件系统中那样各自建立自己对应的数据文件，而是从数据库中存取其中的数据子集，<br>同一个数据可能在物理存储上只存一次，但可以把它映射到不同的逻辑文件里，这就是数据库系统提高数据共享、减少数据冗余的根本所在。</li>
+<li>数据独立性高：<br>1.数据逻辑结构、存储结构以及存取方式的改变不影响应用程序。<ol start="2">
+<li><ul>
+<li>在数据库系统中，整个数据库的结构可分成三级：<ul>
+<li>用户逻辑结构</li>
+<li>数据库逻辑结构</li>
+<li>物理结构<ul>
+<li>数据独立性分为两级：</li>
+</ul>
+</li>
+<li>物理独立性</li>
+<li>逻辑独立性<ul>
+<li>数据逻辑独立性：<br>当数据库逻辑结构（如修改数据定义、增加新的数据类型、改变数据间的关系等）发生改变时，通过修改映射，用户的逻辑结构以及应用程序不用改变。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>有统一的数据管理和控制功能：<ul>
+<li>数据库管理系统提供四个方面的数据控制功能:<blockquote>
+<p>数据安全性<br>数据完整性<br>并发<br>数据恢复</p>
+</blockquote>
+<h1 id="1-3-数据库系统的组成"><a href="#1-3-数据库系统的组成" class="headerlink" title="1.3 数据库系统的组成"></a>1.3 数据库系统的组成</h1>  1.数据库<br>  数据库是储存在计算机内、有组织的、可共享的数据和数据对象（如表、视图、存储过程和触发器等）的集合，这种集合按一定的数据模型（或机构）组织、描述并长期存储，同时能以安全和可靠的方法进行数据的检索和存储。<br>  数据库有如下两个特点<br> （1）集成性<br> （2）共享性<br>  2.用户：<br>  用户是指使用数据库的人，他们可以对数据库进行存储、维护和检索等操作，分为如下三类：<br>  （1）第一类用户：最终用户<br>  （2）第二类用户：应用程序员<br>  （3）第三类用户：数据库管理员（DBA）<pre><code>DBA主要职责如下：
+（1）参与数据库设计的全过程，决定整个数据库的结构和信息内容。
+（2）决定数据库的存储结构和存取策略，已获得较高的存取效率和存储空间利用率。
+（3）帮助应用程序员使用数据库。
+（4）定义数据的安全性和完整性约束条件，负责分配各个应用程序对数据库的存取权限，确保数据的安全性和完整性。
+（5）监控数据库的使用和运行，DBA负责定义和实施适当的数据库备份和恢复策略（最短时间恢复正确，准确地修改数据结构）
+（6）改进和重构数据库，DBA负责监视数据库运行期间的空间利用率、处理效率等性能指标，利用数据库管理系统提供的监视和分析程序对数据库运行情况进行记录、统计分析，并根据实际情况不断改进数据库设计，不断提高系统性能；另外，还要不断根据用户需求情况的变化，对数据库进行重新构造。
+</code></pre>  3.软件系统：<br>  （1）操作系统 OS<br>  （2）数据库管理系统 DBMS<br>   (3) 应用开发工具<br>  （4）应用系统<br>  4.硬件系统：<pre><code>cpu、内存、大容量存储设备、输入/输出设备、外部设备。 数据库管理系统（DBMS）在整个计算机系统中关系如下：
+  硬件-&gt;操作系统-&gt;DBMS、编译系统-&gt;应用开发工具-&gt;应用系统
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h1 id="1-4-数据库系统的内部体系结构"><a href="#1-4-数据库系统的内部体系结构" class="headerlink" title="1.4 数据库系统的内部体系结构"></a>1.4 数据库系统的内部体系结构</h1><h4 id="1-4-1-数据库的三级模式结构"><a href="#1-4-1-数据库的三级模式结构" class="headerlink" title="1.4.1 数据库的三级模式结构"></a>1.4.1 数据库的三级模式结构</h4><ul>
+<li>数据库系统模式的概念：<br>  数据是按一定的数据模型（结构组织起来的），而在数据模型中有”型”、”值”的概念。<br>  型：对某一类数据的结构和属性的说明<br>  值： 是”型”的一个具体赋值<br>  <strong>模式</strong> : 是数据库中全体的逻辑结构和特征的描述，仅设计型的描述，而不涉及具体的值。模式的一个具体值称为模式的一个实例。同一个模式可以有很多实例。</li>
+<li>数据库系统的三级模式结构<blockquote>
+<p><strong>1</strong>.模式（概念模式）：</p>
+<pre><code>数据库中全体数据的逻辑结构和特征描述，处于三级模式结构的中间层，不涉及数据的物理存储细节和硬件环境，与具体应用程序、所使用的应用开发工具及高级程序设计语言无关（一个数据库只有一个模式，是数据库的整体逻辑，对现实世界的抽象，所有信息按照用户需求而形成的一个整体）
+</code></pre><p><strong>2</strong>.外模式（子模式、用户模式）：</p>
+<pre><code>是三级结构最外层，是数据库用户能看到并允许使用的那部分数据的逻辑解耦和特征的描述，是与某一应用有关的数据的逻辑表示，也是数据库用户的数据视图（用户视图）
+(一个数据库可以有多个外模式，不同用户对应的外模式的描述也可能不同，同一个外模式也可以为多个应用系统所使用)
+</code></pre><p><strong>3</strong>.内模式（存储模式、物理模式）：</p>
+<pre><code>是三级系统最内层，也是最靠近物理存储的一层，与实际存储数据有关的一层。
+（对数据库存储结构的描述，是数据在数据库内部的表示方式）
+</code></pre></blockquote>
+</li>
+<li>总结：<br>  1.一个数据库系统，实际存在的只是物理级数据库，即内模式，它是数据访问的基础。<br>  2.概念数据库只不过是物理级数据库的一种抽象描述，用户级数据库是用户与数据库的接口。<br>  3.DBMS的中心工作之一就是完成三级数据库模式间的转换，把用户对数据库的操作转化到物理级去执行。<br>  **在数据库系统中，外模式可以有多个，而模式、内模式只能各有一个。内模式是整个数据库实际存储的表示，模式是整个数据库实际存储的抽象表示，外模式是逻辑模式的某一部分的抽象表示。</li>
+</ul>
+<h4 id="1-4-2-数据库系统的二级映像与数据独立性"><a href="#1-4-2-数据库系统的二级映像与数据独立性" class="headerlink" title="1.4.2 数据库系统的二级映像与数据独立性"></a>1.4.2 数据库系统的二级映像与数据独立性</h4><ul>
+<li>外模式/模式映像</li>
+<li>模式/内模式映像</li>
+</ul>
+<h4 id="1-4-3-数据库系统的三级模式与二级映像优点"><a href="#1-4-3-数据库系统的三级模式与二级映像优点" class="headerlink" title="1.4.3 数据库系统的三级模式与二级映像优点"></a>1.4.3 数据库系统的三级模式与二级映像优点</h4><pre><code>（1）保证数据的独立性：
+    模式与内模式分开，保证了数据的物理独立性；
+    外模式与模式分开，保证了数据的逻辑独立性。
+（2）简化了用户接口：
+    按照外模式编写应用程序或输入命令，而不需了解数据库内部的存储结构，方便用户使用系统。
+（3）有利于数据共享：
+    在不同的外模式下可由多个用户共享系统中数据，减少了数据冗余。
+（4）有利于数据的安全保密：
+    在外模式下根据要求进行操作，只能对限定的数据操作，保证了其他数据安全。
+</code></pre><h1 id="1-5-数据库系统的外部体系结构"><a href="#1-5-数据库系统的外部体系结构" class="headerlink" title="1.5 数据库系统的外部体系结构"></a>1.5 数据库系统的外部体系结构</h1><ul>
+<li>单用户结构的数据库系统（桌面型数据库系统）：<br>  特点：应用程序、DBMS、数据库都装在一台计算机上，由一个用户独立占用，不同计算机不能共享数据。<br>  适用：未联网用户、个人用户。</li>
+<li>主从式结构的数据库系统：<br>  特点：应用程序、DBMS、数据库都集中存放在一个大型主机上，所有处理任务由这个大型主机来完成，而连于主机上的终端，只是作为主机的输入/输出设备，每个用户都感觉自己独占主机的全部配置。<br>  优点：结构简单、易于管理与维护。<br>  缺点：所有处理任务由主机完成，对主机的性能要求较高。当终端数量太多时，主机的处理任务和数据吞吐任务过重，容易形成瓶颈，使系统性能下降；当主机遭受攻击而出现故障时，整个系统无法使用。（对主机的可靠性要求较高）</li>
+<li><p>分布式结构的数据库系统：<br>  描述：数据库中的数据在逻辑上是一个整体，但在物理上却分布在计算机网络的不同结点上。<br>  特点：<br>  （1）数据在物理上是分布的： </p>
+<pre><code>数据库中的数据不集中存放在一台服务器是，而是分布在不同地域的服务器上，每台服务器被称为结点。
+</code></pre><p>  （2）所有数据在逻辑上是一个整体：</p>
+<pre><code>数据库中的数据在物理上是分布的，但在逻辑上却互相关联，是相互联系的整体。
+</code></pre><p>  （3）接点水分布存储的数据相对独立：在普通用户看来，整个数据库系统仍然是集中的整体，用户不关注数据的分片存储，也不关心物理数据的具体分布，完全由网络数据库在分布式文件系统的支持下完成。<br>  优点：可以利用多台服务器并发地处理数据，从而提高计算型数据处理任务的效率。<br>  缺点：数据的分布式存储给数据处理任务的协调与维护带来困难，当用户需要经常访问过程数据时，系统效率明显地受到网络流量的制约。<br>  总结：分布式数据库系统是分布式网络技术与数据库技术相结合的产物，是分布在计算机网络上的多个逻辑相关的数据库的集合。</p>
+</li>
+<li><p>客户机/服务器结构的数据库系统：<br>  描述：在主从式和分布式结构的基础上，把DBMS的功能与应用程序分开，网络上某个（些）结点专门用于执行DBMS功能，完成数据的管理功能，称为数据库服务器，其他结点上的计算机安装DBMS的应用开发工具和相关数据库应用程序，称为客户机。<br>  优点：<br>  （1）网络运行效率大大提高<br>  （2）应用程序的运行和计算处理工作由客户机完成。既减少了与服务器不必要的通信开销，也减轻了服务器的处理工作，从而减轻了服务器的负载。<br>  缺点： 维护升级很不方便，需要在每个客户机上安装客户机程序，而且当应用程序修改后，就必须在所有安装程序的客户机上升级次应用程序</p>
+</li>
+<li><p>浏览器/服务器结构的数据库系统<br>  描述：客户机端仅安装通用浏览器软件，实现用户的输入/输出，而应用程序不安装在客户机端，而是安装在介于客户机和数据库服务器之间的另外一个称为应用服务器的服务器端，即将客户端运行的应用程序转移到应用服务器上。<br>  特点： 三层结构</p>
+<blockquote>
+<p>客户机 -&gt;应用服务器 —&gt; 数据库服务器</p>
+</blockquote>
+<p>  优点：有小弟克服了客户机/服务器的结构的不足，客户机只要能运行浏览器即可，其配置与维护也相对很容易。浏览器/服务器结构在Internet中得到了最广泛的应用。Web 服务器即为应用服务器。</p>
+</li>
+</ul>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=28160237&auto=0&height=66"></iframe>
+
+
+
+
+
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/数据库原理及应用教程/">数据库原理及应用教程</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主修/">主修</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-第一章-测量坐标系与高程-二" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/04/第一章-测量坐标系与高程-二/" class="article-date">
+      <time datetime="2018-09-04T15:43:22.000Z" itemprop="datePublished">09-04-2018</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/04/第一章-测量坐标系与高程-二/">第一章 测量坐标系与高程(二)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="1-2-测量坐标系-未完待续。。"><a href="#1-2-测量坐标系-未完待续。。" class="headerlink" title="1.2 测量坐标系 #   (未完待续。。)"></a>1.2 测量坐标系 #   (未完待续。。)</h1><ul>
+<li><h2 id="常用坐标系定义"><a href="#常用坐标系定义" class="headerlink" title="常用坐标系定义"></a>常用坐标系定义</h2></li>
+<li><h3 id="大地坐标系"><a href="#大地坐标系" class="headerlink" title="大地坐标系"></a>大地坐标系</h3><ul>
+<li>大地坐标系是<strong>椭球面坐标</strong>，它的基准面是<strong>参考椭球面</strong>，基准线是<strong>法线</strong>。</li>
+<li>大地子午面与参考椭球面的交线称为大地子午线或大地经线。</li>
+<li>英国格林尼治平均天文台的子午面称为大地首子午面或大地经线。<br>(通过艾黎仪器中心的经线为起始子午线，全球精度用它作为零点)</li>
+<li>大地坐标系中，任意M点的大地坐标的分量定义如下：</li>
+<li>大地精度L: 过M点的大地子午面与大地起始子午面之间的夹角。由大地起始子午面向东量称为东经，向西量称为西经，其取值范围各为     0~180 .</li>
+<li>大地纬度B: 过M点的法线(与参考椭球面正交的直线)和大地赤道面的夹角。纬度由大地赤道面向北量称为北纬，向南量称为南纬，其取值范围各为 0~90 .</li>
+<li>大地高H: M点的法线至参考椭球面的距离<br><strong><em>大地坐标和大地高只能推算，而不能直接测量</em></strong></li>
+</ul>
+</li>
+<li><h3 id="空间直角坐标系"><a href="#空间直角坐标系" class="headerlink" title="空间直角坐标系"></a>空间直角坐标系</h3></li>
+</ul>
+<ul>
+<li><h3 id="平面直角坐标系"><a href="#平面直角坐标系" class="headerlink" title="平面直角坐标系"></a>平面直角坐标系</h3><ul>
+<li>测量中采用的平面直角坐标系统:</li>
+</ul>
+<ol>
+<li>高斯平面直角坐标系<br>2 . 独立平面直角坐标系</li>
+<li>建筑施工坐标系</li>
+</ol>
+</li>
+<li><h2 id="我国常用的坐标系统"><a href="#我国常用的坐标系统" class="headerlink" title="我国常用的坐标系统"></a>我国常用的坐标系统</h2><ol>
+<li>1954年北京坐标系</li>
+<li>1980年国家大地坐标系</li>
+<li>2000国家大地坐标系</li>
+<li>WGS-84坐标系</li>
+<li>独立坐标系</li>
+</ol>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/数字地形测量学/">数字地形测量学</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主修/">主修</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/18/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/20/">Next &raquo;</a>
+    </nav>
+  
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017-2020 tianrking
+            </div>
+            <div class="footer-right">
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274632088'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1274632088' type='text/javascript'%3E%3C/script%3E"));</script>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到訪數"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本頁閱讀量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+	
+	<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("08/13/2017 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+
+	
+</footer>
+
+
+
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回頂部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看評論"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="轉到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+             friends: "#js-friends a", 
+            
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

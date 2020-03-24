@@ -243,11 +243,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-测绘工程论文翻译" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-图像基本运算概述图像基本运算概述" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/26/测绘工程论文翻译/" class="article-date">
-      <time datetime="2019-11-26T12:55:47.000Z" itemprop="datePublished">11-26-2019</time>
+      <a href="/2020/03/04/图像基本运算概述图像基本运算概述/" class="article-date">
+      <time datetime="2020-03-04T15:43:00.000Z" itemprop="datePublished">03-04-2020</time>
 </a>
 
 
@@ -262,7 +262,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/26/测绘工程论文翻译/">测绘工程论文翻译</a>
+      <a class="article-title" href="/2020/03/04/图像基本运算概述图像基本运算概述/">图像基本运算概述图像基本运算概述</a>
     </h1>
   
 
@@ -272,34 +272,708 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>“运动中的结构”摄影测量法：一种低成本，有效的工具<br>地球科学应用</p>
-<p>传统上，高分辨率地形测量与高昂的资金和后勤成本相关联，因此<br>数据采集​​通常会传递给专业的第三方组织。数据收集的高昂费用是，<br>在地球科学中的许多应用中，许多领域的偏远和不可访问性加剧了这种情况<br>站点，从而导致更便宜，更便携的测量平台（即地面激光扫描或GPS）不切实际。<br>本文概述了一种革命性的，低成本的，用户友好的摄影测量技术，用于获取<br>各种规模的高分辨率数据集，称为“运动结构”（SfM）。传统的软拷贝摄影测量方法需要摄像机的3-D位置和姿势，或地面控制的3-D位置<br>便于场景三角剖分和重建的已知点。相比之下，SfM方法解决了<br>相机的姿势和场景几何图形同时且自动地进行，使用高度冗余的包调整，该调整基于多个重叠的偏移图像中的匹配特征。全面的介绍<br>介绍技术，然后概述用于创建高分辨率数字高程的方法<br>使用消费级数码相机获得的大量照片集创建模型（DEM）。作为初步评估<br>技术的基础上，直接将SfM衍生的DEM与使用地面激光获得的相似模型进行比较<br>扫描。这种比较表明，使用SfM甚至可以达到分米级的垂直精度。<br>具有复杂地形和一系列土地覆盖的地点。 SfM的示例应用针对以下三个方面<br>在各种规模上形成对比的地貌，包括；裸露的岩石峭壁一条冰m大坝<br>复杂;还有一块冰雕的基岩山脊。 SfM技术代表了该领域的重大进步<br>地球科学应用的摄影测量学我们的结果和经验表明SfM是一种廉价的，<br>有效且灵活的方法来捕获复杂的地形。</p>
-<p>1.简介<br>过去十年见证了技术革命<br>正在改变数字高程建模和地貌地形分析的地理信息学。受传统地面测量技术发展的推动，例如差分GPS的出现（例如，<br>Brasington et al。，2000）和无反射器自动全站仪（例如<br>Keim等，1999； Fuller et al。，2003），获取地形<br>新一代数据已经最重大地改变了<br>遥感技术。机载和最近的地面激光扫描（例如Lohani和Mason，2001; Rosser等，2005;<br>Heritage和Hetherington，2007年； Jones等，2007； Hodge等，<br>2009; Notebaert等人，2009年）和软拷贝摄影测量法（例如，<br>Lane等，2000； Westaway et al。，2000;布拉辛顿和斯玛特，<br>特别是2003年），彻底改变了数字高程模型（DEM）的质量，扩展了其空间范围，分辨率和<br>准确性。<br>机载和地面遥感的发展也<br>特别是水文测量的进步反映了这一点<br>通过单束和多束声纳（例如Parsons等，2005;<br>Sacchetti等，2012）。这些声音，可以进行厘米级测量<br>数据间隔和3-D点质量预示着构建的潜力<br>真正的连续，高保真地形模型，用于混合陆地，淡水和海洋环境。最后，关闭技术<br>循环，从一系列廉价的设备中获取遥感数据，<br>部署成像传感器的轻型平台，例如<br>无人飞行器或无人飞行器（例如，Lejot等，2007；尼特哈默（Niethammer）<br>等人，2012年）和系留的风筝和飞艇（例如，Marzolff等人，2003年；<br>Boike和Yoshikawa，2003年； Smith等，2009； Vericat et al。，2009）是<br>逐渐变得越来越普遍。<br>虽然地理空间技术的发展步伐已经加快<br>速度很快，但是仍然可以获取高质量的地形数据<br>在偏远的高山环境中仍然具有挑战性。在这些<br>敌对的风景，陡峭而松散的斜坡和差的卫星<br>覆盖范围阻碍了通过GPS或整体进行地面测量的应用<br>站。替代地面方法，例如地面激光<br>扫描（TLS）由于高昂的投资成本以及大型仪器的便携性及其在偏远地区的电源需求而变得复杂。机载调查，包括LiDAR和<br>由于山地景观的高三维度，摄影的使用也受到限制，这会导致视线严重损失和图像缩短。此外，<br>部署测量平台，包括直升机和较小规模的<br>无人机在高度上高度依赖于有利的天气条件，并且可能经常会因高风速和云而受阻<br>覆盖。潜在的解决方案最终可能取决于<br>高分辨率卫星数据，但目前的空间分辨率为<br>现有的大多数主动和被动传感器通常也是<br>粗略地创建DEM，其分辨率可与地面相比<br>技术，适用于详细的地貌应用。</p>
-<p>1.1。摄影测量方法<br>自问世以来的十年左右的时间里，<br>近距离数字摄影测量法已经成为功能强大的<br>广泛用于三维地形建模的工具<br>（Remondino和El-Hakim，2006； Matthews，2008； Fraser和<br>Cronk，2009年）。软拷贝三角剖分的发展和<br>基于图像的地形提取算法从根本上增强了<br>可以从重叠获得的地形数据的质量<br>立体对（Chandler，1999； Lane等，2000）。同样，改进了紧凑型和单镜头反光的成本和质量<br>（SLR）相机以及此类非公制的校准方法<br>相机（Clarke和Fryer，1998； Chandler等，2005； Remondino）<br>和Fraser，2006年）已使摄影测量法民主化<br>建模并鼓励在地貌学中广泛使用。<br>这包括监测河床地形和平面图<br>（例如Lane，2000; Chandler et al。，2002; Brasington and Smart，2003;<br>Bird等人，2010年），河岸（例如Barker等人，1997年； Pyle等人，<br>1997年）和沟壑侵蚀（例如Betts和DeRose，1999年； Marzolff和<br>Poesen，2009年），以及在冰川学领域中，冰川表面变化的量化（例如Baltsavias等，2001年； Keutterling和<br>托马斯（2006）。数字摄影测量法也已应用于<br>地质问题的数量，包括不连续性表征（例如Krosley等，2006； Sturznegger和Stead，2009）和岩石<br>边坡稳定性分析（例如Haneberg，2008）。近距离应用还包括对土壤侵蚀的直接定量和<br>实验室规模景观演化模型的形态动力学<br>（例如Stojic等，1998； Hancock和Willgoose，2001； Lane等，<br>2001年； Brasington和Smart，2003年； Rieke-Zapp and Nearing，2005年；<br>Heng等，2010）。</p>
-<p>1.2。运动结构<br>在本文中，我们报告了一种新兴的低成本摄影测量方法，用于高分辨率地形重建，理想情况下<br>适用于偏远地区的低成本研究和应用。<br>“运动结构”（SfM）遵循相同的基本原则<br>作为立体摄影测量法，即3-D结构可以<br>从一系列重叠的偏移图像中分解出来（图1）。然而，<br>它与传统的摄影测量法有根本的不同，<br>场景的几何形状，相机位置和方向得到解决<br>无需指定先验即可自动生成具有已知3D位置的目标网络。而是使用高度冗余的迭代包调整同时解决这些问题<br>程序，基于自动提取的特征数据库<br>从一组重叠的图像中提取（Snavely，2008年）。如下所述，该方法最适合具有以下特征的图像集：<br>高度重叠，可捕获完整的三维结构<br>从各种位置观看的场景的名称，或作为名称<br>提示，图像来自移动的传感器。<br>这项技术在1990年代发展起来，起源于计算机视觉界（例如Spetsakis和Aloimonos，1991； Boufama等<br>等，1993； Szeliski和Kang，1994年）和自动化技术的发展<br>过去十年中的功能匹配算法（例如Förstner，<br>1986年；哈里斯和史蒂芬斯（1988）。该方法已普及<br>通过一系列云处理引擎，最著名的是Microsoft®<br>Photosynth™（Microsoft®，2010年），使用了Snavely（2008）和Snavely等人中介绍的SfM方法。 （2008）。这些工具可以<br>直接利用用户上传的和众包的摄影来<br>生成目标场景的必要覆盖范围，并可以根据这些照片集自动生成稀疏的3D点云。 SfM的可能性似乎是无限的，但是迄今为止，该技术已经<br>在地球科学中很少使用（例如Niethammer等，2012）<br>很少有关于地形质量的定量评估<br>从这种方法派生的产品。</p>
-<p>1.3。 SfM的首要原则<br>传统上要确定场景中点的3-D位置<br>软拷贝摄影测量方法需要3-D位置和<br>相机的姿势或一系列控制点的3-D位置<br>众所周知。在没有安装摄像头的情况下使用前者<br>GPS和电子罗盘，可用于三角剖分<br>场景几何，而对于后者，控制点为<br>在输入的照片中手动识别，然后执行以下过程<br>切除或相机姿态估计，用于确定相机<br>位置。相反，SfM方法不需要以上任何一项<br>在场景重建之前要知道。相机姿势和场景<br>通过自动同时重建几何<br>识别多个图像中的匹配特征。这些特点<br>在图像之间进行跟踪，从而可以对摄像机进行初步估算<br>位置和对象坐标，然后对其进行迭代完善<br>使用非线性最小二乘最小化（作为多个解决方案<br>可以从图像数据库中的各种功能中获取； Snavely，2008年）。<br>与传统摄影测量法不同，相机位置推导<br>来自SfM的数据缺乏地面控制坐标所提供的比例和方向。因此，在相对<br>“图像空间”坐标系，必须与现实世界中的“对象空间”坐标系对齐。在大多数情况下，将SfM图像空间坐标转换为绝对坐标系<br>使用3-D相似度转换可基于少量具有已知对象空间的已知地面控制点（GCP）来实现<br>坐标。这样的GCP可以事后推导，识别出在结果点云和现场都清晰可见的候选特征，<br>并通过地面测量（即GPS）获得坐标。但是，实际上，部署具有较高目标的物理目标通常更容易<br>采集图像之前，先在野外进行对比和清晰定义的质心。这种方法简化了图像的明确共置<br>和目标空间目标，并确保可靠，分布合理<br>跨感兴趣区域的目标网络，可以进行评估<br>SfM重建中的任何非线性结构误差。也是<br>有助于在GCP网络中纳入一定程度的冗余<br>应对目标区域中数据稀疏的可能性。</p>
-<p>1.4。本文目标<br>本文的目的是对SfM和<br>使用方法的详细说明；说明<br>生成完全渲染的3D模型所需的步骤，从<br>摄影数据的初始获取。这里的重点是<br>概述可以被环境应用的实际工作流程<br>对部署SfM进行地貌研究感兴趣的科学家和从业人员。为此，我们描述了一个工作流程<br>使用免费提供的应用程序捆绑包SFMToolkit3（Astre，<br>2010年）处理照片并产生起点<br>云。该软件包包含许多开源应用程序<br>包括按执行顺序排列的SiftGPU（Lowe，1999年，2004年），Bundler<br>（Snavely et al。，2008），CMVS和PMVS2（Furukawa and Ponce，2007;<br>Furukawa et al。，2010），如果<br>想要的。<br>描述了SfM在一系列对比鲜明的景观和地貌中的应用，包括沿海悬崖，冰m堰塞的湖泊，<br>和较小规模的冰川雕刻基岩山脊。重要的是，我们<br>也对衍生地形模型的质量进行详细评估，在这种情况下为c。阿伯里斯特威斯的300×300 m悬崖剖面<br>威尔士，通过与高分辨率地形模型进行比较<br>来自精确的地面激光扫描调查。</p>
-<p>2.方法<br>2.1。运动结构<br>2.1.1。图像采集和关键点提取<br>SfM解决的关键问题是确定<br>拍摄多张照片中匹配特征的3-D位置<br>从不同的角度。解决方案中的初始处理步骤<br>这个问题是识别单个图像中的特征<br>可以用于图像对应。流行的解决方案<br>并在Snavely（2008）推广的方法中使用的是<br>尺度不变特征变换（SIFT）对象识别系统。<br>通过合并以下内容在SFMToolkit3中实现<br>SiftGPU算法（Lowe，1999，2004）。<br>这可识别每个图像中不变的特征<br>图像缩放和旋转，并且在照明条件和3-D摄像机视点变化方面部分不变（图2； Lowe，2004年）。<br>兴趣点或“关键点”会自动在所有<br>缩放每个图像中的比例和位置，然后创建特征描述符，该特征描述符通过转换局部图像渐变来计算<br>成为对光照和方向变化不敏感的表示（Lowe，2004）。这些描述符是唯一的<br>足以允许在大型数据集中匹配特征。<br>图像中关键点的数量主要取决于<br>图像的纹理和分辨率，从而使高复杂度的图像<br>（通常是原始）分辨率会返回最多结果。密度<br>照片集的清晰度和分辨率，以及范围<br>因此，自然场景纹理的数量将首先确定输出点云数据的质量。同样，减少<br>相机与感兴趣的特征之间的距离，从而<br>增加照片的空间分辨率，将增强<br>最终点云的空间密度和分辨率。<br>复杂程度，照明，材料的变化各不相同<br>场景都会影响图像纹理，因此无法提供<br>关于所需最少照片数量的明确指导<br>成功进行场景重建。最低要求是<br>在至少三张照片中可见的相应特征；但是，要获得尽可能多的SfM输入图像，<br>给定后勤约束，强烈建议您这样做，因为这样可以优化<br>关键点匹配的最终数量和系统冗余。<br>还应特别考虑选择<br>采集平台。例如，坡度较小的小型场地<br>角度可能更适合于完全基于地面的方法，而低空航拍（LAAP）可能会在较大的站点和较弱的站点提供更好的覆盖范围<br>地形。确实，来自多个平台的图像组合<br>可能被证明是最佳的，可以在场景的不同区域提供不同级别的细节。在获取照片时，应特别注意通过采用短距离来最大程度地增加重叠<br>相机基准（即连续摄影之间的距离<br>位置），并尽可能均匀地覆盖感兴趣的特征或景观。</p>
-<p>从视频可将多种成像传感器用于SfM<br>静态图片，再到低档紧凑型数码相机。首要的<br>要求是曝光良好的感兴趣特征的照片。<br>根据我们的经验，“更大”不一定是“更好”。鉴于<br>通过使用价格日益昂贵的数字SLR模型（以最高分辨率（例如，</p>
-<blockquote>
-<p>12兆像素）几乎不可避免地需要调整大小（<br>因此会丢失图像细节），以避免处理时间过长。如果<br>在偏远地区运行，应特别考虑<br>坚固性和电池寿命，包括在极端温度下的充电方法和性能。<br>2.1.2。 3D场景重建<br>在关键点识别和描述符分配之后，<br>稀疏束调整系统Bundler（Snavely等人，2008）是<br>用于估计相机的姿势并提取低密度或“稀疏”<br>点云。使用近似最近邻居（Arya等，1998）和随机样本共识（RANSAC； Fischler and Bolles，1987）算法和“轨迹”来匹配多个图像中的关键点<br>建立了在一组图片中链接特定关键点的链接。曲目<br>至少包含两个关键点，并使用三个图像<br>用于点云重建，以及那些无法满足这些要求的重建<br>标准将被自动丢弃（Snavely等，2006）。使用<br>这种方法的瞬态特征，例如人们穿越<br>在将感兴趣的区域从数据集中自动删除之前，<br>3D重建开始。这也适用于非静态对象<br>无意中捕获到输入的照片集中，例如<br>传感器，飞艇或风筝的系绳，或直升机降落橇。在<br>这些实例，尽管相同的关键点引用了这些对象<br>将被创建，它们不适合用于场景重建，因为<br>它们相对于其他关键点的位置不断变化，并且<br>使用可见性和正则化约束条件自动进行过滤（Furukawa和Ponce，2007年）。<br>关键点对应关系对相机的姿态方向施加了约束，该约束是使用相似度变换重建的，<br>同时使用非线性最小二乘解实现误差最小化（Szeliski和Kang，1994； Nocedal和Wright，<br>1999）。最后，三角剖分用于估计3-D点位置并逐步重建场景几何，并将其固定到相对坐标系中。此过程的完全自动化，从<br>关键点提取，以准确重建场景几何<br>与传统的数字摄影测量方法相比，SfM方法具有明显的优势。<br>Bundler（Lourakis和<br>Argyros，2009年）产生稀疏点云。密度增加<br>点云可以通过为<br>多视图立体声（CMVS）（古河和庞塞，2007年；古河<br>等（2010年）和基于补丁的多视图立体声（PMVS2）算法<br>（古河和庞塞，2007年）。在这里，相机位置从<br>捆绑器用作输入。 CMVS然后分解重叠<br>将图像输入大小可控制的子集或群集中，同时<br>PMVS2用于从这些单独的簇中独立地重建3-D数据（Furukawa和Ponce，2007）。这种附加处理的结果是大大提高了点密度。通常<br>接近或超过两个数量级（表1）。</p>
-</blockquote>
-<p>2.1.3。后处理和数字高程模型生成<br>从相对坐标系到绝对坐标系的转换是<br>通过手动识别点云中的GCP来实现<br>以及适当转换的计算。在这里，我们使用<br>分解为旋转和平移矩阵和比例因子的刚体变换。这种转变的解决方案是<br>使用Horn（1987）绝对方向的修改版本发现<br>在MATLAB®中实现的算法。要解决总转换中的七个未知数，至少需要三个<br>匹配图像和对象空间坐标。<br>放置目标以提供最大的可见度（并因此在照片中具有明显的外观），并尽可能增强对比度<br>可能与周围环境相辅相成<br>数据转换之前的点云。明显的异常值和<br>人工制品（例如，关键点导致的错误峰谷<br>描述符不匹配）和任何不必要的重建周围地形在此阶段手动删除。<br>使用SfM生成的3-D点云可能取决于<br>图像集，非常密集，可能并入<br>每平方米103点<br>。将原始点云直接内插到<br>通常，较粗糙分辨率的地形模型（例如，米级）代表了相当大的计算任务。此外，与其他遥感方法（如LiDAR或TLS）相同，<br>该原始点云还可能包含“离地”功能，<br>难以理解的简单地貌解释。<br>为了改善数据处理并提供一阶的裸露海拔模型，在这里我们使用网格划分原始点云<br>Rychkov等人开发的程序。 （2012）。最初旨在探索TLS点云的这种方法分解了该点<br>云成规则的网格，为此局部高程的参数<br>提取分布。其中包括最小值，最大值，<br>平均，一阶和高阶矩。该例程然后适合<br>基于局部高程估计，将局部镶嵌细分到此分辨率降低的网格，然后对原始点云进行反趋势处理，以得出<br>可比较的一组本地统计数据，反映了高于<br>一阶网格尺度特征。这种简单但计算有效的过程可以轻松提取地形模型，例如基于局部最小网格高程，同时保留有关子网格高程复杂度的信息以供以后分析。网格单元统计数据的可视化还可以对网格进行统计分析<br>整个模型中点密度的变化。</p>
-<p>当结合使用时，SfM和点云抽取可能<br>提供了强大的地貌分析工具。例如，<br>在可比较的TLS派生点云上使用该方法，<br>Rychkov等。 （2012年）能够揭示陡峭倾斜河岸上砾石级晶粒的粗糙度。同样，如果没有<br>来自星载平台或空中LiDAR的高分辨率图像，<br>可以使用以下方法对整个洪泛区和谷底河段进行测量<br>安装在低空系留平台或无人机（例如<br>Niethammer等人，2012年），然后缩减为提取用作边界条件的几何数据所需的分辨率<br>流体动力学建模数据。<br>但是，根据最终应用，数据抽取可能会<br>虽然是常规的GIS软件，但不是必需的也是不需要的<br>通常不适合管理商品的可视化和存储<br>密集点数据，可能会扩展到数千万或数亿<br>的意见。对于本文介绍的示例，抽取<br>为了便于直接比较SfM和TLS<br>分辨率足以代表一阶地形的数据<br>在感兴趣的规模上实现简单的表面生成和<br>台式电脑上的可视化。得出了最终的地形积<br>通过线性重采样Delaunay三角剖分创建的TIN<br>来自抽取点云的ArcGIS（遵循Brasington等，<br>2000）。可以通过叠加<br>从表面进行SfM处理得到的正射影像。的<br>最终结果是完全地理参考，高分辨率，逼真的图像<br>DEM。完整的工作流程如图3所示。</p>
-<p>3.与地面激光扫描的比较<br>3.1。数据采集​​与处理<br>对SfM方法准确性的独立评估<br>通过直接比较曝光的栅格DEM进行<br>使用上述SfM工作流程和<br>TLS的可比调查。研究地点是宪法山<br>高约80 m的沿海悬崖位于紧挨着北部<br>英国威尔士阿伯里斯特威斯镇（图4a）。下半部分<br>悬崖地势复杂​​，土地覆盖着草，<br>灌木，人行道，近乎垂直的悬崖面和落石碎屑。裸露的基岩包含志留纪浊质，它们被折叠并<br>在加里东造山运动中断裂。鹅卵石海滩位于<br>它的基础。标有黄色×1×1 m的目标<br>感兴趣的区域并用作GCP。总共有35个目标以准均匀的方式分布在整个研究地点，允许地形限制（图4a）。<br>此外，三个三脚架安装的Leica Geosystems HDS目标<br>部署以共同注册TLS数据。使用Leica Geosystems ScanStation从三个位置采集了山坡的扫描图（蓝色<br>图4a）中的三角形。设置为以2 cm的空间分辨率记录数据，第一次扫描的距离为15 m，第二次扫描的距离为1 cm<br>第三。巧合的是，共拍摄了889张照片<br>在山坡上使用消费级数码相机（Panasonic DMC-G10，<br>12兆像素分辨率，具有自动对焦和曝光功能<br>启用），从一系列位置和角度来看，用作输入<br>进行SfM处理。 TLS和SfM数据采集使用三个人，包括SfM GCP的部署（和质心位置测量）<br>和TLS HDS目标，照片获取和TLS数据获取<br>总共花费了大约5小时，其中SfM组件花费了大约2小时。总的后处理时间明显更长：<br>相结合，稀疏和密集点云生成总共花费了<br>23.5小时，而手动点云编辑，GCP识别和转换以及DEM生成又花费了大约4小时。<br>使用TLS将TLS数据共注册到单点云中<br>基于人工识别的3-D相似度转换<br>各个点云中的三个HDS目标。这是<br>使用Leica的Cyclone软件套件实现。没有尝试<br>将最终产品转换为绝对坐标系是<br>尝试，因为这将合并其他不必要的错误。<br>也没有预测数据，以便直接比较<br>两个（TLS和SfM）匹配的笛卡尔坐标系。<br>大量的照片集被分解为三个“批次”，以减少计算需求，输入的照片重新缩放为占总照片的55％<br>其原始分辨率以减少计算需求。加工<br>采用第2节中概述的步骤，产生未引用的<br>稀疏密集的点云作为输出（表2）。 SfM数据分别为<br>通过手动识别转换为TLS坐标系统<br>两个数据集中匹配的GCP重心的分布（图4b–d）。三个SfM<br>批次是单独注册的，在<br>三个转换模型的质量，xyz的平均转换残差分别为0.124、0.058和0.031 m。</p>
-<p>3.2。结果<br>稀疏和密集点云数据的透视图为<br>如图5所示。对于密集的重建，点密度的明显增加是显而易见的。手动编辑后，<br>稀疏数据集包含1.7×105点，而密集重构<br>产生11.3×106点;增加了64倍。这相当于<br>在同一区域内的TLS调查密度为11.7×106个调查点。的<br>分辨率足以揭示基岩结构，尤其是<br>折叠（图6，图5a中的“ c”）。<br>使用在<br>第2部分显示在图7中。此处显示的模型是<br>提取的分辨率为1 m，并且基于当地的最低海拔高度，以帮助自动删除所有非地面观测值（例如植被覆盖）。抽取过程减少了原始<br>到8999和10,780个像元的规则化网格的点数<br>SfM和TLS数据，同时保留描述关键摘要的统计信息<br>子网格高程变异性。<br>两者的空间范围存在细微差异<br>模型，尽管它们都可以清楚地解析出显着的地形要素<br>例如与主行人路相邻的近垂直面（标记为<br>图中的“ A”和“ B” 5a和7a）。点密度数据（图7d，也图8）<br>显示最高浓度（〜70,000至&gt; 90,000点<br>每平方米<br>）位于场景的中心北侧，对应于较大（最大10 m高）的裸露岩石面。<br>通过从TLS获得的SfM高程模型中减去SfM高程模型来创建差异DEM（DoD）（图9a）。这表明94％<br>重叠模型差异的范围是-1.0–1.0 m，<br>86％介于-0.5和0.5 m之间（图9b）。在空间上，海拔高度的正差异（SfM比TLS高）集中于<br>数据集的东北方，更明显的负差异主要限于西部。负偏差对应<br>到场景最高点的头墙和陡峭的面孔<br>分别终止于沙滩（图7a中的“ A”和“ B”，<br>分别）。<br>假设最大的DoD值（图9a）对应于靠近海滩和顶壁的陡坡地势区域<br>在数据集的最高点，可能部分归因于弱<br>大型摄影机到特征基线（&gt; 20 m）引起的重建<br>由于这些地区无法到达。摄影测量TLS<br>这些地区的模型比较也可能对<br>通过点云转换引入的较小水平偏移。在研究区域的其他区域，可以拍照<br>相对较近的地形，包括其他陡峭区域<br>高度差异较小，表明重建良好<br>（zdiff）值（例如，研究区域的中心，与小径相邻）。</p>
-<p>无统​​计学意义的关系（r<br>2 = 0.19）<br>和zdiff存在，表明无法解释DEM差异<br>仅靠局部梯度。差异最大的区域<br>几乎全部集中在邻近的悬崖部分<br>到数据集西部的海滩（图9a中的“ B”），并与<br>到进行大量插值的区域。茂密的植被在宪法山的东端（图9a中的“ C”）占主导地位。<br>与中等高度（正）高程差异强烈相关。如果具有高度重叠的综合照片集<br>未获得此类土地覆被，茂密的植被覆盖<br>由于具有均匀的图像纹理，事实证明对于有效的地形重建存在问题。这同样适用于包括草，雪或沙的表面。<br>两者之间的高程差异明显<br>模型似乎暗示重复SfM用于监控<br>国防部的景观变化将仅限于捕获相对较大的地形动力学（即米级）。但是，在<br>仔细检查很明显，明显的局部偏差<br>SfM和TLS数据集之间的差值在很大程度上对应于灌木和灌木覆盖相对密集的区域。实际上，在大部分没有植被的地方发现的偏差要小得多（即±0.1 m或更小）<br>（短草除外）最靠近该部位的中央部分<br>到海滩。为了说明这一点，该站点的两个子区域（面积均为20 m2）的zdiff频率分布直方图，<br>代表着茂密的植被而基本上没有植被的区域<br>地面，分别如图10所示。对这些数据的分析显示，对于100％的细胞，落在-0.5–0.5 m范围内。<br>无植被的区域，其中89％的细胞属于茂密植被区域的分类。以分米为单位<br>以下，无植被和茂密植被的61％和39％<br>数据分别具有±0.1 m或更小的zdiff值，表明在没有<br>任何明显的植被覆盖。错误的存在<br>植被不是SfM方法独有的问题，但可能会使用多种远程勘测方法使地形重建感到困惑（例如Coveney和Fotheringham，2011）。尽管<br>对此，准确性评估是令人鼓舞的首次评估<br>所使用的SfM算法。在未来的研究中，需要对各种地形类型进行更严格的准确性评估，以更好地阐明主要的误差来源。同样，例如，对系统错误的详细调查<br>手动识别两个点云数据集中的GCP，<br>以及对转换精度的后续影响<br>应用于数据的矩阵也是理想的。</p>
-<p>4.从动结构到大型和小型应用<br>冰川地貌重建<br>4.1。 Dig Tsho冰complex复合物<br>上面概述的工作流程已应用于Dig Tsho<br>尼泊尔昆布·喜玛尔的冰ora水坝综合体（4400 m）<br>（图11a）。冰m位于Langmoche山谷的尽头<br>大坝于1985年8月4日倒塌，当时后退的冰雪崩<br>Langmoche冰川产生的位移波超过了<br>冰ora大坝并引发其失败。造成的冰川湖爆发<br>洪水（GLOF）造成5人死亡，牲畜死亡，并摧毁了宝贵的耕地<br>土地以及新建成的水力发电厂<br>（Vuichard和Zimmerman，1986，1987； Richardson和Reynolds，<br>2000）。冰m终末是由非粘性排列的局部运输的砾石，卵石和巨石大小的碎屑组成，<br>并在其最高处测量约650 m宽和80 m高<br>点。较大的裂口，高约40 m，跨度约70 m<br>在最宽处解剖冰m终端的北边缘。<br>按照上述方法，由35个GCP组成的网络<br>在终端冰ora复合物中建立（图11b），<br>不同位置和不同角度拍摄的1649张照片<br>在整个网站上。由三人组成的团队，由于地形和地形的挑战，GCP部署大约花费了10个小时。<br>在高空工作，而照片采集则在4小时多一点的时间内完成。<br>对三个图像进行特征匹配和稀疏束调整<br>批处理（每张n = 457、560和609幅图像）总共产生2.2×104点，在密集重构和手动编辑后增加到13.2×106点。 SfM处理大约花费了<br>每批22小时，尽管可以访问许多相同的机器<br>允许批量处理。当时的数据<br>地理注册和抽取的栅格化地形产品（产生的最终栅格约为3.5×105个像元）。 GPS错误和转换<br>残差如表2所示。最终的完全地理参考DEM为<br>显示在图12a中。<br>尽管拍照的重点是终端<br>冰ora和破坏，背景摄影信息足以重建整个湖盆，包括2公里长<br>北方冰m。与前面的示例一样，重要的地形细节（亚米级）已得到解决。整个<br>突破被成功重建，并且形态明显<br>模型捕获的特征包括狭窄的中央部分<br>和广阔的出口，以及两个废弃的溢洪道。最高的<br>点密度沿缺口的内表面集中<br>（如果发现密度超过每平方米8700点，<br>整个站点的中位数为7.35 / m2<br>;另请参见图8c），<br>北冰northern远端面的东边界<br>作为残lic内侧冰ora的南面，剖析了<br>末端冰ora复合物（图12b）。场景中存在许多插值伪像，但主要限于<br>南部，对应于广阔的积雪区域。</p>
-<p>4.2。 Cwm Cau冰川雕刻的基岩山脊<br>Cwm Cau是一个向西定向的冰川冰层，位于斯诺登尼亚国家公园的Cadair Idris（893 m）南部，<br>英国威尔士（位置见图4a）。它是用折叠的奥陶纪火山岩雕刻而成的。里面发现了大量的冰川地貌<br>太阳马戏团和山谷，包括莫奈山丘和<br>山脊和冰川雕刻的基岩山脊（萨林和格拉瑟，<br>2008）。后者被认为适合于小规模评估<br>SfM技术。选择进行重建的基岩山脊向西，向东，长80 m，最宽处宽19 m，<br>沿其南部和北部大约6和8 m高<br>侧翼（图13a）。 22个橙色目标测量<br>直径0.1 m用作GCP。给定功能的规模，<br>目标大小的相对减小被认为是适当的。使用dGPS，<br>水平，垂直和组合位置精度为0.002，<br>分别达到0.002和0.003 m。共拍摄了800张照片<br>并用于场景重建。与前面的示例一样，<br>SfM处理在三个独立的批次上进行，<br>平均每个12小时。转换残差平均为0.975、0.161，<br>x，y和z为0.422。照片和GCP数据是在<br>用两个人在大约3小时内完成Cwm Cau，其中1.5小时<br>被用来建立GCP网络。<br>最终内插的DEM在图5和6中显示。 13b和14。由于<br>此功能的规模越小，点云就被抽取到<br>10厘米的空间分辨率，减少了原始点数<br>从8.9×106到1.3×105<br>。抽取的单元格统计数据的分析显示，平均点密度为每0.1平方米69个（同样参见图8d），提供了特征表面的出色细节，尤其是暴露在外的表面<br>在南部和北部侧面发现裸露的岩石面孔<br>（图13b）。实际上，南面的点密度超过90<br>每0.1立方米的点数<br>。这种极端的分辨率足以描述<br>厘米级的基岩节理和其他表面特征，例如<br>条纹。在地形复杂且部分被遮挡的区域（例如东北边缘），场景重建较弱<br>由于较差的照片覆盖范围和阴影，因此无法使用该功能（请参见图14b）。</p>
-<p>5.讨论<br>如以上示例所示，SfM的明显后勤优势（有限的硬件需求和可移植性）至少在以下方面具有优势：<br>部分，与“数据就绪”相比，被冗长的处理时间所抵消<br>TLS或GPS之类的方法。关键点描述符提取，匹配，<br>稀疏和密集的重建算法在计算上<br>苛刻。例如，典型照片集的总处理时间<br>在此使用，编号为400至600张图像（在2272×1740处）<br>像素分辨率），在64位系统（具有<br>2.8 GHz CPU，512 MB GPU和6 GB RAM这严重依赖<br>图像纹理的复杂性，可以通过减小图像大小来改善，尽管这会导致图像纹理的减小。<br>返回的关键点描述符的数量，并最终减少点<br>密度。不可避免地，为任何地球科学应用选择SfM必须考虑到这种巨大的后处理负荷以及<br>选择调查方法最终将权衡一些因素<br>影响因素，包括成本，可访问性，经验以及在数据分辨率和覆盖范围方面的适用性。<br>使用SfM生成的数据集的绝对大小，就此而言<br>那些是从诸如TLS之类的联合遥感方法派生的<br>重大的信息管理问题（Rychkov等，2012）。<br>当前一代的GIS在很大程度上为<br>为此，高分辨率点云的有效可视化和分析受到可用于此目的的有限软件范围的严重限制。使用点云抽取<br>本文所述的方法提供了缩小规模的有用策略<br>这些密集数据，同时保留有关子网格的信息<br>变化性。但是，在对这些抽取数据进行统计分析时<br>可以提供有用的见解，例如量化表面粗糙度，<br>此步骤不可避免地导致地形复杂性的不必要损失。预计将来计算能力会有所提高<br>将减少运行时间并促进使用原始的高分辨率<br>将照片集输入SfM处理，同时出现<br>低成本或免费提供的软件产品（例如MeshLab）<br>轻松操纵远远超过&gt; 106点的点云<br>改善数据处理和方法的一般可访问性。</p>
-<p>这种方法的简约性质也使其适用于空中<br>调查。平台包括风筝，比空气轻的飞艇和<br>无人飞行器（UAV）同样便携，相对便宜并且能够携带基本的和先进的摄影设备（例如Smith等，2009； Vericat等，2009；<br>Niethammer et al。，2012），从而大大增加了潜在的面积覆盖率。此外，航空数据集还有潜力<br>减少甚至消除“死地”问题（狼和<br>Dewitt，2000），从而图像前景中的对象会掩盖背景中的对象，从而导致巨大的数据空白。<br>此问题不仅适用于SfM方法，还适用于所有<br>点云获取方法受到视线的高度限制。对于<br>地形简单的地形（例如，冲刷扇和低谷的洪泛区），空中进场将特别有利。但是，与立体重建一样，陡峭或近乎垂直的地形对于SfM技术而言可能是成问题的。<br>正在进行进一步的工作以评估这种方法。<br>第4节中介绍的示例应用程序非常适合<br>SfM技术的应用。最小的植被覆盖<br>在中尺度和微观尺度上相对复杂的异质形貌有助于提取适当数量的<br>关键点描述符，以实现一致的密集点云覆盖。同样，该方法非常适合在干旱至半干旱地区应用<br>环境。相反，该方法对于河岸景观等地形重建的适用性可能会受到限制，<br>鉴于目前，只有无水的表面才适合重建，在茂密植被的地区，点密度很可能受到限制，并且准确性值得怀疑。<br>6。结论<br>本文概述了一种新颖的低成本，地面，近距离地面摄影测量和计算机视觉方法<br>获得适合建模中微尺度地形的高分辨率空间数据。 SfM方法的本质消除了<br>手动识别图像控制之前的要求<br>处理，而不是使用自动照相机姿态估计算法来同时解析3D照相机位置和场景<br>几何;这是该技术的极其重要的优势<br>超越传统的数字摄影测量方法。但是，由于<br>原始SfM输出固定在相对坐标系中，特别是<br>建立GCP网络应花费时间和精力，以促进向绝对坐标系的转化<br>以及度量数据的提取。考虑到空中方法的假设有效性，地面数据收集<br>尽管如此，本文介绍的方法还是传统人工地形测量的一种有效的，财务上可行的替代方法<br>摄影测量技术，特别是在偏远或无法进入的地区的实际应用。</p>
+        <p>按图像处理运算的数学特征, 图像基本运算可分为：</p>
+<ol>
+<li><p>点运算(Point Operation)<br> 点运算是指对一幅图像中每个像素点的灰度值进行计算<br>的方法。</p>
+</li>
+<li><p>代数运算(Algebra Operation)</p>
+</li>
+<li><p>逻辑运算(Logical Operation)<br> 代数运算或逻辑运算是指将两幅或多幅图像通过对应像<br>素之间的加、减、乘、除运算或逻辑与、或、非运算得<br>到输出图像的方法。</p>
+</li>
+<li><p>几何运算(Geometric Operation)<br> 几何运算就是改变图像中物体对象（像素）之间的空间关系。<br>从变换性质来分，几何变换可以分为图像的位置变换（平移、<br>镜像、旋转）、形状变换（放大、缩小）以及图像的复合变<br>换等。</p>
+</li>
+</ol>
+<p>设输入图像的灰度为f(x,y)，输出图像的灰度为g(x,y)，<br>则点运算可以表示为：G=T[f]<br><strong>其中T[ ]是对 f 在（x，y）点值的一种数学运算，即点运算是一种像素的逐点运算，是灰度到灰度的映射过程，故称T[ ]为灰度变换函数。</strong></p>
 
-        <div id="aplayer-vGBctAnO" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Python库" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/03/04/Python库/" class="article-date">
+      <time datetime="2020-03-04T05:20:55.000Z" itemprop="datePublished">03-04-2020</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/04/Python库/">Python库 </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>作者：是程序员吖<br>来源：<a href="https://www.jianshu.com/p/d25a9169fe86" target="_blank" rel="noopener">https://www.jianshu.com/p/d25a9169fe86</a></p>
+<p>库名称简介</p>
+<p>Chardet 字符编码探测器，可以自动检测文本、网页、xml的编码。</p>
+<p>colorama 主要用来给文本添加各种颜色，并且非常简单易用。</p>
+<p>Prettytable 主要用于在终端或浏览器端构建格式化的输出。</p>
+<p>difflib，[Python]标准库，计算文本差异Levenshtein，快速计算字符串相似度。</p>
+<p>fuzzywuzzy 字符串模糊匹配。</p>
+<p>esmre 正则表达式的加速器。</p>
+<p>shortuuid 一组简洁URL/UUID函数库。</p>
+<p>ftfy，Unicode文本工具7</p>
+<p>unidecode，ascii和Unicode文本转换函数。</p>
+<p>xpinyin，将汉字转换为拼音的函数库</p>
+<p>pangu.py，调整对中日韩文字当中的字母、数字间距。</p>
+<p>pyfiglet，Python写的figlet程序，使用字符组成ASCII艺术图片</p>
+<p>uniout，提取字符串中可读写的字符</p>
+<p>awesome slugify，一个Python slugify库，用于处理Unicode。</p>
+<p>python-slugify，转换Unicode为ASCII内码的slugify函数库。</p>
+<p>unicode-slugify，生成unicode内码，Django的依赖包。</p>
+<p>ply，Python版的lex和yacc的解析工具phonenumbers，解析电话号码，格式，存储和验证的国际电话号码。</p>
+<p>python-user-agents，浏览器的用户代理（user-agents）的解析器。</p>
+<p>sqlparse，SQL解析器。</p>
+<p>pygments，一个通用的语法高亮工具。</p>
+<p>python-nameparser，解析人名，分解为单独的成分。</p>
+<p>pyparsing，通用解析器生成框架。</p>
+<p>tablib，表格数据格式，包括，XLS、CSV，JSON，YAML。</p>
+<p>python-docx，docx文档读取，查询和修改，微软Word 2007 / 2008的docx文件。</p>
+<p>xlwt/xlrd，读写Excel格式的数据文件。</p>
+<p>xlsxwriter，创建Excel格式的xlsx文件。</p>
+<p>xlwings，利用Python调用Excelcsvkit，CSV文件工具包。</p>
+<p>marmir，把Python[数据结构]，转化为电子表格。</p>
+<p>pdfminer，从PDF文件中提取信息。</p>
+<p>pypdf2， 合并和转换PDF页面的函数库。</p>
+<p>Python-Markdown，轻量级标记语言Markdown的Python实现。</p>
+<p>Mistune，,快速、全功能的纯Python编写的Markdown解释器。</p>
+<p>dateutil，标准的Python官方datetime模块的扩展包，字符串日期工具，其中parser是根据字符串解析成</p>
+<p>datetime，而rrule是则是根据定义的规则来生成datetime。</p>
+<p>arrow,更好的日期和时间处理Python库</p>
+<p>chronyk，一个Python 3版函数库，用于解析人写的时间和日期。</p>
+<p>delorean，清理期时间的函数库。</p>
+<p>when.py，为见的日期和时间，提供人性化的功能。</p>
+<p>moment，类似Moment.js的日期/时间Python库</p>
+<p>pytz，世界时区，使用tz database时区信息[数据库]</p>
+<p>BeautifulSoup，基于Python的HTML/XML解析器，简单易用, 功能很强大,即使是有bug，有问题的html代码，也可以解析。</p>
+<p>lxml，快速，易用、灵活的HTML和XML处理库，功能超强，在遇到有缺陷、不规范的xml时，Python自带的xml处理器可能无法解析。报错时，程序会尝试再用lxml的修复模式解析。</p>
+<p>htmlparser，官方版解析HTML DOM树，偶尔搞搞命令行自动表单提交用得上。</p>
+<p>pyyaml，Python版本的YAML解释器。</p>
+<p>html5lib，-标准库，解析和序列化HTML文档和片段。</p>
+<p>pyquery，类似[jQuery]的的HTML解释器函数库。</p>
+<p>cssutils，Python CSS库。</p>
+<p>MarkupSafe，XML或HTML / XHTML安全字符串标记工具。</p>
+<p>cssutils - ACSS library for Python., MarkupSafe - Implements a XML/HTML/XHTMLbleach，漂白，基于HTML的白名单函数库。</p>
+<p>xmltodict，类似JSON的XML工具包。</p>
+<p>xhtml2pdf，HTML / CSS格式转换器，看生成pdf文档。</p>
+<p>untangle，把XML文档，转换为Python对象，方便访问。</p>
+<p>文件处理</p>
+<p>库名称简介Mimetypes，Python标准库，映射文件名到MIME类型。</p>
+<p>imghdr，Python标准库，确定图像类型。</p>
+<p>python-magic，libmagic文件类型识别库，Python接口格式。</p>
+<p>path.py，os.path模块的二次封装。</p>
+<p>watchdog，一组API和shell实用程序，用于监视文件系统事件。</p>
+<p>Unipath，面向对象的文件/目录的操作工具包。</p>
+<p>pathlib，-（Python 3.4版已经作为Python标准库），一个跨平台，面向path的函数库。pickle/cPickle,python的pickle模块实现了基本的数据序列和反序列化。通过pickle模块的序列化操作我们能够将程序中运行的对象信息保存到文件中去，永久存储；通过pickle模块的反序列化操作，我们能够从文件中创建上一次程序保存的对象。</p>
+<p>cPickle是[C语言]实现的版本，速度更快。</p>
+<p>ConfigParser，Python标准库，INI文件解析器。</p>
+<p>configobj，INI文件解析器。</p>
+<p>config，分层次配置，logging作者编写。</p>
+<p>profig，多格式配置转换工具。</p>
+<p>logging，Python标准库，日志文件生成管理函数库。</p>
+<p>logbook，logging的替换品。</p>
+<p>Sentry，实时log服务器。</p>
+<p>Raven，哨兵Sentry的Python客户端。</p>
+<p>Sphinx，斯芬克斯（狮身人面像），Python文档生成器。</p>
+<p>reStructuredText，标记语法和解析工具，Docutils组件。</p>
+<p>mkdocs，Markdown格式文档生成器。</p>
+<p>pycco，简单快速、编程风格的文档生成器。</p>
+<p>pdoc，自动生成的Python库API文档epydoc，从源码注释中生成各种格式文档的工具</p>
+<p>图像处理</p>
+<p>库名称简介PIL（Python Image Library），基于Python的图像处理库，功能强大，对图形文件的格式支持广泛，内置许多图像处理函数，如图像增强、滤波[算法]等。</p>
+<p>Pillow，图像处理库，PIL图像库的分支和升级替代产品。</p>
+<p>Matplotlib，著名的绘图库，提供了整套和matlab相似的命令API，用以绘制一些高质量的数学二维图形，十分适合交互式地进行制图。</p>
+<p>brewer2mpl，有一个专业的python配色工具包，提供了从美术角度来讲的精美配色。</p>
+<p>PyGame基于Python的多媒体开发和游戏软件开发模块，包含大量游戏和图像处理功能。</p>
+<p>Box2d，开源的2d物理引擎，愤怒的小鸟就是使用了这款物理引擎进行开发的，Box2d物理引擎内部模拟了一个世界，你可以设置这个世界里的重力，然后往这个世界里添加各种物体，以及他们的一些物理特性，比如质量，摩擦，阻尼等等。</p>
+<p>Pymunk，类似box2d的开源物理图形模拟库。</p>
+<p>OpenCV, 目前最好的开源图像/视觉库，包括图像处理和计算机视觉方面、[机器学习]的很多通用算法。</p>
+<p>SimpleCV，计算机视觉开源框架，类似opencv。</p>
+<p>VTK，视觉化工具函式库（VTK， Visualization Toolkit）是一个开放源码，跨平台、支援平行处理（VTK曾用于处理大小近乎1个Petabyte的资料，其平台为美国Los Alamos国家实验室所有的具1024个处理器之大型系统）的图形应用函式库。2005年时曾被美国陆军研究实验室用于即时模拟俄罗斯制反导弹战车ZSU23-4受到平面波攻击的情形，其计算节点高达2.5兆个之多。</p>
+<p>cgkit,Python Computer Graphics Kit,其module 主要分两个部分</p>
+<ol>
+<li><p>与3d相关的一些python module 例如the vector, matrix and quaternion types, the RenderMan bindings, noise functions 这些模块可以在maya houdini nuke blender 等有Python扩展的程序中直接用;</p>
+</li>
+<li><p>提供完整的场景操作的module， 他类似其他三维软件，在内存中保留完整的描述场景的信息。不能直接用于maya 等。</p>
+</li>
+</ol>
+<p>CGAL，Computational Geometry Algorithms Library，计算几何算法库，提供计算几何相关的数据结构和算法，诸如三角剖分（2D约束三角剖分及二维和三维Delaunay三角剖分），Voronoi图（二维和三维的点，2D加权Voronoi图，分割Voronoi图等），多边形（布尔操作，偏置），多面体（布尔运算），曲线整理及其应用，网格生成（二维Delaunay网格生成和三维表面和体积网格生成等），几何处理（表面网格简化，细分和参数化等），凸壳算法（2D，3D和dD），搜索结构（近邻搜索，kd树等），插值，形状分析，拟合，距离等。</p>
+<p>Aggdraw，开源图像库，几乎涵盖了2d image操作的所有功能，使用起来非常灵活。</p>
+<p>Pycairo,开源矢量绘图库</p>
+<p>Cairo开罗的python接口，cairo提供在多个背景下做2-D的绘图，高级的更可以使用硬件加速功能。</p>
+<p>wand，Python绑定魔杖工具（MagickWand），C语言API接口。</p>
+<p>thumbor， -智能成像工具，可调整大小和翻转图像。</p>
+<p>imgSeek，查询相似的图像。</p>
+<p>python-qrcode，纯Python的二维码（QR码）生成器。</p>
+<p>pyBarcode，创建条码，无需PIL模块。</p>
+<p>pygram，Instagram像图像过滤器。</p>
+<p>Quads，基于四叉树的计算机艺术。</p>
+<p>nude.py，裸体检测函数。</p>
+<p>scikit-image，scikit工具箱的图像处理库。</p>
+<p>hmap，图像直方图工具。</p>
+<p>bokeh，交互的Web绘图。</p>
+<p>plotly，Web协同的Python和Matplotlib绘制。</p>
+<p>vincent，文森特，Python Vega的函数库。</p>
+<p>d3py，Python绘图库，基于D3.JS, ggplot -API兼容R语言的ggplot2.Kartograph.py，在Python绘制漂亮的SVG地图。</p>
+<p>pygal， SVG图表的创造者。</p>
+<p>pygraphviz，Graphviz的Python接口。</p>
+<p>Fonttlools，ttf字体工具函数包，用于fontforge、ttx等字体软件。</p>
+<p>游戏和多媒体</p>
+<p>库名称简介audiolazy，数字信号处理（DSP）的Python工具包。</p>
+<p>audioread，跨平台（GStreamer + Core Audio + MAD + FFmpeg）音频解码库。</p>
+<p>beets，音乐库管理。dejavu，音频指纹识别算法。</p>
+<p>Dejavu 听一次音频后就会记录该音频的指纹信息，然后可通过麦克风对输入的音频进行识别是否同一首歌。</p>
+<p>django-elastic-transcoder,Django +亚马逊elastic转码。</p>
+<p>eyeD3,音频文件工具，特别是MP3文件包含的ID3元数据。</p>
+<p>id3reader，用于读取MP3的元数据。</p>
+<p>mutagen，处理音频元数据。</p>
+<p>pydub，-操纵音频和简单的高层次的接口。</p>
+<p>pyechonest，Echo Nest API客户端。</p>
+<p>talkbox，语音和信号处理的Python库。</p>
+<p>TimeSide，开放的网络音频处理框架。</p>
+<p>tinytag，读取音乐文件元数据，包括的MP3，OGG，FLAC和wave文件。</p>
+<p>m3u8，用于解析m3u8文件。</p>
+<p>moviepy，多格式视频编辑脚本模块，包括GIF动画。</p>
+<p>shorten.tv，视频摘要。scikit视频，SciPy视频处理例程。</p>
+<p>GeoDjango,一个世界级的地理Web框架。</p>
+<p>geopy,Geo地理编码的工具箱。</p>
+<p>pygeoip，纯Python写的GeoIP API。</p>
+<p>GeoIP，Python API接口，使用高精度GeoIP Legacy Database数据库。</p>
+<p>geojson，GeoJSON函数库django-countries，一个Django程序，提供国家选择，国旗图标的静态文件，和一个国家的地域模型。</p>
+<p>Pygame，Python游戏设计模块。</p>
+<p>Cocos2d，2D游戏框架，演示，和其他的图形/交互应用，基于pyglet。Cocos2d- cocos2d is a framework for building 2D games, demos, and other graphical/interactive applications. It is based on pyglet.,PySDL2，SDL2的封装库。</p>
+<p>Panda3D- 3D游戏引擎，迪士尼开发。用C++写的，完全兼容Python。</p>
+<p>PyOgre，OGRE 3D渲染引擎，可用于游戏，模拟，任何3D。</p>
+<p>PyOpenGL，绑定OpenGL和它相关的API。</p>
+<p>PySFML，Python绑定SFMLRenPy，视觉小说引擎。</p>
+<p>大数据与科学计算</p>
+<p>库名称简介pycuda/opencl，GPU高性能并发计算Pandas，python实现的类似R语言的数据统计、分析平台。基于NumPy和Matplotlib开发的，主要用于数据分析和数据可视化，它的数据结构DataFrame和R语言里的data.frame很像，特别是对于时间序列数据有自己的一套分析机制，非常不错。</p>
+<p>Open Mining，商业智能（BI），Pandas的Web界面。</p>
+<p>blaze，NumPy和Pandas大数据界面。</p>
+<p>SciPy，开源的Python算法库和数学工具包，SciPy包含的模块有最优化、线性代数、积分、插值、特殊函数、快速傅里叶变换、信号处理和图像处理、常微分方程求解和其他科学与工程中常用的计算。其功能与软件MATLAB、Scilab和GNU Octave类似。Numpy和Scipy常常结合着使用，Python大多数机器学习库都依赖于这两个模块。</p>
+<p>ScientificPython，一组经过挑选的Python程序模块，用于科学计算，包括几何学（矢量、张量、变换、矢量和张量场），四元数，自动求导数，（线性）插值，多项式，基础统计学，非线性最小二乘拟合，单位计算，Fortran兼容的文本格式，通过VRML的3D显示，以及两个Tk小工具，分别用于绘制线图和3D网格模型。此外还具有到netCDF，MPI和BSPlib库的接口。</p>
+<p>NumPy科学计算库，提供了矩阵，线性代数，傅立叶变换等等的解决方案, 最常用的是它的N维数组对象. NumPy提供了两种基本的对象：ndarray（N-dimensional array object）和 ufunc（universal function object）。ndarray是存储单一数据类型的多维数组，而ufunc则是能够对数组进行处理的函数。</p>
+<p>Cvxopt，最优化计算包，可进行线性规划、二次规划、半正定规划等的计算。</p>
+<p>Numba，科学计算速度优化编译器。</p>
+<p>pymvpa2，是为大数据集提供统计学习分析的Python工具包，它提供了一个灵活可扩展的框架。它提供的功能有分类、回归、特征选择、数据导入导出、可视化等。</p>
+<p>NetworkX，复杂网络的优化软件包。</p>
+<p>zipline，交易算法的函数库。</p>
+<p>PyDy， Python动态建模函数库。</p>
+<p>SymPy,符号数学的Python库。</p>
+<p>statsmodels,Python的统计建模和计量经济学。</p>
+<p>astropy,天文学界的Python库。</p>
+<p>orange，橙色，数据挖掘，数据可视化，通过可视化编程或Python脚本学习机分析。RDKit,化学信息学和机器学习的软件。</p>
+<p>Open Babel，巴贝尔，开放的化学工具箱。</p>
+<p>cclib，化学软件包的计算函数库。</p>
+<p>Biopython，免费的生物计算工具包。</p>
+<p>bccb，生物分析相关的代码集。</p>
+<p>bcbio-nextgen，提供完全自动化、高通量、测序分析的工具包。</p>
+<p>visvis, 可视化计算模块库，可进行一维到四维数据的可视化。</p>
+<p>MapReduce是Google提出的一个软件[架构]，用于大规模数据集（大于1TB）的并行运算。概念“Map（映射）”和“Reduce（归纳）”，及他们的主要思想，都是从函数式编程语言借来的MapReduce函数库。</p>
+<p>Framworks and libraries for MapReduce.,PySpark，[Spark]的Python API。dpark，Spark的Python克隆，Python中的MapReduce框架。</p>
+<p>luigi，为批量工作，建立复杂的管道。</p>
+<p>mrjob，运行在[Hadoop]，或亚马逊网络服务的，MapReduce工作。</p>
+<p>人工智能与机器学习</p>
+<p>库名称简介NLTK（natural language toolkit)，是python的自然语言处理工具包。2001年推出，包括了大量的词料库，以及自然语言处理方面的算法实现：分词， 词根计算， 分类， 语义分析等。</p>
+<p>Pattern，数据挖掘模块，包括自然语言处理，机器学习工具，等等。</p>
+<p>textblob，提供API为自然语言处理、分解NLP任务。基于NLTK和Pattern模块。</p>
+<p>jieba，结巴，中文分词工具。</p>
+<p>snownlp，用于处理中文文本库。</p>
+<p>loso，中文分词函数库。</p>
+<p>genius，中文CRF基础库，条件随机场(conditional random field,简称 CRF),是一种鉴别式机率模型,是随机场的一种,常用于标注或分析序列资料,如自然语言文字或是生物序列。</p>
+<p>Gensim，一个相当专业的主题模型Python工具包，无论是代码还是文档，可用于如何计算两个文档的相似度LIBSVM,是台湾大学林智仁(Lin Chih-Jen)教授等开发设计的一个简单、易于使用和快速有效的SVM模式识别与回归的软件包，他不但提供了编译好的可在Windows系列系统的执行文件，还提供了源代码，方便改进、修改以及在其它[操作系统]上应用；该软件对SVM所涉及的参数调节相对比较少，提供了很多的默认参数，利用这些默认参数可以解决很多问题；并提供了交互检验(Cross Validation)的功能。该软件可以解决C-SVM、ν-SVM、ε-SVR和ν-SVR等问题，包括基于一对一算法的多类模式识别问题。</p>
+<p>scikits.learn，构建在SciPy之上用于机器学习的 Python 模块。它包括简单而高效的工具，可用于数据挖掘和数据分析。涵盖分类，回归和聚类算法，例如SVM， 逻辑回归，朴素贝叶斯，随机森林，k-means等算法，代码和文档都非常不错，在许多Python项目中都有应用。例如在我们熟悉的NLTK中，分类器方面就有专门针对scikit-learn的接口，可以调用scikit-learn的分类算法以及训练数据来训练分类器模型。</p>
+<p>PyMC，机器学习采样工具包，scikit-learn似乎是所有人的宠儿，有人认为，PyMC更有魅力。PyMC主要用来做Bayesian分析。</p>
+<p>Orange，基于组件的数据挖掘和机器学习软件套装，它的功能即友好，又很强大，快速而又多功能的可视化编程前端，以便浏览数据分析和可视化，包含了完整的一系列的组件以进行数据预处理，并提供了数据帐目，过渡，建模，模式评估和勘探的功能。侧重数据挖掘，可以用可视化语言或Python进行操作，拥有机器学习组件，还具有生物信息学以及文本挖掘的插件。</p>
+<p>Milk，机器学习工具箱，其重点是提供监督分类法与几种有效的分类分析：SVMs(基于libsvm)，K-NN，随机森林经济和决策树。它还可以进行特征选择。这些分类可以在许多方面相结合，形成不同的分类系统。对于无监督学习，它提供K-means和affinity propagation聚类算法。</p>
+<p>PyMVPA(Multivariate Pattern Analysis in Python),是为大数据集提供统计学习分析的Python工具包，它提供了一个灵活可扩展的框架。它提供的功能有分类、回归、特征选择、数据导入导出、可视化等。</p>
+<p>NuPIC，开源人工智能平台。该项目由Grok（原名 Numenta）公司开发，其中包括了公司的算法和软件架构。NuPIC 的运作接近于人脑，“当模式变化的时候，它会忘掉旧模式，记忆新模式”。如人脑一样，CLA 算法能够适应新的变化。</p>
+<p>Pylearn2，-基于Theano的机器学习库。</p>
+<p>hebel，GPU加速，[深度学习]Python库。</p>
+<p>gensim，机器学习库。</p>
+<p>pybrain，机器学习模块，它的目标是为机器学习任务提供灵活、易应、强大的机器学习算法。pybrain包括神经网络、强化学习(及二者结合)、无监督学习、进化算法。以神经网络为核心，所有的训练方法都以神经网络为一个实例Mahout,是 Apache Software Foundation（ASF） 旗下的一个开源项目，提供一些可扩展的机器学习领域经典算法的实现，旨在帮助开发人员更加方便快捷地创建智能应用程序。Mahout包含许多实现，包括聚类、分类、推荐过滤、频繁子项挖掘。此外，通过使用 Apache Hadoop 库，Mahout 可以有效地扩展到云中。</p>
+<p>Crab，灵活的，快速的推荐引擎。</p>
+<p>python-recsys，娱乐系统分析，推荐系统。</p>
+<p>vowpal_porpoise，Vowpal Wabbit轻量级Python封装。</p>
+<p>Theano,用来定义、优化和模拟数学表达式计算，用于高效的解决多维数组的计算问题的python软件包。它使得写深度学习模型更加容易，同时也给出了一些关于在GPU上训练它们的选项。</p>
+<p>系统与命令行</p>
+<p>库名称简介threading，Python标准线程库，更高级别的线程接口。</p>
+<p>envoy，特使，Python子线程的函数库。</p>
+<p>sh，成熟的子线程替换函数库。</p>
+<p>sarge，封装线程。</p>
+<p>subprocess,调用shell命令的神器argparse，写命令行脚本必备，强大的命令行差数解析工具timeit，计算代码运行的时间等等unp，命令行工具，解压文件。</p>
+<p>eventlet开销很少的多线程模块，使用的是 green threads 概念，例如，pool = eventlet.GreenPool(10000) 这样一条语句便创建了一个可以处理 10000 个客户端连接的线程池。类似Gevent线程库Gevent，多线程模块pytools,著名的python通用函数、工具包SendKeys, 键盘鼠标操作模块, 模拟键盘鼠标模拟操作。</p>
+<p>pyHook,基于Python的“钩子”库，主要用于监听当前电脑上鼠标和键盘的事件。这个库依赖于另一个Python库PyWin32，如同名字所显示的，PyWin32只能运行在Windows平台，所以PyHook也只能运行在Windows平台。</p>
+<p>pstuil,跨平台地很方便获取和控制系统的进程，以及读取系统的CPU占用内存占用等信息.</p>
+<p>cement，一个轻量级的、功能齐全的命令行工具</p>
+<p>click，简单优雅的的命令行接口。</p>
+<p>clint，Python命令行工具。</p>
+<p>cliff，创造多层次指令的命令行程序框架。</p>
+<p>Clime， 可以转换任何模块为多的CLI命令程序，无任何配置。</p>
+<p>docopt，Python命令行参数分析器。</p>
+<p>pycli，命令行应用程序，支持的标准命令行解析，测井，单元[测试]和功能测试。</p>
+<p>Gooey，打开命令行程序，作为为一个完整的GUI应用程序,cookiecutter，命令行工具，从cookiecutters（项目模板）创建项目。例如，Python包项目，jQuery插件项目。percol，为UNIX传统管道pipe命令，添加交互式选择风格。</p>
+<p>rainbowstream，聪明和漂亮的推特客户终端。</p>
+<p>Django Models，Django的一部分SQLAlchemy，Python SQL工具包和对象关系映射。</p>
+<p>peewee，小型的ORM解析器。</p>
+<p>PonyORM，为ORM提供了一种面向SQL的接口。</p>
+<p>MongoEngine，Python对象文件映射，使用[MongoDB]。, Django MongoDB引擎MongoDB , Django后台。</p>
+<p>django-mongodb-engine，Django后台.redisco,一个简单的模型和容器库，使用[Redis]flywheel，Amazon DynamoDB对象映射。</p>
+<p>butterdb，谷歌电子表格的ORM，Python版。</p>
+<p>celery，芹菜，异步任务队列/工作，基于分布式消息队列。</p>
+<p>huey，休伊，轻量级，多线程任务队列。</p>
+<p>mrq，队列先生，分布式任务队列，使用redis &amp; Gevent。</p>
+<p>rq，简单的工作队列。</p>
+<p>Queue,Queue模块可以用来实现多线程间通讯，让各个线程共享数据，生产者把货物放到Queue中，供消费者（线程）去使用。</p>
+<p>simpleq，简单的，可扩展的队列，Amazon SQS基础队列。</p>
+<p>Psyco，超强的python性能优化工具，psyco 的神奇在于它只需要在代码的入口处调用短短两行代码，性能就能提升 40% 或更多，真可谓是立竿见影！如果你的客户觉得你的程序有点慢，敬请不要急着去优化代码，psyco 或许能让他立即改变看法。psyco 堪称 Python 的 jit。fn.py，Python函数编程：缺失的功能享受FP的实现。</p>
+<p>funcy，函数编程工具。</p>
+<p>Toolz，函数编程工具：迭代器、函数，字典。</p>
+<p>CyToolz，Toolz的Cython实现，高性能的函数编程工具。</p>
+<p>Ansible，安塞波，极为简单的自动化平台。</p>
+<p>SaltStack，基础设施的自动化管理系统。</p>
+<p>Fabric，织物，一个简单，远程执行和部署的语言工具。</p>
+<p>Fabtools，Fabric的工具函数。</p>
+<p>cuisine，热门的Fabric的工具函数。</p>
+<p>psutil，跨平台的过程和系统工具模块。</p>
+<p>pexpect，控制互动节目。</p>
+<p>provy，易于使用的配置系统的Python。</p>
+<p>honcho，Foreman的Python接口，用于管理procfile应用工具。</p>
+<p>gunnery，多任务执行工具，与网络接口的分布式系统。</p>
+<p>fig，快速。独立的开发环境中使用泊坞窗。</p>
+<p>APScheduler，轻量级、但功能强大的在线任务调度程序。</p>
+<p>django-schedule,Django日程应用程序。</p>
+<p>doit,任务流道/生成工具。</p>
+<p>Joblib,Python提供的轻量级的流水线工具函数。</p>
+<p>Plan，简易生成crontab文件。</p>
+<p>Spiff，纯Python实现的，功能强大的工作流引擎。</p>
+<p>schedule，Python作业调度。</p>
+<p>TaskFlow，有助于使任务执行简单。</p>
+<p>ctypes，Python标准库，速度更快，Python调用C代码的外部函数接口。</p>
+<p>cffi，Python调用C代码外部函数接口，类似于ctypes直接在python程序中调用c程序,但是比ctypes更方便不要求编译成so再调用。</p>
+<p>Cytoolz，python 加速库SWIG，简化封装和接口生成器。</p>
+<p>Cython，Python优化静态编译器。</p>
+<p>PyPy，Python解释器的 Python实现。</p>
+<p>Stackless Python，一个增强版本的Python。它使程序员从基于线程的编程方式中获得好处，并避免传统线程所带来的性能与复杂度问题。Stackless为 Python带来的微线程扩展，是一种低开销、轻量级的便利工具Pyston,使用LLVM和现代JIT技术,对python进行性能优化。</p>
+<p>pythonlibs，非官方的Windows（32 / 64位）的Python扩展包scapy，优秀的数据包处理库。</p>
+<p>ino，Arduino命令行工具。</p>
+<p>Pyro，Python的机器人工具包。</p>
+<p>pluginbase，一个简单而灵活的Python的插件系统。</p>
+<p>itsdangerous，数据安全传输工具。</p>
+<p>blinker，快速Python中的信号/事件调度系统。</p>
+<p>pychievements，用于创建和跟踪成果框架。</p>
+<p>python-patterns，Python中的设计模式。</p>
+<p>pefileWindows PE文件解析器SIP，自动为C和C++库生成Python扩展模块的工具。</p>
+<p>数据库</p>
+<p>库名称简介MySQLdb，成熟的[MySQL]数据库模块,Baresql,SQL数据库包ZODB，Python本地对象数据库。一个K-V对象图数据库。</p>
+<p>pickledb,简单和轻量级的K-V键值存储。</p>
+<p>TinyDB, 轻量级，面向文档的数据库。</p>
+<p>mysql-python，MySQL的Python工具库。</p>
+<p>mysqlclient，mysql-python分支，支持Python 3.,PyMySQL,纯Python写的 MySQL驱动程序，兼容mysql-python。</p>
+<p>mysql-connector-python,MySQL连接器,来自[Oracle]，纯Python编写。</p>
+<p>oursql，MySQL连接器，提供本地话指令语句和BLOBs支持。</p>
+<p>psycopg2，最流行的Python PostgreSQL适配器。</p>
+<p>txpostgres，于Twisted的异步驱动，用于PostgreSQL。</p>
+<p>queries,psycopg2函数库，用于PostgreSQL。dataset,存储Python字典数据,用于SQLite，MySQL和PostgreSQL。</p>
+<p>cassandra-python-driver，开源分布式NoSQL数据库系统Apache Cassandra系统的Python驱动.pycassa,简化的cassandra数据库Python驱动。</p>
+<p>HappyBase，友好的Apache [Hbase]的函数库。</p>
+<p>PyMongo，MongoDB官方客户端。</p>
+<p>Plyvel，LevelDB快速和功能丰富的Python接口。</p>
+<p>redis-py,redis客户端。</p>
+<p>py2neo,Python客户端(基于Neo4j的RESTful接口).</p>
+<p>telephus,基于Twisted的cassandra客户端。</p>
+<p>txRedis，基于Twisted的Redis客户端。</p>
+<p>在学习Python的过程中，往往因为没有资料或者没人指导从而导致自己不想学下去了，因此我特意准备了个群 592539176 ，群里有大量的PDF书籍、教程都给大家免费使用！不管是学习到哪个阶段的小伙伴都可以获取到自己相对应的资料！</p>
+<p>【网络】</p>
+<p>Curl，Pycurl包是一个libcurl的Python接口，它是由C语言编写的。与urllib相比，它的速度要快很多。Libcurl是一个支持FTP, FTPS, HTTP, HTTPS, GOPHER, TELNET, DICT, FILE 和 LDAP的客户端URL传输库.libcurl也支持HTTPS认证,HTTP POST,HTTP PUT,FTP上传,代理,Cookies,基本身份验证,FTP文件断点继传,HTTP代理通道等等。</p>
+<p>Requests，用Python语言编写，基于 urllib的开源 HTTP 库。它比 urllib 更加方便，更加 Pythoner。支持 Python3。</p>
+<p>httpie，命令行HTTP客户端，用户友好的cURL的替换工具。</p>
+<p>s3cmd，命令行工具，用于管理Amazon S3和CloudFront。</p>
+<p>youtube-dl，命令行程序，从YouTube下载视频。</p>
+<p>you-get，Python3写的视频下载工具，可用于YouTube/Youku优酷/Niconico视频下载Coursera，从coursera.org下载视频，可重新命名文件wikiteam，wiki下载工具。</p>
+<p>subliminal，命令行工具，搜索和下载字幕的函数库。</p>
+<p>requests，HTTP函数库，更加人性化。</p>
+<p>grequests，异步HTTP请求+ Gevent（高性能高并发函数库）。</p>
+<p>urllib3，一个线程安全的HTTP连接池，支持文件post。</p>
+<p>httplib2，综合HTTP的客户端函数库。</p>
+<p>treq， Python API接口，Twisted的HTTP客户。</p>
+<p>Mininet，流行的网络仿真器,API采用python编写。</p>
+<p>POX，基于Python的开源软件定义网络（SDN）控制开发平台的应用，如OpenFlow的SDN控制器。</p>
+<p>Pyretic，SDN的编程语言，提供了强大的抽象在网络交换机或仿真器。</p>
+<p>SDX Platform，基于SDN的IXP实现，利用最小网络，痘和热。</p>
+<p>inbox.py，Python的SMTP服务器。</p>
+<p>imbox， Python版本IMAP库。</p>
+<p>inbox，收件箱，开源邮件工具包。</p>
+<p>lamson,SMTP服务器。</p>
+<p>flanker,侧卫,电子邮件地址和MIME解析库。</p>
+<p>marrow.mailer,高性能可扩展邮件交付框架。</p>
+<p>django-celery-ses， Django电子邮件后台，使用AWS SES和Celery。</p>
+<p>modoboa，邮件托管和管理平台，包括现代和简化Web UI。</p>
+<p>envelopes，邮件工具。</p>
+<p>mailjet，批量邮寄mailjet API接口，带统计。</p>
+<p>Talon，利爪，Mailgun库，提取消息和签名。mailjet- Mailjet API implementation for batch mailing, statistics and more., Talon - Mailgun library to extract message quotations and signatures.,pyzmail，编写，发送和解析电子邮件。</p>
+<p>furl，燃料，小型的的URL解析库库。</p>
+<p>purl，简单的，干净的API，操纵URL。</p>
+<p>pyshorteners，纯Python库，URL短网址编辑。</p>
+<p>short_url，短网址生成。</p>
+<p>Scrapy，快速屏幕截取和网页抓取的框架。</p>
+<p>portia，波西亚，Scrapy的可视化扩展。</p>
+<p>feedparser，信息源解释器</p>
+<p>RoboBrowser，简单的网页浏览Python函数库，没有使用Web浏览器。</p>
+<p>MechanicalSoup，网站自动化互动测试工具包。</p>
+<p>mechanize，网页浏览编程工具。</p>
+<p>Demiurge，造物主，-PyQuery的轻量级工具。</p>
+<p>newspaper,提取报纸新闻。</p>
+<p>html2text,转换HTML为 Markdown格式的文本。</p>
+<p>python-goose,HTML内容提取器。</p>
+<p>lassie,莱西,人性化的网站内容检索。</p>
+<p>micawber,通过UR抓提网页的函数库。</p>
+<p>sumy，概要，文本和HTML网页的自动文摘模块。</p>
+<p>Haul，距离，可扩展的图像爬虫。</p>
+<p>python-readability,可读性工具Arc90,快速的Python接口。</p>
+<p>opengraph,OpenGraphProtocol协议解析模块,textract，从任何文件，Word，PowerPoint，PDF文件中提取文本，等。</p>
+<p>sanitize，消毒，使混乱的数据变的理智。</p>
+<p>AutobahnPython， WebSocket和WAMP的函数库，使用 Twisted和PythonWebSocket-for-Python，websocket客户端和服务器端函数库。</p>
+<p>SimpleXMLRPCServer，python标准库，简单的XML-RPC服务器，单线程。SimpleJSONRPCServer，JSON-RPC规范实施函数库。</p>
+<p>zeroRPC，基于ZeroMQ和MessagePack的RPC实现。</p>
+<p>apache-libcloud，所有云服务的Python接口库。</p>
+<p>wifi，WiFi -一套个Python库和命令行工具与WiFi，用于[Linux]。</p>
+<p>streamparse，运行Python代码和数据的实时流。集成了Apache Storm。</p>
+<p>boto，亚马逊网络服务接口。</p>
+<p>twython，Twitter推特API。</p>
+<p>google-api-python-client，谷歌客户端API。</p>
+<p>gspread，谷歌电子表格的Python API。</p>
+<p>facebook-sdk，facebook平台Python SDK。</p>
+<p>facepy，简易的facebook图形APIgmail，Gmail的Python接口。</p>
+<p>django-wordpress，Django的WordPress的模型和视图。</p>
+<p>Web框架</p>
+<p>Django，最流行的Python-Web框架，鼓励快速开发,并遵循MVC设计，开发周期短ActiveGrid企业级的Web2.0解决方案Karrigell简单的Web框架，自身包含了Web服务，py脚本引擎和纯python的数据库</p>
+<p>PyDBLitewebpy 一个小巧灵活的Web框架，虽然简单但是功能强大CherryPy基于Python的Web应用程序开发框架。</p>
+<p>Pylons 基于Python的一个极其高效和可靠的Web开发框架</p>
+<p>Zope 开源的Web应用服务器</p>
+<p>TurboGears 基于Python的MVC风格的Web应用程序框架Twisted流行的网络编程库，大型Web框架。</p>
+<p>QuixoteWeb开发框架Flask,轻量级web框架。</p>
+<p>Bottle，快速，简单和轻量级的WSGI模式Web框架。</p>
+<p>Pyramid，轻量级，快速，稳定的开源Web框架。</p>
+<p>web2py，简单易用的全堆栈Web框架和平台。</p>
+<p>web.py，强大、简单的Web框架。</p>
+<p>TurboGears，便于扩展的Web框架。</p>
+<p>CherryPy，极简Python Web框架，支持，HTTP 1.1和WSGI线程池。</p>
+<p>Grok，基于Zope3的Web框架。</p>
+<p>Bluebream，开源的Web应用服务器，原名Zope 3。</p>
+<p>guava，轻量级，高性能的Python-Web框架，采用c语言编写。</p>
+<p>django-cms，基于Django企业级开源CMS。</p>
+<p>djedi-cms轻量级但功能强大的Django CMS的插件，内联编辑和性能优化。</p>
+<p>FeinCMS，基于Django的先进内容管理系统。</p>
+<p>Kotte，高层次的Python的Web应用框架，基于Pyramid。</p>
+<p>Mezzanine，强大，一致，灵活的内容管理平台。</p>
+<p>Opps，基于Django的CMS，用于高流量的报纸、杂志和门户网站。</p>
+<p>Plone，基于Zope的开源应用服务器Zope。</p>
+<p>Quokka，灵活，可扩展的，轻量级的CMS系统，使用Flask和MongoDB。</p>
+<p>Wagtail，Django内容管理系统。</p>
+<p>Widgy，CMS框架，基于Django。</p>
+<p>django-oscar，Django奥斯卡，开源的电子商务框架。</p>
+<p>django-shop，基于Django的网店系统。</p>
+<p>merchant，支持多种付款处理工具。</p>
+<p>money，可扩展的货币兑换解决方案。</p>
+<p>python-currencies，货币显示格式。</p>
+<p>cornice，Pyramid的REST框架。</p>
+<p>django-rest-framework，Django框架，强大灵活的工具，可以很容易地构建Web API。</p>
+<p>django-tastypie，创造精美的Django应用程序API接口。</p>
+<p>django-formapi，创建JSON API、HMAC认证和Django表单验证。</p>
+<p>flask-api，提供统一的浏览器体验，基于Django框架。</p>
+<p>flask-restful，快速构建REST API支持扩展。</p>
+<p>flask-api-utils，flask的扩展。</p>
+<p>falcon，猎鹰，高性能的Python框架，构建云API和Web应用程序后端。</p>
+<p>eve，夏娃，REST API框架，使用Flask，MongoDB和良好意愿。</p>
+<p>sandman，睡魔，为现有的数据库驱动的系统，自动生成REST API。</p>
+<p>restless，类似TastyPie的框架。</p>
+<p>savory-pie，REST API构建函数库（Django，及其他）Jinja2，现代设计师友好的语言模板。</p>
+<p>Genshi，网络感知输出模板工具包。</p>
+<p>Mako，马可，Python平台的超高速、轻型模板。</p>
+<p>Chameleon，变色龙，一个HTML / XML模板引擎。仿照ZPT，优化速度。</p>
+<p>Spitfire，快速的Python编译模板。</p>
+<p>django-haystack,大海捞针,Django模块搜索。</p>
+<p>elasticsearch-py,Elasticsearch官方低级的Python客户端。</p>
+<p>solrpy,solr客户端。</p>
+<p>Whoosh,呼,快速，纯Python搜索引擎库。</p>
+<p>Feedly，建立新闻和通知系统的函数库，使用Cassandra和Redis。</p>
+<p>django-activity-stream,Django活动流,从你网站上的行动,产生通用的活动流。</p>
+<p>Beaker，烧杯，一个缓存和会话使用的Web应用程序，独立的Python脚本和应用程序库。</p>
+<p>dogpile.cache，是Beaker作者的下一代替代作品。</p>
+<p>HermesCache，Python的缓存库，基于标签的失效及预防Dogpile效果。</p>
+<p>django-cache-machine，Django缓存机，自动缓存失效，使用ORM。</p>
+<p>django-cacheops，自动颗粒事件驱动，ORM缓存失效。</p>
+<p>johnny-cache,约翰尼高速缓存框架,Django应用程序。</p>
+<p>django-viewlet,渲染模板部件扩展缓存控制。</p>
+<p>pylibmc,在libmemcached接口。</p>
+<p>WTForms-JSON,JSON表单数据处理扩展。</p>
+<p>Deform， HTML表单生成的函数库。</p>
+<p>django-bootstrap3，bootstrap3，集成了Django。</p>
+<p>django-crispy-forms，Django程序，可以创建优雅的表单。</p>
+<p>django-remote-forms，Django的远程表单，Django表格的序列化程序。</p>
+<p>django-simple-spam-blocker，Django简单的垃圾邮件拦截器。</p>
+<p>django-simple-captcha，Django简单验证码，简单的和高度可定制的Django应用程序，用于添加验证码图像Ajenti，服务器管理面板。</p>
+<p>Grappelli，界面花哨的django皮肤。</p>
+<p>django-suit，Django替代o界面（仅用于非商业用途）。</p>
+<p>django-xadmin，Django管理面板替代工具。</p>
+<p>flask-admin，简单的flask管理界面框架flower，实时监控和Web管理面板。</p>
+<p>Pelican，鹈鹕，Markdown或ReST，字王内容主题。支持 DVCS, Disqus. AGPL。</p>
+<p>Cactus,仙人掌,设计师的网站静态生成器。</p>
+<p>Hyde，海德， 基于Jinja2的静态网站生成器。</p>
+<p>Nikola，尼古拉-一个静态网站和博客生成器。</p>
+<p>Tags，标签，最简单的静态网站生成器。</p>
+<p>Tinkerer，工匠，基于Sphinx的静态网站生成器。</p>
+<p>asyncio，（在Python 3.4 +是Python标准库），异步I/O，事件循环，协同任务。</p>
+<p>gevent，基于Python的网络库。</p>
+<p>Twisted，扭曲，事件驱动的网络引擎。</p>
+<p>Tornado，龙卷风，Web框架和异步网络的函数库。</p>
+<p>pulsar，脉冲星，事件驱动的并行框架的Python。</p>
+<p>diesel，柴油，绿色的，基于事件的I/O框架。</p>
+<p>eventlet，WSGI支持异步框架。</p>
+<p>pyzmq， 0MQ消息库的Python封装。</p>
+<p>txZMQ,基于Twisted的0MQ消息库封Crossbar,开源统一应用路由器（WebSocket和WAMP）。</p>
+<p>wsgiref，Python标准库，WSGI封装实现，单线程。</p>
+<p>Werkzeug，机床，WSGI工具函数库，很容易地嵌入到你自己的项目框架。</p>
+<p>paste，粘贴，多线程，稳定的，久经考验的WSGI工具。</p>
+<p>rocket，火箭，多线程服务，基于Pyramid。</p>
+<p>netius，快速的、异步WSGI服务器，gunicorn，forked前身，部分用C写的。</p>
+<p>fapws3，异步网络，用C写的。</p>
+<p>meinheld，异步WSGI服务器，是用C写的。</p>
+<p>bjoern，-快速的、异步WSGI服务器，用C写的。</p>
+<p>安全</p>
+<p>Permissions函数库，允许或拒绝用户访问数据或函数。</p>
+<p>django-guardian,Django守护者，管理每个对象的权限，用于Django 1.2 +Carteblanche，管理导航和权限。</p>
+<p>Authomatic，简单强大的认证/授权客户端。</p>
+<p>OAuthLib， 通用，规范，OAuth请求签约工具。</p>
+<p>rauth，用于OAuth 1.0，2.0，的Python库。</p>
+<p>python-oauth2，利用全面测试，抽象接口来创建OAuth的客户端和服务器。</p>
+<p>python-social-auth，易于安装的社会认证机制。</p>
+<p>django-oauth-toolkit,Django OAuth工具包django-oauth2-provider,Django OAuth2工具包。</p>
+<p>django-allauth，Django认证的应用程序。</p>
+<p>Flask-OAuthlib，Flask的OAuth工具包sanction，制裁，简单的oauth2客户端。</p>
+<p>jose，[JavaScript]对象签名和加密(JOSE)草案实施，标记状态。</p>
+<p>python-jwt，JSON的Web令牌生成和验证模块。</p>
+<p>pyjwt，JSON的Web令牌草案01。</p>
+<p>python-jws，JSON的Web令牌草案02。</p>
+<p>PyCrypto，Python的加密工具包。</p>
+<p>Paramiko，sshv2协议的实现，提供了客户端和服务器端的功能。</p>
+<p>cryptography，密码开发工具包。</p>
+<p>PyNac，网络和密码（NaCl）函数库。</p>
+<p>hashids，hashids的 Python函数库。</p>
+<p>Passlib，安全的密码存储/哈希库，非常高的水平。</p>
+<p>hashlib,md5, sha等hash算法，用来替换md5和sha模块，并使他们的API一致。</p>
+<p>它由OpenSSL支持，支持如下算法：md5,sha1, sha224, sha256, sha384, sha512.</p>
+<p>GUI库</p>
+<p>名称简介PyGtk，基于Python的GUI程序开发GTK+库PyQt用于Python的QT开发库WxPythonPython下的GUI编程框架，其消息机制与MFC的架构相似,入门非常简单，需要快速开发相关的应用可以使用这个TkinterPython下标准的界面编程包，因此不算是第三方库了PySide，跨平台Qt的应用程序和用户界面框架，支撑Qt v4框架。</p>
+<p>wxPython，混合wxWidgets的C++类库。</p>
+<p>kivy，创建应用程序GUI函数库，看运行于Windows，Linux，MAC OS X，[Android]和[iOS]。</p>
+<p>curse，用于创建终端GUI应用程序。</p>
+<p>urwid，创建终端GUI应用程序窗体的函数库，支持事件，色彩丰富。</p>
+<p>pyglet，跨平台的窗口和多媒体库的Python。</p>
+<p>Tkinter，是Python事实上的标准GUI软件包。</p>
+<p>enaml，创建漂亮的用户界面，语法类似QML。</p>
+<p>Toga，托加，OS原生GUI工具包。【构建封装】</p>
+<p>pyenv,简单的Python版本管理。</p>
+<p>virtualenv,创建独立的Python环境，用于同时安装不同版本的python环境。</p>
+<p>virtualenvwrapper，是virtualenv的一组扩展。</p>
+<p>pew,一套管理多个虚拟环境的工具。</p>
+<p>vex，使运行指定的virtualenv命令。</p>
+<p>PyRun，一个单文件，无需安装的Python版本管理工具。</p>
+<p>PIP，Python包和依赖的管理工具。</p>
+<p>easy_install，软件包管理系统,提供一个标准的分配Python软件和 函式库的格式。是一个附带设置工具的模块，和一个第三方函式库。旨在加快Python函式库的分配程式的速度。类似Ruby语言的RubyGems 。</p>
+<p>conda，跨平台，二进制软件包管理器。</p>
+<p>Curdling，一个管理Python包的命令行工具。</p>
+<p>wheel，Python发行的新标准，旨在替代eggs.cx-Freeze，跨平台的，用于打包成可执行文件的库</p>
+<p>py2exe, Windows平台的Freeze脚本工具，Py2exe ，将python脚本转换为windows上可以独立运行的可执行程序py2app，MAC OS X平台的Freeze脚本工具。</p>
+<p>pyinstaller，-转换成独立的可执行文件的Python程序（跨平台）。</p>
+<p>pynsist,构建Windows安装程序的工具，用Python编写。</p>
+<p>dh-virtualenv,建立和分发virtualenv(Debian软件包格式)</p>
+<p>PyPI，新一代的Python包库管理工具。warehouse,新一代的Python包库（PyPI）管理工具。</p>
+<p>devpi，PyPI服务器和包装/测试/发布工具。</p>
+<p>localshop，PyPI官方包镜像服务器，支持本地（私人）包上传。</p>
+<p>buildout，创建，组装和部署应用程序的多个部分，其中一些可能是非基于Python的。</p>
+<p>SCons，软件构造工具。</p>
+<p>platformio，一个控制台的工具，构建的代码可用于不同的开发平台。</p>
+<p>bitbake，特殊设计的工具，用于创建和部署[嵌入式]Linux软件包</p>
+<p>fabricate，自动为任何编程语言，生成依赖包。</p>
+<p>django-compressor，Django压缩机，压缩和内联JavaScript或CSS，链接到一个单一的缓存文件。</p>
+<p>jinja-assets-compressor，金贾压缩机，一个Jinja扩展，通过编译，压缩你的资源。</p>
+<p>webassets，优化管理，静态资源，独特的缓存清除。</p>
+<p>fanstatic，球迷，包优化，提供静态文件。</p>
+<p>fileconveyor，监控资源变化，，可保存到CDN（内容分发网络）和文件系统。</p>
+<p>django-storages，一组自定义存储Django后台。</p>
+<p>glue，胶胶，一个简单的命令行工具，生成CSS Sprites。</p>
+<p>libsass-python，Sass (层叠样式表)的Python接口。</p>
+<p>Flask-Assets，整合应用程序资源。【代码调试】</p>
+<p>unittest，Python标准库，单元测试框架。</p>
+<p>nose，鼻子，unittest延伸产品。</p>
+<p>pytest，成熟的全功能的Python测试工具。</p>
+<p>mamba，曼巴，Python的权威测试工具，出自BDD的旗下。</p>
+<p>contexts，背景，BDD测试框架，基于C#。</p>
+<p>pyshould，should风格的测试框架，基于PyHamcrest.pyvows，BDD风格测试框架Selenium，web测试框架，Python绑定Selenium。</p>
+<p>splinter，分裂，测试Web应用程序的开源工具。</p>
+<p>locust，刺槐，可扩展的用户负载测试工具，用Python写的。</p>
+<p>sixpack，语言无关的A/B测试框架。</p>
+<p>mock，模拟对象（英语：mock object，也译作模仿对象），模拟测试库。</p>
+<p>responses，工具函数，用于mock模拟测试。</p>
+<p>doublex-强大的测试框架。</p>
+<p>freezegun，通过时间调整，测试模块。</p>
+<p>httpretty， HTTP请求的模拟工具。</p>
+<p>httmock，mock模拟测试。</p>
+<p>coverage，代码覆盖度量测试。</p>
+<p>faker，生成模拟测试数据的Python包。</p>
+<p>mixer，混频器，产生模拟数据，用于Django ORM，SQLAlchemy，Peewee, MongoEngine, Pony ORM等model_mommy，在Django创建测试随机工具。</p>
+<p>ForgeryPy，易用的模拟数据发生器。</p>
+<p>radar，雷达，生成随机日期/时间。</p>
+<p>FuckIt.py，测试Python代码运行。</p>
+<p>Code Analysispysonar2，Python类型索引。</p>
+<p>pycallgraph,可视化的流量（调用图）应用程序。</p>
+<p>code2flow,转换Python和JavaScript代码到流程图。</p>
+<p>LinterFlake8，源代码模块检查器pylama，Python和JavaScript代码审计工具。</p>
+<p>Pylint，源代码分析器，它查找编程错误，帮助执行一个代码标准和嗅探一些代码味道。注意：相比于PyChecker，Pylint是一个高阶的Python代码分析工具，它分析Python代码中的错误。</p>
+<p>Pyflakes，一个用于检查Python源文件错误的简单程序。Pyflakes分析程序并且检查各种错误。它通过解析源文件实现，无需导入。</p>
+<p>pdb,Python标准库,Python调试器。</p>
+<p>ipdb,IPython使用的PDB。</p>
+<p>winpdb，独立于平台的GUI调试器。</p>
+<p>pudb，全屏，基于python调试控制台。</p>
+<p>pyringe，-可附着于及注入代码到Python程序的调试器。</p>
+<p>python-statsd，statsd服务器客户端。</p>
+<p>memory_profiler， 内存监视。</p>
+<p>profiling，交互式Python分析器。</p>
+<p>django-debug-toolbar, Django调试工具栏,显示各种调试信息:当前请求/响应。django-devserver,Django调试工具。</p>
+<p>flask-debugtoolbar,flask调试工具。</p>
+<p>作者：是程序员吖<br>来源：<a href="https://www.jianshu.com/p/d25a9169fe86" target="_blank" rel="noopener">https://www.jianshu.com/p/d25a9169fe86</a><br>著作权归作者所有。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-时间系统" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/02/26/时间系统/" class="article-date">
+      <time datetime="2020-02-26T08:51:04.000Z" itemprop="datePublished">02-26-2020</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/26/时间系统/">时间系统</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="时间的概念"><a href="#时间的概念" class="headerlink" title="时间的概念"></a>时间的概念</h2><p>时刻：发生某一现象的瞬间，也叫历元。<br>时间间隔：发生某一现象经历的时间过程。<br>时间基准：时间的单位（尺度）和原点（起始历元），尺度是关键，<br>原点根据应用选定。</p>
+<h3 id="作为时间基准，要满足两个条件"><a href="#作为时间基准，要满足两个条件" class="headerlink" title="作为时间基准，要满足两个条件"></a>作为时间基准，要满足两个条件</h3><ol>
+<li>能做连续性的周期运动，且运动周期十分稳定；</li>
+<li>运动的周期必须具有复现性</li>
+</ol>
+<h3 id="在GNSS中，时间的重要性表现在"><a href="#在GNSS中，时间的重要性表现在" class="headerlink" title="在GNSS中，时间的重要性表现在"></a>在GNSS中，时间的重要性表现在</h3><ol>
+<li>准确计算卫星位置，1cm，2.6×10-6s；</li>
+<li>通过时间测量距离，1cm，3×10-11s；</li>
+<li>地球自转位置改变，赤道上，1cm， 2.16×10-5s。</li>
+</ol>
+<h2 id="恒星时"><a href="#恒星时" class="headerlink" title="恒星时"></a>恒星时</h2><p>定义：以春分点为参考点的周日视运动所定义的时间；<br>尺度：春分点连续两次经过本地子午圈的时间间隔为一个<br>恒星日，一个恒星日等于24个恒星小时。<br>测量：春分点相对本地子午圈的时角。<br>具有地方性，所以又叫做地方恒星时</p>
+<h2 id="平太阳时"><a href="#平太阳时" class="headerlink" title="平太阳时"></a>平太阳时</h2><p>定义：以平太阳（以真太阳周年运动的平均速度在天球赤道上作周年视运动）为参考点定义的时间系统称为平太阳时。<br>尺度：平太阳连续两次经过本地子午圈的时间间隔为一个平太阳日，24小时，60分，60秒  测量：平太阳与本地子午圈的时角<br>平太阳时 具有地方性<br>平太阳时=366.2422/365.2422=（1+0.002 737 909）恒星时</p>
+<h2 id="世界时"><a href="#世界时" class="headerlink" title="世界时"></a>世界时</h2><p>国际天文学联合会于1928年决定，将由格林尼治平子夜<br>起算的平太阳时称为世界时。<br>与平太阳时尺度相同，起点不同：世界时=平太阳时+12h<br>UT0——未经改正的世界时<br>UT1——加入极移改正<br>UT2——加入地球自转速度的季节性改正</p>
+<h2 id="儒略日"><a href="#儒略日" class="headerlink" title="儒略日"></a>儒略日</h2><p>儒略日是从公元前4713年1月1日格林尼治平正午起算的连续天数，注意是是平太阳日，而不是恒星日。</p>
+<h2 id="地方时"><a href="#地方时" class="headerlink" title="地方时"></a>地方时</h2><p>不管是恒星时还是平太阳时，都与观测者所在的位置有关，因此，时<br>间不统一，给使用带来不便。<br>现行的做法是通过定义时区来统一进行时间的换算：从西经7.5º到东<br>经7.5º（经度间隔为15º）为零时区，从零时区的边界分别向东和向<br>西，每隔经度15º划一个时区，东西各划出12个时区，东12时区和西<br>12时区重合，全球共划出24个时区，各时区都以中央经线的地方平<br>时为本区的区时，相邻两时区的区时相差1小时。<br>地方时=世界时+区号（东区为正，西区为负），例如北京在东八区<br>，则北京时间=世界时+8小时</p>
+<p>国际日期变更线：180°经线，当由东向西越过时，日期要<br>增加一天，当由西向东越过时，日期要减小1天</p>
+<h2 id="原子时"><a href="#原子时" class="headerlink" title="原子时"></a>原子时</h2><p>定义：以物质内部原子运动的特征为基础的时间系统<br>尺度：位于海平面上的Cs133原子基态的两个超精细能级<br>在零磁场中跃迁辐射震荡9 192 631 770周所持续时间为<br>原子时1s<br>起点：1958年1月1日0时，与世界时对齐。<br>国际原子时（International Atomic Time，TAI）：国际<br>上100座原子钟通过数据处理推算出的统一的原子时系统<br>。</p>
+<h2 id="协调世界时"><a href="#协调世界时" class="headerlink" title="协调世界时"></a>协调世界时</h2><p>为了避免原子时与世界时之间产生过大的偏差，自1972年开始采用了一种以原子时秒长为基础，在时刻上尽量接<br>近世界时的折中的时间系统，称为协调世界时（UTC）。<br>当协调时与世界时的时刻相差超过±0.9s时，便在协调时中加入1闰秒<br>TAI=UTC+1s×n</p>
+<h2 id="GNSS时间系统"><a href="#GNSS时间系统" class="headerlink" title="GNSS时间系统"></a>GNSS时间系统</h2><p>GPST：与原子时尺度相<br>同，起点是1980年1月6日 0时，在此刻与UTC一致<br> 不闰秒<br> TAI-GPST=19s<br> GPST=UTC-19s+n</p>
+<p> BDT：与原子时尺度相同，起<br>点是2006年1月1日0时，与此<br>刻的UTC一致<br> 不闰秒<br> 北斗的导航电文中提供了北斗<br>时间与GPS时间之间的转换参<br>数A0GPS和A1GPS<br> tGPS=tBDT-ΔtGPS<br> ΔtGPS=A0GPS+A1GPS×tBDT</p>
+<h2 id="GNSS系统的计时方法"><a href="#GNSS系统的计时方法" class="headerlink" title="GNSS系统的计时方法"></a>GNSS系统的计时方法</h2><pre><code>周+周积秒
+</code></pre><p>GPS周：从1980年1月6日0时起算<br> 例如2017年3月6日属于GPS的第1939周<br>周积秒：从星期日0时0分0秒起算<br> 例如星期一8 h30min56sec，周积秒是117056秒</p>
+<p>北斗周：从2006年1月1日0时起算<br> 例如2017年3月6日属于北斗的第583周<br>周积秒：从星期日0时0分0秒起算<br> 例如星期一8 h30min56sec，周积秒是117056秒</p>
+<h1 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h1><ol>
+<li>名词解释：历元，时间基准，世界时系统，恒星时，平太阳时，世<br>界时，UT1，UT2，地方时，北京时间，原子时，国际原子时TAI，<br>协调世界时UTC，闰秒（跳秒），GNSS时，儒略日</li>
+<li>一个可观测的周期运动，符合什么要求就可以作为时间的基准？</li>
+<li>在GNSS卫星定位中，时间系统的重要意义表现在哪些方面？</li>
+<li>为什么要跳秒？怎么设置跳秒？</li>
+<li>GPST和BDT是如何定义的？</li>
+<li>将北京时间2011年10月25日14时20分48秒转换成GPS时间。</li>
+<li>将2019年9月10日转换成儒略日</li>
+</ol>
+
+        <div id="aplayer-hlWSAhKD" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-vGBctAnO"),
+            element: document.getElementById("aplayer-hlWSAhKD"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -322,1211 +996,10 @@
       
 
       
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-高雄大空袭" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/11/12/高雄大空袭/" class="article-date">
-      <time datetime="2019-11-12T09:15:21.000Z" itemprop="datePublished">11-12-2019</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/12/高雄大空袭/">高雄大空袭</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <video src="https://tianrking.github.io/media/mp4/%E4%B8%80%E4%B9%9D%E5%9B%9B%E4%BA%94%201945.mp4" autoplay controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"><br>your browser does not support the video tag<br></video>
-
-<p>月 暗淡的光線<br>Gue̍h àm-tām ê kng-suànn<br>照著僥倖的人<br>Tsiò tio̍h hiau-hīng ê lâng<br>遠遠望著一空一隙<br>Hn̄g-hn̄g bāng tio̍h tsi̍t-khang-tsi̍t-khiah</p>
-<p>破敗的海岸<br>Phuà-pāi ê hái-huānn<br>風中浮沈的性命<br>Hong tiong phû-tîm ê sìnn-miā<br>凋零落塗的咒誓<br>Tiau-lîng lo̍h-thôo ê tsiù-tsuā<br>怨嘆希望攏變成空<br>Uàn-thàn hi-bāng lóng piàn-sîng khang<br>怨嘆命運戲弄<br>Uàn-thàn miā-ūn hì-lāng<br>咱是生在亂世的人<br>Lán sī senn tsāi luān-sè ê lâng<br>註定無半項<br>Tsù-tiānn bô puànn hāng<br>但是我的心中<br>Tān-sī guá ê sim tiong<br>有一个願望<br>Ū tsi̍t ê guān-bāng<br>想欲將所有的心意<br>Siūnn beh tsiong sóo-ū ê sim-ì<br>予你知影<br>Hōo lí tsai-iánn</p>
-<p>混亂的時代 純情的夢<br>Hūn-luān ê sî-tāi  sûn-tsîng ê bāng<br>我毋是勇敢的人<br>Guá m̄ sī ióng-kám ê lâng<br>只有恬恬佮你做伴<br>Tsí-ū tiām-tiām kap lí tsuè-phuānn<br>偷偷寫一條歌<br>Thau-thau siá tsi̍t tiâu kua<br>等希望的日頭照佇山嶺<br>Tán hi-bāng ê ji̍t-thâu tsiò tī suann-niá<br>等和平慢慢靠岸<br>Tán hô-pîng bān-bān khò-huānn<br>等飛行機 袂閣來<br>Tán pue-lîng-ki buē koh lâi<br>想欲牽你的手<br>Siūnn beh khan lí ê tshiú<br>聽海湧的聲<br>Thiann hái-íng ê siann</p>
-<p>等飛行機 袂閣來<br>Tán pue-lîng-ki buē koh lâi<br>予我牽你的手 唱這條戀歌<br>Hōo guá khan lí ê tshiú  tshiùnn tsit tiâu luân-kua</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/MV/">MV</a>
-    </div>
-
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-HOCC何韻詩-鋼鐵是怎樣煉成的" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/11/02/HOCC何韻詩-鋼鐵是怎樣煉成的/" class="article-date">
-      <time datetime="2019-11-02T06:06:07.000Z" itemprop="datePublished">11-02-2019</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/02/HOCC何韻詩-鋼鐵是怎樣煉成的/">HOCC何韻詩 鋼鐵是怎樣煉成的</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <video src="https://tianrking.github.io/media/mp4/HOCC%E4%BD%95%E9%9F%BB%E8%A9%A9%E3%80%8A%E6%98%AF%E6%9C%89%E7%A8%AE%E4%BA%BA%E3%80%8BOfficial%20MV.mp4" autoplay controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"><br>your browser does not support the video tag<br></video>
-
-
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-地籍測量學習題" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/10/30/地籍測量學習題/" class="article-date">
-      <time datetime="2019-10-30T12:23:46.000Z" itemprop="datePublished">10-30-2019</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/30/地籍測量學習題/">地籍測量學 習題 习题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="一-緒論"><a href="#一-緒論" class="headerlink" title="一 緒論"></a>一 緒論</h1><h2 id="1-现代地籍-多用途地籍-的含义是什么"><a href="#1-现代地籍-多用途地籍-的含义是什么" class="headerlink" title="1. 现代地籍(多用途地籍) 的含义是什么 ?"></a>1. 现代地籍(多用途地籍) 的含义是什么 ?</h2><p> <strong>地籍是由国家建立和管理的</strong><br> <strong>土地权属是地籍的核心</strong><br> <strong>以地块为基础建立地籍</strong><br> <strong>地籍必须描述地块内附着物的状况</strong><br> <strong>对于每一块土地,都必须描述其权属 利用 位置 数量 质量 等五个要素</strong><br> <strong>对于一个区域(如县级行政管理区域),地籍簿册是由土地调查册 土地登记册 土地统计册</strong></p>
-<h2 id="2-地籍信息回答了土地及其附着物的哪六个基本问题"><a href="#2-地籍信息回答了土地及其附着物的哪六个基本问题" class="headerlink" title="2. 地籍信息回答了土地及其附着物的哪六个基本问题 ?"></a>2. 地籍信息回答了土地及其附着物的哪六个基本问题 ?</h2><p><strong>“是谁的”  具体指权利人与土地之间的法律关系(归属)</strong><br><strong>“在哪里”  具体指土地的空间位置</strong><br><strong>“有多少”  具体指对土地数量的描述</strong><br><strong>“在什么时候” 具体指土地权利和利用的发生 转移 消灭 等事件的时间</strong><br><strong>“为什么”  具体指土地权利和利用的存在依据及其有关说明</strong><br><strong>“怎么样”  具体指权利人占有 使用 处分土地 和取得土地收益的权力 义务 和限制</strong></p>
-<h2 id="3-试述现代地籍的功能"><a href="#3-试述现代地籍的功能" class="headerlink" title="3. 试述现代地籍的功能"></a>3. 试述现代地籍的功能</h2><ol>
-<li><strong>地理性功能</strong></li>
-<li><strong>经济功能</strong></li>
-<li><strong>产权保护功能</strong></li>
-<li><strong>土地利用管理功能</strong></li>
-<li><strong>决策功能</strong></li>
-<li><strong>管理功能</strong></li>
-</ol>
-<h2 id="4-试述地籍的分类"><a href="#4-试述地籍的分类" class="headerlink" title="4. 试述地籍的分类"></a>4. 试述地籍的分类</h2><ol>
-<li><p>按地籍的用途划分</p>
-<ul>
-<li>税收地籍</li>
-<li>产权地籍</li>
-<li>多用途地籍</li>
-<li></li>
-</ul>
-</li>
-<li><p>按地籍的特点和任务划分</p>
-<ul>
-<li>初始地籍</li>
-<li>日常地籍</li>
-</ul>
-</li>
-<li><p>按地籍的区域划分</p>
-<ul>
-<li>城镇地籍</li>
-<li>农村地籍</li>
-</ul>
-</li>
-</ol>
-<h2 id="5-地籍调查的目的-内容-原则-是什么"><a href="#5-地籍调查的目的-内容-原则-是什么" class="headerlink" title="5. 地籍调查的目的 内容 原则 是什么"></a>5. 地籍调查的目的 内容 原则 是什么</h2><p>地籍调查的基本目的 在于为土地登记 土地统计 土地利用规划 土地税收 城市规划 房产管理 以及其他国民经济各部门提供基础资料.<br>地籍调查的根本目的是维护土地制度 保护土地产权 制定土地政策 合理利用土地 等 提供基础资料 </p>
-<p>地籍调查的内容:</p>
-<ol>
-<li>功能不同<ul>
-<li>税收地籍调查的内容: 以财政目的为主的税收地籍调查  土地权力状况(纳税人情况 单位 地址 ..)  计算税收依据(纳税的土地类型 土地面积 土地等级)</li>
-<li>产权地籍调查的内容: 以产权保护为目的的产权地籍 地图权属 土地利用状况 其他要素 </li>
-<li>多用途地籍调查内容: 土地权属(权利人状况 权源 权力性质 权利限制) 土地位置(地理位置 权属界址) 土地数量(土地面积 建筑占地面积 总建筑面积) 土地质量(土地等级 基准地价 建筑物结构 层数 各种房地产价格 ) 土地利用状况(类型 容积率 建筑密度 建筑间距 各类别面积比例)</li>
-</ul>
-</li>
-</ol>
-<ol start="2">
-<li><p>制度不同</p>
-<ul>
-<li><strong>土地权属调查</strong>  土地所有权调查 国有土地使用权调查 集体土地使用权调查 抵押权和地役权等其他土地权利调查 等</li>
-<li><strong>土地利用调查</strong>  图斑地类调查 地物补测 调查底图标绘与整饰 调查手簿填写 等</li>
-<li><strong>地籍测量</strong>   地籍控制测量 界址测量 地籍图测绘 面积测算与汇总</li>
-</ul>
-</li>
-<li><p>地籍调查的原则</p>
-<ul>
-<li>实事求是原则</li>
-<li>全面调查原则</li>
-<li>一查多用原则</li>
-<li>技术先进原则 </li>
-</ul>
-</li>
-</ol>
-<h2 id="7-地籍要素包括哪些内容"><a href="#7-地籍要素包括哪些内容" class="headerlink" title="7. 地籍要素包括哪些内容"></a>7. 地籍要素包括哪些内容</h2><pre><code>权属 利用 位置 数量 质量
-</code></pre><h2 id="8-地籍调查结束后应上交哪些资料"><a href="#8-地籍调查结束后应上交哪些资料" class="headerlink" title="8. 地籍调查结束后应上交哪些资料"></a>8. 地籍调查结束后应上交哪些资料</h2><ol>
-<li>表册成果</li>
-<li>图件成果</li>
-<li>数据成果</li>
-<li>文字成果</li>
-</ol>
-<h2 id="9-同其他测绘相比较-地籍测量有哪些特点"><a href="#9-同其他测绘相比较-地籍测量有哪些特点" class="headerlink" title="9. 同其他测绘相比较,地籍测量有哪些特点"></a>9. 同其他测绘相比较,地籍测量有哪些特点</h2><h2 id="12-试论述地籍测量学的任务-研究的内容和对象"><a href="#12-试论述地籍测量学的任务-研究的内容和对象" class="headerlink" title="12. 试论述地籍测量学的任务 研究的内容和对象"></a>12. 试论述地籍测量学的任务 研究的内容和对象</h2><ul>
-<li>地籍测量学的研究对象:<br>  土地空间位置及其形状和大小(具体指地块的空间位置及其形状和大小)</li>
-<li>地籍测量学的主要任务:<br>  确定地块的位置 面积,保持土地利用过程中所发生的地块的分割 合并 产权转移 和利用类别变化的现势性 准确性</li>
-<li>地籍测量的研究内容:<br>  地籍测量的理论框架 地籍测绘技术体系及其标准化 土地的划分技术与方法 土地信息采集与表达的技术继承 及其可视化 土地利用的动态监测技术与方法 高新测绘技术(3S)在土地管理中的应用    </li>
-</ul>
-<h1 id="第二章-土地權屬調查"><a href="#第二章-土地權屬調查" class="headerlink" title="第二章 土地權屬調查"></a>第二章 土地權屬調查</h1><h2 id="1-試述我國土地權屬的性質及其權屬單位"><a href="#1-試述我國土地權屬的性質及其權屬單位" class="headerlink" title="1. 試述我國土地權屬的性質及其權屬單位"></a>1. 試述我國土地權屬的性質及其權屬單位</h2><p>土地產權是土地制度的核心,土地制度對於土地權利的種種約束表現爲土地產權的約束.土地產權也像其他財產權一樣,必須得到法律的保證.<br><strong>土地權屬是指土地產權的歸屬</strong>,是存在於土地之中的排他性完全權力.包括<strong>土地所有權</strong> <strong>土地使用權</strong> <strong>地役權等多項權力</strong></p>
-<h2 id="2-土地權屬的確認方式有哪幾種-如何確認土地權屬"><a href="#2-土地權屬的確認方式有哪幾種-如何確認土地權屬" class="headerlink" title="2. 土地權屬的確認方式有哪幾種?如何確認土地權屬?"></a>2. 土地權屬的確認方式有哪幾種?如何確認土地權屬?</h2><ul>
-<li><p>確認方式種類</p>
-<ol>
-<li>文件確認</li>
-<li>慣用確認</li>
-<li>協商確認</li>
-<li>仲裁確認</li>
-</ol>
-</li>
-<li><p>確認方式</p>
-<ul>
-<li>農村地區(含城市地區)土地所有權和使用權的確認</li>
-<li>城市土地使用權的確認<ol>
-<li>單位用地紅綫圖</li>
-<li>房地產證書</li>
-<li>土地使用權合同書 協議書 換地書</li>
-<li>証(撥)地批准書和合同書</li>
-<li>有償使用合同書(協議書)和國有土地使用權證書</li>
-<li>其他法律文件</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="簡述地塊和宗地的概念及其劃分的原則"><a href="#簡述地塊和宗地的概念及其劃分的原則" class="headerlink" title="簡述地塊和宗地的概念及其劃分的原則"></a>簡述地塊和宗地的概念及其劃分的原則</h2><p><strong>地塊</strong>是可辨認出同類屬性的最小土地單元.<br>地塊在空間上是連續的<br>地塊的空間位置是固定的,界綫是相對明確的<br>地塊的”同類屬性”既可以是某一種屬性,也可以是某一類屬性的集合</p>
-<p><strong>宗地</strong>是指權力上具有同一屬性的地塊,即同一土地權利相連成片的用地範圍<br>宗地具有固定的位置和明確的權利界限,並可同時辨認出確定的權利 利用 質量 和 時態 等土地基本要素</p>
-<h2 id="論述土地權屬界址-邊界形式-和邊界類型"><a href="#論述土地權屬界址-邊界形式-和邊界類型" class="headerlink" title="論述土地權屬界址 邊界形式 和邊界類型"></a>論述土地權屬界址 邊界形式 和邊界類型</h2><p>土地權屬界址(簡稱界址) 包括 界址綫 界址點 界標</p>
-<p>界綫類型</p>
-<ol>
-<li>行政界限</li>
-<li>土地管理區域界限</li>
-<li>地塊界限</li>
-</ol>
-<p>界綫形式</p>
-<ol>
-<li>普通界限</li>
-<li>法律界限</li>
-<li>自然界限</li>
-</ol>
-<h2 id="簡述土地權屬調查的内容和基本程序"><a href="#簡述土地權屬調查的内容和基本程序" class="headerlink" title="簡述土地權屬調查的内容和基本程序"></a>簡述土地權屬調查的内容和基本程序</h2><h3 id="權屬調查的内容"><a href="#權屬調查的内容" class="headerlink" title="權屬調查的内容"></a>權屬調查的内容</h3><ol>
-<li>土地權屬的狀況</li>
-<li>界址調查</li>
-<li>宗地草圖繪製</li>
-<li>地籍調查表填寫<h3 id="土地權屬調查的程序"><a href="#土地權屬調查的程序" class="headerlink" title="土地權屬調查的程序"></a>土地權屬調查的程序</h3></li>
-<li>街道(地籍區)和街坊(地籍子區)的劃分.</li>
-<li>土地權屬資料的收集 分析 處理</li>
-<li><p>預編地籍號</p>
-</li>
-<li><p>發放通知書</p>
-</li>
-<li>實地調查</li>
-<li>資料整理</li>
-</ol>
-<h2 id="簡述界址點設定的辦法"><a href="#簡述界址點設定的辦法" class="headerlink" title="簡述界址點設定的辦法"></a>簡述界址點設定的辦法</h2><ol>
-<li>界址綫拐點,相鄰宗地的地址綫交叉處應設定界址點</li>
-<li>在一條直綫界址綫上存在多種界址綫類別時,如既有圍墻又有墻壁,滴水綫,籬笆等,變化出可根據需要設定界址綫</li>
-<li>在圍墻 道路 溝渠 田埂處的界址點,要確認界址綫在標志物的位置(如内 中 外)</li>
-</ol>
-<h2 id="土地權屬界限的爭議如何調查處理"><a href="#土地權屬界限的爭議如何調查處理" class="headerlink" title="土地權屬界限的爭議如何調查處理"></a>土地權屬界限的爭議如何調查處理</h2><h2 id="試對宗地草圖進行論述"><a href="#試對宗地草圖進行論述" class="headerlink" title="試對宗地草圖進行論述"></a>試對宗地草圖進行論述</h2><p><strong>宗地草圖</strong>是描述宗地位置 界址點 綫 和 相鄰宗地關係的草編記錄 </p>
-<ol>
-<li>宗地草圖記錄的内容<ul>
-<li>本宗地號和門牌號,權利人名稱和相鄰宗地的宗地號 門牌號 權利人名稱</li>
-<li>本宗地界址點 界址點序號及界址綫 宗地内地物 及宗地外緊靠界址點綫的地物等</li>
-<li>界址邊長 界址點與臨近地物的相關距離和條件距離</li>
-<li>確定宗地界址點位置 界址邊長方位所必須的建築物或構築物</li>
-<li>概略指北針和比例尺 丈量著 丈量日期</li>
-</ul>
-</li>
-</ol>
-<ol start="2">
-<li><p>宗地草圖的特徵</p>
-<ul>
-<li>是宗地的原始描述</li>
-<li>圖上數據是實量的 精度高</li>
-<li>所繪宗地草圖是近似的,相鄰宗地草圖不能拼接</li>
-</ul>
-</li>
-</ol>
-<ol start="3">
-<li><p>宗地草圖的作用</p>
-<ul>
-<li>是地籍資料中的原始資料</li>
-<li>配合低級調查表 爲測定界址點坐標和製作宗地圖提供了初始信息</li>
-<li>可為界址點的維護 回復 和解決權屬糾紛提供依據</li>
-</ul>
-</li>
-</ol>
-<h1 id="三-土地利用現狀調查"><a href="#三-土地利用現狀調查" class="headerlink" title="三 土地利用現狀調查"></a>三 土地利用現狀調查</h1><h2 id="土地分類體系"><a href="#土地分類體系" class="headerlink" title="土地分類體系"></a>土地分類體系</h2><ul>
-<li><p>土地自然分類系統</p>
-<ol>
-<li>地貌特徵 平原 丘陵 山地 高山第</li>
-<li>土壤 植被等 自然特徵</li>
-</ol>
-</li>
-<li><p>土地評價分類系統</p>
-<ol>
-<li>土地生產力水平</li>
-<li>土地質量</li>
-<li>土地生產潛力</li>
-<li><p>土地適宜性</p>
-<p>等具體標志分類,也稱土地的經濟特徵分類</p>
-</li>
-</ol>
-</li>
-<li><p>土地綜合分類系統<br>  土地利用分類體系主要依據土地的綜合特性(包括土地的自然特性 社會經濟特性 管理特性)進行分類。土地綜合特性的差異，導致了人類在長期利用、改造土地的過程中所形成的土地利用方式、土地利用結構、土地的用途和生產利用方面的差異。土地利用現狀分類就是屬於其中的一種分類形式。土地利用分類系統具有生產的實用性，利用它可以分析土地利用現狀，預測土地利用方向</p>
-</li>
-</ul>
-<h2 id="我國現行土地分類的原則"><a href="#我國現行土地分類的原則" class="headerlink" title="我國現行土地分類的原則"></a>我國現行土地分類的原則</h2><ul>
-<li><p>科學性</p>
-<ol>
-<li>按土地利用的綜合性差異劃分打雷,然後按單一性差異逐級細分</li>
-<li>同一級的類型要堅持統一的分類標準</li>
-<li>肺類層次要鮮明 從屬關係要明確</li>
-<li>同一種地類 只能在一個大類中出現 不能同時在兩種大類并存</li>
-</ol>
-</li>
-<li><p>實用性<br>  土地分類標志易於掌握 分類含義力求準確 層次盡量減少 命名講究科學並照顧習慣稱謂,並盡可能與計劃 統計及有關生產部門使用的分類名稱及含義協調一致 以利於為多部門服務</p>
-</li>
-<li><p>開放性<br>  分類體系應具有開放性 兼容性 既要滿足一定時期國家宏觀管理及社會經濟發展的需要 同時也要有利於進一步完善</p>
-</li>
-<li><p>繼承性<br>  藉鑒和戲曲國内外土地利用分類經驗 繼承應用效果好的分類</p>
-</li>
-</ul>
-<h2 id="土地利用現狀調查的目的-内容-原則"><a href="#土地利用現狀調查的目的-内容-原則" class="headerlink" title="土地利用現狀調查的目的 内容 原則"></a>土地利用現狀調查的目的 内容 原則</h2><ul>
-<li><p>目的</p>
-<ol>
-<li>為製定國民經濟計劃和有關政策服務 </li>
-<li>為農業生產提供科學依據</li>
-<li>為建立土地登記和土地統計製度服務 </li>
-<li>為全面管理土地服務</li>
-</ol>
-</li>
-<li><p>内容</p>
-<ol>
-<li>查清土地每一塊土地類型及分佈，量算地類面積</li>
-<li>按土地權屬單位及行政轄區範圍匯總面積和各地類面積。</li>
-<li>編制分幅土地權屬界線圖和縣、鄉兩級土地利用現狀圖。</li>
-<li>調查、總結土地權屬及土地利用的經驗和教訓，提出合理利用土地的建議。</li>
-</ol>
-</li>
-<li><p>原則</p>
-<ol>
-<li>實事求是</li>
-<li>全面調查</li>
-<li>一查多用</li>
-<li>運用科學的方法</li>
-<li>以改善土地利用，加強土地管理為基本宗旨</li>
-<li>以“地塊”為單位進行調查</li>
-</ol>
-</li>
-</ul>
-<h1 id="四-土地等級調查概述"><a href="#四-土地等級調查概述" class="headerlink" title="四 土地等級調查概述"></a>四 土地等級調查概述</h1><h2 id="什麽是土地的質量與形狀-土地的質量與形狀與哪些因素有關"><a href="#什麽是土地的質量與形狀-土地的質量與形狀與哪些因素有關" class="headerlink" title="什麽是土地的質量與形狀?土地的質量與形狀與哪些因素有關?"></a>什麽是土地的質量與形狀?土地的質量與形狀與哪些因素有關?</h2><ul>
-<li>土地質量：是土地相對於特定用途所表現出的效果的優良程度。土地質量總是與土地用途相關聯的，其適宜的用途受土地本身的性狀和環境條件影響。</li>
-<li>土地性狀：是指土地在自然、社會和經濟等方面的性質與狀態，是判斷土地質量水平的依據</li>
-<li>土地性狀指標與土地自然屬性和社會經濟屬性有關，土地自然屬性包括土壤、地形地貌、水文、植被、氣候等；土地的社會經濟屬性包括土地利用的現狀、地理位置、交通條件、單位面積產量、城市設施、環境優劣度等</li>
-</ul>
-<h2 id="簡述土地等-土地級-土地等級-評價的含義"><a href="#簡述土地等-土地級-土地等級-評價的含義" class="headerlink" title="簡述土地等 土地級 土地等級 評價的含義"></a>簡述土地等 土地級 土地等級 評價的含義</h2><ul>
-<li>土地等級：反映土地質量和價值在重要標誌</li>
-<li>土地等級評價：又稱土地分等定級，是指在特定目的下，對土地的自然和經濟屬性進行綜合鑑定並使鑑定結果等級化的工作</li>
-</ul>
-<h2 id="土地性狀調查主要包括哪些内容"><a href="#土地性狀調查主要包括哪些内容" class="headerlink" title="土地性狀調查主要包括哪些内容"></a>土地性狀調查主要包括哪些内容</h2><ol>
-<li>土地自然屬性調查 <ul>
-<li>地形地貌調查 </li>
-<li>土壤調查 </li>
-<li>農業氣候調查 </li>
-<li>植被調查</li>
-</ul>
-</li>
-<li>土地的社會經濟屬性調查 <ul>
-<li>地理位置與交通條件</li>
-<li>人口和勞動力</li>
-<li>農業生產及農業生產環境條件</li>
-<li>土地利用水平 </li>
-<li>地段形態特徵</li>
-</ul>
-</li>
-</ol>
-<h2 id="城鎮土地分等和土地定級有什麽區別-關於城鎮土地級別數目有何具體規定"><a href="#城鎮土地分等和土地定級有什麽區別-關於城鎮土地級別數目有何具體規定" class="headerlink" title="城鎮土地分等和土地定級有什麽區別 關於城鎮土地級別數目有何具體規定"></a>城鎮土地分等和土地定級有什麽區別 關於城鎮土地級別數目有何具體規定</h2><p>區別：</p>
-<ul>
-<li>城鎮土地分等反映城鎮之間土地質量差異</li>
-<li>城鎮土地分級反映城鎮內部土地質量差異</li>
-</ul>
-<p><strong>根據城鎮性質、規模及地域組合的複雜程度，一般規定：大城市5~10級，中等城市4~7級，小城市3~5級</strong></p>
-<h2 id="城鎮土地分等定級主要有哪些方法？"><a href="#城鎮土地分等定級主要有哪些方法？" class="headerlink" title="城鎮土地分等定級主要有哪些方法？"></a>城鎮土地分等定級主要有哪些方法？</h2><ol>
-<li>多因素綜合評定法 </li>
-<li>級差收益測算評定法</li>
-<li>地價分區定級法</li>
-</ol>
-<h2 id="什麽是土地稅-土地稅收的依據和功能是什麽"><a href="#什麽是土地稅-土地稅收的依據和功能是什麽" class="headerlink" title="什麽是土地稅? 土地稅收的依據和功能是什麽?"></a>什麽是土地稅? 土地稅收的依據和功能是什麽?</h2><ul>
-<li>土地稅<ul>
-<li>是國家稅收的一種，是國家以土地為徵稅對象，憑藉政治權利，從土地從屬主手中無償強制性取得部分土地收益的一種稅收</li>
-</ul>
-</li>
-<li>依據<ol>
-<li>按土地面積徵稅</li>
-<li>按土地每年的縂收貨量徵收</li>
-<li>按土地每年的純收益徵收</li>
-<li>按地價徵收</li>
-</ol>
-</li>
-</ul>
-<ul>
-<li>功能<ol>
-<li>保證國家財政收入 </li>
-<li>抑制土地投機</li>
-<li>促進土地資源合理利用 </li>
-<li>引導土地利用方向的調整</li>
-</ol>
-</li>
-</ul>
-<h1 id="五-房屋調查"><a href="#五-房屋調查" class="headerlink" title="五 房屋調查"></a>五 房屋調查</h1><h2 id="試述房屋調查的主要内容"><a href="#試述房屋調查的主要内容" class="headerlink" title="試述房屋調查的主要内容"></a>試述房屋調查的主要内容</h2><ul>
-<li>房屋的權屬<ol>
-<li>權利人</li>
-<li>權屬來源</li>
-<li>產權性質</li>
-<li>產別</li>
-<li>牆體歸屬</li>
-<li>房屋權屬界線示意圖</li>
-<li>房屋權屬登記情況</li>
-</ol>
-</li>
-<li>房屋的位置</li>
-<li><p>房屋的質量</p>
-<ol>
-<li>自然層數</li>
-<li>建築結構</li>
-<li>建成年份</li>
-</ol>
-</li>
-<li><p>房屋的用途</p>
-</li>
-<li>房屋的數量</li>
-</ul>
-<h2 id="房屋是數量包括哪些？試比較解析其中各項"><a href="#房屋是數量包括哪些？試比較解析其中各項" class="headerlink" title="房屋是數量包括哪些？試比較解析其中各項"></a>房屋是數量包括哪些？試比較解析其中各項</h2><ol>
-<li>建築占地面積(基底面積)</li>
-<li>建築面積</li>
-<li>使用面積</li>
-<li>共有面積</li>
-<li>房屋的產權面積</li>
-<li>縂建築面積</li>
-<li>成套房屋的建築面積</li>
-<li>套内房屋使用面積</li>
-<li>套内墻體面積</li>
-<li>套内陽臺建築面積</li>
-</ol>
-<p>P85</p>
-<h2 id="什麽是共有面積-分攤共有面積的分攤原則是什麽"><a href="#什麽是共有面積-分攤共有面積的分攤原則是什麽" class="headerlink" title="什麽是共有面積? 分攤共有面積的分攤原則是什麽?"></a>什麽是共有面積? 分攤共有面積的分攤原則是什麽?</h2><ul>
-<li>共有面積：是指各產權主共同擁有的建築面積</li>
-<li>分攤原則：<ol>
-<li>按文件或協議分攤 </li>
-<li>按比例分攤 </li>
-<li>按功能分攤</li>
-</ol>
-</li>
-</ul>
-<h2 id="應分攤的共有面積的特點是什麽"><a href="#應分攤的共有面積的特點是什麽" class="headerlink" title="應分攤的共有面積的特點是什麽"></a>應分攤的共有面積的特點是什麽</h2><ol>
-<li>產權是共有的</li>
-<li>應分攤共有面積的相對性</li>
-<li>個權利人擁有的應分攤共有面積在空間上是無界的</li>
-<li>理論上講任何建築都要使用面積和共有面積，實際上無共有面積的建築物是極少的，僅限於只有一層的建築物</li>
-</ol>
-<h1 id="六-地籍控制測量"><a href="#六-地籍控制測量" class="headerlink" title="六 地籍控制測量"></a>六 地籍控制測量</h1><h2 id="什麽是地籍控制測量-地籍控制測量的原則是什麽"><a href="#什麽是地籍控制測量-地籍控制測量的原則是什麽" class="headerlink" title="什麽是地籍控制測量? 地籍控制測量的原則是什麽?"></a>什麽是地籍控制測量? 地籍控制測量的原則是什麽?</h2><p><strong>地籍控制測量是根據界址點和地籍圖的精度要求，視測區範圍的大小、測區內現存控制點數量和等級等情況，按測量的基本原則和精度要求進行技術設計、選點、埋石、野外觀測、數據處理等測量工作</strong></p>
-<ul>
-<li>原則：從整體到局部、由高級到低級分級控制</li>
-</ul>
-<h2 id="爲什麽地籍圖根控制點的精度與地籍圖比例尺無關"><a href="#爲什麽地籍圖根控制點的精度與地籍圖比例尺無關" class="headerlink" title="爲什麽地籍圖根控制點的精度與地籍圖比例尺無關?"></a>爲什麽地籍圖根控制點的精度與地籍圖比例尺無關?</h2><p>地籍圖根控制點的精度與地籍圖的比例尺無關。地形圖根控制點的精度一般用地形圖的比例尺精度來要求。界址點坐標精度通常以實體具體的數值來標定，而與地籍圖的比例尺精度無關。一般情況下，界址點坐標精度要等於或高於其地籍圖的比例尺精度，如果地籍圖根控制點的精度能滿足界址點坐標精度的要求，則也能滿足測繪地籍圖的精度要求。</p>
-<h2 id="地籍控制測量常用的坐標系有哪些"><a href="#地籍控制測量常用的坐標系有哪些" class="headerlink" title="地籍控制測量常用的坐標系有哪些"></a>地籍控制測量常用的坐標系有哪些</h2><p>大地坐標系，平面直角坐標系，高程系</p>
-<h2 id="地籍控制點的密度是如何確定的"><a href="#地籍控制點的密度是如何確定的" class="headerlink" title="地籍控制點的密度是如何確定的"></a>地籍控制點的密度是如何確定的</h2><p>控制點的密度應根據界址點的精度、密度、地籍圖比例尺、地籍測量資料的更新和恢復界址點位置的需要等因素來綜合考慮。為滿足日常地籍管理的需要，在城鎮地區，應對一、二級導線點全部埋石。<br>在通常情況下，地籍控製網點的密度為： </p>
-<ol>
-<li>城鎮建城區100-200米(佈設二級地籍控制)</li>
-<li>城鎮稀疏建築區200-400米(佈設二級地籍控制)</li>
-<li>城鎮郊區400-500米(佈設一級地籍控制)。</li>
-</ol>
-<h2 id="簡述在工作實踐中提高支導綫精度的方法"><a href="#簡述在工作實踐中提高支導綫精度的方法" class="headerlink" title="簡述在工作實踐中提高支導綫精度的方法"></a>簡述在工作實踐中提高支導綫精度的方法</h2><ol>
-<li>閉合導線法 </li>
-<li>利用高大建築物檢核</li>
-<li>雙觀測法。</li>
-</ol>
-<h2 id="使用國家統一坐標系有哪些優點-P100"><a href="#使用國家統一坐標系有哪些優點-P100" class="headerlink" title="使用國家統一坐標系有哪些優點 P100"></a>使用國家統一坐標系有哪些優點 P100</h2><ol>
-<li>有利於地籍成果的通用性，便於成果共享，使地籍測量不僅能為地籍管理奠定基礎，而且能為城市規劃、工程設計、土地整理、管道建設等多用途提供服務。</li>
-<li>統一坐標係有利於圖幅正規分幅、圖幅拼接、接合、使用和各種比例尺圖幅的編繪。</li>
-<li>有利於土地、規劃、房地產等部門之間的合作。加快地籍測量的進度，提高效益和節省經費。</li>
-</ol>
-<h2 id="面積小於25km2-的城鎮-如果不具備與國家控制網點的聯測條件-如何建立獨立坐標系"><a href="#面積小於25km2-的城鎮-如果不具備與國家控制網點的聯測條件-如何建立獨立坐標系" class="headerlink" title="面積小於25km2 的城鎮,如果不具備與國家控制網點的聯測條件 如何建立獨立坐標系"></a>面積小於25km2 的城鎮,如果不具備與國家控制網點的聯測條件 如何建立獨立坐標系</h2><ol>
-<li>用國家控製網在的某一點坐標作為原點坐標，某邊的坐標方位角作為起始方位角</li>
-<li>從中小比例尺地形圖上用圖解方法量取國家控製網中一點的坐標或一明顯地物點的坐標作為原點坐標，量取某邊的坐標方位角作為起始方位角</li>
-<li>假設原點的坐標和一邊的坐標方位角為起始方位角</li>
-</ol>
-<h2 id="地球表面-橢球面-高斯平面-三個面上的距離有何關係"><a href="#地球表面-橢球面-高斯平面-三個面上的距離有何關係" class="headerlink" title="地球表面 橢球面 高斯平面 三個面上的距離有何關係"></a>地球表面 橢球面 高斯平面 三個面上的距離有何關係</h2><p>地面上有兩點A、B，已知他們的平面直角坐標分別為A（XA，YA）、B（XB，YB），則可由式計算出AB間的距離：S=（（XB- XA） ^2+( YB- YA)^2）^0.5<br>S僅表示在高斯投影平面上兩點間的距離。若用測量工具在地面直接測量這兩點的水平距離S1，是不會與S相等的，他們之間的差值就是由長度變形所引起的。測量工作總是把直接測得的邊長首先歸算到參考橢球面上，然後在投影到高斯投影平面上去，無論是推算還是投影過程總要產生變形。</p>
-<h1 id="七-界址測量"><a href="#七-界址測量" class="headerlink" title="七 界址測量"></a>七 界址測量</h1><h2 id="土地權屬界址點坐標的作用是什麽"><a href="#土地權屬界址點坐標的作用是什麽" class="headerlink" title="土地權屬界址點坐標的作用是什麽"></a>土地權屬界址點坐標的作用是什麽</h2><p>界址點坐標是在某一特定的坐標系中界址點地理位置的數學表達.<br>它是確定地塊(宗地)地理位置的一句,是量算宗地面積的基礎數據.</p>
-<h2 id="制定界址點坐標精度的依據是什麽-我國對界址點坐標精度有何要求"><a href="#制定界址點坐標精度的依據是什麽-我國對界址點坐標精度有何要求" class="headerlink" title="制定界址點坐標精度的依據是什麽? 我國對界址點坐標精度有何要求?"></a>制定界址點坐標精度的依據是什麽? 我國對界址點坐標精度有何要求?</h2><p>界址點坐標精度，可根據土地經濟價值和界址點的重要程度來加以選擇<br>在我國，考慮到地域之廣大和經濟發展不平衡，對界址點精度的要求有不同的等級。</p>
-<h2 id="簡述測定土地權屬界址點的方法"><a href="#簡述測定土地權屬界址點的方法" class="headerlink" title="簡述測定土地權屬界址點的方法"></a>簡述測定土地權屬界址點的方法</h2><ul>
-<li>解析法:<br><strong>根據角度和距離測量結果按公式解算出界址點坐標的方法叫解析法。極坐標法、正交法、截距法、距離交會法等</strong></li>
-<li>圖解法：<br><strong>在地籍圖上量取界址點坐標的方法稱圖解法。方法與解析法一樣，但數據來源不同。極坐標發、交會法（角度交會法、距離交會法）內外分點法、直角坐標法</strong></li>
-</ul>
-<h1 id="八-地籍圖的測繪"><a href="#八-地籍圖的測繪" class="headerlink" title="八 地籍圖的測繪"></a>八 地籍圖的測繪</h1><h2 id="什麽是地籍圖-我國現在主要測繪製作的地圖有哪些"><a href="#什麽是地籍圖-我國現在主要測繪製作的地圖有哪些" class="headerlink" title="什麽是地籍圖?  我國現在主要測繪製作的地圖有哪些?"></a>什麽是地籍圖?  我國現在主要測繪製作的地圖有哪些?</h2><ul>
-<li>地籍圖：<br><strong>是按照特定的投影方法、比例關係和專用符號把地籍要素及其有關的地物和地貌測繪在平面圖紙上的圖形，是地籍基礎資料之一。</strong></li>
-<li>主要的地籍圖:城鎮地籍圖、宗地圖、農村地籍圖、村莊地籍圖、土地利用現狀圖、地級索引圖、地籍挂圖。</li>
-</ul>
-<h2 id="試述選擇地籍圖比例尺的依據和我國的地籍圖比例尺系列"><a href="#試述選擇地籍圖比例尺的依據和我國的地籍圖比例尺系列" class="headerlink" title="試述選擇地籍圖比例尺的依據和我國的地籍圖比例尺系列"></a>試述選擇地籍圖比例尺的依據和我國的地籍圖比例尺系列</h2><ul>
-<li>依據<br>繁華程度和土地價值 建設密度和細部粗度 地籍圖測量方法</li>
-<li>我國地籍圖的比例尺系列<br>城鎮地區： 1︰500 1︰1000 1︰2000<br>農村地區： 1︰5000 1︰1萬 1︰2.5萬 1︰5萬<br>村莊居民地：1︰1000或 1︰2000</li>
-</ul>
-<h2 id="簡述地籍圖内容選取的基本要點"><a href="#簡述地籍圖内容選取的基本要點" class="headerlink" title="簡述地籍圖内容選取的基本要點"></a>簡述地籍圖内容選取的基本要點</h2><ol>
-<li>具有宗地劃分或劃分參考意義的各類自然或人工地物和地貌，即這些的地物或地貌本身就是權屬界線或在界線的附近，如牆、埋設的界標、溝、路、坎、建築物底層的投影線等。</li>
-<li>具有土地利用現狀分類劃分意義或劃分參考意義的各種地物或地貌，如田埂、地類界、溝、渠、建築物底層的投影線等。</li>
-<li>土地上的重要附著物，如水系、道路、構築物、建築物等，這些地物都是地籍圖具有地理性功能的重要要素。</li>
-<li>在土地表面下的各種管線及構築物，在圖上不表示，如下水道、自來水管、井蓋等。 </li>
-<li>地面上的管線只表述重要的，如萬伏以上的高壓線、裸露的大型管道等。 </li>
-<li>另外，還有界址點、控制點等點要素。</li>
-<li>註記部分，也就是地表自然情況的符號表示，如房屋結構和層數、植被、地理名稱等。 </li>
-<li>標識符，它在地籍圖上佔有非常重要的位置，它是對地面客體的標識，以便使地籍數據集、地籍 簿冊和地籍圖形集之間有機地連接在一起。</li>
-</ol>
-<h2 id="比較宗地與宗地草圖"><a href="#比較宗地與宗地草圖" class="headerlink" title="比較宗地與宗地草圖"></a>比較宗地與宗地草圖</h2><ul>
-<li>宗地圖：以宗地為單位編繪的地籍圖</li>
-<li>宗地草圖：權屬調查中經實地勘丈繪製的宗地圖，其比例尺是概略的，但勘丈尺寸是精確的</li>
-</ul>
-<h2 id="簡述編繪法成圖的作業步驟"><a href="#簡述編繪法成圖的作業步驟" class="headerlink" title="簡述編繪法成圖的作業步驟"></a>簡述編繪法成圖的作業步驟</h2><ul>
-<li>模擬地籍圖的編繪</li>
-</ul>
-<ol>
-<li>選擇符合地籍測量精度要求的地形圖、影像平面圖作為編繪底圖</li>
-<li>利用原圖複製成二底圖，方格網不超限方可使用</li>
-<li>在已有地形圖上進行外業調繪</li>
-<li>在二底圖上進行補測</li>
-<li>外業調繪和補測結束後，將調繪結果轉到二底圖上</li>
-<li>在工作底圖上描繪所必須的地籍和地形要素，捨去不需要的部分清繪整飾後即可</li>
-</ol>
-<h2 id="試述地籍圖和地形圖有什麽不同"><a href="#試述地籍圖和地形圖有什麽不同" class="headerlink" title="試述地籍圖和地形圖有什麽不同"></a>試述地籍圖和地形圖有什麽不同</h2><p>地形圖：按一定比例的符號，用國家規定的符號有選擇的表示，地形特徵點的平面位置和高程的一種正射投影圖。地籍圖=地形圖+地籍要素</p>
-<h1 id="九-土地面積量算"><a href="#九-土地面積量算" class="headerlink" title="九 土地面積量算"></a>九 土地面積量算</h1><h2 id="什麽是解析法面積量算-常用的方法有哪些-簡述各種方法基本原理"><a href="#什麽是解析法面積量算-常用的方法有哪些-簡述各種方法基本原理" class="headerlink" title="什麽是解析法面積量算 常用的方法有哪些 簡述各種方法基本原理"></a>什麽是解析法面積量算 常用的方法有哪些 簡述各種方法基本原理</h2><ul>
-<li>解析法：根據實測的數值計算面積的方法，包括幾何圖形法和坐標法。<ol>
-<li>幾何圖形法: 根據實地測量有關的邊 角元素 進行面積計算的方法</li>
-<li>坐標法: 測量計算出地塊邊界轉折點的坐標值,然後采用坐標面積計算公式計算出地塊面積的方法</li>
-</ol>
-</li>
-</ul>
-<h2 id="什麽是圖解法面積量算-常用的方法有哪些-請簡述各種方法的基本原理"><a href="#什麽是圖解法面積量算-常用的方法有哪些-請簡述各種方法的基本原理" class="headerlink" title="什麽是圖解法面積量算 常用的方法有哪些 請簡述各種方法的基本原理"></a>什麽是圖解法面積量算 常用的方法有哪些 請簡述各種方法的基本原理</h2><ul>
-<li>图解法：是指从图上直接量算面积的方法，包括<ol>
-<li>几何要素与坐标量算法、</li>
-<li>膜片法、</li>
-<li>求积仪法、</li>
-<li>沙维奇法、</li>
-<li>光电求积仪以及电算法。</li>
-</ol>
-</li>
-</ul>
-<h2 id="土地面積量算有哪幾項改算-試述改算的基本原理"><a href="#土地面積量算有哪幾項改算-試述改算的基本原理" class="headerlink" title="!! 土地面積量算有哪幾項改算 試述改算的基本原理"></a>!! 土地面積量算有哪幾項改算 試述改算的基本原理</h2><ol>
-<li>紙張變形對面積測算的影響</li>
-<li>地塊在投影面上的面積改算</li>
-<li>地球表面傾斜面的面積改算</li>
-</ol>
-<h2 id="試述控制面積的量算方法"><a href="#試述控制面積的量算方法" class="headerlink" title="試述控制面積的量算方法"></a>試述控制面積的量算方法</h2><p> 遵循“整体到局部，层层控制，分级测算，块块检核，逐级按比例平差”的原则，即分级控制，分级测算，分级平差</p>
-<h2 id="土地面積量算與平差的原則是什麽"><a href="#土地面積量算與平差的原則是什麽" class="headerlink" title="土地面積量算與平差的原則是什麽"></a>土地面積量算與平差的原則是什麽</h2><ul>
-<li>遵循“整體到局部，層層控制，分級測算，塊塊檢核，逐級按比例平差”的原則，即分級控制，分級測算，分級平差</li>
-</ul>
-<h2 id="簡述獨立宗地面積量算的項目與關係"><a href="#簡述獨立宗地面積量算的項目與關係" class="headerlink" title="簡述獨立宗地面積量算的項目與關係"></a>簡述獨立宗地面積量算的項目與關係</h2><ol>
-<li>用地面積</li>
-<li>建築佔地面積</li>
-<li>其他面積,指宗地内基底面積以外的面積</li>
-</ol>
-<p>用地面積 = 基底面積 + 其他面積 </p>
-<h2 id="簡述公用宗地面積量算的項目與關係"><a href="#簡述公用宗地面積量算的項目與關係" class="headerlink" title="簡述公用宗地面積量算的項目與關係"></a>簡述公用宗地面積量算的項目與關係</h2><ul>
-<li>項目<br>  共有使用權面積，即宗地總面積。權利人用地面積，即各權利人應擁有的面積。分攤基底面積，即各權利人應分攤到的基底面積。<br>  分攤共用面積，即各權利人應分攤到的除基底面積以外的其他面積。<br>  其他面積，如自購花園面積等</li>
-<li>關係<br>  權利人用地面積＝分攤基底面積＋分攤共用面積 ＋權利人的其他面積</li>
-</ul>
-<h2 id="試述土地面積分攤的原則和方法"><a href="#試述土地面積分攤的原則和方法" class="headerlink" title="試述土地面積分攤的原則和方法"></a>試述土地面積分攤的原則和方法</h2><ol>
-<li>各權利人在獲得房地產時已簽訂了合約，明確各權利人應擁有的房地產份額或面積的，登記時則按合約明確的份額或面積計算各權利人的用地面積。</li>
-<li>原沒有明確各權利人的用地面積，則以各權利人擁有的房屋面積按比例分攤土地面積。分攤時先分攤基底面積，再分攤共用面積</li>
-</ol>
-<p>$$分攤基地面積 = 本棟基底面積 / 本棟建築面積 * 權利人建築面積$$</p>
-<p>$$<br>分攤公用面積 = (共用使用權面積-宗地基底面積) / 宗地縂建築面積* 權利人建築面積<br>$$</p>
-<h1 id="十-日常地籍調查"><a href="#十-日常地籍調查" class="headerlink" title="十 日常地籍調查"></a>十 日常地籍調查</h1><h2 id="什麽是日常地籍調查"><a href="#什麽是日常地籍調查" class="headerlink" title="什麽是日常地籍調查"></a>什麽是日常地籍調查</h2><p>日常地籍調查是指在完成地籍縂調查之後,爲適應日常地籍工作的需要,爲保持地籍資料的現勢性而進行的土地及其附屬物的權屬,位置,數量,質量,和利用現狀的調查. 通過日常地籍調查,可以使地籍資料保持現勢性,逐步豐富,完善地籍内容.</p>
-<h2 id="日常地籍調查前-主要應準備哪些資料"><a href="#日常地籍調查前-主要應準備哪些資料" class="headerlink" title="日常地籍調查前 主要應準備哪些資料"></a>日常地籍調查前 主要應準備哪些資料</h2><ol>
-<li>變更土地登記或房產登記設計書</li>
-<li>原有地籍圖和宗地圖的複製件</li>
-<li>本宗地及鄰宗地的原有地籍調查表的複製件（包括宗地草圖）</li>
-<li>有關界址點坐標</li>
-<li>必要的變更數據的準備，如宗地分割時測設元素的計算</li>
-<li>變更地籍調查表</li>
-<li>本宗地附近測量控制點成果，如坐標、點的標記或點位說明、控制點網圖</li>
-<li>變更地籍調查通知書</li>
-</ol>
-<h2 id="什麽是界址點的鑒定-試述鑒定測量的作業程序"><a href="#什麽是界址點的鑒定-試述鑒定測量的作業程序" class="headerlink" title="什麽是界址點的鑒定 試述鑒定測量的作業程序"></a>什麽是界址點的鑒定 試述鑒定測量的作業程序</h2><p><strong>依據地籍資料，實地鑑定土地界址是否正確的測量作業，稱為界址鑑定 （簡稱鑑界）</strong></p>
-<ol>
-<li>調用地籍原圖、表、冊</li>
-<li>精確量出原圖圖廊長度，與理論值比較是否相符，否則應計算其伸縮率，以作為邊長、面積改正的依據</li>
-<li>複製鑑定附近的宗地界線</li>
-<li>精確量定複製部分界線長度，並註記於復製圖相應各邊上</li>
-</ol>
-<h2 id="試述土地利用變更調查的技術流程"><a href="#試述土地利用變更調查的技術流程" class="headerlink" title="試述土地利用變更調查的技術流程"></a>試述土地利用變更調查的技術流程</h2><p><strong>土地在利用的過程中,其用途,利用方式,經營特點和覆蓋特徵都可能發生變化,爲保持原有土地利用調查資料的現勢性,必須進行土地利用變更調查.</strong></p>
-<ol>
-<li>多源數據的選取</li>
-<li>數據項的處理</li>
-<li>變化信息提取及變化類型的確定</li>
-<li>外業核查</li>
-<li>變化信息後處理</li>
-<li>變更監測精度評定</li>
-</ol>
-<h2 id="什麽是土地利用動態遙感檢測-一般采用哪兩種方法進行監測-簡述其優缺點"><a href="#什麽是土地利用動態遙感檢測-一般采用哪兩種方法進行監測-簡述其優缺點" class="headerlink" title="什麽是土地利用動態遙感檢測? 一般采用哪兩種方法進行監測 簡述其優缺點"></a>什麽是土地利用動態遙感檢測? 一般采用哪兩種方法進行監測 簡述其優缺點</h2><p><strong>土地利用動態檢查</strong>是以土地利用調查的數據及圖鑒為基礎,運用遙感圖像處理與識別技術,從遙感圖像上提取變化信息,從而達到對土地利用變化情況進行及時的,直接的,客觀的定期檢測,核查土地利用總體規劃及年度用地計劃的執行情況,並重點檢查每年土地變更調查數據匯總,為國家宏觀決策提供比較可靠,準確的土地利用變化情況,同時對違法或涉嫌違法用地的地區及其他特定目標等進行快速的日常檢測,從而為違法用地的查出以及突發事件的書記處理提供依據.</p>
-<ul>
-<li><p>傳統測量法(簡易補測法,平板儀測量法)</p>
-<ol>
-<li>不能主動監測變化</li>
-<li>測量方法落後且人爲干擾大</li>
-<li>變更數據獲取速度慢,存在多次清繪誤差纍積</li>
-<li>一旦發現變化,原來的圖件即失去現勢性</li>
-<li>土地利用圖斑多為不規則多邊形,運用平板儀等測量工具只能測量拐點,不能連續測量整個邊界,而且難以精確標繪到原樣查底圖上</li>
-</ol>
-</li>
-<li><p>土地利用動態遙感檢測</p>
-<ol>
-<li>保證了精度</li>
-<li>經濟實用</li>
-<li>效率更高</li>
-<li>直觀實時</li>
-</ol>
-</li>
-</ul>
-<h2 id="試述確定土地利用變化類型的方法"><a href="#試述確定土地利用變化類型的方法" class="headerlink" title="試述確定土地利用變化類型的方法"></a>試述確定土地利用變化類型的方法</h2><ol>
-<li>目視解釋法</li>
-<li>計算機自動解釋分類法</li>
-</ol>
-<h2 id="什麽是土地分割測量-何種情況下需要進行土地分割測量"><a href="#什麽是土地分割測量-何種情況下需要進行土地分割測量" class="headerlink" title="什麽是土地分割測量? 何種情況下需要進行土地分割測量?"></a>什麽是土地分割測量? 何種情況下需要進行土地分割測量?</h2><p><strong>土地分割測量(也稱土地劃分測量)</strong>是一種確定新的地塊邊界的測量工作.</p>
-<ol>
-<li>用地範圍的調整，或相鄰地塊間的界線調整。</li>
-<li>城市規劃的實施和按規劃選址。</li>
-<li>土地整理後的地塊或宗地的重劃。</li>
-<li>因規劃的實施或其他原因引起的地塊或宗地內包含幾種地價而需要明確界線的。</li>
-<li>地塊或宗地需要根據新的用途劃分出新的地塊或宗地。</li>
-<li>由於不在上述之列的原因引起的土地分割或重劃</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/習題/">習題</a>
-    </div>
-
-
-      
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/地籍測量學/">地籍測量學</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/卫星导航定位原理及应用/">卫星导航定位原理及应用</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-袁詠琳-Cindy-Yen【終於勇敢了Brave】" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/10/04/袁詠琳-Cindy-Yen【終於勇敢了Brave】/" class="article-date">
-      <time datetime="2019-10-04T10:09:22.000Z" itemprop="datePublished">10-04-2019</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/04/袁詠琳-Cindy-Yen【終於勇敢了Brave】/">袁詠琳 Cindy Yen【終於勇敢了Brave】</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>人生就是旅程，唯有勇敢向前，才能得到答案。</p>
-<video src="https://tianrking.github.io/media/mp4/%E8%A2%81%E8%A9%A0%E7%90%B3%20Cindy%20Yen%E3%80%90%E7%B5%82%E6%96%BC%E5%8B%87%E6%95%A2%E4%BA%86Brave%E3%80%91Official%20MV.mp4" autoplay controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"><br>your browser does not support the video tag<br></video>
-
-
-<p>｢…我只想 大步走向前<br>很不捨 都要能夠 笑著說再見<br>不再依靠誰的肩 終於長大了 終於勇敢了<br>我確定我會很好…｣</p>
-<p>演唱：Cindy袁詠琳<br>詞/曲：袁詠琳Cindy Yen / Atsushi Shimada / MiNE<br>中文詞：張藍云</p>
-<p>曾經最美的風景 你微笑的側臉<br>朋友笑我遮了眼 愛上就很瘋癲<br>女人啊 總這樣 傻傻愛 忘記了考驗<br>找尋又找尋 像抓不住的煙</p>
-<p>偶爾還是 夢到你 我該再收斂<br>雖然痛 把你藏 心裡面</p>
-<p>我只想 大步走向前<br>讓陽光 曬到發亮 煩惱放一邊<br>放下你放過自己 夜裡 不准有眼淚 不准失眠<br>說好要過的鮮豔</p>
-<p>我只想 大步走向前<br>很不捨 都要能夠 笑著說再見<br>不再依靠誰的肩 終於長大了 終於勇敢了<br>我確定我會很好 goodbye my love</p>
-<p>每次走過那間店 總習慣望裡面<br>你碰倒我的咖啡 是相遇的瞬間<br>愛來了 愛走了 沒排練 我牢記每天<br>要多少眼淚 才能寫成一篇 </p>
-<p>其實常常 提起你 還是會想念<br>倔強的 我們都 難改變</p>
-<p>我只想 大步走向前<br>讓陽光 曬到發亮 煩惱放一邊<br>放下你放過自己 夜裡 不准有眼淚不准失眠<br>說好要過的鮮豔</p>
-<p>我只想 大步走向前<br>很不捨 都要能夠 笑著說再見<br>不再依靠誰的肩 終於長大了 終於勇敢了<br>沒有你一樣很好 goodbye my love</p>
-<p>放開的手 難再牽<br>沒有什麼 好虧欠<br>經歷的 每件事 都會是恩典<br>忘記你的臉 要花好多年<br>But I know I will let you go somehow</p>
-<p>我只想 大步走向前<br>讓陽光 曬到發亮 煩惱放一邊<br>放下你放過自己 夜裡 不准有眼淚不准失眠<br>說好要過的鮮豔</p>
-<p>我只想 大步走向前<br>很不捨 都要能夠 笑著說再見<br>不再依靠誰的肩 終於長大了 終於我勇敢了<br>沒有你一樣很好 goodbye my love<br>再見 my love</p>
-<p>製作人Producer：袁詠琳Cindy Yen / 李汪哲Chavy Lee<br>編曲Arranger：潘信維Lil Pan（跳蛋工廠EGGO Music Production）<br>和聲Background Vocal：袁詠琳Cindy Yen<br>吉他Guitar ：謝立航 Ellis Hsieh (光影音樂工作室 LAS studio)<br>錄音Recording：陳陸泰aTai @ 白金錄音室 Platnium Studio<br>混音Mixing：Ken Matsuoka @ Showastation<br>母帶後製Mastering：陳陸泰aTai @ 原艾音樂 Mugwort Music</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/MV/">MV</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/袁詠琳/">袁詠琳</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-R-chord-Cool" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/10/03/R-chord-Cool/" class="article-date">
-      <time datetime="2019-10-03T11:30:07.000Z" itemprop="datePublished">10-03-2019</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/03/R-chord-Cool/">R-chord Cool</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>「一直努力接受那個必須與自己對抗的自己<br>　對我來說，這就是最酷的事」<br>                        —— #謝和弦</p>
-<video src="https://tianrking.github.io/media/mp4/%E8%AC%9D%E5%92%8C%E5%BC%A6%20R-chord%20-%20%E9%85%B7%20Cool%20(Official%20Music%20Video).mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"><br>your browser does not support the video tag<br></video>
-
-<p>■ 酷<br>作詞：謝和弦    作曲：謝和弦</p>
-<p>他走在人生玩命關頭的十字路口<br>他以前玩搖滾 現在想當饒舌歌手<br>他當過謎路人 溜著滑板也重摔過<br>他當過米粒人 為了混口飯吃也墮落<br>他就像Trash 被當成一般垃圾桶<br>他就像拍謝少年隨性席地路邊坐<br>他加入美秀集團開始學會捲菸抽<br>他吃了茄子蛋 也學會浪子回頭<br>他開始會怕胖 決定要學館長<br>一個禮拜最少兩天健身運動練一下<br>他看好李杰明 也看好高爾宣<br>他相信幾年後的他們也會走到飛<br>他謝謝亞神謝謝華納謝謝混血兒交陪<br>他謝謝身邊愛人家人朋友在他身邊<br>他想要永遠長不大的世界永遠有音樂<br>跟玖壹壹和陳零九到老都玩音樂</p>
-<p>他生來就是酷<br>他天生就反骨<br>他會找到一條路<br>不然就自己開路<br>他生來就孤獨<br>他天生就知足<br>他會走出一條路<br>不然就自己鋪路</p>
-<p>他生來就是酷<br>他天生就梵谷<br>他會找到一條路<br>不然就自己開路<br>他生來就孤獨<br>他天生就知足<br>他會走出一條路<br>不然就自己造路</p>
-<p>他在鐵巨人的身上看到自己當年的十五歲<br>不顧於家人反對<br>只想把歌詞熟練<br>只想把握每一次能上台表演的機會<br>也希望自己的創作<br>有一天能浮上檯面<br>學校的功課作業<br>全部都當成副業<br>學讀得那麼多 不如早點出社會<br>早一點承受心碎 早一點學會沈澱<br>原來一個人也可以<br>堅強的說 I’m ok<br>遇見你我的心情那真是太美<br>靈感就像是上帝賜給的泉源<br>當你真心尋求就會源源不絕 不騙<br>遇見你我的心情那真是真是太美<br>靈感就像是上帝賜給的泉水<br>當你真心尋求就會源源不絕 永遠</p>
-<p>他生來就是酷<br>他天生就反骨<br>他會找到一條路<br>不然就自己開路<br>他生來就孤獨<br>他天生就知足<br>他會走出一條路<br>不然就自己鋪路</p>
-<p>他生來就是酷<br>他天生就梵谷<br>他會找到一條路<br>不然就自己開路<br>他生來就孤獨<br>他天生就知足<br>他會走出一條路<br>不然就自己造路</p>
-<p>製作人：陳珊妮<br>編曲：陳有億<br>吉他：陳有億<br>合聲編寫：陳珊妮<br>合聲演唱：謝和弦<br>錄音/混音：陳文駿（強力錄音室）</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/MV/">MV</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R-chord/">R-chord</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-论文杂项" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/09/26/论文杂项/" class="article-date">
-      <time datetime="2019-09-26T12:45:12.000Z" itemprop="datePublished">09-26-2019</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/26/论文杂项/">参考文献</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="引言及文献综述"><a href="#引言及文献综述" class="headerlink" title="引言及文献综述"></a>引言及文献综述</h1><p>周正清（2017）分析了我国商业银行非利息业务影响因素的差异性，检验非利息业务对银行收益的影响效应，以此得出了银行非利息业务存在适当比例；谭海鸥(2019)针对所设计的保本浮动消费50指数挂钩结构性理财产品,从产品市场供求分析、收益和风险分析.市场定位到产品结构构造再到产品定价机制进行产品设计;采用B-S期权定价方法、蒙特卡洛模拟以及期权的二叉树定价方法对金融衍生合约的价值部分进行了定价分析,综合评价了产品定价的合理性;指出提高衍生品定价能力,注重产品设计的个性化,改善产品收益结构,增强客户对产品的认知是当务之急.季月（2018）选取了2007-2015年我国16家上市商业银行的年度数据，实证分析得出非保本理财产品可以提高银行的盈利能力，但在一定程度上会扩大风险。但也有学者对理财业务可以有效提高商业银行的经营绩效持相反观点。曾泓竣(2019)基于我国近年15家上市银行的财务数据, 实证检验了理财业务在资管新规下对我国商业银行财务绩效的影响, 并运用杜邦分析来分解影响绩效的路径, 结果表明理财业务收入对商业银行的绩效影响较小, 但是理财业务会显著地促进银行的绩效。通过对不同所有制银行分别进行回归分析, 结果显示理财业务收入对股份制银行的影响最大, 其次是城商行, 最微弱的是国有五大行。资管新规对商业银行的绩效带来一定的影响, 商业银行的理财业务也将面临银行理财产品销售利润率下降和销售成本上升等问题, 因此, 建议处于资管新规过渡期的商业银行应采取创新保本类理财产品、加强投资者教育、引进Fintech管控成本的对策。张爱荣（2016）基于16家上市商业银行的财务数据，分析得出我国银行非利息收入业务比重较低，内部结构以获利较少的手续费用为主，由于发展环境不完善，非利息收入增长所带来的成本增加反而会降低商业银行的经营绩效；张韬叙(2019)以JX银行为研究对象,采取SWOT分析方法从传统商业银行互联网金融发展模式入手,对JX银行可采取的互联网金融发展模式进行了分析,探索出我国商业银行发展互联网金融的战略定位及保障措施。发现互联网的发展,分流了相当一部分商业银行的客户和存款,尤其是长尾客户,使得更多的客户的理财观念发现变化,同时互联网金融强大的技术平台让银行的支付中介功能变得越来越没有份量,让银行间的竞争更为激烈。因而,商业银行应基于这些进行策略设计,应当针对原有被忽视的所谓低净值的中小客户群体,开辟新的市场,拓展了视野,采取更多创新的方式,让银行的运营成本减少,同时积极吸纳互联网金融的优点,结合自身特点,抓住机遇,重视新兴市场,加强技术支持,建设在线渠道的平台设,从而取得产品创新,服务理念转变,风险管理地改善,风险控制地加强,最终实现JX银行个人理财业务更好地发展。邰越越和杨虎锋（2014）对2007-2012年我国44家中小型城市商业银行的年报数据进行实证研究，结果显示非利息收入对中小商业银行绩效的影响并不明显，甚至会导致中小型银行绩效的降低。徐永金(2019)从我国城镇居民收入的提高, 个人存款率却出现了下降一现象,论述我国居民已经不再单纯依靠储蓄来增加自身财富, 而是积极寻求新的财富增值方式.朱玉兴(2019)实证结果显示:在对商业银行效率进行实证分析时,分别从业务角度和盈利角度这两种角度对其进行了实证分析。在这两种角度下,均表现出城商行效率值明显高于国有控股商业银行和全国股份制商业银行,而国有银行效率值高于全国股份制银行。银行理财产品实际收益率与SHIBOR、CPI、银行效率和认购起始金额呈正相关关系,而与M2同比增速和投资期限呈负相关关系.</p>
-<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="一-引言"><a href="#一-引言" class="headerlink" title="一.引言"></a>一.引言</h2><h3 id="一-研究背景和意义"><a href="#一-研究背景和意义" class="headerlink" title="(一) 研究背景和意义"></a>(一) 研究背景和意义</h3><h3 id="二-文献综述"><a href="#二-文献综述" class="headerlink" title="(二) 文献综述"></a>(二) 文献综述</h3><h3 id="三-本文研究思路与内容"><a href="#三-本文研究思路与内容" class="headerlink" title="(三) 本文研究思路与内容"></a>(三) 本文研究思路与内容</h3><h2 id="二-我国商业银行个人理财业务经营状况"><a href="#二-我国商业银行个人理财业务经营状况" class="headerlink" title="二.我国商业银行个人理财业务经营状况"></a>二.我国商业银行个人理财业务经营状况</h2><h2 id="三-个人理财业务同质化现象"><a href="#三-个人理财业务同质化现象" class="headerlink" title="三.个人理财业务同质化现象"></a>三.个人理财业务同质化现象</h2><h3 id="一-收益方式的同质化"><a href="#一-收益方式的同质化" class="headerlink" title="(一)收益方式的同质化"></a>(一)收益方式的同质化</h3><h3 id="二-基础资产的同质化"><a href="#二-基础资产的同质化" class="headerlink" title="(二)基础资产的同质化"></a>(二)基础资产的同质化</h3><h3 id="三-预期收益率的同质化"><a href="#三-预期收益率的同质化" class="headerlink" title="(三)预期收益率的同质化"></a>(三)预期收益率的同质化</h3><h3 id="四-期限结构的同质化"><a href="#四-期限结构的同质化" class="headerlink" title="(四)期限结构的同质化"></a>(四)期限结构的同质化</h3><h3 id="五-发行币种的同质化"><a href="#五-发行币种的同质化" class="headerlink" title="(五)发行币种的同质化"></a>(五)发行币种的同质化</h3><h3 id="六-产品设计理念的同质化"><a href="#六-产品设计理念的同质化" class="headerlink" title="(六)产品设计理念的同质化"></a>(六)产品设计理念的同质化</h3><h2 id="四-同质化影响"><a href="#四-同质化影响" class="headerlink" title="四.同质化影响"></a>四.同质化影响</h2><h3 id="一-同质化竞争导致中小型银行面临更高的风险"><a href="#一-同质化竞争导致中小型银行面临更高的风险" class="headerlink" title="(一) 同质化竞争导致中小型银行面临更高的风险"></a>(一) 同质化竞争导致中小型银行面临更高的风险</h3><h3 id="二-同质化竞争易扰乱理财市场竞争秩序"><a href="#二-同质化竞争易扰乱理财市场竞争秩序" class="headerlink" title="(二) 同质化竞争易扰乱理财市场竞争秩序"></a>(二) 同质化竞争易扰乱理财市场竞争秩序</h3><h3 id="三-同质化竞争导致银行业发展模式脆弱"><a href="#三-同质化竞争导致银行业发展模式脆弱" class="headerlink" title="(三) 同质化竞争导致银行业发展模式脆弱"></a>(三) 同质化竞争导致银行业发展模式脆弱</h3><h3 id="四-同质化竞争无法满足国内客户多元化理财需求"><a href="#四-同质化竞争无法满足国内客户多元化理财需求" class="headerlink" title="(四) 同质化竞争无法满足国内客户多元化理财需求"></a>(四) 同质化竞争无法满足国内客户多元化理财需求</h3><h2 id="四-我国商业银行个人理财业务同质化问题相关对策"><a href="#四-我国商业银行个人理财业务同质化问题相关对策" class="headerlink" title="四.我国商业银行个人理财业务同质化问题相关对策"></a>四.我国商业银行个人理财业务同质化问题相关对策</h2><h3 id="一-完善技术手段-推动产品创新"><a href="#一-完善技术手段-推动产品创新" class="headerlink" title="(一) 完善技术手段, 推动产品创新"></a>(一) 完善技术手段, 推动产品创新</h3><h3 id="二-拓展营销渠道-完善促销策略"><a href="#二-拓展营销渠道-完善促销策略" class="headerlink" title="(二) 拓展营销渠道,完善促销策略"></a>(二) 拓展营销渠道,完善促销策略</h3><h3 id="三-加强风险管控-防范理财风险"><a href="#三-加强风险管控-防范理财风险" class="headerlink" title="(三) 加强风险管控,防范理财风险"></a>(三) 加强风险管控,防范理财风险</h3><h3 id="四-建立健全信誉评级和监管体系"><a href="#四-建立健全信誉评级和监管体系" class="headerlink" title="(四) 建立健全信誉评级和监管体系"></a>(四) 建立健全信誉评级和监管体系</h3><h3 id="五-加强对从业人员专业素质的培养"><a href="#五-加强对从业人员专业素质的培养" class="headerlink" title="(五) 加强对从业人员专业素质的培养"></a>(五) 加强对从业人员专业素质的培养</h3><h3 id="六-增强与投资者的交流-抑制期限错配投机行为"><a href="#六-增强与投资者的交流-抑制期限错配投机行为" class="headerlink" title="(六) 增强与投资者的交流, 抑制期限错配投机行为"></a>(六) 增强与投资者的交流, 抑制期限错配投机行为</h3>
-        <div id="aplayer-IshHquqe" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content"></pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-IshHquqe"),
-            narrow: false,
-            autoplay: true,
-            showlrc: false,
-            music: {
-              title: "「兄弟登山",
-              author: "各自努力!!!",
-              url: "/media/mp3/piano_glory to hongkong.mp3",
-              pic: "",
-              lrc: ""
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/论文目录/">论文目录</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-香港特别行政区撤回逃犯条例" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/09/19/香港特别行政区撤回逃犯条例/" class="article-date">
-      <time datetime="2019-09-19T10:08:57.000Z" itemprop="datePublished">09-19-2019</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/19/香港特别行政区撤回逃犯条例/">香港特别行政区撤回逃犯条例</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>早于 Sep 4,2019 中国香港特别行政区政府正式撤回《逃犯條例》, 并确认无暴动性定义.<br>此为全段讲话内容 已翻译为简体.<br>因大陆媒体报道存在偏差,故于敏感时期传入墙内,望大家理性爱国,客观看待同胞们在经历的事情.</p>
-<p>#本人积极维护一个中国原则.</p>
-<p>#视频托管于oracle kr</p>
-<video src="http://132.145.93.32/%e6%9e%97%e9%84%ad%e6%9c%88%e5%a8%a5%ef%bc%9a%e9%a6%99%e6%b8%af%e7%89%b9%e5%8d%80%e6%94%bf%e5%ba%9c%e6%ad%a3%e5%bc%8f%e6%92%a4%e5%9b%9e%e4%bf%ae%e8%a8%82%e3%80%8a%e9%80%83%e7%8a%af%e6%a2%9d%e4%be%8b%e3%80%8b%ef%bc%8d%20BBC%20News%20%e4%b8%ad%e6%96%87.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"><br>your browser does not support the video tag<br></video>
-
-
-<p>林鄭月娥的讲话全文：</p>
-<p>///////////////////////////////////////////////////////////////////////</p>
-<p>各位香港市民：</p>
-<p>逃犯条例修订所引起的示威和冲突，已持续两个多月对很多香港人来说，我们这个城市变得很陌生 - 一次又一次的暴力事件，造成许多市民，警察和记者受伤;一向安全，有效率的机场和港铁，被人恶意破坏，造成混乱;道路和隧道突然会被堵塞;旅客担心香港还是否安全，不愿来港旅游和经商;家人，朋友之间因不同见解而反目，持不同意见的人在街上，在学校，在网上遭受欺凌，甚至互相攻击。</p>
-<p>这两个多月发生的事，令每一个香港人都感到震惊和伤心，亦令大家对香港感到焦虑和痛心。大家都很焦急，希望可以尽快走出目前的困局。</p>
-<p>对于示威人士提出的「五大诉求」，我们在不同场合都回应过 - </p>
-<p>一，有关撤回条例草案，我在六月十五日已经宣布暂缓条例草案，之后亦表明，修例工作已经完全停止，条例草案明年七月便会自动失效;</p>
-<p>二，有关成立独立调查委员会，政府认为有关警方执法行动，应该按既定机制，交由专责的独立监警会处理，而不应该另设独立监查会员会。监警会除了处理有关警方的投诉，亦正按照其法定职权，详细审视六月九日开始，发生的一连串大型公众活动，市民很关注的七月二十一日元朗袭击事件是其中一个重点。审视工作的目标是重组事实，评估警方的处理，并提出改善建议监警会已经成立国际专家小组，协助委员会工作，报告的内容和建议都会公开。</p>
-<p>三，有关示威活动的定性，我们多次重申，法律程序上不存在“暴动定性”。律政司已清楚指出，每宗案件的刑事检控决定，都是按证据，按法律，按“检控守则”作出;</p>
-<p>四，有关要求释放所有被捕人士，不检控，不追究违法的人，这些要求是法治社会所不能接受的。根据“基本法”，律政司的刑事检控决定，必须不受任何干涉，否则有违香港的法治精神;</p>
-<p>五，有关双普选，这是“基本法”订下的最终目标。要实现这个目标，社会需要在法理的基础上，在平和及互信的氛围下，以务实的态度进行讨论，否则只会令社会更加撕裂。</p>
-<p>这五点回应是平衡了不同因素而提出，我知道，我们的回应未足以平息社会上许多人的怨气，但不断升级的暴力，持续冲击社会秩序，又能否解决目前的困局呢？请大家想一想，我们是否应该透过对话，为香港寻找出路？</p>
-<p>很多人说，展开对话要有基础。作为行政长官，我有责任尽一切努力，在种种局限下寻找社会向前行的机会。我现在提出四项行动，希望作为社会向前行的起点。</p>
-<p>第一，特区政府会正式撤回条例草案，完全释除市民的疑虑。保安局局长会在立法会复会后，按“议事规则”动议撤回条例草案。</p>
-<p>第二，我们会全力支持监警会的工作。除了邀请海外专家，我已委任两位新成员加入监警会，他们是余黎青萍女士和林定国资深大律师。我向大家承诺，政府会认真跟进监警会日后提交的报告建议。</p>
-<p>第三，由今个月开始，我和所有司局长，会走入社区与市民对话，让社会各个阶层，不同政治立场，不同背景的人士，透过对话平台，将种种不满直接说出来，一起去探讨解决方法;</p>
-<p>第四，我会邀请社会领袖，专家和学者，就社会深层次问题进行独立研究及检讨，向政府提出建议。经过两个多月因修例工作引起的冲突，大家都意识到，我们眼前的矛盾是反映了长期积压的政治，经济和社会问题，例如房屋和土地供应，贫富悬殊，社会公义，青年人的机遇，以至公众参与决策等。我们的对话平台，亦可以让大家一起探讨这些问题。</p>
-<p>各位市民，持续出现的暴力正动摇香港法治的根基，极少数人挑战「一国两制」，冲击中央政府驻港机构，污损国旗，国徽，将香港推向危险的境地。无论市民对政府或对社会现况有多大的不满，暴力绝对不是解决问题的方法。目前，最迫切的就是要遏止暴力，捍卫法治，重建社会秩序。政府会对所有违法及暴力行为，严正执法。</p>
-<p>我和团队很希望，今天提出的四项行动，可以为打破困局行出一步，以对话代替对立，为社会带来改变。</p>
-<p>////////////////////////////////////////////////////////////////////</p>
-<video src="http://132.145.93.32/%e6%9e%97%e9%84%ad%e6%9c%88%e5%a8%a5%ef%bc%9a%e9%a6%99%e6%b8%af%e7%89%b9%e5%8d%80%e6%94%bf%e5%ba%9c%e6%ad%a3%e5%bc%8f%e6%92%a4%e5%9b%9e%e4%bf%ae%e8%a8%82%e3%80%8a%e9%80%83%e7%8a%af%e6%a2%9d%e4%be%8b%e3%80%8b%ef%bc%8d%20BBC%20News%20%e4%b8%ad%e6%96%87.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"><br>your browser does not support the video tag<br></video>
-
-
-
-        <div id="aplayer-iYeACtaJ" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content"></pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-iYeACtaJ"),
-            narrow: false,
-            autoplay: true,
-            showlrc: false,
-            music: {
-              title: "Glory to Hong Kong",
-              author: "✔",
-              url: "/media/mp3/piano_glory to hongkong.mp3",
-              pic: "",
-              lrc: ""
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Anti-Extradition/">Anti-Extradition</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anti-Extradition/">Anti-Extradition</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Vue-Hello-World" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/09/12/Vue-Hello-World/" class="article-date">
-      <time datetime="2019-09-12T15:12:46.000Z" itemprop="datePublished">09-12-2019</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/12/Vue-Hello-World/">Vue Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p><clientonly></clientonly></p>
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-
-
-<div id="app"><br>  <p></p><br></div>
-
-<div><script>alert(“a”);</script></div>
-
-<script>
-new Vue({
-  el: '#app',
-  data: {
-    message: 'Hello Vue.js!'
-  }
-})
-</script>
-
-<p><br>
-        <div id="aplayer-lslQYoGY" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content"></pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-lslQYoGY"),
-            narrow: false,
-            autoplay: false,
-            showlrc: false,
-            music: {
-              title: "",
-              author: "/media/mp3/.mp3",
-              url: "autoplay",
-              pic: "",
-              lrc: ""
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-摄影测量学" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/09/09/摄影测量学/" class="article-date">
-      <time datetime="2019-09-09T03:51:11.000Z" itemprop="datePublished">09-09-2019</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/09/摄影测量学/">摄影测量学</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        
-        <div id="aplayer-JKxYAAZd" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content"></pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-JKxYAAZd"),
-            narrow: false,
-            autoplay: false,
-            showlrc: false,
-            music: {
-              title: "",
-              author: "/media/mp3/.mp3",
-              url: "autoplay",
-              pic: "",
-              lrc: ""
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
       
       <div class="clearfix"></div>
     </div>
@@ -1546,7 +1019,7 @@ new Vue({
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>
