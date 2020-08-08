@@ -324,6 +324,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tianrking.github.io/2019/03/23/字符串/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tianrking">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/trk.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="w0x7c3">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/23/字符串/" itemprop="url">字符串</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-23T20:09:54+08:00">
+                03-23-2019
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/23/字符串/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/23/字符串/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#pragma once</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">class SeqString</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	SeqString();</span><br><span class="line">	~SeqString();</span><br><span class="line">	SeqString(int MaxStrSize = 256);</span><br><span class="line">	SeqString(char *);</span><br><span class="line">	SeqString(SeqString &amp;t);</span><br><span class="line">	int StrLength();</span><br><span class="line">	int StrCom(SeqString t);</span><br><span class="line">	void StrCon(SeqString s, SeqString t);</span><br><span class="line">	int index(SeqString t);</span><br><span class="line">	void SubStr(SeqString s, int start, int len);</span><br><span class="line">	friend void Insert(SeqString &amp;S, SeqString S1, int i);</span><br><span class="line"></span><br><span class="line">	void PrintStr() &#123;</span><br><span class="line">		std::cout &lt;&lt; str &lt;&lt; std::endl;</span><br><span class="line">	&#125;</span><br><span class="line">private:</span><br><span class="line">	int MaxSize;</span><br><span class="line">	char *str;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#include &quot;pch.h&quot;</span><br><span class="line">#include &quot;str.h&quot;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">SeqString::SeqString()</span><br><span class="line">&#123;</span><br><span class="line">	MaxSize = 256;</span><br><span class="line">	str = new char[MaxSize];</span><br><span class="line">	for (int i = 0; i &lt; MaxSize; i++) &#123;</span><br><span class="line">		str[i] = &apos;\0&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">SeqString::SeqString(SeqString &amp;t)</span><br><span class="line">&#123;</span><br><span class="line">	int Len = t.StrLength();</span><br><span class="line">	str = new char[Len];</span><br><span class="line">	int i;</span><br><span class="line">	for (i = 0; i &lt; Len; i++) &#123;</span><br><span class="line">		str[i] = t.str[i];</span><br><span class="line">	&#125;</span><br><span class="line">	str[i] = &apos;\0&apos;;</span><br><span class="line">&#125;</span><br><span class="line">/*</span><br><span class="line">SeqString::SeqString(SeqString &amp;t)</span><br><span class="line">&#123;</span><br><span class="line">	str=new char[Len];</span><br><span class="line">	strcpy(str,t.str);</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">SeqString::SeqString(char *t)</span><br><span class="line">&#123;</span><br><span class="line">	MaxSize = strlen(t) + 1;</span><br><span class="line">	str = new char[MaxSize];</span><br><span class="line">	//strcpy(str, t.str);</span><br><span class="line">	int i;</span><br><span class="line">	for (i = 0; i &lt; MaxSize-1; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		str[i] = *(t + i);</span><br><span class="line">	&#125;</span><br><span class="line">	str[i] = &apos;\0&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">SeqString::~SeqString()</span><br><span class="line">&#123;</span><br><span class="line">	delete str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int SeqString::StrLength()</span><br><span class="line">&#123;</span><br><span class="line">	int i = 0;</span><br><span class="line">	for (;; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if (str[i] == &apos;\0&apos;)</span><br><span class="line">			return i;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int SeqString::index(SeqString T)</span><br><span class="line">&#123;</span><br><span class="line">	int i, j, k;</span><br><span class="line">	int m = T.StrLength();</span><br><span class="line">	int n = StrLength();</span><br><span class="line">	for (i = 0; i &lt; n - m; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		j = 0; k = i;</span><br><span class="line">		while(j&lt;m&amp;&amp;str[k++]==T.str[j++])</span><br><span class="line">		&#123;</span><br><span class="line">			;</span><br><span class="line">		&#125;</span><br><span class="line">		if (j == m)</span><br><span class="line">			return i;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	return -1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void SeqString::SubStr(SeqString s, int start, int len)</span><br><span class="line">&#123;</span><br><span class="line">	int length = s.StrLength();</span><br><span class="line">	if (start &gt;= 0 &amp;&amp; start &lt;= length - 1 &amp;&amp; len &gt;= 0 &amp;&amp; len &lt;= length - start + 1) &#123;</span><br><span class="line">		int i;</span><br><span class="line">		for (i = 0; i &lt; len; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			str[i] = s.str[start + i];</span><br><span class="line">		&#125;</span><br><span class="line">		str[i] = &apos;\0&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">		cout &lt;&lt; &quot;parameter error&quot; &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void SeqString::StrCon(SeqString s, SeqString t)</span><br><span class="line">&#123;</span><br><span class="line">	int slen = strlen(s.str);</span><br><span class="line">	int len = slen + strlen(t.str) + 1;</span><br><span class="line">	int i;</span><br><span class="line">	for (i = slen; i &lt; len; i++)</span><br><span class="line">		str[i] = t.str[i - slen];</span><br><span class="line">	str[i] = &apos;\0&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int SeqString::StrCom(SeqString t1)</span><br><span class="line">&#123;</span><br><span class="line">	char *s, *t;</span><br><span class="line">	s = str; t = t1.str;</span><br><span class="line">	for (; *s == *t&amp;&amp;s != &apos;\0&apos;; s++, t++);</span><br><span class="line">	return *s - *t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Insert(SeqString &amp;S, SeqString S1, int i)</span><br><span class="line">&#123;</span><br><span class="line">	int j, len1, len2;</span><br><span class="line">	len1 = S.StrLength(); len2 = S1.StrLength();</span><br><span class="line">	if (i &gt; len1)</span><br><span class="line">		cout &lt;&lt; &quot;Crossing&quot; &lt;&lt; endl;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		for (j = len1 - 1; j &gt;= 1; j--)</span><br><span class="line">			S.str[len2 + j] = S.str[j];</span><br><span class="line">		for (j = 0; j &lt; len2; j++)</span><br><span class="line">			S.str[i + j - 1] = S1.str[j];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://tianrking.github.io/2019/03/23/第三章-保险合同/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -504,12 +657,12 @@
 </ul>
 <p>（一） 协商<br>（二） 调解<br>（三） 仲裁</p>
 
-        <div id="aplayer-JzduEfWQ" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-cbKfKjbv" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-JzduEfWQ"),
+            element: document.getElementById("aplayer-cbKfKjbv"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -688,205 +841,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tianrking.github.io/2019/03/04/第3章-线性表/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="tianrking">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/trk.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="w0x7c3">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/04/第3章-线性表/" itemprop="url">第3章 线性表</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-04T18:58:54+08:00">
-                03-04-2019
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/03/04/第3章-线性表/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/04/第3章-线性表/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="3-1-线性表的类型定义"><a href="#3-1-线性表的类型定义" class="headerlink" title="3.1  线性表的类型定义"></a>3.1  线性表的类型定义</h1><h2 id="3-1-1-线性表的逻辑定义"><a href="#3-1-1-线性表的逻辑定义" class="headerlink" title="3.1.1 线性表的逻辑定义"></a>3.1.1 线性表的逻辑定义</h2><p>  <strong>由n个数据元素（结点）组成的有限序列，数据元素可以由若干个数据项组成</strong></p>
-<ul>
-<li>从线性表的定义可以看出他的逻辑特称，即对于一个非空的线性表有如下特征<br>  1.有且仅有一个称为开始元素的a1，他没有直接前去元素，仅有一个直接后继元素a2<br>  2.有且仅有一个终端元素an，他没有后继元素<br>  3.其余元素ai([2,n-1])称为内部元素，他们都有且仅有一个直接前驱和一个直接后继<br><strong>线性表中元素之间的逻辑关系就是上述的相邻关系，又称为线性关系，因此线性表是一种典型的线性结构</strong></li>
-</ul>
-<h2 id="3-1-2-线性表的抽象数据类型"><a href="#3-1-2-线性表的抽象数据类型" class="headerlink" title="3.1.2 线性表的抽象数据类型"></a>3.1.2 线性表的抽象数据类型</h2><p>   <strong>可以用一个抽象数据类型(Abstract Data Type ,ADT)</strong><br>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ADT LinearList&#123;</span><br><span class="line">    数据对象及关系</span><br><span class="line">    0个或多个元素的有序集合</span><br><span class="line">    基本运算</span><br><span class="line">    CreateList(),创建一个空的线性表；</span><br><span class="line">    Destory(),删除表；</span><br><span class="line">    ListEmpty(),如果表为空则返回true，否则返回false；</span><br><span class="line">    ListLength(),返回线性表中元素个数,表长；</span><br><span class="line">    GetElem(i,x),取表中第i个元素，若 1&lt;=i&lt;=Listlength(),则将第i个元素值存入x中，否则返回false；</span><br><span class="line">    LocateElem(x),在表中查找第一个值为x的元素，若存在，则返回其在表中的位置，否则返回0；</span><br><span class="line">    InsertElem(i,x),在表L的第i个结点之前插入一个值为x的新元素，表长加1，返回修改后的线性表；</span><br><span class="line">    DeleteElem(i,x),删除表中第i个元素，并将其保存到x中，表长减1，返回修改后的线性表。</span><br><span class="line">&#125; //ADT LinearList</span><br></pre></td></tr></table></figure>
-<h1 id="3-2-线性表的顺序存储及基本运算"><a href="#3-2-线性表的顺序存储及基本运算" class="headerlink" title="3.2 线性表的顺序存储及基本运算"></a>3.2 线性表的顺序存储及基本运算</h1><h2 id="3-2-1-线性表的顺序存储"><a href="#3-2-1-线性表的顺序存储" class="headerlink" title="3.2.1 线性表的顺序存储"></a>3.2.1 线性表的顺序存储</h2><ul>
-<li><p><strong>将线性表的数据元素按照其逻辑次序依次存入一组地址连续的存储单元里，用这种方法存储的线性表简称为顺序表</strong></p>
-</li>
-<li><p><strong>线性表第i个元素存储位置  LOC(ai)=LOC(a1)+(i-1)</strong> * <strong>d  （基地址)</strong></p>
-</li>
-<li><p><strong>线性表的机内表示称为线性表的顺序存储结构，只要确定了线性表的起始位置，线性表中任意一个结点都可随机存取，顺序表是一种随机存取结构</strong></p>
-</li>
-</ul>
-<p><strong>顺序表c++类定义</strong><br>。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//list.h</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">SeqList</span>&#123;</span></span><br><span class="line">    <span class="keyword">public</span>：</span><br><span class="line">		<span class="function"><span class="keyword">friend</span> <span class="keyword">void</span> <span class="title">Converts</span><span class="params">(SeqList&lt;T&gt; &amp;L)</span></span>;    <span class="comment">//线性表逆置友元函数</span></span><br><span class="line">		SeqList(<span class="keyword">int</span> MaxListSize=<span class="number">100</span>);			<span class="comment">//构造函数，默认表长为100</span></span><br><span class="line">		~SeqList()&#123;<span class="keyword">delete</span>[] data;&#125;				<span class="comment">//析构函数</span></span><br><span class="line">		<span class="function"><span class="keyword">bool</span> <span class="title">ListEmpty</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> length == <span class="number">0</span>;&#125;</span><br><span class="line">		<span class="function"><span class="keyword">int</span> <span class="title">ListLength</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> length;&#125;</span><br><span class="line">		<span class="function"><span class="keyword">bool</span> <span class="title">GetElem</span><span class="params">(<span class="keyword">int</span> i,T x)</span></span>;				<span class="comment">//第i个元素存入x中</span></span><br><span class="line">		<span class="function"><span class="keyword">int</span> <span class="title">LocateElem</span><span class="params">(T x)</span></span>;					<span class="comment">//返回x所在的位置</span></span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">InsertElem</span><span class="params">(<span class="keyword">int</span> i,T x)</span></span>;				<span class="comment">//在第i个元素之前插入x</span></span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">DeleteElem</span><span class="params">(<span class="keyword">int</span> i,T &amp;x)</span></span>;			<span class="comment">//删除第i个元素，将值存到x</span></span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">PrintList</span><span class="params">()</span></span>;					   <span class="comment">//输出表的内容</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		<span class="keyword">int</span> length;</span><br><span class="line">		<span class="keyword">int</span> MaxSize;</span><br><span class="line">		T *data;</span><br><span class="line">		</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="3-2-2-顺序表上基本运算的实现"><a href="#3-2-2-顺序表上基本运算的实现" class="headerlink" title="3.2.2 顺序表上基本运算的实现"></a>3.2.2 顺序表上基本运算的实现</h2><ol>
-<li>构造函数的定义</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">SeqList</span>&lt;T&gt;:</span>:SeqList(<span class="keyword">int</span> MaxListSize)</span><br><span class="line">&#123;</span><br><span class="line">	MaxSize=MaxListSize;</span><br><span class="line">	data=<span class="keyword">new</span> T[MaxSize]; 	<span class="comment">//申请一块动态连续的内存区</span></span><br><span class="line">	length=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>取表中第i个元素   O（1）</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">bool</span> <span class="title">SeqList</span>&lt;T&gt;:</span>:GetElem(<span class="keyword">int</span> i,T &amp;x)</span><br><span class="line">&#123;	<span class="comment">//取表中第i个元素值存入x中</span></span><br><span class="line">	<span class="keyword">if</span>(i&lt;<span class="number">1</span>||i&gt;length)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	x=data[i<span class="number">-1</span>];</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>查找值为x的元素 O(length)</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">int</span> <span class="title">SeqList</span>&lt;T&gt;:</span>:LocateElem(T x)</span><br><span class="line">&#123;	<span class="comment">//返回x在表中的位置，如果x不在表中，则返回0</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length;i++)</span><br><span class="line">		<span class="keyword">if</span>(data[i]==x)</span><br><span class="line">			<span class="keyword">return</span> ++i;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>插入运算</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">SeqList</span>&lt;T&gt;:</span>:InsertElem(<span class="keyword">int</span> i,T x)</span><br><span class="line">&#123;	<span class="comment">//在表第i个元素之前插入x</span></span><br><span class="line">	<span class="keyword">if</span>(i&lt;<span class="number">1</span>||i&gt;length+<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">"position error"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span>;				<span class="comment">//给定位置不合理，退出程序</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j=length - <span class="number">1</span> ; j&gt;=i<span class="number">-1</span>;j--)</span><br><span class="line">		data[j+<span class="number">1</span>]=data[j]; <span class="comment">// 从最好一个元素开始逐一后移</span></span><br><span class="line">	data[i<span class="number">-1</span>]=x;	<span class="comment">//插入新元素x</span></span><br><span class="line">	length++;	<span class="comment">//实际表加长1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>删除运算  O(n)</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">SeqList</span>&lt;T&gt;:</span>:DeleteElem(<span class="keyword">int</span> i,T &amp;x)</span><br><span class="line">&#123;	<span class="comment">//在顺序表中删除第i个元素，并返回被删除元素</span></span><br><span class="line">	<span class="keyword">if</span>(i&lt;<span class="number">1</span>||i&gt;length)&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">"position error"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span>;	 	<span class="comment">//给定位置不合理，退出程序</span></span><br><span class="line">	&#125;</span><br><span class="line">	x=data[i<span class="number">-1</span>];   <span class="comment">//返回被删除的元素</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;length;j++)</span><br><span class="line">		data[j<span class="number">-1</span>]=data[j];</span><br><span class="line">	length--;		<span class="comment">//实际表长减1</span></span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="6">
-<li>顺序表的输出</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">SeqList</span>&lt;T&gt;:</span>:PrintList()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length;i++)</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;data[i]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="7">
-<li>顺序表的逆置 O（n）</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">Converts</span>(<span class="title">SeqList</span>&lt;T&gt; &amp;<span class="title">L</span>)</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> x;</span><br><span class="line">	<span class="keyword">int</span> i,k;</span><br><span class="line">	k=length/<span class="number">2</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;k;i++)&#123;</span><br><span class="line">		x=L.data[i];</span><br><span class="line">		L.data[i]=L.data[L.length-i<span class="number">-1</span>];</span><br><span class="line">		L.data[L.length-i<span class="number">-1</span>] = x;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-        <div id="aplayer-CafEUNZP" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content"></pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-CafEUNZP"),
-            narrow: false,
-            autoplay: true,
-            showlrc: false,
-            music: {
-              title: "나선의 달",
-              author: "Sereno",
-              url: "/media/mp3/Sereno - 나선의 달.mp3",
-              pic: "",
-              lrc: ""
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -936,7 +895,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">69</span>
+                  <span class="site-state-item-count">70</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -947,7 +906,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -958,7 +917,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/root-images/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

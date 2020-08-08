@@ -324,6 +324,147 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tianrking.github.io/2019/01/13/scrapy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tianrking">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/trk.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="w0x7c3">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/13/scrapy/" itemprop="url">scrapy</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-13T15:44:56+08:00">
+                01-13-2019
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/13/scrapy/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/13/scrapy/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>继承scrapy.Sprider</li>
+<li>为Sprider取名字</li>
+<li>设定起始爬取点</li>
+<li>实现页面解析函数</li>
+</ol>
+<p>第一个实例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import scrapy</span><br><span class="line">class BooksSpider(scrapy.Spider):</span><br><span class="line">    #标识</span><br><span class="line">    name=&quot;books&quot;</span><br><span class="line"></span><br><span class="line">    #起始点</span><br><span class="line">    start_urls=[&apos;http://books.toscrape.com/&apos;]</span><br><span class="line"></span><br><span class="line">    def parse(self,response):</span><br><span class="line"></span><br><span class="line">        for book in response.css(&apos;article.product_pod&apos;):</span><br><span class="line"></span><br><span class="line">            name=book.xpath(&apos;./h3/a/@title&apos;).extract_first()</span><br><span class="line"></span><br><span class="line">            price=book.css(&apos;p.price_color::text&apos;).extract_first()</span><br><span class="line">            yield&#123;</span><br><span class="line">                &apos;name&apos;:name,</span><br><span class="line">                &apos;price&apos;:price,</span><br><span class="line">            &#125;</span><br><span class="line">        </span><br><span class="line">        next_url=response.css(&apos;ul.pager li.next a::attr(href)&apos;).extract_first()</span><br><span class="line">        if next_url:</span><br><span class="line">            next_url=response.urljoin(next_url)</span><br><span class="line">            yield scrapy.Request(next_url,callback=self.parse)</span><br><span class="line">`</span><br></pre></td></tr></table></figure></p>
+<p>运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy crawl hw.py -o books.csv</span><br></pre></td></tr></table></figure></p>
+<h1 id="使用selector提取数据"><a href="#使用selector提取数据" class="headerlink" title="使用selector提取数据"></a>使用selector提取数据</h1><p>创建对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;from scrapy.selector import Selector</span><br><span class="line">&gt;&gt;&gt; text=&apos;&apos;&apos;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;h1&gt;hello world&lt;/h1&gt;</span><br><span class="line">		&lt;h1&gt;hello scrapy&lt;/h1&gt;</span><br><span class="line">		&lt;b&gt;hello python&lt;/b&gt;</span><br><span class="line">		&lt;ul&gt;</span><br><span class="line">			&lt;li&gt;c++&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;java&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;python&lt;/li&gt;</span><br><span class="line">		&lt;/ul&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">&apos;&apos;&apos;</span><br></pre></td></tr></table></figure>
+<p>选中数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; selector=Selector(text=text)</span><br><span class="line">&gt;&gt;&gt; selector</span><br><span class="line">&lt;Selector xpath=None data=&apos;&lt;html&gt;\n\t&lt;body&gt;\n\t\t&lt;h1&gt;hello world&lt;/h1&gt;\n\t\t&apos;&gt;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; selector_list=selector.xpath(&apos;//h1&apos;)</span><br><span class="line">&gt;&gt;&gt; selector_list</span><br><span class="line">[&lt;Selector xpath=&apos;//h1&apos; data=&apos;&lt;h1&gt;hello world&lt;/h1&gt;&apos;&gt;, &lt;Selector xpath=&apos;//h1&apos; data=&apos;&lt;h1&gt;hello scrapy&lt;/h1&gt;&apos;&gt;]</span><br></pre></td></tr></table></figure></p>
+<p>提取数据<br><code></code></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://tianrking.github.io/2019/01/01/稍微有点意思的财政学/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -732,12 +873,12 @@
 <li>国际税收协定的基本内容</li>
 </ol>
 
-        <div id="aplayer-UagELFBh" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-RYGrpIdj" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-UagELFBh"),
+            element: document.getElementById("aplayer-RYGrpIdj"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -897,12 +1038,12 @@
 <p>#实验四</p>
 <h2 id="操纵-1"><a href="#操纵-1" class="headerlink" title="操纵"></a>操纵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">显示所有专业号为‘001’，并且在服务器显示之前，暂停  1  分钟</span><br><span class="line">timefor delay &apos;00:01&apos;</span><br><span class="line">select * from course where spno=&apos;001&apos;</span><br><span class="line"></span><br><span class="line">把所有计算机转学学生的联系电话删掉，所有专业号为‘001’的学生</span><br><span class="line">的入学时间删掉，所有专业专业号为‘003.’的学生的班级号改为‘001’，</span><br><span class="line">其他的学生删掉其籍贯。（case）</span><br><span class="line">update student </span><br><span class="line">set entime = (case spno </span><br><span class="line">	when &apos;001&apos; then null else entime end)</span><br><span class="line"> 	classno = (case spn</span><br><span class="line">	when &apos;003&apos; then &apos;001&apos; else classno end)</span><br><span class="line">	native = (case spno when &apos;001&apos; native case class when &apos;003&apos; then native else null end )</span><br></pre></td></tr></table></figure>
 
-        <div id="aplayer-xNuNLEPt" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-eLXMSBIs" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-xNuNLEPt"),
+            element: document.getElementById("aplayer-eLXMSBIs"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -951,316 +1092,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tianrking.github.io/2018/10/26/SQL-w0x7c3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="tianrking">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/trk.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="w0x7c3">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/26/SQL-w0x7c3/" itemprop="url">SQL(w0x7c3)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-26T22:46:55+08:00">
-                10-26-2018
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/26/SQL-w0x7c3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/26/SQL-w0x7c3/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <pre><code>select sno,sn,age from s
-select * from sc
-select sn name, sno,age from s /*select sn as name ,sno ,age*/
-/*条件查询*/
-select SNo,score from sc where cno=&apos;c1&apos;   
-select sno,cno,score from sc where score &gt; 85
-select SNo,score from sc where( cno=&apos;c1&apos; or cno=&apos;c2&apos;) and score &gt; 85 
-/**/
-select tno,tn,prof from t where sal between 1000 and 1500
-select tno,tn,prof from t where sal not between 1000 and 1500
-
-select tno,tn from t where tn like &apos;张%&apos;
-select tno,tn from t where tn like &apos;%&apos;
-select tno,tn from t where tn like &apos;_雪&apos;
-
-/*avg() sum() max() min() count() */
-select sum(score) as totalscore ,avg(score) as avgscore from sc where sno=&apos;s1&apos;
-
-/* c1最高分 最低分 之间相差分数 */
-select max(score) as MaxScore ,min (score) as MixScore ,Max(Score)-Min(Score) as diff       from sc where (cno=&apos;c1&apos;) 
-
-select count(*) from  s where dept=&apos;计算机&apos; 
-/*distinct消除重复行 count对null不计算 对0计算*/
-select count(distinct dept) as deptnum from s 
-
-select count(*) from s where dept=&apos;计算机&apos;
-
-/* Group by 分组查询 */
-select tno,count (*) as C_Num from tc Group by tno
-
-select Sno , count (*) as sc_num from sc group by sno having (count(*) &gt;=2 )
-
-
-select sno,cno,score from sc where cno in (&apos;c2&apos;,&apos;c3&apos;,&apos;c4&apos;,&apos;c5&apos;) order by sno,score desc
-
-select X.TN,X.sal as Sal_a,Y.Sal as Sal_b from T as x,T as Y where X.Sal&gt; Y.Sal and Y.TN=&apos;刘伟&apos;
-
-/*返回一个值的普通子查询*/
-select tno,tn from t where prof =( Select prof From T where Tn=&apos;刘伟&apos;)
-
-/*返回一组值的普通子查询*/
-
-/*Any*/
-select tn from t where (tno = any (select tno from tc where cno=&apos;c5&apos;))
-/*In可以代替 &apos;=any&apos;*/
-/*all*/
-select tn,sal from t where (sal &gt; all(select sal from t where dept=&apos;计算机&apos;))
-
-select Tn,Sal from T where (Sal &gt; (Select Max(sal) from t where dept=&apos;计算机&apos;)) and (Dept &lt;&gt; &apos;计算机&apos;)
-
-
-/*相关子查询*/
-
-/*not in 代替 &lt;&gt; all*/
-
-/*查看选修所有课程的学生姓名 【搜索不存在没有选课信息学生的姓名】*/
-select sn from s where (not exists (select * from c where not exists( select * from sc where sno=s.sno and cno=c.cno)))
-
-
-/*存储查询结构到表中*/
-select sno as 学号 ,sum(score ) as 总分 into #cal_table from sc group by sno 
-
-/*数据表数据操纵*/
-
-insert into s (sno,sn,age,sex,dept) values (&apos;s7&apos;,&apos;插入哥&apos;,21,&apos;男&apos;,&apos;失业群众&apos;)
-
-/*添加一行记录的部分数据值*/
-insert into sc (sno,cno) values (&apos;s7&apos;,&apos;c1&apos;)
-
-
-/*添加多行记录*/  
-/*                    點解                              */
- /*                    點解                              */
-  /*                    點解                              */
-    /*                    點解                              */
-      /*                    點解                              */
-        /*                    點解                              */
-          /*                    點解                              */
-          /*                    點解                              */
-     /*                    點解                              */
-
-create table avgval
-(
-    department varchar(20),
-    average smallint
-)
-insert into avgval select dept,avg (sal) from t group by dept
-
-  /*                    點解                              */
- /*                    點解                              */
-  /*                    點解                              */
-    /*                    點解                              */
-      /*                    點解                              */
-        /*                    點解                              */
-          /*                    點解                              */
-          /*                    點解                              */
-     /*                    點解                              */
-
-
-/*用sql命令修改数据*/
-
-
-/*把刘伟老师转移到信息系*/
-  update t set dept=&apos;信息&apos; where tn= &apos;刘伟&apos; 
-
-/* 将所有学生的年龄增加一岁*/
-
-/*mmp 修改失败？？？？？？？ */
-         /*mmp 修改失败？？？？？？？ */
-              /*mmp 修改失败？？？？？？？ */
-update s set age=age-1 
-            /*mmp 修改失败？？？？？？？ */
-        /*mmp 修改失败？？？？？？？ */
-/*mmp 修改失败？？？？？？？ */
-
-update t set sal=1.2 * sal where (Prof = &apos;讲师&apos; ) and (sal &lt;= 1000)
-
-
-
-
- /*未测试   未测试*/
-        /* 未测试   未测试*/ 
-          /* 未测试   未测试*/ 
-
-    /* 把讲授c5课程的教师的岗位津贴增加100元 */
-update t set Comm = Comm + 100 where (tno in (select tno from t, tc where t.tno = tc.tno and tc.cno = &apos;c5&apos;))
-      /* 把所有教师的工资提高到平均工资的1.2倍*/
-update t set sal = ( select 1.2 * avg (sal)) from t)    
-
-
-
-        /* 删除数据 */ 
-delete from where tn = &apos;刘伟&apos;
-      /* 删除所有老师的授课记录 */
-delete from tc 
-    /*删除刘伟老师授课*/
-delete from tc where (tno =( select tno from t where tn=&apos;刘伟&apos;))
-
-
-      /*视图*/
-
-
-
-      / * 未测试   未测试*/ 
-      /* 未测试   未测试*/ 
-/*未测试   未测试*/
-   /* 视图 */
-         /* 视图 */
-              /*创建一个计算机系教师情况的视图Sub_T*/
-create view Sub_T AS select Tno ,Tn ,Prof from t where dept = &apos;计算机&apos;
-              / * 创建一个学生平均成绩视图S_Avg */
-create view S_avg(Sno,Avg) as select sno,avg (Score) from sc group by sno
-
-    /* 视图 */
- /* 视图 */
-</code></pre>
-        <div id="aplayer-JURaWdwl" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content"></pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-JURaWdwl"),
-            narrow: false,
-            autoplay: true,
-            showlrc: false,
-            music: {
-              title: "One Sweet Day",
-              author: "Mariah Care",
-              url: "/root-images/onesweetday.mp3",
-              pic: "",
-              lrc: ""
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/16/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/16/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1310,7 +1146,7 @@ create view S_avg(Sno,Avg) as select sno,avg (Score) from sc group by sno
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">69</span>
+                  <span class="site-state-item-count">70</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1321,7 +1157,7 @@ create view S_avg(Sno,Avg) as select sno,avg (Score) from sc group by sno
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1332,7 +1168,7 @@ create view S_avg(Sno,Avg) as select sno,avg (Score) from sc group by sno
               
               <div class="site-state-item site-state-tags">
                 <a href="/root-images/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

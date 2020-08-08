@@ -324,6 +324,311 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tianrking.github.io/2018/10/26/SQL-w0x7c3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tianrking">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/trk.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="w0x7c3">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/26/SQL-w0x7c3/" itemprop="url">SQL(w0x7c3)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-26T22:46:55+08:00">
+                10-26-2018
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/26/SQL-w0x7c3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/26/SQL-w0x7c3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre><code>select sno,sn,age from s
+select * from sc
+select sn name, sno,age from s /*select sn as name ,sno ,age*/
+/*条件查询*/
+select SNo,score from sc where cno=&apos;c1&apos;   
+select sno,cno,score from sc where score &gt; 85
+select SNo,score from sc where( cno=&apos;c1&apos; or cno=&apos;c2&apos;) and score &gt; 85 
+/**/
+select tno,tn,prof from t where sal between 1000 and 1500
+select tno,tn,prof from t where sal not between 1000 and 1500
+
+select tno,tn from t where tn like &apos;张%&apos;
+select tno,tn from t where tn like &apos;%&apos;
+select tno,tn from t where tn like &apos;_雪&apos;
+
+/*avg() sum() max() min() count() */
+select sum(score) as totalscore ,avg(score) as avgscore from sc where sno=&apos;s1&apos;
+
+/* c1最高分 最低分 之间相差分数 */
+select max(score) as MaxScore ,min (score) as MixScore ,Max(Score)-Min(Score) as diff       from sc where (cno=&apos;c1&apos;) 
+
+select count(*) from  s where dept=&apos;计算机&apos; 
+/*distinct消除重复行 count对null不计算 对0计算*/
+select count(distinct dept) as deptnum from s 
+
+select count(*) from s where dept=&apos;计算机&apos;
+
+/* Group by 分组查询 */
+select tno,count (*) as C_Num from tc Group by tno
+
+select Sno , count (*) as sc_num from sc group by sno having (count(*) &gt;=2 )
+
+
+select sno,cno,score from sc where cno in (&apos;c2&apos;,&apos;c3&apos;,&apos;c4&apos;,&apos;c5&apos;) order by sno,score desc
+
+select X.TN,X.sal as Sal_a,Y.Sal as Sal_b from T as x,T as Y where X.Sal&gt; Y.Sal and Y.TN=&apos;刘伟&apos;
+
+/*返回一个值的普通子查询*/
+select tno,tn from t where prof =( Select prof From T where Tn=&apos;刘伟&apos;)
+
+/*返回一组值的普通子查询*/
+
+/*Any*/
+select tn from t where (tno = any (select tno from tc where cno=&apos;c5&apos;))
+/*In可以代替 &apos;=any&apos;*/
+/*all*/
+select tn,sal from t where (sal &gt; all(select sal from t where dept=&apos;计算机&apos;))
+
+select Tn,Sal from T where (Sal &gt; (Select Max(sal) from t where dept=&apos;计算机&apos;)) and (Dept &lt;&gt; &apos;计算机&apos;)
+
+
+/*相关子查询*/
+
+/*not in 代替 &lt;&gt; all*/
+
+/*查看选修所有课程的学生姓名 【搜索不存在没有选课信息学生的姓名】*/
+select sn from s where (not exists (select * from c where not exists( select * from sc where sno=s.sno and cno=c.cno)))
+
+
+/*存储查询结构到表中*/
+select sno as 学号 ,sum(score ) as 总分 into #cal_table from sc group by sno 
+
+/*数据表数据操纵*/
+
+insert into s (sno,sn,age,sex,dept) values (&apos;s7&apos;,&apos;插入哥&apos;,21,&apos;男&apos;,&apos;失业群众&apos;)
+
+/*添加一行记录的部分数据值*/
+insert into sc (sno,cno) values (&apos;s7&apos;,&apos;c1&apos;)
+
+
+/*添加多行记录*/  
+/*                    點解                              */
+ /*                    點解                              */
+  /*                    點解                              */
+    /*                    點解                              */
+      /*                    點解                              */
+        /*                    點解                              */
+          /*                    點解                              */
+          /*                    點解                              */
+     /*                    點解                              */
+
+create table avgval
+(
+    department varchar(20),
+    average smallint
+)
+insert into avgval select dept,avg (sal) from t group by dept
+
+  /*                    點解                              */
+ /*                    點解                              */
+  /*                    點解                              */
+    /*                    點解                              */
+      /*                    點解                              */
+        /*                    點解                              */
+          /*                    點解                              */
+          /*                    點解                              */
+     /*                    點解                              */
+
+
+/*用sql命令修改数据*/
+
+
+/*把刘伟老师转移到信息系*/
+  update t set dept=&apos;信息&apos; where tn= &apos;刘伟&apos; 
+
+/* 将所有学生的年龄增加一岁*/
+
+/*mmp 修改失败？？？？？？？ */
+         /*mmp 修改失败？？？？？？？ */
+              /*mmp 修改失败？？？？？？？ */
+update s set age=age-1 
+            /*mmp 修改失败？？？？？？？ */
+        /*mmp 修改失败？？？？？？？ */
+/*mmp 修改失败？？？？？？？ */
+
+update t set sal=1.2 * sal where (Prof = &apos;讲师&apos; ) and (sal &lt;= 1000)
+
+
+
+
+ /*未测试   未测试*/
+        /* 未测试   未测试*/ 
+          /* 未测试   未测试*/ 
+
+    /* 把讲授c5课程的教师的岗位津贴增加100元 */
+update t set Comm = Comm + 100 where (tno in (select tno from t, tc where t.tno = tc.tno and tc.cno = &apos;c5&apos;))
+      /* 把所有教师的工资提高到平均工资的1.2倍*/
+update t set sal = ( select 1.2 * avg (sal)) from t)    
+
+
+
+        /* 删除数据 */ 
+delete from where tn = &apos;刘伟&apos;
+      /* 删除所有老师的授课记录 */
+delete from tc 
+    /*删除刘伟老师授课*/
+delete from tc where (tno =( select tno from t where tn=&apos;刘伟&apos;))
+
+
+      /*视图*/
+
+
+
+      / * 未测试   未测试*/ 
+      /* 未测试   未测试*/ 
+/*未测试   未测试*/
+   /* 视图 */
+         /* 视图 */
+              /*创建一个计算机系教师情况的视图Sub_T*/
+create view Sub_T AS select Tno ,Tn ,Prof from t where dept = &apos;计算机&apos;
+              / * 创建一个学生平均成绩视图S_Avg */
+create view S_avg(Sno,Avg) as select sno,avg (Score) from sc group by sno
+
+    /* 视图 */
+ /* 视图 */
+</code></pre>
+        <div id="aplayer-xDqheOCD" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-xDqheOCD"),
+            narrow: false,
+            autoplay: true,
+            showlrc: false,
+            music: {
+              title: "One Sweet Day",
+              author: "Mariah Care",
+              url: "/root-images/onesweetday.mp3",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://tianrking.github.io/2018/10/22/第三章-债券市场/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -515,12 +820,12 @@
 <h3 id="二、金融债券与吸收存款的区别"><a href="#二、金融债券与吸收存款的区别" class="headerlink" title="二、金融债券与吸收存款的区别"></a>二、金融债券与吸收存款的区别</h3><p>1.筹资的目的不同<br>2.筹资的机制不同<br>3.筹资的效率不同<br>4.所筹集的基金的稳定性不同<br>5.资金流动性不同<br>6.吸收存款收到准备金率的影响</p>
 <h3 id="三、金融债券分类"><a href="#三、金融债券分类" class="headerlink" title="三、金融债券分类"></a>三、金融债券分类</h3><p>1.根据利息的支付方式，金融债券可以分为附息金融债券和贴现金融债券<br>2.根据发行条件，金融债券可以分为普通金融债券和累进利息金融债券<br>3.按照发行机构的不同，金融债券可以分为央票、证券公司债券、证券公司短期融资债务、商业银行次债、保险公司</p>
 
-        <div id="aplayer-HPNUOzbc" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-UhgrnCEV" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-HPNUOzbc"),
+            element: document.getElementById("aplayer-UhgrnCEV"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -709,12 +1014,12 @@
 </ul>
 <h1 id="旅行游记"><a href="#旅行游记" class="headerlink" title="旅行游记"></a>旅行游记</h1><h2 id="Day-1-国庆节"><a href="#Day-1-国庆节" class="headerlink" title="Day 1 国庆节"></a>Day 1 国庆节</h2><p><strong><em>10.1.2018</em></strong><br>罗湖口岸过关</p>
 
-        <div id="aplayer-SqCNaxXa" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-wpwTKPxM" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-SqCNaxXa"),
+            element: document.getElementById("aplayer-wpwTKPxM"),
             narrow: false,
             autoplay: true,
             showlrc: false,
@@ -764,308 +1069,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tianrking.github.io/2018/09/24/第二章-货币市场/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="tianrking">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/trk.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="w0x7c3">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/24/第二章-货币市场/" itemprop="url">第二章 货币市场</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-24T13:35:02+08:00">
-                09-24-2018
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/金融市场学/" itemprop="url" rel="index">
-                    <span itemprop="name">金融市场学</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/24/第二章-货币市场/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/24/第二章-货币市场/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="第一节-货币市场概述"><a href="#第一节-货币市场概述" class="headerlink" title="第一节 货币市场概述"></a>第一节 货币市场概述</h1><h2 id="一、货币市场的定义及特征"><a href="#一、货币市场的定义及特征" class="headerlink" title="一、货币市场的定义及特征"></a>一、货币市场的定义及特征</h2><p><strong>货币市场是一年期以内的短期金融工具交易所形成的供求关系及其机制的总和</strong></p>
-<ol>
-<li>期限短、流动性高</li>
-<li>低风险、低收益</li>
-<li>交易量大</li>
-</ol>
-<h2 id="二、货币市场的功能"><a href="#二、货币市场的功能" class="headerlink" title="二、货币市场的功能"></a>二、货币市场的功能</h2><p><strong>货币市场既从微观上为银行、企业提供灵活的手段，使他们在对资金的安全性、流动性、盈利性相统一的管理上更方便灵活，又为中央银行实施货币政策以调控宏观经济提供手段，为保证金融市场的发展发挥巨大作用。</strong></p>
-<ul>
-<li>（一）为政府、企业调剂短期资金余缺，满足短期资金需求，优化资源配置</li>
-<li>（二）货币市场是商业银行等金融机构进行流通性管理的市场</li>
-<li>（三）政策传导功能</li>
-<li>（四）生成市场基准利率，形成金融市场的基础价格</li>
-<li></li>
-</ul>
-<h2 id="三、货币市场效率"><a href="#三、货币市场效率" class="headerlink" title="三、货币市场效率"></a>三、货币市场效率</h2><p><strong>一个有效率的货币市场应该是一个具有广度、深度、弹性的市场。</strong>货币市场的广度是指货币市场参与者多样化；货币市场的深度是指货币市场交易的活跃程度；货币市场的弹性则是指货币市场在应付突发事件及大手笔成交之后价格的迅速的调整能能力。</p>
-<h1 id="第二节-同行拆借市场"><a href="#第二节-同行拆借市场" class="headerlink" title="第二节 同行拆借市场"></a>第二节 同行拆借市场</h1><p><strong>同行拆解市场是指具有准入资格的金融机构之间以货币借贷的方式临时性资金通融的市场作为货币市场中最基础和最重要的组成部分，同行拆借市场交易量非常大，能对社会资金周转和货币流通产生重大影响，拆借率也是利率体系中最具影响力的利率之一，也是各国金融管理部门进行监管的重点</strong></p>
-<h2 id="一、同业发生拆借的原因"><a href="#一、同业发生拆借的原因" class="headerlink" title="一、同业发生拆借的原因"></a>一、同业发生拆借的原因</h2><ul>
-<li>（一）法定存款准备金不足</li>
-<li>（二）备付金不足</li>
-<li>（三）结算资金不足</li>
-<li>（四）临时性其它资金不足</li>
-</ul>
-<h2 id="二、同业拆借市场的形成与发展"><a href="#二、同业拆借市场的形成与发展" class="headerlink" title="二、同业拆借市场的形成与发展"></a>二、同业拆借市场的形成与发展</h2><p><strong>同行拆借市场产生于存款准备金政策的实施，伴随着中央银行业务和商业银行业务的发展而发展</strong></p>
-<h2 id="三、同行拆借市场的交易原理"><a href="#三、同行拆借市场的交易原理" class="headerlink" title="三、同行拆借市场的交易原理"></a>三、同行拆借市场的交易原理</h2><p><strong>同行拆借市场主要是银行等金融机构之间相互借贷在中央银行存款账户上的准备金余额用以调剂准备金头寸的市场。</strong></p>
-<h2 id="四、同业拆借市场主要构成要素"><a href="#四、同业拆借市场主要构成要素" class="headerlink" title="四、同业拆借市场主要构成要素"></a>四、同业拆借市场主要构成要素</h2><ul>
-<li>（一）市场参与者</li>
-<li>（二）拆借期限</li>
-<li>（三）拆借利息</li>
-</ul>
-<h2 id="五、同业拆借市场的特点"><a href="#五、同业拆借市场的特点" class="headerlink" title="五、同业拆借市场的特点"></a>五、同业拆借市场的特点</h2><ul>
-<li>（1）拆借期限短，其目的是救急而非救穷长期资金短缺</li>
-<li>（2）交易金额巨大</li>
-<li>（3）拆借手续简便快捷</li>
-<li>（4）市场化、无形化程度高</li>
-<li>（5）同业拆借率一般比普通贷款低</li>
-</ul>
-<h1 id="第三节-证券回购市场"><a href="#第三节-证券回购市场" class="headerlink" title="第三节 证券回购市场"></a>第三节 证券回购市场</h1><p><strong>证券回购，也叫售出与回购协议，是交易双方在进行证券买卖同时，就约定在未来某一时刻将进行一笔反向交易而达成的协议，即交易双方约定在未来某一时刻，证券出售者以某一个约定的价格将证券从其交易对受众买回的一种交易方式</strong></p>
-<h2 id="一、证券回购市场的运行机制"><a href="#一、证券回购市场的运行机制" class="headerlink" title="一、证券回购市场的运行机制"></a>一、证券回购市场的运行机制</h2><ul>
-<li>正回购（融资） Π+</li>
-<li>逆回购（融券） Π-<br><strong><em>一笔即期与远期交易的组合</em></strong></li>
-</ul>
-<h2 id="二、证券回购市场的要素"><a href="#二、证券回购市场的要素" class="headerlink" title="二、证券回购市场的要素"></a>二、证券回购市场的要素</h2><p><strong>证券回购市场的要素包括可流通证券的种类和价格、证券回购期限、保证金比例、回购利率、交易对手等</strong></p>
-<ul>
-<li>（一）可流通证券的种类与交易定价（证券价格是决定证券回购交易额的关键因素）</li>
-<li>（二）证券回购的期限</li>
-<li>（三）保证金的比例<ol>
-<li>证券回购的期限</li>
-<li>证券价格的易变性</li>
-<li>证券回购的利率<br> 国库券利率 &lt; 证券回购利率 &lt; 银行承兑汇票利率 &lt; 可转让定期存单利率 &lt; 拆借市场利率   </li>
-</ol>
-</li>
-</ul>
-<h2 id="三、证券回购市场的风险"><a href="#三、证券回购市场的风险" class="headerlink" title="三、证券回购市场的风险"></a>三、证券回购市场的风险</h2><p><strong>证券回购市场虽然有较高的流动性，以及质地较好的质押担保物，但同样具有风险</strong></p>
-<ul>
-<li>（一） 信用风险<br>  如果到约定期限后交易商无力回购政府债券等证券，客户只有保留这些抵押品；但如果侍奉债券利率上升，手中持有的债券价格就会下跌，客户所拥有的债券价值就会小于其借出的资金价值。<br>  （设置保证金、根据证券抵押品的市值随时调整方法）</li>
-<li>（二） 定价风险<br>  在证券回购协议早期发展中，主要采用的是竞价定价法，主要是从方便交易计算的角度来考虑的，即为了避免用作担保的证券价格变动产生的收益，再加上此期间应得的利息后出现零头的现象。然而，这种方法有利于证券购买者，不利于证券出售者。当证券回购的交易出现在两次领息期间时，证券价格中不包含本次到期的利息，这就意味着证券出售者出售证券所得到的资金要少于他在现货市场上出售证券的收入。因而出现了很明显的套利机会。</li>
-</ul>
-<h1 id="第四节-银行承兑汇票市场"><a href="#第四节-银行承兑汇票市场" class="headerlink" title="第四节 银行承兑汇票市场"></a>第四节 银行承兑汇票市场</h1><h2 id="一、银行承兑汇票的原理"><a href="#一、银行承兑汇票的原理" class="headerlink" title="一、银行承兑汇票的原理"></a>一、银行承兑汇票的原理</h2><p><strong>银行承兑汇票是在一般商业活动中产生的，后来本广泛用于国际结算。在国际贸易中，双方签订协议后，进口商申请本国银行开出商品信用证，表示开证行原以为进口商进行信用保证，并授权国外出口商可以开出以开征为付款人的汇票</strong><br>在国际贸易中运用银行承兑汇票至少具有如下三方面的优点：</p>
-<ul>
-<li>（一）出口商可以立即获得贷款进行生产，避免由货物装运引起的时间耽搁</li>
-<li>（二）由于乙国银行以本国货币支付给出口商，避免了国际贸易中的不同货币结算上的麻烦及汇率风险</li>
-<li>（三）由于财力雄厚、信誉卓越的银行对贷款的支付作担保，出口商无需花费财力和时间去调查进口商的信用情况</li>
-</ul>
-<h2 id="二、银行承兑汇票市场的运行机制"><a href="#二、银行承兑汇票市场的运行机制" class="headerlink" title="二、银行承兑汇票市场的运行机制"></a>二、银行承兑汇票市场的运行机制</h2><h3 id="（一）银行承兑汇票的一级市场"><a href="#（一）银行承兑汇票的一级市场" class="headerlink" title="（一）银行承兑汇票的一级市场"></a>（一）银行承兑汇票的一级市场</h3><ul>
-<li>出票</li>
-<li>承兑</li>
-</ul>
-<h3 id="二-银行承兑汇票的二级市场"><a href="#二-银行承兑汇票的二级市场" class="headerlink" title="(二) 银行承兑汇票的二级市场"></a>(二) 银行承兑汇票的二级市场</h3><h2 id="三、银行承兑汇票的价值分析"><a href="#三、银行承兑汇票的价值分析" class="headerlink" title="三、银行承兑汇票的价值分析"></a>三、银行承兑汇票的价值分析</h2><h3 id="（一）从银行角度看"><a href="#（一）从银行角度看" class="headerlink" title="（一）从银行角度看"></a>（一）从银行角度看</h3><blockquote>
-<p>对承兑银行而言，银行承兑汇票与吸收存款，然后再向进口商发放一笔用于购买进口商品的贷款相似。</p>
-</blockquote>
-<h3 id="（二）从借款人角度看"><a href="#（二）从借款人角度看" class="headerlink" title="（二）从借款人角度看"></a>（二）从借款人角度看</h3><blockquote>
-<p>从贷款人角度来看，利用银行承兑汇票筹集门槛较低、成本较低</p>
-</blockquote>
-<h3 id="（三）从投资者角度看"><a href="#（三）从投资者角度看" class="headerlink" title="（三）从投资者角度看"></a>（三）从投资者角度看</h3><blockquote>
-<p>从投资者角度看，投资银行承兑汇票具有较好的收益性、安全性、流动性。</p>
-</blockquote>
-<h1 id="第五节-商业票据市场"><a href="#第五节-商业票据市场" class="headerlink" title="第五节 商业票据市场"></a>第五节 商业票据市场</h1><p><strong>商业票据是一种短期的无担保券，是大公司为了筹集短期资金或弥补短期资金缺口，以贴现方式在货币市场发行的、承诺将来的一定时期偿付证券本息的凭证</strong></p>
-<h2 id="一、-商业票据市场的起源与发展"><a href="#一、-商业票据市场的起源与发展" class="headerlink" title="一、 商业票据市场的起源与发展"></a>一、 商业票据市场的起源与发展</h2><h2 id="二、-商业拍哦据的特性和种类"><a href="#二、-商业拍哦据的特性和种类" class="headerlink" title="二、 商业拍哦据的特性和种类"></a>二、 商业拍哦据的特性和种类</h2><ul>
-<li><p>(一) 商业票据的特性</p>
-<blockquote>
-<p>票据是具有一定权利的特性，包括付款请求权和追索权<br>票据的权利与义务是不存在任何原因的，只要持票人拿到票据后，就已经取得票据所赋予的全部权力<br>各国的票据法都要求对票据的任何形式和内容标准化和模式化<br>票据是可流动的证券。除了票据本身的限制外，票据可以凭背书和交付而转让的</p>
-</blockquote>
-</li>
-<li><p>(二) 商业票据的分类</p>
-<ol>
-<li>按照其性质不同，可以分为本票和汇票</li>
-<li>按出票人不同，可以分为银行汇票和商业汇票</li>
-<li>按承兑人不同，可以分为商业承兑汇票和银行承兑汇票</li>
-<li>按付款时间不同，可以分为即期汇票和远期汇票</li>
-<li>按有无附属单据，可以分为光票和跟单汇票</li>
-</ol>
-</li>
-</ul>
-<h2 id="三、商业票据市场的运行机制"><a href="#三、商业票据市场的运行机制" class="headerlink" title="三、商业票据市场的运行机制"></a>三、商业票据市场的运行机制</h2><p><strong><em>商业票据的发行机制包括票据发行方式、信用评级、发行价格的确定等方面</em></strong></p>
-<h3 id="（一）商业票据的发行方式"><a href="#（一）商业票据的发行方式" class="headerlink" title="（一）商业票据的发行方式"></a>（一）商业票据的发行方式</h3><blockquote>
-<p>直接发行、通过证券交易商发行<br>（一般发行人可以分为 <strong>非金融公司</strong> 、 <strong>金融机构</strong>）</p>
-</blockquote>
-<ol>
-<li>“可定承诺包销”，发行人将要发行的商业票据一次性出售给证券交易商，由后者包销商业票据，并承担市场风险。</li>
-<li>“随卖随买”，证券交易商只有在卖出商业票据时才向发行人返还扣除了的发行佣金后的发行款，卖出多少，返还多少。</li>
-<li>“公开利率推销”，以上两种方式结合。</li>
-</ol>
-<h3 id="（二）商业票据的信用评级"><a href="#（二）商业票据的信用评级" class="headerlink" title="（二）商业票据的信用评级"></a>（二）商业票据的信用评级</h3><ol>
-<li>总体流动性分析</li>
-<li>备用流动性分析</li>
-<li>额外信用支持分析</li>
-</ol>
-<h3 id="（三）商业票据的发行价格"><a href="#（三）商业票据的发行价格" class="headerlink" title="（三）商业票据的发行价格"></a>（三）商业票据的发行价格</h3><ul>
-<li>商业票据发行价格主要取决于以下因素：<ol>
-<li>发行者的信用等级</li>
-<li>同期银行借贷利率和其它货币市场利率</li>
-<li>商业票据的期限</li>
-<li>发行商业票据的非利息成本</li>
-</ol>
-</li>
-</ul>
-<h2 id="四、商业票据市场的价值分析"><a href="#四、商业票据市场的价值分析" class="headerlink" title="四、商业票据市场的价值分析"></a>四、商业票据市场的价值分析</h2><p>商业票据的优势与吸引力</p>
-<h3 id="（一）从发行人角度"><a href="#（一）从发行人角度" class="headerlink" title="（一）从发行人角度"></a>（一）从发行人角度</h3><ol>
-<li>融资成本相对较低</li>
-<li>融资效率较高</li>
-</ol>
-<h3 id="（二）从投资者角度"><a href="#（二）从投资者角度" class="headerlink" title="（二）从投资者角度"></a>（二）从投资者角度</h3><ol>
-<li>风险可控</li>
-<li>收益较高</li>
-<li>方案条款设计灵活</li>
-</ol>
-
-        <div id="aplayer-loBJWFOa" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content"></pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-loBJWFOa"),
-            narrow: false,
-            autoplay: true,
-            showlrc: false,
-            music: {
-              title: "紅顏舊",
-              author: "YungAn's Erhu Fantasy",
-              url: "/root-images/瑯琊榜插曲-紅顏舊 二胡版 by 永安 Nirvana in Fire - Aging of a Beauty (Erhu Cover).mp3",
-              pic: "",
-              lrc: ""
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1115,7 +1123,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">69</span>
+                  <span class="site-state-item-count">70</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1126,7 +1134,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1137,7 +1145,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/root-images/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

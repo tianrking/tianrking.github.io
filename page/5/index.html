@@ -324,6 +324,187 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tianrking.github.io/2020/02/26/时间系统/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tianrking">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/trk.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="w0x7c3">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/26/时间系统/" itemprop="url">时间系统</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-26T16:51:04+08:00">
+                02-26-2020
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/02/26/时间系统/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/26/时间系统/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="时间的概念"><a href="#时间的概念" class="headerlink" title="时间的概念"></a>时间的概念</h2><p>时刻：发生某一现象的瞬间，也叫历元。<br>时间间隔：发生某一现象经历的时间过程。<br>时间基准：时间的单位（尺度）和原点（起始历元），尺度是关键，<br>原点根据应用选定。</p>
+<h3 id="作为时间基准，要满足两个条件"><a href="#作为时间基准，要满足两个条件" class="headerlink" title="作为时间基准，要满足两个条件"></a>作为时间基准，要满足两个条件</h3><ol>
+<li>能做连续性的周期运动，且运动周期十分稳定；</li>
+<li>运动的周期必须具有复现性</li>
+</ol>
+<h3 id="在GNSS中，时间的重要性表现在"><a href="#在GNSS中，时间的重要性表现在" class="headerlink" title="在GNSS中，时间的重要性表现在"></a>在GNSS中，时间的重要性表现在</h3><ol>
+<li>准确计算卫星位置，1cm，2.6×10-6s；</li>
+<li>通过时间测量距离，1cm，3×10-11s；</li>
+<li>地球自转位置改变，赤道上，1cm， 2.16×10-5s。</li>
+</ol>
+<h2 id="恒星时"><a href="#恒星时" class="headerlink" title="恒星时"></a>恒星时</h2><p>定义：以春分点为参考点的周日视运动所定义的时间；<br>尺度：春分点连续两次经过本地子午圈的时间间隔为一个<br>恒星日，一个恒星日等于24个恒星小时。<br>测量：春分点相对本地子午圈的时角。<br>具有地方性，所以又叫做地方恒星时</p>
+<h2 id="平太阳时"><a href="#平太阳时" class="headerlink" title="平太阳时"></a>平太阳时</h2><p>定义：以平太阳（以真太阳周年运动的平均速度在天球赤道上作周年视运动）为参考点定义的时间系统称为平太阳时。<br>尺度：平太阳连续两次经过本地子午圈的时间间隔为一个平太阳日，24小时，60分，60秒  测量：平太阳与本地子午圈的时角<br>平太阳时 具有地方性<br>平太阳时=366.2422/365.2422=（1+0.002 737 909）恒星时</p>
+<h2 id="世界时"><a href="#世界时" class="headerlink" title="世界时"></a>世界时</h2><p>国际天文学联合会于1928年决定，将由格林尼治平子夜<br>起算的平太阳时称为世界时。<br>与平太阳时尺度相同，起点不同：世界时=平太阳时+12h<br>UT0——未经改正的世界时<br>UT1——加入极移改正<br>UT2——加入地球自转速度的季节性改正</p>
+<h2 id="儒略日"><a href="#儒略日" class="headerlink" title="儒略日"></a>儒略日</h2><p>儒略日是从公元前4713年1月1日格林尼治平正午起算的连续天数，注意是是平太阳日，而不是恒星日。</p>
+<h2 id="地方时"><a href="#地方时" class="headerlink" title="地方时"></a>地方时</h2><p>不管是恒星时还是平太阳时，都与观测者所在的位置有关，因此，时<br>间不统一，给使用带来不便。<br>现行的做法是通过定义时区来统一进行时间的换算：从西经7.5º到东<br>经7.5º（经度间隔为15º）为零时区，从零时区的边界分别向东和向<br>西，每隔经度15º划一个时区，东西各划出12个时区，东12时区和西<br>12时区重合，全球共划出24个时区，各时区都以中央经线的地方平<br>时为本区的区时，相邻两时区的区时相差1小时。<br>地方时=世界时+区号（东区为正，西区为负），例如北京在东八区<br>，则北京时间=世界时+8小时</p>
+<p>国际日期变更线：180°经线，当由东向西越过时，日期要<br>增加一天，当由西向东越过时，日期要减小1天</p>
+<h2 id="原子时"><a href="#原子时" class="headerlink" title="原子时"></a>原子时</h2><p>定义：以物质内部原子运动的特征为基础的时间系统<br>尺度：位于海平面上的Cs133原子基态的两个超精细能级<br>在零磁场中跃迁辐射震荡9 192 631 770周所持续时间为<br>原子时1s<br>起点：1958年1月1日0时，与世界时对齐。<br>国际原子时（International Atomic Time，TAI）：国际<br>上100座原子钟通过数据处理推算出的统一的原子时系统<br>。</p>
+<h2 id="协调世界时"><a href="#协调世界时" class="headerlink" title="协调世界时"></a>协调世界时</h2><p>为了避免原子时与世界时之间产生过大的偏差，自1972年开始采用了一种以原子时秒长为基础，在时刻上尽量接<br>近世界时的折中的时间系统，称为协调世界时（UTC）。<br>当协调时与世界时的时刻相差超过±0.9s时，便在协调时中加入1闰秒<br>TAI=UTC+1s×n</p>
+<h2 id="GNSS时间系统"><a href="#GNSS时间系统" class="headerlink" title="GNSS时间系统"></a>GNSS时间系统</h2><p>GPST：与原子时尺度相<br>同，起点是1980年1月6日 0时，在此刻与UTC一致<br> 不闰秒<br> TAI-GPST=19s<br> GPST=UTC-19s+n</p>
+<p> BDT：与原子时尺度相同，起<br>点是2006年1月1日0时，与此<br>刻的UTC一致<br> 不闰秒<br> 北斗的导航电文中提供了北斗<br>时间与GPS时间之间的转换参<br>数A0GPS和A1GPS<br> tGPS=tBDT-ΔtGPS<br> ΔtGPS=A0GPS+A1GPS×tBDT</p>
+<h2 id="GNSS系统的计时方法"><a href="#GNSS系统的计时方法" class="headerlink" title="GNSS系统的计时方法"></a>GNSS系统的计时方法</h2><pre><code>周+周积秒
+</code></pre><p>GPS周：从1980年1月6日0时起算<br> 例如2017年3月6日属于GPS的第1939周<br>周积秒：从星期日0时0分0秒起算<br> 例如星期一8 h30min56sec，周积秒是117056秒</p>
+<p>北斗周：从2006年1月1日0时起算<br> 例如2017年3月6日属于北斗的第583周<br>周积秒：从星期日0时0分0秒起算<br> 例如星期一8 h30min56sec，周积秒是117056秒</p>
+<h1 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h1><ol>
+<li>名词解释：历元，时间基准，世界时系统，恒星时，平太阳时，世<br>界时，UT1，UT2，地方时，北京时间，原子时，国际原子时TAI，<br>协调世界时UTC，闰秒（跳秒），GNSS时，儒略日</li>
+<li>一个可观测的周期运动，符合什么要求就可以作为时间的基准？</li>
+<li>在GNSS卫星定位中，时间系统的重要意义表现在哪些方面？</li>
+<li>为什么要跳秒？怎么设置跳秒？</li>
+<li>GPST和BDT是如何定义的？</li>
+<li>将北京时间2011年10月25日14时20分48秒转换成GPS时间。</li>
+<li>将2019年9月10日转换成儒略日</li>
+</ol>
+
+        <div id="aplayer-dhXUyffy" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-dhXUyffy"),
+            narrow: false,
+            autoplay: false,
+            showlrc: false,
+            music: {
+              title: "",
+              author: "/media/mp3/.mp3",
+              url: "autoplay",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://tianrking.github.io/2020/02/25/图像处理1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -453,12 +634,12 @@
 <li>在图像处理领域，近年来引入了一些新的理论并提出了一些新的算法，如 Wavelet、<br>Fractal、Morphology、遗传算法和神经网络等。对于这些理论在未来图像处理理论与技术上的作用应给予充分的注意，并积极地加以研究。</li>
 </ul>
 
-        <div id="aplayer-DsrUYqjt" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-GJwnGQNy" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-DsrUYqjt"),
+            element: document.getElementById("aplayer-GJwnGQNy"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -640,245 +821,12 @@
 </ol>
 <p>理想的电子元件: 电阻 电容 电感</p>
 
-        <div id="aplayer-zTYLeMzk" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-REkzFAVG" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-zTYLeMzk"),
-            narrow: false,
-            autoplay: false,
-            showlrc: false,
-            music: {
-              title: "",
-              author: "/media/mp3/.mp3",
-              url: "autoplay",
-              pic: "",
-              lrc: ""
-            }
-          });
-          window.aplayers || (window.aplayers = []);
-          window.aplayers.push(ap);
-        </script>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tianrking.github.io/2020/02/24/卫星导航定位原理1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="tianrking">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/trk.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="w0x7c3">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/24/卫星导航定位原理1/" itemprop="url">卫星导航定位原理1</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-24T19:26:47+08:00">
-                02-24-2020
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/02/24/卫星导航定位原理1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/24/卫星导航定位原理1/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h2><h3 id="1-2-子午卫星定位导航系统"><a href="#1-2-子午卫星定位导航系统" class="headerlink" title="1.2  子午卫星定位导航系统"></a>1.2  子午卫星定位导航系统</h3><p>1958 12 三项研究</p>
-<ol>
-<li>研制卫星</li>
-</ol>
-<ul>
-<li>多普勒效应</li>
-<li>双曲面定位</li>
-<li>组成<ol>
-<li>空间部分</li>
-<li>地面控制部分</li>
-<li>用户部分</li>
-</ol>
-</li>
-</ul>
-<p>多普勒卫星定位</p>
-<ol>
-<li>一次定位所需时间过长,作业效率低</li>
-<li>通常卫星少,观测时间和间隔时间长,无法提供实时导航定位服务</li>
-<li>导航定位精度低</li>
-</ol>
-<p>GPS空间部分组成</p>
-<ul>
-<li>6个轨道面</li>
-<li>平均轨道高度20200km</li>
-<li>轨道倾角55 各轨道夹角60 每个轨道均匀分布4颗卫星,相邻轨道卫星彼此岔开30 </li>
-<li>周期 11h58m </li>
-</ul>
-<p>GPS卫星星座</p>
-<ul>
-<li>设计星座 21+3</li>
-<li>21颗<br>-<br>-</li>
-</ul>
-<p>主控站 1 注入站 3</p>
-<p>主控站:<br>作用:</p>
-<ul>
-<li>管理 协调 地面监控系统各部分的工作</li>
-<li>收集监测站</li>
-<li>-<br>-</li>
-</ul>
-<p>监测站:<br>作用:</p>
-<ul>
-<li>接收卫星数据,采集气象信息,并将所收集到的数据传送给主控站</li>
-</ul>
-<p>美国的GPS政策<br>SA与AS<br>SPS民用 PPS军用</p>
-<p>3代北斗卫星<br>北斗系统优势</p>
-<ol>
-<li>短报文通讯</li>
-</ol>
-<p>GNSS在国民经济中的应用</p>
-<ol>
-<li>定位精度高</li>
-<li>观测时间短</li>
-</ol>
-<p>GNSS的应用</p>
-<ol>
-<li>测量领域的应用</li>
-<li>交通运输 公共安全</li>
-</ol>
-<h2 id="公转运动"><a href="#公转运动" class="headerlink" title="公转运动"></a>公转运动</h2><p><strong>公转的轨道叫做黄道</strong></p>
-<h2 id="自转运动"><a href="#自转运动" class="headerlink" title="自转运动"></a>自转运动</h2><p><strong>从北极看逆时针旋转</strong></p>
-<h2 id="黄赤交角"><a href="#黄赤交角" class="headerlink" title="黄赤交角"></a>黄赤交角</h2><p>地球的自转轴与黄道面的夹角为66度33分.<br>地球的赤道面与黄道面的夹角是23度27分.</p>
-<p>黄道面与赤道面有两个交点:春分点.秋分点</p>
-<p>以天球为基准建立的坐标系就是天球坐标系</p>
-<ul>
-<li>天轴(地球自转轴)与天极(轴与天球交点)</li>
-<li>天球子午面与天球子午圈</li>
-<li>天球赤道面与天球赤道</li>
-<li>黄道面与黄道 黄赤交角</li>
-<li>黄级</li>
-<li>春分点</li>
-</ul>
-<p>天球球面坐标系</p>
-<ul>
-<li>坐标原点: 地球质心</li>
-<li>Z轴:指向北天极</li>
-<li>X轴:指向春分点</li>
-<li>Y轴:与X和Z轴构成右手坐标系</li>
-<li>空间点s的天球坐标为(X,Y,Z)</li>
-</ul>
-<p>岁差:(春分点西移)</p>
-<p>协议惯性坐标系:</p>
-<ol>
-<li></li>
-</ol>
-
-        <div id="aplayer-gOloGaYw" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
-            <pre class="aplayer-lrc-content"></pre>
-        </div>
-        <script>
-          var ap = new APlayer({
-            element: document.getElementById("aplayer-gOloGaYw"),
+            element: document.getElementById("aplayer-REkzFAVG"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -931,7 +879,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -981,7 +929,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">69</span>
+                  <span class="site-state-item-count">70</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -992,7 +940,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1003,7 +951,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/root-images/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
