@@ -324,6 +324,136 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tianrking.github.io/2020/05/07/机器学习中的基本计算机视觉概念/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tianrking">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/trk.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="w0x7c3">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/07/机器学习中的基本计算机视觉概念/" itemprop="url">机器学习中的基本计算机视觉概念</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-07T11:23:48+08:00">
+                05-07-2020
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/05/07/机器学习中的基本计算机视觉概念/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/07/机器学习中的基本计算机视觉概念/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import tensorflow as tf</span><br><span class="line">import numpy as np</span><br><span class="line">from tensorflow import keras</span><br><span class="line"></span><br><span class="line">#https://codelabs.developers.google.com/codelabs/tensorflow-lab1-helloworld/#0</span><br><span class="line"></span><br><span class="line">#定义模型 单层神经网络  units=1 1个神经元  单个数据放入神经元 一个x值</span><br><span class="line">model = tf.keras.Sequential([keras.layers.Dense(units=1, input_shape=[1])])</span><br><span class="line"></span><br><span class="line">#优化函数 损失函数</span><br><span class="line">model.compile(optimizer=&apos;sgd&apos;, loss=&apos;mean_squared_error&apos;)</span><br><span class="line"></span><br><span class="line">xs = np.array([-1.0, 0.0, 1.0, 2.0, 3.0, 4.0], dtype=float)</span><br><span class="line">ys = np.array([-2.0, 1.0, 4.0, 7.0, 10.0, 13.0], dtype=float)</span><br><span class="line"></span><br><span class="line"># 模型经过循环次数 epochs=500 词</span><br><span class="line">model.fit(xs, ys, epochs=500)</span><br><span class="line"></span><br><span class="line">print(model.predict([10.0]))</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://tianrking.github.io/2020/05/07/tensorflow-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -406,12 +536,12 @@
         
           
             
-        <div id="aplayer-DyxaqASG" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-eoQGKMdU" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-DyxaqASG"),
+            element: document.getElementById("aplayer-eoQGKMdU"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -555,12 +685,12 @@
         
           
             
-        <div id="aplayer-MUHbjNSI" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-PwAdVtaZ" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-MUHbjNSI"),
+            element: document.getElementById("aplayer-PwAdVtaZ"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -575,138 +705,6 @@
           window.aplayers || (window.aplayers = []);
           window.aplayers.push(ap);
         </script>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tianrking.github.io/2020/05/03/Daily-English/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="tianrking">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/trk.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="w0x7c3">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/05/03/Daily-English/" itemprop="url">Daily_English</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-03T23:24:47+08:00">
-                05-03-2020
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/05/03/Daily-English/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/03/Daily-English/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>consult        请教<br>experts        专家<br>interviewing        面试<br>competence        权限<br>tiresome        烦人的<br>persistence        坚持不懈<br>divorce        离婚<br>ridiculous        荒谬<br>criticism        批评</p>
-<p>assessed        被评估<br>assigned        已分配<br>consequences        后果<br>conspicuously        明显地<br>deficits        赤字<br>detrimental        有害<br>designate        指定<br>digestion        消化<br>excel        擅长<br>indulging        沉迷<br>loophole        漏洞<br>rapidly        迅速地<br>redundant        多余的<br>regularly        经常<br>similar        类似<br>factor        因子<br>chronic        慢性的<br>disease        疾病<br>indicator        指示符<br>cholesterol        胆固醇<br>inactivity        不活跃<br>cancers        癌症<br>worse        更差<br>insufficient        不足<br>negative        负<br>obesity        肥胖<br>impairment        减损<br>cognitive        认知的<br>presented        提出了<br>evidence        证据</p>
-<p>emerge        出现<br>mood        心情<br>individual        个人<br>obese        肥胖的<br>hugely        极大地<br>dietary        饮食上的<br>indicator        指示符</p>
-
           
         
       
@@ -795,7 +793,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">71</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -806,7 +804,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -817,7 +815,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/root-images/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
