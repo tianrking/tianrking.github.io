@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="w0x7ce" /><meta name="description" content="123 321" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="w0x7ce" /><meta name="description" content="Shell echo命令 1.显示普通字符串: echo &amp;ldquo;It is a test&amp;rdquo; 这里的双引号完全可以省略，以下命令与上面实例效果一致： echo It is a test 2.显示转义字符 echo &amp;ldquo;&amp;quot;It is a test&amp;quot;&amp;rdquo; 结果将" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -40,19 +40,19 @@
 
 
 <meta property="og:title" content="常用Linux命令(一)" />
-<meta property="og:description" content="123 321" />
+<meta property="og:description" content="Shell echo命令 1.显示普通字符串: echo &ldquo;It is a test&rdquo; 这里的双引号完全可以省略，以下命令与上面实例效果一致： echo It is a test 2.显示转义字符 echo &ldquo;&quot;It is a test&quot;&rdquo; 结果将" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%B8%80/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-09-12T15:33:23+08:00" />
 <meta property="article:modified_time" content="2021-09-12T15:33:23+08:00" />
 
 <meta itemprop="name" content="常用Linux命令(一)">
-<meta itemprop="description" content="123 321"><meta itemprop="datePublished" content="2021-09-12T15:33:23+08:00" />
+<meta itemprop="description" content="Shell echo命令 1.显示普通字符串: echo &ldquo;It is a test&rdquo; 这里的双引号完全可以省略，以下命令与上面实例效果一致： echo It is a test 2.显示转义字符 echo &ldquo;&quot;It is a test&quot;&rdquo; 结果将"><meta itemprop="datePublished" content="2021-09-12T15:33:23+08:00" />
 <meta itemprop="dateModified" content="2021-09-12T15:33:23+08:00" />
-<meta itemprop="wordCount" content="2">
+<meta itemprop="wordCount" content="359">
 <meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="常用Linux命令(一)"/>
-<meta name="twitter:description" content="123 321"/>
+<meta name="twitter:description" content="Shell echo命令 1.显示普通字符串: echo &ldquo;It is a test&rdquo; 这里的双引号完全可以省略，以下命令与上面实例效果一致： echo It is a test 2.显示转义字符 echo &ldquo;&quot;It is a test&quot;&rdquo; 结果将"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/%E7%B3%BB%E7%BB%9F/"> 系统 </a>
             </div>
-          <span class="more-meta"> 2 words </span>
+          <span class="more-meta"> 359 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -145,12 +145,56 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#shell-echo命令">Shell echo命令</a></li>
+  </ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
-      <p>123
-321</p>
+      <h1 id="shell-echo命令">Shell echo命令</h1>
+<p>1.显示普通字符串:
+echo &ldquo;It is a test&rdquo;
+这里的双引号完全可以省略，以下命令与上面实例效果一致：</p>
+<p>echo It is a test
+2.显示转义字符
+echo &ldquo;&quot;It is a test&quot;&rdquo;
+结果将是:</p>
+<p>&ldquo;It is a test&rdquo;
+同样，双引号也可以省略</p>
+<p>3.显示变量
+read 命令从标准输入中读取一行,并把输入行的每个字段的值指定给 shell 变量</p>
+<p>#!/bin/sh
+read name
+echo &ldquo;$name It is a test&rdquo;
+以上代码保存为 test.sh，name 接收标准输入的变量，结果将是:</p>
+<p>[root@www ~]# sh test.sh
+OK                     #标准输入
+OK It is a test        #输出
+4.显示换行
+echo -e &ldquo;OK! \n&rdquo; # -e 开启转义
+echo &ldquo;It is a test&rdquo;
+输出结果：</p>
+<p>OK!</p>
+<p>It is a test
+5.显示不换行
+#!/bin/sh
+echo -e &ldquo;OK! \c&rdquo; # -e 开启转义 \c 不换行
+echo &ldquo;It is a test&rdquo;
+输出结果：</p>
+<p>OK! It is a test
+6.显示结果定向至文件
+echo &ldquo;It is a test&rdquo; &gt; myfile
+7.原样输出字符串，不进行转义或取变量(用单引号)
+echo &lsquo;$name&quot;&rsquo;
+输出结果：</p>
+<p>$name&quot;
+8.显示命令执行结果
+echo <code>date</code>
+注意： 这里使用的是反引号 `, 而不是单引号 &lsquo;。</p>
+<p>结果将显示当前日期</p>
+<p>Thu Jul 24 10:08:46 CST 2014</p>
 
     </div>
 

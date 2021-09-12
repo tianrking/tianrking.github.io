@@ -22,7 +22,7 @@
       <pubDate>Sun, 12 Sep 2021 15:33:23 +0800</pubDate>
       
       <guid>http://localhost:1313/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%B8%80/</guid>
-      <description>123 321</description>
+      <description>Shell echo命令 1.显示普通字符串: echo &amp;ldquo;It is a test&amp;rdquo; 这里的双引号完全可以省略，以下命令与上面实例效果一致： echo It is a test 2.显示转义字符 echo &amp;ldquo;&amp;quot;It is a test&amp;quot;&amp;rdquo; 结果将</description>
     </item>
     
     <item>
