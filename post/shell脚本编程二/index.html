@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Shell脚本编程(二)">
 <meta itemprop="description" content="Shell 传递参数 我们可以在执行 Shell 脚本时，向脚本传递参数，脚本内获取参数的格式为：$n。n 代表一个数字，1 为执行脚本的第一个参数，2 为执行脚本的第二"><meta itemprop="datePublished" content="2021-09-12T18:45:47+08:00" />
 <meta itemprop="dateModified" content="2021-09-12T18:45:47+08:00" />
-<meta itemprop="wordCount" content="946">
+<meta itemprop="wordCount" content="1421">
 <meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Shell脚本编程(二)"/>
 <meta name="twitter:description" content="Shell 传递参数 我们可以在执行 Shell 脚本时，向脚本传递参数，脚本内获取参数的格式为：$n。n 代表一个数字，1 为执行脚本的第一个参数，2 为执行脚本的第二"/>
@@ -136,8 +136,8 @@
         <div class="post-category">
             <a href="/categories/%E7%B3%BB%E7%BB%9F/"> 系统 </a>
             </div>
-          <span class="more-meta"> 946 words </span>
-          <span class="more-meta"> 2 mins read </span>
+          <span class="more-meta"> 1421 words </span>
+          <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -150,6 +150,14 @@
     <li><a href="#shell-传递参数">Shell 传递参数</a>
       <ul>
         <li><a href="#-与--区别">$* 与 $@ 区别：</a></li>
+      </ul>
+    </li>
+    <li><a href="#shell-数组">Shell 数组</a>
+      <ul>
+        <li><a href="#定义数组">定义数组:</a></li>
+        <li><a href="#读取数组">读取数组</a></li>
+        <li><a href="#获取数组中的所有元素">获取数组中的所有元素</a></li>
+        <li><a href="#获取数组长度的方法">获取数组长度的方法</a></li>
       </ul>
     </li>
   </ul>
@@ -232,6 +240,74 @@ $ ./test.sh 1 2 3
 2
 3
 </code></pre>
+<h1 id="shell-数组">Shell 数组</h1>
+<p>数组中可以存放多个值。Bash Shell 只支持一维数组（不支持多维数组），初始化时不需要定义数组大小（与 PHP 类似）。</p>
+<p>与大部分编程语言类似，数组元素的下标由 0 开始。</p>
+<p>Shell 数组用括号来表示，元素用&quot;空格&quot;符号分割开，语法格式如下：</p>
+<pre><code>array_name=(value1 value2 ... valuen)
+实例
+#!/bin/bash
+my_array=(A B &quot;C&quot; D)
+</code></pre>
+<h2 id="定义数组">定义数组:</h2>
+<pre><code>array_name[0]=value0
+array_name[1]=value1
+array_name[2]=value2
+</code></pre>
+<h2 id="读取数组">读取数组</h2>
+<p>读取数组元素值的一般格式是：</p>
+<pre><code>${array_name[index]}
+实例
+#!/bin/bash
+my_array=(A B &quot;C&quot; D)
+
+echo &quot;第一个元素为: ${my_array[0]}&quot;
+echo &quot;第二个元素为: ${my_array[1]}&quot;
+echo &quot;第三个元素为: ${my_array[2]}&quot;
+echo &quot;第四个元素为: ${my_array[3]}&quot;
+</code></pre>
+<p>执行脚本，输出结果如下所示：</p>
+<pre><code>$ chmod +x test.sh 
+$ ./test.sh
+第一个元素为: A
+第二个元素为: B
+第三个元素为: C
+第四个元素为: D
+</code></pre>
+<h2 id="获取数组中的所有元素">获取数组中的所有元素</h2>
+<p>使用@ 或 * 可以获取数组中的所有元素，例如：</p>
+<pre><code>#!/bin/bash
+my_array[0]=A
+my_array[1]=B
+my_array[2]=C
+my_array[3]=D
+
+echo &quot;数组的元素为: ${my_array[*]}&quot;
+echo &quot;数组的元素为: ${my_array[@]}&quot;
+</code></pre>
+<p>执行脚本，输出结果如下所示：</p>
+<pre><code>$ chmod +x test.sh 
+$ ./test.sh
+数组的元素为: A B C D
+数组的元素为: A B C D
+获取数组的长度
+</code></pre>
+<h2 id="获取数组长度的方法">获取数组长度的方法</h2>
+<pre><code>#!/bin/bash
+my_array[0]=A
+my_array[1]=B
+my_array[2]=C
+my_array[3]=D
+
+echo &quot;数组元素个数为: ${#my_array[*]}&quot;
+echo &quot;数组元素个数为: ${#my_array[@]}&quot;
+</code></pre>
+<p>执行脚本，输出结果如下所示：</p>
+<pre><code>$ chmod +x test.sh 
+$ ./test.sh
+数组元素个数为: 4
+数组元素个数为: 4
+</code></pre>
 
     </div>
 
@@ -255,7 +331,11 @@ $ ./test.sh 1 2 3
           <a href="/tags/linux/">Linux</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%89/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Shell脚本编程(三)</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         <a class="next" href="/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%80/">
             <span class="next-text nav-default">Shell脚本编程(一)</span>
             <span class="next-text nav-mobile">Next</span>

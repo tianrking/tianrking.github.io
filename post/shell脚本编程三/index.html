@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Shell脚本编程(三) - WoW</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="w0x7ce" /><meta name="description" content="Shell 基本运算符 Shell 和其他编程语言一样，支持多种运算符，包括： 算数运算符 关系运算符 布尔运算符 字符串运算符 文件测试运算符 原生bash不支持简单的数学" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%89/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Shell脚本编程(三)" />
+<meta property="og:description" content="Shell 基本运算符 Shell 和其他编程语言一样，支持多种运算符，包括： 算数运算符 关系运算符 布尔运算符 字符串运算符 文件测试运算符 原生bash不支持简单的数学" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%89/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-09-12T19:01:25+08:00" />
+<meta property="article:modified_time" content="2021-09-12T19:01:25+08:00" />
+
+<meta itemprop="name" content="Shell脚本编程(三)">
+<meta itemprop="description" content="Shell 基本运算符 Shell 和其他编程语言一样，支持多种运算符，包括： 算数运算符 关系运算符 布尔运算符 字符串运算符 文件测试运算符 原生bash不支持简单的数学"><meta itemprop="datePublished" content="2021-09-12T19:01:25+08:00" />
+<meta itemprop="dateModified" content="2021-09-12T19:01:25+08:00" />
+<meta itemprop="wordCount" content="3332">
+<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Shell脚本编程(三)"/>
+<meta name="twitter:description" content="Shell 基本运算符 Shell 和其他编程语言一样，支持多种运算符，包括： 算数运算符 关系运算符 布尔运算符 字符串运算符 文件测试运算符 原生bash不支持简单的数学"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">WoW</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">WoW</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Shell脚本编程(三)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-09-12 </span>
+        <div class="post-category">
+            <a href="/categories/%E7%B3%BB%E7%BB%9F/"> 系统 </a>
+            </div>
+          <span class="more-meta"> 3332 words </span>
+          <span class="more-meta"> 7 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#shell-基本运算符">Shell 基本运算符</a>
+      <ul>
+        <li><a href="#expr-是一款表达式计算工具使用它能完成表达式的求值操作">expr 是一款表达式计算工具，使用它能完成表达式的求值操作。</a></li>
+        <li><a href="#算术运算符实例如下">算术运算符实例如下：</a></li>
+        <li><a href="#关系运算符">关系运算符</a></li>
+        <li><a href="#布尔运算符">布尔运算符</a></li>
+        <li><a href="#逻辑运算符">逻辑运算符</a></li>
+        <li><a href="#字符串运算符">字符串运算符</a></li>
+        <li><a href="#文件测试运算符">文件测试运算符</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="shell-基本运算符">Shell 基本运算符</h1>
+<p>Shell 和其他编程语言一样，支持多种运算符，包括：</p>
+<ul>
+<li>算数运算符</li>
+<li>关系运算符</li>
+<li>布尔运算符</li>
+<li>字符串运算符</li>
+<li>文件测试运算符</li>
+</ul>
+<p>原生bash不支持简单的数学运算，但是可以通过其他命令来实现，例如 awk 和 expr，expr 最常用。</p>
+<h2 id="expr-是一款表达式计算工具使用它能完成表达式的求值操作">expr 是一款表达式计算工具，使用它能完成表达式的求值操作。</h2>
+<p>例如，两个数相加(注意使用的是反引号 ` 而不是单引号 &lsquo;)：</p>
+<pre><code>#!/bin/bash
+
+val=`expr 2 + 2`
+echo &quot;两数之和为 : $val&quot;
+</code></pre>
+<p>运行实例 »
+执行脚本，输出结果如下所示：</p>
+<pre><code>两数之和为 : 4
+两点注意：
+</code></pre>
+<p>表达式和运算符之间要有空格，例如 2+2 是不对的，必须写成 2 + 2，这与我们熟悉的大多数编程语言不一样。
+完整的表达式要被 <code> </code> 包含，注意这个字符不是常用的单引号，在 Esc 键下边。
+算术运算符
+下表列出了常用的算术运算符，假定变量 a 为 10，变量 b 为 20：</p>
+<pre><code>运算符	说明	举例
++	加法	`expr $a + $b` 结果为 30。
+-	减法	`expr $a - $b` 结果为 -10。
+*	乘法	`expr $a \* $b` 结果为  200。
+/	除法	`expr $b / $a` 结果为 2。
+%	取余	`expr $b % $a` 结果为 0。
+=	赋值	a=$b 将把变量 b 的值赋给 a。
+==	相等。用于比较两个数字，相同则返回 true。	[ $a == $b ] 返回 false。
+!=	不相等。用于比较两个数字，不相同则返回 true。	[ $a != $b ] 返回 true。
+注意：条件表达式要放在方括号之间，并且要有空格，例如: [$a==$b] 是错误的，必须写成 [ $a == $b ]。
+</code></pre>
+<h2 id="算术运算符实例如下">算术运算符实例如下：</h2>
+<pre><code>#!/bin/bash
+a=10
+b=20
+
+val=`expr $a + $b`
+echo &quot;a + b : $val&quot;
+
+val=`expr $a - $b`
+echo &quot;a - b : $val&quot;
+
+val=`expr $a \* $b`
+echo &quot;a * b : $val&quot;
+
+val=`expr $b / $a`
+echo &quot;b / a : $val&quot;
+
+val=`expr $b % $a`
+echo &quot;b % a : $val&quot;
+
+if [ $a == $b ]
+then
+   echo &quot;a 等于 b&quot;
+fi
+if [ $a != $b ]
+then
+   echo &quot;a 不等于 b&quot;
+fi
+</code></pre>
+<p>执行脚本，输出结果如下所示：</p>
+<pre><code>a + b : 30
+a - b : -10
+a * b : 200
+b / a : 2
+b % a : 0
+a 不等于 b
+</code></pre>
+<p>注意：</p>
+<p>乘号(<em>)前边必须加反斜杠()才能实现乘法运算；
+if&hellip;then&hellip;fi 是条件语句，后续将会讲解。
+在 MAC 中 shell 的 expr 语法是：$((表达式))，此处表达式中的 &ldquo;</em>&rdquo; 不需要转义符号 &ldquo;&quot; 。</p>
+<h2 id="关系运算符">关系运算符</h2>
+<p>关系运算符只支持数字，不支持字符串，除非字符串的值是数字。</p>
+<p>下表列出了常用的关系运算符，假定变量 a 为 10，变量 b 为 20：</p>
+<pre><code>运算符	说明	举例
+-eq	检测两个数是否相等，相等返回 true。	[ $a -eq $b ] 返回 false。
+-ne	检测两个数是否不相等，不相等返回 true。	[ $a -ne $b ] 返回 true。
+-gt	检测左边的数是否大于右边的，如果是，则返回 true。	[ $a -gt $b ] 返回 false。
+-lt	检测左边的数是否小于右边的，如果是，则返回 true。	[ $a -lt $b ] 返回 true。
+-ge	检测左边的数是否大于等于右边的，如果是，则返回 true。	[ $a -ge $b ] 返回 false。
+-le	检测左边的数是否小于等于右边的，如果是，则返回 true。	[ $a -le $b ] 返回 true。
+</code></pre>
+<p>关系运算符实例如下：</p>
+<pre><code class="language-实例">#!/bin/bash
+a=10
+b=20
+
+if [ $a -eq $b ]
+then
+   echo &quot;$a -eq $b : a 等于 b&quot;
+else
+   echo &quot;$a -eq $b: a 不等于 b&quot;
+fi
+if [ $a -ne $b ]
+then
+   echo &quot;$a -ne $b: a 不等于 b&quot;
+else
+   echo &quot;$a -ne $b : a 等于 b&quot;
+fi
+if [ $a -gt $b ]
+then
+   echo &quot;$a -gt $b: a 大于 b&quot;
+else
+   echo &quot;$a -gt $b: a 不大于 b&quot;
+fi
+if [ $a -lt $b ]
+then
+   echo &quot;$a -lt $b: a 小于 b&quot;
+else
+   echo &quot;$a -lt $b: a 不小于 b&quot;
+fi
+if [ $a -ge $b ]
+then
+   echo &quot;$a -ge $b: a 大于或等于 b&quot;
+else
+   echo &quot;$a -ge $b: a 小于 b&quot;
+fi
+if [ $a -le $b ]
+then
+   echo &quot;$a -le $b: a 小于或等于 b&quot;
+else
+   echo &quot;$a -le $b: a 大于 b&quot;
+fi
+</code></pre>
+<p>执行脚本，输出结果如下所示：</p>
+<pre><code>10 -eq 20: a 不等于 b
+10 -ne 20: a 不等于 b
+10 -gt 20: a 不大于 b
+10 -lt 20: a 小于 b
+10 -ge 20: a 小于 b
+10 -le 20: a 小于或等于 b
+</code></pre>
+<h2 id="布尔运算符">布尔运算符</h2>
+<p>下表列出了常用的布尔运算符，假定变量 a 为 10，变量 b 为 20：</p>
+<pre><code>运算符	说明	举例
+!	非运算，表达式为 true 则返回 false，否则返回 true。	[ ! false ] 返回 true。
+-o	或运算，有一个表达式为 true 则返回 true。	[ $a -lt 20 -o $b -gt 100 ] 返回 true。
+-a	与运算，两个表达式都为 true 才返回 true。	[ $a -lt 20 -a $b -gt 100 ] 返回 false。
+
+</code></pre>
+<p>布尔运算符实例如下：</p>
+<pre><code class="language-实例">#!/bin/bash
+a=10
+b=20
+
+if [ $a != $b ]
+then
+   echo &quot;$a != $b : a 不等于 b&quot;
+else
+   echo &quot;$a == $b: a 等于 b&quot;
+fi
+if [ $a -lt 100 -a $b -gt 15 ]
+then
+   echo &quot;$a 小于 100 且 $b 大于 15 : 返回 true&quot;
+else
+   echo &quot;$a 小于 100 且 $b 大于 15 : 返回 false&quot;
+fi
+if [ $a -lt 100 -o $b -gt 100 ]
+then
+   echo &quot;$a 小于 100 或 $b 大于 100 : 返回 true&quot;
+else
+   echo &quot;$a 小于 100 或 $b 大于 100 : 返回 false&quot;
+fi
+if [ $a -lt 5 -o $b -gt 100 ]
+then
+   echo &quot;$a 小于 5 或 $b 大于 100 : 返回 true&quot;
+else
+   echo &quot;$a 小于 5 或 $b 大于 100 : 返回 false&quot;
+fi
+</code></pre>
+<p>执行脚本，输出结果如下所示：</p>
+<p>10 != 20 : a 不等于 b
+10 小于 100 且 20 大于 15 : 返回 true
+10 小于 100 或 20 大于 100 : 返回 true
+10 小于 5 或 20 大于 100 : 返回 false</p>
+<h2 id="逻辑运算符">逻辑运算符</h2>
+<p>以下介绍 Shell 的逻辑运算符，假定变量 a 为 10，变量 b 为 20:</p>
+<pre><code>运算符	说明	举例
+&amp;&amp;	逻辑的 AND	[[ $a -lt 100 &amp;&amp; $b -gt 100 ]] 返回 false
+||	逻辑的 OR	[[ $a -lt 100 || $b -gt 100 ]] 返回 true
+</code></pre>
+<p>逻辑运算符实例如下：</p>
+<pre><code class="language-实例">#!/bin/bash
+a=10
+b=20
+
+if [[ $a -lt 100 &amp;&amp; $b -gt 100 ]]
+then
+   echo &quot;返回 true&quot;
+else
+   echo &quot;返回 false&quot;
+fi
+
+if [[ $a -lt 100 || $b -gt 100 ]]
+then
+   echo &quot;返回 true&quot;
+else
+   echo &quot;返回 false&quot;
+fi
+</code></pre>
+<p>执行脚本，输出结果如下所示：</p>
+<pre><code>返回 false
+返回 true
+</code></pre>
+<h2 id="字符串运算符">字符串运算符</h2>
+<p>下表列出了常用的字符串运算符，假定变量 a 为 &ldquo;abc&rdquo;，变量 b 为 &ldquo;efg&rdquo;：</p>
+<pre><code>运算符	说明	举例
+=	检测两个字符串是否相等，相等返回 true。	[ $a = $b ] 返回 false。
+!=	检测两个字符串是否不相等，不相等返回 true。	[ $a != $b ] 返回 true。
+-z	检测字符串长度是否为0，为0返回 true。	[ -z $a ] 返回 false。
+-n	检测字符串长度是否不为 0，不为 0 返回 true。	[ -n &quot;$a&quot; ] 返回 true。
+$	检测字符串是否为空，不为空返回 true。	[ $a ] 返回 true。
+</code></pre>
+<p>字符串运算符实例如下：</p>
+<pre><code>#!/bin/bash
+a=&quot;abc&quot;
+b=&quot;efg&quot;
+
+if [ $a = $b ]
+then
+   echo &quot;$a = $b : a 等于 b&quot;
+else
+   echo &quot;$a = $b: a 不等于 b&quot;
+fi
+if [ $a != $b ]
+then
+   echo &quot;$a != $b : a 不等于 b&quot;
+else
+   echo &quot;$a != $b: a 等于 b&quot;
+fi
+if [ -z $a ]
+then
+   echo &quot;-z $a : 字符串长度为 0&quot;
+else
+   echo &quot;-z $a : 字符串长度不为 0&quot;
+fi
+if [ -n &quot;$a&quot; ]
+then
+   echo &quot;-n $a : 字符串长度不为 0&quot;
+else
+   echo &quot;-n $a : 字符串长度为 0&quot;
+fi
+if [ $a ]
+then
+   echo &quot;$a : 字符串不为空&quot;
+else
+   echo &quot;$a : 字符串为空&quot;
+fi
+</code></pre>
+<p>执行脚本，输出结果如下所示：</p>
+<pre><code>abc = efg: a 不等于 b
+abc != efg : a 不等于 b
+-z abc : 字符串长度不为 0
+-n abc : 字符串长度不为 0
+abc : 字符串不为空
+</code></pre>
+<h2 id="文件测试运算符">文件测试运算符</h2>
+<p>文件测试运算符用于检测 Unix 文件的各种属性。</p>
+<p>属性检测描述如下：</p>
+<pre><code>操作符	说明	举例
+-b file	检测文件是否是块设备文件，如果是，则返回 true。	[ -b $file ] 返回 false。
+-c file	检测文件是否是字符设备文件，如果是，则返回 true。	[ -c $file ] 返回 false。
+-d file	检测文件是否是目录，如果是，则返回 true。	[ -d $file ] 返回 false。
+-f file	检测文件是否是普通文件（既不是目录，也不是设备文件），如果是，则返回 true。	[ -f $file ] 返回 true。
+-g file	检测文件是否设置了 SGID 位，如果是，则返回 true。	[ -g $file ] 返回 false。
+-k file	检测文件是否设置了粘着位(Sticky Bit)，如果是，则返回 true。	[ -k $file ] 返回 false。
+-p file	检测文件是否是有名管道，如果是，则返回 true。	[ -p $file ] 返回 false。
+-u file	检测文件是否设置了 SUID 位，如果是，则返回 true。	[ -u $file ] 返回 false。
+-r file	检测文件是否可读，如果是，则返回 true。	[ -r $file ] 返回 true。
+-w file	检测文件是否可写，如果是，则返回 true。	[ -w $file ] 返回 true。
+-x file	检测文件是否可执行，如果是，则返回 true。	[ -x $file ] 返回 true。
+-s file	检测文件是否为空（文件大小是否大于0），不为空返回 true。	[ -s $file ] 返回 true。
+-e file	检测文件（包括目录）是否存在，如果是，则返回 true。	[ -e $file ] 返回 true。
+其他检查符：
+
+-S: 判断某文件是否 socket。
+-L: 检测文件是否存在并且是一个符号链接。
+</code></pre>
+<p>变量 file 表示文件 /var/www/w0x7ce/test.sh，它的大小为 100 字节，具有 rwx 权限。下面的代码，将检测该文件的各种属性：</p>
+<pre><code class="language-实例">#!/bin/bash
+file=&quot;/var/www/w0x7ce/test.sh&quot;
+if [ -r $file ]
+then
+   echo &quot;文件可读&quot;
+else
+   echo &quot;文件不可读&quot;
+fi
+if [ -w $file ]
+then
+   echo &quot;文件可写&quot;
+else
+   echo &quot;文件不可写&quot;
+fi
+if [ -x $file ]
+then
+   echo &quot;文件可执行&quot;
+else
+   echo &quot;文件不可执行&quot;
+fi
+if [ -f $file ]
+then
+   echo &quot;文件为普通文件&quot;
+else
+   echo &quot;文件为特殊文件&quot;
+fi
+if [ -d $file ]
+then
+   echo &quot;文件是个目录&quot;
+else
+   echo &quot;文件不是个目录&quot;
+fi
+if [ -s $file ]
+then
+   echo &quot;文件不为空&quot;
+else
+   echo &quot;文件为空&quot;
+fi
+if [ -e $file ]
+then
+   echo &quot;文件存在&quot;
+else
+   echo &quot;文件不存在&quot;
+fi
+</code></pre>
+<p>执行脚本，输出结果如下所示：</p>
+<pre><code>文件可读
+文件可写
+文件可执行
+文件为普通文件
+文件不是个目录
+文件不为空
+文件存在
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">w0x7ce</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-09-12
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%BA%8C/">
+            <span class="next-text nav-default">Shell脚本编程(二)</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:null@w0x7ce.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/tianrking/" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/10065982" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>w0x7ce</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

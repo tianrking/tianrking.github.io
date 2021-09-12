@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Sun, 12 Sep 2021 18:45:47 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Sep 2021 19:01:25 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shell脚本编程(三)</title>
+      <link>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%89/</link>
+      <pubDate>Sun, 12 Sep 2021 19:01:25 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%89/</guid>
+      <description>Shell 基本运算符 Shell 和其他编程语言一样，支持多种运算符，包括： 算数运算符 关系运算符 布尔运算符 字符串运算符 文件测试运算符 原生bash不支持简单的数学</description>
+    </item>
+    
     <item>
       <title>Shell脚本编程(二)</title>
       <link>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%BA%8C/</link>
