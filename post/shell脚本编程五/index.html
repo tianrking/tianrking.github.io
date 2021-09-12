@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Shell脚本编程(五) - WoW</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="w0x7ce" /><meta name="description" content="Shell 流程控制 和 Java、PHP 等语言不一样，sh 的流程控制不可为空，如(以下为 PHP 流程控制写法)： &amp;lt;?php if (isset($_GET[&amp;quot;q&amp;quot;])) { search(q); } else { // 不做任何事情 } 在 sh/bash 里可不能这" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%BA%94/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Shell脚本编程(五)" />
+<meta property="og:description" content="Shell 流程控制 和 Java、PHP 等语言不一样，sh 的流程控制不可为空，如(以下为 PHP 流程控制写法)： &lt;?php if (isset($_GET[&quot;q&quot;])) { search(q); } else { // 不做任何事情 } 在 sh/bash 里可不能这" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%BA%94/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-09-12T20:23:01+08:00" />
+<meta property="article:modified_time" content="2021-09-12T20:23:01+08:00" />
+
+<meta itemprop="name" content="Shell脚本编程(五)">
+<meta itemprop="description" content="Shell 流程控制 和 Java、PHP 等语言不一样，sh 的流程控制不可为空，如(以下为 PHP 流程控制写法)： &lt;?php if (isset($_GET[&quot;q&quot;])) { search(q); } else { // 不做任何事情 } 在 sh/bash 里可不能这"><meta itemprop="datePublished" content="2021-09-12T20:23:01+08:00" />
+<meta itemprop="dateModified" content="2021-09-12T20:23:01+08:00" />
+<meta itemprop="wordCount" content="2259">
+<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Shell脚本编程(五)"/>
+<meta name="twitter:description" content="Shell 流程控制 和 Java、PHP 等语言不一样，sh 的流程控制不可为空，如(以下为 PHP 流程控制写法)： &lt;?php if (isset($_GET[&quot;q&quot;])) { search(q); } else { // 不做任何事情 } 在 sh/bash 里可不能这"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">WoW</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">WoW</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Shell脚本编程(五)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-09-12 </span>
+        <div class="post-category">
+            <a href="/categories/%E7%B3%BB%E7%BB%9F/"> 系统 </a>
+            </div>
+          <span class="more-meta"> 2259 words </span>
+          <span class="more-meta"> 5 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#shell-流程控制">Shell 流程控制</a>
+      <ul>
+        <li><a href="#if-else-语法格式">if else 语法格式：</a></li>
+        <li><a href="#if-else-if-else-语法格式">if else-if else 语法格式：</a></li>
+        <li><a href="#if-else-语句经常与-test-命令结合使用如下所示">if else 语句经常与 test 命令结合使用，如下所示：</a></li>
+        <li><a href="#for-循环">for 循环</a></li>
+        <li><a href="#while-语句">while 语句</a></li>
+        <li><a href="#无限循环">无限循环</a></li>
+        <li><a href="#until-循环">until 循环</a></li>
+        <li><a href="#case--esac">case &hellip; esac</a></li>
+        <li><a href="#break命令">break命令</a></li>
+        <li><a href="#continue">continue</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="shell-流程控制">Shell 流程控制</h1>
+<p>和 Java、PHP 等语言不一样，sh 的流程控制不可为空，如(以下为 PHP 流程控制写法)：</p>
+<pre><code class="language-实例">&lt;?php
+if (isset($_GET[&quot;q&quot;])) {
+    search(q);
+}
+else {
+    // 不做任何事情
+}
+</code></pre>
+<p>在 sh/bash 里可不能这么写，如果 else 分支没有语句执行，就不要写这个 else。</p>
+<pre><code>if else
+fi
+if 语句语法格式：
+
+if condition
+then
+    command1 
+    command2
+    ...
+    commandN 
+fi
+</code></pre>
+<p>写成一行（适用于终端命令提示符）：</p>
+<pre><code>if [ $(ps -ef | grep -c &quot;ssh&quot;) -gt 1 ]; then echo &quot;true&quot;; fi
+</code></pre>
+<p>末尾的 fi 就是 if 倒过来拼写，后面还会遇到类似的。</p>
+<p>if else</p>
+<h2 id="if-else-语法格式">if else 语法格式：</h2>
+<pre><code>if condition
+then
+    command1 
+    command2
+    ...
+    commandN
+else
+    command
+fi
+if else-if else
+</code></pre>
+<h2 id="if-else-if-else-语法格式">if else-if else 语法格式：</h2>
+<pre><code>if condition1
+then
+    command1
+elif condition2 
+then 
+    command2
+else
+    commandN
+fi
+</code></pre>
+<p>以下实例判断两个变量是否相等：</p>
+<pre><code class="language-实例">a=10
+b=20
+if [ $a == $b ]
+then
+   echo &quot;a 等于 b&quot;
+elif [ $a -gt $b ]
+then
+   echo &quot;a 大于 b&quot;
+elif [ $a -lt $b ]
+then
+   echo &quot;a 小于 b&quot;
+else
+   echo &quot;没有符合的条件&quot;
+fi
+</code></pre>
+<p>输出结果：</p>
+<pre><code>a 小于 b
+</code></pre>
+<h2 id="if-else-语句经常与-test-命令结合使用如下所示">if else 语句经常与 test 命令结合使用，如下所示：</h2>
+<pre><code class="language-实例">num1=$[2*3]
+num2=$[1+5]
+if test $[num1] -eq $[num2]
+then
+    echo '两个数字相等!'
+else
+    echo '两个数字不相等!'
+fi
+</code></pre>
+<p>输出结果：</p>
+<pre><code>两个数字相等!
+</code></pre>
+<h2 id="for-循环">for 循环</h2>
+<p>与其他编程语言类似，Shell支持for循环。</p>
+<p>for循环一般格式为：</p>
+<pre><code>for var in item1 item2 ... itemN
+do
+    command1
+    command2
+    ...
+    commandN
+done
+</code></pre>
+<p>写成一行：</p>
+<pre><code>for var in item1 item2 ... itemN; do command1; command2… done;
+</code></pre>
+<p>当变量值在列表里，for 循环即执行一次所有命令，使用变量名获取列表中的当前取值。命令可为任何有效的 shell 命令和语句。in 列表可以包含替换、字符串和文件名。</p>
+<p>in列表是可选的，如果不用它，for循环使用命令行的位置参数。</p>
+<p>例如，顺序输出当前列表中的数字：</p>
+<pre><code class="language-实例">for loop in 1 2 3 4 5
+do
+    echo &quot;The value is: $loop&quot;
+done
+</code></pre>
+<p>输出结果：</p>
+<pre><code>The value is: 1
+The value is: 2
+The value is: 3
+The value is: 4
+The value is: 5
+</code></pre>
+<p>顺序输出字符串中的字符：</p>
+<pre><code>#!/bin/bash
+
+for str in This is a string
+do
+    echo $str
+done
+</code></pre>
+<p>输出结果：</p>
+<pre><code>This
+is
+a
+string
+</code></pre>
+<h2 id="while-语句">while 语句</h2>
+<p>while 循环用于不断执行一系列命令，也用于从输入文件中读取数据。其语法格式为：</p>
+<pre><code>while condition
+do
+    command
+done
+</code></pre>
+<p>以下是一个基本的 while 循环，测试条件是：如果 int 小于等于 5，那么条件返回真。int 从 1 开始，每次循环处理时，int 加 1。运行上述脚本，返回数字 1 到 5，然后终止。</p>
+<pre><code class="language-实例">#!/bin/bash
+int=1
+while(( $int&lt;=5 ))
+do
+    echo $int
+    let &quot;int++&quot;
+done
+</code></pre>
+<p>运行脚本，输出：</p>
+<pre><code>1
+2
+3
+4
+5
+</code></pre>
+<p>以上实例使用了 Bash let 命令，它用于执行一个或多个表达式，变量计算中不需要加上 $ 来表示变量，具体可查阅：Bash let 命令</p>
+<p>。
+while循环可用于读取键盘信息。下面的例子中，输入信息被设置为变量FILM，按<Ctrl-D>结束循环。</p>
+<pre><code class="language-实例">echo '按下 &lt;CTRL-D&gt; 退出'
+echo -n '输入你最喜欢的网站名: '
+while read FILM
+do
+    echo &quot;是的！$FILM 是一个好网站&quot;
+done
+</code></pre>
+<p>运行脚本，输出类似下面：</p>
+<pre><code>按下 &lt;CTRL-D&gt; 退出
+输入你最喜欢的网站名:Google
+是的！Google 是一个好网站
+</code></pre>
+<h2 id="无限循环">无限循环</h2>
+<p>无限循环语法格式：</p>
+<pre><code>while :
+do
+    command
+done
+或者
+
+while true
+do
+    command
+done
+或者
+
+for (( ; ; ))
+</code></pre>
+<h2 id="until-循环">until 循环</h2>
+<p>until 循环执行一系列命令直至条件为 true 时停止。</p>
+<p>until 循环与 while 循环在处理方式上刚好相反。</p>
+<p>一般 while 循环优于 until 循环，但在某些时候—也只是极少数情况下，until 循环更加有用。</p>
+<p>until 语法格式:</p>
+<pre><code>until condition
+do
+    command
+done
+</code></pre>
+<p>condition 一般为条件表达式，如果返回值为 false，则继续执行循环体内的语句，否则跳出循环。</p>
+<p>以下实例我们使用 until 命令来输出 0 ~ 9 的数字：</p>
+<pre><code class="language-实例">#!/bin/bash
+
+a=0
+
+until [ ! $a -lt 10 ]
+do
+   echo $a
+   a=`expr $a + 1`
+done
+</code></pre>
+<p>运行结果：</p>
+<pre><code>输出结果为：
+
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+</code></pre>
+<h2 id="case--esac">case &hellip; esac</h2>
+<p>case &hellip; esac 为多选择语句，与其他语言中的 switch &hellip; case 语句类似，是一种多分枝选择结构，每个 case 分支用右圆括号开始，用两个分号 ;; 表示 break，即执行结束，跳出整个 case &hellip; esac 语句，esac（就是 case 反过来）作为结束标记。</p>
+<p>可以用 case 语句匹配一个值与一个模式，如果匹配成功，执行相匹配的命令。</p>
+<p>case &hellip; esac 语法格式如下：</p>
+<pre><code>case 值 in
+模式1)
+    command1
+    command2
+    ...
+    commandN
+    ;;
+模式2）
+    command1
+    command2
+    ...
+    commandN
+    ;;
+esac
+</code></pre>
+<p>case 工作方式如上所示，取值后面必须为单词 in，每一模式必须以右括号结束。取值可以为变量或常数，匹配发现取值符合某一模式后，其间所有命令开始执行直至 ;;。</p>
+<p>取值将检测匹配的每一个模式。一旦模式匹配，则执行完匹配模式相应命令后不再继续其他模式。如果无一匹配模式，使用星号 * 捕获该值，再执行后面的命令。</p>
+<p>下面的脚本提示输入 1 到 4，与每一种模式进行匹配：</p>
+<pre><code class="language-实例">echo '输入 1 到 4 之间的数字:'
+echo '你输入的数字为:'
+read aNum
+case $aNum in
+    1)  echo '你选择了 1'
+    ;;
+    2)  echo '你选择了 2'
+    ;;
+    3)  echo '你选择了 3'
+    ;;
+    4)  echo '你选择了 4'
+    ;;
+    *)  echo '你没有输入 1 到 4 之间的数字'
+    ;;
+esac
+``
+输入不同的内容，会有不同的结果，例如：
+</code></pre>
+<p>输入 1 到 4 之间的数字:
+你输入的数字为:
+3
+你选择了 3
+下面的脚本匹配字符串：</p>
+<pre><code>```实例
+#!/bin/sh
+
+site=&quot;w0x7ce&quot;
+
+case &quot;$site&quot; in
+   &quot;w0x7ce&quot;) echo &quot;w0x7ce&quot;
+   ;;
+   &quot;google&quot;) echo &quot;Google 搜索&quot;
+   ;;
+   &quot;taobao&quot;) echo &quot;淘宝网&quot;
+   ;;
+esac
+</code></pre>
+<p>输出结果为：</p>
+<pre><code>w0x7ce
+跳出循环
+</code></pre>
+<p>在循环过程中，有时候需要在未达到循环结束条件时强制跳出循环，Shell使用两个命令来实现该功能：break和continue。</p>
+<h2 id="break命令">break命令</h2>
+<p>break命令允许跳出所有循环（终止执行后面的所有循环）。</p>
+<p>下面的例子中，脚本进入死循环直至用户输入数字大于5。要跳出这个循环，返回到shell提示符下，需要使用break命令。</p>
+<pre><code class="language-实例">#!/bin/bash
+while :
+do
+    echo -n &quot;输入 1 到 5 之间的数字:&quot;
+    read aNum
+    case $aNum in
+        1|2|3|4|5) echo &quot;你输入的数字为 $aNum!&quot;
+        ;;
+        *) echo &quot;你输入的数字不是 1 到 5 之间的! 游戏结束&quot;
+            break
+        ;;
+    esac
+done
+</code></pre>
+<p>执行以上代码，输出结果为：</p>
+<pre><code>输入 1 到 5 之间的数字:3
+你输入的数字为 3!
+输入 1 到 5 之间的数字:7
+你输入的数字不是 1 到 5 之间的! 游戏结束
+</code></pre>
+<h2 id="continue">continue</h2>
+<p>continue命令与break命令类似，只有一点差别，它不会跳出所有循环，仅仅跳出当前循环。</p>
+<p>对上面的例子进行修改：</p>
+<pre><code class="language-实例">#!/bin/bash
+while :
+do
+    echo -n &quot;输入 1 到 5 之间的数字: &quot;
+    read aNum
+    case $aNum in
+        1|2|3|4|5) echo &quot;你输入的数字为 $aNum!&quot;
+        ;;
+        *) echo &quot;你输入的数字不是 1 到 5 之间的!&quot;
+            continue
+            echo &quot;游戏结束&quot;
+        ;;
+    esac
+done
+</code></pre>
+<p>运行代码发现，当输入大于5的数字时，该例中的循环不会结束，语句 echo &ldquo;游戏结束&rdquo; 永远不会被执行。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">w0x7ce</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-09-12
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E5%9B%9B/">
+            <span class="next-text nav-default">Shell脚本编程(四)</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:null@w0x7ce.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/tianrking/" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/10065982" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>w0x7ce</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
