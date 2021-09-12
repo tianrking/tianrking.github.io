@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Shell脚本编程(七)">
 <meta itemprop="description" content="Shell 输入/输出重定向 大多数 UNIX 系统命令从你的终端接受输入并将所产生的输出发送回​​到您的终端。一个命令通常从一个叫标准输入的地方读取输入，默认情"><meta itemprop="datePublished" content="2021-09-12T21:00:04+08:00" />
 <meta itemprop="dateModified" content="2021-09-12T21:00:04+08:00" />
-<meta itemprop="wordCount" content="2202">
+<meta itemprop="wordCount" content="2199">
 <meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Shell脚本编程(七)"/>
 <meta name="twitter:description" content="Shell 输入/输出重定向 大多数 UNIX 系统命令从你的终端接受输入并将所产生的输出发送回​​到您的终端。一个命令通常从一个叫标准输入的地方读取输入，默认情"/>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/%E7%B3%BB%E7%BB%9F/"> 系统 </a>
             </div>
-          <span class="more-meta"> 2202 words </span>
+          <span class="more-meta"> 2199 words </span>
           <span class="more-meta"> 5 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -195,16 +195,16 @@ tianqixin    console  Oct 31 17:35
 tianqixin    ttys000  Dec  1 11:33 
 </code></pre>
 <h2 id="输出重定向会覆盖文件内容请看下面的例子">输出重定向会覆盖文件内容，请看下面的例子：</h2>
-<pre><code>$ echo &quot;菜鸟教程：www.runoob.com&quot; &gt; users
+<pre><code>$ echo &quot;Google：www.google.com&quot; &gt; users
 $ cat users
-菜鸟教程：www.runoob.com
+Google：www.google.com
 $
 </code></pre>
 <p>如果不希望文件内容被覆盖，可以使用 &raquo; 追加到文件末尾，例如：</p>
-<pre><code>$ echo &quot;菜鸟教程：www.runoob.com&quot; &gt;&gt; users
+<pre><code>$ echo &quot;Google：www.google.com&quot; &gt;&gt; users
 $ cat users
-菜鸟教程：www.runoob.com
-菜鸟教程：www.runoob.com
+Google：www.google.com
+Google：www.google.com
 $
 </code></pre>
 <h2 id="输入重定向">输入重定向</h2>
@@ -265,8 +265,8 @@ $
 在命令行中通过 wc -l 命令计算 Here Document 的行数：</p>
 <pre><code>$ wc -l &lt;&lt; EOF
     欢迎来到
-    菜鸟教程
-    www.runoob.com
+    Google
+    www.google.com
 EOF
 3          # 输出结果为 3 行
 $
@@ -275,14 +275,14 @@ $
 <pre><code>#!/bin/bash
 cat &lt;&lt; EOF
 欢迎来到
-菜鸟教程
-www.runoob.com
+Google
+www.google.com
 EOF
 </code></pre>
 <p>执行以上脚本，输出结果：</p>
 <pre><code>欢迎来到
-菜鸟教程
-www.runoob.com
+Google
+www.google.com
 </code></pre>
 <h2 id="devnull-文件">/dev/null 文件</h2>
 <p>如果希望执行某个命令，但又不希望在屏幕上显示输出结果，那么可以将输出重定向到 /dev/null：</p>
@@ -308,7 +308,7 @@ source filename
 test1.sh 代码如下：
 
 #!/bin/bash
-url=&quot;http://www.runoob.com&quot;
+url=&quot;http://www.google.com&quot;
 </code></pre>
 <p>test2.sh 代码如下：</p>
 <pre><code>#!/bin/bash
@@ -319,13 +319,13 @@ url=&quot;http://www.runoob.com&quot;
 # 或者使用以下包含文件代码
 # source ./test1.sh
 
-echo &quot;菜鸟教程官网地址：$url&quot;
+echo &quot;Google：$url&quot;
 </code></pre>
 <p>接下来，我们为 test2.sh 添加可执行权限并执行：</p>
 <pre><code>$ chmod +x test2.sh 
 $ ./test2.sh 
 </code></pre>
-<pre><code>菜鸟教程官网地址：http://www.runoob.com
+<pre><code>Google：http://www.google.com
 </code></pre>
 <p>注：被包含的文件 test1.sh 不需要可执行权限。</p>
 
