@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>常用Linux命令(一) - WoW</title>
+  <title>Shell脚本编程(二) - WoW</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="w0x7ce" /><meta name="description" content="Shell echo命令 1.显示普通字符串: echo &amp;ldquo;It is a test&amp;rdquo; 这里的双引号完全可以省略，以下命令与上面实例效果一致： echo It is a test 2.显示转义字符 echo &amp;ldquo;&amp;quot;It is a test&amp;quot;&amp;rdquo; 结果将" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="w0x7ce" /><meta name="description" content="Shell 传递参数 我们可以在执行 Shell 脚本时，向脚本传递参数，脚本内获取参数的格式为：$n。n 代表一个数字，1 为执行脚本的第一个参数，2 为执行脚本的第二" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%B8%80/" />
+<link rel="canonical" href="http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%BA%8C/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="常用Linux命令(一)" />
-<meta property="og:description" content="Shell echo命令 1.显示普通字符串: echo &ldquo;It is a test&rdquo; 这里的双引号完全可以省略，以下命令与上面实例效果一致： echo It is a test 2.显示转义字符 echo &ldquo;&quot;It is a test&quot;&rdquo; 结果将" />
+<meta property="og:title" content="Shell脚本编程(二)" />
+<meta property="og:description" content="Shell 传递参数 我们可以在执行 Shell 脚本时，向脚本传递参数，脚本内获取参数的格式为：$n。n 代表一个数字，1 为执行脚本的第一个参数，2 为执行脚本的第二" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%B8%80/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-09-12T15:33:23+08:00" />
-<meta property="article:modified_time" content="2021-09-12T15:33:23+08:00" />
+<meta property="og:url" content="http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%BA%8C/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-09-12T18:45:47+08:00" />
+<meta property="article:modified_time" content="2021-09-12T18:45:47+08:00" />
 
-<meta itemprop="name" content="常用Linux命令(一)">
-<meta itemprop="description" content="Shell echo命令 1.显示普通字符串: echo &ldquo;It is a test&rdquo; 这里的双引号完全可以省略，以下命令与上面实例效果一致： echo It is a test 2.显示转义字符 echo &ldquo;&quot;It is a test&quot;&rdquo; 结果将"><meta itemprop="datePublished" content="2021-09-12T15:33:23+08:00" />
-<meta itemprop="dateModified" content="2021-09-12T15:33:23+08:00" />
-<meta itemprop="wordCount" content="515">
+<meta itemprop="name" content="Shell脚本编程(二)">
+<meta itemprop="description" content="Shell 传递参数 我们可以在执行 Shell 脚本时，向脚本传递参数，脚本内获取参数的格式为：$n。n 代表一个数字，1 为执行脚本的第一个参数，2 为执行脚本的第二"><meta itemprop="datePublished" content="2021-09-12T18:45:47+08:00" />
+<meta itemprop="dateModified" content="2021-09-12T18:45:47+08:00" />
+<meta itemprop="wordCount" content="946">
 <meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="常用Linux命令(一)"/>
-<meta name="twitter:description" content="Shell echo命令 1.显示普通字符串: echo &ldquo;It is a test&rdquo; 这里的双引号完全可以省略，以下命令与上面实例效果一致： echo It is a test 2.显示转义字符 echo &ldquo;&quot;It is a test&quot;&rdquo; 结果将"/>
+<meta name="twitter:title" content="Shell脚本编程(二)"/>
+<meta name="twitter:description" content="Shell 传递参数 我们可以在执行 Shell 脚本时，向脚本传递参数，脚本内获取参数的格式为：$n。n 代表一个数字，1 为执行脚本的第一个参数，2 为执行脚本的第二"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,14 +129,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">常用Linux命令(一)</h1>
+      <h1 class="post-title">Shell脚本编程(二)</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2021-09-12 </span>
         <div class="post-category">
             <a href="/categories/%E7%B3%BB%E7%BB%9F/"> 系统 </a>
             </div>
-          <span class="more-meta"> 515 words </span>
+          <span class="more-meta"> 946 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -147,17 +147,9 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#shell-echo命令">Shell echo命令</a>
+    <li><a href="#shell-传递参数">Shell 传递参数</a>
       <ul>
-        <li><a href="#1显示普通字符串">1.显示普通字符串:</a></li>
-        <li><a href="#2显示转义字符">2.显示转义字符</a></li>
-        <li><a href="#3显示变量">3.显示变量</a></li>
-        <li><a href="#4显示换行">4.显示换行</a></li>
-        <li><a href="#5显示不换行">5.显示不换行</a></li>
-        <li><a href="#6显示结果定向至文件">6.显示结果定向至文件</a></li>
-        <li><a href="#7原样输出字符串不进行转义或取变量用单引号">7.原样输出字符串，不进行转义或取变量(用单引号)</a></li>
-        <li><a href="#8显示命令执行结果">8.显示命令执行结果</a></li>
-        <li><a href="#-e-控制字符参数">-e 控制字符参数</a></li>
+        <li><a href="#-与--区别">$* 与 $@ 区别：</a></li>
       </ul>
     </li>
   </ul>
@@ -165,62 +157,80 @@
   </div>
 </div>
     <div class="post-content">
-      <h1 id="shell-echo命令">Shell echo命令</h1>
-<h2 id="1显示普通字符串">1.显示普通字符串:</h2>
-<p>echo &ldquo;It is a test&rdquo;
-这里的双引号完全可以省略，以下命令与上面实例效果一致：</p>
-<p>echo It is a test</p>
-<h2 id="2显示转义字符">2.显示转义字符</h2>
-<p>echo &ldquo;&quot;It is a test&quot;&rdquo;
-结果将是:</p>
-<p>&ldquo;It is a test&rdquo;
-同样，双引号也可以省略</p>
-<h2 id="3显示变量">3.显示变量</h2>
-<p>read 命令从标准输入中读取一行,并把输入行的每个字段的值指定给 shell 变量</p>
-<p>#!/bin/sh
-read name
-echo &ldquo;$name It is a test&rdquo;
-以上代码保存为 test.sh，name 接收标准输入的变量，结果将是:</p>
-<p>[root@www ~]# sh test.sh
-OK                     #标准输入
-OK It is a test        #输出</p>
-<h2 id="4显示换行">4.显示换行</h2>
-<p>echo -e &ldquo;OK! \n&rdquo; # -e 开启转义
-echo &ldquo;It is a test&rdquo;
-输出结果：</p>
-<p>OK!</p>
-<p>It is a test</p>
-<h2 id="5显示不换行">5.显示不换行</h2>
-<p>#!/bin/sh
-echo -e &ldquo;OK! \c&rdquo; # -e 开启转义 \c 不换行
-echo &ldquo;It is a test&rdquo;
-输出结果：</p>
-<p>OK! It is a test</p>
-<h2 id="6显示结果定向至文件">6.显示结果定向至文件</h2>
-<p>echo &ldquo;It is a test&rdquo; &gt; myfile</p>
-<h2 id="7原样输出字符串不进行转义或取变量用单引号">7.原样输出字符串，不进行转义或取变量(用单引号)</h2>
-<p>echo &lsquo;$name&quot;&rsquo;
-输出结果：</p>
-<p>$name&quot;</p>
-<h2 id="8显示命令执行结果">8.显示命令执行结果</h2>
-<p>echo <code>date</code>
-注意： 这里使用的是反引号 `, 而不是单引号 &lsquo;。</p>
-<p>结果将显示当前日期</p>
-<p>Thu Jul 24 10:08:46 CST 2014</p>
-<h2 id="-e-控制字符参数">-e 控制字符参数</h2>
-<p>控制字元	作 用</p>
-<pre><code class="language-bash">\\	輸出\本身
-\a	輸出警告音
-\b	退格鍵， 刪除左邊一個字元
-\c	取消輸出行末的換行符。和“-n”選項一致
-\e	Esc鍵
-\f	換頁符
-\n	換行符
-\r	回車鍵
-\t	製表符，也就是Tab鍵
-\v	垂直製表符
-\0nnn	按照八進位制 ASCII 碼錶輸出字元。其中 0 為數字 0，nnn 是三位八進位制數
-\xhh	按照十六進位制 ASCH 碼錶輸出字元。其中 hh 是兩位十六進位制數
+      <h1 id="shell-传递参数">Shell 传递参数</h1>
+<p>我们可以在执行 Shell 脚本时，向脚本传递参数，脚本内获取参数的格式为：$n。n 代表一个数字，1 为执行脚本的第一个参数，2 为执行脚本的第二个参数，以此类推……</p>
+<p>实例
+以下实例我们向脚本传递三个参数，并分别输出，其中 $0 为执行的文件名（包含文件路径）：</p>
+<pre><code>#!/bin/bash
+
+echo &quot;Shell 传递参数实例！&quot;;
+echo &quot;执行的文件名：$0&quot;;
+echo &quot;第一个参数为：$1&quot;;
+echo &quot;第二个参数为：$2&quot;;
+echo &quot;第三个参数为：$3&quot;;
+</code></pre>
+<p>为脚本设置可执行权限，并执行脚本，输出结果如下所示：</p>
+<pre><code>$ chmod +x test.sh 
+$ ./test.sh 1 2 3
+
+Shell 传递参数实例！
+执行的文件名：./test.sh
+第一个参数为：1
+第二个参数为：2
+第三个参数为：3
+</code></pre>
+<p>另外，还有几个特殊字符用来处理参数：</p>
+<pre><code>参数处理	说明
+$#	传递到脚本的参数个数
+$*	以一个单字符串显示所有向脚本传递的参数。
+如&quot;$*&quot;用「&quot;」括起来的情况、以&quot;$1 $2 … $n&quot;的形式输出所有参数。
+$$	脚本运行的当前进程ID号
+$!	后台运行的最后一个进程的ID号
+$@	与$*相同，但是使用时加引号，并在引号中返回每个参数。
+如&quot;$@&quot;用「&quot;」括起来的情况、以&quot;$1&quot; &quot;$2&quot; … &quot;$n&quot; 的形式输出所有参数。
+$-	显示Shell使用的当前选项，与set命令功能相同。
+$?	显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。
+</code></pre>
+<pre><code>#!/bin/bash
+
+echo &quot;Shell 传递参数实例！&quot;;
+echo &quot;第一个参数为：$1&quot;;
+
+echo &quot;参数个数为：$#&quot;;
+echo &quot;传递的参数作为一个字符串显示：$*&quot;;
+</code></pre>
+<p>执行脚本，输出结果如下所示：</p>
+<pre><code>$ chmod +x test.sh 
+$ ./test.sh 1 2 3
+Shell 传递参数实例！
+第一个参数为：1
+参数个数为：3
+传递的参数作为一个字符串显示：1 2 3
+</code></pre>
+<h2 id="-与--区别">$* 与 $@ 区别：</h2>
+<p>相同点：都是引用所有参数。
+不同点：只有在双引号中体现出来。假设在脚本运行时写了三个参数 1、2、3，，则 &quot; * &quot; 等价于 &ldquo;1 2 3&rdquo;（传递了一个参数），而 &ldquo;@&rdquo; 等价于 &ldquo;1&rdquo; &ldquo;2&rdquo; &ldquo;3&rdquo;（传递了三个参数）。</p>
+<pre><code>#!/bin/bash
+echo &quot;-- \$* 演示 ---&quot;
+for i in &quot;$*&quot;; do
+    echo $i
+done
+
+echo &quot;-- \$@ 演示 ---&quot;
+for i in &quot;$@&quot;; do
+    echo $i
+done
+</code></pre>
+<p>执行脚本，输出结果如下所示：</p>
+<pre><code>$ chmod +x test.sh 
+$ ./test.sh 1 2 3
+</code></pre>
+<pre><code>-- $* 演示 ---
+1 2 3
+-- $@ 演示 ---
+1
+2
+3
 </code></pre>
 
     </div>
@@ -245,12 +255,12 @@ echo &ldquo;It is a test&rdquo;
           <a href="/tags/linux/">Linux</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%80/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Shell脚本编程(一)</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
         
+        <a class="next" href="/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%80/">
+            <span class="next-text nav-default">Shell脚本编程(一)</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
       </nav>
     </footer>
   </article>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Shell脚本编程(一) - WoW</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="w0x7ce" /><meta name="description" content="Shell变量 注意，变量名和等号之间不能有空格，这可能和你熟悉的所有编程语言都不一样。同时，变量名的命名须遵循如下规则： 命名只能使用英文字母" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%80/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Shell脚本编程(一)" />
+<meta property="og:description" content="Shell变量 注意，变量名和等号之间不能有空格，这可能和你熟悉的所有编程语言都不一样。同时，变量名的命名须遵循如下规则： 命名只能使用英文字母" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%80/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-09-12T18:21:09+08:00" />
+<meta property="article:modified_time" content="2021-09-12T18:21:09+08:00" />
+
+<meta itemprop="name" content="Shell脚本编程(一)">
+<meta itemprop="description" content="Shell变量 注意，变量名和等号之间不能有空格，这可能和你熟悉的所有编程语言都不一样。同时，变量名的命名须遵循如下规则： 命名只能使用英文字母"><meta itemprop="datePublished" content="2021-09-12T18:21:09+08:00" />
+<meta itemprop="dateModified" content="2021-09-12T18:21:09+08:00" />
+<meta itemprop="wordCount" content="1795">
+<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Shell脚本编程(一)"/>
+<meta name="twitter:description" content="Shell变量 注意，变量名和等号之间不能有空格，这可能和你熟悉的所有编程语言都不一样。同时，变量名的命名须遵循如下规则： 命名只能使用英文字母"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">WoW</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">WoW</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Shell脚本编程(一)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-09-12 </span>
+        <div class="post-category">
+            <a href="/categories/%E7%B3%BB%E7%BB%9F/"> 系统 </a>
+            </div>
+          <span class="more-meta"> 1795 words </span>
+          <span class="more-meta"> 4 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#shell变量">Shell变量</a>
+      <ul>
+        <li><a href="#有效的-shell-变量名示例如下">有效的 Shell 变量名示例如下：</a></li>
+        <li><a href="#无效的变量命名">无效的变量命名：</a></li>
+        <li><a href="#除了显式地直接赋值还可以用语句给变量赋值如">除了显式地直接赋值，还可以用语句给变量赋值，如：</a></li>
+      </ul>
+    </li>
+    <li><a href="#使用变量">使用变量</a>
+      <ul>
+        <li><a href="#使用一个定义过的变量只要在变量名前面加美元符号即可如">使用一个定义过的变量，只要在变量名前面加美元符号即可，如：</a></li>
+        <li><a href="#已定义的变量可以被重新定义如">已定义的变量，可以被重新定义，如：</a></li>
+        <li><a href="#只读变量">只读变量</a></li>
+        <li><a href="#删除变量">删除变量</a></li>
+        <li><a href="#变量类型">变量类型</a></li>
+        <li><a href="#使用双引号拼接">使用双引号拼接</a></li>
+        <li><a href="#使用单引号拼接">使用单引号拼接</a></li>
+        <li><a href="#获取字符串长度">获取字符串长度</a></li>
+        <li><a href="#提取子字符串">提取子字符串</a></li>
+        <li><a href="#查找子字符串">查找子字符串</a></li>
+      </ul>
+    </li>
+    <li><a href="#shell-数组">Shell 数组</a>
+      <ul>
+        <li><a href="#取得数组元素的个数">取得数组元素的个数</a></li>
+        <li><a href="#或者">或者</a></li>
+        <li><a href="#取得数组单个元素的长度">取得数组单个元素的长度</a></li>
+        <li><a href="#shell-注释">Shell 注释</a></li>
+        <li><a href="#多行注释">多行注释</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="shell变量">Shell变量</h1>
+<p>注意，变量名和等号之间不能有空格，这可能和你熟悉的所有编程语言都不一样。同时，变量名的命名须遵循如下规则：</p>
+<p>命名只能使用英文字母，数字和下划线，首个字符不能以数字开头。
+中间不能有空格，可以使用下划线 _。
+不能使用标点符号。
+不能使用bash里的关键字（可用help命令查看保留关键字）。</p>
+<h2 id="有效的-shell-变量名示例如下">有效的 Shell 变量名示例如下：</h2>
+<pre><code>w0x7ce
+LD_LIBRARY_PATH
+_var
+var2
+</code></pre>
+<h2 id="无效的变量命名">无效的变量命名：</h2>
+<pre><code>?var=123
+user*name=w0x7ce
+</code></pre>
+<h2 id="除了显式地直接赋值还可以用语句给变量赋值如">除了显式地直接赋值，还可以用语句给变量赋值，如：</h2>
+<pre><code>for file in `ls /etc`
+或
+for file in $(ls /etc)
+</code></pre>
+<p>以上语句将 /etc 下目录的文件名循环出来。</p>
+<h1 id="使用变量">使用变量</h1>
+<h2 id="使用一个定义过的变量只要在变量名前面加美元符号即可如">使用一个定义过的变量，只要在变量名前面加美元符号即可，如：</h2>
+<pre><code>your_name=&quot;qinjx&quot;
+echo $your_name
+echo ${your_name}
+</code></pre>
+<p>变量名外面的花括号是可选的，加不加都行，加花括号是为了帮助解释器识别变量的边界，比如下面这种情况：</p>
+<pre><code>for skill in Ada Coffe Action Java; do
+    echo &quot;I am good at ${skill}Script&quot;
+done
+</code></pre>
+<p>如果不给skill变量加花括号，写成echo &ldquo;I am good at $skillScript&rdquo;，解释器就会把$skillScript当成一个变量（其值为空），代码执行结果就不是我们期望的样子了。</p>
+<p>推荐给所有变量加上花括号，这是个好的编程习惯。</p>
+<h2 id="已定义的变量可以被重新定义如">已定义的变量，可以被重新定义，如：</h2>
+<pre><code>your_name=&quot;tom&quot;
+echo $your_name
+your_name=&quot;alibaba&quot;
+echo $your_name
+</code></pre>
+<p>这样写是合法的，但注意，第二次赋值的时候不能写$your_name=&ldquo;alibaba&rdquo;，使用变量的时候才加美元符（$）。</p>
+<h2 id="只读变量">只读变量</h2>
+<p>使用 readonly 命令可以将变量定义为只读变量，只读变量的值不能被改变。</p>
+<p>下面的例子尝试更改只读变量，结果报错：</p>
+<pre><code>#!/bin/bash
+myUrl=&quot;https://www.google.com&quot;
+readonly myUrl
+myUrl=&quot;https://null.w0x7ce.com&quot;
+</code></pre>
+<p>运行脚本，结果如下：</p>
+<p>/bin/sh: NAME: This variable is read only.</p>
+<h2 id="删除变量">删除变量</h2>
+<p>使用 unset 命令可以删除变量。语法：</p>
+<p>unset variable_name
+变量被删除后不能再次使用。unset 命令不能删除只读变量。</p>
+<p>实例</p>
+<pre><code>#!/bin/sh
+myUrl=&quot;https://null.w0x7ce.com&quot;
+unset myUrl
+echo $myUrl
+</code></pre>
+<p>以上实例执行将没有任何输出。</p>
+<h2 id="变量类型">变量类型</h2>
+<p>运行shell时，会同时存在三种变量：</p>
+<ol>
+<li>局部变量 局部变量在脚本或命令中定义，仅在当前shell实例中有效，其他shell启动的程序不能访问局部变量。</li>
+<li>环境变量 所有的程序，包括shell启动的程序，都能访问环境变量，有些程序需要环境变量来保证其正常运行。必要的时候shell脚本也可以定义环境变量。</li>
+<li>shell变量 shell变量是由shell程序设置的特殊变量。shell变量中有一部分是环境变量，有一部分是局部变量，这些变量保证了shell的正常运行
+Shell 字符串
+字符串是shell编程中最常用最有用的数据类型（除了数字和字符串，也没啥其它类型好用了），字符串可以用单引号，也可以用双引号，也可以不用引号。</li>
+</ol>
+<p>单引号</p>
+<pre><code>str='this is a string'
+</code></pre>
+<p>单引号字符串的限制：</p>
+<p>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的；
+单引号字串中不能出现单独一个的单引号（对单引号使用转义符后也不行），但可成对出现，作为字符串拼接使用。
+双引号</p>
+<pre><code>your_name=&quot;w0x7ce&quot;
+str=&quot;Hello, I know you are \&quot;$your_name\&quot;! \n&quot;
+echo -e $str
+</code></pre>
+<p>输出结果为：</p>
+<p>Hello, I know you are &ldquo;w0x7ce&rdquo;!
+双引号的优点：</p>
+<p>双引号里可以有变量
+双引号里可以出现转义字符
+拼接字符串
+your_name=&ldquo;w0x7ce&rdquo;</p>
+<h2 id="使用双引号拼接">使用双引号拼接</h2>
+<pre><code>greeting=&quot;hello, &quot;$your_name&quot; !&quot;
+greeting_1=&quot;hello, ${your_name} !&quot;
+echo $greeting  $greeting_1
+</code></pre>
+<h2 id="使用单引号拼接">使用单引号拼接</h2>
+<pre><code>greeting_2='hello, '$your_name' !'
+greeting_3='hello, ${your_name} !'
+echo $greeting_2  $greeting_3
+</code></pre>
+<p>输出结果为：</p>
+<p>hello, w0x7ce ! hello, w0x7ce !
+hello, w0x7ce ! hello, ${your_name} !</p>
+<h2 id="获取字符串长度">获取字符串长度</h2>
+<pre><code>string=&quot;abcd&quot;
+echo ${#string} #输出 4
+</code></pre>
+<h2 id="提取子字符串">提取子字符串</h2>
+<p>以下实例从字符串第 2 个字符开始截取 4 个字符：</p>
+<pre><code>string=&quot;w0x7ce is a great site&quot;
+echo ${string:1:4} # 输出 unoo
+</code></pre>
+<p>注意：第一个字符的索引值为 0。</p>
+<h2 id="查找子字符串">查找子字符串</h2>
+<p>查找字符 i 或 o 的位置(哪个字母先出现就计算哪个)：</p>
+<pre><code>string=&quot;w0x7ce is a great site&quot;
+echo `expr index &quot;$string&quot; io`  # 输出 4
+</code></pre>
+<p>注意： 以上脚本中 ` 是反引号，而不是单引号 &lsquo;，不要看错了哦。</p>
+<h1 id="shell-数组">Shell 数组</h1>
+<p>bash支持一维数组（不支持多维数组），并且没有限定数组的大小。</p>
+<p>类似于 C 语言，数组元素的下标由 0 开始编号。获取数组中的元素要利用下标，下标可以是整数或算术表达式，其值应大于或等于 0。</p>
+<p>定义数组
+在 Shell 中，用括号来表示数组，数组元素用&quot;空格&quot;符号分割开。定义数组的一般形式为：</p>
+<p>数组名=(值1 值2 &hellip; 值n)
+例如：</p>
+<pre><code>array_name=(value0 value1 value2 value3)
+</code></pre>
+<p>或者</p>
+<pre><code>array_name=(
+value0
+value1
+value2
+value3
+)
+</code></pre>
+<p>还可以单独定义数组的各个分量：</p>
+<pre><code>array_name[0]=value0
+array_name[1]=value1
+array_name[n]=valuen
+</code></pre>
+<p>可以不使用连续的下标，而且下标的范围没有限制。</p>
+<p>读取数组
+读取数组元素值的一般格式是：</p>
+<pre><code>${数组名[下标]}
+</code></pre>
+<p>例如：</p>
+<pre><code>valuen=${array_name[n]}
+</code></pre>
+<p>使用 @ 符号可以获取数组中的所有元素，例如：</p>
+<pre><code>echo ${array_name[@]}
+</code></pre>
+<p>获取数组的长度
+获取数组长度的方法与获取字符串长度的方法相同，例如：</p>
+<h2 id="取得数组元素的个数">取得数组元素的个数</h2>
+<pre><code>length=${#array_name[@]}
+</code></pre>
+<h2 id="或者">或者</h2>
+<pre><code>length=${#array_name[*]}
+</code></pre>
+<h2 id="取得数组单个元素的长度">取得数组单个元素的长度</h2>
+<pre><code>lengthn=${#array_name[n]}
+</code></pre>
+<h2 id="shell-注释">Shell 注释</h2>
+<p>以 # 开头的行就是注释，会被解释器忽略。</p>
+<h2 id="多行注释">多行注释</h2>
+<p>多行注释还可以使用以下格式：</p>
+<pre><code>:&lt;&lt;EOF
+注释内容...
+注释内容...
+注释内容...
+EOF
+EOF 也可以使用其他符号:
+
+:&lt;&lt;'
+注释内容...
+注释内容...
+注释内容...
+'
+
+:&lt;&lt;!
+注释内容...
+注释内容...
+注释内容...
+!
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">w0x7ce</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-09-12
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%BA%8C/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Shell脚本编程(二)</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%B8%80/">
+            <span class="next-text nav-default">常用Linux命令(一)</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:null@w0x7ce.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/tianrking/" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/10065982" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>w0x7ce</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
