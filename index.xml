@@ -6,7 +6,8 @@
     <description>Recent content on WoW</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 12 Sep 2021 15:33:23 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>w0x7ce</copyright>
+    <lastBuildDate>Sun, 12 Sep 2021 18:21:09 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>http://localhost:1313/about/</link>
@@ -14,6 +15,15 @@
       
       <guid>http://localhost:1313/about/</guid>
       <description>w0x7ce</description>
+    </item>
+    
+    <item>
+      <title>Shell脚本编程</title>
+      <link>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Sun, 12 Sep 2021 18:21:09 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/</guid>
+      <description>Shell变量 注意，变量名和等号之间不能有空格，这可能和你熟悉的所有编程语言都不一样。同时，变量名的命名须遵循如下规则： 命名只能使用英文字母</description>
     </item>
     
     <item>

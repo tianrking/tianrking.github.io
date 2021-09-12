@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>常用Linux命令(一) - WoW</title>
+  <title>Shell脚本编程 - WoW</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="w0x7ce" /><meta name="description" content="Shell echo命令 1.显示普通字符串: echo &amp;ldquo;It is a test&amp;rdquo; 这里的双引号完全可以省略，以下命令与上面实例效果一致： echo It is a test 2.显示转义字符 echo &amp;ldquo;&amp;quot;It is a test&amp;quot;&amp;rdquo; 结果将" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="w0x7ce" /><meta name="description" content="Shell变量 注意，变量名和等号之间不能有空格，这可能和你熟悉的所有编程语言都不一样。同时，变量名的命名须遵循如下规则： 命名只能使用英文字母" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%B8%80/" />
+<link rel="canonical" href="http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="常用Linux命令(一)" />
-<meta property="og:description" content="Shell echo命令 1.显示普通字符串: echo &ldquo;It is a test&rdquo; 这里的双引号完全可以省略，以下命令与上面实例效果一致： echo It is a test 2.显示转义字符 echo &ldquo;&quot;It is a test&quot;&rdquo; 结果将" />
+<meta property="og:title" content="Shell脚本编程" />
+<meta property="og:description" content="Shell变量 注意，变量名和等号之间不能有空格，这可能和你熟悉的所有编程语言都不一样。同时，变量名的命名须遵循如下规则： 命名只能使用英文字母" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%B8%80/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-09-12T15:33:23+08:00" />
-<meta property="article:modified_time" content="2021-09-12T15:33:23+08:00" />
+<meta property="og:url" content="http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-09-12T18:21:09+08:00" />
+<meta property="article:modified_time" content="2021-09-12T18:21:09+08:00" />
 
-<meta itemprop="name" content="常用Linux命令(一)">
-<meta itemprop="description" content="Shell echo命令 1.显示普通字符串: echo &ldquo;It is a test&rdquo; 这里的双引号完全可以省略，以下命令与上面实例效果一致： echo It is a test 2.显示转义字符 echo &ldquo;&quot;It is a test&quot;&rdquo; 结果将"><meta itemprop="datePublished" content="2021-09-12T15:33:23+08:00" />
-<meta itemprop="dateModified" content="2021-09-12T15:33:23+08:00" />
-<meta itemprop="wordCount" content="515">
+<meta itemprop="name" content="Shell脚本编程">
+<meta itemprop="description" content="Shell变量 注意，变量名和等号之间不能有空格，这可能和你熟悉的所有编程语言都不一样。同时，变量名的命名须遵循如下规则： 命名只能使用英文字母"><meta itemprop="datePublished" content="2021-09-12T18:21:09+08:00" />
+<meta itemprop="dateModified" content="2021-09-12T18:21:09+08:00" />
+<meta itemprop="wordCount" content="226">
 <meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="常用Linux命令(一)"/>
-<meta name="twitter:description" content="Shell echo命令 1.显示普通字符串: echo &ldquo;It is a test&rdquo; 这里的双引号完全可以省略，以下命令与上面实例效果一致： echo It is a test 2.显示转义字符 echo &ldquo;&quot;It is a test&quot;&rdquo; 结果将"/>
+<meta name="twitter:title" content="Shell脚本编程"/>
+<meta name="twitter:description" content="Shell变量 注意，变量名和等号之间不能有空格，这可能和你熟悉的所有编程语言都不一样。同时，变量名的命名须遵循如下规则： 命名只能使用英文字母"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,15 +129,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">常用Linux命令(一)</h1>
+      <h1 class="post-title">Shell脚本编程</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2021-09-12 </span>
         <div class="post-category">
             <a href="/categories/%E7%B3%BB%E7%BB%9F/"> 系统 </a>
             </div>
-          <span class="more-meta"> 515 words </span>
-          <span class="more-meta"> 2 mins read </span>
+          <span class="more-meta"> 226 words </span>
+          <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -147,17 +147,11 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#shell-echo命令">Shell echo命令</a>
+    <li><a href="#shell变量">Shell变量</a>
       <ul>
-        <li><a href="#1显示普通字符串">1.显示普通字符串:</a></li>
-        <li><a href="#2显示转义字符">2.显示转义字符</a></li>
-        <li><a href="#3显示变量">3.显示变量</a></li>
-        <li><a href="#4显示换行">4.显示换行</a></li>
-        <li><a href="#5显示不换行">5.显示不换行</a></li>
-        <li><a href="#6显示结果定向至文件">6.显示结果定向至文件</a></li>
-        <li><a href="#7原样输出字符串不进行转义或取变量用单引号">7.原样输出字符串，不进行转义或取变量(用单引号)</a></li>
-        <li><a href="#8显示命令执行结果">8.显示命令执行结果</a></li>
-        <li><a href="#-e-控制字符参数">-e 控制字符参数</a></li>
+        <li><a href="#有效的-shell-变量名示例如下">有效的 Shell 变量名示例如下：</a></li>
+        <li><a href="#无效的变量命名">无效的变量命名：</a></li>
+        <li><a href="#除了显式地直接赋值还可以用语句给变量赋值如">除了显式地直接赋值，还可以用语句给变量赋值，如：</a></li>
       </ul>
     </li>
   </ul>
@@ -165,62 +159,27 @@
   </div>
 </div>
     <div class="post-content">
-      <h1 id="shell-echo命令">Shell echo命令</h1>
-<h2 id="1显示普通字符串">1.显示普通字符串:</h2>
-<p>echo &ldquo;It is a test&rdquo;
-这里的双引号完全可以省略，以下命令与上面实例效果一致：</p>
-<p>echo It is a test</p>
-<h2 id="2显示转义字符">2.显示转义字符</h2>
-<p>echo &ldquo;&quot;It is a test&quot;&rdquo;
-结果将是:</p>
-<p>&ldquo;It is a test&rdquo;
-同样，双引号也可以省略</p>
-<h2 id="3显示变量">3.显示变量</h2>
-<p>read 命令从标准输入中读取一行,并把输入行的每个字段的值指定给 shell 变量</p>
-<p>#!/bin/sh
-read name
-echo &ldquo;$name It is a test&rdquo;
-以上代码保存为 test.sh，name 接收标准输入的变量，结果将是:</p>
-<p>[root@www ~]# sh test.sh
-OK                     #标准输入
-OK It is a test        #输出</p>
-<h2 id="4显示换行">4.显示换行</h2>
-<p>echo -e &ldquo;OK! \n&rdquo; # -e 开启转义
-echo &ldquo;It is a test&rdquo;
-输出结果：</p>
-<p>OK!</p>
-<p>It is a test</p>
-<h2 id="5显示不换行">5.显示不换行</h2>
-<p>#!/bin/sh
-echo -e &ldquo;OK! \c&rdquo; # -e 开启转义 \c 不换行
-echo &ldquo;It is a test&rdquo;
-输出结果：</p>
-<p>OK! It is a test</p>
-<h2 id="6显示结果定向至文件">6.显示结果定向至文件</h2>
-<p>echo &ldquo;It is a test&rdquo; &gt; myfile</p>
-<h2 id="7原样输出字符串不进行转义或取变量用单引号">7.原样输出字符串，不进行转义或取变量(用单引号)</h2>
-<p>echo &lsquo;$name&quot;&rsquo;
-输出结果：</p>
-<p>$name&quot;</p>
-<h2 id="8显示命令执行结果">8.显示命令执行结果</h2>
-<p>echo <code>date</code>
-注意： 这里使用的是反引号 `, 而不是单引号 &lsquo;。</p>
-<p>结果将显示当前日期</p>
-<p>Thu Jul 24 10:08:46 CST 2014</p>
-<h2 id="-e-控制字符参数">-e 控制字符参数</h2>
-<p>控制字元	作 用</p>
-<pre><code class="language-bash">\\	輸出\本身
-\a	輸出警告音
-\b	退格鍵， 刪除左邊一個字元
-\c	取消輸出行末的換行符。和“-n”選項一致
-\e	Esc鍵
-\f	換頁符
-\n	換行符
-\r	回車鍵
-\t	製表符，也就是Tab鍵
-\v	垂直製表符
-\0nnn	按照八進位制 ASCII 碼錶輸出字元。其中 0 為數字 0，nnn 是三位八進位制數
-\xhh	按照十六進位制 ASCH 碼錶輸出字元。其中 hh 是兩位十六進位制數
+      <h1 id="shell变量">Shell变量</h1>
+<p>注意，变量名和等号之间不能有空格，这可能和你熟悉的所有编程语言都不一样。同时，变量名的命名须遵循如下规则：</p>
+<p>命名只能使用英文字母，数字和下划线，首个字符不能以数字开头。
+中间不能有空格，可以使用下划线 _。
+不能使用标点符号。
+不能使用bash里的关键字（可用help命令查看保留关键字）。</p>
+<h2 id="有效的-shell-变量名示例如下">有效的 Shell 变量名示例如下：</h2>
+<pre><code>RUNOOB
+LD_LIBRARY_PATH
+_var
+var2
+</code></pre>
+<h2 id="无效的变量命名">无效的变量命名：</h2>
+<pre><code>?var=123
+user*name=runoob
+</code></pre>
+<h2 id="除了显式地直接赋值还可以用语句给变量赋值如">除了显式地直接赋值，还可以用语句给变量赋值，如：</h2>
+<pre><code>for file in `ls /etc`
+或
+for file in $(ls /etc)
+以上语句将 /etc 下目录的文件名循环出来。
 </code></pre>
 
     </div>
@@ -245,13 +204,9 @@ echo &ldquo;It is a test&rdquo;
           <a href="/tags/linux/">Linux</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Shell脚本编程</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/aa/">
-            <span class="next-text nav-default"></span>
+        
+        <a class="next" href="/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%B8%80/">
+            <span class="next-text nav-default">常用Linux命令(一)</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
