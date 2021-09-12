@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Shell脚本编程(四) - WoW</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="w0x7ce" /><meta name="description" content="Shell printf 命令 上一章节我们学习了 Shell 的 echo 命令，本章节我们来学习 Shell 的另一个输出命令 printf。 printf 命令模仿 C 程序库（library）里的 printf() 程序。 printf 由 POSIX" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E5%9B%9B/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Shell脚本编程(四)" />
+<meta property="og:description" content="Shell printf 命令 上一章节我们学习了 Shell 的 echo 命令，本章节我们来学习 Shell 的另一个输出命令 printf。 printf 命令模仿 C 程序库（library）里的 printf() 程序。 printf 由 POSIX" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E5%9B%9B/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-09-12T20:11:16+08:00" />
+<meta property="article:modified_time" content="2021-09-12T20:11:16+08:00" />
+
+<meta itemprop="name" content="Shell脚本编程(四)">
+<meta itemprop="description" content="Shell printf 命令 上一章节我们学习了 Shell 的 echo 命令，本章节我们来学习 Shell 的另一个输出命令 printf。 printf 命令模仿 C 程序库（library）里的 printf() 程序。 printf 由 POSIX"><meta itemprop="datePublished" content="2021-09-12T20:11:16+08:00" />
+<meta itemprop="dateModified" content="2021-09-12T20:11:16+08:00" />
+<meta itemprop="wordCount" content="1502">
+<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Shell脚本编程(四)"/>
+<meta name="twitter:description" content="Shell printf 命令 上一章节我们学习了 Shell 的 echo 命令，本章节我们来学习 Shell 的另一个输出命令 printf。 printf 命令模仿 C 程序库（library）里的 printf() 程序。 printf 由 POSIX"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">WoW</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">WoW</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Shell脚本编程(四)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-09-12 </span>
+        <div class="post-category">
+            <a href="/categories/%E7%B3%BB%E7%BB%9F/"> 系统 </a>
+            </div>
+          <span class="more-meta"> 1502 words </span>
+          <span class="more-meta"> 3 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#shell-printf-命令">Shell printf 命令</a>
+      <ul>
+        <li><a href="#printf-的转义序列">printf 的转义序列</a></li>
+      </ul>
+    </li>
+    <li><a href="#shell-test-命令">Shell test 命令</a>
+      <ul>
+        <li><a href="#数值测试">数值测试</a></li>
+        <li><a href="#字符串测试">字符串测试</a></li>
+        <li><a href="#文件测试">文件测试</a></li>
+        <li><a href="#shell-还提供了与--a-或--o-非--三个逻辑操作符用于将测试条件连接起来其优先级为--最高--a-次之--o-最低例如">Shell 还提供了与( -a )、或( -o )、非( ! )三个逻辑操作符用于将测试条件连接起来，其优先级为： ! 最高， -a 次之， -o 最低。例如：</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="shell-printf-命令">Shell printf 命令</h1>
+<p>上一章节我们学习了 Shell 的 echo 命令，本章节我们来学习 Shell 的另一个输出命令 printf。</p>
+<p>printf 命令模仿 C 程序库（library）里的 printf() 程序。</p>
+<p>printf 由 POSIX 标准所定义，因此使用 printf 的脚本比使用 echo 移植性好。</p>
+<p>printf 使用引用文本或空格分隔的参数，外面可以在 printf 中使用格式化字符串，还可以制定字符串的宽度、左右对齐方式等。默认的 printf 不会像 echo 自动添加换行符，我们可以手动添加 \n。</p>
+<p>printf 命令的语法：</p>
+<pre><code>printf  format-string  [arguments...]
+</code></pre>
+<pre><code>参数说明：
+
+format-string: 为格式控制字符串
+arguments: 为参数列表。
+实例
+$ echo &quot;Hello, Shell&quot;
+Hello, Shell
+$ printf &quot;Hello, Shell\n&quot;
+Hello, Shell
+$
+</code></pre>
+<p>接下来,我来用一个脚本来体现 printf 的强大功能：</p>
+<pre><code class="language-实例">#!/bin/bash
+printf &quot;%-10s %-8s %-4s\n&quot; 姓名 性别 体重kg  
+printf &quot;%-10s %-8s %-4.2f\n&quot; 郭靖 男 66.1234
+printf &quot;%-10s %-8s %-4.2f\n&quot; 杨过 男 48.6543
+printf &quot;%-10s %-8s %-4.2f\n&quot; 郭芙 女 47.9876
+</code></pre>
+<p>执行脚本，输出结果如下所示：</p>
+<pre><code>姓名     性别   体重kg
+郭靖     男      66.12
+杨过     男      48.65
+郭芙     女      47.99
+%s %c %d %f 都是格式替代符，％s 输出一个字符串，％d 整型输出，％c 输出一个字符，％f 输出实数，以小数形式输出。
+
+%-10s 指一个宽度为 10 个字符（- 表示左对齐，没有则表示右对齐），任何字符都会被显示在 10 个字符宽的字符内，如果不足则自动以空格填充，超过也会将内容全部显示出来。
+
+%-4.2f 指格式化为小数，其中 .2 指保留2位小数。
+</code></pre>
+<pre><code class="language-实例">#!/bin/bash
+# format-string为双引号
+printf &quot;%d %s\n&quot; 1 &quot;abc&quot;
+
+# 单引号与双引号效果一样
+printf '%d %s\n' 1 &quot;abc&quot;
+
+# 没有引号也可以输出
+printf %s abcdef
+
+# 格式只指定了一个参数，但多出的参数仍然会按照该格式输出，format-string 被重用
+printf %s abc def
+
+printf &quot;%s\n&quot; abc def
+
+printf &quot;%s %s %s\n&quot; a b c d e f g h i j
+
+# 如果没有 arguments，那么 %s 用NULL代替，%d 用 0 代替
+printf &quot;%s and %d \n&quot;
+</code></pre>
+<p>执行脚本，输出结果如下所示：</p>
+<pre><code>1 abc
+1 abc
+abcdefabcdefabc
+def
+a b c
+d e f
+g h i
+j  
+ and 0
+</code></pre>
+<h2 id="printf-的转义序列">printf 的转义序列</h2>
+<pre><code>序列	说明
+\a	警告字符，通常为ASCII的BEL字符
+\b	后退
+\c	抑制（不显示）输出结果中任何结尾的换行字符（只在%b格式指示符控制下的参数字符串中有效），而且，任何留在参数里的字符、任何接下来的参数以及任何留在格式字符串中的字符，都被忽略
+\f	换页（formfeed）
+\n	换行
+\r	回车（Carriage return）
+\t	水平制表符
+\v	垂直制表符
+\\	一个字面上的反斜杠字符
+\ddd	表示1到3位数八进制值的字符。仅在格式字符串中有效
+\0ddd	表示1到3位的八进制值字符
+</code></pre>
+<pre><code class="language-实例">$ printf &quot;a string, no processing:&lt;%s&gt;\n&quot; &quot;A\nB&quot;
+a string, no processing:&lt;A\nB&gt;
+
+$ printf &quot;a string, no processing:&lt;%b&gt;\n&quot; &quot;A\nB&quot;
+a string, no processing:&lt;A
+B&gt;
+
+$ printf &quot;www.w0x7ce.com \a&quot;
+www.w0x7ce.com $                  #不换行
+</code></pre>
+<h1 id="shell-test-命令">Shell test 命令</h1>
+<p>Shell中的 test 命令用于检查某个条件是否成立，它可以进行数值、字符和文件三个方面的测试。</p>
+<h2 id="数值测试">数值测试</h2>
+<pre><code>参数	说明
+-eq	等于则为真
+-ne	不等于则为真
+-gt	大于则为真
+-ge	大于等于则为真
+-lt	小于则为真
+-le	小于等于则为真
+</code></pre>
+<pre><code class="language-实例">num1=100
+num2=100
+if test $[num1] -eq $[num2]
+then
+    echo '两个数相等！'
+else
+    echo '两个数不相等！'
+fi
+</code></pre>
+<p>输出结果：</p>
+<pre><code>两个数相等！
+代码中的 [] 执行基本的算数运算，如：
+</code></pre>
+<pre><code class="language-实例">#!/bin/bash
+
+a=5
+b=6
+
+result=$[a+b] # 注意等号两边不能有空格
+echo &quot;result 为： $result&quot;
+</code></pre>
+<p>结果为:</p>
+<pre><code>result 为： 11
+</code></pre>
+<h2 id="字符串测试">字符串测试</h2>
+<p>参数	说明</p>
+<pre><code>=	等于则为真
+!=	不相等则为真
+-z 字符串	字符串的长度为零则为真
+-n 字符串	字符串的长度不为零则为真
+</code></pre>
+<pre><code class="language-实例">num1=&quot;ru1noob&quot;
+num2=&quot;runoob&quot;
+if test $num1 = $num2
+then
+    echo '两个字符串相等!'
+else
+    echo '两个字符串不相等!'
+fi
+</code></pre>
+<p>输出结果：</p>
+<pre><code>两个字符串不相等!
+</code></pre>
+<h2 id="文件测试">文件测试</h2>
+<pre><code>参数	说明
+-e 文件名	如果文件存在则为真
+-r 文件名	如果文件存在且可读则为真
+-w 文件名	如果文件存在且可写则为真
+-x 文件名	如果文件存在且可执行则为真
+-s 文件名	如果文件存在且至少有一个字符则为真
+-d 文件名	如果文件存在且为目录则为真
+-f 文件名	如果文件存在且为普通文件则为真
+-c 文件名	如果文件存在且为字符型特殊文件则为真
+-b 文件名	如果文件存在且为块特殊文件则为真
+</code></pre>
+<pre><code class="language-实例">cd /bin
+if test -e ./bash
+then
+    echo '文件已存在!'
+else
+    echo '文件不存在!'
+fi
+</code></pre>
+<p>输出结果：</p>
+<pre><code>文件已存在!
+</code></pre>
+<h2 id="shell-还提供了与--a-或--o-非--三个逻辑操作符用于将测试条件连接起来其优先级为--最高--a-次之--o-最低例如">Shell 还提供了与( -a )、或( -o )、非( ! )三个逻辑操作符用于将测试条件连接起来，其优先级为： ! 最高， -a 次之， -o 最低。例如：</h2>
+<pre><code class="language-实例">cd /bin
+if test -e ./notFile -o -e ./bash
+then
+    echo '至少有一个文件存在!'
+else
+    echo '两个文件都不存在'
+fi
+</code></pre>
+<p>输出结果：</p>
+<pre><code>至少有一个文件存在!
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">w0x7ce</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-09-12
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%89/">
+            <span class="next-text nav-default">Shell脚本编程(三)</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:null@w0x7ce.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/tianrking/" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/10065982" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>w0x7ce</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
