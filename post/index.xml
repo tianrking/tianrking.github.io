@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Sun, 12 Sep 2021 20:23:01 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Sep 2021 21:00:04 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shell脚本编程(七)</title>
+      <link>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%83/</link>
+      <pubDate>Sun, 12 Sep 2021 21:00:04 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%83/</guid>
+      <description>Shell 输入/输出重定向 大多数 UNIX 系统命令从你的终端接受输入并将所产生的输出发送回​​到您的终端。一个命令通常从一个叫标准输入的地方读取输入，默认情</description>
+    </item>
+    
+    <item>
+      <title>Shell脚本编程(六)</title>
+      <link>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E5%85%AD/</link>
+      <pubDate>Sun, 12 Sep 2021 20:44:56 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E5%85%AD/</guid>
+      <description>Shell 函数 linux shell 可以用户定义函数，然后在shell脚本中可以随便调用。 shell中函数的定义格式如下： [ function ] funname [()] { action; [return int;] } 说明： 1、可以带func</description>
+    </item>
+    
     <item>
       <title>Shell脚本编程(五)</title>
       <link>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%BA%94/</link>

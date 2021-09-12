@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Shell脚本编程(七) - WoW</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="w0x7ce" /><meta name="description" content="Shell 输入/输出重定向 大多数 UNIX 系统命令从你的终端接受输入并将所产生的输出发送回​​到您的终端。一个命令通常从一个叫标准输入的地方读取输入，默认情" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%83/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Shell脚本编程(七)" />
+<meta property="og:description" content="Shell 输入/输出重定向 大多数 UNIX 系统命令从你的终端接受输入并将所产生的输出发送回​​到您的终端。一个命令通常从一个叫标准输入的地方读取输入，默认情" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%83/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-09-12T21:00:04+08:00" />
+<meta property="article:modified_time" content="2021-09-12T21:00:04+08:00" />
+
+<meta itemprop="name" content="Shell脚本编程(七)">
+<meta itemprop="description" content="Shell 输入/输出重定向 大多数 UNIX 系统命令从你的终端接受输入并将所产生的输出发送回​​到您的终端。一个命令通常从一个叫标准输入的地方读取输入，默认情"><meta itemprop="datePublished" content="2021-09-12T21:00:04+08:00" />
+<meta itemprop="dateModified" content="2021-09-12T21:00:04+08:00" />
+<meta itemprop="wordCount" content="2202">
+<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Shell脚本编程(七)"/>
+<meta name="twitter:description" content="Shell 输入/输出重定向 大多数 UNIX 系统命令从你的终端接受输入并将所产生的输出发送回​​到您的终端。一个命令通常从一个叫标准输入的地方读取输入，默认情"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">WoW</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">WoW</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Shell脚本编程(七)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-09-12 </span>
+        <div class="post-category">
+            <a href="/categories/%E7%B3%BB%E7%BB%9F/"> 系统 </a>
+            </div>
+          <span class="more-meta"> 2202 words </span>
+          <span class="more-meta"> 5 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#shell-输入输出重定向">Shell 输入/输出重定向</a>
+      <ul>
+        <li><a href="#重定向命令列表如下">重定向命令列表如下：</a></li>
+        <li><a href="#输出重定向">输出重定向</a></li>
+        <li><a href="#输出重定向会覆盖文件内容请看下面的例子">输出重定向会覆盖文件内容，请看下面的例子：</a></li>
+        <li><a href="#输入重定向">输入重定向</a></li>
+        <li><a href="#重定向深入讲解">重定向深入讲解</a></li>
+        <li><a href="#here-document">Here Document</a></li>
+        <li><a href="#devnull-文件">/dev/null 文件</a></li>
+      </ul>
+    </li>
+    <li><a href="#shell-文件包含">Shell 文件包含</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="shell-输入输出重定向">Shell 输入/输出重定向</h1>
+<p>大多数 UNIX 系统命令从你的终端接受输入并将所产生的输出发送回​​到您的终端。一个命令通常从一个叫标准输入的地方读取输入，默认情况下，这恰好是你的终端。同样，一个命令通常将其输出写入到标准输出，默认情况下，这也是你的终端。</p>
+<h2 id="重定向命令列表如下">重定向命令列表如下：</h2>
+<pre><code>命令	说明
+command &gt; file	将输出重定向到 file。
+command &lt; file	将输入重定向到 file。
+command &gt;&gt; file	将输出以追加的方式重定向到 file。
+n &gt; file	将文件描述符为 n 的文件重定向到 file。
+n &gt;&gt; file	将文件描述符为 n 的文件以追加的方式重定向到 file。
+n &gt;&amp; m	将输出文件 m 和 n 合并。
+n &lt;&amp; m	将输入文件 m 和 n 合并。
+&lt;&lt; tag	将开始标记 tag 和结束标记 tag 之间的内容作为输入。
+需要注意的是文件描述符 0 通常是标准输入（STDIN），1 是标准输出（STDOUT），2 是标准错误输出（STDERR）。
+</code></pre>
+<h2 id="输出重定向">输出重定向</h2>
+<p>重定向一般通过在命令间插入特定的符号来实现。特别的，这些符号的语法如下所示:</p>
+<pre><code>command1 &gt; file1
+</code></pre>
+<p>上面这个命令执行command1然后将输出的内容存入file1。</p>
+<p>注意任何file1内的已经存在的内容将被新内容替代。如果要将新内容添加在文件末尾，请使用&raquo;操作符。</p>
+<p>执行下面的 who 命令，它将命令的完整的输出重定向在用户文件中(users):</p>
+<pre><code>$ who &gt; users
+</code></pre>
+<p>执行后，并没有在终端输出信息，这是因为输出已被从默认的标准输出设备（终端）重定向到指定的文件。</p>
+<p>你可以使用 cat 命令查看文件内容：</p>
+<pre><code>$ cat users
+_mbsetupuser console  Oct 31 17:35 
+tianqixin    console  Oct 31 17:35 
+tianqixin    ttys000  Dec  1 11:33 
+</code></pre>
+<h2 id="输出重定向会覆盖文件内容请看下面的例子">输出重定向会覆盖文件内容，请看下面的例子：</h2>
+<pre><code>$ echo &quot;菜鸟教程：www.runoob.com&quot; &gt; users
+$ cat users
+菜鸟教程：www.runoob.com
+$
+</code></pre>
+<p>如果不希望文件内容被覆盖，可以使用 &raquo; 追加到文件末尾，例如：</p>
+<pre><code>$ echo &quot;菜鸟教程：www.runoob.com&quot; &gt;&gt; users
+$ cat users
+菜鸟教程：www.runoob.com
+菜鸟教程：www.runoob.com
+$
+</code></pre>
+<h2 id="输入重定向">输入重定向</h2>
+<p>和输出重定向一样，Unix 命令也可以从文件获取输入，语法为：</p>
+<pre><code>command1 &lt; file1
+</code></pre>
+<p>这样，本来需要从键盘获取输入的命令会转移到文件读取内容。</p>
+<p>注意：输出重定向是大于号(&gt;)，输入重定向是小于号(&lt;)。</p>
+<p>实例
+接着以上实例，我们需要统计 users 文件的行数,执行以下命令：</p>
+<pre><code>$ wc -l users
+       2 users
+</code></pre>
+<p>也可以将输入重定向到 users 文件：</p>
+<pre><code>$  wc -l &lt; users
+       2 
+</code></pre>
+<p>注意：上面两个例子的结果不同：第一个例子，会输出文件名；第二个不会，因为它仅仅知道从标准输入读取内容。</p>
+<pre><code>command1 &lt; infile &gt; outfile
+</code></pre>
+<p>同时替换输入和输出，执行command1，从文件infile读取内容，然后将输出写入到outfile中。</p>
+<h2 id="重定向深入讲解">重定向深入讲解</h2>
+<p>一般情况下，每个 Unix/Linux 命令运行时都会打开三个文件：</p>
+<pre><code>标准输入文件(stdin)：stdin的文件描述符为0，Unix程序默认从stdin读取数据。
+标准输出文件(stdout)：stdout 的文件描述符为1，Unix程序默认向stdout输出数据。
+标准错误文件(stderr)：stderr的文件描述符为2，Unix程序会向stderr流中写入错误信息。
+默认情况下，command &gt; file 将 stdout 重定向到 file，command &lt; file 将stdin 重定向到 file。
+</code></pre>
+<p>如果希望 stderr 重定向到 file，可以这样写：</p>
+<pre><code>$ command 2&gt;file
+</code></pre>
+<p>如果希望 stderr 追加到 file 文件末尾，可以这样写：</p>
+<pre><code>$ command 2&gt;&gt;file
+</code></pre>
+<p>2 表示标准错误文件(stderr)。</p>
+<p>如果希望将 stdout 和 stderr 合并后重定向到 file，可以这样写：</p>
+<pre><code>$ command &gt; file 2&gt;&amp;1
+</code></pre>
+<p>或者</p>
+<pre><code>$ command &gt;&gt; file 2&gt;&amp;1
+</code></pre>
+<p>如果希望对 stdin 和 stdout 都重定向，可以这样写：</p>
+<pre><code>$ command &lt; file1 &gt;file2
+</code></pre>
+<p>command 命令将 stdin 重定向到 file1，将 stdout 重定向到 file2。</p>
+<h2 id="here-document">Here Document</h2>
+<p>Here Document 是 Shell 中的一种特殊的重定向方式，用来将输入重定向到一个交互式 Shell 脚本或程序。</p>
+<p>它的基本的形式如下：</p>
+<pre><code>command &lt;&lt; delimiter
+    document
+</code></pre>
+<p>delimiter
+它的作用是将两个 delimiter 之间的内容(document) 作为输入传递给 command。</p>
+<p>注意：</p>
+<p>结尾的delimiter 一定要顶格写，前面不能有任何字符，后面也不能有任何字符，包括空格和 tab 缩进。
+开始的delimiter前后的空格会被忽略掉。
+实例
+在命令行中通过 wc -l 命令计算 Here Document 的行数：</p>
+<pre><code>$ wc -l &lt;&lt; EOF
+    欢迎来到
+    菜鸟教程
+    www.runoob.com
+EOF
+3          # 输出结果为 3 行
+$
+</code></pre>
+<p>我们也可以将 Here Document 用在脚本中，例如：</p>
+<pre><code>#!/bin/bash
+cat &lt;&lt; EOF
+欢迎来到
+菜鸟教程
+www.runoob.com
+EOF
+</code></pre>
+<p>执行以上脚本，输出结果：</p>
+<pre><code>欢迎来到
+菜鸟教程
+www.runoob.com
+</code></pre>
+<h2 id="devnull-文件">/dev/null 文件</h2>
+<p>如果希望执行某个命令，但又不希望在屏幕上显示输出结果，那么可以将输出重定向到 /dev/null：</p>
+<pre><code>$ command &gt; /dev/null
+</code></pre>
+<p>/dev/null 是一个特殊的文件，写入到它的内容都会被丢弃；如果尝试从该文件读取内容，那么什么也读不到。但是 /dev/null 文件非常有用，将命令的输出重定向到它，会起到&quot;禁止输出&quot;的效果。</p>
+<p>如果希望屏蔽 stdout 和 stderr，可以这样写：</p>
+<pre><code>$ command &gt; /dev/null 2&gt;&amp;1
+</code></pre>
+<p>注意：0 是标准输入（STDIN），1 是标准输出（STDOUT），2 是标准错误输出（STDERR）。</p>
+<p>这里的 2 和 &gt; 之间不可以有空格，2&gt; 是一体的时候才表示错误输出。</p>
+<h1 id="shell-文件包含">Shell 文件包含</h1>
+<p>和其他语言一样，Shell 也可以包含外部脚本。这样可以很方便的封装一些公用的代码作为一个独立的文件。</p>
+<p>Shell 文件包含的语法格式如下：</p>
+<pre><code>. filename   # 注意点号(.)和文件名中间有一空格
+
+或
+
+source filename
+</code></pre>
+<pre><code class="language-实例">创建两个 shell 脚本文件。
+
+test1.sh 代码如下：
+
+#!/bin/bash
+url=&quot;http://www.runoob.com&quot;
+</code></pre>
+<p>test2.sh 代码如下：</p>
+<pre><code>#!/bin/bash
+
+#使用 . 号来引用test1.sh 文件
+. ./test1.sh
+
+# 或者使用以下包含文件代码
+# source ./test1.sh
+
+echo &quot;菜鸟教程官网地址：$url&quot;
+</code></pre>
+<p>接下来，我们为 test2.sh 添加可执行权限并执行：</p>
+<pre><code>$ chmod +x test2.sh 
+$ ./test2.sh 
+</code></pre>
+<pre><code>菜鸟教程官网地址：http://www.runoob.com
+</code></pre>
+<p>注：被包含的文件 test1.sh 不需要可执行权限。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">w0x7ce</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-09-12
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E5%85%AD/">
+            <span class="next-text nav-default">Shell脚本编程(六)</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:null@w0x7ce.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/IIIIIlIlIIIllll" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="tian.r.king@gmail.com" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/tianrking/" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/10065982" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>w0x7ce</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
