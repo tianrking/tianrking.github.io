@@ -49,7 +49,7 @@
 <meta itemprop="name" content="ROS学习(二)">
 <meta itemprop="description" content="创建ROS软件包 Description: 本教程介绍如何使用roscreate-pkg或catkin创建新的ROS软件包，并使用rospack列出软件包的依赖关系。"><meta itemprop="datePublished" content="2021-09-13T20:15:37+08:00" />
 <meta itemprop="dateModified" content="2021-09-13T20:15:37+08:00" />
-<meta itemprop="wordCount" content="2695">
+<meta itemprop="wordCount" content="2649">
 <meta itemprop="keywords" content="ROS,自动化,机器人," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ROS学习(二)"/>
 <meta name="twitter:description" content="创建ROS软件包 Description: 本教程介绍如何使用roscreate-pkg或catkin创建新的ROS软件包，并使用rospack列出软件包的依赖关系。"/>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"> 机器人操作系统 </a>
             </div>
-          <span class="more-meta"> 2695 words </span>
+          <span class="more-meta"> 2649 words </span>
           <span class="more-meta"> 6 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -313,57 +313,50 @@ rospy
 </code></pre>
 <h4 id="依赖项标签">依赖项标签</h4>
 <p>接下来的标签描述了软件包的依赖关系，这些依赖项分为build_depend、buildtool_depend、run_depend、test_depend。有关这些标记的详细说明，请参考Catkin Dependencies相关的文档。在之前的操作中，因为我们将roscpp、rospy和std_msgs作为catkin_create_pkg命令的参数，因此依赖关系如下所示：</p>
-<pre><code>  27   &lt;!-- The *_depend tags are used to specify dependencies --&gt;
-  28   &lt;!-- Dependencies can be catkin packages or system dependencies --&gt;
-  29   &lt;!-- Examples: --&gt;
-  30   &lt;!-- Use build_depend for packages you need at compile time: --&gt;
-  31   &lt;!--   &lt;build_depend&gt;genmsg&lt;/build_depend&gt; --&gt;
-  32   &lt;!-- Use buildtool_depend for build tool packages: --&gt;
-  33   &lt;!--   &lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt; --&gt;
-  34   &lt;!-- Use exec_depend for packages you need at runtime: --&gt;
-  35   &lt;!--   &lt;exec_depend&gt;python-yaml&lt;/exec_depend&gt; --&gt;
-  36   &lt;!-- Use test_depend for packages you need only for testing: --&gt;
-  37   &lt;!--   &lt;test_depend&gt;gtest&lt;/test_depend&gt; --&gt;
-  38   &lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt;
-  39   &lt;build_depend&gt;roscpp&lt;/build_depend&gt;
-  40   &lt;build_depend&gt;rospy&lt;/build_depend&gt;
-  41   &lt;build_depend&gt;std_msgs&lt;/build_depend&gt;
+<pre><code>&lt;!-- The *_depend tags are used to specify dependencies --&gt;
+&lt;!-- Dependencies can be catkin packages or system dependencies --&gt;
+&lt;!-- Examples: --&gt;
+&lt;!-- Use build_depend for packages you need at compile time: --&gt;
+&lt;!--   &lt;build_depend&gt;genmsg&lt;/build_depend&gt; --&gt;
+&lt;!-- Use buildtool_depend for build tool packages: --&gt;
+&lt;!--   &lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt; --&gt;
+&lt;!-- Use exec_depend for packages you need at runtime: --&gt;
+&lt;!--   &lt;exec_depend&gt;python-yaml&lt;/exec_depend&gt; --&gt;
+&lt;!-- Use test_depend for packages you need only for testing: --&gt;
+&lt;!--   &lt;test_depend&gt;gtest&lt;/test_depend&gt; --&gt;
+&lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt;
+&lt;build_depend&gt;roscpp&lt;/build_depend&gt;
+&lt;build_depend&gt;rospy&lt;/build_depend&gt;
+&lt;build_depend&gt;std_msgs&lt;/build_depend&gt;
 </code></pre>
 <p>除了catkin中默认提供的buildtool_depend，所有我们列出的依赖包都已经被添加到build_depend标签中。在本例中，因为在编译和运行时都需要用到所有指定的依赖包，因此还要将每一个依赖包分别添加到run_depend标签中：</p>
-<pre><code>  12   &lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt;
-  13 
-  14   &lt;build_depend&gt;roscpp&lt;/build_depend&gt;
-  15   &lt;build_depend&gt;rospy&lt;/build_depend&gt;
-  16   &lt;build_depend&gt;std_msgs&lt;/build_depend&gt;
-  17 
-  18   &lt;exec_depend&gt;roscpp&lt;/exec_depend&gt;
-  19   &lt;exec_depend&gt;rospy&lt;/exec_depend&gt;
-  20   &lt;exec_depend&gt;std_msgs&lt;/exec_depend&gt;
+<pre><code>&lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt;
+&lt;build_depend&gt;roscpp&lt;/build_depend&gt;
+&lt;build_depend&gt;rospy&lt;/build_depend&gt;
+&lt;build_depend&gt;std_msgs&lt;/build_depend&gt;
+&lt;exec_depend&gt;roscpp&lt;/exec_depend&gt;
+&lt;exec_depend&gt;rospy&lt;/exec_depend&gt;
+&lt;exec_depend&gt;std_msgs&lt;/exec_depend&gt;
 </code></pre>
 <p>最终的package.xml
 现在看下面最后去掉了注释和未使用标签后的package.xml文件就显得更加简洁了：</p>
-<pre><code>   1 &lt;?xml version=&quot;1.0&quot;?&gt;
-   2 &lt;package format=&quot;2&quot;&gt;
-   3   &lt;name&gt;beginner_tutorials&lt;/name&gt;
-   4   &lt;version&gt;0.1.0&lt;/version&gt;
-   5   &lt;description&gt;The beginner_tutorials package&lt;/description&gt;
-   6 
-   7   &lt;maintainer email=&quot;you@yourdomain.tld&quot;&gt;Your Name&lt;/maintainer&gt;
-   8   &lt;license&gt;BSD&lt;/license&gt;
-   9   &lt;url type=&quot;website&quot;&gt;http://wiki.ros.org/beginner_tutorials&lt;/url&gt;
-  10   &lt;author email=&quot;you@yourdomain.tld&quot;&gt;Jane Doe&lt;/author&gt;
-  11 
-  12   &lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt;
-  13 
-  14   &lt;build_depend&gt;roscpp&lt;/build_depend&gt;
-  15   &lt;build_depend&gt;rospy&lt;/build_depend&gt;
-  16   &lt;build_depend&gt;std_msgs&lt;/build_depend&gt;
-  17 
-  18   &lt;exec_depend&gt;roscpp&lt;/exec_depend&gt;
-  19   &lt;exec_depend&gt;rospy&lt;/exec_depend&gt;
-  20   &lt;exec_depend&gt;std_msgs&lt;/exec_depend&gt;
-  21 
-  22 &lt;/package&gt;
+<pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;package format=&quot;2&quot;&gt;
+&lt;name&gt;beginner_tutorials&lt;/name&gt;
+&lt;version&gt;0.1.0&lt;/version&gt;
+&lt;description&gt;The beginner_tutorials package&lt;/description&gt;
+&lt;maintainer email=&quot;you@yourdomain.tld&quot;&gt;Your Name&lt;/maintainer&gt;
+&lt;license&gt;BSD&lt;/license&gt;
+&lt;url type=&quot;website&quot;&gt;http://wiki.ros.org/beginner_tutorials&lt;/url&gt;
+&lt;author email=&quot;you@yourdomain.tld&quot;&gt;Jane Doe&lt;/author&gt;
+&lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt;
+&lt;build_depend&gt;roscpp&lt;/build_depend&gt;
+&lt;build_depend&gt;rospy&lt;/build_depend&gt;
+&lt;build_depend&gt;std_msgs&lt;/build_depend&gt;
+&lt;exec_depend&gt;roscpp&lt;/exec_depend&gt;
+&lt;exec_depend&gt;rospy&lt;/exec_depend&gt;
+&lt;exec_depend&gt;std_msgs&lt;/exec_depend&gt;
+&lt;/package&gt;
 </code></pre>
 <p>自定义CMakeLists.txt
 到此，这个包含软件包元信息的package.xml文件已经按照需要完成了裁剪整理，现在你可以继续下面的教程了。catkin_create_pkg命令生成的CMakeLists.txt文件将在后续关于构建ROS程序代码的教程中讲述。</p>
