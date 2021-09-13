@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Sun, 12 Sep 2021 21:00:04 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Sep 2021 13:52:02 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux命令大全</title>
+      <link>http://localhost:1313/post/linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</link>
+      <pubDate>Mon, 13 Sep 2021 13:52:02 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</guid>
+      <description>Linux 命令大全 1、文件管理 cat chattr chgrp chmod chown cksum cmp diff diffstat file find git gitview indent cut ln less locate lsattr mattrib mc mdel mdir mktemp more mmove mread mren mtools mtoolstest mv od paste patch rcp rm slocate split tee tmpwatch touch umask which cp whereis mcopy mshowfat rhmask scp awk read updatedb 2、文档编辑 col</description>
+    </item>
+    
     <item>
       <title>Shell脚本编程(七)</title>
       <link>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%83/</link>
