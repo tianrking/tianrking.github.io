@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>常用Linux命令(二)--sed - WoW</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="w0x7ce" /><meta name="description" content="在每一行後面增加一空行 sed G 將原來的所有空行刪除並在每一行後面增加一空行。 這樣在輸出的文本中每一行後面將有且只有一空行。 sed &#39;/^$/d;G&#39; 在每一行後面增加兩" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%BA%8C/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="常用Linux命令(二)--sed" />
+<meta property="og:description" content="在每一行後面增加一空行 sed G 將原來的所有空行刪除並在每一行後面增加一空行。 這樣在輸出的文本中每一行後面將有且只有一空行。 sed &#39;/^$/d;G&#39; 在每一行後面增加兩" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%BA%8C/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-09-13T21:25:58+08:00" />
+<meta property="article:modified_time" content="2021-09-13T21:25:58+08:00" />
+
+<meta itemprop="name" content="常用Linux命令(二)--sed">
+<meta itemprop="description" content="在每一行後面增加一空行 sed G 將原來的所有空行刪除並在每一行後面增加一空行。 這樣在輸出的文本中每一行後面將有且只有一空行。 sed &#39;/^$/d;G&#39; 在每一行後面增加兩"><meta itemprop="datePublished" content="2021-09-13T21:25:58+08:00" />
+<meta itemprop="dateModified" content="2021-09-13T21:25:58+08:00" />
+<meta itemprop="wordCount" content="5823">
+<meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="常用Linux命令(二)--sed"/>
+<meta name="twitter:description" content="在每一行後面增加一空行 sed G 將原來的所有空行刪除並在每一行後面增加一空行。 這樣在輸出的文本中每一行後面將有且只有一空行。 sed &#39;/^$/d;G&#39; 在每一行後面增加兩"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">WoW</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">WoW</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">常用Linux命令(二)--sed</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-09-13 </span>
+        <div class="post-category">
+            <a href="/categories/%E7%B3%BB%E7%BB%9F/"> 系统 </a>
+            </div>
+          <span class="more-meta"> 5823 words </span>
+          <span class="more-meta"> 12 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#在每一行後面增加一空行">在每一行後面增加一空行</a></li>
+        <li><a href="#將原來的所有空行刪除並在每一行後面增加一空行">將原來的所有空行刪除並在每一行後面增加一空行。</a></li>
+        <li><a href="#這樣在輸出的文本中每一行後面將有且只有一空行">這樣在輸出的文本中每一行後面將有且只有一空行。</a></li>
+        <li><a href="#在每一行後面增加兩行空行">在每一行後面增加兩行空行</a></li>
+        <li><a href="#將第一個腳本所產生的所有空行刪除即刪除所有偶數行">將第一個腳本所產生的所有空行刪除（即刪除所有偶數行）</a></li>
+        <li><a href="#在匹配式樣regex的行之前插入一空行">在匹配式樣「regex」的行之前插入一空行</a></li>
+        <li><a href="#在匹配式樣regex的行之後插入一空行">在匹配式樣「regex」的行之後插入一空行</a></li>
+        <li><a href="#在匹配式樣regex的行之前和之後各插入一空行">在匹配式樣「regex」的行之前和之後各插入一空行</a></li>
+      </ul>
+    </li>
+    <li><a href="#編號">編號：</a>
+      <ul>
+        <li><a href="#為文件中的每一行進行編號簡單的左對齊方式這裡使用了製表符">為文件中的每一行進行編號（簡單的左對齊方式）。這裡使用了「製表符」</a></li>
+        <li><a href="#tab見本文末尾關於----的用法的描述而不是空格來對齊邊緣">（tab，見本文末尾關於'    &lsquo;的用法的描述）而不是空格來對齊邊緣。</a></li>
+        <li><a href="#對文件中的所有行編號行號在左文字右端對齊">對文件中的所有行編號（行號在左，文字右端對齊）。</a></li>
+        <li><a href="#對文件中的所有行編號但只顯示非空白行的行號">對文件中的所有行編號，但只顯示非空白行的行號。</a></li>
+        <li><a href="#計算行數-模擬-wc--l">計算行數 （模擬 &ldquo;wc -l&rdquo;）</a></li>
+      </ul>
+    </li>
+    <li><a href="#文本轉換和替代">文本轉換和替代：</a>
+      <ul>
+        <li><a href="#unix環境轉換dos的新行符crlf為unix格式">Unix環境：轉換DOS的新行符（CR/LF）為Unix格式。</a></li>
+        <li><a href="#unix環境轉換unix的新行符lf為dos格式">Unix環境：轉換Unix的新行符（LF）為DOS格式。</a></li>
+        <li><a href="#dos環境轉換unix新行符lf為dos格式">DOS環境：轉換Unix新行符（LF）為DOS格式。</a></li>
+        <li><a href="#dos環境轉換dos新行符crlf為unix格式">DOS環境：轉換DOS新行符（CR/LF）為Unix格式。</a></li>
+        <li><a href="#下面的腳本只對unxutils-sed-407-及更高版本有效要識別unxutils版本的">下面的腳本只對UnxUtils sed 4.0.7 及更高版本有效。要識別UnxUtils版本的</a></li>
+        <li><a href="#sed可以通過其特有的--text選項你可以使用幫助選項--help看">sed可以通過其特有的「&ndash;text」選項。你可以使用幫助選項（「&ndash;help」）看</a></li>
+        <li><a href="#其中有無一個--text項以此來判斷所使用的是否是unxutils版本其它dos">其中有無一個「&ndash;text」項以此來判斷所使用的是否是UnxUtils版本。其它DOS</a></li>
+        <li><a href="#版本的的sed則無法進行這一轉換但可以用tr來實現這一轉換">版本的的sed則無法進行這一轉換。但可以用「tr」來實現這一轉換。</a></li>
+        <li><a href="#將每一行前導的空白字符空格製表符刪除">將每一行前導的「空白字符」（空格，製表符）刪除</a></li>
+        <li><a href="#使之左對齊">使之左對齊</a></li>
+        <li><a href="#將每一行拖尾的空白字符空格製表符刪除">將每一行拖尾的「空白字符」（空格，製表符）刪除</a></li>
+        <li><a href="#將每一行中的前導和拖尾的空白字符刪除">將每一行中的前導和拖尾的空白字符刪除</a></li>
+        <li><a href="#在每一行開頭處插入5個空格使全文向右移動5個字符的位置">在每一行開頭處插入5個空格（使全文向右移動5個字符的位置）</a></li>
+        <li><a href="#以79個字符為寬度將所有文本右對齊">以79個字符為寬度，將所有文本右對齊</a></li>
+        <li><a href="#以79個字符為寬度使所有文本居中在方法1中為了讓文本居中每一行的前">以79個字符為寬度，使所有文本居中。在方法1中，為了讓文本居中每一行的前</a></li>
+        <li><a href="#頭和後頭都填充了空格-在方法2中在居中文本的過程中只在文本的前面填充">頭和後頭都填充了空格。 在方法2中，在居中文本的過程中只在文本的前面填充</a></li>
+        <li><a href="#空格並且最終這些空格將有一半會被刪除此外每一行的後頭並未填充空格">空格，並且最終這些空格將有一半會被刪除。此外每一行的後頭並未填充空格。</a></li>
+        <li><a href="#在每一行中查找字串foo並將找到的foo替換為bar">在每一行中查找字串「foo」，並將找到的「foo」替換為「bar」</a></li>
+        <li><a href="#只在行中出現字串baz的情況下將foo替換成bar">只在行中出現字串「baz」的情況下將「foo」替換成「bar」</a></li>
+        <li><a href="#將foo替換成bar並且只在行中未出現字串baz的情況下替換">將「foo」替換成「bar」，並且只在行中未出現字串「baz」的情況下替換</a></li>
+        <li><a href="#不管是scarletruby還是puce一律換成red">不管是「scarlet」「ruby」還是「puce」，一律換成「red」</a></li>
+        <li><a href="#倒置所有行第一行成為最後一行依次類推模擬tac">倒置所有行，第一行成為最後一行，依次類推（模擬「tac」）。</a></li>
+        <li><a href="#由於某些原因使用下面命令時hhsed-v15會將文件中的空行刪除">由於某些原因，使用下面命令時HHsed v1.5會將文件中的空行刪除</a></li>
+        <li><a href="#將行中的字符逆序排列第一個字成為最後一字模擬rev">將行中的字符逆序排列，第一個字成為最後一字，……（模擬「rev」）</a></li>
+        <li><a href="#將每兩行連接成一行類似paste">將每兩行連接成一行（類似「paste」）</a></li>
+        <li><a href="#如果當前行以反斜槓結束則將下一行並到當前行末尾">如果當前行以反斜槓「」結束，則將下一行並到當前行末尾</a></li>
+        <li><a href="#並去掉原來行尾的反斜槓">並去掉原來行尾的反斜槓</a></li>
+        <li><a href="#如果當前行以等號開頭將當前行並到上一行末尾">如果當前行以等號開頭，將當前行並到上一行末尾</a></li>
+        <li><a href="#並以單個空格代替原來行頭的">並以單個空格代替原來行頭的「=」</a></li>
+        <li><a href="#為數字字串增加逗號分隔符號將1234567改為1234567">為數字字串增加逗號分隔符號，將「1234567」改為「1,234,567」</a></li>
+        <li><a href="#為帶有小數點和負號的數值增加逗號分隔符gnu-sed">為帶有小數點和負號的數值增加逗號分隔符（GNU sed）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="在每一行後面增加一空行">在每一行後面增加一空行</h2>
+<pre><code> sed G
+</code></pre>
+<h2 id="將原來的所有空行刪除並在每一行後面增加一空行">將原來的所有空行刪除並在每一行後面增加一空行。</h2>
+<h2 id="這樣在輸出的文本中每一行後面將有且只有一空行">這樣在輸出的文本中每一行後面將有且只有一空行。</h2>
+<pre><code> sed '/^$/d;G'
+</code></pre>
+<h2 id="在每一行後面增加兩行空行">在每一行後面增加兩行空行</h2>
+<pre><code> sed 'G;G'
+</code></pre>
+<h2 id="將第一個腳本所產生的所有空行刪除即刪除所有偶數行">將第一個腳本所產生的所有空行刪除（即刪除所有偶數行）</h2>
+<pre><code> sed 'n;d'
+</code></pre>
+<h2 id="在匹配式樣regex的行之前插入一空行">在匹配式樣「regex」的行之前插入一空行</h2>
+<pre><code> sed '/regex/{x;p;x;}'
+</code></pre>
+<h2 id="在匹配式樣regex的行之後插入一空行">在匹配式樣「regex」的行之後插入一空行</h2>
+<pre><code> sed '/regex/G'
+</code></pre>
+<h2 id="在匹配式樣regex的行之前和之後各插入一空行">在匹配式樣「regex」的行之前和之後各插入一空行</h2>
+<pre><code> sed '/regex/{x;p;x;G;}'
+</code></pre>
+<h1 id="編號">編號：</h1>
+<hr>
+<h2 id="為文件中的每一行進行編號簡單的左對齊方式這裡使用了製表符">為文件中的每一行進行編號（簡單的左對齊方式）。這裡使用了「製表符」</h2>
+<h2 id="tab見本文末尾關於----的用法的描述而不是空格來對齊邊緣">（tab，見本文末尾關於'    &lsquo;的用法的描述）而不是空格來對齊邊緣。</h2>
+<pre><code> sed = filename | sed 'N;s/ /    /'
+</code></pre>
+<h2 id="對文件中的所有行編號行號在左文字右端對齊">對文件中的所有行編號（行號在左，文字右端對齊）。</h2>
+<pre><code> sed = filename | sed 'N; s/^/     /; s/ *(.{6,}) /1  /'
+</code></pre>
+<h2 id="對文件中的所有行編號但只顯示非空白行的行號">對文件中的所有行編號，但只顯示非空白行的行號。</h2>
+<pre><code> sed '/./=' filename | sed '/./N; s/ / /'
+</code></pre>
+<h2 id="計算行數-模擬-wc--l">計算行數 （模擬 &ldquo;wc -l&rdquo;）</h2>
+<pre><code> sed -n '$='
+</code></pre>
+<h1 id="文本轉換和替代">文本轉換和替代：</h1>
+<hr>
+<h2 id="unix環境轉換dos的新行符crlf為unix格式">Unix環境：轉換DOS的新行符（CR/LF）為Unix格式。</h2>
+<pre><code> sed 's/.$//'                     ## 假設所有行以CR/LF結束
+
+ sed 's/^M$//'                    ## 在bash/tcsh中，將按Ctrl-M改為按Ctrl-V
+
+ sed 's/x0D$//'                  ## ssed、gsed 3.02.80，及更高版本
+</code></pre>
+<h2 id="unix環境轉換unix的新行符lf為dos格式">Unix環境：轉換Unix的新行符（LF）為DOS格式。</h2>
+<pre><code> sed &quot;s/$/`echo -e `/&quot;        ## 在ksh下所使用的命令
+
+ sed 's/$'&quot;/`echo `/&quot;         ## 在bash下所使用的命令
+
+ sed &quot;s/$/`echo `/&quot;           ## 在zsh下所使用的命令
+
+ sed 's/$/ /'                    ## gsed 3.02.80 及更高版本
+</code></pre>
+<h2 id="dos環境轉換unix新行符lf為dos格式">DOS環境：轉換Unix新行符（LF）為DOS格式。</h2>
+<pre><code> sed &quot;s/$//&quot;                      ## 方法 1
+
+ sed -n p                         ## 方法 2
+</code></pre>
+<h2 id="dos環境轉換dos新行符crlf為unix格式">DOS環境：轉換DOS新行符（CR/LF）為Unix格式。</h2>
+<h2 id="下面的腳本只對unxutils-sed-407-及更高版本有效要識別unxutils版本的">下面的腳本只對UnxUtils sed 4.0.7 及更高版本有效。要識別UnxUtils版本的</h2>
+<h2 id="sed可以通過其特有的--text選項你可以使用幫助選項--help看">sed可以通過其特有的「&ndash;text」選項。你可以使用幫助選項（「&ndash;help」）看</h2>
+<h2 id="其中有無一個--text項以此來判斷所使用的是否是unxutils版本其它dos">其中有無一個「&ndash;text」項以此來判斷所使用的是否是UnxUtils版本。其它DOS</h2>
+<h2 id="版本的的sed則無法進行這一轉換但可以用tr來實現這一轉換">版本的的sed則無法進行這一轉換。但可以用「tr」來實現這一轉換。</h2>
+<pre><code> sed &quot;s/ //&quot; infile &gt;outfile     ## UnxUtils sed v4.0.7 或更高版本
+
+ tr -d &lt;infile &gt;outfile        ## GNU tr 1.22 或更高版本
+</code></pre>
+<h2 id="將每一行前導的空白字符空格製表符刪除">將每一行前導的「空白字符」（空格，製表符）刪除</h2>
+<h2 id="使之左對齊">使之左對齊</h2>
+<pre><code> sed 's/^[     ]*//'                ## 見本文末尾關於'    '用法的描述
+</code></pre>
+<h2 id="將每一行拖尾的空白字符空格製表符刪除">將每一行拖尾的「空白字符」（空格，製表符）刪除</h2>
+<pre><code> sed 's/[     ]*$//'                ## 見本文末尾關於'    '用法的描述
+</code></pre>
+<h2 id="將每一行中的前導和拖尾的空白字符刪除">將每一行中的前導和拖尾的空白字符刪除</h2>
+<pre><code> sed 's/^[     ]*//;s/[     ]*$//'
+</code></pre>
+<h2 id="在每一行開頭處插入5個空格使全文向右移動5個字符的位置">在每一行開頭處插入5個空格（使全文向右移動5個字符的位置）</h2>
+<pre><code> sed 's/^/     /'
+</code></pre>
+<h2 id="以79個字符為寬度將所有文本右對齊">以79個字符為寬度，將所有文本右對齊</h2>
+<pre><code> sed -e :a -e 's/^.{1,78}$/ &amp;/;ta'  ## 78個字符外加最後的一個空格
+</code></pre>
+<h2 id="以79個字符為寬度使所有文本居中在方法1中為了讓文本居中每一行的前">以79個字符為寬度，使所有文本居中。在方法1中，為了讓文本居中每一行的前</h2>
+<h2 id="頭和後頭都填充了空格-在方法2中在居中文本的過程中只在文本的前面填充">頭和後頭都填充了空格。 在方法2中，在居中文本的過程中只在文本的前面填充</h2>
+<h2 id="空格並且最終這些空格將有一半會被刪除此外每一行的後頭並未填充空格">空格，並且最終這些空格將有一半會被刪除。此外每一行的後頭並未填充空格。</h2>
+<pre><code> sed  -e :a -e 's/^.{1,77}$/ &amp; /;ta'                     ## 方法1
+
+ sed  -e :a -e 's/^.{1,77}$/ &amp;/;ta' -e 's/( *)1/1/'  ## 方法2
+</code></pre>
+<h2 id="在每一行中查找字串foo並將找到的foo替換為bar">在每一行中查找字串「foo」，並將找到的「foo」替換為「bar」</h2>
+<pre><code> sed 's/foo/bar/'                 ## 只替換每一行中的第一個「foo」字串
+
+ sed 's/foo/bar/4'                ## 只替換每一行中的第四個「foo」字串
+
+ sed 's/foo/bar/g'                ## 將每一行中的所有「foo」都換成「bar」
+
+ sed 's/(.*)foo(.*foo)/1bar2/' ## 替換倒數第二個「foo」
+
+ sed 's/(.*)foo/1bar/'            ## 替換最後一個「foo」
+
+</code></pre>
+<h2 id="只在行中出現字串baz的情況下將foo替換成bar">只在行中出現字串「baz」的情況下將「foo」替換成「bar」</h2>
+<pre><code> sed '/baz/s/foo/bar/g'
+</code></pre>
+<h2 id="將foo替換成bar並且只在行中未出現字串baz的情況下替換">將「foo」替換成「bar」，並且只在行中未出現字串「baz」的情況下替換</h2>
+<pre><code> sed '/baz/!s/foo/bar/g'
+</code></pre>
+<h2 id="不管是scarletruby還是puce一律換成red">不管是「scarlet」「ruby」還是「puce」，一律換成「red」</h2>
+<pre><code> sed 's/scarlet/red/g;s/ruby/red/g;s/puce/red/g'  ##對多數的sed都有效
+
+ gsed 's/scarlet|ruby|puce/red/g'               ## 只對GNU sed有效
+
+</code></pre>
+<h2 id="倒置所有行第一行成為最後一行依次類推模擬tac">倒置所有行，第一行成為最後一行，依次類推（模擬「tac」）。</h2>
+<h2 id="由於某些原因使用下面命令時hhsed-v15會將文件中的空行刪除">由於某些原因，使用下面命令時HHsed v1.5會將文件中的空行刪除</h2>
+<pre><code> sed '1!G;h;$!d'               ## 方法1
+
+ sed -n '1!G;h;$p'             ## 方法2
+</code></pre>
+<h2 id="將行中的字符逆序排列第一個字成為最後一字模擬rev">將行中的字符逆序排列，第一個字成為最後一字，……（模擬「rev」）</h2>
+<pre><code> sed '/ /!G;s/(.)(.* )/&amp;21/;//D;s/.//'
+
+</code></pre>
+<h2 id="將每兩行連接成一行類似paste">將每兩行連接成一行（類似「paste」）</h2>
+<pre><code> sed '$!N;s/ / /'
+
+</code></pre>
+<h2 id="如果當前行以反斜槓結束則將下一行並到當前行末尾">如果當前行以反斜槓「」結束，則將下一行並到當前行末尾</h2>
+<h2 id="並去掉原來行尾的反斜槓">並去掉原來行尾的反斜槓</h2>
+<pre><code> sed -e :a -e '/$/N; s/ //; ta'
+</code></pre>
+<h2 id="如果當前行以等號開頭將當前行並到上一行末尾">如果當前行以等號開頭，將當前行並到上一行末尾</h2>
+<h2 id="並以單個空格代替原來行頭的">並以單個空格代替原來行頭的「=」</h2>
+<pre><code> sed -e :a -e '$!N;s/ =/ /;ta' -e 'P;D'
+</code></pre>
+<h2 id="為數字字串增加逗號分隔符號將1234567改為1234567">為數字字串增加逗號分隔符號，將「1234567」改為「1,234,567」</h2>
+<pre><code> gsed ':a;s/B[0-9]{3}&gt;/,&amp;/;ta'                     ## GNU sed
+
+ sed -e :a -e 's/(.*[0-9])([0-9]{3})/1,2/;ta'  ## 其他sed
+
+</code></pre>
+<h2 id="為帶有小數點和負號的數值增加逗號分隔符gnu-sed">為帶有小數點和負號的數值增加逗號分隔符（GNU sed）</h2>
+<p>``
+gsed -r &lsquo;:a;s/(^|[^0-9.])([0-9]+)([0-9]{3})/12,3/g;ta&rsquo;</p>
+<pre><code>
+## 在每5行後增加一空白行 （在第5，10，15，20，等行後增加一空白行）
+</code></pre>
+<p>gsed &lsquo;0~5G&rsquo;                      ## 只對GNU sed有效</p>
+<p>sed &lsquo;n;n;n;n;G;&rsquo;                 ## 其他sed</p>
+<pre><code> 
+
+# 選擇性地顯示特定行：
+
+--------
+
+ 
+
+ ## 顯示文件中的前10行 （模擬「head」的行為）
+</code></pre>
+<p>sed 10q</p>
+<pre><code> 
+
+ ## 顯示文件中的第一行 （模擬「head -1」命令）
+</code></pre>
+<p>sed q</p>
+<pre><code> 
+
+ ## 顯示文件中的最後10行 （模擬「tail」）
+</code></pre>
+<p>sed -e :a -e &lsquo;$q;N;11,$D;ba&rsquo;</p>
+<pre><code> 
+
+ ## 顯示文件中的最後2行（模擬「tail -2」命令）
+</code></pre>
+<p>sed &lsquo;$!N;$!D&rsquo;</p>
+<pre><code> 
+
+ ## 顯示文件中的最後一行（模擬「tail -1」）
+</code></pre>
+<p>sed &lsquo;$!d&rsquo;                        ## 方法1</p>
+<p>sed -n &lsquo;$p&rsquo;                      ## 方法2</p>
+<pre><code> 
+
+ ## 顯示文件中的倒數第二行
+</code></pre>
+<p>sed -e &lsquo;$!{h;d;}&rsquo; -e x              ## 當文件中只有一行時，輸入空行</p>
+<p>sed -e &lsquo;1{$q;}&rsquo; -e &lsquo;$!{h;d;}&rsquo; -e x  ## 當文件中只有一行時，顯示該行</p>
+<p>sed -e &lsquo;1{$d;}&rsquo; -e &lsquo;$!{h;d;}&rsquo; -e x  ## 當文件中只有一行時，不輸出</p>
+<pre><code> 
+
+ ## 只顯示匹配正則表達式的行（模擬「grep」）
+</code></pre>
+<p>sed -n &lsquo;/regexp/p&rsquo;               ## 方法1</p>
+<p>sed &lsquo;/regexp/!d&rsquo;                 ## 方法2</p>
+<pre><code> 
+
+ ## 只顯示「不」匹配正則表達式的行（模擬「grep -v」）
+</code></pre>
+<p>sed -n &lsquo;/regexp/!p&rsquo;              ## 方法1，與前面的命令相對應</p>
+<p>sed &lsquo;/regexp/d&rsquo;                  ## 方法2，類似的語法</p>
+<pre><code> 
+
+ ## 查找「regexp」並將匹配行的上一行顯示出來，但並不顯示匹配行
+</code></pre>
+<p>sed -n &lsquo;/regexp/{g;1!p;};h&rsquo;</p>
+<pre><code> 
+
+ ## 查找「regexp」並將匹配行的下一行顯示出來，但並不顯示匹配行
+</code></pre>
+<p>sed -n &lsquo;/regexp/{n;p;}&rsquo;</p>
+<pre><code> 
+
+ ## 顯示包含「regexp」的行及其前後行，並在第一行之前加上「regexp」所
+
+ ## 在行的行號 （類似「grep -A1 -B1」）
+</code></pre>
+<p>sed -n -e &lsquo;/regexp/{=;x;1!p;g;$!N;p;D;}&rsquo; -e h</p>
+<pre><code> 
+
+ ## 顯示包含「AAA」、「BBB」或「CCC」的行（任意次序）
+</code></pre>
+<p>sed &lsquo;/AAA/!d; /BBB/!d; /CCC/!d&rsquo;  ## 字串的次序不影響結果</p>
+<pre><code> 
+
+ ## 顯示包含「AAA」、「BBB」和「CCC」的行（固定次序）
+</code></pre>
+<p>sed &lsquo;/AAA.*BBB.*CCC/!d&rsquo;</p>
+<pre><code> 
+
+ ## 顯示包含「AAA」「BBB」或「CCC」的行 （模擬「egrep」）
+</code></pre>
+<p>sed -e &lsquo;/AAA/b&rsquo; -e &lsquo;/BBB/b&rsquo; -e &lsquo;/CCC/b&rsquo; -e d    ## 多數sed</p>
+<p>gsed &lsquo;/AAA|BBB|CCC/!d&rsquo;                        ## 對GNU sed有效</p>
+<pre><code> 
+
+ ## 顯示包含「AAA」的段落 （段落間以空行分隔）
+
+ ## HHsed v1.5 必須在「x;」後加入「G;」，接下來的3個腳本都是這樣
+</code></pre>
+<p>sed -e &lsquo;/./{H;$!d;}&rsquo; -e &lsquo;x;/AAA/!d;&rsquo;</p>
+<pre><code> 
+
+ ## 顯示包含「AAA」「BBB」和「CCC」三個字串的段落 （任意次序）
+</code></pre>
+<p>sed -e &lsquo;/./{H;$!d;}&rsquo; -e &lsquo;x;/AAA/!d;/BBB/!d;/CCC/!d&rsquo;</p>
+<pre><code> 
+
+ ## 顯示包含「AAA」、「BBB」、「CCC」三者中任一字串的段落 （任意次序）
+</code></pre>
+<p>sed -e &lsquo;/./{H;$!d;}&rsquo; -e &lsquo;x;/AAA/b&rsquo; -e &lsquo;/BBB/b&rsquo; -e &lsquo;/CCC/b&rsquo; -e d</p>
+<p>gsed &lsquo;/./{H;$!d;};x;/AAA|BBB|CCC/b;d&rsquo;         ## 只對GNU sed有效</p>
+<pre><code> 
+
+ ## 顯示包含65個或以上字符的行
+</code></pre>
+<p>sed -n &lsquo;/^.{65}/p&rsquo;</p>
+<pre><code> 
+
+ ## 顯示包含65個以下字符的行
+</code></pre>
+<p>sed -n &lsquo;/^.{65}/!p&rsquo;            ## 方法1，與上面的腳本相對應</p>
+<p>sed &lsquo;/^.{65}/d&rsquo;                ## 方法2，更簡便一點的方法</p>
+<pre><code> 
+
+ ## 顯示部分文本——從包含正則表達式的行開始到最後一行結束
+</code></pre>
+<p>sed -n &lsquo;/regexp/,$p&rsquo;</p>
+<pre><code> 
+
+ ## 顯示部分文本——指定行號範圍（從第8至第12行，含8和12行）
+</code></pre>
+<p>sed -n &lsquo;8,12p&rsquo;                   ## 方法1</p>
+<p>sed &lsquo;8,12!d&rsquo;                     ## 方法2</p>
+<pre><code> 
+
+ ## 顯示第52行
+</code></pre>
+<p>sed -n &lsquo;52p&rsquo;                     ## 方法1</p>
+<p>sed &lsquo;52!d&rsquo;                       ## 方法2</p>
+<p>sed &lsquo;52q;d&rsquo;                      ## 方法3, 處理大文件時更有效率</p>
+<pre><code> 
+
+ ## 從第3行開始，每7行顯示一次   
+</code></pre>
+<p>gsed -n &lsquo;3~7p&rsquo;                   ## 只對GNU sed有效</p>
+<p>sed -n &lsquo;3,${p;n;n;n;n;n;n;}&rsquo;     ## 其他sed</p>
+<pre><code> 
+
+ ## 顯示兩個正則表達式之間的文本（包含）
+</code></pre>
+<p>sed -n &lsquo;/Iowa/,/Montana/p&rsquo;       ## 區分大小寫方式</p>
+<pre><code> 
+
+# 選擇性地刪除特定行：
+
+--------
+
+ 
+
+ ## 顯示通篇文檔，除了兩個正則表達式之間的內容
+</code></pre>
+<p>sed &lsquo;/Iowa/,/Montana/d&rsquo;</p>
+<pre><code> 
+
+ ## 刪除文件中相鄰的重複行（模擬「uniq」）
+
+ ## 只保留重複行中的第一行，其他行刪除
+</code></pre>
+<p>sed &lsquo;$!N; /^(.*) 1$/!P; D&rsquo;</p>
+<pre><code> 
+
+ ## 刪除文件中的重複行，不管有無相鄰。注意hold space所能支持的緩存
+
+ ## 大小，或者使用GNU sed。
+</code></pre>
+<p>sed -n &lsquo;G; s/ /&amp;&amp;/; /^([ -~]* ).* 1/d; s/ //; h; P&rsquo;</p>
+<pre><code> 
+
+ ## 刪除除重複行外的所有行（模擬「uniq -d」）
+</code></pre>
+<p>sed &lsquo;$!N; s/^(.*) 1$/1/; t; D&rsquo;</p>
+<pre><code> 
+
+ ## 刪除文件中開頭的10行
+</code></pre>
+<p>sed &lsquo;1,10d&rsquo;</p>
+<pre><code> 
+
+ ## 刪除文件中的最後一行
+</code></pre>
+<p>sed &lsquo;$d&rsquo;</p>
+<pre><code> 
+
+ ## 刪除文件中的最後兩行
+</code></pre>
+<p>sed &lsquo;N;$!P;$!D;$d&rsquo;</p>
+<pre><code> 
+
+ ## 刪除文件中的最後10行
+</code></pre>
+<p>sed -e :a -e &lsquo;$d;N;2,10ba&rsquo; -e &lsquo;P;D&rsquo;   ## 方法1</p>
+<p>sed -n -e :a -e &lsquo;1,10!{P;N;D;};N;ba&rsquo;  ## 方法2</p>
+<pre><code> 
+
+ ## 刪除8的倍數行
+</code></pre>
+<p>gsed &lsquo;0~8d&rsquo;                           ## 只對GNU sed有效</p>
+<p>sed &lsquo;n;n;n;n;n;n;n;d;&rsquo;                ## 其他sed</p>
+<pre><code> 
+
+ ## 刪除匹配式樣的行
+</code></pre>
+<p>sed &lsquo;/pattern/d&rsquo;                      ## 刪除含pattern的行。當然pattern</p>
+<pre><code>                                       ## 可以換成任何有效的正則表達式
+
+ 
+
+ ## 刪除文件中的所有空行（與「grep '.' 」效果相同）
+</code></pre>
+<p>sed &lsquo;/^$/d&rsquo;                           ## 方法1</p>
+<p>sed &lsquo;/./!d&rsquo;                           ## 方法2</p>
+<pre><code> 
+
+ ## 只保留多個相鄰空行的第一行。並且刪除文件頂部和尾部的空行。
+
+ ## （模擬「cat -s」）
+</code></pre>
+<p>sed &lsquo;/./,/^$/!d&rsquo;        ##方法1，刪除文件頂部的空行，允許尾部保留一空行</p>
+<p>sed &lsquo;/^$/N;/ $/D&rsquo;      ##方法2，允許頂部保留一空行，尾部不留空行</p>
+<pre><code> 
+
+ ## 只保留多個相鄰空行的前兩行。
+</code></pre>
+<p>sed &lsquo;/^$/N;/ $/N;//D&rsquo;</p>
+<pre><code> 
+
+ ## 刪除文件頂部的所有空行
+</code></pre>
+<p>sed &lsquo;/./,$!d&rsquo;</p>
+<pre><code> 
+
+ ## 刪除文件尾部的所有空行
+</code></pre>
+<p>sed -e :a -e &lsquo;/^ *$/{$d;N;ba&rsquo; -e &lsquo;}&rsquo;  ## 對所有sed有效</p>
+<p>sed -e :a -e &lsquo;/^ *$/N;/ $/ba&rsquo;        ## 同上，但只對 gsed 3.02.*有效</p>
+<pre><code> 
+
+ ## 刪除每個段落的最後一行
+</code></pre>
+<p>sed -n &lsquo;/^$/{p;h;};/./{x;/./p;}&rsquo;</p>
+<pre><code> 
+
+# 特殊應用：
+
+--------
+
+ 
+
+ ## 移除手冊頁（man page）中的nroff標記。在Unix System V或bash shell下使
+
+ ## 用'echo'命令時可能需要加上 -e 選項。
+</code></pre>
+<p>sed &ldquo;s/.<code>echo </code>//g&rdquo;    ## 外層的雙括號是必須的（Unix環境）</p>
+<p>sed &rsquo;s/.^H//g&rsquo;             ## 在bash或tcsh中, 按 Ctrl-V 再按 Ctrl-H</p>
+<p>sed &rsquo;s/.x08//g'           ## sed 1.5，GNU sed，ssed所使用的十六進制的表示方法</p>
+<pre><code> 
+
+ ## 提取新聞組或 e-mail 的郵件頭
+</code></pre>
+<p>sed &lsquo;/^$/q&rsquo;                ## 刪除第一行空行後的所有內容</p>
+<pre><code> 
+
+ ## 提取新聞組或 e-mail 的正文部分
+</code></pre>
+<p>sed &lsquo;1,/^$/d&rsquo;              ## 刪除第一行空行之前的所有內容</p>
+<pre><code> 
+
+ ## 從郵件頭提取「Subject」（標題欄字段），並移除開頭的「Subject:」字樣
+</code></pre>
+<p>sed &lsquo;/^Subject: */!d; s///;q&rsquo;</p>
+<pre><code> 
+
+ ## 從郵件頭獲得回覆地址
+</code></pre>
+<p>sed &lsquo;/^Reply-To:/q; /^From:/h; /./d;g;q&rsquo;</p>
+<pre><code> 
+
+ ## 獲取郵件地址。在上一個腳本所產生的那一行郵件頭的基礎上進一步的將非電郵
+
+ ## 地址的部分剃除。（見上一腳本）
+</code></pre>
+<p>sed &rsquo;s/ <em>(.</em>)//; s/&gt;.<em>//; s/.</em>[:&lt;] *//'</p>
+<pre><code> 
+
+ ## 在每一行開頭加上一個尖括號和空格（引用信息）
+</code></pre>
+<p>sed &rsquo;s/^/&gt; /'</p>
+<pre><code> 
+
+ ## 將每一行開頭處的尖括號和空格刪除（解除引用）
+</code></pre>
+<p>sed &rsquo;s/^&gt; //'</p>
+<pre><code> 
+
+ ## 移除大部分的HTML標籤（包括跨行標籤）
+</code></pre>
+<p>sed -e :a -e &rsquo;s/&lt;[^&gt;]*&gt;//g;/&lt;/N;//ba'</p>
+<pre><code> 
+
+ ## 將分成多卷的uuencode文件解碼。移除文件頭信息，只保留uuencode編碼部分。
+
+ ## 文件必須以特定順序傳給sed。下面第一種版本的腳本可以直接在命令行下輸入；
+
+ ## 第二種版本則可以放入一個帶執行權限的shell腳本中。（由Rahul Dhesi的一
+
+ ## 個腳本修改而來。）
+</code></pre>
+<p>sed &lsquo;/^end/,/^begin/d&rsquo; file1 file2 &hellip; fileX | uudecode   ## vers. 1</p>
+<p>sed &lsquo;/^end/,/^begin/d&rsquo; &ldquo;$@&rdquo; | uudecode                    ## vers. 2</p>
+<pre><code> 
+
+ ## 將文件中的段落以字母順序排序。段落間以（一行或多行）空行分隔。GNU sed使用
+
+ ## 字元「v」來表示垂直製表符，這裡用它來作為換行符的佔位符——當然你也可以
+
+ ## 用其他未在文件中使用的字符來代替它。
+</code></pre>
+<p>sed &lsquo;/./{H;d;};x;s/ /={NL}=/g&rsquo; file | sort | sed &lsquo;1s/={NL}=//;s/={NL}=/ /g&rsquo;</p>
+<p>gsed &lsquo;/./{H;d};x;y/ /v/&rsquo; file | sort | sed &lsquo;1s/v//;y/v/ /&rsquo;</p>
+<pre><code> 
+
+ ## 分別壓縮每個.TXT文件，壓縮後刪除原來的文件並將壓縮後的.ZIP文件
+
+ ## 命名為與原來相同的名字（只是擴展名不同）。（DOS環境：「dir /b」
+
+ ## 顯示不帶路徑的文件名）。
+</code></pre>
+<p>echo @echo off &gt;zipup.bat</p>
+<p>dir /b <em>.txt | sed &ldquo;s/^(.</em>).TXT/pkzip -mo 1 1.TXT/&rdquo; &raquo;zipup.bat</p>
+<pre><code> 
+
+ 
+
+使用SED：Sed接受一個或多個編輯命令，並且每讀入一行後就依次應用這些命令。
+
+當讀入第一行輸入後，sed對其應用所有的命令，然後將結果輸出。接著再讀入第二
+
+行輸入，對其應用所有的命令……並重複這個過程。上一個例子中sed由標準輸入設
+
+備（即命令解釋器，通常是以管道輸入的形式）獲得輸入。在命令行給出一個或多
+
+個文件名作為參數時，這些文件取代標準輸入設備成為sed的輸入。sed的輸出將被
+
+送到標準輸出（顯示器）。因此：
+
+</code></pre>
+<p>cat filename | sed &lsquo;10q&rsquo;         ## 使用管道輸入</p>
+<p>sed &lsquo;10q&rsquo; filename               ## 同樣效果，但不使用管道輸入</p>
+<p>sed &lsquo;10q&rsquo; filename &gt; newfile     ## 將輸出轉移（重定向）到磁盤上</p>
+<pre><code>
+要瞭解sed命令的使用說明，包括如何通過腳本文件（而非從命令行）來使用這些命
+
+令，請參閱《sed &amp; awk》第二版，作者Dale Dougherty和Arnold Robbins
+
+（O'Reilly，1997；http://www.ora.com），《UNIX Text Processing》，作者
+
+Dale Dougherty和Tim O'Reilly（Hayden Books，1987）或者是Mike Arst寫的教
+
+程——壓縮包的名稱是「U-SEDIT2.ZIP」（在許多站點上都找得到）。要發掘sed
+
+的潛力，則必須對「正則表達式」有足夠的理解。正則表達式的資料可以看
+
+《Mastering Regular Expressions》作者Jeffrey Friedl（O'reilly 1997）。
+
+Unix系統所提供的手冊頁（「man」）也會有所幫助（試一下這些命令
+
+「man sed」、「man regexp」，或者看「man ed」中關於正則表達式的部分），但
+
+手冊提供的信息比較「抽象」——這也是它一直為人所詬病的。不過，它本來就不
+
+是用來教初學者如何使用sed或正則表達式的教材，而只是為那些熟悉這些工具的人
+
+提供的一些文本參考。
+
+ 
+
+括號語法：前面的例子對sed命令基本上都使用單引號（'...'）而非雙引號
+
+（&quot;...&quot;）這是因為sed通常是在Unix平台上使用。單引號下，Unix的shell（命令
+
+解釋器）不會對美元符（$）和後引號（`...`）進行解釋和執行。而在雙引號下
+
+美元符會被展開為變量或參數的值，後引號中的命令被執行並以輸出的結果代替
+
+後引號中的內容。而在「csh」及其衍生的shell中使用感嘆號（!）時需要在其前
+
+面加上轉義用的反斜槓（就像這樣：!）以保證上面所使用的例子能正常運行
+
+（包括使用單引號的情況下）。DOS版本的Sed則一律使用雙引號（&quot;...&quot;）而不是
+
+引號來圈起命令。
+
+ 
+
+'    '的用法：為了使本文保持行文簡潔，我們在腳本中使用'    '來表示一個製表
+
+符。但是現在大部分版本的sed還不能識別'    '的簡寫方式，因此當在命令行中為
+
+腳本輸入製表符時，你應該直接按TAB鍵來輸入製表符而不是輸入'    '。下列的工
+
+具軟件都支持'    '做為一個正則表達式的字元來表示製表符：awk、perl、HHsed、
+
+sedmod以及GNU sed v3.02.80。
+
+ 
+
+不同版本的SED：不同的版本間的sed會有些不同之處，可以想像它們之間在語法上
+
+會有差異。具體而言，它們中大部分不支持在編輯命令中間使用標籤（:name）或分
+
+支命令（b,t），除非是放在那些的末尾。這篇文檔中我們儘量選用了可移植性較高
+
+的語法，以使大多數版本的sed的用戶都能使用這些腳本。不過GNU版本的sed允許使
+
+用更簡潔的語法。想像一下當讀者看到一個很長的命令時的心情：
+
+ 
+</code></pre>
+<p>sed -e &lsquo;/AAA/b&rsquo; -e &lsquo;/BBB/b&rsquo; -e &lsquo;/CCC/b&rsquo; -e d</p>
+<pre><code>
+好消息是GNU sed能讓命令更緊湊：
+
+ 
+</code></pre>
+<p>sed &lsquo;/AAA/b;/BBB/b;/CCC/b;d&rsquo;      ## 甚至可以寫成</p>
+<p>sed &lsquo;/AAA|BBB|CCC/b;d&rsquo;</p>
+<pre><code>
+此外，請注意雖然許多版本的sed接受象「/one/ s/RE1/RE2/」這種在's'前帶有空
+
+格的命令，但這些版本中有些卻不接受這樣的命令:「/one/! s/RE1/RE2/」。這時
+
+只需要把中間的空格去掉就行了。
+
+ 
+
+速度優化：當由於某種原因（比如輸入文件較大、處理器或硬盤較慢等）需要提高
+
+命令執行速度時，可以考慮在替換命令（「s/.../.../」）前面加上地址表達式來
+
+提高速度。舉例來說：
+
+</code></pre>
+<p>sed &rsquo;s/foo/bar/g' filename         ## 標準替換命令</p>
+<p>sed &lsquo;/foo/ s/foo/bar/g&rsquo; filename   ## 速度更快</p>
+<p>sed &lsquo;/foo/ s//bar/g&rsquo; filename      ## 簡寫形式</p>
+<pre><code> 
+
+當只需要顯示文件的前面的部分或需要刪除後面的內容時，可以在腳本中使用「q」
+
+命令（退出命令）。在處理大的文件時，這會節省大量時間。因此：
+
+ 
+</code></pre>
+<p>sed -n &lsquo;45,50p&rsquo; filename           ## 顯示第45到50行</p>
+<p>sed -n &lsquo;51q;45,50p&rsquo; filename       ## 一樣，但快得多</p>
+<pre><code></code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">w0x7ce</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-09-13
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/ros%E5%AD%A6%E4%B9%A0%E4%BA%8C/">
+            <span class="next-text nav-default">ROS学习(二)</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:null@w0x7ce.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/IIIIIlIlIIIllll" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="mailto:tian.r.king@gmail.com" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/tianrking/" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/10065982" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>w0x7ce</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>

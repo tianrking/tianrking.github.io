@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Mon, 13 Sep 2021 20:15:37 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Sep 2021 21:25:58 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>http://localhost:1313/about/</link>
@@ -15,6 +15,15 @@
       
       <guid>http://localhost:1313/about/</guid>
       <description>Your browser does not support the HTML5 audio element. 那怕世界有趟旅程無人問津 那怕要說再見我們仍然相信 仍然相信 能走再遠的路 時間似飛毯 年歲已改變 你有時會很累 也有人會反對 但決不回去</description>
+    </item>
+    
+    <item>
+      <title>常用Linux命令(二)--sed</title>
+      <link>http://localhost:1313/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%BA%8C/</link>
+      <pubDate>Mon, 13 Sep 2021 21:25:58 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%BA%8C/</guid>
+      <description>在每一行後面增加一空行 sed G 將原來的所有空行刪除並在每一行後面增加一空行。 這樣在輸出的文本中每一行後面將有且只有一空行。 sed &#39;/^$/d;G&#39; 在每一行後面增加兩</description>
     </item>
     
     <item>
