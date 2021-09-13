@@ -67,7 +67,7 @@ copyright = "w0x7ce"            # default: author.name ↓        # 默认为下
   archivePaginate = 50
 
   # show 'xx Posts In Total' in archive page ?            # 是否在归档页显示文章的总数
-  showArchiveCount = false
+  showArchiveCount = true
 
   # The date format to use; for a list of valid formats, see https://gohugo.io/functions/format/
   dateFormatToUse = "2006-01-02"
@@ -112,8 +112,8 @@ copyright = "w0x7ce"            # default: author.name ↓        # 默认为下
   uglyURLs = false          # please keep same with uglyurls setting
 
   # Show language selector for multilingual site.
-  showLanguageSelector = false
-
+  showLanguageSelector = true
+  
   [params.publicCDN]        # load these files from public cdn                          # 启用公共CDN，需自行定义
     enable = true
     jquery = '<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>'
@@ -178,8 +178,8 @@ copyright = "w0x7ce"            # default: author.name ↓        # 默认为下
 
   [params.reward]                                         # 文章打赏
     enable = true
-    wechat = "/path/to/your/wechat-qr-code.png"           # 微信二维码
-    alipay = "/path/to/your/alipay-qr-code.png"           # 支付宝二维码
+    wechat = "/media/wechat.png"           # 微信二维码
+    alipay = "/media/alipay.png"           # 支付宝二维码
 
   [params.social]                                         # 社交链接
     a-email = "mailto:null@w0x7ce.com"
