@@ -49,7 +49,7 @@
 <meta itemprop="name" content="ROS学习(二)">
 <meta itemprop="description" content="创建ROS软件包 Description: 本教程介绍如何使用roscreate-pkg或catkin创建新的ROS软件包，并使用rospack列出软件包的依赖关系。"><meta itemprop="datePublished" content="2021-09-13T20:15:37+08:00" />
 <meta itemprop="dateModified" content="2021-09-13T20:15:37+08:00" />
-<meta itemprop="wordCount" content="2631">
+<meta itemprop="wordCount" content="2695">
 <meta itemprop="keywords" content="ROS,自动化,机器人," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ROS学习(二)"/>
 <meta name="twitter:description" content="创建ROS软件包 Description: 本教程介绍如何使用roscreate-pkg或catkin创建新的ROS软件包，并使用rospack列出软件包的依赖关系。"/>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"> 机器人操作系统 </a>
             </div>
-          <span class="more-meta"> 2631 words </span>
+          <span class="more-meta"> 2695 words </span>
           <span class="more-meta"> 6 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -156,12 +156,7 @@
         <li><a href="#软件包依赖关系">软件包依赖关系</a>
           <ul>
             <li><a href="#一级依赖">一级依赖</a></li>
-          </ul>
-        </li>
-        <li><a href="#间接依赖">间接依赖</a></li>
-        <li><a href="#自定义你的软件包">自定义你的软件包</a>
-          <ul>
-            <li><a href="#自定义packagexml">自定义package.xml</a></li>
+            <li><a href="#间接依赖">间接依赖</a></li>
           </ul>
         </li>
       </ul>
@@ -248,7 +243,7 @@ $ cat package.xml
 ...
 &lt;/package&gt;
 </code></pre>
-<h2 id="间接依赖">间接依赖</h2>
+<h3 id="间接依赖">间接依赖</h3>
 <p>在很多情况下，一个依赖包还会有它自己的依赖关系，比如，rospy就有其它依赖包。</p>
 <pre><code>$ rospack depends1 rospy
 </code></pre>
@@ -287,90 +282,89 @@ rospack
 roslib
 rospy
 </code></pre>
-<h2 id="自定义你的软件包">自定义你的软件包</h2>
+<h4 id="自定义你的软件包">自定义你的软件包</h4>
 <p>本部分教程将剖析catkin_create_pkg命令生成的每个文件，并详细描述这些文件的组成部分，以及如何自定义这些文件。</p>
-<h3 id="自定义packagexml">自定义package.xml</h3>
+<h4 id="自定义packagexml">自定义package.xml</h4>
 <p>自动生成的package.xml文件应该在你的新软件包中。现在让我们一起来看看新生成的package.xml文件以及每一个需要你关注的元素。</p>
 <h4 id="描述标签">描述标签</h4>
 <p>首先关注description标签：</p>
-<h4 id="切换行号显示">切换行号显示</h4>
-<pre><code>   5   &lt;description&gt;The beginner_tutorials package&lt;/description&gt;
+<pre><code>&lt;description&gt;The beginner_tutorials package&lt;/description&gt;
 </code></pre>
 <p>将描述信息修改为任何你喜欢的内容，但是按照惯例，第一句话应该简短一些，因为它包括了软件包的范围。如果用一句话难以描述完全那就需要换行了。</p>
 <h4 id="维护者标签">维护者标签</h4>
 <p>接下来是maintainer标签：</p>
-<p>切换行号显示
-7   <!-- One maintainer tag required, multiple allowed, one person per tag -->
-8   <!-- Example:  -->
-9   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
-10   <maintainer email="user@todo.todo">user</maintainer></p>
+<pre><code>   &lt;!-- One maintainer tag required, multiple allowed, one person per tag --&gt; 
+   &lt;!-- Example:  --&gt;
+   &lt;!-- &lt;maintainer email=&quot;jane.doe@example.com&quot;&gt;Jane Doe&lt;/maintainer&gt; --&gt;
+   &lt;maintainer email=&quot;user@todo.todo&quot;&gt;user&lt;/maintainer&gt;
+</code></pre>
 <p>这是package.xml中要求填写的一个重要标签，因为它能够让其他人联系到软件包的相关人员。至少需要填写一个维护者，但如果你想的话可以添加多个。除了在标签里面填写维护者的名字外，还应该在标签的email属性中填写电子邮件地址：</p>
-<p>切换行号显示
-7   <maintainer email="you@yourdomain.tld">Your Name</maintainer></p>
+<pre><code>&lt;maintainer email=&quot;you@yourdomain.tld&quot;&gt;Your Name&lt;/maintainer&gt;
+</code></pre>
 <h4 id="许可证标签">许可证标签</h4>
 <p>再接下来是license标签，同样地也需要：</p>
-<p>切换行号显示
-12   <!-- One license tag required, multiple allowed, one license per tag -->
-13   <!-- Commonly used license strings: -->
-14   <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
-15   <license>TODO</license></p>
+<pre><code> &lt;!-- One license tag required, multiple allowed, one license per tag --&gt;
+ &lt;!-- Commonly used license strings: --&gt;
+ &lt;!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 --&gt;
+&lt;license&gt;TODO&lt;/license&gt;
+</code></pre>
 <p>你应该选择一种许可证并将它填写到这里。一些常见的开源许可协议有BSD、MIT、Boost Software License、GPLv2、GPLv3、LGPLv2.1和LGPLv3。你可以在Open Source Initiative中阅读其中的若干个许可协议的相关信息。对于本教程，我们使用BSD许可证，因为其他核心ROS组件已经在使用它：</p>
-<p>切换行号显示
-8   <license>BSD</license></p>
+<pre><code>&lt;license&gt;BSD&lt;/license&gt;
+</code></pre>
 <h4 id="依赖项标签">依赖项标签</h4>
 <p>接下来的标签描述了软件包的依赖关系，这些依赖项分为build_depend、buildtool_depend、run_depend、test_depend。有关这些标记的详细说明，请参考Catkin Dependencies相关的文档。在之前的操作中，因为我们将roscpp、rospy和std_msgs作为catkin_create_pkg命令的参数，因此依赖关系如下所示：</p>
-<p>切换行号显示
-27   <!-- The *_depend tags are used to specify dependencies -->
-28   <!-- Dependencies can be catkin packages or system dependencies -->
-29   <!-- Examples: -->
-30   <!-- Use build_depend for packages you need at compile time: -->
-31   <!--   <build_depend>genmsg</build_depend> -->
-32   <!-- Use buildtool_depend for build tool packages: -->
-33   <!--   <buildtool_depend>catkin</buildtool_depend> -->
-34   <!-- Use exec_depend for packages you need at runtime: -->
-35   <!--   <exec_depend>python-yaml</exec_depend> -->
-36   <!-- Use test_depend for packages you need only for testing: -->
-37   <!--   <test_depend>gtest</test_depend> -->
-38   &lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt;
-39   &lt;build_depend&gt;roscpp&lt;/build_depend&gt;
-40   &lt;build_depend&gt;rospy&lt;/build_depend&gt;
-41   &lt;build_depend&gt;std_msgs&lt;/build_depend&gt;</p>
+<pre><code>  27   &lt;!-- The *_depend tags are used to specify dependencies --&gt;
+  28   &lt;!-- Dependencies can be catkin packages or system dependencies --&gt;
+  29   &lt;!-- Examples: --&gt;
+  30   &lt;!-- Use build_depend for packages you need at compile time: --&gt;
+  31   &lt;!--   &lt;build_depend&gt;genmsg&lt;/build_depend&gt; --&gt;
+  32   &lt;!-- Use buildtool_depend for build tool packages: --&gt;
+  33   &lt;!--   &lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt; --&gt;
+  34   &lt;!-- Use exec_depend for packages you need at runtime: --&gt;
+  35   &lt;!--   &lt;exec_depend&gt;python-yaml&lt;/exec_depend&gt; --&gt;
+  36   &lt;!-- Use test_depend for packages you need only for testing: --&gt;
+  37   &lt;!--   &lt;test_depend&gt;gtest&lt;/test_depend&gt; --&gt;
+  38   &lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt;
+  39   &lt;build_depend&gt;roscpp&lt;/build_depend&gt;
+  40   &lt;build_depend&gt;rospy&lt;/build_depend&gt;
+  41   &lt;build_depend&gt;std_msgs&lt;/build_depend&gt;
+</code></pre>
 <p>除了catkin中默认提供的buildtool_depend，所有我们列出的依赖包都已经被添加到build_depend标签中。在本例中，因为在编译和运行时都需要用到所有指定的依赖包，因此还要将每一个依赖包分别添加到run_depend标签中：</p>
-<p>切换行号显示
-12   &lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt;
-13
-14   &lt;build_depend&gt;roscpp&lt;/build_depend&gt;
-15   &lt;build_depend&gt;rospy&lt;/build_depend&gt;
-16   &lt;build_depend&gt;std_msgs&lt;/build_depend&gt;
-17
-18   &lt;exec_depend&gt;roscpp&lt;/exec_depend&gt;
-19   &lt;exec_depend&gt;rospy&lt;/exec_depend&gt;
-20   &lt;exec_depend&gt;std_msgs&lt;/exec_depend&gt;</p>
+<pre><code>  12   &lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt;
+  13 
+  14   &lt;build_depend&gt;roscpp&lt;/build_depend&gt;
+  15   &lt;build_depend&gt;rospy&lt;/build_depend&gt;
+  16   &lt;build_depend&gt;std_msgs&lt;/build_depend&gt;
+  17 
+  18   &lt;exec_depend&gt;roscpp&lt;/exec_depend&gt;
+  19   &lt;exec_depend&gt;rospy&lt;/exec_depend&gt;
+  20   &lt;exec_depend&gt;std_msgs&lt;/exec_depend&gt;
+</code></pre>
 <p>最终的package.xml
 现在看下面最后去掉了注释和未使用标签后的package.xml文件就显得更加简洁了：</p>
-<p>切换行号显示
-1 <?xml version="1.0"?>
-2 <package format="2">
-3   <name>beginner_tutorials</name>
-4   <version>0.1.0</version>
-5   <description>The beginner_tutorials package</description>
-6
-7   <maintainer email="you@yourdomain.tld">Your Name</maintainer>
-8   <license>BSD</license>
-9   <url type="website"><a href="http://wiki.ros.org/beginner_tutorials">http://wiki.ros.org/beginner_tutorials</a></url>
-10   <author email="you@yourdomain.tld">Jane Doe</author>
-11
-12   &lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt;
-13
-14   &lt;build_depend&gt;roscpp&lt;/build_depend&gt;
-15   &lt;build_depend&gt;rospy&lt;/build_depend&gt;
-16   &lt;build_depend&gt;std_msgs&lt;/build_depend&gt;
-17
-18   &lt;exec_depend&gt;roscpp&lt;/exec_depend&gt;
-19   &lt;exec_depend&gt;rospy&lt;/exec_depend&gt;
-20   &lt;exec_depend&gt;std_msgs&lt;/exec_depend&gt;
-21
-22 </package></p>
+<pre><code>   1 &lt;?xml version=&quot;1.0&quot;?&gt;
+   2 &lt;package format=&quot;2&quot;&gt;
+   3   &lt;name&gt;beginner_tutorials&lt;/name&gt;
+   4   &lt;version&gt;0.1.0&lt;/version&gt;
+   5   &lt;description&gt;The beginner_tutorials package&lt;/description&gt;
+   6 
+   7   &lt;maintainer email=&quot;you@yourdomain.tld&quot;&gt;Your Name&lt;/maintainer&gt;
+   8   &lt;license&gt;BSD&lt;/license&gt;
+   9   &lt;url type=&quot;website&quot;&gt;http://wiki.ros.org/beginner_tutorials&lt;/url&gt;
+  10   &lt;author email=&quot;you@yourdomain.tld&quot;&gt;Jane Doe&lt;/author&gt;
+  11 
+  12   &lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt;
+  13 
+  14   &lt;build_depend&gt;roscpp&lt;/build_depend&gt;
+  15   &lt;build_depend&gt;rospy&lt;/build_depend&gt;
+  16   &lt;build_depend&gt;std_msgs&lt;/build_depend&gt;
+  17 
+  18   &lt;exec_depend&gt;roscpp&lt;/exec_depend&gt;
+  19   &lt;exec_depend&gt;rospy&lt;/exec_depend&gt;
+  20   &lt;exec_depend&gt;std_msgs&lt;/exec_depend&gt;
+  21 
+  22 &lt;/package&gt;
+</code></pre>
 <p>自定义CMakeLists.txt
 到此，这个包含软件包元信息的package.xml文件已经按照需要完成了裁剪整理，现在你可以继续下面的教程了。catkin_create_pkg命令生成的CMakeLists.txt文件将在后续关于构建ROS程序代码的教程中讲述。</p>
 
