@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Mon, 13 Sep 2021 13:52:02 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Sep 2021 20:08:40 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ROS学习(一)</title>
+      <link>http://localhost:1313/post/ros%E5%AD%A6%E4%B9%A0%E4%B8%80/</link>
+      <pubDate>Mon, 13 Sep 2021 20:08:40 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/ros%E5%AD%A6%E4%B9%A0%E4%B8%80/</guid>
+      <description>ROS文件系统导览 Description: 本教程介绍ROS文件系统的概念，包括如何使用roscd、rosls和rospack命令行工具。 Tutorial Level: BEGINNER Next Tutorial: 创建ROS软件包</description>
+    </item>
+    
     <item>
       <title>Linux命令大全</title>
       <link>http://localhost:1313/post/linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</link>

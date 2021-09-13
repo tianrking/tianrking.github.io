@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>机器人操作系统 on WoW</title>
+    <link>http://localhost:1313/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
+    <description>Recent content in 机器人操作系统 on WoW</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>w0x7ce</copyright>
+    <lastBuildDate>Mon, 13 Sep 2021 20:08:40 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ROS学习(一)</title>
+      <link>http://localhost:1313/post/ros%E5%AD%A6%E4%B9%A0%E4%B8%80/</link>
+      <pubDate>Mon, 13 Sep 2021 20:08:40 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/ros%E5%AD%A6%E4%B9%A0%E4%B8%80/</guid>
+      <description>ROS文件系统导览 Description: 本教程介绍ROS文件系统的概念，包括如何使用roscd、rosls和rospack命令行工具。 Tutorial Level: BEGINNER Next Tutorial: 创建ROS软件包</description>
+    </item>
+    
+  </channel>
+</rss>
