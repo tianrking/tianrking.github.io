@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ROS学习(二) - WoW</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="w0x7ce" /><meta name="description" content="创建ROS软件包 Description: 本教程介绍如何使用roscreate-pkg或catkin创建新的ROS软件包，并使用rospack列出软件包的依赖关系。" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/ros%E5%AD%A6%E4%B9%A0%E4%BA%8C/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="ROS学习(二)" />
+<meta property="og:description" content="创建ROS软件包 Description: 本教程介绍如何使用roscreate-pkg或catkin创建新的ROS软件包，并使用rospack列出软件包的依赖关系。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/ros%E5%AD%A6%E4%B9%A0%E4%BA%8C/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-09-13T20:15:37+08:00" />
+<meta property="article:modified_time" content="2021-09-13T20:15:37+08:00" />
+
+<meta itemprop="name" content="ROS学习(二)">
+<meta itemprop="description" content="创建ROS软件包 Description: 本教程介绍如何使用roscreate-pkg或catkin创建新的ROS软件包，并使用rospack列出软件包的依赖关系。"><meta itemprop="datePublished" content="2021-09-13T20:15:37+08:00" />
+<meta itemprop="dateModified" content="2021-09-13T20:15:37+08:00" />
+<meta itemprop="wordCount" content="2631">
+<meta itemprop="keywords" content="ROS,自动化,机器人," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ROS学习(二)"/>
+<meta name="twitter:description" content="创建ROS软件包 Description: 本教程介绍如何使用roscreate-pkg或catkin创建新的ROS软件包，并使用rospack列出软件包的依赖关系。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">WoW</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">WoW</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">ROS学习(二)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-09-13 </span>
+        <div class="post-category">
+            <a href="/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"> 机器人操作系统 </a>
+            </div>
+          <span class="more-meta"> 2631 words </span>
+          <span class="more-meta"> 6 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#创建ros软件包">创建ROS软件包</a>
+      <ul>
+        <li><a href="#一个catkin软件包由什么组成">一个catkin软件包由什么组成?</a></li>
+        <li><a href="#创建catkin软件包">创建catkin软件包</a></li>
+        <li><a href="#构建一个catkin工作区并生效配置文件">构建一个catkin工作区并生效配置文件</a></li>
+        <li><a href="#要将这个工作空间添加到ros环境中你需要source一下生成的配置文件">要将这个工作空间添加到ROS环境中，你需要source一下生成的配置文件：</a></li>
+        <li><a href="#软件包依赖关系">软件包依赖关系</a>
+          <ul>
+            <li><a href="#一级依赖">一级依赖</a></li>
+          </ul>
+        </li>
+        <li><a href="#间接依赖">间接依赖</a></li>
+        <li><a href="#自定义你的软件包">自定义你的软件包</a>
+          <ul>
+            <li><a href="#自定义packagexml">自定义package.xml</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="创建ros软件包">创建ROS软件包</h1>
+<p>Description: 本教程介绍如何使用roscreate-pkg或catkin创建新的ROS软件包，并使用rospack列出软件包的依赖关系。</p>
+<p>Tutorial Level: BEGINNER</p>
+<p>Next Tutorial: 编译ROS软件包</p>
+<h2 id="一个catkin软件包由什么组成">一个catkin软件包由什么组成?</h2>
+<p>一个包要想称为catkin软件包，必须符合以下要求：</p>
+<p>这个包必须有一个符合catkin规范的package.xml文件</p>
+<p>这个package.xml文件提供有关该软件包的元信息</p>
+<p>这个包必须有一个catkin版本的CMakeLists.txt文件</p>
+<p>如果它是个Catkin元包的话，则需要有一个CMakeList.txt文件的相关样板</p>
+<p>每个包必须有自己的目录
+这意味着在同一个目录下不能有嵌套的或者多个软件包存在
+最简单的软件包看起来就像这样：</p>
+<pre><code>my_package/
+  CMakeLists.txt
+  package.xml
+catkin工作空间中的软件包
+开发catkin软件包的推荐方法是使用catkin工作空间，但是你也可以单独开发catkin软件包。一个简单的工作空间如下所示：
+
+workspace_folder/        -- WORKSPACE
+  src/                   -- SOURCE SPACE
+    CMakeLists.txt       -- 'Toplevel' CMake file, provided by catkin
+    package_1/
+      CMakeLists.txt     -- CMakeLists.txt file for package_1
+      package.xml        -- Package manifest for package_1
+    ...
+    package_n/
+      CMakeLists.txt     -- CMakeLists.txt file for package_n
+      package.xml        -- Package manifest for package_n
+</code></pre>
+<p>在继续本教程之前请先按照创建catkin工作空间教程创建一个空白的catkin工作空间。</p>
+<h2 id="创建catkin软件包">创建catkin软件包</h2>
+<p>本部分教程将演示如何使用catkin_create_pkg脚本来创建一个新的catkin软件包，以及创建之后都能做些什么。</p>
+<p>首先切换到刚才创建的空白catkin工作空间中的源文件空间目录：</p>
+<pre><code># You should have created this in the Creating a Workspace Tutorial
+$ cd ~/catkin_ws/src
+</code></pre>
+<p>现在使用catkin_create_pkg命令创建一个名为beginner_tutorials的新软件包，这个软件包依赖于std_msgs、roscpp和rospy：</p>
+<pre><code>$ catkin_create_pkg beginner_tutorials std_msgs rospy roscpp
+</code></pre>
+<p>这将会创建一个名为beginner_tutorials的文件夹，这个文件夹里面包含一个package.xml文件和一个CMakeLists.txt文件，这两个文件都已经部分填写了你在执行catkin_create_pkg命令时提供的信息。</p>
+<p>catkin_create_pkg命令会要求你输入package_name，如有需要还可以在后面添加一些需要依赖的其它软件包：</p>
+<pre><code># This is an example, do not try to run this
+# catkin_create_pkg &lt;package_name&gt; [depend1] [depend2] [depend3]
+</code></pre>
+<p>catkin_create_pkg命令也有更多的高级功能，这些功能在catkin/commands/catkin_create_pkg中有描述。</p>
+<h2 id="构建一个catkin工作区并生效配置文件">构建一个catkin工作区并生效配置文件</h2>
+<p>现在你需要在catkin工作区中构建软件包：</p>
+<pre><code>$ cd ~/catkin_ws
+$ catkin_make
+</code></pre>
+<p>工作空间构建完成后，在devel子目录下创建了一个与你通常在/opt/ros/$ROSDISTRO_NAME下看到的目录结构类似的结构。</p>
+<h2 id="要将这个工作空间添加到ros环境中你需要source一下生成的配置文件">要将这个工作空间添加到ROS环境中，你需要source一下生成的配置文件：</h2>
+<pre><code>$ . ~/catkin_ws/devel/setup.bash
+</code></pre>
+<h2 id="软件包依赖关系">软件包依赖关系</h2>
+<h3 id="一级依赖">一级依赖</h3>
+<p>之前在使用catkin_create_pkg命令时提供了几个软件包作为依赖关系，现在我们可以使用rospack命令工具来查看这些一级依赖包。</p>
+<pre><code>$ rospack depends1 beginner_tutorials 
+</code></pre>
+<pre><code>std_msgs
+rospy
+roscpp
+</code></pre>
+<p>如你所见，rospack列出了在运行catkin_create_pkg命令时作为参数的依赖包，这些依赖关系存储在package.xml文件中。</p>
+<pre><code>$ roscd beginner_tutorials
+$ cat package.xml
+</code></pre>
+<pre><code>&lt;package&gt;
+...
+  &lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt;
+  &lt;build_depend&gt;roscpp&lt;/build_depend&gt;
+  &lt;build_depend&gt;rospy&lt;/build_depend&gt;
+  &lt;build_depend&gt;std_msgs&lt;/build_depend&gt;
+...
+&lt;/package&gt;
+</code></pre>
+<h2 id="间接依赖">间接依赖</h2>
+<p>在很多情况下，一个依赖包还会有它自己的依赖关系，比如，rospy就有其它依赖包。</p>
+<pre><code>$ rospack depends1 rospy
+</code></pre>
+<pre><code>genpy
+roscpp
+rosgraph
+rosgraph_msgs
+roslib
+std_msgs
+</code></pre>
+<p>一个软件包可以有相当多间接的依赖关系，好在使用rospack可以递归检测出所有嵌套的依赖包。</p>
+<pre><code>$ rospack depends beginner_tutorials
+</code></pre>
+<pre><code>cpp_common
+rostime
+roscpp_traits
+roscpp_serialization
+catkin
+genmsg
+genpy
+message_runtime
+gencpp
+geneus
+gennodejs
+genlisp
+message_generation
+rosbuild
+rosconsole
+std_msgs
+rosgraph_msgs
+xmlrpcpp
+roscpp
+rosgraph
+ros_environment
+rospack
+roslib
+rospy
+</code></pre>
+<h2 id="自定义你的软件包">自定义你的软件包</h2>
+<p>本部分教程将剖析catkin_create_pkg命令生成的每个文件，并详细描述这些文件的组成部分，以及如何自定义这些文件。</p>
+<h3 id="自定义packagexml">自定义package.xml</h3>
+<p>自动生成的package.xml文件应该在你的新软件包中。现在让我们一起来看看新生成的package.xml文件以及每一个需要你关注的元素。</p>
+<h4 id="描述标签">描述标签</h4>
+<p>首先关注description标签：</p>
+<h4 id="切换行号显示">切换行号显示</h4>
+<pre><code>   5   &lt;description&gt;The beginner_tutorials package&lt;/description&gt;
+</code></pre>
+<p>将描述信息修改为任何你喜欢的内容，但是按照惯例，第一句话应该简短一些，因为它包括了软件包的范围。如果用一句话难以描述完全那就需要换行了。</p>
+<h4 id="维护者标签">维护者标签</h4>
+<p>接下来是maintainer标签：</p>
+<p>切换行号显示
+7   <!-- One maintainer tag required, multiple allowed, one person per tag -->
+8   <!-- Example:  -->
+9   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
+10   <maintainer email="user@todo.todo">user</maintainer></p>
+<p>这是package.xml中要求填写的一个重要标签，因为它能够让其他人联系到软件包的相关人员。至少需要填写一个维护者，但如果你想的话可以添加多个。除了在标签里面填写维护者的名字外，还应该在标签的email属性中填写电子邮件地址：</p>
+<p>切换行号显示
+7   <maintainer email="you@yourdomain.tld">Your Name</maintainer></p>
+<h4 id="许可证标签">许可证标签</h4>
+<p>再接下来是license标签，同样地也需要：</p>
+<p>切换行号显示
+12   <!-- One license tag required, multiple allowed, one license per tag -->
+13   <!-- Commonly used license strings: -->
+14   <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
+15   <license>TODO</license></p>
+<p>你应该选择一种许可证并将它填写到这里。一些常见的开源许可协议有BSD、MIT、Boost Software License、GPLv2、GPLv3、LGPLv2.1和LGPLv3。你可以在Open Source Initiative中阅读其中的若干个许可协议的相关信息。对于本教程，我们使用BSD许可证，因为其他核心ROS组件已经在使用它：</p>
+<p>切换行号显示
+8   <license>BSD</license></p>
+<h4 id="依赖项标签">依赖项标签</h4>
+<p>接下来的标签描述了软件包的依赖关系，这些依赖项分为build_depend、buildtool_depend、run_depend、test_depend。有关这些标记的详细说明，请参考Catkin Dependencies相关的文档。在之前的操作中，因为我们将roscpp、rospy和std_msgs作为catkin_create_pkg命令的参数，因此依赖关系如下所示：</p>
+<p>切换行号显示
+27   <!-- The *_depend tags are used to specify dependencies -->
+28   <!-- Dependencies can be catkin packages or system dependencies -->
+29   <!-- Examples: -->
+30   <!-- Use build_depend for packages you need at compile time: -->
+31   <!--   <build_depend>genmsg</build_depend> -->
+32   <!-- Use buildtool_depend for build tool packages: -->
+33   <!--   <buildtool_depend>catkin</buildtool_depend> -->
+34   <!-- Use exec_depend for packages you need at runtime: -->
+35   <!--   <exec_depend>python-yaml</exec_depend> -->
+36   <!-- Use test_depend for packages you need only for testing: -->
+37   <!--   <test_depend>gtest</test_depend> -->
+38   &lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt;
+39   &lt;build_depend&gt;roscpp&lt;/build_depend&gt;
+40   &lt;build_depend&gt;rospy&lt;/build_depend&gt;
+41   &lt;build_depend&gt;std_msgs&lt;/build_depend&gt;</p>
+<p>除了catkin中默认提供的buildtool_depend，所有我们列出的依赖包都已经被添加到build_depend标签中。在本例中，因为在编译和运行时都需要用到所有指定的依赖包，因此还要将每一个依赖包分别添加到run_depend标签中：</p>
+<p>切换行号显示
+12   &lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt;
+13
+14   &lt;build_depend&gt;roscpp&lt;/build_depend&gt;
+15   &lt;build_depend&gt;rospy&lt;/build_depend&gt;
+16   &lt;build_depend&gt;std_msgs&lt;/build_depend&gt;
+17
+18   &lt;exec_depend&gt;roscpp&lt;/exec_depend&gt;
+19   &lt;exec_depend&gt;rospy&lt;/exec_depend&gt;
+20   &lt;exec_depend&gt;std_msgs&lt;/exec_depend&gt;</p>
+<p>最终的package.xml
+现在看下面最后去掉了注释和未使用标签后的package.xml文件就显得更加简洁了：</p>
+<p>切换行号显示
+1 <?xml version="1.0"?>
+2 <package format="2">
+3   <name>beginner_tutorials</name>
+4   <version>0.1.0</version>
+5   <description>The beginner_tutorials package</description>
+6
+7   <maintainer email="you@yourdomain.tld">Your Name</maintainer>
+8   <license>BSD</license>
+9   <url type="website"><a href="http://wiki.ros.org/beginner_tutorials">http://wiki.ros.org/beginner_tutorials</a></url>
+10   <author email="you@yourdomain.tld">Jane Doe</author>
+11
+12   &lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt;
+13
+14   &lt;build_depend&gt;roscpp&lt;/build_depend&gt;
+15   &lt;build_depend&gt;rospy&lt;/build_depend&gt;
+16   &lt;build_depend&gt;std_msgs&lt;/build_depend&gt;
+17
+18   &lt;exec_depend&gt;roscpp&lt;/exec_depend&gt;
+19   &lt;exec_depend&gt;rospy&lt;/exec_depend&gt;
+20   &lt;exec_depend&gt;std_msgs&lt;/exec_depend&gt;
+21
+22 </package></p>
+<p>自定义CMakeLists.txt
+到此，这个包含软件包元信息的package.xml文件已经按照需要完成了裁剪整理，现在你可以继续下面的教程了。catkin_create_pkg命令生成的CMakeLists.txt文件将在后续关于构建ROS程序代码的教程中讲述。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">w0x7ce</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-09-13
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/ros/">ROS</a>
+          <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/">自动化</a>
+          <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/">机器人</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/ros%E5%AD%A6%E4%B9%A0%E4%B8%80/">
+            <span class="next-text nav-default">ROS学习(一)</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:null@w0x7ce.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/IIIIIlIlIIIllll" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="mailto:tian.r.king@gmail.com" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/tianrking/" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/10065982" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>w0x7ce</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>

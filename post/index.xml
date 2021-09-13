@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Mon, 13 Sep 2021 20:08:40 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Sep 2021 20:15:37 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ROS学习(二)</title>
+      <link>http://localhost:1313/post/ros%E5%AD%A6%E4%B9%A0%E4%BA%8C/</link>
+      <pubDate>Mon, 13 Sep 2021 20:15:37 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/ros%E5%AD%A6%E4%B9%A0%E4%BA%8C/</guid>
+      <description>创建ROS软件包 Description: 本教程介绍如何使用roscreate-pkg或catkin创建新的ROS软件包，并使用rospack列出软件包的依赖关系。</description>
+    </item>
+    
     <item>
       <title>ROS学习(一)</title>
       <link>http://localhost:1313/post/ros%E5%AD%A6%E4%B9%A0%E4%B8%80/</link>
