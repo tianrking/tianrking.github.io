@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Docker使用方法(二) - WoW</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="w0x7ce" /><meta name="description" content="Docker 客户端 docker 客户端非常简单 ,我们可以直接输入 docker 命令来查看到 Docker 客户端的所有命令选项。 w0x7ce@w0x7ce:~# docker 可以通过命令 docker command &amp;ndash;help 更深入的了解指定的 Docker 命令使用方法。 例如" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/docker%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%BA%8C/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Docker使用方法(二)" />
+<meta property="og:description" content="Docker 客户端 docker 客户端非常简单 ,我们可以直接输入 docker 命令来查看到 Docker 客户端的所有命令选项。 w0x7ce@w0x7ce:~# docker 可以通过命令 docker command &ndash;help 更深入的了解指定的 Docker 命令使用方法。 例如" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/docker%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%BA%8C/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-09-14T21:51:28+08:00" />
+<meta property="article:modified_time" content="2021-09-14T21:51:28+08:00" />
+
+<meta itemprop="name" content="Docker使用方法(二)">
+<meta itemprop="description" content="Docker 客户端 docker 客户端非常简单 ,我们可以直接输入 docker 命令来查看到 Docker 客户端的所有命令选项。 w0x7ce@w0x7ce:~# docker 可以通过命令 docker command &ndash;help 更深入的了解指定的 Docker 命令使用方法。 例如"><meta itemprop="datePublished" content="2021-09-14T21:51:28+08:00" />
+<meta itemprop="dateModified" content="2021-09-14T21:51:28+08:00" />
+<meta itemprop="wordCount" content="1793">
+<meta itemprop="keywords" content="Linux,Docker," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker使用方法(二)"/>
+<meta name="twitter:description" content="Docker 客户端 docker 客户端非常简单 ,我们可以直接输入 docker 命令来查看到 Docker 客户端的所有命令选项。 w0x7ce@w0x7ce:~# docker 可以通过命令 docker command &ndash;help 更深入的了解指定的 Docker 命令使用方法。 例如"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">WoW</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">WoW</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Docker使用方法(二)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-09-14 </span>
+        <div class="post-category">
+            <a href="/categories/%E8%BD%AF%E4%BB%B6/"> 软件 </a>
+            </div>
+          <span class="more-meta"> 1793 words </span>
+          <span class="more-meta"> 4 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#docker-客户端">Docker 客户端</a></li>
+    <li><a href="#容器使用">容器使用</a>
+      <ul>
+        <li><a href="#获取镜像">获取镜像</a></li>
+        <li><a href="#启动容器">启动容器</a></li>
+        <li><a href="#启动已停止运行的容器">启动已停止运行的容器</a></li>
+        <li><a href="#后台运行">后台运行</a></li>
+        <li><a href="#停止一个容器">停止一个容器</a></li>
+        <li><a href="#进入容器">进入容器</a></li>
+        <li><a href="#导出和导入容器">导出和导入容器</a>
+          <ul>
+            <li><a href="#导出容器">导出容器</a></li>
+            <li><a href="#导入容器快照">导入容器快照</a></li>
+          </ul>
+        </li>
+        <li><a href="#删除容器">删除容器</a></li>
+        <li><a href="#运行一个-web-应用">运行一个 web 应用</a></li>
+        <li><a href="#查看-web-应用容器">查看 WEB 应用容器</a></li>
+      </ul>
+    </li>
+    <li><a href="#docker-ps--l">docker ps -l</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="docker-客户端">Docker 客户端</h1>
+<p>docker 客户端非常简单 ,我们可以直接输入 docker 命令来查看到 Docker 客户端的所有命令选项。</p>
+<pre><code>w0x7ce@w0x7ce:~# docker
+</code></pre>
+<p>可以通过命令 docker command &ndash;help 更深入的了解指定的 Docker 命令使用方法。</p>
+<p>例如我们要查看 docker stats 指令的具体使用方法：</p>
+<pre><code>w0x7ce@w0x7ce:~# docker stats --help
+
+</code></pre>
+<h1 id="容器使用">容器使用</h1>
+<h2 id="获取镜像">获取镜像</h2>
+<p>如果我们本地没有 ubuntu 镜像，我们可以使用 docker pull 命令来载入 ubuntu 镜像：</p>
+<p>$ docker pull ubuntu</p>
+<h2 id="启动容器">启动容器</h2>
+<p>以下命令使用 ubuntu 镜像启动一个容器，参数为以命令行模式进入该容器：</p>
+<pre><code>$ docker run -it ubuntu /bin/bash
+
+
+参数说明：
+
+-i: 交互式操作。
+-t: 终端。
+ubuntu: ubuntu 镜像。
+/bin/bash：放在镜像名后的是命令，这里我们希望有个交互式 Shell，因此用的是 /bin/bash。
+要退出终端，直接输入 exit:
+</code></pre>
+<pre><code>root@ed09e4490c57:/# exit
+</code></pre>
+<h2 id="启动已停止运行的容器">启动已停止运行的容器</h2>
+<p>查看所有的容器命令如下：</p>
+<pre><code>$ docker ps -a
+</code></pre>
+<p>使用 docker start 启动一个已停止的容器：</p>
+<pre><code>$ docker start b750bbbcfd88 
+</code></pre>
+<h2 id="后台运行">后台运行</h2>
+<p>在大部分的场景下，我们希望 docker 的服务是在后台运行的，我们可以过 -d 指定容器的运行模式。</p>
+<pre><code>$ docker run -itd --name ubuntu-test ubuntu /bin/bash
+</code></pre>
+<p>注：加了 -d 参数默认不会进入容器，想要进入容器需要使用指令 docker exec（下面会介绍到）。</p>
+<h2 id="停止一个容器">停止一个容器</h2>
+<p>停止容器的命令如下：</p>
+<pre><code>$ docker stop &lt;容器 ID&gt;
+</code></pre>
+<p>停止的容器可以通过 docker restart 重启：</p>
+<pre><code>$ docker restart &lt;容器 ID&gt;
+</code></pre>
+<h2 id="进入容器">进入容器</h2>
+<p>在使用 -d 参数时，容器启动后会进入后台。此时想要进入容器，可以通过以下指令进入：</p>
+<pre><code>docker attach
+</code></pre>
+<pre><code>docker exec：推荐大家使用 docker exec 命令，因为此退出容器终端，不会导致容器的停止。
+</code></pre>
+<pre><code>attach 命令
+</code></pre>
+<p>下面演示了使用 docker attach 命令。</p>
+<pre><code>$ docker attach 1e560fca3906 
+</code></pre>
+<p>注意： 如果从这个容器退出，会导致容器的停止。</p>
+<p>exec 命令</p>
+<p>下面演示了使用 docker exec 命令。</p>
+<pre><code>docker exec -it 243c32535da7 /bin/bash
+</code></pre>
+<p>注意： 如果从这个容器退出，容器不会停止，这就是为什么推荐大家使用 docker exec 的原因。</p>
+<p>更多参数说明请使用 docker exec &ndash;help 命令查看。</p>
+<h2 id="导出和导入容器">导出和导入容器</h2>
+<h3 id="导出容器">导出容器</h3>
+<p>如果要导出本地某个容器，可以使用 docker export 命令。</p>
+<pre><code>$ docker export 1e560fca3906 &gt; ubuntu.tar
+</code></pre>
+<p>导出容器 1e560fca3906 快照到本地文件 ubuntu.tar。</p>
+<p>这样将导出容器快照到本地文件。</p>
+<h3 id="导入容器快照">导入容器快照</h3>
+<p>可以使用 docker import 从容器快照文件中再导入为镜像，以下实例将快照文件 ubuntu.tar 导入到镜像 test/ubuntu:v1:</p>
+<pre><code>$ cat docker/ubuntu.tar | docker import - test/ubuntu:v1
+</code></pre>
+<p>此外，也可以通过指定 URL 或者某个目录来导入，例如：</p>
+<pre><code>$ docker import http://example.com/exampleimage.tgz example/imagerepo
+</code></pre>
+<h2 id="删除容器">删除容器</h2>
+<p>删除容器使用 docker rm 命令：</p>
+<pre><code>$ docker rm -f 1e560fca3906
+</code></pre>
+<p>下面的命令可以清理掉所有处于终止状态的容器。</p>
+<pre><code>$ docker container prune
+</code></pre>
+<h2 id="运行一个-web-应用">运行一个 web 应用</h2>
+<p>前面我们运行的容器并没有一些什么特别的用处。</p>
+<p>接下来让我们尝试使用 docker 构建一个 web 应用程序。</p>
+<p>我们将在docker容器中运行一个 Python Flask 应用来运行一个web应用。</p>
+<pre><code>w0x7ce@w0x7ce:~# docker pull training/webapp  # 载入镜像
+w0x7ce@w0x7ce:~# docker run -d -P training/webapp python app.py
+</code></pre>
+<pre><code>参数说明:
+
+-d:让容器在后台运行。
+
+-P:将容器内部使用的网络端口随机映射到我们使用的主机上。
+</code></pre>
+<h2 id="查看-web-应用容器">查看 WEB 应用容器</h2>
+<p>使用 docker ps 来查看我们正在运行的容器：</p>
+<pre><code>w0x7ce@w0x7ce:~#  docker ps
+CONTAINER ID        IMAGE               COMMAND             ...        PORTS                 
+d3d5e39ed9d3        training/webapp     &quot;python app.py&quot;     ...        0.0.0.0:32769-&gt;5000/tcp
+</code></pre>
+<p>这里多了端口信息。</p>
+<pre><code>PORTS
+0.0.0.0:32769-&gt;5000/tcp
+Docker 开放了 5000 端口（默认 Python Flask 端口）映射到主机端口 32769 上。
+</code></pre>
+<p>这时我们可以通过浏览器访问WEB应用</p>
+<p>我们也可以通过 -p 参数来设置不一样的端口：</p>
+<pre><code>w0x7ce@w0x7ce:~$ docker run -d -p 5000:5000 training/webapp python app.py
+``
+## docker ps查看正在运行的容器
+</code></pre>
+<p>w0x7ce@w0x7ce:~#  docker ps
+CONTAINER ID        IMAGE                             PORTS                     NAMES
+bf08b7f2cd89        training/webapp     &hellip;        0.0.0.0:5000-&gt;5000/tcp    wizardly_chandrasekhar
+d3d5e39ed9d3        training/webapp     &hellip;        0.0.0.0:32769-&gt;5000/tcp   xenodochial_hoov</p>
+<pre><code>容器内部的 5000 端口映射到我们本地主机的 5000 端口上。
+
+## 网络端口的快捷方式
+通过 docker ps 命令可以查看到容器的端口映射，docker 还提供了另一个快捷方式 docker port，使用 docker port 可以查看指定 （ID 或者名字）容器的某个确定端口映射到宿主机的端口号。
+
+上面我们创建的 web 应用容器 ID 为 bf08b7f2cd89 名字为 wizardly_chandrasekhar。
+
+我可以使用 docker port bf08b7f2cd89 或 docker port wizardly_chandrasekhar 来查看容器端口的映射情况。
+</code></pre>
+<p>w0x7ce@w0x7ce:~$ docker port bf08b7f2cd89
+5000/tcp -&gt; 0.0.0.0:5000
+w0x7ce@w0x7ce:~$ docker port wizardly_chandrasekhar
+5000/tcp -&gt; 0.0.0.0:5000</p>
+<pre><code>## 查看 WEB 应用程序日志
+docker logs [ID或者名字] 可以查看容器内部的标准输出。
+</code></pre>
+<p>w0x7ce@w0x7ce:~$ docker logs -f bf08b7f2cd89</p>
+<ul>
+<li>Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+192.168.239.1 - - [09/May/2016 16:30:37] &ldquo;GET / HTTP/1.1&rdquo; 200 -
+192.168.239.1 - - [09/May/2016 16:30:37] &ldquo;GET /favicon.ico HTTP/1.1&rdquo; 404 -
+-f: 让 docker logs 像使用 tail -f 一样来输出容器内部的标准输出。</li>
+</ul>
+<pre><code>从上面，我们可以看到应用程序使用的是 5000 端口并且能够查看到应用程序的访问日志。
+
+## 查看WEB应用程序容器的进程
+我们还可以使用 docker top 来查看容器内部运行的进程
+</code></pre>
+<p>w0x7ce@w0x7ce:~$ docker top wizardly_chandrasekhar
+UID     PID         PPID          &hellip;       TIME                CMD
+root    23245       23228         &hellip;       00:00:00            python app.py</p>
+<pre><code>## 检查 WEB 应用程序
+使用 docker inspect 来查看 Docker 的底层信息。它会返回一个 JSON 文件记录着 Docker 容器的配置和状态信息。
+</code></pre>
+<p>w0x7ce@w0x7ce:~$ docker inspect wizardly_chandrasekhar
+[
+{
+&ldquo;Id&rdquo;: &ldquo;bf08b7f2cd897b5964943134aa6d373e355c286db9b9885b1f60b6e8f82b2b85&rdquo;,
+&ldquo;Created&rdquo;: &ldquo;2018-09-17T01:41:26.174228707Z&rdquo;,
+&ldquo;Path&rdquo;: &ldquo;python&rdquo;,
+&ldquo;Args&rdquo;: [
+&ldquo;app.py&rdquo;
+],
+&ldquo;State&rdquo;: {
+&ldquo;Status&rdquo;: &ldquo;running&rdquo;,
+&ldquo;Running&rdquo;: true,
+&ldquo;Paused&rdquo;: false,
+&ldquo;Restarting&rdquo;: false,
+&ldquo;OOMKilled&rdquo;: false,
+&ldquo;Dead&rdquo;: false,
+&ldquo;Pid&rdquo;: 23245,
+&ldquo;ExitCode&rdquo;: 0,
+&ldquo;Error&rdquo;: &ldquo;&rdquo;,
+&ldquo;StartedAt&rdquo;: &ldquo;2018-09-17T01:41:26.494185806Z&rdquo;,
+&ldquo;FinishedAt&rdquo;: &ldquo;0001-01-01T00:00:00Z&rdquo;
+},
+&hellip;&hellip;</p>
+<pre><code>## 停止 WEB 应用容器
+w0x7ce@w0x7ce:~$ docker stop wizardly_chandrasekhar   
+wizardly_chandrasekhar
+## 重启WEB应用容器
+已经停止的容器，我们可以使用命令 docker start 来启动。
+</code></pre>
+<p>w0x7ce@w0x7ce:~$ docker start wizardly_chandrasekhar
+wizardly_chandrasekhar
+docker ps -l 查询最后一次创建的容器：</p>
+<pre><code></code></pre>
+<h1 id="docker-ps--l">docker ps -l</h1>
+<p>CONTAINER ID        IMAGE                             PORTS                     NAMES
+bf08b7f2cd89        training/webapp     &hellip;        0.0.0.0:5000-&gt;5000/tcp    wizardly_chandrasekhar</p>
+<pre><code>正在运行的容器，我们可以使用 docker restart 命令来重启。
+
+## 移除WEB应用容器
+我们可以使用 docker rm 命令来删除不需要的容器
+</code></pre>
+<p>w0x7ce@w0x7ce:~$ docker rm wizardly_chandrasekhar<br>
+wizardly_chandrasekhar</p>
+<pre><code>删除容器时，容器必须是停止状态，否则会报如下错误
+</code></pre>
+<p>w0x7ce@w0x7ce:~$ docker rm wizardly_chandrasekhar
+Error response from daemon: You cannot remove a running container bf08b7f2cd897b5964943134aa6d373e355c286db9b9885b1f60b6e8f82b2b85. Stop the container before attempting removal or force remove</p>
+<pre><code></code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">w0x7ce</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-09-14
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          <a href="/tags/docker/">Docker</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/docker%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%B8%80/">
+            <span class="next-text nav-default">Docker使用方法(一)</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:null@w0x7ce.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/IIIIIlIlIIIllll" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="mailto:tian.r.king@gmail.com" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/tianrking/" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/10065982" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>w0x7ce</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
