@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Docker使用方法(一)">
 <meta itemprop="description" content="Docker的应用场景 Web 应用的自动化打包和发布。 自动化测试和持续集成、发布。 在服务型环境中部署和调整数据库或其他的后台应用。 从头编译或者扩展"><meta itemprop="datePublished" content="2021-09-14T20:32:49+08:00" />
 <meta itemprop="dateModified" content="2021-09-14T20:32:49+08:00" />
-<meta itemprop="wordCount" content="735">
+<meta itemprop="wordCount" content="1744">
 <meta itemprop="keywords" content="Linux,Docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Docker使用方法(一)"/>
 <meta name="twitter:description" content="Docker的应用场景 Web 应用的自动化打包和发布。 自动化测试和持续集成、发布。 在服务型环境中部署和调整数据库或其他的后台应用。 从头编译或者扩展"/>
@@ -136,8 +136,8 @@
         <div class="post-category">
             <a href="/categories/%E8%BD%AF%E4%BB%B6/"> 软件 </a>
             </div>
-          <span class="more-meta"> 735 words </span>
-          <span class="more-meta"> 2 mins read </span>
+          <span class="more-meta"> 1744 words </span>
+          <span class="more-meta"> 4 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -149,6 +149,16 @@
   <ul>
     <li><a href="#docker的应用场景">Docker的应用场景</a></li>
     <li><a href="#docker-的优点">Docker 的优点</a></li>
+    <li><a href="#docker安装">Docker安装</a></li>
+    <li><a href="#docker卸载">Docker卸载</a></li>
+    <li><a href="#docker使用基础">Docker使用基础</a>
+      <ul>
+        <li><a href="#docker-hello-world">Docker Hello World</a></li>
+        <li><a href="#运行交互式的容器">运行交互式的容器</a></li>
+        <li><a href="#启动容器后台模式">启动容器（后台模式）</a></li>
+        <li><a href="#停止容器">停止容器</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -181,6 +191,104 @@ Docker 是基于容器的平台，允许高度可移植的工作负载。Docker 
 <li>在同一硬件上运行更多工作负载
 Docker 轻巧快速。它为基于虚拟机管理程序的虚拟机提供了可行、经济、高效的替代方案，因此您可以利用更多的计算能力来实现业务目标。Docker 非常适合于高密度环境以及中小型部署，而您可以用更少的资源做更多的事情</li>
 </ol>
+<h1 id="docker安装">Docker安装</h1>
+<pre><code>curl -sSL https://get.daocloud.io/docker | sh
+</code></pre>
+<h1 id="docker卸载">Docker卸载</h1>
+<pre><code> sudo apt-get remove docker docker-engine docker.io containerd runc
+</code></pre>
+<h1 id="docker使用基础">Docker使用基础</h1>
+<h2 id="docker-hello-world">Docker Hello World</h2>
+<p>Docker 允许你在容器内运行应用程序， 使用 docker run 命令来在容器内运行一个应用程序。</p>
+<p>输出Hello world</p>
+<pre><code>w0x7ce@w0x7ce:~$ docker run ubuntu:15.10 /bin/echo &quot;Hello world&quot;
+Hello world
+</code></pre>
+<p>各个参数解析：</p>
+<pre><code>docker: Docker 的二进制执行文件。
+
+run: 与前面的 docker 组合来运行一个容器。
+
+ubuntu:15.10 指定要运行的镜像，Docker 首先从本地主机上查找镜像是否存在，如果不存在，Docker 就会从镜像仓库 Docker Hub 下载公共镜像。
+
+/bin/echo &quot;Hello world&quot;: 在启动的容器里执行的命令
+</code></pre>
+<p>以上命令完整的意思可以解释为：Docker 以 ubuntu15.10 镜像创建一个新容器，然后在容器里执行 bin/echo &ldquo;Hello world&rdquo;，然后输出结果。</p>
+<h2 id="运行交互式的容器">运行交互式的容器</h2>
+<p>我们通过 docker 的两个参数 -i -t，让 docker 运行的容器实现&quot;对话&quot;的能力：</p>
+<pre><code>w0x7ce@w0x7ce:~$ docker run -i -t ubuntu:15.10 /bin/bash
+root@0123ce188bd8:/#
+</code></pre>
+<p>各个参数解析：</p>
+<pre><code>-t: 在新容器内指定一个伪终端或终端。
+
+-i: 允许你对容器内的标准输入 (STDIN) 进行交互。
+</code></pre>
+<p>注意第二行 root@0123ce188bd8:/#，此时我们已进入一个 ubuntu15.10 系统的容器</p>
+<p>我们尝试在容器中运行命令 cat /proc/version和ls分别查看当前系统的版本信息和当前目录下的文件列表</p>
+<pre><code>root@0123ce188bd8:/#  cat /proc/version
+Linux version 4.4.0-151-generic (buildd@lgw01-amd64-043) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10) ) #178-Ubuntu SMP Tue Jun 11 08:30:22 UTC 2019
+root@0123ce188bd8:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@0123ce188bd8:/# 
+</code></pre>
+<p>我们可以通过运行 exit 命令或者使用 CTRL+D 来退出容器。</p>
+<pre><code>root@0123ce188bd8:/#  exit
+exit
+root@w0x7ce:~# 
+</code></pre>
+<p>注意第三行中 root@w0x7ce:~# 表明我们已经退出了当前的容器，返回到当前的主机中。</p>
+<h2 id="启动容器后台模式">启动容器（后台模式）</h2>
+<p>使用以下命令创建一个以进程方式运行的容器</p>
+<pre><code>w0x7ce@w0x7ce:~$ docker run -d ubuntu:15.10 /bin/sh -c &quot;while true; do echo hello world; sleep 1; done&quot;
+2b1b7a428627c51ab8810d541d759f072b4fc75487eed05812646b8534a2fe63
+</code></pre>
+<p>在输出中，我们没有看到期望的 &ldquo;hello world&rdquo;，而是一串长字符</p>
+<p>2b1b7a428627c51ab8810d541d759f072b4fc75487eed05812646b8534a2fe63</p>
+<p>这个长字符串叫做容器 ID，对每个容器来说都是唯一的，我们可以通过容器 ID 来查看对应的容器发生了什么。</p>
+<p>首先，我们需要确认容器有在运行，可以通过 docker ps 来查看：</p>
+<pre><code>w0x7ce@w0x7ce:~$ docker ps
+CONTAINER ID        IMAGE                  COMMAND              ...  
+5917eac21c36        ubuntu:15.10           &quot;/bin/sh -c 'while t…&quot;    ...
+</code></pre>
+<p>输出详情介绍：</p>
+<pre><code>CONTAINER ID: 容器 ID。
+
+IMAGE: 使用的镜像。
+
+COMMAND: 启动容器时运行的命令。
+
+CREATED: 容器的创建时间。
+
+STATUS: 容器状态。
+
+状态有7种：
+
+created（已创建）
+restarting（重启中）
+running 或 Up（运行中）
+removing（迁移中）
+paused（暂停）
+exited（停止）
+dead（死亡）
+PORTS: 容器的端口信息和使用的连接类型（tcp\udp）。
+
+NAMES: 自动分配的容器名称。
+</code></pre>
+<p>在宿主主机内使用 docker logs 命令，查看容器内的标准输出：</p>
+<pre><code>w0x7ce@w0x7ce:~$ docker logs 2b1b7a428627
+</code></pre>
+<pre><code>w0x7ce@w0x7ce:~$ docker logs amazing_cori
+</code></pre>
+<h2 id="停止容器">停止容器</h2>
+<p>我们使用 docker stop 命令来停止容器:</p>
+<p>通过 docker ps 查看，容器已经停止工作:</p>
+<pre><code>w0x7ce@w0x7ce:~$ docker ps
+</code></pre>
+<p>可以看到容器已经不在了。</p>
+<p>也可以用下面的命令来停止:</p>
+<pre><code>w0x7ce@w0x7ce:~$ docker stop amazing_cori
+</code></pre>
 
     </div>
 
