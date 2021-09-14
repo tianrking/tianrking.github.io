@@ -23,7 +23,7 @@
       <pubDate>Tue, 14 Sep 2021 21:51:28 +0800</pubDate>
       
       <guid>http://localhost:1313/post/docker%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%BA%8C/</guid>
-      <description>Docker 客户端 docker 客户端非常简单 ,我们可以直接输入 docker 命令来查看到 Docker 客户端的所有命令选项。 w0x7ce@w0x7ce:~# docker 可以通过命令 docker command &amp;ndash;help 更深入的了解指定的 Docker 命令使用方法。 例如</description>
+      <description>Docker 客戶端 docker 客戶端非常簡單 ,我們可以直接輸入 docker 命令來查看到 Docker 客戶端的所有命令選項。 w0x7ce@w0x7ce:~# docker 可以通過命令 docker command &amp;ndash;help 更深入的了解指定的 Docker 命令使用方法。 例如</description>
     </item>
     
     <item>
@@ -32,7 +32,7 @@
       <pubDate>Tue, 14 Sep 2021 20:32:49 +0800</pubDate>
       
       <guid>http://localhost:1313/post/docker%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%B8%80/</guid>
-      <description>Docker的应用场景 Web 应用的自动化打包和发布。 自动化测试和持续集成、发布。 在服务型环境中部署和调整数据库或其他的后台应用。 从头编译或者扩展</description>
+      <description>Docker的應用場景 Web 應用的自動化打包和發布。 自動化測試和持續集成、發布。 在服務型環境中部署和調整數據庫或其他的後台應用。 從頭編譯或者擴展</description>
     </item>
     
     <item>

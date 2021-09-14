@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="w0x7ce" /><meta name="description" content="Docker 客户端 docker 客户端非常简单 ,我们可以直接输入 docker 命令来查看到 Docker 客户端的所有命令选项。 w0x7ce@w0x7ce:~# docker 可以通过命令 docker command &amp;ndash;help 更深入的了解指定的 Docker 命令使用方法。 例如" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="w0x7ce" /><meta name="description" content="Docker 客戶端 docker 客戶端非常簡單 ,我們可以直接輸入 docker 命令來查看到 Docker 客戶端的所有命令選項。 w0x7ce@w0x7ce:~# docker 可以通過命令 docker command &amp;ndash;help 更深入的了解指定的 Docker 命令使用方法。 例如" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -40,19 +40,19 @@
 
 
 <meta property="og:title" content="Docker使用方法(二)" />
-<meta property="og:description" content="Docker 客户端 docker 客户端非常简单 ,我们可以直接输入 docker 命令来查看到 Docker 客户端的所有命令选项。 w0x7ce@w0x7ce:~# docker 可以通过命令 docker command &ndash;help 更深入的了解指定的 Docker 命令使用方法。 例如" />
+<meta property="og:description" content="Docker 客戶端 docker 客戶端非常簡單 ,我們可以直接輸入 docker 命令來查看到 Docker 客戶端的所有命令選項。 w0x7ce@w0x7ce:~# docker 可以通過命令 docker command &ndash;help 更深入的了解指定的 Docker 命令使用方法。 例如" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/docker%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%BA%8C/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-09-14T21:51:28+08:00" />
 <meta property="article:modified_time" content="2021-09-14T21:51:28+08:00" />
 
 <meta itemprop="name" content="Docker使用方法(二)">
-<meta itemprop="description" content="Docker 客户端 docker 客户端非常简单 ,我们可以直接输入 docker 命令来查看到 Docker 客户端的所有命令选项。 w0x7ce@w0x7ce:~# docker 可以通过命令 docker command &ndash;help 更深入的了解指定的 Docker 命令使用方法。 例如"><meta itemprop="datePublished" content="2021-09-14T21:51:28+08:00" />
+<meta itemprop="description" content="Docker 客戶端 docker 客戶端非常簡單 ,我們可以直接輸入 docker 命令來查看到 Docker 客戶端的所有命令選項。 w0x7ce@w0x7ce:~# docker 可以通過命令 docker command &ndash;help 更深入的了解指定的 Docker 命令使用方法。 例如"><meta itemprop="datePublished" content="2021-09-14T21:51:28+08:00" />
 <meta itemprop="dateModified" content="2021-09-14T21:51:28+08:00" />
 <meta itemprop="wordCount" content="1787">
 <meta itemprop="keywords" content="Linux,Docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Docker使用方法(二)"/>
-<meta name="twitter:description" content="Docker 客户端 docker 客户端非常简单 ,我们可以直接输入 docker 命令来查看到 Docker 客户端的所有命令选项。 w0x7ce@w0x7ce:~# docker 可以通过命令 docker command &ndash;help 更深入的了解指定的 Docker 命令使用方法。 例如"/>
+<meta name="twitter:description" content="Docker 客戶端 docker 客戶端非常簡單 ,我們可以直接輸入 docker 命令來查看到 Docker 客戶端的所有命令選項。 w0x7ce@w0x7ce:~# docker 可以通過命令 docker command &ndash;help 更深入的了解指定的 Docker 命令使用方法。 例如"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -134,7 +134,7 @@
       <div class="post-meta">
         <span class="post-time"> 2021-09-14 </span>
         <div class="post-category">
-            <a href="/categories/%E8%BD%AF%E4%BB%B6/"> 软件 </a>
+            <a href="/categories/%E8%BB%9F%E4%BB%B6/"> 軟件 </a>
             </div>
           <span class="more-meta"> 1787 words </span>
           <span class="more-meta"> 4 mins read </span>
@@ -147,32 +147,32 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#docker-客户端">Docker 客户端</a></li>
+    <li><a href="#docker-客戶端">Docker 客戶端</a></li>
     <li><a href="#容器使用">容器使用</a>
       <ul>
-        <li><a href="#获取镜像">获取镜像</a></li>
-        <li><a href="#启动容器">启动容器</a></li>
-        <li><a href="#启动已停止运行的容器">启动已停止运行的容器</a></li>
-        <li><a href="#后台运行">后台运行</a></li>
-        <li><a href="#停止一个容器">停止一个容器</a></li>
-        <li><a href="#进入容器">进入容器</a></li>
-        <li><a href="#导出和导入容器">导出和导入容器</a>
+        <li><a href="#獲取鏡像">獲取鏡像</a></li>
+        <li><a href="#啟動容器">啟動容器</a></li>
+        <li><a href="#啟動已停止運行的容器">啟動已停止運行的容器</a></li>
+        <li><a href="#後台運行">後台運行</a></li>
+        <li><a href="#停止一個容器">停止一個容器</a></li>
+        <li><a href="#進入容器">進入容器</a></li>
+        <li><a href="#導出和導入容器">導出和導入容器</a>
           <ul>
-            <li><a href="#导出容器">导出容器</a></li>
-            <li><a href="#导入容器快照">导入容器快照</a></li>
+            <li><a href="#導出容器">導出容器</a></li>
+            <li><a href="#導入容器快照">導入容器快照</a></li>
           </ul>
         </li>
-        <li><a href="#删除容器">删除容器</a></li>
-        <li><a href="#运行一个-web-应用">运行一个 web 应用</a></li>
-        <li><a href="#查看-web-应用容器">查看 WEB 应用容器</a></li>
-        <li><a href="#docker-ps查看正在运行的容器">docker ps查看正在运行的容器</a></li>
-        <li><a href="#网络端口的快捷方式">网络端口的快捷方式</a></li>
-        <li><a href="#查看-web-应用程序日志">查看 WEB 应用程序日志</a></li>
-        <li><a href="#查看web应用程序容器的进程">查看WEB应用程序容器的进程</a></li>
-        <li><a href="#检查-web-应用程序">检查 WEB 应用程序</a></li>
-        <li><a href="#停止-web-应用容器">停止 WEB 应用容器</a></li>
-        <li><a href="#重启web应用容器">重启WEB应用容器</a></li>
-        <li><a href="#移除web应用容器">移除WEB应用容器</a></li>
+        <li><a href="#刪除容器">刪除容器</a></li>
+        <li><a href="#運行一個-web-應用">運行一個 web 應用</a></li>
+        <li><a href="#查看-web-應用容器">查看 WEB 應用容器</a></li>
+        <li><a href="#docker-ps查看正在運行的容器">docker ps查看正在運行的容器</a></li>
+        <li><a href="#網絡端口的快捷方式">網絡端口的快捷方式</a></li>
+        <li><a href="#查看-web-應用程序日誌">查看 WEB 應用程序日誌</a></li>
+        <li><a href="#查看web應用程序容器的進程">查看WEB應用程序容器的進程</a></li>
+        <li><a href="#檢查-web-應用程序">檢查 WEB 應用程序</a></li>
+        <li><a href="#停止-web-應用容器">停止 WEB 應用容器</a></li>
+        <li><a href="#重啟web應用容器">重啟WEB應用容器</a></li>
+        <li><a href="#移除web應用容器">移除WEB應用容器</a></li>
       </ul>
     </li>
   </ul>
@@ -180,152 +180,152 @@
   </div>
 </div>
     <div class="post-content">
-      <h1 id="docker-客户端">Docker 客户端</h1>
-<p>docker 客户端非常简单 ,我们可以直接输入 docker 命令来查看到 Docker 客户端的所有命令选项。</p>
+      <h1 id="docker-客戶端">Docker 客戶端</h1>
+<p>docker 客戶端非常簡單 ,我們可以直接輸入 docker 命令來查看到 Docker 客戶端的所有命令選項。</p>
 <pre><code>w0x7ce@w0x7ce:~# docker
 </code></pre>
-<p>可以通过命令 docker command &ndash;help 更深入的了解指定的 Docker 命令使用方法。</p>
-<p>例如我们要查看 docker stats 指令的具体使用方法：</p>
+<p>可以通過命令 docker command &ndash;help 更深入的了解指定的 Docker 命令使用方法。</p>
+<p>例如我們要查看 docker stats 指令的具體使用方法：</p>
 <pre><code>w0x7ce@w0x7ce:~# docker stats --help
 
 </code></pre>
 <h1 id="容器使用">容器使用</h1>
-<h2 id="获取镜像">获取镜像</h2>
-<p>如果我们本地没有 ubuntu 镜像，我们可以使用 docker pull 命令来载入 ubuntu 镜像：</p>
+<h2 id="獲取鏡像">獲取鏡像</h2>
+<p>如果我們本地沒有 ubuntu 鏡像，我們可以使用 docker pull 命令來載入 ubuntu 鏡像：</p>
 <pre><code>$ docker pull ubuntu
 </code></pre>
-<h2 id="启动容器">启动容器</h2>
-<p>以下命令使用 ubuntu 镜像启动一个容器，参数为以命令行模式进入该容器：</p>
+<h2 id="啟動容器">啟動容器</h2>
+<p>以下命令使用 ubuntu 鏡像啟動一個容器，參數為以命令行模式進入該容器：</p>
 <pre><code>$ docker run -it ubuntu /bin/bash
 </code></pre>
-<p>参数说明：</p>
+<p>參數說明：</p>
 <pre><code>-i: 交互式操作。
--t: 终端。
-ubuntu: ubuntu 镜像。
-/bin/bash：放在镜像名后的是命令，这里我们希望有个交互式 Shell，因此用的是 /bin/bash。
-要退出终端，直接输入 exit:
+-t: 終端。
+ubuntu: ubuntu 鏡像。
+/bin/bash：放在鏡像名後的是命令，這裡我們希望有個交互式 Shell，因此用的是 /bin/bash。
+要退出終端，直接輸入 exit:
 </code></pre>
 <pre><code>root@ed09e4490c57:/# exit
 </code></pre>
-<h2 id="启动已停止运行的容器">启动已停止运行的容器</h2>
+<h2 id="啟動已停止運行的容器">啟動已停止運行的容器</h2>
 <p>查看所有的容器命令如下：</p>
 <pre><code>$ docker ps -a
 </code></pre>
-<p>使用 docker start 启动一个已停止的容器：</p>
+<p>使用 docker start 啟動一個已停止的容器：</p>
 <pre><code>$ docker start b750bbbcfd88 
 </code></pre>
-<h2 id="后台运行">后台运行</h2>
-<p>在大部分的场景下，我们希望 docker 的服务是在后台运行的，我们可以过 -d 指定容器的运行模式。</p>
+<h2 id="後台運行">後台運行</h2>
+<p>在大部分的場景下，我們希望 docker 的服務是在後台運行的，我們可以過 -d 指定容器的運行模式。</p>
 <pre><code>$ docker run -itd --name ubuntu-test ubuntu /bin/bash
 </code></pre>
-<p>注：加了 -d 参数默认不会进入容器，想要进入容器需要使用指令 docker exec（下面会介绍到）。</p>
-<h2 id="停止一个容器">停止一个容器</h2>
+<p>注：加了 -d 參數默認不會進入容器，想要進入容器需要使用指令 docker exec（下面會介紹到）。</p>
+<h2 id="停止一個容器">停止一個容器</h2>
 <p>停止容器的命令如下：</p>
 <pre><code>$ docker stop &lt;容器 ID&gt;
 </code></pre>
-<p>停止的容器可以通过 docker restart 重启：</p>
+<p>停止的容器可以通過 docker restart 重啟：</p>
 <pre><code>$ docker restart &lt;容器 ID&gt;
 </code></pre>
-<h2 id="进入容器">进入容器</h2>
-<p>在使用 -d 参数时，容器启动后会进入后台。此时想要进入容器，可以通过以下指令进入：</p>
+<h2 id="進入容器">進入容器</h2>
+<p>在使用 -d 參數時，容器啟動後會進入後台。此時想要進入容器，可以通過以下指令進入：</p>
 <pre><code>docker attach
 </code></pre>
-<pre><code>docker exec：推荐大家使用 docker exec 命令，因为此退出容器终端，不会导致容器的停止。
+<pre><code>docker exec：推薦大家使用 docker exec 命令，因為此退出容器終端，不會導致容器的停止。
 </code></pre>
 <pre><code>attach 命令
 </code></pre>
 <p>下面演示了使用 docker attach 命令。</p>
 <pre><code>$ docker attach 1e560fca3906 
 </code></pre>
-<p>注意： 如果从这个容器退出，会导致容器的停止。</p>
+<p>注意： 如果從這個容器退出，會導致容器的停止。</p>
 <p>exec 命令</p>
 <p>下面演示了使用 docker exec 命令。</p>
 <pre><code>docker exec -it 243c32535da7 /bin/bash
 </code></pre>
-<p>注意： 如果从这个容器退出，容器不会停止，这就是为什么推荐大家使用 docker exec 的原因。</p>
-<p>更多参数说明请使用 docker exec &ndash;help 命令查看。</p>
-<h2 id="导出和导入容器">导出和导入容器</h2>
-<h3 id="导出容器">导出容器</h3>
-<p>如果要导出本地某个容器，可以使用 docker export 命令。</p>
+<p>注意： 如果從這個容器退出，容器不會停止，這就是為什麼推薦大家使用 docker exec 的原因。</p>
+<p>更多參數說明請使用 docker exec &ndash;help 命令查看。</p>
+<h2 id="導出和導入容器">導出和導入容器</h2>
+<h3 id="導出容器">導出容器</h3>
+<p>如果要導出本地某個容器，可以使用 docker export 命令。</p>
 <pre><code>$ docker export 1e560fca3906 &gt; ubuntu.tar
 </code></pre>
-<p>导出容器 1e560fca3906 快照到本地文件 ubuntu.tar。</p>
-<p>这样将导出容器快照到本地文件。</p>
-<h3 id="导入容器快照">导入容器快照</h3>
-<p>可以使用 docker import 从容器快照文件中再导入为镜像，以下实例将快照文件 ubuntu.tar 导入到镜像 test/ubuntu:v1:</p>
+<p>導出容器 1e560fca3906 快照到本地文件 ubuntu.tar。</p>
+<p>這樣將導出容器快照到本地文件。</p>
+<h3 id="導入容器快照">導入容器快照</h3>
+<p>可以使用 docker import 從容器快照文件中再導入為鏡像，以下實例將快照文件 ubuntu.tar 導入到鏡像 test/ubuntu:v1:</p>
 <pre><code>$ cat docker/ubuntu.tar | docker import - test/ubuntu:v1
 </code></pre>
-<p>此外，也可以通过指定 URL 或者某个目录来导入，例如：</p>
+<p>此外，也可以通過指定 URL 或者某個目錄來導入，例如：</p>
 <pre><code>$ docker import http://example.com/exampleimage.tgz example/imagerepo
 </code></pre>
-<h2 id="删除容器">删除容器</h2>
-<p>删除容器使用 docker rm 命令：</p>
+<h2 id="刪除容器">刪除容器</h2>
+<p>刪除容器使用 docker rm 命令：</p>
 <pre><code>$ docker rm -f 1e560fca3906
 </code></pre>
-<p>下面的命令可以清理掉所有处于终止状态的容器。</p>
+<p>下面的命令可以清理掉所有處於終止狀態的容器。</p>
 <pre><code>$ docker container prune
 </code></pre>
-<h2 id="运行一个-web-应用">运行一个 web 应用</h2>
-<p>前面我们运行的容器并没有一些什么特别的用处。</p>
-<p>接下来让我们尝试使用 docker 构建一个 web 应用程序。</p>
-<p>我们将在docker容器中运行一个 Python Flask 应用来运行一个web应用。</p>
-<pre><code>w0x7ce@w0x7ce:~# docker pull training/webapp  # 载入镜像
+<h2 id="運行一個-web-應用">運行一個 web 應用</h2>
+<p>前面我們運行的容器並沒有一些什麼特別的用處。</p>
+<p>接下來讓我們嘗試使用 docker 構建一個 web 應用程序。</p>
+<p>我們將在docker容器中運行一個 Python Flask 應用來運行一個web應用。</p>
+<pre><code>w0x7ce@w0x7ce:~# docker pull training/webapp  # 載入鏡像
 w0x7ce@w0x7ce:~# docker run -d -P training/webapp python app.py
 </code></pre>
-<pre><code>参数说明:
+<pre><code>參數說明:
 
--d:让容器在后台运行。
+-d:讓容器在後台運行。
 
--P:将容器内部使用的网络端口随机映射到我们使用的主机上。
+-P:將容器內部使用的網絡端口隨機映射到我們使用的主機上。
 </code></pre>
-<h2 id="查看-web-应用容器">查看 WEB 应用容器</h2>
-<p>使用 docker ps 来查看我们正在运行的容器：</p>
+<h2 id="查看-web-應用容器">查看 WEB 應用容器</h2>
+<p>使用 docker ps 來查看我們正在運行的容器：</p>
 <pre><code>w0x7ce@w0x7ce:~#  docker ps
 CONTAINER ID        IMAGE               COMMAND             ...        PORTS                 
 d3d5e39ed9d3        training/webapp     &quot;python app.py&quot;     ...        0.0.0.0:32769-&gt;5000/tcp
 </code></pre>
-<p>这里多了端口信息。</p>
+<p>這裡多了端口信息。</p>
 <pre><code>PORTS
 0.0.0.0:32769-&gt;5000/tcp
-Docker 开放了 5000 端口（默认 Python Flask 端口）映射到主机端口 32769 上。
+Docker 開放了 5000 端口（默認 Python Flask 端口）映射到主機端口 32769 上。
 </code></pre>
-<p>这时我们可以通过浏览器访问WEB应用</p>
-<p>我们也可以通过 -p 参数来设置不一样的端口：</p>
+<p>這時我們可以通過瀏覽器訪問WEB應用</p>
+<p>我們也可以通過 -p 參數來設置不一樣的端口：</p>
 <pre><code>w0x7ce@w0x7ce:~$ docker run -d -p 5000:5000 training/webapp python app.py
 </code></pre>
-<h2 id="docker-ps查看正在运行的容器">docker ps查看正在运行的容器</h2>
+<h2 id="docker-ps查看正在運行的容器">docker ps查看正在運行的容器</h2>
 <pre><code>w0x7ce@w0x7ce:~#  docker ps
 CONTAINER ID        IMAGE                             PORTS                     NAMES
 bf08b7f2cd89        training/webapp     ...        0.0.0.0:5000-&gt;5000/tcp    wizardly_chandrasekhar
 d3d5e39ed9d3        training/webapp     ...        0.0.0.0:32769-&gt;5000/tcp   xenodochial_hoov
 </code></pre>
-<p>容器内部的 5000 端口映射到我们本地主机的 5000 端口上。</p>
-<h2 id="网络端口的快捷方式">网络端口的快捷方式</h2>
-<p>通过 docker ps 命令可以查看到容器的端口映射，docker 还提供了另一个快捷方式 docker port，使用 docker port 可以查看指定 （ID 或者名字）容器的某个确定端口映射到宿主机的端口号。</p>
-<p>上面我们创建的 web 应用容器 ID 为 bf08b7f2cd89 名字为 wizardly_chandrasekhar。</p>
-<p>我可以使用 docker port bf08b7f2cd89 或 docker port wizardly_chandrasekhar 来查看容器端口的映射情况。</p>
+<p>容器內部的 5000 端口映射到我們本地主機的 5000 端口上。</p>
+<h2 id="網絡端口的快捷方式">網絡端口的快捷方式</h2>
+<p>通過 docker ps 命令可以查看到容器的端口映射，docker 還提供了另一個快捷方式 docker port，使用 docker port 可以查看指定 （ID 或者名字）容器的某個確定端口映射到宿主機的端口號。</p>
+<p>上面我們創建的 web 應用容器 ID 為 bf08b7f2cd89 名字為 wizardly_chandrasekhar。</p>
+<p>我可以使用 docker port bf08b7f2cd89 或 docker port wizardly_chandrasekhar 來查看容器端口的映射情況。</p>
 <pre><code>w0x7ce@w0x7ce:~$ docker port bf08b7f2cd89
 5000/tcp -&gt; 0.0.0.0:5000
 w0x7ce@w0x7ce:~$ docker port wizardly_chandrasekhar
 5000/tcp -&gt; 0.0.0.0:5000
 </code></pre>
-<h2 id="查看-web-应用程序日志">查看 WEB 应用程序日志</h2>
-<p>docker logs [ID或者名字] 可以查看容器内部的标准输出。</p>
+<h2 id="查看-web-應用程序日誌">查看 WEB 應用程序日誌</h2>
+<p>docker logs [ID或者名字] 可以查看容器內部的標準輸出。</p>
 <pre><code>w0x7ce@w0x7ce:~$ docker logs -f bf08b7f2cd89
  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
 192.168.239.1 - - [09/May/2016 16:30:37] &quot;GET / HTTP/1.1&quot; 200 -
 192.168.239.1 - - [09/May/2016 16:30:37] &quot;GET /favicon.ico HTTP/1.1&quot; 404 -
--f: 让 docker logs 像使用 tail -f 一样来输出容器内部的标准输出。
+-f: 讓 docker logs 像使用 tail -f 一樣來輸出容器內部的標準輸出。
 </code></pre>
-<p>从上面，我们可以看到应用程序使用的是 5000 端口并且能够查看到应用程序的访问日志。</p>
-<h2 id="查看web应用程序容器的进程">查看WEB应用程序容器的进程</h2>
-<p>我们还可以使用 docker top 来查看容器内部运行的进程</p>
+<p>從上面，我們可以看到應用程序使用的是 5000 端口並且能夠查看到應用程序的訪問日誌。</p>
+<h2 id="查看web應用程序容器的進程">查看WEB應用程序容器的進程</h2>
+<p>我們還可以使用 docker top 來查看容器內部運行的進程</p>
 <pre><code>w0x7ce@w0x7ce:~$ docker top wizardly_chandrasekhar
 UID     PID         PPID          ...       TIME                CMD
 root    23245       23228         ...       00:00:00            python app.py
 </code></pre>
-<h2 id="检查-web-应用程序">检查 WEB 应用程序</h2>
-<p>使用 docker inspect 来查看 Docker 的底层信息。它会返回一个 JSON 文件记录着 Docker 容器的配置和状态信息。</p>
+<h2 id="檢查-web-應用程序">檢查 WEB 應用程序</h2>
+<p>使用 docker inspect 來查看 Docker 的底層信息。它會返回一個 JSON 文件記錄著 Docker 容器的配置和狀態信息。</p>
 <pre><code>w0x7ce@w0x7ce:~$ docker inspect wizardly_chandrasekhar
 [
     {
@@ -352,27 +352,27 @@ root    23245       23228         ...       00:00:00            python app.py
 
 ]
 </code></pre>
-<h2 id="停止-web-应用容器">停止 WEB 应用容器</h2>
+<h2 id="停止-web-應用容器">停止 WEB 應用容器</h2>
 <pre><code>w0x7ce@w0x7ce:~$ docker stop wizardly_chandrasekhar   
 wizardly_chandrasekhar
 </code></pre>
-<h2 id="重启web应用容器">重启WEB应用容器</h2>
-<p>已经停止的容器，我们可以使用命令 docker start 来启动。</p>
+<h2 id="重啟web應用容器">重啟WEB應用容器</h2>
+<p>已經停止的容器，我們可以使用命令 docker start 來啟動。</p>
 <pre><code>w0x7ce@w0x7ce:~$ docker start wizardly_chandrasekhar
 wizardly_chandrasekhar
-docker ps -l 查询最后一次创建的容器：
+docker ps -l 查詢最後一次創建的容器：
 </code></pre>
 <pre><code>#  docker ps -l 
 CONTAINER ID        IMAGE                             PORTS                     NAMES
 bf08b7f2cd89        training/webapp     ...        0.0.0.0:5000-&gt;5000/tcp    wizardly_chandrasekhar
 </code></pre>
-<p>正在运行的容器，我们可以使用 docker restart 命令来重启。</p>
-<h2 id="移除web应用容器">移除WEB应用容器</h2>
-<p>我们可以使用 docker rm 命令来删除不需要的容器</p>
+<p>正在運行的容器，我們可以使用 docker restart 命令來重啟。</p>
+<h2 id="移除web應用容器">移除WEB應用容器</h2>
+<p>我們可以使用 docker rm 命令來刪除不需要的容器</p>
 <pre><code>w0x7ce@w0x7ce:~$ docker rm wizardly_chandrasekhar  
 wizardly_chandrasekhar
 </code></pre>
-<p>删除容器时，容器必须是停止状态，否则会报如下错误</p>
+<p>刪除容器時，容器必須是停止狀態，否則會報如下錯誤</p>
 <pre><code>w0x7ce@w0x7ce:~$ docker rm wizardly_chandrasekhar
 Error response from daemon: You cannot remove a running container bf08b7f2cd897b5964943134aa6d373e355c286db9b9885b1f60b6e8f82b2b85. Stop the container before attempting removal or force remove
 </code></pre>
