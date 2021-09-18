@@ -27,7 +27,7 @@ author: "w0x7ce"
 
 %env PYTHONPATH=
 ```
-＃＃ 第2步
+## Step 2
 安装 Miniconda
 在 Google Colab 单元中执行时，以下代码将下载适合 Miniconda 版本的安装程序脚本并将其安装到 /usr/local。直接安装到 /usr/local，而不是默认位置 ~/miniconda3，确保 Conda 及其所有必需的依赖项将自动在 Google Colab 中可用。
 ```
@@ -39,7 +39,7 @@ chmod +x $MINICONDA_INSTALLER_SCRIPT
 ./$MINICONDA_INSTALLER_SCRIPT -b -f -p $MINICONDA_PREFIX
 ```
 
-## 第 3 步
+## Step 3
 安装 Miniconda 后，您应该能够看到 Conda 可执行文件可用……
 ```
 !which conda # 应该返回 /usr/local/bin/conda
@@ -87,3 +87,4 @@ clear_output()
 
 # Colab Jupyterbook matplotlib 绘图
 
+## 未完待续
