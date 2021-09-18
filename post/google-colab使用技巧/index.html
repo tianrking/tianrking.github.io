@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Google Colab使用技巧 - WoW</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="w0x7ce" /><meta name="description" content="在 Google colab上使用 conda Step 1 首先，需要确认在 Google Colab 中默认使用的是哪个 Python。 运行以下命令返回默认 Python 可执行文件的绝对路径。 !which python # should return /usr/local/bin/python 现在检" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/google-colab%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Google Colab使用技巧" />
+<meta property="og:description" content="在 Google colab上使用 conda Step 1 首先，需要确认在 Google Colab 中默认使用的是哪个 Python。 运行以下命令返回默认 Python 可执行文件的绝对路径。 !which python # should return /usr/local/bin/python 现在检" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/google-colab%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-09-18T22:58:24+08:00" />
+<meta property="article:modified_time" content="2021-09-18T22:58:24+08:00" />
+
+<meta itemprop="name" content="Google Colab使用技巧">
+<meta itemprop="description" content="在 Google colab上使用 conda Step 1 首先，需要确认在 Google Colab 中默认使用的是哪个 Python。 运行以下命令返回默认 Python 可执行文件的绝对路径。 !which python # should return /usr/local/bin/python 现在检"><meta itemprop="datePublished" content="2021-09-18T22:58:24+08:00" />
+<meta itemprop="dateModified" content="2021-09-18T22:58:24+08:00" />
+<meta itemprop="wordCount" content="567">
+<meta itemprop="keywords" content="Colab,Jupyterbook,Python," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Google Colab使用技巧"/>
+<meta name="twitter:description" content="在 Google colab上使用 conda Step 1 首先，需要确认在 Google Colab 中默认使用的是哪个 Python。 运行以下命令返回默认 Python 可执行文件的绝对路径。 !which python # should return /usr/local/bin/python 现在检"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">WoW</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">WoW</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Google Colab使用技巧</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-09-18 </span>
+        <div class="post-category">
+            <a href="/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/"> 云计算 </a>
+            <a href="/categories/%E6%8A%80%E5%B7%A7/"> 技巧 </a>
+            </div>
+          <span class="more-meta"> 567 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#在-google-colab上使用-conda">在 Google colab上使用 conda</a>
+      <ul>
+        <li><a href="#step-1">Step 1</a></li>
+        <li><a href="#第-3-步">第 3 步</a></li>
+      </ul>
+    </li>
+    <li><a href="#colab-清除输出">Colab 清除输出</a>
+      <ul>
+        <li><a href="#方法1">方法1</a></li>
+        <li><a href="#方法2">方法2</a></li>
+      </ul>
+    </li>
+    <li><a href="#colab-jupyterbook-matplotlib-绘图">Colab Jupyterbook matplotlib 绘图</a>
+      <ul>
+        <li><a href="#heading"></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="在-google-colab上使用-conda">在 Google colab上使用 conda</h1>
+<h2 id="step-1">Step 1</h2>
+<p>首先，需要确认在 Google Colab 中默认使用的是哪个 Python。 运行以下命令返回默认 Python 可执行文件的绝对路径。</p>
+<pre><code>!which python # should return /usr/local/bin/python
+</code></pre>
+<p>现在检查这个默认 Python 的版本号。</p>
+<pre><code>!python --version
+</code></pre>
+<p>最后，检查是否已设置 PYTHONPATH 变量。</p>
+<pre><code>!echo $PYTHONPATH
+
+%env PYTHONPATH=
+</code></pre>
+<p>＃＃ 第2步
+安装 Miniconda
+在 Google Colab 单元中执行时，以下代码将下载适合 Miniconda 版本的安装程序脚本并将其安装到 /usr/local。直接安装到 /usr/local，而不是默认位置 ~/miniconda3，确保 Conda 及其所有必需的依赖项将自动在 Google Colab 中可用。</p>
+<pre><code>%%bash
+MINICONDA_INSTALLER_SCRIPT=Miniconda3-4.5.4-Linux-x86_64.sh
+MINICONDA_PREFIX=/usr/local
+wget https://repo.continuum.io/miniconda/$MINICONDA_INSTALLER_SCRIPT
+chmod +x $MINICONDA_INSTALLER_SCRIPT
+./$MINICONDA_INSTALLER_SCRIPT -b -f -p $MINICONDA_PREFIX
+</code></pre>
+<h2 id="第-3-步">第 3 步</h2>
+<p>安装 Miniconda 后，您应该能够看到 Conda 可执行文件可用……</p>
+<pre><code>!which conda # 应该返回 /usr/local/bin/conda
+</code></pre>
+<p>&hellip;而且版本号是正确的。</p>
+<pre><code>!conda --version # 应该返回 4.5.4
+</code></pre>
+<p>请注意，虽然安装 Miniconda 不会影响 Python 可执行文件&hellip;&hellip;</p>
+<pre><code>!which python # 仍然返回 /usr/local/bin/python
+</code></pre>
+<p>……然而，Miniconda 实际上安装了一个其他 Python 版本。</p>
+<pre><code>!python --version # 现在返回 Python 3.6.5 :: Anaconda, Inc.
+</code></pre>
+<p>现在已经安装了 Conda，需要将 Conda 及其所有依赖项更新到最新版本，而无需将 Python 更新到 3.7（或 3.8）。下面的 conda install 命令实际上将 Conda 更新到最新版本，同时将 Python 版本固定为 3.6。然后 conda update 命令将 Conda 的所有依赖项更新到它们的最新版本。</p>
+<pre><code>%%bash
+conda install --channel 默认值 conda python=3.6 --yes
+conda update --channel defaults --all --yes
+</code></pre>
+<p>现在您可以通过检查 Conda 的版本号来确认更新。</p>
+<pre><code>!conda --version # 现在返回 4.8.3
+</code></pre>
+<p>Python 版本再次更改。</p>
+<pre><code>!python --version # 现在返回 Python 3.6.10 :: Anaconda, Inc.
+</code></pre>
+<h1 id="colab-清除输出">Colab 清除输出</h1>
+<h2 id="方法1">方法1</h2>
+<p>from google.colab import output
+output.clear()</p>
+<h2 id="方法2">方法2</h2>
+<p>from IPython.display import clear_output
+clear_output()</p>
+<h1 id="colab-jupyterbook-matplotlib-绘图">Colab Jupyterbook matplotlib 绘图</h1>
+<h2 id="heading"></h2>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">w0x7ce</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-09-18
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/colab/">Colab</a>
+          <a href="/tags/jupyterbook/">Jupyterbook</a>
+          <a href="/tags/python/">Python</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/docker%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%BA%8C/">
+            <span class="next-text nav-default">Docker使用方法(二)</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:null@w0x7ce.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/IIIIIlIlIIIllll" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="mailto:tian.r.king@gmail.com" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/tianrking/" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/10065982" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>w0x7ce</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>

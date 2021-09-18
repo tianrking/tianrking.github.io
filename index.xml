@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Tue, 14 Sep 2021 21:51:28 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Sep 2021 22:58:24 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>http://localhost:1313/about/</link>
@@ -15,6 +15,15 @@
       
       <guid>http://localhost:1313/about/</guid>
       <description>Your browser does not support the HTML5 audio element. 那怕世界有趟旅程無人問津 那怕要說再見我們仍然相信 仍然相信 能走再遠的路 時間似飛毯 年歲已改變 你有時會很累 也有人會反對 但決不回去</description>
+    </item>
+    
+    <item>
+      <title>Google Colab使用技巧</title>
+      <link>http://localhost:1313/post/google-colab%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Sat, 18 Sep 2021 22:58:24 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/google-colab%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</guid>
+      <description>在 Google colab上使用 conda Step 1 首先，需要确认在 Google Colab 中默认使用的是哪个 Python。 运行以下命令返回默认 Python 可执行文件的绝对路径。 !which python # should return /usr/local/bin/python 现在检</description>
     </item>
     
     <item>
