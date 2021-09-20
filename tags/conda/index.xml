@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>conda on WoW</title>
+    <link>http://localhost:1313/tags/conda/</link>
+    <description>Recent content in conda on WoW</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>w0x7ce</copyright>
+    <lastBuildDate>Mon, 20 Sep 2021 17:53:38 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/conda/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>conda安装与使用</title>
+      <link>http://localhost:1313/post/conda%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 20 Sep 2021 17:53:38 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/conda%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
+      <description>Prerequisites To use GUI packages with Linux, you will need to install the following extended dependencies for Qt: Debian apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6 RedHat yum install libXcomposite libXcursor libXi libXtst libXrandr alsa-lib mesa-libEGL libXdamage mesa-libGL libXScrnSaver ArchLinux pacman -Sy libxau libxi libxss libxtst libxcursor libxcomposite libxdamage libxfixes libxrandr libxrender mesa-libgl alsa-lib libglvnd OpenSuse/SLES zypper install libXcomposite1 libXi6 libXext6 libXau6 libX11-6 libXrandr2 libXrender1</description>
+    </item>
+    
+  </channel>
+</rss>
