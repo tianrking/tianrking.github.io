@@ -49,7 +49,7 @@
 <meta itemprop="name" content="TinyBenchmark复现记录">
 <meta itemprop="description" content="undefined symbol: _ZN2at18SparseCUDATensorIdEv ImportError: /data/repos/maskrcnn-benchmark/maskrcnn_benchmark/_C.cpython-37m-x86_64-linux-gnu.so: undefined symbol: _ZN2at18SparseCUDATensorIdEv 参考链接 错误内容 (maskrcnn_benchmark) user_name@server_name: /data/repos/maskrcnn-benchmark$ python tools/train_net.py Traceback (most recent call last): File &quot;train_net.py&quot;, line 18, in from maskrcnn_benchmark.engine.inference import inference File &quot;/data/repos/maskrcnn-benchmark/maskrcnn_benchmark/engine/inference.py&quot;, line 10, in from maskrcnn_benchmark.data.datasets.evaluation import evaluate File &quot;/data/repos/maskrcnn-benchmark/maskrcnn_benchmark/data/datasets/evaluation/init.py&quot;, line 3, in from .coco import coco_evaluation File &quot;/data/repos/maskrcnn-benchmark/maskrcnn_benchmark/data/datasets/evaluation/coco/init.py&quot;, line 1, in from .coco_eval import do_coco_evaluation File &quot;/data/repos/maskrcnn-benchmark/maskrcnn_benchmark/data/datasets/evaluation/coco/coco_eval.py&quot;, line 10, in from maskrcnn_benchmark.structures.boxlist_ops import"><meta itemprop="datePublished" content="2021-09-21T08:04:54+08:00" />
 <meta itemprop="dateModified" content="2021-09-21T08:04:54+08:00" />
-<meta itemprop="wordCount" content="277">
+<meta itemprop="wordCount" content="317">
 <meta itemprop="keywords" content="Python,Pytorch,Computer Vision," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="TinyBenchmark复现记录"/>
 <meta name="twitter:description" content="undefined symbol: _ZN2at18SparseCUDATensorIdEv ImportError: /data/repos/maskrcnn-benchmark/maskrcnn_benchmark/_C.cpython-37m-x86_64-linux-gnu.so: undefined symbol: _ZN2at18SparseCUDATensorIdEv 参考链接 错误内容 (maskrcnn_benchmark) user_name@server_name: /data/repos/maskrcnn-benchmark$ python tools/train_net.py Traceback (most recent call last): File &quot;train_net.py&quot;, line 18, in from maskrcnn_benchmark.engine.inference import inference File &quot;/data/repos/maskrcnn-benchmark/maskrcnn_benchmark/engine/inference.py&quot;, line 10, in from maskrcnn_benchmark.data.datasets.evaluation import evaluate File &quot;/data/repos/maskrcnn-benchmark/maskrcnn_benchmark/data/datasets/evaluation/init.py&quot;, line 3, in from .coco import coco_evaluation File &quot;/data/repos/maskrcnn-benchmark/maskrcnn_benchmark/data/datasets/evaluation/coco/init.py&quot;, line 1, in from .coco_eval import do_coco_evaluation File &quot;/data/repos/maskrcnn-benchmark/maskrcnn_benchmark/data/datasets/evaluation/coco/coco_eval.py&quot;, line 10, in from maskrcnn_benchmark.structures.boxlist_ops import"/>
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/%E8%BB%9F%E4%BB%B6/"> 軟件 </a>
             </div>
-          <span class="more-meta"> 277 words </span>
+          <span class="more-meta"> 317 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -158,6 +158,12 @@
       <ul>
         <li><a href="#错误内容-1">错误内容</a></li>
         <li><a href="#解决方法-1">解决方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#typeerror-smooth_l1_loss-got-an-unexpected-keyword-argument-reduction">TypeError: smooth_l1_loss() got an unexpected keyword argument &lsquo;reduction&rsquo;</a>
+      <ul>
+        <li><a href="#错误内容-2">错误内容</a></li>
+        <li><a href="#解决方法-2">解决方法</a></li>
       </ul>
     </li>
   </ul>
@@ -233,6 +239,16 @@ AttributeError: module 'torch._six' has no attribute 'PY3'
 <pre><code> /content/vqa-maskrcnn-benchmark/maskrcnn_benchmark/utils/imports.py, change PY3 to PY37
 </code></pre>
 <p><a href="https://github.com/facebookresearch/mmf/issues/791">参考链接</a></p>
+<h1 id="typeerror-smooth_l1_loss-got-an-unexpected-keyword-argument-reduction">TypeError: smooth_l1_loss() got an unexpected keyword argument &lsquo;reduction&rsquo;</h1>
+<h2 id="错误内容-2">错误内容</h2>
+<pre><code> TypeError: smooth_l1_loss() got an unexpected keyword argument 'reduction'
+
+</code></pre>
+<h2 id="解决方法-2">解决方法</h2>
+<pre><code>Clone this repository (6cbb3d2) and install the requirements
+python setup.py build develop
+python tools/train_net.py --config-file configs/e2e_faster_rcnn_R_50_C4_1x.yaml
+</code></pre>
 
     </div>
 
