@@ -10,7 +10,63 @@
   
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2021-09-20T17:53:38+08:00</lastmod>
+    <lastmod>2021-09-21T08:04:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/computer-vision/</loc>
+    <lastmod>2021-09-21T08:04:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/</loc>
+    <lastmod>2021-09-21T08:04:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/python/</loc>
+    <lastmod>2021-09-21T08:04:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/pytorch/</loc>
+    <lastmod>2021-09-21T08:04:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2021-09-21T08:04:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/tinybenchmark%E5%A4%8D%E7%8E%B0%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2021-09-21T08:04:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2021-09-21T08:04:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/%E8%BB%9F%E4%BB%B6/</loc>
+    <lastmod>2021-09-21T08:04:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -30,28 +86,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/</loc>
-    <lastmod>2021-09-20T17:53:38+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/categories/python/</loc>
-    <lastmod>2021-09-20T17:53:38+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2021-09-20T17:53:38+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/</loc>
     <lastmod>2021-09-20T17:53:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -80,13 +115,6 @@
   
   <url>
     <loc>http://localhost:1313/tags/jupyterbook/</loc>
-    <lastmod>2021-09-18T22:58:24+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/python/</loc>
     <lastmod>2021-09-18T22:58:24+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -122,13 +150,6 @@
   
   <url>
     <loc>http://localhost:1313/tags/linux/</loc>
-    <lastmod>2021-09-14T21:51:28+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/%E8%BB%9F%E4%BB%B6/</loc>
     <lastmod>2021-09-14T21:51:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

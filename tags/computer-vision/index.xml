@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on WoW</title>
-    <link>http://localhost:1313/tags/python/</link>
-    <description>Recent content in Python on WoW</description>
+    <title>Computer Vision on WoW</title>
+    <link>http://localhost:1313/tags/computer-vision/</link>
+    <description>Recent content in Computer Vision on WoW</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Tue, 21 Sep 2021 08:04:54 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Sep 2021 08:04:54 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/computer-vision/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TinyBenchmark复现记录</title>
       <link>http://localhost:1313/post/tinybenchmark%E5%A4%8D%E7%8E%B0%E8%AE%B0%E5%BD%95/</link>
@@ -15,15 +15,6 @@
       
       <guid>http://localhost:1313/post/tinybenchmark%E5%A4%8D%E7%8E%B0%E8%AE%B0%E5%BD%95/</guid>
       <description>undefined symbol: _ZN2at18SparseCUDATensorIdEv ImportError: /data/repos/maskrcnn-benchmark/maskrcnn_benchmark/_C.cpython-37m-x86_64-linux-gnu.so: undefined symbol: _ZN2at18SparseCUDATensorIdEv 参考链接 错误内容 (maskrcnn_benchmark) user_name@server_name: /data/repos/maskrcnn-benchmark$ python tools/train_net.py Traceback (most recent call last): File &amp;quot;train_net.py&amp;quot;, line 18, in from maskrcnn_benchmark.engine.inference import inference File &amp;quot;/data/repos/maskrcnn-benchmark/maskrcnn_benchmark/engine/inference.py&amp;quot;, line 10, in from maskrcnn_benchmark.data.datasets.evaluation import evaluate File &amp;quot;/data/repos/maskrcnn-benchmark/maskrcnn_benchmark/data/datasets/evaluation/init.py&amp;quot;, line 3, in from .coco import coco_evaluation File &amp;quot;/data/repos/maskrcnn-benchmark/maskrcnn_benchmark/data/datasets/evaluation/coco/init.py&amp;quot;, line 1, in from .coco_eval import do_coco_evaluation File &amp;quot;/data/repos/maskrcnn-benchmark/maskrcnn_benchmark/data/datasets/evaluation/coco/coco_eval.py&amp;quot;, line 10, in from maskrcnn_benchmark.structures.boxlist_ops import</description>
-    </item>
-    
-    <item>
-      <title>Google Colab使用技巧</title>
-      <link>http://localhost:1313/post/google-colab%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</link>
-      <pubDate>Sat, 18 Sep 2021 22:58:24 +0800</pubDate>
-      
-      <guid>http://localhost:1313/post/google-colab%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</guid>
-      <description>在 Google colab上使用 conda Step 1 首先，需要确认在 Google Colab 中默认使用的是哪个 Python。 运行以下命令返回默认 Python 可执行文件的绝对路径。 !which python # should return /usr/local/bin/python 现在检</description>
     </item>
     
   </channel>

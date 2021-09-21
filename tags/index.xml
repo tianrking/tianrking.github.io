@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Mon, 20 Sep 2021 17:53:38 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Sep 2021 08:04:54 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Computer Vision</title>
+      <link>http://localhost:1313/tags/computer-vision/</link>
+      <pubDate>Tue, 21 Sep 2021 08:04:54 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/computer-vision/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://localhost:1313/tags/python/</link>
+      <pubDate>Tue, 21 Sep 2021 08:04:54 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pytorch</title>
+      <link>http://localhost:1313/tags/pytorch/</link>
+      <pubDate>Tue, 21 Sep 2021 08:04:54 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/pytorch/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>conda</title>
       <link>http://localhost:1313/tags/conda/</link>
@@ -32,15 +59,6 @@
       <pubDate>Sat, 18 Sep 2021 22:58:24 +0800</pubDate>
       
       <guid>http://localhost:1313/tags/jupyterbook/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>http://localhost:1313/tags/python/</link>
-      <pubDate>Sat, 18 Sep 2021 22:58:24 +0800</pubDate>
-      
-      <guid>http://localhost:1313/tags/python/</guid>
       <description></description>
     </item>
     
