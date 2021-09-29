@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Mon, 20 Sep 2021 17:53:38 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Sep 2021 11:25:26 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Openpose调试</title>
+      <link>http://localhost:1313/post/openpose%E8%B0%83%E8%AF%95/</link>
+      <pubDate>Tue, 28 Sep 2021 11:25:26 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/openpose%E8%B0%83%E8%AF%95/</guid>
+      <description>bin\OpenPoseDemo.exe &amp;ndash;model_pose COCO &amp;ndash;net_resolution 320x176 bin\OpenPoseDemo.exe &amp;ndash;video examples/media/video.avi &amp;ndash;num_gpu 1 &amp;ndash;num_gpu_start 0 &amp;ndash;net_resolution 480x320</description>
+    </item>
+    
     <item>
       <title>conda安装与使用</title>
       <link>http://localhost:1313/post/conda%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>

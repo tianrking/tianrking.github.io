@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Tue, 21 Sep 2021 08:04:54 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Sep 2021 11:25:26 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Openpose</title>
+      <link>http://localhost:1313/tags/openpose/</link>
+      <pubDate>Tue, 28 Sep 2021 11:25:26 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/openpose/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MATLAB</title>
+      <link>http://localhost:1313/tags/matlab/</link>
+      <pubDate>Fri, 24 Sep 2021 19:54:29 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/matlab/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Computer Vision</title>
       <link>http://localhost:1313/tags/computer-vision/</link>

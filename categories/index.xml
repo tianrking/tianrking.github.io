@@ -7,31 +7,67 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Tue, 21 Sep 2021 08:04:54 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Sep 2021 11:25:26 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>軟件</title>
-      <link>http://localhost:1313/categories/%E8%BB%9F%E4%BB%B6/</link>
-      <pubDate>Tue, 21 Sep 2021 08:04:54 +0800</pubDate>
+      <title>C&#43;&#43;</title>
+      <link>http://localhost:1313/categories/c&#43;&#43;/</link>
+      <pubDate>Tue, 28 Sep 2021 11:25:26 +0800</pubDate>
       
-      <guid>http://localhost:1313/categories/%E8%BB%9F%E4%BB%B6/</guid>
+      <guid>http://localhost:1313/categories/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CV</title>
+      <link>http://localhost:1313/categories/cv/</link>
+      <pubDate>Tue, 28 Sep 2021 11:25:26 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/cv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
       <link>http://localhost:1313/categories/python/</link>
-      <pubDate>Mon, 20 Sep 2021 17:53:38 +0800</pubDate>
+      <pubDate>Tue, 28 Sep 2021 11:25:26 +0800</pubDate>
       
       <guid>http://localhost:1313/categories/python/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>姿态估计</title>
+      <link>http://localhost:1313/categories/%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1/</link>
+      <pubDate>Tue, 28 Sep 2021 11:25:26 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>工具</title>
       <link>http://localhost:1313/categories/%E5%B7%A5%E5%85%B7/</link>
-      <pubDate>Mon, 20 Sep 2021 17:53:38 +0800</pubDate>
+      <pubDate>Tue, 28 Sep 2021 11:25:26 +0800</pubDate>
       
       <guid>http://localhost:1313/categories/%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>机器人</title>
+      <link>http://localhost:1313/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA/</link>
+      <pubDate>Fri, 24 Sep 2021 19:54:29 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>軟件</title>
+      <link>http://localhost:1313/categories/%E8%BB%9F%E4%BB%B6/</link>
+      <pubDate>Tue, 21 Sep 2021 08:04:54 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/%E8%BB%9F%E4%BB%B6/</guid>
       <description></description>
     </item>
     
