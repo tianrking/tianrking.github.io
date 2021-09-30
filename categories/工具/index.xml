@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Tue, 28 Sep 2021 11:25:26 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Sep 2021 20:12:44 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Open mmlab mmtracking</title>
+      <link>http://localhost:1313/post/open-mmlab-mmtracking/</link>
+      <pubDate>Thu, 30 Sep 2021 20:12:44 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/open-mmlab-mmtracking/</guid>
+      <description>conda create -n open-mmlab python=3.7 -y conda activate open-mmlab conda install pytorch==1.5 cudatoolkit=11.0 torchvision -c pytorch pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu110/torch1.5.0/index.html</description>
+    </item>
+    
     <item>
       <title>Openpose调试</title>
       <link>http://localhost:1313/post/openpose%E8%B0%83%E8%AF%95/</link>

@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Tue, 28 Sep 2021 11:25:26 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Sep 2021 20:12:44 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>http://localhost:1313/about/</link>
@@ -15,6 +15,15 @@
       
       <guid>http://localhost:1313/about/</guid>
       <description>Your browser does not support the HTML5 audio element. 那怕世界有趟旅程無人問津 那怕要說再見我們仍然相信 仍然相信 能走再遠的路 時間似飛毯 年歲已改變 你有時會很累 也有人會反對 但決不回去</description>
+    </item>
+    
+    <item>
+      <title>Open mmlab mmtracking</title>
+      <link>http://localhost:1313/post/open-mmlab-mmtracking/</link>
+      <pubDate>Thu, 30 Sep 2021 20:12:44 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/open-mmlab-mmtracking/</guid>
+      <description>conda create -n open-mmlab python=3.7 -y conda activate open-mmlab conda install pytorch==1.5 cudatoolkit=11.0 torchvision -c pytorch pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu110/torch1.5.0/index.html</description>
     </item>
     
     <item>
