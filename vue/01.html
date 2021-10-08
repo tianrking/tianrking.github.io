@@ -1,0 +1,67 @@
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<body>
+    <div>a</div>
+    <span>Message: {{ msg }}</span>
+    <span v-once>这个将不会改变: {{ msg }}</span>
+    <p>Using mustaches: {{ rawHtml }}</p>
+    <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+    <p v-if="seen">现在你看到我了</p>
+    <div id="components-demo">
+        <button-counter></button-counter>
+        <button-counter></button-counter>
+        <button-counter></button-counter>
+    </div>
+    <blog-post title="My journey with Vue"></blog-post>
+    <blog-post title="Blogging with Vue"></blog-post>
+    <blog-post title="Why Vue is so fun"></blog-post>
+<script>
+Vue.component('button-counter', {
+  data: function () {
+    return {
+      count: 0
+    }
+  },
+  template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+})
+new Vue({ el: '#components-demo' })
+
+
+// d3.json("myData.json", function(json) {
+// // code for D3 charts in here
+// });
+
+var dataArray = [23, 13, 21, 14, 37, 15, 18, 34, 30];
+
+var svg = d3.select("body").append("svg")
+          .attr("height","100%")
+          .attr("width","100%");
+
+svg.selectAll("rect")
+    .data(dataArray)
+    .enter().append("rect")
+          .attr("height", function(d, i) {return (d * 10)})
+          .attr("width","40")
+          .attr("x", function(d, i) {return (i * 60) + 25})
+          .attr("y", function(d, i) {return 400 - (d * 10)})
+          .attr("class", "bar");
+//d第一个数据 i第二个索引
+
+
+
+</script>
+    
+<style type="text/css">
+    .bar {
+        fill: #0080FF;
+        stroke: black;
+        stroke-width: 5
+        }
+    .bar:hover {
+        fill: red
+    }
+</style>
+
+</body>
+</html>
