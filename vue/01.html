@@ -27,7 +27,7 @@ Vue.component('button-counter', {
 })
 new Vue({ el: '#components-demo' })
 
-
+//data = FileAttachment("category-brands.csv").csv({typed: true})
 // d3.json("myData.json", function(json) {
 // // code for D3 charts in here
 // });
@@ -47,6 +47,11 @@ svg.selectAll("rect")
           .attr("y", function(d, i) {return 400 - (d * 10)})
           .attr("class", "bar");
 //d第一个数据 i第二个索引
+
+  var svg = d3.create("svg")
+      .attr("viewBox", [0, 0, width, height]);
+
+
 
 
 
