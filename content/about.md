@@ -26,7 +26,7 @@ Learn more and contribute on [GitHub](https://github.com/gohugoio). -->
 
 
 
-<!-- 那怕世界有趟旅程無人問津
+那怕世界有趟旅程無人問津
 
 那怕要說再見我們仍然相信
 
@@ -42,6 +42,6 @@ Learn more and contribute on [GitHub](https://github.com/gohugoio). -->
 
 夢想這一生中離不開
 
-夢想刻於心中永遠都存在 -->
+夢想刻於心中永遠都存在 
 
 
