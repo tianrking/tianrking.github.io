@@ -44,7 +44,7 @@ chmod +x $MINICONDA_INSTALLER_SCRIPT
 ```
 !which conda # 应该返回 /usr/local/bin/conda
 ```
-...而且版本号是正确的。
+而且版本号是正确的。
 ```
 !conda --version # 应该返回 4.5.4
 ```
