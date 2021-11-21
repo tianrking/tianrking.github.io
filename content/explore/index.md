@@ -22,6 +22,15 @@ draft: false
 ## 我**會使用的**
 |  | | |
 | :-----| ----: | :----: |
+| OS | Arch ||
+| OS | Ubuntu ||
+| OS | Centos ||
+| OS | Gentoo ||
+| SE | Aircrack-ng ||
+| SE | Sqlmap ||
+| SE | Setoolkit ||
+| SE | MSF ||
+| SE | NMAP ||
 | CV |對象檢測架|<a href="https://github.com/ultralytics/yolov5">Yolov5</a>|
 | CV|換臉框架|<a href="https://faceswap.dev/">faceswap</a>|
 | Python |Python環境管理系統|<a href="https://www.anaconda.com/">anaconda</a>|
