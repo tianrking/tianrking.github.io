@@ -1,0 +1,25 @@
+proxies:
+- type: ss
+  server: sgp.w0x7ce.eu
+  password: 80
+  port: 13521
+  cipher: chacha20-ietf-poly1305
+  name: GCP新加坡
+- type: ss
+  server: hk.w0x7ce.eu
+  password: 80
+  port: 13521
+  cipher: chacha20-ietf-poly1305
+  name: GCP香港
+- type: ss
+  server: jp.w0x7ce.eu
+  password: 80
+  port: 13521
+  cipher: chacha20-ietf-poly1305
+  name: GCP日本
+- type: ss
+  server: tw.w0x7ce.eu
+  password: 80
+  port: 13521
+  cipher: chacha20-ietf-poly1305
+  name: GCP台灣
