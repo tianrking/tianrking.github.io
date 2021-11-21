@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>MATLAB机器人仿真(一) - WoW</title>
+  <title>Solidity開發01 - WoW</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="w0x7ce" /><meta name="description" content="二维空间姿态描述 &amp;gt;&amp;gt; T1 = SE2(1,2,30*pi/180) T1 = 0.8660 -0.5000 1 0.5000 0.8660 2 0 0 1 &amp;gt;&amp;gt; axis([0 5 0 5]) &amp;gt;&amp;gt; trplot2(T1,&#39;frame&#39;,&#39;1&#39;,&#39;color&#39;,&#39;b&#39;) &amp;gt;&amp;gt; T2 = SE2(2,1,0) T2 = 1 0 2 0 1 1 0 0 1 &amp;gt;&amp;gt; hold on &amp;gt;&amp;gt; trplot2(T2,&#39;frame&#39;,&#39;2&#39;,&#39;color&#39;,&#39;r&#39;) &amp;gt;&amp;gt; T3 = T1 * T2 T3 = 0.8660 -0.5000 2.232 0.5000 0.8660 3.866 0 0 1 &amp;gt;&amp;gt; trplot2(T3,&#39;frame&#39;,&#39;3&#39;,&#39;color&#39;,&#39;g&#39;) &amp;gt;&amp;gt;" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="w0x7ce" /><meta name="description" content="pragma solidity ^0.4.20; // 定义ERC-20标准接口 contract ERC20Interface { // 代币名称 string public name; // 代币符号或者说简写 string public symbol; // 代币小数点位数，代币的最小单位 uint8 public decimals; // 代币的发行总量 uint public totalSupply;" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/matlab%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E4%B8%80/" />
+<link rel="canonical" href="http://localhost:1313/post/solidity%E9%96%8B%E7%99%BC01/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="MATLAB机器人仿真(一)" />
-<meta property="og:description" content="二维空间姿态描述 &gt;&gt; T1 = SE2(1,2,30*pi/180) T1 = 0.8660 -0.5000 1 0.5000 0.8660 2 0 0 1 &gt;&gt; axis([0 5 0 5]) &gt;&gt; trplot2(T1,&#39;frame&#39;,&#39;1&#39;,&#39;color&#39;,&#39;b&#39;) &gt;&gt; T2 = SE2(2,1,0) T2 = 1 0 2 0 1 1 0 0 1 &gt;&gt; hold on &gt;&gt; trplot2(T2,&#39;frame&#39;,&#39;2&#39;,&#39;color&#39;,&#39;r&#39;) &gt;&gt; T3 = T1 * T2 T3 = 0.8660 -0.5000 2.232 0.5000 0.8660 3.866 0 0 1 &gt;&gt; trplot2(T3,&#39;frame&#39;,&#39;3&#39;,&#39;color&#39;,&#39;g&#39;) &gt;&gt;" />
+<meta property="og:title" content="Solidity開發01" />
+<meta property="og:description" content="pragma solidity ^0.4.20; // 定义ERC-20标准接口 contract ERC20Interface { // 代币名称 string public name; // 代币符号或者说简写 string public symbol; // 代币小数点位数，代币的最小单位 uint8 public decimals; // 代币的发行总量 uint public totalSupply;" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/matlab%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E4%B8%80/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-09-24T19:54:29+08:00" />
-<meta property="article:modified_time" content="2021-09-24T19:54:29+08:00" />
+<meta property="og:url" content="http://localhost:1313/post/solidity%E9%96%8B%E7%99%BC01/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-11-21T12:28:22+08:00" />
+<meta property="article:modified_time" content="2021-11-21T12:28:22+08:00" />
 
-<meta itemprop="name" content="MATLAB机器人仿真(一)">
-<meta itemprop="description" content="二维空间姿态描述 &gt;&gt; T1 = SE2(1,2,30*pi/180) T1 = 0.8660 -0.5000 1 0.5000 0.8660 2 0 0 1 &gt;&gt; axis([0 5 0 5]) &gt;&gt; trplot2(T1,&#39;frame&#39;,&#39;1&#39;,&#39;color&#39;,&#39;b&#39;) &gt;&gt; T2 = SE2(2,1,0) T2 = 1 0 2 0 1 1 0 0 1 &gt;&gt; hold on &gt;&gt; trplot2(T2,&#39;frame&#39;,&#39;2&#39;,&#39;color&#39;,&#39;r&#39;) &gt;&gt; T3 = T1 * T2 T3 = 0.8660 -0.5000 2.232 0.5000 0.8660 3.866 0 0 1 &gt;&gt; trplot2(T3,&#39;frame&#39;,&#39;3&#39;,&#39;color&#39;,&#39;g&#39;) &gt;&gt;"><meta itemprop="datePublished" content="2021-09-24T19:54:29+08:00" />
-<meta itemprop="dateModified" content="2021-09-24T19:54:29+08:00" />
-<meta itemprop="wordCount" content="207">
-<meta itemprop="keywords" content="MATLAB," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="MATLAB机器人仿真(一)"/>
-<meta name="twitter:description" content="二维空间姿态描述 &gt;&gt; T1 = SE2(1,2,30*pi/180) T1 = 0.8660 -0.5000 1 0.5000 0.8660 2 0 0 1 &gt;&gt; axis([0 5 0 5]) &gt;&gt; trplot2(T1,&#39;frame&#39;,&#39;1&#39;,&#39;color&#39;,&#39;b&#39;) &gt;&gt; T2 = SE2(2,1,0) T2 = 1 0 2 0 1 1 0 0 1 &gt;&gt; hold on &gt;&gt; trplot2(T2,&#39;frame&#39;,&#39;2&#39;,&#39;color&#39;,&#39;r&#39;) &gt;&gt; T3 = T1 * T2 T3 = 0.8660 -0.5000 2.232 0.5000 0.8660 3.866 0 0 1 &gt;&gt; trplot2(T3,&#39;frame&#39;,&#39;3&#39;,&#39;color&#39;,&#39;g&#39;) &gt;&gt;"/>
+<meta itemprop="name" content="Solidity開發01">
+<meta itemprop="description" content="pragma solidity ^0.4.20; // 定义ERC-20标准接口 contract ERC20Interface { // 代币名称 string public name; // 代币符号或者说简写 string public symbol; // 代币小数点位数，代币的最小单位 uint8 public decimals; // 代币的发行总量 uint public totalSupply;"><meta itemprop="datePublished" content="2021-11-21T12:28:22+08:00" />
+<meta itemprop="dateModified" content="2021-11-21T12:28:22+08:00" />
+<meta itemprop="wordCount" content="768">
+<meta itemprop="keywords" content="Solidity," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Solidity開發01"/>
+<meta name="twitter:description" content="pragma solidity ^0.4.20; // 定义ERC-20标准接口 contract ERC20Interface { // 代币名称 string public name; // 代币符号或者说简写 string public symbol; // 代币小数点位数，代币的最小单位 uint8 public decimals; // 代币的发行总量 uint public totalSupply;"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -129,15 +129,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">MATLAB机器人仿真(一)</h1>
+      <h1 class="post-title">Solidity開發01</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2021-09-24 </span>
+        <span class="post-time"> 2021-11-21 </span>
         <div class="post-category">
-            <a href="/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA/"> 机器人 </a>
+            <a href="/categories/%E5%8D%80%E5%A1%8A%E9%8F%88/"> 區塊鏈 </a>
             </div>
-          <span class="more-meta"> 207 words </span>
-          <span class="more-meta"> 1 min read </span>
+          <span class="more-meta"> 768 words </span>
+          <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -145,112 +145,197 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#二维空间姿态描述">二维空间姿态描述</a></li>
-    <li><a href="#三维空间姿态描述">三维空间姿态描述</a></li>
-  </ul>
-</nav>
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
-  <div class="post-outdated">
-    <div class="hint">
-      <p>[NOTE] Updated <span class="timeago" datetime="2021-09-24T19:54:29" title="September 24, 2021">September 24, 2021</span>. This article may have outdated content or subject matter.</p>
-    </div>
-  </div>
     <div class="post-content">
-      <h1 id="二维空间姿态描述">二维空间姿态描述</h1>
-<pre><code>&gt;&gt; T1 = SE2(1,2,30*pi/180)
+      <pre><code>pragma solidity ^0.4.20;
+
+// 定义ERC-20标准接口
+
+contract ERC20Interface {
+
+    // 代币名称
+
+    string public name;
+
+    // 代币符号或者说简写
+
+    string public symbol;
+
+    // 代币小数点位数，代币的最小单位
+
+    uint8 public decimals;
+
+    // 代币的发行总量
+
+    uint public totalSupply;
 
 
-T1 = 
-    0.8660   -0.5000         1
-    0.5000    0.8660         2
-         0         0         1
-&gt;&gt; axis([0 5 0 5])
-&gt;&gt; trplot2(T1,'frame','1','color','b')
-&gt;&gt; T2 = SE2(2,1,0)
- 
 
-T2 = 
-         1         0         2
-         0         1         1
-         0         0         1
-&gt;&gt; hold on
-&gt;&gt; trplot2(T2,'frame','2','color','r')
-&gt;&gt; T3 = T1 * T2
- 
+    // 实现代币交易，用于给某个地址转移代币
 
-T3 = 
-    0.8660   -0.5000     2.232
-    0.5000    0.8660     3.866
-         0         0         1
-&gt;&gt; trplot2(T3,'frame','3','color','g')
-&gt;&gt; T4 = T2 * T1
- 
+    function transfer(address to, uint tokens) public returns (bool success);
 
-T4 = 
-    0.8660   -0.5000         3
-    0.5000    0.8660         3
-         0         0         1
-&gt;&gt; trplot2(T4,'frame','4','color','c')
-</code></pre>
-<h1 id="三维空间姿态描述">三维空间姿态描述</h1>
-<pre><code>&gt;&gt; R = rotx(pi/2) 
-* roty(pi/2))
+    // 实现代币用户之间的交易，从一个地址转移代币到另一个地址
 
-&gt;&gt; R =
+    function transferFrom(address from, address to, uint tokens) public returns (bool success);
 
-    1.0000         0         0
-         0    0.9996   -0.0274
-         0    0.0274    0.9996
+    // 允许spender多次从你的账户取款，并且最多可取tokens个，主要用于某些场景下授权委托其他用户从你的账户上花费代币
 
- * roty(pi/2))
- ↑
-Invalid use of operator.
- 
-&gt;&gt; R = rotx(pi/2) * roty(pi/2)
+    function approve(address spender, uint tokens) public returns (bool success);
 
-R =
+    // 查询spender允许从tokenOwner上花费的代币数量
 
-    0.9996         0    0.0274
-    0.0008    0.9996   -0.0274
-   -0.0274    0.0274    0.9992
+    function allowance(address tokenOwner, address spender) public view returns (uint remaining);
 
-&gt;&gt; trplot(R)
-&gt;&gt; R = roty(pi/2) * rotx(pi/2)
 
-R =
 
-    0.9996    0.0008    0.0274
-         0    0.9996   -0.0274
-   -0.0274    0.0274    0.9992
+    // 代币交易时触发的事件，即调用transfer方法时触发
 
-&gt;&gt; trplot(R)
+    event Transfer(address indexed from, address indexed to, uint tokens);
 
-&gt;&gt; tranimate(R)
-</code></pre>
-<pre><code>&gt;&gt; R=R*transl(0,1,0)
+    // 允许其他用户从你的账户上花费代币时触发的事件，即调用approve方法时触发
 
-R =
+    event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
 
-    1.0000         0         0         0
-         0    0.9996   -0.0274    0.9996
-         0    0.0274    0.9996    0.0274
-         0         0         0    1.0000
+}
 
-&gt;&gt; tranimate(R)
-&gt;&gt; tranimate(R)
-&gt;&gt; R=R*transl(0,1,0)*transl(1,0,0)
 
-R =
 
-    1.0000         0         0    1.0000
-         0    0.9996   -0.0274    1.9992
-         0    0.0274    0.9996    0.0548
-         0         0         0    1.0000
+// 实现ERC-20标准接口
 
-&gt;&gt; tranimate(R)
+contract ERC20Impl is ERC20Interface {
+
+    // 存储每个地址的余额（因为是public的所以会自动生成balanceOf方法）
+
+    mapping (address =&gt; uint256) public balanceOf;
+
+    // 存储每个地址可操作的地址及其可操作的金额
+
+    mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+
+
+
+    // 初始化属性
+
+    constructor() public {
+
+        name = &quot;w0x7ce_coin&quot;;             // 定义 代币名称
+
+        symbol = &quot;w0x7ce&quot;;                           // 代币的简写
+
+        decimals = 18;
+
+        totalSupply = 100000000 * 10 ** uint256(decimals);       // 代币总量
+
+        // 初始化该代币的账户会拥有所有的代币
+
+        balanceOf[msg.sender] = totalSupply;                    // 初始化的时候，这个代币属于谁
+
+    }
+
+
+
+    function transfer(address to, uint tokens) public returns (bool success) {
+
+        // 检验接收者地址是否合法
+
+        require(to != address(0));
+
+        // 检验发送者账户余额是否足够
+
+        require(balanceOf[msg.sender] &gt;= tokens);
+
+        // 检验是否会发生溢出
+
+        require(balanceOf[to] + tokens &gt;= balanceOf[to]);
+
+
+
+        // 扣除发送者账户余额
+
+        balanceOf[msg.sender] -= tokens;
+
+        // 增加接收者账户余额
+
+        balanceOf[to] += tokens;
+
+
+
+        // 触发相应的事件
+
+        emit Transfer(msg.sender, to, tokens);
+
+    }
+
+
+
+    function transferFrom(address from, address to, uint tokens) public returns (bool success) {
+
+        // 检验地址是否合法
+
+        require(to != address(0) &amp;&amp; from != address(0));
+
+        // 检验发送者账户余额是否足够
+
+        require(balanceOf[from] &gt;= tokens);
+
+        // 检验操作的金额是否是被允许的
+
+        require(allowed[from][msg.sender] &lt;= tokens);
+
+        // 检验是否会发生溢出
+
+        require(balanceOf[to] + tokens &gt;= balanceOf[to]);
+
+
+
+        // 扣除发送者账户余额
+
+        balanceOf[from] -= tokens;
+
+        // 增加接收者账户余额
+
+        balanceOf[to] += tokens;
+
+
+
+        // 触发相应的事件
+
+        emit Transfer(from, to, tokens);  
+
+
+
+        success = true;
+
+    }
+
+
+
+    function approve(address spender, uint tokens) public returns (bool success) {
+
+        allowed[msg.sender][spender] = tokens;
+
+        // 触发相应的事件
+
+        emit Approval(msg.sender, spender, tokens);
+
+
+
+        success = true;
+
+    }
+
+
+
+    function allowance(address tokenOwner, address spender) public view returns (uint remaining) {
+
+        return allowed[tokenOwner][spender];
+
+    }
+
+}
 </code></pre>
 
     </div>
@@ -263,7 +348,7 @@ R =
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2021-09-24
+        2021-11-21
         
     </span>
   </p>
@@ -286,16 +371,12 @@ R =
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/matlab/">MATLAB</a>
+          <a href="/tags/solidity/">Solidity</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/openpose%E8%B0%83%E8%AF%95/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Openpose调试</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/tinybenchmark%E5%A4%8D%E7%8E%B0%E8%AE%B0%E5%BD%95/">
-            <span class="next-text nav-default">TinyBenchmark复现记录</span>
+        
+        <a class="next" href="/post/open-mmlab-mmtracking/">
+            <span class="next-text nav-default">Open mmlab mmtracking</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

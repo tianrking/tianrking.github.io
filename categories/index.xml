@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Thu, 30 Sep 2021 20:12:44 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Nov 2021 12:28:22 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>區塊鏈</title>
+      <link>http://localhost:1313/categories/%E5%8D%80%E5%A1%8A%E9%8F%88/</link>
+      <pubDate>Sun, 21 Nov 2021 12:28:22 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/%E5%8D%80%E5%A1%8A%E9%8F%88/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>C&#43;&#43;</title>
       <link>http://localhost:1313/categories/c&#43;&#43;/</link>
