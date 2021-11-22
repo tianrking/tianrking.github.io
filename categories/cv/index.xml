@@ -23,7 +23,7 @@
       <pubDate>Tue, 28 Sep 2021 11:25:26 +0800</pubDate>
       
       <guid>https://me.w0x7ce.eu/post/openpose%E8%B0%83%E8%AF%95/</guid>
-      <description>bin\OpenPoseDemo.exe &amp;ndash;model_pose COCO &amp;ndash;net_resolution 320x176 bin\OpenPoseDemo.exe &amp;ndash;video examples/media/video.avi &amp;ndash;num_gpu 1 &amp;ndash;num_gpu_start 0 &amp;ndash;net_resolution 480x320</description>
+      <description>bin\OpenPoseDemo.exe &amp;ndash;model_pose COCO &amp;ndash;net_resolution 320x176 bin\OpenPoseDemo.exe &amp;ndash;video examples/media/video.avi &amp;ndash;num_gpu 1 &amp;ndash;num_gpu_start 0 &amp;ndash;net_resolution 480x320 bin\OpenPoseDemo.exe &amp;ndash;video examples/media/video.avi &amp;ndash;write_video output/result.avi</description>
     </item>
     
   </channel>
