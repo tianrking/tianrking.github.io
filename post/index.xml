@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Sun, 21 Nov 2021 12:28:22 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Nov 2021 09:04:05 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>防火墙的使用</title>
+      <link>https://me.w0x7ce.eu/post/%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 22 Nov 2021 09:04:05 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/post/%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>单端口 端口转发 同端口 端口转发 iptables -t nat -A PREROUTING -p tcp &amp;ndash;dport [本地端口] -j DNAT &amp;ndash;to-destination [目标IP:目标端口] iptables -t nat -A PREROUTING -p udp &amp;ndash;dport [本地端口] -j DNAT &amp;ndash;to-destination [目标IP:目标端口]</description>
+    </item>
+    
     <item>
       <title>Solidity開發01</title>
       <link>https://me.w0x7ce.eu/post/solidity%E9%96%8B%E7%99%BC01/</link>

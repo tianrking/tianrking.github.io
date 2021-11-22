@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Solidity開發01 - WoW</title>
+  <title>防火墙的使用 - WoW</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="w0x7ce" /><meta name="description" content="pragma solidity ^0.4.20; // 定义ERC-20标准接口 contract ERC20Interface { // 代币名称 string public name; // 代币符号或者说简写 string public symbol; // 代币小数点位数，代币的最小单位 uint8 public decimals; // 代币的发行总量 uint public totalSupply;" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="w0x7ce" /><meta name="description" content="单端口 端口转发 同端口 端口转发 iptables -t nat -A PREROUTING -p tcp &amp;ndash;dport [本地端口] -j DNAT &amp;ndash;to-destination [目标IP:目标端口] iptables -t nat -A PREROUTING -p udp &amp;ndash;dport [本地端口] -j DNAT &amp;ndash;to-destination [目标IP:目标端口]" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="https://me.w0x7ce.eu/post/solidity%E9%96%8B%E7%99%BC01/" />
+<link rel="canonical" href="https://me.w0x7ce.eu/post/%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E4%BD%BF%E7%94%A8/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Solidity開發01" />
-<meta property="og:description" content="pragma solidity ^0.4.20; // 定义ERC-20标准接口 contract ERC20Interface { // 代币名称 string public name; // 代币符号或者说简写 string public symbol; // 代币小数点位数，代币的最小单位 uint8 public decimals; // 代币的发行总量 uint public totalSupply;" />
+<meta property="og:title" content="防火墙的使用" />
+<meta property="og:description" content="单端口 端口转发 同端口 端口转发 iptables -t nat -A PREROUTING -p tcp &ndash;dport [本地端口] -j DNAT &ndash;to-destination [目标IP:目标端口] iptables -t nat -A PREROUTING -p udp &ndash;dport [本地端口] -j DNAT &ndash;to-destination [目标IP:目标端口]" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://me.w0x7ce.eu/post/solidity%E9%96%8B%E7%99%BC01/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-11-21T12:28:22+08:00" />
-<meta property="article:modified_time" content="2021-11-21T12:28:22+08:00" />
+<meta property="og:url" content="https://me.w0x7ce.eu/post/%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E4%BD%BF%E7%94%A8/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-11-22T09:04:05+08:00" />
+<meta property="article:modified_time" content="2021-11-22T09:04:05+08:00" />
 
-<meta itemprop="name" content="Solidity開發01">
-<meta itemprop="description" content="pragma solidity ^0.4.20; // 定义ERC-20标准接口 contract ERC20Interface { // 代币名称 string public name; // 代币符号或者说简写 string public symbol; // 代币小数点位数，代币的最小单位 uint8 public decimals; // 代币的发行总量 uint public totalSupply;"><meta itemprop="datePublished" content="2021-11-21T12:28:22+08:00" />
-<meta itemprop="dateModified" content="2021-11-21T12:28:22+08:00" />
-<meta itemprop="wordCount" content="768">
-<meta itemprop="keywords" content="Solidity," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Solidity開發01"/>
-<meta name="twitter:description" content="pragma solidity ^0.4.20; // 定义ERC-20标准接口 contract ERC20Interface { // 代币名称 string public name; // 代币符号或者说简写 string public symbol; // 代币小数点位数，代币的最小单位 uint8 public decimals; // 代币的发行总量 uint public totalSupply;"/>
+<meta itemprop="name" content="防火墙的使用">
+<meta itemprop="description" content="单端口 端口转发 同端口 端口转发 iptables -t nat -A PREROUTING -p tcp &ndash;dport [本地端口] -j DNAT &ndash;to-destination [目标IP:目标端口] iptables -t nat -A PREROUTING -p udp &ndash;dport [本地端口] -j DNAT &ndash;to-destination [目标IP:目标端口]"><meta itemprop="datePublished" content="2021-11-22T09:04:05+08:00" />
+<meta itemprop="dateModified" content="2021-11-22T09:04:05+08:00" />
+<meta itemprop="wordCount" content="428">
+<meta itemprop="keywords" content="iptables," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="防火墙的使用"/>
+<meta name="twitter:description" content="单端口 端口转发 同端口 端口转发 iptables -t nat -A PREROUTING -p tcp &ndash;dport [本地端口] -j DNAT &ndash;to-destination [目标IP:目标端口] iptables -t nat -A PREROUTING -p udp &ndash;dport [本地端口] -j DNAT &ndash;to-destination [目标IP:目标端口]"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -133,15 +133,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Solidity開發01</h1>
+      <h1 class="post-title">防火墙的使用</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2021-11-21 </span>
+        <span class="post-time"> 2021-11-22 </span>
         <div class="post-category">
-            <a href="/categories/%E5%8D%80%E5%A1%8A%E9%8F%88/"> 區塊鏈 </a>
+            <a href="/categories/linux/"> Linux </a>
             </div>
-          <span class="more-meta"> 768 words </span>
-          <span class="more-meta"> 2 mins read </span>
+          <span class="more-meta"> 428 words </span>
+          <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -149,198 +149,58 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#单端口-端口转发">单端口 端口转发</a>
+      <ul>
+        <li><a href="#同端口-端口转发">同端口 端口转发</a></li>
+        <li><a href="#不同端口-端口转发">不同端口 端口转发</a></li>
+      </ul>
+    </li>
+    <li><a href="#多端口-端口转发">多端口 端口转发</a>
+      <ul>
+        <li><a href="#同端口-端口转发-1">同端口 端口转发</a></li>
+        <li><a href="#不同端口-端口转发-1">不同端口 端口转发</a></li>
+      </ul>
+    </li>
+    <li><a href="#查看nat规则">查看NAT规则</a></li>
+    <li><a href="#删除nat规则">删除NAT规则</a></li>
+    <li><a href="#不同端口转发到特定端口">不同端口转发到特定端口</a></li>
+  </ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
-      <pre><code>pragma solidity ^0.4.20;
-
-// 定义ERC-20标准接口
-
-contract ERC20Interface {
-
-    // 代币名称
-
-    string public name;
-
-    // 代币符号或者说简写
-
-    string public symbol;
-
-    // 代币小数点位数，代币的最小单位
-
-    uint8 public decimals;
-
-    // 代币的发行总量
-
-    uint public totalSupply;
-
-
-
-    // 实现代币交易，用于给某个地址转移代币
-
-    function transfer(address to, uint tokens) public returns (bool success);
-
-    // 实现代币用户之间的交易，从一个地址转移代币到另一个地址
-
-    function transferFrom(address from, address to, uint tokens) public returns (bool success);
-
-    // 允许spender多次从你的账户取款，并且最多可取tokens个，主要用于某些场景下授权委托其他用户从你的账户上花费代币
-
-    function approve(address spender, uint tokens) public returns (bool success);
-
-    // 查询spender允许从tokenOwner上花费的代币数量
-
-    function allowance(address tokenOwner, address spender) public view returns (uint remaining);
-
-
-
-    // 代币交易时触发的事件，即调用transfer方法时触发
-
-    event Transfer(address indexed from, address indexed to, uint tokens);
-
-    // 允许其他用户从你的账户上花费代币时触发的事件，即调用approve方法时触发
-
-    event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
-
-}
-
-
-
-// 实现ERC-20标准接口
-
-contract ERC20Impl is ERC20Interface {
-
-    // 存储每个地址的余额（因为是public的所以会自动生成balanceOf方法）
-
-    mapping (address =&gt; uint256) public balanceOf;
-
-    // 存储每个地址可操作的地址及其可操作的金额
-
-    mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
-
-
-
-    // 初始化属性
-
-    constructor() public {
-
-        name = &quot;w0x7ce_coin&quot;;             // 定义 代币名称
-
-        symbol = &quot;w0x7ce&quot;;                           // 代币的简写
-
-        decimals = 18;
-
-        totalSupply = 100000000 * 10 ** uint256(decimals);       // 代币总量
-
-        // 初始化该代币的账户会拥有所有的代币
-
-        balanceOf[msg.sender] = totalSupply;                    // 初始化的时候，这个代币属于谁
-
-    }
-
-
-
-    function transfer(address to, uint tokens) public returns (bool success) {
-
-        // 检验接收者地址是否合法
-
-        require(to != address(0));
-
-        // 检验发送者账户余额是否足够
-
-        require(balanceOf[msg.sender] &gt;= tokens);
-
-        // 检验是否会发生溢出
-
-        require(balanceOf[to] + tokens &gt;= balanceOf[to]);
-
-
-
-        // 扣除发送者账户余额
-
-        balanceOf[msg.sender] -= tokens;
-
-        // 增加接收者账户余额
-
-        balanceOf[to] += tokens;
-
-
-
-        // 触发相应的事件
-
-        emit Transfer(msg.sender, to, tokens);
-
-    }
-
-
-
-    function transferFrom(address from, address to, uint tokens) public returns (bool success) {
-
-        // 检验地址是否合法
-
-        require(to != address(0) &amp;&amp; from != address(0));
-
-        // 检验发送者账户余额是否足够
-
-        require(balanceOf[from] &gt;= tokens);
-
-        // 检验操作的金额是否是被允许的
-
-        require(allowed[from][msg.sender] &lt;= tokens);
-
-        // 检验是否会发生溢出
-
-        require(balanceOf[to] + tokens &gt;= balanceOf[to]);
-
-
-
-        // 扣除发送者账户余额
-
-        balanceOf[from] -= tokens;
-
-        // 增加接收者账户余额
-
-        balanceOf[to] += tokens;
-
-
-
-        // 触发相应的事件
-
-        emit Transfer(from, to, tokens);  
-
-
-
-        success = true;
-
-    }
-
-
-
-    function approve(address spender, uint tokens) public returns (bool success) {
-
-        allowed[msg.sender][spender] = tokens;
-
-        // 触发相应的事件
-
-        emit Approval(msg.sender, spender, tokens);
-
-
-
-        success = true;
-
-    }
-
-
-
-    function allowance(address tokenOwner, address spender) public view returns (uint remaining) {
-
-        return allowed[tokenOwner][spender];
-
-    }
-
-}
-</code></pre>
+      <h1 id="单端口-端口转发">单端口 端口转发</h1>
+<h2 id="同端口-端口转发">同端口 端口转发</h2>
+<p>iptables -t nat -A PREROUTING -p tcp &ndash;dport [本地端口] -j DNAT &ndash;to-destination [目标IP:目标端口]
+iptables -t nat -A PREROUTING -p udp &ndash;dport [本地端口] -j DNAT &ndash;to-destination [目标IP:目标端口]
+iptables -t nat -A POSTROUTING -p tcp -d [目标IP] &ndash;dport [目标端口] -j SNAT &ndash;to-source [本地服务器主网卡绑定IP]
+iptables -t nat -A POSTROUTING -p udp -d [目标IP] &ndash;dport [目标端口] -j SNAT &ndash;to-source [本地服务器主网卡绑定IP]</p>
+<h2 id="不同端口-端口转发">不同端口 端口转发</h2>
+<p>iptables -t nat -A PREROUTING -p tcp -m tcp &ndash;dport 10000 -j DNAT &ndash;to-destination 1.1.1.1:30000
+iptables -t nat -A PREROUTING -p udp -m udp &ndash;dport 10000 -j DNAT &ndash;to-destination 1.1.1.1:30000
+iptables -t nat -A POSTROUTING -d 1.1.1.1 -p tcp -m tcp &ndash;dport 30000 -j SNAT &ndash;to-source 2.2.2.2
+iptables -t nat -A POSTROUTING -d 1.1.1.1 -p udp -m udp &ndash;dport 30000 -j SNAT &ndash;to-source 2.2.2.2</p>
+<h1 id="多端口-端口转发">多端口 端口转发</h1>
+<h2 id="同端口-端口转发-1">同端口 端口转发</h2>
+<p>iptables -t nat -A PREROUTING -p tcp -m tcp &ndash;dport 10000:30000 -j DNAT &ndash;to-destination 1.1.1.1:10000-30000
+iptables -t nat -A PREROUTING -p udp -m udp &ndash;dport 10000:30000 -j DNAT &ndash;to-destination 1.1.1.1:10000-30000
+iptables -t nat -A POSTROUTING -d 1.1.1.1 -p tcp -m tcp &ndash;dport 10000:30000 -j SNAT &ndash;to-source 2.2.2.2
+iptables -t nat -A POSTROUTING -d 1.1.1.1 -p udp -m udp &ndash;dport 10000:30000 -j SNAT &ndash;to-source 2.2.2.2</p>
+<h2 id="不同端口-端口转发-1">不同端口 端口转发</h2>
+<p>iptables -t nat -A PREROUTING -p tcp -m tcp &ndash;dport 10000:20000 -j DNAT &ndash;to-destination 1.1.1.1:30000-40000
+iptables -t nat -A PREROUTING -p udp -m udp &ndash;dport 10000:20000 -j DNAT &ndash;to-destination 1.1.1.1:30000-40000
+iptables -t nat -A POSTROUTING -d 1.1.1.1 -p tcp -m tcp &ndash;dport 30000:40000 -j SNAT &ndash;to-source 2.2.2.2
+iptables -t nat -A POSTROUTING -d 1.1.1.1 -p udp -m udp &ndash;dport 30000:40000 -j SNAT &ndash;to-source 2.2.2.2</p>
+<h1 id="查看nat规则">查看NAT规则</h1>
+<p>iptables -t nat -vnL POSTROUTING
+iptables -t nat -vnL PREROUTING</p>
+<h1 id="删除nat规则">删除NAT规则</h1>
+<p>iptables -t nat -D POSTROUTING 1
+iptables -t nat -D PREROUTING 1</p>
+<h1 id="不同端口转发到特定端口">不同端口转发到特定端口</h1>
+<p>iptables -t nat -A PREROUTING -p udp &ndash;dport 12000:40000 -j REDIRECT &ndash;to-port 81</p>
 
     </div>
 
@@ -352,7 +212,7 @@ contract ERC20Impl is ERC20Interface {
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2021-11-21
+        2021-11-22
         
     </span>
   </p>
@@ -375,16 +235,12 @@ contract ERC20Impl is ERC20Interface {
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/solidity/">Solidity</a>
+          <a href="/tags/iptables/">iptables</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E4%BD%BF%E7%94%A8/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">防火墙的使用</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/open-mmlab-mmtracking/">
-            <span class="next-text nav-default">Open mmlab mmtracking</span>
+        
+        <a class="next" href="/post/solidity%E9%96%8B%E7%99%BC01/">
+            <span class="next-text nav-default">Solidity開發01</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

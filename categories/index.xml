@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Sun, 21 Nov 2021 12:28:22 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Nov 2021 09:04:05 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://me.w0x7ce.eu/categories/linux/</link>
+      <pubDate>Mon, 22 Nov 2021 09:04:05 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/categories/linux/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>區塊鏈</title>
       <link>https://me.w0x7ce.eu/categories/%E5%8D%80%E5%A1%8A%E9%8F%88/</link>

@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Sun, 21 Nov 2021 12:28:22 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Nov 2021 09:04:05 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>https://me.w0x7ce.eu/about/</link>
@@ -15,6 +15,15 @@
       
       <guid>https://me.w0x7ce.eu/about/</guid>
       <description>Your browser does not support the HTML5 audio element. 那怕世界有趟旅程無人問津 那怕要說再見我們仍然相信 仍然相信 能走再遠的路 時間似飛毯 年歲已改變 你有時會很累 也有人會反對 但決不回去</description>
+    </item>
+    
+    <item>
+      <title>防火墙的使用</title>
+      <link>https://me.w0x7ce.eu/post/%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 22 Nov 2021 09:04:05 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/post/%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>单端口 端口转发 同端口 端口转发 iptables -t nat -A PREROUTING -p tcp &amp;ndash;dport [本地端口] -j DNAT &amp;ndash;to-destination [目标IP:目标端口] iptables -t nat -A PREROUTING -p udp &amp;ndash;dport [本地端口] -j DNAT &amp;ndash;to-destination [目标IP:目标端口]</description>
     </item>
     
     <item>
