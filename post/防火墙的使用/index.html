@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="w0x7ce" /><meta name="description" content="单端口 端口转发 同端口 端口转发 iptables -t nat -A PREROUTING -p tcp &amp;ndash;dport [本地端口] -j DNAT &amp;ndash;to-destination [目标IP:目标端口] iptables -t nat -A PREROUTING -p udp &amp;ndash;dport [本地端口] -j DNAT &amp;ndash;to-destination [目标IP:目标端口]" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="w0x7ce" /><meta name="description" content="单端口 端口转发 同端口 端口转发 iptables -t nat -A PREROUTING -p tcp --dport [本地端口] -j DNAT --to-destination [目标IP:目标端口] iptables -t nat -A PREROUTING -p udp --dport [本地端口] -j DNAT --to-destination [目标IP:目标端口]" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -40,19 +40,19 @@
 
 
 <meta property="og:title" content="防火墙的使用" />
-<meta property="og:description" content="单端口 端口转发 同端口 端口转发 iptables -t nat -A PREROUTING -p tcp &ndash;dport [本地端口] -j DNAT &ndash;to-destination [目标IP:目标端口] iptables -t nat -A PREROUTING -p udp &ndash;dport [本地端口] -j DNAT &ndash;to-destination [目标IP:目标端口]" />
+<meta property="og:description" content="单端口 端口转发 同端口 端口转发 iptables -t nat -A PREROUTING -p tcp --dport [本地端口] -j DNAT --to-destination [目标IP:目标端口] iptables -t nat -A PREROUTING -p udp --dport [本地端口] -j DNAT --to-destination [目标IP:目标端口]" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://me.w0x7ce.eu/post/%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E4%BD%BF%E7%94%A8/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-11-22T09:04:05+08:00" />
 <meta property="article:modified_time" content="2021-11-22T09:04:05+08:00" />
 
 <meta itemprop="name" content="防火墙的使用">
-<meta itemprop="description" content="单端口 端口转发 同端口 端口转发 iptables -t nat -A PREROUTING -p tcp &ndash;dport [本地端口] -j DNAT &ndash;to-destination [目标IP:目标端口] iptables -t nat -A PREROUTING -p udp &ndash;dport [本地端口] -j DNAT &ndash;to-destination [目标IP:目标端口]"><meta itemprop="datePublished" content="2021-11-22T09:04:05+08:00" />
+<meta itemprop="description" content="单端口 端口转发 同端口 端口转发 iptables -t nat -A PREROUTING -p tcp --dport [本地端口] -j DNAT --to-destination [目标IP:目标端口] iptables -t nat -A PREROUTING -p udp --dport [本地端口] -j DNAT --to-destination [目标IP:目标端口]"><meta itemprop="datePublished" content="2021-11-22T09:04:05+08:00" />
 <meta itemprop="dateModified" content="2021-11-22T09:04:05+08:00" />
 <meta itemprop="wordCount" content="428">
 <meta itemprop="keywords" content="iptables," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="防火墙的使用"/>
-<meta name="twitter:description" content="单端口 端口转发 同端口 端口转发 iptables -t nat -A PREROUTING -p tcp &ndash;dport [本地端口] -j DNAT &ndash;to-destination [目标IP:目标端口] iptables -t nat -A PREROUTING -p udp &ndash;dport [本地端口] -j DNAT &ndash;to-destination [目标IP:目标端口]"/>
+<meta name="twitter:description" content="单端口 端口转发 同端口 端口转发 iptables -t nat -A PREROUTING -p tcp --dport [本地端口] -j DNAT --to-destination [目标IP:目标端口] iptables -t nat -A PREROUTING -p udp --dport [本地端口] -j DNAT --to-destination [目标IP:目标端口]"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -173,34 +173,41 @@
     <div class="post-content">
       <h1 id="单端口-端口转发">单端口 端口转发</h1>
 <h2 id="同端口-端口转发">同端口 端口转发</h2>
-<p>iptables -t nat -A PREROUTING -p tcp &ndash;dport [本地端口] -j DNAT &ndash;to-destination [目标IP:目标端口]
-iptables -t nat -A PREROUTING -p udp &ndash;dport [本地端口] -j DNAT &ndash;to-destination [目标IP:目标端口]
-iptables -t nat -A POSTROUTING -p tcp -d [目标IP] &ndash;dport [目标端口] -j SNAT &ndash;to-source [本地服务器主网卡绑定IP]
-iptables -t nat -A POSTROUTING -p udp -d [目标IP] &ndash;dport [目标端口] -j SNAT &ndash;to-source [本地服务器主网卡绑定IP]</p>
+<pre><code>iptables -t nat -A PREROUTING -p tcp --dport [本地端口] -j DNAT --to-destination [目标IP:目标端口]
+iptables -t nat -A PREROUTING -p udp --dport [本地端口] -j DNAT --to-destination [目标IP:目标端口]
+iptables -t nat -A POSTROUTING -p tcp -d [目标IP] --dport [目标端口] -j SNAT --to-source [本地服务器主网卡绑定IP]
+iptables -t nat -A POSTROUTING -p udp -d [目标IP] --dport [目标端口] -j SNAT --to-source [本地服务器主网卡绑定IP]
+</code></pre>
 <h2 id="不同端口-端口转发">不同端口 端口转发</h2>
-<p>iptables -t nat -A PREROUTING -p tcp -m tcp &ndash;dport 10000 -j DNAT &ndash;to-destination 1.1.1.1:30000
-iptables -t nat -A PREROUTING -p udp -m udp &ndash;dport 10000 -j DNAT &ndash;to-destination 1.1.1.1:30000
-iptables -t nat -A POSTROUTING -d 1.1.1.1 -p tcp -m tcp &ndash;dport 30000 -j SNAT &ndash;to-source 2.2.2.2
-iptables -t nat -A POSTROUTING -d 1.1.1.1 -p udp -m udp &ndash;dport 30000 -j SNAT &ndash;to-source 2.2.2.2</p>
+<pre><code>iptables -t nat -A PREROUTING -p tcp -m tcp --dport 10000 -j DNAT --to-destination 1.1.1.1:30000
+iptables -t nat -A PREROUTING -p udp -m udp --dport 10000 -j DNAT --to-destination 1.1.1.1:30000
+iptables -t nat -A POSTROUTING -d 1.1.1.1 -p tcp -m tcp --dport 30000 -j SNAT --to-source 2.2.2.2
+iptables -t nat -A POSTROUTING -d 1.1.1.1 -p udp -m udp --dport 30000 -j SNAT --to-source 2.2.2.2
+</code></pre>
 <h1 id="多端口-端口转发">多端口 端口转发</h1>
 <h2 id="同端口-端口转发-1">同端口 端口转发</h2>
-<p>iptables -t nat -A PREROUTING -p tcp -m tcp &ndash;dport 10000:30000 -j DNAT &ndash;to-destination 1.1.1.1:10000-30000
-iptables -t nat -A PREROUTING -p udp -m udp &ndash;dport 10000:30000 -j DNAT &ndash;to-destination 1.1.1.1:10000-30000
-iptables -t nat -A POSTROUTING -d 1.1.1.1 -p tcp -m tcp &ndash;dport 10000:30000 -j SNAT &ndash;to-source 2.2.2.2
-iptables -t nat -A POSTROUTING -d 1.1.1.1 -p udp -m udp &ndash;dport 10000:30000 -j SNAT &ndash;to-source 2.2.2.2</p>
+<pre><code>iptables -t nat -A PREROUTING -p tcp -m tcp --dport 10000:30000 -j DNAT --to-destination 1.1.1.1:10000-30000
+iptables -t nat -A PREROUTING -p udp -m udp --dport 10000:30000 -j DNAT --to-destination 1.1.1.1:10000-30000
+iptables -t nat -A POSTROUTING -d 1.1.1.1 -p tcp -m tcp --dport 10000:30000 -j SNAT --to-source 2.2.2.2
+iptables -t nat -A POSTROUTING -d 1.1.1.1 -p udp -m udp --dport 10000:30000 -j SNAT --to-source 2.2.2.2
+</code></pre>
 <h2 id="不同端口-端口转发-1">不同端口 端口转发</h2>
-<p>iptables -t nat -A PREROUTING -p tcp -m tcp &ndash;dport 10000:20000 -j DNAT &ndash;to-destination 1.1.1.1:30000-40000
-iptables -t nat -A PREROUTING -p udp -m udp &ndash;dport 10000:20000 -j DNAT &ndash;to-destination 1.1.1.1:30000-40000
-iptables -t nat -A POSTROUTING -d 1.1.1.1 -p tcp -m tcp &ndash;dport 30000:40000 -j SNAT &ndash;to-source 2.2.2.2
-iptables -t nat -A POSTROUTING -d 1.1.1.1 -p udp -m udp &ndash;dport 30000:40000 -j SNAT &ndash;to-source 2.2.2.2</p>
+<pre><code>iptables -t nat -A PREROUTING -p tcp -m tcp --dport 10000:20000 -j DNAT --to-destination 1.1.1.1:30000-40000
+iptables -t nat -A PREROUTING -p udp -m udp --dport 10000:20000 -j DNAT --to-destination 1.1.1.1:30000-40000
+iptables -t nat -A POSTROUTING -d 1.1.1.1 -p tcp -m tcp --dport 30000:40000 -j SNAT --to-source 2.2.2.2
+iptables -t nat -A POSTROUTING -d 1.1.1.1 -p udp -m udp --dport 30000:40000 -j SNAT --to-source 2.2.2.2
+</code></pre>
 <h1 id="查看nat规则">查看NAT规则</h1>
-<p>iptables -t nat -vnL POSTROUTING
-iptables -t nat -vnL PREROUTING</p>
+<pre><code>iptables -t nat -vnL POSTROUTING
+iptables -t nat -vnL PREROUTING
+</code></pre>
 <h1 id="删除nat规则">删除NAT规则</h1>
-<p>iptables -t nat -D POSTROUTING 1
-iptables -t nat -D PREROUTING 1</p>
+<pre><code>iptables -t nat -D POSTROUTING 1
+iptables -t nat -D PREROUTING 1
+</code></pre>
 <h1 id="不同端口转发到特定端口">不同端口转发到特定端口</h1>
-<p>iptables -t nat -A PREROUTING -p udp &ndash;dport 12000:40000 -j REDIRECT &ndash;to-port 81</p>
+<pre><code>iptables -t nat -A PREROUTING -p udp --dport 12000:40000 -j REDIRECT --to-port 81
+</code></pre>
 
     </div>
 

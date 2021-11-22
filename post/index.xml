@@ -14,7 +14,7 @@
       <pubDate>Mon, 22 Nov 2021 09:04:05 +0800</pubDate>
       
       <guid>https://me.w0x7ce.eu/post/%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
-      <description>单端口 端口转发 同端口 端口转发 iptables -t nat -A PREROUTING -p tcp &amp;ndash;dport [本地端口] -j DNAT &amp;ndash;to-destination [目标IP:目标端口] iptables -t nat -A PREROUTING -p udp &amp;ndash;dport [本地端口] -j DNAT &amp;ndash;to-destination [目标IP:目标端口]</description>
+      <description>单端口 端口转发 同端口 端口转发 iptables -t nat -A PREROUTING -p tcp --dport [本地端口] -j DNAT --to-destination [目标IP:目标端口] iptables -t nat -A PREROUTING -p udp --dport [本地端口] -j DNAT --to-destination [目标IP:目标端口]</description>
     </item>
     
     <item>

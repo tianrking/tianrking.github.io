@@ -143,7 +143,7 @@
   
   <div class="post-content">
     <div class="post-summary">
-      单端口 端口转发 同端口 端口转发 iptables -t nat -A PREROUTING -p tcp &ndash;dport [本地端口] -j DNAT &ndash;to-destination [目标IP:目标端口] iptables -t nat -A PREROUTING -p udp &ndash;dport [本地端口] -j DNAT &ndash;to-destination [目标IP:目标端口]
+      单端口 端口转发 同端口 端口转发 iptables -t nat -A PREROUTING -p tcp --dport [本地端口] -j DNAT --to-destination [目标IP:目标端口] iptables -t nat -A PREROUTING -p udp --dport [本地端口] -j DNAT --to-destination [目标IP:目标端口]
     </div>
     <div class="read-more">
       <a href="/post/%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E4%BD%BF%E7%94%A8/" class="read-more-link">Read more...</a>
