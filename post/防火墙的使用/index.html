@@ -49,7 +49,7 @@
 <meta itemprop="name" content="防火墙的使用">
 <meta itemprop="description" content="单端口 端口转发 同端口 端口转发 iptables -t nat -A PREROUTING -p tcp --dport [本地端口] -j DNAT --to-destination [目标IP:目标端口] iptables -t nat -A PREROUTING -p udp --dport [本地端口] -j DNAT --to-destination [目标IP:目标端口]"><meta itemprop="datePublished" content="2021-11-22T09:04:05+08:00" />
 <meta itemprop="dateModified" content="2021-11-22T09:04:05+08:00" />
-<meta itemprop="wordCount" content="428">
+<meta itemprop="wordCount" content="1010">
 <meta itemprop="keywords" content="iptables," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="防火墙的使用"/>
 <meta name="twitter:description" content="单端口 端口转发 同端口 端口转发 iptables -t nat -A PREROUTING -p tcp --dport [本地端口] -j DNAT --to-destination [目标IP:目标端口] iptables -t nat -A PREROUTING -p udp --dport [本地端口] -j DNAT --to-destination [目标IP:目标端口]"/>
@@ -140,8 +140,8 @@
         <div class="post-category">
             <a href="/categories/linux/"> Linux </a>
             </div>
-          <span class="more-meta"> 428 words </span>
-          <span class="more-meta"> 1 min read </span>
+          <span class="more-meta"> 1010 words </span>
+          <span class="more-meta"> 3 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -166,6 +166,17 @@
     <li><a href="#查看nat规则">查看NAT规则</a></li>
     <li><a href="#删除nat规则">删除NAT规则</a></li>
     <li><a href="#不同端口转发到特定端口">不同端口转发到特定端口</a></li>
+    <li><a href="#允許或阻止特定連接">允許或阻止特定連接</a>
+      <ul>
+        <li><a href="#來自單個ip位址的連接">來自單個IP位址的連接</a></li>
+        <li><a href="#來自一系列ip位址的連接">來自一系列IP位址的連接</a></li>
+        <li><a href="#與特定埠的連接">與特定埠的連接</a></li>
+        <li><a href="#此示例演示如何阻止來自任何ip位址的ssh連接">此示例演示如何阻止來自任何IP位址的SSH連接。</a></li>
+      </ul>
+    </li>
+    <li><a href="#連接狀態">連接狀態</a></li>
+    <li><a href="#保存更改">保存更改</a></li>
+    <li><a href="#其他命令">其他命令</a></li>
   </ul>
 </nav>
   </div>
@@ -207,6 +218,48 @@ iptables -t nat -D PREROUTING 1
 </code></pre>
 <h1 id="不同端口转发到特定端口">不同端口转发到特定端口</h1>
 <pre><code>iptables -t nat -A PREROUTING -p udp --dport 12000:40000 -j REDIRECT --to-port 81
+</code></pre>
+<h1 id="允許或阻止特定連接">允許或阻止特定連接</h1>
+<h2 id="來自單個ip位址的連接">來自單個IP位址的連接</h2>
+<p>此示例演示如何阻止來自IP位址10.10.10.10.10的所有連接。</p>
+<pre><code>iptables -A INPUT -s 10.10.10.10 -j DROP
+</code></pre>
+<h2 id="來自一系列ip位址的連接">來自一系列IP位址的連接</h2>
+<pre><code>iptables -A INPUT -s 10.10.10.0/24 -j DROP
+</code></pre>
+<p>或</p>
+<pre><code>iptables -A INPUT -s 10.10.10.0/255.255.255.0 -j DROP
+</code></pre>
+<h2 id="與特定埠的連接">與特定埠的連接</h2>
+<p>此示例演示如何阻止來自 10.10.10.10 的 SSH 連接。</p>
+<pre><code>iptables -A INPUT -p tcp --dport ssh -s 10.10.10.10 -j DROP
+</code></pre>
+<p>您可以將「ssh」 替換為任何協定或連接埠號。代碼的一部分告訴iptables協定使用哪種連接。如果您要阻止使用UDP而不是TCP的協議，那麼將是必要的。-p tcp-p udp</p>
+<h2 id="此示例演示如何阻止來自任何ip位址的ssh連接">此示例演示如何阻止來自任何IP位址的SSH連接。</h2>
+<p>iptables -A INPUT -p tcp &ndash;dport ssh -j DROP</p>
+<h1 id="連接狀態">連接狀態</h1>
+<p>這就是連接狀態的用武之地，它為您提供了允許雙向通信但只允許建立單向連接所需的功能。請看一下此示例，其中允許從 10.10.10.10 的 SSH 連接，但不允許從 10.10.10.10 連接到 SSH 連接。但是，只要已經建立了會話，就允許系統通過 SSH 發送回資訊，這使得這兩個主機之間的 SSH 通信成為可能。</p>
+<pre><code>iptables -A INPUT -p tcp --dport ssh -s 10.10.10.10 -m state --state NEW,ESTABLISHED -j ACCEPT
+
+iptables -A OUTPUT -p tcp --sport 22 -d 10.10.10.10 -m state --state ESTABLISHED -j ACCEPT
+</code></pre>
+<h1 id="保存更改">保存更改</h1>
+<p>對iptables規則所做的更改將在下次重新啟動iptables服務時報廢，除非您執行命令來保存更改。此指令可能因發行版而異：</p>
+<p>Ubuntu：</p>
+<pre><code>sudo /sbin/iptables-save
+</code></pre>
+<p>紅帽 / CentOS：</p>
+<pre><code>/sbin/service iptables save
+## OR
+/etc/init.d/iptables save
+</code></pre>
+<h1 id="其他命令">其他命令</h1>
+<p>列出目前的 iptables 規則：</p>
+<pre><code>iptables -L
+</code></pre>
+<p>添加該選項將為您提供數據包和位元組資訊，添加將以數位方式列出所有內容。換句話說，主機名、協定和網路都列為數位。-v-n</p>
+<p>要清除所有當前配置的規則，您可以發出刷新命令。</p>
+<pre><code>iptables -F
 </code></pre>
 
     </div>
