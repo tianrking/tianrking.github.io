@@ -42,3 +42,10 @@ draft: false
 | Music Dev |音軌分割|<a href="https://github.com/deezer/spleeter">spleeter</a>|
 ||||
 |...仲有好多既|😆 😅 😂 🤣|🧑🏿‍🦲🧑🏾‍🦲🧑🏼‍🦲🧑🏻‍🦲|
+
+
+
+## 我**正在学习的**
+|  | | |
+| :-----| ----: | :----: |
+| PyAutoGui | Python图像工具 |<a href="https://pyautogui.readthedocs.io/en/latest/">Pyautogui</a>|
