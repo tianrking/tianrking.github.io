@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Mon, 22 Nov 2021 09:04:05 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Nov 2021 17:18:19 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>控制系統仿真</title>
+      <link>https://me.w0x7ce.eu/post/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%B5%B1%E4%BB%BF%E7%9C%9F/</link>
+      <pubDate>Mon, 22 Nov 2021 17:18:19 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/post/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%B5%B1%E4%BB%BF%E7%9C%9F/</guid>
+      <description>3 3-1 X = [4 15 7 3 1]; pie(X) X = [4 15 7 3 1]; labels = {&#39;100-90&#39;,&#39;89-80&#39;,&#39;79-70&#39;,&#39;69-60&#39;,&#39;59-0&#39;}; pie(X,labels) pie3(X,labels) X = reordercats(X,{&#39;100-90&#39;,&#39;89-80&#39;,&#39;79-70&#39;,&#39;69-60&#39;,&#39;59-0&#39;}); Y=[4 15 7 3 1]; bar(X,Y) bar3(X,Y) 3-2 plot(x1,y1) x1 = linspace(0,2*3.1415926,125); y1=cos(x1.*(0.5+3.*sin(x1)/(1+x1.*x1))) 3-3 z = linspace(-45,45,500); x = z.*sin(3.*z) y = z.*cos(3.*z) 3-4 t = linspace(-200,200,5000); y1=sin(2.*t+0); y2=sin(2.*t+3.1415926/3); y3=sin(2.*t+3.1415926/2); y4=sin(2.*t+3.1415926); subplot(2,2,1) plot(x,y1) subplot(2,2,2) plot(x,y2) subplot(2,2,3) plot(x,y3) subplot(2,2,4) plot(x,y4)</description>
+    </item>
+    
     <item>
       <title>防火墙的使用</title>
       <link>https://me.w0x7ce.eu/post/%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
