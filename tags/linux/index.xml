@@ -2,117 +2,117 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on WoW</title>
-    <link>http://localhost:1313/tags/linux/</link>
+    <link>https://me.w0x7ce.eu/tags/linux/</link>
     <description>Recent content in Linux on WoW</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Tue, 14 Sep 2021 21:51:28 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Sep 2021 21:51:28 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker使用方法(二)</title>
-      <link>http://localhost:1313/post/docker%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%BA%8C/</link>
+      <link>https://me.w0x7ce.eu/post/docker%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%BA%8C/</link>
       <pubDate>Tue, 14 Sep 2021 21:51:28 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/docker%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%BA%8C/</guid>
+      <guid>https://me.w0x7ce.eu/post/docker%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%BA%8C/</guid>
       <description>Docker 客戶端 docker 客戶端非常簡單 ,我們可以直接輸入 docker 命令來查看到 Docker 客戶端的所有命令選項。 w0x7ce@w0x7ce:~# docker 可以通過命令 docker command &amp;ndash;help 更深入的了解指定的 Docker 命令使用方法。 例如</description>
     </item>
     
     <item>
       <title>Docker使用方法(一)</title>
-      <link>http://localhost:1313/post/docker%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%B8%80/</link>
+      <link>https://me.w0x7ce.eu/post/docker%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%B8%80/</link>
       <pubDate>Tue, 14 Sep 2021 20:32:49 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/docker%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%B8%80/</guid>
+      <guid>https://me.w0x7ce.eu/post/docker%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%B8%80/</guid>
       <description>Docker的應用場景 Web 應用的自動化打包和發布。 自動化測試和持續集成、發布。 在服務型環境中部署和調整數據庫或其他的後台應用。 從頭編譯或者擴展</description>
     </item>
     
     <item>
       <title>常用Linux命令(二)--sed</title>
-      <link>http://localhost:1313/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%BA%8C/</link>
+      <link>https://me.w0x7ce.eu/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%BA%8C/</link>
       <pubDate>Mon, 13 Sep 2021 21:25:58 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%BA%8C/</guid>
+      <guid>https://me.w0x7ce.eu/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%BA%8C/</guid>
       <description>在每一行後面增加一空行 sed G 將原來的所有空行刪除並在每一行後面增加一空行。 這樣在輸出的文本中每一行後面將有且只有一空行。 sed &#39;/^$/d;G&#39; 在每一行後面增加兩</description>
     </item>
     
     <item>
       <title>Linux命令大全</title>
-      <link>http://localhost:1313/post/linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</link>
+      <link>https://me.w0x7ce.eu/post/linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</link>
       <pubDate>Mon, 13 Sep 2021 13:52:02 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</guid>
+      <guid>https://me.w0x7ce.eu/post/linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</guid>
       <description>Linux 命令大全 1、文件管理 cat chattr chgrp chmod chown cksum cmp diff diffstat file find git gitview indent cut ln less locate lsattr mattrib mc mdel mdir mktemp more mmove mread mren mtools mtoolstest mv od paste patch rcp rm slocate split tee tmpwatch touch umask which cp whereis mcopy mshowfat rhmask scp awk read updatedb 2、文档编辑 col</description>
     </item>
     
     <item>
       <title>Shell脚本编程(七)</title>
-      <link>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%83/</link>
+      <link>https://me.w0x7ce.eu/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%83/</link>
       <pubDate>Sun, 12 Sep 2021 21:00:04 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%83/</guid>
+      <guid>https://me.w0x7ce.eu/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%83/</guid>
       <description>Shell 输入/输出重定向 大多数 UNIX 系统命令从你的终端接受输入并将所产生的输出发送回​​到您的终端。一个命令通常从一个叫标准输入的地方读取输入，默认情</description>
     </item>
     
     <item>
       <title>Shell脚本编程(六)</title>
-      <link>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E5%85%AD/</link>
+      <link>https://me.w0x7ce.eu/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E5%85%AD/</link>
       <pubDate>Sun, 12 Sep 2021 20:44:56 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E5%85%AD/</guid>
+      <guid>https://me.w0x7ce.eu/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E5%85%AD/</guid>
       <description>Shell 函数 linux shell 可以用户定义函数，然后在shell脚本中可以随便调用。 shell中函数的定义格式如下： [ function ] funname [()] { action; [return int;] } 说明： 1、可以带func</description>
     </item>
     
     <item>
       <title>Shell脚本编程(五)</title>
-      <link>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%BA%94/</link>
+      <link>https://me.w0x7ce.eu/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%BA%94/</link>
       <pubDate>Sun, 12 Sep 2021 20:23:01 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%BA%94/</guid>
+      <guid>https://me.w0x7ce.eu/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%BA%94/</guid>
       <description>Shell 流程控制 和 Java、PHP 等语言不一样，sh 的流程控制不可为空，如(以下为 PHP 流程控制写法)： &amp;lt;?php if (isset($_GET[&amp;quot;q&amp;quot;])) { search(q); } else { // 不做任何事情 } 在 sh/bash 里可不能这</description>
     </item>
     
     <item>
       <title>Shell脚本编程(四)</title>
-      <link>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E5%9B%9B/</link>
+      <link>https://me.w0x7ce.eu/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E5%9B%9B/</link>
       <pubDate>Sun, 12 Sep 2021 20:11:16 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E5%9B%9B/</guid>
+      <guid>https://me.w0x7ce.eu/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E5%9B%9B/</guid>
       <description>Shell printf 命令 上一章节我们学习了 Shell 的 echo 命令，本章节我们来学习 Shell 的另一个输出命令 printf。 printf 命令模仿 C 程序库（library）里的 printf() 程序。 printf 由 POSIX</description>
     </item>
     
     <item>
       <title>Shell脚本编程(三)</title>
-      <link>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%89/</link>
+      <link>https://me.w0x7ce.eu/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%89/</link>
       <pubDate>Sun, 12 Sep 2021 19:01:25 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%89/</guid>
+      <guid>https://me.w0x7ce.eu/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%89/</guid>
       <description>Shell 基本运算符 Shell 和其他编程语言一样，支持多种运算符，包括： 算数运算符 关系运算符 布尔运算符 字符串运算符 文件测试运算符 原生bash不支持简单的数学</description>
     </item>
     
     <item>
       <title>Shell脚本编程(二)</title>
-      <link>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%BA%8C/</link>
+      <link>https://me.w0x7ce.eu/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%BA%8C/</link>
       <pubDate>Sun, 12 Sep 2021 18:45:47 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%BA%8C/</guid>
+      <guid>https://me.w0x7ce.eu/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%BA%8C/</guid>
       <description>Shell 传递参数 我们可以在执行 Shell 脚本时，向脚本传递参数，脚本内获取参数的格式为：$n。n 代表一个数字，1 为执行脚本的第一个参数，2 为执行脚本的第二</description>
     </item>
     
     <item>
       <title>Shell脚本编程(一)</title>
-      <link>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%80/</link>
+      <link>https://me.w0x7ce.eu/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%80/</link>
       <pubDate>Sun, 12 Sep 2021 18:21:09 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%80/</guid>
+      <guid>https://me.w0x7ce.eu/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%80/</guid>
       <description>Shell变量 注意，变量名和等号之间不能有空格，这可能和你熟悉的所有编程语言都不一样。同时，变量名的命名须遵循如下规则： 命名只能使用英文字母</description>
     </item>
     
     <item>
       <title>常用Linux命令(一)</title>
-      <link>http://localhost:1313/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%B8%80/</link>
+      <link>https://me.w0x7ce.eu/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%B8%80/</link>
       <pubDate>Sun, 12 Sep 2021 15:33:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%B8%80/</guid>
+      <guid>https://me.w0x7ce.eu/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%B8%80/</guid>
       <description>Shell echo命令 1.显示普通字符串: echo &amp;ldquo;It is a test&amp;rdquo; 这里的双引号完全可以省略，以下命令与上面实例效果一致： echo It is a test 2.显示转义字符 echo &amp;ldquo;&amp;quot;It is a test&amp;quot;&amp;rdquo; 结果将</description>
     </item>
     

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>姿态估计 on WoW</title>
-    <link>http://localhost:1313/categories/%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1/</link>
+    <link>https://me.w0x7ce.eu/categories/%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1/</link>
     <description>Recent content in 姿态估计 on WoW</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Tue, 28 Sep 2021 11:25:26 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Sep 2021 11:25:26 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/categories/%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Openpose调试</title>
-      <link>http://localhost:1313/post/openpose%E8%B0%83%E8%AF%95/</link>
+      <link>https://me.w0x7ce.eu/post/openpose%E8%B0%83%E8%AF%95/</link>
       <pubDate>Tue, 28 Sep 2021 11:25:26 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/openpose%E8%B0%83%E8%AF%95/</guid>
+      <guid>https://me.w0x7ce.eu/post/openpose%E8%B0%83%E8%AF%95/</guid>
       <description>bin\OpenPoseDemo.exe &amp;ndash;model_pose COCO &amp;ndash;net_resolution 320x176 bin\OpenPoseDemo.exe &amp;ndash;video examples/media/video.avi &amp;ndash;num_gpu 1 &amp;ndash;num_gpu_start 0 &amp;ndash;net_resolution 480x320</description>
     </item>
     

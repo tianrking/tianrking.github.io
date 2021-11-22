@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mmlab on WoW</title>
-    <link>http://localhost:1313/tags/mmlab/</link>
+    <link>https://me.w0x7ce.eu/tags/mmlab/</link>
     <description>Recent content in mmlab on WoW</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Thu, 30 Sep 2021 20:12:44 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/mmlab/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Sep 2021 20:12:44 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/tags/mmlab/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Open mmlab mmtracking</title>
-      <link>http://localhost:1313/post/open-mmlab-mmtracking/</link>
+      <link>https://me.w0x7ce.eu/post/open-mmlab-mmtracking/</link>
       <pubDate>Thu, 30 Sep 2021 20:12:44 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/open-mmlab-mmtracking/</guid>
+      <guid>https://me.w0x7ce.eu/post/open-mmlab-mmtracking/</guid>
       <description>环境 (mmcv) w0x7ce@w0x7ce-XPS-15-9570:~/Desktop/mmtracking$ nvidia-smi Fri Oct 1 10:29:58 2021 +-----------------------------------------------------------------------------+ | NVIDIA-SMI 450.142.00 Driver Version: 450.142.00 CUDA Version: 11.0 | |-------------------------------+----------------------+----------------------+ | GPU Name Persistence-M| Bus-Id Disp.A | Volatile Uncorr. ECC | | Fan Temp Perf Pwr:Usage/Cap| Memory-Usage | GPU-Util Compute M. | | | | MIG M. | |===============================+======================+======================| | 0 GeForce GTX 105... Off | 00000000:01:00.0 Off | N/A | | N/A 36C P8 N/A / N/A</description>
     </item>
     

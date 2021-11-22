@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Colab on WoW</title>
-    <link>http://localhost:1313/tags/colab/</link>
+    <link>https://me.w0x7ce.eu/tags/colab/</link>
     <description>Recent content in Colab on WoW</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Sat, 18 Sep 2021 22:58:24 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/colab/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Sep 2021 22:58:24 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/tags/colab/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Google Colab使用技巧</title>
-      <link>http://localhost:1313/post/google-colab%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</link>
+      <link>https://me.w0x7ce.eu/post/google-colab%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</link>
       <pubDate>Sat, 18 Sep 2021 22:58:24 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/google-colab%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</guid>
+      <guid>https://me.w0x7ce.eu/post/google-colab%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</guid>
       <description>在 Google colab上使用 conda Step 1 首先，需要确认在 Google Colab 中默认使用的是哪个 Python。 运行以下命令返回默认 Python 可执行文件的绝对路径。 !which python # should return /usr/local/bin/python 现在检</description>
     </item>
     

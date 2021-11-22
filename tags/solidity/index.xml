@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Solidity on WoW</title>
-    <link>http://localhost:1313/tags/solidity/</link>
+    <link>https://me.w0x7ce.eu/tags/solidity/</link>
     <description>Recent content in Solidity on WoW</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Sun, 21 Nov 2021 12:28:22 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/solidity/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Nov 2021 12:28:22 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/tags/solidity/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Solidity開發01</title>
-      <link>http://localhost:1313/post/solidity%E9%96%8B%E7%99%BC01/</link>
+      <link>https://me.w0x7ce.eu/post/solidity%E9%96%8B%E7%99%BC01/</link>
       <pubDate>Sun, 21 Nov 2021 12:28:22 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/solidity%E9%96%8B%E7%99%BC01/</guid>
+      <guid>https://me.w0x7ce.eu/post/solidity%E9%96%8B%E7%99%BC01/</guid>
       <description>pragma solidity ^0.4.20; // 定义ERC-20标准接口 contract ERC20Interface { // 代币名称 string public name; // 代币符号或者说简写 string public symbol; // 代币小数点位数，代币的最小单位 uint8 public decimals; // 代币的发行总量 uint public totalSupply;</description>
     </item>
     

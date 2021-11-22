@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C&#43;&#43; on WoW</title>
-    <link>http://localhost:1313/categories/c&#43;&#43;/</link>
+    <link>https://me.w0x7ce.eu/categories/c&#43;&#43;/</link>
     <description>Recent content in C&#43;&#43; on WoW</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Thu, 30 Sep 2021 20:12:44 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/c++/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Sep 2021 20:12:44 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/categories/c++/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Open mmlab mmtracking</title>
-      <link>http://localhost:1313/post/open-mmlab-mmtracking/</link>
+      <link>https://me.w0x7ce.eu/post/open-mmlab-mmtracking/</link>
       <pubDate>Thu, 30 Sep 2021 20:12:44 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/open-mmlab-mmtracking/</guid>
+      <guid>https://me.w0x7ce.eu/post/open-mmlab-mmtracking/</guid>
       <description>环境 (mmcv) w0x7ce@w0x7ce-XPS-15-9570:~/Desktop/mmtracking$ nvidia-smi Fri Oct 1 10:29:58 2021 +-----------------------------------------------------------------------------+ | NVIDIA-SMI 450.142.00 Driver Version: 450.142.00 CUDA Version: 11.0 | |-------------------------------+----------------------+----------------------+ | GPU Name Persistence-M| Bus-Id Disp.A | Volatile Uncorr. ECC | | Fan Temp Perf Pwr:Usage/Cap| Memory-Usage | GPU-Util Compute M. | | | | MIG M. | |===============================+======================+======================| | 0 GeForce GTX 105... Off | 00000000:01:00.0 Off | N/A | | N/A 36C P8 N/A / N/A</description>
     </item>
     
     <item>
       <title>Openpose调试</title>
-      <link>http://localhost:1313/post/openpose%E8%B0%83%E8%AF%95/</link>
+      <link>https://me.w0x7ce.eu/post/openpose%E8%B0%83%E8%AF%95/</link>
       <pubDate>Tue, 28 Sep 2021 11:25:26 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/openpose%E8%B0%83%E8%AF%95/</guid>
+      <guid>https://me.w0x7ce.eu/post/openpose%E8%B0%83%E8%AF%95/</guid>
       <description>bin\OpenPoseDemo.exe &amp;ndash;model_pose COCO &amp;ndash;net_resolution 320x176 bin\OpenPoseDemo.exe &amp;ndash;video examples/media/video.avi &amp;ndash;num_gpu 1 &amp;ndash;num_gpu_start 0 &amp;ndash;net_resolution 480x320</description>
     </item>
     
