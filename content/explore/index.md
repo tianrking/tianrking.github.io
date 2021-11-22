@@ -38,6 +38,7 @@ draft: false
 | CV|Text Detection|<a href="https://github.com/open-mmlab/mmocr">mmocr</a>|
 | CV |Detection Toolbox|<a href="https://github.com/open-mmlab/mmdetection">mmdet</a>|
 | CV|人體姿態估計|<a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose">Openpose</a>|
+| CV|2D-3D|<a href="https://github.com/facebookresearch/pifuhd">PIFUHD</a>|
 | Music Dev |音軌分割|<a href="https://github.com/deezer/spleeter">spleeter</a>|
 ||||
 |...仲有好多既|😆 😅 😂 🤣|🧑🏿‍🦲🧑🏾‍🦲🧑🏼‍🦲🧑🏻‍🦲|

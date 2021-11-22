@@ -12,3 +12,5 @@ author: "w0x7ce"
 bin\OpenPoseDemo.exe --model_pose COCO --net_resolution 320x176
 
 bin\OpenPoseDemo.exe --video examples/media/video.avi --num_gpu 1 --num_gpu_start 0  --net_resolution 480x320
+
+bin\OpenPoseDemo.exe --video examples/media/video.avi --write_video output/result.avi
