@@ -45,7 +45,7 @@ draft: false
 
 
 
-## 宜家*學習的**
+## 宜家**學習的**
 |  | | |
 | :-----| ----: | :----: |
 | PyAutoGui | Python图像工具 |<a href="https://pyautogui.readthedocs.io/en/latest/">Pyautogui</a>|
