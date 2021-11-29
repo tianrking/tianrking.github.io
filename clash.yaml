@@ -23,3 +23,9 @@ proxies:
   port: 13521
   cipher: chacha20-ietf-poly1305
   name: GCP台灣
+- type: ss
+  server: us.w0x7ce.eu
+  password: 80
+  port: 13541
+  cipher: chacha20-ietf-poly1305
+  name: GCP美國
