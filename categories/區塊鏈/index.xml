@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Sun, 21 Nov 2021 12:28:22 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/categories/%E5%8D%80%E5%A1%8A%E9%8F%88/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Dec 2021 14:06:01 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/categories/%E5%8D%80%E5%A1%8A%E9%8F%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solidity開發02</title>
+      <link>https://me.w0x7ce.eu/post/solidity%E9%96%8B%E7%99%BC02/</link>
+      <pubDate>Sat, 25 Dec 2021 14:06:01 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/post/solidity%E9%96%8B%E7%99%BC02/</guid>
+      <description>pragma solidity ^0.4.25; contract Meow_test{ int cc; string namename; string name; address owner; uint public rename_counter; bool isVaild; uint balance; string information; event LogCreate(string information,uint balance); event LogCreateINdex(string indexed information,uint indexed balance); event LogCreate_name_balance(string name,uint balance); event LogCreate_b(uint b); constructor() public { name=&amp;quot;unknown&amp;quot;; owner=msg.sender; rename_counter=0; isVaild = true; information = &amp;quot;default&amp;quot;; balance = 100; emit LogCreate(information,balance); emit LogCreateINdex(information,balance); } function fb() public payable{ //emit LogCreate_name_balance(name,balance); emit LogCreate_b(address(this).balance); } //fallback function</description>
+    </item>
+    
     <item>
       <title>Solidity開發01</title>
       <link>https://me.w0x7ce.eu/post/solidity%E9%96%8B%E7%99%BC01/</link>
