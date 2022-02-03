@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Thu, 30 Sep 2021 20:12:44 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Feb 2022 21:08:48 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nvidia驱动安装相关问题</title>
+      <link>https://me.w0x7ce.eu/post/nvidia%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 03 Feb 2022 21:08:48 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/post/nvidia%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</guid>
+      <description>Failed to initialize NVML: Driver/library version mismatch. 驱动与驱动内核版本不匹配 方式1: 直接重启 方式2：手动重新加载内核模块（先移除旧模块，再加载新模块） 查看依赖（可略） 查看依赖 lsmod |</description>
+    </item>
+    
     <item>
       <title>Open mmlab mmtracking</title>
       <link>https://me.w0x7ce.eu/post/open-mmlab-mmtracking/</link>
