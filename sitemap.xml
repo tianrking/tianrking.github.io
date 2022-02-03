@@ -9,14 +9,28 @@
   </url>
   
   <url>
-    <loc>https://me.w0x7ce.eu/categories/</loc>
-    <lastmod>2021-12-25T14:06:01+08:00</lastmod>
+    <loc>https://me.w0x7ce.eu/post/nvidia%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2022-02-03T21:08:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://me.w0x7ce.eu/post/</loc>
+    <lastmod>2022-02-03T21:08:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/</loc>
+    <lastmod>2022-02-03T21:08:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/categories/</loc>
     <lastmod>2021-12-25T14:06:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -38,13 +52,6 @@
   
   <url>
     <loc>https://me.w0x7ce.eu/tags/</loc>
-    <lastmod>2021-12-25T14:06:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://me.w0x7ce.eu/</loc>
     <lastmod>2021-12-25T14:06:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Open mmlab mmtracking - WoW</title>
+  <title>Nvidia驱动安装相关问题 - WoW</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="w0x7ce" /><meta name="description" content="环境 (mmcv) w0x7ce@w0x7ce-XPS-15-9570:~/Desktop/mmtracking$ nvidia-smi Fri Oct 1 10:29:58 2021 &#43;-----------------------------------------------------------------------------&#43; | NVIDIA-SMI 450.142.00 Driver Version: 450.142.00 CUDA Version: 11.0 | |-------------------------------&#43;----------------------&#43;----------------------&#43; | GPU Name Persistence-M| Bus-Id Disp.A | Volatile Uncorr. ECC | | Fan Temp Perf Pwr:Usage/Cap| Memory-Usage | GPU-Util Compute M. | | | | MIG M. | |===============================&#43;======================&#43;======================| | 0 GeForce GTX 105... Off | 00000000:01:00.0 Off | N/A | | N/A 36C P8 N/A / N/A" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="w0x7ce" /><meta name="description" content="Failed to initialize NVML: Driver/library version mismatch. 驱动与驱动内核版本不匹配 方式1: 直接重启 方式2：手动重新加载内核模块（先移除旧模块，再加载新模块） （1）查看依赖（可略） 查看依" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="https://me.w0x7ce.eu/post/open-mmlab-mmtracking/" />
+<link rel="canonical" href="https://me.w0x7ce.eu/post/nvidia%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Open mmlab mmtracking" />
-<meta property="og:description" content="环境 (mmcv) w0x7ce@w0x7ce-XPS-15-9570:~/Desktop/mmtracking$ nvidia-smi Fri Oct 1 10:29:58 2021 &#43;-----------------------------------------------------------------------------&#43; | NVIDIA-SMI 450.142.00 Driver Version: 450.142.00 CUDA Version: 11.0 | |-------------------------------&#43;----------------------&#43;----------------------&#43; | GPU Name Persistence-M| Bus-Id Disp.A | Volatile Uncorr. ECC | | Fan Temp Perf Pwr:Usage/Cap| Memory-Usage | GPU-Util Compute M. | | | | MIG M. | |===============================&#43;======================&#43;======================| | 0 GeForce GTX 105... Off | 00000000:01:00.0 Off | N/A | | N/A 36C P8 N/A / N/A" />
+<meta property="og:title" content="Nvidia驱动安装相关问题" />
+<meta property="og:description" content="Failed to initialize NVML: Driver/library version mismatch. 驱动与驱动内核版本不匹配 方式1: 直接重启 方式2：手动重新加载内核模块（先移除旧模块，再加载新模块） （1）查看依赖（可略） 查看依" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://me.w0x7ce.eu/post/open-mmlab-mmtracking/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-09-30T20:12:44+08:00" />
-<meta property="article:modified_time" content="2021-09-30T20:12:44+08:00" />
+<meta property="og:url" content="https://me.w0x7ce.eu/post/nvidia%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-02-03T21:08:48+08:00" />
+<meta property="article:modified_time" content="2022-02-03T21:08:48+08:00" />
 
-<meta itemprop="name" content="Open mmlab mmtracking">
-<meta itemprop="description" content="环境 (mmcv) w0x7ce@w0x7ce-XPS-15-9570:~/Desktop/mmtracking$ nvidia-smi Fri Oct 1 10:29:58 2021 &#43;-----------------------------------------------------------------------------&#43; | NVIDIA-SMI 450.142.00 Driver Version: 450.142.00 CUDA Version: 11.0 | |-------------------------------&#43;----------------------&#43;----------------------&#43; | GPU Name Persistence-M| Bus-Id Disp.A | Volatile Uncorr. ECC | | Fan Temp Perf Pwr:Usage/Cap| Memory-Usage | GPU-Util Compute M. | | | | MIG M. | |===============================&#43;======================&#43;======================| | 0 GeForce GTX 105... Off | 00000000:01:00.0 Off | N/A | | N/A 36C P8 N/A / N/A"><meta itemprop="datePublished" content="2021-09-30T20:12:44+08:00" />
-<meta itemprop="dateModified" content="2021-09-30T20:12:44+08:00" />
-<meta itemprop="wordCount" content="216">
-<meta itemprop="keywords" content="mmlab," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Open mmlab mmtracking"/>
-<meta name="twitter:description" content="环境 (mmcv) w0x7ce@w0x7ce-XPS-15-9570:~/Desktop/mmtracking$ nvidia-smi Fri Oct 1 10:29:58 2021 &#43;-----------------------------------------------------------------------------&#43; | NVIDIA-SMI 450.142.00 Driver Version: 450.142.00 CUDA Version: 11.0 | |-------------------------------&#43;----------------------&#43;----------------------&#43; | GPU Name Persistence-M| Bus-Id Disp.A | Volatile Uncorr. ECC | | Fan Temp Perf Pwr:Usage/Cap| Memory-Usage | GPU-Util Compute M. | | | | MIG M. | |===============================&#43;======================&#43;======================| | 0 GeForce GTX 105... Off | 00000000:01:00.0 Off | N/A | | N/A 36C P8 N/A / N/A"/>
+<meta itemprop="name" content="Nvidia驱动安装相关问题">
+<meta itemprop="description" content="Failed to initialize NVML: Driver/library version mismatch. 驱动与驱动内核版本不匹配 方式1: 直接重启 方式2：手动重新加载内核模块（先移除旧模块，再加载新模块） （1）查看依赖（可略） 查看依"><meta itemprop="datePublished" content="2022-02-03T21:08:48+08:00" />
+<meta itemprop="dateModified" content="2022-02-03T21:08:48+08:00" />
+<meta itemprop="wordCount" content="128">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Nvidia驱动安装相关问题"/>
+<meta name="twitter:description" content="Failed to initialize NVML: Driver/library version mismatch. 驱动与驱动内核版本不匹配 方式1: 直接重启 方式2：手动重新加载内核模块（先移除旧模块，再加载新模块） （1）查看依赖（可略） 查看依"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -133,18 +133,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Open mmlab mmtracking</h1>
+      <h1 class="post-title">Nvidia驱动安装相关问题</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2021-09-30 </span>
-        <div class="post-category">
-            <a href="/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
-            <a href="/categories/python/"> Python </a>
-            <a href="/categories/cv/"> CV </a>
-            <a href="/categories/c&#43;&#43;/"> C&#43;&#43; </a>
-            <a href="/categories/%E8%B7%9F%E8%B8%AA/"> 跟踪 </a>
-            </div>
-          <span class="more-meta"> 216 words </span>
+        <span class="post-time"> 2022-02-03 </span>
+        
+          <span class="more-meta"> 128 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -155,12 +149,15 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#环境">环境</a></li>
-    <li><a href="#install">Install</a>
+    <li>
       <ul>
-        <li><a href="#mmtracking">mmtracking</a>
+        <li><a href="#failed-to-initialize-nvml-driverlibrary-version-mismatch">Failed to initialize NVML: Driver/library version mismatch.</a>
           <ul>
-            <li><a href="#mmtracking-verification">mmtracking Verification</a></li>
+            <li><a href="#查看依赖">查看依赖</a></li>
+            <li><a href="#依次移除依赖模块">依次移除依赖模块</a></li>
+            <li><a href="#移除旧模块">移除旧模块</a></li>
+            <li><a href="#会自动加载相关模块">会自动加载相关模块</a></li>
+            <li><a href="#查看已有驱动版本">查看已有驱动版本</a></li>
           </ul>
         </li>
       </ul>
@@ -169,59 +166,30 @@
 </nav>
   </div>
 </div>
-  <div class="post-outdated">
-    <div class="hint">
-      <p>[NOTE] Updated <span class="timeago" datetime="2021-09-30T20:12:44" title="September 30, 2021">September 30, 2021</span>. This article may have outdated content or subject matter.</p>
-    </div>
-  </div>
     <div class="post-content">
-      <h1 id="环境">环境</h1>
-<pre><code>(mmcv) w0x7ce@w0x7ce-XPS-15-9570:~/Desktop/mmtracking$ nvidia-smi 
-Fri Oct  1 10:29:58 2021       
-+-----------------------------------------------------------------------------+
-| NVIDIA-SMI 450.142.00   Driver Version: 450.142.00   CUDA Version: 11.0     |
-|-------------------------------+----------------------+----------------------+
-| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-|                               |                      |               MIG M. |
-|===============================+======================+======================|
-|   0  GeForce GTX 105...  Off  | 00000000:01:00.0 Off |                  N/A |
-| N/A   36C    P8    N/A /  N/A |    461MiB /  4042MiB |     17%      Default |
-|                               |                      |                  N/A |
-+-------------------------------+----------------------+----------------------+
-                                                                               
-+-----------------------------------------------------------------------------+
-| Processes:                                                                  |
-|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
-|        ID   ID                                                   Usage      |
-|=============================================================================|
-|    0   N/A  N/A      1308      G   /usr/lib/xorg/Xorg                 45MiB |
-|    0   N/A  N/A      1806      G   /usr/lib/xorg/Xorg                173MiB |
-|    0   N/A  N/A      1985      G   /usr/bin/gnome-shell              162MiB |
-|    0   N/A  N/A      2580      G   ...AAAAAAAAA= --shared-files       33MiB |
-|    0   N/A  N/A      4535      G   /usr/lib/firefox/firefox            1MiB |
-|    0   N/A  N/A      5113      G   ...AAAAAAAAA= --shared-files       35MiB |
-+-----------------------------------------------------------------------------+
-
+      <h2 id="failed-to-initialize-nvml-driverlibrary-version-mismatch">Failed to initialize NVML: Driver/library version mismatch.</h2>
+<p>驱动与驱动内核版本不匹配</p>
+<pre><code class="language-txt">方式1: 直接重启
+方式2：手动重新加载内核模块（先移除旧模块，再加载新模块）
+（1）查看依赖（可略）
 </code></pre>
-<h1 id="install">Install</h1>
-<pre><code>conda create -n open-mmlab python=3.7 -y
-conda activate open-mmlab
+<h3 id="查看依赖">查看依赖</h3>
+<pre><code class="language-bash">lsmod | grep -i nvidia
 </code></pre>
-<pre><code>conda install pytorch cudatoolkit=11.0 torchvision -c pytorch
+<h3 id="依次移除依赖模块">依次移除依赖模块</h3>
+<pre><code class="language-bash">sudo rmmod nvidia_uvm
+sudo rmmod nvidia_drm 
+sudo rmmod nvidia_modeset
 </code></pre>
-<pre><code>pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu110/torch1.7.0/index.html
-pip install mmdet
+<h3 id="移除旧模块">移除旧模块</h3>
+<pre><code class="language-bash">sudo rmmod nvidia
 </code></pre>
-<h2 id="mmtracking">mmtracking</h2>
-<pre><code>git clone https://github.com/open-mmlab/mmtracking.git
-cd mmtracking
+<h3 id="会自动加载相关模块">会自动加载相关模块</h3>
+<pre><code class="language-bash">sudo nvidia-smi
 </code></pre>
-<pre><code>pip install -r requirements/build.txt
-pip install -v -e .  # or &quot;python setup.py develop&quot;
-</code></pre>
-<h3 id="mmtracking-verification">mmtracking Verification</h3>
-<pre><code>python demo/demo_mot.py configs/mot/deepsort/sort_faster-rcnn_fpn_4e_mot17-private.py --input demo/demo.mp4 --output mot.mp4
+<h3 id="查看已有驱动版本">查看已有驱动版本</h3>
+<pre><code class="language-bash">dpkg -l | grep -i nvidia
+cat /proc/driver/nvidia/version
 </code></pre>
 
     </div>
@@ -234,7 +202,7 @@ pip install -v -e .  # or &quot;python setup.py develop&quot;
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2021-09-30
+        2022-02-03
         
     </span>
   </p>
@@ -256,17 +224,11 @@ pip install -v -e .  # or &quot;python setup.py develop&quot;
       </label>
   </div>
 </div><footer class="post-footer">
-      <div class="post-tags">
-          <a href="/tags/mmlab/">mmlab</a>
-          </div>
+      
       <nav class="post-nav">
-        <a class="prev" href="/post/solidity%E9%96%8B%E7%99%BC01/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Solidity開發01</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/openpose%E8%B0%83%E8%AF%95/">
-            <span class="next-text nav-default">Openpose调试</span>
+        
+        <a class="next" href="/post/solidity%E9%96%8B%E7%99%BC02/">
+            <span class="next-text nav-default">Solidity開發02</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
