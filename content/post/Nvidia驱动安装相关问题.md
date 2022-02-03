@@ -2,6 +2,10 @@
 title: "Nvidia驱动安装相关问题"
 date: 2022-02-03T21:08:48+08:00
 draft: false
+tags: ["nvidia"]
+categories: ["nvidia","Python","cuda"]
+author: "w0x7ce"
+
 ---
 
 ## Failed to initialize NVML: Driver/library version mismatch. 
@@ -11,7 +15,7 @@ draft: false
 ```txt
 方式1: 直接重启
 方式2：手动重新加载内核模块（先移除旧模块，再加载新模块）
-（1）查看依赖（可略）
+查看依赖（可略）
 ```
 
 ### 查看依赖
