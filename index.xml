@@ -180,6 +180,15 @@
     </item>
     
     <item>
+      <title>Setting up Chrome and Selenium without GUI</title>
+      <link>https://me.w0x7ce.eu/post/setting-up-chrome-and-selenium-without-gui/</link>
+      <pubDate>Mon, 13 Sep 2021 20:08:40 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/post/setting-up-chrome-and-selenium-without-gui/</guid>
+      <description>SSH into your VPS sudo apt update sudo apt upgrade sudo apt install wget -y Download &amp;amp;Install Chrome wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb sudo dpkg -i google-chrome-stable_current_amd64.deb sudo apt-get install -f Test your intall google-chrome View the version google-chrome --version Download the chrome-driver Find the package here https://chromedriver.chromium.org/downloads wget {link you copied above} unzip xxx.zip sudo mv chromedriver /usr/bin/chromedriver sudo chown root:root /usr/bin/chromedriver sudo chmod +x /usr/bin/chromedriver Verify chromedriver is working chromedriver --url-base=/wd/hub</description>
+    </item>
+    
+    <item>
       <title>Linux命令大全</title>
       <link>https://me.w0x7ce.eu/post/linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</link>
       <pubDate>Mon, 13 Sep 2021 13:52:02 +0800</pubDate>

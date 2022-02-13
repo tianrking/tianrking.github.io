@@ -26,5 +26,14 @@
       <description>ROS文件系统导览 Description: 本教程介绍ROS文件系统的概念，包括如何使用roscd、rosls和rospack命令行工具。 Tutorial Level: BEGINNER Next Tutorial: 创建ROS软件包</description>
     </item>
     
+    <item>
+      <title>Setting up Chrome and Selenium without GUI</title>
+      <link>https://me.w0x7ce.eu/post/setting-up-chrome-and-selenium-without-gui/</link>
+      <pubDate>Mon, 13 Sep 2021 20:08:40 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/post/setting-up-chrome-and-selenium-without-gui/</guid>
+      <description>SSH into your VPS sudo apt update sudo apt upgrade sudo apt install wget -y Download &amp;amp;Install Chrome wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb sudo dpkg -i google-chrome-stable_current_amd64.deb sudo apt-get install -f Test your intall google-chrome View the version google-chrome --version Download the chrome-driver Find the package here https://chromedriver.chromium.org/downloads wget {link you copied above} unzip xxx.zip sudo mv chromedriver /usr/bin/chromedriver sudo chown root:root /usr/bin/chromedriver sudo chmod +x /usr/bin/chromedriver Verify chromedriver is working chromedriver --url-base=/wd/hub</description>
+    </item>
+    
   </channel>
 </rss>
