@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Thu, 03 Feb 2022 21:08:48 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Feb 2022 20:08:40 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>测试</title>
+      <link>https://me.w0x7ce.eu/tags/%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Sun, 13 Feb 2022 20:08:40 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/tags/%E6%B5%8B%E8%AF%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>爬虫</title>
+      <link>https://me.w0x7ce.eu/tags/%E7%88%AC%E8%99%AB/</link>
+      <pubDate>Sun, 13 Feb 2022 20:08:40 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/tags/%E7%88%AC%E8%99%AB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>自动化</title>
+      <link>https://me.w0x7ce.eu/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/</link>
+      <pubDate>Sun, 13 Feb 2022 20:08:40 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>nvidia</title>
       <link>https://me.w0x7ce.eu/tags/nvidia/</link>
@@ -149,33 +176,6 @@
       <pubDate>Mon, 13 Sep 2021 20:15:37 +0800</pubDate>
       
       <guid>https://me.w0x7ce.eu/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>自动化</title>
-      <link>https://me.w0x7ce.eu/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/</link>
-      <pubDate>Mon, 13 Sep 2021 20:15:37 +0800</pubDate>
-      
-      <guid>https://me.w0x7ce.eu/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>测试</title>
-      <link>https://me.w0x7ce.eu/tags/%E6%B5%8B%E8%AF%95/</link>
-      <pubDate>Mon, 13 Sep 2021 20:08:40 +0800</pubDate>
-      
-      <guid>https://me.w0x7ce.eu/tags/%E6%B5%8B%E8%AF%95/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>爬虫</title>
-      <link>https://me.w0x7ce.eu/tags/%E7%88%AC%E8%99%AB/</link>
-      <pubDate>Mon, 13 Sep 2021 20:08:40 +0800</pubDate>
-      
-      <guid>https://me.w0x7ce.eu/tags/%E7%88%AC%E8%99%AB/</guid>
       <description></description>
     </item>
     
