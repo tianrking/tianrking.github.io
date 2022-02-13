@@ -1,6 +1,6 @@
 ---
 title: "Setting up Chrome and Selenium without GUI"
-date: 2021-09-13T20:08:40+08:00
+date: 2022-02-13T20:08:40+08:00
 draft: false
 
 tags: ["爬虫","自动化","测试"]
