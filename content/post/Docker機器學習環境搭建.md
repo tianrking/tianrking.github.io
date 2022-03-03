@@ -94,3 +94,26 @@ docker attach [tag]
 ctrl +p + q ## exit without stop the container
 docker ps -a
 ```
+
+### Misc
+
+中国内地使用可以配置镜像，以便加速下载
+
+- 请首先查看是否在 docker.service 文件中配置过镜像地址。
+
+    ```bash
+    $ systemctl cat docker | grep '\-\-registry\-mirror'
+    ```
+
+- 如果该命令有输出，那么请执行 $ systemctl cat docker 查看 ExecStart= 出现的位置，修改对应的文件内容去掉 --registry-mirror 参数及其值，并按接下来的步骤进行配置。
+
+- 如果以上命令没有任何输出，那么就可以在 /etc/docker/daemon.json 中写入如下内容（如果文件不存在请新建该文件）
+
+```bash
+{
+  "registry-mirrors": [
+    "https://hub-mirror.c.163.com",
+    "https://mirror.baidubce.com"
+  ]
+}
+```
