@@ -117,3 +117,5 @@ docker ps -a
   ]
 }
 ```
+
+[ci可用测试](https://github.com/docker-practice/docker-registry-cn-mirror-test/actions)
