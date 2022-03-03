@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Docker機器學習環境搭建">
 <meta itemprop="description" content="Way 1 simple use ufoym/deepo https://github.com/ufoym/deepo https://hub.docker.com/r/ufoym/deepo Configure Docker Step 1 Uninstall old version sudo apt-get remove docker docker-engine docker.io containerd runc Step 2 Install latest docker sudo apt-get update sudo apt-get install \ ca-certificates \ curl \ gnupg \ lsb-release curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg echo \ &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null sudo apt-get update"><meta itemprop="datePublished" content="2022-03-03T17:21:04+08:00" />
 <meta itemprop="dateModified" content="2022-03-03T17:21:04+08:00" />
-<meta itemprop="wordCount" content="211">
+<meta itemprop="wordCount" content="365">
 <meta itemprop="keywords" content="Linux,Docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Docker機器學習環境搭建"/>
 <meta name="twitter:description" content="Way 1 simple use ufoym/deepo https://github.com/ufoym/deepo https://hub.docker.com/r/ufoym/deepo Configure Docker Step 1 Uninstall old version sudo apt-get remove docker docker-engine docker.io containerd runc Step 2 Install latest docker sudo apt-get update sudo apt-get install \ ca-certificates \ curl \ gnupg \ lsb-release curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg echo \ &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null sudo apt-get update"/>
@@ -140,7 +140,7 @@
         <div class="post-category">
             <a href="/categories/%E8%BB%9F%E4%BB%B6/"> 軟件 </a>
             </div>
-          <span class="more-meta"> 211 words </span>
+          <span class="more-meta"> 365 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -156,6 +156,7 @@
         <li><a href="#way-1-simple-use-ufoymdeepo">Way 1 simple use ufoym/deepo</a>
           <ul>
             <li><a href="#configure-docker">Configure Docker</a></li>
+            <li><a href="#misc">Misc</a></li>
           </ul>
         </li>
       </ul>
@@ -226,6 +227,28 @@ sudo apt-get install -y nvidia-docker2
 docker attach [tag]
 ctrl +p + q ## exit without stop the container
 docker ps -a
+</code></pre>
+<h3 id="misc">Misc</h3>
+<p>中国内地使用可以配置镜像，以便加速下载</p>
+<ul>
+<li>
+<p>请首先查看是否在 docker.service 文件中配置过镜像地址。</p>
+<pre><code class="language-bash">$ systemctl cat docker | grep '\-\-registry\-mirror'
+</code></pre>
+</li>
+<li>
+<p>如果该命令有输出，那么请执行 $ systemctl cat docker 查看 ExecStart= 出现的位置，修改对应的文件内容去掉 &ndash;registry-mirror 参数及其值，并按接下来的步骤进行配置。</p>
+</li>
+<li>
+<p>如果以上命令没有任何输出，那么就可以在 /etc/docker/daemon.json 中写入如下内容（如果文件不存在请新建该文件）</p>
+</li>
+</ul>
+<pre><code class="language-bash">{
+  &quot;registry-mirrors&quot;: [
+    &quot;https://hub-mirror.c.163.com&quot;,
+    &quot;https://mirror.baidubce.com&quot;
+  ]
+}
 </code></pre>
 
     </div>
