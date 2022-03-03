@@ -219,7 +219,7 @@ sudo apt-get install -y nvidia-docker2
 <h4 id="step-4-select-the-verion-depends-on-ur-env">Step 4 Select the verion depends on ur ENV</h4>
 <pre><code class="language-bash">    nvidia-smi #view the cuda version if it's cuda10.2
     docker pull ufoym/deepo:pytorch-cu102
-    nvidia-docker  run --name w0x7ce -p 7789:22 -p 7791:7790 -it -v /storage/xpq:/data ufoym/deepo:pytorch-cu102
+    nvidia-docker  run --name w0x7ce -p 7789:22 -p 7791:7790 -it -v /storage:/data ufoym/deepo:pytorch-cu102
 </code></pre>
 <p>NOW it will work well !</p>
 <h4 id="use-note">USE note</h4>
