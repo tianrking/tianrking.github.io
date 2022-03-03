@@ -88,7 +88,9 @@ NOW it will work well !
 
 #### USE note
 
+```bash
 docker start [tag]
 docker attach [tag]
 ctrl +p + q ## exit without stop the container
 docker ps -a
+```
