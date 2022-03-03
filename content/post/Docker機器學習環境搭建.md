@@ -4,7 +4,7 @@ date: 2022-03-03T17:21:04+08:00
 draft: false
 
 tags: ["Linux","Docker"]
-categories: ["軟件"]
+categories: ["軟件","機器學習"]
 author: "w0x7ce"
 ---
 
