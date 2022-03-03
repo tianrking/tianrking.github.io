@@ -81,7 +81,7 @@ echo \
 ```bash
     nvidia-smi #view the cuda version if it's cuda10.2
     docker pull ufoym/deepo:pytorch-cu102
-    nvidia-docker  run --name w0x7ce -p 7789:22 -p 7791:7790 -it -v /storage/xpq:/data ufoym/deepo:pytorch-cu102
+    nvidia-docker  run --name w0x7ce -p 7789:22 -p 7791:7790 -it -v /storage:/data ufoym/deepo:pytorch-cu102
 ```
 
 NOW it will work well !
