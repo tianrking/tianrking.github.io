@@ -130,6 +130,29 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/docker%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E7%92%B0%E5%A2%83%E6%90%AD%E5%BB%BA/">Docker機器學習環境搭建</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2022-03-03 </span>
+      <div class="post-category">
+          <a href="/categories/%E8%BB%9F%E4%BB%B6/"> 軟件 </a>
+          </div>
+        <span class="more-meta"> 211 words </span>
+        <span class="more-meta"> 1 min read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Way 1 simple use ufoym/deepo https://github.com/ufoym/deepo https://hub.docker.com/r/ufoym/deepo Configure Docker Step 1 Uninstall old version sudo apt-get remove docker docker-engine docker.io containerd runc Step 2 Install latest docker sudo apt-get update sudo apt-get install \ ca-certificates \ curl \ gnupg \ lsb-release curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg echo \ &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null sudo apt-get update
+    </div>
+    <div class="read-more">
+      <a href="/post/docker%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E7%92%B0%E5%A2%83%E6%90%AD%E5%BB%BA/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/setting-up-chrome-and-selenium-without-gui/">Setting up Chrome and Selenium without GUI</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2022-02-13 </span>
@@ -216,27 +239,6 @@
     </div>
     <div class="read-more">
       <a href="/post/git%E4%BD%BF%E7%94%A8/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%B5%B1%E4%BB%BF%E7%9C%9F/">控制系統仿真</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-11-22 </span>
-      
-        <span class="more-meta"> 64 words </span>
-        <span class="more-meta"> 1 min read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      3 3-1 X = [4 15 7 3 1]; pie(X) X = [4 15 7 3 1]; labels = {'100-90','89-80','79-70','69-60','59-0'}; pie(X,labels) pie3(X,labels) X = reordercats(X,{'100-90','89-80','79-70','69-60','59-0'}); Y=[4 15 7 3 1]; bar(X,Y) bar3(X,Y) 3-2 plot(x1,y1) x1 = linspace(0,2*3.1415926,125); y1=cos(x1.*(0.5+3.*sin(x1)/(1+x1.*x1))) 3-3 z = linspace(-45,45,500); x = z.*sin(3.*z) y = z.*cos(3.*z) 3-4 t = linspace(-200,200,5000); y1=sin(2.*t+0); y2=sin(2.*t+3.1415926/3); y3=sin(2.*t+3.1415926/2); y4=sin(2.*t+3.1415926); subplot(2,2,1) plot(x,y1) subplot(2,2,2) plot(x,y2) subplot(2,2,3) plot(x,y3) subplot(2,2,4) plot(x,y4)
-    </div>
-    <div class="read-more">
-      <a href="/post/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%B5%B1%E4%BB%BF%E7%9C%9F/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

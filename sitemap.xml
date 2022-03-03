@@ -10,34 +10,62 @@
   
   <url>
     <loc>https://me.w0x7ce.eu/categories/</loc>
-    <lastmod>2022-02-13T20:08:40+08:00</lastmod>
+    <lastmod>2022-03-03T17:21:04+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/tags/docker/</loc>
+    <lastmod>2022-03-03T17:21:04+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/post/docker%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E7%92%B0%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2022-03-03T17:21:04+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/tags/linux/</loc>
+    <lastmod>2022-03-03T17:21:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://me.w0x7ce.eu/post/</loc>
-    <lastmod>2022-02-13T20:08:40+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://me.w0x7ce.eu/post/setting-up-chrome-and-selenium-without-gui/</loc>
-    <lastmod>2022-02-13T20:08:40+08:00</lastmod>
+    <lastmod>2022-03-03T17:21:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://me.w0x7ce.eu/tags/</loc>
-    <lastmod>2022-02-13T20:08:40+08:00</lastmod>
+    <lastmod>2022-03-03T17:21:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://me.w0x7ce.eu/</loc>
+    <lastmod>2022-03-03T17:21:04+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/categories/%E8%BB%9F%E4%BB%B6/</loc>
+    <lastmod>2022-03-03T17:21:04+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/post/setting-up-chrome-and-selenium-without-gui/</loc>
     <lastmod>2022-02-13T20:08:40+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -289,13 +317,6 @@
   </url>
   
   <url>
-    <loc>https://me.w0x7ce.eu/categories/%E8%BB%9F%E4%BB%B6/</loc>
-    <lastmod>2021-09-21T08:04:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://me.w0x7ce.eu/tags/conda/</loc>
     <lastmod>2021-09-20T17:53:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -345,21 +366,7 @@
   </url>
   
   <url>
-    <loc>https://me.w0x7ce.eu/tags/docker/</loc>
-    <lastmod>2021-09-14T21:51:28+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://me.w0x7ce.eu/post/docker%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%BA%8C/</loc>
-    <lastmod>2021-09-14T21:51:28+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://me.w0x7ce.eu/tags/linux/</loc>
     <lastmod>2021-09-14T21:51:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
