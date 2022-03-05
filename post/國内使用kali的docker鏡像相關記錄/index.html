@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>國内使用Kali的Docker鏡像相關記錄 - WoW</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="w0x7ce" /><meta name="description" content="Using Kali Linux Docker Images kali@kali:~$ docker pull kalilinux/kali-rolling kali@kali:~$ kali@kali:~$ docker run -p 61102:2 -p 61101:1 -p 61180:80 -p61122:22 --tty --interactive tianrking/kali_rolling_diy:v0.1 /bin/bash root@e4ae79503654:/ root@e4ae79503654:/ exit Please also note, all the images below do not come with the “default” metapackage. You will need to apt update &amp;amp;&amp;amp; apt -y install kali-linux-headless. From the terminal use apt-get command to install SSH packages:" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="https://me.w0x7ce.eu/post/%E5%9C%8B%E5%86%85%E4%BD%BF%E7%94%A8kali%E7%9A%84docker%E9%8F%A1%E5%83%8F%E7%9B%B8%E9%97%9C%E8%A8%98%E9%8C%84/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="國内使用Kali的Docker鏡像相關記錄" />
+<meta property="og:description" content="Using Kali Linux Docker Images kali@kali:~$ docker pull kalilinux/kali-rolling kali@kali:~$ kali@kali:~$ docker run -p 61102:2 -p 61101:1 -p 61180:80 -p61122:22 --tty --interactive tianrking/kali_rolling_diy:v0.1 /bin/bash root@e4ae79503654:/ root@e4ae79503654:/ exit Please also note, all the images below do not come with the “default” metapackage. You will need to apt update &amp;&amp; apt -y install kali-linux-headless. From the terminal use apt-get command to install SSH packages:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://me.w0x7ce.eu/post/%E5%9C%8B%E5%86%85%E4%BD%BF%E7%94%A8kali%E7%9A%84docker%E9%8F%A1%E5%83%8F%E7%9B%B8%E9%97%9C%E8%A8%98%E9%8C%84/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-03-04T19:47:42+08:00" />
+<meta property="article:modified_time" content="2022-03-04T19:47:42+08:00" />
+
+<meta itemprop="name" content="國内使用Kali的Docker鏡像相關記錄">
+<meta itemprop="description" content="Using Kali Linux Docker Images kali@kali:~$ docker pull kalilinux/kali-rolling kali@kali:~$ kali@kali:~$ docker run -p 61102:2 -p 61101:1 -p 61180:80 -p61122:22 --tty --interactive tianrking/kali_rolling_diy:v0.1 /bin/bash root@e4ae79503654:/ root@e4ae79503654:/ exit Please also note, all the images below do not come with the “default” metapackage. You will need to apt update &amp;&amp; apt -y install kali-linux-headless. From the terminal use apt-get command to install SSH packages:"><meta itemprop="datePublished" content="2022-03-04T19:47:42+08:00" />
+<meta itemprop="dateModified" content="2022-03-04T19:47:42+08:00" />
+<meta itemprop="wordCount" content="115">
+<meta itemprop="keywords" content="Kali,hack," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="國内使用Kali的Docker鏡像相關記錄"/>
+<meta name="twitter:description" content="Using Kali Linux Docker Images kali@kali:~$ docker pull kalilinux/kali-rolling kali@kali:~$ kali@kali:~$ docker run -p 61102:2 -p 61101:1 -p 61180:80 -p61122:22 --tty --interactive tianrking/kali_rolling_diy:v0.1 /bin/bash root@e4ae79503654:/ root@e4ae79503654:/ exit Please also note, all the images below do not come with the “default” metapackage. You will need to apt update &amp;&amp; apt -y install kali-linux-headless. From the terminal use apt-get command to install SSH packages:"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">WoW</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/explore/">
+        <li class="mobile-menu-item">Explore</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">WoW</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/explore/">Explore</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">國内使用Kali的Docker鏡像相關記錄</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-03-04 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            <a href="/categories/hack/"> Hack </a>
+            </div>
+          <span class="more-meta"> 115 words </span>
+          <span class="more-meta"> 1 min read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#using-kali-linux-docker-images">Using Kali Linux Docker Images</a>
+          <ul>
+            <li><a href="#install-ssh-server">Install ssh server</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="using-kali-linux-docker-images">Using Kali Linux Docker Images</h2>
+<pre><code class="language-bash">kali@kali:~$ docker pull kalilinux/kali-rolling
+kali@kali:~$
+kali@kali:~$ docker run -p 61102:2 -p 61101:1 -p 61180:80 -p61122:22 --tty --interactive tianrking/kali_rolling_diy:v0.1 /bin/bash
+root@e4ae79503654:/
+root@e4ae79503654:/ exit
+</code></pre>
+<p>Please also note, all the images below do not come with the “default” metapackage. You will need to</p>
+<pre><code class="language-bash">apt update &amp;&amp; apt -y install kali-linux-headless.
+</code></pre>
+<p>From the terminal use apt-get command to install SSH packages:</p>
+<h3 id="install-ssh-server">Install ssh server</h3>
+<pre><code class="language-bash"># apt-get update
+# apt-get install ssh
+</code></pre>
+<p>Enable and Start SSH
+To make sure that secure shell starts after reboot use systemctl command to enable it:</p>
+<pre><code class="language-bash"># systemctl enable ssh
+</code></pre>
+<p>To start SSH for a current session execute:</p>
+<pre><code class="language-bash"># service ssh start
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">w0x7ce</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2022-03-04
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/kali/">Kali</a>
+          <a href="/tags/hack/">hack</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E5%B8%B8%E7%94%A8docker%E9%8F%A1%E5%83%8F%E4%BE%BF%E6%8D%B7%E8%AE%B0%E5%BD%95/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">常用docker鏡像便捷记录</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/k8s%E5%AE%89%E8%A3%9D%E8%88%87%E9%85%8D%E7%BD%AE/">
+            <span class="next-text nav-default">K8s安裝與配置</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:null@w0x7ce.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/IIIIIlIlIIIllll" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="mailto:tian.r.king@gmail.com" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/tianrking/" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/10065982" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://me.w0x7ce.eu/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>w0x7ce</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
