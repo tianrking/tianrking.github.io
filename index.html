@@ -130,53 +130,6 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/%E5%B8%B8%E7%94%A8docker%E9%8F%A1%E5%83%8F%E4%BE%BF%E6%8D%B7%E8%AE%B0%E5%BD%95/">常用docker鏡像便捷记录</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2022-03-05 </span>
-      <div class="post-category">
-          <a href="/categories/%E7%B3%BB%E7%BB%9F/"> 系统 </a>
-          </div>
-        <span class="more-meta"> 26 words </span>
-        <span class="more-meta"> 1 min read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      OS Fedora docker pull fedora kasmweb/core-kali-rolling docker pull kasmweb/core-kali-rolling ufoym/deepo docker pull ufoym/deepo docker run -p 61102:2 -p 61101:1 -p 61180:80 -p 61122:22 --tty fedora /bin/bash
-    </div>
-    <div class="read-more">
-      <a href="/post/%E5%B8%B8%E7%94%A8docker%E9%8F%A1%E5%83%8F%E4%BE%BF%E6%8D%B7%E8%AE%B0%E5%BD%95/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/%E5%9C%8B%E5%86%85%E4%BD%BF%E7%94%A8kali%E7%9A%84docker%E9%8F%A1%E5%83%8F%E7%9B%B8%E9%97%9C%E8%A8%98%E9%8C%84/">國内使用Kali的Docker鏡像相關記錄</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2022-03-04 </span>
-      <div class="post-category">
-          <a href="/categories/linux/"> Linux </a>
-          <a href="/categories/hack/"> Hack </a>
-          </div>
-        <span class="more-meta"> 115 words </span>
-        <span class="more-meta"> 1 min read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Using Kali Linux Docker Images kali@kali:~$ docker pull kalilinux/kali-rolling kali@kali:~$ kali@kali:~$ docker run -p 61102:2 -p 61101:1 -p 61180:80 -p61122:22 --tty --interactive tianrking/kali_rolling_diy:v0.1 /bin/bash root@e4ae79503654:/ root@e4ae79503654:/ exit Please also note, all the images below do not come with the “default” metapackage. You will need to apt update &amp;&amp; apt -y install kali-linux-headless. From the terminal use apt-get command to install SSH packages:
-    </div>
-    <div class="read-more">
-      <a href="/post/%E5%9C%8B%E5%86%85%E4%BD%BF%E7%94%A8kali%E7%9A%84docker%E9%8F%A1%E5%83%8F%E7%9B%B8%E9%97%9C%E8%A8%98%E9%8C%84/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/k8s%E5%AE%89%E8%A3%9D%E8%88%87%E9%85%8D%E7%BD%AE/">K8s安裝與配置</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2022-03-04 </span>
@@ -244,6 +197,54 @@
     </div>
     <div class="read-more">
       <a href="/post/docker%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E7%92%B0%E5%A2%83%E6%90%AD%E5%BB%BA/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/setting-up-chrome-and-selenium-without-gui/">Setting up Chrome and Selenium without GUI</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2022-02-13 </span>
+      <div class="post-category">
+          <a href="/categories/%E7%88%AC%E8%99%AB/"> 爬虫 </a>
+          </div>
+        <span class="more-meta"> 115 words </span>
+        <span class="more-meta"> 1 min read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      SSH into your VPS sudo apt update sudo apt upgrade sudo apt install wget -y Download &amp;Install Chrome wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb sudo dpkg -i google-chrome-stable_current_amd64.deb sudo apt-get install -f Test your intall google-chrome View the version google-chrome --version Download the chrome-driver Find the package here https://chromedriver.chromium.org/downloads wget {link you copied above} unzip xxx.zip sudo mv chromedriver /usr/bin/chromedriver sudo chown root:root /usr/bin/chromedriver sudo chmod +x /usr/bin/chromedriver Verify chromedriver is working chromedriver --url-base=/wd/hub
+    </div>
+    <div class="read-more">
+      <a href="/post/setting-up-chrome-and-selenium-without-gui/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/nvidia%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">Nvidia驱动安装相关问题</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2022-02-03 </span>
+      <div class="post-category">
+          <a href="/categories/nvidia/"> nvidia </a>
+          <a href="/categories/python/"> Python </a>
+          <a href="/categories/cuda/"> cuda </a>
+          </div>
+        <span class="more-meta"> 125 words </span>
+        <span class="more-meta"> 1 min read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Failed to initialize NVML: Driver/library version mismatch. 驱动与驱动内核版本不匹配 方式1: 直接重启 方式2：手动重新加载内核模块（先移除旧模块，再加载新模块） 查看依赖（可略） 查看依赖 lsmod |
+    </div>
+    <div class="read-more">
+      <a href="/post/nvidia%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

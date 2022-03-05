@@ -130,52 +130,6 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E4%BD%BF%E7%94%A8/">防火墙的使用</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-11-22 </span>
-      <div class="post-category">
-          <a href="/categories/linux/"> Linux </a>
-          </div>
-        <span class="more-meta"> 1010 words </span>
-        <span class="more-meta"> 3 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      单端口 端口转发 同端口 端口转发 iptables -t nat -A PREROUTING -p tcp --dport [本地端口] -j DNAT --to-destination [目标IP:目标端口] iptables -t nat -A PREROUTING -p udp --dport [本地端口] -j DNAT --to-destination [目标IP:目标端口]
-    </div>
-    <div class="read-more">
-      <a href="/post/%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E4%BD%BF%E7%94%A8/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/solidity%E9%96%8B%E7%99%BC01/">Solidity開發01</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-11-21 </span>
-      <div class="post-category">
-          <a href="/categories/%E5%8D%80%E5%A1%8A%E9%8F%88/"> 區塊鏈 </a>
-          </div>
-        <span class="more-meta"> 768 words </span>
-        <span class="more-meta"> 2 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      pragma solidity ^0.4.20; // 定义ERC-20标准接口 contract ERC20Interface { // 代币名称 string public name; // 代币符号或者说简写 string public symbol; // 代币小数点位数，代币的最小单位 uint8 public decimals; // 代币的发行总量 uint public totalSupply;
-    </div>
-    <div class="read-more">
-      <a href="/post/solidity%E9%96%8B%E7%99%BC01/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/open-mmlab-mmtracking/">Open mmlab mmtracking</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-09-30 </span>
@@ -247,6 +201,53 @@
     </div>
     <div class="read-more">
       <a href="/post/matlab%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E4%B8%80/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/tinybenchmark%E5%A4%8D%E7%8E%B0%E8%AE%B0%E5%BD%95/">TinyBenchmark复现记录</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-09-21 </span>
+      <div class="post-category">
+          <a href="/categories/%E8%BB%9F%E4%BB%B6/"> 軟件 </a>
+          </div>
+        <span class="more-meta"> 321 words </span>
+        <span class="more-meta"> 1 min read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      undefined symbol: _ZN2at18SparseCUDATensorIdEv ImportError: /data/repos/maskrcnn-benchmark/maskrcnn_benchmark/_C.cpython-37m-x86_64-linux-gnu.so: undefined symbol: _ZN2at18SparseCUDATensorIdEv 参考链接 错误内容 (maskrcnn_benchmark) user_name@server_name: /data/repos/maskrcnn-benchmark$ python tools/train_net.py Traceback (most recent call last): File &quot;train_net.py&quot;, line 18, in from maskrcnn_benchmark.engine.inference import inference File &quot;/data/repos/maskrcnn-benchmark/maskrcnn_benchmark/engine/inference.py&quot;, line 10, in from maskrcnn_benchmark.data.datasets.evaluation import evaluate File &quot;/data/repos/maskrcnn-benchmark/maskrcnn_benchmark/data/datasets/evaluation/init.py&quot;, line 3, in from .coco import coco_evaluation File &quot;/data/repos/maskrcnn-benchmark/maskrcnn_benchmark/data/datasets/evaluation/coco/init.py&quot;, line 1, in from .coco_eval import do_coco_evaluation File &quot;/data/repos/maskrcnn-benchmark/maskrcnn_benchmark/data/datasets/evaluation/coco/coco_eval.py&quot;, line 10, in from maskrcnn_benchmark.structures.boxlist_ops import
+    </div>
+    <div class="read-more">
+      <a href="/post/tinybenchmark%E5%A4%8D%E7%8E%B0%E8%AE%B0%E5%BD%95/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/conda%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/">conda安装与使用</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-09-20 </span>
+      <div class="post-category">
+          <a href="/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
+          <a href="/categories/python/"> Python </a>
+          </div>
+        <span class="more-meta"> 119 words </span>
+        <span class="more-meta"> 1 min read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Prerequisites To use GUI packages with Linux, you will need to install the following extended dependencies for Qt: Debian apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6 RedHat yum install libXcomposite libXcursor libXi libXtst libXrandr alsa-lib mesa-libEGL libXdamage mesa-libGL libXScrnSaver ArchLinux pacman -Sy libxau libxi libxss libxtst libxcursor libxcomposite libxdamage libxfixes libxrandr libxrender mesa-libgl alsa-lib libglvnd OpenSuse/SLES zypper install libXcomposite1 libXi6 libXext6 libXau6 libX11-6 libXrandr2 libXrender1
+    </div>
+    <div class="read-more">
+      <a href="/post/conda%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

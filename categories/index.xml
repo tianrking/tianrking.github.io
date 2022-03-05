@@ -7,34 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Sat, 05 Mar 2022 08:33:02 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>系统</title>
-      <link>https://me.w0x7ce.eu/categories/%E7%B3%BB%E7%BB%9F/</link>
-      <pubDate>Sat, 05 Mar 2022 08:33:02 +0800</pubDate>
-      
-      <guid>https://me.w0x7ce.eu/categories/%E7%B3%BB%E7%BB%9F/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hack</title>
-      <link>https://me.w0x7ce.eu/categories/hack/</link>
-      <pubDate>Fri, 04 Mar 2022 19:47:42 +0800</pubDate>
-      
-      <guid>https://me.w0x7ce.eu/categories/hack/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://me.w0x7ce.eu/categories/linux/</link>
-      <pubDate>Fri, 04 Mar 2022 19:47:42 +0800</pubDate>
-      
-      <guid>https://me.w0x7ce.eu/categories/linux/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Fri, 04 Mar 2022 10:37:09 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DevOps</title>
       <link>https://me.w0x7ce.eu/categories/devops/</link>
@@ -135,6 +108,15 @@
     </item>
     
     <item>
+      <title>Linux</title>
+      <link>https://me.w0x7ce.eu/categories/linux/</link>
+      <pubDate>Mon, 22 Nov 2021 09:04:05 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>C&#43;&#43;</title>
       <link>https://me.w0x7ce.eu/categories/c&#43;&#43;/</link>
       <pubDate>Thu, 30 Sep 2021 20:12:44 +0800</pubDate>
@@ -194,6 +176,15 @@
       <pubDate>Sat, 18 Sep 2021 22:58:24 +0800</pubDate>
       
       <guid>https://me.w0x7ce.eu/categories/%E6%8A%80%E5%B7%A7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>系统</title>
+      <link>https://me.w0x7ce.eu/categories/%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Mon, 13 Sep 2021 21:25:58 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/categories/%E7%B3%BB%E7%BB%9F/</guid>
       <description></description>
     </item>
     
