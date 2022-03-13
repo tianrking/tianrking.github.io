@@ -10,7 +10,56 @@
   
   <url>
     <loc>https://me.w0x7ce.eu/categories/</loc>
-    <lastmod>2022-03-04T10:37:09+08:00</lastmod>
+    <lastmod>2022-03-13T22:11:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/tags/linux/</loc>
+    <lastmod>2022-03-13T22:11:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/post/</loc>
+    <lastmod>2022-03-13T22:11:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/tags/python/</loc>
+    <lastmod>2022-03-13T22:11:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/categories/python/</loc>
+    <lastmod>2022-03-13T22:11:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/post/python%E6%9D%82%E8%AE%B0/</loc>
+    <lastmod>2022-03-13T22:11:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/tags/</loc>
+    <lastmod>2022-03-13T22:11:35+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/</loc>
+    <lastmod>2022-03-13T22:11:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -38,34 +87,6 @@
   
   <url>
     <loc>https://me.w0x7ce.eu/post/k8s%E5%AE%89%E8%A3%9D%E8%88%87%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2022-03-04T10:37:09+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://me.w0x7ce.eu/tags/linux/</loc>
-    <lastmod>2022-03-04T10:37:09+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://me.w0x7ce.eu/post/</loc>
-    <lastmod>2022-03-04T10:37:09+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://me.w0x7ce.eu/tags/</loc>
-    <lastmod>2022-03-04T10:37:09+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://me.w0x7ce.eu/</loc>
     <lastmod>2022-03-04T10:37:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -185,13 +206,6 @@
   
   <url>
     <loc>https://me.w0x7ce.eu/post/nvidia%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2022-02-03T21:08:48+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://me.w0x7ce.eu/categories/python/</loc>
     <lastmod>2022-02-03T21:08:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -353,13 +367,6 @@
   
   <url>
     <loc>https://me.w0x7ce.eu/tags/computer-vision/</loc>
-    <lastmod>2021-09-21T08:04:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://me.w0x7ce.eu/tags/python/</loc>
     <lastmod>2021-09-21T08:04:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
