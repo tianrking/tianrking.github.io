@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>WoW</title>
+  <title>Golang学习(一) - WoW</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="w0x7ce" /><meta name="description" content="Secret space @w0x7ce." /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="w0x7ce" /><meta name="description" content="学习项目 https://github.com/xinliangnote/go-gin-api https://github.com/eddycjy/go-gin-example https://github.com/songtianyi/wechat-go https://github.com/gin-gonic/gin https://github.com/go-gorm/gorm 在线工具 JSON to Go struct 网站链接： mholt.github.io/json-to-go/ YAML to Go struct 网站链接： zhwt.github.io/yaml-to-go/ Table to Go struct 网站链接： github.com/gohouse/con… plantUML 网站链接" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,9 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="https://me.w0x7ce.eu/" />
-  <link href="https://me.w0x7ce.eu/index.xml" rel="alternate" type="application/rss+xml" title="WoW" />
-  <link href="https://me.w0x7ce.eu/index.xml" rel="feed" type="application/rss+xml" title="WoW" />
+<link rel="canonical" href="https://me.w0x7ce.eu/post/golang%E5%AD%A6%E4%B9%A0%E4%B8%80/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -41,15 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="WoW" />
-<meta property="og:description" content="Secret space @w0x7ce." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://me.w0x7ce.eu/" />
+<meta property="og:title" content="Golang学习(一)" />
+<meta property="og:description" content="学习项目 https://github.com/xinliangnote/go-gin-api https://github.com/eddycjy/go-gin-example https://github.com/songtianyi/wechat-go https://github.com/gin-gonic/gin https://github.com/go-gorm/gorm 在线工具 JSON to Go struct 网站链接： mholt.github.io/json-to-go/ YAML to Go struct 网站链接： zhwt.github.io/yaml-to-go/ Table to Go struct 网站链接： github.com/gohouse/con… plantUML 网站链接" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://me.w0x7ce.eu/post/golang%E5%AD%A6%E4%B9%A0%E4%B8%80/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-03-14T21:48:05+08:00" />
+<meta property="article:modified_time" content="2022-03-14T21:48:05+08:00" />
 
-<meta itemprop="name" content="WoW">
-<meta itemprop="description" content="Secret space @w0x7ce."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="WoW"/>
-<meta name="twitter:description" content="Secret space @w0x7ce."/>
+<meta itemprop="name" content="Golang学习(一)">
+<meta itemprop="description" content="学习项目 https://github.com/xinliangnote/go-gin-api https://github.com/eddycjy/go-gin-example https://github.com/songtianyi/wechat-go https://github.com/gin-gonic/gin https://github.com/go-gorm/gorm 在线工具 JSON to Go struct 网站链接： mholt.github.io/json-to-go/ YAML to Go struct 网站链接： zhwt.github.io/yaml-to-go/ Table to Go struct 网站链接： github.com/gohouse/con… plantUML 网站链接"><meta itemprop="datePublished" content="2022-03-14T21:48:05+08:00" />
+<meta itemprop="dateModified" content="2022-03-14T21:48:05+08:00" />
+<meta itemprop="wordCount" content="79">
+<meta itemprop="keywords" content="Linux,Golang," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Golang学习(一)"/>
+<meta name="twitter:description" content="学习项目 https://github.com/xinliangnote/go-gin-api https://github.com/eddycjy/go-gin-example https://github.com/songtianyi/wechat-go https://github.com/gin-gonic/gin https://github.com/go-gorm/gorm 在线工具 JSON to Go struct 网站链接： mholt.github.io/json-to-go/ YAML to Go struct 网站链接： zhwt.github.io/yaml-to-go/ Table to Go struct 网站链接： github.com/gohouse/con… plantUML 网站链接"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -127,136 +130,119 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          <section id="posts" class="posts">
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%BA%8C/">常用Linux命令(二)--sed</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-09-13 </span>
-      <div class="post-category">
-          <a href="/categories/%E7%B3%BB%E7%BB%9F/"> 系统 </a>
-          </div>
-        <span class="more-meta"> 5823 words </span>
-        <span class="more-meta"> 12 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      在每一行後面增加一空行 sed G 將原來的所有空行刪除並在每一行後面增加一空行。 這樣在輸出的文本中每一行後面將有且只有一空行。 sed '/^$/d;G' 在每一行後面增加兩
-    </div>
-    <div class="read-more">
-      <a href="/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%BA%8C/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Golang学习(一)</h1>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/ros%E5%AD%A6%E4%B9%A0%E4%BA%8C/">ROS学习(二)</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-09-13 </span>
-      <div class="post-category">
-          <a href="/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"> 机器人操作系统 </a>
-          </div>
-        <span class="more-meta"> 2649 words </span>
-        <span class="more-meta"> 6 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      创建ROS软件包 Description: 本教程介绍如何使用roscreate-pkg或catkin创建新的ROS软件包，并使用rospack列出软件包的依赖关系。
-    </div>
-    <div class="read-more">
-      <a href="/post/ros%E5%AD%A6%E4%B9%A0%E4%BA%8C/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
+      <div class="post-meta">
+        <span class="post-time"> 2022-03-14 </span>
+        <div class="post-category">
+            <a href="/categories/backend/"> Backend </a>
+            <a href="/categories/devops/"> DevOps </a>
+            </div>
+          <span class="more-meta"> 79 words </span>
+          <span class="more-meta"> 1 min read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/ros%E5%AD%A6%E4%B9%A0%E4%B8%80/">ROS学习(一)</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-09-13 </span>
-      <div class="post-category">
-          <a href="/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"> 机器人操作系统 </a>
-          </div>
-        <span class="more-meta"> 1665 words </span>
-        <span class="more-meta"> 4 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      ROS文件系统导览 Description: 本教程介绍ROS文件系统的概念，包括如何使用roscd、rosls和rospack命令行工具。 Tutorial Level: BEGINNER Next Tutorial: 创建ROS软件包
-    </div>
-    <div class="read-more">
-      <a href="/post/ros%E5%AD%A6%E4%B9%A0%E4%B8%80/" class="read-more-link">Read more...</a>
-    </div>
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#学习项目">学习项目</a></li>
+        <li><a href="#在线工具">在线工具</a>
+          <ul>
+            <li><a href="#json-to-go-struct">JSON to Go struct</a></li>
+            <li><a href="#yaml-to-go-struct">YAML to Go struct</a></li>
+            <li><a href="#table-to-go-struct">Table to Go struct</a></li>
+            <li><a href="#plantuml">plantUML</a></li>
+            <li><a href="#rego">Rego</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
   </div>
-</article>
+</div>
+    <div class="post-content">
+      <h2 id="学习项目">学习项目</h2>
+<ol>
+<li><a href="https://github.com/xinliangnote/go-gin-api">https://github.com/xinliangnote/go-gin-api</a></li>
+<li><a href="https://github.com/eddycjy/go-gin-example">https://github.com/eddycjy/go-gin-example</a></li>
+<li><a href="https://github.com/songtianyi/wechat-go">https://github.com/songtianyi/wechat-go</a></li>
+<li><a href="https://github.com/gin-gonic/gin">https://github.com/gin-gonic/gin</a></li>
+<li><a href="https://github.com/go-gorm/gorm">https://github.com/go-gorm/gorm</a></li>
+</ol>
+<h2 id="在线工具">在线工具</h2>
+<h3 id="json-to-go-struct">JSON to Go struct</h3>
+<p>网站链接： mholt.github.io/json-to-go/</p>
+<h3 id="yaml-to-go-struct">YAML to Go struct</h3>
+<p>网站链接： zhwt.github.io/yaml-to-go/</p>
+<h3 id="table-to-go-struct">Table to Go struct</h3>
+<p>网站链接： github.com/gohouse/con…</p>
+<h3 id="plantuml">plantUML</h3>
+<p>网站链接： <a href="http://www.dumels.com/">www.dumels.com/</a></p>
+<h3 id="rego">Rego</h3>
+<p>网站链接： regoio.herokuapp.com/</p>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/">Linux命令大全</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-09-13 </span>
-      <div class="post-category">
-          <a href="/categories/%E7%B3%BB%E7%BB%9F/"> 系统 </a>
-          </div>
-        <span class="more-meta"> 424 words </span>
-        <span class="more-meta"> 1 min read </span>
     </div>
-  </header>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">w0x7ce</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2022-03-14
+        
+    </span>
+  </p>
   
-  <div class="post-content">
-    <div class="post-summary">
-      Linux 命令大全 1、文件管理 cat chattr chgrp chmod chown cksum cmp diff diffstat file find git gitview indent cut ln less locate lsattr mattrib mc mdel mdir mktemp more mmove mread mren mtools mtoolstest mv od paste patch rcp rm slocate split tee tmpwatch touch umask which cp whereis mcopy mshowfat rhmask scp awk read updatedb 2、文档编辑 col
-    </div>
-    <div class="read-more">
-      <a href="/post/linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/" class="read-more-link">Read more...</a>
-    </div>
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/alipay.png">
+        <span>alipay</span>
+      </label>
   </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%83/">Shell脚本编程(七)</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-09-12 </span>
-      <div class="post-category">
-          <a href="/categories/%E7%B3%BB%E7%BB%9F/"> 系统 </a>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          <a href="/tags/golang/">Golang</a>
           </div>
-        <span class="more-meta"> 2199 words </span>
-        <span class="more-meta"> 5 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Shell 输入/输出重定向 大多数 UNIX 系统命令从你的终端接受输入并将所产生的输出发送回​​到您的终端。一个命令通常从一个叫标准输入的地方读取输入，默认情
-    </div>
-    <div class="read-more">
-      <a href="/post/shell%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B%E4%B8%83/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    </section>
-  
-  <nav class="pagination">
-    <a class="prev" href="/page/4/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text">Prev</span>
-      </a>
-    <a class="next" href="/page/6/">
-        <span class="next-text">Next</span>
-        <i class="iconfont icon-right"></i>
-      </a>
-  </nav>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/python%E6%9D%82%E8%AE%B0/">
+            <span class="next-text nav-default">Python杂记</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
         </div>
         
+
+  
+
+  
 
       </div>
     </main>
