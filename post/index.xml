@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Tue, 15 Mar 2022 13:43:49 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Mar 2022 21:17:31 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>爬蟲框架 Colly</title>
+      <link>https://me.w0x7ce.eu/post/%E7%88%AC%E8%9F%B2%E6%A1%86%E6%9E%B6-colly/</link>
+      <pubDate>Tue, 15 Mar 2022 21:17:31 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/post/%E7%88%AC%E8%9F%B2%E6%A1%86%E6%9E%B6-colly/</guid>
+      <description>安裝 colly # 启用 Go Modules 功能 go env -w GO111MODULE=on # 1. 七牛 CDN go env -w GOPROXY=https://goproxy.cn,direct # 2. 阿里云 go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct # 3. 官方 go env -w GOPROXY=https://goproxy.io,direct go get -u github.com/gocolly/colly/v2 Colly OnResponse ```Golang package main import ( &amp;quot;fmt&amp;quot; &amp;quot;strings&amp;quot; &amp;quot;github.com/gocolly/colly&amp;quot; ) var count int = 0 func main() { c := colly.NewCollector() // 在co</description>
+    </item>
+    
     <item>
       <title>Tor</title>
       <link>https://me.w0x7ce.eu/post/tor/</link>
