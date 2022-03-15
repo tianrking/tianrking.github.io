@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Tue, 15 Mar 2022 08:44:16 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Mar 2022 13:43:49 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>https://me.w0x7ce.eu/about/</link>
@@ -15,6 +15,15 @@
       
       <guid>https://me.w0x7ce.eu/about/</guid>
       <description>Your browser does not support the HTML5 audio element. 那怕世界有趟旅程無人問津 那怕要說再見我們仍然相信 仍然相信 能走再遠的路 時間似飛毯 年歲已改變 你有時會很累 也有人會反對 但決不回去</description>
+    </item>
+    
+    <item>
+      <title>Tor</title>
+      <link>https://me.w0x7ce.eu/post/tor/</link>
+      <pubDate>Tue, 15 Mar 2022 13:43:49 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/post/tor/</guid>
+      <description>指定出入口 节点 EntryNodes {ru} StrictNodes 1 ExitNodes {fr} StrictNodes 1</description>
     </item>
     
     <item>
