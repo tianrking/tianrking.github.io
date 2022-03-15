@@ -14,7 +14,7 @@
       <pubDate>Mon, 14 Mar 2022 21:48:05 +0800</pubDate>
       
       <guid>https://me.w0x7ce.eu/post/golang%E5%AD%A6%E4%B9%A0%E4%B8%80/</guid>
-      <description>学习项目 https://github.com/xinliangnote/go-gin-api https://github.com/eddycjy/go-gin-example https://github.com/songtianyi/wechat-go https://github.com/gin-gonic/gin https://github.com/go-gorm/gorm 在线工具 JSON to Go struct 网站链接： mholt.github.io/json-to-go/ YAML to Go struct 网站链接： zhwt.github.io/yaml-to-go/ Table to Go struct 网站链接： github.com/gohouse/con… plantUML 网站链接</description>
+      <description>学习项目 https://github.com/xinliangnote/go-gin-api https://github.com/eddycjy/go-gin-example https://github.com/songtianyi/wechat-go https://github.com/gin-gonic/gin https://github.com/go-gorm/gorm 在线工具 JSON to Go struct 网站链接： https://mholt.github.io/json-to-go/ YAML to Go struct 网站链接： https://zhwt.github.io/yaml-to-go/ plantUML 网站链接： https://www.dumels.com/ Rego 网站链接： https://regoio.herokuapp.com/</description>
     </item>
     
   </channel>

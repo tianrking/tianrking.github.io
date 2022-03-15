@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Ab压力测试 - WoW</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="w0x7ce" /><meta name="description" content="ab install sudo apt-get install apache2-utils ab 参数 -A auth-username:password 为服务器提供BASIC身份验证凭据。用户名和密码由一个单独分隔，:并通过wire base64编码发送。无论服务器是否需" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="https://me.w0x7ce.eu/post/ab%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Ab压力测试" />
+<meta property="og:description" content="ab install sudo apt-get install apache2-utils ab 参数 -A auth-username:password 为服务器提供BASIC身份验证凭据。用户名和密码由一个单独分隔，:并通过wire base64编码发送。无论服务器是否需" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://me.w0x7ce.eu/post/ab%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-03-15T08:44:16+08:00" />
+<meta property="article:modified_time" content="2022-03-15T08:44:16+08:00" />
+
+<meta itemprop="name" content="Ab压力测试">
+<meta itemprop="description" content="ab install sudo apt-get install apache2-utils ab 参数 -A auth-username:password 为服务器提供BASIC身份验证凭据。用户名和密码由一个单独分隔，:并通过wire base64编码发送。无论服务器是否需"><meta itemprop="datePublished" content="2022-03-15T08:44:16+08:00" />
+<meta itemprop="dateModified" content="2022-03-15T08:44:16+08:00" />
+<meta itemprop="wordCount" content="2123">
+<meta itemprop="keywords" content="Linux,ab,test," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ab压力测试"/>
+<meta name="twitter:description" content="ab install sudo apt-get install apache2-utils ab 参数 -A auth-username:password 为服务器提供BASIC身份验证凭据。用户名和密码由一个单独分隔，:并通过wire base64编码发送。无论服务器是否需"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">WoW</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/explore/">
+        <li class="mobile-menu-item">Explore</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">WoW</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/explore/">Explore</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Ab压力测试</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-03-15 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/"> 压力测试 </a>
+            <a href="/categories/devops/"> DevOps </a>
+            </div>
+          <span class="more-meta"> 2123 words </span>
+          <span class="more-meta"> 5 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#ab-install">ab install</a></li>
+        <li><a href="#ab-参数">ab 参数</a>
+          <ul>
+            <li><a href="#常用参数">常用参数</a></li>
+          </ul>
+        </li>
+        <li><a href="#ab-demo">ab demo</a>
+          <ul>
+            <li><a href="#测试post请求">测试POST请求</a></li>
+          </ul>
+        </li>
+        <li><a href="#参考文档">参考文档：</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="ab-install">ab install</h2>
+<pre><code class="language-bash">sudo apt-get install apache2-utils
+</code></pre>
+<h2 id="ab-参数">ab 参数</h2>
+<pre><code class="language-bash">-A auth-username:password
+为服务器提供BASIC身份验证凭据。用户名和密码由一个单独分隔，:并通过wire base64编码发送。无论服务器是否需要它，都会发送该字符串（即，已发送401认证）。
+-b windowsize
+TCP发送/接收缓冲区的大小，以字节为单位。
+-B local-address
+在进行传出连接时绑定的地址。
+-c concurrency
+一次执行多个请求的数量。默认值是一次一个请求。
+-C cookie-name=value
+Cookie:在请求中添加一行。论证通常是一 对的形式。该字段是可重复的。name=value
+-d
+不显示“XX [ms]表中提供的百分比”。（遗产支持）。
+-e csv-file
+写一个逗号分隔值（CSV）文件，其中包含为每个百分比（从1％到100％）提供服务该百分比请求所用的时间（以毫秒为单位）。这通常比'gnuplot'文件更有用; 因为结果已经“装箱”了。
+-f protocol
+指定SSL / TLS协议（SSL2，SSL3，TLS1，TLS1.1，TLS1.2或ALL）。2.4.4及更高版本中提供了TLS1.1和TLS1.2支持。
+-g gnuplot-file
+将所有测量值写为'gnuplot'或TSV（Tab单独值）文件。这个文件可以很容易地导入到Gnuplot，IDL，Mathematica，Igor甚至Excel等软件包中。标签位于文件的第一行。
+-h
+显示使用信息。
+-H custom-header
+在请求中附加额外的标头。该参数是典型地在一个有效报头线的形式，含有一个冒号分隔的字段值对（即，&quot;Accept-Encoding: zip/zop;8bit&quot;）。
+-i
+做HEAD请求而不是GET。
+-k
+启用HTTP KeepAlive功能，即在一个HTTP会话中执行多个请求。默认值是没有KeepAlive。
+-l
+如果响应的长度不恒定，请不要报告错误。这对动态页面很有用。适用于2.4.7及更高版本。
+-m HTTP-method
+请求的自定义HTTP方法。适用于2.4.10及更高版本。
+-n requests
+为基准测试会话执行的请求数。默认情况下只执行单个请求，这通常会导致非代表性的基准测试结果。
+-p POST-file
+包含POST数据的文件。记得还要设置-T。
+-P proxy-auth-username:password
+将BASIC身份验证凭据提供给代理路由。用户名和密码由一个单独分隔，:并通过wire base64编码发送。无论代理是否需要它，都会发送该字符串（即，已发送407代理身份验证）。
+-q
+处理超过150个请求时，每10％或100个请求左右ab输出进度计数stderr。该 -q标志将禁止这些消息。
+-r
+不要退出套接字接收错误。
+-s timeout
+套接字超时前等待的最大秒数。默认值为30秒。适用于2.4.4及更高版本。
+-S
+当平均值和中位数分别超过标准差的一倍或两倍时，不显示中值和标准差值，也不显示警告/错误消息。默认为min / avg / max值。（遗产支持）。
+-t timelimit
+用于基准测试的最大秒数。这意味着 -n 50000内部。使用此选项可在固定的总时间内对服务器进行基准测试。默认情况下没有时间限制。
+-T content-type
+用于POST / PUT数据的内容类型标头，例如。 application/x-www-form-urlencoded。默认是text/plain。
+-u PUT-file
+包含数据到PUT的文件。记得还要设置-T。
+-v verbosity
+设置详细级别 - 4以及上面打印标题信息，3上面打印响应代码（404,200等）， 2以及上面打印警告和信息。
+-V
+显示版本号并退出。
+-w
+在HTML表格中打印结果。默认表格为两列宽，背景为白色。
+-x &lt;table&gt;-attributes
+用作...的属性的字符串&lt;table&gt;。插入属性。&lt;table here &gt;
+-X proxy[:port]
+使用代理服务器来处理请求。
+-y &lt;tr&gt;-attributes
+用作...的属性的字符串&lt;tr&gt;。
+-z &lt;td&gt;-attributes
+用作...的属性的字符串&lt;td&gt;。
+-Z ciphersuite
+指定SSL / TLS密码套件（请参阅openssl密码）
+</code></pre>
+<h3 id="常用参数">常用参数</h3>
+<pre><code class="language-txt">-t timelimit  测试时间限制，单位秒
+-s timeout    每个请求时间限制，单位秒
+-v verbosity  日志输出级别，可以选择1, 2等，调试使用
+-T content-type  POST/PUT接口的content-type
+-p postfile      POST请求发送的数据文件
+</code></pre>
+<h2 id="ab-demo">ab demo</h2>
+<pre><code class="language-bash">ab -c 10 -n 100 -r -s 200 http://127.0.0.1:1080/
+</code></pre>
+<h3 id="测试post请求">测试POST请求</h3>
+<ol>
+<li>
+<p>以x-www-form-urlencoded形式发送</p>
+<pre><code class="language-bash">ab -n 1000 -c 100 -p post.txt -T 'application/x-www-form-urlencoded' http://www.test.com/test/api
+</code></pre>
+<p>假定需要发送的json数据为 {name : “hello,world”}。
+post.txt文件内容：</p>
+<pre><code class="language-txt">name=hello,world
+</code></pre>
+</li>
+<li>
+<p>以multipart/form-data形式发送</p>
+<pre><code class="language-bash">ab -n 1000 -c 100 -p post.txt -T 'multipart/form-data; boundary=--WebKitFormBoundaryE19zNvXGzXaLvS5C' http://www.test.com/test/api
+</code></pre>
+<p>post.txt文件内容如下：</p>
+<pre><code class="language-post.txt">----WebKitFormBoundaryE19zNvXGzXaLvS5C
+Content-Disposition: form-data; name=&quot;name&quot;
+
+hello,world
+----WebKitFormBoundaryE19zNvXGzXaLvS5C
+</code></pre>
+</li>
+</ol>
+<ul>
+<li>POST的文件内容可以通过postman测试接口来查看。</li>
+<li>性能测试得到的最重要的指标就是QPS(Requests per second)，反映了接口的并发承受能力，也就是系统的峰值性能。如果对接口的调用超过了这一限制，就要考虑提升硬件或者做一些优化了。</li>
+</ul>
+<h2 id="参考文档">参考文档：</h2>
+<ol>
+<li>ab参数介绍：<a href="http://httpd.apache.org/docs/2.4/programs/ab.html">http://httpd.apache.org/docs/2.4/programs/ab.html</a></li>
+<li>使用ab命令发送一个post请求：<a href="http://stackoverflow.com/questions/29731023/make-a-post-request-using-ab-apache-benchmarking-on-a-django-server">http://stackoverflow.com/questions/29731023/make-a-post-request-using-ab-apache-benchmarking-on-a-django-server</a></li>
+<li>同上：<a href="http://stackoverflow.com/questions/20220270/posting-multipart-form-data-with-apache-bench-ab">http://stackoverflow.com/questions/20220270/posting-multipart-form-data-with-apache-bench-ab</a></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">w0x7ce</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2022-03-15
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">Linux</a>
+          <a href="/tags/ab/">ab</a>
+          <a href="/tags/test/">test</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/golang%E5%AD%A6%E4%B9%A0%E4%B8%80/">
+            <span class="next-text nav-default">Golang学习(一)</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:null@w0x7ce.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/IIIIIlIlIIIllll" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="mailto:tian.r.king@gmail.com" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/tianrking/" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/10065982" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://me.w0x7ce.eu/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>w0x7ce</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
