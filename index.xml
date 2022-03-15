@@ -32,7 +32,7 @@
       <pubDate>Tue, 15 Mar 2022 13:43:49 +0800</pubDate>
       
       <guid>https://me.w0x7ce.eu/post/tor/</guid>
-      <description>指定出入口 节点 EntryNodes {ru} StrictNodes 1 ExitNodes {fr} StrictNodes 1</description>
+      <description>https://www.torproject.org/docs/faq#torrc 通用部分 Tor opens a SOCKS proxy on port 9050 by default &amp;ndash; even if you don&amp;rsquo;t configure one below. Set &amp;ldquo;SOCKSPort 0&amp;rdquo; if you plan to run Tor only as a relay, and not make any local application connections yourself. SOCKSPort 9050 # Default: Bind to localhost:9050 for local connections. SOCKSPort 192.168.0.1:9100 # Bind to this address:port too. Entry policies to allow/deny SOCKS requests based on</description>
     </item>
     
     <item>

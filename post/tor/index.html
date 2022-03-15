@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="w0x7ce" /><meta name="description" content="指定出入口 节点 EntryNodes {ru} StrictNodes 1 ExitNodes {fr} StrictNodes 1" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="w0x7ce" /><meta name="description" content="https://www.torproject.org/docs/faq#torrc 通用部分 Tor opens a SOCKS proxy on port 9050 by default &amp;ndash; even if you don&amp;rsquo;t configure one below. Set &amp;ldquo;SOCKSPort 0&amp;rdquo; if you plan to run Tor only as a relay, and not make any local application connections yourself. SOCKSPort 9050 # Default: Bind to localhost:9050 for local connections. SOCKSPort 192.168.0.1:9100 # Bind to this address:port too. Entry policies to allow/deny SOCKS requests based on" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -40,19 +40,19 @@
 
 
 <meta property="og:title" content="Tor" />
-<meta property="og:description" content="指定出入口 节点 EntryNodes {ru} StrictNodes 1 ExitNodes {fr} StrictNodes 1" />
+<meta property="og:description" content="https://www.torproject.org/docs/faq#torrc 通用部分 Tor opens a SOCKS proxy on port 9050 by default &ndash; even if you don&rsquo;t configure one below. Set &ldquo;SOCKSPort 0&rdquo; if you plan to run Tor only as a relay, and not make any local application connections yourself. SOCKSPort 9050 # Default: Bind to localhost:9050 for local connections. SOCKSPort 192.168.0.1:9100 # Bind to this address:port too. Entry policies to allow/deny SOCKS requests based on" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://me.w0x7ce.eu/post/tor/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-03-15T13:43:49+08:00" />
 <meta property="article:modified_time" content="2022-03-15T13:43:49+08:00" />
 
 <meta itemprop="name" content="Tor">
-<meta itemprop="description" content="指定出入口 节点 EntryNodes {ru} StrictNodes 1 ExitNodes {fr} StrictNodes 1"><meta itemprop="datePublished" content="2022-03-15T13:43:49+08:00" />
+<meta itemprop="description" content="https://www.torproject.org/docs/faq#torrc 通用部分 Tor opens a SOCKS proxy on port 9050 by default &ndash; even if you don&rsquo;t configure one below. Set &ldquo;SOCKSPort 0&rdquo; if you plan to run Tor only as a relay, and not make any local application connections yourself. SOCKSPort 9050 # Default: Bind to localhost:9050 for local connections. SOCKSPort 192.168.0.1:9100 # Bind to this address:port too. Entry policies to allow/deny SOCKS requests based on"><meta itemprop="datePublished" content="2022-03-15T13:43:49+08:00" />
 <meta itemprop="dateModified" content="2022-03-15T13:43:49+08:00" />
-<meta itemprop="wordCount" content="15">
+<meta itemprop="wordCount" content="1685">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Tor"/>
-<meta name="twitter:description" content="指定出入口 节点 EntryNodes {ru} StrictNodes 1 ExitNodes {fr} StrictNodes 1"/>
+<meta name="twitter:description" content="https://www.torproject.org/docs/faq#torrc 通用部分 Tor opens a SOCKS proxy on port 9050 by default &ndash; even if you don&rsquo;t configure one below. Set &ldquo;SOCKSPort 0&rdquo; if you plan to run Tor only as a relay, and not make any local application connections yourself. SOCKSPort 9050 # Default: Bind to localhost:9050 for local connections. SOCKSPort 192.168.0.1:9100 # Bind to this address:port too. Entry policies to allow/deny SOCKS requests based on"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -138,8 +138,8 @@
       <div class="post-meta">
         <span class="post-time"> 2022-03-15 </span>
         
-          <span class="more-meta"> 15 words </span>
-          <span class="more-meta"> 1 min read </span>
+          <span class="more-meta"> 1685 words </span>
+          <span class="more-meta"> 4 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -151,7 +151,9 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#指定出入口-节点">指定出入口 节点</a></li>
+        <li><a href="#通用部分">通用部分</a></li>
+        <li><a href="#this-section-is-just-for-location-hidden-services">This section is just for location-hidden services</a></li>
+        <li><a href="#this-section-is-just-for-relays">This section is just for relays</a></li>
       </ul>
     </li>
   </ul>
@@ -159,9 +161,239 @@
   </div>
 </div>
     <div class="post-content">
-      <h2 id="指定出入口-节点">指定出入口 节点</h2>
-<p>EntryNodes {ru} StrictNodes 1
-ExitNodes {fr} StrictNodes 1</p>
+      <p><a href="https://www.torproject.org/docs/faq#torrc">https://www.torproject.org/docs/faq#torrc</a></p>
+<h2 id="通用部分">通用部分</h2>
+<p>Tor opens a SOCKS proxy on port 9050 by default &ndash; even if you don&rsquo;t
+configure one below. Set &ldquo;SOCKSPort 0&rdquo; if you plan to run Tor only
+as a relay, and not make any local application connections yourself.</p>
+<pre><code class="language-bash">SOCKSPort 9050 # Default: Bind to localhost:9050 for local connections.
+SOCKSPort 192.168.0.1:9100 # Bind to this address:port too.
+</code></pre>
+<p>Entry policies to allow/deny SOCKS requests based on IP address.
+First entry that matches wins. If no SOCKSPolicy is set, we accept
+all (and only) requests that reach a SOCKSPort. Untrusted users who
+can access your SOCKSPort may be able to learn about the connections
+you make.</p>
+<pre><code class="language-bash">SOCKSPolicy accept 192.168.0.0/16
+SOCKSPolicy accept6 FC00::/7
+SOCKSPolicy reject *
+</code></pre>
+<p>Logs go to stdout at level &ldquo;notice&rdquo; unless redirected by something
+else, like one of the below lines. You can have as many Log lines as
+you want.</p>
+<p>We advise using &ldquo;notice&rdquo; in most cases, since anything more verbose
+may provide sensitive information to an attacker who obtains the logs.</p>
+<p>Send all messages of level &lsquo;notice&rsquo; or higher to @LOCALSTATEDIR@/log/tor/notices.log</p>
+<pre><code class="language-bash">Log notice file @LOCALSTATEDIR@/log/tor/notices.log
+</code></pre>
+<p>Send every possible message to @LOCALSTATEDIR@/log/tor/debug.log</p>
+<pre><code class="language-bash">Log debug file @LOCALSTATEDIR@/log/tor/debug.log
+</code></pre>
+<p>Use the system log instead of Tor&rsquo;s logfiles</p>
+<pre><code class="language-bash">Log notice syslog
+</code></pre>
+<p>To send all messages to stderr:</p>
+<pre><code class="language-bash">Log debug stderr
+</code></pre>
+<p>Uncomment this to start the process in the background&hellip; or use
+&ndash;runasdaemon 1 on the command line. This is ignored on Windows;
+see the FAQ entry if you want Tor to run as an NT service.</p>
+<pre><code class="language-bash">RunAsDaemon 1
+</code></pre>
+<p>The directory for keeping all the keys/etc. By default, we store
+things in $HOME/.tor on Unix, and in Application Data\tor on Windows.</p>
+<pre><code class="language-bash">DataDirectory @LOCALSTATEDIR@/lib/tor
+</code></pre>
+<p>The port on which Tor will listen for local connections from Tor
+controller applications, as documented in control-spec.txt.</p>
+<pre><code class="language-bash">ControlPort 9051
+</code></pre>
+<p>If you enable the controlport, be sure to enable one of these
+authentication methods, to prevent attackers from accessing it.</p>
+<pre><code class="language-bash">HashedControlPassword 16:872860B76453A77D60CA2BB8C1A7042072093276A3D701AD684053EC4C
+CookieAuthentication 1
+</code></pre>
+<h2 id="this-section-is-just-for-location-hidden-services">This section is just for location-hidden services</h2>
+<p>Once you have configured a hidden service, you can look at the
+contents of the file &ldquo;&hellip;/hidden_service/hostname&rdquo; for the address
+to tell people.</p>
+<p>HiddenServicePort x y:z says to redirect requests on port x to the
+address y:z.</p>
+<pre><code class="language-bash">HiddenServiceDir @LOCALSTATEDIR@/lib/tor/hidden_service/
+HiddenServicePort 80 127.0.0.1:80
+
+HiddenServiceDir @LOCALSTATEDIR@/lib/tor/other_hidden_service/
+HiddenServicePort 80 127.0.0.1:80
+HiddenServicePort 22 127.0.0.1:22
+</code></pre>
+<h2 id="this-section-is-just-for-relays">This section is just for relays</h2>
+<p>See <a href="https://www.torproject.org/docs/tor-doc-relay">https://www.torproject.org/docs/tor-doc-relay</a> for details.</p>
+<p>Required: what port to advertise for incoming Tor connections.</p>
+<pre><code class="language-bash">ORPort 9001
+</code></pre>
+<p>If you want to listen on a port other than the one advertised in
+ORPort (e.g. to advertise 443 but bind to 9090), you can do it as
+follows.  You&rsquo;ll need to do ipchains or other port forwarding
+yourself to make this work.</p>
+<pre><code class="language-bash">ORPort 443 NoListen
+ORPort 127.0.0.1:9090 NoAdvertise
+</code></pre>
+<p>If you want to listen on IPv6 your numeric address must be explicitly
+between square brackets as follows. You must also listen on IPv4.</p>
+<pre><code class="language-bash">ORPort [2001:DB8::1]:9050
+</code></pre>
+<p>The IP address or full DNS name for incoming connections to your
+relay. Leave commented out and Tor will guess.</p>
+<pre><code class="language-bash">Address noname.example.com
+</code></pre>
+<p>If you have multiple network interfaces, you can specify one for
+outgoing traffic to use.
+OutboundBindAddressExit will be used for all exit traffic, while
+OutboundBindAddressOR will be used for all OR and Dir connections
+(DNS connections ignore OutboundBindAddress).
+If you do not wish to differentiate, use OutboundBindAddress to
+specify the same address for both in a single line.</p>
+<pre><code class="language-bash">OutboundBindAddressExit 10.0.0.4
+OutboundBindAddressOR 10.0.0.5
+</code></pre>
+<p>A handle for your relay, so people don&rsquo;t have to refer to it by key.
+Nicknames must be between 1 and 19 characters inclusive, and must
+contain only the characters [a-zA-Z0-9].
+If not set, &ldquo;Unnamed&rdquo; will be used.</p>
+<pre><code class="language-bash">Nickname ididnteditheconfig
+</code></pre>
+<p>Define these to limit how much relayed traffic you will allow. Your
+own traffic is still unthrottled. Note that RelayBandwidthRate must
+be at least 75 kilobytes per second.
+Note that units for these config options are bytes (per second), not
+bits (per second), and that prefixes are binary prefixes, i.e. 2^10,
+2^20, etc.</p>
+<pre><code class="language-bash">RelayBandwidthRate 100 KBytes  # Throttle traffic to 100KB/s (800Kbps)
+RelayBandwidthBurst 200 KBytes # But allow bursts up to 200KB (1600Kb)
+</code></pre>
+<p>Use these to restrict the maximum traffic per day, week, or month.
+Note that this threshold applies separately to sent and received bytes,
+not to their sum: setting &ldquo;40 GB&rdquo; may allow up to 80 GB total before
+hibernating.</p>
+<p>Set a maximum of 40 gigabytes each way per period.</p>
+<pre><code class="language-bash">AccountingMax 40 GBytes
+</code></pre>
+<p>Each period starts daily at midnight (AccountingMax is per day)</p>
+<pre><code class="language-bash">AccountingStart day 00:00
+</code></pre>
+<p>Each period starts on the 3rd of the month at 15:00 (AccountingMax
+is per month)</p>
+<pre><code class="language-bash">AccountingStart month 3 15:00
+</code></pre>
+<p>Administrative contact information for this relay or bridge. This line
+can be used to contact you if your relay or bridge is misconfigured or
+something else goes wrong. Note that we archive and publish all
+descriptors containing these lines and that Google indexes them, so
+spammers might also collect them. You may want to obscure the fact that
+it&rsquo;s an email address and/or generate a new address for this purpose.</p>
+<p>If you are running multiple relays, you MUST set this option.</p>
+<pre><code class="language-bash">ContactInfo Random Person &lt;nobody AT example dot com&gt;
+</code></pre>
+<p>You might also include your PGP or GPG fingerprint if you have one:</p>
+<pre><code class="language-bash">ContactInfo 0xFFFFFFFF Random Person &lt;nobody AT example dot com&gt;
+</code></pre>
+<p>Uncomment this to mirror directory information for others. Please do
+if you have enough bandwidth.</p>
+<pre><code class="language-bash">DirPort 9030 # what port to advertise for directory connections
+</code></pre>
+<p>If you want to listen on a port other than the one advertised in
+DirPort (e.g. to advertise 80 but bind to 9091), you can do it as
+follows.  below too. You&rsquo;ll need to do ipchains or other port
+forwarding yourself to make this work.</p>
+<pre><code class="language-bash">DirPort 80 NoListen
+DirPort 127.0.0.1:9091 NoAdvertise
+</code></pre>
+<p>Uncomment to return an arbitrary blob of html on your DirPort. Now you
+can explain what Tor is if anybody wonders why your IP address is
+contacting them. See contrib/tor-exit-notice.html in Tor&rsquo;s source
+distribution for a sample.</p>
+<pre><code class="language-bash">DirPortFrontPage @CONFDIR@/tor-exit-notice.html
+</code></pre>
+<p>Uncomment this if you run more than one Tor relay, and add the identity
+key fingerprint of each Tor relay you control, even if they&rsquo;re on
+different networks. You declare it here so Tor clients can avoid
+using more than one of your relays in a single circuit. See
+<a href="https://www.torproject.org/docs/faq#MultipleRelays">https://www.torproject.org/docs/faq#MultipleRelays</a>
+However, you should never include a bridge&rsquo;s fingerprint here, as it would
+break its concealability and potentially reveal its IP/TCP address.</p>
+<p>If you are running multiple relays, you MUST set this option.</p>
+<p>Note: do not use MyFamily on bridge relays.</p>
+<pre><code class="language-bash">MyFamily $keyid,$keyid,...
+</code></pre>
+<p>Uncomment this if you want your relay to be an exit, with the default
+exit policy (or whatever exit policy you set below).
+(If ReducedExitPolicy, ExitPolicy, or IPv6Exit are set, relays are exits.
+If none of these options are set, relays are non-exits.)</p>
+<pre><code class="language-bash">ExitRelay 1
+</code></pre>
+<p>Uncomment this if you want your relay to allow IPv6 exit traffic.
+(Relays do not allow any exit traffic by default.)</p>
+<pre><code class="language-bash">IPv6Exit 1
+</code></pre>
+<p>Uncomment this if you want your relay to be an exit, with a reduced set
+of exit ports.</p>
+<pre><code class="language-bash">ReducedExitPolicy 1
+</code></pre>
+<p>Uncomment these lines if you want your relay to be an exit, with the
+specified set of exit IPs and ports.</p>
+<p>A comma-separated list of exit policies. They&rsquo;re considered first
+to last, and the first match wins.</p>
+<p>If you want to allow the same ports on IPv4 and IPv6, write your rules
+using accept/reject *. If you want to allow different ports on IPv4 and
+IPv6, write your IPv6 rules using accept6/reject6 *6, and your IPv4 rules
+using accept/reject *4.</p>
+<p>If you want to <em>replace</em> the default exit policy, end this with either a
+reject <em>:</em> or an accept <em>:</em>. Otherwise, you&rsquo;re <em>augmenting</em> (prepending to)
+the default exit policy. Leave commented to just use the default, which is
+described in the man page or at
+<a href="https://www.torproject.org/documentation.html">https://www.torproject.org/documentation.html</a></p>
+<p>Look at <a href="https://www.torproject.org/faq-abuse.html#TypicalAbuses">https://www.torproject.org/faq-abuse.html#TypicalAbuses</a>
+for issues you might encounter if you use the default exit policy.</p>
+<p>If certain IPs and ports are blocked externally, e.g. by your firewall,
+you should update your exit policy to reflect this &ndash; otherwise Tor
+users will be told that those destinations are down.</p>
+<p>For security, by default Tor rejects connections to private (local)
+networks, including to the configured primary public IPv4 and IPv6 addresses,
+and any public IPv4 and IPv6 addresses on any interface on the relay.
+See the man page entry for ExitPolicyRejectPrivate if you want to allow
+&ldquo;exit enclaving&rdquo;.</p>
+<pre><code class="language-bash">ExitPolicy accept *:6660-6667,reject *:* # allow irc ports on IPv4 and IPv6 but no more
+ExitPolicy accept *:119 # accept nntp ports on IPv4 and IPv6 as well as default exit policy
+ExitPolicy accept *4:119 # accept nntp ports on IPv4 only as well as default exit policy
+ExitPolicy accept6 *6:119 # accept nntp ports on IPv6 only as well as default exit policy
+ExitPolicy reject *:* # no exits allowed
+</code></pre>
+<p>Bridge relays (or &ldquo;bridges&rdquo;) are Tor relays that aren&rsquo;t listed in the
+main directory. Since there is no complete public list of them, even an
+ISP that filters connections to all the known Tor relays probably
+won&rsquo;t be able to block all the bridges. Also, websites won&rsquo;t treat you
+differently because they won&rsquo;t know you&rsquo;re running Tor. If you can
+be a real relay, please do; but if not, be a bridge!</p>
+<p>Warning: when running your Tor as a bridge, make sure than MyFamily is
+NOT configured.</p>
+<pre><code class="language-bash">BridgeRelay 1
+</code></pre>
+<p>By default, Tor will advertise your bridge to users through various
+mechanisms like <a href="https://bridges.torproject.org/">https://bridges.torproject.org/</a>. If you want to run
+a private bridge, for example because you&rsquo;ll give out your bridge
+address manually to your friends, uncomment this line:</p>
+<pre><code class="language-bash">BridgeDistribution none
+</code></pre>
+<p>Configuration options can be imported from files or folders using the %include
+option with the value being a path. This path can have wildcards. Wildcards are
+expanded first, using lexical order. Then, for each matching file or folder, the following
+rules are followed: if the path is a file, the options from the file will be parsed as if
+they were written where the %include option is. If the path is a folder, all files on that
+folder will be parsed following lexical order. Files starting with a dot are ignored. Files
+on subfolders are ignored.
+The %include option can be used recursively.</p>
+<pre><code class="language-bash">%include /etc/torrc.d/*.conf
+</code></pre>
 
     </div>
 
