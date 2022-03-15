@@ -2,6 +2,11 @@
 title: "Tor"
 date: 2022-03-15T13:43:49+08:00
 draft: false
+
+tags: ["Tor","Browser","Tools"]
+categories: ["DevOps","Hack"]
+author: "w0x7ce"
+
 ---
 
 
