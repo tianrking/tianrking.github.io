@@ -21,20 +21,16 @@ author: "w0x7ce"
 
 ### JSON to Go struct
 
-网站链接： mholt.github.io/json-to-go/
+网站链接： <https://mholt.github.io/json-to-go/>
 
 ### YAML to Go struct
 
-网站链接： zhwt.github.io/yaml-to-go/
-
-### Table to Go struct
-
-网站链接： github.com/gohouse/con…
+网站链接： <https://zhwt.github.io/yaml-to-go/>
 
 ### plantUML
 
-网站链接： www.dumels.com/
+网站链接： <https://www.dumels.com/>
 
 ### Rego
 
-网站链接： regoio.herokuapp.com/
+网站链接： <https://regoio.herokuapp.com/>
