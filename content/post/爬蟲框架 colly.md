@@ -6,9 +6,7 @@ draft: false
 tags: ["Golang","Spider","Colly"]
 categories: ["爬虫"]
 author: "w0x7ce"
-
 ---
-
 ## 安裝 colly
 
 ```bash
@@ -75,70 +73,60 @@ func main() {
 
 1. Tag 標籤
 
-    ```Golang
-    c.OnHTML("title", func(e *colly.HTMLElement) {
-        fmt.Println(e.Text)
-    })
-    ```
-
+   ```Golang
+   c.OnHTML("title", func(e *colly.HTMLElement) {
+       fmt.Println(e.Text)
+   })
+   ```
 2. Attr 屬性
 
-    ```Golang
-    c.OnHTML("meta[name]", func(e *colly.HTMLElement) {
-        fmt.Println(e)
-    })
-    ```
-
+   ```Golang
+   c.OnHTML("meta[name]", func(e *colly.HTMLElement) {
+       fmt.Println(e)
+   })
+   ```
 3. AttrVal 屬性值
 
-    name="description"這串屬性的content
+   name="description"這串屬性的content
 
-    ```Goalng
-    c.OnHTML("meta[name='description']", func(e *colly.HTMLElement) {
-        fmt.Println(e.Attr("content")) // 抓此Tag中的name屬性 來找出此Tag，再印此Tag中的content屬性
-    })
-    ```
-
+   ```Goalng
+   c.OnHTML("meta[name='description']", func(e *colly.HTMLElement) {
+       fmt.Println(e.Attr("content")) // 抓此Tag中的name屬性 來找出此Tag，再印此Tag中的content屬性
+   })
+   ```
 4. CSS Class 名稱
 
-    ```Golang
-    c.OnHTML(".qa-list__title-link", func(e *colly.HTMLElement) { // 每找到一個符合 goquerySelector字樣的結果，便會進這個OnHTML一次
-            fmt.Println(e.Text)
-        })
+   ```Golang
+   c.OnHTML(".qa-list__title-link", func(e *colly.HTMLElement) { // 每找到一個符合 goquerySelector字樣的結果，便會進這個OnHTML一次
+           fmt.Println(e.Text)
+       })
 
-    ```
-
+   ```
 5. CSS ID 唯一識別
 
-    以 CSS來抓該 id底下的字
+   以 CSS來抓該 id底下的字
 
-    ```Golang
-    c.OnHTML("#read_more", func(e *colly.HTMLElement) {
-        fmt.Println(e.Text)
-    })
-    ```
+   ```Golang
+   c.OnHTML("#read_more", func(e *colly.HTMLElement) {
+       fmt.Println(e.Text)
+   })
+   ```
 
 ## 執行順序
 
 colly函式作用順序(Call order of callbacks)
 
 1. OnRequest
-    在發起請求之前，可以預先對Header的參數進行設定
-
+   在發起請求之前，可以預先對Header的參數進行設定
 2. OnError
-如果在請求的時候發生錯誤
-
+   如果在請求的時候發生錯誤
 3. OnResponseHeaders
-收到響應的標頭時
-
+   收到響應的標頭時
 4. OnResponse
-收到響應回復的時候
-
+   收到響應回復的時候
 5. OnHTML
-收到的響應是HTML格式時（時間點比 OnResponse還晚），進行goquerySelector篩選
-
+   收到的響應是HTML格式時（時間點比 OnResponse還晚），進行goquerySelector篩選
 6. OnXML
-收到的響應是XML格式時（時間點比 OnHTML還晚），進行xpathQuery篩選
-
+   收到的響應是XML格式時（時間點比 OnHTML還晚），進行xpathQuery篩選
 7. OnScraped
-抓取網頁（與OnResponse相仿），但在最後才進行調用
+   抓取網頁（與OnResponse相仿），但在最後才進行調用
