@@ -1,14 +1,12 @@
 ---
 title: "數字貨幣行情爬取 Colly實戰"
 date: 2022-03-17T12:44:48+08:00
-draft: true
+draft: false
 
 tags: ["Golang","Spider","Colly"]
 categories: ["爬虫","實戰","數字貨幣"]
 author: "w0x7ce"
-
 ---
-
 ## Colly & coinmarket
 
 ### Colly 是什么，什么要用它，怎样利用它进行量化相关的应用
@@ -40,31 +38,11 @@ colly函式作用順序(Call order of callbacks)
 
 ### Colly 的安装
 
-    ```bash
-    # 安装Golang
-    wget "https://go.dev/dl/go1.18.linux-amd64.tar.gz"
-    rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.linux-amd64.tar.gz
-    export PATH=$PATH:/usr/local/go/bin
-    go version
-    ```
+    ``bash     # 安装Golang     wget "https://go.dev/dl/go1.18.linux-amd64.tar.gz"     rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.linux-amd64.tar.gz     export PATH=$PATH:/usr/local/go/bin     go version     ``
 
-    ```bash
-    # 启用 Go Modules 功能
-    go env -w GO111MODULE=on
-    # 1. 七牛 CDN
-    go env -w  GOPROXY=https://goproxy.cn,direct
-    # 2. 阿里云
-    go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
-    # 3. 官方
-    go env -w  GOPROXY=https://goproxy.io,direct
-    ```
+    ``bash     # 启用 Go Modules 功能     go env -w GO111MODULE=on     # 1. 七牛 CDN     go env -w  GOPROXY=https://goproxy.cn,direct     # 2. 阿里云     go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct     # 3. 官方     go env -w  GOPROXY=https://goproxy.io,direct     ``
 
-    ```bash
-    mkdir Crawl && pushd Crawl
-    go mod init
-    go get -u github.com/gocolly/colly/v2
-    go mod tidy
-    ```
+    ``bash     mkdir Crawl && pushd Crawl     go mod init     go get -u github.com/gocolly/colly/v2     go mod tidy     ``
 
 ### 网络环境的配置
 
@@ -72,40 +50,35 @@ colly函式作用順序(Call order of callbacks)
 
     如果没有搭建 可以 尝试在服务器上用snap 安装 shadowsocks
 
-    ```bash
-    sudo apt-get update && sudo apt-get upgrade -y
-    sudo apt install snapd
-    sudo snap install shadowsocks-libev
-    sudo snap run shadowsocks-libev.ss-local -s server_ip -p server_port -l local_port -b 0.0.0.0 -k passwd -m method
-    ```
+    ``bash     sudo apt-get update && sudo apt-get upgrade -y     sudo apt install snapd     sudo snap install shadowsocks-libev     sudo snap run shadowsocks-libev.ss-local -s server_ip -p server_port -l local_port -b 0.0.0.0 -k passwd -m method     ``
 
 ### 完整代码
 
     ```golang
         package main
 
-        import (
+    import (
             "fmt"
             "log"
             "strconv"
 
-            colly "github.com/gocolly/colly/v2"
+    colly "github.com/gocolly/colly/v2"
             "github.com/gocolly/colly/v2/proxy"
             excelize "github.com/xuri/excelize/v2"
         )
 
-        type GG struct {
+    type GG struct {
             _url       string
             _name      string
             _now_price string
         }
 
-        func main() {
+    func main() {
 
-            num := 0
+    num := 0
             f := excelize.NewFile()
 
-            // Instantiate default collector
+    // Instantiate default collector
             c := colly.NewCollector()
             // Rotate two socks5 proxies
             rp, err := proxy.RoundRobinProxySwitcher("socks5://127.0.0.1:12999", "socks5://127.0.0.1:12999")
@@ -115,7 +88,7 @@ colly函式作用順序(Call order of callbacks)
             // 【设置代理IP】 ，这里使用的是轮询ip方式
             c.SetProxyFunc(rp)
 
-            c.OnRequest(func(r *colly.Request) { 
+    c.OnRequest(func(r *colly.Request) {
                 r.Headers.Set("Authority", "coinmarketcap.com")
                 r.Headers.Set("Cache-Control", "max-age=0")
                 r.Headers.Set("Sec-Ch-Ua", "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"99\", \"Microsoft Edge\";v=\"99\"")
@@ -131,15 +104,15 @@ colly函式作用順序(Call order of callbacks)
                 r.Headers.Set("Referer", "https://coinmarketcap.com/all/views/all/")
                 r.Headers.Set("Accept-Language", "zh-TW,zh-HK;q=0.9,zh;q=0.8,en;q=0.7,zh-CN;q=0.6,en-GB;q=0.5,en-US;q=0.4")
 
-            })
+    })
 
-            c.OnResponse(func(r *colly.Response) { 
-                
-            })
+    c.OnResponse(func(r *colly.Response) {
 
-            c.OnHTML(".cmc-table__table-wrapper-outer tbody tr", func(e *colly.HTMLElement) {
-            
-                DOGE := GG{}
+    })
+
+    c.OnHTML(".cmc-table__table-wrapper-outer tbody tr", func(e *colly.HTMLElement) {
+
+    DOGE := GG{}
                 if len(e.ChildText("td[class='name-cell']")) == 0 {
                     DOGE._url = "https://coinmarketcap.com" + e.ChildAttr("a[class='cmc-link']", "href")
                     DOGE._name = e.ChildText("a[class='cmc-table__column-name--name cmc-link']")
@@ -148,7 +121,7 @@ colly函式作用順序(Call order of callbacks)
                     DOGE._name = e.ChildText("td[class='name-cell']")
                 }
 
-                c_coin := colly.NewCollector()
+    c_coin := colly.NewCollector()
                 c_coin.SetProxyFunc(rp)
                 c_coin.OnRequest(func(r *colly.Request) {
                     r.Headers.Set("Authority", "coinmarketcap.com")
@@ -173,26 +146,26 @@ colly函式作用順序(Call order of callbacks)
                 })
                 c_coin.Visit(DOGE._url)
 
-                fmt.Print(DOGE._name, "     ")
+    fmt.Print(DOGE._name, "     ")
                 fmt.Print(DOGE._now_price, "     ")
                 fmt.Println(DOGE._url)
 
-                var A_num string = "A" + strconv.Itoa(num)
+    var A_num string = "A" + strconv.Itoa(num)
                 B_price := "B" + strconv.Itoa(num)
                 C_url := "C" + strconv.Itoa(num)
 
-                f.SetCellValue("Sheet1", A_num, DOGE._name)
+    f.SetCellValue("Sheet1", A_num, DOGE._name)
                 f.SetCellValue("Sheet1", B_price, DOGE._now_price)
                 f.SetCellValue("Sheet1", C_url, DOGE._url)
-            
-                if err := f.SaveAs("Coin_price.xlsx"); err != nil {
+
+    if err := f.SaveAs("Coin_price.xlsx"); err != nil {
                     fmt.Println(err)
                 }
                 num += 1
 
-            })
+    })
 
-            c.Visit("https://coinmarketcap.com/all/views/all/")
-            
-        }
+    c.Visit("https://coinmarketcap.com/all/views/all/")
+
+    }
     ```
