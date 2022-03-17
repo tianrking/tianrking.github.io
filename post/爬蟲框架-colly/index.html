@@ -260,34 +260,20 @@ func main() {
 <h2 id="執行順序">執行順序</h2>
 <p>colly函式作用順序(Call order of callbacks)</p>
 <ol>
-<li>
-<p>OnRequest
-在發起請求之前，可以預先對Header的參數進行設定</p>
-</li>
-<li>
-<p>OnError
-如果在請求的時候發生錯誤</p>
-</li>
-<li>
-<p>OnResponseHeaders
-收到響應的標頭時</p>
-</li>
-<li>
-<p>OnResponse
-收到響應回復的時候</p>
-</li>
-<li>
-<p>OnHTML
-收到的響應是HTML格式時（時間點比 OnResponse還晚），進行goquerySelector篩選</p>
-</li>
-<li>
-<p>OnXML
-收到的響應是XML格式時（時間點比 OnHTML還晚），進行xpathQuery篩選</p>
-</li>
-<li>
-<p>OnScraped
-抓取網頁（與OnResponse相仿），但在最後才進行調用</p>
-</li>
+<li>OnRequest
+在發起請求之前，可以預先對Header的參數進行設定</li>
+<li>OnError
+如果在請求的時候發生錯誤</li>
+<li>OnResponseHeaders
+收到響應的標頭時</li>
+<li>OnResponse
+收到響應回復的時候</li>
+<li>OnHTML
+收到的響應是HTML格式時（時間點比 OnResponse還晚），進行goquerySelector篩選</li>
+<li>OnXML
+收到的響應是XML格式時（時間點比 OnHTML還晚），進行xpathQuery篩選</li>
+<li>OnScraped
+抓取網頁（與OnResponse相仿），但在最後才進行調用</li>
 </ol>
 
     </div>
