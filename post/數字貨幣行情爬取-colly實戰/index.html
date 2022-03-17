@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>數字貨幣行情爬取 Colly實戰 - WoW</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="w0x7ce" /><meta name="description" content="Colly &amp;amp; coinmarket Colly 是什么，什么要用它，怎样利用它进行量化相关的应用 colly 是用Go 语言编写的功能强大的爬虫框架。 它提供简洁的API，拥有强劲的性能，可以自动" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="https://me.w0x7ce.eu/post/%E6%95%B8%E5%AD%97%E8%B2%A8%E5%B9%A3%E8%A1%8C%E6%83%85%E7%88%AC%E5%8F%96-colly%E5%AF%A6%E6%88%B0/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="數字貨幣行情爬取 Colly實戰" />
+<meta property="og:description" content="Colly &amp; coinmarket Colly 是什么，什么要用它，怎样利用它进行量化相关的应用 colly 是用Go 语言编写的功能强大的爬虫框架。 它提供简洁的API，拥有强劲的性能，可以自动" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://me.w0x7ce.eu/post/%E6%95%B8%E5%AD%97%E8%B2%A8%E5%B9%A3%E8%A1%8C%E6%83%85%E7%88%AC%E5%8F%96-colly%E5%AF%A6%E6%88%B0/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-03-17T12:44:48+08:00" />
+<meta property="article:modified_time" content="2022-03-17T12:44:48+08:00" />
+
+<meta itemprop="name" content="數字貨幣行情爬取 Colly實戰">
+<meta itemprop="description" content="Colly &amp; coinmarket Colly 是什么，什么要用它，怎样利用它进行量化相关的应用 colly 是用Go 语言编写的功能强大的爬虫框架。 它提供简洁的API，拥有强劲的性能，可以自动"><meta itemprop="datePublished" content="2022-03-17T12:44:48+08:00" />
+<meta itemprop="dateModified" content="2022-03-17T12:44:48+08:00" />
+<meta itemprop="wordCount" content="857">
+<meta itemprop="keywords" content="Golang,Spider,Colly," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="數字貨幣行情爬取 Colly實戰"/>
+<meta name="twitter:description" content="Colly &amp; coinmarket Colly 是什么，什么要用它，怎样利用它进行量化相关的应用 colly 是用Go 语言编写的功能强大的爬虫框架。 它提供简洁的API，拥有强劲的性能，可以自动"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">WoW</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/explore/">
+        <li class="mobile-menu-item">Explore</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">WoW</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/explore/">Explore</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">數字貨幣行情爬取 Colly實戰</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-03-17 </span>
+        <div class="post-category">
+            <a href="/categories/%E7%88%AC%E8%99%AB/"> 爬虫 </a>
+            <a href="/categories/%E5%AF%A6%E6%88%B0/"> 實戰 </a>
+            <a href="/categories/%E6%95%B8%E5%AD%97%E8%B2%A8%E5%B9%A3/"> 數字貨幣 </a>
+            </div>
+          <span class="more-meta"> 857 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#colly--coinmarket">Colly &amp; coinmarket</a>
+          <ul>
+            <li><a href="#colly-是什么什么要用它怎样利用它进行量化相关的应用">Colly 是什么，什么要用它，怎样利用它进行量化相关的应用</a></li>
+          </ul>
+        </li>
+        <li><a href="#colly的使用">Colly的使用</a>
+          <ul>
+            <li><a href="#colly的执行顺序">Colly的执行顺序</a></li>
+            <li><a href="#colly-的安装">Colly 的安装</a></li>
+            <li><a href="#网络环境的配置">网络环境的配置</a></li>
+            <li><a href="#完整代码">完整代码</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="colly--coinmarket">Colly &amp; coinmarket</h2>
+<h3 id="colly-是什么什么要用它怎样利用它进行量化相关的应用">Colly 是什么，什么要用它，怎样利用它进行量化相关的应用</h3>
+<p>colly 是用Go 语言编写的功能强大的爬虫框架。 它提供简洁的API，拥有强劲的性能，可以自动处理cookie&amp;session，还有提供灵活的扩展机制</p>
+<p>Colly 本身不能做量化 但是 Colly可以更高效的帮助我们采集数据，为我们提供量化的弹药</p>
+<h2 id="colly的使用">Colly的使用</h2>
+<h3 id="colly的执行顺序">Colly的执行顺序</h3>
+<p>colly函式作用順序(Call order of callbacks)</p>
+<ol>
+<li>OnRequest
+在发起请求前 可以进行Header相关的设定</li>
+<li>OnError
+如果请求时候出现错误 在这里捕获它</li>
+<li>OnResponseHeaders
+收到响应标头时候 我们需要做的东西写在这里</li>
+<li>OnResponse
+收到响应回复的时候 我们要做的事情 写在这里</li>
+<li>OnHTML
+收到相应为HTML格式时候（晚于OnResponse），进行goquerySelector篩選</li>
+<li>OnXML
+收到相应为XML格式时候（晚于OnHTML），进行xpathQuery筛选</li>
+<li>OnScraped
+抓取网页（类似于OnResponse），但在最后才进行调用</li>
+</ol>
+<h3 id="colly-的安装">Colly 的安装</h3>
+<pre><code>``bash     # 安装Golang     wget &quot;https://go.dev/dl/go1.18.linux-amd64.tar.gz&quot;     rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.18.linux-amd64.tar.gz     export PATH=$PATH:/usr/local/go/bin     go version     ``
+
+``bash     # 启用 Go Modules 功能     go env -w GO111MODULE=on     # 1. 七牛 CDN     go env -w  GOPROXY=https://goproxy.cn,direct     # 2. 阿里云     go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct     # 3. 官方     go env -w  GOPROXY=https://goproxy.io,direct     ``
+
+``bash     mkdir Crawl &amp;&amp; pushd Crawl     go mod init     go get -u github.com/gocolly/colly/v2     go mod tidy     ``
+</code></pre>
+<h3 id="网络环境的配置">网络环境的配置</h3>
+<pre><code>因为在国内 无法直接连接上数字货币的网站 所以 我们需要配置代理, 我们的本地代理为 socks5:/127.0.0.1:12999
+
+如果没有搭建 可以 尝试在服务器上用snap 安装 shadowsocks
+
+``bash     sudo apt-get update &amp;&amp; sudo apt-get upgrade -y     sudo apt install snapd     sudo snap install shadowsocks-libev     sudo snap run shadowsocks-libev.ss-local -s server_ip -p server_port -l local_port -b 0.0.0.0 -k passwd -m method     ``
+</code></pre>
+<h3 id="完整代码">完整代码</h3>
+<pre><code>```golang
+    package main
+
+import (
+        &quot;fmt&quot;
+        &quot;log&quot;
+        &quot;strconv&quot;
+
+colly &quot;github.com/gocolly/colly/v2&quot;
+        &quot;github.com/gocolly/colly/v2/proxy&quot;
+        excelize &quot;github.com/xuri/excelize/v2&quot;
+    )
+
+type GG struct {
+        _url       string
+        _name      string
+        _now_price string
+    }
+
+func main() {
+
+num := 0
+        f := excelize.NewFile()
+
+// Instantiate default collector
+        c := colly.NewCollector()
+        // Rotate two socks5 proxies
+        rp, err := proxy.RoundRobinProxySwitcher(&quot;socks5://127.0.0.1:12999&quot;, &quot;socks5://127.0.0.1:12999&quot;)
+        if err != nil {
+            log.Fatal(err)
+        }
+        // 【设置代理IP】 ，这里使用的是轮询ip方式
+        c.SetProxyFunc(rp)
+
+c.OnRequest(func(r *colly.Request) {
+            r.Headers.Set(&quot;Authority&quot;, &quot;coinmarketcap.com&quot;)
+            r.Headers.Set(&quot;Cache-Control&quot;, &quot;max-age=0&quot;)
+            r.Headers.Set(&quot;Sec-Ch-Ua&quot;, &quot;\&quot; Not A;Brand\&quot;;v=\&quot;99\&quot;, \&quot;Chromium\&quot;;v=\&quot;99\&quot;, \&quot;Microsoft Edge\&quot;;v=\&quot;99\&quot;&quot;)
+            r.Headers.Set(&quot;Sec-Ch-Ua-Mobile&quot;, &quot;?0&quot;)
+            r.Headers.Set(&quot;Sec-Ch-Ua-Platform&quot;, &quot;\&quot;Windows\&quot;&quot;)
+            r.Headers.Set(&quot;Upgrade-Insecure-Requests&quot;, &quot;1&quot;)
+            r.Headers.Set(&quot;User-Agent&quot;, &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36 Edg/99.0.1150.39&quot;)
+            r.Headers.Set(&quot;Accept&quot;, &quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;)
+            r.Headers.Set(&quot;Sec-Fetch-Site&quot;, &quot;same-origin&quot;)
+            r.Headers.Set(&quot;Sec-Fetch-Mode&quot;, &quot;navigate&quot;)
+            r.Headers.Set(&quot;Sec-Fetch-User&quot;, &quot;?2&quot;)
+            r.Headers.Set(&quot;Sec-Fetch-Dest&quot;, &quot;document&quot;)
+            r.Headers.Set(&quot;Referer&quot;, &quot;https://coinmarketcap.com/all/views/all/&quot;)
+            r.Headers.Set(&quot;Accept-Language&quot;, &quot;zh-TW,zh-HK;q=0.9,zh;q=0.8,en;q=0.7,zh-CN;q=0.6,en-GB;q=0.5,en-US;q=0.4&quot;)
+
+})
+
+c.OnResponse(func(r *colly.Response) {
+
+})
+
+c.OnHTML(&quot;.cmc-table__table-wrapper-outer tbody tr&quot;, func(e *colly.HTMLElement) {
+
+DOGE := GG{}
+            if len(e.ChildText(&quot;td[class='name-cell']&quot;)) == 0 {
+                DOGE._url = &quot;https://coinmarketcap.com&quot; + e.ChildAttr(&quot;a[class='cmc-link']&quot;, &quot;href&quot;)
+                DOGE._name = e.ChildText(&quot;a[class='cmc-table__column-name--name cmc-link']&quot;)
+            } else {
+                DOGE._url = &quot;https://coinmarketcap.com&quot; + e.ChildAttr(&quot;a[class='cmc-link']&quot;, &quot;href&quot;)
+                DOGE._name = e.ChildText(&quot;td[class='name-cell']&quot;)
+            }
+
+c_coin := colly.NewCollector()
+            c_coin.SetProxyFunc(rp)
+            c_coin.OnRequest(func(r *colly.Request) {
+                r.Headers.Set(&quot;Authority&quot;, &quot;coinmarketcap.com&quot;)
+                r.Headers.Set(&quot;Cache-Control&quot;, &quot;max-age=0&quot;)
+                r.Headers.Set(&quot;Sec-Ch-Ua&quot;, &quot;\&quot; Not A;Brand\&quot;;v=\&quot;99\&quot;, \&quot;Chromium\&quot;;v=\&quot;99\&quot;, \&quot;Microsoft Edge\&quot;;v=\&quot;99\&quot;&quot;)
+                r.Headers.Set(&quot;Sec-Ch-Ua-Mobile&quot;, &quot;?0&quot;)
+                r.Headers.Set(&quot;Sec-Ch-Ua-Platform&quot;, &quot;\&quot;Windows\&quot;&quot;)
+                r.Headers.Set(&quot;Upgrade-Insecure-Requests&quot;, &quot;1&quot;)
+                r.Headers.Set(&quot;User-Agent&quot;, &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36 Edg/99.0.1150.39&quot;)
+                r.Headers.Set(&quot;Accept&quot;, &quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&quot;)
+                r.Headers.Set(&quot;Sec-Fetch-Site&quot;, &quot;same-origin&quot;)
+                r.Headers.Set(&quot;Sec-Fetch-Mode&quot;, &quot;navigate&quot;)
+                r.Headers.Set(&quot;Sec-Fetch-User&quot;, &quot;?2&quot;)
+                r.Headers.Set(&quot;Sec-Fetch-Dest&quot;, &quot;document&quot;)
+                r.Headers.Set(&quot;Referer&quot;, &quot;https://coinmarketcap.com/all/views/all/&quot;)
+                r.Headers.Set(&quot;Accept-Language&quot;, &quot;zh-TW,zh-HK;q=0.9,zh;q=0.8,en;q=0.7,zh-CN;q=0.6,en-GB;q=0.5,en-US;q=0.4&quot;)
+            })
+            c_coin.OnResponse(func(r *colly.Response) {
+            })
+            c_coin.OnHTML(&quot;div[class='priceValue ']&quot;, func(r *colly.HTMLElement) {
+                DOGE._now_price = string(r.Text)
+            })
+            c_coin.Visit(DOGE._url)
+
+fmt.Print(DOGE._name, &quot;     &quot;)
+            fmt.Print(DOGE._now_price, &quot;     &quot;)
+            fmt.Println(DOGE._url)
+
+var A_num string = &quot;A&quot; + strconv.Itoa(num)
+            B_price := &quot;B&quot; + strconv.Itoa(num)
+            C_url := &quot;C&quot; + strconv.Itoa(num)
+
+f.SetCellValue(&quot;Sheet1&quot;, A_num, DOGE._name)
+            f.SetCellValue(&quot;Sheet1&quot;, B_price, DOGE._now_price)
+            f.SetCellValue(&quot;Sheet1&quot;, C_url, DOGE._url)
+
+if err := f.SaveAs(&quot;Coin_price.xlsx&quot;); err != nil {
+                fmt.Println(err)
+            }
+            num += 1
+
+})
+
+c.Visit(&quot;https://coinmarketcap.com/all/views/all/&quot;)
+
+}
+```
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">w0x7ce</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2022-03-17
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/golang/">Golang</a>
+          <a href="/tags/spider/">Spider</a>
+          <a href="/tags/colly/">Colly</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/%E7%88%AC%E8%9F%B2%E6%A1%86%E6%9E%B6-colly/">
+            <span class="next-text nav-default">爬蟲框架 Colly</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:null@w0x7ce.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/IIIIIlIlIIIllll" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="mailto:tian.r.king@gmail.com" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/tianrking/" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/10065982" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://me.w0x7ce.eu/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>w0x7ce</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
