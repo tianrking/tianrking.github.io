@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>機器學習 Xgboost完成股價預測 - WoW</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="w0x7ce" /><meta name="description" content="Xgboost 是什麽 XGBoost是boosting算法的其中一种。Boosting算法的思想是将许多弱分类器集成在一起形成一个强分类器。因为XGBoo" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="https://me.w0x7ce.eu/post/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-xgboost%E5%AE%8C%E6%88%90%E8%82%A1%E5%83%B9%E9%A0%90%E6%B8%AC/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="機器學習 Xgboost完成股價預測" />
+<meta property="og:description" content="Xgboost 是什麽 XGBoost是boosting算法的其中一种。Boosting算法的思想是将许多弱分类器集成在一起形成一个强分类器。因为XGBoo" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://me.w0x7ce.eu/post/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-xgboost%E5%AE%8C%E6%88%90%E8%82%A1%E5%83%B9%E9%A0%90%E6%B8%AC/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-03-27T00:35:19+08:00" />
+<meta property="article:modified_time" content="2022-03-27T00:35:19+08:00" />
+
+<meta itemprop="name" content="機器學習 Xgboost完成股價預測">
+<meta itemprop="description" content="Xgboost 是什麽 XGBoost是boosting算法的其中一种。Boosting算法的思想是将许多弱分类器集成在一起形成一个强分类器。因为XGBoo"><meta itemprop="datePublished" content="2022-03-27T00:35:19+08:00" />
+<meta itemprop="dateModified" content="2022-03-27T00:35:19+08:00" />
+<meta itemprop="wordCount" content="707">
+<meta itemprop="keywords" content="Xgboost,ML,Fintech," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="機器學習 Xgboost完成股價預測"/>
+<meta name="twitter:description" content="Xgboost 是什麽 XGBoost是boosting算法的其中一种。Boosting算法的思想是将许多弱分类器集成在一起形成一个强分类器。因为XGBoo"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">WoW</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/explore/">
+        <li class="mobile-menu-item">Explore</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">WoW</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/explore/">Explore</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">機器學習 Xgboost完成股價預測</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-03-27 </span>
+        <div class="post-category">
+            <a href="/categories/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"> 機器學習 </a>
+            <a href="/categories/%E9%87%8F%E5%8C%96/"> 量化 </a>
+            </div>
+          <span class="more-meta"> 707 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#xgboost-是什麽">Xgboost 是什麽</a></li>
+        <li><a href="#數據獲取">數據獲取</a>
+          <ul>
+            <li><a href="#安裝tushare">安裝tushare</a></li>
+            <li><a href="#配置token">配置token</a></li>
+            <li><a href="#數據選擇">數據選擇</a></li>
+          </ul>
+        </li>
+        <li><a href="#特徵工程">特徵工程</a></li>
+        <li><a href="#移動平均線計算">移動平均線計算</a></li>
+        <li><a href="#標準化">標準化</a></li>
+        <li><a href="#開始work">開始work</a>
+          <ul>
+            <li><a href="#準備數據">準備數據</a></li>
+            <li><a href="#特徵工程-1">特徵工程</a></li>
+            <li><a href="#數據標準化">數據標準化</a></li>
+            <li><a href="#生成訓練集和測試集">生成訓練集和測試集</a></li>
+            <li><a href="#特徵標簽標準化">特徵標簽標準化</a></li>
+            <li><a href="#建立样本">建立样本</a></li>
+            <li><a href="#开始训练">开始训练</a></li>
+            <li><a href="#可视化">可视化</a></li>
+            <li><a href="#参数打印">参数打印</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="xgboost-是什麽">Xgboost 是什麽</h2>
+<p>XGBoost是boosting算法的其中一种。Boosting算法的思想是将许多弱分类器集成在一起形成一个强分类器。因为XGBoost是一种提升树模型，所以它是将许多树模型集成在一起，形成一个很强的分类器。</p>
+<h2 id="數據獲取">數據獲取</h2>
+<h3 id="安裝tushare">安裝tushare</h3>
+<pre><code class="language-bash">pip install tushare
+</code></pre>
+<h3 id="配置token">配置token</h3>
+<pre><code class="language-bash">import tushare as ts
+pro = ts.pro_api(&quot;API_TOKEN&quot;)
+import pandas as pd
+import matplotlib.pyplot as plt
+
+import torch
+from torch.autograd import Variable
+import torch.nn.functional as F
+import torch.utils.data as Data
+</code></pre>
+<h3 id="數據選擇">數據選擇</h3>
+<pre><code class="language-bash">df = pro.daily(ts_code='000001.SZ', start_date='20180701', end_date='20180718')
+df['date'] = pd.to_datetime(df['trade_date'])
+df['adj_close'] = df['close']
+df['volume']=df['vol']
+df['month'] =  pd.DatetimeIndex(df['trade_date']).month
+df = df[['date','open','high','low','close','adj_close','volume','month']]
+
+print(df.head())
+
+</code></pre>
+<h2 id="特徵工程">特徵工程</h2>
+<pre><code class="language-bash">def feature_engineer(df):
+
+    df['range_hl'] = df['high'] - df['low']
+    df['range_oc'] = df['open'] - df['close']
+
+    lag_cols = ['adj_close', 'range_hl', 'range_oc', 'volume']
+    shift_range = [x + 1 for x in range(N)]
+
+    for col in lag_cols:
+        for i in shift_range:
+
+            new_col='{}_lag_{}'.format(col, i)  
+            df[new_col]=df[col].shift(i)
+
+    return df[N:]
+</code></pre>
+<pre><code class="language-bash">test_size = 0.2         #测试集合分割比例
+N = 3                   #设置作为特征的历史天数
+df = feature_engineer(df)
+print(df.head())
+</code></pre>
+<h2 id="移動平均線計算">移動平均線計算</h2>
+<pre><code class="language-bash">import numpy as np
+import copy
+# c = copy.deepcopy(a) 新建datafrrame可以深拷贝
+
+def get_mov_avg_std(df, col, N):
+  
+    mean_list = df[col].rolling(window=N, min_periods=1).mean() 
+    std_list = df[col].rolling(window=N, min_periods=1).std()  
+    mean_list = np.concatenate((np.array([np.nan]), np.array(mean_list[:-1])))
+    std_list = np.concatenate((np.array([np.nan]), np.array(std_list[:-1])))
+
+    df_out = df.copy()
+
+    df_out[col + '_mean'] = mean_list
+    df_out[col + '_std'] = std_list
+
+    return df_out
+
+df_ma = get_mov_avg_std(df,&quot;close&quot;,3)
+print(df_ma.head())
+</code></pre>
+<h2 id="標準化">標準化</h2>
+<pre><code class="language-bash">def scale_row(row, feat_mean, feat_std):
+
+    feat_std = 0.001 if feat_std == 0 else feat_std
+    row_scaled = (row - feat_mean) / feat_std
+
+    return row_scaled
+</code></pre>
+<h2 id="開始work">開始work</h2>
+<h3 id="準備數據">準備數據</h3>
+<h3 id="特徵工程-1">特徵工程</h3>
+<pre><code class="language-bash">df=feature_engineer(data_df)
+</code></pre>
+<h3 id="數據標準化">數據標準化</h3>
+<pre><code class="language-bash">cols_list = [
+        &quot;adj_close&quot;,
+        &quot;range_hl&quot;,
+        &quot;range_oc&quot;,
+        &quot;volume&quot;
+    ]
+for col in cols_list:
+  df = get_mov_avg_std(df, col, N)
+</code></pre>
+<h3 id="生成訓練集和測試集">生成訓練集和測試集</h3>
+<pre><code class="language-bash">num_test = int(test_size * len(df))
+num_train = len(df) - num_test
+train = df[:num_train]
+test = df[num_train:]
+</code></pre>
+<h3 id="特徵標簽標準化">特徵標簽標準化</h3>
+<pre><code class="language-bash">from sklearn.preprocessing import StandardScaler
+from tqdm import tqdm
+
+cols_to_scale = [
+      &quot;adj_close&quot;
+  ]
+for i in range(1, N + 1):
+  cols_to_scale.append(&quot;adj_close_lag_&quot; + str(i))
+  cols_to_scale.append(&quot;range_hl_lag_&quot; + str(i))
+  cols_to_scale.append(&quot;range_oc_lag_&quot; + str(i))
+  cols_to_scale.append(&quot;volume_lag_&quot; + str(i))
+
+scaler = StandardScaler()
+train_scaled = scaler.fit_transform(train[cols_to_scale])
+
+train_scaled = pd.DataFrame(train_scaled, columns=cols_to_scale)
+train_scaled[['date', 'month']] = train.reset_index()[['date', 'month']]
+
+test_scaled = test[['date']]
+for col in tqdm(cols_list):
+  feat_list = [col + '_lag_' + str(shift) for shift in range(1, N + 1)]
+  temp = test.apply(lambda row: scale_row(row[feat_list], row[col + '_mean'], row[col + '_std']), axis=1)
+  test_scaled = pd.concat([test_scaled, temp], axis=1)
+
+</code></pre>
+<h3 id="建立样本">建立样本</h3>
+<pre><code class="language-bash">
+features = []
+for i in range(1, N + 1):
+  features.append(&quot;adj_close_lag_&quot; + str(i))
+  features.append(&quot;range_hl_lag_&quot; + str(i))
+  features.append(&quot;range_oc_lag_&quot; + str(i))
+  features.append(&quot;volume_lag_&quot; + str(i))
+
+target = &quot;adj_close&quot;
+
+X_train = train[features]
+y_train = train[target]
+X_sample = test[features]
+y_sample = test[target]
+
+X_train_scaled = train_scaled[features]
+y_train_scaled = train_scaled[target]
+X_sample_scaled = test_scaled[features]
+
+</code></pre>
+<h3 id="开始训练">开始训练</h3>
+<pre><code class="language-bash">from xgboost import XGBRegressor
+import math
+
+model_seed = 100
+
+from sklearn.model_selection import GridSearchCV
+parameters={'n_estimators':[90],
+            'max_depth':[7],
+            'learning_rate': [0.2],
+            'min_child_weight':range(5, 21, 1)，
+            }
+
+model=XGBRegressor(seed=model_seed,
+                      n_estimators=100,
+                      max_depth=3,
+                      eval_metric='rmse',
+                      learning_rate=0.1,
+                      min_child_weight=1,
+                      subsample=1,
+                      colsample_bytree=1,
+                      colsample_bylevel=1,
+                      gamma=0)
+gs=GridSearchCV(estimator= model,param_grid=parameters,cv=5,refit= True,scoring='neg_mean_squared_error')
+
+gs.fit(X_train_scaled,y_train_scaled)
+print ('最优参数: ' + str(gs.best_params_))
+
+</code></pre>
+<h3 id="可视化">可视化</h3>
+<pre><code class="language-bash">from sklearn.metrics import mean_squared_error
+est_scaled = gs.predict(X_train_scaled)
+train['est'] = est_scaled * math.sqrt(scaler.var_[0]) + scaler.mean_[0]
+
+pre_y_scaled = gs.predict(X_sample_scaled)
+test['pre_y_scaled'] = pre_y_scaled
+test['pre_y']=test['pre_y_scaled'] * test['adj_close_std'] + test['adj_close_mean']
+
+plt.figure(figsize=(14,10))
+ax = test.plot(x='date', y='adj_close', style='b-', grid=True,figsize=(14,10))
+ax = test.plot(x='date', y='pre_y', style='r-', grid=True, ax=ax)
+
+plt.show()
+
+rmse=math.sqrt(mean_squared_error(y_sample, test['pre_y']))
+print(&quot;RMSE on dev  = %0.3f&quot; % rmse)
+
+</code></pre>
+<h3 id="参数打印">参数打印</h3>
+<pre><code class="language-bash">def get_mape(y_true, y_pred):
+    y_true, y_pred = np.array(y_true), np.array(y_pred)
+    return np.mean(np.abs((y_true - y_pred) / y_true)) * 100
+    
+mape = get_mape(y_sample, test['pre_y'])
+print(&quot;MAPE on dev  = %0.3f%%&quot; % mape)
+
+imp = list(zip(train[features], gs.best_estimator_.feature_importances_))
+imp.sort(key=lambda tup: tup[1])
+for i in range(-1,-10,-1):
+  print(imp[i])</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">w0x7ce</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2022-03-27
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/xgboost/">Xgboost</a>
+          <a href="/tags/ml/">ML</a>
+          <a href="/tags/fintech/">Fintech</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/grafana-prometheus%E7%9B%A3%E6%8E%A7/">
+            <span class="next-text nav-default">Grafana Prometheus監控</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:null@w0x7ce.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/IIIIIlIlIIIllll" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="mailto:tian.r.king@gmail.com" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/tianrking/" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/10065982" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://me.w0x7ce.eu/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>w0x7ce</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>

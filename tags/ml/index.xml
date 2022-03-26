@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ML on WoW</title>
+    <link>https://me.w0x7ce.eu/tags/ml/</link>
+    <description>Recent content in ML on WoW</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>w0x7ce</copyright>
+    <lastBuildDate>Sun, 27 Mar 2022 00:35:19 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/tags/ml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>機器學習 Xgboost完成股價預測</title>
+      <link>https://me.w0x7ce.eu/post/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-xgboost%E5%AE%8C%E6%88%90%E8%82%A1%E5%83%B9%E9%A0%90%E6%B8%AC/</link>
+      <pubDate>Sun, 27 Mar 2022 00:35:19 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/post/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-xgboost%E5%AE%8C%E6%88%90%E8%82%A1%E5%83%B9%E9%A0%90%E6%B8%AC/</guid>
+      <description>Xgboost 是什麽 XGBoost是boosting算法的其中一种。Boosting算法的思想是将许多弱分类器集成在一起形成一个强分类器。因为XGBoo</description>
+    </item>
+    
+  </channel>
+</rss>
