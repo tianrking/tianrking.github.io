@@ -1,7 +1,7 @@
 ---
 title: "機器學習 Xgboost完成股價預測"
 date: 2022-03-27T00:35:19+08:00
-draft: true
+draft: false
 
 tags: ["Xgboost","ML","Fintech"]
 categories: ["機器學習","量化"]
