@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Sun, 27 Mar 2022 00:35:19 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/categories/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Mar 2022 22:19:15 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/categories/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>機器學習 Pytorch完成股價預測</title>
+      <link>https://me.w0x7ce.eu/post/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-pytorch%E5%AE%8C%E6%88%90%E8%82%A1%E5%83%B9%E9%A0%90%E6%B8%AC/</link>
+      <pubDate>Mon, 28 Mar 2022 22:19:15 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/post/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-pytorch%E5%AE%8C%E6%88%90%E8%82%A1%E5%83%B9%E9%A0%90%E6%B8%AC/</guid>
+      <description>环境配置 import torch from torch import nn from torch.utils.data import DataLoader from torchvision import datasets from torchvision.transforms import ToTensor from torch.autograd import Variable 数据准备 df = pro.daily(ts_code=&#39;000001.SZ&#39;, start_date=&#39;20220101&#39;, end_date=&#39;20220326&#39;) df[&#39;date&#39;] = pd.to_datetime(df[&#39;trade_date&#39;]) df[&#39;adj_close&#39;] = df[&#39;close&#39;] df[&#39;volume&#39;]=df[&#39;vol&#39;] df[&#39;month&#39;] = pd.DatetimeIndex(df[&#39;trade_date&#39;]).month df = df[[&#39;date&#39;,&#39;open&#39;,&#39;high&#39;,&#39;low&#39;,&#39;close&#39;,&#39;adj_close&#39;,&#39;volume&#39;,&#39;month&#39;]] print(df.head()) import numpy as np # x = torch.unsqueeze(torch.linspace(-1,1,100),dim=1) # y = x.pow(4)+0.1*torch.randn(x.size()) x_data = torch.unsqueeze(torch.tensor(df[&#39;high&#39;].astype(np.float32).values),dim=1) x = (x_data-x_data.min())/(x_data.max()-x_data.min()) y_data = torch.unsqueeze(torch.tensor(df[&#39;close&#39;].astype(np.float32).values),dim=1)</description>
+    </item>
+    
     <item>
       <title>機器學習 Xgboost完成股價預測</title>
       <link>https://me.w0x7ce.eu/post/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-xgboost%E5%AE%8C%E6%88%90%E8%82%A1%E5%83%B9%E9%A0%90%E6%B8%AC/</link>
