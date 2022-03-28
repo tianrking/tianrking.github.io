@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>機器學習 Pytorch完成股價預測 - WoW</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="w0x7ce" /><meta name="description" content="环境配置 import torch from torch import nn from torch.utils.data import DataLoader from torchvision import datasets from torchvision.transforms import ToTensor from torch.autograd import Variable 数据准备 df = pro.daily(ts_code=&#39;000001.SZ&#39;, start_date=&#39;20220101&#39;, end_date=&#39;20220326&#39;) df[&#39;date&#39;] = pd.to_datetime(df[&#39;trade_date&#39;]) df[&#39;adj_close&#39;] = df[&#39;close&#39;] df[&#39;volume&#39;]=df[&#39;vol&#39;] df[&#39;month&#39;] = pd.DatetimeIndex(df[&#39;trade_date&#39;]).month df = df[[&#39;date&#39;,&#39;open&#39;,&#39;high&#39;,&#39;low&#39;,&#39;close&#39;,&#39;adj_close&#39;,&#39;volume&#39;,&#39;month&#39;]] print(df.head()) import numpy as np # x = torch.unsqueeze(torch.linspace(-1,1,100),dim=1) # y = x.pow(4)&#43;0.1*torch.randn(x.size()) x_data = torch.unsqueeze(torch.tensor(df[&#39;high&#39;].astype(np.float32).values),dim=1) x = (x_data-x_data.min())/(x_data.max()-x_data.min()) y_data = torch.unsqueeze(torch.tensor(df[&#39;close&#39;].astype(np.float32).values),dim=1)" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="https://me.w0x7ce.eu/post/pytorch%E5%AE%8C%E6%88%90%E8%82%A1%E5%83%B9%E9%A0%90%E6%B8%AC/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="機器學習 Pytorch完成股價預測" />
+<meta property="og:description" content="环境配置 import torch from torch import nn from torch.utils.data import DataLoader from torchvision import datasets from torchvision.transforms import ToTensor from torch.autograd import Variable 数据准备 df = pro.daily(ts_code=&#39;000001.SZ&#39;, start_date=&#39;20220101&#39;, end_date=&#39;20220326&#39;) df[&#39;date&#39;] = pd.to_datetime(df[&#39;trade_date&#39;]) df[&#39;adj_close&#39;] = df[&#39;close&#39;] df[&#39;volume&#39;]=df[&#39;vol&#39;] df[&#39;month&#39;] = pd.DatetimeIndex(df[&#39;trade_date&#39;]).month df = df[[&#39;date&#39;,&#39;open&#39;,&#39;high&#39;,&#39;low&#39;,&#39;close&#39;,&#39;adj_close&#39;,&#39;volume&#39;,&#39;month&#39;]] print(df.head()) import numpy as np # x = torch.unsqueeze(torch.linspace(-1,1,100),dim=1) # y = x.pow(4)&#43;0.1*torch.randn(x.size()) x_data = torch.unsqueeze(torch.tensor(df[&#39;high&#39;].astype(np.float32).values),dim=1) x = (x_data-x_data.min())/(x_data.max()-x_data.min()) y_data = torch.unsqueeze(torch.tensor(df[&#39;close&#39;].astype(np.float32).values),dim=1)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://me.w0x7ce.eu/post/pytorch%E5%AE%8C%E6%88%90%E8%82%A1%E5%83%B9%E9%A0%90%E6%B8%AC/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-03-28T22:19:15+08:00" />
+<meta property="article:modified_time" content="2022-03-28T22:19:15+08:00" />
+
+<meta itemprop="name" content="機器學習 Pytorch完成股價預測">
+<meta itemprop="description" content="环境配置 import torch from torch import nn from torch.utils.data import DataLoader from torchvision import datasets from torchvision.transforms import ToTensor from torch.autograd import Variable 数据准备 df = pro.daily(ts_code=&#39;000001.SZ&#39;, start_date=&#39;20220101&#39;, end_date=&#39;20220326&#39;) df[&#39;date&#39;] = pd.to_datetime(df[&#39;trade_date&#39;]) df[&#39;adj_close&#39;] = df[&#39;close&#39;] df[&#39;volume&#39;]=df[&#39;vol&#39;] df[&#39;month&#39;] = pd.DatetimeIndex(df[&#39;trade_date&#39;]).month df = df[[&#39;date&#39;,&#39;open&#39;,&#39;high&#39;,&#39;low&#39;,&#39;close&#39;,&#39;adj_close&#39;,&#39;volume&#39;,&#39;month&#39;]] print(df.head()) import numpy as np # x = torch.unsqueeze(torch.linspace(-1,1,100),dim=1) # y = x.pow(4)&#43;0.1*torch.randn(x.size()) x_data = torch.unsqueeze(torch.tensor(df[&#39;high&#39;].astype(np.float32).values),dim=1) x = (x_data-x_data.min())/(x_data.max()-x_data.min()) y_data = torch.unsqueeze(torch.tensor(df[&#39;close&#39;].astype(np.float32).values),dim=1)"><meta itemprop="datePublished" content="2022-03-28T22:19:15+08:00" />
+<meta itemprop="dateModified" content="2022-03-28T22:19:15+08:00" />
+<meta itemprop="wordCount" content="332">
+<meta itemprop="keywords" content="Pytorch,ML,Fintech," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="機器學習 Pytorch完成股價預測"/>
+<meta name="twitter:description" content="环境配置 import torch from torch import nn from torch.utils.data import DataLoader from torchvision import datasets from torchvision.transforms import ToTensor from torch.autograd import Variable 数据准备 df = pro.daily(ts_code=&#39;000001.SZ&#39;, start_date=&#39;20220101&#39;, end_date=&#39;20220326&#39;) df[&#39;date&#39;] = pd.to_datetime(df[&#39;trade_date&#39;]) df[&#39;adj_close&#39;] = df[&#39;close&#39;] df[&#39;volume&#39;]=df[&#39;vol&#39;] df[&#39;month&#39;] = pd.DatetimeIndex(df[&#39;trade_date&#39;]).month df = df[[&#39;date&#39;,&#39;open&#39;,&#39;high&#39;,&#39;low&#39;,&#39;close&#39;,&#39;adj_close&#39;,&#39;volume&#39;,&#39;month&#39;]] print(df.head()) import numpy as np # x = torch.unsqueeze(torch.linspace(-1,1,100),dim=1) # y = x.pow(4)&#43;0.1*torch.randn(x.size()) x_data = torch.unsqueeze(torch.tensor(df[&#39;high&#39;].astype(np.float32).values),dim=1) x = (x_data-x_data.min())/(x_data.max()-x_data.min()) y_data = torch.unsqueeze(torch.tensor(df[&#39;close&#39;].astype(np.float32).values),dim=1)"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">WoW</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/explore/">
+        <li class="mobile-menu-item">Explore</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">WoW</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/explore/">Explore</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">機器學習 Pytorch完成股價預測</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-03-28 </span>
+        <div class="post-category">
+            <a href="/categories/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"> 機器學習 </a>
+            <a href="/categories/%E9%87%8F%E5%8C%96/"> 量化 </a>
+            </div>
+          <span class="more-meta"> 332 words </span>
+          <span class="more-meta"> 1 min read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#环境配置">环境配置</a></li>
+        <li><a href="#数据准备">数据准备</a></li>
+        <li><a href="#网络定义-单输入-单输出">网络定义 单输入 单输出</a></li>
+        <li><a href="#网络定义-seq2seq">网络定义 Seq2Seq</a>
+          <ul>
+            <li><a href="#损失函数优化函数及训练">损失函数，优化函数及训练</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="环境配置">环境配置</h2>
+<pre><code class="language-bash">import torch
+from torch import nn
+from torch.utils.data import DataLoader
+from torchvision import datasets
+from torchvision.transforms import ToTensor
+from torch.autograd import Variable
+</code></pre>
+<h2 id="数据准备">数据准备</h2>
+<pre><code class="language-bash">df = pro.daily(ts_code='000001.SZ', start_date='20220101', end_date='20220326')
+df['date'] = pd.to_datetime(df['trade_date'])
+df['adj_close'] = df['close']
+df['volume']=df['vol']
+df['month'] =  pd.DatetimeIndex(df['trade_date']).month
+df = df[['date','open','high','low','close','adj_close','volume','month']]
+print(df.head())
+</code></pre>
+<pre><code class="language-bash">import numpy as np
+
+# x = torch.unsqueeze(torch.linspace(-1,1,100),dim=1)
+# y = x.pow(4)+0.1*torch.randn(x.size())
+
+x_data = torch.unsqueeze(torch.tensor(df['high'].astype(np.float32).values),dim=1)
+x = (x_data-x_data.min())/(x_data.max()-x_data.min())
+
+y_data = torch.unsqueeze(torch.tensor(df['close'].astype(np.float32).values),dim=1)
+y = (y_data-y_data.min())/(y_data.max()-y_data.min())
+
+# print(x.shape,y.shape)
+# print(type(x),type(y))
+# print(x[:10],y[:10])
+</code></pre>
+<pre><code class="language-bash">x , y =(Variable(x),Variable(y))
+
+# plt.figure(figsize=(18,10))
+# x_draw = x * (x_data.max()-x_data.min()) + x_data.min()
+# plt.plot(df['date'].values,x_draw.numpy(),'g')
+# # plt.figure(figsize=(18,10))
+# y_draw = y * (y_data.max()-y_data.min()) + y_data.min()
+# plt.plot(df['date'].values,y_draw.numpy(),'r')
+
+# # plt.scatter(x.data.numpy(),df['date'])
+# # 或者采用如下的方式也可以输出x,y
+# # plt.scatter(x.data.numpy(),y.data.numpy())
+plt.show()
+</code></pre>
+<h2 id="网络定义-单输入-单输出">网络定义 单输入 单输出</h2>
+<pre><code class="language-bash">class Net(nn.Module):
+    def __init__(self,n_input,n_hidden,n_output):
+        super(Net,self).__init__()
+        self.hidden1 = nn.Linear(1,64)
+        self.hidden_a = nn.Linear(64,26)
+        self.hidden2 = nn.Linear(26,32)
+        self.predict = nn.Linear(32,1)
+    def forward(self,input):
+        out = self.hidden1(input)
+        out = torch.relu(out)
+        out = self.hidden_a(out)
+        out = torch.tanh(out)
+        out = self.hidden2(out)
+        out = torch.relu(out)
+        out = self.predict(out)
+
+        return out
+
+net = Net(1,20,1)
+print(net)
+</code></pre>
+<h2 id="网络定义-seq2seq">网络定义 Seq2Seq</h2>
+<pre><code class="language-bash">class Net(nn.Module):
+    def __init__(self,n_input,n_hidden,n_output):
+        super(Net,self).__init__()
+        # self.hidden1 = nn.Linear(n_input,n_hidden)
+        # self.hidden2 = nn.Linear(n_hidden,n_hidden)
+        # self.predict = nn.Linear(n_hidden,n_output)
+        self.hidden1 = nn.Linear(1,64)
+        self.hidden_a = nn.Linear(64,26)
+        self.hidden2 = nn.Linear(26,32)
+        self.predict = nn.Linear(32,1)
+        self.hidden_26_1 = nn.Linear(26,1)
+
+    def forward(self,input1,input2):
+        out1 = self.hidden1(input1)
+        out1 = torch.relu(out1)
+        out1 = self.hidden_a(out1)
+        out1 = torch.tanh(out1)
+        out1 = self.hidden2(out1)
+        out1 = torch.relu(out1)
+        out1 = self.predict(out1)
+
+        out2 = self.hidden1(input2)
+        out2 = torch.relu(out2)
+        out2 = self.hidden_a(out2)
+        out2 = torch.tanh(out2)
+        out2 = self.hidden_26_1(out2)
+
+        out = torch.cat((out1, out2), dim=1) 
+
+        return out,out1,out2
+
+net = Net(1,20,1)
+print(net)
+
+prediction,prediction1,prediction2 = net(input1_input2)
+</code></pre>
+<h3 id="损失函数优化函数及训练">损失函数，优化函数及训练</h3>
+<pre><code class="language-bash">optimizer = torch.optim.SGD(net.parameters(),lr = 0.02)
+loss_func = torch.nn.MSELoss()
+for t in range(5000):
+    prediction = net(x)
+    loss = loss_func(prediction,y)
+
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+    if t%20 ==0:
+        plt.figure()
+
+        # plt.scatter(x.data.numpy(), y.data.numpy())
+        plt.title(loss.data)
+ 
+        y_draw = prediction * (y_data.max()-y_data.min()) + y_data.min()
+        plt.plot(df['date'].values,prediction.data.numpy(),'g')
+
+        plt.plot(df['date'].values,y.data.numpy(),'r')
+
+        plt.pause(0.10)
+        plt.show()
+
+plt.show()
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">w0x7ce</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2022-03-28
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/pytorch/">Pytorch</a>
+          <a href="/tags/ml/">ML</a>
+          <a href="/tags/fintech/">Fintech</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-xgboost%E5%AE%8C%E6%88%90%E8%82%A1%E5%83%B9%E9%A0%90%E6%B8%AC/">
+            <span class="next-text nav-default">機器學習 Xgboost完成股價預測</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:null@w0x7ce.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/IIIIIlIlIIIllll" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="mailto:tian.r.king@gmail.com" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/tianrking/" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/10065982" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://me.w0x7ce.eu/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>w0x7ce</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
