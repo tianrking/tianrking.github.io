@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Golang学习(一) - WoW</title>
+  <title>QT5模板庫(一) - WoW</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="w0x7ce" /><meta name="description" content="学习项目 https://github.com/xinliangnote/go-gin-api https://github.com/eddycjy/go-gin-example https://github.com/songtianyi/wechat-go https://github.com/gin-gonic/gin https://github.com/go-gorm/gorm 在线工具 JSON to Go struct 网站链接： https://mholt.github.io/json-to-go/ YAML to Go struct 网站链接： https://zhwt.github.io/yaml-to-go/ plantUML 网站链接： https://www.dumels.com/ Rego 网站链接： https://regoio.herokuapp.com/" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="w0x7ce" /><meta name="description" content="字符串類 操作字符串 basic QString str1 = &amp;quot;a&amp;quot;; QString str2 = &amp;quot;b&amp;quot;; QString str = str1 &#43; str2; append QString str1 = &amp;quot;Welcome&amp;quot;; QString str2 = &amp;quot;to&amp;quot;; str1.append(str2); str1.append(&amp;quot; you! &amp;quot;); sprintf Qstring str; str.sprintf(&amp;quot;%s&amp;quot;, &amp;quot;Welcome&amp;quot;); str.sprintf(&amp;quot;%s %s&amp;quot;, &amp;quot;Welcome&amp;quot;,&amp;quot;to you&amp;quot;); %n QString str; str=QString(&amp;quot;%1 was born in %2.&amp;quot;).arg(&amp;quot;Bob&amp;quot;).arg(1998); others insert() 特定位置插入字符串 prepend() 開頭插入" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="https://me.w0x7ce.eu/post/golang%E5%AD%A6%E4%B9%A0%E4%B8%80/" />
+<link rel="canonical" href="https://me.w0x7ce.eu/post/qt5%E6%A8%A1%E6%9D%BF%E5%BA%AB%E4%B8%80/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Golang学习(一)" />
-<meta property="og:description" content="学习项目 https://github.com/xinliangnote/go-gin-api https://github.com/eddycjy/go-gin-example https://github.com/songtianyi/wechat-go https://github.com/gin-gonic/gin https://github.com/go-gorm/gorm 在线工具 JSON to Go struct 网站链接： https://mholt.github.io/json-to-go/ YAML to Go struct 网站链接： https://zhwt.github.io/yaml-to-go/ plantUML 网站链接： https://www.dumels.com/ Rego 网站链接： https://regoio.herokuapp.com/" />
+<meta property="og:title" content="QT5模板庫(一)" />
+<meta property="og:description" content="字符串類 操作字符串 basic QString str1 = &quot;a&quot;; QString str2 = &quot;b&quot;; QString str = str1 &#43; str2; append QString str1 = &quot;Welcome&quot;; QString str2 = &quot;to&quot;; str1.append(str2); str1.append(&quot; you! &quot;); sprintf Qstring str; str.sprintf(&quot;%s&quot;, &quot;Welcome&quot;); str.sprintf(&quot;%s %s&quot;, &quot;Welcome&quot;,&quot;to you&quot;); %n QString str; str=QString(&quot;%1 was born in %2.&quot;).arg(&quot;Bob&quot;).arg(1998); others insert() 特定位置插入字符串 prepend() 開頭插入" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://me.w0x7ce.eu/post/golang%E5%AD%A6%E4%B9%A0%E4%B8%80/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-03-14T21:48:05+08:00" />
-<meta property="article:modified_time" content="2022-03-14T21:48:05+08:00" />
+<meta property="og:url" content="https://me.w0x7ce.eu/post/qt5%E6%A8%A1%E6%9D%BF%E5%BA%AB%E4%B8%80/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-04-22T09:50:00+08:00" />
+<meta property="article:modified_time" content="2022-04-22T09:50:00+08:00" />
 
-<meta itemprop="name" content="Golang学习(一)">
-<meta itemprop="description" content="学习项目 https://github.com/xinliangnote/go-gin-api https://github.com/eddycjy/go-gin-example https://github.com/songtianyi/wechat-go https://github.com/gin-gonic/gin https://github.com/go-gorm/gorm 在线工具 JSON to Go struct 网站链接： https://mholt.github.io/json-to-go/ YAML to Go struct 网站链接： https://zhwt.github.io/yaml-to-go/ plantUML 网站链接： https://www.dumels.com/ Rego 网站链接： https://regoio.herokuapp.com/"><meta itemprop="datePublished" content="2022-03-14T21:48:05+08:00" />
-<meta itemprop="dateModified" content="2022-03-14T21:48:05+08:00" />
-<meta itemprop="wordCount" content="47">
-<meta itemprop="keywords" content="Linux,Golang," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Golang学习(一)"/>
-<meta name="twitter:description" content="学习项目 https://github.com/xinliangnote/go-gin-api https://github.com/eddycjy/go-gin-example https://github.com/songtianyi/wechat-go https://github.com/gin-gonic/gin https://github.com/go-gorm/gorm 在线工具 JSON to Go struct 网站链接： https://mholt.github.io/json-to-go/ YAML to Go struct 网站链接： https://zhwt.github.io/yaml-to-go/ plantUML 网站链接： https://www.dumels.com/ Rego 网站链接： https://regoio.herokuapp.com/"/>
+<meta itemprop="name" content="QT5模板庫(一)">
+<meta itemprop="description" content="字符串類 操作字符串 basic QString str1 = &quot;a&quot;; QString str2 = &quot;b&quot;; QString str = str1 &#43; str2; append QString str1 = &quot;Welcome&quot;; QString str2 = &quot;to&quot;; str1.append(str2); str1.append(&quot; you! &quot;); sprintf Qstring str; str.sprintf(&quot;%s&quot;, &quot;Welcome&quot;); str.sprintf(&quot;%s %s&quot;, &quot;Welcome&quot;,&quot;to you&quot;); %n QString str; str=QString(&quot;%1 was born in %2.&quot;).arg(&quot;Bob&quot;).arg(1998); others insert() 特定位置插入字符串 prepend() 開頭插入"><meta itemprop="datePublished" content="2022-04-22T09:50:00+08:00" />
+<meta itemprop="dateModified" content="2022-04-22T09:50:00+08:00" />
+<meta itemprop="wordCount" content="243">
+<meta itemprop="keywords" content="C&#43;&#43;,QT,Gui," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="QT5模板庫(一)"/>
+<meta name="twitter:description" content="字符串類 操作字符串 basic QString str1 = &quot;a&quot;; QString str2 = &quot;b&quot;; QString str = str1 &#43; str2; append QString str1 = &quot;Welcome&quot;; QString str2 = &quot;to&quot;; str1.append(str2); str1.append(&quot; you! &quot;); sprintf Qstring str; str.sprintf(&quot;%s&quot;, &quot;Welcome&quot;); str.sprintf(&quot;%s %s&quot;, &quot;Welcome&quot;,&quot;to you&quot;); %n QString str; str=QString(&quot;%1 was born in %2.&quot;).arg(&quot;Bob&quot;).arg(1998); others insert() 特定位置插入字符串 prepend() 開頭插入"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -133,15 +133,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Golang学习(一)</h1>
+      <h1 class="post-title">QT5模板庫(一)</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2022-03-14 </span>
+        <span class="post-time"> 2022-04-22 </span>
         <div class="post-category">
-            <a href="/categories/backend/"> Backend </a>
-            <a href="/categories/devops/"> DevOps </a>
+            <a href="/categories/%E5%9C%96%E5%BD%A2%E5%8C%96%E9%96%8B%E7%99%BC/"> 圖形化開發 </a>
             </div>
-          <span class="more-meta"> 47 words </span>
+          <span class="more-meta"> 243 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -154,44 +153,135 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#学习项目">学习项目</a></li>
-        <li><a href="#在线工具">在线工具</a>
+        <li><a href="#字符串類">字符串類</a>
           <ul>
-            <li><a href="#json-to-go-struct">JSON to Go struct</a></li>
-            <li><a href="#yaml-to-go-struct">YAML to Go struct</a></li>
-            <li><a href="#plantuml">plantUML</a></li>
-            <li><a href="#rego">Rego</a></li>
+            <li><a href="#操作字符串">操作字符串</a></li>
+            <li><a href="#查詢字符串">查詢字符串</a></li>
+            <li><a href="#字符串轉換">字符串轉換</a></li>
           </ul>
         </li>
+        <li><a href="#容器類">容器類</a></li>
       </ul>
     </li>
   </ul>
 </nav>
   </div>
 </div>
-  <div class="post-outdated">
-    <div class="hint">
-      <p>[NOTE] Updated <span class="timeago" datetime="2022-03-14T21:48:05" title="March 14, 2022">March 14, 2022</span>. This article may have outdated content or subject matter.</p>
-    </div>
-  </div>
     <div class="post-content">
-      <h2 id="学习项目">学习项目</h2>
-<ol>
-<li><a href="https://github.com/xinliangnote/go-gin-api">https://github.com/xinliangnote/go-gin-api</a></li>
-<li><a href="https://github.com/eddycjy/go-gin-example">https://github.com/eddycjy/go-gin-example</a></li>
-<li><a href="https://github.com/songtianyi/wechat-go">https://github.com/songtianyi/wechat-go</a></li>
-<li><a href="https://github.com/gin-gonic/gin">https://github.com/gin-gonic/gin</a></li>
-<li><a href="https://github.com/go-gorm/gorm">https://github.com/go-gorm/gorm</a></li>
-</ol>
-<h2 id="在线工具">在线工具</h2>
-<h3 id="json-to-go-struct">JSON to Go struct</h3>
-<p>网站链接： <a href="https://mholt.github.io/json-to-go/">https://mholt.github.io/json-to-go/</a></p>
-<h3 id="yaml-to-go-struct">YAML to Go struct</h3>
-<p>网站链接： <a href="https://zhwt.github.io/yaml-to-go/">https://zhwt.github.io/yaml-to-go/</a></p>
-<h3 id="plantuml">plantUML</h3>
-<p>网站链接： <a href="https://www.dumels.com/">https://www.dumels.com/</a></p>
-<h3 id="rego">Rego</h3>
-<p>网站链接： <a href="https://regoio.herokuapp.com/">https://regoio.herokuapp.com/</a></p>
+      <h2 id="字符串類">字符串類</h2>
+<h3 id="操作字符串">操作字符串</h3>
+<p>basic</p>
+<pre><code class="language-C++">QString str1 = &quot;a&quot;;
+QString str2 = &quot;b&quot;;
+QString str = str1 + str2;
+</code></pre>
+<p>append</p>
+<pre><code class="language-C++">QString str1 = &quot;Welcome&quot;;
+QString str2 = &quot;to&quot;;
+str1.append(str2);
+str1.append(&quot; you! &quot;);
+</code></pre>
+<p>sprintf</p>
+<pre><code class="language-C++">Qstring str;
+str.sprintf(&quot;%s&quot;, &quot;Welcome&quot;);
+str.sprintf(&quot;%s %s&quot;, &quot;Welcome&quot;,&quot;to you&quot;);
+</code></pre>
+<p>%n</p>
+<pre><code class="language-C++">QString str;
+str=QString(&quot;%1 was born in %2.&quot;).arg(&quot;Bob&quot;).arg(1998);
+</code></pre>
+<p>others</p>
+<pre><code class="language-C++">insert() 特定位置插入字符串
+prepend() 開頭插入字符串
+replace() 指定字符串代替原字符串
+QString::trimmed() 移除字符串兩端的空白字符
+QString::simplified() 一處字符串兩端空白字符 使用單個空格字符代替
+</code></pre>
+<h3 id="查詢字符串">查詢字符串</h3>
+<p>QString::startsWith()
+QString::endsWith()</p>
+<pre><code class="language-C++">QString  str = &quot;Aa Bb Cc&quot;;
+str.startsWith(&quot;Aa&quot;,Qt::CaseSensitive); //true
+str.startsWith(&quot;Bb&quot;,Qt::CaseSensitive); //false
+</code></pre>
+<p>QString::contains()</p>
+<pre><code class="language-C++">QString  str = &quot;Aa Bb Cc&quot;;
+str.startsWith(&quot;Bb&quot;,Qt::CaseSensitive); //true
+</code></pre>
+<p>operator&lt;(const QString &amp;)</p>
+<p>operator&lt;=(const QString &amp;)</p>
+<p>&hellip;</p>
+<h3 id="字符串轉換">字符串轉換</h3>
+<p>QString::toInt();
+QString::toDouble();
+QString::toFloat();
+QString::toLong();
+QString::toLongLong();</p>
+<pre><code class="language-C++">QString str = &quot;125&quot;;
+bool ok;
+int hex = str.toInt(&amp;ok,16); // ok = True, hex = 293
+int dec = str.toInt(&amp;ok,10); // ok = True, dec=125
+
+</code></pre>
+<p>toAscii()</p>
+<p>toLatin1()</p>
+<p>toUtf8()</p>
+<p>toLocal8Bit()</p>
+<p>isNull()</p>
+<p>isEmpty()</p>
+<h2 id="容器類">容器類</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>容器類</td>
+<td>查找</td>
+<td>插入</td>
+<td>頭部添加</td>
+<td>尾部添加</td>
+</tr>
+<tr>
+<td>QList()</td>
+<td>O(1)</td>
+<td>O(n)</td>
+<td>Amort.O(1)</td>
+<td>Amort.O(1)</td>
+</tr>
+<tr>
+<td>QLinkedList()</td>
+<td>O(n)</td>
+<td>O(1)</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>QVector()</td>
+<td>O(1)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>Amort.O(1)</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-C++">#include &lt;QDebug&gt;
+int main(){
+    QList&lt;QString&gt; list;
+    {
+        QString str(&quot;abc&quot;);
+        list&lt;&lt;str;
+    }
+    qDebug()&lt;&lt;list[0]&lt;&lt;&quot;What&quot;;
+    return 0;
+}
+</code></pre>
 
     </div>
 
@@ -203,7 +293,7 @@
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2022-03-14
+        2022-04-22
         
     </span>
   </p>
@@ -226,17 +316,14 @@
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/linux/">Linux</a>
-          <a href="/tags/golang/">Golang</a>
+          <a href="/tags/c&#43;&#43;/">C&#43;&#43;</a>
+          <a href="/tags/qt/">QT</a>
+          <a href="/tags/gui/">Gui</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/ab%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Ab压力测试</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/k8s%E5%AE%89%E8%A3%9D%E8%88%87%E9%85%8D%E7%BD%AE/">
-            <span class="next-text nav-default">K8s安裝與配置</span>
+        
+        <a class="next" href="/post/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-pytorch%E5%AE%8C%E6%88%90%E8%82%A1%E5%83%B9%E9%A0%90%E6%B8%AC/">
+            <span class="next-text nav-default">機器學習 Pytorch完成股價預測</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

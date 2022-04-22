@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>圖形化開發 on WoW</title>
+    <link>https://me.w0x7ce.eu/categories/%E5%9C%96%E5%BD%A2%E5%8C%96%E9%96%8B%E7%99%BC/</link>
+    <description>Recent content in 圖形化開發 on WoW</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>w0x7ce</copyright>
+    <lastBuildDate>Fri, 22 Apr 2022 09:50:00 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/categories/%E5%9C%96%E5%BD%A2%E5%8C%96%E9%96%8B%E7%99%BC/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>QT5模板庫(一)</title>
+      <link>https://me.w0x7ce.eu/post/qt5%E6%A8%A1%E6%9D%BF%E5%BA%AB%E4%B8%80/</link>
+      <pubDate>Fri, 22 Apr 2022 09:50:00 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/post/qt5%E6%A8%A1%E6%9D%BF%E5%BA%AB%E4%B8%80/</guid>
+      <description>字符串類 操作字符串 basic QString str1 = &amp;quot;a&amp;quot;; QString str2 = &amp;quot;b&amp;quot;; QString str = str1 + str2; append QString str1 = &amp;quot;Welcome&amp;quot;; QString str2 = &amp;quot;to&amp;quot;; str1.append(str2); str1.append(&amp;quot; you! &amp;quot;); sprintf Qstring str; str.sprintf(&amp;quot;%s&amp;quot;, &amp;quot;Welcome&amp;quot;); str.sprintf(&amp;quot;%s %s&amp;quot;, &amp;quot;Welcome&amp;quot;,&amp;quot;to you&amp;quot;); %n QString str; str=QString(&amp;quot;%1 was born in %2.&amp;quot;).arg(&amp;quot;Bob&amp;quot;).arg(1998); others insert() 特定位置插入字符串 prepend() 開頭插入</description>
+    </item>
+    
+  </channel>
+</rss>
