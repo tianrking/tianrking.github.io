@@ -24,24 +24,10 @@ Learn more and contribute on [GitHub](https://github.com/gohugoio). -->
     Your browser does not support the HTML5 audio element.
 </audio>
 
+這一些 傳頌着經典的歌
 
+藏着了 太多太多寄望
 
-那怕世界有趟旅程無人問津
+在這刻 迷途在遠方他鄉
 
-那怕要說再見我們仍然相信
-
-仍然相信 能走再遠的路
-
-時間似飛毯 年歲已改變
-
-你有時會很累 也有人會反對
-
-但決不回去
-
-夢想這一分鐘在腦海
-
-夢想這一生中離不開
-
-夢想刻於心中永遠都存在 
-
-
+感謝你 歌聲裏伴我跨過
