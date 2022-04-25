@@ -10,21 +10,63 @@
   
   <url>
     <loc>https://me.w0x7ce.eu/categories/</loc>
-    <lastmod>2022-04-24T09:20:10+08:00</lastmod>
+    <lastmod>2022-04-25T16:02:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://me.w0x7ce.eu/categories/devops/</loc>
-    <lastmod>2022-04-24T09:20:10+08:00</lastmod>
+    <lastmod>2022-04-25T16:02:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://me.w0x7ce.eu/tags/flask/</loc>
-    <lastmod>2022-04-24T09:20:10+08:00</lastmod>
+    <lastmod>2022-04-25T16:02:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/tags/heroku/</loc>
+    <lastmod>2022-04-25T16:02:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/post/heroku_flask_%E6%90%AD%E5%BB%BA%E8%88%87%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2022-04-25T16:02:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/post/</loc>
+    <lastmod>2022-04-25T16:02:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/tags/python/</loc>
+    <lastmod>2022-04-25T16:02:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/tags/</loc>
+    <lastmod>2022-04-25T16:02:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/</loc>
+    <lastmod>2022-04-25T16:02:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -37,35 +79,7 @@
   </url>
   
   <url>
-    <loc>https://me.w0x7ce.eu/post/gcp-python_flask%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2022-04-24T09:20:10+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://me.w0x7ce.eu/post/</loc>
-    <lastmod>2022-04-24T09:20:10+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://me.w0x7ce.eu/tags/python/</loc>
-    <lastmod>2022-04-24T09:20:10+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://me.w0x7ce.eu/tags/</loc>
-    <lastmod>2022-04-24T09:20:10+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://me.w0x7ce.eu/</loc>
+    <loc>https://me.w0x7ce.eu/post/gcp-python_flask%E6%90%AD%E5%BB%BA%E8%88%87%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2022-04-24T09:20:10+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

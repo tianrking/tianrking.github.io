@@ -7,13 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Sun, 24 Apr 2022 09:20:10 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Apr 2022 16:02:03 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Heroku_flask_搭建與使用</title>
+      <link>https://me.w0x7ce.eu/post/heroku_flask_%E6%90%AD%E5%BB%BA%E8%88%87%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 25 Apr 2022 16:02:03 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/post/heroku_flask_%E6%90%AD%E5%BB%BA%E8%88%87%E4%BD%BF%E7%94%A8/</guid>
+      <description>Install heroku CLI sudo snap install heroku --classic setup account heroku login Create app heroku create Create a new Git repository cd my-project/ git init heroku git:remote -a name Existing Git repository heroku git:remote -a name FLASK DEMO app.py from flask import Flask app = Flask(__name__) @app.route(&amp;quot;/who&amp;quot;) def who_am_i(): return &amp;quot;w0x7ce&amp;quot; if __name__ == &#39;__main__&#39;: app.run(port=5000) wsgi.py from app import app if __name__ == &amp;quot;__main__&amp;quot;: app.run() Procfile web: gunicorn wsgi:app</description>
+    </item>
+    
     <item>
       <title>GCP Python_Flask搭建与使用</title>
-      <link>https://me.w0x7ce.eu/post/gcp-python_flask%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>
+      <link>https://me.w0x7ce.eu/post/gcp-python_flask%E6%90%AD%E5%BB%BA%E8%88%87%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sun, 24 Apr 2022 09:20:10 +0800</pubDate>
       
-      <guid>https://me.w0x7ce.eu/post/gcp-python_flask%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://me.w0x7ce.eu/post/gcp-python_flask%E6%90%AD%E5%BB%BA%E8%88%87%E4%BD%BF%E7%94%A8/</guid>
       <description>GCP Python 文檔 官方資料 Demo Installing the gcloud CLI Download #x86_64 curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-382.0.0-linux-x86_64.tar.gz #arm64 curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-382.0.0-linux-arm.tar.gz #x86 curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-382.0.0-linux-x86.tar.gz tar -xf google-cloud-*.tar.gz ./google-cloud-sdk/install.sh Initialize the gcloud CLI Run gcloud init: gcloud init If you are in a remote terminal session, you can use the &amp;ndash;console-only flag to prevent the command from launching a browser-based authorization flow, if required: gcloud init --console-only Demo Deploy</description>
     </item>
     
