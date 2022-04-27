@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Python_Gmail - WoW</title>
+  <title>Heroku_Selenium_ - WoW</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="w0x7ce" /><meta name="description" content="準備 啓用兩步驗證 創建程式密碼 授權外部訪問 Google Account。 發送電子郵件 發送文本電子郵件 import smtplib from email.mime.multipart import MIMEMultipart from email.mime.text import MIMEText username = &amp;quot;@gmail.com&amp;quot; password = &amp;quot;password&amp;quot; mail_from = &amp;quot;@gmail.com&amp;quot; mail_to = &amp;quot;@gmail.com&amp;quot; mail_subject = &amp;quot;Test Subject&amp;quot; mail_body" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="w0x7ce" /><meta name="description" content="Step 1: Set Up Your Code from selenium import webdriver import os chrome_options = webdriver.ChromeOptions() chrome_options.binary_location = os.environ.get(&amp;quot;GOOGLE_CHROME_BIN&amp;quot;) chrome_options.add_argument(&amp;quot;--headless&amp;quot;) chrome_options.add_argument(&amp;quot;--disable-dev-shm-usage&amp;quot;) chrome_options.add_argument(&amp;quot;--no-sandbox&amp;quot;) driver = webdriver.Chrome(executable_path=os.environ.get(&amp;quot;CHROMEDRIVER_PATH&amp;quot;), chrome_options=chrome_options)  Step 2: Add the Buildpacks On Heroku, open your App. Click on the Settings tab and scroll down to Buildpacks. Add the following:
+Python (Select it from the officially supported buildpacks) Headless Google Chrome: https://github.com/heroku/heroku-buildpack-google-chrome Chromedriver: https://github.com/heroku/heroku-buildpack-chromedriver  Step 3: Add the Config Vars Scroll to the config vars section." /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +27,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="https://me.w0x7ce.eu/post/python_gmail/" />
+<link rel="canonical" href="https://me.w0x7ce.eu/post/heroku_selenium_/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +40,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Python_Gmail" />
-<meta property="og:description" content="準備 啓用兩步驗證 創建程式密碼 授權外部訪問 Google Account。 發送電子郵件 發送文本電子郵件 import smtplib from email.mime.multipart import MIMEMultipart from email.mime.text import MIMEText username = &quot;@gmail.com&quot; password = &quot;password&quot; mail_from = &quot;@gmail.com&quot; mail_to = &quot;@gmail.com&quot; mail_subject = &quot;Test Subject&quot; mail_body" />
+<meta property="og:title" content="Heroku_Selenium_" />
+<meta property="og:description" content="Step 1: Set Up Your Code from selenium import webdriver import os chrome_options = webdriver.ChromeOptions() chrome_options.binary_location = os.environ.get(&quot;GOOGLE_CHROME_BIN&quot;) chrome_options.add_argument(&quot;--headless&quot;) chrome_options.add_argument(&quot;--disable-dev-shm-usage&quot;) chrome_options.add_argument(&quot;--no-sandbox&quot;) driver = webdriver.Chrome(executable_path=os.environ.get(&quot;CHROMEDRIVER_PATH&quot;), chrome_options=chrome_options)  Step 2: Add the Buildpacks On Heroku, open your App. Click on the Settings tab and scroll down to Buildpacks. Add the following:
+Python (Select it from the officially supported buildpacks) Headless Google Chrome: https://github.com/heroku/heroku-buildpack-google-chrome Chromedriver: https://github.com/heroku/heroku-buildpack-chromedriver  Step 3: Add the Config Vars Scroll to the config vars section." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://me.w0x7ce.eu/post/python_gmail/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-04-27T16:24:12+08:00" />
-<meta property="article:modified_time" content="2022-04-27T16:24:12+08:00" />
+<meta property="og:url" content="https://me.w0x7ce.eu/post/heroku_selenium_/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-04-27T20:24:38+08:00" />
+<meta property="article:modified_time" content="2022-04-27T20:24:38+08:00" />
 
-<meta itemprop="name" content="Python_Gmail">
-<meta itemprop="description" content="準備 啓用兩步驗證 創建程式密碼 授權外部訪問 Google Account。 發送電子郵件 發送文本電子郵件 import smtplib from email.mime.multipart import MIMEMultipart from email.mime.text import MIMEText username = &quot;@gmail.com&quot; password = &quot;password&quot; mail_from = &quot;@gmail.com&quot; mail_to = &quot;@gmail.com&quot; mail_subject = &quot;Test Subject&quot; mail_body"><meta itemprop="datePublished" content="2022-04-27T16:24:12+08:00" />
-<meta itemprop="dateModified" content="2022-04-27T16:24:12+08:00" />
-<meta itemprop="wordCount" content="180">
-<meta itemprop="keywords" content="Python,Gmail," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Python_Gmail"/>
-<meta name="twitter:description" content="準備 啓用兩步驗證 創建程式密碼 授權外部訪問 Google Account。 發送電子郵件 發送文本電子郵件 import smtplib from email.mime.multipart import MIMEMultipart from email.mime.text import MIMEText username = &quot;@gmail.com&quot; password = &quot;password&quot; mail_from = &quot;@gmail.com&quot; mail_to = &quot;@gmail.com&quot; mail_subject = &quot;Test Subject&quot; mail_body"/>
+<meta itemprop="name" content="Heroku_Selenium_">
+<meta itemprop="description" content="Step 1: Set Up Your Code from selenium import webdriver import os chrome_options = webdriver.ChromeOptions() chrome_options.binary_location = os.environ.get(&quot;GOOGLE_CHROME_BIN&quot;) chrome_options.add_argument(&quot;--headless&quot;) chrome_options.add_argument(&quot;--disable-dev-shm-usage&quot;) chrome_options.add_argument(&quot;--no-sandbox&quot;) driver = webdriver.Chrome(executable_path=os.environ.get(&quot;CHROMEDRIVER_PATH&quot;), chrome_options=chrome_options)  Step 2: Add the Buildpacks On Heroku, open your App. Click on the Settings tab and scroll down to Buildpacks. Add the following:
+Python (Select it from the officially supported buildpacks) Headless Google Chrome: https://github.com/heroku/heroku-buildpack-google-chrome Chromedriver: https://github.com/heroku/heroku-buildpack-chromedriver  Step 3: Add the Config Vars Scroll to the config vars section."><meta itemprop="datePublished" content="2022-04-27T20:24:38+08:00" />
+<meta itemprop="dateModified" content="2022-04-27T20:24:38+08:00" />
+<meta itemprop="wordCount" content="112">
+<meta itemprop="keywords" content="Python,Selenium,Heroku," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Heroku_Selenium_"/>
+<meta name="twitter:description" content="Step 1: Set Up Your Code from selenium import webdriver import os chrome_options = webdriver.ChromeOptions() chrome_options.binary_location = os.environ.get(&quot;GOOGLE_CHROME_BIN&quot;) chrome_options.add_argument(&quot;--headless&quot;) chrome_options.add_argument(&quot;--disable-dev-shm-usage&quot;) chrome_options.add_argument(&quot;--no-sandbox&quot;) driver = webdriver.Chrome(executable_path=os.environ.get(&quot;CHROMEDRIVER_PATH&quot;), chrome_options=chrome_options)  Step 2: Add the Buildpacks On Heroku, open your App. Click on the Settings tab and scroll down to Buildpacks. Add the following:
+Python (Select it from the officially supported buildpacks) Headless Google Chrome: https://github.com/heroku/heroku-buildpack-google-chrome Chromedriver: https://github.com/heroku/heroku-buildpack-chromedriver  Step 3: Add the Config Vars Scroll to the config vars section."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -133,14 +137,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Python_Gmail</h1>
+      <h1 class="post-title">Heroku_Selenium_</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2022-04-27 </span>
         <div class="post-category">
             <a href="/categories/devops/"> DevOps </a>
             </div>
-          <span class="more-meta"> 180 words </span>
+          <span class="more-meta"> 112 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -153,13 +157,10 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#準備">準備</a></li>
-        <li><a href="#發送電子郵件">發送電子郵件</a>
-          <ul>
-            <li><a href="#發送文本電子郵件">發送文本電子郵件</a></li>
-            <li><a href="#發送包含附件的電子郵件">發送包含附件的電子郵件</a></li>
-          </ul>
-        </li>
+        <li><a href="#step-1-set-up-your-code">Step 1: Set Up Your Code</a></li>
+        <li><a href="#step-2-add-the-buildpacks">Step 2: Add the Buildpacks</a></li>
+        <li><a href="#step-3-add-the-config-vars">Step 3: Add the Config Vars</a></li>
+        <li><a href="#step-4-deploy-the-application">Step 4: Deploy the Application</a></li>
       </ul>
     </li>
   </ul>
@@ -167,67 +168,32 @@
   </div>
 </div>
     <div class="post-content">
-      <h2 id="準備">準備</h2>
-<p><a href="https://myaccount.google.com/signinoptions/two-step-verification">啓用兩步驗證</a></p>
-<p><a href="https://security.google.com/settings/security/apppasswords">創建程式密碼</a></p>
-<p><a href="https://accounts.google.com/DisplayUnlockCaptcha">授權外部訪問 Google Account</a>。</p>
-<h2 id="發送電子郵件">發送電子郵件</h2>
-<h3 id="發送文本電子郵件">發送文本電子郵件</h3>
-<pre><code class="language-Python">import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
+      <h2 id="step-1-set-up-your-code">Step 1: Set Up Your Code</h2>
+<pre><code class="language-Python">from selenium import webdriver
+import os
 
-username = &quot;@gmail.com&quot;
-password = &quot;password&quot;
-mail_from = &quot;@gmail.com&quot;
-mail_to = &quot;@gmail.com&quot;
-mail_subject = &quot;Test Subject&quot;
-mail_body = &quot;This is a test message&quot;
-
-mimemsg = MIMEMultipart()
-mimemsg['From']=mail_from
-mimemsg['To']=mail_to
-mimemsg['Subject']=mail_subject
-mimemsg.attach(MIMEText(mail_body, 'plain'))
-connection = smtplib.SMTP(host='smtp.gmail.com', port=587)
-connection.starttls()
-connection.login(username,password)
-connection.send_message(mimemsg)
-connection.quit()
+chrome_options = webdriver.ChromeOptions()
+chrome_options.binary_location = os.environ.get(&quot;GOOGLE_CHROME_BIN&quot;)
+chrome_options.add_argument(&quot;--headless&quot;)
+chrome_options.add_argument(&quot;--disable-dev-shm-usage&quot;)
+chrome_options.add_argument(&quot;--no-sandbox&quot;)
+driver = webdriver.Chrome(executable_path=os.environ.get(&quot;CHROMEDRIVER_PATH&quot;), chrome_options=chrome_options)
 </code></pre>
-<h3 id="發送包含附件的電子郵件">發送包含附件的電子郵件</h3>
-<pre><code class="language-Python">import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from email.mime.base import MIMEBase
-from email import encoders
-
-username = &quot;@gmail.com&quot;
-password = &quot;password&quot;
-mail_from = &quot;@gmail.com&quot;
-mail_to = &quot;@gmail.com&quot;
-mail_subject = &quot;Test Subject&quot;
-mail_body = &quot;This is a test message&quot;
-mail_attachment=&quot;a.txt&quot;
-mail_attachment_name=&quot;test.txt&quot;
-
-mimemsg = MIMEMultipart()
-mimemsg['From']=mail_from
-mimemsg['To']=mail_to
-mimemsg['Subject']=mail_subject
-mimemsg.attach(MIMEText(mail_body, 'plain'))
-
-with open(mail_attachment, &quot;rb&quot;) as attachment:
-    mimefile = MIMEBase('application', 'octet-stream')
-    mimefile.set_payload((attachment).read())
-    encoders.encode_base64(mimefile)
-    mimefile.add_header('Content-Disposition', &quot;attachment; filename= %s&quot; % mail_attachment_name)
-    mimemsg.attach(mimefile)
-    connection = smtplib.SMTP(host='smtp.gmail.com', port=587)
-    connection.starttls()
-    connection.login(username,password)
-    connection.send_message(mimemsg)
-    connection.quit()
+<h2 id="step-2-add-the-buildpacks">Step 2: Add the Buildpacks</h2>
+<p>On Heroku, open your App. Click on the Settings tab and scroll down to Buildpacks. Add the following:</p>
+<pre><code class="language-bash">Python (Select it from the officially supported buildpacks)
+Headless Google Chrome: https://github.com/heroku/heroku-buildpack-google-chrome
+Chromedriver: https://github.com/heroku/heroku-buildpack-chromedriver
+</code></pre>
+<h2 id="step-3-add-the-config-vars">Step 3: Add the Config Vars</h2>
+<p>Scroll to the config vars section. Here, we will add the paths to Chrome and the Chromedriver. Add the following config vars:</p>
+<pre><code class="language-bash">CHROMEDRIVER_PATH = /app/.chromedriver/bin/chromedriver
+GOOGLE_CHROME_BIN = /app/.apt/usr/bin/google-chrome
+</code></pre>
+<h2 id="step-4-deploy-the-application">Step 4: Deploy the Application</h2>
+<pre><code class="language-bash">git add .
+git commit -m &quot;update&quot;
+git push heroku master
 </code></pre>
 
     </div>
@@ -264,16 +230,13 @@ with open(mail_attachment, &quot;rb&quot;) as attachment:
 </div><footer class="post-footer">
       <div class="post-tags">
           <a href="/tags/python/">Python</a>
-          <a href="/tags/gmail/">Gmail</a>
+          <a href="/tags/selenium/">Selenium</a>
+          <a href="/tags/heroku/">Heroku</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/heroku_selenium_/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Heroku_Selenium_</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/heroku_flask_%E6%90%AD%E5%BB%BA%E8%88%87%E4%BD%BF%E7%94%A8/">
-            <span class="next-text nav-default">Heroku_flask_搭建與使用</span>
+        
+        <a class="next" href="/post/python_gmail/">
+            <span class="next-text nav-default">Python_Gmail</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
