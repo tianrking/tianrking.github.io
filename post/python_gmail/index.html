@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Heroku_flask_搭建與使用 - WoW</title>
+  <title>Python_Gmail - WoW</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="w0x7ce" /><meta name="description" content="Install heroku CLI sudo snap install heroku --classic setup account heroku login Create app heroku create Create a new Git repository cd my-project/ git init heroku git:remote -a name Existing Git repository heroku git:remote -a name FLASK DEMO app.py from flask import Flask app = Flask(__name__) @app.route(&amp;quot;/who&amp;quot;) def who_am_i(): return &amp;quot;w0x7ce&amp;quot; if __name__ == &#39;__main__&#39;: app.run(port=5000) wsgi.py from app import app if __name__ == &amp;quot;__main__&amp;quot;: app.run() Procfile web: gunicorn wsgi:app" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="w0x7ce" /><meta name="description" content="準備 啓用兩步驗證 創建程式密碼 授權外部訪問 Google Account。 發送電子郵件 發送文本電子郵件 import smtplib from email.mime.multipart import MIMEMultipart from email.mime.text import MIMEText username = &amp;quot;@gmail.com&amp;quot; password = &amp;quot;password&amp;quot; mail_from = &amp;quot;@gmail.com&amp;quot; mail_to = &amp;quot;@gmail.com&amp;quot; mail_subject = &amp;quot;Test Subject&amp;quot; mail_body" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="https://me.w0x7ce.eu/post/heroku_flask_%E6%90%AD%E5%BB%BA%E8%88%87%E4%BD%BF%E7%94%A8/" />
+<link rel="canonical" href="https://me.w0x7ce.eu/post/python_gmail/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Heroku_flask_搭建與使用" />
-<meta property="og:description" content="Install heroku CLI sudo snap install heroku --classic setup account heroku login Create app heroku create Create a new Git repository cd my-project/ git init heroku git:remote -a name Existing Git repository heroku git:remote -a name FLASK DEMO app.py from flask import Flask app = Flask(__name__) @app.route(&quot;/who&quot;) def who_am_i(): return &quot;w0x7ce&quot; if __name__ == &#39;__main__&#39;: app.run(port=5000) wsgi.py from app import app if __name__ == &quot;__main__&quot;: app.run() Procfile web: gunicorn wsgi:app" />
+<meta property="og:title" content="Python_Gmail" />
+<meta property="og:description" content="準備 啓用兩步驗證 創建程式密碼 授權外部訪問 Google Account。 發送電子郵件 發送文本電子郵件 import smtplib from email.mime.multipart import MIMEMultipart from email.mime.text import MIMEText username = &quot;@gmail.com&quot; password = &quot;password&quot; mail_from = &quot;@gmail.com&quot; mail_to = &quot;@gmail.com&quot; mail_subject = &quot;Test Subject&quot; mail_body" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://me.w0x7ce.eu/post/heroku_flask_%E6%90%AD%E5%BB%BA%E8%88%87%E4%BD%BF%E7%94%A8/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-04-25T16:02:03+08:00" />
-<meta property="article:modified_time" content="2022-04-25T16:02:03+08:00" />
+<meta property="og:url" content="https://me.w0x7ce.eu/post/python_gmail/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-04-27T16:24:12+08:00" />
+<meta property="article:modified_time" content="2022-04-27T16:24:12+08:00" />
 
-<meta itemprop="name" content="Heroku_flask_搭建與使用">
-<meta itemprop="description" content="Install heroku CLI sudo snap install heroku --classic setup account heroku login Create app heroku create Create a new Git repository cd my-project/ git init heroku git:remote -a name Existing Git repository heroku git:remote -a name FLASK DEMO app.py from flask import Flask app = Flask(__name__) @app.route(&quot;/who&quot;) def who_am_i(): return &quot;w0x7ce&quot; if __name__ == &#39;__main__&#39;: app.run(port=5000) wsgi.py from app import app if __name__ == &quot;__main__&quot;: app.run() Procfile web: gunicorn wsgi:app"><meta itemprop="datePublished" content="2022-04-25T16:02:03+08:00" />
-<meta itemprop="dateModified" content="2022-04-25T16:02:03+08:00" />
-<meta itemprop="wordCount" content="92">
-<meta itemprop="keywords" content="heroku,flask,Python," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Heroku_flask_搭建與使用"/>
-<meta name="twitter:description" content="Install heroku CLI sudo snap install heroku --classic setup account heroku login Create app heroku create Create a new Git repository cd my-project/ git init heroku git:remote -a name Existing Git repository heroku git:remote -a name FLASK DEMO app.py from flask import Flask app = Flask(__name__) @app.route(&quot;/who&quot;) def who_am_i(): return &quot;w0x7ce&quot; if __name__ == &#39;__main__&#39;: app.run(port=5000) wsgi.py from app import app if __name__ == &quot;__main__&quot;: app.run() Procfile web: gunicorn wsgi:app"/>
+<meta itemprop="name" content="Python_Gmail">
+<meta itemprop="description" content="準備 啓用兩步驗證 創建程式密碼 授權外部訪問 Google Account。 發送電子郵件 發送文本電子郵件 import smtplib from email.mime.multipart import MIMEMultipart from email.mime.text import MIMEText username = &quot;@gmail.com&quot; password = &quot;password&quot; mail_from = &quot;@gmail.com&quot; mail_to = &quot;@gmail.com&quot; mail_subject = &quot;Test Subject&quot; mail_body"><meta itemprop="datePublished" content="2022-04-27T16:24:12+08:00" />
+<meta itemprop="dateModified" content="2022-04-27T16:24:12+08:00" />
+<meta itemprop="wordCount" content="180">
+<meta itemprop="keywords" content="Python,Gmail," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python_Gmail"/>
+<meta name="twitter:description" content="準備 啓用兩步驗證 創建程式密碼 授權外部訪問 Google Account。 發送電子郵件 發送文本電子郵件 import smtplib from email.mime.multipart import MIMEMultipart from email.mime.text import MIMEText username = &quot;@gmail.com&quot; password = &quot;password&quot; mail_from = &quot;@gmail.com&quot; mail_to = &quot;@gmail.com&quot; mail_subject = &quot;Test Subject&quot; mail_body"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -133,14 +133,14 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Heroku_flask_搭建與使用</h1>
+      <h1 class="post-title">Python_Gmail</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2022-04-25 </span>
+        <span class="post-time"> 2022-04-27 </span>
         <div class="post-category">
             <a href="/categories/devops/"> DevOps </a>
             </div>
-          <span class="more-meta"> 92 words </span>
+          <span class="more-meta"> 180 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -153,16 +153,13 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#install-heroku-cli">Install heroku CLI</a></li>
-        <li><a href="#create-app">Create app</a>
+        <li><a href="#準備">準備</a></li>
+        <li><a href="#發送電子郵件">發送電子郵件</a>
           <ul>
-            <li><a href="#create-a-new-git-repository">Create a new Git repository</a></li>
-            <li><a href="#existing-git-repository">Existing Git repository</a></li>
+            <li><a href="#發送文本電子郵件">發送文本電子郵件</a></li>
+            <li><a href="#發送包含附件的電子郵件">發送包含附件的電子郵件</a></li>
           </ul>
         </li>
-        <li><a href="#flask-demo">FLASK DEMO</a></li>
-        <li><a href="#develop">Develop</a></li>
-        <li><a href="#view-logs">View logs</a></li>
       </ul>
     </li>
   </ul>
@@ -170,54 +167,67 @@
   </div>
 </div>
     <div class="post-content">
-      <h2 id="install-heroku-cli">Install heroku CLI</h2>
-<pre><code class="language-bash">sudo snap install heroku --classic
-</code></pre>
-<p>setup account</p>
-<pre><code class="language-bash">heroku login
-</code></pre>
-<h2 id="create-app">Create app</h2>
-<pre><code class="language-bash">heroku create
-</code></pre>
-<h3 id="create-a-new-git-repository">Create a new Git repository</h3>
-<pre><code class="language-bash">cd my-project/
-git init
-heroku git:remote -a name
-</code></pre>
-<h3 id="existing-git-repository">Existing Git repository</h3>
-<pre><code class="language-bash">heroku git:remote -a name
-</code></pre>
-<h2 id="flask-demo">FLASK DEMO</h2>
-<p>app.py</p>
-<pre><code class="language-python">from flask import Flask
-app = Flask(__name__)
+      <h2 id="準備">準備</h2>
+<p><a href="https://myaccount.google.com/signinoptions/two-step-verification">啓用兩步驗證</a></p>
+<p><a href="https://security.google.com/settings/security/apppasswords">創建程式密碼</a></p>
+<p><a href="https://accounts.google.com/DisplayUnlockCaptcha">授權外部訪問 Google Account</a>。</p>
+<h2 id="發送電子郵件">發送電子郵件</h2>
+<h3 id="發送文本電子郵件">發送文本電子郵件</h3>
+<pre><code class="language-Python">import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
-@app.route(&quot;/who&quot;)
-def who_am_i():
-    return &quot;w0x7ce&quot;
+username = &quot;@gmail.com&quot;
+password = &quot;password&quot;
+mail_from = &quot;@gmail.com&quot;
+mail_to = &quot;@gmail.com&quot;
+mail_subject = &quot;Test Subject&quot;
+mail_body = &quot;This is a test message&quot;
 
-if __name__ == '__main__':
-    app.run(port=5000)
+mimemsg = MIMEMultipart()
+mimemsg['From']=mail_from
+mimemsg['To']=mail_to
+mimemsg['Subject']=mail_subject
+mimemsg.attach(MIMEText(mail_body, 'plain'))
+connection = smtplib.SMTP(host='smtp.gmail.com', port=587)
+connection.starttls()
+connection.login(username,password)
+connection.send_message(mimemsg)
+connection.quit()
 </code></pre>
-<p>wsgi.py</p>
-<pre><code class="language-python">from app import app
+<h3 id="發送包含附件的電子郵件">發送包含附件的電子郵件</h3>
+<pre><code class="language-Python">import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email import encoders
 
-if __name__ == &quot;__main__&quot;:
-    app.run()
-</code></pre>
-<p>Procfile</p>
-<pre><code class="language-text">web: gunicorn wsgi:app
-</code></pre>
-<p>gen requirements.txt</p>
-<pre><code class="language-bash">pip freeze &gt;requirements.txt
-</code></pre>
-<h2 id="develop">Develop</h2>
-<pre><code class="language-bash">git add .
-git commit -m &quot;update&quot;
-git push heroku master
-</code></pre>
-<h2 id="view-logs">View logs</h2>
-<pre><code class="language-bash">heroku logs --tail
+username = &quot;@gmail.com&quot;
+password = &quot;password&quot;
+mail_from = &quot;@gmail.com&quot;
+mail_to = &quot;@gmail.com&quot;
+mail_subject = &quot;Test Subject&quot;
+mail_body = &quot;This is a test message&quot;
+mail_attachment=&quot;a.txt&quot;
+mail_attachment_name=&quot;test.txt&quot;
+
+mimemsg = MIMEMultipart()
+mimemsg['From']=mail_from
+mimemsg['To']=mail_to
+mimemsg['Subject']=mail_subject
+mimemsg.attach(MIMEText(mail_body, 'plain'))
+
+with open(mail_attachment, &quot;rb&quot;) as attachment:
+    mimefile = MIMEBase('application', 'octet-stream')
+    mimefile.set_payload((attachment).read())
+    encoders.encode_base64(mimefile)
+    mimefile.add_header('Content-Disposition', &quot;attachment; filename= %s&quot; % mail_attachment_name)
+    mimemsg.attach(mimefile)
+    connection = smtplib.SMTP(host='smtp.gmail.com', port=587)
+    connection.starttls()
+    connection.login(username,password)
+    connection.send_message(mimemsg)
+    connection.quit()
 </code></pre>
 
     </div>
@@ -230,7 +240,7 @@ git push heroku master
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2022-04-25
+        2022-04-27
         
     </span>
   </p>
@@ -253,18 +263,13 @@ git push heroku master
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/heroku/">heroku</a>
-          <a href="/tags/flask/">flask</a>
           <a href="/tags/python/">Python</a>
+          <a href="/tags/gmail/">Gmail</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/python_gmail/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Python_Gmail</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/gcp-python_flask%E6%90%AD%E5%BB%BA%E8%88%87%E4%BD%BF%E7%94%A8/">
-            <span class="next-text nav-default">GCP Python_Flask搭建与使用</span>
+        
+        <a class="next" href="/post/heroku_flask_%E6%90%AD%E5%BB%BA%E8%88%87%E4%BD%BF%E7%94%A8/">
+            <span class="next-text nav-default">Heroku_flask_搭建與使用</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

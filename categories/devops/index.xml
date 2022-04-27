@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Mon, 25 Apr 2022 16:02:03 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Apr 2022 16:24:12 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python_Gmail</title>
+      <link>https://me.w0x7ce.eu/post/python_gmail/</link>
+      <pubDate>Wed, 27 Apr 2022 16:24:12 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/post/python_gmail/</guid>
+      <description>準備 啓用兩步驗證 創建程式密碼 授權外部訪問 Google Account。 發送電子郵件 發送文本電子郵件 import smtplib from email.mime.multipart import MIMEMultipart from email.mime.text import MIMEText username = &amp;quot;@gmail.com&amp;quot; password = &amp;quot;password&amp;quot; mail_from = &amp;quot;@gmail.com&amp;quot; mail_to = &amp;quot;@gmail.com&amp;quot; mail_subject = &amp;quot;Test Subject&amp;quot; mail_body</description>
+    </item>
+    
     <item>
       <title>Heroku_flask_搭建與使用</title>
       <link>https://me.w0x7ce.eu/post/heroku_flask_%E6%90%AD%E5%BB%BA%E8%88%87%E4%BD%BF%E7%94%A8/</link>

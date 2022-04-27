@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Mon, 25 Apr 2022 16:02:03 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Apr 2022 16:24:12 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gmail</title>
+      <link>https://me.w0x7ce.eu/tags/gmail/</link>
+      <pubDate>Wed, 27 Apr 2022 16:24:12 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/tags/gmail/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://me.w0x7ce.eu/tags/python/</link>
+      <pubDate>Wed, 27 Apr 2022 16:24:12 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/tags/python/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Flask</title>
       <link>https://me.w0x7ce.eu/tags/flask/</link>
@@ -23,15 +41,6 @@
       <pubDate>Mon, 25 Apr 2022 16:02:03 +0800</pubDate>
       
       <guid>https://me.w0x7ce.eu/tags/heroku/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://me.w0x7ce.eu/tags/python/</link>
-      <pubDate>Mon, 25 Apr 2022 16:02:03 +0800</pubDate>
-      
-      <guid>https://me.w0x7ce.eu/tags/python/</guid>
       <description></description>
     </item>
     
