@@ -1,13 +1,13 @@
 proxies:
 - type: ss
   server: us.w0x7ce.eu
-  password: 766
-  port: 4000663
+  password: 4000663
+  port: 766
   cipher: chacha20-ietf-poly1305
   name: USA Los Angeles
 - type: ss
   server: ru.w0x7ce.eu
-  password: 766
-  port: 4000663
+  password: 4000663
+  port: 766
   cipher: chacha20-ietf-poly1305
   name: RU Moscow
