@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>image on WoW</title>
+    <link>https://me.w0x7ce.eu/tags/image/</link>
+    <description>Recent content in image on WoW</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>w0x7ce</copyright>
+    <lastBuildDate>Thu, 05 May 2022 19:58:58 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/tags/image/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Terminal_Pic</title>
+      <link>https://me.w0x7ce.eu/post/terminal_pic_/</link>
+      <pubDate>Thu, 05 May 2022 19:58:58 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/post/terminal_pic_/</guid>
+      <description>tiv</description>
+    </item>
+    
+  </channel>
+</rss>

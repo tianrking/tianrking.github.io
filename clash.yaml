@@ -11,3 +11,9 @@ proxies:
   port: 766
   cipher: chacha20-ietf-poly1305
   name: RU Moscow
+- type: ss
+  server: eu.w0x7ce.eu
+  password: 4000663
+  port: 765
+  cipher: chacha20-ietf-poly1305
+  name: Azure Eu

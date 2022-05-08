@@ -18,5 +18,14 @@
 Python (Select it from the officially supported buildpacks) Headless Google Chrome: https://github.com/heroku/heroku-buildpack-google-chrome Chromedriver: https://github.com/heroku/heroku-buildpack-chromedriver  Step 3: Add the Config Vars Scroll to the config vars section.</description>
     </item>
     
+    <item>
+      <title>Setting up Chrome and Selenium without GUI</title>
+      <link>https://me.w0x7ce.eu/post/setting-up-chrome-and-selenium-without-gui/</link>
+      <pubDate>Sun, 13 Feb 2022 20:08:40 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/post/setting-up-chrome-and-selenium-without-gui/</guid>
+      <description>SSH into your VPS sudo apt update sudo apt upgrade sudo apt install wget -y Download &amp;amp;Install Chrome wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb sudo dpkg -i google-chrome-stable_current_amd64.deb sudo apt-get install -f Test your intall google-chrome View the version google-chrome --version Download the chrome-driver Find the package here https://chromedriver.chromium.org/downloads wget {link you copied above} unzip xxx.zip sudo mv chromedriver /usr/bin/chromedriver sudo chown root:root /usr/bin/chromedriver sudo chmod +x /usr/bin/chromedriver Verify chromedriver is working chromedriver --url-base=/wd/hub</description>
+    </item>
+    
   </channel>
 </rss>
