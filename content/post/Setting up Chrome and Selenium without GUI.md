@@ -3,7 +3,7 @@ title: "Setting up Chrome and Selenium without GUI"
 date: 2022-02-13T20:08:40+08:00
 draft: false
 
-tags: ["爬虫","自动化","测试"]
+tags: ["爬虫","自动化","测试","selenium"]
 categories: ["爬虫"]
 author: "w0x7ce"
 ---
