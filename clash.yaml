@@ -17,3 +17,9 @@ proxies:
   port: 765
   cipher: chacha20-ietf-poly1305
   name: Azure Eu
+- type: ss
+  server: hk.w0x7ce.eu
+  password: 81
+  port: 81
+  cipher: chacha20-ietf-poly1305
+  name: Azure HongKong
