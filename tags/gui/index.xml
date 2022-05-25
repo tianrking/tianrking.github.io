@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Fri, 22 Apr 2022 09:50:00 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/tags/gui/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 May 2022 20:12:44 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/tags/gui/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PyQt5系列之QGraphic</title>
+      <link>https://me.w0x7ce.eu/post/pyqt5%E7%B3%BB%E5%88%97%E4%B9%8Bqgraphic/</link>
+      <pubDate>Wed, 25 May 2022 20:12:44 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/post/pyqt5%E7%B3%BB%E5%88%97%E4%B9%8Bqgraphic/</guid>
+      <description>QGraphic 笔者练习代码repo(持续更新) 参考资料 http://anh.cs.luc.edu/handsonPythonTutorial/graphics.html QGraphicsView Class QGraphicsView Some examples 基本框架 要可视化场景，首先构造一个 QGraphicsView 对象，将要可视化的场景的地址传递给 QGraphicsView 的构造函数。或</description>
+    </item>
+    
     <item>
       <title>QT5模板庫(一)</title>
       <link>https://me.w0x7ce.eu/post/qt5%E6%A8%A1%E6%9D%BF%E5%BA%AB%E4%B8%80/</link>

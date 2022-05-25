@@ -9,7 +9,28 @@
   </url>
   
   <url>
+    <loc>https://me.w0x7ce.eu/categories/</loc>
+    <lastmod>2022-05-25T20:12:44+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/tags/gui/</loc>
+    <lastmod>2022-05-25T20:12:44+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://me.w0x7ce.eu/post/</loc>
+    <lastmod>2022-05-25T20:12:44+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/tags/pyqt/</loc>
     <lastmod>2022-05-25T20:12:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -23,7 +44,28 @@
   </url>
   
   <url>
+    <loc>https://me.w0x7ce.eu/categories/python/</loc>
+    <lastmod>2022-05-25T20:12:44+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/tags/</loc>
+    <lastmod>2022-05-25T20:12:44+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://me.w0x7ce.eu/</loc>
+    <lastmod>2022-05-25T20:12:44+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/categories/%E8%BB%9F%E4%BB%B6/</loc>
     <lastmod>2022-05-25T20:12:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -32,13 +74,6 @@
   <url>
     <loc>https://me.w0x7ce.eu/post/ubuntu-create-vm-via-kvm/</loc>
     <lastmod>2022-05-22T20:02:34+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://me.w0x7ce.eu/categories/</loc>
-    <lastmod>2022-04-27T20:24:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -73,13 +108,6 @@
   
   <url>
     <loc>https://me.w0x7ce.eu/tags/selenium/</loc>
-    <lastmod>2022-04-27T20:24:38+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://me.w0x7ce.eu/tags/</loc>
     <lastmod>2022-04-27T20:24:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -129,13 +157,6 @@
   
   <url>
     <loc>https://me.w0x7ce.eu/tags/c&#43;&#43;/</loc>
-    <lastmod>2022-04-22T09:50:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://me.w0x7ce.eu/tags/gui/</loc>
     <lastmod>2022-04-22T09:50:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -457,13 +478,6 @@
   </url>
   
   <url>
-    <loc>https://me.w0x7ce.eu/categories/%E8%BB%9F%E4%BB%B6/</loc>
-    <lastmod>2022-03-03T18:03:03+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://me.w0x7ce.eu/post/docker%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E7%92%B0%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2022-03-03T17:21:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -521,13 +535,6 @@
   
   <url>
     <loc>https://me.w0x7ce.eu/post/nvidia%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2022-02-03T21:08:48+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://me.w0x7ce.eu/categories/python/</loc>
     <lastmod>2022-02-03T21:08:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>w0x7ce</copyright>
-    <lastBuildDate>Wed, 27 Apr 2022 20:24:38 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 May 2022 20:12:44 +0800</lastBuildDate><atom:link href="https://me.w0x7ce.eu/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python</title>
+      <link>https://me.w0x7ce.eu/categories/python/</link>
+      <pubDate>Wed, 25 May 2022 20:12:44 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>軟件</title>
+      <link>https://me.w0x7ce.eu/categories/%E8%BB%9F%E4%BB%B6/</link>
+      <pubDate>Wed, 25 May 2022 20:12:44 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/categories/%E8%BB%9F%E4%BB%B6/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>DevOps</title>
       <link>https://me.w0x7ce.eu/categories/devops/</link>
@@ -144,15 +162,6 @@
     </item>
     
     <item>
-      <title>軟件</title>
-      <link>https://me.w0x7ce.eu/categories/%E8%BB%9F%E4%BB%B6/</link>
-      <pubDate>Thu, 03 Mar 2022 18:03:03 +0800</pubDate>
-      
-      <guid>https://me.w0x7ce.eu/categories/%E8%BB%9F%E4%BB%B6/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>cuda</title>
       <link>https://me.w0x7ce.eu/categories/cuda/</link>
       <pubDate>Thu, 03 Feb 2022 21:08:48 +0800</pubDate>
@@ -167,15 +176,6 @@
       <pubDate>Thu, 03 Feb 2022 21:08:48 +0800</pubDate>
       
       <guid>https://me.w0x7ce.eu/categories/nvidia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://me.w0x7ce.eu/categories/python/</link>
-      <pubDate>Thu, 03 Feb 2022 21:08:48 +0800</pubDate>
-      
-      <guid>https://me.w0x7ce.eu/categories/python/</guid>
       <description></description>
     </item>
     
