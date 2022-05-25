@@ -19,19 +19,19 @@
     
     <item>
       <title>PyQt5系列之QGraphic</title>
-      <link>https://me.w0x7ce.eu/post/pyqt5%E7%B3%BB%E5%88%97%E4%B9%8Bqgraphic_/</link>
+      <link>https://me.w0x7ce.eu/post/pyqt5%E7%B3%BB%E5%88%97%E4%B9%8Bqgraphic/</link>
       <pubDate>Wed, 25 May 2022 20:12:44 +0800</pubDate>
       
-      <guid>https://me.w0x7ce.eu/post/pyqt5%E7%B3%BB%E5%88%97%E4%B9%8Bqgraphic_/</guid>
+      <guid>https://me.w0x7ce.eu/post/pyqt5%E7%B3%BB%E5%88%97%E4%B9%8Bqgraphic/</guid>
       <description>QGraphic 笔者练习代码repo(持续更新) 参考资料 http://anh.cs.luc.edu/handsonPythonTutorial/graphics.html QGraphicsView Class QGraphicsView Some examples 基本框架 要可视化场景，首先构造一个 QGraphicsView 对象，将要可视化的场景的地址传递给 QGraphicsView 的构造函数。或</description>
     </item>
     
     <item>
       <title>Ubuntu Create Vm via KVM_</title>
-      <link>https://me.w0x7ce.eu/post/ubuntu-create-vm-via-kvm_/</link>
+      <link>https://me.w0x7ce.eu/post/ubuntu-create-vm-via-kvm/</link>
       <pubDate>Sun, 22 May 2022 20:02:34 +0800</pubDate>
       
-      <guid>https://me.w0x7ce.eu/post/ubuntu-create-vm-via-kvm_/</guid>
+      <guid>https://me.w0x7ce.eu/post/ubuntu-create-vm-via-kvm/</guid>
       <description>sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
 sudo adduser ‘username’ libvirt //root
 sudo adduser ‘[username]’ kvm
@@ -44,10 +44,10 @@ virt-install &amp;ndash;option1=value &amp;ndash;option2=value &amp;hellip;</des
     
     <item>
       <title>Heroku_Selenium_</title>
-      <link>https://me.w0x7ce.eu/post/heroku_selenium_/</link>
+      <link>https://me.w0x7ce.eu/post/heroku_selenium/</link>
       <pubDate>Wed, 27 Apr 2022 20:24:38 +0800</pubDate>
       
-      <guid>https://me.w0x7ce.eu/post/heroku_selenium_/</guid>
+      <guid>https://me.w0x7ce.eu/post/heroku_selenium/</guid>
       <description>Step 1: Set Up Your Code from selenium import webdriver import os chrome_options = webdriver.ChromeOptions() chrome_options.binary_location = os.environ.get(&amp;quot;GOOGLE_CHROME_BIN&amp;quot;) chrome_options.add_argument(&amp;quot;--headless&amp;quot;) chrome_options.add_argument(&amp;quot;--disable-dev-shm-usage&amp;quot;) chrome_options.add_argument(&amp;quot;--no-sandbox&amp;quot;) driver = webdriver.Chrome(executable_path=os.environ.get(&amp;quot;CHROMEDRIVER_PATH&amp;quot;), chrome_options=chrome_options)  Step 2: Add the Buildpacks On Heroku, open your App. Click on the Settings tab and scroll down to Buildpacks. Add the following:
 Python (Select it from the officially supported buildpacks) Headless Google Chrome: https://github.com/heroku/heroku-buildpack-google-chrome Chromedriver: https://github.com/heroku/heroku-buildpack-chromedriver  Step 3: Add the Config Vars Scroll to the config vars section.</description>
     </item>
