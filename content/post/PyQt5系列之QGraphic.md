@@ -2,6 +2,10 @@
 title: "PyQt5系列之QGraphic"
 date: 2022-05-25T20:12:44+08:00
 draft: false
+
+tags: ["PyQt","Gui"]
+categories: ["軟件","Python"]
+author: "w0x7ce"
 ---
 
 ## QGraphic
