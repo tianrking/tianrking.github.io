@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>WoW</title>
+  <title>Ubuntu Create Vm via KVM_ - WoW</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,14 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="w0x7ce" /><meta name="description" content="Secret space @w0x7ce." /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="w0x7ce" /><meta name="description" content="sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+sudo adduser ‘username’ libvirt //root
+sudo adduser ‘[username]’ kvm
+virsh list &amp;ndash;all
+sudo systemctl status libvirtd
+sudo systemctl enable &amp;ndash;now libvirtd
+sudo apt install virt-manager
+virt-install &amp;ndash;option1=value &amp;ndash;option2=value &amp;hellip;" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,9 +33,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="https://me.w0x7ce.eu/" />
-  <link href="https://me.w0x7ce.eu/index.xml" rel="alternate" type="application/rss+xml" title="WoW" />
-  <link href="https://me.w0x7ce.eu/index.xml" rel="feed" type="application/rss+xml" title="WoW" />
+<link rel="canonical" href="https://me.w0x7ce.eu/post/ubuntu-create-vm-via-kvm_/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -41,15 +46,41 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="WoW" />
-<meta property="og:description" content="Secret space @w0x7ce." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://me.w0x7ce.eu/" />
+<meta property="og:title" content="Ubuntu Create Vm via KVM_" />
+<meta property="og:description" content="sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+sudo adduser ‘username’ libvirt //root
+sudo adduser ‘[username]’ kvm
+virsh list &ndash;all
+sudo systemctl status libvirtd
+sudo systemctl enable &ndash;now libvirtd
+sudo apt install virt-manager
+virt-install &ndash;option1=value &ndash;option2=value &hellip;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://me.w0x7ce.eu/post/ubuntu-create-vm-via-kvm_/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-05-22T20:02:34+08:00" />
+<meta property="article:modified_time" content="2022-05-22T20:02:34+08:00" />
 
-<meta itemprop="name" content="WoW">
-<meta itemprop="description" content="Secret space @w0x7ce."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="WoW"/>
-<meta name="twitter:description" content="Secret space @w0x7ce."/>
+<meta itemprop="name" content="Ubuntu Create Vm via KVM_">
+<meta itemprop="description" content="sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+sudo adduser ‘username’ libvirt //root
+sudo adduser ‘[username]’ kvm
+virsh list &ndash;all
+sudo systemctl status libvirtd
+sudo systemctl enable &ndash;now libvirtd
+sudo apt install virt-manager
+virt-install &ndash;option1=value &ndash;option2=value &hellip;"><meta itemprop="datePublished" content="2022-05-22T20:02:34+08:00" />
+<meta itemprop="dateModified" content="2022-05-22T20:02:34+08:00" />
+<meta itemprop="wordCount" content="36">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ubuntu Create Vm via KVM_"/>
+<meta name="twitter:description" content="sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+sudo adduser ‘username’ libvirt //root
+sudo adduser ‘[username]’ kvm
+virsh list &ndash;all
+sudo systemctl status libvirtd
+sudo systemctl enable &ndash;now libvirtd
+sudo apt install virt-manager
+virt-install &ndash;option1=value &ndash;option2=value &hellip;"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -127,138 +158,89 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          <section id="posts" class="posts">
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/conda%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/">conda安装与使用</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-09-20 </span>
-      <div class="post-category">
-          <a href="/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
-          <a href="/categories/python/"> Python </a>
-          </div>
-        <span class="more-meta"> 119 words </span>
-        <span class="more-meta"> 1 min read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Prerequisites To use GUI packages with Linux, you will need to install the following extended dependencies for Qt: Debian apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6 RedHat yum install libXcomposite libXcursor libXi libXtst libXrandr alsa-lib mesa-libEGL libXdamage mesa-libGL libXScrnSaver ArchLinux pacman -Sy libxau libxi libxss libxtst libxcursor libxcomposite libxdamage libxfixes libxrandr libxrender mesa-libgl alsa-lib libglvnd OpenSuse/SLES zypper install libXcomposite1 libXi6 libXext6 libXau6 libX11-6 libXrandr2 libXrender1
-    </div>
-    <div class="read-more">
-      <a href="/post/conda%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Ubuntu Create Vm via KVM_</h1>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/google-colab%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">Google Colab使用技巧</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-09-18 </span>
-      <div class="post-category">
-          <a href="/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/"> 云计算 </a>
-          <a href="/categories/%E6%8A%80%E5%B7%A7/"> 技巧 </a>
-          </div>
-        <span class="more-meta"> 559 words </span>
-        <span class="more-meta"> 2 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      在 Google colab上使用 conda Step 1 首先，需要确认在 Google Colab 中默认使用的是哪个 Python。 运行以下命令返回默认 Python 可执行文件的绝对路径。 !which python # should return /usr/local/bin/python 现在检
-    </div>
-    <div class="read-more">
-      <a href="/post/google-colab%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
+      <div class="post-meta">
+        <span class="post-time"> 2022-05-22 </span>
+        
+          <span class="more-meta"> 36 words </span>
+          <span class="more-meta"> 1 min read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/docker%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%BA%8C/">Docker使用方法(二)</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-09-14 </span>
-      <div class="post-category">
-          <a href="/categories/%E8%BB%9F%E4%BB%B6/"> 軟件 </a>
-          </div>
-        <span class="more-meta"> 1787 words </span>
-        <span class="more-meta"> 4 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Docker 客戶端 docker 客戶端非常簡單 ,我們可以直接輸入 docker 命令來查看到 Docker 客戶端的所有命令選項。 w0x7ce@w0x7ce:~# docker 可以通過命令 docker command &ndash;help 更深入的了解指定的 Docker 命令使用方法。 例如
-    </div>
-    <div class="read-more">
-      <a href="/post/docker%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%BA%8C/" class="read-more-link">Read more...</a>
-    </div>
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
   </div>
-</article>
+</div>
+    <div class="post-content">
+      <p>sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils</p>
+<p>sudo adduser ‘username’ libvirt //root</p>
+<p>sudo adduser ‘[username]’ kvm</p>
+<p>virsh list &ndash;all</p>
+<p>sudo systemctl status libvirtd</p>
+<p>sudo systemctl enable &ndash;now libvirtd</p>
+<p>sudo apt install virt-manager</p>
+<p>virt-install &ndash;option1=value &ndash;option2=value &hellip;</p>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/docker%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%B8%80/">Docker使用方法(一)</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-09-14 </span>
-      <div class="post-category">
-          <a href="/categories/%E8%BB%9F%E4%BB%B6/"> 軟件 </a>
-          </div>
-        <span class="more-meta"> 1729 words </span>
-        <span class="more-meta"> 4 mins read </span>
     </div>
-  </header>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">w0x7ce</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2022-05-22
+        
+    </span>
+  </p>
   
-  <div class="post-content">
-    <div class="post-summary">
-      Docker的應用場景 Web 應用的自動化打包和發布。 自動化測試和持續集成、發布。 在服務型環境中部署和調整數據庫或其他的後台應用。 從頭編譯或者擴展
-    </div>
-    <div class="read-more">
-      <a href="/post/docker%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E4%B8%80/" class="read-more-link">Read more...</a>
-    </div>
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/alipay.png">
+        <span>alipay</span>
+      </label>
   </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%BA%8C/">常用Linux命令(二)--sed</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-09-13 </span>
-      <div class="post-category">
-          <a href="/categories/%E7%B3%BB%E7%BB%9F/"> 系统 </a>
-          </div>
-        <span class="more-meta"> 5823 words </span>
-        <span class="more-meta"> 12 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      在每一行後面增加一空行 sed G 將原來的所有空行刪除並在每一行後面增加一空行。 這樣在輸出的文本中每一行後面將有且只有一空行。 sed '/^$/d;G' 在每一行後面增加兩
-    </div>
-    <div class="read-more">
-      <a href="/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%BA%8C/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    </section>
-  
-  <nav class="pagination">
-    <a class="prev" href="/page/6/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text">Prev</span>
-      </a>
-    <a class="next" href="/page/8/">
-        <span class="next-text">Next</span>
-        <i class="iconfont icon-right"></i>
-      </a>
-  </nav>
+</div><footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/pyqt5%E7%B3%BB%E5%88%97%E4%B9%8Bqgraphic_/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">PyQt5系列之QGraphic</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/heroku_selenium_/">
+            <span class="next-text nav-default">Heroku_Selenium_</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
         </div>
         
+
+  
+
+  
 
       </div>
     </main>

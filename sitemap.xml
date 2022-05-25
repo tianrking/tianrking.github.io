@@ -9,6 +9,34 @@
   </url>
   
   <url>
+    <loc>https://me.w0x7ce.eu/post/</loc>
+    <lastmod>2022-05-25T20:12:44+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/post/pyqt5%E7%B3%BB%E5%88%97%E4%B9%8Bqgraphic_/</loc>
+    <lastmod>2022-05-25T20:12:44+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/</loc>
+    <lastmod>2022-05-25T20:12:44+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/post/ubuntu-create-vm-via-kvm_/</loc>
+    <lastmod>2022-05-22T20:02:34+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://me.w0x7ce.eu/categories/</loc>
     <lastmod>2022-04-27T20:24:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -37,13 +65,6 @@
   </url>
   
   <url>
-    <loc>https://me.w0x7ce.eu/post/</loc>
-    <lastmod>2022-04-27T20:24:38+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://me.w0x7ce.eu/tags/python/</loc>
     <lastmod>2022-04-27T20:24:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -59,13 +80,6 @@
   
   <url>
     <loc>https://me.w0x7ce.eu/tags/</loc>
-    <lastmod>2022-04-27T20:24:38+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://me.w0x7ce.eu/</loc>
     <lastmod>2022-04-27T20:24:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

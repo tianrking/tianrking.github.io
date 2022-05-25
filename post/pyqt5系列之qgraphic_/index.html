@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>QT5模板庫(一) - WoW</title>
+  <title>PyQt5系列之QGraphic - WoW</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="w0x7ce" /><meta name="description" content="字符串類 操作字符串 basic QString str1 = &amp;quot;a&amp;quot;; QString str2 = &amp;quot;b&amp;quot;; QString str = str1 &#43; str2; append QString str1 = &amp;quot;Welcome&amp;quot;; QString str2 = &amp;quot;to&amp;quot;; str1.append(str2); str1.append(&amp;quot; you! &amp;quot;); sprintf Qstring str; str.sprintf(&amp;quot;%s&amp;quot;, &amp;quot;Welcome&amp;quot;); str.sprintf(&amp;quot;%s %s&amp;quot;, &amp;quot;Welcome&amp;quot;,&amp;quot;to you&amp;quot;); %n QString str; str=QString(&amp;quot;%1 was born in %2.&amp;quot;).arg(&amp;quot;Bob&amp;quot;).arg(1998); others insert() 特定位置插入字符串 prepend() 開頭插入" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="w0x7ce" /><meta name="description" content="QGraphic 笔者练习代码repo(持续更新) 参考资料 http://anh.cs.luc.edu/handsonPythonTutorial/graphics.html QGraphicsView Class QGraphicsView Some examples 基本框架 要可视化场景，首先构造一个 QGraphicsView 对象，将要可视化的场景的地址传递给 QGraphicsView 的构造函数。或" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="https://me.w0x7ce.eu/post/qt5%E6%A8%A1%E6%9D%BF%E5%BA%AB%E4%B8%80/" />
+<link rel="canonical" href="https://me.w0x7ce.eu/post/pyqt5%E7%B3%BB%E5%88%97%E4%B9%8Bqgraphic_/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,20 +39,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="QT5模板庫(一)" />
-<meta property="og:description" content="字符串類 操作字符串 basic QString str1 = &quot;a&quot;; QString str2 = &quot;b&quot;; QString str = str1 &#43; str2; append QString str1 = &quot;Welcome&quot;; QString str2 = &quot;to&quot;; str1.append(str2); str1.append(&quot; you! &quot;); sprintf Qstring str; str.sprintf(&quot;%s&quot;, &quot;Welcome&quot;); str.sprintf(&quot;%s %s&quot;, &quot;Welcome&quot;,&quot;to you&quot;); %n QString str; str=QString(&quot;%1 was born in %2.&quot;).arg(&quot;Bob&quot;).arg(1998); others insert() 特定位置插入字符串 prepend() 開頭插入" />
+<meta property="og:title" content="PyQt5系列之QGraphic" />
+<meta property="og:description" content="QGraphic 笔者练习代码repo(持续更新) 参考资料 http://anh.cs.luc.edu/handsonPythonTutorial/graphics.html QGraphicsView Class QGraphicsView Some examples 基本框架 要可视化场景，首先构造一个 QGraphicsView 对象，将要可视化的场景的地址传递给 QGraphicsView 的构造函数。或" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://me.w0x7ce.eu/post/qt5%E6%A8%A1%E6%9D%BF%E5%BA%AB%E4%B8%80/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-04-22T09:50:00+08:00" />
-<meta property="article:modified_time" content="2022-04-22T09:50:00+08:00" />
+<meta property="og:url" content="https://me.w0x7ce.eu/post/pyqt5%E7%B3%BB%E5%88%97%E4%B9%8Bqgraphic_/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-05-25T20:12:44+08:00" />
+<meta property="article:modified_time" content="2022-05-25T20:12:44+08:00" />
 
-<meta itemprop="name" content="QT5模板庫(一)">
-<meta itemprop="description" content="字符串類 操作字符串 basic QString str1 = &quot;a&quot;; QString str2 = &quot;b&quot;; QString str = str1 &#43; str2; append QString str1 = &quot;Welcome&quot;; QString str2 = &quot;to&quot;; str1.append(str2); str1.append(&quot; you! &quot;); sprintf Qstring str; str.sprintf(&quot;%s&quot;, &quot;Welcome&quot;); str.sprintf(&quot;%s %s&quot;, &quot;Welcome&quot;,&quot;to you&quot;); %n QString str; str=QString(&quot;%1 was born in %2.&quot;).arg(&quot;Bob&quot;).arg(1998); others insert() 特定位置插入字符串 prepend() 開頭插入"><meta itemprop="datePublished" content="2022-04-22T09:50:00+08:00" />
-<meta itemprop="dateModified" content="2022-04-22T09:50:00+08:00" />
-<meta itemprop="wordCount" content="244">
-<meta itemprop="keywords" content="C&#43;&#43;,QT,Gui," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="QT5模板庫(一)"/>
-<meta name="twitter:description" content="字符串類 操作字符串 basic QString str1 = &quot;a&quot;; QString str2 = &quot;b&quot;; QString str = str1 &#43; str2; append QString str1 = &quot;Welcome&quot;; QString str2 = &quot;to&quot;; str1.append(str2); str1.append(&quot; you! &quot;); sprintf Qstring str; str.sprintf(&quot;%s&quot;, &quot;Welcome&quot;); str.sprintf(&quot;%s %s&quot;, &quot;Welcome&quot;,&quot;to you&quot;); %n QString str; str=QString(&quot;%1 was born in %2.&quot;).arg(&quot;Bob&quot;).arg(1998); others insert() 特定位置插入字符串 prepend() 開頭插入"/>
+<meta itemprop="name" content="PyQt5系列之QGraphic">
+<meta itemprop="description" content="QGraphic 笔者练习代码repo(持续更新) 参考资料 http://anh.cs.luc.edu/handsonPythonTutorial/graphics.html QGraphicsView Class QGraphicsView Some examples 基本框架 要可视化场景，首先构造一个 QGraphicsView 对象，将要可视化的场景的地址传递给 QGraphicsView 的构造函数。或"><meta itemprop="datePublished" content="2022-05-25T20:12:44+08:00" />
+<meta itemprop="dateModified" content="2022-05-25T20:12:44+08:00" />
+<meta itemprop="wordCount" content="460">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PyQt5系列之QGraphic"/>
+<meta name="twitter:description" content="QGraphic 笔者练习代码repo(持续更新) 参考资料 http://anh.cs.luc.edu/handsonPythonTutorial/graphics.html QGraphicsView Class QGraphicsView Some examples 基本框架 要可视化场景，首先构造一个 QGraphicsView 对象，将要可视化的场景的地址传递给 QGraphicsView 的构造函数。或"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -133,14 +133,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">QT5模板庫(一)</h1>
+      <h1 class="post-title">PyQt5系列之QGraphic</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2022-04-22 </span>
-        <div class="post-category">
-            <a href="/categories/%E5%9C%96%E5%BD%A2%E5%8C%96%E9%96%8B%E7%99%BC/"> 圖形化開發 </a>
-            </div>
-          <span class="more-meta"> 244 words </span>
+        <span class="post-time"> 2022-05-25 </span>
+        
+          <span class="more-meta"> 460 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -153,141 +151,145 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#字符串類">字符串類</a>
+        <li><a href="#qgraphic">QGraphic</a>
           <ul>
-            <li><a href="#操作字符串">操作字符串</a></li>
-            <li><a href="#查詢字符串">查詢字符串</a></li>
-            <li><a href="#字符串轉換">字符串轉換</a></li>
+            <li><a href="#显示图片">显示图片</a></li>
+            <li><a href="#绘制线条">绘制线条</a></li>
+            <li><a href="#绘制图案">绘制图案</a></li>
           </ul>
         </li>
-        <li><a href="#容器類">容器類</a></li>
       </ul>
     </li>
   </ul>
 </nav>
   </div>
 </div>
-  <div class="post-outdated">
-    <div class="hint">
-      <p>[NOTE] Updated <span class="timeago" datetime="2022-04-22T09:50:00" title="April 22, 2022">April 22, 2022</span>. This article may have outdated content or subject matter.</p>
-    </div>
-  </div>
     <div class="post-content">
-      <h2 id="字符串類">字符串類</h2>
-<h3 id="操作字符串">操作字符串</h3>
-<p>basic</p>
-<pre><code class="language-C++">QString str1 = &quot;a&quot;;
-QString str2 = &quot;b&quot;;
-QString str = str1 + str2;
+      <h2 id="qgraphic">QGraphic</h2>
+<ul>
+<li>
+<p><a href="https://github.com/tianrking/learn_pyqt5">笔者练习代码repo(持续更新)</a></p>
+</li>
+<li>
+<p>参考资料</p>
+<ul>
+<li><a href="http://anh.cs.luc.edu/handsonPythonTutorial/graphics.html">http://anh.cs.luc.edu/handsonPythonTutorial/graphics.html</a></li>
+<li><a href="https://doc.qt.io/qt-5/qgraphicsview.html">QGraphicsView Class</a></li>
+<li><a href="https://doc.qt.io/qtforpython-5/PySide2/QtWidgets/QGraphicsView.html">QGraphicsView</a></li>
+<li><a href="https://www.pythonguis.com/tutorials/pyqt-qgraphics-vector-graphics/">Some examples</a></li>
+</ul>
+</li>
+<li>
+<p>基本框架</p>
+<p>要可视化场景，首先构造一个 QGraphicsView 对象，将要可视化的场景的地址传递给 QGraphicsView 的构造函数。或者，您可以调用 setScene（） 在稍后设置场景。调用 后，默认情况下，视图将滚动到场景的中心，并显示此时可见的任何项目。例如：show()</p>
+<pre><code class="language-Python">import sys
+from PyQt5.QtWidgets import (QApplication, QGraphicsScene, QGraphicsView)
+
+app = QApplication(sys.argv)
+
+scene = QGraphicsScene()
+scene.addText(&quot;Hello, world!&quot;)
+
+view = QGraphicsView(scene)
+view.show()
+
+sys.exit(app.exec_())
 </code></pre>
-<p>append</p>
-<pre><code class="language-C++">QString str1 = &quot;Welcome&quot;;
-QString str2 = &quot;to&quot;;
-str1.append(str2);
-str1.append(&quot; you! &quot;);
+</li>
+</ul>
+<h3 id="显示图片">显示图片</h3>
+<pre><code class="language-Python3">from PyQt5.QtGui import QImage, QPixmap
+from PyQt5.QtWidgets import QGraphicsPixmapItem, QGraphicsScene
+
+import sys
+from PyQt5.QtWidgets import (QApplication, QGraphicsScene, QGraphicsView, )
+# def showImage(self):
+
+app = QApplication(sys.argv)
+frame = QImage(&quot;../ui_designer/btc.png&quot;)  
+pix = QPixmap.fromImage(frame)
+item = QGraphicsPixmapItem(pix)
+scene = QGraphicsScene()
+scene.addItem(item)
+view = QGraphicsView(scene)
+view.setWindowTitle('w0x7ce')
+view.resize(480, 320)
+view.show()
+sys.exit(app.exec_())
 </code></pre>
-<p>sprintf</p>
-<pre><code class="language-C++">Qstring str;
-str.sprintf(&quot;%s&quot;, &quot;Welcome&quot;);
-str.sprintf(&quot;%s %s&quot;, &quot;Welcome&quot;,&quot;to you&quot;);
-</code></pre>
-<p>%n</p>
-<pre><code class="language-C++">QString str;
-str=QString(&quot;%1 was born in %2.&quot;).arg(&quot;Bob&quot;).arg(1998);
-</code></pre>
-<p>others</p>
-<pre><code class="language-C++">insert() 特定位置插入字符串
-prepend() 開頭插入字符串
-replace() 指定字符串代替原字符串
-QString::trimmed() 移除字符串兩端的空白字符
-QString::simplified() 一處字符串兩端空白字符 使用單個空格字符代替
-</code></pre>
-<h3 id="查詢字符串">查詢字符串</h3>
-<p>QString::startsWith()
-QString::endsWith()</p>
-<pre><code class="language-C++">QString  str = &quot;Aa Bb Cc&quot;;
-str.startsWith(&quot;Aa&quot;,Qt::CaseSensitive); //true
-str.startsWith(&quot;Bb&quot;,Qt::CaseSensitive); //false
-</code></pre>
-<p>QString::contains()</p>
-<pre><code class="language-C++">QString  str = &quot;Aa Bb Cc&quot;;
-str.startsWith(&quot;Bb&quot;,Qt::CaseSensitive); //true
-</code></pre>
-<p>operator&lt;(const QString &amp;)</p>
-<p>operator&lt;=(const QString &amp;)</p>
-<p>&hellip;</p>
-<h3 id="字符串轉換">字符串轉換</h3>
-<p>QString::toInt();
-QString::toDouble();
-QString::toFloat();
-QString::toLong();
-QString::toLongLong();</p>
-<pre><code class="language-C++">QString str = &quot;125&quot;;
-bool ok;
-int hex = str.toInt(&amp;ok,16); // ok = True, hex = 293
-int dec = str.toInt(&amp;ok,10); // ok = True, dec=125
+<h3 id="绘制线条">绘制线条</h3>
+<pre><code class="language-Python">
+import sys
+from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QPen,QColor
+from PyQt5.QtWidgets import (QApplication, QGraphicsScene, QGraphicsView, QGraphicsRectItem)
+
+app = QApplication(sys.argv)
+scene = QGraphicsScene()
+
+scene.addLine(20, 20, 200, 200)
+scene.addText('Test Graphics View')
+
+scene.addRect(0, 0, 320, 240)
+scene.addEllipse(100, 100, 100, 100)
+
+rect = QGraphicsRectItem(99, 99, 102, 102)
+rect.setPen(QPen(Qt.red))
+scene.addItem(rect)
+
+view = QGraphicsView(scene)
+view.setWindowTitle('w0x7ce')
+view.resize(480, 320)
+view.show()
+sys.exit(app.exec_())
 
 </code></pre>
-<p>toAscii()</p>
-<p>toLatin1()</p>
-<p>toUtf8()</p>
-<p>toLocal8Bit()</p>
-<p>isNull()</p>
-<p>isEmpty()</p>
-<h2 id="容器類">容器類</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>容器類</td>
-<td>查找</td>
-<td>插入</td>
-<td>頭部添加</td>
-<td>尾部添加</td>
-</tr>
-<tr>
-<td>QList()</td>
-<td>O(1)</td>
-<td>O(n)</td>
-<td>Amort.O(1)</td>
-<td>Amort.O(1)</td>
-</tr>
-<tr>
-<td>QLinkedList()</td>
-<td>O(n)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>QVector()</td>
-<td>O(1)</td>
-<td>O(n)</td>
-<td>O(n)</td>
-<td>Amort.O(1)</td>
-</tr>
-</tbody>
-</table>
-<pre><code class="language-C++">#include &lt;QDebug&gt;
-int main(){
-    QList&lt;QString&gt; list;
-    {
-        QString str(&quot;abc&quot;);
-        list&lt;&lt;str;
-    }
-    qDebug()&lt;&lt;list[0]&lt;&lt;&quot;What&quot;;
-    return 0;
-}
+<h3 id="绘制图案">绘制图案</h3>
+<pre><code class="language-Python">import sys
+from PyQt5.QtWidgets import QGraphicsScene, QGraphicsView, QGraphicsRectItem, QGraphicsEllipseItem, QApplication
+from PyQt5.QtGui import QBrush, QPen
+from PyQt5.QtCore import Qt
+
+app = QApplication(sys.argv)
+
+# 定义一个 400x200 的场景矩形，它的原点在 0,0。
+# 如果我们没有在创建时设置它，我们可以稍后使用 .setSceneRect 设置它
+scene = QGraphicsScene(0, 0, 400, 200)
+
+# 绘制一个矩形项目，设置尺寸。
+rect = QGraphicsRectItem(0, 0, 200, 50)
+
+# 设置场景中矩形的原点（位置）。
+rect.setPos(50, 20)
+
+# 定义画笔（填充颜色）。
+brush = QBrush(Qt.red)
+rect.setBrush(brush)
+
+# 定义笔（线）
+pen = QPen(Qt.cyan)
+pen.setWidth(10)
+rect.setPen(pen)
+
+ellipse = QGraphicsEllipseItem(0, 0, 100, 100)
+ellipse.setPos(75, 30)
+
+brush = QBrush(Qt.blue)
+ellipse.setBrush(brush)
+
+pen = QPen(Qt.green)
+pen.setWidth(5)
+ellipse.setPen(pen)
+
+# 将项目添加到场景中。 项目按添加顺序堆叠。
+scene.addItem(ellipse)
+scene.addItem(rect)
+
+
+view = QGraphicsView(scene)
+view.show()
+app.exec_()
 </code></pre>
-<p>##</p>
 
     </div>
 
@@ -299,7 +301,7 @@ int main(){
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2022-04-22
+        2022-05-25
         
     </span>
   </p>
@@ -321,19 +323,11 @@ int main(){
       </label>
   </div>
 </div><footer class="post-footer">
-      <div class="post-tags">
-          <a href="/tags/c&#43;&#43;/">C&#43;&#43;</a>
-          <a href="/tags/qt/">QT</a>
-          <a href="/tags/gui/">Gui</a>
-          </div>
+      
       <nav class="post-nav">
-        <a class="prev" href="/post/gcp-python_flask%E6%90%AD%E5%BB%BA%E8%88%87%E4%BD%BF%E7%94%A8/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">GCP Python_Flask搭建与使用</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-pytorch%E5%AE%8C%E6%88%90%E8%82%A1%E5%83%B9%E9%A0%90%E6%B8%AC/">
-            <span class="next-text nav-default">機器學習 Pytorch完成股價預測</span>
+        
+        <a class="next" href="/post/ubuntu-create-vm-via-kvm_/">
+            <span class="next-text nav-default">Ubuntu Create Vm via KVM_</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
