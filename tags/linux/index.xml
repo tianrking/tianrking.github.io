@@ -27,6 +27,15 @@
     </item>
     
     <item>
+      <title>Clean Up Disk Space in Linux</title>
+      <link>https://me.w0x7ce.eu/post/clean-up-disk-space-in-linux/</link>
+      <pubDate>Fri, 04 Mar 2022 10:37:09 +0800</pubDate>
+      
+      <guid>https://me.w0x7ce.eu/post/clean-up-disk-space-in-linux/</guid>
+      <description>Clean Up Disk Space in Linux df df命令可以获取硬盘被占用了多少空间，目前还剩下多少空间等信息，它也可以显示所有文件系统对i节点和磁盘块的使用情况。 df命令各</description>
+    </item>
+    
+    <item>
       <title>K8s安裝與配置</title>
       <link>https://me.w0x7ce.eu/post/k8s%E5%AE%89%E8%A3%9D%E8%88%87%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Fri, 04 Mar 2022 10:37:09 +0800</pubDate>

@@ -422,6 +422,13 @@
   </url>
   
   <url>
+    <loc>https://me.w0x7ce.eu/post/clean-up-disk-space-in-linux/</loc>
+    <lastmod>2022-03-04T10:37:09+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://me.w0x7ce.eu/tags/docker/</loc>
     <lastmod>2022-03-04T10:37:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -437,6 +444,13 @@
   
   <url>
     <loc>https://me.w0x7ce.eu/post/k8s%E5%AE%89%E8%A3%9D%E8%88%87%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2022-03-04T10:37:09+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.w0x7ce.eu/categories/tips/</loc>
     <lastmod>2022-03-04T10:37:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
