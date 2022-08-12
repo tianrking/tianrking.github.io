@@ -1,6 +1,6 @@
 ---
 title: "Clean Up Disk Space in Linux"
-date: 2022-03-04T10:37:09+08:00
+date: 2022-08-12T10:37:09+08:00
 draft: false
 
 tags: ["Linux","Docker"]
