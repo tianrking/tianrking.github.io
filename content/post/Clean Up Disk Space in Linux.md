@@ -68,7 +68,7 @@ ubuntu@VM-HK-w0x7ce:/etc$ du -h ./apt
 104K    ./apt
 ```
 
-## tun2fs
+## tune2fs
 
 tune2fs 命令用于调整文件系统的参数，是 ext2 及 ext3 文件系统常用的调整工具。
 
@@ -222,7 +222,6 @@ overlay on /var/lib/docker/overlay2/28bbbb41fef8d50f3ecf916b6134e3ba7e7348120fa7
 留意到
 
 ```bash
-/var/lib/docker/overlay
 /var/lib/docker/overlay2
 ```
 
@@ -290,7 +289,7 @@ tmpfs            13G  2.9M   13G   1% /run
 /dev/sda4       221G  214G  4.8G  100% /
 ```
 
-最后修改预留空间为 1% 完成释放
+最后修改预留空间为 1%
 
 ```bash
 tune2fs -m 1 /dev/sda4
@@ -309,4 +308,56 @@ Block count:              59107328
 Reserved block count:     591073
 ```
 
-完成空间释放
+可以看出可用空间变多，完成空间释放
+
+# Tips 
+
+## xargs (eXtended ARGuments）
+
+1. xargs 是给命令传递参数的一个过滤器，也是组合多个命令的一个工具。
+
+2. xargs 可以将管道或标准输入（stdin）数据转换成命令行参数，也能够从文件的输出中读取数据。
+
+3. xargs 也可以将单行或多行文本输入转换为其他格式，例如多行变单行，单行变多行。
+
+4. xargs 默认的命令是 echo，这意味着通过管道传递给 xargs 的输入将会包含换行和空白，不过通过 xargs 的处理，换行和空白将被空格取代。
+
+5. xargs 是一个强有力的命令，它能够捕获一个命令的输出，然后传递给另外一个命令。
+
+xargs 一般是和管道一起使用。
+
+```bash
+命令格式：
+somecommand |xargs -item  command
+参数：
+
+-a file 从文件中读入作为 stdin
+
+-e flag ，注意有的时候可能会是-E，flag必须是一个以空格分隔的标志，当xargs分析到含有flag这个标志的时候就停止。
+
+-p 当每次执行一个argument的时候询问一次用户。
+
+-n num 后面加次数，表示命令在执行的时候一次用的argument的个数，默认是用所有的。
+
+-t 表示先打印命令，然后再执行。
+
+-i 或者是-I，这得看linux支持了，将xargs的每项名称，一般是一行一行赋值给 {}，可以用 {} 代替。
+
+-r no-run-if-empty 当xargs的输入为空的时候则停止xargs，不用再去执行了。
+
+-s num 命令行的最大字符数，指的是 xargs 后面那个命令的最大命令行字符数。
+
+-L num 从标准输入一次读取 num 行送给 command 命令。
+
+-l 同 -L。
+
+-d delim 分隔符，默认的xargs分隔符是回车，argument的分隔符是空格，这里修改的是xargs的分隔符。
+
+-x exit的意思，主要是配合-s使用
+```
+
+example
+
+```bash
+find ./ -name "systemd*" | xargs -i cp -r {} {}.bak #寻找 systemd开头文件并备份
+```
