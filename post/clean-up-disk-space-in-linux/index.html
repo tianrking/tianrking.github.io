@@ -49,7 +49,7 @@
 <meta itemprop="name" content="Clean Up Disk Space in Linux">
 <meta itemprop="description" content="Clean Up Disk Space in Linux df df命令可以获取硬盘被占用了多少空间，目前还剩下多少空间等信息，它也可以显示所有文件系统对i节点和磁盘块的使用情况。 df命令各"><meta itemprop="datePublished" content="2022-08-12T10:37:09+08:00" />
 <meta itemprop="dateModified" content="2022-08-12T10:37:09+08:00" />
-<meta itemprop="wordCount" content="1947">
+<meta itemprop="wordCount" content="2588">
 <meta itemprop="keywords" content="Linux,Docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Clean Up Disk Space in Linux"/>
 <meta name="twitter:description" content="Clean Up Disk Space in Linux df df命令可以获取硬盘被占用了多少空间，目前还剩下多少空间等信息，它也可以显示所有文件系统对i节点和磁盘块的使用情况。 df命令各"/>
@@ -141,8 +141,8 @@
             <a href="/categories/tips/"> tips </a>
             <a href="/categories/devops/"> DevOps </a>
             </div>
-          <span class="more-meta"> 1947 words </span>
-          <span class="more-meta"> 4 mins read </span>
+          <span class="more-meta"> 2588 words </span>
+          <span class="more-meta"> 6 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -156,7 +156,7 @@
       <ul>
         <li><a href="#df">df</a></li>
         <li><a href="#du-disk-usage">du （disk usage）</a></li>
-        <li><a href="#tun2fs">tun2fs</a>
+        <li><a href="#tune2fs">tune2fs</a>
           <ul>
             <li><a href="#查看文件系统信息">查看文件系统信息</a></li>
             <li><a href="#显示卷--更改卷名字">显示卷 &amp; 更改卷名字</a></li>
@@ -169,6 +169,11 @@
             <li><a href="#step-2-根据-filesystem-查看可疑文件系统">Step 2 根据 Filesystem 查看可疑文件系统</a></li>
           </ul>
         </li>
+      </ul>
+    </li>
+    <li><a href="#tips">Tips</a>
+      <ul>
+        <li><a href="#xargs-extended-arguments">xargs (eXtended ARGuments）</a></li>
       </ul>
     </li>
   </ul>
@@ -219,7 +224,7 @@ tmpfs             202488       4    202484   1% /run/user/1000
 4.0K    ./apt/sources.list.d
 104K    ./apt
 </code></pre>
-<h2 id="tun2fs">tun2fs</h2>
+<h2 id="tune2fs">tune2fs</h2>
 <p>tune2fs 命令用于调整文件系统的参数，是 ext2 及 ext3 文件系统常用的调整工具。</p>
 <pre><code class="language-bash">df命令各个选项的含义如下：
     -c 次数 #挂载多少次后运行硬盘检查命令
@@ -344,8 +349,7 @@ overlay on /var/lib/docker/overlay2/38ce2a2c8fadbb345c6c88e4023e2553a15580cef285
 overlay on /var/lib/docker/overlay2/28bbbb41fef8d50f3ecf916b6134e3ba7e7348120fa78314df5ffdbe1dc7d797/merged type overlay (rw,relatime,lowerdir=/var/lib/docker/overlay2/l/DHEKFL6D46UEDBR5PHWHN6UEHH:/var/lib/docker/overlay2/l/SNN7A2T7ZBXYKW2SXBQKSIX67C:/var/lib/docker/overlay2/l/FYK374GFEJZGCQQW2ALAIRHVSO:/var/lib/docker/overlay2/l/7HACMERHIGQR7JZQQGJNCKNUS7:/var/lib/docker/overlay2/l/QS6R2DYIBTBQRHOVGB4VHAWPV6:/var/lib/docker/overlay2/l/FKTA7IQF4JNBOFNRG353Q4T22C:/var/lib/docker/overlay2/l/IAWRXYRJ4V67KBVYV2TI5M7M4M:/var/lib/docker/overlay2/l/Y4G4HGVVSYPCSPGILFDLB5ITYI:/var/lib/docker/overlay2/l/STDB5J7V3YO3XUK5XNT7D6FEOG:/var/lib/docker/overlay2/l/YPRRYJ5PGWZ6BQ5NSLMEBYPB4I:/var/lib/docker/overlay2/l/RCUOIVTEDAON5N3DP3BVUQVXBH:/var/lib/docker/overlay2/l/U2F73KIPTHDRJA7NZVNJT4KHLI,upperdir=/var/lib/docker/overlay2/28bbbb41fef8d50f3ecf916b6134e3ba7e7348120fa78314df5ffdbe1dc7d797/diff,workdir=/var/lib/docker/overlay2/28bbbb41fef8d50f3ecf916b6134e3ba7e7348120fa78314df5ffdbe1dc7d797/work)
 </code></pre>
 <p>留意到</p>
-<pre><code class="language-bash">/var/lib/docker/overlay
-/var/lib/docker/overlay2
+<pre><code class="language-bash">/var/lib/docker/overlay2
 </code></pre>
 <p>pushd 进相关目录</p>
 <pre><code class="language-bash">du -h --max-depth=1
@@ -395,7 +399,7 @@ udev             63G     0   63G   0% /dev
 tmpfs            13G  2.9M   13G   1% /run
 /dev/sda4       221G  214G  4.8G  100% /
 </code></pre>
-<p>最后修改预留空间为 1% 完成释放</p>
+<p>最后修改预留空间为 1%</p>
 <pre><code class="language-bash">tune2fs -m 1 /dev/sda4
 </code></pre>
 <pre><code class="language-bash">df -h
@@ -407,7 +411,58 @@ tmpfs            13G  2.9M   13G   1% /run
 Block count:              59107328
 Reserved block count:     591073
 </code></pre>
-<p>完成空间释放</p>
+<p>可以看出可用空间变多，完成空间释放</p>
+<h1 id="tips">Tips</h1>
+<h2 id="xargs-extended-arguments">xargs (eXtended ARGuments）</h2>
+<ol>
+<li>
+<p>xargs 是给命令传递参数的一个过滤器，也是组合多个命令的一个工具。</p>
+</li>
+<li>
+<p>xargs 可以将管道或标准输入（stdin）数据转换成命令行参数，也能够从文件的输出中读取数据。</p>
+</li>
+<li>
+<p>xargs 也可以将单行或多行文本输入转换为其他格式，例如多行变单行，单行变多行。</p>
+</li>
+<li>
+<p>xargs 默认的命令是 echo，这意味着通过管道传递给 xargs 的输入将会包含换行和空白，不过通过 xargs 的处理，换行和空白将被空格取代。</p>
+</li>
+<li>
+<p>xargs 是一个强有力的命令，它能够捕获一个命令的输出，然后传递给另外一个命令。</p>
+</li>
+</ol>
+<p>xargs 一般是和管道一起使用。</p>
+<pre><code class="language-bash">命令格式：
+somecommand |xargs -item  command
+参数：
+
+-a file 从文件中读入作为 stdin
+
+-e flag ，注意有的时候可能会是-E，flag必须是一个以空格分隔的标志，当xargs分析到含有flag这个标志的时候就停止。
+
+-p 当每次执行一个argument的时候询问一次用户。
+
+-n num 后面加次数，表示命令在执行的时候一次用的argument的个数，默认是用所有的。
+
+-t 表示先打印命令，然后再执行。
+
+-i 或者是-I，这得看linux支持了，将xargs的每项名称，一般是一行一行赋值给 {}，可以用 {} 代替。
+
+-r no-run-if-empty 当xargs的输入为空的时候则停止xargs，不用再去执行了。
+
+-s num 命令行的最大字符数，指的是 xargs 后面那个命令的最大命令行字符数。
+
+-L num 从标准输入一次读取 num 行送给 command 命令。
+
+-l 同 -L。
+
+-d delim 分隔符，默认的xargs分隔符是回车，argument的分隔符是空格，这里修改的是xargs的分隔符。
+
+-x exit的意思，主要是配合-s使用
+</code></pre>
+<p>example</p>
+<pre><code class="language-bash">find ./ -name &quot;systemd*&quot; | xargs -i cp -r {} {}.bak #寻找 systemd开头文件并备份
+</code></pre>
 
     </div>
 
