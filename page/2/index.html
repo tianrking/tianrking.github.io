@@ -130,6 +130,29 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/heroku_flask_%E6%90%AD%E5%BB%BA%E8%88%87%E4%BD%BF%E7%94%A8/">Heroku_flask_搭建與使用</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2022-04-25 </span>
+      <div class="post-category">
+          <a href="/categories/devops/"> DevOps </a>
+          </div>
+        <span class="more-meta"> 92 words </span>
+        <span class="more-meta"> 1 min read </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Install heroku CLI sudo snap install heroku --classic setup account heroku login Create app heroku create Create a new Git repository cd my-project/ git init heroku git:remote -a name Existing Git repository heroku git:remote -a name FLASK DEMO app.py from flask import Flask app = Flask(__name__) @app.route(&quot;/who&quot;) def who_am_i(): return &quot;w0x7ce&quot; if __name__ == '__main__': app.run(port=5000) wsgi.py from app import app if __name__ == &quot;__main__&quot;: app.run() Procfile web: gunicorn wsgi:app
+    </div>
+    <div class="read-more">
+      <a href="/post/heroku_flask_%E6%90%AD%E5%BB%BA%E8%88%87%E4%BD%BF%E7%94%A8/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/gcp-python_flask%E6%90%AD%E5%BB%BA%E8%88%87%E4%BD%BF%E7%94%A8/">GCP Python_Flask搭建与使用</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2022-04-24 </span>
@@ -218,30 +241,6 @@
     </div>
     <div class="read-more">
       <a href="/post/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-xgboost%E5%AE%8C%E6%88%90%E8%82%A1%E5%83%B9%E9%A0%90%E6%B8%AC/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/grafana-prometheus%E7%9B%A3%E6%8E%A7/">Grafana Prometheus監控</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2022-03-21 </span>
-      <div class="post-category">
-          <a href="/categories/%E9%81%8B%E7%B6%AD/"> 運維 </a>
-          <a href="/categories/%E5%8F%AF%E8%A6%96%E5%8C%96/"> 可視化 </a>
-          </div>
-        <span class="more-meta"> 173 words </span>
-        <span class="more-meta"> 1 min read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      Unfinished Installing node_exporter wget https://github.com/prometheus/node_exporter/releases/download/v0.15.2/node_exporter-0.15.2.linux-amd64.tar.gz tar -xf node_exporter-0.15.2.linux-amd64.tar.gz sudo mv node_exporter-0.15.2.linux-amd64/node_exporter /usr/local/bin rm -r node_exporter-0.15.2.linux-amd64* sudo useradd -rs /bin/false node_exporter sudo nano /etc/systemd/system/node_exporter.service [Unit] Description=Node Exporter After=network.target [Service] User=node_exporter Group=node_exporter Type=simple ExecStart=/usr/local/bin/node_exporter [Install] WantedBy=multi-user.target sudo systemctl daemon-reload sudo systemctl enable node_exporter sudo systemctl start node_exporter Installing Prometheus wget https://github.com/prometheus/prometheus/releases/download/v2.1.0/prometheus-2.1.0.linux-amd64.tar.gz tar -xf prometheus-2.1.0.linux-amd64.tar.gz sudo mv prometheus-2.1.0.linux-amd64/prometheus prometheus-2.1.0.linux-amd64/promtool /usr/local/bin sudo mkdir /etc/prometheus /var/lib/prometheus sudo mv prometheus-2.1.0.linux-amd64/consoles prometheus-2.1.0.linux-amd64/console_libraries /etc/prometheus rm -r prometheus-2.1.0.linux-amd64* Go
-    </div>
-    <div class="read-more">
-      <a href="/post/grafana-prometheus%E7%9B%A3%E6%8E%A7/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
