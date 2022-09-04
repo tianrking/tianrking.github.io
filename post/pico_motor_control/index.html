@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title> - WoW</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="w0x7ce" /><meta name="description" content="树莓派pico的闭环电机控制 基于 pico-sdk (c&#43;&#43;) 实现 环境配置 https://github.com/raspberrypi/pico-sdk 安装相关软件包 安装 CMake (3.13以上版本), 和支持arm架构的gcc编译器 sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc&#43;&#43;-arm-none-eabi-newlib 配置" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="https://me.w0x7ce.eu/post/pico_motor_control/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.b5a744db6de49a86cadafb3b70f555ab443f83c307a483402259e94726b045ff.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="树莓派pico的闭环电机控制 基于 pico-sdk (c&#43;&#43;) 实现 环境配置 https://github.com/raspberrypi/pico-sdk 安装相关软件包 安装 CMake (3.13以上版本), 和支持arm架构的gcc编译器 sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc&#43;&#43;-arm-none-eabi-newlib 配置" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://me.w0x7ce.eu/post/pico_motor_control/" /><meta property="article:section" content="post" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="树莓派pico的闭环电机控制 基于 pico-sdk (c&#43;&#43;) 实现 环境配置 https://github.com/raspberrypi/pico-sdk 安装相关软件包 安装 CMake (3.13以上版本), 和支持arm架构的gcc编译器 sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc&#43;&#43;-arm-none-eabi-newlib 配置">
+
+<meta itemprop="wordCount" content="1418">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="树莓派pico的闭环电机控制 基于 pico-sdk (c&#43;&#43;) 实现 环境配置 https://github.com/raspberrypi/pico-sdk 安装相关软件包 安装 CMake (3.13以上版本), 和支持arm架构的gcc编译器 sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc&#43;&#43;-arm-none-eabi-newlib 配置"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">WoW</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/explore/">
+        <li class="mobile-menu-item">Explore</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">WoW</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/explore/">Explore</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title"></h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 0001-01-01 </span>
+        
+          <span class="more-meta"> 1418 words </span>
+          <span class="more-meta"> 3 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#树莓派pico的闭环电机控制-基于-pico-sdk-c-实现">树莓派pico的闭环电机控制 基于 pico-sdk (c++) 实现</a>
+      <ul>
+        <li><a href="#环境配置">环境配置</a></li>
+        <li><a href="#创建项目">创建项目</a></li>
+        <li><a href="#编写项目代码">编写项目代码</a>
+          <ul>
+            <li><a href="#pwm-驱动电机">PWM 驱动电机</a></li>
+            <li><a href="#编码器数值读取与闭环控制">编码器数值读取与闭环控制</a></li>
+          </ul>
+        </li>
+        <li><a href="#编译代码与调试">编译代码与调试</a>
+          <ul>
+            <li><a href="#编译">编译</a></li>
+            <li><a href="#烧录">烧录</a></li>
+            <li><a href="#调试">调试</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>[NOTE] Updated <span class="timeago" datetime="0001-01-01T00:00:00" title="January 1, 0001">January 1, 0001</span>. This article may have outdated content or subject matter.</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="树莓派pico的闭环电机控制-基于-pico-sdk-c-实现">树莓派pico的闭环电机控制 基于 pico-sdk (c++) 实现</h1>
+<h2 id="环境配置">环境配置</h2>
+<p><a href="https://github.com/raspberrypi/pico-sdk">https://github.com/raspberrypi/pico-sdk</a></p>
+<p>安装相关软件包</p>
+<ol>
+<li>
+<p>安装 CMake (3.13以上版本), 和支持arm架构的gcc编译器</p>
+<pre><code class="language-bash">sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
+</code></pre>
+</li>
+<li>
+<p>配置环境变量 确保可以正确的调用 Pico-SDK 开发套件</p>
+<pre><code class="language-bash">git clone https://github.com/raspberrypi/pico-sdk ~/pico-sdk
+export PICO_SDK_PATH={pico-sdk下载的路径}
+</code></pre>
+</li>
+</ol>
+<h2 id="创建项目">创建项目</h2>
+<ol>
+<li>在合适的路径下</li>
+</ol>
+<pre><code class="language-bash">mkdir ~/pico_project
+cd ~/pico_project
+</code></pre>
+<ol start="2">
+<li>复制 在 SDK 里面的 <a href="https://github.com/raspberrypi/pico-sdk/blob/master/external/pico_sdk_import.cmake">pico_sdk_import.cmake</a> 到我们的项目根路径</li>
+</ol>
+<pre><code class="language-bash">cp ~/pico-sdk/external/pico_sdk_import.cmake ~/pico_project
+</code></pre>
+<ol start="3">
+<li>
+<p>参考 <a href="https://github.com/raspberrypi/pico-examples">pico-example</a>  编写 <code>CMakeLists.txt</code> 对于电机控制的项目我的代码是这样的:</p>
+<pre><code class="language-cmake">cmake_minimum_required(VERSION 3.13)
+
+include(pico_sdk_import.cmake)
+
+project(my_project)
+
+# 初始化 pico-sdk 开发套件
+pico_sdk_init()
+
+add_executable(motor_control)
+
+pico_generate_pio_header(motor_control ${CMAKE_CURRENT_LIST_DIR}/quadrature_encoder.pio)
+
+target_sources(motor_control PRIVATE motor_control.cpp)
+
+
+# 连接相关的依赖
+target_link_libraries(motor_control PRIVATE
+        pico_stdlib
+        pico_multicore
+        hardware_pio
+        hardware_pwm
+        )
+
+# 启用 usb 串口输出 禁用 uart 输出
+pico_enable_stdio_usb(motor_control 1)
+pico_enable_stdio_uart(motor_control 0)
+
+# 创建 map/bin/hex/uf2 类型烧录文件.
+pico_add_extra_outputs(motor_control)
+</code></pre>
+</li>
+</ol>
+<h2 id="编写项目代码">编写项目代码</h2>
+<p>经过上面的步骤我们完成了环境的配置 下边可以开始编写功能代码。</p>
+<h3 id="pwm-驱动电机">PWM 驱动电机</h3>
+<p>我们选用的是L298N电机驱动</p>
+<p><img src = "media\L298N-Motor-Driver-Module-Pinout.png"></img></p>
+<p>可同时控制两个直流减速电机做不同动作，在6V到46V的电压范围内，提供2安培的电流，并且具有过热自断和反馈检测功能。正确接线后，在软件层面，我们只需要使能对应的输出，通过调整输出的pwm信号就可以驱动电机旋转。</p>
+<p>pico有一个频率为125Mhz的pwm时钟，这个时钟8ns计数一次，内部计数器连续计数，到达65535后 重新回到0.</p>
+<p>我们可以利用它生成一个 周期为4ns ，占空比为50% 的PWM信号如</p>
+<p>25000kHZ=25mHz
+4us / 8ns = 500 Cycles //我们可让pico 计数到五百个为一组
+250 / 500 = 50%
+V-pwm = 3.3*50% = 1.65V 在高频的情况下我们也可以将其视为一个1.65V的信号</p>
+<p>代码如下</p>
+<pre><code class="language-c"> #include &lt;stdio.h&gt;
+ #include &quot;pico/stdlib.h&quot;
+ #include &quot;hardware/timer.h&quot;
+ #include &quot;hardware/pwm.h&quot;
+
+ #include &quot;iostream&quot;
+
+ int wrap;
+
+ int main() {
+     gpio_set_function(GPIO_motor_pwm, GPIO_FUNC_PWM);
+     uint slice_num = pwm_gpio_to_slice_num(GPIO_motor_pwm);
+
+     wrap = 500; // 25Mhz
+     // wrap = 62500; // 2khz
+     // wrap = 12500 ; //should be 10 kHz 
+     // wrap = 1250; // should be 100 kHz 
+     pwm_set_wrap(slice_num, wrap);
+     pwm_set_enabled(slice_num, true);
+
+     pwm_set_chan_level(slice_num, PWM_CHAN_A, 0.5*wrap);
+ }
+</code></pre>
+<p>这样就可以调制出对应的波形</p>
+<h3 id="编码器数值读取与闭环控制">编码器数值读取与闭环控制</h3>
+<p>通过以上的步骤 我们可用调制出需要的pwm信号，现在我们利用编码器来获取电机转动的相对速度，下面以便于理解的增量式PID来举例说明。</p>
+<p><strong>此步骤需要调用 <a href="https://github.com/raspberrypi/pico-examples/blob/master/pio/quadrature_encoder/quadrature_encoder.pio">quadrature_encoder.pio</a> 在开始前我们需要先拷贝此文件</strong></p>
+<ol>
+<li>定义一个便于实现PID的类</li>
+</ol>
+<pre><code class="language-c++">class PID_class
+{
+    private:
+        float kp, ki, kd;
+        float err, last_err;
+        float err_i;
+        float err_d;
+        float fix;
+
+    public:
+        PID_class(int p, int i, int d)
+        {
+            kp = p;
+            ki = i;
+            kd = d;
+            std::cout &lt;&lt; kp &lt;&lt; &quot; &quot; &lt;&lt; ki &lt;&lt; &quot; &quot; &lt;&lt; kd;
+        };
+
+        void PID_init(int p, int i, int d)
+        {
+            PID_class(p, i, d);
+        };
+
+        void PID_change(int p, int i, int d)
+        {
+            kp = p;
+            ki = i;
+            kd = d;
+            std::cout &lt;&lt; kp &lt;&lt; &quot; &quot; &lt;&lt; ki &lt;&lt; &quot; &quot; &lt;&lt; kd;
+        };
+
+        int caculate(int now, int target)
+        {
+            err = target - now;
+            err_i += err;
+            err_d = err - last_err;
+            last_err = err;
+
+            fix = kp * err + ki * err_i + kd * err_d;
+            return fix;
+        }
+        
+} PID(5, 0.5, 0);
+</code></pre>
+<ol start="2">
+<li>读取编码器的值 调用 PID 并自动调节输出脉冲的占空比</li>
+</ol>
+<pre><code class="language-c++">#include &lt;stdio.h&gt;
+#include &quot;pico/stdlib.h&quot;
+#include &quot;hardware/pio.h&quot;
+#include &quot;hardware/timer.h&quot;
+#include &quot;hardware/pwm.h&quot;
+
+#include &quot;iostream&quot;
+
+#include &quot;quadrature_encoder.pio.h&quot;
+
+int wrap;
+int GPIO_motor_pwm = 6;
+
+/// 定义 PID_class 代码在上面部分 
+/// 复制粘贴到这里即可 在根据实际情况修改参数
+/// 此处省略
+
+int main()
+{
+    int new_value, delta, old_value = 0;
+
+    //编码器一根线接到Pin10 另外一根接到11
+    const uint PIN_AB = 10;
+
+    stdio_init_all();
+
+    PIO pio = pio0;
+    const uint sm = 0;
+
+    uint offset = pio_add_program(pio, &amp;quadrature_encoder_program);
+    quadrature_encoder_program_init(pio, sm, offset, PIN_AB, 0);
+
+    // 选择输出 pwm 的引脚 用作控制信号传入L298n 电机驱动并完成初始化
+    gpio_set_function(GPIO_motor_pwm, GPIO_FUNC_PWM);
+    uint slice_num = pwm_gpio_to_slice_num(GPIO_motor_pwm);
+    wrap = 62500; // 2khz
+    pwm_set_wrap(slice_num, wrap);
+    pwm_set_enabled(slice_num, true);
+
+    // 在这里我们设定默认输出 占空比为0 即 静止状态
+    float output_pwm = 0; // 12000
+
+    while (1)
+    {
+        // 读取编码器的数值
+        
+        new_value = quadrature_encoder_get_count(pio, sm);
+        delta = new_value - old_value; //获取反应速度的相对数值
+        old_value = new_value;
+
+        // 调用PID 第一个参数 传入当前值， 第二个参数 传入我们理想的速度值， 可用根据不同编码器的脉冲数来进行对应映射的计算，算出角速度。如果只是需要反应速度的快慢，想提速就增大第二个参数值即可，然后转速就会随之改变，最后实时速度的数值会趋于第二个参数，即目标速度
+        
+        output_pwm += PID.caculate(delta, 12);
+
+        // 我们需要对 pwm 进行 限幅 
+        // 有两个原因 一是起到保护作用 二是pico 计数不能超过 65535 
+        
+        if (output_pwm &gt; 65000)
+        {
+            output_pwm = 65000;
+        }
+
+        if (output_pwm &lt; 0)
+        {
+            output_pwm = 0;
+        }
+
+        pwm_set_chan_level(slice_num, PWM_CHAN_A, output_pwm);
+
+        std::cout &lt;&lt; &quot;position &quot; &lt;&lt; new_value &lt;&lt; &quot; delta &quot; &lt;&lt; delta &lt;&lt; &quot;  pwm &quot; &lt;&lt; output_pwm*100/62500 &lt;&lt;&quot;%&quot; &lt;&lt; std::endl;
+
+        sleep_ms(2);
+    }
+}
+
+</code></pre>
+<h2 id="编译代码与调试">编译代码与调试</h2>
+<h3 id="编译">编译</h3>
+<p>进入项目目录 创建并进入 build 目录,在修改 CMakeLists.txt 后需要重新执行 &quot; cmake .. &ldquo;, 修改 cpp 源代码 只需要重新执行 make 完成编译</p>
+<pre><code class="language-bash">cd ~/pico_project
+mkdir build
+cd build
+cmake ..
+make
+</code></pre>
+<h3 id="烧录">烧录</h3>
+<pre><code class="language-bash">cp ~/pico_project/build/motor_control.uf2 /media/$USER/RPI-RP2
+</code></pre>
+<h3 id="调试">调试</h3>
+<pre><code class="language-bash">sudo minicom -D /dev/serial/by-id/usb-Raspberry_Pi_Pico_E6605481DB64B936-if00
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">w0x7ce</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        0001-01-01
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">Reward</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/wechat.png">
+        <span>wechat</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/media/alipay.png">
+        <span>alipay</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E5%B8%B8%E7%94%A8linux%E5%91%BD%E4%BB%A4%E4%B8%80/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">常用Linux命令(一)</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:null@w0x7ce.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/IIIIIlIlIIIllll" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="mailto:tian.r.king@gmail.com" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/tianrking/" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/10065982" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://me.w0x7ce.eu/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>w0x7ce</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
