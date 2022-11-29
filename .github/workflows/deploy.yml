@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - main
+      - v3.0
       
     paths-ignore:
       - "ISSUE_TEMPLATE/**"
@@ -70,7 +70,7 @@ jobs:
             cd  ~/docusaurus_wiki/build
             git init
             git remote add github git@github.com:tianrking/tianrking.github.io.git
-            git checkout -b HTML 
+            git checkout -b v3.0_HTML
             git add .
             git commit -m "Update"
             git push -u github HTML -f
