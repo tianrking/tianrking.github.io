@@ -69,11 +69,11 @@ jobs:
         run: |
             cd  ~/docusaurus_wiki/build
             git init
-            git remote add git@github.com:tianrking/tianrking.github.io.git
+            git remote add github git@github.com:tianrking/tianrking.github.io.git
             git checkout -b v3.0_HTML_test
             git add .
             git commit -m "Update"
-            git push -u github HTML -f
+            git push -u github v3.0_HTML_test -f
 
 
 

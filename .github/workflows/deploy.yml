@@ -73,7 +73,7 @@ jobs:
             git checkout -b v3.0_HTML
             git add .
             git commit -m "Update"
-            git push -u github HTML -f
+            git push -u github v3.0_HTML -f
 
 
 
