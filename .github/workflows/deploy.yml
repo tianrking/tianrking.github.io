@@ -44,7 +44,7 @@ jobs:
                   git -y 
             git config --global user.name 'tianrking'
             git config --global user.email 'tian.r.king@gmail.com'
-            git clone git@github.com:tianrking/tianrking.github.io.git ~/docusaurus_wiki
+            git clone -b v3.0 git@github.com:tianrking/tianrking.github.io.git ~/docusaurus_wiki
             
       - name: NPM RUN for HTML BUILD
         run: |
