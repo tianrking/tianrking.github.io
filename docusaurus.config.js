@@ -35,7 +35,6 @@ const config = {
         docs: {
 
           routeBasePath: '/', // Set this value to '/'.
-          homePageId: 'intro.md', // Set to existing document id.
 
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
