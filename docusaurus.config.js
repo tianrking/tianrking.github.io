@@ -16,7 +16,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
+  organizationName: 'w0x7ce', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -86,7 +86,7 @@ const config = {
         repo: 'tianrking/tianrking.github.io',
         repoId: 'MDEwOlJlcG9zaXRvcnk2MzA2MTIzOQ==',
         category: 'Q&A',
-        categoryId: 'DIC_kwDOA8I8984B_Bd'
+        categoryId: 'DIC_kwDOA8I8984B_Bd7'
       },
 
       docs: {
