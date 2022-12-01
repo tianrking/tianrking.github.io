@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'w0x7ce 的秘密花園 ',
+  tagline: 'Hi I am Tienjui Wong , Write , Share , Live',
   url: 'https://me.w0x7ce.eu',
   baseUrl: '/',
   onBrokenLinks: 'throw',
