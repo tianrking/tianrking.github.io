@@ -80,6 +80,15 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
 
+      giscus: {
+        theme: 'light_high_contrast',
+        // darkTheme: 'dark_tritanopia',
+        repo: 'tianrking/tianrking.github.io',
+        repoId: 'MDEwOlJlcG9zaXRvcnk2MzA2MTIzOQ==',
+        category: 'Q&A',
+        categoryId: 'DIC_kwDOA8I8984B_Bd'
+      },
+
       docs: {
         sidebar: {
           hideable: true,
