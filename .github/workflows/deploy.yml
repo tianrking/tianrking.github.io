@@ -71,6 +71,7 @@ jobs:
             git init
             git remote add github git@github.com:tianrking/tianrking.github.io.git
             git checkout -b v3.0_HTML
+            echo "me.w0x7ce.eu" > CNAME
             git add .
             git commit -m "Update"
             git push -u github v3.0_HTML -f
