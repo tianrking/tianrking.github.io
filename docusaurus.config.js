@@ -24,7 +24,17 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en','zh-TW'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',       // 閱讀方向為左到右
+      },
+      'zh-TW': {
+        label: '繁體中文（台灣）',
+        direction: 'ltr',
+      },
+    },
   },
 
   presets: [
@@ -64,15 +74,39 @@ const config = {
 
         blog: {
 
-          showReadingTime: true, // When set to false, the "x min read" won't be shown
-          readingTime: ({content, frontMatter, defaultReadingTime}) =>
-            defaultReadingTime({content, options: {wordsPerMinute: 300}}),
+          path: 'blog',
+          // Simple use-case: string editUrl
+          // editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
+          // Advanced use-case: functional editUrl
+          editUrl: ({locale, blogDirPath, blogPath, permalink}) =>
+            `https://github.com/tianrking/tianrking.github.io/edit/v3.0/${blogDirPath}/${blogPath}`,
+          editLocalizedFiles: false,
+          blogTitle: 'Blog title',
+          blogDescription: 'Blog',
+          blogSidebarCount: 5,
+          blogSidebarTitle: 'All our posts',
+          routeBasePath: 'blog',
+          include: ['**/*.{md,mdx}'],
+          exclude: [
+            '**/_*.{js,jsx,ts,tsx,md,mdx}',
+            '**/_*/**',
+            '**/*.test.{js,jsx,ts,tsx}',
+            '**/__tests__/**',
+          ],
+          postsPerPage: 10,
+          blogListComponent: '@theme/BlogListPage',
+          blogPostComponent: '@theme/BlogPostPage',
+          blogTagsListComponent: '@theme/BlogTagsListPage',
+          blogTagsPostsComponent: '@theme/BlogTagsPostsPage',
+          remarkPlugins: [require('remark-math')],
+          rehypePlugins: [],
+          beforeDefaultRemarkPlugins: [],
+          beforeDefaultRehypePlugins: [],
+          truncateMarker: /<!--\s*(truncate)\s*-->/,
+          showReadingTime: true,
 
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
+
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
