@@ -175,7 +175,7 @@ const config = {
               },
               {
                 label: 'Telegram',
-                href: '@qozob',
+                href: 'https://telegram.me/qozob',
               },
               {
                 label: 'Twitter',
