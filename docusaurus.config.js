@@ -148,7 +148,7 @@ const config = {
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/tianrking/tianrking.github.io',
             label: 'GitHub',
             position: 'right',
           },
@@ -170,17 +170,21 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Github',
+                href: 'https://github.com/tianrking',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Telegram',
+                href: '@qozob',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/IIIIIlIlIIIllll',
               },
+              {
+                label: 'Email',
+                href: 'tian.r.king@gmail.com',
+              }
             ],
           },
           {
@@ -192,7 +196,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/tianrking/tianrking.github.io',
               },
             ],
           },
