@@ -37,11 +37,31 @@ const config = {
           routeBasePath: '/', // Set this value to '/'.
 
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          
+          editLocalizedFiles: false,
+          editCurrentVersion: false,
+
+          beforeDefaultRemarkPlugins: [],
+          beforeDefaultRehypePlugins: [],
+
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
+          disableVersioning: false,
+          includeCurrentVersion: true,
+          lastVersion: undefined,
+
+          include: ['**/*.md', '**/*.mdx'],
+          exclude: [
+            '**/_*.{js,jsx,ts,tsx,md,mdx}',
+            '**/_*/**',
+            '**/*.test.{js,jsx,ts,tsx}',
+            '**/__tests__/**',
+          ],
+
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/tianrking/tianrking.github.io/edit/v3.0/',
         },
+
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
