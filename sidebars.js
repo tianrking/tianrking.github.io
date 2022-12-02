@@ -19,7 +19,7 @@ const sidebars = {
   // But you can create a sidebar manually
 
   tutorialSidebar: [
-    'intro',
+    // 'intro',
     {
       type: 'category',
       label: 'Tutorial',
@@ -39,7 +39,9 @@ const sidebars = {
           label: 'RP2040',
           items: 
           [
-            'rp2040/freeRTOS-on-RP2040-get-start'
+            'rp2040/freeRTOS-on-RP2040-get-start',
+            'rp2040/PlatformIO-on-RP2040-get-start',
+            'rp2040/micro-ROS-on-RP2040'
           ],  
         },
       ],
