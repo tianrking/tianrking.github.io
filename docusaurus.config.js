@@ -183,7 +183,7 @@ const config = {
               },
               {
                 label: 'Email',
-                href: 'mailto:tian.r.king@gmail.com',
+                href: 'tian.r.king@gmail.com',
               }
             ],
           },
