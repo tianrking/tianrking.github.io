@@ -2,8 +2,8 @@
 description: ESP32 Setting up Development Environment
 title: ESP32 Getting started
 tags:
-  - Demo
-  - Getting started
+  - embedded
+  - esp
 keywords:
   - embedded
   - esp

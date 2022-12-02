@@ -34,7 +34,16 @@ const sidebars = {
             'esp/esp32c3-dev-get-start'
           ],  
         },
+        {
+          type: 'category',
+          label: 'RP2040',
+          items: 
+          [
+            'rp2040/freeRTOS-on-RP2040-get-start'
+          ],  
+        },
       ],
+      
     },
   ],
 
