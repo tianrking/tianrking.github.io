@@ -69,6 +69,7 @@ idf.py menuconfig
 
 ```bash
 idf.py build
+idf.py flash
 ```
 
 
