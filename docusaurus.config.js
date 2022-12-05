@@ -83,7 +83,7 @@ const config = {
           editLocalizedFiles: false,
           blogTitle: 'Blog title',
           blogDescription: 'Blog',
-          blogSidebarCount: 5,
+          blogSidebarCount: 20,
           blogSidebarTitle: 'All our posts',
           routeBasePath: 'blog',
           include: ['**/*.{md,mdx}'],
