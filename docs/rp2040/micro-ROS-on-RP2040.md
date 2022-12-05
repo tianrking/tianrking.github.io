@@ -16,15 +16,31 @@ last_update:
 
 ---
 
+
+## Getting Started on PICO
+
+[Detailed Tutorial](https://me.w0x7ce.eu/rp2040/micro-ROS-on-RP2040)
+
 ```bash
-git clone --recurse-submodules https://github.com/raspberrypi/pico-sdk.git ~/pico-sdk
-export PICO_SDK_PATH=~/pico-sdk
 git clone https://github.com/tianrking/1_ros ~/1_ros
 ```
 
+### Dependencies
+
+First, make sure the Pico SDK is properly installed and configured:
+
 ```bash
-sudo apt install cmake g++ gcc-arm-none-eabi doxygen libnewlib-arm-none-eabi git python3 -y
+# Install dependencies
+sudo apt install cmake g++ gcc-arm-none-eabi doxygen libnewlib-arm-none-eabi git python3
+git clone --recurse-submodules https://github.com/raspberrypi/pico-sdk.git $HOME/pico-sdk
+
+# Configure environment
+echo "export PICO_SDK_PATH=$HOME/pico-sdk" >> ~/.bashrc
+source ~/.bashrc
+
 ```
+
+### Build
 
 ```bash
 cd ~/1_ros
@@ -34,10 +50,18 @@ cmake ..
 make
 ```
 
+### Flash 
+
+To flash, hold the boot button, plug the USB and run:
+
 ```bash
 cp pico_micro_ros_example.uf2 /media/$USER/RPI-RP2
 ```
 
+### Start Micro-ROS Agent
+
+Micro-ROS follows the client-server architecture, so you need to start the Micro-ROS Agent.
+You can do so using the [micro-ros-agent Docker](https://hub.docker.com/r/microros/micro-ros-agent):
 ```bash
 docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:humble serial --dev /dev/ttyACM0 -b 115200
 ```
