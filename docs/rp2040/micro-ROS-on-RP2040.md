@@ -18,22 +18,21 @@ last_update:
 
 
 ```bash
-git clone https://github.com/raspberrypi/pico-examples # For Example
 git clone https://github.com/raspberrypi/pico-sdk.git ~/pico-sdk
 export PICO_SDK_PATH=~/pico-sdk
-```
-
-```bash
-git clone https://github.com/micro-ROS/micro_ros_raspberrypi_pico_sdk.git
+git clone https://github.com/tianrking/1_ros ~/1_ros
 ```
 
 ```bash
 sudo apt install cmake g++ gcc-arm-none-eabi doxygen libnewlib-arm-none-eabi git python3 -y
 ```
 
-
 ```bash
-docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:humble serial --dev /dev/ttyACM0 -b 115200
+cd ~/1_ros
+mkdir build
+cd build
+cmake ..
+make
 ```
 
 ```bash
@@ -41,11 +40,12 @@ cp pico_micro_ros_example.uf2 /media/$USER/RPI-RP2
 ```
 
 ```bash
+docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:humble serial --dev /dev/ttyACM0 -b 115200
 ```
 
 ## Remote Control
 
-### RCLCPP
+### RCLCPP (Unfinish)
 
 ```bash
 mkdir ~/PC_Control
@@ -93,29 +93,74 @@ ament_target_dependencies(get_speed rclcpp)
 ```
 
 ```bash
-cd ~/PC_Control/
+cd ~/1_ros/PC_Control/
 colcon build --packages-select motor_control_rclcpp
 ros2 run motor_control_rclcpp get_speed
 ros2 run motor_control_rclcpp change_speed
 ```
 
+### RCLPY
 
-### RCLCPP
+1. Creat Project
 
-```bash
-cd ~/PC_Control/src
-ros2 pkg create example_topic_rclpy  --build-type ament_python --dependencies rclpy
-```
+  ```bash
+  cd ~/1_ros/PC_Control/src
+  ros2 pkg create motor_control_rclpy  --build-type ament_python --dependencies rclpy
+  ```
 
-```bash
-cd example_topic_rclpy/example_topic_rclpy
-touch topic_subscribe_02.py
-touch topic_publisher_02.py
-```
+2. Write Code
 
-```bash
-cd ~/PC_Control/
-colcon build
-```
+  ```bash
+  cd ~/1_ros/PC_Control/src/motor_control_rclpy/motor_control_rclpy
+  wget https://raw.githubusercontent.com/tianrking/1_ros/pico_control_motor/PC_Control/src/motor_control_rclpy/motor_control_rclpy/change_speed.py
+  wget https://raw.githubusercontent.com/tianrking/1_ros/pico_control_motor/PC_Control/src/motor_control_rclpy/motor_control_rclpy/get_speed.py
+  ```
 
-https://github.com/micro-ROS/micro-ROS-demos
+  Modify package.xml like [this](https://github.com/tianrking/1_ros/blob/pico_control_motor/PC_Control/src/motor_control_rclpy/package.xml)
+
+  ```xml
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+  ```
+
+  Modify setup.cfg like [this](https://github.com/tianrking/1_ros/blob/pico_control_motor/PC_Control/src/motor_control_rclpy/setup.cfg)
+
+  ```bash
+  [develop]
+  script_dir=$base/lib/motor_control_rclpy
+  [install]
+  install_scripts=$base/lib/motor_control_rclpy
+  ```
+
+  Modify setup.py like [this](https://github.com/tianrking/1_ros/blob/pico_control_motor/PC_Control/src/motor_control_rclpy/setup.py)
+
+  ```py
+  entry_points={
+          'console_scripts': [
+              "get_speed = motor_control_rclpy.get_speed:main",
+              "change_speed = motor_control_rclpy.change_speed:main"      
+          ],
+      },
+  ```
+
+3. Build
+
+  ```bash
+  cd ~/1_ros/PC_Control/
+  colcon build
+  source install/setup.bash
+  ```
+
+4. Run
+
+  ```bash
+  ros2 run motor_control_rclpy change_speed
+  ros2 run motor_control_rclpy get_speed
+  ```
+
+## Thanks
+
+- https://github.com/micro-ROS/micro-ROS-demos
+- https://github.com/raspberrypi/pico-examples
