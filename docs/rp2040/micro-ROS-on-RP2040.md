@@ -16,9 +16,8 @@ last_update:
 
 ---
 
-
 ```bash
-git clone https://github.com/raspberrypi/pico-sdk.git ~/pico-sdk
+git clone --recurse-submodules https://github.com/raspberrypi/pico-sdk.git ~/pico-sdk
 export PICO_SDK_PATH=~/pico-sdk
 git clone https://github.com/tianrking/1_ros ~/1_ros
 ```
