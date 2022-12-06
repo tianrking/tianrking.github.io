@@ -200,6 +200,21 @@ ros2 run motor_control_rclcpp change_speed
   ros2 run motor_control_rclpy get_speed
   ```
 
+#### rqt
+
+```bash
+sudo apt install ros-dev-tools
+```
+
+cd ~/ros2_ws
+vcs import --force --input https://raw.githubusercontent.com/PickNikRobotics/rqt2_setup/master/rqt2.repos src
+
+rosdep install --from-paths src --ignore-src --rosdistro bouncy -y --skip-keys "console_bridge fastcdr fastrtps rti-connext-dds-6.0.1 urdfdom_headers"
+
+colcon build
+
+. install/local_setup.bash
+
 ## Thanks
 
 - https://github.com/micro-ROS/micro-ROS-demos
