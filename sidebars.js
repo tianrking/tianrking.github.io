@@ -52,6 +52,14 @@ const sidebars = {
             'samd/Seeeduino_Lotus_Cortex-M0'
           ],  
         },
+        {
+          type: 'category',
+          label: 'Software',
+          items: 
+          [
+            'Software/terminator'
+          ],  
+        },
       ],
     },
   ],
