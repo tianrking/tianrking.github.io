@@ -44,6 +44,14 @@ const sidebars = {
             'rp2040/micro-ROS-on-RP2040'
           ],  
         },
+        {
+          type: 'category',
+          label: 'samd',
+          items: 
+          [
+            'samd/Seeeduino_Lotus_Cortex-M0'
+          ],  
+        },
       ],
     },
   ],
