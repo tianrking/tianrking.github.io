@@ -1,14 +1,14 @@
 ---
 description: terminator
-title: Terminator
+title: terminator
 tags:
-  - Linux
-  - tools
-  - ros
-tags:
-  - Linux
-  - tools
-  - ros
+  - embedded
+  - samd
+  - platformio
+keywords:
+  - embedded
+  - samd
+  - platformio
 image: https://github.com/tianrking.png
 last_update:
   date: 12/6/2022
@@ -16,7 +16,7 @@ last_update:
 
 ---
 
-#### Quick Start:
+## Quick Start:
 
 Create more terminals by:  
  - horizontal split: `Ctrl-Shift-o`
