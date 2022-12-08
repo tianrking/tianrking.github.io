@@ -77,3 +77,15 @@ ros2 run rqt_py_console rqt_py_console
 
 ros2 pkg list
 ```
+
+plugin code dir
+
+```bash
+/opt/ros/humble/lib/python3.10/site-packages
+```
+
+bin dir
+
+```bash
+/opt/ros/humble/bin
+```
