@@ -60,6 +60,22 @@ const sidebars = {
             'Software/terminator'
           ],  
         },
+        {
+          type: 'category',
+          label: 'ROS',
+          items: 
+          [
+            'ROS/install_ros2_on_ubuntu'
+          ],  
+        },
+        {
+          type: 'category',
+          label: 'Jetson',
+          items: 
+          [
+            'Jetson/Get_Start_With_Nano'
+          ],  
+        },
       ],
     },
   ],

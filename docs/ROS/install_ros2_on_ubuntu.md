@@ -89,3 +89,7 @@ bin dir
 ```bash
 /opt/ros/humble/bin
 ```
+
+```bash
+/opt/ros/humble/share
+```
