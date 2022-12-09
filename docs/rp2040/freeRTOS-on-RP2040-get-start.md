@@ -112,6 +112,12 @@ make
 
 ## NOTE
 
+https://github.com/tianrking/FreeRTOS-SMP-Demos
+
+https://github.com/tianrking/freertos-rp2040
+
+
+
 ### 資料型態及命名規則
 
 在不同硬體裝置上，通訊埠設定上也不同，定義在portmacro.h標頭檔內，有兩種特殊資料型態portTickType以及portBASE_TYPE。
