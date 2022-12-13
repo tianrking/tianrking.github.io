@@ -1,6 +1,6 @@
 ---
-description: terminator
-title: terminator
+description: docusaurus
+title: docusaurus
 tags:
   - docusaurus
   - blog
