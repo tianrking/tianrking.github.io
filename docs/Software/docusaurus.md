@@ -1,6 +1,6 @@
 ---
-description: docusaurus
-title: docusaurus
+description: terminator
+title: terminator
 tags:
   - docusaurus
   - blog
@@ -225,6 +225,20 @@ docker run -it --env-file=.env -e "CONFIG=$(cat docsearch.json | jq -r tostring)
 APPLICATION_ID={Application ID}
 API_KEY={Admin API Key}
 ```
+
+```bash title="docusaurus.config.js"
+module.exports = {
+  themeConfig: {
+    algolia: {
+      // Application ID
+      appId: {'YOUR_APP_ID'},
+      //  Search-Only API Key
+      apiKey: {'YOUR_SEARCH_API_KEY'},
+      indexName: {'YOUR_INDEX_NAME'}
+    }
+  }
+};
+
 
 We can get {Application ID} & {Admin API Key} [here](https://www.algolia.com/account/api-keys)
 
