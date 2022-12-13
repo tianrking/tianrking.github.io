@@ -17,6 +17,7 @@ last_update:
 ---
 
 [SAMD21G18A Seeeduino_Lotus_Cortex-M0](https://wiki.seeedstudio.com/Seeeduino_Lotus_Cortex-M0-)
+[Wio Lite W600](https://wiki.seeedstudio.com/Wio-Lite-W600/)
 
 ```bash
 pio project init --board seeed_zero
@@ -24,6 +25,7 @@ touch src/main.cpp
 ```
 
 ```cxx title="src/main.cpp"
+#include<Arduino.h>
 void setup()
 {
 
