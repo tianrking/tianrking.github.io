@@ -41,7 +41,8 @@ const sidebars = {
           [
             'rp2040/freeRTOS-on-RP2040-get-start',
             'rp2040/PlatformIO-on-RP2040-get-start',
-            'rp2040/micro-ROS-on-RP2040'
+            'rp2040/micro-ROS-on-RP2040',
+            'rp2040/Zephyr-on-RP2040-get-start'
           ],  
         },
         {
