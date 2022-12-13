@@ -57,7 +57,8 @@ const sidebars = {
           label: 'Software',
           items: 
           [
-            'Software/terminator'
+            'Software/terminator',
+            'Software/docusaurus'   
           ],  
         },
         {
