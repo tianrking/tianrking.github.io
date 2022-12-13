@@ -238,6 +238,7 @@ module.exports = {
     }
   }
 };
+```
 
 
 We can get {Application ID} & {Admin API Key} [here](https://www.algolia.com/account/api-keys)
