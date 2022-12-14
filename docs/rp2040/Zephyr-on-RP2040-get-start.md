@@ -19,6 +19,18 @@ last_update:
 ## Get Zephyr and install Python dependencies
 
 ```bash
+wget https://apt.kitware.com/kitware-archive.sh
+sudo bash kitware-archive.sh
+```
+
+```bash
+sudo apt install --no-install-recommends git cmake ninja-build gperf \
+  ccache dfu-util device-tree-compiler wget \
+  python3-dev python3-pip python3-setuptools python3-tk python3-wheel xz-utils file \
+  make gcc gcc-multilib g++-multilib libsdl2-dev libmagic1
+```
+
+```bash
 sudo apt install python3-venv
 
 python3 -m venv ~/zephyrproject/.venv
@@ -59,13 +71,25 @@ sudo udevadm control --reload
 
 ## Build the Blinky Sample
 
-```bash
-cd ~/zephyrproject/zephyr
-west build -p always -b <your-board-name> samples/basic/blinky
+- Build with west
 
-# For RP2040
-west build -p always -b rpi_pico samples/basic/blinky
-```
+	```bash
+	cd ~/zephyrproject/zephyr
+	west build -p always -b <your-board-name> samples/basic/blinky
+
+	# For RP2040
+	west build -p always -b rpi_pico samples/basic/blinky
+	```
+- Build with Cmake 
+
+	```bash
+	cd samples/hello_world
+	mkdir build
+	cd build
+	cmake -DBOARD=rpi_pico ..
+	make -j
+	```
+
 
 ## Read Code
 
