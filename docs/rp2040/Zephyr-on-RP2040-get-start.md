@@ -106,6 +106,12 @@ sudo udevadm control --reload
 	|west diff|git diff|
 	|West status|git status|
 
+- menuconfig
+
+	```bash
+	west build –t menuconfig –b rpi_pico samples\hello_world
+	```
+
 - Custom
 
 	```bash
