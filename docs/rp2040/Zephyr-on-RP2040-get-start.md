@@ -90,6 +90,27 @@ sudo udevadm control --reload
 	make -j
 	```
 
+- More
+
+	|||
+	|---|---|
+	|west flash|make flash|
+	|west debug |make debug|
+	|west debugserver|make debugserver|
+	|||
+	|west build -t rom_report|make rom_report|
+	|west build -t ram_report|make ram_report|
+	|||
+	|west boards||
+	|||
+	|west diff|git diff|
+	|West status|git status|
+
+- Custom
+
+	```bash
+	west init -m https://github.com/zephyrproject-rtos/zephyr --mr v2.6.0
+	```
 
 ## Read Code
 
