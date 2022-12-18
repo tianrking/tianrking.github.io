@@ -120,6 +120,10 @@ sudo udevadm control --reload
 
 ## Read Code
 
+```bash
+boards/<ARCH>/<BOARD>/<BOARD>_defconfig
+```
+
 DTS
 
 ```bash title='~/zephyrproject/zephyr/boards/arm/rpi_pico/rpi_pico.dts'
