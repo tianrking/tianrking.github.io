@@ -13,6 +13,32 @@ last_update:
   author: w0x7ce
 ---
 
+## Struct
+
+```bash
+my-website         // Root
+├── blog           // Blog Root  We dont use now 
+│   ├── 2019-05-28-hola.md
+├── docs           // Wiki docs
+│   ├── doc1.md
+│   ├── doc2.md
+│   ├── doc3.md
+│   └── mdx.md
+├── src
+│   ├── css        // style manager
+│   │   └── custom.css
+│   └── pages      // page manager
+│       ├── styles.module.css
+│       └── index.js
+├── static        // static common file 
+│   └── img
+├── docusaurus.config.js  // docusaurus base config
+├── package.json
+├── README.md
+├── sidebars.js           // sidebar config
+└── yarn.lock
+```
+
 ## Local install
 
 1. Download nodejs latest from [https://nodejs.org/en/download](https://nodejs.org/en/download/) 
@@ -134,4 +160,214 @@ last_update:
     https://github.com/{USER}/{REPO}/settings/secrets/actions
 
 
+## Plugins
 
+### Search Support
+
+```bash
+docker run -it --env-file=.env -e "CONFIG=$(cat docsearch.json | jq -r tostring)" algolia/docsearch-scraper
+```
+
+```json title="docsearch.json"
+{
+  "index_name": "wiki",
+  "start_urls": [
+    "https://c1ev0ps.github.io/docusaurus_wiki/"
+  ],
+  "sitemap_urls": [
+    "https://c1ev0ps.github.io/docusaurus_wiki/sitemap.xml"
+  ],
+  "stop_urls": [
+    "/search",
+    "/v3me",
+    "/playground",
+    "/inspector"
+  ],
+  "sitemap_alternate_links": true,
+  "selectors": {
+    "lvl0": {
+      "selector": "(//ul[contains(@class,'menu__list')]//a[contains(@class, 'menu__link menu__link--sublist menu__link--active')]/text() | //nav[contains(@class, 'navbar')]//a[contains(@class, 'navbar__link--active')]/text())[last()]",
+      "type": "xpath",
+      "global": true,
+      "default_value": "Documentation"
+    },
+    "lvl1": "header h1",
+    "lvl2": "article h2",
+    "lvl3": "article h3",
+    "lvl4": "article h4",
+    "lvl5": "article h5, article td:first-child",
+    "lvl6": "article h6",
+    "text": "article p, article li, article td:last-child"
+  },
+  "strip_chars": " .,;:#",
+  "custom_settings": {
+    "separatorsToIndex": "_",
+    "attributesForFaceting": [
+      "language",
+      "version",
+      "type",
+      "docusaurus_tag"
+    ],
+    "attributesToRetrieve": [
+      "hierarchy",
+      "content",
+      "anchor",
+      "url",
+      "url_without_anchor",
+      "type"
+    ]
+  },
+  "js_render": true,
+  "nb_hits": 856
+}
+
+```
+
+```bash title=".env"
+APPLICATION_ID={Application ID}
+API_KEY={Admin API Key}
+```
+
+```bash title="docusaurus.config.js"
+module.exports = {
+  themeConfig: {
+    algolia: {
+      // Application ID
+      appId: {'YOUR_APP_ID'},
+      //  Search-Only API Key
+      apiKey: {'YOUR_SEARCH_API_KEY'},
+      indexName: {'YOUR_INDEX_NAME'}
+    }
+  }
+};
+```
+
+
+We can get {Application ID} & {Admin API Key} [here](https://www.algolia.com/account/api-keys)
+
+
+### Name & Url & Root
+
+```bash title="docusaurus.config.js"
+module.exports = {
+  title: 'Docusaurus',
+  url: 'https://docusaurus.io',
+  baseUrl: '/',
+};
+```
+
+### Pic & Slogan
+
+```bash title="docusaurus.config.js"
+module.exports = {
+  favicon: '/img/favicon.ico',
+  tagline:
+    'Docusaurus makes it easy to maintain Open Source documentation websites.',
+};
+```
+
+### GitHub User & Project & Host
+
+```bash title="docusaurus.config.js"
+module.exports = {
+  // Docusaurus' organization is facebook
+  organizationName: 'facebook',
+  projectName: 'docusaurus',
+ githubHost: 'github.com',
+};
+```
+
+### navbar、footer
+
+```bash title="docusaurus.config.js"
+module.exports = {
+  themeConfig: {              
+    hideableSidebar: false,   
+    colorMode: {             
+      defaultMode: 'light',
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
+      switchConfig: {
+        darkIcon: '🌙',
+        lightIcon: '\u2600',
+        // React inline style object
+        // see https://reactjs.org/docs/dom-elements.html#style
+        darkIconStyle: {
+          marginLeft: '2px',
+        },
+        lightIconStyle: {
+          marginLeft: '1px',
+        },
+      },
+    },
+    navbar: {                
+      title: 'Site Title',    
+      logo: {
+        alt: 'Site Logo',
+        src: 'img/logo.svg',
+      },
+      items: [                
+        {
+          to: 'docs/docusaurus.config.js',
+          activeBasePath: 'docs',
+          label: 'docusaurus.config.js',
+          position: 'left',
+        },
+        // ... other links
+      ],
+    },
+    footer: {               
+      style: 'dark',
+      links: [
+        {
+          title: 'Docs',
+          items: [
+            {
+              label: 'Docs',
+              to: 'docs/doc1',
+            },
+          ],
+        },
+        // ... other links
+      ],
+      logo: {
+        alt: 'Facebook Open Source Logo',
+        src: 'https://docusaurus.io/img/oss_logo.png',
+      },
+      copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`, // You can also put own HTML here
+    },
+  },
+};
+```
+
+### themes 
+
+```bash title="docusaurus.config.js"
+module.exports = {
+  themes: [
+    
+    require.resolve('@docusaurus/theme-live-codeblock'),
+
+    require.resolve('@docusaurus/theme-search-algolia'),
+
+    require.resolve('@docusaurus/theme-classic'),
+  ],
+};
+```
+
+### Add Head in HTML
+
+```bash title="docusaurus.config.js"
+module.exports = {
+  scripts: [
+    // String format.
+    'https://docusaurus.io/script.js',
+    // Object format.
+    {
+      src:
+        'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
+      async: true,    // 是否同步
+    },
+  ],
+};
+```
