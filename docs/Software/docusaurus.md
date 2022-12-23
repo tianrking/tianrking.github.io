@@ -1,6 +1,6 @@
 ---
-description: terminator
-title: terminator
+description: docusaurus
+title: docusaurus
 tags:
   - docusaurus
   - blog
@@ -356,6 +356,21 @@ module.exports = {
 ```
 
 ### Add Head in HTML
+
+```bash title="docusaurus.config.js"
+module.exports = {
+  scripts: [
+    // String format.
+    'https://docusaurus.io/script.js',
+    // Object format.
+    {
+      src:
+        'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
+      async: true,    // 是否同步
+    },
+  ],
+};
+```
 
 ```bash title="docusaurus.config.js"
 module.exports = {
