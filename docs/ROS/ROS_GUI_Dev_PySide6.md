@@ -27,22 +27,22 @@ ROS官方支持的开发语言包括C++和Python，并且为这两种语言提�
 
 RQT是ROS中一个基于QT的GUI开发框架, 在这个框架内可以搭载许多GUI小应用, 这些小应用也被叫做rqt_plugin. 利用这个框架就可以在同一个界面内组合多个小应用。 但是弊端也就是与ROS版本存在着较高的耦合，ros 的wiki中对于humble 等新版本开发资料较少，另外受制于RQT本身的函数封装，虽然使用方便，但是可自定义的程度远低于一个完整的图形界面开发框架。
 
-# Software Requirements
+## Software Requirements
 
 - Ubuntu22.04
 - ROS2 humble
 - PySide6
 - Qt Creator (Unnecessary)
 
-# Software INSTALL
+## Software INSTALL
 
-## Install PySide6
+### Install PySide6
 
 ```bash
 pip install PySide6
 ```
 
-## Install QT Creater
+### Install QT Creater
 
 Visit [www.qt.io/download-thank-you?os=linux](www.qt.io/download-thank-you?os=linux ) to Get latest version OR simply download specially version below
 
@@ -54,7 +54,7 @@ chmod +x qt-unified-linux-x64-4.5.1-online.run
 
 Then click next step, Make sure install QT Creator platform.
 
-## Install ROS2 humble
+### Install ROS2 humble
 
 ```bash
 locale  # check for UTF-8
@@ -91,7 +91,9 @@ https://github.com/tianrking/1_ros/blob/GUI
 
 ```bash
 git clone -b  GUI https://github.com/tianrking/1_ros/blob/GUI ~/GUI
-cd ~/GUI 
+cd ~/GUI
+pip install -r requirements.txt
+source /opt/ros/humble/setup.bash
 python3 main.py
 ```
 
