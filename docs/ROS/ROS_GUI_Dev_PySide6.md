@@ -99,36 +99,36 @@ python3 main.py
 
 1. 打开 QT Designer 这就是设计界面
 
-<p style={{textAlign: 'center'}}><img src="../../media/ROS_GUI_Dev_PySide6.md/1.png" alt="pir" width={500} height="auto" /></p>
+<p style={{textAlign: 'center'}}><img src="https://raw.githubusercontent.com/tianrking/tianrking.github.io/v3.0/media/ROS_GUI_Dev_PySide6.md/1.png" alt="pir" width={500} height="auto" /></p>
 
 2. 我们选择 MainWindow模板然后点击Create 创建
 
-<p style={{textAlign: 'center'}}><img src="../../media/ROS_GUI_Dev_PySide6.md/2.png" alt="pir" width={500} height="auto" /></p>
+<p style={{textAlign: 'center'}}><img src="https://raw.githubusercontent.com/tianrking/tianrking.github.io/v3.0/media/ROS_GUI_Dev_PySide6.md/2.png" alt="pir" width={500} height="auto" /></p>
 
 就是这个样子了
 
 3. 这时，我们可以选择并按住鼠标左键拖动 WidgetBox里面的按钮到 MainWindow内，比如我们添加一个PushButton 和一个滚动条
 
-<p style={{textAlign: 'center'}}><img src="../../media/ROS_GUI_Dev_PySide6.md/3.png" alt="pir" width={500} height="auto" /></p>
+<p style={{textAlign: 'center'}}><img src="https://raw.githubusercontent.com/tianrking/tianrking.github.io/v3.0/media/ROS_GUI_Dev_PySide6.md/3.png" alt="pir" width={500} height="auto" /></p>
 
 4. 点击PushButton 在右侧修改它的参数，我们这里给它换个名字
 
-<p style={{textAlign: 'center'}}><img src="../../media/ROS_GUI_Dev_PySide6.md/4.png" alt="pir" width={500} height="auto" /></p>
+<p style={{textAlign: 'center'}}><img src="https://raw.githubusercontent.com/tianrking/tianrking.github.io/v3.0/media/ROS_GUI_Dev_PySide6.md/4.png" alt="pir" width={500} height="auto" /></p>
 
 5. 再给滚动条边上加上名字，比如叫Speed Control 速度控制。 选择并拖动 Display Widgets里面的label到想要的位置，然后修改
 
-<p style={{textAlign: 'center'}}><img src="../../media/ROS_GUI_Dev_PySide6.md/5.png" alt="pir" width={500} height="auto" /></p>
+<p style={{textAlign: 'center'}}><img src="https://raw.githubusercontent.com/tianrking/tianrking.github.io/v3.0/media/ROS_GUI_Dev_PySide6.md/5.png" alt="pir" width={500} height="auto" /></p>
 
-<p style={{textAlign: 'center'}}><img src="../../media/ROS_GUI_Dev_PySide6.md/6.png" alt="pir" width={500} height="auto" /></p>
+<p style={{textAlign: 'center'}}><img src="https://raw.githubusercontent.com/tianrking/tianrking.github.io/v3.0/media/ROS_GUI_Dev_PySide6.md/6.png" alt="pir" width={500} height="auto" /></p>
 
 6. 好了现在我们得到了一个简单的视窗，然后 File->Save as 设置保存的路径保存
 
-<p style={{textAlign: 'center'}}><img src="../../media/ROS_GUI_Dev_PySide6.md/7.png" alt="pir" width={500} height="auto" /></p>
+<p style={{textAlign: 'center'}}><img src="https://raw.githubusercontent.com/tianrking/tianrking.github.io/v3.0/media/ROS_GUI_Dev_PySide6.md/7.png" alt="pir" width={500} height="auto" /></p>
 
 7. pyside6-uic 保存文件名称.ui > 输出文件名称.py
 比如我的 pyside6-uic untitled.ui > ui_mainwindow.py
 
-<p style={{textAlign: 'center'}}><img src="../../media/ROS_GUI_Dev_PySide6.md/8.png" alt="pir" width={500} height="auto" /></p>
+<p style={{textAlign: 'center'}}><img src="https://raw.githubusercontent.com/tianrking/tianrking.github.io/v3.0/media/ROS_GUI_Dev_PySide6.md/8.png" alt="pir" width={500} height="auto" /></p>
 
 这个就是生成的界面部分Python代码
 
@@ -164,7 +164,7 @@ if __name__ == "__main__":
 python3 main.py
 ```
 
-<p style={{textAlign: 'center'}}><img src="../../media/ROS_GUI_Dev_PySide6.md/9.png" alt="pir" width={500} height="auto" /></p>
+<p style={{textAlign: 'center'}}><img src="https://raw.githubusercontent.com/tianrking/tianrking.github.io/v3.0/media/ROS_GUI_Dev_PySide6.md/9.png" alt="pir" width={500} height="auto" /></p>
 
 这样他就可以运行了
 
