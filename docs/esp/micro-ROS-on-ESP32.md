@@ -27,5 +27,17 @@ git clone https://github.com/micro-ROS/micro_ros_espidf_component
 pip3 install catkin_pkg lark-parser empy colcon-common-extensions
 ```
 
+```bash
+docker run -it --rm espressif/idf:release-v4.4
+```
+- esp32 success
+- esp32s3 success
+- esp32c3 fail
+
+```bash
+idf.py set-target esp32c3
+idf.py menuconfig
+idf.py build
+```
 
 

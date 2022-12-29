@@ -112,6 +112,7 @@ const config = {
         },
       }),
     ],
+    'docusaurus-plugin-image-zoom',
   ],
 
   themeConfig:
