@@ -67,7 +67,8 @@ const sidebars = {
           label: 'ROS',
           items: 
           [
-            'ROS/install_ros2_on_ubuntu'
+            'ROS/install_ros2_on_ubuntu',
+            'ROS/ROS_GUI_Dev_PySide6'
           ],  
         },
         {
