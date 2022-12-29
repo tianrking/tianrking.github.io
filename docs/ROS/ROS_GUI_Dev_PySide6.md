@@ -44,7 +44,7 @@ pip install PySide6
 
 ### Install QT Creater
 
-Visit [www.qt.io/download-thank-you?os=linux](www.qt.io/download-thank-you?os=linux ) to Get latest version OR simply download specially version below
+Visit [www.qt.io/download-thank-you?os=linux](https://www.qt.io/download-thank-you?os=linux ) to Get latest version OR simply download specially version below
 
 ```bash
 wget https://d13lb3tujbc8s0.cloudfront.net/onlineinstallers/qt-unified-linux-x64-4.5.1-online.run
