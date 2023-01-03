@@ -44,6 +44,106 @@ PR2040 是一款高性能，灵活的I/O，低成本的控制器。在这里我�
 git clone https://github.com/tianrking/MicroROS_RP2040.git ~/MicroROS_RP2040
 ```
 
+### 关键部分解析
+
+#### CMakeList
+
+这里利用 CMakeLists 自动检索并关联相关的头文件 利用 quadrature_encoder/quadrature_encoder.pio 快速实现pico对编码器数值解析，以便获得相对转速
+
+```cpp title="CMakeLists.txt"
+include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
+
+add_executable(pico_micro_ros_motor_control
+    pico_micro_ros_motor_control.c
+    $ENV{micro_ROS_SDK_PATH}/pico_uart_transport.c
+)
+
+pico_generate_pio_header(pico_micro_ros_motor_control $ENV{pico_examples_PATH}/pio/quadrature_encoder/quadrature_encoder.pio)
+```
+
+这里我们添加了 micro ros 开发包
+
+```cpp title="CMakeLists.txt"
+link_directories($ENV{micro_ROS_SDK_PATH}/libmicroros)
+```
+
+如果我们需要使用 FreeRTOS 需要添加目录链接 并确依赖安装 FreeRTOS SMP 版本，同时完成环境变量的设定
+
+```cpp title="CMakeLists.txt"
+target_link_libraries(pico_micro_ros_motor_control
+    pico_multicore
+    FreeRTOS-Kernel 
+    FreeRTOS-Kernel-Heap4
+)
+```
+
+配置是否使用 usb(数据线串口) uart(GPIO串口)
+
+```cpp title="CMakeLists.txt"
+# Configure Pico
+pico_enable_stdio_usb(pico_micro_ros_motor_control 1)
+pico_enable_stdio_uart(pico_micro_ros_motor_control 0)
+add_compile_definitions(PICO_UART_ENABLE_CRLF_SUPPORT=0)
+add_compile_definitions(PICO_STDIO_ENABLE_CRLF_SUPPORT=0)
+add_compile_definitions(PICO_STDIO_DEFAULT_CRLF=0)
+```
+
+生成 UF2 固件 后续我们可以直接复制粘贴到 pico 中 (烧录模式)
+
+```cpp title="CMakeLists.txt"
+pico_add_extra_outputs(pico_micro_ros_motor_control)
+```
+
+#### 代码部分
+
+- 初始化节点
+
+```bash
+rcl_node_t node;
+rclc_support_t support;
+rcl_allocator_t allocator;
+rclc_support_init(&support, 0, NULL, &allocator);
+rclc_node_init_default(&node, "pico_node", "", &support);
+```
+
+- 话题发布
+
+```c
+rclc_publisher_init_default(
+        &publisher,
+        &node,
+        ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
+        "pico_publisher");
+
+msg_publisher_encoder.data = 123 ;  // 比如我们要发布123 在我们的代码中 利用定时器做回调函数 定时发送 编码器获取到的转速数值
+rcl_ret_t ret = rcl_publish(&publisher, &msg, NULL);
+ret = rcl_publish(&publisher_encoder, &msg_publisher_encoder, NULL); 
+```
+
+- 话题订阅
+
+在这里我们每次接收到数据，都会传到回调函数中，当我们发送转速，PWM 随之改变， 通过回调函数实现转速控制
+
+```c 
+// 初始化
+rclc_subscription_init_default(
+      &subscriber_speed_change,
+      &node,
+      ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
+      "speed_change");
+
+// 回调函数
+float speed_value;
+void subscription_callback_speed_change(const void *msgin_diy)
+{
+    // Cast received message to used type
+    const std_msgs__msg__Int32 *msg_diy = (const std_msgs__msg__Int32 *)msgin_diy;
+    speed_value = (float)msg_diy->data / 100 ;
+    // pwm_set_chan_level(slice_num, PWM_CHAN_A, _value * 62500);
+
+}
+```
+
 ### 依赖安装
 
 首先， 确保 Pico SDK 正确安装并且配置到环境变量:
@@ -176,6 +276,7 @@ source install/setup.bash
 ros2 run motor_control_rclpy change_speed
 ros2 run motor_control_rclpy get_speed
 ```
+
 
 ## Thanks
 
