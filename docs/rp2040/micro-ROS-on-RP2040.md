@@ -16,14 +16,16 @@ last_update:
 
 ---
 
-## Prepare
+PR2040 是一款高性能，灵活的I/O，低成本的控制器。在这里我们将介绍利用 Raspberry Pi Pico 实现基于ROS的电机控制。 
 
-### Hardware
+## 准备
+
+### 硬件
 
 - [Pi Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/)
 - [L298N motor Driver](https://lastminuteengineers.com/l298n-dc-stepper-driver-arduino-tutorial/)
 
-### Connect Solution
+### 接线方式
 
 - Encoder
 
@@ -34,17 +36,17 @@ last_update:
     
     - GPIO 6
 
-## Getting Started on PICO
+## 拷贝代码
 
 [Detailed Tutorial](https://me.w0x7ce.eu/rp2040/micro-ROS-on-RP2040)
 
 ```bash
-git clone https://github.com/tianrking/1_ros ~/1_ros
+git clone https://github.com/tianrking/MicroROS_RP2040.git ~/MicroROS_RP2040
 ```
 
-### Dependencies
+### 依赖安装
 
-First, make sure the Pico SDK is properly installed and configured:
+首先， 确保 Pico SDK 正确安装并且配置到环境变量:
 
 ```bash
 # Install dependencies
@@ -54,166 +56,126 @@ git clone --recurse-submodules https://github.com/raspberrypi/pico-sdk.git $HOME
 # Configure environment
 echo "export PICO_SDK_PATH=$HOME/pico-sdk" >> ~/.bashrc
 source ~/.bashrc
-
 ```
+
+然后, 确保 microros 和 pico-example 被正确配置， 我们将调用 pico-example 里面的函数快速实现编码器数值获取
+
+```bash
+git clone https://github.com/micro-ROS/micro_ros_raspberrypi_pico_sdk ~/micro_ROS_SDK_PATH
+export micro_ROS_SDK_PATH=~/micro_ROS_SDK_PATH
+
+git clone https://github.com/raspberrypi/pico-examples ~/pico-examples
+export pico_examples_PATH=~/pico-examples
+```
+
+如果想支持 FreeRTOS 可以添加 smp 版本的 FreeRTOS ，因为 RP2040 是对称多处理器
+
+```bash
+git clone -b smp https://github.com/FreeRTOS/FreeRTOS-Kernel --recurse-submodules ~/FreeRTOS-Kernel-SMP 
+export FREERTOS_KERNEL_PATH=~/FreeRTOS-Kernel-SMP/FreeRTOS-Kernel
+```
+
+然后我们开始编译代码
 
 ### Build
 
 ```bash
-cd ~/1_ros
+cd ~/MicroROS_RP2040
 mkdir build
 cd build
 cmake ..
 make
 ```
 
-### Flash 
+### Flash
 
-To flash, hold the boot button, plug the USB and run:
+按住 boot 键，将 pico 插入电脑， 然后松开boot键
 
 ```bash
 cp pico_micro_ros_example.uf2 /media/$USER/RPI-RP2
 ```
 
-### Start Micro-ROS Agent
+### 运行 Micro-ROS 服务
 
-Micro-ROS follows the client-server architecture, so you need to start the Micro-ROS Agent.
-You can do so using the [micro-ros-agent Docker](https://hub.docker.com/r/microros/micro-ros-agent):
+Micro-ROS 遵循C/S架构，所以需要在Linux端启动Micro-ROS代理，解析单片机端传回的数据。 
+
+- Docker 方式
+
 ```bash
 docker run -it --rm -v /dev:/dev --privileged --net=host microros/micro-ros-agent:humble serial --dev /dev/ttyACM0 -b 115200
 ```
 
-## Remote Control
+- snap 方式
 
-### RCLCPP (Unfinish)
-
-```bash
-mkdir ~/PC_Control
-cd ~/PC_Control
-ros2 pkg create motor_control_rclcpp --build-type ament_cmake --dependencies rclcpp
-cd ~/PC_Control/src
-touch ~/PC_Control/src/get_speed.cpp
-```
-
-```cpp title="get_speed.cpp"
-#include "rclcpp/rclcpp.hpp"
-
-class TopicPublisher01 : public rclcpp::Node
-{
-public:
-    // 构造函数,有一个参数为节点名称
-    TopicPublisher01(std::string name) : Node(name)
-    {
-        RCLCPP_INFO(this->get_logger(), "%s.", name.c_str());
-    }
-
-private:
-    // 声明节点
-};
-
-int main(int argc, char **argv)
-{
-    rclcpp::init(argc, argv);
-    /*产生一个的节点*/
-    auto node = std::make_shared<TopicPublisher01>("topic_publisher_01");
-    /* 运行节点，并检测退出信号*/
-    rclcpp::spin(node);
-    rclcpp::shutdown();
-    return 0;
-}
-
-```
-
-```cpp title='Add to CMakeList.txt'
-add_executable(get_speed src/get_speed.cpp)
-
-// After find_package
-
-ament_target_dependencies(get_speed rclcpp)
-```
+1. 安装
 
 ```bash
-cd ~/1_ros/PC_Control/
-colcon build --packages-select motor_control_rclcpp
-ros2 run motor_control_rclcpp get_speed
-ros2 run motor_control_rclcpp change_speed
+sudo snap install micro-ros-agent
 ```
 
-### RCLPY
-
-1. Creat Project
-
-  ```bash
-  cd ~/1_ros/PC_Control/src
-  ros2 pkg create motor_control_rclpy  --build-type ament_python --dependencies rclpy
-  ```
-
-2. Write Code
-
-  ```bash
-  cd ~/1_ros/PC_Control/src/motor_control_rclpy/motor_control_rclpy
-  wget https://raw.githubusercontent.com/tianrking/1_ros/pico_control_motor/PC_Control/src/motor_control_rclpy/motor_control_rclpy/change_speed.py
-  wget https://raw.githubusercontent.com/tianrking/1_ros/pico_control_motor/PC_Control/src/motor_control_rclpy/motor_control_rclpy/get_speed.py
-  ```
-
-  Modify package.xml like [this](https://github.com/tianrking/1_ros/blob/pico_control_motor/PC_Control/src/motor_control_rclpy/package.xml)
-
-  ```xml
-  <test_depend>ament_copyright</test_depend>
-  <test_depend>ament_flake8</test_depend>
-  <test_depend>ament_pep257</test_depend>
-  <test_depend>python3-pytest</test_depend>
-  ```
-
-  Modify setup.cfg like [this](https://github.com/tianrking/1_ros/blob/pico_control_motor/PC_Control/src/motor_control_rclpy/setup.cfg)
-
-  ```bash
-  [develop]
-  script_dir=$base/lib/motor_control_rclpy
-  [install]
-  install_scripts=$base/lib/motor_control_rclpy
-  ```
-
-  Modify setup.py like [this](https://github.com/tianrking/1_ros/blob/pico_control_motor/PC_Control/src/motor_control_rclpy/setup.py)
-
-  ```py
-  entry_points={
-          'console_scripts': [
-              "get_speed = motor_control_rclpy.get_speed:main",
-              "change_speed = motor_control_rclpy.change_speed:main"      
-          ],
-      },
-  ```
-
-3. Build
-
-  ```bash
-  cd ~/1_ros/PC_Control/
-  colcon build
-  source install/setup.bash
-  ```
-
-4. Run
-
-  ```bash
-  ros2 run motor_control_rclpy change_speed
-  ros2 run motor_control_rclpy get_speed
-  ```
-
-#### rqt
+2. 启动热插拔
 
 ```bash
-sudo apt install ros-dev-tools
+sudo snap set core experimental.hotplug=true
+sudo systemctl restart snapd
 ```
 
-cd ~/ros2_ws
-vcs import --force --input https://raw.githubusercontent.com/PickNikRobotics/rqt2_setup/master/rqt2.repos src
+3. 运行
 
-rosdep install --from-paths src --ignore-src --rosdistro bouncy -y --skip-keys "console_bridge fastcdr fastrtps rti-connext-dds-6.0.1 urdfdom_headers"
+```bash
+sudo micro-ros-agent serial --dev /dev/ttyACM0 baudrate=115200
+```
 
+## 远端控制
+
+### 上位机控制
+
+```bash
+git clone -b GUI https://github.com/tianrking/MicroROS_RP2040.git ~/MicroROS_RP2040_GUI
+cd ~/MicroROS_RP2040_GUI 
+pip install -r requirements.txt
+source /opt/ros/humble/setup/bash
+python3 main.py
+```
+
+### 快速测试
+
+#### 命令行
+
+- 查看 Topic
+
+```bash
+ros2 topic list
+```
+
+- 调节转速
+
+```bash
+ros2 topic pub /speed_change std_msgs/Int32 "data: 28" -t 1
+```
+
+- 获取转速
+
+```bash
+ros2 topic echo /pico_publisher_encoder
+```
+
+#### rclpy
+
+1. 编译
+
+```bash
+cd ~/MicroROS_RP2040/PC_Control/
 colcon build
+source install/setup.bash
+```
 
-. install/local_setup.bash
+2. 运行
+
+```bash
+ros2 run motor_control_rclpy change_speed
+ros2 run motor_control_rclpy get_speed
+```
 
 ## Thanks
 
