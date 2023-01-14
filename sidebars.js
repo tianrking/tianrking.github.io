@@ -20,69 +20,61 @@ const sidebars = {
 
   tutorialSidebar: [
     'intro',
+
     {
       type: 'category',
-      label: 'Tutorial',
-      // items: ['esp/esp32c3-dev-get-start'],
-      items:
+      label: 'ESP',
+      items: 
       [
-        {
-          type: 'category',
-          label: 'ESP',
-          items: 
-          [
-            'esp/esp32c3-dev-get-start'
-          ],  
-        },
-        {
-          type: 'category',
-          label: 'RP2040',
-          items: 
-          [
-            'rp2040/freeRTOS-on-RP2040-get-start',
-            'rp2040/PlatformIO-on-RP2040-get-start',
-            'rp2040/micro-ROS-on-RP2040',
-            'rp2040/Zephyr-on-RP2040-get-start'
-          ],  
-        },
-        {
-          type: 'category',
-          label: 'samd',
-          items: 
-          [
-            'samd/Seeeduino_Lotus_Cortex-M0'
-          ],  
-        },
-        {
-          type: 'category',
-          label: 'Software',
-          items: 
-          [
-            'Software/terminator',
-            'Software/docusaurus'   
-          ],  
-        },
-        {
-          type: 'category',
-          label: 'ROS',
-          items: 
-          [
-            'ROS/install_ros2_on_ubuntu',
-            'ROS/ROS_GUI_Dev_PySide6'
-          ],  
-        },
-        {
-          type: 'category',
-          label: 'Jetson',
-          items: 
-          [
-            'Jetson/Get_Start_With_Nano'
-          ],  
-        },
-      ],
+        'esp/esp32c3-dev-get-start'
+      ],  
     },
-  ],
-
+    {
+      type: 'category',
+      label: 'RP2040',
+      items: 
+      [
+        'rp2040/freeRTOS-on-RP2040-get-start',
+        'rp2040/PlatformIO-on-RP2040-get-start',
+        'rp2040/micro-ROS-on-RP2040',
+        'rp2040/Zephyr-on-RP2040-get-start'
+      ],  
+    },
+    {
+      type: 'category',
+      label: 'samd',
+      items: 
+      [
+        'samd/Seeeduino_Lotus_Cortex-M0'
+      ],  
+    },
+    {
+      type: 'category',
+      label: 'Software',
+      items: 
+      [
+        'Software/terminator',
+        'Software/docusaurus'   
+      ],  
+    },
+    {
+      type: 'category',
+      label: 'ROS',
+      items: 
+      [
+        'ROS/install_ros2_on_ubuntu',
+        'ROS/ROS_GUI_Dev_PySide6'
+      ],  
+    },
+    {
+      type: 'category',
+      label: 'Jetson',
+      items: 
+      [
+        'Jetson/Get_Start_With_Nano'
+      ],  
+    },
+  ]
 };
 
 module.exports = sidebars;
