@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[8822],{9194:s=>{s.exports=JSON.parse('{"label":"docusaurus","permalink":"/zh-TW/tags/docusaurus","allTagsPath":"/zh-TW/tags","count":1,"items":[{"id":"Software/docusaurus","title":"docusaurus","description":"docusaurus","permalink":"/zh-TW/Software/docusaurus"}]}')}}]);

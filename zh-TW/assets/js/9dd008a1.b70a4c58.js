@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[188],{4389:e=>{e.exports=JSON.parse('{"permalink":"/zh-TW/blog/tags/\u5be6\u6230","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog title"}')}}]);

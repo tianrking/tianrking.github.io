@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[5100],{6352:t=>{t.exports=JSON.parse('{"label":"nano","permalink":"/zh-TW/tags/nano","allTagsPath":"/zh-TW/tags","count":1,"items":[{"id":"Jetson/Get_Start_With_Nano","title":"Get_Start_With_Nano","description":"Get_Start_With_Nano","permalink":"/zh-TW/Jetson/Get_Start_With_Nano"}]}')}}]);
