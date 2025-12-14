@@ -1,12 +1,8 @@
 ---
 slug: Docker-Getting-Srart-01
 title: "Docker使用方法(一)"
-authors:
-  name: w0x7ce
-  title: MySelf
-  url: https://github.com/tianrking
-  image_url: https://github.com/tianrking.png
-tags: [misc,Linux,"Linux","Docker","軟件","機器學習"]
+authors: [w0x7ce]
+tags: [misc, Linux, Docker, 軟件, 機器學習]
 ---
 
 # Docker的應用場景
@@ -101,6 +97,8 @@ exit
 root@w0x7ce:~# 
 ```
 注意第三行中 root@w0x7ce:~# 表明我們已經退出了當前的容器，返回到當前的主機中。
+
+<!-- truncate -->
 
 ## 啟動容器（後台模式）
 使用以下命令創建一個以進程方式運行的容器

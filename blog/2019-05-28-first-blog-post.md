@@ -1,11 +1,7 @@
 ---
 slug: first-blog-post
 title: First Blog Post
-authors:
-  name: w0x7ce
-  title: MySelf
-  url: https://github.com/tianrking
-  image_url: https://github.com/tianrking.png
+authors: [w0x7ce]
 tags: [hola, docusaurus]
 ---
 
@@ -88,6 +84,8 @@ framework-arduinoespressif32 @ https://github.com/espressif/arduino-esp32.git#2.
 | Timer | 硬件定時器 | Arduino IDE / PlatformIO | ESP32 系列 |
 | Touch | 電容式觸摸感應 | Arduino IDE / PlatformIO | ESP32 系列 |
 | TWAI | CAN 總線通信 | Arduino IDE / PlatformIO | ESP32 系列 |
+
+<!-- truncate -->
 
 ## USB 功能示例
 

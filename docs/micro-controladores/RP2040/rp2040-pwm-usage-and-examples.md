@@ -229,7 +229,7 @@ int main() {
 }
 
 ```
-:::tips
+:::tip
 1個切片 兩個通道  相鄰 GPIO 是一個切片 如 GPIO0&GPIO1  GPIO2&GPIO3
 :::
 

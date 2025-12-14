@@ -37,7 +37,8 @@ const sidebars = {
             {
               type: 'link',
               label: ' ',
-              href: '#'
+              href: '#',
+              key: 'cn_separator'
             },
             'micro-controladores/CN/bouffalo_sdk',
             'micro-controladores/CN/warning_uart_rts',
@@ -63,7 +64,8 @@ const sidebars = {
               {
                 type: 'link',
                 label: ' ',
-                href: '#'
+                href: '#',
+                key: 'esp32_separator'
               },
               'micro-controladores/ESP32/esp-idf5.3_sdk',
               'micro-controladores/ESP32/esp32_all_need_know_zh_hk',
@@ -80,7 +82,8 @@ const sidebars = {
               {
                 type: 'link',
                 label: ' ',
-                href: '#'
+                href: '#',
+                key: 'rp2040_separator'
               },
               'micro-controladores/RP2040/rp2040-uart-interrupt-handling-and-usage',
               'micro-controladores/RP2040/rp2040-pwm-usage-and-examples',
