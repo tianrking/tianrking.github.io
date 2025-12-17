@@ -12,7 +12,7 @@ const FeatureList = [
         Everything you need to master ESP32 development.
       </>
     ),
-    link: '/micro-controladores/ESP32/esp32_all_need_know',
+    link: 'http://localhost:3000/tags',
     color: '#8b5cf6'
   },
   {
@@ -24,7 +24,7 @@ const FeatureList = [
         microcontroller with practical examples.
       </>
     ),
-    link: '/micro-controladores/RP2040/mastering-pio-programming',
+    link: 'http://localhost:3000/tags',
     color: '#ec4899'
   },
   {
@@ -36,7 +36,7 @@ const FeatureList = [
         with ST's powerful microcontroller family.
       </>
     ),
-    link: '/micro-controladores/STM32/stm32_cdc_develop',
+    link: 'http://localhost:3000/tags',
     color: '#3b82f6'
   },
   {
@@ -48,7 +48,7 @@ const FeatureList = [
         Organized in 10 categories for easy discovery.
       </>
     ),
-    link: '/migrated/golang-complete-learning-guide',
+    link: 'http://localhost:3000/tags',
     color: '#10b981'
   },
   {
@@ -60,7 +60,7 @@ const FeatureList = [
         Explore China's innovative microcontroller solutions.
       </>
     ),
-    link: '/micro-controladores/CN/bouffalo_sdk',
+    link: 'http://localhost:3000/tags',
     color: '#f59e0b'
   },
   {
@@ -72,7 +72,7 @@ const FeatureList = [
         in embedded systems and software development.
       </>
     ),
-    link: '/blog',
+    link: 'http://localhost:3000/tags',
     color: '#a78bfa'
   },
 ];
