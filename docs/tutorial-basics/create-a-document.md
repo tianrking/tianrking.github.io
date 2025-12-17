@@ -17,14 +17,14 @@ Create a Markdown file at `docs/hello.md`:
 ```md title="docs/hello.md"
 # Hello
 
-This is my **first Docusaurus document**!
+This is my **first document**!
 ```
 
 A new document is now available at [http://localhost:3000/docs/hello](http://localhost:3000/docs/hello).
 
 ## Configure the Sidebar
 
-Docusaurus automatically **creates a sidebar** from the `docs` folder.
+The site automatically **creates a sidebar** from the `docs` folder.
 
 Add metadata to customize the sidebar label and position:
 
@@ -36,7 +36,7 @@ sidebar_position: 3
 
 # Hello
 
-This is my **first Docusaurus document**!
+This is my **first document**!
 ```
 
 It is also possible to create your sidebar explicitly in `sidebars.js`:

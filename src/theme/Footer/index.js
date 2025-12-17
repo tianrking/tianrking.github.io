@@ -120,7 +120,7 @@ export default function Footer() {
         <div className={styles.bottomBar}>
           <div className={styles.copyright}>
             <p>© {currentYear} w0x7ce. Crafted with 💜 in The Secret Garden</p>
-            <p className={styles.credit}>Inspired by @meta • Built with Docusaurus</p>
+            <p className={styles.credit}>Inspired by @meta</p>
           </div>
         </div>
       </div>

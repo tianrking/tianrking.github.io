@@ -126,4 +126,4 @@ If you encounter issues or have improvement suggestions / Si encuentras problema
 
 ---
 
-*Built with ❤️ by w0x7ce | Powered by Docusaurus | Optimized for Knowledge Sharing*
+*Built with ❤️ by w0x7ce | Optimized for Knowledge Sharing*
