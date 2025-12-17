@@ -1,7 +1,7 @@
 export const roboticsLabData = {
   lab: {
     title: 'Robotics Lab',
-    description: '机器人实验室 - 探索自动化与智能控制的无限可能',
+    description: 'Robotics Lab - Exploring the infinite possibilities of automation and intelligent control',
     icon: '🤖',
     color: '#ec4899',
   },
