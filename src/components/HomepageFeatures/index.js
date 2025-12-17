@@ -12,7 +12,7 @@ const FeatureList = [
         Everything you need to master ESP32 development.
       </>
     ),
-    link: 'http://localhost:3000/tags',
+    link: '/tags',
     color: '#8b5cf6'
   },
   {
@@ -24,7 +24,7 @@ const FeatureList = [
         microcontroller with practical examples.
       </>
     ),
-    link: 'http://localhost:3000/tags',
+    link: '/tags',
     color: '#ec4899'
   },
   {
@@ -36,7 +36,7 @@ const FeatureList = [
         with ST's powerful microcontroller family.
       </>
     ),
-    link: 'http://localhost:3000/tags',
+    link: '/tags',
     color: '#3b82f6'
   },
   {
@@ -48,7 +48,7 @@ const FeatureList = [
         Organized in 10 categories for easy discovery.
       </>
     ),
-    link: 'http://localhost:3000/tags',
+    link: '/tags',
     color: '#10b981'
   },
   {
@@ -60,7 +60,7 @@ const FeatureList = [
         Explore China's innovative microcontroller solutions.
       </>
     ),
-    link: 'http://localhost:3000/tags',
+    link: '/tags',
     color: '#f59e0b'
   },
   {
@@ -72,7 +72,7 @@ const FeatureList = [
         in embedded systems and software development.
       </>
     ),
-    link: 'http://localhost:3000/tags',
+    link: '/tags',
     color: '#a78bfa'
   },
 ];

@@ -1,0 +1,193 @@
+/* Page Wrapper */
+.pageWrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #831843 100%);
+  padding-top: 60px;
+}
+
+/* Hero Section */
+.hero {
+  padding: 4rem 0 2rem;
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  border-bottom: 1px solid rgba(236, 72, 153, 0.2);
+}
+
+.heroContent {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroIcon {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.heroDescription {
+  font-size: 1.3rem;
+  color: #fce7f3;
+  line-height: 1.8;
+  margin: 0 auto 2.5rem;
+  max-width: 600px;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statValue {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ec4899;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: #f9a8d4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Filter Section */
+.filterSection {
+  padding: 2rem 0;
+  background: rgba(236, 72, 153, 0.05);
+  border-bottom: 1px solid rgba(236, 72, 153, 0.1);
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filterButton {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid rgba(236, 72, 153, 0.3);
+  background: rgba(236, 72, 153, 0.05);
+  color: #fce7f3;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filterButton:hover {
+  background: rgba(236, 72, 153, 0.15);
+  border-color: #ec4899;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.filterButton.active {
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(236, 72, 153, 0.4);
+}
+
+/* Projects Section */
+.projectsSection {
+  padding: 3rem 0 5rem;
+}
+
+/* No Results */
+.noResults {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #f9a8d4;
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .heroIcon {
+    font-size: 3.5rem;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroDescription {
+    font-size: 1.1rem;
+  }
+
+  .stats {
+    gap: 2rem;
+  }
+
+  .statValue {
+    font-size: 2rem;
+  }
+
+  .filters {
+    gap: 0.75rem;
+  }
+
+  .filterButton {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .stats {
+    gap: 1.5rem;
+  }
+
+  .statValue {
+    font-size: 1.5rem;
+  }
+}

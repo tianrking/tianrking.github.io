@@ -13,7 +13,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://me.w0x7ce.eu',
+  url: 'https://w0x7ce.eu',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -94,6 +94,16 @@ const config = {
             label: 'Tutorial',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            type: 'dropdown',
+            label: 'Labs',
+            position: 'left',
+            items: [
+              {to: '/ai-lab', label: '🤖 AI Lab'},
+              {to: '/robotics-lab', label: '🤖 Robotics Lab'},
+              {to: '/ops-lab', label: '⚙️ Ops Lab'},
+            ],
+          },
           {
             href: 'https://github.com/tianrking',
             label: 'GitHub',
