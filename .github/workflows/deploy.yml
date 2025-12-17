@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - V3.4
+      - V3.9
       
     paths-ignore:
       - "ISSUE_TEMPLATE/**"
@@ -44,7 +44,7 @@ jobs:
                   git -y 
             git config --global user.name 'tianrking'
             git config --global user.email 'tian.r.king@gmail.com'
-            git clone -b V3.4 git@github.com:tianrking/tianrking.github.io.git ~/docusaurus_wiki
+            git clone -b V3.9 git@github.com:tianrking/tianrking.github.io.git ~/docusaurus_wiki
             
       - name: NPM RUN for HTML BUILD
         run: |
@@ -71,11 +71,11 @@ jobs:
             cd  ~/docusaurus_wiki/build
             git init
             git remote add github git@github.com:tianrking/tianrking.github.io.git
-            git checkout -b v3.0_HTML
+            git checkout -b v3.9_HTML
             echo "me.w0x7ce.eu" > CNAME
             git add .
             git commit -m "Update"
-            git push -u github v3.0_HTML -f
+            git push -u github v3.9_HTML -f
 
 
 
