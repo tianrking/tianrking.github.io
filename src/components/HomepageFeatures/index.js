@@ -64,15 +64,15 @@ const FeatureList = [
     color: '#f59e0b'
   },
   {
-    title: 'Blog',
-    icon: '✍️',
+    title: 'Blog (Legacy)',
+    icon: '📚',
     description: (
       <>
-        Technical insights, development tips, and hands-on tutorials. Stay updated with the latest
-        in embedded systems and software development.
+        Legacy articles from 2019-2021 covering Docker, Google Colab, and early development tips.
+        Classic content for historical reference.
       </>
     ),
-    link: '/tags',
+    link: '/blog',
     color: '#a78bfa'
   },
 ];
