@@ -94,6 +94,7 @@ const config = {
             label: 'Tutorial',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/tools', label: 'Tools', position: 'left'},
           {
             type: 'dropdown',
             label: 'Labs',
