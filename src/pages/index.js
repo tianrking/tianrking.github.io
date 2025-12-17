@@ -18,7 +18,7 @@ function HomepageHeader() {
             {siteConfig.title}
           </Heading>
           <p className={styles.heroSubtitle}>
-            ✍️ Escribo, 💻 Comparto, 🌴 Vivo, 🔍 Exploro, 🎨 Creo, 💭 Pienso ✨
+            <span className={styles.emoji}>✍️</span> <span className={styles.subtitleText}>Escribo</span>, <span className={styles.emoji}>💻</span> <span className={styles.subtitleText}>Comparto</span>, <span className={styles.emoji}>🌴</span> <span className={styles.subtitleText}>Vivo</span>, <span className={styles.emoji}>🔍</span> <span className={styles.subtitleText}>Exploro</span>, <span className={styles.emoji}>🎨</span> <span className={styles.subtitleText}>Creo</span>, <span className={styles.emoji}>💭</span> <span className={styles.subtitleText}>Pienso</span> <span className={styles.emoji}>✨</span>
           </p>
           <p className={styles.heroDescription}>
             A multilingual technical documentation hub featuring practical guides for microcontroller development,
@@ -28,12 +28,12 @@ function HomepageHeader() {
             <Link
               className={clsx("button button--primary button--lg", styles.primaryButton)}
               to="/tutorial">
-              🌟 Explore The Garden
+              <span className={styles.buttonEmoji}>🌟</span> <span className={styles.buttonText}>Explore The Garden</span>
             </Link>
             <Link
               className={clsx("button button--outline button--lg", styles.secondaryButton)}
               to="/blog">
-              📚 Read the Blog
+              <span className={styles.buttonEmoji}>📚</span> <span className={styles.buttonText}>Read the Blog</span>
             </Link>
           </div>
           <div className={styles.stats}>

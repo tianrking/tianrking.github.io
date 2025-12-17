@@ -137,14 +137,29 @@
 
 .heroSubtitle {
   font-size: 1.6rem;
-  background: linear-gradient(90deg, #a78bfa, #60a5fa, #34d399);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   margin-bottom: 2rem;
   font-weight: 600;
   letter-spacing: 0.5px;
   animation: fadeIn 1.5s ease-out 0.5s backwards;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.emoji {
+  font-size: 1.6rem;
+  display: inline-block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.subtitleText {
+  background: linear-gradient(90deg, #a78bfa, #60a5fa, #34d399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
 }
 
 @keyframes fadeIn {
@@ -172,6 +187,16 @@
   margin-bottom: 4rem;
   flex-wrap: wrap;
   animation: fadeIn 1.5s ease-out 0.9s backwards;
+}
+
+.buttonEmoji {
+  font-size: 1.3rem;
+  display: inline-block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.buttonText {
+  font-weight: 700;
 }
 
 .primaryButton {
