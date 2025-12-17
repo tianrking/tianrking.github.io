@@ -73,6 +73,7 @@ jobs:
             git remote add github git@github.com:tianrking/tianrking.github.io.git
             git checkout -b v3.9_HTML
             echo "w0x7ce.eu" > CNAME
+            echo "google.com, pub-8741919641227561, DIRECT, f08c47fec0942fa0" > ads.txt
             git add .
             git commit -m "Update"
             git push -u github v3.9_HTML -f
