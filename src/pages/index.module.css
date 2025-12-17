@@ -4,11 +4,25 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  background: linear-gradient(-45deg, #0a0a1e, #1a1a3e, #2d1b4e, #1e3a5f);
+  background-size: 400% 400%;
   min-height: 100vh;
   display: flex;
   align-items: center;
   isolation: isolate;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .backgroundPattern {
@@ -17,21 +31,34 @@
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 0.1;
+  opacity: 0.4;
   background-image:
-    radial-gradient(circle at 20% 50%, rgba(120, 200, 150, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(120, 200, 150, 0.2) 0%, transparent 50%),
-    radial-gradient(circle at 40% 20%, rgba(120, 200, 150, 0.2) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 60% 60%, rgba(16, 185, 129, 0.2) 0%, transparent 50%);
   z-index: -1;
-  animation: float 20s ease-in-out infinite;
+  animation: float 20s ease-in-out infinite, pulseGlow 4s ease-in-out infinite;
 }
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-30px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(-15px) rotate(-1deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.3;
   }
   50% {
-    transform: translateY(-20px);
+    opacity: 0.6;
   }
 }
 
@@ -39,12 +66,14 @@
   max-width: 900px;
   margin: 0 auto;
   animation: fadeInUp 1s ease-out;
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
@@ -53,71 +82,111 @@
 }
 
 .gardenIcon {
-  font-size: 6rem;
-  margin-bottom: 1.5rem;
-  animation: bounce 2s ease-in-out infinite;
-  filter: drop-shadow(0 0 20px rgba(120, 200, 150, 0.5));
+  font-size: 7rem;
+  margin-bottom: 2rem;
+  animation: bounceIn 1.5s ease-out, floatIcon 3s ease-in-out infinite 1.5s;
+  filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.6));
+  position: relative;
 }
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3) rotate(-45deg);
+    opacity: 0;
   }
   50% {
-    transform: translateY(-10px);
+    transform: scale(1.1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes floatIcon {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(2deg);
   }
 }
 
 .heroTitle {
-  font-size: 3.5rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #78c896 0%, #45b7a0 50%, #2e8555 100%);
+  font-size: 4rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 25%, #3b82f6 50%, #10b981 75%, #f59e0b 100%);
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+  animation: gradientText 8s ease infinite;
+  position: relative;
+}
+
+@keyframes gradientText {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .heroSubtitle {
-  font-size: 1.5rem;
-  color: #78c896;
-  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  background: linear-gradient(90deg, #a78bfa, #60a5fa, #34d399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 2rem;
   font-weight: 600;
   letter-spacing: 0.5px;
+  animation: fadeIn 1.5s ease-out 0.5s backwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .heroDescription {
-  font-size: 1.1rem;
-  color: #b8d4c3;
-  max-width: 700px;
-  margin: 0 auto 2.5rem;
+  font-size: 1.15rem;
+  color: #c7d2fe;
+  max-width: 750px;
+  margin: 0 auto 3rem;
   line-height: 1.8;
+  animation: fadeIn 1.5s ease-out 0.7s backwards;
 }
 
 .buttons {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   justify-content: center;
   margin-bottom: 4rem;
   flex-wrap: wrap;
+  animation: fadeIn 1.5s ease-out 0.9s backwards;
 }
 
 .primaryButton {
-  background: linear-gradient(135deg, #45c876 0%, #2e8555 100%);
+  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
   border: none;
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(69, 200, 118, 0.3);
+  padding: 1.2rem 3rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.4);
   position: relative;
   overflow: hidden;
-}
-
-.primaryButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(69, 200, 118, 0.5);
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .primaryButton::before {
@@ -127,8 +196,14 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s;
+}
+
+.primaryButton:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(139, 92, 246, 0.6);
+  background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
 }
 
 .primaryButton:hover::before {
@@ -136,89 +211,156 @@
 }
 
 .secondaryButton {
-  border: 2px solid #78c896;
-  color: #78c896;
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  background: rgba(120, 200, 150, 0.1);
+  border: 2px solid transparent;
+  background: linear-gradient(#0f172a, #0f172a) padding-box,
+              linear-gradient(135deg, #8b5cf6, #ec4899, #3b82f6) border-box;
+  color: #a78bfa;
+  padding: 1.2rem 3rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  transition: all 0.4s ease;
   backdrop-filter: blur(10px);
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.secondaryButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899, #3b82f6);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
 }
 
 .secondaryButton:hover {
-  background: #78c896;
-  color: #0f2027;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(120, 200, 150, 0.4);
+  color: white;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(139, 92, 246, 0.5);
+}
+
+.secondaryButton:hover::before {
+  opacity: 1;
 }
 
 /* Stats Section */
 .stats {
   display: flex;
   justify-content: center;
-  gap: 4rem;
-  margin-top: 3rem;
+  gap: 3rem;
+  margin-top: 4rem;
   flex-wrap: wrap;
+  animation: fadeIn 1.5s ease-out 1.1s backwards;
 }
 
 .statItem {
   text-align: center;
-  padding: 1.5rem 2rem;
+  padding: 2rem 2.5rem;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(120, 200, 150, 0.2);
-  transition: all 0.3s ease;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.statItem::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent, rgba(139, 92, 246, 0.3), transparent);
+  animation: rotate 3s linear infinite;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .statItem:hover {
-  transform: translateY(-5px);
-  background: rgba(120, 200, 150, 0.1);
-  border-color: rgba(120, 200, 150, 0.4);
+  transform: translateY(-8px) scale(1.05);
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.6);
+  box-shadow: 0 15px 50px rgba(139, 92, 246, 0.4);
+}
+
+.statItem:hover::before {
+  opacity: 1;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .statNumber {
-  font-size: 2.5rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #78c896 0%, #45b7a0 100%);
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #3b82f6 100%);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 0.5rem;
+  animation: gradientShift 5s ease infinite;
+  position: relative;
+  z-index: 1;
 }
 
 .statLabel {
-  font-size: 0.95rem;
-  color: #b8d4c3;
+  font-size: 1rem;
+  color: #c7d2fe;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 600;
+  letter-spacing: 2px;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
 }
 
 /* Main Content */
 .mainContent {
-  background: linear-gradient(to bottom, #0f2027 0%, #1a2f2a 100%);
+  background: linear-gradient(to bottom, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
   padding: 0;
+  position: relative;
+}
+
+.mainContent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(139, 92, 246, 0.2), transparent);
+  z-index: 0;
 }
 
 /* Responsive Design */
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 4rem 0;
+    padding: 5rem 0;
     min-height: auto;
   }
 
   .gardenIcon {
-    font-size: 4rem;
+    font-size: 5rem;
   }
 
   .heroTitle {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
 
   .heroSubtitle {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .buttons {
@@ -229,7 +371,7 @@
   .primaryButton,
   .secondaryButton {
     width: 100%;
-    max-width: 300px;
+    max-width: 350px;
   }
 
   .stats {
@@ -238,16 +380,33 @@
 
   .statItem {
     flex: 1 1 calc(50% - 1rem);
-    min-width: 150px;
+    min-width: 180px;
+    padding: 1.5rem 2rem;
+  }
+
+  .statNumber {
+    font-size: 2.5rem;
   }
 }
 
 @media screen and (max-width: 640px) {
   .heroTitle {
-    font-size: 2rem;
+    font-size: 2.2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .heroDescription {
+    font-size: 1rem;
   }
 
   .statItem {
     flex: 1 1 100%;
+  }
+
+  .statNumber {
+    font-size: 2rem;
   }
 }
