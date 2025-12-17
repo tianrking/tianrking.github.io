@@ -13,7 +13,7 @@ const FeatureList = [
       </>
     ),
     link: '/micro-controladores/ESP32/esp32_all_need_know',
-    color: '#45c876'
+    color: '#8b5cf6'
   },
   {
     title: 'RP2040',
@@ -25,7 +25,7 @@ const FeatureList = [
       </>
     ),
     link: '/micro-controladores/RP2040/mastering-pio-programming',
-    color: '#45b7a0'
+    color: '#ec4899'
   },
   {
     title: 'STM32',
@@ -37,7 +37,7 @@ const FeatureList = [
       </>
     ),
     link: '/micro-controladores/STM32/stm32_cdc_develop',
-    color: '#2e8555'
+    color: '#3b82f6'
   },
   {
     title: 'Legacy Articles',
@@ -48,8 +48,8 @@ const FeatureList = [
         Organized in 10 categories for easy discovery.
       </>
     ),
-    link: '/migrated/linux-commands-complete-reference',
-    color: '#78c896'
+    link: '/migrated/golang-complete-learning-guide',
+    color: '#10b981'
   },
   {
     title: 'CN Series',
@@ -61,7 +61,7 @@ const FeatureList = [
       </>
     ),
     link: '/micro-controladores/CN/bouffalo_sdk',
-    color: '#5fa777'
+    color: '#f59e0b'
   },
   {
     title: 'Blog',
@@ -73,7 +73,7 @@ const FeatureList = [
       </>
     ),
     link: '/blog',
-    color: '#a8d5ba'
+    color: '#a78bfa'
   },
 ];
 
