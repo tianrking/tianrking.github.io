@@ -4,44 +4,90 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'UNO',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'ESP32',
+    icon: '📡',
     description: (
       <>
-        Compartir conocimientos y habilidades 
+        Comprehensive guides for ESP-IDF 5.3 SDK, MCPWM usage, and wireless communication protocols.
+        Everything you need to master ESP32 development.
       </>
     ),
+    link: '/micro-controladores/ESP32/esp32_all_need_know',
+    color: '#45c876'
   },
   {
-    title: 'DOS',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'RP2040',
+    icon: '⚡',
     description: (
       <>
-        Registrar los detalles de la vida cotidiana 
+        From UART interrupts to advanced PIO programming. Learn to harness the power of the RP2040
+        microcontroller with practical examples.
       </>
     ),
+    link: '/micro-controladores/RP2040/mastering-pio-programming',
+    color: '#45b7a0'
   },
   {
-    title: 'TRES',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'STM32',
+    icon: '🔌',
     description: (
       <>
-        Compartir las observaciones y reflexiones de los viajes
+        CDC communication development and STM32CubeMX integration. Build robust embedded systems
+        with ST's powerful microcontroller family.
       </>
     ),
+    link: '/micro-controladores/STM32/stm32_cdc_develop',
+    color: '#2e8555'
+  },
+  {
+    title: 'Legacy Articles',
+    icon: '📚',
+    description: (
+      <>
+        46+ technical articles covering Linux, Docker, programming languages, data science, and more.
+        Organized in 10 categories for easy discovery.
+      </>
+    ),
+    link: '/migrated/linux-commands-complete-reference',
+    color: '#78c896'
+  },
+  {
+    title: 'CN Series',
+    icon: '🔧',
+    description: (
+      <>
+        Bouffalo BL602/BL616/BL618 development guides and WinnerMicro XT-E804 board tutorials.
+        Explore China's innovative microcontroller solutions.
+      </>
+    ),
+    link: '/micro-controladores/CN/bouffalo_sdk',
+    color: '#5fa777'
+  },
+  {
+    title: 'Blog',
+    icon: '✍️',
+    description: (
+      <>
+        Technical insights, development tips, and hands-on tutorials. Stay updated with the latest
+        in embedded systems and software development.
+      </>
+    ),
+    link: '/blog',
+    color: '#a8d5ba'
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({Svg, title, description, link, icon, color}) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
+    <div className={clsx('col col--4')} style={{ marginBottom: '2rem' }}>
+      <a href={link} className={styles.featureCard} style={{ '--accent-color': color }}>
+        <div className={styles.featureIcon}>{icon}</div>
+        <div className={styles.featureContent}>
+          <Heading as="h3" className={styles.featureTitle}>{title}</Heading>
+          <p className={styles.featureDescription}>{description}</p>
+        </div>
+        <div className={styles.featureArrow}>→</div>
+      </a>
     </div>
   );
 }
@@ -50,6 +96,14 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
+        <div className={styles.sectionHeader}>
+          <Heading as="h2" className={styles.sectionTitle}>
+            Explore The Garden
+          </Heading>
+          <p className={styles.sectionSubtitle}>
+            Discover comprehensive guides, tutorials, and technical resources
+          </p>
+        </div>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />

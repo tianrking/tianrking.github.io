@@ -1,38 +1,253 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
+/* Hero Banner Styles */
 .heroBanner {
-  padding: 4rem 0;
+  padding: 8rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
+.backgroundPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(120, 200, 150, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(120, 200, 150, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(120, 200, 150, 0.2) 0%, transparent 50%);
+  z-index: -1;
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
   }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.heroContent {
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gardenIcon {
+  font-size: 6rem;
+  margin-bottom: 1.5rem;
+  animation: bounce 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(120, 200, 150, 0.5));
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #78c896 0%, #45b7a0 50%, #2e8555 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  color: #78c896;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.heroDescription {
+  font-size: 1.1rem;
+  color: #b8d4c3;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.8;
 }
 
 .buttons {
   display: flex;
-  align-items: center;
+  gap: 1.5rem;
   justify-content: center;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
 }
 
-/*DIY */
-.heroSecretGarden {
-  background-color: #45f76b; /* 柔和的棕色 */
-  /*background-image: url('/img/secret-garden-bg.jpg');  使用一张秘密花园的背景图片 */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.primaryButton {
+  background: linear-gradient(135deg, #45c876 0%, #2e8555 100%);
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(69, 200, 118, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(69, 200, 118, 0.5);
+}
+
+.primaryButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.primaryButton:hover::before {
+  left: 100%;
+}
+
+.secondaryButton {
+  border: 2px solid #78c896;
+  color: #78c896;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  background: rgba(120, 200, 150, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.secondaryButton:hover {
+  background: #78c896;
+  color: #0f2027;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(120, 200, 150, 0.4);
+}
+
+/* Stats Section */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.statItem {
+  text-align: center;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(120, 200, 150, 0.2);
+  transition: all 0.3s ease;
+}
+
+.statItem:hover {
+  transform: translateY(-5px);
+  background: rgba(120, 200, 150, 0.1);
+  border-color: rgba(120, 200, 150, 0.4);
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #78c896 0%, #45b7a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.95rem;
+  color: #b8d4c3;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* Main Content */
 .mainContent {
-  background-color: #12af1f; /* 浅灰色背景 */
+  background: linear-gradient(to bottom, #0f2027 0%, #1a2f2a 100%);
   padding: 0;
 }
 
+/* Responsive Design */
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 4rem 0;
+    min-height: auto;
+  }
+
+  .gardenIcon {
+    font-size: 4rem;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.2rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .stats {
+    gap: 2rem;
+  }
+
+  .statItem {
+    flex: 1 1 calc(50% - 1rem);
+    min-width: 150px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .statItem {
+    flex: 1 1 100%;
+  }
+}
