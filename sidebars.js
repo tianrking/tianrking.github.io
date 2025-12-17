@@ -95,9 +95,116 @@ const sidebars = {
             ]
         }
       ]
+    },
+    {
+      type: 'category',
+      label: 'Legacy Articles',
+      collapsed: true,
+      items: [
+        {
+          type: 'category',
+          label: 'Linux & System Administration',
+          collapsed: true,
+          items: [
+            'migrated/linux-commands-complete-reference',
+            'migrated/common-linux-commands-detailed-guide',
+            'migrated/common-linux-commands-part-1',
+            'migrated/sed-text-processing-complete-guide',
+            'migrated/linux-disk-space-cleanup',
+            'migrated/linux-firewall-management-guide'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Docker & DevOps',
+          collapsed: true,
+          items: [
+            'migrated/docker-getting-started-guide',
+            'migrated/docker-usage-guide-part-1',
+            'migrated/docker-usage-guide-part-2',
+            'migrated/docker-machine-learning-environment-setup',
+            'migrated/kubernetes-installation-and-configuration'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Programming Languages',
+          collapsed: true,
+          items: [
+            'migrated/golang-complete-learning-guide',
+            'migrated/git-complete-usage-guide',
+            'migrated/python-gmail-sending-guide',
+            'migrated/python-notes-and-tips',
+            'migrated/qt5-standard-library-guide',
+            'migrated/pyqt5-qgraphicsview-complete-guide'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Data Science & Machine Learning',
+          collapsed: true,
+          items: [
+            'migrated/xgboost-stock-price-prediction-guide',
+            'migrated/pytorch-stock-prediction-guide',
+            'migrated/matlab-robotics-simulation-guide'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Web Development & APIs',
+          collapsed: true,
+          items: [
+            'migrated/jin10-financial-news-scraping-guide',
+            'migrated/cryptocurrency-scraping-colly-guide',
+            'migrated/heroku-flask-deployment-complete-guide',
+            'migrated/gcp-python-flask-deployment-guide',
+            'migrated/heroku-selenium-web-scraping-guide',
+            'migrated/chrome-selenium-headless-setup-guide'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Tools & Testing',
+          collapsed: true,
+          items: [
+            'migrated/apache-benchmark-comprehensive-guide',
+            'migrated/tinybenchmark-reproduction-troubleshooting-guide',
+            'migrated/opensearch-complete-guide'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Embedded & Hardware',
+          collapsed: true,
+          items: [
+            'migrated/raspberry-pi-pico-motor-control',
+            'migrated/nvidia-driver-installation-guide',
+            'migrated/openmmlab-mmtracking-guide',
+            'migrated/openpose-debugging-guide'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'ROS & Robotics',
+          collapsed: true,
+          items: [
+            'migrated/ros-filesystem-guide',
+            'migrated/ros-package-development-guide'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Blockchain & Security',
+          collapsed: true,
+          items: [
+            'migrated/solidity-erc20-token-development-guide',
+            'migrated/grafana-prometheus-complete-monitoring-guide'
+          ]
+        }
+      ]
     }
   ]
-   
+
 };
 
 export default sidebars;

@@ -32,37 +32,9 @@ const config = {
     },
   },
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: 'es',
-    locales: ['es','zh-hk','en'],
-    path: 'i18n',
-    localeConfigs: {
-      es: {
-        label: 'Español',
-        direction: 'ltr',
-        htmlLang: 'es-ES',
-        calendar: 'gregory',
-        path: 'es',
-      },
-      'zh-hk': {
-        label: '繁體中文',
-        direction: 'ltr',
-        htmlLang: 'zh-HK',
-        calendar: 'gregory',
-        path: 'zh-hk',
-      },
-      en: {
-        label: 'English',
-        direction: 'ltr',
-        htmlLang: 'en-US',
-        calendar: 'gregory',
-        path: 'en',
-      },
-    },
-  },
+  // Single language site (English)
+  // Content can be in any language (Chinese, Spanish, English) as per MD files
+  // The site interface is in English
 
   presets: [
     [
@@ -125,10 +97,6 @@ const config = {
           {
             href: 'https://github.com/tianrking',
             label: 'GitHub',
-            position: 'right',
-          },
-          {
-            type: 'localeDropdown',
             position: 'right',
           },
         ],

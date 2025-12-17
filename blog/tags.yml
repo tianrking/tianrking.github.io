@@ -36,3 +36,19 @@ Docker:
   label: 機器學習
   permalink: /machine-learning
   description: Machine learning
+Colab:
+  label: Colab
+  permalink: /colab
+  description: Google Colab usage
+Jupyter:
+  label: Jupyter
+  permalink: /jupyter
+  description: Jupyter notebook
+Python:
+  label: Python
+  permalink: /python
+  description: Python programming
+云计算:
+  label: 云计算
+  permalink: /cloud-computing
+  description: Cloud computing
