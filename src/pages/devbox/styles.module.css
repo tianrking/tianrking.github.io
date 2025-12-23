@@ -1,0 +1,223 @@
+/* Hover effects for cards */
+.card:hover {
+  transform: translateY(-10px) !important;
+  background: #fff !important;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15), 0 0 0 1px var(--color) !important;
+}
+
+.card:hover .icon {
+  background: var(--color) !important;
+  color: #fff !important;
+  transform: scale(1.1) rotate(-5deg) !important;
+  box-shadow: 0 10px 20px -5px var(--color) !important;
+}
+
+.card:hover .arrowIcon {
+  color: var(--color) !important;
+  transform: translateX(5px) !important;
+}
+
+.card:hover .actionArea {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Card top border */
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: var(--color);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+/* Action button hover */
+.actionBtn:hover {
+  background: var(--color) !important;
+  color: #fff !important;
+}
+
+/* Close button hover */
+.closeBtn:hover {
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+  transform: rotate(90deg) !important;
+}
+
+/* Tab active indicator */
+.tabBtnActive::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color);
+  transform: scaleX(1);
+}
+
+.tabBtn::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+/* Logo box hover */
+.logoBox:hover {
+  transform: rotate(0deg) scale(1.05) !important;
+}
+
+/* Code blocks */
+.instruction {
+  font-size: '1rem';
+  font-weight: 700;
+  color: #334155;
+  marginBottom: '12px';
+}
+
+.code-wrap {
+  background: #1e293b;
+  borderRadius: '12px';
+  border: '1px solid #334155';
+  padding: '20px';
+  marginBottom: '25px';
+  position: 'relative';
+  boxShadow: '0 4px 6px rgba(0,0,0,0.05)';
+}
+
+.code-pre {
+  fontFamily: 'Consolas, Monaco, monospace';
+  fontSize: '0.95rem';
+  lineHeight: '1.6';
+  color: #e2e8f0;
+  whiteSpace: 'pre-wrap';
+  wordBreak: 'break-all';
+  margin: 0;
+}
+
+.cmd {
+  color: #38bdf8;
+  fontWeight: 700;
+}
+
+.arg {
+  color: #fbbf24;
+}
+
+.comment {
+  color: #64748b;
+  fontStyle: 'italic';
+  marginBottom: '8px';
+  display: 'block';
+  fontSize: '0.85rem';
+}
+
+.modal-copy-btn {
+  position: 'absolute';
+  top: '15px';
+  right: '15px';
+  background: 'rgba(255,255,255,0.1)';
+  color: '#fff';
+  border: '1px solid rgba(255,255,255,0.1)';
+  padding: '6px 14px';
+  borderRadius: '6px';
+  fontSize: '12px';
+  fontWeight: 600;
+  cursor: 'pointer';
+  transition: 'all 0.2s';
+}
+
+.modal-copy-btn:hover {
+  background: var(--color);
+  border-color: var(--color);
+  color: #000;
+}
+
+.external-link {
+  color: var(--color);
+  textDecoration: 'none';
+  fontWeight: 600;
+}
+
+.external-link:hover {
+  textDecoration: 'underline';
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .h1 {
+    fontSize: '2.2rem' !important;
+  }
+
+  .grid {
+    gridTemplateColumns: '1fr' !important;
+    padding: '0 20px 60px' !important;
+  }
+
+  .card {
+    minHeight: 'auto' !important;
+  }
+
+  .actionArea {
+    opacity: 1 !important;
+    transform: 'translateY(0)' !important;
+    marginTop: '15px' !important;
+    background: '#f8fafc' !important;
+  }
+}
+
+/* Reset body padding for full bleed */
+div[class*='docPage'],
+div[class*='docMainContainer'] {
+  padding: 0 !important;
+}
+
+div.navbar {
+  margin-bottom: 0 !important;
+}

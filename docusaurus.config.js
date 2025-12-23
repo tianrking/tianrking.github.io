@@ -103,7 +103,7 @@ const config = {
             label: 'Tutorial',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
-          {to: '/tools', label: 'Tools', position: 'left'},
+          {to: '/devbox', label: '📦 DevBox', position: 'left'},
           {
             type: 'dropdown',
             label: 'Labs',
