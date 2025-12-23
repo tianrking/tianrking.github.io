@@ -42,7 +42,7 @@ This content is from my university archives and may not be reliable or up-to-dat
 **职能**：
 1. 信用中介
 2. 支付中介
-3. 信用创造：$$k=\frac{\Delta D}{\Delta P}=\frac{1}{rd}$$
+3. 信用创造：k = ΔD/ΔP = 1/rd
 4. 金融服务
 5. 代理监督和经济调节
 
