@@ -173,6 +173,16 @@ const sidebars = {
         },
         {
           type: 'category',
+          label: '日志',
+          collapsed: true,
+          items: [
+            'uni-notes/2018-09-02-new-semester',
+            'uni-notes/2018-09-02-dream-back-zhuolu',
+            'uni-notes/2018-09-02-zen-tea-life',
+          ],
+        },
+        {
+          type: 'category',
           label: '其他',
           collapsed: true,
           items: [
@@ -182,6 +192,8 @@ const sidebars = {
             'uni-notes/2019-03-23-insurance-contract',
             'uni-notes/2019-09-19-hk-extradition-bill-withdrawal',
             'uni-notes/2020-02-24-circuits-1-1',
+            'uni-notes/2020-03-24-insurance',
+            'uni-notes/2020-09-02-task',
           ],
         },
       ],
