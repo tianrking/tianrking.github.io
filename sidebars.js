@@ -27,16 +27,15 @@ const sidebars = {
     {
       type: 'category',
       label: 'University Notes',
-      collapsed: false,
+      collapsed: true,
       items: [
         {
           type: 'category',
           label: '测绘工程',
-          collapsed: false,
+          collapsed: true,
           items: [
             'uni-notes/2019-09-02-cadastral-surveying-introduction',
             'uni-notes/2019-09-06-land-ownership-investigation',
-            'uni-notes/2019-09-09-photogrammetry',
             'uni-notes/2019-10-30-cadastral-surveying-exercises',
             'uni-notes/2019-11-26-surveying-paper-translation',
             'uni-notes/2019-12-18-geographic-information-system',
@@ -47,11 +46,10 @@ const sidebars = {
         {
           type: 'category',
           label: '图像处理',
-          collapsed: false,
+          collapsed: true,
           items: [
             'uni-notes/2020-02-25-image-processing-1',
             'uni-notes/2020-03-04-image-basic-operations',
-            'uni-notes/2020-03-05-image-transform',
             'uni-notes/2020-03-10-image-enhancement-overview',
             'uni-notes/2020-03-12-image-restoration',
           ],
@@ -59,7 +57,7 @@ const sidebars = {
         {
           type: 'category',
           label: '数据库',
-          collapsed: false,
+          collapsed: true,
           items: [
             'uni-notes/2018-09-06-database-system-overview-part1',
             'uni-notes/2018-09-06-database-system-overview-part2',
@@ -70,7 +68,7 @@ const sidebars = {
         {
           type: 'category',
           label: '财政学',
-          collapsed: false,
+          collapsed: true,
           items: [
             'uni-notes/2018-09-08-public-finance-intro',
             'uni-notes/2018-09-22-financial-expenditure-intro',
@@ -82,7 +80,7 @@ const sidebars = {
         {
           type: 'category',
           label: '数字地形测量学',
-          collapsed: false,
+          collapsed: true,
           items: [
             'uni-notes/2018-09-04-chapter1-coordinate-system-part1',
             'uni-notes/2018-09-04-coordinate-system-part2',
@@ -93,7 +91,7 @@ const sidebars = {
         {
           type: 'category',
           label: '金融市场与投资',
-          collapsed: false,
+          collapsed: true,
           items: [
             'uni-notes/2018-09-10-financial-engineering-intro',
             'uni-notes/2018-09-15-financial-market-overview',
@@ -104,7 +102,6 @@ const sidebars = {
             'uni-notes/2019-04-03-macroeconomic-policy-practice',
             'uni-notes/2019-07-09-commercial-bank-introduction',
             'uni-notes/2019-07-19-bank-wealth-management-paper',
-            'uni-notes/2019-07-24-thesis-introduction',
             'uni-notes/2019-09-08-central-banking-system',
             'uni-notes/2019-09-26-bank-wealth-management-paper-research',
             'uni-notes/2020-08-09-seaborn-visualization',
@@ -113,7 +110,7 @@ const sidebars = {
         {
           type: 'category',
           label: '财务报表分析',
-          collapsed: false,
+          collapsed: true,
           items: [
             'uni-notes/2018-09-16-financial-statement-analysis-intro',
             'uni-notes/2018-09-23-financial-statement-analysis-basics',
@@ -122,7 +119,7 @@ const sidebars = {
         {
           type: 'category',
           label: '数据结构',
-          collapsed: false,
+          collapsed: true,
           items: [
             'uni-notes/2019-03-03-data-structure-introduction',
             'uni-notes/2019-03-04-linear-list',
@@ -132,7 +129,7 @@ const sidebars = {
         {
           type: 'category',
           label: '地图学',
-          collapsed: false,
+          collapsed: true,
           items: [
             'uni-notes/2019-07-20-maps-and-cartography-basics',
             'uni-notes/2019-07-21-map-language',
@@ -140,19 +137,8 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'MV音乐',
-          collapsed: true,
-          items: [
-            'uni-notes/2019-10-03-r-chord-cool',
-            'uni-notes/2019-10-04-cindy-yen-brave',
-            'uni-notes/2019-11-02-hocc-iron',
-            'uni-notes/2019-11-12-kaohsiung-air-raid',
-          ],
-        },
-        {
-          type: 'category',
           label: '编程与开发',
-          collapsed: false,
+          collapsed: true,
           items: [
             'uni-notes/2019-01-13-scrapy',
             'uni-notes/2019-03-19-opengl-drawing',
@@ -164,25 +150,6 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: '英语学习',
-          collapsed: false,
-          items: [
-            'uni-notes/2020-04-16-cet6-001',
-            'uni-notes/2020-05-03-daily-english',
-          ],
-        },
-        {
-          type: 'category',
-          label: '日志',
-          collapsed: true,
-          items: [
-            'uni-notes/2018-09-02-new-semester',
-            'uni-notes/2018-09-02-dream-back-zhuolu',
-            'uni-notes/2018-09-02-zen-tea-life',
-          ],
-        },
-        {
-          type: 'category',
           label: '其他',
           collapsed: true,
           items: [
@@ -190,10 +157,7 @@ const sidebars = {
             'uni-notes/2018-09-06-city-urbanization',
             'uni-notes/2018-10-08-hong-kong-trip',
             'uni-notes/2019-03-23-insurance-contract',
-            'uni-notes/2019-09-19-hk-extradition-bill-withdrawal',
             'uni-notes/2020-02-24-circuits-1-1',
-            'uni-notes/2020-03-24-insurance',
-            'uni-notes/2020-09-02-task',
           ],
         },
       ],

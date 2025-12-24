@@ -112,6 +112,13 @@ const config = {
               {to: '/ai-lab', label: '🤖 AI Lab'},
               {to: '/robotics-lab', label: '🤖 Robotics Lab'},
               {to: '/ops-lab', label: '⚙️ Ops Lab'},
+              {href: 'https://polymarket.w0x7ce.eu/', label: '📊 PolyScan'},
+              {href: 'https://n8n.w0x7ce.eu/', label: '🔄 n8n'},
+              {href: 'https://docker.w0x7ce.eu/', label: '🐳 Docker'},
+              {href: 'https://pypi.w0x7ce.eu/', label: '📦 PyPI'},
+              {href: 'https://mirrors.w0x7ce.eu/', label: '🪞 Mirrors'},
+              {href: 'https://github.w0x7ce.eu/', label: '🐙 GitHub Proxy'},
+              {href: 'https://proxy.w0x7ce.eu/', label: '🌐 Proxy'},
             ],
           },
           {

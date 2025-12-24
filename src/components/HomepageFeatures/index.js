@@ -44,7 +44,7 @@ const FeatureList = [
     icon: '📚',
     description: (
       <>
-        46+ technical articles covering Linux, Docker, programming languages, data science, and more.
+        130+ technical articles covering Linux, Docker, programming languages, data science, and more.
         Organized in 10 categories for easy discovery.
       </>
     ),

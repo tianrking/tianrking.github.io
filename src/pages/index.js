@@ -38,7 +38,7 @@ function HomepageHeader() {
           </div>
           <div className={styles.stats}>
             <div className={styles.statItem}>
-              <div className={styles.statNumber}>46+</div>
+              <div className={styles.statNumber}>130+</div>
               <div className={styles.statLabel}>Technical Articles</div>
             </div>
             <div className={styles.statItem}>
