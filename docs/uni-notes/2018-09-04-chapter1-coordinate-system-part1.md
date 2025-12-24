@@ -10,6 +10,9 @@ description: "地球形状和大小，大地水准面，参考椭球面"
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 
+{/* MDX: Initialize math variables to prevent runtime errors */}
+export const a = 0, b = 0;
+
 ## 第一章 测量坐标系与高程(一)
 
 ### 1.1 地球形状和大小
@@ -31,7 +34,9 @@ This content is from my university archives and may not be reliable or up-to-dat
 
 地球椭球体的大小是由长半径 a、短半径 b 和扁率 f 来确定的，称为**地球椭球体元素**：
 
-$$f = \frac{a-b}{a}$$
+```
+f = (a - b) / a
+```
 
 地球椭球体元素值是通过大量的测量结果推算出来的。人们把形状、大小和定位都已经确定了的地球椭球体称为**参考椭球体**。
 
@@ -50,4 +55,8 @@ $$f = \frac{a-b}{a}$$
 
 地球平均半径：
 
-R = (2a+b)/3 = 6371 km
+```
+R = (2a + b) / 3 = 6371
+```
+
+(Where 2a is twice the semi-major axis, b is the semi-minor axis)

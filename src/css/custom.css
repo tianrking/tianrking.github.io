@@ -372,3 +372,155 @@ footer.footer .container {
   border-left: 3px solid #8b5cf6;
   padding-left: 0.5rem;
 }
+
+/* ============================================================================
+   MOBILE NAVIGATION FIXES
+   Ensures mobile sidebar displays correctly with scrollable content
+   ============================================================================ */
+
+@media (max-width: 996px) {
+  /* === Sidebar Container === */
+  .navbar-sidebar {
+    z-index: 999 !important;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 27, 75, 0.98) 100%) !important;
+  }
+
+  .navbar-sidebar__backdrop {
+    z-index: 998 !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+  }
+
+  /* === Toggle Button === */
+  .navbar__toggle {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    z-index: 1000 !important;
+    position: relative;
+  }
+
+  /* === CRITICAL: Items Container Height & Scrolling === */
+  .navbar-sidebar__items {
+    height: auto !important;
+    max-height: calc(100vh - 3.75rem) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* === Sidebar Item Container === */
+  .navbar-sidebar__item {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+    padding: 0.5rem;
+  }
+
+  /* === Menu Container === */
+  .menu {
+    padding: 0.5rem 0;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .menu__list {
+    max-height: none !important;
+  }
+
+  /* === Ensure all elements are clickable === */
+  .navbar-sidebar,
+  .navbar-sidebar * {
+    pointer-events: auto !important;
+  }
+
+  /* === Menu Link Styling === */
+  .menu__link,
+  .menu__link--active,
+  .menu__link--sublist {
+    color: #c7d2fe !important;
+    min-height: 48px !important;
+    padding: 0.75rem 1rem !important;
+    display: flex;
+    align-items: center;
+  }
+
+  .menu__link:hover {
+    background: rgba(139, 92, 246, 0.15) !important;
+  }
+
+  .menu__link--active {
+    background: rgba(139, 92, 246, 0.2) !important;
+    color: #a78bfa !important;
+  }
+
+  /* === Sublist Caret/Arrow === */
+  .menu__caret {
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+    pointer-events: auto !important;
+  }
+
+  .menu__caret:before {
+    display: block !important;
+  }
+
+  .menu__link--sublist-caret:after {
+    display: block !important;
+    opacity: 1 !important;
+  }
+
+  /* === Collapsible Items === */
+  .menu__list-item-collapsible {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .menu__list-item {
+    width: 100%;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+  }
+
+  /* === Nested Menu Visibility === */
+  .menu__list .menu__list {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .menu__list-item--collapsed .menu__list {
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* === Submenu Indentation === */
+  .menu__list .menu__link {
+    padding-left: 1.5rem !important;
+  }
+
+  .menu__list .menu__list .menu__link {
+    padding-left: 2.5rem !important;
+  }
+
+  .menu__list .menu__list .menu__list .menu__link {
+    padding-left: 3.5rem !important;
+  }
+
+  .menu__list .menu__list .menu__list .menu__list .menu__link {
+    padding-left: 4.5rem !important;
+  }
+
+  /* === Scrollbar Styling === */
+  .navbar-sidebar__items::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .navbar-sidebar__items::-webkit-scrollbar-thumb {
+    background: rgba(139, 92, 246, 0.5);
+    border-radius: 2px;
+  }
+
+  /* === Navbar Performance === */
+  .navbar {
+    backdrop-filter: blur(10px) !important;
+  }
+}
