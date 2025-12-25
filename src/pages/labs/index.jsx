@@ -106,6 +106,15 @@ function LabsContent() {
           icon: '📄',
           tags: ['PDF', 'Images', 'Converter'],
           external: true
+        },
+        {
+          id: 'realtime',
+          title: 'OpenAI Realtime Proxy',
+          description: 'Proxy for OpenAI realtime API calls - forward requests with CORS support',
+          url: 'https://realtime.w0x7ce.eu/',
+          icon: '🔌',
+          tags: ['OpenAI', 'API', 'Proxy'],
+          external: true
         }
       ]
     }
