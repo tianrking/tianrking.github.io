@@ -196,19 +196,16 @@ code:not([class*="language-"]) {
 
 /* Theme toggle button - Make it visible in both modes */
 /* Navbar theme toggle button (right corner) */
-.navbar .clean-btn.theme-toggle-button,
-html:not([data-theme='dark']) .navbar .theme-toggle-button {
-  color: #f8fafc !important;
-  background: #475569 !important;
-  border: 1px solid #334155 !important;
-  border-radius: 8px;
-  padding: 0.5rem;
+.navbar__items .theme-toggle-button,
+[data-theme='light'] .navbar .theme-toggle-button {
+  color: #1e293b !important;
+  background: #cbd5e1 !important;
+  border: 1px solid #94a3b8 !important;
 }
 
-html:not([data-theme='dark']) .navbar .clean-btn.theme-toggle-button:hover,
-html:not([data-theme='dark']) .navbar .theme-toggle-button:hover {
-  background: #334155 !important;
-  border-color: #1e293b !important;
+.navbar__items .theme-toggle-button:hover,
+[data-theme='light'] .navbar .theme-toggle-button:hover {
+  background: #94a3b8 !important;
 }
 
 /* Dark mode - lighter button */
