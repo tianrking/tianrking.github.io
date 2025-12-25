@@ -70,6 +70,15 @@ function LabsContent() {
           icon: '🌐',
           tags: ['Proxy', 'Download'],
           external: true
+        },
+        {
+          id: 'llm-matrix',
+          title: 'LLM Matrix',
+          description: 'Real-time LLM pricing comparison leaderboard - compare model costs across providers',
+          url: 'https://llm.w0x7ce.eu/',
+          icon: '🤖',
+          tags: ['AI', 'LLM', 'Pricing'],
+          external: true
         }
       ]
     }
