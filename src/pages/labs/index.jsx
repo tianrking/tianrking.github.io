@@ -97,6 +97,15 @@ function LabsContent() {
           icon: '🎨',
           tags: ['Drawing', 'Art', 'Creative'],
           external: true
+        },
+        {
+          id: 'pdfstitch',
+          title: 'PDFStitch',
+          description: 'PDF to image converter tool - extract and convert PDF pages to images',
+          url: 'https://pdfstitch.w0x7ce.eu/',
+          icon: '📄',
+          tags: ['PDF', 'Images', 'Converter'],
+          external: true
         }
       ]
     }
