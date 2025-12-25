@@ -79,6 +79,24 @@ function LabsContent() {
           icon: '🤖',
           tags: ['AI', 'LLM', 'Pricing'],
           external: true
+        },
+        {
+          id: 'libretv',
+          title: 'LibreTV',
+          description: 'Free video streaming platform with multiple sources - movies, TV shows, and more',
+          url: 'https://libretv.w0x7ce.eu/',
+          icon: '🎬',
+          tags: ['Video', 'Streaming', 'Movies'],
+          external: true
+        },
+        {
+          id: 'draw',
+          title: 'Draw Online',
+          description: 'Online drawing and sketching tool - create art directly in your browser',
+          url: 'https://draw.w0x7ce.eu/',
+          icon: '🎨',
+          tags: ['Drawing', 'Art', 'Creative'],
+          external: true
         }
       ]
     }
