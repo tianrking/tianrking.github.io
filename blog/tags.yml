@@ -84,3 +84,23 @@ Frontend:
   label: 技術深度
   permalink: /technical-deep-dive
   description: In-depth technical articles
+
+Telink:
+  label: Telink
+  permalink: /telink
+  description: 泰凌微半導體開發與工具鏈
+
+TLSR8258:
+  label: TLSR8258
+  permalink: /tlsr8258
+  description: TLSR8258 韌體開發與除錯
+
+BLE:
+  label: Bluetooth LE
+  permalink: /bluetooth-low-energy
+  description: Bluetooth Low Energy 應用開發
+
+嵌入式系統:
+  label: 嵌入式系統
+  permalink: /embedded-systems
+  description: 嵌入式系統設計、開發與驗證

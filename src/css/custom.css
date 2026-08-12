@@ -396,7 +396,13 @@ code:not([class*="language-"]) {
 
 [data-theme='dark'] code:not([class*="language-"]) {
   background: rgba(139, 92, 246, 0.15);
-  color: #a78bfa;
+  color: #c4b5fd;
+}
+
+/* Keep inline content links recognizable independently of color. */
+article .markdown a:not(.hash-link) {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 
 /* Tables - Dark Mode */
@@ -417,21 +423,25 @@ code:not([class*="language-"]) {
 [data-theme='dark'] .alert--info {
   background: rgba(59, 130, 246, 0.1);
   border-left-color: #3b82f6;
+  color: #bfdbfe;
 }
 
 [data-theme='dark'] .alert--success {
   background: rgba(34, 197, 94, 0.1);
   border-left-color: #22c55e;
+  color: #bbf7d0;
 }
 
 [data-theme='dark'] .alert--warning {
   background: rgba(245, 158, 11, 0.1);
   border-left-color: #f59e0b;
+  color: #fde68a;
 }
 
 [data-theme='dark'] .alert--danger {
   background: rgba(239, 68, 68, 0.1);
   border-left-color: #ef4444;
+  color: #fecaca;
 }
 
 /* TOC - Dark Mode */
