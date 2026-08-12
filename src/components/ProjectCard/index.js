@@ -151,6 +151,7 @@ function ProjectMetric({label, value}) {
 }
 
 export default function ProjectCard({project, compact = false, accentColor}) {
+  const titleId = `project-${project.id}-title`;
   const summary = project.summary || project.description;
   const tags = project.tags?.length ? project.tags : project.tech || [];
   const languages = getProjectLanguages(project);
@@ -171,6 +172,7 @@ export default function ProjectCard({project, compact = false, accentColor}) {
 
   return (
     <article
+      aria-labelledby={titleId}
       className={`${styles.card} ${compact ? styles.compact : ''}`}
       style={accentColor ? {'--project-accent': accentColor} : undefined}>
       <div className={styles.cardTopline} aria-hidden="true" />
@@ -190,7 +192,7 @@ export default function ProjectCard({project, compact = false, accentColor}) {
       ) : null}
 
       <div className={styles.content}>
-        <h3 className={styles.title}>{project.title}</h3>
+        <h3 id={titleId} className={styles.title}>{project.title}</h3>
         <p className={styles.summary}>{summary}</p>
 
         <div className={styles.tags} aria-label="技術標籤">

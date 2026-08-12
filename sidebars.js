@@ -11,6 +11,15 @@
 
 // @ts-check
 
+const generatedIndex = (slug, title, description) => ({
+  type: 'generated-index',
+  slug,
+  title,
+  description,
+});
+
+const doc = (id, label) => ({type: 'doc', id, label});
+
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   // By default, Docusaurus generates a sidebar from the docs folder structure
@@ -28,11 +37,21 @@ const sidebars = {
       type: 'category',
       label: '封存 · 課程筆記',
       collapsed: true,
+      link: generatedIndex(
+        '/archive/university-notes',
+        '封存課程筆記',
+        '大學時期留下的課程筆記，按主題整理。內容保留作歷史參考。',
+      ),
       items: [
         {
           type: 'category',
           label: '測繪工程',
           collapsed: true,
+          link: generatedIndex(
+            '/archive/university-notes/surveying',
+            '測繪工程',
+            '地籍測量、土地權屬、GIS、衛星導航與時間系統課程筆記。',
+          ),
           items: [
             'uni-notes/2019-09-02-cadastral-surveying-introduction',
             'uni-notes/2019-09-06-land-ownership-investigation',
@@ -47,6 +66,11 @@ const sidebars = {
           type: 'category',
           label: '影像處理',
           collapsed: true,
+          link: generatedIndex(
+            '/archive/university-notes/image-processing',
+            '影像處理',
+            '影像基本運算、增強與復原的課程筆記。',
+          ),
           items: [
             'uni-notes/2020-02-25-image-processing-1',
             'uni-notes/2020-03-04-image-basic-operations',
@@ -58,6 +82,11 @@ const sidebars = {
           type: 'category',
           label: '資料庫',
           collapsed: true,
+          link: generatedIndex(
+            '/archive/university-notes/databases',
+            '資料庫',
+            '資料庫系統、SQL 與課程實驗筆記。',
+          ),
           items: [
             'uni-notes/2018-09-06-database-system-overview-part1',
             'uni-notes/2018-09-06-database-system-overview-part2',
@@ -69,6 +98,11 @@ const sidebars = {
           type: 'category',
           label: '財政學',
           collapsed: true,
+          link: generatedIndex(
+            '/archive/university-notes/public-finance',
+            '財政學',
+            '公共財政、財政支出與課程總結。',
+          ),
           items: [
             'uni-notes/2018-09-08-public-finance-intro',
             'uni-notes/2018-09-22-financial-expenditure-intro',
@@ -81,6 +115,11 @@ const sidebars = {
           type: 'category',
           label: '數位地形測量學',
           collapsed: true,
+          link: generatedIndex(
+            '/archive/university-notes/terrain-surveying',
+            '數位地形測量學',
+            '座標系、高程與測量誤差理論筆記。',
+          ),
           items: [
             'uni-notes/2018-09-04-chapter1-coordinate-system-part1',
             'uni-notes/2018-09-04-coordinate-system-part2',
@@ -92,6 +131,11 @@ const sidebars = {
           type: 'category',
           label: '金融市場與投資',
           collapsed: true,
+          link: generatedIndex(
+            '/archive/university-notes/finance-and-investment',
+            '金融市場與投資',
+            '金融工程、貨幣與債券市場、銀行與宏觀政策筆記。',
+          ),
           items: [
             'uni-notes/2018-09-10-financial-engineering-intro',
             'uni-notes/2018-09-15-financial-market-overview',
@@ -111,6 +155,11 @@ const sidebars = {
           type: 'category',
           label: '財務報表分析',
           collapsed: true,
+          link: generatedIndex(
+            '/archive/university-notes/financial-statements',
+            '財務報表分析',
+            '財務報表分析基礎課程筆記。',
+          ),
           items: [
             'uni-notes/2018-09-16-financial-statement-analysis-intro',
             'uni-notes/2018-09-23-financial-statement-analysis-basics',
@@ -120,6 +169,11 @@ const sidebars = {
           type: 'category',
           label: '資料結構',
           collapsed: true,
+          link: generatedIndex(
+            '/archive/university-notes/data-structures',
+            '資料結構',
+            '線性表、字串實作與資料結構基礎筆記。',
+          ),
           items: [
             'uni-notes/2019-03-03-data-structure-introduction',
             'uni-notes/2019-03-04-linear-list',
@@ -130,6 +184,11 @@ const sidebars = {
           type: 'category',
           label: '地圖學',
           collapsed: true,
+          link: generatedIndex(
+            '/archive/university-notes/cartography',
+            '地圖學',
+            '地圖與地圖語言基礎筆記。',
+          ),
           items: [
             'uni-notes/2019-07-20-maps-and-cartography-basics',
             'uni-notes/2019-07-21-map-language',
@@ -139,6 +198,11 @@ const sidebars = {
           type: 'category',
           label: '程式設計與開發',
           collapsed: true,
+          link: generatedIndex(
+            '/archive/university-notes/programming',
+            '程式設計與開發',
+            'Scrapy、OpenGL、Vue、電腦圖學與機器學習課程筆記。',
+          ),
           items: [
             'uni-notes/2019-01-13-scrapy',
             'uni-notes/2019-03-19-opengl-drawing',
@@ -152,6 +216,11 @@ const sidebars = {
           type: 'category',
           label: '其他',
           collapsed: true,
+          link: generatedIndex(
+            '/archive/university-notes/other',
+            '其他課程筆記',
+            '城市、電路、保險與其他課程記錄。',
+          ),
           items: [
             'uni-notes/2018-09-03-introduction',
             'uni-notes/2018-09-06-city-urbanization',
@@ -165,88 +234,98 @@ const sidebars = {
     {
       type: 'category',
       label: '嵌入式系統',
-      collapsed: false,
+      collapsed: true,
+      link: generatedIndex(
+        '/embedded',
+        '嵌入式系統',
+        'MCU、開發板、通訊介面與板級除錯筆記。',
+      ),
       items: [
-        {
-          type: 'category',
-          label: 'Telink',
-          collapsed: false,
-          items: [
-            'embedded/telink/tlsr8258/sws-build-flash-verify'
-          ]
-        },
+        doc(
+          'embedded/telink/tlsr8258/sws-build-flash-verify',
+          'Telink · TLSR8258 SWS 燒錄與驗證',
+        ),
         {
           type: 'category',
           label: 'Bouffalo Lab 與 WinnerMicro',
           collapsed: true,
+          link: generatedIndex(
+            '/embedded/bouffalo-winnermicro',
+            'Bouffalo Lab 與 WinnerMicro',
+            'Bouffalo Lab 與 WinnerMicro 開發板、SDK 和除錯筆記。',
+          ),
           items: [
-            'micro-controladores/CN/bouffalo_sdk',
-            'micro-controladores/CN/warning_uart_rts',
-            'micro-controladores/CN/bouffalo-BL602-AI-WB2-32s',
-            'micro-controladores/CN/bouffalo-BL616-AI-M62-32s',
-            'micro-controladores/CN/bouffalo-BL618-Sipeed-M0P-Dock',
-            'micro-controladores/CN/winnermicro-XT-E804-HLK-W801-Kit'
+            doc('micro-controladores/CN/bouffalo_sdk', 'Bouffalo SDK 網路介面'),
+            doc('micro-controladores/CN/warning_uart_rts', 'UART RTS 問題排查'),
+            doc('micro-controladores/CN/bouffalo-BL602-AI-WB2-32s', 'BL602 · AI-WB2-32S 資料'),
+            doc('micro-controladores/CN/bouffalo-BL616-AI-M62-32s', 'BL616 · AI-M62-32S 快速筆記'),
+            doc('micro-controladores/CN/bouffalo-BL618-Sipeed-M0P-Dock', 'BL618 · Sipeed M0P Dock 資料'),
+            doc('micro-controladores/CN/winnermicro-XT-E804-HLK-W801-Kit', 'WinnerMicro W801 開發板筆記'),
           ]
         },
-        {
-          type: 'category',
-          label: 'STM32',
-          collapsed: true,
-          items: [
-            'micro-controladores/STM32/stm32_cdc_develop'
-          ]
-        },
+        doc('micro-controladores/STM32/stm32_cdc_develop', 'STM32 · USB CDC 通訊'),
         {
             type: 'category',
             label: 'ESP32',
             collapsed: true,
+            link: generatedIndex(
+              '/embedded/esp32',
+              'ESP32',
+              'ESP-IDF、ESP-ADF、周邊控制、Zephyr 與無線通訊筆記。',
+            ),
             items: [
-              'micro-controladores/ESP32/esp-idf5.3_sdk',
-              'micro-controladores/ESP32/esp32-adf-I2S',
-              'micro-controladores/ESP32/esp32-encoder',
-              'micro-controladores/ESP32/esp32_all_need_know_zh_hk',
-              'micro-controladores/ESP32/esp32_all_need_know',
-              'micro-controladores/ESP32/esp32-mcpwm-usage-and-examples',
-              'micro-controladores/ESP32/esp32-rf24-demo',
-              'micro-controladores/ESP32/esp32-zephyer-basic',
-              'micro-controladores/ESP32/esp32-lol'
+              doc('micro-controladores/ESP32/esp-idf5.3_sdk', 'ESP-IDF 5.3 · Wi-Fi 介面'),
+              doc('micro-controladores/ESP32/esp32-adf-I2S', 'ESP-ADF · I²S Stream'),
+              doc('micro-controladores/ESP32/esp32-encoder', 'EC11 編碼器 · PCNT 與 GPTimer'),
+              doc('micro-controladores/ESP32/esp32_all_need_know_zh_hk', 'ESP32 範例清單（繁中）'),
+              doc('micro-controladores/ESP32/esp32_all_need_know', 'ESP32 範例清單（西語）'),
+              doc('micro-controladores/ESP32/esp32-mcpwm-usage-and-examples', 'MCPWM 使用指南與範例'),
+              doc('micro-controladores/ESP32/esp32-rf24-demo', 'NRF24L01 · ESP32 / RP2040'),
+              doc('micro-controladores/ESP32/esp32-zephyer-basic', 'Zephyr · ESP32 快速開始'),
+              doc('comunicaciones/Bluetooth/hack_esp', 'Wi-Fi · PMF 與管理幀測試'),
             ]
         },
         {
             type: 'category',
             label: 'RP2040',
             collapsed: true,
+            link: generatedIndex(
+              '/embedded/rp2040',
+              'RP2040',
+              'UART、PWM、Timer、PIO 與 NRF24L01 實作筆記。',
+            ),
             items: [
-              'micro-controladores/RP2040/rp2040-uart-interrupt-handling-and-usage',
-              'micro-controladores/RP2040/rp2040-pwm-usage-and-examples',
-              'micro-controladores/RP2040/rp2040-timer-and-alarm-usage',
-              'micro-controladores/RP2040/mastering-pio-programming',
-              'micro-controladores/RP2040/pio-uart-implementation',
-              'micro-controladores/RP2040/advanced-pio-led-control-and-resource-management',
-              'micro-controladores/RP2040/rp2040-rf24-demo',
-              'micro-controladores/RP2040/rp2040-lol'
+              doc('micro-controladores/RP2040/rp2040-uart-interrupt-handling-and-usage', 'UART 中斷與資料傳輸'),
+              doc('micro-controladores/RP2040/rp2040-pwm-usage-and-examples', 'PWM 使用指南與範例'),
+              doc('micro-controladores/RP2040/rp2040-timer-and-alarm-usage', 'Timer 與 Alarm'),
+              doc('micro-controladores/RP2040/mastering-pio-programming', 'PIO 編程深入探索'),
+              doc('micro-controladores/RP2040/pio-uart-implementation', 'PIO UART TX 實作'),
+              doc('micro-controladores/RP2040/advanced-pio-led-control-and-resource-management', 'PIO LED 與資源管理'),
+              doc('micro-controladores/RP2040/rp2040-rf24-demo', 'NRF24L01 · RP2040 / ESP32'),
             ]
         },
-        {
-          type: 'category',
-          label: 'Wireless · Bluetooth',
-          collapsed: true,
-          items: [
-            'comunicaciones/Bluetooth/basics',
-            'comunicaciones/Bluetooth/hack_esp'
-          ]
-        }
+        doc('comunicaciones/Bluetooth/basics', 'Bluetooth · 技術模式與 ESP32 應用'),
       ]
     },
     {
       type: 'category',
       label: '封存 · 舊文章',
       collapsed: true,
+      link: generatedIndex(
+        '/archive/old-posts',
+        '封存舊文章',
+        '過去整理的技術文章。版本與操作方式可能已經過時，請先確認目前的官方文件。',
+      ),
       items: [
         {
           type: 'category',
-          label: 'Linux & System Administration',
+          label: 'Linux 與系統管理',
           collapsed: true,
+          link: generatedIndex(
+            '/archive/old-posts/linux-system-administration',
+            'Linux 與系統管理',
+            'Linux 指令、系統管理、磁碟、防火牆與虛擬化舊文章。',
+          ),
           items: [
             'migrated/linux-commands-complete-reference',
             'migrated/linux-commands-complete-guide',
@@ -261,8 +340,13 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Docker & DevOps',
+          label: 'Docker 與 DevOps',
           collapsed: true,
+          link: generatedIndex(
+            '/archive/old-posts/docker-devops',
+            'Docker 與 DevOps',
+            'Docker、Kubernetes 與容器開發環境舊文章。',
+          ),
           items: [
             'migrated/docker-getting-started-guide',
             'migrated/docker-usage-guide-part-1',
@@ -273,8 +357,13 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Programming Languages',
+          label: '程式語言',
           collapsed: true,
+          link: generatedIndex(
+            '/archive/old-posts/programming-languages',
+            '程式語言',
+            'Go、Git、Python、Qt 與 PyQt 舊文章。',
+          ),
           items: [
             'migrated/golang-complete-learning-guide',
             'migrated/golang-learning-guide',
@@ -289,8 +378,13 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Data Science & Machine Learning',
+          label: '資料科學與機器學習',
           collapsed: true,
+          link: generatedIndex(
+            '/archive/old-posts/data-science-machine-learning',
+            '資料科學與機器學習',
+            '機器學習、資料分析與運算環境舊文章。',
+          ),
           items: [
             'migrated/xgboost-stock-price-prediction-guide',
             'migrated/pytorch-stock-prediction-guide',
@@ -301,8 +395,13 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Web Development & APIs',
+          label: 'Web 開發與 API',
           collapsed: true,
+          link: generatedIndex(
+            '/archive/old-posts/web-development-api',
+            'Web 開發與 API',
+            '資料抓取、Flask 部署與 Selenium 舊文章。',
+          ),
           items: [
             'migrated/jin10-financial-news-scraping-guide',
             'migrated/cryptocurrency-scraping-colly-guide',
@@ -314,8 +413,13 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Tools & Testing',
+          label: '工具與測試',
           collapsed: true,
+          link: generatedIndex(
+            '/archive/old-posts/tools-testing',
+            '工具與測試',
+            '效能測試、基準測試與搜尋工具舊文章。',
+          ),
           items: [
             'migrated/apache-benchmark-comprehensive-guide',
             'migrated/ab-stress-testing-guide',
@@ -325,8 +429,13 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Embedded & Hardware',
+          label: '嵌入式與硬體',
           collapsed: true,
+          link: generatedIndex(
+            '/archive/old-posts/embedded-hardware',
+            '嵌入式與硬體',
+            'Raspberry Pi Pico、NVIDIA 與電腦視覺工具舊文章。',
+          ),
           items: [
             'migrated/raspberry-pi-pico-motor-control',
             'migrated/nvidia-driver-installation-guide',
@@ -336,8 +445,13 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'ROS & Robotics',
+          label: 'ROS 與機器人',
           collapsed: true,
+          link: generatedIndex(
+            '/archive/old-posts/ros-robotics',
+            'ROS 與機器人',
+            'ROS 檔案系統與套件開發舊文章。',
+          ),
           items: [
             'migrated/ros-filesystem-guide',
             'migrated/ros-package-development-guide'
@@ -345,8 +459,13 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Blockchain & Security',
+          label: '區塊鏈與安全',
           collapsed: true,
+          link: generatedIndex(
+            '/archive/old-posts/blockchain-security',
+            '區塊鏈與安全',
+            'Solidity、監控與安全相關舊文章。',
+          ),
           items: [
             'migrated/solidity-erc20-token-development-guide',
             'migrated/grafana-prometheus-complete-monitoring-guide'
