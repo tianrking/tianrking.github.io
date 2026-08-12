@@ -22,16 +22,16 @@ const sidebars = {
     {
       type: 'doc',
       id: 'tutorial',
-      label: 'Tutorial',
+      label: '技術筆記',
     },
     {
       type: 'category',
-      label: 'University Notes',
+      label: '封存 · 課程筆記',
       collapsed: true,
       items: [
         {
           type: 'category',
-          label: '测绘工程',
+          label: '測繪工程',
           collapsed: true,
           items: [
             'uni-notes/2019-09-02-cadastral-surveying-introduction',
@@ -45,7 +45,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: '图像处理',
+          label: '影像處理',
           collapsed: true,
           items: [
             'uni-notes/2020-02-25-image-processing-1',
@@ -56,7 +56,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: '数据库',
+          label: '資料庫',
           collapsed: true,
           items: [
             'uni-notes/2018-09-06-database-system-overview-part1',
@@ -67,7 +67,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: '财政学',
+          label: '財政學',
           collapsed: true,
           items: [
             'uni-notes/2018-09-08-public-finance-intro',
@@ -79,7 +79,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: '数字地形测量学',
+          label: '數位地形測量學',
           collapsed: true,
           items: [
             'uni-notes/2018-09-04-chapter1-coordinate-system-part1',
@@ -90,7 +90,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: '金融市场与投资',
+          label: '金融市場與投資',
           collapsed: true,
           items: [
             'uni-notes/2018-09-10-financial-engineering-intro',
@@ -109,7 +109,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: '财务报表分析',
+          label: '財務報表分析',
           collapsed: true,
           items: [
             'uni-notes/2018-09-16-financial-statement-analysis-intro',
@@ -118,7 +118,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: '数据结构',
+          label: '資料結構',
           collapsed: true,
           items: [
             'uni-notes/2019-03-03-data-structure-introduction',
@@ -128,7 +128,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: '地图学',
+          label: '地圖學',
           collapsed: true,
           items: [
             'uni-notes/2019-07-20-maps-and-cartography-basics',
@@ -137,7 +137,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: '编程与开发',
+          label: '程式設計與開發',
           collapsed: true,
           items: [
             'uni-notes/2019-01-13-scrapy',
@@ -164,20 +164,22 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Micro-Controladores',
+      label: '嵌入式系統',
       collapsed: false,
       items: [
         {
           type: 'category',
-          label: 'CN',
+          label: 'Telink',
           collapsed: false,
           items: [
-            {
-              type: 'link',
-              label: ' ',
-              href: '#',
-              key: 'cn_separator'
-            },
+            'embedded/telink/tlsr8258/sws-build-flash-verify'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Bouffalo Lab 與 WinnerMicro',
+          collapsed: true,
+          items: [
             'micro-controladores/CN/bouffalo_sdk',
             'micro-controladores/CN/warning_uart_rts',
             'micro-controladores/CN/bouffalo-BL602-AI-WB2-32s',
@@ -189,7 +191,7 @@ const sidebars = {
         {
           type: 'category',
           label: 'STM32',
-          collapsed: false,
+          collapsed: true,
           items: [
             'micro-controladores/STM32/stm32_cdc_develop'
           ]
@@ -197,46 +199,48 @@ const sidebars = {
         {
             type: 'category',
             label: 'ESP32',
-            collapsed: false,
+            collapsed: true,
             items: [
-              {
-                type: 'link',
-                label: ' ',
-                href: '#',
-                key: 'esp32_separator'
-              },
               'micro-controladores/ESP32/esp-idf5.3_sdk',
+              'micro-controladores/ESP32/esp32-adf-I2S',
+              'micro-controladores/ESP32/esp32-encoder',
               'micro-controladores/ESP32/esp32_all_need_know_zh_hk',
               'micro-controladores/ESP32/esp32_all_need_know',
               'micro-controladores/ESP32/esp32-mcpwm-usage-and-examples',
-              'micro-controladores/ESP32/esp32-rf24-demo'
+              'micro-controladores/ESP32/esp32-rf24-demo',
+              'micro-controladores/ESP32/esp32-zephyer-basic',
+              'micro-controladores/ESP32/esp32-lol'
             ]
         },
         {
             type: 'category',
             label: 'RP2040',
-            collapsed: false,
+            collapsed: true,
             items: [
-              {
-                type: 'link',
-                label: ' ',
-                href: '#',
-                key: 'rp2040_separator'
-              },
               'micro-controladores/RP2040/rp2040-uart-interrupt-handling-and-usage',
               'micro-controladores/RP2040/rp2040-pwm-usage-and-examples',
               'micro-controladores/RP2040/rp2040-timer-and-alarm-usage',
               'micro-controladores/RP2040/mastering-pio-programming',
               'micro-controladores/RP2040/pio-uart-implementation',
               'micro-controladores/RP2040/advanced-pio-led-control-and-resource-management',
-              'micro-controladores/RP2040/rp2040-rf24-demo'
+              'micro-controladores/RP2040/rp2040-rf24-demo',
+              'micro-controladores/RP2040/rp2040-lol'
             ]
+        },
+        {
+          type: 'category',
+          label: 'Wireless · Bluetooth',
+          collapsed: true,
+          items: [
+            'comunicaciones/Bluetooth/basics',
+            'comunicaciones/Bluetooth/hack_esp'
+          ]
         }
       ]
     },
     {
       type: 'category',
-      label: 'Legacy Articles',
+      label: '封存 · 舊文章',
       collapsed: true,
       items: [
         {
@@ -245,11 +249,14 @@ const sidebars = {
           collapsed: true,
           items: [
             'migrated/linux-commands-complete-reference',
+            'migrated/linux-commands-complete-guide',
             'migrated/common-linux-commands-detailed-guide',
             'migrated/common-linux-commands-part-1',
             'migrated/sed-text-processing-complete-guide',
+            'migrated/shell-scripting-programming-guide',
             'migrated/linux-disk-space-cleanup',
-            'migrated/linux-firewall-management-guide'
+            'migrated/linux-firewall-management-guide',
+            'migrated/ubuntu-kvm-virtualization-guide'
           ]
         },
         {
@@ -270,11 +277,14 @@ const sidebars = {
           collapsed: true,
           items: [
             'migrated/golang-complete-learning-guide',
+            'migrated/golang-learning-guide',
             'migrated/git-complete-usage-guide',
+            'migrated/git-usage-guide',
             'migrated/python-gmail-sending-guide',
             'migrated/python-notes-and-tips',
             'migrated/qt5-standard-library-guide',
-            'migrated/pyqt5-qgraphicsview-complete-guide'
+            'migrated/pyqt5-qgraphicsview-complete-guide',
+            'migrated/pyqt5-qgraphics-guide'
           ]
         },
         {
@@ -284,7 +294,9 @@ const sidebars = {
           items: [
             'migrated/xgboost-stock-price-prediction-guide',
             'migrated/pytorch-stock-prediction-guide',
-            'migrated/matlab-robotics-simulation-guide'
+            'migrated/matlab-robotics-simulation-guide',
+            'migrated/conda-installation-and-usage',
+            'migrated/google-colab-usage-tips'
           ]
         },
         {
@@ -306,6 +318,7 @@ const sidebars = {
           collapsed: true,
           items: [
             'migrated/apache-benchmark-comprehensive-guide',
+            'migrated/ab-stress-testing-guide',
             'migrated/tinybenchmark-reproduction-troubleshooting-guide',
             'migrated/opensearch-complete-guide'
           ]

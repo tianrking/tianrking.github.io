@@ -1,0 +1,82 @@
+[
+  {
+    "id": "proxychains-rs",
+    "title": "proxychains-rs",
+    "summary": "以 Rust 重寫的跨平台 process-level proxy chaining，涵蓋 Linux、macOS 與 Windows。",
+    "category": "Infrastructure",
+    "status": "Active",
+    "repo": {
+      "owner": "tianrking",
+      "name": "proxychains-rs"
+    },
+    "tags": ["Rust", "Networking", "Cross-platform"]
+  },
+  {
+    "id": "edge-mirror",
+    "title": "EdgeMirror",
+    "summary": "建構於 Cloudflare Workers 的唯讀、無快取軟體倉庫與開發資源邊緣鏡像閘道。",
+    "category": "Infrastructure",
+    "status": "Active",
+    "repo": {
+      "owner": "tianrking",
+      "name": "EdgeMirror"
+    },
+    "tags": ["Cloudflare Workers", "Edge", "Mirrors"]
+  },
+  {
+    "id": "dm-gripper",
+    "title": "DM Gripper Control",
+    "summary": "透過 Python、WebSocket 與 React 即時控制 DM-J4310-2EC 馬達的夾爪控制台。",
+    "category": "Robotics",
+    "status": "Active",
+    "repo": {
+      "owner": "tianrking",
+      "name": "DM_Gripper"
+    },
+    "tags": ["Robotics", "Python", "React", "WebSocket"]
+  },
+  {
+    "id": "secure-element-lab",
+    "title": "Secure Element Lab",
+    "summary": "在 Nordic nRF54LM20 與 ESP32-H2 上驗證 NXP SE05x、T=1 over I2C、SCP03 與可移植安全元件堆疊。",
+    "category": "Embedded Security",
+    "status": "Bench verified",
+    "repositories": [
+      {
+        "owner": "tianrking",
+        "name": "nrf54lm20-se05x-ncs",
+        "label": "Nordic NCS"
+      },
+      {
+        "owner": "tianrking",
+        "name": "esp32-se05x-idf",
+        "label": "ESP-IDF"
+      }
+    ],
+    "tags": ["nRF54", "ESP32-H2", "NXP SE05x", "SCP03"]
+  },
+  {
+    "id": "marcato",
+    "title": "Marcato",
+    "summary": "支援圖表、分享、匯出、GitHub 匯入與行動閱讀流程的 browser-first Markdown studio。",
+    "category": "Developer Tools",
+    "status": "Active",
+    "repo": {
+      "owner": "tianrking",
+      "name": "Marcato"
+    },
+    "tags": ["TypeScript", "React", "Markdown", "PWA"]
+  },
+  {
+    "id": "particle-pair",
+    "title": "ParticlePair",
+    "summary": "以旋轉星系同時提供人類可感知配對提示與相機可驗證光學訊框的互動實驗。",
+    "category": "Experiments",
+    "status": "Experimental",
+    "repo": {
+      "owner": "tianrking",
+      "name": "ParticlePair"
+    },
+    "tags": ["TypeScript", "Computer Vision", "Interaction"]
+  }
+]

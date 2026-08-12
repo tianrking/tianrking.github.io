@@ -1,0 +1,43 @@
+name: Refresh public GitHub project snapshot
+
+on:
+  schedule:
+    - cron: '17 1 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-public-project-snapshot
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    name: Generate and verify snapshot
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Generate snapshot and verify production build
+        run: npm run build
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Preserve generated snapshot for inspection
+        uses: actions/upload-artifact@v7
+        with:
+          name: featured-projects-${{ github.run_id }}
+          path: static/data/featured-projects.json
+          if-no-files-found: error
+          retention-days: 14

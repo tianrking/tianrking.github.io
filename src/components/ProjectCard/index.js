@@ -1,108 +1,232 @@
-import React from 'react';
-import clsx from 'clsx';
+import React, {useEffect, useMemo, useState} from 'react';
+import Link from '@docusaurus/Link';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import {featuredProjects} from '@site/src/data/featured-projects';
 import styles from './styles.module.css';
 
-export default function ProjectCard({ project, accentColor }) {
-  const {
-    title,
-    description,
-    image,
-    tech = [],
-    demoUrl,
-    githubUrl,
-    docsUrl,
-    status = 'active',
-    tags = [],
-    date,
-  } = project;
+const categoryLabels = {
+  embedded: '嵌入式系統',
+  hardware: '硬體',
+  robotics: '機器人',
+  ai: 'AI',
+  infrastructure: '基礎設施',
+  network: '網路工程',
+  apps: '應用程式',
+  tools: '開發工具',
+  'embedded security': '嵌入式安全',
+  'developer tools': '開發工具',
+  experiments: '互動實驗',
+};
+
+const statusLabels = {
+  active: '持續維護',
+  maintained: '持續維護',
+  experimental: '實驗中',
+  demo: '可體驗',
+  stable: '穩定',
+  archived: '已封存',
+  'bench verified': '實板驗證',
+};
+
+function humanize(value) {
+  if (!value) {
+    return '';
+  }
+
+  return String(value)
+    .replace(/[-_]/g, ' ')
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
+export function getCategoryLabel(category) {
+  return categoryLabels[String(category || '').toLowerCase()] || humanize(category) || '工程專案';
+}
+
+export function getStatusLabel(status) {
+  return statusLabels[String(status || '').toLowerCase()] || humanize(status) || '專案';
+}
+
+export function getProjectLanguages(project) {
+  const values = [
+    project.language,
+    project.github?.language,
+    project.github?.primaryLanguage?.name,
+    ...(project.github?.languages || []),
+    ...(project.repositories || []).flatMap((repository) => [
+      repository.language,
+      repository.github?.language,
+      repository.github?.primaryLanguage?.name,
+      typeof repository.primaryLanguage === 'string'
+        ? repository.primaryLanguage
+        : repository.primaryLanguage?.name,
+    ]),
+  ];
+
+  return [...new Set(values.filter(Boolean))];
+}
+
+function getRepositoryUrl(project) {
+  if (project.links?.github) {
+    return project.links.github;
+  }
+
+  if (project.githubUrl) {
+    return project.githubUrl;
+  }
+
+  const repository = project.repo || project.repositories?.[0];
+  return repository?.owner && repository?.name
+    ? `https://github.com/${repository.owner}/${repository.name}`
+    : null;
+}
+
+function mergeSnapshot(snapshotProjects) {
+  const curatedById = new Map(featuredProjects.map((project) => [project.id, project]));
+  const seen = new Set();
+  const merged = snapshotProjects.map((project) => {
+    const curated = curatedById.get(project.id) || {};
+    seen.add(project.id);
+    return {
+      ...curated,
+      ...project,
+      links: {...curated.links, ...project.links},
+    };
+  });
+
+  featuredProjects.forEach((project) => {
+    if (!seen.has(project.id)) {
+      merged.push(project);
+    }
+  });
+
+  return merged;
+}
+
+export function useFeaturedProjects() {
+  const snapshotUrl = useBaseUrl('/data/featured-projects.json');
+  const [projects, setProjects] = useState(featuredProjects);
+  const [snapshotState, setSnapshotState] = useState('loading');
+
+  useEffect(() => {
+    let cancelled = false;
+
+    fetch(snapshotUrl, {cache: 'no-cache'})
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`GitHub snapshot returned ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((snapshot) => {
+        if (!cancelled && Array.isArray(snapshot.projects)) {
+          setProjects(mergeSnapshot(snapshot.projects));
+          setSnapshotState('ready');
+        }
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setSnapshotState('fallback');
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [snapshotUrl]);
+
+  return useMemo(() => ({projects, snapshotState}), [projects, snapshotState]);
+}
+
+function ProjectMetric({label, value}) {
+  if (value === undefined || value === null || value === '') {
+    return null;
+  }
 
   return (
-    <div
-      className={clsx('col col--4', styles.projectCard)}
-      style={{ '--accent-color': accentColor }}
-    >
-      <div className={styles.card}>
-        {/* Status Badge */}
-        {status && (
-          <div className={clsx(styles.statusBadge, styles[status])}>
-            {status === 'active' && '🚀 Active'}
-            {status === 'demo' && '🎮 Demo'}
-            {status === 'archived' && '📦 Archived'}
-          </div>
-        )}
+    <span className={styles.metric} title={label}>
+      <span className={styles.metricLabel}>{label}</span>
+      <strong>{value}</strong>
+    </span>
+  );
+}
 
-        {/* Project Image */}
-        {image && (
-          <div className={styles.imageContainer}>
-            <img src={image} alt={title} className={styles.projectImage} />
-          </div>
-        )}
+export default function ProjectCard({project, compact = false, accentColor}) {
+  const summary = project.summary || project.description;
+  const tags = project.tags?.length ? project.tags : project.tech || [];
+  const languages = getProjectLanguages(project);
+  const displayTags = tags.filter((tag) => (
+    !languages.some((language) => language.toLowerCase() === String(tag).toLowerCase())
+  ));
+  const repositoryUrl = getRepositoryUrl(project);
+  const github = project.github || {};
+  const stars = github.stars ?? github.stargazersCount ?? github.stargazerCount;
+  const forks = github.forks ?? github.forksCount;
+  const latestRelease = github.latestRelease?.tagName
+    || github.latestRelease?.tag
+    || github.latestRelease?.name
+    || github.latestRelease;
+  const docsUrl = project.links?.docs || project.docsUrl;
+  const demoUrl = project.links?.demo || project.demoUrl;
+  const repositoryCount = project.repositories?.length;
 
-        {/* Content */}
-        <div className={styles.content}>
-          <h3 className={styles.title}>{title}</h3>
-          <p className={styles.description}>{description}</p>
+  return (
+    <article
+      className={`${styles.card} ${compact ? styles.compact : ''}`}
+      style={accentColor ? {'--project-accent': accentColor} : undefined}>
+      <div className={styles.cardTopline} aria-hidden="true" />
 
-          {/* Tech Stack */}
-          {tech.length > 0 && (
-            <div className={styles.techStack}>
-              {tech.map((item, idx) => (
-                <span key={idx} className={styles.techItem}>
-                  {item}
-                </span>
-              ))}
-            </div>
-          )}
+      <div className={styles.cardHeader}>
+        <span className={styles.category}>{getCategoryLabel(project.category)}</span>
+        <span className={`${styles.status} ${styles[String(project.status || '').toLowerCase().replace(/\s+/g, '')] || ''}`}>
+          <span className={styles.statusDot} aria-hidden="true" />
+          {getStatusLabel(project.status)}
+        </span>
+      </div>
 
-          {/* Tags */}
-          {tags.length > 0 && (
-            <div className={styles.tags}>
-              {tags.map((tag, idx) => (
-                <span key={idx} className={styles.tag}>
-                  #{tag}
-                </span>
-              ))}
-            </div>
-          )}
-
-          {/* Date */}
-          {date && <p className={styles.date}>{date}</p>}
+      {project.image && !compact ? (
+        <div className={styles.imageFrame}>
+          <img src={project.image} alt="" className={styles.image} loading="lazy" />
         </div>
+      ) : null}
 
-        {/* Links */}
-        <div className={styles.links}>
-          {demoUrl && (
-            <a
-              href={demoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={clsx(styles.linkButton, styles.primary)}
-            >
-              <span>🚀</span> Live Demo
-            </a>
-          )}
-          {githubUrl && (
-            <a
-              href={githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.linkButton}
-            >
-              <span>🐙</span> Code
-            </a>
-          )}
-          {docsUrl && (
-            <a
-              href={docsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.linkButton}
-            >
-              <span>📚</span> Docs
-            </a>
-          )}
+      <div className={styles.content}>
+        <h3 className={styles.title}>{project.title}</h3>
+        <p className={styles.summary}>{summary}</p>
+
+        <div className={styles.tags} aria-label="技術標籤">
+          {languages.map((language) => (
+            <span key={language} className={styles.language}>{language}</span>
+          ))}
+          {displayTags.slice(0, compact ? 3 : 5).map((tag) => (
+            <span key={tag}>{tag}</span>
+          ))}
         </div>
       </div>
-    </div>
+
+      <div className={styles.cardFooter}>
+        <div className={styles.metrics} aria-label="GitHub 專案資料">
+          <ProjectMetric label="Stars" value={stars} />
+          <ProjectMetric label="Forks" value={forks} />
+          <ProjectMetric label="Release" value={latestRelease} />
+          {repositoryCount > 1 ? (
+            <ProjectMetric label="Repos" value={repositoryCount} />
+          ) : null}
+        </div>
+
+        <div className={styles.links}>
+          {docsUrl ? <Link to={docsUrl}>技術筆記</Link> : null}
+          {demoUrl ? (
+            <a href={demoUrl} target="_blank" rel="noopener noreferrer">
+              Demo <span aria-hidden="true">↗</span>
+            </a>
+          ) : null}
+          {repositoryUrl ? (
+            <a href={repositoryUrl} target="_blank" rel="noopener noreferrer">
+              GitHub <span aria-hidden="true">↗</span>
+            </a>
+          ) : null}
+        </div>
+      </div>
+    </article>
   );
 }

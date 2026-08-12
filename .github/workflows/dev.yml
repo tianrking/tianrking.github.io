@@ -31,6 +31,8 @@ jobs:
 
       - name: Build site
         run: npm run build
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
       - name: Publish preview branch
         env:
