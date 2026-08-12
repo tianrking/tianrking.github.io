@@ -28,3 +28,5 @@ jobs:
 
       - name: Build with strict link and MDX checks
         run: npm run build
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

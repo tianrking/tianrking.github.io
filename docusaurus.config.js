@@ -142,8 +142,7 @@ const config = {
           hideable: true,
         },
       },
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/w0x7ce-social-card.png',
       navbar: {
         hideOnScroll: true,
         style: 'dark',

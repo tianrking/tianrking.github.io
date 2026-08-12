@@ -10,6 +10,7 @@ const SNAPSHOT_PATH = path.join(ROOT_DIR, 'static', 'data', 'featured-projects.j
 const GITHUB_API = 'https://api.github.com';
 const ALLOWED_OWNER = 'tianrking';
 const REPOSITORY_NAME_PATTERN = /^[A-Za-z0-9_.-]+$/;
+const MAX_CURATED_PROJECTS = 24;
 
 const githubToken = process.env.GITHUB_TOKEN?.trim();
 
@@ -56,8 +57,12 @@ function validateRepositoryEntry(repository, projectId) {
 }
 
 function validateCuratedProjects(projects) {
-  if (!Array.isArray(projects) || projects.length !== 6) {
-    throw new Error('Exactly six curated featured projects are required.');
+  if (
+    !Array.isArray(projects) ||
+    projects.length < 1 ||
+    projects.length > MAX_CURATED_PROJECTS
+  ) {
+    throw new Error(`Between 1 and ${MAX_CURATED_PROJECTS} curated projects are required.`);
   }
 
   const ids = new Set();
@@ -66,10 +71,29 @@ function validateCuratedProjects(projects) {
       throw new Error(`Featured project id is missing or duplicated: ${project.id ?? '(missing)'}`);
     }
     ids.add(project.id);
+    for (const field of ['title', 'summary', 'category', 'status']) {
+      if (typeof project[field] !== 'string' || !project[field].trim()) {
+        throw new Error(`Featured project ${project.id} has an invalid ${field}.`);
+      }
+    }
+    if (!Array.isArray(project.tags) || project.tags.length === 0) {
+      throw new Error(`Featured project ${project.id} must include at least one tag.`);
+    }
     repositoryList(project).forEach((repository) =>
       validateRepositoryEntry(repository, project.id),
     );
   }
+}
+
+function comparableSnapshot(snapshot) {
+  return {
+    schemaVersion: snapshot?.schemaVersion ?? null,
+    source: snapshot?.source ?? null,
+    staleRepositories: Array.isArray(snapshot?.staleRepositories)
+      ? snapshot.staleRepositories
+      : [],
+    projects: Array.isArray(snapshot?.projects) ? snapshot.projects : [],
+  };
 }
 
 function canonicalRepositoryUrl(owner, name) {
@@ -301,12 +325,29 @@ async function main() {
     return;
   }
 
-  const snapshot = {
+  const nextSnapshotPayload = {
     schemaVersion: 1,
-    generatedAt: new Date().toISOString(),
     source: 'GitHub public REST API',
     staleRepositories,
     projects,
+  };
+
+  if (
+    JSON.stringify(comparableSnapshot(previousSnapshot)) ===
+    JSON.stringify(nextSnapshotPayload)
+  ) {
+    console.log(
+      `Snapshot is already current (${projects.length} projects / ${projects.flatMap((project) => project.repositories).length} repositories); file left unchanged.`,
+    );
+    return;
+  }
+
+  const snapshot = {
+    schemaVersion: nextSnapshotPayload.schemaVersion,
+    generatedAt: new Date().toISOString(),
+    source: nextSnapshotPayload.source,
+    staleRepositories: nextSnapshotPayload.staleRepositories,
+    projects: nextSnapshotPayload.projects,
   };
 
   await mkdir(path.dirname(SNAPSHOT_PATH), {recursive: true});
