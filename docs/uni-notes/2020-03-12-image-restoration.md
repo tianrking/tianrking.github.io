@@ -6,7 +6,7 @@ category: "图像处理"
 description: "图像复原的基本概念、噪声模型（高斯噪声、均匀分布噪声、脉冲噪声）、空间域滤波复原方法"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

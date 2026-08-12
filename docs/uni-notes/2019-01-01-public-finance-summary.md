@@ -6,7 +6,7 @@ category: "财政学"
 description: "财政学重点知识总结，包括绪论、市场失灵、公共物品、财政职能等"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

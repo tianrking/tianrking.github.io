@@ -6,7 +6,7 @@ category: "数据结构C++语言描述"
 description: "数据结构的基本概念和常用术语，逻辑结构与存储结构，算法描述"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

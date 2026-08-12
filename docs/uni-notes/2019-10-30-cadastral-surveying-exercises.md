@@ -6,7 +6,7 @@ category: "地籍测量学"
 description: "地籍测量学各章节习题，涵盖绪论、土地权属调查、土地利用现状调查、土地等级调查、房屋调查、地籍控制测量、界址测量、地籍图测绘、土地面积量算、日常地籍调查"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

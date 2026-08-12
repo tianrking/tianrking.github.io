@@ -6,7 +6,7 @@ category: "金融市场学"
 description: "货币市场概述，同业拆借市场，证券回购市场，银行承兑汇票市场，商业票据市场"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

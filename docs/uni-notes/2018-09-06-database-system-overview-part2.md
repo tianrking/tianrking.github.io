@@ -6,7 +6,7 @@ category: "数据库原理及应用教程"
 description: "数据库管理系统（DBMS）的功能、组成和数据存取过程"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

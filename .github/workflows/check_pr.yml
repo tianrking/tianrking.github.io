@@ -1,40 +1,30 @@
-name: Check_PR
+name: Check PR
 
 on:
   pull_request:
-    paths-ignore:
-      - "ISSUE_TEMPLATE/**"
-      - ".github/**.md"
-      - ".gitignore"
-      - "demo/**"
-      - "docker/**"
-      - "HOW_TO.md"
-      - "TASK.md"
-      - "SECURITY.md"
-      - "README.md"
-      - "README_zh-CN.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
-  lint:
-    name: test_ci
+  build:
+    name: Build with Node.js 24
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1.0.0
+      - name: Check out source and history
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
-      - name: Checkout
-        uses: actions/checkout@master
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
 
-      - name: GIT CLONE
-        run: |
-            sudo apt-get update
+      - name: Install locked dependencies
+        run: npm ci
 
-      - name: NPM RUN for HTML BUILD
-        run: |
-            curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-            echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-            sudo apt remove cmdtest
-            sudo apt update && sudo apt install yarn
-            yarn
-            yarn build
-
-          
+      - name: Build with strict link and MDX checks
+        run: npm run build

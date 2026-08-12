@@ -6,7 +6,7 @@ category: "旅行"
 description: "香港旅行攻略和游记，包括计划准备、住宿、饮食和旅行记录"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

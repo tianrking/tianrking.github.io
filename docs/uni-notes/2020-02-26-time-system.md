@@ -6,7 +6,7 @@ category: "卫星导航定位原理及应用"
 description: "时间的概念、恒星时、平太阳时、世界时、儒略日、原子时、协调世界时、GNSS时间系统"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

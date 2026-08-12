@@ -6,7 +6,7 @@ category: "地图学原理与方法"
 description: "地图内容要素的特征，地图符号与视觉变量"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

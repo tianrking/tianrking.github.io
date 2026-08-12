@@ -6,7 +6,7 @@ category: "主修"
 description: "计算机图形学的定义，图形的构成要素和表示方法"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

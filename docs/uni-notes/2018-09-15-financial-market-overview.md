@@ -6,7 +6,7 @@ category: "金融市场学"
 description: "金融市场的定义、要素、功能与分类"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

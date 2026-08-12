@@ -56,3 +56,31 @@ Python:
   label: 雲計算
   permalink: /cloud-computing-zht
   description: Cloud computing
+AI:
+  label: AI
+  permalink: /ai
+  description: Artificial intelligence
+Google:
+  label: Google
+  permalink: /google
+  description: Google technologies
+A2UI:
+  label: A2UI
+  permalink: /a2ui
+  description: Agent-to-user interface technology
+Agent:
+  label: Agent
+  permalink: /agent
+  description: AI agents
+UI:
+  label: UI
+  permalink: /ui
+  description: User interface design
+Frontend:
+  label: Frontend
+  permalink: /frontend
+  description: Frontend development
+技術深度:
+  label: 技術深度
+  permalink: /technical-deep-dive
+  description: In-depth technical articles

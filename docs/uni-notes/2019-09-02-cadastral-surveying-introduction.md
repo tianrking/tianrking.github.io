@@ -6,7 +6,7 @@ category: "地籍测量学"
 description: "现代地籍的含义、地籍信息的基本问题、地籍功能与分类"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

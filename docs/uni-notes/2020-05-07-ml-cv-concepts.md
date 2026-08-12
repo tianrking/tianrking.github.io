@@ -6,7 +6,7 @@ category: "机器学习"
 description: "使用TensorFlow构建简单的神经网络模型进行回归预测"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

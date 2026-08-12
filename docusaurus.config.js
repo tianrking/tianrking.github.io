@@ -23,8 +23,9 @@ const config = {
   organizationName: 'tianrking', // Usually your GitHub org/user name.
   projectName: 'tianrking.github.io', // Usually your repo name.
 
-  // onBrokenLinks: 'throw',
-  onBrokenLinks: 'ignore',
+  onBrokenLinks: 'throw',
+  onBrokenAnchors: 'throw',
+  onDuplicateRoutes: 'throw',
 
   // Add scripts to all pages
   scripts: [
@@ -36,8 +37,15 @@ const config = {
   ],
 
   markdown: {
+    // Keep all content on native MDX syntax instead of the legacy MDX 1
+    // compatibility preprocessor that Docusaurus v4 will remove by default.
+    mdx1Compat: {
+      comments: false,
+      admonitions: false,
+      headingIds: false,
+    },
     hooks: {
-      onBrokenMarkdownLinks: 'warn',
+      onBrokenMarkdownLinks: 'throw',
     },
   },
 
@@ -58,14 +66,14 @@ const config = {
           // Remove this to remove the "edit this page" links.
           showLastUpdateTime: true,
           editUrl:
-            'https://github.com/tianrking/tianrking.github.io/tree/V3.9/',
+            'https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/tianrking/tianrking.github.io/tree/V3.9/',
+            'https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/',
           onInlineAuthors: 'ignore',
           onUntruncatedBlogPosts: 'ignore',
         },
@@ -124,7 +132,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/intro',
+                to: '/tutorial',
               },
             ],
           },

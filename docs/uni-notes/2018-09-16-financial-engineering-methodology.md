@@ -6,7 +6,7 @@ category: "金融工程"
 description: "无套利分析法、风险中性定价法、状态复制定价法、积木分析法"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

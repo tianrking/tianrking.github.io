@@ -6,7 +6,7 @@ category: "图像处理"
 description: "按图像处理运算的数学特征分类：点运算、代数运算、逻辑运算、几何运算"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

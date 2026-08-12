@@ -6,7 +6,7 @@ category: "财政学"
 description: "政府与市场的关系，市场效率与市场失灵，公共物品与公共需要"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

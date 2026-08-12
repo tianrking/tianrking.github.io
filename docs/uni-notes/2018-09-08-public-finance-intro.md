@@ -6,7 +6,7 @@ category: "财政学"
 description: "财政的产生与发展，财政学的研究对象"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

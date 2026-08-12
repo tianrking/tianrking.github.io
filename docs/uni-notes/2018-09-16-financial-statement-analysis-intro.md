@@ -6,7 +6,7 @@ category: "财务报表分析"
 description: "财务报表分析的起源和演进，概念、主体和目的，基本方法"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

@@ -6,7 +6,7 @@ category: "保险学"
 description: "保险合同的概念与特点，要素，订立与履行，变更，解释原则与争议处理"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

@@ -6,7 +6,7 @@ category: "数据库原理及应用教程"
 description: "信息、数据、数据处理与数据管理，数据库技术产生与发展"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

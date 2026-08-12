@@ -6,7 +6,7 @@ category: "宏观经济学"
 description: "经济政策目标，财政政策与货币政策的实践"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

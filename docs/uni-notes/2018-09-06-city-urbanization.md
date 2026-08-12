@@ -6,7 +6,7 @@ category: "城市规划原理"
 description: "城市的产生与发展，城镇化进程"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

@@ -70,9 +70,9 @@ Esta sección se enfoca en guías de desarrollo y tutoriales prácticos / This s
 ### Recommendations / Recomendaciones / 新手推薦
 
 #### 1. **Microcontroller Development / Desarrollo de microcontroladores / 微控制器開發**
-- Start with / Comienza con / 先從 [ESP32 All You Need to Know](/docs/micro-controladores/ESP32/esp32_all_need_know)
-- Learn about / Aprende sobre / 了解 [RP2040 PIO Programming](/docs/micro-controladores/RP2040/mastering-pio-programming)
-- Check out / Consulta / 查看 [STM32 CDC Development](/docs/micro-controladores/STM32/stm32_cdc_develop)
+- Start with / Comienza con / 先從 [ESP32 All You Need to Know](/micro-controladores/ESP32/esp32-lista-de-ejemplos-de-programacion)
+- Learn about / Aprende sobre / 了解 [RP2040 PIO Programming](/micro-controladores/RP2040/mastering-pio-programming-rp2040)
+- Check out / Consulta / 查看 [STM32 CDC Development](/micro-controladores/STM32/desarrollo-cdc-stm32cubemx)
 
 #### 2. **Linux & Docker Knowledge / Conocimiento de Linux o Docker / Linux或Docker知識**
 - Expand / Expande / 在側邊欄中展開 **Legacy Articles**
@@ -81,8 +81,8 @@ Esta sección se enfoca en guías de desarrollo y tutoriales prácticos / This s
 
 #### 3. **Programming Learning / Aprendizaje de programación / 編程學習**
 - Check / Consulta / 查看 **Programming Languages** category / categoría / 分類
-- Recommended / Recomendado / 推薦: [Golang Complete Learning Guide](/docs/migrated/golang-complete-learning-guide)
-- Or / O / 或: [Git Complete Usage Guide](/docs/migrated/git-complete-usage-guide)
+- Recommended / Recomendado / 推薦: [Golang Complete Learning Guide](/migrated/golang-complete-learning-guide)
+- Or / O / 或: [Git Complete Usage Guide](/migrated/git-complete-usage-guide)
 
 ---
 

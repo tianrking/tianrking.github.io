@@ -6,7 +6,7 @@ category: "辅修"
 description: "商业银行的性质、功能和组织结构"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 
