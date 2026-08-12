@@ -174,12 +174,12 @@ export default function Labs() {
   }
 
   return (
-    <Layout title="實驗場" description="w0x7ce 維護的開發服務、基礎設施與互動實驗。">
+    <Layout title="實驗場" description="w0x7ce 的公開服務、工具與實驗。">
       <main className={styles.page}>
         <header className={styles.hero}>
-          <p className={styles.eyebrow}>LAB / PUBLIC WORKBENCH</p>
+          <p className={styles.eyebrow}>LABS</p>
           <h1>實驗場</h1>
-          <p>正在運作的基礎設施、可直接使用的工具，以及尚在演化中的小型實驗。</p>
+          <p>一些自己在用的服務、工具和小實驗。</p>
           <div className={styles.notice}>
             這裡展示公開入口，不代表服務等級承諾；使用前請確認頁面狀態與最後更新資訊。
           </div>

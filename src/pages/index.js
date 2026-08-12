@@ -62,14 +62,14 @@ function HomepageHero() {
       <div className={styles.heroGrid} aria-hidden="true" />
       <div className={`container ${styles.heroInner}`}>
         <div className={styles.heroCopy}>
-          <span className={styles.identity}>w0x7ce / engineering field notes</span>
-          <Heading as="h1">把做過、拆過、驗證過的系統寫下來。</Heading>
+          <span className={styles.identity}>w0x7ce / personal notes</span>
+          <Heading as="h1">寫程式、玩硬體，也記下遇到的問題。</Heading>
           <p className={styles.lead}>
-            嵌入式系統、Local AI 與基礎設施的實作紀錄。不是技術名詞的陳列，而是從原始碼到實板、從原型到運行中的完整證據鏈。
+            這裡主要放嵌入式系統、Local AI、基礎設施相關的筆記，也有最近在做的專案和一些小實驗。
           </p>
           <div className={styles.heroActions}>
             <Link className={styles.primaryAction} to="/projects">
-              查看精選專案 <span aria-hidden="true">→</span>
+              看看最近的專案 <span aria-hidden="true">→</span>
             </Link>
             <Link className={styles.secondaryAction} to="/tutorial">
               閱讀技術筆記
@@ -82,28 +82,28 @@ function HomepageHero() {
           </div>
         </div>
 
-        <aside className={styles.signalPanel} aria-label="工程方法">
+        <aside className={styles.signalPanel} aria-label="網站內容">
           <div className={styles.panelHeader}>
-            <span>METHOD / EVIDENCE</span>
+            <span>ON THIS SITE</span>
             <span className={styles.liveIndicator}>NOW</span>
           </div>
           <ol className={styles.evidenceList}>
             <li>
               <span>01</span>
-              <div><strong>Build</strong><small>source · toolchain · artifact</small></div>
+              <div><strong>Notes</strong><small>guides · debugging · references</small></div>
             </li>
             <li>
               <span>02</span>
-              <div><strong>Bench</strong><small>device · signal · measurement</small></div>
+              <div><strong>Projects</strong><small>hardware · software · tools</small></div>
             </li>
             <li>
               <span>03</span>
-              <div><strong>Publish</strong><small>notes · release · reproducibility</small></div>
+              <div><strong>Labs</strong><small>services · demos · experiments</small></div>
             </li>
           </ol>
           <div className={styles.panelFooter}>
-            <span>目前聚焦</span>
-            <strong>讓硬體 bring-up 的每一步都可診斷</strong>
+            <span>最近在寫</span>
+            <strong>TLSR8258 開發與燒錄筆記</strong>
           </div>
         </aside>
       </div>
@@ -117,8 +117,8 @@ export default function Home() {
 
   return (
     <Layout
-      title="w0x7ce 技術工作台"
-      description="嵌入式系統、Local AI 與基礎設施的實作紀錄。">
+      title="w0x7ce"
+      description="嵌入式系統、Local AI 與基礎設施筆記。">
       <main className={styles.page}>
         <HomepageHero />
 
@@ -126,8 +126,8 @@ export default function Home() {
           <div className={`container ${styles.nowInner}`}>
             <span className={styles.nowLabel}>NOW</span>
             <div>
-              <Heading id="now-heading" as="h2">正在把零散的 bring-up 經驗整理成可重現的工程筆記。</Heading>
-              <p>工具版本、接線、失敗症狀與實板驗證會放在同一條路徑裡，而不只留下「最後成功了」。</p>
+              <Heading id="now-heading" as="h2">最近在整理 TLSR8258 的開發與燒錄筆記。</Heading>
+              <p>包含工具鏈、接線、常見錯誤與實板測試記錄。</p>
             </div>
             <Link to="/embedded/telink/tlsr8258/sws-build-flash-verify">
               查看目前筆記 <span aria-hidden="true">↗</span>
@@ -138,9 +138,9 @@ export default function Home() {
         <section className={styles.section} aria-labelledby="projects-heading">
           <div className="container">
             <SectionHeading
-              eyebrow="SELECTED WORK"
-              title={<span id="projects-heading">精選專案</span>}
-              description="以問題、工程角色與驗證狀態策展，而不是把整個 GitHub 倉庫列表搬過來。"
+              eyebrow="RECENT PROJECTS"
+              title={<span id="projects-heading">最近的專案</span>}
+              description="幾個正在維護或最近整理的公開專案。"
               action={(
                 <Link className={styles.textAction} to="/projects">
                   全部專案 <span aria-hidden="true">→</span>
@@ -163,9 +163,9 @@ export default function Home() {
         <section className={`${styles.section} ${styles.outputSection}`} aria-labelledby="output-heading">
           <div className="container">
             <SectionHeading
-              eyebrow="RECENT OUTPUT"
+              eyebrow="RECENTLY"
               title={<span id="output-heading">最近發布</span>}
-              description="長期可維護的內容放進技術筆記；有時間脈絡的過程與觀點留在開發誌。"
+              description="最近更新的技術筆記與開發紀錄。"
             />
             <div className={styles.outputGrid}>
               {recentWork.map((item) => (
@@ -186,8 +186,8 @@ export default function Home() {
         <section className={styles.section} aria-labelledby="browse-heading">
           <div className="container">
             <SectionHeading
-              eyebrow="BROWSE THE WORKBENCH"
-              title={<span id="browse-heading">從你需要的資訊進入</span>}
+              eyebrow="BROWSE"
+              title={<span id="browse-heading">瀏覽更多內容</span>}
             />
             <div className={styles.entranceGrid}>
               {entrances.map((entrance) => (
@@ -206,8 +206,8 @@ export default function Home() {
           <div className={`container ${styles.closingInner}`}>
             <span className={styles.closingMark} aria-hidden="true">W7</span>
             <div>
-              <span className={styles.eyebrow}>OPEN WORK</span>
-              <Heading as="h2">原始碼只是起點，能被重現才算完成。</Heading>
+              <span className={styles.eyebrow}>GITHUB</span>
+              <Heading as="h2">更多程式碼和專案都在 GitHub。</Heading>
             </div>
             <a href="https://github.com/tianrking" target="_blank" rel="noopener noreferrer">
               GitHub / tianrking <span aria-hidden="true">↗</span>

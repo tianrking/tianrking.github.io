@@ -14,7 +14,7 @@ export default function Footer() {
       <div className={`container ${styles.inner}`}>
         <div className={styles.identity}>
           <Link className={styles.brand} to="/">w0x7ce</Link>
-          <p>把做過、拆過與驗證過的系統寫下來。</p>
+          <p>技術筆記、專案和小實驗。</p>
           <p className={styles.scope}>Embedded systems · Local AI · Infrastructure</p>
         </div>
         <nav className={styles.navigation} aria-label="頁尾導覽">

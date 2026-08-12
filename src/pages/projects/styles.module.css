@@ -18,7 +18,6 @@
 }
 
 .eyebrow,
-.legend,
 .filter,
 .resultSummary,
 .principleNumber {
@@ -43,11 +42,7 @@
 }
 
 .heroBottom {
-  display: grid;
-  grid-template-columns: minmax(0, 45rem) auto;
-  justify-content: space-between;
-  gap: 3rem;
-  align-items: end;
+  max-width: 45rem;
 }
 
 .heroBottom > p {
@@ -55,40 +50,6 @@
   color: var(--project-page-muted);
   font-size: 1rem;
   line-height: 1.75;
-}
-
-.legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  color: var(--project-page-muted);
-  font-size: 0.66rem;
-  text-transform: uppercase;
-}
-
-.legend span {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.legend i {
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: 50%;
-  background: var(--project-page-line);
-}
-
-.legend .buildDot {
-  background: #64748b;
-}
-
-.legend .benchDot {
-  background: #ca8a04;
-}
-
-.legend .productionDot {
-  background: var(--project-page-accent);
 }
 
 .indexSection {
@@ -272,7 +233,6 @@
 }
 
 @media (max-width: 700px) {
-  .heroBottom,
   .principleInner {
     grid-template-columns: 1fr;
     gap: 1.5rem;
