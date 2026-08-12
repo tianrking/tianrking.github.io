@@ -140,12 +140,11 @@ const config = {
       docs: {
         sidebar: {
           hideable: true,
+          autoCollapseCategories: true,
         },
       },
       image: 'img/w0x7ce-social-card.png',
       navbar: {
-        hideOnScroll: true,
-        style: 'dark',
         title: 'w0x7ce',
         logo: {
           alt: 'w0x7ce',

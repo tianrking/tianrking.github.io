@@ -116,15 +116,17 @@ const LAB_ITEMS = [
 ];
 
 function LabCard({item, copied, copyFailed, onCopy}) {
+  const titleId = `lab-${item.id}-title`;
+
   return (
-    <article className={styles.card}>
+    <article className={styles.card} aria-labelledby={titleId}>
       <div className={styles.cardHeader}>
         <span className={styles.mark} aria-hidden="true">{item.mark}</span>
         <span className={styles.kind}>
           {item.category === 'infrastructure' ? 'SERVICE' : 'EXPERIMENT'}
         </span>
       </div>
-      <h2>{item.name}</h2>
+      <h3 id={titleId}>{item.name}</h3>
       <p>{item.description}</p>
       <ul className={styles.tags} aria-label="技術標籤">
         {item.tags.map((tag) => <li key={tag}>{tag}</li>)}
@@ -135,8 +137,7 @@ function LabCard({item, copied, copyFailed, onCopy}) {
           <button
             type="button"
             onClick={() => onCopy(item)}
-            aria-label={copyFailed ? `${item.name} 指令複製失敗，請手動複製` : `複製 ${item.name} 指令`}
-            aria-live="polite">
+            aria-label={copyFailed ? `${item.name} 指令複製失敗，請手動複製` : `複製 ${item.name} 指令`}>
             {copied ? '已複製' : copyFailed ? '請手動複製' : '複製'}
           </button>
         </div>
@@ -194,6 +195,7 @@ export default function Labs() {
                   key={filter.id}
                   type="button"
                   aria-pressed={activeFilter === filter.id}
+                  aria-controls="lab-grid"
                   onClick={() => setActiveFilter(filter.id)}
                 >
                   {filter.label}
@@ -201,7 +203,7 @@ export default function Labs() {
               ))}
             </div>
           </div>
-          <div className={styles.grid}>
+          <div id="lab-grid" className={styles.grid}>
             {visibleItems.map((item) => (
               <LabCard
                 key={item.id}
@@ -212,8 +214,8 @@ export default function Labs() {
               />
             ))}
           </div>
-          <p className={styles.copyStatus} aria-live="polite">
-            {copiedId ? '指令已複製到剪貼簿。' : ''}
+          <p className={styles.copyStatus} role="status" aria-live="polite" aria-atomic="true">
+            {copiedId ? '指令已複製到剪貼簿。' : copyFailedId ? '指令複製失敗，請手動複製。' : ''}
           </p>
         </section>
       </main>

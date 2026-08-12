@@ -9,11 +9,15 @@ import ProjectCard, {
 } from '@site/src/components/ProjectCard';
 import styles from './styles.module.css';
 
-function FilterGroup({id, label, value, onChange, options}) {
+function FilterGroup({id, label, value, onChange, options, controls}) {
   return (
     <label className={styles.filter} htmlFor={id}>
       <span>{label}</span>
-      <select id={id} value={value} onChange={(event) => onChange(event.target.value)}>
+      <select
+        id={id}
+        value={value}
+        aria-controls={controls}
+        onChange={(event) => onChange(event.target.value)}>
         <option value="all">全部</option>
         {options.map((option) => (
           <option key={option.value} value={option.value}>{option.label}</option>
@@ -92,6 +96,7 @@ export default function ProjectsPage() {
                   value={category}
                   onChange={setCategory}
                   options={categories}
+                  controls="project-grid"
                 />
                 <FilterGroup
                   id={statusId}
@@ -99,6 +104,7 @@ export default function ProjectsPage() {
                   value={status}
                   onChange={setStatus}
                   options={statuses}
+                  controls="project-grid"
                 />
                 <FilterGroup
                   id={languageId}
@@ -106,11 +112,12 @@ export default function ProjectsPage() {
                   value={language}
                   onChange={setLanguage}
                   options={languages}
+                  controls="project-grid"
                 />
               </div>
             </div>
 
-            <div className={styles.resultSummary} aria-live="polite">
+            <div className={styles.resultSummary} aria-live="polite" aria-atomic="true">
               <span>顯示 {filteredProjects.length} / {projects.length} 個專案</span>
               <span>
                 {snapshotState === 'fallback'
@@ -120,13 +127,13 @@ export default function ProjectsPage() {
             </div>
 
             {filteredProjects.length ? (
-              <div className={styles.grid}>
+              <div id="project-grid" className={styles.grid}>
                 {filteredProjects.map((project) => (
                   <ProjectCard key={project.id} project={project} />
                 ))}
               </div>
             ) : (
-              <div className={styles.empty}>
+              <div id="project-grid" className={styles.empty}>
                 <span aria-hidden="true">00</span>
                 <Heading as="h3">沒有符合這組條件的專案</Heading>
                 <p>調整篩選，或查看全部專案。</p>
