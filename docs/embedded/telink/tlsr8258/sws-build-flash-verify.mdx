@@ -1,10 +1,9 @@
 ---
-slug: telink-tlsr8258-firmware-development-guide
 title: "泰凌微 TLSR8258 開發實戰：從 SWS 燒錄到韌體驗證"
+sidebar_label: "TLSR8258：SWS、燒錄與驗證"
 description: "以 TLSR8258F512ET48 為例，整理 Telink 工具鏈、SWS 接線、編譯產物、BDT 燒錄、指令級除錯與可追溯的韌體驗證流程。"
-authors: [w0x7ce]
-tags: [Telink, TLSR8258, BLE, 嵌入式系統, 技術深度]
-date: 2026-08-12
+slug: /embedded/telink/tlsr8258/sws-build-flash-verify
+tags: [Telink, TLSR8258, BLE, 嵌入式系統]
 image: /img/blog/telink-tlsr8258/tlsr8258-development-social.png
 keywords: [Telink, 泰凌微, TLSR8258, TLSR8258F512ET48, B85, SWS, SWIRE, BLE, BDT]
 ---
@@ -14,8 +13,6 @@ keywords: [Telink, 泰凌微, TLSR8258, TLSR8258F512ET48, B85, SWS, SWIRE, BLE, 
 泰凌微 TLSR8258 的開發難點，通常不在 C 語言本身，而在於要同時理解 **PC 工具、Burning EVK、USB 驅動、SWS 單線介面、建置產物與韌體啟動狀態**。只要其中兩層被混為一談，就很容易遇到「工具看得到、晶片卻連不上」、「Download 顯示成功、程式卻沒有執行」或「明明選了新 BIN，板上跑的仍是舊版本」。
 
 這篇文章整理自一次真實 TLSR8258 產品板的板級啟動（bring-up）與燒錄除錯過程，目標是建立一套可重複、可診斷、可驗證的開發閉環。
-
-{/* truncate */}
 
 :::info[本文範圍]
 
