@@ -6,7 +6,7 @@ category: "财政学"
 description: "财政支出分类，公共物品的提供方式，公共生产与公共定价"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

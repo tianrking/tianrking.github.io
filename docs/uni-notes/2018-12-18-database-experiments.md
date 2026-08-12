@@ -6,7 +6,7 @@ category: "数据库原理及应用教程"
 description: "数据库实验代码，包括建表、插入数据、查询操作等"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

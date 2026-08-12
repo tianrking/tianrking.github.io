@@ -6,7 +6,7 @@ category: "地理信息系统"
 description: "地理信息系统基本概念、空间数据模型、数据结构、空间分析、数字地形分析、空间统计分析、地理信息可视化"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

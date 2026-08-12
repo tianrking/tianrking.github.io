@@ -6,7 +6,7 @@ category: "数字地形测量学"
 description: "测量坐标系定义，常用坐标系，我国常用的坐标系统"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

@@ -6,7 +6,7 @@ category: "金融市场学"
 description: "债券市场概述，债券的定义、特征和分类，债券的发行与交易，各类债券市场"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

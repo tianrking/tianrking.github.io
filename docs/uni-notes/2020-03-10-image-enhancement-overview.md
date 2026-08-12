@@ -6,7 +6,7 @@ category: "图像处理"
 description: "图像增强概述、问题背景、图像增强的目的与评价标准、空间域增强与频率域增强方法、直方图处理、空间滤波"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

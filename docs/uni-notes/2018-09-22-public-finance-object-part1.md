@@ -6,7 +6,7 @@ category: "财政学"
 description: "财政的基本含义和基本特征，财政的职能"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

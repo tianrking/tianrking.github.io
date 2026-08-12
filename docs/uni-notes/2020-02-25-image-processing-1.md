@@ -6,7 +6,7 @@ category: "图像处理"
 description: "图像与图像处理的基本概念、数字图像处理的组成与应用、图像分析与图像增强"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

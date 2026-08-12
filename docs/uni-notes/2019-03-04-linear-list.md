@@ -6,7 +6,7 @@ category: "数据结构C++语言描述"
 description: "线性表的类型定义、逻辑定义、抽象数据类型，顺序存储及基本运算实现"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

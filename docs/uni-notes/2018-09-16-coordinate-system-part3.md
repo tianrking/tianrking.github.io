@@ -6,7 +6,7 @@ category: "数字地形测量学"
 description: "地图投影和高斯平面直角坐标系，高程系统，方位角"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

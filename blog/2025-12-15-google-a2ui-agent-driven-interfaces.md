@@ -28,7 +28,7 @@ A2UI 是一個開源專案，包含一種針對「可更新、由代理生成的
 
 ![A2UI 渲染卡片範例，展示各種 UI 組合](https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/a2ui-blog-1-component-gallery_2.original.png)
 
-<!-- truncate -->
+{/* truncate */}
 
 ## 核心問題：代理需要學會「講」UI 語言
 

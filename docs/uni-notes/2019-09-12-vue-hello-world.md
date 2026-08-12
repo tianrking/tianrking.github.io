@@ -6,7 +6,7 @@ category: "编程练习"
 description: "Vue.js 基础入门示例"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

@@ -6,7 +6,7 @@ category: "财务报表分析"
 description: "企业财务报告概述，基本财务报表，制约企业报表编制的基本会计假设和一般原则"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

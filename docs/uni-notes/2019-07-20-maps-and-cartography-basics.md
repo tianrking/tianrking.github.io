@@ -6,7 +6,7 @@ category: "地图学原理与方法"
 description: "地图的定义、特征、功能，地图学的基本概念和发展趋势"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

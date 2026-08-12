@@ -6,7 +6,7 @@ category: "论文"
 description: "关于贸易战背景下商业银行个人理财业务的研究论文大纲"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

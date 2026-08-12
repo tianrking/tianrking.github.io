@@ -11,7 +11,7 @@ tags: [RP2040, UART, interrupts, Raspberry Pi Pico, embedded systems, serial com
 
 在這篇文章中,我將與大家分享如何在 RP2040 中使用 UART 進行資料收發,並透過中斷方式有效地處理接收到的資料。我會詳細解析程式碼,討論 FIFO 的使用,並提供實際應用的範例,帶領大家深入理解 UART 在 RP2040 中的工作原理和使用方法。
 
-:::note UART 簡介
+:::note[UART 簡介]
 UART（Universal Asynchronous Receiver/Transmitter,通用異步收發傳輸器）是一種常用的串口通信協議,廣泛應用於嵌入式系統中。它以異步的方式進行資料傳輸,透過 TX（發送）和 RX（接收）兩條線來實現全雙工通信。UART 的資料格式包括起始位、資料位、校驗位（可選）和停止位。
 :::
 
@@ -108,17 +108,17 @@ int main() {
 
 FIFO（First In First Out,先進先出）是一種資料緩衝區,可以用於暫存 UART 接收到的資料。在 RP2040 中,每個 UART 模組都有一個對應的 FIFO。
 
-:::tip 啟用 FIFO
+:::tip[啟用 FIFO]
 - 使用 `uart_set_fifo_enabled()` 函式啟用 UART 的 FIFO 功能。
 - 設定 FIFO 的深度,即可存儲的資料量。
 :::
 
-:::warning 不啟用 FIFO
+:::warning[不啟用 FIFO]
 - 如果不啟用 FIFO,每次接收到資料都會觸發中斷。
 - 這種方式適用於對即時性要求較高的場景,但可能會增加 CPU 的負擔。
 :::
 
-:::info 使用 FIFO 的好處
+:::info[使用 FIFO 的好處]
 - 啟用 FIFO 後,只有當 FIFO 中累積了一定數量的資料或達到設定的閾值時,才會觸發中斷。
 - 這種方式可以減少中斷的頻率,降低 CPU 的負擔。
 - FIFO 提供了緩衝區,可以暫存一定量的資料,避免資料丟失。

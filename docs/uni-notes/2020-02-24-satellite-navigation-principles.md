@@ -6,7 +6,7 @@ category: "卫星导航定位原理及应用"
 description: "绪论、子午卫星定位导航系统、GPS空间组成、天球坐标系"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

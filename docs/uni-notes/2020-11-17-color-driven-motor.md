@@ -6,7 +6,7 @@ category: "自动化"
 description: "使用51单片机通过PWM控制电机速度的代码示例"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

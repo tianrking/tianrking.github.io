@@ -6,7 +6,7 @@ category: "论文"
 description: "商业银行个人理财业务的文献综述、经营状况、同质化问题及对策分析"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

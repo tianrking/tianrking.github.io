@@ -6,7 +6,7 @@ category: "金融"
 description: "使用Python的Seaborn和Tushare库可视化股票交易热点数据"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

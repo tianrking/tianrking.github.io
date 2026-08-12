@@ -6,7 +6,7 @@ category: "中央银行学"
 description: "中央银行的历史背景、客观经济需要、形成发展过程，以及中央银行的性质与职能"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

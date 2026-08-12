@@ -6,7 +6,7 @@ category: "金融工程"
 description: "金融工程的概念、特点、功能与发展"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

@@ -6,7 +6,7 @@ category: "测绘工程"
 description: "摄影测量法论文翻译"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

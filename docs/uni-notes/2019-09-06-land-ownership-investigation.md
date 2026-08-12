@@ -6,7 +6,7 @@ category: "地籍测量学"
 description: "第二章 土地权属调查 - 我国土地权属性质、确认方式、地块和宗地概念、权属界址类型"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

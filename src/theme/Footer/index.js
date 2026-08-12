@@ -64,7 +64,7 @@ export default function Footer() {
               <h4 className={styles.sectionTitle}>Content</h4>
               <ul className={styles.linkList}>
                 <li>
-                  <Link to="/docs/intro" className={styles.footerLink}>
+                  <Link to="/tutorial" className={styles.footerLink}>
                     <span>📖</span>
                     Tutorial
                   </Link>
@@ -100,10 +100,10 @@ export default function Footer() {
               <h4 className={styles.sectionTitle}>Connect</h4>
               <ul className={styles.linkList}>
                 <li>
-                  <Link to="/about" className={styles.footerLink}>
+                  <a href="https://github.com/tianrking" className={styles.footerLink} target="_blank" rel="noopener noreferrer">
                     <span>👤</span>
                     About Me
-                  </Link>
+                  </a>
                 </li>
                 <li>
                   <a href={`mailto:contact@w0x7ce.eu`} className={styles.footerLink}>

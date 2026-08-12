@@ -6,7 +6,7 @@ category: "代码练习"
 description: "使用OpenGL绘制旋转图形的C++程序代码"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

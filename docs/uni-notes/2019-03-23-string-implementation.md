@@ -6,7 +6,7 @@ category: "数据结构"
 description: "字符串的顺序存储实现，包括类定义和各种操作"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

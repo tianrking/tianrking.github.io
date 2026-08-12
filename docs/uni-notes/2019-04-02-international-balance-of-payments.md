@@ -6,7 +6,7 @@ category: "国际金融"
 description: "国际收支概述、国际收支平衡表、国际投资头寸、国际收支失衡调节"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 

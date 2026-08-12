@@ -6,7 +6,7 @@ category: "误差理论与测量平差基础"
 description: "观测误差与测量平差任务，观测误差产生原因及分类，测量平差的任务"
 ---
 
-:::note Archived University Note
+:::note[Archived University Note]
 This content is from my university archives and may not be reliable or up-to-date.
 :::
 
