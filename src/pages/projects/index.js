@@ -64,21 +64,16 @@ export default function ProjectsPage() {
   return (
     <Layout
       title="專案"
-      description="w0x7ce 的精選嵌入式、Local AI、基礎設施與應用專案。">
+      description="一些嵌入式、Local AI、基礎設施與應用專案。">
       <main className={styles.page}>
         <header className={styles.hero}>
           <div className="container">
-            <span className={styles.eyebrow}>PROJECT INDEX / CURATED</span>
-            <Heading as="h1">專案不是倉庫清單，<br />而是一段段完成工作的證據。</Heading>
+            <span className={styles.eyebrow}>PROJECTS</span>
+            <Heading as="h1">最近做的一些專案。</Heading>
             <div className={styles.heroBottom}>
               <p>
-                這裡只選擇有代表性的作品，呈現它解決的問題、主要技術、維護狀態與公開成果。Fork、練習和一次性測試不會自動進入列表。
+                有些已經能用，有些還在慢慢更新。可以依領域、狀態和語言篩選，其他公開專案都在 GitHub。
               </p>
-              <div className={styles.legend} aria-label="證據分層說明">
-                <span><i className={styles.buildDot} /> Build</span>
-                <span><i className={styles.benchDot} /> Bench</span>
-                <span><i className={styles.productionDot} /> Production</span>
-              </div>
             </div>
           </div>
         </header>
@@ -88,7 +83,7 @@ export default function ProjectsPage() {
             <div className={styles.toolbar}>
               <div>
                 <span className={styles.eyebrow}>FILTER</span>
-                <Heading id="project-index-heading" as="h2">精選作品</Heading>
+                <Heading id="project-index-heading" as="h2">專案列表</Heading>
               </div>
               <div className={styles.filters}>
                 <FilterGroup
@@ -134,7 +129,7 @@ export default function ProjectsPage() {
               <div className={styles.empty}>
                 <span aria-hidden="true">00</span>
                 <Heading as="h3">沒有符合這組條件的專案</Heading>
-                <p>調整篩選，或回到完整的精選作品列表。</p>
+                <p>調整篩選，或查看全部專案。</p>
                 <button type="button" onClick={resetFilters}>清除篩選</button>
               </div>
             )}
@@ -143,11 +138,11 @@ export default function ProjectsPage() {
 
         <section className={styles.principle}>
           <div className={`container ${styles.principleInner}`}>
-            <span className={styles.principleNumber}>01—03</span>
+            <span className={styles.principleNumber}>MORE</span>
             <div>
-              <span className={styles.eyebrow}>EDITORIAL POLICY</span>
-              <Heading as="h2">選擇少一點，說清楚多一點。</Heading>
-              <p>每個專案都應能回答三個問題：它解決什麼、我實際做了什麼、目前驗證到哪一層。</p>
+              <span className={styles.eyebrow}>ON GITHUB</span>
+              <Heading as="h2">其他公開專案</Heading>
+              <p>這裡只列出一部分，完整列表可以到 GitHub 查看。</p>
             </div>
             <a href="https://github.com/tianrking?tab=repositories" target="_blank" rel="noopener noreferrer">
               查看所有公開倉庫 <span aria-hidden="true">↗</span>

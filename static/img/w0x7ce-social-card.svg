@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">w0x7ce 技術工作台</title>
-  <desc id="desc">嵌入式系統、Local AI 與基礎設施的實作紀錄</desc>
+  <title id="title">w0x7ce 個人技術博客</title>
+  <desc id="desc">嵌入式系統、Local AI 與基礎設施筆記</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0d1210"/>
@@ -28,15 +28,15 @@
     <path d="M61 25h18v7L67 70H56l12-35h-7V25Z" fill="#5dd2ae"/>
   </g>
 
-  <text x="194" y="96" fill="#5dd2ae" font-family="Consolas, 'JetBrains Mono', monospace" font-size="20" font-weight="700" letter-spacing="3">ENGINEERING WORKBENCH</text>
-  <text x="194" y="132" fill="#9caea7" font-family="Consolas, 'JetBrains Mono', monospace" font-size="17" letter-spacing="1.5">BUILD · BENCH · PRODUCTION</text>
+  <text x="194" y="96" fill="#5dd2ae" font-family="Consolas, 'JetBrains Mono', monospace" font-size="20" font-weight="700" letter-spacing="3">PERSONAL TECH NOTES</text>
+  <text x="194" y="132" fill="#9caea7" font-family="Consolas, 'JetBrains Mono', monospace" font-size="17" letter-spacing="1.5">EMBEDDED · LOCAL AI · INFRASTRUCTURE</text>
 
   <text x="72" y="318" fill="#edf5f1" font-family="'Segoe UI', Arial, sans-serif" font-size="112" font-weight="800" letter-spacing="-4">w0x7ce</text>
   <rect x="74" y="348" width="82" height="6" rx="3" fill="#5dd2ae"/>
   <text x="72" y="416" fill="#dce8e3" font-family="'Microsoft JhengHei', 'Noto Sans TC', 'Segoe UI', sans-serif" font-size="39" font-weight="600">嵌入式系統 · Local AI · 基礎設施</text>
-  <text x="72" y="466" fill="#9caea7" font-family="'Microsoft JhengHei', 'Noto Sans TC', 'Segoe UI', sans-serif" font-size="24">親手建造、記錄邊界，讓工程結果可以被重現。</text>
+  <text x="72" y="466" fill="#9caea7" font-family="'Microsoft JhengHei', 'Noto Sans TC', 'Segoe UI', sans-serif" font-size="24">技術筆記、專案和實驗。</text>
 
   <line x1="72" y1="535" x2="1128" y2="535" stroke="#5dd2ae" stroke-opacity="0.3"/>
   <text x="72" y="580" fill="#5dd2ae" font-family="Consolas, 'JetBrains Mono', monospace" font-size="23" font-weight="700" letter-spacing="1.5">W0X7CE.EU</text>
-  <text x="1128" y="580" fill="#9caea7" text-anchor="end" font-family="Consolas, 'JetBrains Mono', monospace" font-size="18" letter-spacing="1.5">TIANRKING / PUBLIC NOTES</text>
+  <text x="1128" y="580" fill="#9caea7" text-anchor="end" font-family="Consolas, 'JetBrains Mono', monospace" font-size="18" letter-spacing="1.5">TIANRKING / NOTES</text>
 </svg>

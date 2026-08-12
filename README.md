@@ -1,13 +1,13 @@
-# w0x7ce 技術工作台
+# w0x7ce.eu
 
-[w0x7ce.eu](https://w0x7ce.eu) 是一個以繁體中文為主的個人工程工作台，整理嵌入式系統、Local AI、基礎設施、公開專案與可重現實驗。網站使用 Docusaurus 3 建置，內容與介面都直接維護在這個倉庫。
+[w0x7ce.eu](https://w0x7ce.eu) 是我的個人技術博客，主要記錄嵌入式系統、Local AI、基礎設施、公開專案和一些實驗。網站使用 Docusaurus 3 建置。
 
 ## 內容結構
 
 - `docs/`：可長期維護的技術筆記與實作指南。
 - `blog/`：帶有時間脈絡的開發紀錄、決策與回顧。
 - `src/data/featured-projects.json`：首頁與專案頁的公開專案白名單。
-- `src/pages/projects/`：精選專案與驗證狀態。
+- `src/pages/projects/`：專案頁與篩選功能。
 - `src/pages/labs/`：公開服務、工具與實驗入口。
 - `static/data/featured-projects.json`：由 GitHub 公開 API 產生的最小化唯讀快照。
 
@@ -32,7 +32,7 @@ npm run build
 
 1. 長期指南放進 `docs/`，並在 `sidebars.js` 指定清楚的分類與順序。
 2. 有日期脈絡的內容放進 `blog/`，保留作者、標籤、摘要與可分享圖片。
-3. 精選專案只修改 `src/data/featured-projects.json`；腳本只允許 `tianrking` 名下、明確列入白名單的公開倉庫。
+3. 首頁與專案頁顯示的專案只修改 `src/data/featured-projects.json`；腳本只允許 `tianrking` 名下、明確列入白名單的公開倉庫。
 4. 新增公開工具或服務時更新 `src/pages/labs/index.jsx`，並確認入口、說明與示例指令仍然有效。
 5. 移動或刪除既有頁面時，在 `docusaurus.config.js` 補上 redirect，避免舊連結失效。
 

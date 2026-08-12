@@ -8,8 +8,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import clsx from 'clsx';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'w0x7ce — 技術工作台',
-  tagline: '嵌入式系統、Local AI 與基礎設施的實作紀錄',
+  title: 'w0x7ce',
+  tagline: '嵌入式系統、Local AI 與基礎設施筆記',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -202,7 +202,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} w0x7ce. 寫下親手建造與驗證的系統。`,
+        copyright: `Copyright © ${new Date().getFullYear()} w0x7ce.`,
       },
       prism: {
         theme: prismThemes.github,
