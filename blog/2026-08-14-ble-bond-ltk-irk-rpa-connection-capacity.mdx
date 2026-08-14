@@ -1,0 +1,378 @@
+---
+slug: ble-bond-ltk-irk-rpa-connection-capacity
+title: "BLE 為什麼常見只保存 8 個 Bond？從 LTK、IRK、RPA 到並行連線的完整資源模型"
+description: "完整拆解 BLE Bond、LTK、IRK、RPA、Resolving List、CCCD 與並行連線的獨立上限，並以容量與無線佔用估算器說明為何產品常選擇 8。"
+authors: [tianrking]
+tags: [BLE, 嵌入式系統, 技術深度]
+date: 2026-08-14
+image: /img/w0x7ce-social-card.png
+keywords:
+  - BLE Bond
+  - Bluetooth Low Energy
+  - LTK
+  - IRK
+  - RPA
+  - Resolving List
+  - 並行連線
+  - NVS
+  - CCCD
+---
+
+import BleResourceWorkbench from '@site/src/components/BleResourceWorkbench';
+
+很多 BLE 產品的設定檔裡都能看到一個似乎很有「規範感」的數字：`MAX_BONDS = 8`。接著很自然就會產生兩個誤解：Bluetooth 是否最多只能記住 8 台裝置？記住 8 台是否代表可以同時連上 8 台？
+
+答案都是否定的。
+
+:::info[先給最直白的結論]
+
+**「8 個 Bond」不是 Bluetooth 規範上限，也不等於 8 條同時連線。**
+
+它通常是 Host 協定堆疊配置、持久化資料庫、應用身分表、Controller 的 Resolving List／Filter Accept List、CCCD 池、RAM、無線排程與產品安全策略共同取最小值後的工程選擇。
+
+:::
+
+可以先用四個生活化比喻建立直覺：
+
+- **Bond DB 是鑰匙櫃**：保存曾經安全配對之裝置的長期密鑰。
+- **Resolving List 是門衛的快速識別名單**：看到輪換地址時，Controller 可以先在門口認出對方。
+- **Active Connection 是通信車道**：此刻真正佔用控制器、RAM 與無線時隙的連線。
+- **ADMIN／MEMBER 是軟體權限系統**：決定一個已驗證會話能做什麼，而不是決定 Link Layer 如何加密。
+
+比喻只負責建立直覺；下面會把每一層換回嚴謹的技術定義。
+
+{/* truncate */}
+
+## 六個必須分開計算的數量
+
+一個可維護的 BLE 產品，不應只有籠統的 `MAX_USERS`。至少要把以下六個容量寫進架構文件、設定表與測試矩陣：
+
+| 符號 | 真正代表的數量 | 主要資源位置 | 它不代表什麼 |
+|---|---|---|---|
+| `N_bond` | 長期保存 SMP 密鑰的 peer 數量 | Host Bond DB、NVS／Flash | 當下連線數、App 帳號數 |
+| `N_identity` | 應用層 ADMIN、MEMBER、使用者或裝置身分數量 | MCU／App／伺服器權限資料庫 | Controller Resolving List 容量 |
+| `N_resolving` | Controller Resolving List 記錄數 | Controller Link Layer | 完整 Bond DB 大小 |
+| `N_filter` | Filter Accept List 記錄數 | Controller Link Layer | 已 Bond 裝置一定都能進入的保證 |
+| `N_conn` | 此刻活動中的 ACL 連線數 | Controller + Host + RAM + 無線排程 | 曾經配對或可快速識別的 peer 數 |
+| `N_cccd` | 可持久保存的通知／指示訂閱狀態數 | GATT Host、settings／NVS | characteristic 數量本身 |
+
+若產品要求一個 Bond 必須對應一個本機身分槽位，可先用下列模型做容量門檻：
+
+```text title="容量關係"
+實際 Bond 數
+  = min(協定堆疊配置, 持久化資料庫, 應用身分表, 產品策略)
+
+可由 Controller 快速解析的 RPA 數
+  = min(實際 Bond 數, Resolving List 容量)
+
+實際並行連線數
+  = min(Controller 能力, Host 配置, RAM 預算, 無線排程, 產品策略)
+```
+
+`N_filter` 是另一條獨立的門衛規則。Filter Accept List 可以限制哪些 Identity Address／已解析身分能掃描、連入或被主動連線，但它不是 Bond DB 的別名。Controller 的實際 `N_resolving` 與 `N_filter` 應分別透過 [HCI 的 LE Read Resolving List Size 與 LE Read Filter Accept List Size 命令](https://www.bluetooth.com/wp-content/uploads/Files/Specification/HTML/Core-54/out/en/host-controller-interface.html)查詢，不能從資料手冊宣傳語或 connection handle 位數猜測。
+
+### CCCD 是最容易漏掉的第七張帳單
+
+CCCD（Client Characteristic Configuration Descriptor）記錄某個 client 是否訂閱 Notify／Indicate。若每個已 Bond peer 都需要持久保存多個 characteristic 的訂閱狀態，最壞容量可近似為：
+
+```text
+N_cccd ≈ N_bond × 每個 peer 需要持久化訂閱的 characteristic 數
+```
+
+這不是所有協定堆疊的固定配置公式；有些實作會延遲載入、共用記錄或只保存非預設值。不過它是一個很好的上界檢查。Zephyr 的 GATT 實作甚至會依 `CONFIG_BT_MAX_PAIRED`、`CONFIG_BT_MAX_CONN` 與 lazy loading 選項推導 CCC 記錄池，正好說明 CCCD 既與 Bond 有關，也可能需要照顧活動中的未 Bond 連線。
+
+## 標準的硬邊界、SDK 配置與工程常用值
+
+先把三種數字分清楚：
+
+1. **規範欄位範圍**：互通協定允許或要求的編碼範圍。
+2. **某個 SDK 的配置範圍**：特定版本、目標晶片與協定堆疊能設定的值。
+3. **工程常用起點**：產品團隊為功耗、RAM、安全與 QA 選擇的初始值。
+
+三者不能互相替代。
+
+| 項目 | 規範／實作邊界 | 工程解讀 |
+|---|---|---|
+| Bond 數 | 可為 `0`；Bluetooth 沒有統一條數上限 | 常見起點為 1、3、4、8、16、32 |
+| Resolving List | 實作相關；支援 LL Privacy 的 Link Layer 至少能保存 1 筆 | 用 HCI 查詢，不要假設等於 Bond 數 |
+| Filter Accept List | 實作相關；由 HCI 回報容量 | 可小於 Bond DB，也可只裝載目前策略需要的 peer |
+| 活動 ACL 連線 | 廣播器可以為 `0`；沒有跨晶片統一的「最多幾條」 | 小型低功耗 Peripheral 常見 1；一般多連線產品常見 1–4；特定堆疊可到 9、20 或更多 |
+| LTK | 欄位 16 B；協商有效加密密鑰長度 7–16 B | 現代安全產品應以完整 16 B 為產品要求 |
+| IRK | 16 B | 生成與解析 RPA；輪換地址不會增加 Bond |
+| CSRK | 16 B，可選 | 用於未加密連線上的資料簽章；很多現代產品不使用 |
+| BLE 地址／RPA | 6 B | RPA 是 24-bit `hash` + 24-bit `prand` |
+| 傳統 connection interval | 7.5 ms–4 s，1.25 ms 單位 | 實際值還受角色、延遲、吞吐、功耗與 peer 接受度影響 |
+| Supervision Timeout | 100 ms–32 s，10 ms 單位 | 還必須滿足與 interval／latency 的一致性限制 |
+| Passkey Entry | `000000`–`999999`，固定顯示六位十進制 | 前導零是數值的一部分，不是 4 位 PIN |
+
+[Bluetooth Link Layer 規範](https://www.bluetooth.com/wp-content/uploads/Files/Specification/HTML/Core-61/out/en/low-energy-controller/link-layer-specification.html)明確定義了 RPA 的 `hash`／`prand` 結構、Resolving List 與 LL Privacy；[Security Manager 規範](https://www.bluetooth.com/wp-content/uploads/Files/Specification/HTML/Core-62/out/en/host/security-manager-specification.html)則定義 LTK、IRK、CSRK、EDIV、RAND、7–16 octet 的最大加密密鑰長度欄位，以及六位 Passkey Entry 行為。
+
+### 不要從 connection handle 的位數推導連線能力
+
+一個欄位能表示很多 handle，只表示封包格式保留了足夠的編號空間，不代表晶片真的配置了同等數量的 Link Layer context、加密狀態、ACL 緩衝、計時器與排程時隙。真正的上限必須看 Controller 功能、Host 配置與量測後的 RAM／無線預算。
+
+### Bluetooth 6.2 的短連線間隔是協商能力，不是新預設值
+
+傳統 Baseline Connection Interval Values 仍以 7.5 ms 為下限。Bluetooth Core 6.2 新增 Shorter Connection Intervals；[官方功能概覽](https://www.bluetooth.com/bluetooth-core-6-2-feature-overview/)說明，雙方都宣告支援時才可使用新程序，必備的 Rounded Connection Interval Values 可到 1.25 ms，而可選的 Extended Connection Interval Values 可低至 375 µs、解析度 125 µs。只要任一端不支援，連線仍回到 `≥ 7.5 ms` 的基線範圍。
+
+### 配對窗口與空閒斷線時間都是產品策略
+
+30／60／120 秒的配對窗口、授權連線的空閒 timeout、槽位滿時拒絕還是回收，都不是 Bluetooth 固定值。它們是安全、體驗、電池與營運風險之間的產品決策。Bluetooth SIG 的 [LE Regulatory Aspects 文件](https://www.bluetooth.com/wp-content/uploads/2023/03/bluetooth-le-regulatory-aspects-document.pdf)處理的是射頻法規脈絡，也不會替產品規定 Bond 表大小或管理員轉移規則。
+
+## 一條 Bond 裡究竟保存了什麼
+
+Bonding 的目的，是讓雙方在未來重新連線時，不必每次重新配對，就能找回安全材料並恢復加密或身分解析。
+
+### LTK、IRK、RPA 各自做什麼
+
+- **LTK（Long Term Key）**：128-bit 長期密鑰，用於派生或恢復連線加密所需的金鑰材料。
+- **IRK（Identity Resolving Key）**：128-bit 身分解析密鑰，用於生成與解析 RPA。
+- **RPA（Resolvable Private Address）**：48-bit 輪換地址，由 24-bit `prand` 與 24-bit `hash = ah(IRK, prand)` 組成。
+- **CSRK（Connection Signature Resolving Key）**：128-bit 可選密鑰，用於簽章資料與驗證簽章。
+
+地址每次輪換時，只是同一個 BLE 身分換了一張短期門牌。只要仍由同一 IRK 生成，就不會新增一條 Bond。解析端取出 RPA 的 `prand`，對已知 IRK 計算 `ah()`，再比對 24-bit hash；[Link Layer 的 RPA 解析程序](https://www.bluetooth.com/wp-content/uploads/Files/Specification/HTML/Core-61/out/en/low-energy-controller/link-layer-specification.html)對此有逐步定義。
+
+若 Controller 的 Resolving List 放得下，門衛可以先在硬體側完成辨識；若放不下，Host 仍可保存更多 IRK，醒來後逐筆嘗試解析，或輪換哪些重要／近期 peer 駐留 Controller。後者會增加延遲、CPU 活動與功耗，而且在「只允許硬體白名單直接回應」的嚴格模式下不一定可行。
+
+## 一條 Bond 到底占多少 Flash
+
+Bluetooth 規範定義安全欄位與封包，不定義你的 C struct、NVS record header、CRC 或磨損平均格式。所以下表是**工程估算**，不是規範固定結構：
+
+| 欄位 | 典型原始大小 | 備註 |
+|---|---:|---|
+| Identity Address + type | 約 7 B | 6 B 地址 + 1 B 類型 |
+| LTK | 16 B | 欄位為 128 bit |
+| Peer IRK | 16 B | 未使用 Privacy 時可能不保存 |
+| RAND + EDIV | 10 B | LE Legacy：8 B RAND + 2 B EDIV |
+| CSRK + signing counter | 約 20 B | 可選：16 B CSRK + 約 4 B counter |
+| flags／key size／security level | 若干 | 通常還有 authenticated、SC、MITM 等旗標 |
+| role／slot／timestamp／version／CRC | 實作相關 | 應用管理、資料遷移與完整性欄位 |
+| 對齊與 NVS record header | 實作相關 | 受到 Flash page、NVS 格式與原子更新策略影響 |
+
+由此得到一個實用的預算區間：
+
+- **純安全欄位**：約 50–80 B／peer。
+- **可維護的邏輯記錄**：常見約 96–256 B／peer。
+- **加入 journal、冗餘、GC、磨損平均與掉電恢復**：常按 256–512 B／peer 估算。
+
+以下以每 peer 96–256 B 的邏輯記錄、256–512 B 的存儲預算做量級比較：
+
+| Bond 數 | 邏輯資料量 | 建議先抓的 NVS 資料預算 | 說明 |
+|---:|---:|---:|---|
+| 8 | 768 B–2 KiB | 2–4 KiB | 一個 4 KiB erase sector 已有量級概念，但實際 NVS 往往需要更多管理頁 |
+| 16 | 1.5–4 KiB | 4–8 KiB | 必須驗證 GC 與升級遷移最壞情境 |
+| 32 | 3–8 KiB | 8–16 KiB | 仍通常遠小於整體韌體 Flash，RAM／表格／策略常更早撞牆 |
+
+這些只是資料量，不是可以直接照抄的 partition size。實際分區仍要向上對齊 Flash erase/page 幾何，並依 NVS 引擎保留 active／spare page、GC 與掉電恢復空間。
+
+**也因此，Flash 往往不是「第 9 台進不去」的真正原因。** 多存一筆 Bond 通常只增加幾百 bytes；真正先到上限的，常是固定陣列、應用身分槽、Controller list、CCCD 池、遷移格式或產品安全策略。
+
+<BleResourceWorkbench />
+
+## 為什麼產品特別喜歡 8
+
+`8` 不是藍牙數學常數，而是一個很容易被完整驗證的工程折衷。
+
+### 1. 對家庭與消費設備通常夠用
+
+門鎖、遙控器、家用感測器的真實使用者／手機數通常不大。8 個槽位可以容納家庭成員、備用手機與維護裝置，又不至於讓失效裝置無限制累積。
+
+### 2. 靜態資料結構很乾淨
+
+8 個固定 slot 可以用靜態陣列管理；一個 byte 的 occupancy bitmap 就能表示 8 個位置。RAM、Flash layout、序列化格式與最壞執行時間都很確定，對小型 MCU 特別友善。
+
+### 3. 容易與堆疊預設或 Controller list 對齊
+
+某些協定堆疊、Controller Resolving List、Filter Accept List 或 CCCD 預設值恰好落在相近量級。產品把 Host Bond DB 對齊其中一個較小上限，可以避免「已保存，但硬體快速路徑放不下」的分層行為。
+
+但這只是方便，不代表所有 Controller 都是 8。正確做法仍是 HCI 查詢與版本化測試。
+
+### 4. Host 解析 RPA 的成本可控
+
+當 Controller 無法容納全部 IRK，Host 可能對收到的 RPA 逐 IRK 執行 `ah()`。8 筆的 CPU 時間、喚醒延遲與功耗容易控制；擴成 32、64 甚至幾百筆後，應改用索引、分層駐留或外部身分服務，而不是無上限線性掃描。
+
+### 5. NVS 原子性、GC 與遷移容易證明
+
+Bond 記錄不是只寫一次。重配對、CCCD 更新、角色調整、韌體升級與 revoke 都可能改動資料。槽位固定且數量小時，雙副本、CRC、journal、GC、磨損測試與舊版本遷移的狀態空間比較可控。
+
+### 6. 它本身也是安全邊界
+
+無限制接受配對，會留下遺失手機、舊手機、測試機與惡意配對嘗試。固定容量能降低配對表耗盡攻擊的表面，也迫使產品定義：誰可以新增、誰可以刪除、唯一所有者能否被移除，以及滿槽時如何回復。
+
+### 7. QA 真正測得完
+
+槽位滿、刪除中掉電、管理員轉移、重綁、同手機改地址、換手機、唯一 ADMIN 遺失、韌體升級與回滾，會形成大量組合。8 個 slot 仍有機會建立可重現的完整狀態機測試；任意數量則很容易留下未定義角落。
+
+## 為什麼能記住 8 台，卻通常只連 1 台
+
+保存一條 Bond 主要消耗幾百 bytes 的非揮發存儲；維持一條活動連線則要同時支付 Controller、Host、RAM 與無線時間。
+
+每條活動 ACL 連線至少可能需要：
+
+- Controller link context、加密狀態、channel map、事件計數與 supervision timer；
+- HCI ACL buffer 與流量控制；
+- Host 的 `bt_conn`／GAP 狀態；
+- L2CAP channel、ATT bearer、GATT discovery/cache 狀態；
+- MTU／DLE 收發緩衝；
+- Notify／Indicate queue 與確認狀態；
+- CCCD 的活動副本；
+- 應用層 Session、授權、命令佇列、timeout 與仲裁狀態。
+
+### 無線「同時」其實是交錯排程
+
+BLE 無線電不會讓 8 條 ACL 在同一個微秒一起發送。Controller 會把不同連線的 connection event 排進時間軸。建立直覺時，可以用：
+
+```text title="無線佔用近似式"
+U_radio ≈ Σ(T_event_i / T_interval_i) + 廣播／掃描／重傳餘量
+```
+
+例如 8 條連線都採 30 ms interval：
+
+- 若每條 connection event 平均佔 2 ms：`8 × 2 / 30 ≈ 53%`。
+- 若平均佔 3 ms：`8 × 3 / 30 = 80%`。
+
+80% 還沒有計入重傳、掃描、廣播、時鐘漂移保護、較長封包與排程碰撞，系統已很脆弱。這也解釋了為何「Controller 宣稱能建立 8 條」不等於產品在目標吞吐、延遲與 RF 環境下能穩定維持 8 條。
+
+而且連線數只是傳輸層問題。如果兩支手機同時送出相反的鎖控命令，產品仍需在應用層定義：命令序列化、優先級、重放保護、鎖狀態版本、結果回覆與 audit。Bluetooth 不會替產品完成業務仲裁。
+
+### 任意已 Bond 手機快速響應，不需要 8 條常駐連線
+
+多數電池設備更適合：
+
+```text
+connect → encrypted link → session authentication → command → result → disconnect
+```
+
+對已授權連線設定合理的空閒 timeout，避免背景 App 永久佔住唯一車道；同時保留短而明確的重新連線路徑。這通常比維持 8 條空閒 ACL 更省電、更容易仲裁，也更容易測試。
+
+## 四個官方實作例子：版本與堆疊決定數字
+
+以下數值只適用於所列版本／產品線，不能外推到同一家公司所有晶片。
+
+### ESP-IDF 5.4 NimBLE
+
+[ESP-IDF 5.4 的 Kconfig 文件](https://docs.espressif.com/projects/esp-idf/en/v5.4/esp32/api-reference/kconfig.html)把三個容量明確分開：
+
+| 配置 | ESP-IDF 5.4 文件中的值 | 意義 |
+|---|---|---|
+| `CONFIG_BT_NIMBLE_MAX_CONNECTIONS` | 某些目標範圍 1–9，預設 3 | Host 最大並行 BLE 連線；Controller 還要同步配置 |
+| `CONFIG_BT_NIMBLE_MAX_BONDS` | 預設 3 | 跨重啟保存的安全記錄數 |
+| `CONFIG_BT_NIMBLE_MAX_CCCDS` | 預設 8 | 跨重啟保存的 CCC descriptor 狀態數 |
+
+同一份 5.4 文件也註明 ESP32-C2、ESP32-C6、ESP32-H2 每增加一條連線約增加 1 KiB 基礎 DRAM。這不是完整總成本：ACL buffers、MTU、DLE、GATT、應用 Session 與日誌仍會繼續增加記憶體。
+
+### Nordic S140
+
+[Nordic S140 SoftDevice 規格](https://docs.nordicsemi.com/r/bundle/sds_s140/page/sds/s1xx/s140.html)標示最多 20 條並行連線，並且連線數與屬性可配置、需要相應 RAM。這是 S140 的 Controller + Host 能力，不代表 Bond 也自動是 20；Bond 數仍由 Host／Peer Manager 的存儲配置、Flash backend 與產品策略決定。
+
+### Zephyr
+
+Zephyr 將 `CONFIG_BT_MAX_CONN` 與 `CONFIG_BT_MAX_PAIRED` 分開：前者配置同時存在的 connection object，後者配置可保存的已配對裝置。這個設計本身就是「連線容量不等於 Bond 容量」的直接證據；Zephyr 的 [Bluetooth Host Kconfig](https://github.com/zephyrproject-rtos/zephyr/blob/main/subsys/bluetooth/host/Kconfig)與[連線 API 文件](https://docs.zephyrproject.org/latest/doxygen/html/group__bt__conn.html)也分別描述兩者。
+
+### Silicon Labs External Bonding DB
+
+Silicon Labs 提供 [External Bonding Database API](https://docs.silabs.com/bluetooth/latest/bluetooth-stack-api/sl-bt-external-bondingdb)，讓應用在協定堆疊要求時提供 remote/local LTK、IRK、metadata 與 GATT client configuration。它是把大量 Bond 移出內建資料庫的正式擴展路徑，但應用也因此必須負責安全持久化、查詢延遲、資料一致性與 RPA 解析策略。
+
+:::warning[版本邊界]
+
+同一顆 MCU 換成不同 Controller 韌體、Host 協定堆疊、SDK 版本或編譯配置，數字就可能不同。設計文件應記錄「晶片 + Controller + Host + SDK 版本 + Kconfig/sdkconfig」，而不是只寫「ESP32 最多 9 條」或「Nordic 最多 20 條」。
+
+:::
+
+## ADMIN／MEMBER 與 Bond 必須解耦
+
+Bluetooth 標準沒有 ADMIN 或 MEMBER。這兩個詞屬於產品授權模型。
+
+可以把安全判斷拆成三問：
+
+1. **Bond／Link Encryption**：這個物理 BLE 身分是否曾安全配對，現在能否恢復加密？
+2. **Session Authentication**：當前 App／會話是否持有有效 nonce、token、challenge response 或其他會話憑據？
+3. **Authorization**：這個已認證會話可以讀資料、開鎖、加成員、撤銷裝置，還是更新韌體？
+
+三層會出現很多非一對一關係：
+
+- 一台手機可以只占一個 Bond，App 內卻切換多個軟體帳號。
+- 一個使用者可以有兩台手機，因此占兩個 Bond。
+- 8 個 Bond 可以對應 1 個 ADMIN + 7 個 MEMBER，也可以有多個管理員。
+- 伺服器可以管理 1000 個使用者，而 MCU 只保存少量受信任手機或 gateway 的 Bond。
+
+大規模系統不應替每個使用者建立 BLE Bond。更可擴展的模型是：
+
+```text
+少量鏈路身分（手機／gateway Bond）
+  + 應用層 capability／token／session
+  + 本機或雲端權限資料庫
+```
+
+Bond 證明「這個 BLE 身分曾安全配對」；它不自動證明當前 App 帳號仍有效，也不代表該會話擁有管理員權限。
+
+## 槽位滿了，或真的要擴到 16／32／64，該怎麼做
+
+### 超過 8 個 Bond：所有相關池都要一起盤點
+
+不要只把 `MAX_BONDS` 從 8 改成 32。至少同步檢查：
+
+- Host 協定堆疊的 Bond／paired 配置；
+- 應用身分表與 slot index 寬度；
+- CCCD／GATT cache 池；
+- NVS 分區、record version 與舊資料遷移；
+- Controller Resolving List 與 Filter Accept List 實際容量；
+- RPA 解析是在 Controller 還是 Host；
+- RAM、boot-time 載入與查找最壞延遲；
+- 槽位滿、刪除、重配對、升級與回滾測試。
+
+持久化資料至少要考慮 CRC、掉電原子性、雙副本或 journal，以及 wear leveling。擴容不是只多幾個 slot，也是在擴大資料遷移與故障恢復的狀態空間。
+
+### Resolving List 小於 Bond DB
+
+可讓重要、常用或最近裝置駐留 Controller，其餘 IRK 留在 Host DB，必要時由 Host 解析或輪換駐留集合。這種分層要明確量測喚醒延遲與功耗。
+
+如果產品要求 Controller 在 Host 醒來前就以硬體白名單拒絕所有未知裝置，那麼未駐留的 Bond 不能享有完全相同的快速路徑；這是嚴格安全策略下的真實限制，不能用「Flash 還有空間」掩蓋。
+
+### 槽位滿時的安全策略
+
+推薦由 ADMIN 顯式 revoke 舊裝置，再開放新配對。也可以在滿槽時直接拒絕新配對並清楚提示。
+
+自動 LRU（Least Recently Used）看似方便，卻可能靜默驅逐仍有效的安全身分；**絕不能自動驅逐唯一所有者或唯一 ADMIN**。若產品真的採 LRU，至少要排除特權 slot、保留 audit，並要求重新驗證管理員操作。
+
+### 要多連線：Controller、Host、RAM 與產品邏輯都要擴
+
+硬體與 Host 都必須支援目標 `N_conn`，同時增加 connection context、ACL／ATT buffer、CCCD 活動狀態與 App Session。還要調整 interval、每 event 的資料量、掃描／廣播占空，並實作命令仲裁與 backpressure。
+
+先用實際封包大小、PHY、RSSI、重傳率與共存情況做空中量測，再決定能否從 1 擴到 4 或 8；不要只依 `menuconfig` 能輸入的最大值發布規格。
+
+### 要很多裝置，和要很多使用者，是兩個不同問題
+
+- **很多 BLE 裝置**：可考慮外部 Bond DB、外部 Flash、分層 Resolving List 或 gateway。
+- **很多使用者**：採應用帳號、短期 capability/token、session 與本機／雲端權限資料庫，不要一人一個 Bond。
+
+## 工程起點表
+
+下表是用來開始估算與測試的**工程常見起點**，不是 Bluetooth 規範保證，也不是任何晶片的通用能力：
+
+| 產品類型 | Bond 常見起點 | 活動連線常見起點 | 首要驗證 |
+|---|---:|---:|---|
+| 簡單感測器／遙控器 | 1–4 | 1 | 功耗、重連、唯一 owner 回復 |
+| 電池鎖／家庭設備 | 4–8 或 16 | 1 | 管理員轉移、滿槽、背景 App 占線、掉電一致性 |
+| 多人共享設備 | 8–32 | 1–4 | 權限解耦、RPA 解析延遲、命令仲裁 |
+| 工業設備／gateway | 16–64+ | 4–20 | RAM、RF 排程、吞吐、外部 DB 與恢復時間 |
+| 數百／數千使用者 | 少量鏈路 Bond + 權限資料庫 | 依 gateway 架構 | token/session、撤銷、審計；不要一人一 Bond |
+
+### 上線前的容量驗收清單
+
+- [ ] 實際讀取 Controller 的 Resolving List 與 Filter Accept List 容量。
+- [ ] 記錄 Controller、Host、SDK 與編譯配置版本。
+- [ ] 對每個 Bond record 做 schema version、CRC 與升級遷移測試。
+- [ ] 在 NVS GC／掉電／Flash 接近滿載時測試新增、revoke 與重配對。
+- [ ] 量測目標 `N_conn` 下的 RAM high-water mark、event 時間、重傳與功耗。
+- [ ] 測試槽位滿、唯一 ADMIN、裝置遺失、手機更換與工廠重設流程。
+- [ ] 明確分離 link encryption、session authentication 與 authorization。
+- [ ] 把「規範範圍」「SDK 上限」「產品核准值」分三欄記錄。
+
+## 結語
+
+看到 `MAX_BONDS = 8` 時，正確問題不是「藍牙為什麼只能 8 台」，而是：
+
+> 這個 `8` 正在限制哪一層？Host Bond DB、應用身分、Controller Resolving List、Filter Accept List、CCCD、活動連線，還是產品安全策略？
+
+只要把六個容量分開、把 Flash 與 RAM／無線時間分開、把 Bond 與 ADMIN／MEMBER 分開，系統就不再是一個神祕的「最多 8 台」黑盒。你可以有意識地保留 8，也可以安全地擴到 16、32、64；更重要的是，你會知道每多一個 slot 究竟付出了什麼成本，以及要補上哪些測試與安全邊界。
