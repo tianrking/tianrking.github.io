@@ -414,6 +414,12 @@
   color: #ff8f87;
 }
 
+/* Auto Ads may keep a desktop-sized zero-height iframe on narrow screens. */
+:global(.google-auto-placed [id^='aswift_']) {
+  max-width: 100% !important;
+  overflow-x: clip !important;
+}
+
 @media (max-width: 760px) {
   .workbenchIntro,
   .radioResult,
