@@ -20,5 +20,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # Local source exports are private intake material and must never be committed.
-/wechat-import/*
-!/wechat-import/README.md
+/wechat-import/
