@@ -124,8 +124,6 @@ const config = {
             from: [
               '/blog/tags/telink',
               '/blog/tags/tlsr8258',
-              '/blog/tags/bluetooth-low-energy',
-              '/blog/tags/embedded-systems',
             ],
             to: '/embedded/telink/tlsr8258/sws-build-flash-verify',
           },
