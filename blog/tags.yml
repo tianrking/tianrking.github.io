@@ -85,6 +85,11 @@ Frontend:
   permalink: /technical-deep-dive
   description: In-depth technical articles
 
+微信公眾號:
+  label: 微信公眾號
+  permalink: /wechat-official-account
+  description: 從個人微信公眾號整理到博客的文章
+
 Telink:
   label: Telink
   permalink: /telink

@@ -13,7 +13,8 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "import:wechat": "node scripts/import-wechat.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.2",
@@ -27,7 +28,8 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.10.2",
-    "@docusaurus/types": "3.10.2"
+    "@docusaurus/types": "3.10.2",
+    "cheerio": "1.0.0-rc.12"
   },
   "overrides": {
     "serialize-javascript": "7.1.0",
