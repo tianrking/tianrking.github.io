@@ -1,8 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-15T10:12:29.404Z",
+  "generatedAt": "2026-08-15T17:35:55.101Z",
   "source": "GitHub public REST API",
-  "staleRepositories": [],
+  "staleRepositories": [
+    "tianrking/DM_Gripper",
+    "tianrking/nrf54lm20-se05x-ncs",
+    "tianrking/esp32-se05x-idf",
+    "tianrking/Marcato",
+    "tianrking/ParticlePair"
+  ],
   "projects": [
     {
       "id": "proxychains-rs",
@@ -123,7 +129,7 @@
         ],
         "latestRelease": null,
         "latestPushAt": "2025-11-16T14:05:03Z",
-        "stale": false
+        "stale": true
       },
       "repositories": [
         {
@@ -143,7 +149,7 @@
           "defaultBranch": "main",
           "pushedAt": "2025-11-16T14:05:03Z",
           "latestRelease": null,
-          "stale": false
+          "stale": true
         }
       ]
     },
@@ -168,7 +174,7 @@
         ],
         "latestRelease": null,
         "latestPushAt": "2026-06-15T12:04:11Z",
-        "stale": false
+        "stale": true
       },
       "repositories": [
         {
@@ -188,7 +194,7 @@
           "defaultBranch": "main",
           "pushedAt": "2026-06-15T12:04:11Z",
           "latestRelease": null,
-          "stale": false
+          "stale": true
         },
         {
           "owner": "tianrking",
@@ -207,7 +213,7 @@
           "defaultBranch": "main",
           "pushedAt": "2026-06-15T06:09:22Z",
           "latestRelease": null,
-          "stale": false
+          "stale": true
         }
       ]
     },
@@ -232,7 +238,7 @@
         ],
         "latestRelease": null,
         "latestPushAt": "2026-08-12T09:36:16Z",
-        "stale": false
+        "stale": true
       },
       "repositories": [
         {
@@ -252,7 +258,7 @@
           "defaultBranch": "main",
           "pushedAt": "2026-08-12T09:36:16Z",
           "latestRelease": null,
-          "stale": false
+          "stale": true
         }
       ]
     },
@@ -276,7 +282,7 @@
         ],
         "latestRelease": null,
         "latestPushAt": "2026-08-12T00:20:16Z",
-        "stale": false
+        "stale": true
       },
       "repositories": [
         {
@@ -296,7 +302,7 @@
           "defaultBranch": "main",
           "pushedAt": "2026-08-12T00:20:16Z",
           "latestRelease": null,
-          "stale": false
+          "stale": true
         }
       ]
     }
