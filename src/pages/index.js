@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import ProjectCard, {useFeaturedProjects} from '@site/src/components/ProjectCard';
+import ParticleField from '@site/src/components/ParticleField';
 import contentIndex from '@site/src/data/content-index.json';
 import styles from './index.module.css';
 
@@ -61,6 +62,7 @@ function HomepageHero() {
   return (
     <header className={styles.hero}>
       <div className={styles.heroGrid} aria-hidden="true" />
+      <ParticleField />
       <div className={`container ${styles.heroInner}`}>
         <div className={styles.heroCopy}>
           <span className={styles.identity}>w0x7ce / 個人技術筆記</span>

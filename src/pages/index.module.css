@@ -34,6 +34,7 @@
 
 .heroGrid {
   position: absolute;
+  z-index: 0;
   inset: 0;
   opacity: .2;
   pointer-events: none;
@@ -47,6 +48,7 @@
 
 .heroInner {
   position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 1.28fr) minmax(19rem, .72fr);
   gap: clamp(3rem, 8vw, 7.5rem);

@@ -1,0 +1,30 @@
+.field {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: .74;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 17%, black 82%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, black 17%, black 82%, transparent 100%);
+}
+
+.canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 700px) {
+  .field {
+    opacity: .54;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field {
+    opacity: .42;
+  }
+}
