@@ -173,6 +173,11 @@ const config = {
         indexDocs: true,
         indexBlog: true,
         indexPages: false,
+        // The imported WeChat archive remains available on its canonical pages
+        // and in /explore, but should not make the global Lunr payload enormous.
+        // Those files use the stable export suffix `-224748<id>`; maintained
+        // notes (including the BLE and Telink articles) are indexed normally.
+        ignoreFiles: /^blog\/\d{4}-\d{2}-\d{2}-.*-224748\d+$/,
         docsRouteBasePath: '/',
         blogRouteBasePath: '/blog',
         searchBarShortcutKeymap: 'mod+k',
