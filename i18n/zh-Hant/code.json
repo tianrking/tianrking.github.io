@@ -1,0 +1,12 @@
+{
+  "theme.SearchBar.label": {"message": "搜尋"},
+  "theme.SearchBar.seeAll": {"message": "查看全部結果"},
+  "theme.SearchBar.noResultsText": {"message": "找不到內容"},
+  "theme.SearchBar.searchInContext": {"message": "查看「{context}」中的全部結果"},
+  "theme.SearchBar.seeAllOutsideContext": {"message": "查看「{context}」以外的全部結果"},
+  "theme.SearchPage.existingResultsTitle": {"message": "「{query}」的搜尋結果"},
+  "theme.SearchPage.emptyResultsTitle": {"message": "搜尋內容"},
+  "theme.SearchPage.documentsFound.plurals": {"message": "找到 {count} 篇內容"},
+  "theme.SearchPage.noResultsText": {"message": "找不到符合的內容"},
+  "theme.SearchPage.searchContext.everywhere": {"message": "全部內容"}
+}

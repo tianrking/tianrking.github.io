@@ -1,13 +1,15 @@
 {
-  "name": "El_Jardin_Secreto_de_w0x7ce",
+  "name": "w0x7ce-eu",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
     "sync:github": "node scripts/sync-github-public.mjs",
+    "index:content": "node scripts/generate-content-index.mjs",
     "prebuild": "npm run sync:github",
+    "prestart": "npm run index:content",
     "start": "docusaurus start",
-    "build": "docusaurus build",
+    "build": "npm run index:content && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -18,8 +20,11 @@
   },
   "dependencies": {
     "@docusaurus/core": "3.10.2",
+    "@docusaurus/faster": "3.10.2",
     "@docusaurus/plugin-client-redirects": "3.10.2",
     "@docusaurus/preset-classic": "3.10.2",
+    "@docusaurus/theme-mermaid": "3.10.2",
+    "@easyops-cn/docusaurus-search-local": "0.55.3",
     "@mdx-js/react": "3.1.1",
     "clsx": "2.1.1",
     "prism-react-renderer": "2.4.1",
@@ -29,7 +34,8 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.10.2",
     "@docusaurus/types": "3.10.2",
-    "cheerio": "1.0.0-rc.12"
+    "cheerio": "1.0.0-rc.12",
+    "js-yaml": "4.3.1"
   },
   "overrides": {
     "serialize-javascript": "7.1.0",

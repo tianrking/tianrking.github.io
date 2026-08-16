@@ -1,0 +1,72 @@
+嵌入式系統:
+  label: 嵌入式系統
+  permalink: /embedded-systems
+  description: 微控制器、韌體、硬體驗證與嵌入式產品開發。
+Embedded Systems:
+  label: Embedded Systems
+  permalink: /embedded-systems-en
+  description: Embedded firmware and hardware development.
+ESP32:
+  label: ESP32
+  permalink: /esp32
+  description: Espressif ESP32 系列與 ESP-IDF 開發。
+RP2040:
+  label: RP2040
+  permalink: /rp2040
+  description: Raspberry Pi Pico、PIO 與 RP2040 開發。
+BLE:
+  label: Bluetooth LE
+  permalink: /bluetooth-low-energy
+  description: Bluetooth Low Energy、配對、GATT 與隱私機制。
+Bluetooth:
+  label: Bluetooth
+  permalink: /bluetooth
+  description: Bluetooth 與低功耗無線通訊。
+Telink:
+  label: Telink
+  permalink: /telink
+  description: 泰凌微半導體與 TLSR 系列開發。
+TLSR8258:
+  label: TLSR8258
+  permalink: /tlsr8258
+  description: TLSR8258 韌體、SWS、燒錄與驗證。
+UART:
+  label: UART
+  permalink: /uart
+  description: UART、串列通訊與除錯。
+PIO:
+  label: PIO
+  permalink: /pio
+  description: RP2040 Programmable I/O 與時序控制。
+Linux:
+  label: Linux
+  permalink: /linux
+  description: Linux、Shell、系統管理與開發環境。
+Docker:
+  label: Docker
+  permalink: /docker
+  description: Docker、容器與可重現部署。
+AI:
+  label: AI
+  permalink: /ai
+  description: 人工智慧、模型與應用工程。
+Local AI:
+  label: Local AI
+  permalink: /local-ai
+  description: 本地模型、推理服務與私有 AI 工具鏈。
+Python:
+  label: Python
+  permalink: /python
+  description: Python、資料處理與工具開發。
+Networking:
+  label: Networking
+  permalink: /networking
+  description: 網路、協議、代理與基礎設施。
+Robotics:
+  label: Robotics
+  permalink: /robotics
+  description: 機器人、馬達控制與即時互動。
+技術深度:
+  label: 技術深度
+  permalink: /technical-deep-dive
+  description: 可重現、深入且帶有工程取捨的技術文章。

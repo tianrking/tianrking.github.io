@@ -1,0 +1,312 @@
+.page {
+  min-height: 100vh;
+  color: var(--site-ink);
+  background:
+    radial-gradient(circle at 90% 0%, color-mix(in srgb, var(--ifm-color-primary) 11%, transparent), transparent 28rem),
+    var(--site-canvas);
+}
+
+.hero {
+  padding: clamp(5rem, 10vw, 8rem) 0 3.2rem;
+  border-bottom: 1px solid var(--site-line);
+}
+
+.eyebrow {
+  color: var(--ifm-color-primary);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.hero h1 {
+  max-width: 48rem;
+  margin: 1rem 0 1rem;
+  color: var(--site-ink);
+  font-size: clamp(2.8rem, 7vw, 5.4rem);
+  font-weight: 730;
+  letter-spacing: -.055em;
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.hero p {
+  max-width: 44rem;
+  margin: 0;
+  color: var(--site-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+kbd {
+  padding: .12rem .34rem;
+  border: 1px solid var(--site-line-strong);
+  border-bottom-width: 2px;
+  border-radius: .35rem;
+  color: var(--site-ink);
+  background: var(--site-surface-soft);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: .8em;
+}
+
+.explorer {
+  padding-top: 2.2rem;
+  padding-bottom: 6rem;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: minmax(15rem, 2fr) repeat(4, minmax(9rem, 1fr)) auto;
+  gap: .75rem;
+  align-items: end;
+  padding: 1rem;
+  border: 1px solid var(--site-line);
+  border-radius: var(--site-radius-lg);
+  background: var(--site-surface-soft);
+  box-shadow: var(--site-shadow-sm);
+}
+
+.controls label {
+  display: grid;
+  gap: .4rem;
+  min-width: 0;
+  color: var(--site-muted);
+  font-size: .72rem;
+  font-weight: 650;
+}
+
+.controls input,
+.controls select {
+  width: 100%;
+  min-height: 2.8rem;
+  padding: .62rem .72rem;
+  border: 1px solid var(--site-line-strong);
+  border-radius: .72rem;
+  color: var(--site-ink);
+  background: var(--site-surface);
+  font: inherit;
+  font-size: .84rem;
+}
+
+.controls input:focus,
+.controls select:focus {
+  border-color: var(--ifm-color-primary);
+  outline: 3px solid color-mix(in srgb, var(--ifm-color-primary) 18%, transparent);
+  outline-offset: 1px;
+}
+
+.clearButton {
+  min-height: 2.8rem;
+  padding: .62rem .85rem;
+  border: 1px solid var(--site-line-strong);
+  border-radius: 999px;
+  color: var(--site-ink);
+  background: var(--site-surface);
+  cursor: pointer;
+  font-size: .8rem;
+  font-weight: 680;
+  white-space: nowrap;
+  transition: border-color 160ms ease, background-color 160ms ease, opacity 160ms ease;
+}
+
+.clearButton:hover:not(:disabled) {
+  border-color: var(--ifm-color-primary);
+  background: color-mix(in srgb, var(--ifm-color-primary) 8%, var(--site-surface));
+}
+
+.clearButton:disabled {
+  cursor: not-allowed;
+  opacity: .45;
+}
+
+.resultsHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  margin: 1.5rem .25rem 1rem;
+  color: var(--site-muted);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: .72rem;
+}
+
+.resultsHeader p {
+  margin: 0;
+}
+
+.resultsHeader strong {
+  color: var(--ifm-color-primary);
+  font-size: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  position: relative;
+  min-height: 14rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1.35rem;
+  overflow: hidden;
+  border: 1px solid var(--site-line);
+  border-radius: var(--site-radius-lg);
+  color: var(--site-ink);
+  background: var(--site-surface);
+  box-shadow: var(--site-shadow-sm);
+  text-decoration: none;
+  transition: border-color 180ms ease, box-shadow 220ms ease, transform 220ms var(--site-spring);
+}
+
+.card::before {
+  position: absolute;
+  inset: 0 auto auto 1.35rem;
+  width: 2.8rem;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--ifm-color-primary);
+  content: '';
+}
+
+.card:hover,
+.card:focus-visible {
+  color: var(--site-ink);
+  border-color: color-mix(in srgb, var(--ifm-color-primary) 44%, var(--site-line));
+  box-shadow: var(--site-shadow-md);
+  text-decoration: none;
+  transform: translateY(-3px);
+}
+
+.card:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--ifm-color-primary) 28%, transparent);
+  outline-offset: 3px;
+}
+
+.cardMeta,
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  gap: .75rem;
+  color: var(--site-muted);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: .67rem;
+}
+
+.cardMeta span {
+  color: var(--ifm-color-primary);
+}
+
+.card h2 {
+  margin: 2.2rem 0 .7rem;
+  color: var(--site-ink);
+  font-size: 1.22rem;
+  font-weight: 690;
+  letter-spacing: -.025em;
+  line-height: 1.25;
+}
+
+.card p {
+  margin: 0;
+  color: var(--site-muted);
+  font-size: .88rem;
+  line-height: 1.7;
+}
+
+.cardFooter {
+  margin-top: auto;
+  padding-top: 1.4rem;
+}
+
+.emptyState {
+  padding: 4rem 1.5rem;
+  border: 1px dashed var(--site-line-strong);
+  border-radius: var(--site-radius-lg);
+  text-align: center;
+}
+
+.emptyState h2 {
+  margin: 0 0 .6rem;
+  color: var(--site-ink);
+}
+
+.emptyState p {
+  margin: 0 0 1.3rem;
+  color: var(--site-muted);
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 1200px) {
+  .controls {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .searchField {
+    grid-column: span 3;
+  }
+
+  .clearButton {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 996px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding-top: 4.5rem;
+  }
+
+  .explorer {
+    padding-inline: .75rem;
+  }
+
+  .controls {
+    grid-template-columns: 1fr;
+    padding: .85rem;
+  }
+
+  .searchField {
+    grid-column: auto;
+  }
+
+  .clearButton {
+    width: 100%;
+  }
+
+  .resultsHeader {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .35rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 12rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+}

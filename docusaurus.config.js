@@ -27,6 +27,31 @@ const config = {
   onBrokenAnchors: 'throw',
   onDuplicateRoutes: 'throw',
 
+  // Keep browser state isolated when the site is embedded beside another app
+  // on the same origin (for example, during local development or previews).
+  storage: {
+    type: 'localStorage',
+    namespace: true,
+  },
+
+  // Docusaurus Faster is stable in 3.10.2. Keep the v4 breaking-change flags
+  // opt-in while using the faster compiler/bundler on this v3 site. SSG worker
+  // threads remain disabled because that option requires the v4 post-build
+  // head migration; the other compiler and bundler improvements are safe here.
+  future: {
+    faster: {
+      swcJsLoader: true,
+      swcJsMinimizer: true,
+      swcHtmlMinimizer: true,
+      lightningCssMinimizer: true,
+      mdxCrossCompilerCache: true,
+      rspackBundler: true,
+      rspackPersistentCache: true,
+      ssgWorkerThreads: false,
+      gitEagerVcs: true,
+    },
+  },
+
   // Add scripts to all pages
   scripts: [
     {
@@ -37,6 +62,7 @@ const config = {
   ],
 
   markdown: {
+    mermaid: true,
     // Keep all content on native MDX syntax instead of the legacy MDX 1
     // compatibility preprocessor that Docusaurus v4 will remove by default.
     mdx1Compat: {
@@ -65,6 +91,11 @@ const config = {
         docs: {
           sidebarPath: './sidebars.js',
           routeBasePath: '/',
+          // Historical imported notes intentionally use a broad inline-tag
+          // vocabulary. The canonical docs/tags.yml covers the maintained
+          // taxonomy; unknown legacy tags remain searchable without flooding
+          // production builds with non-actionable warnings.
+          onInlineTags: 'ignore',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           showLastUpdateTime: true,
@@ -132,6 +163,26 @@ const config = {
     ],
   ],
 
+  themes: [
+    '@docusaurus/theme-mermaid',
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        language: ['zh', 'en'],
+        indexDocs: true,
+        indexBlog: true,
+        indexPages: false,
+        docsRouteBasePath: '/',
+        blogRouteBasePath: '/blog',
+        searchBarShortcutKeymap: 'mod+k',
+        highlightSearchTermsOnTargetPage: true,
+        searchResultLimits: 10,
+        searchResultContextMaxLength: 90,
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -156,6 +207,7 @@ const config = {
             label: '技術筆記',
           },
           {to: '/blog', label: '開發誌', position: 'left'},
+          {to: '/explore', label: '探索', position: 'left'},
           {to: '/projects', label: '專案', position: 'left'},
           {to: '/labs', label: '實驗場', position: 'left'},
           {
@@ -178,6 +230,10 @@ const config = {
               {
                 label: '開發誌',
                 to: '/blog',
+              },
+              {
+                label: '探索內容',
+                to: '/explore',
               },
             ],
           },
