@@ -36,7 +36,7 @@ const sidebars = {
     {
       type: 'category',
       label: '封存 · 課程筆記',
-      collapsed: true,
+      collapsed: false,
       link: generatedIndex(
         '/archive/university-notes',
         '封存課程筆記',
@@ -234,7 +234,7 @@ const sidebars = {
     {
       type: 'category',
       label: '嵌入式系統',
-      collapsed: true,
+      collapsed: false,
       link: generatedIndex(
         '/embedded',
         '嵌入式系統',
@@ -309,12 +309,53 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: '技術參考',
+      collapsed: false,
+      link: generatedIndex(
+        '/references',
+        '技術參考',
+        '從舊文章中重新整理出的穩定主題；版本敏感或待核對的內容仍保留在封存區。',
+      ),
+      items: [
+        {
+          type: 'category',
+          label: 'Linux 與 Shell',
+          collapsed: true,
+          link: generatedIndex(
+            '/references/linux-shell',
+            'Linux 與 Shell',
+            'Linux 命令列與 Shell 自動化的穩定參考；網路與磁碟專題仍在版本核對區。',
+          ),
+          items: [
+            doc('migrated/linux-commands-complete-guide', 'Linux 命令大全'),
+            doc('migrated/shell-scripting-programming-guide', 'Shell 腳本與自動化'),
+          ],
+        },
+        {
+          type: 'category',
+          label: '開發工具與語言',
+          collapsed: true,
+          link: generatedIndex(
+            '/references/developer-tools',
+            '開發工具與語言',
+            'Git、Python 與 Go 的長期可讀參考與工作流整理。',
+          ),
+          items: [
+            doc('migrated/git-complete-usage-guide', 'Git 完整工作流'),
+            doc('migrated/python-notes-and-tips', 'Python 實用技巧'),
+            doc('migrated/golang-complete-learning-guide', 'Go 學習與實戰'),
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
       label: '封存 · 舊文章',
-      collapsed: true,
+      collapsed: false,
       link: generatedIndex(
         '/archive/old-posts',
         '封存舊文章',
-        '過去整理的技術文章。版本與操作方式可能已經過時，請先確認目前的官方文件。',
+        '版本敏感、重複或仍待重新整理的舊文章。穩定且仍適合閱讀的內容已移到技術參考。',
       ),
       items: [
         {
@@ -328,13 +369,11 @@ const sidebars = {
           ),
           items: [
             'migrated/linux-commands-complete-reference',
-            'migrated/linux-commands-complete-guide',
             'migrated/common-linux-commands-detailed-guide',
             'migrated/common-linux-commands-part-1',
             'migrated/sed-text-processing-complete-guide',
-            'migrated/shell-scripting-programming-guide',
-            'migrated/linux-disk-space-cleanup',
             'migrated/linux-firewall-management-guide',
+            'migrated/linux-disk-space-cleanup',
             'migrated/ubuntu-kvm-virtualization-guide'
           ]
         },
@@ -365,12 +404,9 @@ const sidebars = {
             'Go、Git、Python、Qt 與 PyQt 舊文章。',
           ),
           items: [
-            'migrated/golang-complete-learning-guide',
             'migrated/golang-learning-guide',
-            'migrated/git-complete-usage-guide',
             'migrated/git-usage-guide',
             'migrated/python-gmail-sending-guide',
-            'migrated/python-notes-and-tips',
             'migrated/qt5-standard-library-guide',
             'migrated/pyqt5-qgraphicsview-complete-guide',
             'migrated/pyqt5-qgraphics-guide'

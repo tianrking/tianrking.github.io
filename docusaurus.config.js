@@ -194,7 +194,9 @@ const config = {
       docs: {
         sidebar: {
           hideable: true,
-          autoCollapseCategories: true,
+          // Keep the first navigation level visible so the docs landing page
+          // does not look empty. Nested topic groups remain opt-in collapsed.
+          autoCollapseCategories: false,
         },
       },
       image: 'img/w0x7ce-social-card.png',
