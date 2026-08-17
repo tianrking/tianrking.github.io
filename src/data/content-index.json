@@ -1,7 +1,37 @@
 {
   "schemaVersion": 1,
-  "total": 289,
+  "total": 290,
   "documents": [
+    {
+      "id": "blog:2026-08-17-esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram.md",
+      "kind": "blog",
+      "kindLabel": "開發誌",
+      "section": "開發誌",
+      "language": "zh-Hant",
+      "title": "从 GPIO4 到麦克风声谱图：ESP32-S3 驱动 25T 超声波的完整波形与观测模型",
+      "description": "从 ESP32-S3 GPIO4 的载波方波、LEDC 占空比、Burst 包络和外部驱动，一路推导到 25T 压电换能器、麦克风采样、FFT、声谱图、混叠、非线性和实验验证。",
+      "route": "/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram",
+      "date": "2026-08-17",
+      "year": "2026",
+      "tags": [
+        "嵌入式系統",
+        "技術深度"
+      ],
+      "keywords": [
+        "ESP32-S3",
+        "GPIO4",
+        "LEDC",
+        "25T",
+        "超声波",
+        "Burst",
+        "包络",
+        "FFT",
+        "声谱图",
+        "混叠",
+        "非线性"
+      ],
+      "image": null
+    },
     {
       "id": "blog:2026-08-15-2026-08-15-新興-multiagent-systems-的模式與問題-2247486213.md",
       "kind": "blog",
