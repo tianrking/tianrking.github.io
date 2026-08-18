@@ -1,7 +1,36 @@
 {
   "schemaVersion": 1,
-  "total": 290,
+  "total": 291,
   "documents": [
+    {
+      "id": "blog:2026-08-18-vpu-接觸式振動拾音器-器件原理論文開源調研.md",
+      "kind": "blog",
+      "kindLabel": "開發誌",
+      "section": "開發誌",
+      "language": "zh-Hant",
+      "title": "VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作",
+      "description": "從人體語音拾取到手機背面電話錄音，完整梳理 VPU、骨傳導麥克風、接觸式振動拾音器與寬頻加速度感測器的物理原理、商用產品、器件選型、硬體介面、論文、專利、開源資料集與實作路線。",
+      "route": "/blog/vpu-contact-vibration-microphone-research",
+      "date": "2026-08-18",
+      "year": "2026",
+      "tags": [
+        "嵌入式系統",
+        "技術深度",
+        "機器學習"
+      ],
+      "keywords": [
+        "VPU",
+        "Voice Pick-Up",
+        "骨傳導麥克風",
+        "接觸式麥克風",
+        "振動拾音器",
+        "電話錄音",
+        "語音增強",
+        "嵌入式音訊",
+        "Hera Pro"
+      ],
+      "image": null
+    },
     {
       "id": "blog:2026-08-17-esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram.md",
       "kind": "blog",
