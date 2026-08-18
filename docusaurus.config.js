@@ -259,6 +259,10 @@ const config = {
                 label: 'GitHub',
                 href: 'https://github.com/tianrking/tianrking.github.io',
               },
+              {
+                label: 'Email',
+                href: 'mailto:tian.r.king@gmail.com',
+              },
             ],
           },
         ],

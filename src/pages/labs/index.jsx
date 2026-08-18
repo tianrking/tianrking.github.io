@@ -41,13 +41,13 @@ const LAB_ITEMS = [
   },
   {
     id: 'hugging-face',
-    name: 'Hugging Face Mirror',
+    name: 'Hugging Face',
     mark: 'HF',
     category: 'infrastructure',
-    description: '模型權重與資料集下載入口。',
-    url: 'https://hf.w0x7ce.eu/',
+    description: '模型權重與資料集的官方入口。',
+    url: 'https://huggingface.co/',
     tags: ['AI', 'Models'],
-    command: 'HF_ENDPOINT=https://hf.w0x7ce.eu huggingface-cli download gpt2',
+    command: 'huggingface-cli download gpt2',
   },
   {
     id: 'linux-mirrors',

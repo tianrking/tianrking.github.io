@@ -24,7 +24,7 @@ export default function Footer() {
         </nav>
         <div className={styles.external}>
           <a href="https://github.com/tianrking" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-          <a href="mailto:contact@w0x7ce.eu">Contact</a>
+          <a href="mailto:tian.r.king@gmail.com" aria-label="Email tian.r.king@gmail.com">Email</a>
         </div>
       </div>
       <div className={`container ${styles.bottom}`}>
