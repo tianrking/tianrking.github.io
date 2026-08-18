@@ -2,7 +2,12 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
-import ProjectCard, {useFeaturedProjects} from '@site/src/components/ProjectCard';
+import ProjectCard, {
+  getCategoryLabel,
+  getProjectLanguages,
+  getStatusLabel,
+  useFeaturedProjects,
+} from '@site/src/components/ProjectCard';
 import ParticleField from '@site/src/components/ParticleField';
 import contentIndex from '@site/src/data/content-index.json';
 import styles from './index.module.css';
@@ -16,6 +21,7 @@ const recentWork = (contentIndex.documents || [])
     title: document.title,
     description: document.description,
     to: document.route,
+    tags: (document.tags || []).slice(0, 2),
   }));
 
 const entrances = [
@@ -66,9 +72,9 @@ function HomepageHero() {
       <div className={`container ${styles.heroInner}`}>
         <div className={styles.heroCopy}>
           <span className={styles.identity}>w0x7ce / 個人技術筆記</span>
-          <Heading as="h1">寫程式、玩硬體，也記下遇到的問題。</Heading>
+          <Heading as="h1">寫程式、做硬體，把問題寫成可複現的記錄。</Heading>
           <p className={styles.lead}>
-            這裡主要放嵌入式系統、Local AI、基礎設施相關的筆記，也有最近在做的專案和一些小實驗。
+            嵌入式、Local AI、基礎設施；還有正在維護的專案和小實驗。
           </p>
           <div className={styles.heroActions}>
             <Link className={styles.primaryAction} to="/projects">
@@ -87,7 +93,7 @@ function HomepageHero() {
 
         <aside className={styles.signalPanel} aria-label="網站內容">
           <div className={styles.panelHeader}>
-            <span>網站內容</span>
+            <span>內容索引</span>
             <span className={styles.liveIndicator}>現在</span>
           </div>
           <ol className={styles.evidenceList}>
@@ -111,6 +117,56 @@ function HomepageHero() {
         </aside>
       </div>
     </header>
+  );
+}
+
+function ProjectRow({project, index}) {
+  const languages = getProjectLanguages(project);
+  const tags = (project.tags || project.tech || [])
+    .filter((tag) => !languages.some((language) => language.toLowerCase() === String(tag).toLowerCase()))
+    .slice(0, 2);
+  const github = project.github || {};
+  const stars = github.stars ?? github.stargazersCount ?? github.stargazerCount;
+  const latestRelease = github.latestRelease?.tagName
+    || github.latestRelease?.tag
+    || github.latestRelease?.name
+    || github.latestRelease;
+  const repository = project.repo || project.repositories?.[0];
+  const repositoryUrl = project.links?.github
+    || project.githubUrl
+    || (repository?.owner && repository?.name
+      ? `https://github.com/${repository.owner}/${repository.name}`
+      : null);
+
+  return (
+    <article className={styles.projectRow}>
+      <span className={styles.projectRowIndex}>{String(index).padStart(2, '0')}</span>
+      <div className={styles.projectRowBody}>
+        <div className={styles.projectRowMeta}>
+          <span>{getCategoryLabel(project.category)}</span>
+          <span className={styles.projectRowStatus}>
+            <span aria-hidden="true" />
+            {getStatusLabel(project.status)}
+          </span>
+        </div>
+        <Heading as="h3">{project.title}</Heading>
+        <p>{project.summary || project.description}</p>
+        <div className={styles.projectRowTags} aria-label="技術標籤">
+          {[...languages.slice(0, 2), ...tags].map((tag) => <span key={tag}>{tag}</span>)}
+        </div>
+      </div>
+      <div className={styles.projectRowAside}>
+        <div className={styles.projectRowMetrics} aria-label="GitHub 專案資料">
+          {stars !== undefined && stars !== null ? <span><strong>{stars}</strong> stars</span> : null}
+          {latestRelease ? <span>{latestRelease}</span> : null}
+        </div>
+        {repositoryUrl ? (
+          <a href={repositoryUrl} target="_blank" rel="noopener noreferrer">
+            GitHub <span aria-hidden="true">↗</span>
+          </a>
+        ) : null}
+      </div>
+    </article>
   );
 }
 
@@ -141,19 +197,30 @@ export default function Home() {
         <section className={styles.section} aria-labelledby="projects-heading">
           <div className="container">
             <SectionHeading
-              eyebrow="最近專案"
-              title={<span id="projects-heading">最近的專案</span>}
-              description="幾個正在維護或最近整理的公開專案。"
+              eyebrow="精選作品"
+              title={<span id="projects-heading">正在做的事</span>}
+              description="一個完整展示，幾個持續維護的工程線索。"
               action={(
                 <Link className={styles.textAction} to="/projects">
                   全部專案 <span aria-hidden="true">→</span>
                 </Link>
               )}
             />
-            <div className={styles.projectGrid}>
-              {featured.map((project) => (
-                <ProjectCard key={project.id} project={project} compact />
-              ))}
+            <div className={styles.projectShowcase}>
+              {featured[0] ? (
+                <div className={styles.featuredProject}>
+                  <div className={styles.featuredProjectLabel}>
+                    <span>01</span>
+                    <span>Selected build</span>
+                  </div>
+                  <ProjectCard project={featured[0]} />
+                </div>
+              ) : null}
+              <div className={styles.projectList}>
+                {featured.slice(1, 5).map((project, index) => (
+                  <ProjectRow key={project.id} project={project} index={index + 2} />
+                ))}
+              </div>
             </div>
             <p className={styles.dataNote}>
               {snapshotState === 'fallback'
@@ -170,15 +237,23 @@ export default function Home() {
               title={<span id="output-heading">最近發布</span>}
               description="最近更新的技術筆記與開發紀錄。"
             />
-            <div className={styles.outputGrid}>
-              {recentWork.map((item) => (
+            <div className={styles.outputList}>
+              {recentWork.map((item, index) => (
                 <Link key={item.to} to={item.to} className={styles.outputCard}>
-                  <div className={styles.outputMeta}>
-                    <span>{item.kind}</span>
-                    <time>{item.date}</time>
+                  <span className={styles.outputIndex}>{String(index + 1).padStart(2, '0')}</span>
+                  <div className={styles.outputBody}>
+                    <div className={styles.outputMeta}>
+                      <span>{item.kind}</span>
+                      <time>{item.date}</time>
+                    </div>
+                    <Heading as="h3">{item.title}</Heading>
+                    <p>{item.description}</p>
+                    {item.tags.length ? (
+                      <div className={styles.outputTags} aria-label="文章標籤">
+                        {item.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                      </div>
+                    ) : null}
                   </div>
-                  <Heading as="h3">{item.title}</Heading>
-                  <p>{item.description}</p>
                   <span className={styles.outputArrow} aria-hidden="true">↗</span>
                 </Link>
               ))}

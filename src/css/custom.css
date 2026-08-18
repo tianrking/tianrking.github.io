@@ -25,13 +25,13 @@
   --site-muted: #626a66;
   --site-line: rgb(16 20 18 / 10%);
   --site-line-strong: rgb(16 20 18 / 16%);
-  --site-shadow-sm: 0 1px 2px rgb(16 24 20 / 4%), 0 8px 28px rgb(16 24 20 / 5%);
-  --site-shadow-md: 0 1px 2px rgb(16 24 20 / 5%), 0 18px 48px rgb(16 24 20 / 8%);
-  --site-shadow-lg: 0 2px 4px rgb(16 24 20 / 5%), 0 30px 90px rgb(16 24 20 / 12%);
+  --site-shadow-sm: 0 1px 2px rgb(16 24 20 / 4%), 0 7px 22px rgb(16 24 20 / 4%);
+  --site-shadow-md: 0 1px 2px rgb(16 24 20 / 4%), 0 15px 40px rgb(16 24 20 / 6%);
+  --site-shadow-lg: 0 2px 4px rgb(16 24 20 / 4%), 0 26px 78px rgb(16 24 20 / 9%);
   --site-radius-sm: 0.75rem;
   --site-radius-md: 1.1rem;
-  --site-radius-lg: 1.55rem;
-  --site-radius-xl: 2rem;
+  --site-radius-lg: 1.35rem;
+  --site-radius-xl: 1.7rem;
   --site-ease: cubic-bezier(.2, .72, .22, 1);
   --site-spring: cubic-bezier(.16, 1, .3, 1);
   --search-local-modal-background: var(--site-surface-solid);
@@ -67,9 +67,9 @@
   --site-muted: #9da7a2;
   --site-line: rgb(235 245 240 / 10%);
   --site-line-strong: rgb(235 245 240 / 17%);
-  --site-shadow-sm: 0 1px 2px rgb(0 0 0 / 18%), 0 10px 32px rgb(0 0 0 / 16%);
-  --site-shadow-md: 0 1px 2px rgb(0 0 0 / 22%), 0 22px 56px rgb(0 0 0 / 24%);
-  --site-shadow-lg: 0 2px 4px rgb(0 0 0 / 28%), 0 36px 100px rgb(0 0 0 / 34%);
+  --site-shadow-sm: 0 1px 2px rgb(0 0 0 / 16%), 0 8px 27px rgb(0 0 0 / 13%);
+  --site-shadow-md: 0 1px 2px rgb(0 0 0 / 19%), 0 18px 47px rgb(0 0 0 / 20%);
+  --site-shadow-lg: 0 2px 4px rgb(0 0 0 / 24%), 0 30px 86px rgb(0 0 0 / 28%);
   --search-local-modal-background: var(--site-surface-solid);
   --search-local-hit-background: var(--site-surface-solid);
 }
@@ -204,7 +204,7 @@ summary {
 .navbar__link {
   position: relative;
   padding: .58rem .78rem;
-  border-radius: 999px;
+  border-radius: .68rem;
   color: var(--site-muted);
   font-size: .86rem;
   font-weight: 620;
@@ -219,7 +219,8 @@ summary {
 
 .navbar__link--active {
   color: var(--site-ink);
-  background: color-mix(in srgb, var(--ifm-color-primary) 9%, var(--site-surface-soft));
+  background: transparent;
+  box-shadow: inset 0 -2px 0 color-mix(in srgb, var(--ifm-color-primary) 78%, transparent);
 }
 
 .navbar__link:active {
