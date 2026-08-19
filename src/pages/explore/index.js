@@ -1,204 +1,99 @@
-import React, {useMemo, useState} from 'react';
+import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
-import contentIndex from '@site/src/data/content-index.json';
+import {travelSeries} from '@site/src/data/explore-series';
 import styles from './styles.module.css';
 
-const travelDocument = {
-  id: 'explore-travel-malaysia-peninsula-8-day',
-  title: '馬來西亞西馬半島 8 天 7 晚',
-  description: '歷史考古、國家級地標、交通、預算與現場風險整理成一份可執行的行程。',
-  section: '行旅誌',
-  kind: 'explore',
-  kindLabel: '探索系列',
-  route: '/explore/travel/malaysia-peninsula-8-day',
-  date: '2026-08-19',
-  year: '2026',
-  tags: ['旅行', '馬來西亞', '歷史考古'],
-  keywords: ['馬六甲', '檳城', '布央谷', '太平', '怡保', '吉隆坡'],
-};
-
-const documents = [travelDocument, ...(contentIndex.documents || [])];
-
-const travelSeries = {
-  eyebrow: 'TRAVEL SERIES / 01',
-  title: '馬來西亞西馬半島 8 天 7 晚',
-  description:
-    '一份把地理路線、歷史考古、國家級地標、交通預訂、預算與現場風險放在同一張桌上的可執行旅行方案。',
-  meta: '2026.08.29 — 2026.09.05 · 歷史考古 · 國家級地標',
-  route: '/explore/travel/malaysia-peninsula-8-day',
-};
-
-function uniqueValues(key) {
-  return [...new Set(documents.flatMap((document) => document[key] || []).filter(Boolean))]
-    .sort((left, right) => left.localeCompare(right, 'zh-Hant'));
-}
-
-const sections = [...new Set(documents.map((document) => document.section).filter(Boolean))]
-  .sort((left, right) => left.localeCompare(right, 'zh-Hant'));
-const tags = uniqueValues('tags');
-const years = [...new Set(documents.map((document) => document.year).filter(Boolean))]
-  .sort((left, right) => right.localeCompare(left));
-
-function formatDate(date) {
-  return date ? date.replaceAll('-', '.') : '未標日期';
-}
-
-function searchableText(document) {
-  return [
-    document.title,
-    document.description,
-    document.section,
-    document.kindLabel,
-    ...(document.tags || []),
-    ...(document.keywords || []),
-  ].join(' ').toLocaleLowerCase();
-}
-
-function ContentCard({document}) {
-  return (
-    <Link className={styles.card} to={document.route}>
-      <div className={styles.cardMeta}>
-        <span>{document.kindLabel}</span>
-        <time dateTime={document.date || undefined}>{formatDate(document.date)}</time>
-      </div>
-      <Heading as="h2">{document.title}</Heading>
-      <p>{document.description || '這篇內容尚未提供摘要。'}</p>
-      <div className={styles.cardFooter}>
-        <span>{document.section}</span>
-        <span aria-hidden="true">↗</span>
-      </div>
-    </Link>
-  );
-}
+const categories = [
+  {
+    index: '01',
+    label: '行旅誌',
+    title: '旅行規劃與記錄',
+    description: '把路線、歷史、交通、預算與現場觀察整理成下一次可以直接使用的旅程。',
+    meta: '1 個系列 · 1 篇完整方案',
+    route: '/explore/travel',
+    accent: 'travel',
+  },
+  {
+    index: '02',
+    label: '其他探索',
+    title: '城市、文化與專題',
+    description: '不屬於技術筆記或開發誌的觀察，留給城市、文化、方法與仍在形成中的研究。',
+    meta: '系列建立中 · 之後持續加入',
+    route: '/explore/notes',
+    accent: 'notes',
+  },
+];
 
 export default function ExplorePage() {
-  const [query, setQuery] = useState('');
-  const [kind, setKind] = useState('all');
-  const [section, setSection] = useState('all');
-  const [tag, setTag] = useState('all');
-  const [year, setYear] = useState('all');
-
-  const filteredDocuments = useMemo(() => {
-    const normalizedQuery = query.trim().toLocaleLowerCase();
-
-    return documents.filter((document) => {
-      if (kind !== 'all' && document.kind !== kind) return false;
-      if (section !== 'all' && document.section !== section) return false;
-      if (tag !== 'all' && !document.tags?.includes(tag)) return false;
-      if (year !== 'all' && document.year !== year) return false;
-      if (normalizedQuery && !searchableText(document).includes(normalizedQuery)) return false;
-      return true;
-    });
-  }, [kind, query, section, tag, year]);
-
-  const hasFilters = Boolean(query || kind !== 'all' || section !== 'all' || tag !== 'all' || year !== 'all');
-
-  function clearFilters() {
-    setQuery('');
-    setKind('all');
-    setSection('all');
-    setTag('all');
-    setYear('all');
-  }
-
   return (
     <Layout
-      title="探索內容"
-      description="搜尋和瀏覽 w0x7ce 的技術筆記、開發誌與工程資料。">
+      title="探索"
+      description="行旅誌與其他探索系列：旅行、城市、文化與仍在形成中的專題。">
       <main className={styles.page}>
-        <header className={styles.hero}>
+        <header className={styles.hubHero}>
           <div className="container">
-            <span className={styles.eyebrow}>CONTENT INDEX</span>
-            <Heading as="h1">找到你要的內容。</Heading>
+            <div className={styles.hubHeroTop}>
+              <span className={styles.eyebrow}>EXPLORATION / INDEX</span>
+              <Link className={styles.indexLink} to="/explore/library">
+                全站內容索引 <span aria-hidden="true">↗</span>
+              </Link>
+            </div>
+            <Heading as="h1">探索，不只有一種方向。</Heading>
             <p>
-              以關鍵字、內容類型、技術領域、標籤或年份篩選技術筆記與開發誌。
-              全站搜尋也可以使用 <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>K</kbd>。
+              這裡與技術筆記、開發誌分開，收納旅行規劃與其他非技術專題。
+              兩個系列各自成頁，之後新增內容也不會再混在同一張清單裡。
             </p>
           </div>
         </header>
 
-        <section className={`container ${styles.seriesFeature}`} aria-labelledby="travel-series-title">
-          <div className={styles.seriesFeatureLabel}>{travelSeries.eyebrow}</div>
-          <div className={styles.seriesFeatureBody}>
-            <div>
-              <Heading as="h2" id="travel-series-title">{travelSeries.title}</Heading>
-              <p>{travelSeries.description}</p>
-              <div className={styles.seriesMeta}>{travelSeries.meta}</div>
-            </div>
-            <Link className={styles.seriesLink} to={travelSeries.route}>
-              閱讀完整方案 <span aria-hidden="true">↗</span>
-            </Link>
+        <section className={`container ${styles.categorySection}`} aria-labelledby="explore-categories">
+          <div className={styles.sectionIntro}>
+            <span className={styles.sectionKicker}>兩個入口</span>
+            <Heading as="h2" id="explore-categories">先選你要探索的世界。</Heading>
+          </div>
+          <div className={styles.categoryGrid}>
+            {categories.map((category) => (
+              <Link
+                key={category.index}
+                className={`${styles.categoryCard} ${styles[category.accent]}`}
+                to={category.route}>
+                <div className={styles.categoryCardTop}>
+                  <span>{category.index}</span>
+                  <span>{category.label}</span>
+                </div>
+                <Heading as="h3">{category.title}</Heading>
+                <p>{category.description}</p>
+                <div className={styles.categoryCardBottom}>
+                  <span>{category.meta}</span>
+                  <span aria-hidden="true">↗</span>
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
 
-        <section className={`container ${styles.explorer}`} aria-labelledby="explore-controls">
-          <h2 id="explore-controls" className={styles.visuallyHidden}>內容篩選</h2>
-          <div className={styles.controls}>
-            <label className={styles.searchField}>
-              <span>搜尋內容</span>
-              <input
-                type="search"
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-                placeholder="例如：BLE、RP2040、Docker、AI…"
-                aria-label="搜尋內容標題、摘要與標籤"
-              />
-            </label>
-            <label>
-              <span>類型</span>
-              <select value={kind} onChange={(event) => setKind(event.target.value)}>
-                <option value="all">全部類型</option>
-                <option value="docs">技術筆記</option>
-                <option value="blog">開發誌</option>
-                <option value="explore">探索系列</option>
-              </select>
-            </label>
-            <label>
-              <span>領域</span>
-              <select value={section} onChange={(event) => setSection(event.target.value)}>
-                <option value="all">全部領域</option>
-                {sections.map((value) => <option key={value} value={value}>{value}</option>)}
-              </select>
-            </label>
-            <label>
-              <span>標籤</span>
-              <select value={tag} onChange={(event) => setTag(event.target.value)}>
-                <option value="all">全部標籤</option>
-                {tags.map((value) => <option key={value} value={value}>{value}</option>)}
-              </select>
-            </label>
-            <label>
-              <span>年份</span>
-              <select value={year} onChange={(event) => setYear(event.target.value)}>
-                <option value="all">全部年份</option>
-                {years.map((value) => <option key={value} value={value}>{value}</option>)}
-              </select>
-            </label>
-            <button className={styles.clearButton} type="button" onClick={clearFilters} disabled={!hasFilters}>
-              清除篩選
-            </button>
+        <section className={`container ${styles.featuredStrip}`} aria-labelledby="featured-travel">
+          <div>
+            <span className={styles.sectionKicker}>{travelSeries.eyebrow}</span>
+            <Heading as="h2" id="featured-travel">第一篇：馬來西亞西馬半島 8 天 7 晚</Heading>
+            <p>{travelSeries.description}</p>
           </div>
+          <Link className={styles.featuredLink} to={travelSeries.route}>
+            閱讀行程 <span aria-hidden="true">→</span>
+          </Link>
+        </section>
 
-          <div className={styles.resultsHeader}>
-            <p aria-live="polite">
-              顯示 <strong>{filteredDocuments.length}</strong> / {documents.length} 篇內容
-            </p>
-            <span>索引在建置時生成，頁面本身不需要等待 API。</span>
+        <section className={`container ${styles.libraryPrompt}`} aria-labelledby="library-heading">
+          <div>
+            <span className={styles.sectionKicker}>UTILITY</span>
+            <Heading as="h2" id="library-heading">要找既有技術內容？</Heading>
+            <p>技術筆記與開發誌維持原本的入口；需要跨類型搜尋時，再進入全站內容索引。</p>
           </div>
-
-          {filteredDocuments.length ? (
-            <div className={styles.grid}>
-              {filteredDocuments.map((document) => <ContentCard key={document.id} document={document} />)}
-            </div>
-          ) : (
-            <div className={styles.emptyState} role="status">
-              <Heading as="h2">找不到符合的內容。</Heading>
-              <p>試試較短的關鍵字，或清除部分篩選條件。</p>
-              <button className={styles.clearButton} type="button" onClick={clearFilters}>清除篩選</button>
-            </div>
-          )}
+          <Link className={styles.libraryLink} to="/explore/library">
+            開啟索引 <span aria-hidden="true">↗</span>
+          </Link>
         </section>
       </main>
     </Layout>

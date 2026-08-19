@@ -239,8 +239,12 @@ const config = {
                 to: '/blog',
               },
               {
-                label: '探索內容',
+                label: '探索',
                 to: '/explore',
+              },
+              {
+                label: '全站內容索引',
+                to: '/explore/library',
               },
             ],
           },

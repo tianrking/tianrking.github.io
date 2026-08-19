@@ -45,8 +45,8 @@ const entrances = [
   },
   {
     index: '04',
-    title: '探索內容',
-    description: '用關鍵字、領域、標籤和年份快速找到需要的內容。',
+    title: '探索',
+    description: '旅行規劃、城市觀察與非技術專題，和內容索引分開瀏覽。',
     to: '/explore',
   },
 ];
