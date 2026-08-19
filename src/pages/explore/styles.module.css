@@ -38,6 +38,85 @@
   line-height: 1.8;
 }
 
+.seriesFeature {
+  padding-top: 2rem;
+}
+
+.seriesFeatureLabel {
+  margin: 0 0 .7rem .2rem;
+  color: var(--ifm-color-primary);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.seriesFeatureBody {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: end;
+  padding: clamp(1.3rem, 3vw, 2rem);
+  border: 1px solid color-mix(in srgb, var(--ifm-color-primary) 36%, var(--site-line));
+  border-radius: var(--site-radius-lg);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--ifm-color-primary) 9%, transparent), transparent 62%),
+    var(--site-surface);
+  box-shadow: var(--site-shadow-sm);
+}
+
+.seriesFeatureBody h2 {
+  margin: 0 0 .65rem;
+  color: var(--site-ink);
+  font-size: clamp(1.45rem, 3vw, 2.1rem);
+  letter-spacing: -.04em;
+}
+
+.seriesFeatureBody p {
+  max-width: 48rem;
+  margin: 0;
+  color: var(--site-muted);
+  line-height: 1.75;
+}
+
+.seriesMeta {
+  margin-top: 1rem;
+  color: var(--site-muted);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: .7rem;
+}
+
+.seriesLink {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: .45rem;
+  min-height: 2.8rem;
+  padding: .65rem 1rem;
+  border: 1px solid var(--site-line-strong);
+  border-radius: .78rem;
+  color: var(--site-ink);
+  background: var(--site-surface-soft);
+  font-size: .82rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.seriesLink:hover,
+.seriesLink:focus-visible {
+  color: var(--site-ink);
+  border-color: var(--ifm-color-primary);
+  background: color-mix(in srgb, var(--ifm-color-primary) 10%, var(--site-surface));
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.seriesLink:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--ifm-color-primary) 24%, transparent);
+  outline-offset: 3px;
+}
+
 kbd {
   padding: .12rem .34rem;
   border: 1px solid var(--site-line-strong);
@@ -275,6 +354,21 @@ kbd {
 
   .explorer {
     padding-inline: .75rem;
+  }
+
+  .seriesFeature {
+    padding-inline: .75rem;
+  }
+
+  .seriesFeatureBody {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .seriesLink {
+    justify-content: center;
+    width: 100%;
   }
 
   .controls {

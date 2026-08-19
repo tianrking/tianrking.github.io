@@ -5,7 +5,30 @@ import Heading from '@theme/Heading';
 import contentIndex from '@site/src/data/content-index.json';
 import styles from './styles.module.css';
 
-const documents = contentIndex.documents || [];
+const travelDocument = {
+  id: 'explore-travel-malaysia-peninsula-8-day',
+  title: '馬來西亞西馬半島 8 天 7 晚',
+  description: '歷史考古、國家級地標、交通、預算與現場風險整理成一份可執行的行程。',
+  section: '行旅誌',
+  kind: 'explore',
+  kindLabel: '探索系列',
+  route: '/explore/travel/malaysia-peninsula-8-day',
+  date: '2026-08-19',
+  year: '2026',
+  tags: ['旅行', '馬來西亞', '歷史考古'],
+  keywords: ['馬六甲', '檳城', '布央谷', '太平', '怡保', '吉隆坡'],
+};
+
+const documents = [travelDocument, ...(contentIndex.documents || [])];
+
+const travelSeries = {
+  eyebrow: 'TRAVEL SERIES / 01',
+  title: '馬來西亞西馬半島 8 天 7 晚',
+  description:
+    '一份把地理路線、歷史考古、國家級地標、交通預訂、預算與現場風險放在同一張桌上的可執行旅行方案。',
+  meta: '2026.08.29 — 2026.09.05 · 歷史考古 · 國家級地標',
+  route: '/explore/travel/malaysia-peninsula-8-day',
+};
 
 function uniqueValues(key) {
   return [...new Set(documents.flatMap((document) => document[key] || []).filter(Boolean))]
@@ -96,6 +119,20 @@ export default function ExplorePage() {
           </div>
         </header>
 
+        <section className={`container ${styles.seriesFeature}`} aria-labelledby="travel-series-title">
+          <div className={styles.seriesFeatureLabel}>{travelSeries.eyebrow}</div>
+          <div className={styles.seriesFeatureBody}>
+            <div>
+              <Heading as="h2" id="travel-series-title">{travelSeries.title}</Heading>
+              <p>{travelSeries.description}</p>
+              <div className={styles.seriesMeta}>{travelSeries.meta}</div>
+            </div>
+            <Link className={styles.seriesLink} to={travelSeries.route}>
+              閱讀完整方案 <span aria-hidden="true">↗</span>
+            </Link>
+          </div>
+        </section>
+
         <section className={`container ${styles.explorer}`} aria-labelledby="explore-controls">
           <h2 id="explore-controls" className={styles.visuallyHidden}>內容篩選</h2>
           <div className={styles.controls}>
@@ -115,6 +152,7 @@ export default function ExplorePage() {
                 <option value="all">全部類型</option>
                 <option value="docs">技術筆記</option>
                 <option value="blog">開發誌</option>
+                <option value="explore">探索系列</option>
               </select>
             </label>
             <label>
