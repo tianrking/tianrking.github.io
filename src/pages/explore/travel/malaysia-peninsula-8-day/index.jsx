@@ -15,7 +15,7 @@ const routeStops = [
 ];
 
 const budgetInitial = {
-  flight: 850,
+  flight: 2050,
   transit: 320,
   stay: 330,
   tickets: 250,
@@ -194,20 +194,19 @@ function BudgetEstimator() {
 
   function applyPreset(type) {
     setValues(type === 'lean'
-      ? {flight: 850, transit: 320, stay: 330, tickets: 250, food: 336, local: 144}
-      : {flight: 1200, transit: 430, stay: 720, tickets: 360, food: 560, local: 260});
+      ? {flight: 2050, transit: 320, stay: 330, tickets: 250, food: 336, local: 144}
+      : {flight: 2050, transit: 430, stay: 720, tickets: 360, food: 560, local: 260});
   }
 
   return (
     <div className={styles.budgetWorkbench}>
       <div className={styles.workbenchHeader}>
         <div>
-          <span className={styles.kicker}>LIVE ESTIMATE</span>
-          <Heading as="h3">預算不是答案，是出發前的約束條件。</Heading>
+          <Heading as="h3">各項金額</Heading>
         </div>
         <div className={styles.presetGroup} aria-label="預算預設">
-          <button type="button" onClick={() => applyPreset('lean')}>特種兵</button>
-          <button type="button" onClick={() => applyPreset('balanced')}>舒適版</button>
+          <button type="button" onClick={() => applyPreset('lean')}>最低成本</button>
+          <button type="button" onClick={() => applyPreset('balanced')}>預留餘量</button>
         </div>
       </div>
       <div className={styles.budgetGrid}>
@@ -238,7 +237,7 @@ function BudgetEstimator() {
           </div>
         </div>
       </div>
-      <p className={styles.workbenchNote}>這是以人民幣計的規劃估算，不是即時報價；機票、匯率、國慶長周末與景點政策要在出發前重新核對。</p>
+      <p className={styles.workbenchNote}>金額以人民幣估算；機票、匯率、國慶長周末與景點政策，出發前再核對。</p>
     </div>
   );
 }
@@ -291,7 +290,7 @@ export default function MalaysiaPeninsulaPage() {
               <span>2026.08.29 — 2026.09.05</span>
               <span>8 天 / 7 晚</span>
               <span>歷史考古</span>
-              <span>背包客預算版</span>
+              <span>最低成本版</span>
             </div>
           </div>
         </header>
@@ -322,15 +321,15 @@ export default function MalaysiaPeninsulaPage() {
         <section className="container" aria-labelledby="budget-title">
           <div className={styles.sectionHeading}>
             <span className={styles.kicker}>02 / BUDGET</span>
-            <Heading as="h2" id="budget-title">把硬開銷攤開，才知道哪裡值得加錢。</Heading>
-            <p>原始方案的背包客基準約為 ¥2,230。以下估算器可以直接替換成你的機票、住宿與交通價格。</p>
+            <Heading as="h2" id="budget-title">最低成本估算</Heading>
+            <p>按往返機票約 ¥2,050 計算，8 天最低成本約為 ¥3,430；其他項目可直接替換成實際價格。</p>
           </div>
           <BudgetEstimator />
           <div className={styles.tableWrap}>
             <table>
               <thead><tr><th>支出項目</th><th>人民幣基準</th><th>核算思路</th></tr></thead>
               <tbody>
-                <tr><td>國際機票</td><td>¥850</td><td>大灣區往返 KUL 的廉航裸票，隨身行李另按航空公司規則。</td></tr>
+                <tr><td>國際機票</td><td>約 ¥2,050</td><td>本方案按目前往返票價估算，隨航班、日期與行李規則浮動。</td></tr>
                 <tr><td>城際大交通</td><td>約 ¥320</td><td>機場巴士、夜巴、KTM / ETS、纜車與少量 Grab。</td></tr>
                 <tr><td>住宿</td><td>約 ¥330</td><td>夜巴省 1 晚，其餘 6 晚以青旅床位估算。</td></tr>
                 <tr><td>門票與纜車</td><td>約 ¥250</td><td>升旗山、僑生博物館、戰爭博物館、凱利古堡與兩座國家館舍。</td></tr>

@@ -34,7 +34,7 @@ export default function TravelSeriesPage() {
                 <span>8 天 / 7 晚</span>
                 <span>歷史考古</span>
                 <span>國家級地標</span>
-                <span>背包客硬開銷估算</span>
+                <span>最低成本估算</span>
               </div>
               <Link className={styles.primaryLink} to="/explore/travel/malaysia-peninsula-8-day">
                 打開完整行程 <span aria-hidden="true">↗</span>
