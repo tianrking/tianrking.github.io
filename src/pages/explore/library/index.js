@@ -91,10 +91,8 @@ export default function ExploreLibraryPage() {
               <Link to="/explore">探索</Link><span aria-hidden="true">/</span><span>全站索引</span>
             </div>
             <span className={styles.eyebrow}>CONTENT INDEX</span>
-            <Heading as="h1">找得到，比堆在一起更重要。</Heading>
-            <p>
-              跨技術筆記、開發誌與探索系列搜尋。探索首頁只展示系列入口，這裡才是完整內容資料庫。
-            </p>
+            <Heading as="h1">全站內容索引</Heading>
+            <p>依關鍵字、類型、領域、標籤與年份篩選。</p>
           </div>
         </header>
 
@@ -128,7 +126,6 @@ export default function ExploreLibraryPage() {
           </div>
           <div className={styles.resultsHeader}>
             <p aria-live="polite">顯示 <strong>{filteredDocuments.length}</strong> / {documents.length} 篇內容</p>
-            <span>索引在建置時生成，頁面本身不需要等待 API。</span>
           </div>
           {filteredDocuments.length ? (
             <div className={styles.grid}>{filteredDocuments.map((document) => <ContentCard key={document.id} document={document} />)}</div>

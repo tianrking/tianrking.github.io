@@ -180,9 +180,9 @@ export default function Labs() {
         <header className={styles.hero}>
           <p className={styles.eyebrow}>LABS</p>
           <h1>實驗場</h1>
-          <p>一些自己在用的服務、工具和小實驗。</p>
+          <p>公開服務、工具與小型原型。</p>
           <div className={styles.notice}>
-            這裡展示公開入口，不代表服務等級承諾；使用前請確認頁面狀態與最後更新資訊。
+            公開入口不提供服務等級承諾；請查看服務狀態與最後更新時間。
           </div>
         </header>
 

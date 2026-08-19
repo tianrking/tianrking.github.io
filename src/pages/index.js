@@ -40,13 +40,13 @@ const entrances = [
   {
     index: '03',
     title: '實驗場',
-    description: '仍在運作或驗證中的服務、工具與線上原型。',
+    description: '公開服務、工具與線上原型。',
     to: '/labs',
   },
   {
     index: '04',
     title: '探索',
-    description: '旅行規劃、城市觀察與非技術專題，和內容索引分開瀏覽。',
+    description: '旅行規劃、城市觀察與非技術專題。',
     to: '/explore',
   },
 ];
@@ -72,13 +72,13 @@ function HomepageHero() {
       <div className={`container ${styles.heroInner}`}>
         <div className={styles.heroCopy}>
           <span className={styles.identity}>w0x7ce / 個人技術筆記</span>
-          <Heading as="h1">寫程式、做硬體，把問題寫成可複現的記錄。</Heading>
+          <Heading as="h1">Embedded Systems · Local AI · Infrastructure</Heading>
           <p className={styles.lead}>
-            嵌入式、Local AI、基礎設施；還有正在維護的專案和小實驗。
+            技術筆記、專案與實驗。
           </p>
           <div className={styles.heroActions}>
             <Link className={styles.primaryAction} to="/projects">
-              看看最近的專案 <span aria-hidden="true">→</span>
+              查看專案 <span aria-hidden="true">→</span>
             </Link>
             <Link className={styles.secondaryAction} to="/tutorial">
               閱讀技術筆記
@@ -111,7 +111,7 @@ function HomepageHero() {
             </li>
           </ol>
           <div className={styles.panelFooter}>
-            <span>最近在寫</span>
+            <span>最新筆記</span>
             <strong>TLSR8258 開發與燒錄筆記</strong>
           </div>
         </aside>
@@ -185,7 +185,7 @@ export default function Home() {
           <div className={`container ${styles.nowInner}`}>
             <span className={styles.nowLabel}>現在</span>
             <div>
-              <Heading id="now-heading" as="h2">最近在整理 TLSR8258 的開發與燒錄筆記。</Heading>
+              <Heading id="now-heading" as="h2">TLSR8258 開發與燒錄</Heading>
               <p>包含工具鏈、接線、常見錯誤與實板測試記錄。</p>
             </div>
             <Link to="/embedded/telink/tlsr8258/sws-build-flash-verify">
@@ -198,8 +198,8 @@ export default function Home() {
           <div className="container">
             <SectionHeading
               eyebrow="精選作品"
-              title={<span id="projects-heading">正在做的事</span>}
-              description="一個完整展示，幾個持續維護的工程線索。"
+              title={<span id="projects-heading">精選專案</span>}
+              description="專案狀態、技術棧與 GitHub 公開資料。"
               action={(
                 <Link className={styles.textAction} to="/projects">
                   全部專案 <span aria-hidden="true">→</span>
@@ -235,7 +235,7 @@ export default function Home() {
             <SectionHeading
               eyebrow="最近更新"
               title={<span id="output-heading">最近發布</span>}
-              description="最近更新的技術筆記與開發紀錄。"
+              description="按日期排列的技術筆記與開發誌。"
             />
             <div className={styles.outputList}>
               {recentWork.map((item, index) => (
@@ -265,7 +265,7 @@ export default function Home() {
           <div className="container">
             <SectionHeading
               eyebrow="瀏覽內容"
-              title={<span id="browse-heading">瀏覽更多內容</span>}
+              title={<span id="browse-heading">內容入口</span>}
             />
             <div className={styles.entranceGrid}>
               {entrances.map((entrance) => (
@@ -285,7 +285,7 @@ export default function Home() {
             <span className={styles.closingMark} aria-hidden="true">W7</span>
             <div>
               <span className={styles.eyebrow}>開源程式碼</span>
-              <Heading as="h2">更多程式碼和專案都在 GitHub。</Heading>
+              <Heading as="h2">GitHub 公開程式碼與專案。</Heading>
             </div>
             <a href="https://github.com/tianrking" target="_blank" rel="noopener noreferrer">
               GitHub / tianrking <span aria-hidden="true">↗</span>

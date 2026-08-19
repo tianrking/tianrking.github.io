@@ -68,15 +68,15 @@ export default function ProjectsPage() {
   return (
     <Layout
       title="專案"
-      description="一些嵌入式、Local AI、基礎設施與應用專案。">
+      description="嵌入式、Local AI、基礎設施與應用專案。">
       <main className={styles.page}>
         <header className={styles.hero}>
           <div className="container">
             <span className={styles.eyebrow}>PROJECTS</span>
-            <Heading as="h1">最近做的一些專案。</Heading>
+            <Heading as="h1">專案</Heading>
             <div className={styles.heroBottom}>
               <p>
-                有些已經能用，有些還在慢慢更新。可以依領域、狀態和語言篩選，其他公開專案都在 GitHub。
+                依領域、狀態與語言篩選；完整公開倉庫見 GitHub。
               </p>
             </div>
           </div>
@@ -149,7 +149,7 @@ export default function ProjectsPage() {
             <div>
               <span className={styles.eyebrow}>ON GITHUB</span>
               <Heading as="h2">其他公開專案</Heading>
-              <p>這裡只列出一部分，完整列表可以到 GitHub 查看。</p>
+              <p>本站顯示精選專案；完整公開倉庫見 GitHub。</p>
             </div>
             <a href="https://github.com/tianrking?tab=repositories" target="_blank" rel="noopener noreferrer">
               查看所有公開倉庫 <span aria-hidden="true">↗</span>

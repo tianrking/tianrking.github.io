@@ -10,9 +10,9 @@ hide_table_of_contents: true
 
 # 技術筆記
 
-這裡不是從第一章一路讀到最後一章的教程，而是我在開發、除錯和驗證系統時留下的工作筆記。每篇內容都以一個具體問題為入口，並盡量說清楚版本、工具、限制與驗證邊界。
+技術筆記按問題與領域分類，涵蓋版本、工具、限制與驗證邊界。
 
-## 從這裡開始
+## 推薦入口
 
 | 領域 | 內容 | 推薦入口 |
 |---|---|---|
@@ -43,4 +43,4 @@ Local AI          /  Inference · Tooling · Model infrastructure
 Infrastructure    /  Rust · Edge · Containers · Network systems
 ```
 
-使用左側分類瀏覽全部筆記；想看近期正在做什麼，可以前往[專案](/projects)或[開發誌](/blog)。
+使用左側分類瀏覽筆記；專案見[專案](/projects)，時間線見[開發誌](/blog)。

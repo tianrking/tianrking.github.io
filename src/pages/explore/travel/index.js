@@ -17,7 +17,7 @@ const seriesPrinciples = [
   },
   {
     index: '03',
-    title: '回來之後修正',
+    title: '行程復盤',
     body: '把實際花費、等待時間、體力與意外整理回下一版，讓旅行規劃越來越可靠。',
   },
 ];
@@ -32,16 +32,13 @@ export default function TravelSeriesPage() {
   return (
     <Layout
       title="行旅誌"
-      description="w0x7ce 的旅行規劃、田野筆記與行程復盤系列。">
+      description="旅行規劃、田野筆記與行程復盤。">
       <main className={styles.page}>
         <header className={styles.hero}>
           <div className="container">
             <div className={styles.eyebrow}>EXPLORATION / TRAVEL LOG</div>
             <Heading as="h1">把旅程寫成一份<br />可以真正執行的記錄。</Heading>
-            <p>
-              這是一個新的探索系列：把地理、歷史、交通、預算、食物與現場風險放在同一份文件裡，
-              也把出發後的修正留給下一次旅行。
-            </p>
+            <p>路線、歷史、交通、預算、食物與現場風險，集中在同一份行程文件。</p>
           </div>
         </header>
 
@@ -86,7 +83,7 @@ export default function TravelSeriesPage() {
         <section className={`container ${styles.principles}`} aria-labelledby="series-principles-title">
           <div className={styles.sectionHeading}>
             <span className={styles.eyebrow}>METHOD</span>
-            <Heading as="h2" id="series-principles-title">這個系列怎麼寫。</Heading>
+            <Heading as="h2" id="series-principles-title">方法</Heading>
           </div>
           <div className={styles.principleGrid}>
             {seriesPrinciples.map((item) => (
@@ -102,8 +99,8 @@ export default function TravelSeriesPage() {
         <section className={`container ${styles.nextSection}`} aria-labelledby="future-stories-title">
           <div className={styles.nextCopy}>
             <span className={styles.eyebrow}>UP NEXT</span>
-            <Heading as="h2" id="future-stories-title">後面還會繼續加。</Heading>
-            <p>這裡不只放完成後的遊記，也會保留那些還在準備、比較與修正中的版本。</p>
+            <Heading as="h2" id="future-stories-title">待加入行程</Heading>
+            <p>城市考古、沿海鐵路與田野調查。</p>
           </div>
           <ul className={styles.futureList}>
             {futureStories.map((story, index) => (
