@@ -15,7 +15,7 @@ const routeStops = [
 ];
 
 const budgetInitial = {
-  flight: 2050,
+  flight: 1200,
   transit: 320,
   stay: 330,
   tickets: 250,
@@ -194,8 +194,8 @@ function BudgetEstimator() {
 
   function applyPreset(type) {
     setValues(type === 'lean'
-      ? {flight: 2050, transit: 320, stay: 330, tickets: 250, food: 336, local: 144}
-      : {flight: 2050, transit: 430, stay: 720, tickets: 360, food: 560, local: 260});
+      ? {flight: 1200, transit: 320, stay: 330, tickets: 250, food: 336, local: 144}
+      : {flight: 1200, transit: 430, stay: 720, tickets: 360, food: 560, local: 260});
   }
 
   return (
@@ -322,14 +322,14 @@ export default function MalaysiaPeninsulaPage() {
           <div className={styles.sectionHeading}>
             <span className={styles.kicker}>02 / BUDGET</span>
             <Heading as="h2" id="budget-title">最低成本估算</Heading>
-            <p>按往返機票約 ¥2,050 計算，8 天最低成本約為 ¥3,430；其他項目可直接替換成實際價格。</p>
+            <p>按往返機票約 ¥1,200 計算，8 天最低成本約為 ¥2,580；其他項目可直接替換成實際價格。</p>
           </div>
           <BudgetEstimator />
           <div className={styles.tableWrap}>
             <table>
               <thead><tr><th>支出項目</th><th>人民幣基準</th><th>核算思路</th></tr></thead>
               <tbody>
-                <tr><td>國際機票</td><td>約 ¥2,050</td><td>本方案按目前往返票價估算，隨航班、日期與行李規則浮動。</td></tr>
+                <tr><td>國際機票</td><td>約 ¥1,200</td><td>本方案按目前往返票價估算，隨航班、日期與行李規則浮動。</td></tr>
                 <tr><td>城際大交通</td><td>約 ¥320</td><td>機場巴士、夜巴、KTM / ETS、纜車與少量 Grab。</td></tr>
                 <tr><td>住宿</td><td>約 ¥330</td><td>夜巴省 1 晚，其餘 6 晚以青旅床位估算。</td></tr>
                 <tr><td>門票與纜車</td><td>約 ¥250</td><td>升旗山、僑生博物館、戰爭博物館、凱利古堡與兩座國家館舍。</td></tr>
