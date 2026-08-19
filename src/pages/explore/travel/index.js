@@ -4,30 +4,6 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
-const seriesPrinciples = [
-  {
-    index: '01',
-    title: '先把路線算清楚',
-    body: '先看地理邏輯、交通轉移與每天可承受的密度，再決定要不要加入某個景點。',
-  },
-  {
-    index: '02',
-    title: '到現場留下證據',
-    body: '景點不是打卡清單，而是歷史、建築、城市與食物的現場資料。',
-  },
-  {
-    index: '03',
-    title: '行程復盤',
-    body: '把實際花費、等待時間、體力與意外整理回下一版，讓旅行規劃越來越可靠。',
-  },
-];
-
-const futureStories = [
-  '下一次的城市考古與博物館路線',
-  '一段適合慢遊的沿海鐵路旅行',
-  '把硬體田野調查與旅行筆記放在同一套方法裡',
-];
-
 export default function TravelSeriesPage() {
   return (
     <Layout
@@ -80,37 +56,6 @@ export default function TravelSeriesPage() {
           </div>
         </section>
 
-        <section className={`container ${styles.principles}`} aria-labelledby="series-principles-title">
-          <div className={styles.sectionHeading}>
-            <span className={styles.eyebrow}>METHOD</span>
-            <Heading as="h2" id="series-principles-title">方法</Heading>
-          </div>
-          <div className={styles.principleGrid}>
-            {seriesPrinciples.map((item) => (
-              <article className={styles.principle} key={item.index}>
-                <span className={styles.principleIndex}>{item.index}</span>
-                <Heading as="h3">{item.title}</Heading>
-                <p>{item.body}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className={`container ${styles.nextSection}`} aria-labelledby="future-stories-title">
-          <div className={styles.nextCopy}>
-            <span className={styles.eyebrow}>UP NEXT</span>
-            <Heading as="h2" id="future-stories-title">待加入行程</Heading>
-            <p>城市考古、沿海鐵路與田野調查。</p>
-          </div>
-          <ul className={styles.futureList}>
-            {futureStories.map((story, index) => (
-              <li key={story}>
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                {story}
-              </li>
-            ))}
-          </ul>
-        </section>
       </main>
     </Layout>
   );
