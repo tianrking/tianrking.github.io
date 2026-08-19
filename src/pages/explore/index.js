@@ -74,7 +74,7 @@ export default function ExplorePage() {
         <section className={`container ${styles.featuredStrip}`} aria-labelledby="featured-travel">
           <div>
             <span className={styles.sectionKicker}>{travelSeries.eyebrow}</span>
-            <Heading as="h2" id="featured-travel">第一篇：馬來西亞西馬半島 8 天 7 晚</Heading>
+            <Heading as="h2" id="featured-travel">第一篇：馬來西亞西馬半島 8 日行程</Heading>
             <p>{travelSeries.description}</p>
           </div>
           <Link className={styles.featuredLink} to={travelSeries.route}>

@@ -273,7 +273,7 @@ export default function MalaysiaPeninsulaPage() {
 
   return (
     <Layout
-      title="馬來西亞西馬半島 8 天 7 晚"
+      title="馬來西亞西馬半島 8 日歷史考古與地標行程"
       description="一份把西馬半島歷史考古、國家級地標、交通、預算與現場風險整理在一起的完整旅行規劃。"
       image="img/w0x7ce-social-card.png">
       <main className={styles.page}>
@@ -281,7 +281,7 @@ export default function MalaysiaPeninsulaPage() {
           <div className="container">
             <div className={styles.breadcrumb}><Link to="/explore/travel">行旅誌</Link><span>/</span><span>01</span></div>
             <div className={styles.kicker}>MALAYSIA / PENINSULAR FIELD PLAN</div>
-            <Heading as="h1">馬來西亞西馬半島<br />8 天 7 晚終極歷史考古與地標線。</Heading>
+            <Heading as="h1">馬來西亞西馬半島<br />8 日歷史考古與地標行程。</Heading>
             <p className={styles.lead}>
               從馬六甲的殖民要塞與華人古墓，到檳城的國慶、二戰地下要塞與宗族街區，
               再沿北馬鐵路走進布央谷、太平、怡保，最後回到吉隆坡的博物館、清真寺與現代城市地標。

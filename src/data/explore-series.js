@@ -1,6 +1,6 @@
 export const travelDocument = {
   id: 'explore-travel-malaysia-peninsula-8-day',
-  title: '馬來西亞西馬半島 8 天 7 晚',
+  title: '馬來西亞西馬半島 8 日歷史考古與地標行程',
   description: '歷史考古、國家級地標、交通、預算與現場風險整理成一份可執行的行程。',
   section: '行旅誌',
   kind: 'explore',
@@ -14,7 +14,7 @@ export const travelDocument = {
 
 export const travelSeries = {
   eyebrow: 'TRAVEL SERIES / 01',
-  title: '馬來西亞西馬半島 8 天 7 晚',
+  title: '馬來西亞西馬半島 8 日歷史考古與地標行程',
   description:
     '一份把地理路線、歷史考古、國家級地標、交通預訂、預算與現場風險放在同一張桌上的可執行旅行方案。',
   meta: '2026.08.29 — 2026.09.05 · 歷史考古 · 國家級地標',
