@@ -1,7 +1,38 @@
 {
   "schemaVersion": 1,
-  "total": 291,
+  "total": 292,
   "documents": [
+    {
+      "id": "blog:2026-08-19-smart-wearable-sensor-research.md",
+      "kind": "blog",
+      "kindLabel": "開發誌",
+      "section": "開發誌",
+      "language": "zh-Hant",
+      "title": "智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證",
+      "description": "按智能穿戴物理量與產品模態梳理傳感器家族、代表器件、主機介面、資料協議、價格級別、系統風險與驗證邊界。",
+      "route": "/blog/smart-wearable-sensor-research",
+      "date": "2026-08-19",
+      "year": "2026",
+      "tags": [
+        "嵌入式系統",
+        "技術深度"
+      ],
+      "keywords": [
+        "智能穿戴",
+        "傳感器",
+        "感測器",
+        "PPG",
+        "ECG",
+        "BioZ",
+        "IMU",
+        "毫米波雷達",
+        "汗液電化學",
+        "硬體選型",
+        "BOM",
+        "RFQ"
+      ],
+      "image": null
+    },
     {
       "id": "blog:2026-08-18-vpu-接觸式振動拾音器-器件原理論文開源調研.md",
       "kind": "blog",
