@@ -17,10 +17,10 @@ const routeStops = [
 const budgetInitial = {
   flight: 1200,
   transit: 320,
-  stay: 330,
+  stay: 385,
   tickets: 250,
-  food: 336,
-  local: 144,
+  food: 378,
+  local: 162,
 };
 
 const budgetLabels = {
@@ -36,13 +36,13 @@ const days = [
   {
     day: 1,
     date: '8 月 29 日（六）',
-    route: '大灣區 → 吉隆坡 → 馬六甲',
+    route: 'KUL → 馬六甲',
     title: '先把古城的時間尺度拉開',
     focus: '大航海要塞、娘惹街屋、三寶山古墓群',
     blocks: [
-      ['06:00–11:30', '從大灣區機場搭早班廉航直飛 KUL。入境後先完成交通卡、現金與網路補給。'],
-      ['11:30–14:30', '在機場客運大廳購買前往 Melaka Sentral 的長途巴士票，車程約 2 小時。'],
-      ['14:30–17:30', '從荷蘭紅屋、基督堂、A Famosa 城門與聖保羅堂開始，沿著葡萄牙、荷蘭與英國殖民留下的建築層疊讀城市。再走進峇峇娘惹祖屋，看清代閩南商館、天井、金漆木雕與維多利亞瓷磚。'],
+      ['08:00–10:30', '抵達 KUL 後完成入境、提取行李、交通卡、現金與網路補給；把機場流程和緩衝時間算進第一天。'],
+      ['10:30–13:00', '從機場前往 Melaka Sentral，車程約 2–2.5 小時；抵達後先寄放行李或辦理入住，再進老城。'],
+      ['13:30–17:30', '從荷蘭紅屋、基督堂、A Famosa 城門與聖保羅堂開始，沿著葡萄牙、荷蘭與英國殖民留下的建築層疊讀城市。再走進峇峇娘惹祖屋，看清代閩南商館、天井、金漆木雕與維多利亞瓷磚。'],
       ['18:00–20:00', '在 Bukit Cina（三寶山）做一次低強度的夜間田野：明清墓碑、甲必丹家族與馬六甲華人抗日紀念碑，重點是辨識墓群如何成為城市記憶。'],
       ['20:30–21:30', '雞場街吃雞飯粒與白斬雞，最後用娘惹煎蕊收尾。'],
     ],
@@ -131,14 +131,28 @@ const days = [
   {
     day: 8,
     date: '9 月 5 日（六）',
-    route: '雙溪毛糯 → 國家館舍 → 廣東義山 → KUL',
+    route: '雙溪毛糯 → 國家館舍 → 廣東義山 → 吉隆坡',
     title: '用博物館和墓園替整條路線收束',
     focus: '希望之谷、國家博物館、伊斯蘭藝術館、國家清真寺、廣東義山',
     blocks: [
       ['07:30–10:00', 'MRT 前往 Sungai Buloh Settlement，希望之谷的舊隔離城與墓園適合用來理解殖民醫療、隔離政策與病患自建社群。'],
       ['10:30–14:00', '集中參觀 Muzium Negara、伊斯蘭藝術館與國家清真寺。這三站分別補上史前與古代王國、伊斯蘭藝術與現代國家建築的框架。進入清真寺時遵守服裝與脫鞋規範。'],
       ['14:30–17:30', '走占美清真寺、生命之河、獨立廣場與蘇丹阿都沙末大廈，再到 Kwong Tong Cemetery，找葉亞來墓、南僑機工紀念碑與日據死難者總墓。'],
-      ['18:00–22:00', '回到 KL Sentral，乘機場巴士前往 KUL，搭晚班航班返程。保留至少 3 小時給跨城回機場與安檢。'],
+      ['18:00–20:30', '回到 KL Sentral，在市區吃晚餐並整理隔天返程所需的證件、行李與交通方案。'],
+    ],
+    stay: '吉隆坡青旅，預算約 35 MYR。',
+  },
+  {
+    day: 9,
+    date: '9 月 6 日（日）',
+    route: '吉隆坡市區 → KUL',
+    title: '把返程留出真正的餘量',
+    focus: '早餐、退房、機場轉移、15:00 航班',
+    blocks: [
+      ['08:00–09:30', '在住宿附近吃早餐，整理最後的行李與文件。'],
+      ['09:30–10:30', '退房；確認護照、登機資料、充電設備與可托運行李。'],
+      ['10:30–12:00', '從市區前往 KUL，按交通狀況預留轉移時間；國際航班不要把最後一段跨城交通排到極限。'],
+      ['12:00–15:00', '在 KUL 完成值機、托運、安檢與登機，15:00 返程。'],
     ],
     stay: '返程日。',
   },
@@ -186,7 +200,7 @@ function currency(value) {
 function BudgetEstimator() {
   const [values, setValues] = useState(budgetInitial);
   const total = useMemo(() => Object.values(values).reduce((sum, value) => sum + Number(value || 0), 0), [values]);
-  const perDay = total / 8;
+  const perDay = total / 9;
 
   function updateValue(key, event) {
     setValues((current) => ({...current, [key]: event.target.value}));
@@ -194,8 +208,8 @@ function BudgetEstimator() {
 
   function applyPreset(type) {
     setValues(type === 'lean'
-      ? {flight: 1200, transit: 320, stay: 330, tickets: 250, food: 336, local: 144}
-      : {flight: 1200, transit: 430, stay: 720, tickets: 360, food: 560, local: 260});
+      ? {flight: 1200, transit: 320, stay: 385, tickets: 250, food: 378, local: 162}
+      : {flight: 1200, transit: 430, stay: 840, tickets: 360, food: 630, local: 280});
   }
 
   return (
@@ -229,7 +243,7 @@ function BudgetEstimator() {
           ))}
         </div>
         <div className={styles.budgetResult} aria-live="polite">
-          <span>8 天估算總額</span>
+          <span>9 日估算總額</span>
           <strong>{currency(total)}</strong>
           <div className={styles.budgetResultMeta}>
             <span>平均每天 {currency(perDay)}</span>
@@ -273,7 +287,7 @@ export default function MalaysiaPeninsulaPage() {
 
   return (
     <Layout
-      title="馬來西亞西馬半島 8 日歷史考古與地標行程"
+      title="馬來西亞西馬半島 9 日歷史考古與地標行程"
       description="一份把西馬半島歷史考古、國家級地標、交通、預算與現場風險整理在一起的完整旅行規劃。"
       image="img/w0x7ce-social-card.png">
       <main className={styles.page}>
@@ -281,14 +295,14 @@ export default function MalaysiaPeninsulaPage() {
           <div className="container">
             <div className={styles.breadcrumb}><Link to="/explore/travel">行旅誌</Link><span>/</span><span>01</span></div>
             <div className={styles.kicker}>MALAYSIA / PENINSULAR FIELD PLAN</div>
-            <Heading as="h1">馬來西亞西馬半島<br />8 日歷史考古與地標行程。</Heading>
+            <Heading as="h1">馬來西亞西馬半島<br />9 日歷史考古與地標行程。</Heading>
             <p className={styles.lead}>
               從馬六甲的殖民要塞與華人古墓，到檳城的國慶、二戰地下要塞與宗族街區，
               再沿北馬鐵路走進布央谷、太平、怡保，最後回到吉隆坡的博物館、清真寺與現代城市地標。
             </p>
             <div className={styles.metaRow}>
-              <span>2026.08.29 — 2026.09.05</span>
-              <span>8 天 / 7 晚</span>
+              <span>2026.08.29 — 2026.09.06</span>
+              <span>9 日 / 8 晚</span>
               <span>歷史考古</span>
               <span>最低成本版</span>
             </div>
@@ -322,7 +336,7 @@ export default function MalaysiaPeninsulaPage() {
           <div className={styles.sectionHeading}>
             <span className={styles.kicker}>02 / BUDGET</span>
             <Heading as="h2" id="budget-title">最低成本估算</Heading>
-            <p>按往返機票約 ¥1,200 計算，8 天最低成本約為 ¥2,580；其他項目可直接替換成實際價格。</p>
+            <p>按往返機票約 ¥1,200 計算，9 日最低成本約為 ¥2,695；其他項目可直接替換成實際價格。</p>
           </div>
           <BudgetEstimator />
           <div className={styles.tableWrap}>
@@ -331,10 +345,10 @@ export default function MalaysiaPeninsulaPage() {
               <tbody>
                 <tr><td>國際機票</td><td>約 ¥1,200</td><td>本方案按目前往返票價估算，隨航班、日期與行李規則浮動。</td></tr>
                 <tr><td>城際大交通</td><td>約 ¥320</td><td>機場巴士、夜巴、KTM / ETS、纜車與少量 Grab。</td></tr>
-                <tr><td>住宿</td><td>約 ¥330</td><td>夜巴省 1 晚，其餘 6 晚以青旅床位估算。</td></tr>
+                <tr><td>住宿</td><td>約 ¥385</td><td>夜巴省 1 晚，其餘 7 晚以青旅床位估算。</td></tr>
                 <tr><td>門票與纜車</td><td>約 ¥250</td><td>升旗山、僑生博物館、戰爭博物館、凱利古堡與兩座國家館舍。</td></tr>
-                <tr><td>餐飲</td><td>約 ¥336</td><td>茶餐室、嘛嘛檔、雞飯粒、肉骨茶與扁擔飯，按日均約 26 MYR。</td></tr>
-                <tr><td>市內交通與通信</td><td>約 ¥144</td><td>本地 eSIM、RapidKL、短途公交與拼車。</td></tr>
+                <tr><td>餐飲</td><td>約 ¥378</td><td>茶餐室、嘛嘛檔、雞飯粒、肉骨茶與扁擔飯，按 9 日估算。</td></tr>
+                <tr><td>市內交通與通信</td><td>約 ¥162</td><td>本地 eSIM、RapidKL、短途公交與拼車，按 9 日估算。</td></tr>
               </tbody>
             </table>
           </div>
@@ -344,7 +358,7 @@ export default function MalaysiaPeninsulaPage() {
           <div className={styles.sectionHeading}>
             <span className={styles.kicker}>03 / DAILY EXECUTION</span>
             <Heading as="h2" id="itinerary-title">每天怎麼走，現場看什麼。</Heading>
-            <p>上面的快捷選擇會把焦點移到某一天；下面保留完整的 8 天明細，沒有 JavaScript 時也能直接閱讀。</p>
+            <p>上面的快捷選擇會把焦點移到某一天；下面保留完整的 9 日明細，沒有 JavaScript 時也能直接閱讀。</p>
           </div>
           <div className={styles.daySelector} role="tablist" aria-label="選擇行程日">
             {days.map((day) => (
