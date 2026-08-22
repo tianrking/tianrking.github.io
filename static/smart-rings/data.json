@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-21",
+  "checked_on": "2026-08-22",
   "scope_note": "第一版全球市场盘点：按可独立购买的产品代际/型号纳入；颜色、尺寸和纯外观材质不单独计数。疑似同一OEM硬件的品牌别名放入候选与别名表。价格保留产品页面所在市场币种，未做汇率换算。",
   "products": [
     {
@@ -294,25 +294,25 @@
       "model": "RingConn Gen 3",
       "country_region": "中国/全球",
       "category": "健康/睡眠",
-      "status": "官方对比页显示/上市细节待补",
-      "evidence": "C",
-      "launch_date": "2026-约",
-      "launch_date_type": "官方对比页当前型号",
-      "price": "US$349起（官方对比页）",
-      "official_url": "https://ringconn.com/pages/product-compare",
+      "status": "在售/官网缺货",
+      "evidence": "A",
+      "launch_date": "2026-05-29",
+      "launch_date_type": "官方预售页首发发货日期",
+      "price": "US$349；官方预售价曾US$314（2026-05-05至05-28）",
+      "official_url": "https://ringconn.com/products/ringconn-gen-3",
       "spec_url": "https://ringconn.com/pages/product-compare",
-      "sensors": "PPG；体温；三轴加速度（代际信息待独立规格页确认）",
+      "sensors": "光学传感器（心率/血氧）；体温传感器；三轴加速度计；振动马达",
       "chip_or_soc": "未公开",
-      "size_range": "未完整公开",
+      "size_range": "6–15",
       "dimensions": "厚约2.3mm",
       "weight_g": "约2.5–3.5g",
-      "battery": "最长约14天",
-      "charging": "以官方充电配件为准",
-      "water_resistance": "100m（对比页）",
+      "battery": "振动开启约10–12天；关闭约11–14天；离线存储约10天",
+      "charging": "通用无线充电盒；具体充电规格未公开",
+      "water_resistance": "IP68/ATM10；100m",
       "subscription": "无订阅",
-      "features": "健康/睡眠/活动；具体增量待官方规格页",
-      "availability_note": "目前以官方产品比较页作为证据，上市时间与独立购买页待补证",
-      "source_note": "官方产品比较页；暂不把页面营销信息视为完整上市证明"
+      "features": "血管健康趋势、睡眠与睡眠呼吸暂停模式洞察、女性全周期预测、振动提醒、数据稳定性改进",
+      "availability_note": "官方产品页当前显示缺货，但型号仍在官方商城；预售页显示2026-05-29起发货；库存需持续复核",
+      "source_note": "RingConn官方产品页、预售页、产品对比页及官方发布稿；本轮补齐首发发货、尺码、续航、充电盒和库存口径"
     },
     {
       "id": "SR-013",
@@ -2066,21 +2066,21 @@
       "evidence": "A",
       "launch_date": "2026-05-28",
       "launch_date_type": "官方发布/商城",
-      "price": "€429起；高端颜色约€529（地区页面）",
+      "price": "US$399（银/黑）；US$499（金/隐形/刷银/深玫瑰；地区价格不同）",
       "official_url": "https://ouraring.com/store/rings/oura-ring-5",
       "spec_url": "https://support.ouraring.com/hc/en-us/articles/50997181300243-Discover-Oura-Ring-5",
-      "sensors": "红/红外LED血氧；绿/红外LED心率/HRV/呼吸；数字温度；加速度计",
+      "sensors": "两组三色LED发射器/光电探测器；数字温度传感器；加速度计",
       "chip_or_soc": "未公开",
       "size_range": "6–13",
-      "dimensions": "宽6.09mm；厚2.28mm",
-      "weight_g": "2g起",
-      "battery": "约6–9天",
+      "dimensions": "宽6.09mm；厚2.28mm；传感器凸台约0.7mm",
+      "weight_g": "约2g起",
+      "battery": "通常约6–9天；最多约3天离线存储",
       "charging": "专用充电座；约80分钟",
       "water_resistance": "100m/328ft；IP68；不适合潜水",
       "subscription": "完整功能需要Oura Membership",
-      "features": "睡眠、活动、恢复、压力、心脏健康、女性健康、血氧、体温",
-      "availability_note": "2026年官方最新代际；价格随地区和表面材质变化",
-      "source_note": "Oura官方商城、发布博文和支持页"
+      "features": "睡眠、活动、恢复、压力、心脏健康、女性健康、血氧和体温趋势",
+      "availability_note": "2026年官方最新代际；六种表面；价格随地区和表面材质变化",
+      "source_note": "Oura官方商城与官方支持规格页；本轮复核价格、尺寸、传感器、续航、充电和防水"
     },
     {
       "id": "SR-081",
@@ -3459,6 +3459,84 @@
       "features": "一键录音、语音转写/AI记忆、开放源代码与本地离线数据路线；iOS/Android",
       "availability_note": "官方称新订单约1–2个月发货，首批从2026年3月开始；它是输入/记忆戒指，不应按健康环规格比较。",
       "source_note": "Pebble官方Index 01页面；电池、无需充电、尺寸和发货口径来自官方预售页，芯片料号未公开。"
+    },
+    {
+      "id": "SR-134",
+      "brand": "Sandbar",
+      "model": "Stream Ring",
+      "country_region": "美国/当前美国发货",
+      "category": "语音输入/AI记忆/手势控制",
+      "status": "预售/分批发货",
+      "evidence": "A/B",
+      "launch_date": "未公开",
+      "launch_date_type": "官网预售页；正式发布日期未公开",
+      "price": "US$249预售价（标价US$349）",
+      "official_url": "https://shop.sandbar.com/products/stream-ring-sizing-kit",
+      "spec_url": "https://www.sandbar.com/",
+      "sensors": "电容触控；IMU；LRA触觉执行器；麦克风（按压激活；非健康生理传感器）",
+      "chip_or_soc": "未公开",
+      "size_range": "5–13",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "全天候可充电；续航天数未公开",
+      "charging": "USB-C充电器",
+      "water_resistance": "可应对雨水和洗手；IP等级未公开",
+      "subscription": "基础笔记/每周听写无订阅；预购含3个月Data Plan，之后高级语音聊天/不限消息/记忆约US$10/月",
+      "features": "按压/触控唤醒、Push-to-Talk、语音笔记/聊天/听写、音乐控制、触觉反馈",
+      "availability_note": "Batch 1–3已售罄；当前Batch 4页面预计2026年秋季发货；当前主要面向美国发货；实际交付待跟踪",
+      "source_note": "Sandbar官方商店Stream Ring产品/尺码页和官网；未将官网未披露的芯片、尺寸、重量和IP等级补成推测值"
+    },
+    {
+      "id": "SR-135",
+      "brand": "Vocci",
+      "model": "Vocci Ring",
+      "country_region": "美国/全球",
+      "category": "语音记录/AI助手/生产力",
+      "status": "在售/限量库存",
+      "evidence": "A/B",
+      "launch_date": "2026-08-04",
+      "launch_date_type": "官方公开销售公告",
+      "price": "US$249（Lumen/Midnight/Dawn）；US$299（Lux Signature）；结账限时减US$20",
+      "official_url": "https://vocci.ai/products/vocci-ring",
+      "spec_url": "https://en.prnasia.com/releases/global/vocci-ring-now-available-for-public-purchase-bringing-real-world-context-to-users-existing-ai-assistants-542900.shtml",
+      "sensors": "1个MEMS麦克风；触觉马达；指示灯；控制按键（非健康生理传感器）",
+      "chip_or_soc": "SoC未公开；Bluetooth 5.4",
+      "size_range": "美国6–15",
+      "dimensions": "宽约6.8mm；厚约2.85mm；充电盒约62×58×24.5mm",
+      "weight_g": "约3–5g",
+      "battery": "连续录音最长约8小时；常规使用约2天；充电盒约可提供3次完整充电",
+      "charging": "磁吸充电；约30分钟充至80%",
+      "water_resistance": "IP67",
+      "subscription": "基础录音/本地存储可用；随订单含3个月Vocci AI Pro，之后Pro服务条款以官方为准",
+      "features": "按键录音、转写、摘要、整理；与ChatGPT/Claude及生产力应用的MCP集成；触觉反馈",
+      "availability_note": "官方产品页显示限量库存、通常14天内发货；官方公告称2026-08-04开放公众购买并开始首批发货",
+      "source_note": "Vocci官方产品页与官方公开销售公告；没有把AI会员服务描述当作戒指硬件传感器"
+    },
+    {
+      "id": "SR-136",
+      "brand": "ZzzRing",
+      "model": "Smart Ring（6.8mm/8.0mm系列）",
+      "country_region": "中国供应链/美国网站",
+      "category": "健康/睡眠/运动",
+      "status": "在售/官方商城",
+      "evidence": "C",
+      "launch_date": "未公开",
+      "launch_date_type": "官方商城当前商品；正式发布日期未公开",
+      "price": "US$59（6.8mm银/黑/金变体）；US$99（8.0mm变体）",
+      "official_url": "https://zzzhealth.com/",
+      "spec_url": "https://zzzhealth.com/",
+      "sensors": "心率、HRV、SpO2，以及活动/运动/睡眠监测；具体传感器型号未公开",
+      "chip_or_soc": "Apollo chip（官网宣传；具体型号未公开）",
+      "size_range": "戒指尺码未公开；宽度变体6.8mm/8.0mm",
+      "dimensions": "宽6.8mm或8.0mm（官网商品变体）；其他尺寸未公开",
+      "weight_g": "未公开",
+      "battery": "单次充电约5–7天",
+      "charging": "未公开",
+      "water_resistance": "IP68",
+      "subscription": "官网未见订阅要求；具体服务条款未公开",
+      "features": "心率/HRV/血氧、运动与活动、睡眠、AI生成报告",
+      "availability_note": "官网商城列出6.8mm和8.0mm变体；同站Solar Energy Ring另列US$199但当前缺货，单独保留为候选",
+      "source_note": "ZzzRing官方商城首页；网站公开规格有限，品牌/供应链与精确硬件信息需继续核验"
     }
   ],
   "candidates": [
@@ -3626,6 +3704,72 @@
       "reason": "SwissTech CES资料称其为嵌入式6DoF手部追踪和指向/手势输入方案；本轮未找到独立零售、价格、续航和消费级交付证据。",
       "url": "https://www.swiss.tech/events/ces-2026",
       "alias_or_relation": "Sensoryx与Murata联合展示；按开发者/参考设计保留，不按在售消费产品计数"
+    },
+    {
+      "name": "ZzzRing Solar Energy Ring",
+      "brand": "ZzzRing",
+      "region": "中国供应链/美国网站",
+      "category": "健康/睡眠/太阳能补能",
+      "status": "缺货/待补货",
+      "evidence": "C",
+      "reason": "官方商城列出US$199 Solar Energy Ring并显示Out of stock/Notify Me When Available；未公开独立完整规格、实际交付时间和稳定库存。",
+      "url": "https://zzzhealth.com/",
+      "alias_or_relation": "与ZzzRing 6.8mm/8.0mm系列同站；单独Solar SKU，不并入当前在售主表"
+    },
+    {
+      "name": "MENTAGRAPH Mentoring 2",
+      "brand": "MENTAGRAPH",
+      "region": "日本/全球展示",
+      "category": "心理状态/压力/疲劳",
+      "status": "CES展示/零售待核",
+      "evidence": "B",
+      "reason": "MENTAGRAPH官方CES 2026公告公开EDA、PPG、体温、加速度/角速度四类传感器和Mental Battery算法，但未公开消费价格、零售交付、续航、尺寸、重量、防水或芯片。",
+      "url": "https://www.mentagraph.com/en/news/news-00019",
+      "alias_or_relation": "JT全资子公司MENTAGRAPH；官方日文稿另称七种尺码；在有独立商品/交付证据前保留候选"
+    },
+    {
+      "name": "Omni Health Ring Pro",
+      "brand": "Omni Health",
+      "region": "美国/全球",
+      "category": "健康/睡眠",
+      "status": "官方发布/与Gen1零售关系待核",
+      "evidence": "B",
+      "reason": "Omni官方CES 2026博客明确使用Omni Health Ring Pro名称并给出约7–9天续航，但当前商店/产品页没有形成独立完整SKU、价格和尺码证据。",
+      "url": "https://omnihealthring.com/blogs/community/omni-health-ai-wearable-ecosystem-ces-2026",
+      "alias_or_relation": "可能是Omni Health Ring Gen 1的Pro命名或后续版本；未确认前不与SR-124合并或重复计数"
+    },
+    {
+      "name": "Spark Ring",
+      "brand": "Spark Ring",
+      "region": "全球众筹/预购",
+      "category": "语音记录/AI笔记/提醒",
+      "status": "预发布/计划2026年11月全球发货",
+      "evidence": "B",
+      "reason": "官方页面开放US$5 early-bird reservation并称计划2026年11月全球发货；公开3–5m拾音、低于3g、最长7天、20分钟充满和IP68，但尚未形成实际在售和交付证明。",
+      "url": "https://sparkring.ai/",
+      "alias_or_relation": "输入型AI智能戒指；核心功能无需订阅，Pro计划为可选增值服务；暂不计入在售主表"
+    },
+    {
+      "name": "VOLERA Smart Ring / Core",
+      "brand": "VOLERA",
+      "region": "全球众筹计划",
+      "category": "健康/睡眠/模块化珠宝",
+      "status": "预告/计划2026年8月Kickstarter",
+      "evidence": "B",
+      "reason": "官方页面标注Launching August 2026/Kickstarter，公开8×8×4mm核心、BLE 5.2、PPG/SpO2/温度/HRV/IMU、14天、电池无线充电和IP67；尚无实际发货、完整尺码或芯片证据。",
+      "url": "https://volerawear.com/",
+      "alias_or_relation": "同一智能核心可放入戒指、耳环和手链外壳；仅将Smart Ring配置作为候选，其他珠宝形态不拆成智能戒指"
+    },
+    {
+      "name": "XATRIX Stellar Ring",
+      "brand": "XATRIX",
+      "region": "全球Indiegogo/预发布",
+      "category": "健康/睡眠/压力/配对振动",
+      "status": "众筹/预发布",
+      "evidence": "B",
+      "reason": "XATRIX官方页称Stellar Ring在Indiegogo启动并提供早期访问，公开钛合金、8颗培育钻、6+健康传感器、10–12天、5ATM、约3g和振动提醒；官方完整价格、尺码、芯片、实际发货尚待核。",
+      "url": "https://www.xatrixai.com/",
+      "alias_or_relation": "Aura Loop与Crown Gem为Coming Soon珠宝形态；未按独立智能戒指主型号计数"
     }
   ],
   "sources": [
@@ -3651,10 +3795,10 @@
       "quality": "A"
     },
     {
-      "source_group": "全球主流官方产品页",
+      "source_group": "RingConn官方对比",
       "url": "https://ringconn.com/pages/product-compare",
-      "scope": "RingConn Gen2/Gen2 Air/Gen3代际对比",
-      "checked_on": "2026-08-20",
+      "scope": "RingConn Gen 3对比规格、续航、防水和无订阅",
+      "checked_on": "2026-08-22",
       "quality": "A"
     },
     {
@@ -3749,10 +3893,10 @@
       "quality": "D"
     },
     {
-      "source_group": "补充代际与正式上市核验",
+      "source_group": "Oura官方商城",
       "url": "https://ouraring.com/store/rings/oura-ring-5",
-      "scope": "Oura Ring 5当前在售、价格、传感器、尺寸、电池和防水",
-      "checked_on": "2026-08-20",
+      "scope": "Oura Ring 5当前价格、表面、尺寸和在售状态",
+      "checked_on": "2026-08-22",
       "quality": "A"
     },
     {
@@ -4006,9 +4150,120 @@
       "scope": "Sensoryx/Murata Magic Ring 6DoF XR展示背景",
       "quality": "C",
       "checked_on": "2026-08-21"
+    },
+    {
+      "source_group": "Oura官方支持",
+      "url": "https://support.ouraring.com/hc/en-us/articles/50997181300243-Discover-Oura-Ring-5",
+      "scope": "Oura Ring 5传感器、尺寸、续航、充电和防水",
+      "checked_on": "2026-08-22",
+      "quality": "A"
+    },
+    {
+      "source_group": "RingConn官方商城",
+      "url": "https://ringconn.com/products/ringconn-gen-3",
+      "scope": "RingConn Gen 3当前价格、尺码、规格和库存",
+      "checked_on": "2026-08-22",
+      "quality": "A"
+    },
+    {
+      "source_group": "RingConn官方预售页",
+      "url": "https://ringconn.com/products/ringconn-gen-3?variant=49061926666548",
+      "scope": "RingConn Gen 3官方预售价格和首发发货安排",
+      "checked_on": "2026-08-22",
+      "quality": "A"
+    },
+    {
+      "source_group": "RingConn官方发布稿",
+      "url": "https://www.prnewswire.com/news-releases/ringconn-gen-3-smart-ring-opens-for-pre-order-bringing-vascular-insights-to-effortless-everyday-wear-302767496.html",
+      "scope": "RingConn Gen 3预售与功能公告",
+      "checked_on": "2026-08-22",
+      "quality": "B"
+    },
+    {
+      "source_group": "Sandbar官方商店",
+      "url": "https://shop.sandbar.com/products/stream-ring-sizing-kit",
+      "scope": "Stream Ring预售价、批次、尺码、材质、功能和订阅",
+      "checked_on": "2026-08-22",
+      "quality": "A/B"
+    },
+    {
+      "source_group": "Sandbar官方官网",
+      "url": "https://www.sandbar.com/",
+      "scope": "Stream Ring产品定位、AI语音和发货范围",
+      "checked_on": "2026-08-22",
+      "quality": "B"
+    },
+    {
+      "source_group": "Vocci官方产品页",
+      "url": "https://vocci.ai/products/vocci-ring",
+      "scope": "Vocci Ring价格、尺寸、麦克风、续航、充电、IP67和会员",
+      "checked_on": "2026-08-22",
+      "quality": "A"
+    },
+    {
+      "source_group": "Vocci官方公开销售公告",
+      "url": "https://en.prnasia.com/releases/global/vocci-ring-now-available-for-public-purchase-bringing-real-world-context-to-users-existing-ai-assistants-542900.shtml",
+      "scope": "Vocci Ring公众购买日期、首批发货和功能",
+      "checked_on": "2026-08-22",
+      "quality": "B"
+    },
+    {
+      "source_group": "ZzzRing官方商城",
+      "url": "https://zzzhealth.com/",
+      "scope": "ZzzRing变体价格、功能、Apollo chip宣传、续航、IP68和Solar缺货",
+      "checked_on": "2026-08-22",
+      "quality": "C"
+    },
+    {
+      "source_group": "MENTAGRAPH官方英文公告",
+      "url": "https://www.mentagraph.com/en/news/news-00019",
+      "scope": "Mentoring 2 CES展示、四类传感器和Mental Battery",
+      "checked_on": "2026-08-22",
+      "quality": "B"
+    },
+    {
+      "source_group": "MENTAGRAPH官方日文公告",
+      "url": "https://www.mentagraph.com/news/news-00019",
+      "scope": "Mentoring 2日文公告和七种尺码信息",
+      "checked_on": "2026-08-22",
+      "quality": "B"
+    },
+    {
+      "source_group": "Omni官方CES博客",
+      "url": "https://omnihealthring.com/blogs/community/omni-health-ai-wearable-ecosystem-ces-2026",
+      "scope": "Omni Health Ring Pro官方命名与续航线索",
+      "checked_on": "2026-08-22",
+      "quality": "B"
+    },
+    {
+      "source_group": "Spark Ring官方页面",
+      "url": "https://sparkring.ai/",
+      "scope": "Spark Ring预购、功能、续航、尺寸材料、防水和计划发货",
+      "checked_on": "2026-08-22",
+      "quality": "B"
+    },
+    {
+      "source_group": "VOLERA官方页面",
+      "url": "https://volerawear.com/",
+      "scope": "VOLERA模块化Smart Ring核心规格、价格档位和计划Kickstarter",
+      "checked_on": "2026-08-22",
+      "quality": "B"
+    },
+    {
+      "source_group": "XATRIX官方页面",
+      "url": "https://www.xatrixai.com/",
+      "scope": "Stellar Ring Indiegogo、传感器数量、续航、防水、重量和功能",
+      "checked_on": "2026-08-22",
+      "quality": "B"
     }
   ],
   "update_log": [
+    {
+      "date": "2026-08-22",
+      "change": "本轮新增3条主表记录：Sandbar Stream Ring、Vocci Ring、ZzzRing Smart Ring；新增6条候选/待交付记录：ZzzRing Solar、MENTAGRAPH Mentoring 2、Omni Health Ring Pro、Spark Ring、VOLERA、XATRIX Stellar Ring；更新Oura Ring 5与RingConn Gen 3的官方价格、规格、库存/交付口径。主表增至136条，候选增至21条。",
+      "verification": "优先使用官方商品页、官方支持页、官方发布公告或官方商城；区分在售、官网缺货、预售分批发货、众筹预发布和CES/官方展示。来源未披露的芯片、精确传感器型号、尺寸、重量、充电规格、IP等级和正式日期写“未公开”；ZzzRing因网站透明度较低保留C级证据；健康、血管、睡眠呼吸暂停和压力等功能仅记录厂商/官网表述，不作医疗认证结论。",
+      "next": "继续追踪Sandbar Batch 4、Vocci库存、RingConn Gen 3补货与Spark/VOLERA/XATRIX实际众筹/发货；核对ZzzRing、Veyro及低透明度品牌的OEM同源、FCC/CE/认证、App与独立规格书；补充新国家/地区品牌并保留停售与历史来源。"
+    },
     {
       "date": "2026-08-21",
       "change": "本轮新增12条主表记录：Casio CRW-H001、AIVELA Ring Pro、Omni Health Ring、Herz P1、Prolo Ring、Reebok Smart Ring、Ringora One、Aurora Motion、Even R1、SofiRing S10、PulseRive Halo、Pebble Index 01；新增6条候选/待交付记录：MOVA H1、Bond Ring、Aurena、KiWear、OASIS、Sensoryx/Murata Magic Ring。补充官方商品/规格/发布来源，主表增至133条，候选增至15条。",
