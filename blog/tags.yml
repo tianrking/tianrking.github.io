@@ -109,3 +109,23 @@ BLE:
   label: 嵌入式系統
   permalink: /embedded-systems
   description: 嵌入式系統設計、開發與驗證
+
+Cat.1:
+  label: Cat.1
+  permalink: /cat-1
+  description: LTE Cat.1 連線與裝置資料上傳
+
+TLS:
+  label: TLS
+  permalink: /tls
+  description: 傳輸層安全與裝置端加密連線
+
+SCS527E:
+  label: SCS527E
+  permalink: /scs527e
+  description: SCS527E Cat.1 模組與 AT 介面
+
+音訊:
+  label: 音訊
+  permalink: /audio
+  description: 錄音、編碼、儲存與音訊傳輸

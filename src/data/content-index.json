@@ -1,7 +1,39 @@
 {
   "schemaVersion": 1,
-  "total": 292,
+  "total": 293,
   "documents": [
+    {
+      "id": "blog:2026-08-23-cat1-audio-upload-http-tls-socket-performance.md",
+      "kind": "blog",
+      "kindLabel": "開發誌",
+      "section": "開發誌",
+      "language": "zh-Hant",
+      "title": "為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速",
+      "description": "從 SCS527E 的 AT 介面、HTTP over TLS 分片、SHA-256 回執到 UART 提速，拆解一張錄音卡如何在 Cat.1 網路上可靠上傳音訊。",
+      "route": "/blog/cat1-audio-upload-http-tls-socket-performance",
+      "date": "2026-08-23",
+      "year": "2026",
+      "tags": [
+        "嵌入式系統",
+        "技術深度",
+        "Cat.1",
+        "TLS",
+        "SCS527E",
+        "音訊"
+      ],
+      "keywords": [
+        "LTE Cat.1",
+        "SCS527E",
+        "HTTP over TLS",
+        "HTTPS",
+        "UART",
+        "音訊上傳",
+        "分片",
+        "SHA-256",
+        "RTS CTS"
+      ],
+      "image": null
+    },
     {
       "id": "blog:2026-08-19-smart-wearable-sensor-research.md",
       "kind": "blog",
