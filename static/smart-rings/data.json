@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-23",
+  "checked_on": "2026-08-24",
   "scope_note": "第一版全球市场盘点：按可独立购买的产品代际/型号纳入；颜色、尺寸和纯外观材质不单独计数。疑似同一OEM硬件的品牌别名放入候选与别名表。价格保留产品页面所在市场币种，未做汇率换算。",
   "products": [
     {
@@ -311,8 +311,8 @@
       "water_resistance": "IP68/ATM10；100m",
       "subscription": "无订阅",
       "features": "血管健康趋势、睡眠与睡眠呼吸暂停模式洞察、女性全周期预测、振动提醒、数据稳定性改进",
-      "availability_note": "官方产品页当前显示缺货，但型号仍在官方商城；预售页显示2026-05-29起发货；库存需持续复核",
-      "source_note": "RingConn官方产品页、预售页、产品对比页及官方发布稿；本轮补齐首发发货、尺码、续航、充电盒和库存口径"
+      "availability_note": "RingConn官方产品页本轮仍显示US$349且Out of stock；型号仍在官方商城，尺码6–15、Gen 3规格和官方预售发货口径保持不变；库存需继续复核",
+      "source_note": "RingConn官方产品页、预售页、产品对比页及官方发布稿；2026-08-24复核当前官方商城缺货状态"
     },
     {
       "id": "SR-013",
@@ -604,27 +604,27 @@
       "id": "SR-024",
       "brand": "Veyro",
       "model": "Veyro Smart Ring",
-      "country_region": "欧洲",
+      "country_region": "欧洲/全球",
       "category": "健康/睡眠",
-      "status": "在售/新品",
+      "status": "在售/官方商城；48小时发货",
       "evidence": "C",
       "launch_date": "2026-约",
       "launch_date_type": "官网Now available",
       "price": "€349促销；原价约€449",
-      "official_url": "https://www.veyro-technologies.com/",
+      "official_url": "https://www.veyro-technologies.com/product/veyro-ring-launch-edition",
       "spec_url": "https://www.veyro-technologies.com/",
-      "sensors": "官网称9项生物信号；未公开传感器类型清单",
-      "chip_or_soc": "未公开",
+      "sensors": "8通道PPG（绿光、红光、红外）；NTC温度模块；精确器件型号未公开",
+      "chip_or_soc": "未公开；官方仅称包裹在钛金属中的芯片",
       "size_range": "未完整公开",
       "dimensions": "未公开",
-      "weight_g": "未公开",
+      "weight_g": "约2.4g起；官网另称钛金属平台约3.2g，口径依版本/尺寸而异",
       "battery": "约7天",
-      "charging": "官方页面未详述",
-      "water_resistance": "100m",
-      "subscription": "无订阅",
-      "features": "健康、睡眠、活动、生物信号趋势",
-      "availability_note": "官网有售标识，但规格透明度较低，列为C级证据",
-      "source_note": "Veyro官方官网"
+      "charging": "充电盒；具体充电时间未公开",
+      "water_resistance": "约100m",
+      "subscription": "无订阅；终身App访问",
+      "features": "睡眠阶段、HRV、静息心率、呼吸率、体温趋势、恢复评分、压力、血氧、活动、女性周期和AI晨间建议",
+      "availability_note": "官方首页明确Now available、In stock and shipping in 48 hours、全球免邮、30天试用和2年保修；当前促销价€349，原价€449",
+      "source_note": "VEYRO官方首页、Launch Edition商品页和FAQ；官网公开部分传感器与现货口径，但芯片、完整尺寸和详细充电规格仍未公开"
     },
     {
       "id": "SR-025",
@@ -3028,7 +3028,7 @@
       "evidence": "A",
       "launch_date": "2026-07-09",
       "launch_date_type": "官方上市日",
-      "price": "约¥41,800起",
+      "price": "约¥41,800起（官方上市新闻稿建议零售价标为开放价；当前渠道价格以各销售页为准）",
       "official_url": "https://www.sharp.co.jp/wearable/ring/mhr01/",
       "spec_url": "https://corporate.jp.sharp/news/260616-b.html",
       "sensors": "加速度；光学心率；红/红外血氧；皮肤温度",
@@ -3041,8 +3041,8 @@
       "water_resistance": "IPX8/约100m + IP6X",
       "subscription": "核心功能免费；可选约¥600/月的建议计划",
       "features": "心率、血氧、皮温、活动量、步数、睡眠、营养和生活建议",
-      "availability_note": "Sharp官方明确采用SOXAI传感技术和SOXAI OS；月费只针对增强建议服务",
-      "source_note": "Sharp官方产品页与上市新闻稿"
+      "availability_note": "Sharp官方新闻稿确认2026-07-09上市；本轮官方产品站抓取返回502，当前库存/可下单状态未由产品站独立确认；日本市场渠道需继续复核",
+      "source_note": "Sharp官方产品页与上市新闻稿；2026-08-24复核官方新闻稿的上市、四类传感器、Bluetooth 5.0、14天、IPX8/IP6X及月额600日元建议服务口径"
     },
     {
       "id": "SR-118",
@@ -3171,8 +3171,8 @@
       "water_resistance": "日常生活防水；IP/ATM未公开",
       "subscription": "AIZO RING App；未标订阅",
       "features": "显示时间；步数、卡路里、运动/训练记录；睡眠与恢复；心率、血氧、体温；训练分析、健康报告、周期管理；来电/消息/闹钟/健康提醒振动",
-      "availability_note": "官方中国页面注明目前仅在中国销售/服务；为表体与智能模块组合，需配合AIZO RING App。",
-      "source_note": "Casio中国官方产品页与新品公告；未把App名称推断为芯片型号，健康器件BOM未披露。"
+      "availability_note": "Casio中国官方2026-07新品页仍链接CRW-H001S/M/L-8购买入口，三种尺码均标¥1,990；当前记录为中国官方渠道在售，智能模块与表体组合及AIZO RING App边界保持不变",
+      "source_note": "Casio中国官方产品页与2026-07-03新品公告；本轮复核S/M/L官方售价、心率/血氧/体温/振动提醒等厂商表述，健康功能不作医疗结论"
     },
     {
       "id": "SR-123",
@@ -3807,6 +3807,114 @@
       "availability_note": "官方商品页可购买；尺码US 6–13；具体重量、尺寸、芯片和充电规格未公开",
       "source_note": "NovaRing官方商品页及官网首页；品牌对传感器、SoC、精确尺寸和充电硬件披露有限",
       "checked_on": "2026-08-23"
+    },
+    {
+      "id": "SR-147",
+      "brand": "CUDIS",
+      "model": "CUDIS 002 Classic Ring",
+      "country_region": "美国/全球",
+      "category": "健康/睡眠/恢复",
+      "status": "官方商城已列/当前售罄",
+      "evidence": "B",
+      "launch_date": "未公开",
+      "launch_date_type": "官方商品页当前型号；正式发布日期未公开",
+      "price": "US$349",
+      "official_url": "https://www.cudis.xyz/products/cudis-002-classic-ring",
+      "spec_url": "https://www.cudis.xyz/",
+      "sensors": "官方功能覆盖心率、血氧、HRV、压力、睡眠、活动和恢复；具体传感器型号未公开",
+      "chip_or_soc": "未公开",
+      "size_range": "US 6–14",
+      "dimensions": "未公开",
+      "weight_g": "约3g",
+      "battery": "未公开；官网平台页对CUDIS 002称约10天，但Classic单页未单独确认",
+      "charging": "未公开；官方页展示Charging Pod和Type-C线，但未给Classic专属时间",
+      "water_resistance": "5ATM（官网CUDIS 002平台口径；Classic单页未单独说明）",
+      "subscription": "无订阅费；含AI Coach、健康积分和数据所有权功能",
+      "features": "睡眠与恢复优先、压力、活动、50+种活动、AI Coach、CUDIS Age、Strain、社交挑战和健康积分",
+      "availability_note": "官方商品页显示US$349、尺码6–14和当前Sold Out；页面仍提供官方尺码/售后信息，颜色含金色、黑色、银色、玫瑰金",
+      "source_note": "CUDIS官方Classic商品页及官网；与Sporty分开保留，平台共享字段明确标注来源口径，不推断未披露硬件",
+      "checked_on": "2026-08-24"
+    },
+    {
+      "id": "SR-148",
+      "brand": "CUDIS",
+      "model": "CUDIS 002 Sporty Ring",
+      "country_region": "美国/全球",
+      "category": "健康/运动/睡眠/恢复",
+      "status": "官方商城已列/当前售罄",
+      "evidence": "B",
+      "launch_date": "2026-02-27",
+      "launch_date_type": "官方新闻稿发布日期；预售自2026-02-26开启",
+      "price": "US$399；官方商城当前显示该价",
+      "official_url": "https://www.cudis.xyz/products/cudis-002-sporty-ring",
+      "spec_url": "https://www.globenewswire.com/news-release/2026/02/27/3246300/0/en/CUDIS-Launches-Sporty-Series-Ring-with-AI-Coach-and-Integrated-Access-to-Healthcare-Providers.html",
+      "sensors": "官方功能覆盖心率、血氧、HRV、压力、睡眠、活动和恢复；具体传感器型号未公开",
+      "chip_or_soc": "Ultra-Low-Power Bluetooth Chip（官方商品页泛称；型号未公开）",
+      "size_range": "US 6–14",
+      "dimensions": "未公开；官方页提供尺码内径对照",
+      "weight_g": "约3g；钛金属主体及硅胶外壳组合",
+      "battery": "最长约10天",
+      "charging": "Charging Pod及USB-C线；官方对比表称约70分钟，具体条件未公开",
+      "water_resistance": "5ATM",
+      "subscription": "无订阅费；含AI Coach、健康积分和数据所有权功能",
+      "features": "训练、恢复、睡眠、压力、活动和心率/血氧等健康追踪；可更换硅胶外壳、30+种运动模式、AI Coach、健康积分",
+      "availability_note": "官方商品页显示US$399、尺码6–14、订单处理1–3个工作日但当前Sold Out；美国标注3–5日、国际约2–4周运输口径",
+      "source_note": "CUDIS官方Sporty商品页、官网及CUDIS提供的发布稿；早鸟众筹价与当前零售价分开记录，不推断传感器BOM",
+      "checked_on": "2026-08-24"
+    },
+    {
+      "id": "SR-149",
+      "brand": "Aurora Ring",
+      "model": "Aurora Eclipse - Glucose Smart Ring + ECG & BP",
+      "country_region": "全球在线",
+      "category": "健康/睡眠/血糖宣称/ECG与血压宣称",
+      "status": "官方商城已列/当前售罄",
+      "evidence": "C",
+      "launch_date": "未公开",
+      "launch_date_type": "官方商品页当前型号；正式发布日期未公开",
+      "price": "当前US$199；页面原价US$399.99",
+      "official_url": "https://aurora-ring.com/products/ecg-watch-blood-glucose-bp-heart-and-ai-health-inside",
+      "spec_url": "https://aurora-ring.com/products/ecg-watch-blood-glucose-bp-heart-and-ai-health-inside",
+      "sensors": "多组光学及温度传感器（具体型号未公开）；官方页面宣称血糖、血压、ECG、心率、血氧、温度和HRV相关功能",
+      "chip_or_soc": "Bluetooth Low Energy；具体芯片型号未公开",
+      "size_range": "US 7–13",
+      "dimensions": "宽约7.9mm；厚约2.55mm",
+      "weight_g": "约4–6g（依尺码）",
+      "battery": "最长约7天",
+      "charging": "充电盒；约20–80分钟",
+      "water_resistance": "约30m",
+      "subscription": "无月费（官方页面表述）",
+      "features": "官方宣称血糖趋势、血压趋势、ECG、心率、睡眠、恢复、压力、温度、女性健康、活动和卡路里追踪",
+      "availability_note": "官方商品页显示US$199但当前Sale Sold Out；页面提供全球免邮及美国3–5日配送口径；页面同时声明非医疗器械",
+      "source_note": "Aurora Ring官方商品页；血糖、血压和ECG能力仅记录品牌营销表述，未找到本轮监管许可或独立验证，证据等级保留C",
+      "checked_on": "2026-08-24"
+    },
+    {
+      "id": "SR-150",
+      "brand": "Aurora Ring",
+      "model": "Aurora Luman - Smart Ring For Women",
+      "country_region": "全球在线",
+      "category": "女性健康/睡眠/血压与ECG宣称",
+      "status": "官方商城已列/当前售罄",
+      "evidence": "C",
+      "launch_date": "未公开",
+      "launch_date_type": "官方商品页当前型号；正式发布日期未公开",
+      "price": "US$149.99；页面原价显示为US$0.00的促销口径，价格透明度有限",
+      "official_url": "https://aurora-ring.com/products/aurora-smart-ring-for-women",
+      "spec_url": "https://aurora-ring.com/products/aurora-smart-ring-for-women",
+      "sensors": "多组传感器（官方称覆盖心率、血氧、皮温、HRV和血压相关趋势；具体器件型号未公开）",
+      "chip_or_soc": "Bluetooth Low Energy；具体芯片型号未公开",
+      "size_range": "US 6–12；银色和金色",
+      "dimensions": "宽约7.9mm；厚约2.55mm",
+      "weight_g": "约4–6g（依尺码）",
+      "battery": "最长约7天",
+      "charging": "充电盒；约20–80分钟",
+      "water_resistance": "约30m；官方称适合日常泼溅",
+      "subscription": "无月费（官方页面表述）",
+      "features": "女性周期与排卵窗口趋势、睡眠、心率、血氧、压力、温度、活动、卡路里和官方宣称的血压/ECG相关健康信息",
+      "availability_note": "官方商品页显示US$149.99、尺码6–12但当前Sale Sold Out；页面提供全球免邮及美国3–5日配送口径；页面声明非医疗器械",
+      "source_note": "Aurora Ring官方女性款商品页；品牌宣称的血压和ECG等功能未做医疗或监管确认，证据等级保留C",
+      "checked_on": "2026-08-24"
     }
   ],
   "candidates": [
@@ -4095,6 +4203,17 @@
       "reason": "Dreame官方商城商品页显示“通用款-陶瓷黑”、页面标价¥2999且当前动态价格显示¥0，并标注2026-10-01抢先预售、10-20发货；本轮未能从动态页确认完整规格及与Glow Ring/CES型号的关系",
       "url": "https://www.dreame.tech/product/3158",
       "alias_or_relation": "疑似独立商城SKU；不能直接并入SR-116 Dreame Glow Ring，也不能直接等同于CES三款命名型号，待官方SKU/规格书确认"
+    },
+    {
+      "name": "Garmin CIRQA Smart Ring",
+      "brand": "Garmin",
+      "region": "印度尼西亚监管记录/全球未发布",
+      "category": "健康/运动/睡眠",
+      "status": "监管记录曾出现/官方未发布",
+      "evidence": "C/D",
+      "reason": "二手报道记录印尼DJID/e-Sertifikasi数据库曾于2026-08-12出现“CIRQA SMART RING”，证书号125338/DJID/2026、申请人为PT Garmin Indonesia Distribution、产地台湾、类别Fitness Product；次日记录消失，Garmin尚未发布零售公告或规格",
+      "url": "https://watchesreviewed.com/garmin-cirqa-smart-ring-leak/",
+      "alias_or_relation": "不要与现有Garmin CIRQA Smart Band合并；监管记录可能是预发布型号、撤回记录或翻译/型号误标，暂无价格、尺寸、传感器、芯片、续航和交付证据"
     }
   ],
   "sources": [
@@ -4699,9 +4818,92 @@
       "scope": "通用款陶瓷黑商品页、价格与预售/发货动态口径",
       "checked_on": "2026-08-23",
       "quality": "B/C"
+    },
+    {
+      "source_group": "Sharp日本官方上市新闻稿",
+      "url": "https://corporate.jp.sharp/news/260616-b.html",
+      "scope": "Sharp からだメイト Ring MH-R01上市日、传感器、Bluetooth、尺寸、重量、续航、防水和服务费",
+      "checked_on": "2026-08-24",
+      "quality": "A"
+    },
+    {
+      "source_group": "VEYRO官方首页",
+      "url": "https://www.veyro-technologies.com/",
+      "scope": "VEYRO当前现货、48小时发货、价格、传感器、重量、防水、续航和无订阅口径",
+      "checked_on": "2026-08-24",
+      "quality": "B/C"
+    },
+    {
+      "source_group": "VEYRO Launch Edition商品页",
+      "url": "https://www.veyro-technologies.com/product/veyro-ring-launch-edition",
+      "scope": "VEYRO产品入口与官方商品关系",
+      "checked_on": "2026-08-24",
+      "quality": "B/C"
+    },
+    {
+      "source_group": "VEYRO官方FAQ",
+      "url": "https://www.veyro-technologies.com/faq",
+      "scope": "VEYRO官方支持入口、价格和服务导航",
+      "checked_on": "2026-08-24",
+      "quality": "C"
+    },
+    {
+      "source_group": "CUDIS官方首页",
+      "url": "https://www.cudis.xyz/",
+      "scope": "CUDIS 002 Classic/Sporty产品线、价格、平台功能、5ATM、无订阅和运动能力",
+      "checked_on": "2026-08-24",
+      "quality": "B"
+    },
+    {
+      "source_group": "CUDIS 002 Classic官方商品页",
+      "url": "https://www.cudis.xyz/products/cudis-002-classic-ring",
+      "scope": "Classic价格、尺码、重量、材质、售罄状态和功能",
+      "checked_on": "2026-08-24",
+      "quality": "B"
+    },
+    {
+      "source_group": "CUDIS 002 Sporty官方商品页",
+      "url": "https://www.cudis.xyz/products/cudis-002-sporty-ring",
+      "scope": "Sporty价格、尺码、颜色、售罄状态、重量、续航、充电、5ATM和运输",
+      "checked_on": "2026-08-24",
+      "quality": "B"
+    },
+    {
+      "source_group": "CUDIS Sporty官方发布稿",
+      "url": "https://www.globenewswire.com/news-release/2026/02/27/3246300/0/en/CUDIS-Launches-Sporty-Series-Ring-with-AI-Coach-and-Integrated-Access-to-Healthcare-Providers.html",
+      "scope": "Sporty Series发布日期、预售日期、零售价和无订阅口径",
+      "checked_on": "2026-08-24",
+      "quality": "B"
+    },
+    {
+      "source_group": "Aurora Eclipse官方商品页",
+      "url": "https://aurora-ring.com/products/ecg-watch-blood-glucose-bp-heart-and-ai-health-inside",
+      "scope": "Aurora Eclipse价格、尺码、售罄、续航、充电、防水和血糖/血压/ECG品牌宣称",
+      "checked_on": "2026-08-24",
+      "quality": "C"
+    },
+    {
+      "source_group": "Aurora Luman官方商品页",
+      "url": "https://aurora-ring.com/products/aurora-smart-ring-for-women",
+      "scope": "Aurora Luman价格、女性健康功能、尺码、售罄、续航、充电、防水和传感器泛称",
+      "checked_on": "2026-08-24",
+      "quality": "C"
+    },
+    {
+      "source_group": "Garmin CIRQA Smart Ring监管记录报道",
+      "url": "https://watchesreviewed.com/garmin-cirqa-smart-ring-leak/",
+      "scope": "印尼DJID/e-Sertifikasi曾出现的CIRQA SMART RING记录、证书号、申请方、产地和删除状态",
+      "checked_on": "2026-08-24",
+      "quality": "C/D"
     }
   ],
   "update_log": [
+    {
+      "date": "2026-08-24",
+      "change": "本轮新增4条主表记录：CUDIS 002 Classic、CUDIS 002 Sporty、Aurora Eclipse、Aurora Luman；新增1条候选：Garmin CIRQA Smart Ring。更新4条既有记录：RingConn Gen 3缺货、VEYRO现货、Sharp上市口径、Casio中国官方渠道。新增11条来源，主表增至150条，候选增至27条，来源增至97条。",
+      "verification": "优先使用官方商品页、官方发布稿和官方渠道；CUDIS与Aurora按商品页逐型号区分，售罄也保留在主表；Aurora血糖、血压和ECG只保留品牌宣称，证据等级为C且不作医疗结论；Garmin CIRQA Smart Ring仅因监管记录报道进入候选，不与CIRQA Smart Band合并。",
+      "next": "继续复核CUDIS售罄后的发货与硬件规格、Aurora低透明度型号的真实SKU/OEM关系、VEYRO实际交付和监管记录；追踪Garmin是否重新提交或正式发布Smart Ring，并继续扫描日本、中国、印度、东南亚和欧美官方渠道的新型号。"
+    },
     {
       "date": "2026-08-23",
       "change": "本轮新增10条主表记录：Smalth 4款、Vertu Cor/Aura Ring Ultra 1款、Nova 5款；新增5条候选：Elah 1款、Dreame CES命名型号3款及官方商城通用款1款。新增17条官方来源，主表增至146条，候选增至26条，来源增至86条。",
