@@ -119,6 +119,18 @@
   border: 1px solid var(--site-line);
   border-radius: .75rem;
   background: var(--site-surface);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+.routeStop:hover,
+.routeStop:focus-visible {
+  border-color: var(--ifm-color-primary);
+  background: color-mix(in srgb, var(--ifm-color-primary) 7%, var(--site-surface));
+  color: inherit;
+  text-decoration: none;
+  transform: translateY(-1px);
 }
 
 .routeStop > span {
@@ -143,6 +155,58 @@
   place-items: center;
   color: var(--site-muted);
   font-size: 1.1rem;
+}
+
+.routeMapPanel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.2rem;
+  align-items: end;
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid color-mix(in srgb, var(--ifm-color-primary) 24%, var(--site-line));
+  border-radius: .9rem;
+  background: color-mix(in srgb, var(--ifm-color-primary) 5%, var(--site-surface));
+}
+
+.routeMapPanel h3 {
+  margin: .55rem 0 .35rem;
+  color: var(--site-ink);
+  font-size: 1.05rem;
+  letter-spacing: -.025em;
+}
+
+.routeMapPanel p {
+  max-width: 48rem;
+  margin: 0;
+  color: var(--site-muted);
+  font-size: .82rem;
+  line-height: 1.7;
+}
+
+.mapRouteLink {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  min-height: 2.65rem;
+  padding: .62rem .85rem;
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: .65rem;
+  color: var(--site-canvas);
+  background: var(--ifm-color-primary);
+  font-size: .78rem;
+  font-weight: 720;
+  text-decoration: none;
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.mapRouteLink:hover {
+  color: var(--site-canvas);
+  filter: brightness(.95);
+  text-decoration: none;
+  transform: translateY(-1px);
 }
 
 .callout {
@@ -214,7 +278,10 @@
 
 .presetGroup button:focus-visible,
 .daySelector button:focus-visible,
-.backLink:focus-visible {
+.backLink:focus-visible,
+.mapRouteLink:focus-visible,
+.mapStopLink:focus-visible,
+.routeStop:focus-visible {
   outline: 3px solid color-mix(in srgb, var(--ifm-color-primary) 25%, transparent);
   outline-offset: 2px;
 }
@@ -449,6 +516,71 @@
   line-height: 1.8;
 }
 
+.dayMap {
+  margin-top: 1.2rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--site-line);
+}
+
+.dayMapHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: .8rem;
+  align-items: end;
+}
+
+.dayMapHeader > div {
+  display: grid;
+  gap: .2rem;
+}
+
+.dayMapHeader span {
+  color: var(--ifm-color-primary);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.dayMapHeader strong {
+  color: var(--site-ink);
+  font-size: .95rem;
+}
+
+.mapStopList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-top: .8rem;
+}
+
+.mapStopLink {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  min-height: 2.2rem;
+  max-width: 100%;
+  padding: .46rem .62rem;
+  border: 1px solid var(--site-line-strong);
+  border-radius: .55rem;
+  color: var(--site-ink);
+  background: var(--site-surface-soft);
+  font-size: .75rem;
+  font-weight: 680;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+  transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+.mapStopLink:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--site-ink);
+  background: color-mix(in srgb, var(--ifm-color-primary) 8%, var(--site-surface));
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
 .stay {
   margin: 1rem 0 0;
   color: var(--site-muted);
@@ -657,9 +789,15 @@
   }
 
   .workbenchHeader,
-  .revisionCard {
+  .revisionCard,
+  .dayMapHeader {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .routeMapPanel {
+    grid-template-columns: 1fr;
+    align-items: stretch;
   }
 
   .presetGroup {
@@ -667,7 +805,8 @@
   }
 
   .presetGroup button,
-  .backLink {
+  .backLink,
+  .mapRouteLink {
     flex: 1;
     justify-content: center;
   }
@@ -691,7 +830,10 @@
 
 @media (prefers-reduced-motion: reduce) {
   .presetGroup button,
-  .daySelector button {
+  .daySelector button,
+  .routeStop,
+  .mapRouteLink,
+  .mapStopLink {
     transition: none;
   }
 }

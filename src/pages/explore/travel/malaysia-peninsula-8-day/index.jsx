@@ -5,14 +5,16 @@ import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
 const routeStops = [
-  {label: 'KUL', detail: '吉隆坡國際機場'},
-  {label: '馬六甲', detail: '殖民要塞與華人古墓'},
-  {label: '檳城', detail: '國慶、宗族街區與二戰要塞'},
-  {label: '布央谷', detail: '4–11 世紀古吉打遺址'},
-  {label: '太平', detail: '英聯邦戰爭公墓與雨樹'},
-  {label: '怡保', detail: '錫礦城市與摩崖古刹'},
-  {label: 'KL / KUL', detail: '博物館、清真寺與返程'},
+  {label: 'KUL', detail: '吉隆坡國際機場', query: 'Kuala Lumpur International Airport, Sepang, Malaysia'},
+  {label: '馬六甲', detail: '殖民要塞與華人古墓', query: 'Dutch Square Melaka, Malaysia'},
+  {label: '檳城', detail: '國慶、宗族街區與二戰要塞', query: 'George Town, Penang, Malaysia'},
+  {label: '布央谷', detail: '4–11 世紀古吉打遺址', query: 'Lembah Bujang Archaeological Museum, Kedah, Malaysia'},
+  {label: '太平', detail: '英聯邦戰爭公墓與雨樹', query: 'Taiping War Cemetery, Perak, Malaysia'},
+  {label: '怡保', detail: '錫礦城市與摩崖古刹', query: 'Ipoh, Perak, Malaysia'},
+  {label: 'KL / KUL', detail: '博物館、清真寺與返程', query: 'Kuala Lumpur International Airport, Sepang, Malaysia'},
 ];
+
+const overallRouteStops = routeStops.map((stop) => stop.query);
 
 const budgetInitial = {
   flight: 1200,
@@ -39,6 +41,15 @@ const days = [
     route: 'KUL → 馬六甲',
     title: '先把古城的時間尺度拉開',
     focus: '大航海要塞、娘惹街屋、三寶山古墓群',
+    mapStops: [
+      {label: 'KUL', query: 'Kuala Lumpur International Airport, Sepang, Malaysia'},
+      {label: 'Melaka Sentral', query: 'Melaka Sentral, Melaka, Malaysia'},
+      {label: '荷蘭紅屋', query: 'Dutch Square Melaka, Malaysia'},
+      {label: '聖保羅堂', query: "St. Paul's Church Melaka, Malaysia"},
+      {label: '峇峇娘惹祖屋', query: 'Baba & Nyonya Heritage Museum Melaka, Malaysia'},
+      {label: '三寶山', query: 'Bukit Cina Melaka, Malaysia'},
+      {label: '雞場街', query: 'Jonker Street Night Market Melaka, Malaysia'},
+    ],
     blocks: [
       ['08:00–10:30', '抵達 KUL 後完成入境、提取行李、交通卡、現金與網路補給；把機場流程和緩衝時間算進第一天。'],
       ['10:30–13:00', '從機場前往 Melaka Sentral，車程約 2–2.5 小時；抵達後先寄放行李或辦理入住，再進老城。'],
@@ -54,6 +65,13 @@ const days = [
     route: '馬六甲 → 檳城（夜巴）',
     title: '把海上貿易史交給一艘船',
     focus: '青雲亭、海事博物館、荷蘭街騎樓、夜間跨半島',
+    mapStops: [
+      {label: '青雲亭', query: 'Cheng Hoon Teng Temple Melaka, Malaysia'},
+      {label: '海事博物館', query: 'Maritime Museum Melaka, Malaysia'},
+      {label: '荷蘭街', query: 'Heeren Street Melaka, Malaysia'},
+      {label: 'Melaka Sentral', query: 'Melaka Sentral, Melaka, Malaysia'},
+      {label: '檳城巴士總站', query: 'Sungai Nibong Bus Terminal, Penang, Malaysia'},
+    ],
     blocks: [
       ['08:30–12:00', '走訪青雲亭，觀察華人寺廟如何同時承擔宗教、社群與地方調解功能；再到海事博物館登上 1:1 復原的 Flor de la Mar，理解香料、航線與武力如何一起塑造馬六甲。'],
       ['12:30–17:00', '漫步 Heeren Street 老騎樓，吃娘惹叻沙；把下午留給補眠、充電、防蚊與整理田野筆記。'],
@@ -68,6 +86,16 @@ const days = [
     route: '檳城國慶 → 極樂寺 → 升旗山 → 喬治市',
     title: '在一座港口城市裡看見多個移民網絡',
     focus: '州級國慶、極樂寺、升旗山、僑生大宅、老公墓與清真寺',
+    mapStops: [
+      {label: 'Esplanade', query: 'Esplanade George Town Penang, Malaysia'},
+      {label: '康華利斯堡', query: 'Fort Cornwallis, Penang, Malaysia'},
+      {label: '極樂寺', query: 'Kek Lok Si Temple, Penang, Malaysia'},
+      {label: '升旗山下站', query: 'Penang Hill Lower Station, Penang, Malaysia'},
+      {label: '僑生博物館', query: 'Pinang Peranakan Mansion, Penang, Malaysia'},
+      {label: '老新教徒墓園', query: 'Old Protestant Cemetery Penang, Malaysia'},
+      {label: '吉寧甲必丹回教堂', query: 'Kapitan Keling Mosque, Penang, Malaysia'},
+      {label: '亞齊清真寺', query: 'Acheen Street Mosque, Penang, Malaysia'},
+    ],
     blocks: [
       ['06:00–08:30', '巴士抵達後前往 Esplanade，觀看國慶活動與康華利斯堡方向的海防地景。國慶日活動時間每年不同，需於出發前重新核對。'],
       ['09:00–13:00', '極樂寺看中、泰、緬風格的萬佛寶塔與觀音像；再乘升旗山纜車，從高處看海峽、殖民避暑別墅與城市密度。'],
@@ -82,6 +110,12 @@ const days = [
     route: '檳城南端 → 喬治市',
     title: '把戰爭遺址當成一個空間系統來讀',
     focus: '檳城二戰戰爭博物館、地下工事、壁畫與水上宗族',
+    mapStops: [
+      {label: '檳城戰爭博物館', query: 'Penang War Museum, Penang, Malaysia'},
+      {label: '喬治市壁畫', query: 'Armenian Street George Town Penang, Malaysia'},
+      {label: '姓周橋', query: 'Chew Jetty Penang, Malaysia'},
+      {label: '邱公司', query: 'Khoo Kongsi Penang, Malaysia'},
+    ],
     blocks: [
       ['08:30–13:30', '從光大搭公交前往 Penang War Museum。重點不是獵奇，而是讀懂山頂地下工事、彈藥庫、防毒氣室、刑訊空間與逃生通道如何互相連接。密林路段注意鞋底、飲水與驅蚊。'],
       ['15:00–18:30', '回到喬治市看街頭壁畫、姓周橋與邱公司祠堂。這一段用來觀察城市如何把商業、宗族與旅遊重新編排。'],
@@ -94,6 +128,16 @@ const days = [
     route: '北海 → 布央谷 → 太平 → 怡保',
     title: '沿著鐵路把文明的年代往前推',
     focus: '布央谷考古遺址、太平戰爭公墓、怡保錫礦城市',
+    mapStops: [
+      {label: '北海車站', query: 'Butterworth Railway Station, Penang, Malaysia'},
+      {label: '雙溪大年', query: 'Sungai Petani Railway Station, Kedah, Malaysia'},
+      {label: '布央谷遺址', query: 'Lembah Bujang Archaeological Museum, Kedah, Malaysia'},
+      {label: 'Bukit Batu Pahat 遺址', query: 'Candi Bukit Batu Pahat Lembah Bujang, Kedah, Malaysia'},
+      {label: '太平戰爭公墓', query: 'Taiping War Cemetery, Perak, Malaysia'},
+      {label: '太平湖花園', query: 'Taiping Lake Gardens, Perak, Malaysia'},
+      {label: '怡保舊街場', query: 'Ipoh Old Town, Perak, Malaysia'},
+      {label: 'Han Chin Pet Soo', query: 'Han Chin Pet Soo, Ipoh, Malaysia'},
+    ],
     blocks: [
       ['07:30–12:00', '從 Butterworth 乘 KTM 前往雙溪大年，再轉 Grab 到 Lembah Bujang Archaeological Museum。看 Candi Bukit Batu Pahat、紅磚神殿基座、古代煉鐵熔爐與海上貿易留下的地層。'],
       ['13:00–16:30', '乘 KTM 南下太平，探訪 Taiping War Cemetery，再走太平湖的百年雨樹古徑。公墓參觀保持安靜，不跨越墓區邊界。'],
@@ -107,6 +151,13 @@ const days = [
     route: '怡保 → 吉隆坡',
     title: '從摩崖字跡走到城市天際線',
     focus: '霹靂洞、凱利古堡、KTM ETS、KLCC',
+    mapStops: [
+      {label: '霹靂洞', query: 'Perak Cave Temple, Ipoh, Malaysia'},
+      {label: '凱利古堡', query: "Kellie's Castle, Batu Gajah, Perak, Malaysia"},
+      {label: '怡保車站', query: 'Ipoh Railway Station, Perak, Malaysia'},
+      {label: 'KL Sentral', query: 'Kuala Lumpur Sentral, Malaysia'},
+      {label: '雙子塔 / KLCC', query: 'Petronas Twin Towers, Kuala Lumpur, Malaysia'},
+    ],
     blocks: [
       ['08:30–13:00', '先到霹靂洞看天然喀斯特洞穴、摩崖書法與濕壁畫，再到 Kellie’s Castle 觀察未完工古堡、地下通道與殖民時期橡膠園主的想像。'],
       ['14:00–16:30', '搭 KTM ETS 南下 KL Sentral，車程約 2 小時。抵達後先辦理入住與設備充電。'],
@@ -120,6 +171,13 @@ const days = [
     route: '黑風洞 → 雲頂高原 → 皇家雪蘭莪',
     title: '把宗教、娛樂與工業史放在同一天',
     focus: '黑風洞、雲頂、清水岩廟、錫器工業史',
+    mapStops: [
+      {label: '黑風洞', query: 'Batu Caves, Selangor, Malaysia'},
+      {label: 'Awana SkyCentral', query: 'Awana SkyCentral, Genting Highlands, Malaysia'},
+      {label: '清水岩廟', query: 'Chin Swee Caves Temple, Genting Highlands, Malaysia'},
+      {label: '雲頂高原', query: 'Resorts World Genting, Pahang, Malaysia'},
+      {label: '皇家雪蘭莪', query: 'Royal Selangor Visitor Centre, Kuala Lumpur, Malaysia'},
+    ],
     blocks: [
       ['07:30–09:30', '乘 KTM 到 Batu Caves，登 272 級彩階進入石灰岩洞穴神殿。注意猴群、階梯濕滑與宗教空間禮儀。'],
       ['10:00–14:30', '前往 Awana 缆車站，半山經停清水岩廟，再登雲頂。若進入賭場，需符合當地年齡、證件與服裝要求；這裡更適合觀察一個山頂度假城如何運轉。'],
@@ -134,6 +192,17 @@ const days = [
     route: '雙溪毛糯 → 國家館舍 → 廣東義山 → 吉隆坡',
     title: '用博物館和墓園替整條路線收束',
     focus: '希望之谷、國家博物館、伊斯蘭藝術館、國家清真寺、廣東義山',
+    mapStops: [
+      {label: '希望之谷', query: 'Sungai Buloh Leprosy Control Centre, Selangor, Malaysia'},
+      {label: '國家博物館', query: 'Muzium Negara, Kuala Lumpur, Malaysia'},
+      {label: '伊斯蘭藝術館', query: 'Islamic Arts Museum Malaysia, Kuala Lumpur, Malaysia'},
+      {label: '國家清真寺', query: 'National Mosque of Malaysia, Kuala Lumpur, Malaysia'},
+      {label: '占美清真寺', query: 'Masjid Jamek of Kuala Lumpur, Malaysia'},
+      {label: '生命之河', query: 'River of Life Kuala Lumpur, Malaysia'},
+      {label: '獨立廣場', query: 'Merdeka Square Kuala Lumpur, Malaysia'},
+      {label: '蘇丹阿都沙末大廈', query: 'Sultan Abdul Samad Building Kuala Lumpur, Malaysia'},
+      {label: '廣東義山', query: 'Kwong Tong Cemetery Kuala Lumpur, Malaysia'},
+    ],
     blocks: [
       ['07:30–10:00', 'MRT 前往 Sungai Buloh Settlement，希望之谷的舊隔離城與墓園適合用來理解殖民醫療、隔離政策與病患自建社群。'],
       ['10:30–14:00', '集中參觀 Muzium Negara、伊斯蘭藝術館與國家清真寺。這三站分別補上史前與古代王國、伊斯蘭藝術與現代國家建築的框架。進入清真寺時遵守服裝與脫鞋規範。'],
@@ -148,6 +217,10 @@ const days = [
     route: '吉隆坡市區 → KUL',
     title: '把返程留出真正的餘量',
     focus: '早餐、退房、機場轉移、15:00 航班',
+    mapStops: [
+      {label: 'KL Sentral', query: 'Kuala Lumpur Sentral, Malaysia'},
+      {label: 'KUL', query: 'Kuala Lumpur International Airport, Sepang, Malaysia'},
+    ],
     blocks: [
       ['08:00–09:30', '在住宿附近吃早餐，整理最後的行李與文件。'],
       ['09:30–10:30', '退房；確認護照、登機資料、充電設備與可托運行李。'],
@@ -192,6 +265,23 @@ const preparation = [
   ['宗教禮儀', '清真寺脫鞋、服裝端正，借用長袍與頭巾後按規定歸還；不要把宗教空間當成背景板。'],
   ['回程餘量', '返程日不要把最後一班跨城交通排到極限，至少預留 3 小時給回機場、安檢與改道。'],
 ];
+
+function googleMapsSearchUrl(query) {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+}
+
+function googleMapsDirectionsUrl(stops) {
+  const [origin, ...remainingStops] = stops;
+  const destination = remainingStops.at(-1);
+  const waypoints = remainingStops.slice(0, -1);
+  const params = new URLSearchParams({api: '1', origin, destination});
+
+  if (waypoints.length) {
+    params.set('waypoints', waypoints.join('|'));
+  }
+
+  return `https://www.google.com/maps/dir/?${params.toString()}`;
+}
 
 function currency(value) {
   return `¥${Math.round(value).toLocaleString('zh-CN')}`;
@@ -257,6 +347,8 @@ function BudgetEstimator() {
 }
 
 function DayDetails({day}) {
+  const dayMapUrl = googleMapsDirectionsUrl(day.mapStops.map((stop) => stop.query));
+
   return (
     <article className={styles.dayCard} id={`day-${day.day}`}>
       <div className={styles.dayCardTop}>
@@ -275,6 +367,35 @@ function DayDetails({day}) {
             <p>{description}</p>
           </div>
         ))}
+      </div>
+      <div className={styles.dayMap}>
+        <div className={styles.dayMapHeader}>
+          <div>
+            <span>GOOGLE MAPS / DAY {String(day.day).padStart(2, '0')}</span>
+            <strong>當日路線與主要地點</strong>
+          </div>
+          <a
+            className={styles.mapRouteLink}
+            href={dayMapUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`在 Google Maps 開啟 Day ${day.day} 全日路線`}>
+            開啟全日路線 <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div className={styles.mapStopList} aria-label={`Day ${day.day} 主要地點 Google Maps 連結`}>
+          {day.mapStops.map((stop) => (
+            <a
+              key={stop.label}
+              className={styles.mapStopLink}
+              href={googleMapsSearchUrl(stop.query)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`在 Google Maps 查看${stop.label}`}>
+              {stop.label} <span aria-hidden="true">↗</span>
+            </a>
+          ))}
+        </div>
       </div>
       <p className={styles.stay}><strong>住宿：</strong>{day.stay}</p>
     </article>
@@ -318,14 +439,34 @@ export default function MalaysiaPeninsulaPage() {
           <div className={styles.routeRail}>
             {routeStops.map((stop, index) => (
               <React.Fragment key={stop.label}>
-                <div className={styles.routeStop}>
+                <a
+                  className={styles.routeStop}
+                  href={googleMapsSearchUrl(stop.query)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`在 Google Maps 查看${stop.label}`}>
                   <span>{String(index + 1).padStart(2, '0')}</span>
                   <strong>{stop.label}</strong>
                   <small>{stop.detail}</small>
-                </div>
+                </a>
                 {index < routeStops.length - 1 && <div className={styles.routeArrow} aria-hidden="true">→</div>}
               </React.Fragment>
             ))}
+          </div>
+          <div className={styles.routeMapPanel}>
+            <div>
+              <span className={styles.kicker}>GOOGLE MAPS / WHOLE ROUTE</span>
+              <Heading as="h3">全程城市順序</Heading>
+              <p>從 KUL 出發，依序經馬六甲、檳城、布央谷、太平、怡保與吉隆坡後回到 KUL；用來看整段地理關係，跨城交通仍以每日連結與實際班次為準。</p>
+            </div>
+            <a
+              className={styles.mapRouteLink}
+              href={googleMapsDirectionsUrl(overallRouteStops)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="在 Google Maps 開啟全程行程路線">
+              開啟全程路線 <span aria-hidden="true">↗</span>
+            </a>
           </div>
           <div className={styles.callout}>
             <strong>最直白的版本：</strong>這是一條內容密度很高的「田野線」，每天都需要早起、走路、轉車與整理筆記；如果更在意慢遊，保留同一條主線、刪掉一個轉移點即可。
