@@ -29,8 +29,7 @@
 }
 
 .hero > div,
-.catalog > div,
-.methodInner {
+.catalog > div {
   position: relative;
   z-index: 1;
 }
@@ -38,8 +37,7 @@
 .eyebrow,
 .cardEyebrow,
 .heroAside,
-.cardStats,
-.methodMark {
+.cardStats {
   font-family: var(--ifm-font-family-monospace);
 }
 
@@ -324,74 +322,6 @@
   text-decoration: none;
 }
 
-.method {
-  padding: 0 0 clamp(4rem, 8vw, 7rem);
-}
-
-.methodInner {
-  display: grid;
-  grid-template-columns: 5rem minmax(0, 1fr) auto;
-  gap: 2rem;
-  align-items: center;
-  padding: 2.3rem 2.4rem;
-  border: 1px solid rgb(255 255 255 / 10%);
-  border-radius: var(--site-radius-xl);
-  color: #eaf2ee;
-  background:
-    radial-gradient(circle at 84% 18%, rgb(99 214 174 / 14%), transparent 15rem),
-    linear-gradient(135deg, #13241f, #1d4034);
-  box-shadow: var(--site-shadow-md);
-}
-
-.methodMark {
-  color: #8ce0be;
-  font-size: .82rem;
-  font-weight: 700;
-  letter-spacing: .06em;
-}
-
-.methodInner .eyebrow {
-  color: #8ce0be;
-}
-
-.methodInner h2 {
-  margin: .55rem 0 .8rem;
-  color: #f4fbf7;
-  font-size: clamp(1.6rem, 3vw, 2.45rem);
-  font-weight: 690;
-  letter-spacing: -.045em;
-}
-
-.methodInner p {
-  max-width: 45rem;
-  margin: 0;
-  color: #b8ccc2;
-  font-size: .88rem;
-  line-height: 1.75;
-}
-
-.methodInner > a {
-  min-height: 2.75rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: .65rem 1rem;
-  border: 1px solid rgb(213 249 233 / 28%);
-  border-radius: 999px;
-  color: #eafaf2;
-  font-size: .78rem;
-  font-weight: 660;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background-color 170ms var(--site-ease), transform 170ms var(--site-ease);
-}
-
-.methodInner > a:hover {
-  color: #f4fffa;
-  background: rgb(255 255 255 / 10%);
-  text-decoration: none;
-}
-
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
     border-color: color-mix(in srgb, var(--database-accent) 36%, var(--site-line));
@@ -426,22 +356,12 @@
     grid-template-columns: 1fr;
   }
 
-  .methodInner {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 1.7rem 1.35rem;
-  }
-
-  .methodInner > a {
-    justify-self: start;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .card,
   .primaryLink,
-  .dataLink,
-  .methodInner > a {
+  .dataLink {
     transition: none;
   }
 }

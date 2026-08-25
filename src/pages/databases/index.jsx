@@ -177,19 +177,6 @@ export default function DatabasesPage() {
           </div>
         </section>
 
-        <section className={styles.method} aria-labelledby="database-method-title">
-          <div className={`container ${styles.methodInner}`}>
-            <span className={styles.methodMark} aria-hidden="true">CHECK</span>
-            <div>
-              <span className={styles.eyebrow}>SOURCE CHECK</span>
-              <Heading id="database-method-title" as="h2">有來源，缺什麼也直接標出來。</Heading>
-              <p>
-                先看官方產品頁、發布資訊、規格、支援頁和銷售頁；找不到的欄位就寫「未公開」。預售、候選、歷史型號和 OEM 線索各自標清楚，不混在一起。
-              </p>
-            </div>
-            <a href="/smart-rings/">從智能指環開始 <span aria-hidden="true">↗</span></a>
-          </div>
-        </section>
       </main>
     </Layout>
   );
