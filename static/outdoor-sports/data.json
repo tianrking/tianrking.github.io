@@ -13,6 +13,10 @@
     [
       "耐候口径",
       "IP等级、潜水耐压和MIL-STD分别记录；未公开不按产品定位推断。"
+    ],
+    [
+      "查证日期",
+      "2026-08-25"
     ]
   ],
   "products": [
@@ -49,7 +53,8 @@
       "privacy": "未公开",
       "features": "户外地图、路线、航点、多频定位、气压高度",
       "availability_note": "Garmin官方产品页可核验",
-      "source_note": "Garmin官方产品/发布页"
+      "source_note": "Garmin官方产品/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-002",
@@ -84,7 +89,8 @@
       "privacy": "未公开",
       "features": "户外地图、双向消息、SOS、位置追踪、气压高度",
       "availability_note": "官方产品与手册页在售",
-      "source_note": "Garmin官方产品/手册/支持页"
+      "source_note": "Garmin官方产品/手册/支持页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-003",
@@ -119,7 +125,8 @@
       "privacy": "未公开",
       "features": "太阳能、户外导航、长续航、多频定位",
       "availability_note": "Garmin官方产品/发布页在售",
-      "source_note": "Garmin官方产品/发布页"
+      "source_note": "Garmin官方产品/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-004",
@@ -154,7 +161,8 @@
       "privacy": "未公开",
       "features": "大屏导航、卫星消息、SOS、越野地图",
       "availability_note": "Garmin英国官方产品页可核验",
-      "source_note": "Garmin官方产品页"
+      "source_note": "Garmin官方产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-005",
@@ -189,7 +197,8 @@
       "privacy": "未公开",
       "features": "户外地图、路线、SeeMe、GO Cloud",
       "availability_note": "TwoNav官方产品页在售",
-      "source_note": "TwoNav官方产品/支持页"
+      "source_note": "TwoNav官方产品/支持页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-006",
@@ -224,7 +233,8 @@
       "privacy": "未公开",
       "features": "双向短信、位置共享、SOS、天气",
       "availability_note": "Garmin官方发布和产品线可核验",
-      "source_note": "Garmin官方发布/产品页"
+      "source_note": "Garmin官方发布/产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-007",
@@ -259,7 +269,8 @@
       "privacy": "未公开",
       "features": "文字、照片、语音、位置、SOS、离网导航",
       "availability_note": "官方产品页可发货；卫星覆盖按地区/法规",
-      "source_note": "Garmin官方产品/发布/手册页"
+      "source_note": "Garmin官方产品/发布/手册页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-008",
@@ -294,7 +305,8 @@
       "privacy": "未公开",
       "features": "卫星短信、SOS、定位、离线通信",
       "availability_note": "官方规格页标注区域可得性",
-      "source_note": "ZOLEO官方规格页"
+      "source_note": "ZOLEO官方规格页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-009",
@@ -329,7 +341,8 @@
       "privacy": "未公开",
       "features": "卫星短信、SOS、位置共享",
       "availability_note": "按上一代/地区产品保留，不与1500合并",
-      "source_note": "ZOLEO官方规格页"
+      "source_note": "ZOLEO官方规格页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-010",
@@ -364,7 +377,8 @@
       "privacy": "未公开",
       "features": "双向短信、QWERTY键盘、SOS、蓝牙App",
       "availability_note": "覆盖与可用性依国家/地区",
-      "source_note": "Globalstar官方产品页"
+      "source_note": "Globalstar官方产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-011",
@@ -399,7 +413,8 @@
       "privacy": "未公开",
       "features": "卫星短信、SOS、GPS、离网通信",
       "availability_note": "英国/欧洲部分市场销售",
-      "source_note": "HMD官方规格页"
+      "source_note": "HMD官方规格页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-012",
@@ -434,7 +449,8 @@
       "privacy": "未公开",
       "features": "骑行导航、训练、安全、路线、传感器连接",
       "availability_note": "Garmin官方发布/产品线可核验",
-      "source_note": "Garmin官方发布/产品页"
+      "source_note": "Garmin官方发布/产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-013",
@@ -469,7 +485,8 @@
       "privacy": "未公开",
       "features": "骑行导航、训练、传感器、路线",
       "availability_note": "Wahoo官方支持与销售页确认ROAM 3为当前型号",
-      "source_note": "Wahoo官方支持/产品页"
+      "source_note": "Wahoo官方支持/产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-014",
@@ -504,7 +521,8 @@
       "privacy": "未公开",
       "features": "太阳能续航、骑行导航、训练、组队/安全功能",
       "availability_note": "COROS产品页与帮助中心可核验",
-      "source_note": "COROS官方产品/支持页"
+      "source_note": "COROS官方产品/支持页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-015",
@@ -539,7 +557,8 @@
       "privacy": "未公开",
       "features": "骑行导航、训练、路线、传感器",
       "availability_note": "Bryton全球产品页在售",
-      "source_note": "Bryton官方产品页"
+      "source_note": "Bryton官方产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-016",
@@ -574,7 +593,8 @@
       "privacy": "未公开",
       "features": "多气体、CCR、自由潜、空气整合、SubWave、潜水地图",
       "availability_note": "Garmin官方产品/发布页可发货",
-      "source_note": "Garmin官方产品/发布/手册页"
+      "source_note": "Garmin官方产品/发布/手册页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-017",
@@ -609,7 +629,8 @@
       "privacy": "未公开",
       "features": "潜水规划、5种气体、Tank POD、户外运动、GPS",
       "availability_note": "官方产品页在售；价格随促销变化",
-      "source_note": "Suunto官方产品页"
+      "source_note": "Suunto官方产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-018",
@@ -644,7 +665,8 @@
       "privacy": "未公开",
       "features": "潜水模式、5种气体、深度/压力、户外运动",
       "availability_note": "Suunto官方发布/产品页可核验",
-      "source_note": "Suunto官方产品/发布页"
+      "source_note": "Suunto官方产品/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-019",
@@ -679,7 +701,8 @@
       "privacy": "未公开",
       "features": "技术潜水、CCR、多气体、最多4个无线气瓶发射器",
       "availability_note": "Shearwater官方加拿大产品页在售",
-      "source_note": "Shearwater官方产品页"
+      "source_note": "Shearwater官方产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-020",
@@ -714,7 +737,8 @@
       "privacy": "未公开",
       "features": "空气整合、Nitrox、Trimix、CCR、自由潜、数字罗盘",
       "availability_note": "官方销售页在售；尺寸重量字段待补",
-      "source_note": "SCUBAPRO官方销售页"
+      "source_note": "SCUBAPRO官方销售页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-021",
@@ -749,7 +773,8 @@
       "privacy": "未公开",
       "features": "Mesh对讲、蓝牙通话、LED、山地车安全",
       "availability_note": "官方产品页在售；认证含EN1078/CPSC",
-      "source_note": "Sena官方产品页"
+      "source_note": "Sena官方产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-022",
@@ -784,7 +809,8 @@
       "privacy": "未公开",
       "features": "Alexa、Mesh对讲、LED、蓝牙通话",
       "availability_note": "官方产品页在售；认证含EN1078/CPSC",
-      "source_note": "Sena官方产品页"
+      "source_note": "Sena官方产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-023",
@@ -819,7 +845,8 @@
       "privacy": "碰撞数据处理细节未公开",
       "features": "MIPS、灯光、转向/刹车提示、碰撞检测",
       "availability_note": "官方页可查，部分规格/库存需复核；认证含CE/EN1078/CPSC",
-      "source_note": "UNIT 1官方产品页"
+      "source_note": "UNIT 1官方产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-024",
@@ -854,7 +881,8 @@
       "privacy": "未公开",
       "features": "前后灯、转向灯、自动刹车灯、蓝牙遥控",
       "availability_note": "官方产品页在售；认证含CPSC/CE/EN1078/AS-NZS2063/NTA8776",
-      "source_note": "Lumos官方产品页"
+      "source_note": "Lumos官方产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-025",
@@ -889,7 +917,8 @@
       "privacy": "未公开",
       "features": "GPS定位、406MHz求救、121.5MHz归航、闪光灯",
       "availability_note": "ACR官方产品页；认证含FCC/RED/Cospas-Sarsat",
-      "source_note": "ACR官方产品页"
+      "source_note": "ACR官方产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "OUT-026",
@@ -924,7 +953,8 @@
       "privacy": "未公开",
       "features": "自动回退、多埋压搜索、信号抑制、雪崩搜救",
       "availability_note": "BCA官方销售页在售；认证/固件资源由官方提供",
-      "source_note": "BCA官方销售页"
+      "source_note": "BCA官方销售页",
+      "connectivity": "未公开"
     }
   ],
   "candidates": [

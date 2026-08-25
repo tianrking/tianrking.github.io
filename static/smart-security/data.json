@@ -1,0 +1,538 @@
+{
+  "checked_on": "2026-08-25",
+  "scope_note": "本库覆盖智能安防与门禁：家庭摄像头、可视门铃、智能门锁、报警器、门窗传感器与智能对讲。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
+  "field_rules": [
+    [
+      "类别边界",
+      "家庭摄像头、可视门铃、智能门锁、报警器、门窗传感器与智能对讲。"
+    ],
+    [
+      "跨库去重",
+      "已在其他独立数据库收录的同一硬件不重复计入主表；如有交叉用途，保留候选/别名和原始来源。"
+    ],
+    [
+      "上市状态",
+      "在售、地区在售、预售、历史、售罄、候选和OEM线索分开；官方页面不能证明当前交付的型号不计入主表。"
+    ],
+    [
+      "证据等级",
+      "A为官方产品/规格/销售链较完整；B为官方页面明确但关键字段或当前库存有缺口；C/D为候选、渠道、历史或未充分验证线索。"
+    ],
+    [
+      "字段缺口",
+      "来源未披露统一写“未公开”，尤其不推断芯片、传感器、尺寸、重量、续航、防水、订阅和隐私字段。"
+    ],
+    [
+      "价格",
+      "保留首发/当前价格和原币种；促销、租赁、订阅、押金和服务费在原文中区分，不做无说明汇率换算。"
+    ],
+    [
+      "查证日期",
+      "2026-08-25"
+    ]
+  ],
+  "products": [
+    {
+      "id": "SEC-001",
+      "brand": "Google Nest",
+      "model": "Nest Doorbell (wired, 3rd gen)",
+      "country_region": "美国/全球部分地区",
+      "category": "smart-security",
+      "form_factor": "有线可视门铃",
+      "use_case": "家庭门口视频、包裹/人员/车辆/动物提醒",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "US$139.99起",
+      "official_url": "https://store.google.com/us/product/nest_doorbell_wired_3rd_gen?hl=en-US",
+      "spec_url": "https://store.google.com/us/product/nest_doorbell_wired_3rd_gen_specs?hl=en-US",
+      "features": [
+        "2K HDR",
+        "166°视场角",
+        "24/7 live view",
+        "双向通话",
+        "智能提醒"
+      ],
+      "sensors": [
+        "2K彩色图像传感器",
+        "850nm红外LED"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "Wi-Fi 2.4/5GHz",
+        "BLE",
+        "H.264",
+        "H.265"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "131×42×28mm",
+      "weight_g": 140,
+      "battery": "无内置电池",
+      "charging": "16–24VAC门铃变压器",
+      "water_resistance": "IP65",
+      "subscription": "部分视频历史和AI功能需Google Home Premium",
+      "privacy": "安全启动、128-bit AES、TLS/SSL、设备端机器学习",
+      "availability_note": "美国Google Store可购买；地区和功能可用性不同",
+      "source_note": "芯片、GPS和电池容量官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "SEC-002",
+      "brand": "Ring",
+      "model": "Battery Doorbell (2nd Gen)",
+      "country_region": "美国/加拿大/英国",
+      "category": "smart-security",
+      "form_factor": "电池式可视门铃",
+      "use_case": "家庭门口监控、移动侦测、双向通话",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "2026",
+      "launch_date_type": "官方产品页标注",
+      "price": "未公开",
+      "official_url": "https://ring.com/products/battery-doorbell-2nd-gen",
+      "spec_url": "https://ring.com/ca/en/products/battery-doorbell",
+      "features": [
+        "Retinal 2K",
+        "6倍增强变焦",
+        "头到脚视场",
+        "双向通话"
+      ],
+      "sensors": [
+        "摄像头",
+        "移动侦测"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "Wi-Fi 4",
+        "2.4GHz"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "5.36×14.68×3.58cm",
+      "weight_g": "未公开",
+      "battery": "内置锂离子电池",
+      "charging": "USB-C；可接8–24VAC补充供电",
+      "water_resistance": "IPX级防护，具体等级官方页面未披露",
+      "subscription": "Ring Protect可选；云录像和高级AI需订阅",
+      "privacy": "可配置隐私区域；官方页面未披露加密细节",
+      "availability_note": "美国、加拿大和英国官方页面可核验，名称随地区变化",
+      "source_note": "重量、芯片、GPS和确切防护等级官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "SEC-003",
+      "brand": "Aqara",
+      "model": "Smart Video Doorbell G4",
+      "country_region": "中国/全球部分地区",
+      "category": "smart-security",
+      "form_factor": "电池/有线可视门铃",
+      "use_case": "家庭门口视频、HomeKit门铃、访客通话",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://www.aqara.com/en/product/smart-video-doorbell-g4/",
+      "spec_url": "https://www.aqara.com/en/product/smart-video-doorbell-g4/specs/",
+      "features": [
+        "1080p",
+        "162°视场角",
+        "本地microSD录像",
+        "AI人脸识别",
+        "室内响铃器"
+      ],
+      "sensors": [
+        "1080p摄像头",
+        "门铃按键"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "2.4GHz Wi-Fi",
+        "Apple Home",
+        "Alexa",
+        "Google Home",
+        "IFTTT"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "141.5×65×30.4mm",
+      "weight_g": 163,
+      "battery": "6×AA电池",
+      "charging": "12–24VAC或8–24VDC；响铃器USB-C",
+      "water_resistance": "IPX3",
+      "subscription": "本地录像无需云订阅；云服务条款按地区变化",
+      "privacy": "支持本地microSD；HomeKit Secure Video兼容性按地区变化",
+      "availability_note": "官方全球/地区页面可购买",
+      "source_note": "芯片、GPS和电池续航官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "SEC-004",
+      "brand": "eufy Security",
+      "model": "Video Doorbell (Wired) S330",
+      "country_region": "美国/全球部分地区",
+      "category": "smart-security",
+      "form_factor": "有线双摄可视门铃",
+      "use_case": "门口监控、包裹识别、人脸识别",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://www.eufy.com/products/e8203111?fliter_category=e8203111",
+      "spec_url": "https://www.eufy.com/products/e8203111?fliter_category=e8203111",
+      "features": [
+        "双摄",
+        "2K主摄",
+        "1080p包裹摄像头",
+        "8GB本地存储",
+        "包裹/人脸/人物识别"
+      ],
+      "sensors": [
+        "2K前置摄像头",
+        "1080p包裹摄像头",
+        "移动侦测"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "2.4GHz Wi-Fi",
+        "433MHz",
+        "Alexa",
+        "Google Assistant"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "13.8×5.0×2.7cm",
+      "weight_g": 200,
+      "battery": "无内置电池",
+      "charging": "有线供电",
+      "water_resistance": "IP65",
+      "subscription": "8GB本地存储；云服务可选",
+      "privacy": "本地存储；官方页面未披露完整加密方案",
+      "availability_note": "eufy美国官方产品页可核验",
+      "source_note": "芯片、GPS和电源输入细节官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "SEC-005",
+      "brand": "Yale",
+      "model": "Smart Lock with Matter",
+      "country_region": "美国/全球部分地区",
+      "category": "smart-security",
+      "form_factor": "智能门锁/电子死锁",
+      "use_case": "密码、App和实体钥匙门禁",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://store.google.com/us/product/yale_smart_lock_matter?hl=en-US",
+      "spec_url": "https://store.google.com/us/product/yale_smart_lock_matter?hl=en-US",
+      "features": [
+        "Matter",
+        "可编程密码",
+        "Google Home",
+        "DoorSense门状态传感器",
+        "实体钥匙备用"
+      ],
+      "sensors": [
+        "DoorSense门状态传感器"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "Matter",
+        "Wi-Fi/智能家居协议由配套生态提供"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "0.88×2.56×5.38英寸",
+      "weight_g": 1361,
+      "battery": "4×AA碱性电池",
+      "charging": "更换AA电池",
+      "water_resistance": "未公开",
+      "subscription": "未公开",
+      "privacy": "官方页面未披露详细隐私机制",
+      "availability_note": "Google Store美国页面可购买；地区兼容性不同",
+      "source_note": "芯片、GPS、防水和订阅信息官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "SEC-006",
+      "brand": "Schlage",
+      "model": "Encode Plus Smart WiFi Deadbolt",
+      "country_region": "美国",
+      "category": "smart-security",
+      "form_factor": "Wi-Fi智能门锁",
+      "use_case": "Home Key、密码、远程门锁",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "US$329 MSRP",
+      "official_url": "https://www.schlage.com/en/home/smart-locks/encode-plus.html",
+      "spec_url": "https://www.schlage.com/en/home/products/BE499WBCENFFF.html",
+      "features": [
+        "Apple Home Key",
+        "最多100组密码",
+        "远程控制",
+        "防撬报警",
+        "BHMA Grade AAA"
+      ],
+      "sensors": [
+        "触摸键盘",
+        "门锁状态/防撬检测"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "2.4GHz Wi-Fi",
+        "Apple Home",
+        "Alexa",
+        "Google Assistant",
+        "Matter认证"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "外部3×5×0.9英寸；内部3×5.5×2.2英寸",
+      "weight_g": "约1300",
+      "battery": "4×AA碱性电池",
+      "charging": "更换AA电池",
+      "water_resistance": "未公开",
+      "subscription": "无强制订阅",
+      "privacy": "加密连接；官方页面未披露算法",
+      "availability_note": "Schlage美国官方页面可购买",
+      "source_note": "芯片、GPS和防护等级官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "SEC-007",
+      "brand": "Aqara",
+      "model": "Door and Window Sensor P2",
+      "country_region": "中国/全球部分地区",
+      "category": "smart-security",
+      "form_factor": "门窗磁传感器",
+      "use_case": "门窗开合、入侵和本地自动化",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "€32.99",
+      "official_url": "https://eu.aqara.com/en-eu/products/aqara-door-and-window-sensor-p2",
+      "spec_url": "https://us.aqara.com/pages/product-specs/door-and-window-sensor-p-2",
+      "features": [
+        "Matter原生支持",
+        "Thread网状网络",
+        "本地自动化",
+        "防拆报警"
+      ],
+      "sensors": [
+        "霍尔传感器",
+        "防拆检测"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "Thread",
+        "BLE",
+        "Matter",
+        "Apple Home",
+        "Alexa",
+        "Google Home",
+        "SmartThings"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "主件77×22×22mm；附件36×11.5×7.3mm",
+      "weight_g": 40,
+      "battery": "CR123A",
+      "charging": "更换电池",
+      "water_resistance": "未公开",
+      "subscription": "无强制订阅；需Matter Thread Border Router",
+      "privacy": "支持本地家庭自动化；官方未披露芯片级隐私细节",
+      "availability_note": "Aqara欧洲/美国页面可核验",
+      "source_note": "GPS、芯片和续航官方未统一披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "SEC-008",
+      "brand": "Arlo",
+      "model": "Essential Indoor Camera 2nd Gen 2K",
+      "country_region": "美国/全球部分地区",
+      "category": "smart-security",
+      "form_factor": "室内有线摄像头",
+      "use_case": "家庭室内监控、宠物/儿童看护",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "US$29.99促销/US$79.99标价",
+      "official_url": "https://www.arlo.com/en-us/cameras/essential/arlo-essential-indoor-v2.html",
+      "spec_url": "https://downloads.arlo.com/files/QSG/Arlo_Essential_IndoorCamera_2K_2ndGen_VMC3060_DS_EN.pdf",
+      "features": [
+        "2K",
+        "130°视场角",
+        "夜视",
+        "双向通话",
+        "自动隐私遮罩",
+        "内置警报器"
+      ],
+      "sensors": [
+        "4MP图像传感器",
+        "850nm红外LED",
+        "图像移动侦测"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "2.4GHz Wi-Fi",
+        "Alexa",
+        "Apple Home",
+        "Google Assistant",
+        "SmartThings"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "52×46.87×96.41mm",
+      "weight_g": 113,
+      "battery": "无内置电池",
+      "charging": "电源适配器",
+      "water_resistance": "室内使用；官方页面标注weather-resistant",
+      "subscription": "Arlo Secure部分AI/云录像功能需订阅",
+      "privacy": "自动隐私遮罩；可配置隐私区域",
+      "availability_note": "美国官方页仍有销售；部分地区页面显示替代型号",
+      "source_note": "芯片、GPS和完整存储策略官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Ring Contact Sensor (2nd Gen)",
+      "brand": "Ring",
+      "region": "美国",
+      "category": "smart-security",
+      "status": "在售候选",
+      "evidence": "B",
+      "reason": "官方未披露芯片、GPS和防护等级",
+      "url": "https://ring.com/support/products/alarm/contact-sensor-gen-2?page=1&redirect=true",
+      "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    }
+  ],
+  "sources": [
+    {
+      "source_group": "smart-security官方来源1",
+      "url": "https://store.google.com/us/product/nest_doorbell_wired_3rd_gen_specs?hl=en-US",
+      "scope": "Nest Doorbell产品规格、尺寸、重量、连接和防护",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-security官方来源2",
+      "url": "https://ring.com/products/battery-doorbell-2nd-gen",
+      "scope": "Ring Battery Doorbell产品状态和型号",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-security官方来源3",
+      "url": "https://ring.com/ca/en/products/battery-doorbell",
+      "scope": "Ring Battery Doorbell技术规格",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-security官方来源4",
+      "url": "https://www.aqara.com/en/product/smart-video-doorbell-g4/specs/",
+      "scope": "Aqara G4官方规格",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-security官方来源5",
+      "url": "https://www.eufy.com/products/e8203111?fliter_category=e8203111",
+      "scope": "eufy S330官方产品和规格",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-security官方来源6",
+      "url": "https://store.google.com/us/product/yale_smart_lock_matter?hl=en-US",
+      "scope": "Yale Smart Lock with Matter产品页",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-security官方来源7",
+      "url": "https://www.schlage.com/en/home/products/BE499WBCENFFF.html",
+      "scope": "Schlage Encode Plus产品、规格和价格",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-security官方来源8",
+      "url": "https://eu.aqara.com/en-eu/products/aqara-door-and-window-sensor-p2",
+      "scope": "Aqara P2价格、协议和兼容平台",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-security官方来源9",
+      "url": "https://us.aqara.com/pages/product-specs/door-and-window-sensor-p-2",
+      "scope": "Aqara P2尺寸、电池和协议",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-security官方来源10",
+      "url": "https://www.arlo.com/en-us/cameras/essential/arlo-essential-indoor-v2.html",
+      "scope": "Arlo室内摄像头产品、价格和规格",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-security官方来源11",
+      "url": "https://ring.com/support/products/alarm/contact-sensor-gen-2?page=1&redirect=true",
+      "scope": "Ring Contact Sensor候选状态和规格",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    }
+  ],
+  "update_log": [
+    {
+      "date": "2026-08-25",
+      "change": "首版新增8条智能安防与门禁主表记录，覆盖多个国家/地区品牌；另保留1条候选、历史、边界或地区线索。",
+      "verification": "优先使用官方产品、规格、支持、发布和销售页面；A/B证据分级，来源未披露字段均写“未公开”。跨库重复型号已转为候选关系，不纳入本库主表。",
+      "next": "继续补充更多国家/地区品牌，逐条复核当前库存、首发日期、原始价格、芯片、传感器、续航、防护和服务条款。"
+    }
+  ]
+}

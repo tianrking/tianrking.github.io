@@ -1,0 +1,455 @@
+{
+  "checked_on": "2026-08-25",
+  "scope_note": "本库覆盖定位追踪与个人安全：蓝牙标签、GPS追踪器、老人/儿童定位器与车辆追踪设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
+  "field_rules": [
+    [
+      "类别边界",
+      "蓝牙标签、GPS追踪器、老人/儿童定位器与车辆追踪设备。"
+    ],
+    [
+      "跨库去重",
+      "已在其他独立数据库收录的同一硬件不重复计入主表；如有交叉用途，保留候选/别名和原始来源。"
+    ],
+    [
+      "上市状态",
+      "在售、地区在售、预售、历史、售罄、候选和OEM线索分开；官方页面不能证明当前交付的型号不计入主表。"
+    ],
+    [
+      "证据等级",
+      "A为官方产品/规格/销售链较完整；B为官方页面明确但关键字段或当前库存有缺口；C/D为候选、渠道、历史或未充分验证线索。"
+    ],
+    [
+      "字段缺口",
+      "来源未披露统一写“未公开”，尤其不推断芯片、传感器、尺寸、重量、续航、防水、订阅和隐私字段。"
+    ],
+    [
+      "价格",
+      "保留首发/当前价格和原币种；促销、租赁、订阅、押金和服务费在原文中区分，不做无说明汇率换算。"
+    ],
+    [
+      "查证日期",
+      "2026-08-25"
+    ]
+  ],
+  "products": [
+    {
+      "id": "TRACK-001",
+      "brand": "Apple",
+      "model": "AirTag (2nd generation)",
+      "country_region": "美国/全球",
+      "category": "smart-trackers",
+      "form_factor": "蓝牙物品追踪器",
+      "use_case": "钥匙、行李、背包和个人物品定位",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "2026",
+      "launch_date_type": "官方规格页年份",
+      "price": "US$29单只；US$99四只装",
+      "official_url": "https://www.apple.com/airtag/",
+      "spec_url": "https://support.apple.com/en-us/126203",
+      "features": [
+        "Find My网络",
+        "精确查找",
+        "丢失模式",
+        "内置扬声器"
+      ],
+      "sensors": [
+        "加速度计"
+      ],
+      "gps_positioning": "无GPS；通过Bluetooth、UWB和Find My网络定位",
+      "supported_protocols": [
+        "Bluetooth",
+        "UWB",
+        "NFC",
+        "Apple Find My"
+      ],
+      "chip_or_soc": "Apple第二代UWB芯片",
+      "dimensions": "直径31.9mm；高8.0mm",
+      "weight_g": 11.8,
+      "battery": "可更换CR2032",
+      "charging": "更换电池",
+      "water_resistance": "IP67",
+      "subscription": "无",
+      "privacy": "Find My匿名加密；未知追踪器提醒",
+      "availability_note": "Apple官方商店可购买；需iOS 26或更高版本",
+      "source_note": "蜂窝通信和GPS官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "TRACK-002",
+      "brand": "Samsung",
+      "model": "Galaxy SmartTag2",
+      "country_region": "韩国/全球",
+      "category": "smart-trackers",
+      "form_factor": "BLE/UWB物品追踪器",
+      "use_case": "个人物品和家庭IoT设备定位",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "2023",
+      "launch_date_type": "官方产品发布/支持页",
+      "price": "US$29.99",
+      "official_url": "https://www.samsung.com/us/mobile-accessories/galaxy-smarttag2-black-ei-t5600bbegus/",
+      "spec_url": "https://www.samsung.com/ca/business/mobile-accessories/galaxy-smarttag2-black-ei-t5600bbegca/",
+      "features": [
+        "SmartThings Find",
+        "Lost Mode NFC",
+        "铃声",
+        "最长500天电池"
+      ],
+      "sensors": [
+        "加速度计",
+        "蜂鸣器",
+        "按键"
+      ],
+      "gps_positioning": "无GPS；通过BLE、UWB和Galaxy Find网络定位",
+      "supported_protocols": [
+        "BLE 5.3",
+        "UWB",
+        "NFC",
+        "SmartThings Find"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "28.8×52.44×8.0mm",
+      "weight_g": 13.75,
+      "battery": "可更换CR2032",
+      "charging": "更换电池",
+      "water_resistance": "IP67",
+      "subscription": "无",
+      "privacy": "SmartThings Find需账户和用户选择加入；Lost Mode NFC",
+      "availability_note": "Samsung多个地区官方商店可购买",
+      "source_note": "芯片和蜂窝通信官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "TRACK-003",
+      "brand": "Chipolo",
+      "model": "ONE Spot",
+      "country_region": "斯洛文尼亚/全球",
+      "category": "smart-trackers",
+      "form_factor": "Apple Find My蓝牙追踪器",
+      "use_case": "钥匙、行李、背包定位",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://chipolo.net/en/products/chipolo-one-spot",
+      "spec_url": "https://chipolo.net/en/products/chipolo-one-spot",
+      "features": [
+        "Apple Find My",
+        "最高约120dB",
+        "离身提醒",
+        "钥匙孔"
+      ],
+      "sensors": [
+        "蜂鸣器"
+      ],
+      "gps_positioning": "无GPS；通过Bluetooth和Apple Find My网络定位",
+      "supported_protocols": [
+        "Bluetooth",
+        "Apple Find My"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "直径37.9mm；厚6.4mm",
+      "weight_g": "未公开",
+      "battery": "可更换CR2032，约1年",
+      "charging": "更换电池",
+      "water_resistance": "IPX5",
+      "subscription": "无",
+      "privacy": "Find My网络端到端加密；未知追踪提醒",
+      "availability_note": "Chipolo官方页面支持加入购物车",
+      "source_note": "芯片、重量和GPS官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "TRACK-004",
+      "brand": "Garmin",
+      "model": "inReach Mini 2",
+      "country_region": "美国/全球",
+      "category": "smart-trackers",
+      "form_factor": "卫星通信/GNSS个人安全设备",
+      "use_case": "户外定位、双向通信、SOS",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "2022-02-02",
+      "launch_date_type": "官方发布公告",
+      "price": "US$399.99 MSRP；地区价格不同",
+      "official_url": "https://www.garmin.com/en-CA/p/765374/pn/010-02602-00/",
+      "spec_url": "https://www.garmin.com/en-US/newsroom/press-release/outdoor/new-garmin-inreach-mini-2-delivers-up-to-30-days-of-global-satellite-communication-emergency-services-and-enhanced-location-tracking/",
+      "features": [
+        "双向卫星消息",
+        "互动SOS",
+        "TracBack",
+        "MapShare",
+        "天气"
+      ],
+      "sensors": [
+        "GNSS接收器",
+        "电子罗盘"
+      ],
+      "gps_positioning": "GPS、Galileo、QZSS、BeiDou",
+      "supported_protocols": [
+        "Iridium卫星网络",
+        "Bluetooth",
+        "ANT+"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "5.17×9.90×2.61cm",
+      "weight_g": 100,
+      "battery": "内置可充电锂离子电池，10分钟追踪约14天",
+      "charging": "USB",
+      "water_resistance": "IPX7",
+      "subscription": "需要inReach卫星服务订阅",
+      "privacy": "账户、MapShare和SOS数据策略由Garmin服务条款约束",
+      "availability_note": "Garmin美国、加拿大、欧洲页面可购买",
+      "source_note": "芯片型号和电池容量官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "TRACK-005",
+      "brand": "AngelSense",
+      "model": "GPS4 Kit",
+      "country_region": "美国/加拿大",
+      "category": "smart-trackers",
+      "form_factor": "4G个人安全定位器",
+      "use_case": "儿童、老人和特殊需要人群定位",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "Full 1-Year Package US$49.99/月",
+      "official_url": "https://www.angelsense.com/safety-independence-product/",
+      "spec_url": "https://www.angelsense.com/safety-independence-product/",
+      "features": [
+        "全天候定位",
+        "电子围栏",
+        "到离校提醒",
+        "语音功能",
+        "内置4G SIM"
+      ],
+      "sensors": [
+        "GNSS定位模块",
+        "运动/状态检测，具体未公开"
+      ],
+      "gps_positioning": "4G辅助GNSS；具体卫星系统未公开",
+      "supported_protocols": [
+        "4G LTE",
+        "蜂窝网络"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "未公开",
+      "water_resistance": "未公开",
+      "subscription": "需要AngelSense服务订阅",
+      "privacy": "未公开",
+      "availability_note": "官方产品页面向美国/加拿大家庭用户",
+      "source_note": "芯片、尺寸、重量、电池和防护等级官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "TRACK-006",
+      "brand": "LandAirSea",
+      "model": "54 GPS Tracker",
+      "country_region": "美国/全球155+国家",
+      "category": "smart-trackers",
+      "form_factor": "4G LTE磁吸式车辆/资产追踪器",
+      "use_case": "车辆、设备、行李、家庭成员定位",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "US$29.95；订阅US$19.95/月起",
+      "official_url": "https://landairsea.com/products/landairsea-54",
+      "spec_url": "https://landairsea.com/wp-content/uploads/2023/10/54_SpecSheet.pdf",
+      "features": [
+        "实时追踪",
+        "地理围栏",
+        "速度提醒",
+        "磁吸",
+        "历史回放"
+      ],
+      "sensors": [
+        "GNSS接收器",
+        "运动检测"
+      ],
+      "gps_positioning": "GPS；结合4G LTE与卫星定位",
+      "supported_protocols": [
+        "4G LTE",
+        "GPS",
+        "Google Maps"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "直径2.275英寸；高0.945英寸",
+      "weight_g": "未公开",
+      "battery": "1500mAh；普通模式1–3周，低功耗最长6个月",
+      "charging": "USB",
+      "water_resistance": "IP67",
+      "subscription": "强制订阅",
+      "privacy": "SilverCloud账户登录；官方未披露完整隐私机制",
+      "availability_note": "美国官方商店可购买，国际覆盖取决于蜂窝网络",
+      "source_note": "芯片和重量官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Tile Mate",
+      "brand": "Tile",
+      "region": "美国/全球",
+      "category": "smart-trackers",
+      "status": "当前/区域销售候选",
+      "evidence": "B",
+      "reason": "合规文件确认产品名称和型号；官方规格页缺少多个字段",
+      "url": "https://www.tile.com/product/mate",
+      "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "name": "Life360 Jiobit Smart Tag",
+      "brand": "Life360",
+      "region": "美国",
+      "category": "smart-trackers",
+      "status": "历史/区域候选",
+      "evidence": "B",
+      "reason": "官方页面可访问性和产品状态存在地区差异",
+      "url": "https://www.life360.com/jiobit",
+      "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "name": "Tractive DOG 6",
+      "brand": "Tractive",
+      "region": "奥地利/全球175+国家",
+      "category": "smart-trackers",
+      "status": "已在智能宠物项圈数据库收录；跨库去重",
+      "evidence": "A",
+      "reason": "同一宠物GPS硬件已经在 /smart-pet-collars/ 主表，避免在通用追踪库重复计数。",
+      "url": "https://tractive.com/en/pd/gps-tracker-dog?edition=black",
+      "alias_or_relation": "转入智能宠物项圈/吊牌数据库"
+    }
+  ],
+  "sources": [
+    {
+      "source_group": "smart-trackers官方来源1",
+      "url": "https://support.apple.com/en-us/126203",
+      "scope": "AirTag 2规格、UWB、IP67、电池和尺寸",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-trackers官方来源2",
+      "url": "https://www.apple.com/shop/buy-airtag/airtag",
+      "scope": "AirTag当前价格和销售状态",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-trackers官方来源3",
+      "url": "https://www.samsung.com/us/mobile-accessories/galaxy-smarttag2-black-ei-t5600bbegus/",
+      "scope": "SmartTag2价格、规格和兼容性",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-trackers官方来源4",
+      "url": "https://chipolo.net/en/products/chipolo-one-spot",
+      "scope": "Chipolo ONE Spot官方销售、Find My和规格",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-trackers官方来源5",
+      "url": "https://www.garmin.com/en-CA/p/765374/pn/010-02602-00/",
+      "scope": "inReach Mini 2当前价格、规格和销售",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-trackers官方来源6",
+      "url": "https://www.garmin.com/en-US/newsroom/press-release/outdoor/new-garmin-inreach-mini-2-delivers-up-to-30-days-of-global-satellite-communication-emergency-services-and-enhanced-location-tracking/",
+      "scope": "inReach Mini 2发布日期、定位卫星和订阅",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-trackers官方来源7",
+      "url": "https://www.angelsense.com/safety-independence-product/",
+      "scope": "AngelSense GPS4功能、价格和4G SIM",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-trackers官方来源8",
+      "url": "https://landairsea.com/products/landairsea-54",
+      "scope": "LandAirSea 54产品、价格、订阅和功能",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-trackers官方来源9",
+      "url": "https://landairsea.com/wp-content/uploads/2023/10/54_SpecSheet.pdf",
+      "scope": "LandAirSea 54技术规格",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-trackers官方来源10",
+      "url": "https://tractive.com/en/pd/gps-tracker-dog?edition=black",
+      "scope": "Tractive DOG 6价格、GPS、LTE、IP68和电池",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-trackers官方来源11",
+      "url": "https://legal.tile.com/assets/compliance/pdf/NPI2024/UK/UKPSTI_T1801A.pdf",
+      "scope": "Tile Mate官方合规文件和型号确认",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-trackers官方来源12",
+      "url": "https://www.life360.com/jiobit",
+      "scope": "Jiobit官方候选产品入口",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    }
+  ],
+  "update_log": [
+    {
+      "date": "2026-08-25",
+      "change": "首版新增6条定位追踪与个人安全主表记录，覆盖多个国家/地区品牌；另保留3条候选、历史、边界或地区线索。",
+      "verification": "优先使用官方产品、规格、支持、发布和销售页面；A/B证据分级，来源未披露字段均写“未公开”。跨库重复型号已转为候选关系，不纳入本库主表。",
+      "next": "继续补充更多国家/地区品牌，逐条复核当前库存、首发日期、原始价格、芯片、传感器、续航、防护和服务条款。"
+    }
+  ]
+}

@@ -13,6 +13,10 @@
     [
       "服务口径",
       "AI、翻译、云端转写和订阅是服务字段；不能从营销词推断芯片或隐私实现。"
+    ],
+    [
+      "查证日期",
+      "2026-08-25"
     ]
   ],
   "products": [
@@ -49,7 +53,8 @@
       "privacy": "Apple官方隐私设置与设备权限控制；详细字段未公开",
       "features": "主动降噪、通透、自适应音频、心率/健康功能、通话",
       "availability_note": "Apple官方规格与发布页在售",
-      "source_note": "Apple官方规格/发布页"
+      "source_note": "Apple官方规格/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-002",
@@ -84,7 +89,8 @@
       "privacy": "未公开",
       "features": "主动降噪、通透、自适应音频、通话",
       "availability_note": "官方产品与支持规格页可核验",
-      "source_note": "Apple官方规格/支持页"
+      "source_note": "Apple官方规格/支持页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-003",
@@ -119,7 +125,8 @@
       "privacy": "未公开",
       "features": "自适应ANC、高保真、通话、Galaxy AI相关功能",
       "availability_note": "Samsung官方产品与新闻稿可核验；部分规格未公开",
-      "source_note": "Samsung官方产品/发布页"
+      "source_note": "Samsung官方产品/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-004",
@@ -154,7 +161,8 @@
       "privacy": "未公开",
       "features": "ANC、通透、通话、Google Assistant/AI能力",
       "availability_note": "Google Store产品/规格页可核验",
-      "source_note": "Google官方商店/规格页"
+      "source_note": "Google官方商店/规格页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-005",
@@ -189,7 +197,8 @@
       "privacy": "未公开",
       "features": "主动降噪、环境声、通话、LDAC",
       "availability_note": "Sony官方支持/规格页可核验",
-      "source_note": "Sony官方规格/支持页"
+      "source_note": "Sony官方规格/支持页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-006",
@@ -224,7 +233,8 @@
       "privacy": "未公开",
       "features": "自适应ANC、CustomTune、沉浸式音频、通话",
       "availability_note": "Bose官方产品/新闻稿在售",
-      "source_note": "Bose官方产品/发布页"
+      "source_note": "Bose官方产品/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-007",
@@ -259,7 +269,8 @@
       "privacy": "未公开",
       "features": "自适应ANC、Auracast、LE Audio、多点连接",
       "availability_note": "Sennheiser官方产品和FAQ页在售",
-      "source_note": "Sennheiser官方产品/支持页"
+      "source_note": "Sennheiser官方产品/支持页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-008",
@@ -294,7 +305,8 @@
       "privacy": "未公开",
       "features": "自适应ANC、Voice Focus AI、Dolby Atmos、多点连接",
       "availability_note": "Technics官方产品与系列页在售",
-      "source_note": "Technics官方产品/系列页"
+      "source_note": "Technics官方产品/系列页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-009",
@@ -329,7 +341,8 @@
       "privacy": "未公开",
       "features": "ANC、通话降噪、高清音频、骨声纹",
       "availability_note": "Huawei官方规格页可核验",
-      "source_note": "Huawei官方规格页"
+      "source_note": "Huawei官方规格页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-010",
@@ -364,7 +377,8 @@
       "privacy": "未公开",
       "features": "AI降噪、录音、转写、翻译、音乐",
       "availability_note": "Xiaomi全球产品/规格/FAQ页在售",
-      "source_note": "Xiaomi官方产品/规格/FAQ"
+      "source_note": "Xiaomi官方产品/规格/FAQ",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-011",
@@ -399,7 +413,8 @@
       "privacy": "未公开",
       "features": "最高45dB ANC、通透、ChatGPT集成、多点",
       "availability_note": "Nothing官方产品和地区页在售",
-      "source_note": "Nothing官方产品/地区页"
+      "source_note": "Nothing官方产品/地区页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-012",
@@ -434,7 +449,8 @@
       "privacy": "未公开",
       "features": "ANC、Smart Charging Case触屏、音频发射器、Auracast",
       "availability_note": "JBL官方产品、发布和规格PDF可核验",
-      "source_note": "JBL官方产品/发布/规格页"
+      "source_note": "JBL官方产品/发布/规格页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-013",
@@ -469,7 +485,8 @@
       "privacy": "未公开",
       "features": "双单元、ANC、通话、骨传感器、多点",
       "availability_note": "OnePlus官方产品/规格/发布页可核验",
-      "source_note": "OnePlus官方产品/规格/发布页"
+      "source_note": "OnePlus官方产品/规格/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-014",
@@ -504,7 +521,8 @@
       "privacy": "录音/AI数据处理细节未公开",
       "features": "AI录音、通话、ANC、智能盒、VPU",
       "availability_note": "官方产品页在售；地区和服务可能变化",
-      "source_note": "soundcore官方产品页"
+      "source_note": "soundcore官方产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-015",
@@ -539,7 +557,8 @@
       "privacy": "未公开",
       "features": "AI助手、100种语言翻译、开放式运动佩戴",
       "availability_note": "soundcore官方澳洲产品页/FAQ可核验",
-      "source_note": "soundcore官方产品/FAQ"
+      "source_note": "soundcore官方产品/FAQ",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-016",
@@ -574,7 +593,8 @@
       "privacy": "官方提供GDPR/FERPA隐私说明",
       "features": "52种语言/106口音翻译、骨声纹、会议/旅行",
       "availability_note": "Timekettle官方产品页在售",
-      "source_note": "Timekettle官方产品页"
+      "source_note": "Timekettle官方产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-017",
@@ -609,7 +629,8 @@
       "privacy": "未公开",
       "features": "52种语言/106口音；13种离线语言；电话、视频、会议、媒体翻译",
       "availability_note": "Timekettle官方2026产品页在售",
-      "source_note": "Timekettle官方产品页"
+      "source_note": "Timekettle官方产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-018",
@@ -644,7 +665,8 @@
       "privacy": "未公开",
       "features": "43种在线/13种离线语言；最多6人翻译",
       "availability_note": "官方产品页仍可查；代际/别名关系保留",
-      "source_note": "Timekettle官方产品页"
+      "source_note": "Timekettle官方产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-019",
@@ -679,7 +701,8 @@
       "privacy": "未公开",
       "features": "支持51种以上语言；官方明确不支持音乐和电话",
       "availability_note": "官方产品页当前显示不可用，保留历史/状态记录",
-      "source_note": "Vasco官方产品与CES发布页"
+      "source_note": "Vasco官方产品与CES发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-020",
@@ -714,7 +737,8 @@
       "privacy": "未公开",
       "features": "37种以上语言实时翻译；音乐与通话",
       "availability_note": "官方产品页显示在售，服务条款需继续核验",
-      "source_note": "Mymanu官方产品页"
+      "source_note": "Mymanu官方产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-021",
@@ -749,7 +773,8 @@
       "privacy": "未公开",
       "features": "144种在线/11种离线语言；翻译、音乐、通话",
       "availability_note": "全球商店与日本规格页可交叉核验",
-      "source_note": "Wooask全球/日本官方页"
+      "source_note": "Wooask全球/日本官方页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-022",
@@ -784,7 +809,8 @@
       "privacy": "未公开",
       "features": "开放式运动听音、通话、骨传导/空气传导",
       "availability_note": "官方页可查，但库存/促销状态有冲突",
-      "source_note": "Shokz官方产品/详情页"
+      "source_note": "Shokz官方产品/详情页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-023",
@@ -819,7 +845,8 @@
       "privacy": "未公开",
       "features": "游泳MP3、水下使用、骨传导、运动通话",
       "availability_note": "Shokz官方产品与英国规格页在售",
-      "source_note": "Shokz官方产品/规格页"
+      "source_note": "Shokz官方产品/规格页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-024",
@@ -854,7 +881,8 @@
       "privacy": "未公开",
       "features": "骨传导、LED、头部动作控制、抗风噪",
       "availability_note": "Suunto官方产品与支持页在售",
-      "source_note": "Suunto官方产品/支持页"
+      "source_note": "Suunto官方产品/支持页",
+      "connectivity": "未公开"
     },
     {
       "id": "AUDIO-025",
@@ -889,7 +917,8 @@
       "privacy": "未公开",
       "features": "蓝牙、TF、MP3；水下MP3/TF模式",
       "availability_note": "官方产品页在售；关键电池/充电规格未公开",
-      "source_note": "Naenka官方产品页"
+      "source_note": "Naenka官方产品页",
+      "connectivity": "未公开"
     }
   ],
   "candidates": [

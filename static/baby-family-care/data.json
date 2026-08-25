@@ -1,0 +1,497 @@
+{
+  "checked_on": "2026-08-25",
+  "scope_note": "本库覆盖婴儿与家庭照护：婴儿监视器、智能摇篮、婴儿秤、睡眠监测与家庭照护报警器。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
+  "field_rules": [
+    [
+      "类别边界",
+      "婴儿监视器、智能摇篮、婴儿秤、睡眠监测与家庭照护报警器。"
+    ],
+    [
+      "跨库去重",
+      "已在其他独立数据库收录的同一硬件不重复计入主表；如有交叉用途，保留候选/别名和原始来源。"
+    ],
+    [
+      "上市状态",
+      "在售、地区在售、预售、历史、售罄、候选和OEM线索分开；官方页面不能证明当前交付的型号不计入主表。"
+    ],
+    [
+      "证据等级",
+      "A为官方产品/规格/销售链较完整；B为官方页面明确但关键字段或当前库存有缺口；C/D为候选、渠道、历史或未充分验证线索。"
+    ],
+    [
+      "字段缺口",
+      "来源未披露统一写“未公开”，尤其不推断芯片、传感器、尺寸、重量、续航、防水、订阅和隐私字段。"
+    ],
+    [
+      "价格",
+      "保留首发/当前价格和原币种；促销、租赁、订阅、押金和服务费在原文中区分，不做无说明汇率换算。"
+    ],
+    [
+      "查证日期",
+      "2026-08-25"
+    ]
+  ],
+  "products": [
+    {
+      "id": "BABY-001",
+      "brand": "Nanit",
+      "model": "Nanit Pro Smart Baby Monitor",
+      "country_region": "美国/全球",
+      "category": "baby-family-care",
+      "form_factor": "壁挂式婴儿摄像头",
+      "use_case": "婴儿视频、睡眠与呼吸动作监测",
+      "status": "已上市，可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "USD 289.99",
+      "official_url": "https://www.nanit.com/products/smart-baby-monitor",
+      "spec_url": "https://support.nanit.com/en_us/nanit-pro-camera-and-floor-stand-101-SJXLf30tle",
+      "features": [
+        "1080p视频",
+        "夜视",
+        "双向通话",
+        "睡眠追踪",
+        "呼吸动作监测"
+      ],
+      "sensors": [
+        "摄像头",
+        "红外灯"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "Wi-Fi 2.4GHz"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "壁挂支架 4.2 x 3.3 x 8 in",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "有线供电",
+      "water_resistance": "未公开",
+      "subscription": "Insights/Sleep/Memories/Milestones 订阅可选",
+      "privacy": "官方称 256-bit 加密、端到端加密、强制 MFA",
+      "availability_note": "官网可购买",
+      "source_note": "官方产品页与支持页；型号 N302 另见官方 EU DoC",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "BABY-002",
+      "brand": "Owlet",
+      "model": "Dream Sock",
+      "country_region": "美国/全球部分地区",
+      "category": "baby-family-care",
+      "form_factor": "婴儿脚部可穿戴袜式监测器",
+      "use_case": "婴儿睡眠、脉搏率和血氧监测",
+      "status": "已上市，可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://owletcare.com/products/owlet-dream-sock",
+      "spec_url": "https://support.owletcare.com/hc/en-us/article_attachments/27362372264845",
+      "features": [
+        "实时脉搏率",
+        "血氧读数",
+        "睡眠趋势",
+        "基站报警",
+        "手机通知"
+      ],
+      "sensors": [
+        "脉搏血氧传感器"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "未公开"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "基站/USB供电，具体未公开",
+      "water_resistance": "未公开",
+      "subscription": "未公开",
+      "privacy": "未公开",
+      "availability_note": "官网产品页可购买",
+      "source_note": "官方产品页与官方用户手册；官方称 FDA-cleared",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "BABY-003",
+      "brand": "CuboAi",
+      "model": "CuboAi Smart Baby Monitor 3",
+      "country_region": "台湾/美国及多地区",
+      "category": "baby-family-care",
+      "form_factor": "Wi-Fi 婴儿摄像头",
+      "use_case": "婴儿视频、安全、睡眠与健康提醒",
+      "status": "已上市，可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "USD 199 起",
+      "official_url": "https://us.getcubo.com/products/cuboai-smart-baby-monitor",
+      "spec_url": "https://help.getcubo.com/hc/en-us/categories/36311620995225-CuboAi-Plus-Smart-Baby-Monitor",
+      "features": [
+        "翻身提醒",
+        "遮脸提醒",
+        "哭声/动作提醒",
+        "温湿度",
+        "多用户登录"
+      ],
+      "sensors": [
+        "摄像头",
+        "温湿度传感器"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "Wi-Fi"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "有线供电",
+      "water_resistance": "未公开",
+      "subscription": "CuboAi Care Premium；官网含一年试用/随附服务",
+      "privacy": "官网提供 Security/Privacy 说明，具体加密实现未公开",
+      "availability_note": "官网可购买；标准配送约 3–10 个工作日",
+      "source_note": "官方产品页与帮助中心",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "BABY-004",
+      "brand": "Sense-U",
+      "model": "Sense-U Pro Baby Monitor",
+      "country_region": "美国/全球线上销售",
+      "category": "baby-family-care",
+      "form_factor": "婴儿尿布夹式监测器",
+      "use_case": "腹部运动、睡姿、体感温度与睡眠分析",
+      "status": "已上市，可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "USD 129.99 起",
+      "official_url": "https://shop.sense-u.com/products/baby-monitor",
+      "spec_url": "https://shop.sense-u.com/products/sense-u-baby-monitor-pro",
+      "features": [
+        "15秒无腹部运动提醒",
+        "翻身提醒",
+        "过热/过冷提醒",
+        "机身振动",
+        "App睡眠分析"
+      ],
+      "sensors": [
+        "腹部运动传感器",
+        "温度传感器"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "Bluetooth Low Energy 4.0+"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "单次充电 7 天以上",
+      "charging": "USB-C",
+      "water_resistance": "未公开",
+      "subscription": "官方称基础使用无月费；云存储可选",
+      "privacy": "官方称非医疗器械；隐私细节未公开",
+      "availability_note": "官网可购买",
+      "source_note": "官方销售页；官方明确声明非医疗器械",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "BABY-005",
+      "brand": "Happiest Baby",
+      "model": "SNOO Smart Sleeper",
+      "country_region": "美国/全球部分地区",
+      "category": "baby-family-care",
+      "form_factor": "智能摇篮/婴儿床",
+      "use_case": "婴儿睡眠辅助与自动安抚",
+      "status": "已上市，可购买或租赁",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "USD 1,695；租赁 USD 159–499",
+      "official_url": "https://www.happiestbaby.com/",
+      "spec_url": "https://www.happiestbaby.com/pages/snoo-smart-sleeper",
+      "features": [
+        "自动摇摆",
+        "白噪声",
+        "哭声响应",
+        "睡眠辅助",
+        "购买/租赁"
+      ],
+      "sensors": [
+        "声音/哭声检测，具体传感器未公开"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": "未公开",
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "有线供电",
+      "water_resistance": "未公开",
+      "subscription": "租赁方案；其他订阅未公开",
+      "privacy": "未公开",
+      "availability_note": "官网列出新机、认证二手和租赁",
+      "source_note": "官方主页/销售入口",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "BABY-006",
+      "brand": "Philips Avent",
+      "model": "Premium Connected Baby Monitor SCD971/37",
+      "country_region": "荷兰/美国及多地区",
+      "category": "baby-family-care",
+      "form_factor": "摄像头+独立家长显示器",
+      "use_case": "婴儿视频、睡眠、呼吸与哭声识别",
+      "status": "已上市，地区可售",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://www.usa.philips.com/c-p/SCD971_37/premium-connected-baby-monitor-connected",
+      "spec_url": "https://www.documents.philips.com/assets/20260528/bc18d4cbfd1e4d02be06b458007a5bc7.pdf",
+      "features": [
+        "SenseIQ无穿戴睡眠/呼吸追踪",
+        "5英寸家长屏",
+        "哭声检测/翻译",
+        "夜视",
+        "双向通话"
+      ],
+      "sensors": [
+        "摄像头",
+        "图像运动分析"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "Wi-Fi",
+        "Secure Connect System"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "家长单元最长约 12 小时",
+      "charging": "有线充电",
+      "water_resistance": "未公开",
+      "subscription": "未公开",
+      "privacy": "官方称多重加密连接",
+      "availability_note": "地区型号/库存不同",
+      "source_note": "官方产品页与官方说明书；官方声明非医疗器械",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "BABY-007",
+      "brand": "Beurer",
+      "model": "BY 90",
+      "country_region": "德国/欧洲及多地区",
+      "category": "baby-family-care",
+      "form_factor": "婴儿电子秤",
+      "use_case": "婴儿体重与成长记录",
+      "status": "已上市，可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "GBP 79.99（英国官方页面）",
+      "official_url": "https://www.beurer.com/global/p/95606/",
+      "spec_url": "https://pim.beurer.com/images/attribut/956.06_BY90_2018-09-05_02_DS_EN_BEU.pdf",
+      "features": [
+        "Hold稳定称重",
+        "去皮称重",
+        "内置量尺",
+        "10组记忆",
+        "App记录"
+      ],
+      "sensors": [
+        "重量传感器"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "Bluetooth"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "56.00 x 33.00 x 4.75 cm",
+      "weight_g": 1400,
+      "battery": "电池供电",
+      "charging": "不适用",
+      "water_resistance": "未公开",
+      "subscription": "无公开订阅",
+      "privacy": "未公开",
+      "availability_note": "官网列为当前产品；地区价格不同",
+      "source_note": "官方产品页与规格数据",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "BABY-008",
+      "brand": "Lifeline",
+      "model": "HomeSafe Cellular",
+      "country_region": "美国",
+      "category": "baby-family-care",
+      "form_factor": "家庭照护报警器+可穿戴求助按钮",
+      "use_case": "老年人/家庭照护、紧急呼叫与可选跌倒检测",
+      "status": "已上市，可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "按服务方案计费；固定价格未公开",
+      "official_url": "https://www.lifeline.com/product/homesafe-cellular/",
+      "spec_url": "https://www.lifeline.com/product/homesafe-cellular/",
+      "features": [
+        "蜂窝网络",
+        "800英尺按钮范围",
+        "24/7人工响应",
+        "可选跌倒检测",
+        "30小时备用电池"
+      ],
+      "sensors": [
+        "可选跌倒检测传感器，具体未公开"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "蜂窝网络"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "通讯器备用电池约 30 小时；按钮电池由官方更换",
+      "charging": "有线供电/备用电池",
+      "water_resistance": "求助按钮官方称防水",
+      "subscription": "必须选择服务计划",
+      "privacy": "未公开",
+      "availability_note": "官网可下单",
+      "source_note": "官方产品/销售页",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Sense-U AI 2.5K PTZ Baby Camera",
+      "brand": "Sense-U",
+      "region": "美国/全球线上销售",
+      "category": "baby-family-care",
+      "status": "候选；边界型号",
+      "evidence": "A",
+      "reason": "官方产品页；与 Sense-U Pro 属同品牌不同产品线，暂不并入主表",
+      "url": "https://shop.sense-u.com/collections/baby-camera-monitors/products/sense-u-ai-2k-ptz-baby-camera-video-monitor",
+      "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "name": "Nanit Nanit Sound + Light",
+      "brand": "Nanit",
+      "region": "美国/全球部分地区",
+      "category": "baby-family-care",
+      "status": "候选；家庭照护边界型号",
+      "evidence": "B",
+      "reason": "官方支持页确认产品存在及兼容摄像头",
+      "url": "https://support.nanit.com/en_us/what-is-nanit-home-rkQUqOYQGl",
+      "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    }
+  ],
+  "sources": [
+    {
+      "source_group": "baby-family-care官方来源1",
+      "url": "https://www.nanit.com/products/smart-baby-monitor",
+      "scope": "产品、价格、订阅与隐私",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "baby-family-care官方来源2",
+      "url": "https://owletcare.com/products/owlet-dream-sock",
+      "scope": "产品功能与 FDA 状态",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "baby-family-care官方来源3",
+      "url": "https://us.getcubo.com/products/cuboai-smart-baby-monitor",
+      "scope": "产品、价格、配送与服务",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "baby-family-care官方来源4",
+      "url": "https://shop.sense-u.com/products/baby-monitor",
+      "scope": "传感器、续航、BLE 与免责声明",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "baby-family-care官方来源5",
+      "url": "https://www.happiestbaby.com/",
+      "scope": "SNOO 购买、租赁与价格",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "baby-family-care官方来源6",
+      "url": "https://www.usa.philips.com/c-p/SCD971_37/premium-connected-baby-monitor-connected",
+      "scope": "官方功能与型号",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "baby-family-care官方来源7",
+      "url": "https://www.beurer.com/global/p/95606/",
+      "scope": "规格、尺寸、重量与电源",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "baby-family-care官方来源8",
+      "url": "https://www.lifeline.com/product/homesafe-cellular/",
+      "scope": "家庭报警、蜂窝网络与服务",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    }
+  ],
+  "update_log": [
+    {
+      "date": "2026-08-25",
+      "change": "首版新增8条婴儿与家庭照护主表记录，覆盖多个国家/地区品牌；另保留2条候选、历史、边界或地区线索。",
+      "verification": "优先使用官方产品、规格、支持、发布和销售页面；A/B证据分级，来源未披露字段均写“未公开”。跨库重复型号已转为候选关系，不纳入本库主表。",
+      "next": "继续补充更多国家/地区品牌，逐条复核当前库存、首发日期、原始价格、芯片、传感器、续航、防护和服务条款。"
+    }
+  ]
+}

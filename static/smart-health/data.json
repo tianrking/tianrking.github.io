@@ -1,0 +1,531 @@
+{
+  "checked_on": "2026-08-25",
+  "scope_note": "本库覆盖健康与医疗智能设备：体脂秤、血压、心电、睡眠、血糖、体温与康复设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
+  "field_rules": [
+    [
+      "类别边界",
+      "体脂秤、血压、心电、睡眠、血糖、体温与康复设备。"
+    ],
+    [
+      "跨库去重",
+      "已在其他独立数据库收录的同一硬件不重复计入主表；如有交叉用途，保留候选/别名和原始来源。"
+    ],
+    [
+      "上市状态",
+      "在售、地区在售、预售、历史、售罄、候选和OEM线索分开；官方页面不能证明当前交付的型号不计入主表。"
+    ],
+    [
+      "证据等级",
+      "A为官方产品/规格/销售链较完整；B为官方页面明确但关键字段或当前库存有缺口；C/D为候选、渠道、历史或未充分验证线索。"
+    ],
+    [
+      "字段缺口",
+      "来源未披露统一写“未公开”，尤其不推断芯片、传感器、尺寸、重量、续航、防水、订阅和隐私字段。"
+    ],
+    [
+      "价格",
+      "保留首发/当前价格和原币种；促销、租赁、订阅、押金和服务费在原文中区分，不做无说明汇率换算。"
+    ],
+    [
+      "查证日期",
+      "2026-08-25"
+    ]
+  ],
+  "products": [
+    {
+      "id": "HEALTH-001",
+      "brand": "Withings",
+      "model": "Body Comp",
+      "country_region": "法国/全球",
+      "category": "smart-health",
+      "form_factor": "智能体脂秤",
+      "use_case": "体重、体脂、肌肉、骨量和心血管健康趋势",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "US$229.95",
+      "official_url": "https://www.withings.com/en-us/products/body-comp-black",
+      "spec_url": "https://wcs.withings.com/us/en/body-comp",
+      "features": [
+        "体脂/肌肉/骨量",
+        "站立心率",
+        "血管年龄",
+        "EDA评分",
+        "Wi-Fi同步"
+      ],
+      "sensors": [
+        "生物电阻抗",
+        "心率电极",
+        "EDA电极"
+      ],
+      "gps_positioning": "无GPS",
+      "supported_protocols": [
+        "Wi-Fi",
+        "Bluetooth",
+        "Withings App"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "4×AAA；最长约15个月",
+      "charging": "更换AAA电池",
+      "water_resistance": "未公开",
+      "subscription": "Withings+可选；部分洞察需订阅",
+      "privacy": "官方隐私政策适用；健康数据云端同步",
+      "availability_note": "Withings美国官网显示In stock",
+      "source_note": "芯片、尺寸、重量和防护等级官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "HEALTH-002",
+      "brand": "OMRON",
+      "model": "10 Series Upper Arm Blood Pressure Monitor BP7465",
+      "country_region": "美国/加拿大",
+      "category": "smart-health",
+      "form_factor": "蓝牙上臂式血压计",
+      "use_case": "家庭血压、脉搏和房颤筛查",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "US$118.99 MSRP",
+      "official_url": "https://omronhealthcare.com/en-ca/products/10-series-upper-arm-blood-pressure-monitor-bp7465",
+      "spec_url": "https://omronhealthcare.com/storage/pdfs/10-series-wireless-upper-arm-blood-pressure-monitor-bp7450-im-en_3608646-1j.pdf",
+      "features": [
+        "房颤筛查",
+        "蓝牙",
+        "双用户",
+        "200条记忆",
+        "TruRead三次平均"
+      ],
+      "sensors": [
+        "血压测量模块",
+        "身体移动检测",
+        "脉搏检测"
+      ],
+      "gps_positioning": "无GPS",
+      "supported_protocols": [
+        "Bluetooth",
+        "OMRON connect"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "191×85×120mm",
+      "weight_g": 470,
+      "battery": "4×AA",
+      "charging": "4×AA或AC适配器",
+      "water_resistance": "未公开",
+      "subscription": "无强制订阅",
+      "privacy": "OMRON connect隐私政策适用",
+      "availability_note": "OMRON美国/加拿大官方页可核验",
+      "source_note": "芯片、GPS和防护等级官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "HEALTH-003",
+      "brand": "AliveCor",
+      "model": "KardiaMobile 6L",
+      "country_region": "美国/全球部分地区",
+      "category": "smart-health",
+      "form_factor": "便携六导联ECG",
+      "use_case": "家庭心电记录和心律筛查",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://store.alivecor.com/products/kardiamobile6l",
+      "spec_url": "https://cdn.alivecor.com/ifus/km-card/19LB01.07_KardiaMobile_6L_System_Instructions_for_Use_%28IFU%29_locked.pdf",
+      "features": [
+        "六导联ECG",
+        "30秒至5分钟记录",
+        "FDA-cleared个人ECG",
+        "App分析"
+      ],
+      "sensors": [
+        "3个不锈钢电极"
+      ],
+      "gps_positioning": "无GPS",
+      "supported_protocols": [
+        "Bluetooth Low Energy"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "90×30×7.2mm",
+      "weight_g": 24,
+      "battery": "CR2016；典型约12个月",
+      "charging": "更换电池",
+      "water_resistance": "未公开",
+      "subscription": "KardiaCare可选；基础记录可用性按地区变化",
+      "privacy": "健康数据经Kardia App和账户处理",
+      "availability_note": "AliveCor官方商店可购买",
+      "source_note": "芯片、GPS和防护等级官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "HEALTH-005",
+      "brand": "Dexcom",
+      "model": "Stelo Glucose Biosensor",
+      "country_region": "美国",
+      "category": "smart-health",
+      "form_factor": "非处方连续血糖生物传感器",
+      "use_case": "成人非胰岛素使用者的持续血糖趋势",
+      "status": "在售",
+      "evidence": "B",
+      "launch_date": "2024-08-26",
+      "launch_date_type": "官方发布公告",
+      "price": "US$99/两枚；订阅US$89/月",
+      "official_url": "https://www.dexcom.com/en-us/glucose-sensing",
+      "spec_url": "https://investors.dexcom.com/news/news-details/2024/Stelo-by-Dexcom-the-First-Over-the-Counter-Glucose-Biosensor-in-the-U.S.-Is-Now-Available/",
+      "features": [
+        "24/7血糖趋势",
+        "无需处方",
+        "无需指尖采血",
+        "手机App"
+      ],
+      "sensors": [
+        "葡萄糖生物传感器"
+      ],
+      "gps_positioning": "无GPS",
+      "supported_protocols": [
+        "Bluetooth",
+        "手机App"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "传感器单枚最长约15天",
+      "charging": "不可充电；更换传感器",
+      "water_resistance": "未公开",
+      "subscription": "可按月订阅或一次性购买",
+      "privacy": "健康数据经Dexcom App和云服务处理",
+      "availability_note": "美国18岁以上、非胰岛素使用者适用；地区限制明确",
+      "source_note": "芯片、尺寸、重量和防护等级官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "HEALTH-006",
+      "brand": "Tempdrop",
+      "model": "Tempdrop 2.0",
+      "country_region": "美国/全球",
+      "category": "smart-health",
+      "form_factor": "上臂式睡眠/基础体温监测器",
+      "use_case": "睡眠期间基础体温和生育周期追踪",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "US$189",
+      "official_url": "https://www.tempdrop.com/products/tempdrop-gen2",
+      "spec_url": "https://help.tempdrop.com/article/178-how-to-change-tempdrops-battery",
+      "features": [
+        "夜间连续体温",
+        "iOS/Android App",
+        "周期图表",
+        "Apple Health/Google Health"
+      ],
+      "sensors": [
+        "温度传感器",
+        "运动测量"
+      ],
+      "gps_positioning": "无GPS",
+      "supported_protocols": [
+        "Bluetooth Low Energy"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "CR2032；通常10–14个月",
+      "charging": "更换电池",
+      "water_resistance": "未公开",
+      "subscription": "基础App免费；Premium可选",
+      "privacy": "官方称不出售个人信息；支持账户删除",
+      "availability_note": "官方商店可购买；国际配送时间不同",
+      "source_note": "芯片、尺寸、重量和防护等级官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "HEALTH-007",
+      "brand": "Therabody",
+      "model": "PowerDot 2.0 Duo",
+      "country_region": "美国/全球部分地区",
+      "category": "smart-health",
+      "form_factor": "TENS/NMES肌肉电刺激康复设备",
+      "use_case": "疼痛缓解、肌肉恢复和运动康复",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://www.therabody.com/us/en-us/powerdot-duo-blue.html",
+      "spec_url": "https://www.therabody.com/us/en-us/powerdot-duo-blue.html",
+      "features": [
+        "双电刺激模块",
+        "TENS",
+        "NMES",
+        "App个性化方案"
+      ],
+      "sensors": [
+        "电极片；生理传感器未公开"
+      ],
+      "gps_positioning": "无GPS",
+      "supported_protocols": [
+        "Bluetooth",
+        "PowerDot App"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "60.4×43.5×13.6mm/模块",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "micro-USB",
+      "water_resistance": "未公开",
+      "subscription": "无强制订阅",
+      "privacy": "App健康数据受Therabody隐私政策约束",
+      "availability_note": "Therabody美国官方商店可购买",
+      "source_note": "芯片、电池、重量和防护等级官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "HEALTH-008",
+      "brand": "eufy",
+      "model": "Smart Scale P2 Pro",
+      "country_region": "中国/英国/新加坡等地区",
+      "category": "smart-health",
+      "form_factor": "Wi-Fi/Bluetooth智能体脂秤",
+      "use_case": "体重、体脂、心率和身体成分",
+      "status": "在售（区域）",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "£54.99；地区价格不同",
+      "official_url": "https://www.eufy.com/uk/products/t9149111",
+      "spec_url": "https://www.eufy.com/uk/products/t9149111",
+      "features": [
+        "16项指标",
+        "心率",
+        "3D人体模型",
+        "Wi-Fi同步",
+        "宠物/婴儿模式"
+      ],
+      "sensors": [
+        "ITO生物电阻抗",
+        "心率测量"
+      ],
+      "gps_positioning": "无GPS",
+      "supported_protocols": [
+        "Bluetooth 5.0",
+        "2.4GHz Wi-Fi",
+        "EufyLife"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "280×280×26mm",
+      "weight_g": 1700,
+      "battery": "4×AAA",
+      "charging": "更换AAA电池",
+      "water_resistance": "IPX5",
+      "subscription": "无强制订阅",
+      "privacy": "App和云同步策略按eufy隐私政策",
+      "availability_note": "英国、欧洲、新加坡官方页面可购买；美国官网已宣布停售该系列",
+      "source_note": "芯片和GPS官方未披露；美国区域停售不代表全球停售",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Kinsa QuickCare Smart Thermometer",
+      "brand": "Kinsa",
+      "region": "美国",
+      "category": "smart-health",
+      "status": "预售/库存候选",
+      "evidence": "A",
+      "reason": "因当前库存状态不稳定，列为候选而非主表",
+      "url": "https://home.kinsahealth.com/products/kinsa-quickcare-smart-thermometer",
+      "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "name": "Beurer SE 80 SleepExpert",
+      "brand": "Beurer",
+      "region": "德国/欧洲",
+      "category": "smart-health",
+      "status": "历史候选",
+      "evidence": "B",
+      "reason": "列为历史候选，不纳入当前主表",
+      "url": "https://www.beurer.com/web/we-dokumente/ratgeber_broschueren/gb/757.455_Flyer_SleepLine_DIN-L_GB_0717_low.pdf",
+      "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "name": "Oura Oura Ring 4",
+      "brand": "Oura",
+      "region": "芬兰/全球",
+      "category": "smart-health",
+      "status": "已在智能指环数据库收录；跨库去重",
+      "evidence": "A",
+      "reason": "Oura Ring 是已有 /smart-rings/ 主表的独立形态，健康库保留交叉引用但不重复计数。",
+      "url": "https://ouraring.com/store/rings/oura-ring-4",
+      "alias_or_relation": "转入智能指环数据库"
+    }
+  ],
+  "sources": [
+    {
+      "source_group": "smart-health官方来源1",
+      "url": "https://www.withings.com/en-us/products/body-comp-black",
+      "scope": "Withings Body Comp价格、在售状态和核心指标",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-health官方来源2",
+      "url": "https://wcs.withings.com/us/en/body-comp",
+      "scope": "Body Comp连接、续航和功能比较",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-health官方来源3",
+      "url": "https://omronhealthcare.com/en-ca/products/10-series-upper-arm-blood-pressure-monitor-bp7465",
+      "scope": "OMRON BP7465价格、蓝牙、房颤和规格",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-health官方来源4",
+      "url": "https://omronhealthcare.com/storage/pdfs/10-series-wireless-upper-arm-blood-pressure-monitor-bp7450-im-en_3608646-1j.pdf",
+      "scope": "OMRON血压计尺寸、重量和电池",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-health官方来源5",
+      "url": "https://store.alivecor.com/products/kardiamobile6l",
+      "scope": "KardiaMobile 6L价格、六导联和硬件规格",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-health官方来源6",
+      "url": "https://cdn.alivecor.com/ifus/km-card/19LB01.07_KardiaMobile_6L_System_Instructions_for_Use_%28IFU%29_locked.pdf",
+      "scope": "KardiaMobile 6L官方使用说明和医疗器械确认",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-health官方来源7",
+      "url": "https://ouraring.com/store/rings/oura-ring-4",
+      "scope": "Oura Ring 4价格和在售状态",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-health官方来源8",
+      "url": "https://support.ouraring.com/hc/en-us/articles/33045011508115-Oura-Ring-4",
+      "scope": "Oura Ring 4传感器、尺寸、重量、电池和防水",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-health官方来源9",
+      "url": "https://www.dexcom.com/en-us/glucose-sensing",
+      "scope": "Stelo当前产品与适用人群",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-health官方来源10",
+      "url": "https://investors.dexcom.com/news/news-details/2024/Stelo-by-Dexcom-the-First-Over-the-Counter-Glucose-Biosensor-in-the-U.S.-Is-Now-Available/",
+      "scope": "Stelo发布日期、价格、购买和佩戴周期",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-health官方来源11",
+      "url": "https://www.tempdrop.com/products/tempdrop-gen2",
+      "scope": "Tempdrop 2.0价格、功能和购买",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-health官方来源12",
+      "url": "https://help.tempdrop.com/article/178-how-to-change-tempdrops-battery",
+      "scope": "Tempdrop 2.0电池型号和更换",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-health官方来源13",
+      "url": "https://www.therabody.com/us/en-us/powerdot-duo-blue.html",
+      "scope": "PowerDot 2.0功能、尺寸和治疗方式",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-health官方来源14",
+      "url": "https://www.eufy.com/uk/products/t9149111",
+      "scope": "eufy P2 Pro价格、16项指标、连接和IPX5",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-health官方来源15",
+      "url": "https://us.eufy.com/blogs/home/eufy-smart-scale-discontinued",
+      "scope": "eufy美国区域停售说明",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-health官方来源16",
+      "url": "https://home.kinsahealth.com/products/kinsa-quickcare-smart-thermometer",
+      "scope": "Kinsa QuickCare价格、FDA状态和当前库存提示",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-health官方来源17",
+      "url": "https://www.beurer.com/web/we-dokumente/ratgeber_broschueren/gb/757.455_Flyer_SleepLine_DIN-L_GB_0717_low.pdf",
+      "scope": "Beurer SE 80历史产品功能",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    }
+  ],
+  "update_log": [
+    {
+      "date": "2026-08-25",
+      "change": "首版新增7条健康与医疗智能设备主表记录，覆盖多个国家/地区品牌；另保留3条候选、历史、边界或地区线索。",
+      "verification": "优先使用官方产品、规格、支持、发布和销售页面；A/B证据分级，来源未披露字段均写“未公开”。跨库重复型号已转为候选关系，不纳入本库主表。",
+      "next": "继续补充更多国家/地区品牌，逐条复核当前库存、首发日期、原始价格、芯片、传感器、续航、防护和服务条款。"
+    }
+  ]
+}

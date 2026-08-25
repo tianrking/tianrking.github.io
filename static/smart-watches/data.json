@@ -13,6 +13,10 @@
     [
       "价格口径",
       "保留首发价、当前价和促销价的原币种，不做无说明的汇率换算。"
+    ],
+    [
+      "查证日期",
+      "2026-08-25"
     ]
   ],
   "products": [
@@ -49,7 +53,8 @@
       "privacy": "健康数据权限由Apple设备、Health和iCloud设置控制",
       "features": "健康洞察、训练、睡眠、心电、通知、通话、定位",
       "availability_note": "Apple官方商店和规格页可核验；具体尺寸/表带组合按市场变化",
-      "source_note": "Apple官方产品/规格/发布页"
+      "source_note": "Apple官方产品/规格/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "WATCH-002",
@@ -84,7 +89,8 @@
       "privacy": "未公开",
       "features": "户外导航、训练、潜水、健康、卫星SOS、通信",
       "availability_note": "Apple官方产品与规格页在售",
-      "source_note": "Apple官方产品/规格/发布页"
+      "source_note": "Apple官方产品/规格/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "WATCH-003",
@@ -119,7 +125,8 @@
       "privacy": "未公开",
       "features": "活动、训练、通知、家庭管理、安全通信",
       "availability_note": "可用于Apple Watch For Your Kids，但不是专用儿童硬件",
-      "source_note": "Apple官方产品/规格/发布页"
+      "source_note": "Apple官方产品/规格/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "WATCH-004",
@@ -154,7 +161,8 @@
       "privacy": "未公开",
       "features": "睡眠、健康、训练、BIA、心电、通知、通话",
       "availability_note": "Samsung全球/地区产品页与官方商店可核验",
-      "source_note": "Samsung官方产品/规格/发布页"
+      "source_note": "Samsung官方产品/规格/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "WATCH-005",
@@ -189,7 +197,8 @@
       "privacy": "未公开",
       "features": "健康、训练、睡眠、旋转表圈、通信",
       "availability_note": "Samsung地区产品与商店页可核验",
-      "source_note": "Samsung官方产品/规格/发布页"
+      "source_note": "Samsung官方产品/规格/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "WATCH-006",
@@ -224,7 +233,8 @@
       "privacy": "未公开",
       "features": "户外训练、健康、睡眠、导航、通信",
       "availability_note": "Samsung官方产品/购买/规格页在售",
-      "source_note": "Samsung官方产品/规格/发布页"
+      "source_note": "Samsung官方产品/规格/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "WATCH-007",
@@ -259,7 +269,8 @@
       "privacy": "未公开",
       "features": "健康、Fitbit训练、睡眠、通知、Google服务",
       "availability_note": "Google Store规格和产品页在售",
-      "source_note": "Google官方商店/规格/发布页"
+      "source_note": "Google官方商店/规格/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "WATCH-008",
@@ -294,7 +305,8 @@
       "privacy": "未公开",
       "features": "跑步/铁三训练、恢复、GPS、健康、训练建议",
       "availability_note": "Garmin官方产品页和新闻稿可核验；不同表径分开规格",
-      "source_note": "Garmin官方产品/比较/发布页"
+      "source_note": "Garmin官方产品/比较/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "WATCH-009",
@@ -329,7 +341,8 @@
       "privacy": "未公开",
       "features": "跑步/铁三、地图、训练、Garmin Pay、健康",
       "availability_note": "Garmin官方产品、手册、新闻稿可核验",
-      "source_note": "Garmin官方产品/手册/发布页"
+      "source_note": "Garmin官方产品/手册/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "WATCH-010",
@@ -364,7 +377,8 @@
       "privacy": "未公开",
       "features": "多运动、地图、户外导航、潜水、训练、Garmin Pay",
       "availability_note": "Garmin官方产品与系列手册在售",
-      "source_note": "Garmin官方产品/手册/发布页"
+      "source_note": "Garmin官方产品/手册/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "WATCH-011",
@@ -399,7 +413,8 @@
       "privacy": "儿童定位和家庭账户数据；官方细节未公开",
       "features": "通话、定位、围栏、SOS、家长控制",
       "availability_note": "英国和欧洲官方页可核验；全球可得性分区",
-      "source_note": "Garmin官方产品/区域页面"
+      "source_note": "Garmin官方产品/区域页面",
+      "connectivity": "未公开"
     },
     {
       "id": "WATCH-012",
@@ -434,7 +449,8 @@
       "privacy": "数据处理细节未在规格页完整披露",
       "features": "健康监测、运动、睡眠、通信、手势交互",
       "availability_note": "区域价格与通信版本差异较大",
-      "source_note": "Huawei官方产品/规格/中国页"
+      "source_note": "Huawei官方产品/规格/中国页",
+      "connectivity": "未公开"
     },
     {
       "id": "WATCH-013",
@@ -469,7 +485,8 @@
       "privacy": "未公开",
       "features": "运动训练、户外、潜水、健康、睡眠",
       "availability_note": "官方区域页面在售；价格和日期需按市场补证",
-      "source_note": "Huawei官方产品/规格页"
+      "source_note": "Huawei官方产品/规格页",
+      "connectivity": "未公开"
     },
     {
       "id": "WATCH-014",
@@ -504,7 +521,8 @@
       "privacy": "未公开",
       "features": "睡眠、心率、运动、压力、通知",
       "availability_note": "区域版本/NFC配置不同",
-      "source_note": "Huawei官方产品/规格页"
+      "source_note": "Huawei官方产品/规格页",
+      "connectivity": "未公开"
     },
     {
       "id": "WATCH-015",
@@ -539,7 +557,8 @@
       "privacy": "未公开",
       "features": "健康、运动、训练、睡眠、通知、通话",
       "availability_note": "官方全球/英国页；价格和区域版本待补",
-      "source_note": "Xiaomi官方产品/规格/投资者披露"
+      "source_note": "Xiaomi官方产品/规格/投资者披露",
+      "connectivity": "未公开"
     },
     {
       "id": "WATCH-016",
@@ -574,7 +593,8 @@
       "privacy": "未公开",
       "features": "睡眠、心率、运动、游泳动作识别",
       "availability_note": "产品与规格页在售；关键电源字段未在当前来源披露",
-      "source_note": "Xiaomi官方产品/规格/发布页"
+      "source_note": "Xiaomi官方产品/规格/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "WATCH-017",
@@ -609,7 +629,8 @@
       "privacy": "未公开",
       "features": "健康、训练、双频GPS、户外、睡眠、运动",
       "availability_note": "官方产品页可核验；促销价会变动",
-      "source_note": "Amazfit官方产品页"
+      "source_note": "Amazfit官方产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "WATCH-018",
@@ -644,7 +665,8 @@
       "privacy": "未公开",
       "features": "健康、睡眠、训练、GPS、运动",
       "availability_note": "Amazfit官方产品页和公告可核验",
-      "source_note": "Amazfit官方产品/新闻页"
+      "source_note": "Amazfit官方产品/新闻页",
+      "connectivity": "未公开"
     },
     {
       "id": "WATCH-019",
@@ -679,7 +701,8 @@
       "privacy": "未公开",
       "features": "户外导航、训练负荷、恢复、双频GPS、健康",
       "availability_note": "官方产品与技术规格页在售",
-      "source_note": "Polar官方产品/支持页"
+      "source_note": "Polar官方产品/支持页",
+      "connectivity": "未公开"
     },
     {
       "id": "WATCH-020",
@@ -714,7 +737,8 @@
       "privacy": "官方资料提及GDPR相关加密传输",
       "features": "通话、定位、家长控制、相机、活动管理",
       "availability_note": "区域销售和通信套餐不同",
-      "source_note": "Xplora官方产品/支持/发布页"
+      "source_note": "Xplora官方产品/支持/发布页",
+      "connectivity": "未公开"
     }
   ],
   "candidates": [

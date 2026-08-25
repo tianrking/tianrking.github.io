@@ -1,0 +1,505 @@
+{
+  "checked_on": "2026-08-25",
+  "scope_note": "本库覆盖智能服饰与运动装备：智能鞋、智能服装、姿态设备、触觉手环与智能护具；排除已有独立数据库的重复型号。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
+  "field_rules": [
+    [
+      "类别边界",
+      "智能鞋、智能服装、姿态设备、触觉手环与智能护具；排除已有独立数据库的重复型号。"
+    ],
+    [
+      "跨库去重",
+      "已在其他独立数据库收录的同一硬件不重复计入主表；如有交叉用途，保留候选/别名和原始来源。"
+    ],
+    [
+      "上市状态",
+      "在售、地区在售、预售、历史、售罄、候选和OEM线索分开；官方页面不能证明当前交付的型号不计入主表。"
+    ],
+    [
+      "证据等级",
+      "A为官方产品/规格/销售链较完整；B为官方页面明确但关键字段或当前库存有缺口；C/D为候选、渠道、历史或未充分验证线索。"
+    ],
+    [
+      "字段缺口",
+      "来源未披露统一写“未公开”，尤其不推断芯片、传感器、尺寸、重量、续航、防水、订阅和隐私字段。"
+    ],
+    [
+      "价格",
+      "保留首发/当前价格和原币种；促销、租赁、订阅、押金和服务费在原文中区分，不做无说明汇率换算。"
+    ],
+    [
+      "查证日期",
+      "2026-08-25"
+    ]
+  ],
+  "products": [
+    {
+      "id": "WEAR-001",
+      "brand": "Sensoria",
+      "model": "Smart Sock v2.0 + Sensoria Core",
+      "country_region": "美国/全球",
+      "category": "smart-wearables",
+      "form_factor": "智能袜+可拆卸电子模块",
+      "use_case": "跑步步态、落地方式、步频和冲击分析",
+      "status": "已上市，可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开；附加袜页面列 USD 169",
+      "official_url": "https://store.sensoriafitness.com/smart-sock-v2-0-sensoria-core/",
+      "spec_url": "https://www.sensoriafitness.com/",
+      "features": [
+        "实时音频提示",
+        "步频",
+        "落地方式",
+        "冲击力",
+        "鞋款比较"
+      ],
+      "sensors": [
+        "纺织压力传感器",
+        "Sensoria Core 电子模块"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "Bluetooth Smart"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "Core 电池规格未公开",
+      "charging": "USB 充电器",
+      "water_resistance": "袜体耐用性/清洗限制未公开",
+      "subscription": "App/仪表盘服务条款未公开",
+      "privacy": "未公开",
+      "availability_note": "官网商店可下单；订单处理最长约 5 个工作日",
+      "source_note": "官方商店和产品主页",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "WEAR-002",
+      "brand": "Moticon",
+      "model": "OpenGo Sensor Insoles",
+      "country_region": "德国/全球",
+      "category": "smart-wearables",
+      "form_factor": "无线智能鞋垫",
+      "use_case": "步态、足底压力、运动和临床研究",
+      "status": "已上市，可询价购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "USD 1,995/双（官方价格表）",
+      "official_url": "https://moticon.com/opengo/sensor-insoles",
+      "spec_url": "https://moticon.com/documentation/opengo-sensor-insole-specification",
+      "features": [
+        "足底压力",
+        "总力/VGRF",
+        "COP",
+        "运动捕捉",
+        "10–100Hz采样"
+      ],
+      "sensors": [
+        "每只 16 个压力传感器",
+        "6轴 IMU"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "Bluetooth LE 4.2+",
+        "Wi-Fi 经 App 转发"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "尺码 S1–S9；具体外形尺寸见尺寸页",
+      "weight_g": "未公开",
+      "battery": "可更换/充电式 Li-Ion 2032；续航依模式",
+      "charging": "专用 coin-cell 充电器",
+      "water_resistance": "未公开",
+      "subscription": "OpenGo 软件模块/服务按报价",
+      "privacy": "未公开",
+      "availability_note": "官方提供报价和国际交付",
+      "source_note": "官方产品、规格、价格和报价页",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "WEAR-003",
+      "brand": "Neofect",
+      "model": "Smart Glove",
+      "country_region": "韩国/美国/欧洲",
+      "category": "smart-wearables",
+      "form_factor": "康复智能手套",
+      "use_case": "中风后手部、腕部和前臂运动康复",
+      "status": "已上市，可申请演示/购买",
+      "evidence": "A",
+      "launch_date": "2014-12",
+      "launch_date_type": "官方公司资料披露",
+      "price": "未公开",
+      "official_url": "https://www.neofect.com/us/smart-glove",
+      "spec_url": "https://shop.neofect.com/pages/about-neofect",
+      "features": [
+        "运动记录",
+        "虚拟训练",
+        "家庭康复",
+        "手指/腕部动作检测"
+      ],
+      "sensors": [
+        "加速度计",
+        "弯曲传感器"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": "未公开",
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "未公开",
+      "water_resistance": "未公开",
+      "subscription": "康复服务方案未公开",
+      "privacy": "未公开",
+      "availability_note": "官网提供 Demo 入口；官方公司资料称产品已在美国、韩国销售",
+      "source_note": "官方产品页与公司资料",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "WEAR-004",
+      "brand": "Xenoma",
+      "model": "e-skin EMStyle Personal EECP-F101BK",
+      "country_region": "日本",
+      "category": "smart-wearables",
+      "form_factor": "智能 EMS 服装",
+      "use_case": "居家运动、肌肉刺激与健身训练",
+      "status": "已上市，可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "JPY 159,500",
+      "official_url": "https://shop.xenoma.com/products/e-skin-emstyle-for-japan",
+      "spec_url": "https://xenoma.com/en/eskin/",
+      "features": [
+        "24个电极",
+        "App控制刺激类型/强度",
+        "20分钟训练",
+        "服装式穿戴"
+      ],
+      "sensors": "官方页面未列传感器；主要为 EMS 电极",
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "App连接；具体协议未公开"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "尺码 0–5",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "未公开",
+      "water_resistance": "官方称护理方便；具体防水等级未公开",
+      "subscription": "训练方案/服务可能另售；具体未公开",
+      "privacy": "未公开",
+      "availability_note": "日本官方商店可加入购物车；页面称仅面向日本使用",
+      "source_note": "官方日本商店与公司技术页",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "WEAR-005",
+      "brand": "UPRIGHT",
+      "model": "GO 2",
+      "country_region": "以色列/美国及全球",
+      "category": "smart-wearables",
+      "form_factor": "背部姿态训练器",
+      "use_case": "姿态监测、久坐提醒与姿态训练",
+      "status": "已上市，可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "USD 79",
+      "official_url": "https://store.uprightpose.com/products/upright-go2",
+      "spec_url": "https://new.uprightpose.com/wp-content/uploads/2020/05/GO_2_User_Manual-1-1.pdf",
+      "features": [
+        "实时姿态提醒",
+        "振动反馈",
+        "9种反馈计划",
+        "App同步"
+      ],
+      "sensors": [
+        "2个内置运动传感器"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "Bluetooth/App，具体版本未公开"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "未公开",
+      "water_resistance": "未公开",
+      "subscription": "30天自动 App 同步；高级服务条款未公开",
+      "privacy": "未公开",
+      "availability_note": "官网可购买；页面显示 1 年保修",
+      "source_note": "官方商店和用户手册",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "WEAR-006",
+      "brand": "Plantiga",
+      "model": "Plantiga In-Shoe Sensor System",
+      "country_region": "加拿大/全球专业市场",
+      "category": "smart-wearables",
+      "form_factor": "运动智能鞋垫/鞋内传感系统",
+      "use_case": "运动员负荷、足底压力、左右不对称与复出评估",
+      "status": "已上市，可申请",
+      "evidence": "B",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://plantiga.com/",
+      "spec_url": "https://plantiga.com/about",
+      "features": [
+        "运动负荷",
+        "左右不对称",
+        "真实场地采集",
+        "运动员管理",
+        "数据平台"
+      ],
+      "sensors": [
+        "鞋内传感器；具体类型未公开"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": "未公开",
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "未公开",
+      "water_resistance": "未公开",
+      "subscription": "平台/服务方案未公开",
+      "privacy": "未公开",
+      "availability_note": "官网主要提供 Get Started/专业方案入口",
+      "source_note": "官方产品主页与公司介绍",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "WEAR-007",
+      "brand": "Hexoskin",
+      "model": "Hexoskin Smart Shirt",
+      "country_region": "加拿大/全球",
+      "category": "smart-wearables",
+      "form_factor": "智能衬衫",
+      "use_case": "呼吸、活动和生理数据采集",
+      "status": "已上市，官方支持页可核验",
+      "evidence": "B",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://www.hexoskin.com/",
+      "spec_url": "https://support.hexoskin.com/hexoskin-breathing-sensors",
+      "features": [
+        "胸腹呼吸监测",
+        "运动数据",
+        "App/Dashboard",
+        "可穿戴服装形态"
+      ],
+      "sensors": [
+        "胸部 RIP 呼吸传感器",
+        "腹部 RIP 呼吸传感器"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": "未公开",
+      "chip_or_soc": "未公开",
+      "dimensions": "尺码/版型不同",
+      "weight_g": "未公开",
+      "battery": "外部 Hexoskin 记录模块；规格未公开",
+      "charging": "未公开",
+      "water_resistance": "未公开",
+      "subscription": "App/Dashboard 服务条款未公开",
+      "privacy": "未公开",
+      "availability_note": "官方支持页面确认 Smart Shirts/ProShirts 产品线",
+      "source_note": "官方支持页与品牌页面",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "WEAR-008",
+      "brand": "Sony",
+      "model": "mocopi QM-SS1",
+      "country_region": "日本/全球",
+      "category": "smart-wearables",
+      "form_factor": "六点 IMU 动作捕捉穿戴套件",
+      "use_case": "全身动作捕捉、VR、姿态和动作数据采集",
+      "status": "已上市，可购买",
+      "evidence": "B",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://electronics.sony.com/more/mocopi/c/all-mocopi",
+      "spec_url": "https://xyn.sony.net/en/developer/technical/mocopi/aboutmocopi",
+      "features": [
+        "六个紧凑传感器",
+        "全身姿态估计",
+        "VR/PC应用",
+        "SDK支持"
+      ],
+      "sensors": [
+        "加速度计",
+        "陀螺仪"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "Bluetooth；SDK/PC连接，具体版本未公开"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "官方称轻量；具体未公开",
+      "battery": "未公开",
+      "charging": "未公开",
+      "water_resistance": "未公开",
+      "subscription": "应用/专业模式可能需额外组件或服务",
+      "privacy": "动作数据/SDK隐私条款未公开",
+      "availability_note": "Sony/XYN 官方产品与开发者页面可核验",
+      "source_note": "官方产品、技术和开发者页面",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Orpyx SI Sensory Insoles",
+      "brand": "Orpyx",
+      "region": "加拿大/美国",
+      "category": "smart-wearables",
+      "status": "候选；医疗/远程护理边界，不作为普通消费电子主表",
+      "evidence": "B",
+      "reason": "官方资料称监测足底压力、温度、步数和穿戴时间；主要面向糖尿病足护理",
+      "url": "https://www.orpyx.com/",
+      "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "name": "Moticon ReGo Sensor Insoles",
+      "brand": "Moticon",
+      "region": "德国/全球",
+      "category": "smart-wearables",
+      "status": "候选；临床和运动筛查边界",
+      "evidence": "A",
+      "reason": "官方当前产品线，因专业医疗/运动定位暂列候选",
+      "url": "https://moticon.com/rego/sensor-insoles",
+      "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "name": "Xenoma e-skin MEVA",
+      "brand": "Xenoma",
+      "region": "日本/全球专业市场",
+      "category": "smart-wearables",
+      "status": "候选；专业动作捕捉/智能服装",
+      "evidence": "B",
+      "reason": "官方产品资料确认 7/18 IMU 版本；当前个人消费者销售状态未核验",
+      "url": "https://xenoma.com/business/eskin-meva/",
+      "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    }
+  ],
+  "sources": [
+    {
+      "source_group": "smart-wearables官方来源1",
+      "url": "https://store.sensoriafitness.com/smart-sock-v2-0-sensoria-core/",
+      "scope": "智能袜、Core、App和订单状态",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-wearables官方来源2",
+      "url": "https://moticon.com/opengo/sensor-insoles",
+      "scope": "鞋垫无线协议、采样率、传感器与尺码",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-wearables官方来源3",
+      "url": "https://moticon.com/wp-content/uploads/2021/09/OpenGo-Pricelist-USD-A4-EN-03.07.pdf",
+      "scope": "官方价格、16压力传感器、6轴 IMU 与电池",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-wearables官方来源4",
+      "url": "https://www.neofect.com/us/smart-glove",
+      "scope": "智能手套传感器与康复用途",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-wearables官方来源5",
+      "url": "https://shop.xenoma.com/products/e-skin-emstyle-for-japan",
+      "scope": "EMStyle 价格、电极、App和地区限制",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-wearables官方来源6",
+      "url": "https://store.uprightpose.com/products/upright-go2",
+      "scope": "GO 2 价格、传感器、反馈计划和保修",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-wearables官方来源7",
+      "url": "https://plantiga.com/",
+      "scope": "鞋内传感系统和运动员数据用途",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-wearables官方来源8",
+      "url": "https://support.hexoskin.com/hexoskin-breathing-sensors",
+      "scope": "智能衬衫胸腹 RIP 呼吸传感器",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "smart-wearables官方来源9",
+      "url": "https://xyn.sony.net/en/developer/technical/mocopi/aboutmocopi",
+      "scope": "mocopi 六点 IMU、姿态与位置估计",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    }
+  ],
+  "update_log": [
+    {
+      "date": "2026-08-25",
+      "change": "首版新增8条智能服饰与运动装备主表记录，覆盖多个国家/地区品牌；另保留3条候选、历史、边界或地区线索。",
+      "verification": "优先使用官方产品、规格、支持、发布和销售页面；A/B证据分级，来源未披露字段均写“未公开”。跨库重复型号已转为候选关系，不纳入本库主表。",
+      "next": "继续补充更多国家/地区品牌，逐条复核当前库存、首发日期、原始价格、芯片、传感器、续航、防护和服务条款。"
+    }
+  ]
+}

@@ -1,0 +1,549 @@
+{
+  "checked_on": "2026-08-25",
+  "scope_note": "本库覆盖家用机器人：扫地、洗地、擦窗、割草与泳池机器人。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
+  "field_rules": [
+    [
+      "类别边界",
+      "扫地、洗地、擦窗、割草与泳池机器人。"
+    ],
+    [
+      "跨库去重",
+      "已在其他独立数据库收录的同一硬件不重复计入主表；如有交叉用途，保留候选/别名和原始来源。"
+    ],
+    [
+      "上市状态",
+      "在售、地区在售、预售、历史、售罄、候选和OEM线索分开；官方页面不能证明当前交付的型号不计入主表。"
+    ],
+    [
+      "证据等级",
+      "A为官方产品/规格/销售链较完整；B为官方页面明确但关键字段或当前库存有缺口；C/D为候选、渠道、历史或未充分验证线索。"
+    ],
+    [
+      "字段缺口",
+      "来源未披露统一写“未公开”，尤其不推断芯片、传感器、尺寸、重量、续航、防水、订阅和隐私字段。"
+    ],
+    [
+      "价格",
+      "保留首发/当前价格和原币种；促销、租赁、订阅、押金和服务费在原文中区分，不做无说明汇率换算。"
+    ],
+    [
+      "查证日期",
+      "2026-08-25"
+    ]
+  ],
+  "products": [
+    {
+      "id": "ROBOT-001",
+      "brand": "Roborock",
+      "model": "Saros 10R",
+      "country_region": "中国/全球",
+      "category": "home-robots",
+      "form_factor": "扫地/拖地机器人",
+      "use_case": "家庭地面吸尘、拖地和自动维护",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "2025",
+      "launch_date_type": "官方页面标注",
+      "price": "US$1099.99当前标价",
+      "official_url": "https://us.roborock.com/products/roborock-saros-10r",
+      "spec_url": "https://us.roborock.com/pages/roborock-saros-10r",
+      "features": [
+        "StarSight 2.0",
+        "双旋转拖布",
+        "AdaptiLift底盘",
+        "10合1基站",
+        "Matter"
+      ],
+      "sensors": [
+        "3D ToF",
+        "固态LiDAR",
+        "悬崖传感器",
+        "障碍物识别"
+      ],
+      "gps_positioning": "无GPS；室内LiDAR/ToF定位",
+      "supported_protocols": [
+        "2.4GHz Wi-Fi",
+        "Bluetooth",
+        "Matter",
+        "Alexa",
+        "Google Home",
+        "Siri Shortcuts"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "机器人350×353×79.8mm",
+      "weight_g": 4100,
+      "battery": "6400mAh锂离子",
+      "charging": "多功能基站；约2.5小时快充",
+      "water_resistance": "未公开",
+      "subscription": "无强制订阅；需Roborock App",
+      "privacy": "官方称不存储图像；符合ETSI EN 303 645",
+      "availability_note": "Roborock美国官方商店可购买",
+      "source_note": "芯片和防水等级官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "ROBOT-002",
+      "brand": "Dreame",
+      "model": "X50 Ultra",
+      "country_region": "中国/全球",
+      "category": "home-robots",
+      "form_factor": "扫地/拖地机器人",
+      "use_case": "家庭吸尘、拖地、越障和自动清洁",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "2024",
+      "launch_date_type": "官方页面技术说明",
+      "price": "未公开",
+      "official_url": "https://global.dreametech.com/products/x50-ultra",
+      "spec_url": "https://global.dreametech.com/products/x50-ultra",
+      "features": [
+        "ProLeap伸缩腿",
+        "20,000Pa吸力",
+        "自动补水",
+        "AI RGB+3D结构光",
+        "自清洁基站"
+      ],
+      "sensors": [
+        "DToF",
+        "LDS",
+        "RGB摄像头",
+        "3D结构光"
+      ],
+      "gps_positioning": "无GPS；DToF/LDS室内定位",
+      "supported_protocols": [
+        "Wi-Fi",
+        "App控制",
+        "第三方语音控制"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "机器人350×350×89/111mm",
+      "weight_g": 4530,
+      "battery": "6400mAh",
+      "charging": "基站自动充电",
+      "water_resistance": "未公开",
+      "subscription": "无强制订阅",
+      "privacy": "未公开",
+      "availability_note": "Dreame全球官方页面可核验，销售国家不同",
+      "source_note": "芯片、隐私和防护等级官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "ROBOT-003",
+      "brand": "ECOVACS",
+      "model": "DEEBOT X12 OmniCyclone",
+      "country_region": "中国/美国/全球部分地区",
+      "category": "home-robots",
+      "form_factor": "扫地/拖地机器人",
+      "use_case": "家庭吸尘、滚筒拖地和自动集尘",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "2026",
+      "launch_date_type": "官方产品页年份",
+      "price": "US$899",
+      "official_url": "https://www.ecovacs.com/us/shop/deebot-robotic-vacuum-cleaner/deebot-x12-omnicyclone",
+      "spec_url": "https://www.ecovacs.com/global/deebot-robotic-vacuum-cleaner/deebot-x12-omnicyclone",
+      "features": [
+        "22,000Pa",
+        "FocusJet",
+        "OZMO Roller 3.0",
+        "PureCyclone 2.0",
+        "AIVI 3D 4.0"
+      ],
+      "sensors": [
+        "AIVI 3D",
+        "边缘传感器",
+        "障碍物识别"
+      ],
+      "gps_positioning": "无GPS；室内传感器/地图定位",
+      "supported_protocols": [
+        "Wi-Fi",
+        "ECOVACS HOME",
+        "YIKO"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "353×351×98mm",
+      "weight_g": 5500,
+      "battery": "锂离子电池",
+      "charging": "基站自动充电；PowerBoost",
+      "water_resistance": "未公开",
+      "subscription": "无强制订阅",
+      "privacy": "未公开",
+      "availability_note": "ECOVACS美国官方商店可购买",
+      "source_note": "芯片、容量、续航和防水等级官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "ROBOT-004",
+      "brand": "iRobot",
+      "model": "Roomba Combo 10 Max",
+      "country_region": "美国/全球部分地区",
+      "category": "home-robots",
+      "form_factor": "扫地/拖地机器人",
+      "use_case": "家庭吸尘、拖地、自动洗拖布和集尘",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "2024",
+      "launch_date_type": "官方发布/产品资料",
+      "price": "未公开",
+      "official_url": "https://www.irobot.com/en_US/roomba-combo-10-max-robot-with-autowash-dock/X085020.html",
+      "spec_url": "https://www.irobot.com/en_US/roomba-combo-10-max-robot-with-autowash-dock/X085020.html",
+      "features": [
+        "AutoWash Dock",
+        "SmartScrub",
+        "Dirt Detective",
+        "PrecisionVision避障"
+      ],
+      "sensors": [
+        "摄像头",
+        "PrecisionVision",
+        "地面污渍检测"
+      ],
+      "gps_positioning": "无GPS；室内视觉/地图定位",
+      "supported_protocols": [
+        "Wi-Fi",
+        "iRobot Home",
+        "Alexa",
+        "Siri",
+        "Google Assistant"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "机器人13.3×13.3×3.4英寸",
+      "weight_g": 4990,
+      "battery": "4200mAh LFP",
+      "charging": "AutoWash基站",
+      "water_resistance": "未公开",
+      "subscription": "无强制订阅；部分云服务按地区变化",
+      "privacy": "未公开",
+      "availability_note": "iRobot美国官方页面可核验",
+      "source_note": "芯片、续航和防护等级官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "ROBOT-005",
+      "brand": "SwitchBot",
+      "model": "S10",
+      "country_region": "日本/全球部分地区",
+      "category": "home-robots",
+      "form_factor": "扫地/洗地机器人",
+      "use_case": "吸尘、滚筒拖地和自动清洗",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://us.switch-bot.com/pages/switchbot-floor-cleaning-robot-s10",
+      "spec_url": "https://us.switch-bot.com/pages/switchbot-floor-cleaning-robot-s10",
+      "features": [
+        "6500Pa",
+        "RevoRoll滚筒拖布",
+        "RinseSync自清洗",
+        "自动补排水"
+      ],
+      "sensors": [
+        "未公开"
+      ],
+      "gps_positioning": "无GPS；室内地图定位",
+      "supported_protocols": [
+        "Wi-Fi",
+        "SwitchBot App"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "自动回基站充电",
+      "water_resistance": "未公开",
+      "subscription": "无强制订阅",
+      "privacy": "未公开",
+      "availability_note": "SwitchBot美国官方产品页可核验",
+      "source_note": "芯片、尺寸、重量、电池和传感器官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "ROBOT-006",
+      "brand": "ECOVACS",
+      "model": "WINBOT W2 PRO OMNI",
+      "country_region": "中国/美国/欧洲",
+      "category": "home-robots",
+      "form_factor": "擦窗机器人",
+      "use_case": "平面玻璃窗自动清洁",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "2025",
+      "launch_date_type": "官方支持/产品资料年份",
+      "price": "US$499.99",
+      "official_url": "https://www.ecovacs.com/us/shop/winbot-window-cleaning-robot/winbot-w2-pro-omni?gQT=1",
+      "spec_url": "https://site-static.ecovacs.com/upload/file/support/2025/02/27/015012_5742%24WINBOTW2PROOMNI-EMEA.pdf",
+      "features": [
+        "便携基站",
+        "自动喷液",
+        "WIN-SLAM 4.0",
+        "5500Pa吸附",
+        "12级防跌落"
+      ],
+      "sensors": [
+        "加速度传感器",
+        "光电边缘传感器",
+        "压力/吸附检测"
+      ],
+      "gps_positioning": "无GPS；WIN-SLAM室内路径规划",
+      "supported_protocols": [
+        "Wi-Fi",
+        "ECOVACS HOME"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "机器人271×271×77mm",
+      "weight_g": 1600,
+      "battery": "4500mAh锂电池；约110分钟",
+      "charging": "便携基站；约3小时",
+      "water_resistance": "未公开",
+      "subscription": "无强制订阅",
+      "privacy": "未公开",
+      "availability_note": "ECOVACS美国官方商店可购买",
+      "source_note": "芯片和防护等级官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "ROBOT-007",
+      "brand": "Mammotion",
+      "model": "LUBA 2 AWD 5000",
+      "country_region": "中国/美国/欧洲",
+      "category": "home-robots",
+      "form_factor": "无边界线割草机器人",
+      "use_case": "大型草坪自动割草",
+      "status": "在售（区域）",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "€2999页面标价；地区不同",
+      "official_url": "https://de.mammotion.com/products/luba-2-awd-5000-perimeter-wire-free-robot-lawn-mower",
+      "spec_url": "https://support.mammotion.com/portal/en/kb/articles/luba-2-awd-series-specifications",
+      "features": [
+        "AWD",
+        "80%爬坡",
+        "Vision+RTK",
+        "多区域管理",
+        "自动回充"
+      ],
+      "sensors": [
+        "双目视觉",
+        "超声波雷达",
+        "碰撞传感器",
+        "RTK"
+      ],
+      "gps_positioning": "RTK GNSS+视觉定位",
+      "supported_protocols": [
+        "4G",
+        "Wi-Fi",
+        "Bluetooth",
+        "Alexa",
+        "Google Assistant"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "690×513×273mm",
+      "weight_g": 17120,
+      "battery": "未公开",
+      "charging": "自动回充；充电约150分钟",
+      "water_resistance": "主机/基站IPX6；RTK站IPX7",
+      "subscription": "4G服务条款按地区变化",
+      "privacy": "官方未披露完整隐私机制",
+      "availability_note": "德国官方商店可购买；美国页面显示部分版本售罄",
+      "source_note": "电池容量、芯片和完整续航官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "ROBOT-008",
+      "brand": "Beatbot",
+      "model": "AquaSense 2 Ultra",
+      "country_region": "中国/全球部分地区",
+      "category": "home-robots",
+      "form_factor": "泳池清洁机器人",
+      "use_case": "泳池水面、水线、池底和池壁清洁",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://eu.beatbot.com/products/aquasense-2-ultra",
+      "spec_url": "https://eu.beatbot.com/products/aquasense-2-ultra",
+      "features": [
+        "AI泳池清洁",
+        "水面/水线/池底清洁",
+        "自动回收",
+        "多模式"
+      ],
+      "sensors": [
+        "AI视觉/水下传感器，具体型号未公开"
+      ],
+      "gps_positioning": "无GPS；泳池环境定位",
+      "supported_protocols": [
+        "Bluetooth/Wi-Fi，具体未公开"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "官方未公开",
+      "water_resistance": "适用于泳池；IP等级未公开",
+      "subscription": "无强制订阅",
+      "privacy": "未公开",
+      "availability_note": "Beatbot欧洲官方商店可核验",
+      "source_note": "芯片、尺寸、重量、电池、协议和IP等级官方未披露",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "ECOVACS DEEBOT X8 PRO OMNI",
+      "brand": "ECOVACS",
+      "region": "中国/美国/全球部分地区",
+      "category": "home-robots",
+      "status": "历史/区域候选；美国官方页显示售罄",
+      "evidence": "B",
+      "reason": "不纳入主表以避免将售罄型号标为当前可购买",
+      "url": "https://www.ecovacs.com/us/shop/deebot-robotic-vacuum-cleaner/deebot-x8-pro-omni",
+      "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    }
+  ],
+  "sources": [
+    {
+      "source_group": "home-robots官方来源1",
+      "url": "https://us.roborock.com/products/roborock-saros-10r",
+      "scope": "Saros 10R价格、销售和基本规格",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "home-robots官方来源2",
+      "url": "https://us.roborock.com/pages/roborock-saros-10r",
+      "scope": "Saros 10R传感器、Matter和隐私说明",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "home-robots官方来源3",
+      "url": "https://global.dreametech.com/products/x50-ultra",
+      "scope": "Dreame X50 Ultra规格和技术功能",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "home-robots官方来源4",
+      "url": "https://www.ecovacs.com/us/shop/deebot-robotic-vacuum-cleaner/deebot-x12-omnicyclone",
+      "scope": "DEEBOT X12美国价格、销售和规格",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "home-robots官方来源5",
+      "url": "https://www.ecovacs.com/global/deebot-robotic-vacuum-cleaner/deebot-x12-omnicyclone",
+      "scope": "DEEBOT X12全球产品技术说明",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "home-robots官方来源6",
+      "url": "https://www.irobot.com/en_US/roomba-combo-10-max-robot-with-autowash-dock/X085020.html",
+      "scope": "Roomba Combo 10 Max规格、电池和功能",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "home-robots官方来源7",
+      "url": "https://us.switch-bot.com/pages/switchbot-floor-cleaning-robot-s10",
+      "scope": "SwitchBot S10产品功能",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "home-robots官方来源8",
+      "url": "https://www.ecovacs.com/us/shop/winbot-window-cleaning-robot/winbot-w2-pro-omni?gQT=1",
+      "scope": "WINBOT W2 PRO OMNI销售、价格和功能",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "home-robots官方来源9",
+      "url": "https://site-static.ecovacs.com/upload/file/support/2025/02/27/015012_5742%24WINBOTW2PROOMNI-EMEA.pdf",
+      "scope": "WINBOT W2 PRO OMNI详细规格",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "home-robots官方来源10",
+      "url": "https://de.mammotion.com/products/luba-2-awd-5000-perimeter-wire-free-robot-lawn-mower",
+      "scope": "LUBA 2 AWD欧洲销售、价格和功能",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "home-robots官方来源11",
+      "url": "https://support.mammotion.com/portal/en/kb/articles/luba-2-awd-series-specifications",
+      "scope": "LUBA 2 AWD规格、RTK、IP等级和重量",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "home-robots官方来源12",
+      "url": "https://eu.beatbot.com/products/aquasense-2-ultra",
+      "scope": "Beatbot泳池机器人官方产品页",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "home-robots官方来源13",
+      "url": "https://www.ecovacs.com/us/shop/deebot-robotic-vacuum-cleaner/deebot-x8-pro-omni",
+      "scope": "X8 PRO OMNI候选状态和产品信息",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    }
+  ],
+  "update_log": [
+    {
+      "date": "2026-08-25",
+      "change": "首版新增8条家用机器人主表记录，覆盖多个国家/地区品牌；另保留1条候选、历史、边界或地区线索。",
+      "verification": "优先使用官方产品、规格、支持、发布和销售页面；A/B证据分级，来源未披露字段均写“未公开”。跨库重复型号已转为候选关系，不纳入本库主表。",
+      "next": "继续补充更多国家/地区品牌，逐条复核当前库存、首发日期、原始价格、芯片、传感器、续航、防护和服务条款。"
+    }
+  ]
+}

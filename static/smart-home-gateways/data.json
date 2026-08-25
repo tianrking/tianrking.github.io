@@ -13,6 +13,10 @@
     [
       "服务口径",
       "本地自动化、云端远程、备份和订阅分开记录；不能从品牌生态推断数据存储或隐私策略。"
+    ],
+    [
+      "查证日期",
+      "2026-08-25"
     ]
   ],
   "products": [
@@ -49,7 +53,8 @@
       "privacy": "数据本地处理为主",
       "features": "Home Assistant本地自动化、Matter设备接入、仪表盘",
       "availability_note": "官方产品页和发布页现售",
-      "source_note": "Home Assistant官方产品/发布页"
+      "source_note": "Home Assistant官方产品/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-002",
@@ -84,7 +89,8 @@
       "privacy": "本地自动化为主",
       "features": "Zigbee、Thread、Matter、本地Home Assistant",
       "availability_note": "标准版停止新增生产，可能存在套件库存",
-      "source_note": "Home Assistant官方产品/生命周期公告"
+      "source_note": "Home Assistant官方产品/生命周期公告",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-003",
@@ -119,7 +125,8 @@
       "privacy": "本地优先；云端服务可选",
       "features": "多协议自动化、Matter、Z-Wave、Zigbee、红外",
       "availability_note": "Homey官方美国页全球销售",
-      "source_note": "Homey官方产品/发布页"
+      "source_note": "Homey官方产品/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-004",
@@ -154,7 +161,8 @@
       "privacy": "本地优先",
       "features": "Matter、Thread、Zigbee、本地自动化",
       "availability_note": "Homey官方产品页现售",
-      "source_note": "Homey官方产品页"
+      "source_note": "Homey官方产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-005",
@@ -189,7 +197,8 @@
       "privacy": "云端与本地能力取决于配套平台",
       "features": "协议桥接、红外、433MHz、Zigbee、Z-Wave",
       "availability_note": "非独立完整自动化中枢，按桥接器记录",
-      "source_note": "Homey官方产品页"
+      "source_note": "Homey官方产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-006",
@@ -224,7 +233,8 @@
       "privacy": "本地加密存储；云端服务按App设置",
       "features": "Matter控制器/桥、Thread边界路由、Zigbee、红外、本地自动化",
       "availability_note": "Aqara美国页和规格/发布页可核验",
-      "source_note": "Aqara官方产品/规格/发布页"
+      "source_note": "Aqara官方产品/规格/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-007",
@@ -259,7 +269,8 @@
       "privacy": "未公开",
       "features": "Zigbee网关、红外、Matter桥、以太网",
       "availability_note": "区域库存和Matter能力依固件/地区",
-      "source_note": "Aqara官方产品/规格/上市页"
+      "source_note": "Aqara官方产品/规格/上市页",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-008",
@@ -294,7 +305,8 @@
       "privacy": "官方说明支持加密通信",
       "features": "照明自动化；约50盏灯、12个配件；Matter桥",
       "availability_note": "Philips Hue官方美国页在售",
-      "source_note": "Philips Hue官方产品/Matter说明"
+      "source_note": "Philips Hue官方产品/Matter说明",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-009",
@@ -329,7 +341,8 @@
       "privacy": "家庭数据与云端细节未完整披露",
       "features": "IKEA智能设备管理、自动化、Matter桥",
       "availability_note": "IKEA官方美国页在售",
-      "source_note": "IKEA官方产品/Matter发布页"
+      "source_note": "IKEA官方产品/Matter发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-010",
@@ -364,7 +377,8 @@
       "privacy": "Edge本地自动化；云服务条款按地区",
       "features": "Matter、Thread边界路由、自动化、无线充电",
       "availability_note": "区域库存不同",
-      "source_note": "Samsung官方产品/规格/发布页"
+      "source_note": "Samsung官方产品/规格/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-011",
@@ -399,7 +413,8 @@
       "privacy": "未公开",
       "features": "SmartThings中枢、Matter、Thread、Zigbee",
       "availability_note": "地区上市与发货时间需继续核对",
-      "source_note": "Aeotec官方产品/支持页"
+      "source_note": "Aeotec官方产品/支持页",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-012",
@@ -434,7 +449,8 @@
       "privacy": "本地自动化",
       "features": "本地场景、Matter、Zigbee、Z-Wave、BLE",
       "availability_note": "官方产品、销售和Matter发布页可核验",
-      "source_note": "Hubitat官方产品/发布页"
+      "source_note": "Hubitat官方产品/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-013",
@@ -469,7 +485,8 @@
       "privacy": "本地加密存储",
       "features": "本地家庭自动化、Zigbee、Matter兼容、HomeKit",
       "availability_note": "德国/欧洲官方页在售",
-      "source_note": "Bosch官方产品/规格/Matter页"
+      "source_note": "Bosch官方产品/规格/Matter页",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-014",
@@ -504,7 +521,8 @@
       "privacy": "支持本地模式",
       "features": "最多约350设备；本地自动化、远程管理",
       "availability_note": "Homematic IP官方产品页在售",
-      "source_note": "Homematic IP官方产品页"
+      "source_note": "Homematic IP官方产品页",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-015",
@@ -539,7 +557,8 @@
       "privacy": "未公开",
       "features": "窗帘、遮阳、采暖、Apple/Google/Alexa连接",
       "availability_note": "Somfy官方规格和发布页可核验",
-      "source_note": "Somfy官方规格/发布页"
+      "source_note": "Somfy官方规格/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-016",
@@ -574,7 +593,8 @@
       "privacy": "未公开",
       "features": "Caséta照明与Serena窗帘桥接；约75设备",
       "availability_note": "按协议桥接器记录，Pro是独立变体",
-      "source_note": "Lutron官方支持/产品/价目表"
+      "source_note": "Lutron官方支持/产品/价目表",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-017",
@@ -609,7 +629,8 @@
       "privacy": "未公开",
       "features": "tado X采暖设备连接、Matter、Thread边界路由",
       "availability_note": "不是通用家庭中枢，保留为采暖专用网关",
-      "source_note": "tado官方支持/商店/发布页"
+      "source_note": "tado官方支持/商店/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-018",
@@ -644,7 +665,8 @@
       "privacy": "未公开",
       "features": "本地自动化、Bluetooth Mesh、Zigbee、以太网",
       "availability_note": "官方支持页称不支持Matter/HomeKit，作为边界记录",
-      "source_note": "Xiaomi官方产品/规格/支持页"
+      "source_note": "Xiaomi官方产品/规格/支持页",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-019",
@@ -679,7 +701,8 @@
       "privacy": "本地Web；云端集成可选",
       "features": "最多约256个Zigbee设备；Matter桥；Home Assistant; Apple/Google/Alexa",
       "availability_note": "官方手册和本地化说明可核验",
-      "source_note": "SONOFF官方手册/产品说明"
+      "source_note": "SONOFF官方手册/产品说明",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-020",
@@ -714,7 +737,8 @@
       "privacy": "本地自动化",
       "features": "Z-Wave设备、场景自动化、家庭控制",
       "availability_note": "部分地区偏历史存量，当前库存需继续核验",
-      "source_note": "FIBARO官方规格/价目表"
+      "source_note": "FIBARO官方规格/价目表",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-021",
@@ -749,7 +773,8 @@
       "privacy": "带麦克风物理开关；数据细节按Google政策",
       "features": "智能屏、语音控制、Matter/Thread、睡眠感知",
       "availability_note": "Google Store规格/产品页在售",
-      "source_note": "Google官方商店/规格页"
+      "source_note": "Google官方商店/规格页",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-022",
@@ -784,7 +809,8 @@
       "privacy": "官方称Hey Siri先在设备本地识别；详情依Apple政策",
       "features": "Apple Home中枢、Thread边界路由、Siri、Matter",
       "availability_note": "Apple官方规格/发布页在售",
-      "source_note": "Apple官方规格/发布页"
+      "source_note": "Apple官方规格/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-023",
@@ -819,7 +845,8 @@
       "privacy": "未公开",
       "features": "影音、Apple Home中枢、Matter、Thread",
       "availability_note": "只有Wi‑Fi+Ethernet版本含Thread，按型号变体说明",
-      "source_note": "Apple官方规格/发布页"
+      "source_note": "Apple官方规格/发布页",
+      "connectivity": "未公开"
     },
     {
       "id": "HUB-024",
@@ -854,7 +881,8 @@
       "privacy": "未公开",
       "features": "Wi‑Fi 6E路由、Matter、Thread边界路由",
       "availability_note": "它是路由器，不作为独立自动化中枢混淆",
-      "source_note": "Google官方规格/产品页"
+      "source_note": "Google官方规格/产品页",
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
