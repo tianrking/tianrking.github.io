@@ -59,6 +59,50 @@ const DATABASES = [
     data: '/smart-pet-collars/data.json',
     accent: '#c46b62',
   },
+  {
+    id: 'watches',
+    mark: 'WATCH',
+    eyebrow: 'WATCH / FITNESS',
+    title: '智能手表／运动手环',
+    description: '智能手表、GPS运动表、运动手环与儿童手表。',
+    focus: '覆盖健康、训练、定位、通信和儿童安全，按代际与形态区分。',
+    path: '/smart-watches/',
+    data: '/smart-watches/data.json',
+    accent: '#3c78a8',
+  },
+  {
+    id: 'audio',
+    mark: 'AUDIO',
+    eyebrow: 'TWS / AI AUDIO',
+    title: 'TWS／AI／翻译耳机',
+    description: 'TWS、AI耳机、翻译耳机、降噪耳机与骨传导耳机。',
+    focus: '记录驱动单元、麦克风、ANC、编解码、AI服务和真实续航。',
+    path: '/smart-audio/',
+    data: '/smart-audio/data.json',
+    accent: '#a05d73',
+  },
+  {
+    id: 'gateways',
+    mark: 'HUB',
+    eyebrow: 'SMART HOME',
+    title: '家庭中控／Matter网关',
+    description: '家庭中控、Matter网关、协议桥接器与自动化中枢。',
+    focus: '区分独立网关、音箱/屏内置中枢、路由器功能与开发者设备。',
+    path: '/smart-home-gateways/',
+    data: '/smart-home-gateways/data.json',
+    accent: '#6b7c49',
+  },
+  {
+    id: 'outdoor',
+    mark: 'OUTDOOR',
+    eyebrow: 'OUTDOOR / SPORTS',
+    title: '户外GPS／骑行／潜水／智能头盔',
+    description: 'GPS户外设备、卫星通信器、骑行码表、潜水电脑与智能头盔。',
+    focus: '把户外安全、导航、训练、耐压防水和订阅服务分开记录。',
+    path: '/outdoor-sports/',
+    data: '/outdoor-sports/data.json',
+    accent: '#b26d3e',
+  },
 ];
 
 function DatabaseCard({database, stats}) {
@@ -133,7 +177,7 @@ export default function DatabasesPage() {
   return (
     <Layout
       title="全球智能硬件資料庫"
-      description="智能指環、錄音卡片、智能掛墜、智能眼鏡與智能寵物項圈的全球上市資料庫入口。">
+      description="智能硬件、消费电子与户外运动设备的全球上市数据库入口。">
       <main className={styles.page}>
         <header className={styles.hero}>
           <div className="container">
@@ -154,7 +198,7 @@ export default function DatabasesPage() {
                   <strong>{loaded ? totalProducts : '—'}</strong>
                   <span>已收錄型號</span>
                 </div>
-                <p>五組資料各自更新，數字會跟著最新 JSON 自動變化。</p>
+                <p>九組資料各自更新，數字會跟著最新 JSON 自動變化。</p>
               </aside>
             </div>
           </div>
