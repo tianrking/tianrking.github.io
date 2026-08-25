@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-24",
+  "checked_on": "2026-08-25",
   "scope_note": "首版全球智能眼镜／AR眼镜／AI眼镜市场库：主表纳入官方在售、官方明确发售、官方明确预售、企业正式销售/服务中或有官方产品页、手册、规格与交付证据的独立型号/代际。类别覆盖无显示音频眼镜、相机AI眼镜、带显示AI眼镜、消费级AR/XR、企业/工业/医疗/开发者AR。颜色、镜片、处方配置、套装和配件不拆行；不同代际、显示/相机/主机连接方式或关键功能保留独立行。传闻、原型、合作路线、众筹、Coming soon、OEM线索和无法证明交付的项目放入候选与别名表。来源未披露的芯片、传感器、尺寸、重量、电池容量、续航、防水和订阅字段写“未公开”，不从App、AI功能或外观推断。",
   "products": [
     {
@@ -67,6 +67,39 @@
       "features": "3K视频、AI问答、翻译、拍摄、通话、音乐、直播",
       "availability_note": "官方Ray-Ban商品页可购买；原始价格保留美元，不做汇率换算",
       "source_note": "Meta官方发布与Ray-Ban官方商品页；具体重量、芯片和IP等级未公开即保留缺口"
+    },
+    {
+      "id": "META-006",
+      "brand": "Meta / EssilorLuxottica",
+      "model": "Meta Glasses (2026)",
+      "country_region": "美国/加拿大首发；其他市场逐步开放",
+      "category": "AI/开放式音频",
+      "form_factor": "眼镜式穿戴",
+      "status": "在售/地区扩展中",
+      "evidence": "A",
+      "launch_date": "2026-06-23",
+      "launch_date_type": "Meta官方合作发布",
+      "price": "US$299起",
+      "official_url": "https://about.fb.com/news/2026/06/meta-essilorluxottica-partner-launch-meta-glasses/",
+      "spec_url": "https://www.essilorluxottica.com/cap/content/304074/?_iframe=true",
+      "cameras": "未公开",
+      "microphones": "未公开",
+      "sensors": "未公开",
+      "display": "无（Meta官方文章称displayless glasses）",
+      "audio": "开放式音频；具体扬声器规格未公开",
+      "connectivity": "手机；Meta AI App；具体无线制式未公开",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "26种款式/镜框与镜片组合；统一外形尺寸未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "未公开",
+      "water_resistance": "未公开",
+      "subscription": "无硬件订阅口径；Meta AI按地区/账户开放",
+      "privacy": "相机、麦克风、Meta账户和AI服务权限；具体硬件指示灯/数据保留未公开",
+      "features": "Meta AI、免手语音、视觉问答、翻译、通话/消息、处方镜片；后续导航功能持续更新",
+      "availability_note": "Meta官方称美国/加拿大可购买并逐步扩展；不把发布日覆盖误作全球现货",
+      "source_note": "Meta官方Meta Glasses发布稿与EssilorLuxottica官方发布资料；未披露硬件细项均保留未公开"
     },
     {
       "id": "META-003",
@@ -2823,24 +2856,35 @@
     {
       "name": "RayNeo iO Smart Glasses",
       "brand": "RayNeo",
-      "region": "全球",
-      "category": "AI/开放式音频",
-      "status": "Coming soon",
-      "evidence": "B",
-      "reason": "官方系列页列出Coming soon，价格/规格/交付未公开",
-      "url": "https://www.rayneo.com/collections/ai-smart-glasses",
-      "alias_or_relation": "不与RayNeo X3 Pro/X2合并"
+      "region": "全球/中国先行与后续国际市场",
+      "category": "AI/显示/开放式音频",
+      "status": "预售/2026-09-04计划发售",
+      "evidence": "A",
+      "reason": "RayNeo官方博客和支持页已给出公告与计划发售日；截至2026-08-25仍未形成稳定全球现货、统一价格和完整公开规格，暂不转入主表",
+      "url": "https://www.rayneo.com/pages/support-rayneo-io-ai-glasses",
+      "alias_or_relation": "不与RayNeo X3 Pro/X2合并；公告日期与实际各地区发货需继续复核"
+    },
+    {
+      "name": "RayNeo GT Smart Glasses",
+      "brand": "RayNeo",
+      "region": "全球/中国先行与后续国际市场",
+      "category": "AR显示/娱乐",
+      "status": "预售/2026-09计划发售",
+      "evidence": "A",
+      "reason": "RayNeo官方发布稿确认GT与GT Max两条新线，但GT的地区价格、完整规格和交付窗口仍需官方商品页确认",
+      "url": "https://www.prnewswire.com/news-releases/rayneo-expands-consumer-ar-lineup-unveiling-rayneo-io-and-cinematic-rayneo-gt-series-302856495.html",
+      "alias_or_relation": "与RayNeo GT Max、Air系列分开记录"
     },
     {
       "name": "RayNeo GT Max AR Glasses",
       "brand": "RayNeo",
-      "region": "全球",
+      "region": "全球/中国先行与后续国际市场",
       "category": "AR显示",
-      "status": "Coming soon",
-      "evidence": "B",
-      "reason": "官方系列页列出Coming soon，尚未形成可核验规格表",
-      "url": "https://www.rayneo.com/collections/air-series",
-      "alias_or_relation": "不与Air系列合并"
+      "status": "预售/2026-09-04计划发售",
+      "evidence": "A",
+      "reason": "RayNeo官方产品页显示Coming September 4并开放早鸟登记；完整量产规格和稳定零售交付仍待确认",
+      "url": "https://www.rayneo.com/pages/rayneo-gt-series-ar-glasses",
+      "alias_or_relation": "不与Air系列合并；早鸟/预售不等同全球现货"
     },
     {
       "name": "Meta Orion",
@@ -2944,13 +2988,13 @@
     {
       "name": "Snap SPECS",
       "brand": "Snap",
-      "region": "全球开发者",
-      "category": "下一代AR",
-      "status": "开发者计划/预发布",
+      "region": "美国/英国/法国首发计划",
+      "category": "独立AR/AI眼镜",
+      "status": "预售/预计2026秋季发货",
       "evidence": "A",
-      "reason": "Snap官方开发者站将SPECS列为未来平台，未形成公开上市硬件",
-      "url": "https://developers.snap.com/",
-      "alias_or_relation": "与Spectacles (2024)不同代际/平台"
+      "reason": "Snap官方发布稿确认已开放预订，价格US$2,195、可退订金US$200，预计秋季向美国/英国/法国发货；截至查证日仍不是普遍现货",
+      "url": "https://investor.snap.com/news/news-details/2026/Snap-Inc--Debuts-SPECS-Augmented-Reality-Glasses-to-Make-Computing-More-Human/default.aspx",
+      "alias_or_relation": "与Spectacles (2024)不同代际/平台；不把预订视为全球上市"
     }
   ],
   "sources": [
@@ -2959,6 +3003,20 @@
       "url": "https://about.fb.com/news/2025/09/meta-ray-ban-display-ai-wristband/",
       "scope": "Ray-Ban Meta Gen1/Gen2/Display、Neural Band",
       "checked_on": "2026-08-24",
+      "quality": "A"
+    },
+    {
+      "source_group": "Meta Glasses 2026",
+      "url": "https://about.fb.com/news/2026/06/meta-essilorluxottica-partner-launch-meta-glasses/",
+      "scope": "Meta Glasses美国/加拿大上市、US$299起、26种款式和Meta AI/Muse Spark",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "EssilorLuxottica Meta Glasses",
+      "url": "https://www.essilorluxottica.com/cap/content/304074/?_iframe=true",
+      "scope": "Meta Glasses合作发布与产品边界",
+      "checked_on": "2026-08-25",
       "quality": "A"
     },
     {
@@ -3074,6 +3132,27 @@
       "quality": "A"
     },
     {
+      "source_group": "RayNeo iO官方支持",
+      "url": "https://www.rayneo.com/pages/support-rayneo-io-ai-glasses",
+      "scope": "iO支持页、充电盒和计划发售状态",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "RayNeo iO/GT发布",
+      "url": "https://www.prnewswire.com/news-releases/rayneo-expands-consumer-ar-lineup-unveiling-rayneo-io-and-cinematic-rayneo-gt-series-302856495.html",
+      "scope": "2026-08-21 iO、GT、GT Max公告与型号边界",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "RayNeo GT官方",
+      "url": "https://www.rayneo.com/pages/rayneo-gt-series-ar-glasses",
+      "scope": "GT Max官方Coming September 4和早鸟登记",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
       "source_group": "XREAL官方商店",
       "url": "https://us.shop.xreal.com/collections/all-products",
       "scope": "One/One Pro/1S/Air系列/R1目录与价格",
@@ -3169,6 +3248,13 @@
       "url": "https://newsroom.snap.com/sps-2024-spectacles-snapos",
       "scope": "Spectacles 2024上市、开发者订阅、重量/续航",
       "checked_on": "2026-08-24",
+      "quality": "A"
+    },
+    {
+      "source_group": "Snap SPECS官方发布",
+      "url": "https://investor.snap.com/news/news-details/2026/Snap-Inc--Debuts-SPECS-Augmented-Reality-Glasses-to-Make-Computing-More-Human/default.aspx",
+      "scope": "SPECS预订价、订金、尺寸重量、美国/英国/法国秋季发货计划",
+      "checked_on": "2026-08-25",
       "quality": "A"
     },
     {
@@ -3283,6 +3369,12 @@
       "change": "新增智能眼镜全球首版主表85条，覆盖消费级AI/音频、显示AR/XR、企业/工业/开发者三大组；另保留13条候选与原型线索。重点补入Ray-Ban Meta Gen1/Gen2/Display、Oakley Meta HSTN/Vanguard、Xiaomi、Rokid、Even G1/G2、Looktech、Halliday、Mentra、Brilliant、Solos、XREAL、RayNeo、VITURE、INMO、Meizu、Vuzix、RealWear、Epson、Magic Leap、HoloLens、Snap、Google Glass EE2和Iristick等。",
       "verification": "优先引用官方产品页、官方发布稿、官方支持/规格页和企业销售页；把预售、开发者计划、停产、售罄、企业报价与普通消费者现货分开。主表主张只覆盖查证到的产品与字段；未公开字段不补猜。",
       "next": "下一轮优先补：Oakley/Ray-Ban完整规格与地区支持、XREAL/RayNeo/VITURE最新库存、Rokid Style/Xiaomi国际规格、Vuzix/RealWear/Epson企业手册、Iristick G3/G2完整传感器、各型号实际发货和监管/认证记录；同时持续发现中国、韩国、日本、印度、东南亚、拉美和中东本地上市型号。"
+    },
+    {
+      "date": "2026-08-25",
+      "change": "新增主表META-006 Meta Glasses (2026)，官方发布起价US$299；将RayNeo iO、RayNeo GT/GT Max和Snap SPECS从泛Coming soon/开发者线索细化为预售或计划发售状态，并保留为候选。",
+      "verification": "Meta/EssilorLuxottica官方发布确认Meta Glasses在美国/加拿大上市并逐步扩展；RayNeo官方支持/产品页确认iO与GT Max的计划发售窗口；Snap官方发布确认SPECS预订价、可退订金和秋季发货计划。硬件未公开字段继续写未公开。",
+      "next": "继续核对Meta Glasses各镜框的官方商品页、RayNeo iO/GT实际交付、Snap SPECS发货与完整规格；其他四库按同一来源等级持续复核。"
     }
   ]
 }

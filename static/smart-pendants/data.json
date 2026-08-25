@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-24",
+  "checked_on": "2026-08-25",
   "scope_note": "首版全球智能挂坠／挂链市场库：主表纳入官方在售、官方明确发售、官方明确预售、正式服务中或有官方产品/手册/销售规格证据的独立型号/代际。覆盖AI/环境/录音、健康与情绪、医疗报警/PERS、智能珠宝/关系互动、数字记忆、NFC医疗信息和UV/光照等类别。颜色、链长、纯套装和配件不拆行；不同代际、主机连接方式或关键功能保留独立行。传闻、原型、众筹/OEM线索和无法证明交付的项目放入候选与别名表。来源未披露的芯片、传感器、尺寸、重量、电池容量、续航、防水和订阅字段写“未公开”，不做外观或App功能推断。",
   "products": [
     {
@@ -476,9 +476,9 @@
       "form_factor": "电子屏智能吊坠/项链",
       "status": "在售",
       "evidence": "A",
-      "launch_date": "2025–2026（具体首发日未公开）",
-      "launch_date_type": "官方产品页/AI智能吊坠说明",
-      "price": "US$149；925银版本可能预售",
+      "launch_date": "2026-08-11",
+      "launch_date_type": "TOTWOO官方美国发布公告",
+      "price": "US$149起；925银版本预售，官方页面显示15–20天发货",
       "official_url": "https://totwoo.com/products/tree-of-life-ai-smart-locket",
       "spec_url": "https://totwoo.com/pages/ai-smart-locket",
       "microphones": "无录音功能口径",
@@ -495,8 +495,8 @@
       "subscription": "未公开；基础数字内容功能未标强制订阅",
       "privacy": "照片/视频/AI记忆存储路径需按App设置确认",
       "features": "动态照片/短视频/AI记忆、屏幕展示、树形珠宝设计",
-      "availability_note": "官方商店列出并可购买；颜色/银材质版本不拆行",
-      "source_note": "TOTWOO官方产品页和AI智能吊坠说明；芯片、充电时间、防水未公开"
+      "availability_note": "TOTWOO于2026-08-11宣布美国上市；官方页显示可购买并向多国配送，925银款为预售；颜色/材质版本不拆行",
+      "source_note": "TOTWOO官方产品页、AI智能吊坠说明和2026-08-11美国发布公告；芯片、充电时间、防水未公开"
     },
     {
       "id": "PEN-017",
@@ -1645,6 +1645,20 @@
       "scope": "未发布AI挂坠传闻；仅保留候选线索",
       "checked_on": "2026-08-24",
       "quality": "C"
+    },
+    {
+      "source_group": "TOTWOO Smart Locket 2026官方产品页",
+      "url": "https://totwoo.com/products/tree-of-life-ai-smart-locket",
+      "scope": "US$149、NEW ARRIVAL、尺寸、重量、存储、续航、全球配送和925银预售",
+      "checked_on": "2026-08-25",
+      "quality": "A"
+    },
+    {
+      "source_group": "TOTWOO Smart Locket美国发布",
+      "url": "https://www.globenewswire.com/news-release/2026/08/11/3342637/0/en/totwoo-launches-ai-powered-smart-locket-in-the-u-s-expanding-its-connected-jewelry-portfolio.html",
+      "scope": "2026-08-11美国上市公告、US$149起和三种材质/版本",
+      "checked_on": "2026-08-25",
+      "quality": "A"
     }
   ],
   "update_log": [
@@ -1653,6 +1667,12 @@
       "change": "新建全球智能挂坠／挂链数据库首版：主表41条独立型号/代际，候选与别名10条，来源组37组；覆盖AI/录音、健康/情绪、医疗报警、SOS、智能珠宝、数字记忆、NFC和UV等形态。",
       "verification": "优先核对官方产品页、官方商店、官方支持/数据表、官方发布稿；对交付不明、媒体补充、型号边界和续航冲突标注B/C或在备注中保留缺口。价格保留原币种，不以汇率推断。",
       "next": "继续补充中国大陆、日韩、东南亚、拉美、中东和非洲的本地销售/监管页面；优先核验主表中官方列出但交付/库存待确认的项目，以及所有未公开的芯片、精确尺寸、重量、充电和防水字段。"
+    },
+    {
+      "date": "2026-08-25",
+      "change": "更新PEN-016 TOTWOO Tree of Life AI Smart Locket：由模糊的2025–2026口径改为2026-08-11美国上市，补充US$149起、全球配送和925银预售状态；新增2组官方来源。",
+      "verification": "官方产品页显示NEW ARRIVAL、可购买、具体尺寸/重量/电池和多国配送；美国发布公告支持上市日期与价格。颜色、材质变体不拆行，未披露芯片、防水和充电时间仍写未公开。",
+      "next": "继续核对Taya等录音挂坠的官方可交付证据，并补充中国大陆、日韩、东南亚、拉美、中东和非洲区域页面。"
     }
   ]
 }

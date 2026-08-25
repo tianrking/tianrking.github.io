@@ -1,8 +1,8 @@
 {
   "title": "全球上市智能宠物项圈／宠物吊牌研究库",
   "subtitle": "Global smart pet collars, trackers, tags and pet identity devices catalog",
-  "checked_on": "2026-08-24",
-  "version": "2026-08-24-pet-v2",
+  "checked_on": "2026-08-25",
+  "version": "2026-08-25-pet-v3",
   "methodology": "优先官方产品页、官方商店、官方发布稿、官方规格/支持页和监管/认证记录；未披露字段写“未公开”，不从同系列、App功能、外观或OEM推断芯片/传感器/尺寸/续航；通用物品标签可挂宠物但明确标注非宠物专用。",
   "products": [
     {
@@ -4922,8 +4922,15 @@
       "source_group": "Tractive定位/订阅",
       "url": "https://tractive.com/en-us/",
       "scope": "DOG/CAT定位产品、覆盖与服务入口",
-      "checked_on": "2026-08-24",
+      "checked_on": "2026-08-25",
       "quality": "A 官方产品站"
+    },
+    {
+      "source_group": "Tractive 2026新品复核",
+      "url": "https://tractive.com/blog/en/press/tractive-launches-new-cat-and-dog-trackers-and-features",
+      "scope": "DOG 6 XL、CAT 6 Mini的2026-04-08发布和在售状态复核；本轮未发现更新型号",
+      "checked_on": "2026-08-25",
+      "quality": "A 官方发布稿"
     },
     {
       "source_group": "Tractive DOG XL Adventure",
@@ -5512,6 +5519,12 @@
       "change": "第二轮扩展新增Weenect XS、Jiobit、Garmin Alpha LTE/K5/T20、中国OEM/区域产品、日本Eview/Trackimo/VerdantTrace、韩国NAVIX、印度Trakbond/Vyncx/Netra360、东南亚Tack/PawTrace/AIS、拉美RastroPET/The Pet GPS/DL/KuyraPet/Serviax、中东PatiTracker/Trackimo/PetLoc8/Buddies，以及Dogtra/PetSafe/SpotOn/Invisible Fence/ZoomieGo等GPS围栏。",
       "verification": "补充了官方产品页、区域运营商商城、官方制造商目录和候选Beta线索；OEM/区域渠道/页面规格冲突均显式标注为目录、区域、缺货、历史或未证状态，不把通用GPS围栏当作蜂窝远程追踪器。Whistle四个型号依据官方公告改为停服/历史在售。",
       "next": "继续补齐非洲、东欧、南亚和中国终端零售；逐条回查地区库存、蜂窝制式、服务停止时间、健康传感器原始型号、芯片、尺寸、重量和充电方式，并把官方状态变化写入历史日志。"
+    },
+    {
+      "date": "2026-08-25",
+      "change": "本轮复核Tractive DOG 6 XL/CAT 6 Mini及现有GPS、健康、围栏和QR/NFC产品的官方可得性；未发现足以新增为独立主表型号的可靠官方新品。",
+      "verification": "Tractive 2026-04-08官方发布稿仍是当前DOG 6 XL/CAT 6 Mini新型号来源，已在主表；本轮不把新闻搜索结果、通用定位器或OEM目录重复计数。缺货、区域网络、OEM和芯片/传感器缺口继续按原记录保留。",
+      "next": "继续追踪全球宠物定位器、GPS围栏、健康项圈和QR/NFC身份牌的官方状态，重点补充非洲、东欧、南亚、中国终端零售及监管/认证记录。"
     }
   ],
   "field_notes": {

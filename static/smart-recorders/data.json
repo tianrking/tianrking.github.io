@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-24",
+  "checked_on": "2026-08-25",
   "scope_note": "首版全球录音卡片与AI录音设备市场库：主表按可独立购买、官方明确发售或官方明确预售的型号/代际计数；卡片、磁吸手机设备、穿戴式录音器、耳机录音器和桌面会议设备按形态分类。颜色、存储容量选项、配件包不拆行；疑似OEM/贴牌、众筹或只出现于集合页的型号放入候选与别名表。价格保留查证时官方页面原币种，不做未经说明的汇率换算。来源未披露的芯片、精确尺寸、重量、电池容量、采样率和防水等级写“未公开”。",
   "products": [
     {
@@ -1326,6 +1326,17 @@
       "alias_or_relation": "OEM/贴牌候选池，不按商品标题数量计数"
     },
     {
+      "name": "Flomem Open-Source Recording Card",
+      "brand": "Flomem",
+      "region": "中国深圳/全球支持者",
+      "category": "开源录音卡片/AI Agent硬件",
+      "status": "试产/支持者批次/尚未量产",
+      "evidence": "A",
+      "reason": "官方站说明2026年6月众筹结束、8月100台试产批次发给支持者、2026年第四季度全球量产交付；截至查证日不是面向普通消费者的稳定现货，因此保留候选。",
+      "url": "https://flomem.com/",
+      "alias_or_relation": "卡片式开源录音硬件；无托管云端订阅口径；不与PLAUD Note/NotePin合并"
+    },
+    {
       "name": "Plaud Desktop",
       "brand": "PLAUD",
       "region": "全球",
@@ -1673,6 +1684,13 @@
       "scope": "MYLE、KlarisPen及OEM候选发现，不作为主表事实来源",
       "checked_on": "2026-08-24",
       "quality": "C"
+    },
+    {
+      "source_group": "Flomem官方",
+      "url": "https://flomem.com/",
+      "scope": "开源录音卡片、BLE/USB-C Agent链路、无订阅、2026年试产与量产计划",
+      "checked_on": "2026-08-25",
+      "quality": "A"
     }
   ],
   "update_log": [
@@ -1681,6 +1699,12 @@
       "change": "建立首版全球录音卡片/AI录音设备数据库：主表31条，覆盖卡片、穿戴、耳机、便携专业录音器、USB电脑录音器和桌面会议设备；候选与别名14条；来源45组。",
       "verification": "优先使用官方产品页、官方商店、官方发布稿、官方支持页和官方手册。区分在售、官方列出但售罄、预售/预订、历史/候选；颜色、容量、配件包不拆行；OEM与众筹线索不直接计入主表。来源未披露字段写“未公开”。",
       "next": "继续补齐中国大陆、日韩、印度、东南亚和欧洲本地官方渠道；重点核验Note Pro续航模式、HiDock P1 mini存储冲突、Comu Action Pro硬件尺寸/电池、Vibe/TransAI/Sonal实际交付、HARIOX/LORZOR是否存在同OEM平台，并逐步加入FCC/CE/说明书/实际发货证据。"
+    },
+    {
+      "date": "2026-08-25",
+      "change": "新增1条官方候选Flomem Open-Source Recording Card：官方站显示2026年8月支持者试产批次、Q4量产计划和无托管云端订阅路线；不计入当前在售主表。",
+      "verification": "Flomem官方页面能够证明项目、形态、开发阶段和交付时间线，但尚未证明普通消费者稳定现货，价格、芯片、完整尺寸/重量/电池等字段不填入主表。",
+      "next": "继续追踪Flomem首批发货和正式商店；核验其他卡片式AI录音硬件的官方订单、监管/说明书和是否为OEM同源。"
     }
   ]
 }

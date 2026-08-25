@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-24",
+  "checked_on": "2026-08-25",
   "scope_note": "第一版全球市场盘点：按可独立购买的产品代际/型号纳入；颜色、尺寸和纯外观材质不单独计数。疑似同一OEM硬件的品牌别名放入候选与别名表。价格保留产品页面所在市场币种，未做汇率换算。",
   "products": [
     {
@@ -4903,6 +4903,12 @@
       "change": "本轮新增4条主表记录：CUDIS 002 Classic、CUDIS 002 Sporty、Aurora Eclipse、Aurora Luman；新增1条候选：Garmin CIRQA Smart Ring。更新4条既有记录：RingConn Gen 3缺货、VEYRO现货、Sharp上市口径、Casio中国官方渠道。新增11条来源，主表增至150条，候选增至27条，来源增至97条。",
       "verification": "优先使用官方商品页、官方发布稿和官方渠道；CUDIS与Aurora按商品页逐型号区分，售罄也保留在主表；Aurora血糖、血压和ECG只保留品牌宣称，证据等级为C且不作医疗结论；Garmin CIRQA Smart Ring仅因监管记录报道进入候选，不与CIRQA Smart Band合并。",
       "next": "继续复核CUDIS售罄后的发货与硬件规格、Aurora低透明度型号的真实SKU/OEM关系、VEYRO实际交付和监管记录；追踪Garmin是否重新提交或正式发布Smart Ring，并继续扫描日本、中国、印度、东南亚和欧美官方渠道的新型号。"
+    },
+    {
+      "date": "2026-08-25",
+      "change": "本轮对Oura、Samsung、RingConn、CUDIS、Aurora以及Garmin CIRQA候选进行官方页面/监管记录复核；未发现足以新增为全球可上市主表型号的可靠官方新品。",
+      "verification": "Garmin CIRQA仍只有短暂出现后撤下的印尼监管记录报道，没有Garmin官方零售页、发布公告、价格、完整规格或交付证据，因此继续留在候选，不把二手报道升级为主表事实。",
+      "next": "继续追踪Garmin是否正式发布或重新提交CIRQA Smart Ring；补充更多国家监管记录、FCC/CE资料和区域官方商城，保持健康功能与医疗认证边界。"
     },
     {
       "date": "2026-08-23",
