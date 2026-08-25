@@ -78,7 +78,7 @@ function DatabaseCard({database, stats}) {
       <div className={styles.cardStats} aria-label={`${database.title} 即時統計`}>
         <div>
           <strong>{summary ? summary.products : '—'}</strong>
-          <span>主表型號</span>
+          <span>已收錄</span>
         </div>
         <div>
           <strong>{summary ? summary.candidates : '—'}</strong>
@@ -91,7 +91,7 @@ function DatabaseCard({database, stats}) {
       </div>
       <div className={styles.cardFooter}>
         <a className={styles.primaryLink} href={database.path}>
-          查看資料庫 <span aria-hidden="true">↗</span>
+          進入清單 <span aria-hidden="true">↗</span>
         </a>
         <a className={styles.dataLink} href={database.data} target="_blank" rel="noopener noreferrer">
           JSON <span aria-hidden="true">↗</span>
@@ -142,7 +142,7 @@ export default function DatabasesPage() {
               <div>
                 <Heading as="h1">全球智能硬件資料庫。</Heading>
                 <p className={styles.heroLead}>
-                  把分散在全球的可上市智能硬件，整理成可查、可比、持續更新的型號入口。
+                  把散落在全球的智能硬件，整理成一個可以直接查、直接比、持續更新的清單。
                 </p>
               </div>
               <aside className={styles.heroAside} aria-label="資料庫概覽">
@@ -152,9 +152,9 @@ export default function DatabasesPage() {
                 </div>
                 <div className={styles.heroMetric}>
                   <strong>{loaded ? totalProducts : '—'}</strong>
-                  <span>目前已載入的主表型號</span>
+                  <span>已收錄型號</span>
                 </div>
-                <p>五套資料庫獨立維護，入口頁統計直接讀取各自的 data.json。</p>
+                <p>五組資料各自更新，數字會跟著最新 JSON 自動變化。</p>
               </aside>
             </div>
           </div>
@@ -165,9 +165,9 @@ export default function DatabasesPage() {
             <div className={styles.sectionHeading}>
               <div>
                 <span className={styles.eyebrow}>CHOOSE A DATASET</span>
-                <Heading id="database-catalog-title" as="h2">選擇一套資料庫</Heading>
+                <Heading id="database-catalog-title" as="h2">想看哪一類？</Heading>
               </div>
-              <p>點擊卡片進入可搜尋、可篩選的完整頁面；JSON 供程式化讀取。</p>
+              <p>進去就能搜尋、篩選；需要做自己的整理，也可以直接讀獨立 JSON。</p>
             </div>
             <div className={styles.grid}>
               {DATABASES.map((database) => (
@@ -179,15 +179,15 @@ export default function DatabasesPage() {
 
         <section className={styles.method} aria-labelledby="database-method-title">
           <div className={`container ${styles.methodInner}`}>
-            <span className={styles.methodMark} aria-hidden="true">A→D</span>
+            <span className={styles.methodMark} aria-hidden="true">CHECK</span>
             <div>
-              <span className={styles.eyebrow}>EVIDENCE FIRST</span>
-              <Heading id="database-method-title" as="h2">來源優先，缺口明示。</Heading>
+              <span className={styles.eyebrow}>SOURCE CHECK</span>
+              <Heading id="database-method-title" as="h2">有來源，缺什麼也直接標出來。</Heading>
               <p>
-                優先核對官方產品頁、發布公告、規格／支援頁、監管記錄與官方銷售頁；未披露欄位標為「未公開」，預售、候選、歷史與 OEM 線索分開保存。
+                先看官方產品頁、發布資訊、規格、支援頁和銷售頁；找不到的欄位就寫「未公開」。預售、候選、歷史型號和 OEM 線索各自標清楚，不混在一起。
               </p>
             </div>
-            <a href="/smart-rings/">先看一套完整資料庫 <span aria-hidden="true">↗</span></a>
+            <a href="/smart-rings/">從智能指環開始 <span aria-hidden="true">↗</span></a>
           </div>
         </section>
       </main>
