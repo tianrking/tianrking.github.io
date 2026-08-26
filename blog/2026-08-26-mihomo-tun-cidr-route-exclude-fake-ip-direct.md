@@ -1,177 +1,239 @@
 ---
 slug: mihomo-tun-cidr-route-exclude-fake-ip-direct
-title: "Clash Verge 與 Mihomo TUN：CIDR 排除路由、/32、Fake-IP 與單一 IP 直連"
-description: "從 IPv4 CIDR、最長前綴匹配到 Mihomo TUN、Fake-IP 與 DOMAIN 規則，釐清 103.143.81.55/32 為何可用於單一 IP 直連，以及何時仍要處理 DNS。"
+title: "從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析"
+description: "從 32-bit IPv4、CIDR 前綴與最長前綴匹配出發，拆解 /32 主機路由如何經由 TUN、DNS Fake-IP 與 Mihomo 規則控制一條連線的實際流向。"
 authors: [tianrking]
 tags: [網路, 路由, CIDR, TUN, Mihomo, Clash Verge, DNS]
 date: 2026-08-26
-keywords: [Clash Verge, Mihomo, TUN, CIDR, /32, route-exclude-address, Fake-IP, DNS, DIRECT, 最長前綴匹配]
+keywords: [IPv4, CIDR, /32, 主機路由, 最長前綴匹配, FIB, TUN, Mihomo, Fake-IP, DNS, DIRECT, route-exclude-address]
 ---
 
-在 Clash Verge / Mihomo 裡看到這段設定時，最常見的反應是：「`103.143.81.55/32` 是不是一段網段？」
+**103.143.81.55/32** 看起來只是一行設定，背後卻跨了 IPv4 位址語義、核心路由表、TUN 攔截、DNS 回覆與代理出站五個層次。若目標是「讓它直連」，先要釐清直連究竟是**完全不進 TUN**，還是**進入 Mihomo 後選擇 DIRECT 出站**。
+
+最短的結論如下：
+
+- **103.143.81.55/32** 是只匹配這一個 IPv4 位址的 CIDR 主機前綴。
+- 把它寫進 **tun.route-exclude-address**，控制的是作業系統把流量導入 TUN 之前的路徑。
+- 把它寫成 **IP-CIDR,103.143.81.55/32,DIRECT**，控制的是封包已進入 Mihomo 後的出站選擇。
+- 若應用程式使用網域而且開啟 Fake-IP，作業系統可能看到的是虛擬 IP；單排除真實 IP 就不會命中。
+- 若真正意圖是「某個服務名稱直連」，通常應先使用 **DOMAIN,名稱,DIRECT**，而不是永久鎖死一個可能變動的 A 記錄。
+
+本文先講 IP 規範與選路模型，再把 Mihomo 放回它實際所在的資料面。Mihomo 章節以官方設定文件所公開的行為為準；不同核心版本、作業系統、權限、TUN stack 與網路環境可能使用不同後端，實際結果必須由本機路由表、連線日誌與封包觀測證明。
+
+:::note[例子範圍]
+
+103.143.81.55 與 hk2.w0x7ce.eu 僅用來說明 CIDR、規則與驗證方法，不表示目前 DNS、伺服器可達性、所有權、白名單或任何安全策略。請使用自己被授權管理的目標驗證。
+
+:::
+
+## 1. 一條連線其實經過四個控制面
+
+以瀏覽器開啟某個 HTTPS 網域為例，至少有四個獨立的決策面。把它們分開，是理解所有 TUN 規則的前提。
+
+| 控制面 | 主要決策者 | 看得到什麼 | 它能改變什麼 | 它不能保證什麼 |
+| --- | --- | --- | --- | --- |
+| DNS / 名稱解析 | resolver、Fake-IP 映射 | FQDN、DNS policy | 回覆真實或虛擬位址 | 封包最後從哪張網卡出去 |
+| 本機選路 | OS policy routing、FIB | 目的 IP、介面、metric、路由表 | 送往實體介面或 TUN | Mihomo 最後選了哪個 proxy |
+| 代理核心 | Mihomo rules / outbound | hostname、目的 IP、程序、介面等 | DIRECT、代理群組、拒絕 | 遠端服務是否接受請求 |
+| 遠端安全邊界 | firewall、TLS、應用程式 | 來源、SNI、憑證、帳號、token | 放行、拒絕、授權 | 用戶端有沒有先進 TUN |
+
+因此「直連」有兩種不同含義：
+
+1. **路由層直連**：封包於 OS FIB 階段直接走原本的 Wi-Fi、乙太網或行動網路，不進 TUN。
+2. **代理核心直連**：封包先由 TUN 交給 Mihomo，Mihomo 比對規則後以 DIRECT 建立外連，不經代理節點。
+
+第一種適合避免循環路由、排除 LAN 或特定目的 IP；第二種適合保留規則可觀測性與名稱分類，同時避免某服務走代理。它們不是同一件事，也不能互相替代。
+
+## 2. IPv4 與 CIDR：斜線後的數字是前綴長度
+
+IPv4 是固定 32 bit 的位址，只是為了閱讀而以四個十進位 octet 顯示。CIDR 的核心是明確指定「前面多少個 bit 用於比對」。IETF 的 [RFC 4632](https://www.rfc-editor.org/rfc/rfc4632.html) 將表示法定義為 a.b.c.d/p，其中 p 可由 0 到 32。
+
+以 103.143.81.55 為例：
+
+```text
+103        . 143        . 81         . 55
+01100111   . 10001111   . 01010001   . 00110111
+```
+
+在 103.143.81.55/32 裡，所有 32 個 bit 都是前綴：
+
+```text
+前綴 bit： 01100111.10001111.01010001.00110111
+host bit： （沒有剩餘 bit）
+遮罩：     255.255.255.255
+位址數：   2^(32 - 32) = 1
+```
+
+因此它是**主機路由**：在路由查詢中只會命中這一個 IPv4 值。RFC 4632 的前綴表明確列出 /32 是 one-address host route，/0 是涵蓋所有 IPv4 的 default route。
+
+### 2.1 位址數不是「可配主機數」
+
+CIDR 前綴所包含的位址數公式為：
+
+```text
+位址數 = 2^(32 - prefix_length)
+```
+
+| 前綴 | 十進位遮罩 | 前綴內位址數 | 常見路由含義 |
+| --- | --- | ---: | --- |
+| 0.0.0.0/0 | 0.0.0.0 | 4,294,967,296 | default route |
+| 10.0.0.0/8 | 255.0.0.0 | 16,777,216 | 大型彙總 |
+| 172.16.0.0/16 | 255.255.0.0 | 65,536 | 一般彙總或私網 |
+| 192.168.99.0/24 | 255.255.255.0 | 256 | 常見 LAN 前綴 |
+| 103.143.81.55/32 | 255.255.255.255 | 1 | 單一目的地 |
+
+「/24 等於 254 台主機」只是在典型乙太網 IPv4 子網中，扣除網路與廣播位址後的常見教學結論；它不是 CIDR 的位址數定義。CIDR 是一個位址集合與前綴匹配語言。對 /31 point-to-point、loopback、主機路由與非乙太網鏈路，直接套用 N - 2 的說法會失真。
+
+### 2.2 為什麼 103.143.81.55/24 代表 103.143.81.0/24
+
+當前綴短於 /32，host bit 不屬於網路識別。例如：
+
+```text
+103.143.81.55/24
+→ 匹配集合：103.143.81.0 至 103.143.81.255
+→ 正規化前綴：103.143.81.0/24
+```
+
+有些工具會接受帶 host bit 的寫法並自動正規化，有些會拒絕。跨平台設定中應直接寫前綴邊界，避免人與工具對「這段網段」有不同理解。/32 沒有 host bit，因此 103.143.81.55/32 本身已是正規形式。
+
+## 3. FIB 選路：最長前綴匹配優先於更大的彙總
+
+FIB 是核心用來決定封包下一跳或介面的轉送表。對典型 unicast 查詢，所有能匹配目的位址的前綴會競爭，**匹配 bit 最多的前綴優先**。這叫 longest-prefix match，亦是 CIDR 能以更細前綴覆蓋大範圍 aggregate 的基礎。
+
+假設存在以下路由：
+
+```text
+0.0.0.0/0          → Wi-Fi gateway
+103.143.0.0/16     → TUN
+103.143.81.0/24    → TUN
+103.143.81.55/32   → Wi-Fi gateway
+```
+
+對目的 103.143.81.55：
+
+```text
+0.0.0.0/0           匹配
+103.143.0.0/16      匹配
+103.143.81.0/24     匹配
+103.143.81.55/32    匹配  ← 前綴最長，最具體
+```
+
+所以 /32 覆蓋 /24、/16 與 /0；對 103.143.81.99，則是 /24 覆蓋 /16 與 /0。
+
+不過，這不是「加一條 /32 就必定生效」的萬用公式：
+
+- 前綴長度相同時，才可能由 route metric、行政距離或平台實作決定。
+- policy routing、多張路由表、VPN、EDR、企業 filter 與防火牆可能改變一般 FIB 查詢的結果。
+- IPv4 /32 不會覆蓋 IPv6 AAAA 流量。
+- 有路由不表示遠端 port 開放、TLS 合法或應用授權成功。
+
+所以必須把 longest-prefix match 視為**同一選路域內的比較規則**，不是對整個作業系統和遠端網路的替代模型。
+
+## 4. TUN 的位置：虛擬 L3 介面，不是代理協定
+
+TUN 是三層虛擬網路介面。核心像對待一般 IP 介面一樣，把選定的 IPv4/IPv6 封包送給它；使用者空間程式讀取後，可重建連線、套規則並以另一條外連送出。它不同於二層 TAP：TUN 關心的是 IP packet，不是乙太網 frame。
+
+在 Mihomo 中，TUN 是一個 inbound。開啟 auto-route 後，Mihomo 依平台能力調整系統路由，將目標流量導進 TUN。route-exclude-address 是這一個**自動導流階段**的排除集合。官方 [TUN 文件](https://wiki.metacubex.one/en/config/inbound/tun/) 對此的描述就是：auto-route 開啟時，指定子網不會被導到 TUN。
+
+這兩段設定作用於不同位置：
 
 ```yaml
+# OS 選路層：命中後不要自動導入 TUN
 tun:
+  enable: true
   auto-route: true
   route-exclude-address:
     - 103.143.81.55/32
 ```
 
-答案是：它不是一段可容納多台主機的網段，而是**剛好只指向 `103.143.81.55` 這一個 IPv4 位址的 host route（主機路由）**。在 TUN 的語境下，這通常用來告訴作業系統：「通往這個目的 IP 的流量不要被自動導入 Mihomo 的 TUN 路徑，走原本的網路出口。」
-
-不過，這句話有三個很重要的前提：
-
-1. 它是**本機的目的地選路**，不是伺服器防火牆白名單。
-2. 它只看封包當下的**目的 IP**；如果 DNS Fake-IP 把網域先映射成虛擬位址，單排除真實 IP 可能完全碰不到。
-3. Mihomo 的 `rules:` 是另一套「由上往下，第一條命中就停止」的規則系統；作業系統的路由表則通常依**最長前綴匹配**選路。兩者不要混為一談。
-
-本文以 `103.143.81.55/32` 與 `hk2.w0x7ce.eu` 作為教學例子，不把它們當成任何伺服器安全策略、固定 IP 承諾或可複製到所有網路的結論。
-
-:::info[先講可操作的結論]
-
-如果你的真正意圖是「`hk2.w0x7ce.eu` 這個主機名稱永遠直接連線」，優先把**精確網域規則**放在 Mihomo 規則頂端：
-
 ```yaml
+# Mihomo 規則層：封包已被核心接收，選 DIRECT 出站
 rules:
-  - DOMAIN,hk2.w0x7ce.eu,DIRECT
-  - MATCH,PROXY
-```
-
-如果還希望**任何直接以 `103.143.81.55` 為目的地的封包**不要進 TUN，再加上：
-
-```yaml
-tun:
-  auto-route: true
-  route-exclude-address:
-    - 103.143.81.55/32
-```
-
-若啟用了 `fake-ip`，再確認 DNS 不會先把該網域回覆成假位址；否則 `route-exclude-address` 看到的可能不是 `103.143.81.55`。
-
-:::
-
-## 1. 先拆開四個不同層次
-
-「直連」這兩個字在代理設定裡很容易被過度簡化。實際上至少有四層：
-
-| 層次 | 問的問題 | 常見設定 | 它**不**負責什麼 |
-| --- | --- | --- | --- |
-| 作業系統選路 | 這個目的 IP 的封包先交給哪個介面／下一跳？ | `tun.route-exclude-address`、系統路由表 | 不決定網域規則，也不改伺服器 ACL。 |
-| Mihomo 流量規則 | 已進入 Mihomo 的連線，要選哪個 outbound？ | `DOMAIN,...,DIRECT`、`IP-CIDR,...,DIRECT` | 不一定表示封包從未碰過 TUN。 |
-| DNS 映射 | 應用程式拿到真實 IP 還是 Fake-IP？ | `enhanced-mode`、`fake-ip-filter` | 不保證實際 TCP/TLS 一定成功。 |
-| 遠端伺服器防火牆 | 伺服器允許哪個來源位址、埠與協議進入？ | nftables、iptables、雲端安全群組 | 不會替客戶端選擇是否繞過 TUN。 |
-
-把問題放回正確的層次，排錯就不會變成「我加了白名單，為什麼代理還在接管？」
-
-Mihomo 的官方 TUN 文件把 `route-exclude-address` 定義為：在啟用 `auto-route` 時排除自訂子網；它是 TUN 自動選路的輸入，而不是代理規則的別名。[Mihomo TUN 文件](https://wiki.metacubex.one/en/config/inbound/tun/) 同時也說明，Linux 專用的 `route-exclude-address-set` 有額外 nftables、`auto-route` 與 `auto-redirect` 條件，不能把它和跨平台的普通 `route-exclude-address` 混用。
-
-## 2. IPv4、CIDR 與 `/32` 到底在描述什麼
-
-IPv4 位址固定為 **32 bits**，只是不方便直接閱讀二進位，所以通常寫成四個十進位 octet，例如：
-
-```text
-103.143.81.55
-01100111.10001111.01010001.00110111
-```
-
-CIDR 把「前面多少 bits 是固定前綴」寫在斜線後面。RFC 4632 定義，IPv4 的 CIDR 前綴長度範圍是 `/0` 到 `/32`，斜線後的數字代表 32-bit 位址中有多少個有效前綴位元；它同時把 `n.n.n.n/32` 列為只含一個位址的 host route。[RFC 4632 §3.1](https://www.rfc-editor.org/rfc/rfc4632.html#section-3.1)
-
-| CIDR | 固定的網路位元 | 剩餘主機位元 | 位址數 | 直覺 |
-| --- | ---: | ---: | ---: | --- |
-| `0.0.0.0/0` | 0 | 32 | 4,294,967,296 | 所有 IPv4；常被稱為預設路由。 |
-| `10.20.0.0/16` | 16 | 16 | 65,536 | 固定前兩個 octet。 |
-| `10.20.30.0/24` | 24 | 8 | 256 | 固定前三個 octet。 |
-| `103.143.81.55/32` | 32 | 0 | 1 | 只命中 `103.143.81.55`。 |
-
-因此，`/32` 不是「遮罩特別嚴格的局域網」，而是「沒有剩餘主機位元」：32 個 bit 全部固定，只有這一個目的地能命中。
-
-:::note[不要只背 /24]
-
-`/24` 很常見，但 CIDR 不是只有 `/8`、`/16`、`/24` 這些舊類別感很強的寫法。只要前綴連續，`/13`、`/27`、`/31`、`/32` 都是合法的 CIDR。對 TUN 排除來說，應該選**能表達真正意圖的最小範圍**：只需一個 IP 就用 `/32`，不要因為方便而放大成 `/24` 或 `/16`。
-
-:::
-
-## 3. 為什麼 `/32` 能壓過 TUN 的預設路徑：最長前綴匹配
-
-系統路由表常會同時有多條看起來都能匹配同一個目的地的路由。典型的邏輯模型如下：
-
-```text
-0.0.0.0/0          → Mihomo TUN
-103.143.81.55/32   → 原本的實體網卡與預設閘道
-```
-
-當目標是 `103.143.81.55` 時，兩條都「可匹配」，但 `/32` 比 `/0` 更具體。IP 選路採用最長前綴匹配（longest-prefix match），所以會優先選更長、更精確的前綴；若前綴長度相同，才會再涉及 route metric、優先級與作業系統策略。RFC 4632 將這個模型描述為 more-specific route 優於 aggregate route 的前綴選擇。[RFC 4632](https://www.rfc-editor.org/rfc/rfc4632.html)
-
-但這裡應避免一個過度推論：**不要假定每個 Mihomo、每個作業系統、每個 TUN stack 都會用完全相同的路由表呈現方式實作排除。** Mihomo 文件保證的是 `auto-route` 下「排除自訂子網」的功能語意；實際是否顯示為一條可見的 `/32` 路由、路由規則或平台特定機制，應以本機路由查詢和實際連線結果為準。
-
-這也說明了 `/0` 與 `/32` 的風險差異：
-
-```text
-103.143.81.55/32  → 只影響一個 IPv4 目的地
-103.143.81.0/24  → 影響 256 個位址
-0.0.0.0/0        → 幾乎等於關掉所有 IPv4 的 TUN 導流
-```
-
-## 4. `route-exclude-address`、`IP-CIDR,DIRECT` 與 `DOMAIN,DIRECT` 不是同一件事
-
-這三種寫法名稱相近，作用的位置不同：
-
-| 寫法 | 主要匹配對象 | 主要發生層 | 適合的意圖 |
-| --- | --- | --- | --- |
-| `tun.route-exclude-address: 103.143.81.55/32` | 作業系統封包的目的 IP | TUN 自動選路 | 讓這個真實 IP 不被導入 TUN。 |
-| `IP-CIDR,103.143.81.55/32,DIRECT` | Mihomo 已看到的目的 IP | Mihomo 規則 | 流量進入 core 後，指定這個 IP 使用 `DIRECT` outbound。 |
-| `DOMAIN,hk2.w0x7ce.eu,DIRECT` | 完整網域名稱 | Mihomo 規則 | 按服務名稱做精確直連，較能承受 IP 變動。 |
-
-Mihomo 的路由規則是**自上而下、上面的優先**；`DOMAIN` 匹配完整網域，而 `IP-CIDR` 匹配 IP 範圍。官方規則文件也示範了 `/32` 的 source-IP 寫法與 `DOMAIN,...,DIRECT` 的三欄格式。[Mihomo Route Rules](https://wiki.metacubex.one/en/config/rules/)
-
-因此，下面的規則順序有意義：
-
-```yaml
-rules:
-  # 精確主機名必須在廣泛規則與 MATCH 之前
-  - DOMAIN,hk2.w0x7ce.eu,DIRECT
-
-  # 只有在流量真的以此真實 IP 進入 Mihomo 時才會命中
   - IP-CIDR,103.143.81.55/32,DIRECT,no-resolve
-
-  # 這條是兜底；放在前面會吃掉後面的規則
   - MATCH,PROXY
 ```
 
-`no-resolve` 的含義不是「強制直連」，而是避免為了 IP 類規則的比對再觸發 DNS 解析；它只屬於目的 IP 類規則的額外參數。[Mihomo 規則參數說明](https://wiki.metacubex.one/en/config/rules/#no-resolve)
+| 問題 | route-exclude-address | IP-CIDR + DIRECT |
+| --- | --- | --- |
+| 決策時機 | OS 導入 TUN 前 | 進入 Mihomo 後 |
+| 比對資料 | 封包當下的目的 IP | Mihomo 可見的目的 IP |
+| 主要效果 | 保留 OS 的原始出口 | 由核心以直接出站建立連線 |
+| 是否繞過 TUN | 目標是；以實際路由表驗證 | 否 |
+| 是否理解網域名 | 否 | IP-CIDR 本身否；需要 DOMAIN 規則 |
+| 是否是遠端防火牆設定 | 否 | 否 |
 
-## 5. TUN + Fake-IP：為什麼只排除真實 IP 仍可能不夠
+### 4.1 Mihomo 的實作選項不是跨平台承諾
 
-Fake-IP 的目標不是偽造遠端伺服器，而是讓 Mihomo 在 TUN 攔截到應用程式連線時仍能保留「這條連線原本請求哪個網域」的關聯。簡化流程如下：
+Mihomo 官方 TUN 文件列出 system、gvisor 與 mixed 三種 stack：system 倚賴 OS 協定棧；gvisor 是使用者空間網路棧；mixed 對 TCP 使用 system、UDP 使用 gVisor。文件建議無相容性問題時可採 mixed，但它不是「一定更快」或「一定無漏流」的保證。
 
-```text
-App
- │  DNS: hk2.w0x7ce.eu ?
- ▼
-Mihomo DNS（fake-ip）
- │  回覆一個設定範圍內的 Fake-IP，例如 198.18.x.x
- ▼
-App 對 Fake-IP 建立 TCP/TLS 連線
- │
- ▼
-TUN / Mihomo 依 Fake-IP 映射還原網域，套用 DOMAIN 規則，
-再決定要以哪個出口去解析與連線真實目的地。
-```
+Linux 的 auto-redirect 又是另一層功能：文件標示它只支援 Linux，會透過 iptables/nftables 將 TCP 流量導向 TUN，並要求 auto-route。Windows/macOS 不應照抄這種 Linux 專屬配置。若有多張網卡，auto-detect-interface、strict-route、routing-mark 與企業 VPN policy 也都會影響最終資料面。
 
-Mihomo 官方 DNS 文件指出，`enhanced-mode` 可使用 `fake-ip`，而 `fake-ip-filter` 中的網域不會得到 Fake-IP 映射；DNS 文件也特別說明 TUN 的預設 IPv4 位址會參考 fake-IP range。[Mihomo DNS configuration](https://wiki.metacubex.one/en/config/dns/)
+其中 auto-detect-interface 的工作是偵測核心自身外連所應使用的實體出口，避免代理節點的上游連線又被導回 TUN 形成迴圈；它不是依每個網站自動選最佳線路的策略引擎。strict-route 則是平台特定的更嚴格導流／防漏設計，可能與虛擬機、其他 VPN 或特殊網路程式衝突。兩者都不改變 CIDR 的位元語義，只改變「哪些封包在哪個 OS 路徑被攔截」。
 
-這就產生一個常見現象：
+## 5. 一條網域連線如何通過 Mihomo
+
+下圖是典型 TCP/HTTPS 資料面。並非每個應用都必然走完整流程：它可能直接連 literal IP、使用快取、使用 DoH、或自行管理 resolver。但這個模型足以解釋 CIDR 規則為何會在不同層失效。
 
 ```text
-你排除： 103.143.81.55/32
-App 實際先連：198.18.0.42（Fake-IP）
+應用程式
+  │  1. 查詢 hk2.w0x7ce.eu，或從快取取得 IP
+  ▼
+DNS resolver / Mihomo DNS
+  │  2. 回覆真實 A/AAAA，或 Fake-IP
+  ▼
+connect(目的 IP:port)
+  ▼
+OS policy routing / FIB
+  │  3a. 命中排除 → 原實體介面
+  │  3b. 未排除   → TUN
+  ▼
+Mihomo TUN inbound
+  │  4. 接收封包；依 stack 建立連線中繼資料
+  │     Fake-IP 可恢復對應的 FQDN
+  ▼
+Mihomo rules（由上而下，第一條命中）
+  │  5. DOMAIN / IP-CIDR / 程序 / 介面等分類
+  ▼
+Outbound
+  │  6a. DIRECT → 本機直接對目標撥號
+  │  6b. Proxy  → 先連代理節點，再由其轉送
+  ▼
+實體介面 → 網關 → Internet → 遠端服務
 ```
 
-在封包剛進系統選路時，它的目的地是 `198.18.0.42`，不是 `103.143.81.55`。所以那條 `/32` 排除規則根本尚未命中；封包仍進 TUN，之後才由 Mihomo 找回原始網域。這不是 `/32` 失效，而是**匹配的時點與看到的目的位址不同**。
+根據 [Mihomo Rules 文件](https://wiki.metacubex.one/en/config/rules/)，規則是由上到下比對，最先命中的規則有優先權。這是規則引擎的順序，不是 FIB 的 longest-prefix match；兩套排序邏輯不能混用。
 
-### 5.1 需要網域直連時：先加 `DOMAIN,...,DIRECT`
+### 5.1 DIRECT 究竟控制了什麼
 
-如果你的意圖是「這個 FQDN 一律直接走」，應先用網域規則表達它：
+DIRECT 是 Mihomo 的出站選擇：核心不將該連線交給 proxy node，而以本機網路直接對目標建立外連。連線仍可能先進 TUN，經過 DNS hijack、Fake-IP 映射、規則比對和 dashboard 日誌。
+
+因此：
+
+- DOMAIN,hk2.w0x7ce.eu,DIRECT 表達「這個服務由 Mihomo 直接出站」。
+- route-exclude-address: 103.143.81.55/32 表達「OS 不要把這個目的 IP 自動導入 TUN」。
+
+前者是核心出站政策，後者是本機捕獲政策。需要前者、後者或兩者，要由需求本身決定。
+
+## 6. Fake-IP：為什麼真實 /32 可能完全碰不到封包
+
+Mihomo DNS 的 enhanced-mode 可選 fake-ip 或 redir-host，官方文件目前列出的預設為 redir-host。fake-ip 模式會為網域回覆一個虛擬位址，並保留「Fake-IP 對應哪個 FQDN」的映射。應用程式後續對這個虛擬位址呼叫 connect()，TUN 核心便能還原網域意圖並套用 DOMAIN 規則。
+
+時序如下：
+
+```text
+網域：hk2.w0x7ce.eu
+真實 A 記錄（示意）：103.143.81.55
+
+Fake-IP DNS 回覆：198.18.x.y（示意）
+OS FIB 實際看到：198.18.x.y
+Mihomo 可恢復為：hk2.w0x7ce.eu
+```
+
+這時 route-exclude-address 裡的 103.143.81.55/32 在 OS 選路階段自然不會命中。不是 CIDR 寫錯，也不代表 Mihomo 沒有讀到設定；而是該規則比對的資料是**當下目的 IP**，此時它是 Fake-IP。
+
+### 6.1 服務意圖優先：先使用 DOMAIN 規則
+
+若真正要表達的是「指定服務永遠直連」，應先寫 FQDN 規則：
 
 ```yaml
 rules:
@@ -179,93 +241,141 @@ rules:
   - MATCH,PROXY
 ```
 
-這條規則的價值是它表達了真正意圖：**主機名**。日後 IP 變更、同一服務新增 IPv6、DNS 回覆多個 A 記錄，仍有機會保持正確；相反地，一條寫死的 `/32` 只認得當下那個 IP。
+它可以隨服務 A 記錄、CNAME、負載平衡和 IPv6 變動而保留原意；前提是 Mihomo 能取得 hostname 中繼資料，而且這條規則放在廣泛規則和 MATCH 之前。若需要整個子網域族群，才考慮 DOMAIN-SUFFIX，並重新評估不必要擴大的範圍。
 
-### 5.2 必須讓應用拿到真實 IP 時：加 `fake-ip-filter`
+### 6.2 真的要在 OS 路由層繞過 TUN
 
-某些程式、LAN 設備、內網服務或診斷工具需要看到真實解析結果。這時可以把特定主機名排除 Fake-IP：
+如果需求不是「Mihomo 直接出站」，而是「這個網域絕不能進 TUN」，就要讓 OS 看見真實目的 IP。Mihomo DNS 的 fake-ip-filter 可以令匹配名稱不取得 Fake-IP：
 
 ```yaml
 dns:
+  enable: true
   enhanced-mode: fake-ip
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
     - 'hk2.w0x7ce.eu'
+
+tun:
+  enable: true
+  auto-route: true
+  route-exclude-address:
+    - 103.143.81.55/32
 ```
 
-在預設 `blacklist` 模式中，命中的名稱不會拿到 Fake-IP。注意這不是「萬用加速開關」：它會改變 DNS 的可觀測性與後續選路條件，應只對確實需要的精確主機名使用。
-
-如果你的設定已採用 Mihomo 的 `rule` 型 Fake-IP 過濾器，語法不同，應使用 `real-ip` / `fake-ip` 動作，而且整個清單要依該模式的規則語法整理：
+也可用 rule mode 精確定義真實 IP 與 Fake-IP 的分界：
 
 ```yaml
 dns:
   enhanced-mode: fake-ip
   fake-ip-filter-mode: rule
   fake-ip-filter:
-    - DOMAIN,hk2.w0x7ce.eu,real-ip
-    - MATCH,fake-ip
+    - 'DOMAIN,hk2.w0x7ce.eu,real-ip'
+    - 'MATCH,fake-ip'
 ```
 
-Mihomo 文件明確指出：`rule` 模式的 Fake-IP 過濾器採和路由規則相同的自上而下比對，並支援 `DOMAIN*` 與 `MATCH`；因此不要把這一段和普通字串型 `fake-ip-filter` 混著貼。[Mihomo Fake-IP filter modes](https://wiki.metacubex.one/en/config/dns/#fake-ip-filter-mode)
+這會改變 DNS 路徑、名稱映射與應用相容性；真實 A/AAAA 也可能變動。因此應先用 DOMAIN,DIRECT 表達服務意圖，只有確實需要在**OS 導流前**排除時，才加入 DNS 例外和對應的 IPv4/IPv6 前綴。
 
-### 5.3 一份保守的組合範例
+## 7. 配置按目標選，不要把所有規則疊在一起
 
-下面不是「所有人都要複製」的模板，而是示範每一層各自解決什麼。合併前先備份目前生效的設定。
+### 7.1 目標 A：一個 literal IPv4 不進 TUN
+
+適合應用本來就連 IP，或需要在系統導流時排除一個精確目的地。
 
 ```yaml
 tun:
   enable: true
   auto-route: true
   route-exclude-address:
-    # 僅針對這一個真實 IPv4 目的地，不擴大成 /24
     - 103.143.81.55/32
+```
 
-dns:
-  enhanced-mode: fake-ip
-  fake-ip-filter-mode: blacklist
-  fake-ip-filter:
-    # 讓這個 FQDN 回覆真實 IP；若既有清單很多，保留它們
-    - 'hk2.w0x7ce.eu'
+要驗證的是 OS FIB 是否選到原有網路介面，而不是只確認 YAML 能載入。此規則不會自動照顧相同服務的其他 IP、IPv6、網域或遠端存取權。
 
+### 7.2 目標 B：一個服務名稱由 Mihomo 直接出站
+
+適合需要維持 TUN 規則、可觀測性或 Fake-IP 映射，但不走代理節點。
+
+```yaml
 rules:
-  # 放在 GEOSITE、GEOIP、RULE-SET 與 MATCH 等廣泛規則之前
   - DOMAIN,hk2.w0x7ce.eu,DIRECT
+  - MATCH,PROXY
+```
+
+這不保證封包未進 TUN；它保證的是在該規則命中時，核心選擇 DIRECT outbound。
+
+### 7.3 目標 C：已進核心的 literal IP 直連
+
+適合沒有可用網域，且接受流量先被 Mihomo 接收。
+
+```yaml
+rules:
   - IP-CIDR,103.143.81.55/32,DIRECT,no-resolve
   - MATCH,PROXY
 ```
 
-這三項是可疊加的，但不是永遠都必需：
+no-resolve 是 IP 類規則的附加項，用於避免 Mihomo 為此 IP 規則再做 DNS 解析。它不是停止全部 DNS、不是修改 OS 路由表，也不會撤銷先前已發生的 DNS 行為。
 
-- 只希望按**服務名**直連：從 `DOMAIN,...,DIRECT` 開始。
-- 只希望某一個**字面 IP**不進 TUN：使用 `route-exclude-address`。
-- 啟用 Fake-IP，且應用或本機路由必須看到**真實 IP**：再考慮 `fake-ip-filter`。
+### 7.4 決策表
 
-## 6. Clash Verge 裡應該放在哪裡
+| 真實需求 | 優先機制 | 需要留意 |
+| --- | --- | --- |
+| 單一 IPv4 完全不進 TUN | route-exclude-address: x.x.x.x/32 | Fake-IP、IPv6、實際 FIB |
+| 某個服務名稱直連 | DOMAIN,name,DIRECT | 規則順序、FQDN 中繼資料 |
+| 網域完全不進 TUN | DNS 真實 IP 例外 + A/AAAA 排除 | DNS 變動與相容性成本 |
+| 已攔截的網段直連 | IP-CIDR,prefix,DIRECT | 前綴不可過大，不能改 OS 導流 |
 
-Clash Verge 是 Mihomo core 的圖形化前端之一；核心 YAML 的鍵與行為仍應以 Mihomo 文件為準。Clash Verge Rev 的公開設定範例也包含 `tun.auto-route`、`dns.enhanced-mode: fake-ip`、`fake-ip-filter` 與 `rules`，並指向 Mihomo 官方文件作為完整設定依據。[Clash Verge Rev configuration example](https://github.com/clash-verge-rev/clash-verge-rev.github.io/blob/main/docs/guide/config.md)
+## 8. Mihomo 的流量控制矩陣
 
-實務上請遵守這四個原則：
+Mihomo 不是只靠一條 rules 清單控制流量；不同設定在不同位置作用。
 
-1. **不要直接把變更只寫進會被訂閱更新覆蓋的原始 profile。** 使用你當前版本介面提供的 Merge、Override、Extend Config 或等效機制；名稱會隨版本改變。
-2. **先看最終生效設定。** GUI 的 TUN 全域開關、訂閱內容與擴充設定可能彼此覆蓋；不要只看某一個編輯視窗就判定規則已載入。
-3. **規則放在廣泛規則前。** `DOMAIN,hk2.w0x7ce.eu,DIRECT` 必須在 `MATCH`、大型 `RULE-SET` 或通用代理規則之前。
-4. **每次只改一層。** 先驗證 `DOMAIN`，再驗證 Fake-IP，最後才加 `/32` 排除；否則出問題時無法知道是哪一層造成的。
+| 機制 | 階段 | 控制或比對資料 | 能做什麼 | 不應誤解為 |
+| --- | --- | --- | --- | --- |
+| auto-route | OS 選路 | 目的 IP、TUN 路由策略 | 導入 TUN | 通用跨平台 route script |
+| route-exclude-address | OS 選路 | 封包當下的目的 IP 前綴 | 不自動導入 TUN | 網域規則或伺服器 ACL |
+| dns-hijack | DNS 攔截 | DNS 目的位址/port | 將命中 DNS 交內部 resolver | 必能攔截 DoH、私有 DNS 或所有 app |
+| fake-ip | DNS 與映射 | FQDN ↔ 虛擬 IP | 保留名稱意圖供後續分類 | OS 仍能看見真實 IP |
+| fake-ip-filter | DNS 回覆 | FQDN | 指定名稱回真實 IP | 無成本的相容性開關 |
+| DOMAIN / DOMAIN-SUFFIX | Mihomo 規則 | hostname | 以服務語意選出站 | 可在 OS FIB 階段比對 |
+| IP-CIDR | Mihomo 規則 | 目的 IP 前綴 | 對已接收流量分類 | 改寫 auto-route 的排除結果 |
+| 程序、套件、介面規則 | Mihomo 規則 / TUN 能力 | process、package、inbound 等 | 細化應用層級策略 | 所有平台都同樣支援 |
+| DIRECT / proxy group | outbound | 規則結果 | 選直接撥號或代理節點 | 遠端身分授權或防火牆繞過 |
 
-## 7. 驗證：不要只看「能打開網頁」
+Linux 還有 route-exclude-address-set、auto-redirect 與 nftables 相關能力。官方文件對它們列出 Linux、auto-route、auto-redirect、routing-mark 等前提與互斥條件；它們應按受管理系統的實際路由環境驗證，不能當作 Windows 或 macOS 的通用答案。
 
-網頁能打開不等於已經從你預期的路徑出去：快取、既有連線、服務端 CDN、瀏覽器 proxy 設定都可能讓表面結果看起來正常。建議把驗證拆成三段。
+## 9. 驗證應分層：能開網站不等於路徑正確
 
-### 7.1 確認作業系統選路
+### 9.1 先看 DNS 回覆
 
-先開啟 TUN、套用設定並重新載入 core，再查詢目標 IP 的實際路徑。
+Windows：
 
-Windows PowerShell：
+```powershell
+Resolve-DnsName hk2.w0x7ce.eu -Type A
+Resolve-DnsName hk2.w0x7ce.eu -Type AAAA
+```
+
+Linux：
+
+```bash
+resolvectl query hk2.w0x7ce.eu
+getent ahostsv4 hk2.w0x7ce.eu
+```
+
+macOS：
+
+```bash
+dig hk2.w0x7ce.eu A
+dig hk2.w0x7ce.eu AAAA
+```
+
+如果結果是 Fake-IP 範圍，真實 103.143.81.55/32 就不會在 OS FIB 階段命中。此時要選擇：保留 Fake-IP 並用 DOMAIN,DIRECT，或為該名稱配置 real-IP 例外。
+
+### 9.2 再看 OS 實際選路
+
+Windows：
 
 ```powershell
 Find-NetRoute -RemoteIPAddress 103.143.81.55 |
   Format-List DestinationPrefix,NextHop,InterfaceAlias,RouteMetric
-
-Test-NetConnection 103.143.81.55 -Port 443
 ```
 
 Linux：
@@ -280,87 +390,89 @@ macOS：
 route -n get 103.143.81.55
 ```
 
-預期不是某個固定文字，而是：結果應能解釋該目標最後為何選到實體介面或預期的 next hop。若結果仍指向 TUN，先確認 `auto-route` 已生效、設定是否被前端覆蓋，以及實際目標是否仍是這個 IPv4。
+這是驗證「不進 TUN」最有價值的一步。看的是系統為該目的 IP 實際選中的 interface、gateway 與 route source，不是設定檔是否存在一行 /32。
 
-### 7.2 確認 DNS 看到的是 Fake-IP 還是真實 IP
+### 9.3 再看 Mihomo 命中了哪條規則
 
-Windows 可觀察系統解析結果：
+從 Mihomo Dashboard 或日誌確認：
+
+1. 原始目的 IP 和可見的 hostname；
+2. 最先命中的規則；
+3. 最終 outbound 是 DIRECT 還是某代理群組；
+4. DNS 模式與 Fake-IP filter 是否命中。
+
+規則是 first-match。若較早規則已命中，後面再精確的 /32 或 DOMAIN 都不會執行。
+
+### 9.4 最後才是 HTTPS 與應用測試
+
+保留 hostname，讓 SNI 與憑證驗證正常運作：
 
 ```powershell
-Resolve-DnsName hk2.w0x7ce.eu -Type A
+curl.exe --noproxy "*" -I --connect-timeout 8 https://hk2.w0x7ce.eu/
 ```
 
-若回覆落在你設定的 Fake-IP range，例如常見的 `198.18.x.x`，表示 `fake-ip-filter` 沒有命中或不是生效中的設定。若回覆真實 A 記錄，還要繼續看後續的路由與 Mihomo 連線記錄；DNS 真實並不自動證明 TCP 一定直連。
+Linux／macOS：
 
-### 7.3 確認 Mihomo 命中的規則與 TLS
-
-把日誌暫時調到 `info` 或在控制台的 Connections / Logs 檢查，確認這個連線命中的是 `DOMAIN,hk2.w0x7ce.eu,DIRECT`，而不是後面的通用規則。然後用不繞過 TLS 驗證的方式測試：
-
-```powershell
-curl.exe -I --noproxy "*" --connect-timeout 8 https://hk2.w0x7ce.eu/
+```bash
+curl --noproxy '*' -I --connect-timeout 8 https://hk2.w0x7ce.eu/
 ```
 
-`--noproxy "*"` 只用來避免命令列另外繼承 HTTP proxy 環境變數；它不會神奇地繞過作業系統的 TUN。測試時**不要**加 `-k` / `--insecure`，因為那會關閉你本來要一起驗證的憑證與主機名稱檢查。也不要用 `https://103.143.81.55/` 取代網域來驗 TLS：多數網站憑證是簽給網域名稱，直接以 IP 存取會造成正常而有價值的名稱不匹配。
+若要固定測試一個 IP，同時維持正確 hostname 與 TLS 驗證：
 
-:::warning[不要拿 Ping 當作唯一證據]
+```bash
+curl --noproxy '*' --resolve hk2.w0x7ce.eu:443:103.143.81.55 \
+  -I --connect-timeout 8 https://hk2.w0x7ce.eu/
+```
 
-`ping` 是 ICMP；目標可能禁止 ICMP，但 HTTPS 仍正常，也可能 ICMP 回覆正常而 TCP/443 走了另一條路。對這個問題而言，`Find-NetRoute` / `ip route get`、DNS 回覆、Mihomo 規則命中與一次不關閉 TLS 驗證的 HTTPS 請求，合在一起才有足夠證據。
+不要改成用 HTTPS IP 位址直接連，也不要加 --insecure 來掩蓋憑證問題。ping 和 Test-NetConnection 只可作為連通性輔助，不能證明 HTTPS 的名稱、SNI、規則命中或實際代理路徑。
 
-:::
+## 10. 常見問題的正確定位順序
 
-## 8. 「本機繞過 TUN」絕對不等於「伺服器防火牆白名單」
-
-這兩件事常被同一句「白名單」混在一起，但方向完全相反：
-
-| 問題 | 本機 TUN 排除 | 伺服器防火牆白名單 |
+| 現象 | 常見原因 | 第一個檢查點 |
 | --- | --- | --- |
-| 控制者 | 你的電腦或手機 | 遠端伺服器管理者 |
-| 匹配重點 | **目的地** IP／網域與本機選路 | 到達伺服器的**來源** IP、埠、協議 |
-| 作用 | 決定封包是否導入 Mihomo、使用哪個出口 | 決定入站連線是否被接受 |
-| 例子 | `route-exclude-address: 103.143.81.55/32` | 只允許某些公網來源連到 TCP/443 |
-| 不會做到的事 | 不能讓伺服器自動放行你 | 不能讓客戶端自動繞過 TUN |
+| 加了真實 /32，網域仍進 TUN | Fake-IP 回覆虛擬 IP | DNS A/AAAA 與 Fake-IP filter |
+| DOMAIN 規則仍走代理 | 較早規則或 MATCH 搶先命中 | Mihomo connection log |
+| IPv4 直連但偶爾仍走代理 | 系統選用 IPv6 AAAA | IPv6 DNS 與 IPv6 route |
+| 路由表正確但連線失敗 | TLS、SNI、port、ACL、企業防火牆 | 保留 hostname 的 curl |
+| 改一個 IP 後很快失效 | DNS、CDN、負載平衡、服務遷移 | 改以 FQDN 規則表達意圖 |
+| DIRECT 後仍受安全軟體影響 | DIRECT 不會繞過 OS policy | VPN、EDR、防火牆與 policy route |
 
-若你用 TUN 代理，伺服器看到的來源位址還可能是代理出口的公網 IP，而不是你的本地 LAN 位址。反過來，就算伺服器已對你的 ISP 公網 IP 放行，本機依然可能把封包送進錯誤的 TUN 或 Proxy 出口。這兩個方向需要各自驗證與各自最小化授權。
+有效的排錯順序是：**DNS 回覆 → OS FIB → Mihomo 命中規則 → outbound → TLS/應用層**。一次只改一個層次，保留前後輸出，否則問題會無法歸因。
 
-## 9. 常見錯誤與風險邊界
+## 11. 本機 TUN 排除不是伺服器防火牆白名單
 
-### 把 `/32` 當成 DNS 規則
+| 項目 | 本機 route-exclude-address | 遠端 firewall allowlist |
+| --- | --- | --- |
+| 執行位置 | 你的電腦或手機 | 遠端伺服器／雲端網路邊界 |
+| 判斷對象 | 本機要送往哪個目的 IP | 對方是否接受來源、port、協定或身分 |
+| 典型效果 | 避免自動導入 TUN | 放行或拒絕服務連線 |
+| 是否完成授權 | 否 | 可能是一層，通常仍需 TLS、帳號或 token |
+| 是否能改變對端 policy | 否 | 是 |
 
-`103.143.81.55/32` 不知道 `hk2.w0x7ce.eu` 這個名稱。若服務換 IP、啟用 IPv6、使用多 A 記錄或前面加了 CDN，原本的 `/32` 可能變成無效或只影響部分流量。長期意圖通常應先以 `DOMAIN` 表達。
+把 103.143.81.55/32 寫進本機設定，不會在遠端建立白名單，也不會證明對服務有權限。反之，伺服器允許某個來源，也不會決定本機是否先把流量送進 TUN。這兩類控制都重要，但絕不能混為一談。
 
-### 把 `DIRECT` 當成「完全不經過任何本機網路控制」
+## 12. 部署前檢查清單
 
-在 Mihomo 裡，`DIRECT` 是一種 outbound 決策；它仍受作業系統路由、DNS、企業端點安全、VPN、NAT 與本機/網關防火牆影響。它不是安全豁免，也不是匿名保證。
-
-### 為了「讓它通」而擴大排除範圍
-
-不要把一個 `/32` 直接擴成 `103.143.81.0/24`，更不要加 `0.0.0.0/0` 或把整個 DNS Fake-IP range 排除。先確認真正的目的 IP、是否有 IPv6、是否由 Fake-IP 導致，再做最小變更。
-
-### 關閉憑證驗證來掩蓋路由問題
-
-`skip-cert-verify` 或 `curl -k` 只能掩蓋 TLS 問題，不能證明直連配置正確，還會降低中間人攻擊的防線。路由、DNS 與 TLS 是三個都應該保留驗證的邊界。
-
-### 忘記既有連線與快取
-
-規則載入後，瀏覽器、系統、HTTP/3 連線池或 Mihomo Fake-IP 映射可能仍使用舊狀態。驗證時重啟有關應用、清楚區分新的連線與既有連線，必要時暫時停用再重新啟用 TUN，避免把歷史連線當作新規則結果。
-
-## 10. 普通使用者的安全檢查清單
-
-```text
-[ ] 先備份目前能工作的 profile / merge / override 設定。
-[ ] 只排除真正需要的單一 IP：103.143.81.55/32，而不是放大成 /24 或 /0。
-[ ] 若意圖是某個網站，先加 DOMAIN,hk2.w0x7ce.eu,DIRECT，並放在 MATCH 前。
-[ ] Fake-IP 啟用時，確認 hk2.w0x7ce.eu 是否需要 fake-ip-filter 才能回覆真實 IP。
-[ ] 不要混用普通 fake-ip-filter 清單與 rule 模式的 fake-ip-filter 語法。
-[ ] 查 OS 選路、DNS 回覆、Mihomo 命中規則與 HTTPS TLS；不要只看瀏覽器能否開頁。
-[ ] 不使用 -k、skip-cert-verify 或忽略憑證錯誤來「測通」。
-[ ] 記得本機 TUN 排除不是伺服器防火牆白名單；兩者需獨立設定與審核。
-[ ] 若 IP、IPv6、CDN 或服務域名有變更，重新檢查規則，不把 /32 當永久身份。
-[ ] 任何異常先回退剛加的最小一段設定，而不是一次關閉整個 TUN 或安全機制。
-```
+- [ ] 單一 IPv4 使用 /32，不為方便誤放大成 /24 或 /0。
+- [ ] 服務意圖優先用 DOMAIN，而非只鎖定可能變動的一個 A 記錄。
+- [ ] 已明確區分「不進 TUN」和「進 TUN 後 DIRECT」。
+- [ ] Fake-IP 模式下已檢查 OS 實際看到的是什麼目的 IP。
+- [ ] IPv4 和 IPv6 都已納入規則與驗證。
+- [ ] DOMAIN 或 IP-CIDR 位於更廣泛規則、MATCH 之前。
+- [ ] 已以 Find-NetRoute、ip route get 或 route -n get 驗證實際 FIB。
+- [ ] HTTPS 測試保留 hostname 與憑證驗證，不以 --insecure 掩蓋問題。
+- [ ] 沒有把本機路由例外誤認成防火牆、身份認證或安全繞過。
 
 ## 結語
 
-`103.143.81.55/32` 的含義其實很精確：32 個 IPv4 位元全部固定，所以它只代表一個目的位址。在 Mihomo TUN 裡，這讓它成為「指定單一 IP 繞過自動導流」的好工具；它之所以有效，依賴的是更具體前綴優先於 `/0` 預設路徑的選路原理。
+103.143.81.55/32 的定義非常單純：它是只匹配一個 IPv4 位址的 CIDR 主機前綴。真正的工程問題，是判斷它要放在哪一層：
 
-但一個可靠的設定不能只停在 `/32`：需要區分作業系統路由和 Mihomo 規則、理解 Fake-IP 可能先改變封包目的位址、在需要時用 `DOMAIN,...,DIRECT` 表達真正服務意圖，並把遠端防火牆規則留在它自己的安全邊界。這樣做，才能讓「直連」既可驗證，也不犧牲 TLS 與最小授權原則。
+- 在 **OS 選路**，控制封包是否進 TUN；
+- 在 **Mihomo 規則**，控制已攔截流量是否 DIRECT；
+- 在 **DNS/Fake-IP**，決定名稱與當下目的 IP 是否一致；
+- 在 **DOMAIN 規則**，表達服務本身的直連意圖；
+- 在 **遠端安全邊界**，以獨立的 TLS、帳號、token 和 firewall 管理存取。
+
+當這些責任邊界清楚後，Mihomo 就不是「加一條神奇規則」的黑箱。CIDR 是位址語言，TUN 是資料面入口，DNS 與規則引擎負責理解流量，DIRECT 與 proxy group 則決定核心最後如何出站。
+
+延伸閱讀：[RFC 4632：CIDR](https://www.rfc-editor.org/rfc/rfc4632.html)、Mihomo 的 [TUN 設定](https://wiki.metacubex.one/en/config/inbound/tun/)、[DNS 設定](https://wiki.metacubex.one/en/config/dns/) 與 [Rules 文件](https://wiki.metacubex.one/en/config/rules/)。
