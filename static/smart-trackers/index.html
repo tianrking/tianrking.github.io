@@ -117,6 +117,10 @@ body{min-width:0}
   showDetail=function(id){
     const x=window.scrollX;
     const y=window.scrollY;
+    if(__activeId===id && __detail.classList.contains('show')){
+      __closeDetail();
+      return;
+    }
     __restoreDetail();
     __originalShowDetail(id);
     __ensureClose();

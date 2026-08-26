@@ -172,6 +172,10 @@ $('updates').innerHTML=DATA.update_log.map(u=>'<p><b>'+esc(u.date)+'</b>　'+esc
   showDetail=function(id){
     const x=window.scrollX;
     const y=window.scrollY;
+    if(__activeId===id && __detail.classList.contains('show')){
+      __closeDetail();
+      return;
+    }
     __restoreDetail();
     __originalShowDetail(id);
     __ensureClose();
