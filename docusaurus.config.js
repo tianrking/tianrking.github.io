@@ -10,7 +10,7 @@ import clsx from 'clsx';
 const config = {
   title: 'w0x7ce',
   tagline: '嵌入式系統、Local AI 與基礎設施筆記',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
 
   // Set the production url of your site here
   url: 'https://w0x7ce.eu',
