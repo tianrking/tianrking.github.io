@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
-  <title id="title">w0x7ce</title>
-  <rect width="64" height="64" rx="16" fill="#101b18"/>
-  <rect x="3" y="3" width="58" height="58" rx="13" fill="none" stroke="#69d8b5" stroke-opacity=".48"/>
-  <text x="32" y="43" text-anchor="middle" font-family="Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif" font-size="40">🫠</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="title" role="img" viewBox="0 0 64 64"><title id="title">w0x7ce</title><rect width="64" height="64" fill="#101b18" rx="16"/><rect width="58" height="58" x="3" y="3" fill="none" stroke="#69d8b5" stroke-opacity=".48" rx="13"/><text x="32" y="43" font-family="Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, sans-serif" font-size="40" text-anchor="middle">🫠</text></svg>
