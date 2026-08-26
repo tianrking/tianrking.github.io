@@ -1,7 +1,41 @@
 {
   "schemaVersion": 1,
-  "total": 293,
+  "total": 294,
   "documents": [
+    {
+      "id": "blog:2026-08-26-mihomo-tun-cidr-route-exclude-fake-ip-direct.md",
+      "kind": "blog",
+      "kindLabel": "開發誌",
+      "section": "開發誌",
+      "language": "zh-Hant",
+      "title": "Clash Verge 與 Mihomo TUN：CIDR 排除路由、/32、Fake-IP 與單一 IP 直連",
+      "description": "從 IPv4 CIDR、最長前綴匹配到 Mihomo TUN、Fake-IP 與 DOMAIN 規則，釐清 103.143.81.55/32 為何可用於單一 IP 直連，以及何時仍要處理 DNS。",
+      "route": "/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct",
+      "date": "2026-08-26",
+      "year": "2026",
+      "tags": [
+        "網路",
+        "路由",
+        "CIDR",
+        "TUN",
+        "Mihomo",
+        "Clash Verge",
+        "DNS"
+      ],
+      "keywords": [
+        "Clash Verge",
+        "Mihomo",
+        "TUN",
+        "CIDR",
+        "/32",
+        "route-exclude-address",
+        "Fake-IP",
+        "DNS",
+        "DIRECT",
+        "最長前綴匹配"
+      ],
+      "image": null
+    },
     {
       "id": "blog:2026-08-23-cat1-audio-upload-http-tls-socket-performance.md",
       "kind": "blog",

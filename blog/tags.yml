@@ -129,3 +129,38 @@ SCS527E:
   label: 音訊
   permalink: /audio
   description: 錄音、編碼、儲存與音訊傳輸
+
+網路:
+  label: 網路
+  permalink: /networking
+  description: 網路協議、名稱解析與連線除錯
+
+路由:
+  label: 路由
+  permalink: /routing
+  description: IP 選路、CIDR 與流量路徑設計
+
+CIDR:
+  label: CIDR
+  permalink: /cidr
+  description: 無類別網域間路由與前綴匹配
+
+TUN:
+  label: TUN
+  permalink: /tun
+  description: 虛擬網路介面與系統流量導流
+
+Mihomo:
+  label: Mihomo
+  permalink: /mihomo
+  description: Mihomo 代理核心與規則配置
+
+Clash Verge:
+  label: Clash Verge
+  permalink: /clash-verge
+  description: Clash Verge 與 Mihomo 圖形化客戶端配置
+
+DNS:
+  label: DNS
+  permalink: /dns
+  description: DNS 解析、Fake-IP 與名稱選路
