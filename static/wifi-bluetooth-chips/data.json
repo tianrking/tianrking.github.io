@@ -85,23 +85,23 @@
       "official_product_url": "https://www.espressif.com/en/products/socs?id=ESP32",
       "datasheet_url": "https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf",
       "news_url": "未公开",
-      "distributor_url": "未公开",
-      "price": "未公开",
-      "price_type": "未公开",
-      "moq": "未公开",
-      "availability": "官方页面可查；实际库存、交期和批量供货需按地区/分料号复核",
-      "price_current_best": "未公开",
-      "price_single_piece_usd": "未公开",
-      "price_lowest_visible_usd": "未公开",
-      "price_lowest_quantity": "未公开",
-      "price_platforms": "未公开",
-      "price_offer_count": 0,
-      "price_bare_chip_offer_count": 0,
+      "distributor_url": "https://www.lcsc.com/product-detail/rf-transceiver-ics_espressif-systems-esp32-d0wd-v3_C967021.html",
+      "price": "USD 2.7775 起（LCSC，1+，ESP32-D0WD-V3）；USD 1.9686 起（LCSC，1000+）",
+      "price_type": "多渠道采购快照/阶梯价",
+      "moq": "1",
+      "availability": "in stock；ships now（页面快照）",
+      "price_current_best": "USD 2.7775 起（LCSC，1+，ESP32-D0WD-V3）；USD 1.9686 起（LCSC，1000+）",
+      "price_single_piece_usd": 2.7775,
+      "price_lowest_visible_usd": 1.9686,
+      "price_lowest_quantity": "1000+",
+      "price_platforms": "LCSC",
+      "price_offer_count": 1,
+      "price_bare_chip_offer_count": 1,
       "price_module_offer_count": 0,
-      "price_currency_set": "未公开",
-      "price_checked_on": "未公开",
-      "price_status": "未公开/询价",
-      "price_notes": "未公开",
+      "price_currency_set": "USD",
+      "price_checked_on": "2026-08-26",
+      "price_status": "有裸芯片现货/即时采购信号",
+      "price_notes": "价格是按精确 SKU、平台、地区视图和查证日期保存的快照；税费、运费、账户价、汇率和交付条款未统一折算。模块/开发板不覆盖裸芯片价格。",
       "wifi_support": "是",
       "wifi_standard": "802.11 b/g/n",
       "wifi_bands": "2.4 GHz",
@@ -142,7 +142,8 @@
       "source_note": "关键字段仅按官方产品页/规格书/选型表填写；未披露字段保留为“未公开”。",
       "source_refs": [
         "ESP-PORTFOLIO",
-        "ESP32-DS"
+        "ESP32-DS",
+        "WBC-SRC-PRICE-LCSC-ESP32-D0WD-V3"
       ],
       "checked_on": "2026-08-26"
     },
@@ -786,23 +787,23 @@
       "official_product_url": "https://www.nordicsemi.com/Products/nRF52811",
       "datasheet_url": "未公开",
       "news_url": "未公开",
-      "distributor_url": "未公开",
-      "price": "未公开",
-      "price_type": "未公开",
-      "moq": "未公开",
-      "availability": "官方页面可查；实际库存、交期和批量供货需按地区/分料号复核",
-      "price_current_best": "未公开",
+      "distributor_url": "https://www.lcsc.com/product-detail/Wireless-Transceiver-Chips_Nordic-Semicon-NRF52811-CAAA-B-R7_C6248976.html",
+      "price": "USD 1.7123 参考（LCSC，1500+；当前缺货/状态待复核）",
+      "price_type": "缺货参考价/询价",
+      "moq": "1",
+      "availability": "价格可见；库存待复核",
+      "price_current_best": "USD 1.7123 参考（LCSC，1500+；当前缺货/状态待复核）",
       "price_single_piece_usd": "未公开",
-      "price_lowest_visible_usd": "未公开",
-      "price_lowest_quantity": "未公开",
-      "price_platforms": "未公开",
-      "price_offer_count": 0,
-      "price_bare_chip_offer_count": 0,
+      "price_lowest_visible_usd": 1.7123,
+      "price_lowest_quantity": "1500+",
+      "price_platforms": "LCSC",
+      "price_offer_count": 1,
+      "price_bare_chip_offer_count": 1,
       "price_module_offer_count": 0,
-      "price_currency_set": "未公开",
-      "price_checked_on": "未公开",
-      "price_status": "未公开/询价",
-      "price_notes": "未公开",
+      "price_currency_set": "USD",
+      "price_checked_on": "2026-08-26",
+      "price_status": "仅缺货参考价或询价",
+      "price_notes": "价格是按精确 SKU、平台、地区视图和查证日期保存的快照；税费、运费、账户价、汇率和交付条款未统一折算。模块/开发板不覆盖裸芯片价格。",
       "wifi_support": "不支持",
       "wifi_standard": "未公开",
       "wifi_bands": "未公开",
@@ -842,7 +843,8 @@
       "notes": "未公开",
       "source_note": "关键字段仅按官方产品页/规格书/选型表填写；未披露字段保留为“未公开”。",
       "source_refs": [
-        "NRD-PRODUCTS"
+        "NRD-PRODUCTS",
+        "WBC-SRC-PRICE-LCSC-NRF52811-CAAA-B-R7"
       ],
       "checked_on": "2026-08-26"
     },
@@ -862,23 +864,23 @@
       "official_product_url": "https://www.nordicsemi.com/Products/nRF52820",
       "datasheet_url": "未公开",
       "news_url": "未公开",
-      "distributor_url": "未公开",
-      "price": "未公开",
-      "price_type": "未公开",
-      "moq": "未公开",
-      "availability": "官方页面可查；实际库存、交期和批量供货需按地区/分料号复核",
-      "price_current_best": "未公开",
-      "price_single_piece_usd": "未公开",
-      "price_lowest_visible_usd": "未公开",
-      "price_lowest_quantity": "未公开",
-      "price_platforms": "未公开",
-      "price_offer_count": 0,
-      "price_bare_chip_offer_count": 0,
+      "distributor_url": "https://www.lcsc.com/product-detail/rf-transceiver-ics_nordic-nrf52820-qdaa-r_C3015612.html",
+      "price": "USD 3.0514 起（LCSC，1+，NRF52820-QDAA-R）；USD 1.5940 起（LCSC，1000+）",
+      "price_type": "多渠道采购快照/阶梯价",
+      "moq": "1",
+      "availability": "in stock；ships now（页面快照）",
+      "price_current_best": "USD 3.0514 起（LCSC，1+，NRF52820-QDAA-R）；USD 1.5940 起（LCSC，1000+）",
+      "price_single_piece_usd": 3.0514,
+      "price_lowest_visible_usd": 1.594,
+      "price_lowest_quantity": "1000+",
+      "price_platforms": "LCSC",
+      "price_offer_count": 1,
+      "price_bare_chip_offer_count": 1,
       "price_module_offer_count": 0,
-      "price_currency_set": "未公开",
-      "price_checked_on": "未公开",
-      "price_status": "未公开/询价",
-      "price_notes": "未公开",
+      "price_currency_set": "USD",
+      "price_checked_on": "2026-08-26",
+      "price_status": "有裸芯片现货/即时采购信号",
+      "price_notes": "价格是按精确 SKU、平台、地区视图和查证日期保存的快照；税费、运费、账户价、汇率和交付条款未统一折算。模块/开发板不覆盖裸芯片价格。",
       "wifi_support": "不支持",
       "wifi_standard": "未公开",
       "wifi_bands": "未公开",
@@ -918,7 +920,8 @@
       "notes": "未公开",
       "source_note": "关键字段仅按官方产品页/规格书/选型表填写；未披露字段保留为“未公开”。",
       "source_refs": [
-        "NRD-PRODUCTS"
+        "NRD-PRODUCTS",
+        "WBC-SRC-PRICE-LCSC-NRF52820-QDAA-R"
       ],
       "checked_on": "2026-08-26"
     },
@@ -1643,23 +1646,23 @@
       "official_product_url": "https://www.nordicsemi.com/Products/nRF7002",
       "datasheet_url": "未公开",
       "news_url": "未公开",
-      "distributor_url": "未公开",
-      "price": "未公开",
-      "price_type": "未公开",
-      "moq": "未公开",
-      "availability": "官方页面可查；实际库存、交期和批量供货需按地区/分料号复核",
-      "price_current_best": "未公开",
-      "price_single_piece_usd": "未公开",
-      "price_lowest_visible_usd": "未公开",
-      "price_lowest_quantity": "未公开",
-      "price_platforms": "未公开",
-      "price_offer_count": 0,
-      "price_bare_chip_offer_count": 0,
+      "distributor_url": "https://www.digikey.com/en/products/detail/nordic-semiconductor-asa/NRF7002-QFAA-R7/17738487",
+      "price": "USD 4.6500 起（DigiKey，1+，NRF7002-QFAA-R7）；USD 2.5900 起（DigiKey，1000+）",
+      "price_type": "多渠道采购快照/阶梯价",
+      "moq": "1",
+      "availability": "in stock；ships now（页面快照）",
+      "price_current_best": "USD 4.6500 起（DigiKey，1+，NRF7002-QFAA-R7）；USD 2.5900 起（DigiKey，1000+）",
+      "price_single_piece_usd": 4.65,
+      "price_lowest_visible_usd": 2.59,
+      "price_lowest_quantity": "1000+",
+      "price_platforms": "DigiKey",
+      "price_offer_count": 1,
+      "price_bare_chip_offer_count": 1,
       "price_module_offer_count": 0,
-      "price_currency_set": "未公开",
-      "price_checked_on": "未公开",
-      "price_status": "未公开/询价",
-      "price_notes": "未公开",
+      "price_currency_set": "USD",
+      "price_checked_on": "2026-08-26",
+      "price_status": "有裸芯片现货/即时采购信号",
+      "price_notes": "价格是按精确 SKU、平台、地区视图和查证日期保存的快照；税费、运费、账户价、汇率和交付条款未统一折算。模块/开发板不覆盖裸芯片价格。",
       "wifi_support": "是",
       "wifi_standard": "Wi‑Fi 6",
       "wifi_bands": "2.4/5 GHz",
@@ -1700,7 +1703,8 @@
       "source_note": "关键字段仅按官方产品页/规格书/选型表填写；未披露字段保留为“未公开”。",
       "source_refs": [
         "NRD-7002",
-        "NRD-PRODUCTS"
+        "NRD-PRODUCTS",
+        "WBC-SRC-PRICE-DK-NRF7002-QFAA-R7"
       ],
       "checked_on": "2026-08-26"
     },
@@ -1796,23 +1800,23 @@
       "official_product_url": "https://www.ti.com/product/CC2541",
       "datasheet_url": "未公开",
       "news_url": "未公开",
-      "distributor_url": "未公开",
-      "price": "未公开",
-      "price_type": "未公开",
-      "moq": "未公开",
-      "availability": "官方页面可查；实际库存、交期和批量供货需按地区/分料号复核",
-      "price_current_best": "未公开",
-      "price_single_piece_usd": "未公开",
-      "price_lowest_visible_usd": "未公开",
-      "price_lowest_quantity": "未公开",
-      "price_platforms": "未公开",
-      "price_offer_count": 0,
-      "price_bare_chip_offer_count": 0,
+      "distributor_url": "https://www.lcsc.com/product-detail/Texas-Instruments_Texas-Instruments-CC2541F256RHAR_C22206.html",
+      "price": "USD 1.6264 起（LCSC，1+，CC2541F256RHAR）；USD 0.9811 起（LCSC，1000+）",
+      "price_type": "多渠道采购快照/阶梯价",
+      "moq": "1",
+      "availability": "in stock；ships now（页面快照）",
+      "price_current_best": "USD 1.6264 起（LCSC，1+，CC2541F256RHAR）；USD 0.9811 起（LCSC，1000+）",
+      "price_single_piece_usd": 1.6264,
+      "price_lowest_visible_usd": 0.9811,
+      "price_lowest_quantity": "1000+",
+      "price_platforms": "LCSC",
+      "price_offer_count": 1,
+      "price_bare_chip_offer_count": 1,
       "price_module_offer_count": 0,
-      "price_currency_set": "未公开",
-      "price_checked_on": "未公开",
-      "price_status": "未公开/询价",
-      "price_notes": "未公开",
+      "price_currency_set": "USD",
+      "price_checked_on": "2026-08-26",
+      "price_status": "有裸芯片现货/即时采购信号",
+      "price_notes": "价格是按精确 SKU、平台、地区视图和查证日期保存的快照；税费、运费、账户价、汇率和交付条款未统一折算。模块/开发板不覆盖裸芯片价格。",
       "wifi_support": "不支持",
       "wifi_standard": "未公开",
       "wifi_bands": "未公开",
@@ -1852,7 +1856,8 @@
       "notes": "未公开",
       "source_note": "关键字段仅按官方产品页/规格书/选型表填写；未披露字段保留为“未公开”。",
       "source_refs": [
-        "TI-CC2541"
+        "TI-CC2541",
+        "WBC-SRC-PRICE-LCSC-CC2541F256RHAR"
       ],
       "checked_on": "2026-08-26"
     },
@@ -3027,23 +3032,23 @@
       "official_product_url": "https://www.silabs.com/wireless/bluetooth/efr32bg21-series-2-socs",
       "datasheet_url": "https://www.silabs.com/documents/public/data-sheets/efr32bg21-datasheet.pdf",
       "news_url": "未公开",
-      "distributor_url": "未公开",
-      "price": "未公开",
-      "price_type": "未公开",
-      "moq": "未公开",
-      "availability": "官方页面可查；实际库存、交期和批量供货需按地区/分料号复核",
-      "price_current_best": "未公开",
-      "price_single_piece_usd": "未公开",
-      "price_lowest_visible_usd": "未公开",
-      "price_lowest_quantity": "未公开",
-      "price_platforms": "未公开",
-      "price_offer_count": 0,
-      "price_bare_chip_offer_count": 0,
+      "distributor_url": "https://www.digikey.com/en/products/detail/silicon-labs/EFR32BG21A020F1024IM32-BR/9838107",
+      "price": "USD 6.9600 起（DigiKey，1+，EFR32BG21A020F1024IM32-BR）；USD 4.4243 起（DigiKey，1000+）",
+      "price_type": "多渠道采购快照/阶梯价",
+      "moq": "1",
+      "availability": "in stock；ships now（页面快照）",
+      "price_current_best": "USD 6.9600 起（DigiKey，1+，EFR32BG21A020F1024IM32-BR）；USD 4.4243 起（DigiKey，1000+）",
+      "price_single_piece_usd": 6.96,
+      "price_lowest_visible_usd": 4.42434,
+      "price_lowest_quantity": "1000+",
+      "price_platforms": "DigiKey",
+      "price_offer_count": 1,
+      "price_bare_chip_offer_count": 1,
       "price_module_offer_count": 0,
-      "price_currency_set": "未公开",
-      "price_checked_on": "未公开",
-      "price_status": "未公开/询价",
-      "price_notes": "未公开",
+      "price_currency_set": "USD",
+      "price_checked_on": "2026-08-26",
+      "price_status": "有裸芯片现货/即时采购信号",
+      "price_notes": "价格是按精确 SKU、平台、地区视图和查证日期保存的快照；税费、运费、账户价、汇率和交付条款未统一折算。模块/开发板不覆盖裸芯片价格。",
       "wifi_support": "不支持",
       "wifi_standard": "未公开",
       "wifi_bands": "未公开",
@@ -3083,7 +3088,8 @@
       "notes": "未公开",
       "source_note": "关键字段仅按官方产品页/规格书/选型表填写；未披露字段保留为“未公开”。",
       "source_refs": [
-        "SILABS-BT"
+        "SILABS-BT",
+        "WBC-SRC-PRICE-DK-EFR32BG21A020F1024IM32-BR"
       ],
       "checked_on": "2026-08-26"
     },
@@ -4037,23 +4043,23 @@
       "official_product_url": "https://www.st.com/en/wireless-connectivity/bluenrg-lp.html",
       "datasheet_url": "未公开",
       "news_url": "未公开",
-      "distributor_url": "未公开",
-      "price": "未公开",
-      "price_type": "未公开",
-      "moq": "未公开",
-      "availability": "官方页面可查；实际库存、交期和批量供货需按地区/分料号复核",
-      "price_current_best": "未公开",
-      "price_single_piece_usd": "未公开",
-      "price_lowest_visible_usd": "未公开",
-      "price_lowest_quantity": "未公开",
-      "price_platforms": "未公开",
-      "price_offer_count": 0,
-      "price_bare_chip_offer_count": 0,
+      "distributor_url": "https://www.digikey.com/en/products/detail/stmicroelectronics/BLUENRG-345MT/13592610",
+      "price": "USD 4.4100 起（DigiKey，1+，BLUENRG-345MT）；USD 2.0228 起（DigiKey，3000+）",
+      "price_type": "多渠道采购快照/阶梯价",
+      "moq": "1",
+      "availability": "in stock；ships now（页面快照）",
+      "price_current_best": "USD 4.4100 起（DigiKey，1+，BLUENRG-345MT）；USD 2.0228 起（DigiKey，3000+）",
+      "price_single_piece_usd": 4.41,
+      "price_lowest_visible_usd": 2.02279,
+      "price_lowest_quantity": "3000+",
+      "price_platforms": "DigiKey",
+      "price_offer_count": 1,
+      "price_bare_chip_offer_count": 1,
       "price_module_offer_count": 0,
-      "price_currency_set": "未公开",
-      "price_checked_on": "未公开",
-      "price_status": "未公开/询价",
-      "price_notes": "未公开",
+      "price_currency_set": "USD",
+      "price_checked_on": "2026-08-26",
+      "price_status": "有裸芯片现货/即时采购信号",
+      "price_notes": "价格是按精确 SKU、平台、地区视图和查证日期保存的快照；税费、运费、账户价、汇率和交付条款未统一折算。模块/开发板不覆盖裸芯片价格。",
       "wifi_support": "不支持",
       "wifi_standard": "未公开",
       "wifi_bands": "未公开",
@@ -4094,7 +4100,8 @@
       "source_note": "关键字段仅按官方产品页/规格书/选型表填写；未披露字段保留为“未公开”。",
       "source_refs": [
         "ST-BLE-LIST",
-        "ST-WB0-DS"
+        "ST-WB0-DS",
+        "WBC-SRC-PRICE-DK-BLUENRG-345MT"
       ],
       "checked_on": "2026-08-26"
     },
@@ -4890,23 +4897,23 @@
       "official_product_url": "https://www.nxp.com/products/IW416",
       "datasheet_url": "未公开",
       "news_url": "未公开",
-      "distributor_url": "未公开",
-      "price": "未公开",
-      "price_type": "未公开",
-      "moq": "未公开",
-      "availability": "官方页面可查；实际库存、交期和批量供货需按地区/分料号复核",
-      "price_current_best": "未公开",
+      "distributor_url": "https://www.digikey.com/en/products/detail/nxp-usa-inc/IW416HN-A1CK/18711382",
+      "price": "USD 6.2844 起（DigiKey，1740+）",
+      "price_type": "多渠道采购快照/阶梯价",
+      "moq": "1740",
+      "availability": "available to order；非即时库存",
+      "price_current_best": "USD 6.2844 起（DigiKey，1740+）",
       "price_single_piece_usd": "未公开",
-      "price_lowest_visible_usd": "未公开",
-      "price_lowest_quantity": "未公开",
-      "price_platforms": "未公开",
-      "price_offer_count": 0,
-      "price_bare_chip_offer_count": 0,
+      "price_lowest_visible_usd": 6.28441,
+      "price_lowest_quantity": "1740+",
+      "price_platforms": "DigiKey",
+      "price_offer_count": 1,
+      "price_bare_chip_offer_count": 1,
       "price_module_offer_count": 0,
-      "price_currency_set": "未公开",
-      "price_checked_on": "未公开",
-      "price_status": "未公开/询价",
-      "price_notes": "未公开",
+      "price_currency_set": "USD",
+      "price_checked_on": "2026-08-26",
+      "price_status": "有裸芯片现货/即时采购信号",
+      "price_notes": "价格是按精确 SKU、平台、地区视图和查证日期保存的快照；税费、运费、账户价、汇率和交付条款未统一折算。模块/开发板不覆盖裸芯片价格。",
       "wifi_support": "是",
       "wifi_standard": "802.11n（Wi‑Fi 4）",
       "wifi_bands": "2.4/5 GHz",
@@ -4946,7 +4953,8 @@
       "notes": "未公开",
       "source_note": "关键字段仅按官方产品页/规格书/选型表填写；未披露字段保留为“未公开”。",
       "source_refs": [
-        "NXP-WIFI-BT"
+        "NXP-WIFI-BT",
+        "WBC-SRC-PRICE-DK-IW416HN-A1CK"
       ],
       "checked_on": "2026-08-26"
     },
@@ -5882,23 +5890,23 @@
       "official_product_url": "https://www.nxp.com/products/wireless-connectivity/wi-fi-plus-bluetooth-plus-802-15-4/wireless-mcu-with-integrated-tri-radio-1x1-wi-fi-6-plus-bluetooth-low-energy-5-4-802-15-4%3ARW612?tab=Buy_Parametric_Tab",
       "datasheet_url": "未公开",
       "news_url": "未公开",
-      "distributor_url": "未公开",
-      "price": "未公开",
-      "price_type": "未公开",
-      "moq": "未公开",
-      "availability": "官方页面可查；实际库存、交期和批量供货需按地区/分料号复核",
-      "price_current_best": "未公开",
+      "distributor_url": "https://www.digikey.com/en/products/detail/u-blox/IRIS-W106-40B/29776371",
+      "price": "关联模块 USD 13.6500 起（DigiKey，不等同裸芯片）",
+      "price_type": "裸芯片询价；关联实体有渠道价",
+      "moq": "1",
+      "availability": "out of stock；price visible",
+      "price_current_best": "关联模块 USD 13.6500 起（DigiKey，不等同裸芯片）",
       "price_single_piece_usd": "未公开",
       "price_lowest_visible_usd": "未公开",
       "price_lowest_quantity": "未公开",
-      "price_platforms": "未公开",
-      "price_offer_count": 0,
+      "price_platforms": "DigiKey",
+      "price_offer_count": 1,
       "price_bare_chip_offer_count": 0,
-      "price_module_offer_count": 0,
-      "price_currency_set": "未公开",
-      "price_checked_on": "未公开",
-      "price_status": "未公开/询价",
-      "price_notes": "未公开",
+      "price_module_offer_count": 1,
+      "price_currency_set": "USD",
+      "price_checked_on": "2026-08-26",
+      "price_status": "裸芯片未公开；关联模块有价",
+      "price_notes": "价格是按精确 SKU、平台、地区视图和查证日期保存的快照；税费、运费、账户价、汇率和交付条款未统一折算。模块/开发板不覆盖裸芯片价格。",
       "wifi_support": "是",
       "wifi_standard": "Wi‑Fi 6",
       "wifi_bands": "2.4/5 GHz",
@@ -5938,7 +5946,8 @@
       "notes": "未公开",
       "source_note": "关键字段仅按官方产品页/规格书/选型表填写；未披露字段保留为“未公开”。",
       "source_refs": [
-        "NXP-RW612"
+        "NXP-RW612",
+        "WBC-SRC-PRICE-DK-IRIS-W106-40B"
       ],
       "checked_on": "2026-08-26"
     },
@@ -7636,23 +7645,23 @@
       "official_product_url": "https://www.infineon.com/products/wireless-connectivity/bluetooth",
       "datasheet_url": "未公开",
       "news_url": "未公开",
-      "distributor_url": "未公开",
-      "price": "未公开",
-      "price_type": "未公开",
-      "moq": "未公开",
-      "availability": "官方页面可查；实际库存、交期和批量供货需按地区/分料号复核",
-      "price_current_best": "未公开",
-      "price_single_piece_usd": "未公开",
-      "price_lowest_visible_usd": "未公开",
-      "price_lowest_quantity": "未公开",
-      "price_platforms": "未公开",
-      "price_offer_count": 0,
-      "price_bare_chip_offer_count": 0,
+      "distributor_url": "https://www.digikey.com/en/products/detail/infineon-technologies/CYW20819A1KFBG/16897218",
+      "price": "USD 5.9600 起（DigiKey，1+，CYW20819A1KFBG）；USD 3.8679 起（DigiKey，1470+）",
+      "price_type": "多渠道采购快照/阶梯价",
+      "moq": "1",
+      "availability": "in stock；not recommended for new designs（页面快照）",
+      "price_current_best": "USD 5.9600 起（DigiKey，1+，CYW20819A1KFBG）；USD 3.8679 起（DigiKey，1470+）",
+      "price_single_piece_usd": 5.96,
+      "price_lowest_visible_usd": 3.8679,
+      "price_lowest_quantity": "1470+",
+      "price_platforms": "DigiKey",
+      "price_offer_count": 1,
+      "price_bare_chip_offer_count": 1,
       "price_module_offer_count": 0,
-      "price_currency_set": "未公开",
-      "price_checked_on": "未公开",
-      "price_status": "未公开/询价",
-      "price_notes": "未公开",
+      "price_currency_set": "USD",
+      "price_checked_on": "2026-08-26",
+      "price_status": "有裸芯片现货/即时采购信号",
+      "price_notes": "价格是按精确 SKU、平台、地区视图和查证日期保存的快照；税费、运费、账户价、汇率和交付条款未统一折算。模块/开发板不覆盖裸芯片价格。",
       "wifi_support": "不支持",
       "wifi_standard": "未公开",
       "wifi_bands": "未公开",
@@ -7692,7 +7701,8 @@
       "notes": "未公开",
       "source_note": "关键字段仅按官方产品页/规格书/选型表填写；未披露字段保留为“未公开”。",
       "source_refs": [
-        "INFINEON-AIROC"
+        "INFINEON-AIROC",
+        "WBC-SRC-PRICE-DK-CYW20819A1KFBG"
       ],
       "checked_on": "2026-08-26"
     },
@@ -8250,23 +8260,23 @@
       "official_product_url": "https://www.renesas.com/en/products/da14585",
       "datasheet_url": "未公开",
       "news_url": "未公开",
-      "distributor_url": "未公开",
-      "price": "未公开",
-      "price_type": "未公开",
-      "moq": "未公开",
-      "availability": "官方页面可查；实际库存、交期和批量供货需按地区/分料号复核",
-      "price_current_best": "未公开",
+      "distributor_url": "https://www.lcsc.com/product-detail/RF-Transceiver-ICs_Dialog-Semiconductor-DA14585-00000AT2_C425084.html",
+      "price": "USD 1.5018 参考（LCSC，1000+；当前缺货/状态待复核）",
+      "price_type": "缺货参考价/询价",
+      "moq": "1",
+      "availability": "out of stock；reference price only",
+      "price_current_best": "USD 1.5018 参考（LCSC，1000+；当前缺货/状态待复核）",
       "price_single_piece_usd": "未公开",
-      "price_lowest_visible_usd": "未公开",
-      "price_lowest_quantity": "未公开",
-      "price_platforms": "未公开",
-      "price_offer_count": 0,
-      "price_bare_chip_offer_count": 0,
+      "price_lowest_visible_usd": 1.5018,
+      "price_lowest_quantity": "1000+",
+      "price_platforms": "LCSC",
+      "price_offer_count": 1,
+      "price_bare_chip_offer_count": 1,
       "price_module_offer_count": 0,
-      "price_currency_set": "未公开",
-      "price_checked_on": "未公开",
-      "price_status": "未公开/询价",
-      "price_notes": "未公开",
+      "price_currency_set": "USD",
+      "price_checked_on": "2026-08-26",
+      "price_status": "仅缺货参考价或询价",
+      "price_notes": "价格是按精确 SKU、平台、地区视图和查证日期保存的快照；税费、运费、账户价、汇率和交付条款未统一折算。模块/开发板不覆盖裸芯片价格。",
       "wifi_support": "不支持",
       "wifi_standard": "未公开",
       "wifi_bands": "未公开",
@@ -8306,7 +8316,8 @@
       "notes": "未公开",
       "source_note": "关键字段仅按官方产品页/规格书/选型表填写；未披露字段保留为“未公开”。",
       "source_refs": [
-        "RENESAS-DA14531"
+        "RENESAS-DA14531",
+        "WBC-SRC-PRICE-LCSC-DA14585-00000AT2"
       ],
       "checked_on": "2026-08-26"
     },
@@ -8404,23 +8415,23 @@
       "official_product_url": "https://www.renesas.com/en/products/da16200",
       "datasheet_url": "未公开",
       "news_url": "未公开",
-      "distributor_url": "未公开",
-      "price": "未公开",
-      "price_type": "未公开",
-      "moq": "未公开",
-      "availability": "官方页面可查；实际库存、交期和批量供货需按地区/分料号复核",
-      "price_current_best": "未公开",
-      "price_single_piece_usd": "未公开",
-      "price_lowest_visible_usd": "未公开",
-      "price_lowest_quantity": "未公开",
-      "price_platforms": "未公开",
-      "price_offer_count": 0,
-      "price_bare_chip_offer_count": 0,
+      "distributor_url": "https://www.digikey.com/en/products/detail/renesas-electronics-corporation/DA16200-00000F22/12153686",
+      "price": "USD 6.2500 起（DigiKey，1+，DA16200-00000F22）；USD 4.1495 起（DigiKey，1000+）",
+      "price_type": "多渠道采购快照/阶梯价",
+      "moq": "1",
+      "availability": "in stock；ships now（页面快照）",
+      "price_current_best": "USD 6.2500 起（DigiKey，1+，DA16200-00000F22）；USD 4.1495 起（DigiKey，1000+）",
+      "price_single_piece_usd": 6.25,
+      "price_lowest_visible_usd": 4.14955,
+      "price_lowest_quantity": "1000+",
+      "price_platforms": "DigiKey",
+      "price_offer_count": 1,
+      "price_bare_chip_offer_count": 1,
       "price_module_offer_count": 0,
-      "price_currency_set": "未公开",
-      "price_checked_on": "未公开",
-      "price_status": "未公开/询价",
-      "price_notes": "未公开",
+      "price_currency_set": "USD",
+      "price_checked_on": "2026-08-26",
+      "price_status": "有裸芯片现货/即时采购信号",
+      "price_notes": "价格是按精确 SKU、平台、地区视图和查证日期保存的快照；税费、运费、账户价、汇率和交付条款未统一折算。模块/开发板不覆盖裸芯片价格。",
       "wifi_support": "是",
       "wifi_standard": "802.11 b/g/n",
       "wifi_bands": "2.4 GHz",
@@ -8461,7 +8472,8 @@
       "source_note": "关键字段仅按官方产品页/规格书/选型表填写；未披露字段保留为“未公开”。",
       "source_refs": [
         "RENESAS-DA16200",
-        "RENESAS-DA16600"
+        "RENESAS-DA16600",
+        "WBC-SRC-PRICE-DK-DA16200-00000F22"
       ],
       "checked_on": "2026-08-26"
     },
@@ -11299,7 +11311,7 @@
       "family": "CH57x",
       "vendor_country": "中国",
       "entity_type": "芯片/SoC",
-      "radio_class": "Bluetooth-only / 2.4 GHz",
+      "radio_class": "2.4 GHz proprietary wireless MCU（不支持 Bluetooth）",
       "status": "官方目录/在售信号",
       "evidence": "A",
       "launch_year": "未公开",
@@ -11308,32 +11320,32 @@
       "official_product_url": "https://special.wch.cn/zh_cn/BLEChip_Module_Index/",
       "datasheet_url": "未公开",
       "news_url": "未公开",
-      "distributor_url": "未公开",
-      "price": "未公开",
-      "price_type": "未公开",
-      "moq": "未公开",
-      "availability": "官方页面可查；实际库存、交期和批量供货需按地区/分料号复核",
-      "price_current_best": "未公开",
+      "distributor_url": "https://www.lcsc.com/product-detail/C49260680.html",
+      "price": "USD 0.1458 起（LCSC，5000+）",
+      "price_type": "多渠道采购快照/阶梯价",
+      "moq": "5",
+      "availability": "in stock；ships now（页面快照）",
+      "price_current_best": "USD 0.1458 起（LCSC，5000+）",
       "price_single_piece_usd": "未公开",
-      "price_lowest_visible_usd": "未公开",
-      "price_lowest_quantity": "未公开",
-      "price_platforms": "未公开",
-      "price_offer_count": 0,
-      "price_bare_chip_offer_count": 0,
+      "price_lowest_visible_usd": 0.1458,
+      "price_lowest_quantity": "5000+",
+      "price_platforms": "LCSC",
+      "price_offer_count": 1,
+      "price_bare_chip_offer_count": 1,
       "price_module_offer_count": 0,
-      "price_currency_set": "未公开",
-      "price_checked_on": "未公开",
-      "price_status": "未公开/询价",
-      "price_notes": "未公开",
+      "price_currency_set": "USD",
+      "price_checked_on": "2026-08-26",
+      "price_status": "有裸芯片现货/即时采购信号",
+      "price_notes": "价格是按精确 SKU、平台、地区视图和查证日期保存的快照；税费、运费、账户价、汇率和交付条款未统一折算。模块/开发板不覆盖裸芯片价格。",
       "wifi_support": "不支持",
       "wifi_standard": "未公开",
       "wifi_bands": "未公开",
       "wifi_bandwidth_streams": "未公开",
       "wifi_peak_rate": "未公开",
-      "bluetooth_version": "BLE 2 Mbps",
-      "ble_support": "是",
+      "bluetooth_version": "不支持",
+      "ble_support": "不支持",
       "bt_classic_blc": "不支持",
-      "bluetooth_mode": "BLE-only",
+      "bluetooth_mode": "不支持",
       "le_audio": "未公开",
       "mesh_802154": "未公开",
       "radio_concurrency": "未公开",
@@ -11358,13 +11370,14 @@
       "pin_count": "未公开",
       "process_node": "未公开",
       "operating_temp": "未公开",
-      "applications": "BLE 串口/低功耗",
+      "applications": "2.4G 专有无线通信、低功耗控制",
       "module_options": "有无配套模块需另行核验；模块不计入主表芯片行",
       "certifications": "未公开",
       "notes": "未公开",
       "source_note": "关键字段仅按官方产品页/规格书/选型表填写；未披露字段保留为“未公开”。",
       "source_refs": [
-        "WCH-BLE"
+        "WCH-BLE",
+        "WBC-SRC-PRICE-LCSC-CH570Q"
       ],
       "checked_on": "2026-08-26"
     },
@@ -11384,23 +11397,23 @@
       "official_product_url": "https://special.wch.cn/zh_cn/BLEChip_Module_Index/",
       "datasheet_url": "未公开",
       "news_url": "未公开",
-      "distributor_url": "未公开",
-      "price": "未公开",
-      "price_type": "未公开",
-      "moq": "未公开",
-      "availability": "官方页面可查；实际库存、交期和批量供货需按地区/分料号复核",
-      "price_current_best": "未公开",
+      "distributor_url": "https://www.lcsc.com/product-detail/microcontrollers-mcu-mpu-soc_wch-jiangsu-qin-heng-ch572q_C46772607.html",
+      "price": "USD 0.2021 起（LCSC，5000+）",
+      "price_type": "多渠道采购快照/阶梯价",
+      "moq": "5",
+      "availability": "in stock；ships now（页面快照）",
+      "price_current_best": "USD 0.2021 起（LCSC，5000+）",
       "price_single_piece_usd": "未公开",
-      "price_lowest_visible_usd": "未公开",
-      "price_lowest_quantity": "未公开",
-      "price_platforms": "未公开",
-      "price_offer_count": 0,
-      "price_bare_chip_offer_count": 0,
+      "price_lowest_visible_usd": 0.2021,
+      "price_lowest_quantity": "5000+",
+      "price_platforms": "LCSC",
+      "price_offer_count": 1,
+      "price_bare_chip_offer_count": 1,
       "price_module_offer_count": 0,
-      "price_currency_set": "未公开",
-      "price_checked_on": "未公开",
-      "price_status": "未公开/询价",
-      "price_notes": "未公开",
+      "price_currency_set": "USD",
+      "price_checked_on": "2026-08-26",
+      "price_status": "有裸芯片现货/即时采购信号",
+      "price_notes": "价格是按精确 SKU、平台、地区视图和查证日期保存的快照；税费、运费、账户价、汇率和交付条款未统一折算。模块/开发板不覆盖裸芯片价格。",
       "wifi_support": "不支持",
       "wifi_standard": "未公开",
       "wifi_bands": "未公开",
@@ -11440,7 +11453,8 @@
       "notes": "未公开",
       "source_note": "关键字段仅按官方产品页/规格书/选型表填写；未披露字段保留为“未公开”。",
       "source_refs": [
-        "WCH-BLE"
+        "WCH-BLE",
+        "WBC-SRC-PRICE-LCSC-CH572Q"
       ],
       "checked_on": "2026-08-26"
     },
@@ -11460,18 +11474,18 @@
       "official_product_url": "https://special.wch.cn/zh_cn/BLEChip_Module_Index/",
       "datasheet_url": "https://www.wch.cn/uploads/file/20230316/1678936172282320.pdf",
       "news_url": "未公开",
-      "distributor_url": "https://www.lcsc.com/product-detail/C3001175.html；https://www.lcsc.com/brand/941-271.html",
+      "distributor_url": "https://www.lcsc.com/product-detail/C3001175.html；https://www.lcsc.com/brand/941-271.html；https://www.lcsc.com/product-detail/microcontrollers-mcu-mpu-soc_wch-jiangsu-qin-heng-ch582f_C3001175.html",
       "price": "USD 1.1310 起（LCSC，1+，CH582F）；USD 0.6766 起（LCSC，980+）",
       "price_type": "多渠道采购快照/阶梯价",
       "moq": "1",
-      "availability": "in stock（页面快照）；in stock（品牌页快照）",
+      "availability": "in stock（页面快照）；in stock（品牌页快照）；in stock；ships now（页面快照）",
       "price_current_best": "USD 1.1310 起（LCSC，1+，CH582F）；USD 0.6766 起（LCSC，980+）",
       "price_single_piece_usd": 1.131,
       "price_lowest_visible_usd": 0.6766,
       "price_lowest_quantity": "980+",
       "price_platforms": "LCSC",
-      "price_offer_count": 2,
-      "price_bare_chip_offer_count": 2,
+      "price_offer_count": 3,
+      "price_bare_chip_offer_count": 3,
       "price_module_offer_count": 0,
       "price_currency_set": "USD",
       "price_checked_on": "2026-08-26",
@@ -11692,18 +11706,18 @@
       "official_product_url": "https://special.wch.cn/zh_cn/BLEChip_Module_Index/",
       "datasheet_url": "未公开",
       "news_url": "未公开",
-      "distributor_url": "https://www.lcsc.com/brand/941-271.html",
+      "distributor_url": "https://www.lcsc.com/brand/941-271.html；https://www.lcsc.com/product-detail/C48888259.html",
       "price": "USD 1.3030 起（LCSC，1+，CH585D）；USD 0.7277 起（LCSC，1000+）",
       "price_type": "多渠道采购快照/阶梯价",
       "moq": "1",
-      "availability": "in stock（品牌页快照）",
+      "availability": "in stock（品牌页快照）；in stock；ships now（页面快照）",
       "price_current_best": "USD 1.3030 起（LCSC，1+，CH585D）；USD 0.7277 起（LCSC，1000+）",
       "price_single_piece_usd": 1.303,
       "price_lowest_visible_usd": 0.7277,
       "price_lowest_quantity": "1000+",
       "price_platforms": "LCSC",
-      "price_offer_count": 1,
-      "price_bare_chip_offer_count": 1,
+      "price_offer_count": 2,
+      "price_bare_chip_offer_count": 2,
       "price_module_offer_count": 0,
       "price_currency_set": "USD",
       "price_checked_on": "2026-08-26",
@@ -11749,7 +11763,8 @@
       "source_note": "关键字段仅按官方产品页/规格书/选型表填写；未披露字段保留为“未公开”。",
       "source_refs": [
         "WCH-BLE",
-        "WBC-SRC-PRICE-LCSC-WCH-BRAND"
+        "WBC-SRC-PRICE-LCSC-WCH-BRAND",
+        "WBC-SRC-PRICE-LCSC-CH585D"
       ],
       "checked_on": "2026-08-26"
     },
@@ -18674,6 +18689,762 @@
       "checked_on": "2026-08-26",
       "evidence": "A",
       "notes": "Avnet 页面精确列出 MPN、阶梯价和库存/工厂交期；当前无现货，价格作为渠道参考。"
+    },
+    {
+      "id": "WBCP-0108",
+      "product_id": "WBC-0001",
+      "vendor": "Espressif",
+      "family": "ESP32",
+      "part_number": "ESP32-D0WD-V3",
+      "entity_level": "bare_chip",
+      "package": "QFN-48-EP(5x5)",
+      "platform": "LCSC",
+      "platform_region": "US/global view",
+      "seller_type": "authorized_distributor",
+      "distributor_sku": "C967021",
+      "currency": "USD",
+      "price_breaks": [
+        {
+          "min_qty": 1,
+          "unit_price": 2.7775
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 2.4721
+        },
+        {
+          "min_qty": 30,
+          "unit_price": 2.2805
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 2.1213
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 2.0141
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 1.9686
+        }
+      ],
+      "minimum_order_qty": 1,
+      "standard_pack_qty": 5000,
+      "stock_signal": "879（页面快照）",
+      "availability": "in stock；ships now（页面快照）",
+      "price_type": "渠道实时阶梯价",
+      "url": "https://www.lcsc.com/product-detail/rf-transceiver-ics_espressif-systems-esp32-d0wd-v3_C967021.html",
+      "source_id": "WBC-SRC-PRICE-LCSC-ESP32-D0WD-V3",
+      "checked_on": "2026-08-26",
+      "evidence": "A",
+      "notes": "LCSC 精确 MPN 与 QFN-48-EP(5x5) 页面；主表以 ESP32 系列行承载，价格不是模块或开发板价格。"
+    },
+    {
+      "id": "WBCP-0109",
+      "product_id": "WBC-0010",
+      "vendor": "Nordic Semiconductor",
+      "family": "nRF52811",
+      "part_number": "NRF52811-CAAA-B-R7",
+      "entity_level": "bare_chip",
+      "package": "未公开",
+      "platform": "LCSC",
+      "platform_region": "US/global view",
+      "seller_type": "authorized_distributor",
+      "distributor_sku": "C6248976",
+      "currency": "USD",
+      "price_breaks": [
+        {
+          "min_qty": 1,
+          "unit_price": 4.5156
+        },
+        {
+          "min_qty": 200,
+          "unit_price": 1.8017
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 1.7426
+        },
+        {
+          "min_qty": 1500,
+          "unit_price": 1.7123
+        }
+      ],
+      "minimum_order_qty": 1,
+      "standard_pack_qty": 1500,
+      "stock_signal": "页面价格可见；库存需在地区页复核",
+      "availability": "价格可见；库存待复核",
+      "price_type": "渠道阶梯价快照",
+      "url": "https://www.lcsc.com/product-detail/Wireless-Transceiver-Chips_Nordic-Semicon-NRF52811-CAAA-B-R7_C6248976.html",
+      "source_id": "WBC-SRC-PRICE-LCSC-NRF52811-CAAA-B-R7",
+      "checked_on": "2026-08-26",
+      "evidence": "A",
+      "notes": "精确 nRF52811 分料号；LCSC 页面对库存/参考价口径有地区差异，保留为可复核采购快照。"
+    },
+    {
+      "id": "WBCP-0110",
+      "product_id": "WBC-0011",
+      "vendor": "Nordic Semiconductor",
+      "family": "nRF52820",
+      "part_number": "NRF52820-QDAA-R",
+      "entity_level": "bare_chip",
+      "package": "未公开",
+      "platform": "LCSC",
+      "platform_region": "US/global view",
+      "seller_type": "authorized_distributor",
+      "distributor_sku": "C3015612",
+      "currency": "USD",
+      "price_breaks": [
+        {
+          "min_qty": 1,
+          "unit_price": 3.0514
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 2.5081
+        },
+        {
+          "min_qty": 30,
+          "unit_price": 2.1682
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 1.8185
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 1.6624
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 1.594
+        }
+      ],
+      "minimum_order_qty": 1,
+      "standard_pack_qty": "未公开",
+      "stock_signal": "57（页面快照）",
+      "availability": "in stock；ships now（页面快照）",
+      "price_type": "渠道实时阶梯价",
+      "url": "https://www.lcsc.com/product-detail/rf-transceiver-ics_nordic-nrf52820-qdaa-r_C3015612.html",
+      "source_id": "WBC-SRC-PRICE-LCSC-NRF52820-QDAA-R",
+      "checked_on": "2026-08-26",
+      "evidence": "A",
+      "notes": "LCSC 精确 MPN；内存与协议规格需结合 Nordic 官方规格书，不以渠道字段替代原厂证据。"
+    },
+    {
+      "id": "WBCP-0111",
+      "product_id": "WBC-0023",
+      "vendor": "Texas Instruments",
+      "family": "CC2541",
+      "part_number": "CC2541F256RHAR",
+      "entity_level": "bare_chip",
+      "package": "未公开",
+      "platform": "LCSC",
+      "platform_region": "US/global view",
+      "seller_type": "authorized_distributor",
+      "distributor_sku": "C22206",
+      "currency": "USD",
+      "price_breaks": [
+        {
+          "min_qty": 1,
+          "unit_price": 1.6264
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1.3751
+        },
+        {
+          "min_qty": 30,
+          "unit_price": 1.2373
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 1.0816
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 1.0119
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 0.9811
+        }
+      ],
+      "minimum_order_qty": 1,
+      "standard_pack_qty": 2500,
+      "stock_signal": "7443（页面快照）",
+      "availability": "in stock；ships now（页面快照）",
+      "price_type": "渠道实时阶梯价",
+      "url": "https://www.lcsc.com/product-detail/Texas-Instruments_Texas-Instruments-CC2541F256RHAR_C22206.html",
+      "source_id": "WBC-SRC-PRICE-LCSC-CC2541F256RHAR",
+      "checked_on": "2026-08-26",
+      "evidence": "A",
+      "notes": "精确 TI CC2541 分料号；LCSC 页面同时给出 BLE 应用说明和阶梯价。"
+    },
+    {
+      "id": "WBCP-0112",
+      "product_id": "WBC-0021",
+      "vendor": "Nordic Semiconductor",
+      "family": "nRF7002",
+      "part_number": "NRF7002-QFAA-R7",
+      "entity_level": "bare_chip",
+      "package": "48-QFN(6x6 mm)",
+      "platform": "DigiKey",
+      "platform_region": "US/global view",
+      "seller_type": "authorized_distributor",
+      "distributor_sku": "4823-NRF7002-QFAA-R7TR-ND / 4823-NRF7002-QFAA-R7CT-ND",
+      "currency": "USD",
+      "price_breaks": [
+        {
+          "min_qty": 1,
+          "unit_price": 4.65
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 4.02
+        },
+        {
+          "min_qty": 25,
+          "unit_price": 3.8012
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 3.5008
+        },
+        {
+          "min_qty": 250,
+          "unit_price": 3.32064
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 3.19342
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 2.59
+        }
+      ],
+      "minimum_order_qty": 1,
+      "standard_pack_qty": 1000,
+      "stock_signal": "2647（页面快照）",
+      "availability": "in stock；ships now（页面快照）",
+      "price_type": "渠道实时阶梯价",
+      "url": "https://www.digikey.com/en/products/detail/nordic-semiconductor-asa/NRF7002-QFAA-R7/17738487",
+      "source_id": "WBC-SRC-PRICE-DK-NRF7002-QFAA-R7",
+      "checked_on": "2026-08-26",
+      "evidence": "A",
+      "notes": "DigiKey 同时展示 cut tape/Digi-Reel 与 1000 件卷装价；报价平台是 nRF7002 companion IC 本体，不是开发板。"
+    },
+    {
+      "id": "WBCP-0113",
+      "product_id": "WBC-0039",
+      "vendor": "Silicon Labs",
+      "family": "EFR32BG21",
+      "part_number": "EFR32BG21A020F1024IM32-BR",
+      "entity_level": "bare_chip",
+      "package": "32-QFN(4x4 mm)",
+      "platform": "DigiKey",
+      "platform_region": "US/global view",
+      "seller_type": "authorized_distributor",
+      "distributor_sku": "336-EFR32BG21A020F1024IM32-BR-ND",
+      "currency": "USD",
+      "price_breaks": [
+        {
+          "min_qty": 1,
+          "unit_price": 6.96
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 5.918
+        },
+        {
+          "min_qty": 25,
+          "unit_price": 5.5656
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 5.0886
+        },
+        {
+          "min_qty": 250,
+          "unit_price": 4.80656
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 4.6091
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 4.42434
+        }
+      ],
+      "minimum_order_qty": 1,
+      "standard_pack_qty": 2500,
+      "stock_signal": "2500（页面快照）",
+      "availability": "in stock；ships now（页面快照）",
+      "price_type": "渠道实时阶梯价",
+      "url": "https://www.digikey.com/en/products/detail/silicon-labs/EFR32BG21A020F1024IM32-BR/9838107",
+      "source_id": "WBC-SRC-PRICE-DK-EFR32BG21A020F1024IM32-BR",
+      "checked_on": "2026-08-26",
+      "evidence": "A",
+      "notes": "DigiKey 精确料号、封装、协议、库存和阶梯价；BG21 系列其他 Flash/封装变体不隐式合并。"
+    },
+    {
+      "id": "WBCP-0114",
+      "product_id": "WBC-0099",
+      "vendor": "Infineon",
+      "family": "CYW20819",
+      "part_number": "CYW20819A1KFBG",
+      "entity_level": "bare_chip",
+      "package": "62-FBGA(4.5x4.5 mm)",
+      "platform": "DigiKey",
+      "platform_region": "US/global view",
+      "seller_type": "authorized_distributor",
+      "distributor_sku": "448-CYW20819A1KFBG-ND",
+      "currency": "USD",
+      "price_breaks": [
+        {
+          "min_qty": 1,
+          "unit_price": 5.96
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 5.16
+        },
+        {
+          "min_qty": 25,
+          "unit_price": 4.88
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 4.4957
+        },
+        {
+          "min_qty": 490,
+          "unit_price": 4.10716
+        },
+        {
+          "min_qty": 980,
+          "unit_price": 3.95358
+        },
+        {
+          "min_qty": 1470,
+          "unit_price": 3.8679
+        }
+      ],
+      "minimum_order_qty": 1,
+      "standard_pack_qty": 1470,
+      "stock_signal": "40（页面快照）",
+      "availability": "in stock；not recommended for new designs（页面快照）",
+      "price_type": "渠道实时阶梯价",
+      "url": "https://www.digikey.com/en/products/detail/infineon-technologies/CYW20819A1KFBG/16897218",
+      "source_id": "WBC-SRC-PRICE-DK-CYW20819A1KFBG",
+      "checked_on": "2026-08-26",
+      "evidence": "A",
+      "notes": "DigiKey 页面标注 Not For New Designs；价格和库存保留为当前采购快照，选型时须同时看生命周期。"
+    },
+    {
+      "id": "WBCP-0115",
+      "product_id": "WBC-0063",
+      "vendor": "NXP",
+      "family": "IW416",
+      "part_number": "IW416HN/A1CK",
+      "entity_level": "bare_chip",
+      "package": "68-HVQFN(8x8 mm)",
+      "platform": "DigiKey",
+      "platform_region": "US/global view",
+      "seller_type": "authorized_distributor",
+      "distributor_sku": "568-IW416HN/A1CK-ND",
+      "currency": "USD",
+      "price_breaks": [
+        {
+          "min_qty": 1740,
+          "unit_price": 6.28441
+        }
+      ],
+      "minimum_order_qty": 1740,
+      "standard_pack_qty": 1740,
+      "stock_signal": "Available To Order；manufacturer lead time 16 weeks（页面快照）",
+      "availability": "available to order；非即时库存",
+      "price_type": "渠道大包装价快照",
+      "url": "https://www.digikey.com/en/products/detail/nxp-usa-inc/IW416HN-A1CK/18711382",
+      "source_id": "WBC-SRC-PRICE-DK-IW416HN-A1CK",
+      "checked_on": "2026-08-26",
+      "evidence": "A",
+      "notes": "精确 IW416 后缀的 1740 件包装价格；无 1 件可下单价，不用模块/开发板价格替代。"
+    },
+    {
+      "id": "WBCP-0116",
+      "product_id": "WBC-0109",
+      "vendor": "Renesas",
+      "family": "DA16200",
+      "part_number": "DA16200-00000F22",
+      "entity_level": "bare_chip",
+      "package": "CSP72",
+      "platform": "DigiKey",
+      "platform_region": "US/global view",
+      "seller_type": "authorized_distributor",
+      "distributor_sku": "1695-DA16200-00000F22CT-ND / 1695-DA16200-00000F22TR-ND",
+      "currency": "USD",
+      "price_breaks": [
+        {
+          "min_qty": 1,
+          "unit_price": 6.25
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 5.41
+        },
+        {
+          "min_qty": 25,
+          "unit_price": 5.1188
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 4.7186
+        },
+        {
+          "min_qty": 250,
+          "unit_price": 4.4786
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 4.30916
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 4.14955
+        }
+      ],
+      "minimum_order_qty": 1,
+      "standard_pack_qty": 4000,
+      "stock_signal": "12765（页面快照）",
+      "availability": "in stock；ships now（页面快照）",
+      "price_type": "渠道实时阶梯价",
+      "url": "https://www.digikey.com/en/products/detail/renesas-electronics-corporation/DA16200-00000F22/12153686",
+      "source_id": "WBC-SRC-PRICE-DK-DA16200-00000F22",
+      "checked_on": "2026-08-26",
+      "evidence": "A",
+      "notes": "DigiKey 精确 CSP72 后缀；另有 QFN48 变体，封装与分料号不隐式合并。"
+    },
+    {
+      "id": "WBCP-0117",
+      "product_id": "WBC-0107",
+      "vendor": "Renesas",
+      "family": "DA14585",
+      "part_number": "DA14585-00000AT2",
+      "entity_level": "bare_chip",
+      "package": "QFN-40-EP(5x5 mm)",
+      "platform": "LCSC",
+      "platform_region": "US/global view",
+      "seller_type": "authorized_distributor",
+      "distributor_sku": "C425084",
+      "currency": "USD",
+      "price_breaks": [
+        {
+          "min_qty": 1,
+          "unit_price": 2.4717
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 2.1105
+        },
+        {
+          "min_qty": 30,
+          "unit_price": 1.8845
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 1.6524
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 1.5479
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 1.5018
+        }
+      ],
+      "minimum_order_qty": 1,
+      "standard_pack_qty": 5000,
+      "stock_signal": "0（页面快照）",
+      "availability": "out of stock；reference price only",
+      "price_type": "缺货参考阶梯价",
+      "url": "https://www.lcsc.com/product-detail/RF-Transceiver-ICs_Dialog-Semiconductor-DA14585-00000AT2_C425084.html",
+      "source_id": "WBC-SRC-PRICE-LCSC-DA14585-00000AT2",
+      "checked_on": "2026-08-26",
+      "evidence": "A",
+      "notes": "LCSC 精确 MPN 与 QFN40 页面；当前缺货，价格仅作参考，不计入即时现货覆盖。"
+    },
+    {
+      "id": "WBCP-0118",
+      "product_id": "WBC-0147",
+      "vendor": "WCH",
+      "family": "CH570",
+      "part_number": "CH570Q",
+      "entity_level": "bare_chip",
+      "package": "DFN-10(3x3 mm)",
+      "platform": "LCSC",
+      "platform_region": "US/global view",
+      "seller_type": "authorized_distributor",
+      "distributor_sku": "C49260680",
+      "currency": "USD",
+      "price_breaks": [
+        {
+          "min_qty": 5,
+          "unit_price": 0.2913
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 0.2292
+        },
+        {
+          "min_qty": 2500,
+          "unit_price": 0.1546
+        },
+        {
+          "min_qty": 5000,
+          "unit_price": 0.1458
+        }
+      ],
+      "minimum_order_qty": 5,
+      "standard_pack_qty": 5000,
+      "stock_signal": "3480（页面快照）",
+      "availability": "in stock；ships now（页面快照）",
+      "price_type": "渠道实时阶梯价",
+      "url": "https://www.lcsc.com/product-detail/C49260680.html",
+      "source_id": "WBC-SRC-PRICE-LCSC-CH570Q",
+      "checked_on": "2026-08-26",
+      "evidence": "A",
+      "notes": "CH570 是 2.4 GHz 无线 MCU；该型号不应按 BLE 芯片使用，主表协议字段仍以 WCH 资料为准。"
+    },
+    {
+      "id": "WBCP-0119",
+      "product_id": "WBC-0148",
+      "vendor": "WCH",
+      "family": "CH572",
+      "part_number": "CH572Q",
+      "entity_level": "bare_chip",
+      "package": "DFN-10(3x3 mm)",
+      "platform": "LCSC",
+      "platform_region": "US/global view",
+      "seller_type": "authorized_distributor",
+      "distributor_sku": "C46772607",
+      "currency": "USD",
+      "price_breaks": [
+        {
+          "min_qty": 5,
+          "unit_price": 0.2964
+        },
+        {
+          "min_qty": 50,
+          "unit_price": 0.2562
+        },
+        {
+          "min_qty": 150,
+          "unit_price": 0.2389
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 0.2174
+        },
+        {
+          "min_qty": 2500,
+          "unit_price": 0.2078
+        },
+        {
+          "min_qty": 5000,
+          "unit_price": 0.2021
+        }
+      ],
+      "minimum_order_qty": 5,
+      "standard_pack_qty": 5000,
+      "stock_signal": "1300（页面快照）",
+      "availability": "in stock；ships now（页面快照）",
+      "price_type": "渠道实时阶梯价",
+      "url": "https://www.lcsc.com/product-detail/microcontrollers-mcu-mpu-soc_wch-jiangsu-qin-heng-ch572q_C46772607.html",
+      "source_id": "WBC-SRC-PRICE-LCSC-CH572Q",
+      "checked_on": "2026-08-26",
+      "evidence": "A",
+      "notes": "LCSC 精确 CH572Q 价格、库存、DFN10 与 5 件起订信息；与 CH570 区分。"
+    },
+    {
+      "id": "WBCP-0120",
+      "product_id": "WBC-0149",
+      "vendor": "WCH",
+      "family": "CH582",
+      "part_number": "CH582F",
+      "entity_level": "bare_chip",
+      "package": "QFN-28-EP(4x4 mm)",
+      "platform": "LCSC",
+      "platform_region": "US/global view",
+      "seller_type": "authorized_distributor",
+      "distributor_sku": "C3001175",
+      "currency": "USD",
+      "price_breaks": [
+        {
+          "min_qty": 1,
+          "unit_price": 1.2051
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1.0176
+        },
+        {
+          "min_qty": 490,
+          "unit_price": 0.7455
+        },
+        {
+          "min_qty": 980,
+          "unit_price": 0.7225
+        }
+      ],
+      "minimum_order_qty": 1,
+      "standard_pack_qty": "未公开",
+      "stock_signal": "1008（页面快照）",
+      "availability": "in stock；ships now（页面快照）",
+      "price_type": "渠道实时阶梯价",
+      "url": "https://www.lcsc.com/product-detail/microcontrollers-mcu-mpu-soc_wch-jiangsu-qin-heng-ch582f_C3001175.html",
+      "source_id": "WBC-SRC-PRICE-LCSC-CH582F",
+      "checked_on": "2026-08-26",
+      "evidence": "A",
+      "notes": "LCSC 精确 CH582F 料号与 QFN28 页面；数量档位按页面快照保存。"
+    },
+    {
+      "id": "WBCP-0121",
+      "product_id": "WBC-0152",
+      "vendor": "WCH",
+      "family": "CH585",
+      "part_number": "CH585D",
+      "entity_level": "bare_chip",
+      "package": "QFN-20(3x3 mm)",
+      "platform": "LCSC",
+      "platform_region": "US/global view",
+      "seller_type": "authorized_distributor",
+      "distributor_sku": "C48888259",
+      "currency": "USD",
+      "price_breaks": [
+        {
+          "min_qty": 1,
+          "unit_price": 1.303
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 1.0801
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 0.7556
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 0.7277
+        }
+      ],
+      "minimum_order_qty": 1,
+      "standard_pack_qty": 5000,
+      "stock_signal": "2563（页面快照）",
+      "availability": "in stock；ships now（页面快照）",
+      "price_type": "渠道实时阶梯价",
+      "url": "https://www.lcsc.com/product-detail/C48888259.html",
+      "source_id": "WBC-SRC-PRICE-LCSC-CH585D",
+      "checked_on": "2026-08-26",
+      "evidence": "A",
+      "notes": "WCH CH585D 精确后缀；主表协议与存储字段不由 LCSC 单一渠道字段扩展推断。"
+    },
+    {
+      "id": "WBCP-0122",
+      "product_id": "WBC-0052",
+      "vendor": "STMicroelectronics",
+      "family": "BlueNRG-LP",
+      "part_number": "BLUENRG-345MT",
+      "entity_level": "bare_chip",
+      "package": "未公开",
+      "platform": "DigiKey",
+      "platform_region": "US/global view",
+      "seller_type": "authorized_distributor",
+      "distributor_sku": "497-BLUENRG-345MTTR-ND / 497-BLUENRG-345MTCT-ND",
+      "currency": "USD",
+      "price_breaks": [
+        {
+          "min_qty": 1,
+          "unit_price": 4.41
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 3.342
+        },
+        {
+          "min_qty": 25,
+          "unit_price": 3.0752
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 2.7816
+        },
+        {
+          "min_qty": 250,
+          "unit_price": 2.64156
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 2.55718
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 2.48774
+        },
+        {
+          "min_qty": 3000,
+          "unit_price": 2.02279
+        }
+      ],
+      "minimum_order_qty": 1,
+      "standard_pack_qty": 3000,
+      "stock_signal": "4500（页面快照）",
+      "availability": "in stock；ships now（页面快照）",
+      "price_type": "渠道实时阶梯价",
+      "url": "https://www.digikey.com/en/products/detail/stmicroelectronics/BLUENRG-345MT/13592610",
+      "source_id": "WBC-SRC-PRICE-DK-BLUENRG-345MT",
+      "checked_on": "2026-08-26",
+      "evidence": "A",
+      "notes": "DigiKey 精确 BlueNRG-LP 分料号；3000 件为 tape-and-reel 档，cut tape/Digi-Reel 另有重卷费。"
+    },
+    {
+      "id": "WBCP-0123",
+      "product_id": "WBC-0076",
+      "vendor": "NXP",
+      "family": "RW612",
+      "part_number": "IRIS-W106-40B",
+      "entity_level": "module",
+      "package": "152-SMD module",
+      "platform": "DigiKey",
+      "platform_region": "US/global view",
+      "seller_type": "authorized_distributor",
+      "distributor_sku": "672-IRIS-W106-40BTR-ND / 672-IRIS-W106-40BCT-ND",
+      "currency": "USD",
+      "price_breaks": [
+        {
+          "min_qty": 1,
+          "unit_price": 16.71
+        },
+        {
+          "min_qty": 250,
+          "unit_price": 13.65
+        }
+      ],
+      "minimum_order_qty": 1,
+      "standard_pack_qty": 250,
+      "stock_signal": "0（页面快照）",
+      "availability": "out of stock；price visible",
+      "price_type": "模块渠道参考价",
+      "url": "https://www.digikey.com/en/products/detail/u-blox/IRIS-W106-40B/29776371",
+      "source_id": "WBC-SRC-PRICE-DK-IRIS-W106-40B",
+      "checked_on": "2026-08-26",
+      "evidence": "A",
+      "notes": "这是集成 RW612 的 u-blox 模块，不是 RW612 裸芯片价；模块独立保留以辅助方案级成本比较。"
     }
   ],
   "candidates": [
@@ -22502,6 +23273,276 @@
       "scope": "Nordic Semiconductor NRF52832-QFAA-R；实体层级=bare_chip；封装=QFN48",
       "quality": "A",
       "checked_on": "2026-08-26"
+    },
+    {
+      "id": "WBC-SRC-PRICE-LCSC-ESP32-D0WD-V3",
+      "source_group": "LCSC｜Espressif ESP32-D0WD-V3 采购价格",
+      "url": "https://www.lcsc.com/product-detail/rf-transceiver-ics_espressif-systems-esp32-d0wd-v3_C967021.html",
+      "source_domain": "www.lcsc.com",
+      "source_channel": "authorized_distributor",
+      "source_role": "精确 SKU 价格/库存页面",
+      "seller_type": "LCSC/授权分销页面",
+      "availability_signal": "in stock；ships now（页面快照）",
+      "storefront_type": "bare_chip",
+      "platform_reference": "C967021",
+      "campaign_status": "未公开",
+      "pledge_or_price": "USD 2.7775 @ 1+",
+      "estimated_delivery": "未公开",
+      "scope": "Espressif ESP32-D0WD-V3；实体层级=bare_chip；封装=QFN-48-EP(5x5)",
+      "quality": "A",
+      "checked_on": "2026-08-26"
+    },
+    {
+      "id": "WBC-SRC-PRICE-LCSC-NRF52811-CAAA-B-R7",
+      "source_group": "LCSC｜Nordic Semiconductor NRF52811-CAAA-B-R7 采购价格",
+      "url": "https://www.lcsc.com/product-detail/Wireless-Transceiver-Chips_Nordic-Semicon-NRF52811-CAAA-B-R7_C6248976.html",
+      "source_domain": "www.lcsc.com",
+      "source_channel": "authorized_distributor",
+      "source_role": "精确 SKU 价格/库存页面",
+      "seller_type": "LCSC/授权分销页面",
+      "availability_signal": "价格可见；库存待复核",
+      "storefront_type": "bare_chip",
+      "platform_reference": "C6248976",
+      "campaign_status": "未公开",
+      "pledge_or_price": "USD 4.5156 @ 1+",
+      "estimated_delivery": "未公开",
+      "scope": "Nordic Semiconductor NRF52811-CAAA-B-R7；实体层级=bare_chip；封装=未公开",
+      "quality": "A",
+      "checked_on": "2026-08-26"
+    },
+    {
+      "id": "WBC-SRC-PRICE-LCSC-NRF52820-QDAA-R",
+      "source_group": "LCSC｜Nordic Semiconductor NRF52820-QDAA-R 采购价格",
+      "url": "https://www.lcsc.com/product-detail/rf-transceiver-ics_nordic-nrf52820-qdaa-r_C3015612.html",
+      "source_domain": "www.lcsc.com",
+      "source_channel": "authorized_distributor",
+      "source_role": "精确 SKU 价格/库存页面",
+      "seller_type": "LCSC/授权分销页面",
+      "availability_signal": "in stock；ships now（页面快照）",
+      "storefront_type": "bare_chip",
+      "platform_reference": "C3015612",
+      "campaign_status": "未公开",
+      "pledge_or_price": "USD 3.0514 @ 1+",
+      "estimated_delivery": "未公开",
+      "scope": "Nordic Semiconductor NRF52820-QDAA-R；实体层级=bare_chip；封装=未公开",
+      "quality": "A",
+      "checked_on": "2026-08-26"
+    },
+    {
+      "id": "WBC-SRC-PRICE-LCSC-CC2541F256RHAR",
+      "source_group": "LCSC｜Texas Instruments CC2541F256RHAR 采购价格",
+      "url": "https://www.lcsc.com/product-detail/Texas-Instruments_Texas-Instruments-CC2541F256RHAR_C22206.html",
+      "source_domain": "www.lcsc.com",
+      "source_channel": "authorized_distributor",
+      "source_role": "精确 SKU 价格/库存页面",
+      "seller_type": "LCSC/授权分销页面",
+      "availability_signal": "in stock；ships now（页面快照）",
+      "storefront_type": "bare_chip",
+      "platform_reference": "C22206",
+      "campaign_status": "未公开",
+      "pledge_or_price": "USD 1.6264 @ 1+",
+      "estimated_delivery": "未公开",
+      "scope": "Texas Instruments CC2541F256RHAR；实体层级=bare_chip；封装=未公开",
+      "quality": "A",
+      "checked_on": "2026-08-26"
+    },
+    {
+      "id": "WBC-SRC-PRICE-DK-NRF7002-QFAA-R7",
+      "source_group": "DigiKey｜Nordic Semiconductor NRF7002-QFAA-R7 采购价格",
+      "url": "https://www.digikey.com/en/products/detail/nordic-semiconductor-asa/NRF7002-QFAA-R7/17738487",
+      "source_domain": "www.digikey.com",
+      "source_channel": "authorized_distributor",
+      "source_role": "精确 SKU 价格/库存页面",
+      "seller_type": "DigiKey/授权分销页面",
+      "availability_signal": "in stock；ships now（页面快照）",
+      "storefront_type": "bare_chip",
+      "platform_reference": "4823-NRF7002-QFAA-R7TR-ND / 4823-NRF7002-QFAA-R7CT-ND",
+      "campaign_status": "未公开",
+      "pledge_or_price": "USD 4.65 @ 1+",
+      "estimated_delivery": "未公开",
+      "scope": "Nordic Semiconductor NRF7002-QFAA-R7；实体层级=bare_chip；封装=48-QFN(6x6 mm)",
+      "quality": "A",
+      "checked_on": "2026-08-26"
+    },
+    {
+      "id": "WBC-SRC-PRICE-DK-EFR32BG21A020F1024IM32-BR",
+      "source_group": "DigiKey｜Silicon Labs EFR32BG21A020F1024IM32-BR 采购价格",
+      "url": "https://www.digikey.com/en/products/detail/silicon-labs/EFR32BG21A020F1024IM32-BR/9838107",
+      "source_domain": "www.digikey.com",
+      "source_channel": "authorized_distributor",
+      "source_role": "精确 SKU 价格/库存页面",
+      "seller_type": "DigiKey/授权分销页面",
+      "availability_signal": "in stock；ships now（页面快照）",
+      "storefront_type": "bare_chip",
+      "platform_reference": "336-EFR32BG21A020F1024IM32-BR-ND",
+      "campaign_status": "未公开",
+      "pledge_or_price": "USD 6.96 @ 1+",
+      "estimated_delivery": "未公开",
+      "scope": "Silicon Labs EFR32BG21A020F1024IM32-BR；实体层级=bare_chip；封装=32-QFN(4x4 mm)",
+      "quality": "A",
+      "checked_on": "2026-08-26"
+    },
+    {
+      "id": "WBC-SRC-PRICE-DK-CYW20819A1KFBG",
+      "source_group": "DigiKey｜Infineon CYW20819A1KFBG 采购价格",
+      "url": "https://www.digikey.com/en/products/detail/infineon-technologies/CYW20819A1KFBG/16897218",
+      "source_domain": "www.digikey.com",
+      "source_channel": "authorized_distributor",
+      "source_role": "精确 SKU 价格/库存页面",
+      "seller_type": "DigiKey/授权分销页面",
+      "availability_signal": "in stock；not recommended for new designs（页面快照）",
+      "storefront_type": "bare_chip",
+      "platform_reference": "448-CYW20819A1KFBG-ND",
+      "campaign_status": "未公开",
+      "pledge_or_price": "USD 5.96 @ 1+",
+      "estimated_delivery": "未公开",
+      "scope": "Infineon CYW20819A1KFBG；实体层级=bare_chip；封装=62-FBGA(4.5x4.5 mm)",
+      "quality": "A",
+      "checked_on": "2026-08-26"
+    },
+    {
+      "id": "WBC-SRC-PRICE-DK-IW416HN-A1CK",
+      "source_group": "DigiKey｜NXP IW416HN/A1CK 采购价格",
+      "url": "https://www.digikey.com/en/products/detail/nxp-usa-inc/IW416HN-A1CK/18711382",
+      "source_domain": "www.digikey.com",
+      "source_channel": "authorized_distributor",
+      "source_role": "精确 SKU 价格/库存页面",
+      "seller_type": "DigiKey/授权分销页面",
+      "availability_signal": "available to order；非即时库存",
+      "storefront_type": "bare_chip",
+      "platform_reference": "568-IW416HN/A1CK-ND",
+      "campaign_status": "未公开",
+      "pledge_or_price": "USD 6.28441 @ 1740+",
+      "estimated_delivery": "未公开",
+      "scope": "NXP IW416HN/A1CK；实体层级=bare_chip；封装=68-HVQFN(8x8 mm)",
+      "quality": "A",
+      "checked_on": "2026-08-26"
+    },
+    {
+      "id": "WBC-SRC-PRICE-DK-DA16200-00000F22",
+      "source_group": "DigiKey｜Renesas DA16200-00000F22 采购价格",
+      "url": "https://www.digikey.com/en/products/detail/renesas-electronics-corporation/DA16200-00000F22/12153686",
+      "source_domain": "www.digikey.com",
+      "source_channel": "authorized_distributor",
+      "source_role": "精确 SKU 价格/库存页面",
+      "seller_type": "DigiKey/授权分销页面",
+      "availability_signal": "in stock；ships now（页面快照）",
+      "storefront_type": "bare_chip",
+      "platform_reference": "1695-DA16200-00000F22CT-ND / 1695-DA16200-00000F22TR-ND",
+      "campaign_status": "未公开",
+      "pledge_or_price": "USD 6.25 @ 1+",
+      "estimated_delivery": "未公开",
+      "scope": "Renesas DA16200-00000F22；实体层级=bare_chip；封装=CSP72",
+      "quality": "A",
+      "checked_on": "2026-08-26"
+    },
+    {
+      "id": "WBC-SRC-PRICE-LCSC-DA14585-00000AT2",
+      "source_group": "LCSC｜Renesas DA14585-00000AT2 采购价格",
+      "url": "https://www.lcsc.com/product-detail/RF-Transceiver-ICs_Dialog-Semiconductor-DA14585-00000AT2_C425084.html",
+      "source_domain": "www.lcsc.com",
+      "source_channel": "authorized_distributor",
+      "source_role": "精确 SKU 价格/库存页面",
+      "seller_type": "LCSC/授权分销页面",
+      "availability_signal": "out of stock；reference price only",
+      "storefront_type": "bare_chip",
+      "platform_reference": "C425084",
+      "campaign_status": "未公开",
+      "pledge_or_price": "USD 2.4717 @ 1+",
+      "estimated_delivery": "未公开",
+      "scope": "Renesas DA14585-00000AT2；实体层级=bare_chip；封装=QFN-40-EP(5x5 mm)",
+      "quality": "A",
+      "checked_on": "2026-08-26"
+    },
+    {
+      "id": "WBC-SRC-PRICE-LCSC-CH570Q",
+      "source_group": "LCSC｜WCH CH570Q 采购价格",
+      "url": "https://www.lcsc.com/product-detail/C49260680.html",
+      "source_domain": "www.lcsc.com",
+      "source_channel": "authorized_distributor",
+      "source_role": "精确 SKU 价格/库存页面",
+      "seller_type": "LCSC/授权分销页面",
+      "availability_signal": "in stock；ships now（页面快照）",
+      "storefront_type": "bare_chip",
+      "platform_reference": "C49260680",
+      "campaign_status": "未公开",
+      "pledge_or_price": "USD 0.2913 @ 5+",
+      "estimated_delivery": "未公开",
+      "scope": "WCH CH570Q；实体层级=bare_chip；封装=DFN-10(3x3 mm)",
+      "quality": "A",
+      "checked_on": "2026-08-26"
+    },
+    {
+      "id": "WBC-SRC-PRICE-LCSC-CH572Q",
+      "source_group": "LCSC｜WCH CH572Q 采购价格",
+      "url": "https://www.lcsc.com/product-detail/microcontrollers-mcu-mpu-soc_wch-jiangsu-qin-heng-ch572q_C46772607.html",
+      "source_domain": "www.lcsc.com",
+      "source_channel": "authorized_distributor",
+      "source_role": "精确 SKU 价格/库存页面",
+      "seller_type": "LCSC/授权分销页面",
+      "availability_signal": "in stock；ships now（页面快照）",
+      "storefront_type": "bare_chip",
+      "platform_reference": "C46772607",
+      "campaign_status": "未公开",
+      "pledge_or_price": "USD 0.2964 @ 5+",
+      "estimated_delivery": "未公开",
+      "scope": "WCH CH572Q；实体层级=bare_chip；封装=DFN-10(3x3 mm)",
+      "quality": "A",
+      "checked_on": "2026-08-26"
+    },
+    {
+      "id": "WBC-SRC-PRICE-LCSC-CH585D",
+      "source_group": "LCSC｜WCH CH585D 采购价格",
+      "url": "https://www.lcsc.com/product-detail/C48888259.html",
+      "source_domain": "www.lcsc.com",
+      "source_channel": "authorized_distributor",
+      "source_role": "精确 SKU 价格/库存页面",
+      "seller_type": "LCSC/授权分销页面",
+      "availability_signal": "in stock；ships now（页面快照）",
+      "storefront_type": "bare_chip",
+      "platform_reference": "C48888259",
+      "campaign_status": "未公开",
+      "pledge_or_price": "USD 1.303 @ 1+",
+      "estimated_delivery": "未公开",
+      "scope": "WCH CH585D；实体层级=bare_chip；封装=QFN-20(3x3 mm)",
+      "quality": "A",
+      "checked_on": "2026-08-26"
+    },
+    {
+      "id": "WBC-SRC-PRICE-DK-BLUENRG-345MT",
+      "source_group": "DigiKey｜STMicroelectronics BLUENRG-345MT 采购价格",
+      "url": "https://www.digikey.com/en/products/detail/stmicroelectronics/BLUENRG-345MT/13592610",
+      "source_domain": "www.digikey.com",
+      "source_channel": "authorized_distributor",
+      "source_role": "精确 SKU 价格/库存页面",
+      "seller_type": "DigiKey/授权分销页面",
+      "availability_signal": "in stock；ships now（页面快照）",
+      "storefront_type": "bare_chip",
+      "platform_reference": "497-BLUENRG-345MTTR-ND / 497-BLUENRG-345MTCT-ND",
+      "campaign_status": "未公开",
+      "pledge_or_price": "USD 4.41 @ 1+",
+      "estimated_delivery": "未公开",
+      "scope": "STMicroelectronics BLUENRG-345MT；实体层级=bare_chip；封装=未公开",
+      "quality": "A",
+      "checked_on": "2026-08-26"
+    },
+    {
+      "id": "WBC-SRC-PRICE-DK-IRIS-W106-40B",
+      "source_group": "DigiKey｜NXP IRIS-W106-40B 采购价格",
+      "url": "https://www.digikey.com/en/products/detail/u-blox/IRIS-W106-40B/29776371",
+      "source_domain": "www.digikey.com",
+      "source_channel": "authorized_distributor",
+      "source_role": "精确 SKU 价格/库存页面",
+      "seller_type": "DigiKey/授权分销页面",
+      "availability_signal": "out of stock；price visible",
+      "storefront_type": "module",
+      "platform_reference": "672-IRIS-W106-40BTR-ND / 672-IRIS-W106-40BCT-ND",
+      "campaign_status": "未公开",
+      "pledge_or_price": "USD 16.71 @ 1+",
+      "estimated_delivery": "未公开",
+      "scope": "NXP IRIS-W106-40B；实体层级=module；封装=152-SMD module",
+      "quality": "A",
+      "checked_on": "2026-08-26"
     }
   ],
   "source_channel_policy": [
@@ -22563,7 +23604,7 @@
   "source_channel_counts": {
     "official_product": 70,
     "official_datasheet": 24,
-    "authorized_distributor": 98,
+    "authorized_distributor": 113,
     "official_news": 4,
     "marketplace_discovery": 2
   },
@@ -22626,9 +23667,15 @@
   "update_log": [
     {
       "date": "2026-08-26",
-      "change": "建立第 25 套独立数据库的采购价格层：179 条芯片/SoC/无线 MCU/连接协处理器记录，覆盖 27 个厂商/品牌；新增 107 条精确 SKU/平台价格报价快照（15 个采购平台/销售渠道），另保留 20 条候选与资料缺口线索。",
+      "change": "建立第 25 套独立数据库的采购价格层：179 条芯片/SoC/无线 MCU/连接协处理器记录，覆盖 27 个厂商/品牌；新增 123 条精确 SKU/平台价格报价快照（15 个采购平台/销售渠道），另保留 20 条候选与资料缺口线索。",
       "verification": "首轮使用原厂产品页、官方选型表、数据手册/产品简报、发布公告和 DigiKey、Mouser、LCSC 等授权分销页面；A/B 证据进入主表或价格层，缺货价、模块价和询价分别标注。",
       "next": "按厂商逐分料号扩展 Realtek、Airoha、BES、Jieli、Actions、ASR、HiSilicon、XRadio、PHYPLUS，以及每家厂商的完整后缀、生命周期、DigiKey/Mouser/LCSC/element14/Arrow/Avnet/TME 价格与认证记录。"
+    },
+    {
+      "date": "2026-08-26",
+      "change": "价格维度第二轮扩展：新增 16 条精确 MPN 报价快照，补覆盖 ESP32、Nordic nRF52/nRF7002、TI CC2541、Silicon Labs EFR32BG21、Infineon CYW20819、NXP IW416、Renesas DA16xxx/DA14585、WCH CH57x/CH58x、ST BlueNRG-LP 等厂商与分料号；模块报价继续单列。",
+      "verification": "本轮回到 LCSC、DigiKey 等页面核对精确制造商料号、分销 SKU、币种、单件/批量阶梯、MOQ、标准包装、库存或缺货状态；价格快照按查证日保存，税费、运费、汇率、登录态和地区差异不做统一猜测。",
+      "next": "继续按价格缺口扩展 Qualcomm、MediaTek、Realtek、Airoha、BES、Jieli、Actions、ASR、HiSilicon、XRadio、PHYPLUS、WinnerMicro、Bouffalo 与小型 BLE 厂商，并为同一 MPN 增加 Mouser、Farnell/element14、RS、TME、Arrow、Avnet 和地区页面交叉报价。"
     }
   ]
 }
