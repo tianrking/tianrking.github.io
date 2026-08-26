@@ -1,10 +1,10 @@
 {
-  "checked_on": "2026-08-25",
-  "scope_note": "本库覆盖家用机器人：扫地、洗地、擦窗、割草与泳池机器人。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
+  "checked_on": "2026-08-26",
+  "scope_note": "本库覆盖家用机器人：扫地、洗地、擦窗、割草、泳池与宠物陪伴机器人；宠物项圈/吊牌另库。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
       "类别边界",
-      "扫地、洗地、擦窗、割草与泳池机器人。"
+      "扫地、洗地、擦窗、割草、泳池与宠物陪伴机器人；宠物项圈/吊牌另库。"
     ],
     [
       "跨库去重",
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-08-25"
+      "2026-08-26"
     ]
   ],
   "products": [
@@ -430,6 +430,190 @@
       "satellite": "未公开",
       "connectivity": "未公开",
       "storage": "未公开"
+    },
+    {
+      "id": "ROBOT-009",
+      "brand": "iRobot",
+      "model": "Roomba Plus 415 Combo + AutoWash dock",
+      "country_region": "美国/部分市场",
+      "category": "home-robots",
+      "form_factor": "扫地/洗地机器人",
+      "use_case": "家庭地面吸尘、拖地和自动洗/烘拖布",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "2026-08-24官方活动；首售日期未公开",
+      "launch_date_type": "官方活动/官方销售页",
+      "price": "US$499.99",
+      "official_url": "https://www.irobot.com/en_US/roomba-plus-415-combo-robot-plus-autowash-dock/G285020.html",
+      "spec_url": "https://www.irobot.com/en_US/livestream.html",
+      "features": [
+        "吸尘/拖地",
+        "AutoWash基站自动洗/烘",
+        "LiDAR地图/导航"
+      ],
+      "sensors": [
+        "LiDAR",
+        "其他避障/悬崖传感器未公开"
+      ],
+      "gps_positioning": "无GPS；LiDAR室内定位",
+      "supported_protocols": "Wi-Fi/App（版本未公开）",
+      "chip_or_soc": "未公开",
+      "dimensions": "机器人11.73×11.93×3.29英寸",
+      "weight_g": "6.44lb",
+      "battery": "5200mAh",
+      "charging": "AutoWash基站自动回充；自动洗/烘",
+      "water_resistance": "未公开",
+      "subscription": "无强制订阅；App/云服务条款未公开",
+      "privacy": "未公开",
+      "availability_note": "iRobot美国官方产品页显示在售/可购买",
+      "source_note": "iRobot官方产品页和官方活动页；未披露字段不推断",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "ROBOT-010",
+      "brand": "iRobot",
+      "model": "Roomba Plus 515 Combo + AutoWash dock",
+      "country_region": "美国/部分市场",
+      "category": "home-robots",
+      "form_factor": "扫地/洗地机器人",
+      "use_case": "家庭地面吸尘、拖地和自动洗/烘拖布",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "2026-08-24官方活动；首售日期未公开",
+      "launch_date_type": "官方活动/官方销售页",
+      "price": "US$599.99",
+      "official_url": "https://www.irobot.com/en_US/roomba-plus-515-combo-robot-plus-autowash-dock/N285020.html",
+      "spec_url": "https://www.irobot.com/en_US/livestream.html",
+      "features": [
+        "吸尘/拖地",
+        "ClearView LiDAR",
+        "3倍吸力",
+        "最长约295分钟/约2000平方英尺",
+        "AutoWash基站",
+        "机身更薄约46%"
+      ],
+      "sensors": [
+        "ClearView LiDAR",
+        "其他避障/悬崖传感器未公开"
+      ],
+      "gps_positioning": "无GPS；LiDAR室内定位",
+      "supported_protocols": "Wi-Fi/App（版本未公开）",
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "AutoWash基站自动回充；自动洗/烘",
+      "water_resistance": "未公开",
+      "subscription": "无强制订阅；App/云服务条款未公开",
+      "privacy": "未公开",
+      "availability_note": "iRobot美国官方产品页显示在售/可购买",
+      "source_note": "iRobot官方产品页和官方活动页；未披露字段不推断",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "ROBOT-011",
+      "brand": "iRobot",
+      "model": "Roomba Plus 575 Combo + AutoWash dock",
+      "country_region": "美国/部分市场",
+      "category": "home-robots",
+      "form_factor": "AI扫地/洗地机器人",
+      "use_case": "家庭地面吸尘、拖地、自动集尘和洗/烘拖布",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "2026-08-24官方活动；首售日期未公开",
+      "launch_date_type": "官方活动/官方销售页",
+      "price": "US$699.99",
+      "official_url": "https://www.irobot.com/en_US/roomba-plus-575-combo/R285020.html",
+      "spec_url": "https://www.irobot.com/en_US/livestream.html",
+      "features": [
+        "AI功能",
+        "ClearView Pro LiDAR",
+        "PrecisionVision AI",
+        "3.5倍吸力",
+        "跨越35mm门槛",
+        "自动集尘/洗/烘"
+      ],
+      "sensors": [
+        "ClearView Pro LiDAR",
+        "PrecisionVision AI视觉",
+        "其他传感器未公开"
+      ],
+      "gps_positioning": "无GPS；LiDAR/视觉室内定位",
+      "supported_protocols": "Wi-Fi/App（版本未公开）",
+      "chip_or_soc": "未公开",
+      "dimensions": "机器人14.1×13.8×4.2英寸",
+      "weight_g": "9.44lb",
+      "battery": "锂离子电池；容量和续航未公开",
+      "charging": "AutoWash基站自动回充；自动集尘/洗/烘",
+      "water_resistance": "未公开",
+      "subscription": "无强制订阅；App/云服务条款未公开",
+      "privacy": "视觉/云数据处理细节未公开",
+      "availability_note": "iRobot美国官方产品页显示在售/可购买",
+      "source_note": "iRobot官方产品页和官方活动页；未披露字段不推断",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "ROBOT-012",
+      "brand": "Onlypet",
+      "model": "Buddy Pet Companion Robot (YL-PC5)",
+      "country_region": "美国/全球部分市场",
+      "category": "home-robots",
+      "form_factor": "移动摄像/宠物互动机器人",
+      "use_case": "宠物远程看护、互动、远程巡航和语音",
+      "status": "在售",
+      "evidence": "A",
+      "launch_date": "首发日期未公开",
+      "launch_date_type": "官方产品页",
+      "price": "US$199",
+      "official_url": "https://theonlypet.com/products/onlypet-pet-robot",
+      "spec_url": "https://theonlypet.com/products/onlypet-pet-robot",
+      "features": [
+        "2K实时视频",
+        "远程巡航",
+        "双向语音",
+        "手动/定时激光互动",
+        "AI宠物跟随",
+        "夜视",
+        "自动回充",
+        "TOF避障"
+      ],
+      "sensors": [
+        "2K摄像头",
+        "TOF避障传感器"
+      ],
+      "gps_positioning": "无GPS；室内移动定位",
+      "supported_protocols": "2.4/5GHz Wi-Fi；TF卡/云存储；iOS/Android App",
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "5100mAh；典型约6小时",
+      "charging": "DC 5V/2A；约4小时；自动回充",
+      "water_resistance": "保持干燥；防水等级未公开",
+      "subscription": "含3天云存储；更长保留期可选，条款依地区",
+      "privacy": "本地TF卡/云存储可选；完整隐私和数据保留细节未公开",
+      "availability_note": "Onlypet官方产品页显示US$199、库存和ready to ship",
+      "source_note": "Onlypet官方产品页和官方主页；未披露字段不推断",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
     }
   ],
   "candidates": [
@@ -536,6 +720,41 @@
       "scope": "X8 PRO OMNI候选状态和产品信息",
       "checked_on": "2026-08-25",
       "quality": "A"
+    },
+    {
+      "source_group": "iRobot 2026官方活动页",
+      "url": "https://www.irobot.com/en_US/livestream.html",
+      "scope": "Roomba Plus 415/515/575官方活动、产品线和价格入口",
+      "quality": "A",
+      "checked_on": "2026-08-26"
+    },
+    {
+      "source_group": "iRobot Roomba Plus 415官方产品页",
+      "url": "https://www.irobot.com/en_US/roomba-plus-415-combo-robot-plus-autowash-dock/G285020.html",
+      "scope": "415价格、库存、LiDAR、5200mAh、尺寸和重量",
+      "quality": "A",
+      "checked_on": "2026-08-26"
+    },
+    {
+      "source_group": "iRobot Roomba Plus 515官方产品页",
+      "url": "https://www.irobot.com/en_US/roomba-plus-515-combo-robot-plus-autowash-dock/N285020.html",
+      "scope": "515价格、库存、LiDAR、吸力、续航/面积和基站功能",
+      "quality": "A",
+      "checked_on": "2026-08-26"
+    },
+    {
+      "source_group": "iRobot Roomba Plus 575官方产品页",
+      "url": "https://www.irobot.com/en_US/roomba-plus-575-combo/R285020.html",
+      "scope": "575价格、库存、AI/LiDAR/视觉、越障、尺寸和重量",
+      "quality": "A",
+      "checked_on": "2026-08-26"
+    },
+    {
+      "source_group": "Onlypet Buddy官方产品页",
+      "url": "https://theonlypet.com/products/onlypet-pet-robot",
+      "scope": "Buddy/YL-PC5价格、库存、2K摄像、Wi-Fi、TOF、云存储、电池和充电",
+      "quality": "A",
+      "checked_on": "2026-08-26"
     }
   ],
   "update_log": [
@@ -544,6 +763,12 @@
       "change": "首版新增8条家用机器人主表记录，覆盖多个国家/地区品牌；另保留1条候选、历史、边界或地区线索。",
       "verification": "优先使用官方产品、规格、支持、发布和销售页面；A/B证据分级，来源未披露字段均写“未公开”。跨库重复型号已转为候选关系，不纳入本库主表。",
       "next": "继续补充更多国家/地区品牌，逐条复核当前库存、首发日期、原始价格、芯片、传感器、续航、防护和服务条款。"
+    },
+    {
+      "change": "新增4条官方确认的家用机器人主表记录：iRobot Roomba Plus 415、515、575，以及Onlypet Buddy宠物陪伴机器人。",
+      "verification": "采用iRobot官方活动/产品销售页和Onlypet官方产品页；按独立型号计数，产品页未披露的芯片、尺寸、重量、防护、订阅和隐私字段写“未公开”。",
+      "next": "继续补充不同国家的扫地、擦窗、割草、泳池和宠物陪伴机器人；复核地区库存、服务订阅、摄像/云数据和电池信息。",
+      "date": "2026-08-26"
     }
   ]
 }

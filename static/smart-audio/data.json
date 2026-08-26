@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-25",
+  "checked_on": "2026-08-26",
   "scope_note": "首版优先覆盖全球主要品牌的TWS、主动降噪、AI/录音/翻译耳机与骨传导/开放式运动耳机。按独立型号/代际计数；颜色、充电盒套装和区域SKU不拆行。翻译能力、AI功能与硬件音频能力分开记录；来源没有披露的芯片、传感器、尺寸、重量、防水、续航和订阅字段写“未公开”。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-08-25"
+      "2026-08-26"
     ]
   ],
   "products": [
@@ -919,6 +919,42 @@
       "availability_note": "官方产品页在售；关键电池/充电规格未公开",
       "source_note": "Naenka官方产品页",
       "connectivity": "未公开"
+    },
+    {
+      "id": "AUDIO-026",
+      "brand": "Sennheiser",
+      "model": "MOMENTUM True Wireless 5",
+      "country_region": "德国/美国/全球部分市场",
+      "category": "TWS/AI主动降噪耳机",
+      "form_factor": "入耳式TWS",
+      "use_case": "音乐、通话、降噪、空间音频、AI语音增强",
+      "status": "预售/2026-09-03起发货",
+      "evidence": "A",
+      "launch_date": "2026-08-20",
+      "launch_date_type": "官方新闻稿",
+      "price": "US$299.95（美国官方预售）；£249.99（英国官方预售）",
+      "official_url": "https://us.sennheiser-hearing.com/collections/in-ear-headphones/products/momentum-true-wireless-5",
+      "spec_url": "https://newsroom.sennheiser.com/introducing-sennheiser-momentum-true-wireless-5-the-flagship-momentum-experience-in-your-pocket-3bq5c0",
+      "display": "无屏幕；充电盒",
+      "os_platform": "Sennheiser Smart Control",
+      "audio_drivers": "7mm动态换能器；6麦克风+2骨传导语音加速度计",
+      "sensors": "6个麦克风；2个骨传导语音加速度计；其他佩戴/触控传感器未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "Bluetooth 6.0；aptX Lossless；Dolby Atmos/头部追踪功能",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "67.2×48.4×25.0mm（充电盒含耳机）",
+      "weight_g": "7g/只；55g充电盒；62g合计",
+      "battery": "每只72mAh；ANC关闭约12h/开启约6h；充电盒总续航约40h；盒760mAh",
+      "charging": "USB-C；Qi无线充电；充电8分钟约1h",
+      "water_resistance": "IP54",
+      "subscription": "无硬件强制订阅；AI/云服务条款未公开",
+      "privacy": "录音和AI语音处理细节未公开",
+      "features": "可更换耳机/充电盒电池、ANC、AI语音增强、Dolby Atmos、头部追踪、aptX Lossless",
+      "availability_note": "美国官方页显示预售；官方页/新闻稿显示2026-09-03起发货；地区价格不同",
+      "source_note": "Sennheiser美国/英国官方销售页和官方Newsroom；未披露字段不推断",
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -998,6 +1034,27 @@
       "scope": "骨传导、游泳、户外运动耳机",
       "checked_on": "2026-08-25",
       "quality": "A"
+    },
+    {
+      "source_group": "Sennheiser MOMENTUM True Wireless 5官方产品页",
+      "url": "https://us.sennheiser-hearing.com/collections/in-ear-headphones/products/momentum-true-wireless-5",
+      "scope": "美国预售价格、发货日期、尺寸、重量、电池、IP54、充电和功能",
+      "quality": "A",
+      "checked_on": "2026-08-26"
+    },
+    {
+      "source_group": "Sennheiser MOMENTUM True Wireless 5官方Newsroom",
+      "url": "https://newsroom.sennheiser.com/introducing-sennheiser-momentum-true-wireless-5-the-flagship-momentum-experience-in-your-pocket-3bq5c0",
+      "scope": "发布日期、可更换电池、AI语音、Dolby Atmos、Bluetooth 6.0和传感器描述",
+      "quality": "A",
+      "checked_on": "2026-08-26"
+    },
+    {
+      "source_group": "Sennheiser英国官方产品页",
+      "url": "https://uk.sennheiser-hearing.com/products/momentum-true-wireless-5",
+      "scope": "英国官方预售价格和区域可得性",
+      "quality": "A",
+      "checked_on": "2026-08-26"
     }
   ],
   "update_log": [
@@ -1006,6 +1063,12 @@
       "change": "新增25条TWS、ANC、AI/翻译与骨传导/开放式耳机主表记录，覆盖主流音频品牌和翻译专用设备。",
       "verification": "优先使用官方产品、规格、支持、发布和销售页；A/B按库存、日期和字段完整度区分，未披露字段未推断。",
       "next": "继续补充Bose/Sony/Samsung/Xiaomi区域SKU、AI耳机隐私/订阅、翻译服务离线包、开放式运动耳机和历史型号。"
+    },
+    {
+      "change": "新增1条官方确认的TWS/AI主动降噪耳机主表记录：Sennheiser MOMENTUM True Wireless 5。",
+      "verification": "采用Sennheiser官方Newsroom、美国/英国官方销售页；预售与2026-09-03发货状态分开记录，电池、传感器、IP54和连接规格按官方披露填写，未披露字段写“未公开”。",
+      "next": "继续补充AI耳机、翻译耳机、骨传导和各区域SKU；重点核验录音/AI数据处理、订阅和真实库存。",
+      "date": "2026-08-26"
     }
   ]
 }
