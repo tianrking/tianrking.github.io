@@ -364,84 +364,204 @@
       "url": "https://support.apple.com/en-us/126203",
       "scope": "AirTag 2规格、UWB、IP67、电池和尺寸",
       "checked_on": "2026-08-25",
-      "quality": "A"
+      "quality": "A",
+      "source_domain": "support.apple.com",
+      "source_channel": "official_support_manual",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/规格/支持资料",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     },
     {
       "source_group": "smart-trackers官方来源2",
       "url": "https://www.apple.com/shop/buy-airtag/airtag",
       "scope": "AirTag当前价格和销售状态",
       "checked_on": "2026-08-25",
-      "quality": "A"
+      "quality": "A",
+      "source_domain": "apple.com",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "销售/库存/预售页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     },
     {
       "source_group": "smart-trackers官方来源3",
       "url": "https://www.samsung.com/us/mobile-accessories/galaxy-smarttag2-black-ei-t5600bbegus/",
       "scope": "SmartTag2价格、规格和兼容性",
       "checked_on": "2026-08-25",
-      "quality": "A"
+      "quality": "A",
+      "source_domain": "samsung.com",
+      "source_channel": "official_product",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/功能页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     },
     {
       "source_group": "smart-trackers官方来源4",
       "url": "https://chipolo.net/en/products/chipolo-one-spot",
       "scope": "Chipolo ONE Spot官方销售、Find My和规格",
       "checked_on": "2026-08-25",
-      "quality": "A"
+      "quality": "A",
+      "source_domain": "chipolo.net",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "销售/库存/预售页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     },
     {
       "source_group": "smart-trackers官方来源5",
       "url": "https://www.garmin.com/en-CA/p/765374/pn/010-02602-00/",
       "scope": "inReach Mini 2当前价格、规格和销售",
       "checked_on": "2026-08-25",
-      "quality": "A"
+      "quality": "A",
+      "source_domain": "garmin.com",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "销售/库存/预售页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     },
     {
       "source_group": "smart-trackers官方来源6",
       "url": "https://www.garmin.com/en-US/newsroom/press-release/outdoor/new-garmin-inreach-mini-2-delivers-up-to-30-days-of-global-satellite-communication-emergency-services-and-enhanced-location-tracking/",
       "scope": "inReach Mini 2发布日期、定位卫星和订阅",
       "checked_on": "2026-08-25",
-      "quality": "A"
+      "quality": "A",
+      "source_domain": "garmin.com",
+      "source_channel": "official_release",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "发布/公告",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     },
     {
       "source_group": "smart-trackers官方来源7",
       "url": "https://www.angelsense.com/safety-independence-product/",
       "scope": "AngelSense GPS4功能、价格和4G SIM",
       "checked_on": "2026-08-25",
-      "quality": "A"
+      "quality": "A",
+      "source_domain": "angelsense.com",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "销售/库存/预售页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     },
     {
       "source_group": "smart-trackers官方来源8",
       "url": "https://landairsea.com/products/landairsea-54",
       "scope": "LandAirSea 54产品、价格、订阅和功能",
       "checked_on": "2026-08-25",
-      "quality": "A"
+      "quality": "A",
+      "source_domain": "landairsea.com",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "销售/库存/预售页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     },
     {
       "source_group": "smart-trackers官方来源9",
       "url": "https://landairsea.com/wp-content/uploads/2023/10/54_SpecSheet.pdf",
       "scope": "LandAirSea 54技术规格",
       "checked_on": "2026-08-25",
-      "quality": "A"
+      "quality": "A",
+      "source_domain": "landairsea.com",
+      "source_channel": "official_support_manual",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/规格/支持资料",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     },
     {
       "source_group": "smart-trackers官方来源10",
       "url": "https://tractive.com/en/pd/gps-tracker-dog?edition=black",
       "scope": "Tractive DOG 6价格、GPS、LTE、IP68和电池",
       "checked_on": "2026-08-25",
-      "quality": "A"
+      "quality": "A",
+      "source_domain": "tractive.com",
+      "source_channel": "official_product",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/功能页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     },
     {
       "source_group": "smart-trackers官方来源11",
       "url": "https://legal.tile.com/assets/compliance/pdf/NPI2024/UK/UKPSTI_T1801A.pdf",
       "scope": "Tile Mate官方合规文件和型号确认",
       "checked_on": "2026-08-25",
-      "quality": "A"
+      "quality": "A",
+      "source_domain": "legal.tile.com",
+      "source_channel": "official_product",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/功能页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     },
     {
       "source_group": "smart-trackers官方来源12",
       "url": "https://www.life360.com/jiobit",
       "scope": "Jiobit官方候选产品入口",
       "checked_on": "2026-08-25",
-      "quality": "A"
+      "quality": "A",
+      "source_domain": "life360.com",
+      "source_channel": "official_product",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/功能页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     }
   ],
   "update_log": [
@@ -456,6 +576,109 @@
       "verification": "本轮完成官方产品页、发布公告、规格/支持页、官方销售页及可用监管/认证线索的快速核验；没有可靠交付证据的线索不计入主表，未披露字段不推断。",
       "next": "继续核验个人安全设备的卫星、LTE-M/NB-IoT、SOS服务和订阅。",
       "date": "2026-08-26"
+    },
+    {
+      "date": "2026-08-26",
+      "change": "来源体系升级：新增官方销售、监管/认证、Kickstarter、Indiegogo、Amazon及主要区域电商等渠道维度，并为每条来源补充渠道、证据角色、域名、卖方/项目方、可得性信号和平台标识字段。",
+      "verification": "已对现有来源完成规则化标注；众筹与电商字段未披露处保留“未公开”，不以平台页面单独证明正式上市。",
+      "next": "每日继续按渠道矩阵补查新型号、区域页面、ASIN/SKU/项目ID、卖方身份、库存、众筹状态与实际交付证据。"
     }
+  ],
+  "source_channel_policy": [
+    {
+      "channel": "official_product",
+      "label": "品牌官网产品页",
+      "role": "primary_evidence",
+      "sites": "品牌产品页、技术页、产品线页",
+      "rule": "确认型号、功能和产品边界；不能仅凭集合页证明当前库存。"
+    },
+    {
+      "channel": "official_sales",
+      "label": "品牌官方商店/购买页",
+      "role": "primary_evidence",
+      "sites": "品牌官方商城、官方Buy页、官方区域商店",
+      "rule": "确认官方价格、区域库存、预售和交付信号；记录查证日期。"
+    },
+    {
+      "channel": "official_support_manual",
+      "label": "官方支持/手册/规格",
+      "role": "primary_evidence",
+      "sites": "品牌支持中心、用户手册、规格PDF、FAQ",
+      "rule": "补充芯片、传感器、尺寸、电池、协议、防水和服务条款；未披露写“未公开”。"
+    },
+    {
+      "channel": "official_release",
+      "label": "品牌官方发布/新闻室",
+      "role": "primary_evidence",
+      "sites": "品牌Newsroom、官方博客、发布公告",
+      "rule": "确认发布日、首发价、上市计划和功能；与销售/发货状态分开。"
+    },
+    {
+      "channel": "regulatory_certification",
+      "label": "监管/认证/标准数据库",
+      "role": "primary_evidence",
+      "sites": "FDA AccessData、FCC、Bluetooth SIG、CSA Matter、CE/UKCA、UL/TÜV、各国认证库",
+      "rule": "只对登记型号和明确用途作证据，不把认证登记自动当成全球在售。"
+    },
+    {
+      "channel": "crowdfunding",
+      "label": "众筹/项目预售平台",
+      "role": "discovery_or_preorder_signal",
+      "sites": "Kickstarter、Indiegogo、BackerKit、Crowd Supply",
+      "rule": "记录项目状态、目标/金额、档位、预计交付和风险；未有正式产品/交付证据时留候选。"
+    },
+    {
+      "channel": "marketplace",
+      "label": "大型电商平台",
+      "role": "market_signal",
+      "sites": "Amazon/Amazon Business、eBay、Walmart、Best Buy、Target、B&H、Newegg、AliExpress、Alibaba、京东、天猫/淘宝、Rakuten、Mercado Libre、Shopee、Lazada、Flipkart",
+      "rule": "记录区域、ASIN/SKU、卖方身份、库存、价格和抓取日期；严格区分官方旗舰店、授权经销商和第三方卖家。"
+    },
+    {
+      "channel": "distributor_retail",
+      "label": "授权经销/区域零售",
+      "role": "market_signal",
+      "sites": "授权经销商、运营商、区域零售商",
+      "rule": "用于补充区域价格、套餐和交付线索，不能替代品牌或监管证据。"
+    },
+    {
+      "channel": "press_release_distribution",
+      "label": "新闻稿分发平台",
+      "role": "secondary_or_distributed_evidence",
+      "sites": "PR Newswire、GlobeNewswire、Business Wire、PR TIMES、VPO/Room等",
+      "rule": "若稿件可追溯到厂商可作为发布辅助证据；否则标为分发/二手来源。"
+    },
+    {
+      "channel": "secondary_media",
+      "label": "专业媒体/评测/数据库",
+      "role": "discovery_or_cross_check",
+      "sites": "The Verge、TechCrunch、Wired、CNET、Tom’s Guide、Notebookcheck、DC Rainmaker、DPReview等",
+      "rule": "用于发现型号和交叉核验，不覆盖官方缺失字段，不单独证明全球上市。"
+    },
+    {
+      "channel": "community_discovery",
+      "label": "社区/社交/论坛线索",
+      "role": "discovery_only",
+      "sites": "Reddit、论坛、YouTube、社交平台和用户帖子",
+      "rule": "只进入候选/别名或待核验队列，不能直接进入A/B级主表。"
+    }
+  ],
+  "source_channel_counts": {
+    "official_product": 4,
+    "official_release": 1,
+    "official_sales": 5,
+    "official_support_manual": 2
+  },
+  "source_domains": [
+    "angelsense.com",
+    "apple.com",
+    "chipolo.net",
+    "garmin.com",
+    "landairsea.com",
+    "legal.tile.com",
+    "life360.com",
+    "samsung.com",
+    "support.apple.com",
+    "tractive.com"
   ]
 }

@@ -998,63 +998,153 @@
       "url": "https://www.apple.com/airpods-pro/specs/",
       "scope": "AirPods、Galaxy Buds、Pixel Buds官方产品/规格/发布",
       "checked_on": "2026-08-25",
-      "quality": "A"
+      "quality": "A",
+      "source_domain": "apple.com",
+      "source_channel": "official_support_manual",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/规格/支持资料",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     },
     {
       "source_group": "Sony/Bose/Sennheiser/Technics",
       "url": "https://www.sony.com/electronics/support/wireless-headphones-bluetooth-headphones/wf-1000xm5/specifications",
       "scope": "主流TWS、ANC、编解码、续航和防水",
       "checked_on": "2026-08-25",
-      "quality": "A"
+      "quality": "A",
+      "source_domain": "sony.com",
+      "source_channel": "official_support_manual",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/规格/支持资料",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     },
     {
       "source_group": "Huawei/Xiaomi/Nothing/JBL/OnePlus",
       "url": "https://www.mi.com/global/product/xiaomi-buds-5-pro/",
       "scope": "AI、录音、降噪和高保真耳机",
       "checked_on": "2026-08-25",
-      "quality": "A"
+      "quality": "A",
+      "source_domain": "mi.com",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "销售/库存/预售页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     },
     {
       "source_group": "soundcore",
       "url": "https://www.soundcore.com/collections/translation-earbuds",
       "scope": "AI助手、翻译、录音和开放式耳机",
       "checked_on": "2026-08-25",
-      "quality": "A"
+      "quality": "A",
+      "source_domain": "soundcore.com",
+      "source_channel": "official_product",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/功能页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     },
     {
       "source_group": "Timekettle/Vasco/Mymanu/Wooask",
       "url": "https://www.timekettle.co/products/w4-ai-interpreter-earbuds",
       "scope": "专用翻译耳机与服务/订阅",
       "checked_on": "2026-08-25",
-      "quality": "A"
+      "quality": "A",
+      "source_domain": "timekettle.co",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "销售/库存/预售页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     },
     {
       "source_group": "Shokz/Suunto/Naenka",
       "url": "https://shokz.com/products/openswimpro",
       "scope": "骨传导、游泳、户外运动耳机",
       "checked_on": "2026-08-25",
-      "quality": "A"
+      "quality": "A",
+      "source_domain": "shokz.com",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "销售/库存/预售页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     },
     {
       "source_group": "Sennheiser MOMENTUM True Wireless 5官方产品页",
       "url": "https://us.sennheiser-hearing.com/collections/in-ear-headphones/products/momentum-true-wireless-5",
       "scope": "美国预售价格、发货日期、尺寸、重量、电池、IP54、充电和功能",
       "quality": "A",
-      "checked_on": "2026-08-26"
+      "checked_on": "2026-08-26",
+      "source_domain": "us.sennheiser-hearing.com",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "销售/库存/预售页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     },
     {
       "source_group": "Sennheiser MOMENTUM True Wireless 5官方Newsroom",
       "url": "https://newsroom.sennheiser.com/introducing-sennheiser-momentum-true-wireless-5-the-flagship-momentum-experience-in-your-pocket-3bq5c0",
       "scope": "发布日期、可更换电池、AI语音、Dolby Atmos、Bluetooth 6.0和传感器描述",
       "quality": "A",
-      "checked_on": "2026-08-26"
+      "checked_on": "2026-08-26",
+      "source_domain": "newsroom.sennheiser.com",
+      "source_channel": "official_release",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "发布/公告",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     },
     {
       "source_group": "Sennheiser英国官方产品页",
       "url": "https://uk.sennheiser-hearing.com/products/momentum-true-wireless-5",
       "scope": "英国官方预售价格和区域可得性",
       "quality": "A",
-      "checked_on": "2026-08-26"
+      "checked_on": "2026-08-26",
+      "source_domain": "uk.sennheiser-hearing.com",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "销售/库存/预售页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     }
   ],
   "update_log": [
@@ -1069,6 +1159,108 @@
       "verification": "采用Sennheiser官方Newsroom、美国/英国官方销售页；预售与2026-09-03发货状态分开记录，电池、传感器、IP54和连接规格按官方披露填写，未披露字段写“未公开”。",
       "next": "继续补充AI耳机、翻译耳机、骨传导和各区域SKU；重点核验录音/AI数据处理、订阅和真实库存。",
       "date": "2026-08-26"
+    },
+    {
+      "date": "2026-08-26",
+      "change": "来源体系升级：新增官方销售、监管/认证、Kickstarter、Indiegogo、Amazon及主要区域电商等渠道维度，并为每条来源补充渠道、证据角色、域名、卖方/项目方、可得性信号和平台标识字段。",
+      "verification": "已对现有来源完成规则化标注；众筹与电商字段未披露处保留“未公开”，不以平台页面单独证明正式上市。",
+      "next": "每日继续按渠道矩阵补查新型号、区域页面、ASIN/SKU/项目ID、卖方身份、库存、众筹状态与实际交付证据。"
     }
+  ],
+  "source_channel_policy": [
+    {
+      "channel": "official_product",
+      "label": "品牌官网产品页",
+      "role": "primary_evidence",
+      "sites": "品牌产品页、技术页、产品线页",
+      "rule": "确认型号、功能和产品边界；不能仅凭集合页证明当前库存。"
+    },
+    {
+      "channel": "official_sales",
+      "label": "品牌官方商店/购买页",
+      "role": "primary_evidence",
+      "sites": "品牌官方商城、官方Buy页、官方区域商店",
+      "rule": "确认官方价格、区域库存、预售和交付信号；记录查证日期。"
+    },
+    {
+      "channel": "official_support_manual",
+      "label": "官方支持/手册/规格",
+      "role": "primary_evidence",
+      "sites": "品牌支持中心、用户手册、规格PDF、FAQ",
+      "rule": "补充芯片、传感器、尺寸、电池、协议、防水和服务条款；未披露写“未公开”。"
+    },
+    {
+      "channel": "official_release",
+      "label": "品牌官方发布/新闻室",
+      "role": "primary_evidence",
+      "sites": "品牌Newsroom、官方博客、发布公告",
+      "rule": "确认发布日、首发价、上市计划和功能；与销售/发货状态分开。"
+    },
+    {
+      "channel": "regulatory_certification",
+      "label": "监管/认证/标准数据库",
+      "role": "primary_evidence",
+      "sites": "FDA AccessData、FCC、Bluetooth SIG、CSA Matter、CE/UKCA、UL/TÜV、各国认证库",
+      "rule": "只对登记型号和明确用途作证据，不把认证登记自动当成全球在售。"
+    },
+    {
+      "channel": "crowdfunding",
+      "label": "众筹/项目预售平台",
+      "role": "discovery_or_preorder_signal",
+      "sites": "Kickstarter、Indiegogo、BackerKit、Crowd Supply",
+      "rule": "记录项目状态、目标/金额、档位、预计交付和风险；未有正式产品/交付证据时留候选。"
+    },
+    {
+      "channel": "marketplace",
+      "label": "大型电商平台",
+      "role": "market_signal",
+      "sites": "Amazon/Amazon Business、eBay、Walmart、Best Buy、Target、B&H、Newegg、AliExpress、Alibaba、京东、天猫/淘宝、Rakuten、Mercado Libre、Shopee、Lazada、Flipkart",
+      "rule": "记录区域、ASIN/SKU、卖方身份、库存、价格和抓取日期；严格区分官方旗舰店、授权经销商和第三方卖家。"
+    },
+    {
+      "channel": "distributor_retail",
+      "label": "授权经销/区域零售",
+      "role": "market_signal",
+      "sites": "授权经销商、运营商、区域零售商",
+      "rule": "用于补充区域价格、套餐和交付线索，不能替代品牌或监管证据。"
+    },
+    {
+      "channel": "press_release_distribution",
+      "label": "新闻稿分发平台",
+      "role": "secondary_or_distributed_evidence",
+      "sites": "PR Newswire、GlobeNewswire、Business Wire、PR TIMES、VPO/Room等",
+      "rule": "若稿件可追溯到厂商可作为发布辅助证据；否则标为分发/二手来源。"
+    },
+    {
+      "channel": "secondary_media",
+      "label": "专业媒体/评测/数据库",
+      "role": "discovery_or_cross_check",
+      "sites": "The Verge、TechCrunch、Wired、CNET、Tom’s Guide、Notebookcheck、DC Rainmaker、DPReview等",
+      "rule": "用于发现型号和交叉核验，不覆盖官方缺失字段，不单独证明全球上市。"
+    },
+    {
+      "channel": "community_discovery",
+      "label": "社区/社交/论坛线索",
+      "role": "discovery_only",
+      "sites": "Reddit、论坛、YouTube、社交平台和用户帖子",
+      "rule": "只进入候选/别名或待核验队列，不能直接进入A/B级主表。"
+    }
+  ],
+  "source_channel_counts": {
+    "official_product": 1,
+    "official_release": 1,
+    "official_sales": 5,
+    "official_support_manual": 2
+  },
+  "source_domains": [
+    "apple.com",
+    "mi.com",
+    "newsroom.sennheiser.com",
+    "shokz.com",
+    "sony.com",
+    "soundcore.com",
+    "timekettle.co",
+    "uk.sennheiser-hearing.com",
+    "us.sennheiser-hearing.com"
   ]
 }
