@@ -268,6 +268,17 @@ const DATABASES = [
     data: '/smart-wearables/data.json',
     accent: '#8a6b58',
   },
+  {
+    id: 'wifiBluetoothChips',
+    mark: 'CHIP',
+    eyebrow: 'WI-FI / BLUETOOTH SILICON',
+    title: 'Wi‑Fi／Bluetooth 芯片选型库',
+    description: 'Wi‑Fi、Bluetooth Classic／BR/EDR、BLE、Combo、tri-radio 与无线 MCU 芯片。',
+    focus: '按无线分类、协议版本、内存、外设、封装、功耗、价格类型、生命周期和证据检索。',
+    path: '/wifi-bluetooth-chips/',
+    data: '/wifi-bluetooth-chips/data.json',
+    accent: '#4f7894',
+  },
 ];
 
 function DatabaseCard({database, stats}) {
@@ -363,7 +374,7 @@ export default function DatabasesPage() {
                   <strong>{loaded ? totalProducts : '—'}</strong>
                   <span>已收錄型號</span>
                 </div>
-                <p>二十四組資料各自更新，數字會跟著最新 JSON 自動變化。</p>
+                <p>二十五組資料各自更新，數字會跟著最新 JSON 自動變化。</p>
               </aside>
             </div>
           </div>
