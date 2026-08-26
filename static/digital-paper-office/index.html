@@ -8,9 +8,13 @@ body{min-width:0}
 .wrap,.hero,.panel,.two,.two-col,.cards,.detail,.controls,.table-wrap{min-width:0;max-width:100%;box-sizing:border-box}
 .two>.panel,.two-col>.panel{min-width:0;overflow:hidden}
 .table-wrap{width:100%;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-gutter:stable}
-.controls{min-width:0}
+.controls{min-width:0;align-items:center}
 .controls input,.controls select{max-width:100%}
 .table-wrap:focus-within{outline:2px solid #80b9d6;outline-offset:2px}
+.catalog-clear-filters{border:1px solid #9bb9cf;background:#f8fbfd;color:#1f526f;border-radius:8px;padding:8px 12px;min-height:36px;cursor:pointer;white-space:nowrap;font:inherit;font-size:13px}
+.catalog-clear-filters:hover{background:#e9f4fb;border-color:#5d9ac0}
+.catalog-clear-filters:focus-visible{outline:2px solid #2b78a6;outline-offset:2px}
+.catalog-filter-state{color:#64748b;font-size:12px;line-height:1.4;white-space:nowrap}
 .catalog-detail-row>td{padding:0!important;border:0!important;background:transparent!important}
 .catalog-detail-row .detail{margin-top:10px}
 .catalog-detail-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
@@ -26,6 +30,8 @@ body{min-width:0}
   .controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .controls input{grid-column:1/-1;min-width:0;width:100%;flex:initial}
   .controls select{min-width:0;width:100%;font-size:13px}
+  .catalog-clear-filters,.catalog-filter-state{grid-column:1/-1;width:100%}
+  .catalog-filter-state{white-space:normal}
   .detail-grid{grid-template-columns:1fr}
   .detail{padding:12px}
   .catalog-detail-top{position:sticky;top:0;background:#f8fafc;padding-bottom:8px;z-index:2}
@@ -114,6 +120,52 @@ body{min-width:0}
     __detail.classList.remove('show');
     window.scrollTo(x,y);
   }
+  function __filterFields(root){
+    return Array.from(root.querySelectorAll('input,select,textarea'));
+  }
+  function __updateFilterStates(){
+    document.querySelectorAll('.controls').forEach(function(root){
+      const state=root.querySelector('.catalog-filter-state');
+      if(!state) return;
+      const count=__filterFields(root).filter(function(field){return String(field.value||'').trim()!=='';}).length;
+      state.textContent=count ? '已启用 '+count+' 项筛选' : '当前未筛选 · 显示全部';
+    });
+  }
+  function __installClearButtons(){
+    document.querySelectorAll('.controls').forEach(function(root){
+      const fields=__filterFields(root);
+      if(!fields.length) return;
+      let button=root.querySelector('.catalog-clear-filters');
+      if(!button){
+        button=document.createElement('button');
+        button.type='button';
+        button.className='catalog-clear-filters';
+        button.textContent='显示全部';
+        button.setAttribute('aria-label','清除本组筛选并显示全部数据');
+        button.title='清除本组筛选并显示全部数据';
+        root.appendChild(button);
+        button.addEventListener('click',function(event){
+          event.preventDefault();
+          const x=window.scrollX;
+          const y=window.scrollY;
+          fields.forEach(function(field){field.value='';});
+          render();
+          window.scrollTo(x,y);
+        });
+      }
+      let state=root.querySelector('.catalog-filter-state');
+      if(!state){
+        state=document.createElement('span');
+        state.className='catalog-filter-state';
+        state.setAttribute('aria-live','polite');
+        root.appendChild(state);
+      }
+    });
+    __updateFilterStates();
+  }
+  function __resetFilterDefaults(){
+    document.querySelectorAll('.controls input,.controls select,.controls textarea').forEach(function(field){field.value='';});
+  }
   showDetail=function(id){
     const x=window.scrollX;
     const y=window.scrollY;
@@ -150,6 +202,7 @@ body{min-width:0}
         __detail.classList.remove('show');
       }
     }
+    __updateFilterStates();
     window.scrollTo(x,y);
   };
   __detail.addEventListener('click',function(event){
@@ -190,6 +243,8 @@ body{min-width:0}
       },true);
     }
   }
+  __resetFilterDefaults();
+  __installClearButtons();
   __bindRows();
 })();
 

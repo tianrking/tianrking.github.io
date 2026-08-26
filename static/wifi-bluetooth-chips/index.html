@@ -10,9 +10,13 @@ body{min-width:0}
 .wrap,.hero,.panel,.two,.two-col,.cards,.detail,.controls,.table-wrap{min-width:0;max-width:100%;box-sizing:border-box}
 .two>.panel,.two-col>.panel{min-width:0;overflow:hidden}
 .table-wrap{width:100%;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-gutter:stable}
-.controls{min-width:0}
+.controls{min-width:0;align-items:center}
 .controls input,.controls select{max-width:100%}
 .table-wrap:focus-within{outline:2px solid #80b9d6;outline-offset:2px}
+.catalog-clear-filters{border:1px solid #9bb9cf;background:#f8fbfd;color:#1f526f;border-radius:8px;padding:8px 12px;min-height:36px;cursor:pointer;white-space:nowrap;font:inherit;font-size:13px}
+.catalog-clear-filters:hover{background:#e9f4fb;border-color:#5d9ac0}
+.catalog-clear-filters:focus-visible{outline:2px solid #2b78a6;outline-offset:2px}
+.catalog-filter-state{color:#64748b;font-size:12px;line-height:1.4;white-space:nowrap}
 .catalog-detail-row>td{padding:0!important;border:0!important;background:transparent!important}
 .catalog-detail-row .detail{margin-top:10px}
 .catalog-detail-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
@@ -28,6 +32,8 @@ body{min-width:0}
   .controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .controls input{grid-column:1/-1;min-width:0;width:100%;flex:initial}
   .controls select{min-width:0;width:100%;font-size:13px}
+  .catalog-clear-filters,.catalog-filter-state{grid-column:1/-1;width:100%}
+  .catalog-filter-state{white-space:normal}
   .detail-grid{grid-template-columns:1fr}
   .detail{padding:12px}
   .catalog-detail-top{position:sticky;top:0;background:#f8fafc;padding-bottom:8px;z-index:2}
@@ -99,8 +105,8 @@ function renderResponsiveCards(){mobileRows.innerHTML=getFilteredProducts().map(
 let mobileStaticRendered=false; function renderStaticMobileLists(){if(mobileStaticRendered)return;mobileCandidateRows.innerHTML=DATA.candidates.map(candidateCard).join('');mobileSourceRows.innerHTML=DATA.sources.map(sourceCard).join('');mobileStaticRendered=true;}
 const showDetailBase=showDetail; showDetail=function(id){showDetailBase(id);const detail=$('detail');if(!detail)return;const heading=detail.querySelector('h3');if(!detail.querySelector('.detail-close')){const top=document.createElement('div');top.className='detail-top';if(heading)top.appendChild(heading);const close=document.createElement('button');close.type='button';close.className='detail-close';close.textContent='关闭详情';close.setAttribute('aria-label','关闭芯片详情');close.addEventListener('click',()=>{detail.classList.remove('show');});top.appendChild(close);detail.insertBefore(top,detail.firstChild);}detail.setAttribute('aria-live','polite');}; document.addEventListener('keydown',(event)=>{if(event.key==='Escape')$('detail').classList.remove('show');});
 const renderDesktop=render; render=function(){renderDesktop();renderStaticMobileLists();renderResponsiveCards();};
-function fill(id, values){values.forEach((v)=>{const o=document.createElement('option');o.value=v;o.textContent=v;$(id).appendChild(o);});}
-fill('vendor',uniq('vendor')); fill('radio',uniq('radio_class')); fill('bt',uniq('bluetooth_version')); fill('pricePlatform',[...new Set(offers.map((o)=>String(o.platform || '未公开')))].sort((a,b)=>a.localeCompare(b,'zh-CN'))); fill('priceStatus',uniq('price_status')); fill('evidence',uniq('evidence')); fill('status',uniq('status')); fill('priceLevel',[...new Set(offers.map((o)=>String(o.entity_level || '未公开')))].sort((a,b)=>a.localeCompare(b,'zh-CN'))); fill('priceAvailability',[...new Set(offers.map((o)=>String(o.availability || '未公开')))].sort((a,b)=>a.localeCompare(b,'zh-CN'))); fill('wifi',['是','不支持','未公开']); fill('ble',['是','不支持','未公开']); fill('classic',['是','不支持','未公开']);
+function fill(id, values, label){const select=$(id);const current=select.value;select.innerHTML='';const all=document.createElement('option');all.value='';all.textContent=label||'全部';select.appendChild(all);values.forEach((v)=>{const o=document.createElement('option');o.value=v;o.textContent=v;select.appendChild(o);});if(values.includes(current))select.value=current;else select.value='';}
+fill('vendor',uniq('vendor'),'全部厂商'); fill('radio',uniq('radio_class'),'全部无线分类'); fill('bt',uniq('bluetooth_version'),'全部 Bluetooth 版本'); fill('pricePlatform',[...new Set(offers.map((o)=>String(o.platform || '未公开')))].sort((a,b)=>a.localeCompare(b,'zh-CN')),'全部报价平台'); fill('priceStatus',uniq('price_status'),'全部价格状态'); fill('evidence',uniq('evidence'),'全部证据等级'); fill('status',uniq('status'),'全部上市状态'); fill('priceLevel',[...new Set(offers.map((o)=>String(o.entity_level || '未公开')))].sort((a,b)=>a.localeCompare(b,'zh-CN')),'全部实体层级'); fill('priceAvailability',[...new Set(offers.map((o)=>String(o.availability || '未公开')))].sort((a,b)=>a.localeCompare(b,'zh-CN')),'全部可得性'); fill('wifi',['是','不支持','未公开'],'全部 Wi-Fi 支持状态'); fill('ble',['是','不支持','未公开'],'全部 BLE 状态'); fill('classic',['是','不支持','未公开'],'全部 Bluetooth Classic / BLC 状态');
 const isCombo=(p)=>/combo|tri-radio|Bluetooth + 802.15.4|UWB|companion IC|companion IC/i.test(String(p.radio_class)); $('statProducts').textContent=DATA.products.length; $('statVendors').textContent=new Set(DATA.products.map((p)=>p.vendor)).size; $('statWifi').textContent=DATA.products.filter((p)=>String(p.wifi_support).startsWith('是')).length; $('statBt').textContent=DATA.products.filter((p)=>p.ble_support==='是'||p.bt_classic_blc==='是').length; $('statCombo').textContent=DATA.products.filter(isCombo).length; $('statBle').textContent=DATA.products.filter((p)=>p.bluetooth_mode==='BLE-only').length; $('statClassic').textContent=DATA.products.filter((p)=>p.bt_classic_blc==='是').length; $('statCandidates').textContent=DATA.candidates.length; $('statPriceProducts').textContent=DATA.products.filter((p)=>Number(p.price_offer_count)>0).length; $('statBareOffers').textContent=offers.filter((o)=>o.entity_level==='bare_chip').length; $('statPricePlatforms').textContent=new Set(offers.map((o)=>o.platform)).size; $('statNoPrice').textContent=DATA.products.filter((p)=>!Number(p.price_offer_count)).length;
 function formatBreaks(offer){const rows=Array.isArray(offer.price_breaks)?offer.price_breaks:[]; if(!rows.length)return '询价/未公开'; return rows.map((b)=>esc(String(b.min_qty)+'+ '+String(offer.currency||'未公开')+' '+Number(b.unit_price).toFixed(4))).join('<br>')+(offer.price_range?' <br><small>区间：'+esc(offer.price_range)+'</small>':'');}
 function render(){const q=low($('search').value), vendor=$('vendor').value, radio=$('radio').value, wifi=$('wifi').value, bt=$('bt').value, ble=$('ble').value, classic=$('classic').value, pricePlatform=$('pricePlatform').value, priceStatus=$('priceStatus').value, evidence=$('evidence').value, status=$('status').value; const list=DATA.products.filter((p)=>(!q||low(JSON.stringify(p)).includes(q))&&(!vendor||p.vendor===vendor)&&(!radio||p.radio_class===radio)&&(!wifi||p.wifi_support===wifi)&&(!bt||p.bluetooth_version===bt)&&(!ble||p.ble_support===ble)&&(!classic||p.bt_classic_blc===classic)&&(!pricePlatform||String(p.price_platforms||'').split('；').includes(pricePlatform))&&(!priceStatus||p.price_status===priceStatus)&&(!evidence||p.evidence===evidence)&&(!status||p.status===status)); $('shown').textContent=list.length; $('rows').innerHTML=list.map((p)=>'<tr data-id="'+esc(p.id)+'"><td>'+esc(p.id)+'</td><td><b>'+esc(p.vendor)+'</b><br>'+esc(p.model)+'</td><td>'+esc(p.family)+'<br><small>'+esc(p.entity_type)+'</small></td><td>'+esc(p.vendor_country)+'</td><td>'+esc(p.radio_class)+'</td><td>'+esc(p.status)+'</td><td><span class="pill ev-'+esc(p.evidence)+'">'+esc(p.evidence)+'</span></td><td>'+esc(p.launch_year)+'</td><td>'+esc(p.wifi_standard)+'<br>'+esc(p.wifi_bands)+'</td><td>'+esc(p.bluetooth_version)+'<br>BLE: '+esc(p.ble_support)+'<br>BLC: '+esc(p.bt_classic_blc)+'</td><td>'+esc(p.cpu_core)+'<br>'+esc(p.cpu_frequency)+'<br>Flash: '+esc(p.on_chip_flash)+'<br>RAM: '+esc(p.on_chip_sram)+'</td><td>'+esc(p.peripherals)+'<br>'+esc(p.host_interface)+'</td><td>'+esc(p.package)+'<br>'+esc(p.package_size)+'<br>'+esc(p.pin_count)+'</td><td>'+esc(p.price_current_best||p.price)+'<br>'+esc(p.price_type)+'</td><td>'+link(p.official_product_url,'官方')+'<br>'+link(p.datasheet_url,'规格')+'<br>'+link(p.news_url,'新闻')+'</td></tr>').join(''); document.querySelectorAll('#rows tr').forEach((tr)=>tr.addEventListener('click',()=>showDetail(tr.dataset.id)));
@@ -179,6 +185,52 @@ function showDetail(id){const p=DATA.products.find((x)=>x.id===id);if(!p)return;
     __detail.classList.remove('show');
     window.scrollTo(x,y);
   }
+  function __filterFields(root){
+    return Array.from(root.querySelectorAll('input,select,textarea'));
+  }
+  function __updateFilterStates(){
+    document.querySelectorAll('.controls').forEach(function(root){
+      const state=root.querySelector('.catalog-filter-state');
+      if(!state) return;
+      const count=__filterFields(root).filter(function(field){return String(field.value||'').trim()!=='';}).length;
+      state.textContent=count ? '已启用 '+count+' 项筛选' : '当前未筛选 · 显示全部';
+    });
+  }
+  function __installClearButtons(){
+    document.querySelectorAll('.controls').forEach(function(root){
+      const fields=__filterFields(root);
+      if(!fields.length) return;
+      let button=root.querySelector('.catalog-clear-filters');
+      if(!button){
+        button=document.createElement('button');
+        button.type='button';
+        button.className='catalog-clear-filters';
+        button.textContent='显示全部';
+        button.setAttribute('aria-label','清除本组筛选并显示全部数据');
+        button.title='清除本组筛选并显示全部数据';
+        root.appendChild(button);
+        button.addEventListener('click',function(event){
+          event.preventDefault();
+          const x=window.scrollX;
+          const y=window.scrollY;
+          fields.forEach(function(field){field.value='';});
+          render();
+          window.scrollTo(x,y);
+        });
+      }
+      let state=root.querySelector('.catalog-filter-state');
+      if(!state){
+        state=document.createElement('span');
+        state.className='catalog-filter-state';
+        state.setAttribute('aria-live','polite');
+        root.appendChild(state);
+      }
+    });
+    __updateFilterStates();
+  }
+  function __resetFilterDefaults(){
+    document.querySelectorAll('.controls input,.controls select,.controls textarea').forEach(function(field){field.value='';});
+  }
   showDetail=function(id){
     const x=window.scrollX;
     const y=window.scrollY;
@@ -215,6 +267,7 @@ function showDetail(id){const p=DATA.products.find((x)=>x.id===id);if(!p)return;
         __detail.classList.remove('show');
       }
     }
+    __updateFilterStates();
     window.scrollTo(x,y);
   };
   __detail.addEventListener('click',function(event){
@@ -255,6 +308,8 @@ function showDetail(id){const p=DATA.products.find((x)=>x.id===id);if(!p)return;
       },true);
     }
   }
+  __resetFilterDefaults();
+  __installClearButtons();
   __bindRows();
 })();
 
