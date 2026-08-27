@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-26",
+  "checked_on": "2026-08-27",
   "scope_note": "第一版全球市场盘点：按可独立购买的产品代际/型号纳入；颜色、尺寸和纯外观材质不单独计数。疑似同一OEM硬件的品牌别名放入候选与别名表。价格保留产品页面所在市场币种，未做汇率换算。",
   "products": [
     {
@@ -3889,6 +3889,32 @@
       "availability_note": "官方商品页显示US$149.99、尺码6–12但当前Sale Sold Out；页面提供全球免邮及美国3–5日配送口径；页面声明非医疗器械",
       "source_note": "Aurora Ring官方女性款商品页；品牌宣称的血压和ECG等功能未做医疗或监管确认，证据等级保留C",
       "checked_on": "2026-08-24"
+    },
+    {
+      "id": "SR-151",
+      "brand": "Hama",
+      "model": "Smart Ring \"One\" / Ring One",
+      "country_region": "德国/欧洲",
+      "category": "健康/睡眠/运动",
+      "status": "官方商城已列/当前不可用",
+      "evidence": "A",
+      "launch_date": "2026-08-04",
+      "launch_date_type": "Hama官方新闻稿发布日",
+      "price": "€129（Hama德国/奥地利官方商城；当前不可用）",
+      "official_url": "https://www.hama.com/at/de/smart-ring-one-tracker-schlaf-puls-benachrichtigung-57-mm-schwarz-00178643",
+      "spec_url": "https://company.hama.com/00178643/hama-one-smart-ring-tracker-sleep-pulse-notification-57-mm-black",
+      "sensors": "心率、HRV、血氧、体温、睡眠/活动监测（具体传感器器件未公开）",
+      "chip_or_soc": "未公开",
+      "size_range": "US 7–12；黑/银两色、六种尺码变体",
+      "dimensions": "内径18.2 mm（官方黑色SKU 00178643页面示例，US 8）；其他尺码与外部尺寸未公开",
+      "weight_g": "未公开",
+      "battery": "单枚最长约4天；充电盒最多约20天/5次额外充电",
+      "charging": "充电盒；USB-C；官方产品页列出USB充电线",
+      "water_resistance": "5 ATM；官方提示仅适合淡水，避免氯/盐，不适合桑拿/蒸汽房",
+      "subscription": "无订阅；Hama Active App免费，无单项功能额外费用",
+      "features": "24/7心率、HRV、血氧、体温、睡眠分析、步数、120项运动、女性周期提醒、震动通知、离线记录、低电量灯光提示、查找灯光信号、Apple Health/Health Connect",
+      "availability_note": "Hama官方商城已列€129但当前不可用；官方新闻稿物料号178643-52，商品页族覆盖00178643–00178652；颜色/尺码SKU不拆成独立型号，全球可得性待继续核验",
+      "source_note": "Hama官方发布、官方产品/支持页；心率等为功能层披露，具体光学器件、芯片和电池容量未公开"
     }
   ],
   "candidates": [
@@ -4199,6 +4225,17 @@
       "reason": "与SR-076为同一历史Kerv支付指环和同一来源链；保留2017承接/停产关系，不重复计数。",
       "url": "https://kerv-the-worlds-first-contactless-payment-ring.backerkit.com/hosted_preorders",
       "alias_or_relation": "SR-093→SR-076；同型号/历史承接记录"
+    },
+    {
+      "name": "Zensy Ring",
+      "brand": "Zensy and Soulie",
+      "region": "中国香港众筹/全球候选",
+      "category": "压力/情绪/睡眠/触觉提醒",
+      "status": "Kickstarter众筹已结束/交付待核",
+      "evidence": "C",
+      "reason": "Kickstarter项目页显示2026-06-30至2026-07-30完成众筹，297位支持者、HK$460,050（目标HK$60,000），并在2026-08-25更新；当前未核到独立官方零售页、完整规格和实际交付证据，因此保留候选。",
+      "url": "https://www.kickstarter.com/projects/zensyandsoulie/zensy-ring-mood-tracking-ring-with-phone-free-calming-guide",
+      "alias_or_relation": "不与已上市健康戒指合并；众筹成功不等同正式上市/交付，需继续核验pledge manager、预计交期、尺码、传感器和价格档位"
     }
   ],
   "sources": [
@@ -5867,6 +5904,74 @@
       "campaign_status": "未公开",
       "pledge_or_price": "未公开",
       "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "Hama Ring One官方发布",
+      "url": "https://company.hama.com/press/press-messages/hama-brings-health-tracking-to-your-fingertips",
+      "scope": "Ring One型号、2026-08-04发布、心率/HRV/血氧/体温/睡眠、120项运动、5 ATM、4天续航、US 7–12、物料号178643-52",
+      "checked_on": "2026-08-27",
+      "quality": "A",
+      "source_domain": "company.hama.com",
+      "source_channel": "official_release",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "官方新品发布；销售状态另由商城核验",
+      "storefront_type": "官方新闻室",
+      "platform_reference": "178643-52",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "Hama Ring One官方商城",
+      "url": "https://www.hama.com/at/de/smart-ring-one-tracker-schlaf-puls-benachrichtigung-57-mm-schwarz-00178643",
+      "scope": "官方黑色SKU 00178643；€129；当前不可用；功能、充电盒、5次额外充电、德国服务器/数据说明和淡水使用提示",
+      "checked_on": "2026-08-27",
+      "quality": "A",
+      "source_domain": "www.hama.com",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "官方商品页；当前不可用",
+      "storefront_type": "官方区域商城（奥地利）",
+      "platform_reference": "00178643",
+      "campaign_status": "未公开",
+      "pledge_or_price": "€129（含税）",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "Hama Ring One官方支持/产品详情",
+      "url": "https://support.hama.com/00178651/hama-one-smart-ring-tracker-sleep-pulse-notification-60-mm-silver",
+      "scope": "官方支持页示例SKU 00178651；不锈钢、内径19.10 mm、Android/iOS、USB-C充电盒和淡水使用限制",
+      "checked_on": "2026-08-27",
+      "quality": "A",
+      "source_domain": "support.hama.com",
+      "source_channel": "official_support_manual",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "官方支持/技术详情",
+      "storefront_type": "官方支持中心",
+      "platform_reference": "00178651",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "Zensy Ring Kickstarter项目",
+      "url": "https://www.kickstarter.com/projects/zensyandsoulie/zensy-ring-mood-tracking-ring-with-phone-free-calming-guide",
+      "scope": "项目状态、支持人数、筹款金额、筹款周期和项目方更新；用于候选/众筹信号，不证明正式上市",
+      "checked_on": "2026-08-27",
+      "quality": "C",
+      "source_domain": "kickstarter.com",
+      "source_channel": "crowdfunding",
+      "source_role": "discovery_or_preorder_signal",
+      "seller_type": "项目方/众筹创建者",
+      "availability_signal": "Campaign ended；pledge manager入口存在",
+      "storefront_type": "Kickstarter项目页",
+      "platform_reference": "zensyandsoulie/zensy-ring-mood-tracking-ring-with-phone-free-calming-guide",
+      "campaign_status": "已结束；297位支持者；HK$460,050/HK$60,000目标",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     }
   ],
   "update_log": [
@@ -5923,6 +6028,12 @@
       "change": "来源体系升级：新增官方销售、监管/认证、Kickstarter、Indiegogo、Amazon及主要区域电商等渠道维度，并为每条来源补充渠道、证据角色、域名、卖方/项目方、可得性信号和平台标识字段。",
       "verification": "已对现有来源完成规则化标注；众筹与电商字段未披露处保留“未公开”，不以平台页面单独证明正式上市。",
       "next": "每日继续按渠道矩阵补查新型号、区域页面、ASIN/SKU/项目ID、卖方身份、库存、众筹状态与实际交付证据。"
+    },
+    {
+      "date": "2026-08-27",
+      "change": "新增SR-151 Hama Smart Ring \"One\" / Ring One：官方公告、官方商城和支持页均已核验；主表记录€129、当前不可用、US 7–12、4天、5 ATM及无订阅等字段。另将Zensy Ring作为Kickstarter已结束/交付待核候选加入，不计入已上市主表。",
+      "verification": "Hama型号、功能和发布日期来自品牌官方发布；价格、SKU和当前不可用来自官方区域商城；尺寸/充电/数据说明来自官方产品与支持页。Zensy仅使用Kickstarter项目状态，未把众筹成功推断为正式交付。芯片、精确传感器器件、重量和统一全球库存仍标未公开/待核。",
+      "next": "继续核对Hama其他国家商城、最终交付和完整硬件规格；跟踪Zensy pledge manager、交付、价格档位和官方规格。"
     }
   ],
   "source_channel_policy": [
@@ -6006,12 +6117,12 @@
   ],
   "source_channel_counts": {
     "community_discovery": 1,
-    "crowdfunding": 1,
+    "crowdfunding": 2,
     "marketplace": 1,
     "official_product": 32,
-    "official_release": 2,
-    "official_sales": 48,
-    "official_support_manual": 4,
+    "official_release": 3,
+    "official_sales": 49,
+    "official_support_manual": 5,
     "press_release_distribution": 5,
     "regulatory_certification": 3,
     "secondary_media": 1
@@ -6028,6 +6139,7 @@
     "ces.vporoom.com",
     "colmi.com",
     "colmi.info",
+    "company.hama.com",
     "corporate.jp.sharp",
     "cudis.xyz",
     "dreame.tech",
@@ -6072,6 +6184,7 @@
     "soxai.co.jp",
     "sparkring.ai",
     "support.evenrealities.com",
+    "support.hama.com",
     "support.ouraring.com",
     "swiss.tech",
     "tap-2.com",
@@ -6083,6 +6196,7 @@
     "vocci.ai",
     "volerawear.com",
     "watchesreviewed.com",
+    "www.hama.com",
     "xatrixai.com",
     "zzzhealth.com"
   ]

@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-26",
+  "checked_on": "2026-08-27",
   "scope_note": "首版全球智能眼镜／AR眼镜／AI眼镜市场库：主表纳入官方在售、官方明确发售、官方明确预售、企业正式销售/服务中或有官方产品页、手册、规格与交付证据的独立型号/代际。类别覆盖无显示音频眼镜、相机AI眼镜、带显示AI眼镜、消费级AR/XR、企业/工业/医疗/开发者AR。颜色、镜片、处方配置、套装和配件不拆行；不同代际、显示/相机/主机连接方式或关键功能保留独立行。传闻、原型、合作路线、众筹、Coming soon、OEM线索和无法证明交付的项目放入候选与别名表。来源未披露的芯片、传感器、尺寸、重量、电池容量、续航、防水和订阅字段写“未公开”，不从App、AI功能或外观推断。",
   "products": [
     {
@@ -72,14 +72,14 @@
       "id": "META-006",
       "brand": "Meta / EssilorLuxottica",
       "model": "Meta Glasses (2026)",
-      "country_region": "美国/加拿大首发；其他市场逐步开放",
+      "country_region": "美国/加拿大首发；日本自2026-08-26起；其他市场逐步开放",
       "category": "AI/开放式音频",
       "form_factor": "眼镜式穿戴",
       "status": "在售/地区扩展中",
       "evidence": "A",
       "launch_date": "2026-06-23",
       "launch_date_type": "Meta官方合作发布",
-      "price": "US$299起",
+      "price": "US$299起；日本¥50,600起（含税）",
       "official_url": "https://about.fb.com/news/2026/06/meta-essilorluxottica-partner-launch-meta-glasses/",
       "spec_url": "https://www.essilorluxottica.com/cap/content/304074/?_iframe=true",
       "cameras": "未公开",
@@ -98,8 +98,8 @@
       "subscription": "无硬件订阅口径；Meta AI按地区/账户开放",
       "privacy": "相机、麦克风、Meta账户和AI服务权限；具体硬件指示灯/数据保留未公开",
       "features": "Meta AI、免手语音、视觉问答、翻译、通话/消息、处方镜片；后续导航功能持续更新",
-      "availability_note": "Meta官方称美国/加拿大可购买并逐步扩展；不把发布日覆盖误作全球现货",
-      "source_note": "Meta官方Meta Glasses发布稿与EssilorLuxottica官方发布资料；未披露硬件细项均保留未公开"
+      "availability_note": "Meta官方确认美国/加拿大首发并逐步扩展；Meta日本官方公告确认2026-08-26起在Meta.com及授权零售商销售，26种款式；日本价格不外推为全球价格",
+      "source_note": "Meta/EssilorLuxottica官方发布与日本官方公告；未披露硬件细项均保留未公开"
     },
     {
       "id": "META-003",
@@ -3881,6 +3881,23 @@
       "campaign_status": "未公开",
       "pledge_or_price": "未公开",
       "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "Meta Glasses日本官方上市公告",
+      "url": "https://about.fb.com/ja/news/2026/08/meta-glasses-launch-in-japan/",
+      "scope": "日本2026-08-26上市、26种款式、¥50,600起（含税）、Meta.com/授权零售渠道、8小时以上续航与充电盒最多40小时、隐私指示灯/麦克风说明",
+      "checked_on": "2026-08-27",
+      "quality": "A",
+      "source_domain": "about.fb.com",
+      "source_channel": "official_release",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "日本官方上市/授权零售",
+      "storefront_type": "日本官方Newsroom/Meta.com",
+      "platform_reference": "26 styles",
+      "campaign_status": "未公开",
+      "pledge_or_price": "¥50,600起（含税）",
+      "estimated_delivery": "未公开"
     }
   ],
   "update_log": [
@@ -3907,6 +3924,12 @@
       "change": "来源体系升级：新增官方销售、监管/认证、Kickstarter、Indiegogo、Amazon及主要区域电商等渠道维度，并为每条来源补充渠道、证据角色、域名、卖方/项目方、可得性信号和平台标识字段。",
       "verification": "已对现有来源完成规则化标注；众筹与电商字段未披露处保留“未公开”，不以平台页面单独证明正式上市。",
       "next": "每日继续按渠道矩阵补查新型号、区域页面、ASIN/SKU/项目ID、卖方身份、库存、众筹状态与实际交付证据。"
+    },
+    {
+      "date": "2026-08-27",
+      "change": "更新META-006 Meta Glasses (2026)区域可得性：日本官方确认2026-08-26起销售，起价¥50,600（含税），26种款式；新增日本官方来源并补充日本区域续航/隐私信息。",
+      "verification": "日本价格、上市日期和官方购买渠道仅适用于日本；未据此推断其他地区价格或库存。硬件芯片、摄像头/传感器和统一尺寸仍按官方披露保留未公开。",
+      "next": "继续核对各地区商品SKU、镜框/镜片组合、库存、监管与隐私数据处理说明。"
     }
   ],
   "source_channel_policy": [
@@ -3991,6 +4014,7 @@
   "source_channel_counts": {
     "marketplace": 1,
     "official_product": 21,
+    "official_release": 1,
     "official_sales": 16,
     "official_support_manual": 13,
     "press_release_distribution": 1
