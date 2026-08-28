@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-27",
+  "checked_on": "2026-08-28",
   "scope_note": "本库覆盖智能服饰与运动装备：智能鞋、智能服装、姿态设备、触觉手环与智能护具；排除已有独立数据库的重复型号。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-08-27"
+      "2026-08-28"
     ]
   ],
   "products": [
@@ -427,6 +427,17 @@
       "reason": "官方产品资料确认 7/18 IMU 版本；当前个人消费者销售状态未核验",
       "url": "https://xenoma.com/business/eskin-meva/",
       "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "name": "Lumia 2 Smart Earrings",
+      "brand": "Lumia",
+      "region": "美国波士顿/全球众筹候选",
+      "category": "智能耳饰/健康穿戴",
+      "status": "Kickstarter已结束/项目更新中，交付待核",
+      "evidence": "C",
+      "reason": "Kickstarter项目页称用于睡眠、周期、活动和血流等健康追踪；2026-04-28至2026-05-28筹资，6,133位支持者、US$2,030,193，页面最近于2026-08-19更新。当前未核到独立官方零售页、最终硬件规格或实际交付证据，因此保留候选。",
+      "url": "https://www.kickstarter.com/projects/lumiahealth/lumia-2-smart-earrings-discreet-next-gen-health-tracking/",
+      "alias_or_relation": "智能饰品/健康穿戴候选；不与智能指环、耳机或医疗设备主表合并；众筹成功不等同正式上市，需继续核对传感器、芯片、尺码、续航、价格档位和交付。"
     }
   ],
   "sources": [
@@ -582,6 +593,23 @@
       "campaign_status": "未公开",
       "pledge_or_price": "未公开",
       "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "Lumia 2 Smart Earrings Kickstarter项目",
+      "url": "https://www.kickstarter.com/projects/lumiahealth/lumia-2-smart-earrings-discreet-next-gen-health-tracking/",
+      "scope": "项目类别、项目方、健康追踪定位、筹资周期、6,133位支持者、US$2,030,193筹款及2026-08-19项目更新；仅作候选/众筹信号，不证明正式上市或交付",
+      "checked_on": "2026-08-28",
+      "quality": "C",
+      "source_domain": "kickstarter.com",
+      "source_channel": "crowdfunding",
+      "source_role": "discovery_or_preorder_signal",
+      "seller_type": "项目方/众筹平台",
+      "availability_signal": "Campaign ended；项目持续更新，交付待核",
+      "storefront_type": "Kickstarter项目页",
+      "platform_reference": "lumiahealth/lumia-2-smart-earrings-discreet-next-gen-health-tracking",
+      "campaign_status": "已结束；2026-04-28至2026-05-28；6,133位支持者；US$2,030,193/US$10,000目标；最近更新2026-08-19",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     }
   ],
   "update_log": [
@@ -608,6 +636,12 @@
       "change": "【智能服饰与运动装备】本轮按官方产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
       "verification": "众筹和电商页面继续作为发现、预售、区域价格/库存和SKU信号；缺少原厂/官方规格/交付证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管和授权渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-28",
+      "change": "新增Lumia 2 Smart Earrings候选：Kickstarter项目已结束但仍有2026-08-19更新，记录筹资、健康追踪定位和交付待核状态；不计入已上市主表，不推断传感器/芯片/续航/价格。",
+      "verification": "项目状态和筹资数据来自Kickstarter项目页；Kickstarter仅作为众筹/预售发现信号，未找到足以证明正式零售上市、最终规格和实际交付的官方证据。",
+      "next": "继续核对Lumia官方站、项目更新、pledge manager、最终规格、价格档位、交付和是否转为公开销售。"
     }
   ],
   "source_channel_policy": [
@@ -690,11 +724,13 @@
     }
   ],
   "source_channel_counts": {
+    "crowdfunding": 1,
     "official_product": 4,
     "official_sales": 3,
     "official_support_manual": 2
   },
   "source_domains": [
+    "kickstarter.com",
     "moticon.com",
     "neofect.com",
     "plantiga.com",

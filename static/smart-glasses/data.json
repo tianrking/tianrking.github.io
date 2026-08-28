@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-27",
+  "checked_on": "2026-08-28",
   "scope_note": "首版全球智能眼镜／AR眼镜／AI眼镜市场库：主表纳入官方在售、官方明确发售、官方明确预售、企业正式销售/服务中或有官方产品页、手册、规格与交付证据的独立型号/代际。类别覆盖无显示音频眼镜、相机AI眼镜、带显示AI眼镜、消费级AR/XR、企业/工业/医疗/开发者AR。颜色、镜片、处方配置、套装和配件不拆行；不同代际、显示/相机/主机连接方式或关键功能保留独立行。传闻、原型、合作路线、众筹、Coming soon、OEM线索和无法证明交付的项目放入候选与别名表。来源未披露的芯片、传感器、尺寸、重量、电池容量、续航、防水和订阅字段写“未公开”，不从App、AI功能或外观推断。",
   "products": [
     {
@@ -98,8 +98,8 @@
       "subscription": "无硬件订阅口径；Meta AI按地区/账户开放",
       "privacy": "相机、麦克风、Meta账户和AI服务权限；具体硬件指示灯/数据保留未公开",
       "features": "Meta AI、免手语音、视觉问答、翻译、通话/消息、处方镜片；后续导航功能持续更新",
-      "availability_note": "Meta官方确认美国/加拿大首发并逐步扩展；Meta日本官方公告确认2026-08-26起在Meta.com及授权零售商销售，26种款式；日本价格不外推为全球价格",
-      "source_note": "Meta/EssilorLuxottica官方发布与日本官方公告；未披露硬件细项均保留未公开"
+      "availability_note": "Meta官方确认美国/加拿大首发并逐步扩展；Meta日本官方公告确认2026-08-26起在Meta.com及授权零售商销售，SoftBank日本自同日起在线上商店及部分门店销售；26种款式；日本价格不外推为全球价格，门店库存需单独确认",
+      "source_note": "Meta/EssilorLuxottica官方发布、日本官方公告及SoftBank日本授权零售公告/产品页；未披露硬件细项均保留未公开"
     },
     {
       "id": "META-003",
@@ -3898,6 +3898,40 @@
       "campaign_status": "未公开",
       "pledge_or_price": "¥50,600起（含税）",
       "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "SoftBank日本 Meta Glasses授权零售公告",
+      "url": "https://www.softbank.jp/mobile/info/personal/news/product/20260826a/",
+      "scope": "SoftBank于2026-08-26起在网上商店及部分SoftBank门店开始销售Meta Glasses；门店展示、试戴和体验范围及库存因门店而异",
+      "checked_on": "2026-08-28",
+      "quality": "B",
+      "source_domain": "www.softbank.jp",
+      "source_channel": "official_sales",
+      "source_role": "区域授权零售/可得性证据",
+      "seller_type": "运营商/授权零售商",
+      "availability_signal": "日本区域销售开始；库存因门店而异",
+      "storefront_type": "日本运营商在线商店/部分实体店",
+      "platform_reference": "Meta Glasses",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开（动态结算价未在公告正文显示）",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "SoftBank日本 Meta Glasses产品页",
+      "url": "https://www.softbank.jp/mobile/products/smartglasses/meta-glasses/",
+      "scope": "日本产品页列出2026-08-26发售、最高8小时连续使用、充电盒最多40小时供电；购买/门店库存提示由页面动态展示，具体价格不在静态抓取正文中",
+      "checked_on": "2026-08-28",
+      "quality": "B",
+      "source_domain": "www.softbank.jp",
+      "source_channel": "official_sales",
+      "source_role": "区域官方产品/销售页面",
+      "seller_type": "运营商/授权零售商",
+      "availability_signal": "日本区域产品页/可购买入口；库存动态",
+      "storefront_type": "日本运营商产品页",
+      "platform_reference": "Meta Glasses",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
     }
   ],
   "update_log": [
@@ -3930,6 +3964,12 @@
       "change": "更新META-006 Meta Glasses (2026)区域可得性：日本官方确认2026-08-26起销售，起价¥50,600（含税），26种款式；新增日本官方来源并补充日本区域续航/隐私信息。",
       "verification": "日本价格、上市日期和官方购买渠道仅适用于日本；未据此推断其他地区价格或库存。硬件芯片、摄像头/传感器和统一尺寸仍按官方披露保留未公开。",
       "next": "继续核对各地区商品SKU、镜框/镜片组合、库存、监管与隐私数据处理说明。"
+    },
+    {
+      "date": "2026-08-28",
+      "change": "补充META-006 Meta Glasses日本区域授权零售证据：SoftBank日本确认2026-08-26起在线上商店及部分门店销售，并提示展示、体验与库存因门店而异；新增公告与产品页来源，不改变全球价格口径。",
+      "verification": "SoftBank官方渠道只用于日本区域销售、门店和库存信号；日本价格仍以Meta日本官方公告¥50,600起为准，未从动态分期页面猜测价格，也未将日本渠道外推为全球可得。",
+      "next": "继续核对Meta.com及各国家/地区授权零售的精确SKU、库存、镜框/镜片组合和监管/隐私说明。"
     }
   ],
   "source_channel_policy": [
@@ -4015,7 +4055,7 @@
     "marketplace": 1,
     "official_product": 21,
     "official_release": 1,
-    "official_sales": 16,
+    "official_sales": 18,
     "official_support_manual": 13,
     "press_release_distribution": 1
   },
@@ -4065,6 +4105,7 @@
     "viture.com",
     "vueglasses.com",
     "vuzix.com",
+    "www.softbank.jp",
     "xreal.com"
   ]
 }
