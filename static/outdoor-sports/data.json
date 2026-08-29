@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-28",
+  "checked_on": "2026-08-29",
   "scope_note": "首版覆盖户外GPS手持设备、卫星通信/求救设备、骑行码表、潜水电脑、智能头盔及部分雪地安全设备。潜水电脑与普通运动手表分开；卫星通信、PLB和雪崩信标按用途分开；颜色、尺寸、套餐和配件不拆行。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-08-28"
+      "2026-08-29"
     ]
   ],
   "products": [
@@ -990,6 +990,17 @@
       "reason": "官方店存在库存/版本和价格冲突；Halo Bit按配件/版本关系保留。",
       "url": "https://shop.atherenergy.com/products/halo-smart-helmets",
       "alias_or_relation": "不计入主表，待库存与独立型号确认"
+    },
+    {
+      "name": "UNISTELLAR ENVISION",
+      "brand": "UNISTELLAR",
+      "region": "法国/全球众筹支持者",
+      "category": "AR智能双筒望远镜/户外观测",
+      "status": "Kickstarter/Indiegogo众筹结束；2026年分批履约中，非普遍零售",
+      "evidence": "B",
+      "reason": "官方产品页、支持中心和Kickstarter资料确认ENVISION为AR智能双筒望远镜；官方支持页称Kickstarter/Indiegogo订单计划在2026年7月至10月分批发货，个人日期尚未确认，保留为履约候选而非普遍上市。",
+      "url": "https://www.unistellar.com/envision/",
+      "alias_or_relation": "户外观测与星空地图设备；与普通双筒望远镜、GPS户外终端和影像相机分开；若未来公开零售再评估主表。"
     }
   ],
   "sources": [
@@ -1094,6 +1105,60 @@
       "campaign_status": "未公开",
       "pledge_or_price": "未公开",
       "estimated_delivery": "未公开"
+    },
+    {
+      "checked_on": "2026-08-29",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开/众筹奖励档未在本条主字段汇总",
+      "estimated_delivery": "2026-07至10月分批（支持页计划）",
+      "id": "UNISTELLAR-ENVISION-OFFICIAL",
+      "source_group": "UNISTELLAR ENVISION官方产品页",
+      "url": "https://www.unistellar.com/envision/",
+      "scope": "AR双筒望远镜、10x、GPS/手机定位与IMU、智能观测/星空地图、蓝牙、离线使用和续航/观测次数等产品定位",
+      "quality": "B",
+      "source_domain": "unistellar.com",
+      "source_channel": "official_product",
+      "source_role": "官方产品/功能/形态证据",
+      "seller_type": "品牌官方",
+      "availability_signal": "众筹支持者履约；非普遍零售",
+      "storefront_type": "品牌官方产品页",
+      "platform_reference": "ENVISION"
+    },
+    {
+      "checked_on": "2026-08-29",
+      "campaign_status": "Kickstarter/Indiegogo campaign ended",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "2026年7月底至10月；单个订单日期未确认",
+      "id": "UNISTELLAR-ENVISION-DELIVERY",
+      "source_group": "UNISTELLAR ENVISION官方交付FAQ",
+      "url": "https://help.unistellar.com/hc/en-us/articles/27712391161628-ENVISION-Deliveries-Shipping-FAQ-for-Backers",
+      "scope": "Kickstarter/Indiegogo支持者的交付窗口、分批发货和个人日期尚未确认状态；仅作履约可得性证据",
+      "quality": "A",
+      "source_domain": "help.unistellar.com",
+      "source_channel": "official_support_manual",
+      "source_role": "官方支持/交付生命周期证据",
+      "seller_type": "品牌官方支持中心",
+      "availability_signal": "Backer fulfillment；late July–October 2026计划",
+      "storefront_type": "官方支持中心",
+      "platform_reference": "ENVISION"
+    },
+    {
+      "checked_on": "2026-08-29",
+      "campaign_status": "已结束；约US$2,783,021；约3,700支持者；项目更新至2026-07-21",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "官方支持页另称2026-07至10月分批",
+      "id": "UNISTELLAR-ENVISION-KS",
+      "source_group": "UNISTELLAR ENVISION Kickstarter项目页",
+      "url": "https://www.kickstarter.com/projects/unistellar/envision-smart-binoculars-for-stars-and-outdoor-exploration?lang=fr",
+      "scope": "众筹项目身份、已结束状态、约US$2.78M筹资、约3,700支持者和项目更新；不单独证明当前零售上市",
+      "quality": "C",
+      "source_domain": "kickstarter.com",
+      "source_channel": "crowdfunding",
+      "source_role": "众筹项目/筹资/履约发现",
+      "seller_type": "项目方/众筹平台",
+      "availability_signal": "Campaign ended；backer fulfillment",
+      "storefront_type": "Kickstarter项目页",
+      "platform_reference": "unistellar/envision-smart-binoculars-for-stars-and-outdoor-exploration"
     }
   ],
   "update_log": [
@@ -1126,6 +1191,12 @@
       "change": "【户外GPS/卫星通信/骑行码表/潜水电脑/智能头盔】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
       "verification": "众筹和电商页面继续作为发现、预售、区域价格/库存和SKU信号；缺少原厂/官方规格/交付证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管和授权渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-29",
+      "change": "新增UNISTELLAR ENVISION候选：官方产品页、交付FAQ和Kickstarter资料确认AR智能双筒望远镜、户外/星空观测定位、众筹结束及2026年7–10月分批履约；未计入普遍在售主表。",
+      "verification": "官方支持中心用于交付窗口与履约状态，Kickstarter用于项目身份/筹资发现；个人发货日期、零售价格和全面硬件规格仍未完整公开，不将众筹支持者履约等同全球零售。",
+      "next": "继续核对实际发货、正式零售/授权渠道、价格、重量/尺寸、显示/IMU/GPS细节和地区可得性。"
     }
   ],
   "source_channel_policy": [
@@ -1208,16 +1279,21 @@
     }
   ],
   "source_channel_counts": {
+    "crowdfunding": 1,
+    "official_product": 1,
     "official_release": 1,
     "official_sales": 3,
-    "official_support_manual": 2
+    "official_support_manual": 3
   },
   "source_domains": [
     "acrartex.com",
     "garmin.com",
+    "help.unistellar.com",
+    "kickstarter.com",
     "sena.com",
     "support.wahoofitness.com",
     "support.zoleo.com",
+    "unistellar.com",
     "us.suunto.com"
   ]
 }

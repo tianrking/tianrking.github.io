@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-28",
+  "checked_on": "2026-08-29",
   "scope_note": "首版全球录音卡片与AI录音设备市场库：主表按可独立购买、官方明确发售或官方明确预售的型号/代际计数；卡片、磁吸手机设备、穿戴式录音器、耳机录音器和桌面会议设备按形态分类。颜色、存储容量选项、配件包不拆行；疑似OEM/贴牌、众筹或只出现于集合页的型号放入候选与别名表。价格保留查证时官方页面原币种，不做未经说明的汇率换算。来源未披露的芯片、精确尺寸、重量、电池容量、采样率和防水等级写“未公开”。",
   "products": [
     {
@@ -1179,6 +1179,50 @@
       "features": "无按钮/低摩擦穿戴口径、夹扣/别针/吊坠/腕带、语音到行动",
       "availability_note": "官方页写Ships Q2 2026且仍为Claim My Spot/Reserve，当前日期尚未核得实际发货证据",
       "source_note": "Sonal官方首页和规格区；预订产品按未稳定交付处理，最终价格和续航待补"
+    },
+    {
+      "id": "RC-032",
+      "brand": "PLAUD",
+      "model": "Plaud One Limited Explorer Edition",
+      "country_region": "美国/欧洲部分市场/加拿大；限量全球2,000台",
+      "category": "穿戴式AI录音/录音耳机",
+      "form_factor": "无线耳机 + 带4G/eSIM与麦克风的录音充电盒",
+      "use_case": "会议、电话、在线会议录音、转写、摘要、AI Agent、音乐与通话",
+      "status": "预售已结束/候补与交付待核",
+      "evidence": "A",
+      "launch_date": "2026-08-28",
+      "launch_date_type": "官方地区发布文章/官方产品页",
+      "price": "US$249.99（官方产品页；限量Explorer Edition）",
+      "official_url": "https://www.plaud.ai/products/plaud-one",
+      "spec_url": "https://www.plaud.ai/pages/plaud-device-comparison",
+      "display": "无",
+      "os_platform": "Plaud App/Web/Desktop；地区兼容性按官方页面核验",
+      "audio_drivers": "12mm动态驱动单元",
+      "sensors": "每只耳机3个MEMS + 1个VPU；充电盒4个MEMS + AI波束成形；触控/按键细节未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "Bluetooth 5.4；4G LTE/eSIM；SBC/LDAC；双设备Multipoint；Apple Find My",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "4.5g/只；充电盒62.5g",
+      "battery": "耳机ANC关闭约6h/开启约4.5h；耳机+盒最长约36h；连续录音耳机6h/盒25h；充电盒830mAh；待机约21天",
+      "charging": "USB-C；10分钟约补充2小时使用",
+      "water_resistance": "耳机IP54；充电盒IP52",
+      "subscription": "Starter每月含300分钟转写；Pro/Unlimited为付费计划；订阅和额度可能按地区变化",
+      "privacy": "官方称传输与静态数据加密，除非明确选择加入不用于模型训练；录音同意与当地法规需自行遵守",
+      "features": "录音耳机、录音盒、环境/电话/在线会议采集、AI转写/摘要/Agent；与AUDIO-027为同一硬件，不重复计作另一代产品",
+      "availability_note": "官方产品页列出有限地区；当前预售已结束/候补，发货时间按结算和地区显示；未当作普遍在售录音卡片",
+      "source_note": "Plaud官方产品页、设备对比页和地区发布文章；录音格式、采样率、芯片、存储、尺寸未公开；与智能音频库AUDIO-027交叉索引",
+      "recording_formats": "官方产品页未公开具体文件格式",
+      "sampling_rate": "未公开",
+      "microphones": "每只耳机3个MEMS + 1个VPU；盒内4个MEMS + AI波束成形",
+      "audio_capture": "耳机环境录音、充电盒近场录音；官方宣称盒可约5m/16.4ft采集",
+      "noise_reduction": "自适应混合ANC最高约40dB；AI波束成形/降噪",
+      "phone_call_capture": "支持电话与在线会议录音；具体系统通话接入路径按App/地区核验",
+      "ai_features": "转写、摘要、Plaud Agent、会议/电话/在线录音、跨应用工作流",
+      "languages": "未公开；Plaud服务语言和额度按计划/地区变化",
+      "connectivity": "Bluetooth 5.4；4G LTE/eSIM；SBC/LDAC；双设备Multipoint；USB-C"
     }
   ],
   "candidates": [
@@ -2181,6 +2225,42 @@
       "campaign_status": "未公开",
       "pledge_or_price": "未公开",
       "estimated_delivery": "未公开"
+    },
+    {
+      "checked_on": "2026-08-29",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$249.99；全球限量2,000台",
+      "estimated_delivery": "结算时按地区/订单显示；未统一公开",
+      "id": "PLAUD-ONE-RECORDER",
+      "source_group": "PLAUD One官方录音硬件资料",
+      "url": "https://www.plaud.ai/products/plaud-one",
+      "scope": "Plaud One作为耳机/录音盒硬件的录音、麦克风、AI、连接、续航、防护、订阅和区域预售证据；与AUDIO-027做跨类别关联",
+      "quality": "A",
+      "source_domain": "plaud.ai",
+      "source_channel": "official_product",
+      "source_role": "原厂录音硬件/规格/价格证据",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "预售已结束/候补；区域限定",
+      "storefront_type": "品牌官方产品页",
+      "platform_reference": "Plaud One Limited Explorer Edition"
+    },
+    {
+      "checked_on": "2026-08-29",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "PLAUD-ONE-RECORDER-RELEASE",
+      "source_group": "PLAUD One官方地区发布文章",
+      "url": "https://plaud.se/es/blog/plaud-lanza-ahora-sus-primeros-auriculares-con-ia-conoce-plaud-one",
+      "scope": "官方首发文章与录音盒/耳机产品说明；仅支持Plaud One型号身份与公开功能，不补推未披露录音格式和芯片",
+      "quality": "A",
+      "source_domain": "plaud.se",
+      "source_channel": "official_news",
+      "source_role": "品牌发布/录音硬件发现证据",
+      "seller_type": "品牌官方",
+      "availability_signal": "官方发布；实际交付与区域库存待订单核验",
+      "storefront_type": "品牌官方News/Blog",
+      "platform_reference": "Plaud One"
     }
   ],
   "update_log": [
@@ -2219,6 +2299,12 @@
       "change": "【录音卡片/录音硬件】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
       "verification": "众筹和电商页面继续作为发现、预售、区域价格/库存和SKU信号；缺少原厂/官方规格/交付证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管和授权渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-29",
+      "change": "新增RC-032 Plaud One作为穿戴式AI录音硬件：按录音耳机/录音盒的采集、转写、摘要、麦克风、连接、续航、IP等级和订阅字段整理；与AUDIO-027标明为同一硬件的跨品类索引，不重复计代。",
+      "verification": "录音硬件字段来自Plaud官方产品页和官方地区发布文章；录音格式、采样率、芯片、存储、尺寸及实际交付未公开，预售结束/候补不等于普遍上市。",
+      "next": "继续查验公开发货、录音文件格式/采样率、App兼容、地区价格和授权渠道库存。"
     }
   ],
   "source_channel_policy": [
@@ -2302,7 +2388,8 @@
   ],
   "source_channel_counts": {
     "crowdfunding": 4,
-    "official_product": 11,
+    "official_news": 1,
+    "official_product": 12,
     "official_release": 1,
     "official_sales": 26,
     "official_support_manual": 3,
@@ -2327,6 +2414,7 @@
     "omi.me",
     "oss.boyamic.com",
     "plaud.ai",
+    "plaud.se",
     "prnewswire.com",
     "prtimes.jp",
     "sonal-ai.com",

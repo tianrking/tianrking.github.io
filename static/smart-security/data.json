@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-28",
+  "checked_on": "2026-08-29",
   "scope_note": "本库覆盖智能安防与门禁：家庭摄像头、可视门铃、智能门锁、报警器、门窗传感器与智能对讲。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-08-28"
+      "2026-08-29"
     ]
   ],
   "products": [
@@ -446,6 +446,17 @@
       "reason": "官方未披露芯片、GPS和防护等级",
       "url": "https://ring.com/support/products/alarm/contact-sensor-gen-2?page=1&redirect=true",
       "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "name": "Arculus Boxx",
+      "brand": "Arculus",
+      "region": "美国/全球众筹候选",
+      "category": "智能包裹保护/门禁安防",
+      "status": "预发布/等待Kickstarter；目标2026年10月交付",
+      "evidence": "C",
+      "reason": "Arculus官方站、FAQ和GlobeNewswire发布资料显示Boxx仍处于Kickstarter前后切换的预发布阶段：页面之间对活动日期存在差异，官方FAQ称production-ready design/pre-production并预计2026年10月交付，不能当作已普遍上市产品。",
+      "url": "https://arculusboxx.com/",
+      "alias_or_relation": "智能包裹箱/访问控制生态；与普通门铃、摄像头、智能锁分开；Kickstarter状态、订阅和交付继续核对。"
     }
   ],
   "sources": [
@@ -635,6 +646,60 @@
       "campaign_status": "未公开",
       "pledge_or_price": "未公开",
       "estimated_delivery": "未公开"
+    },
+    {
+      "checked_on": "2026-08-29",
+      "campaign_status": "未公开",
+      "pledge_or_price": "Founder pricing约US$399；官方页面口径待活动开启时复核",
+      "estimated_delivery": "未公开/FAQ另称2026年10月",
+      "id": "ARCULUS-BOXX-OFFICIAL",
+      "source_group": "Arculus Boxx官方产品页",
+      "url": "https://arculusboxx.com/",
+      "scope": "Boxx包裹保护生态、Founder价格约US$399含一年Arculus Complete、智能访问控制、包裹追踪/盗窃地图、隐私和官方活动入口；当前预发布",
+      "quality": "B",
+      "source_domain": "arculusboxx.com",
+      "source_channel": "official_product",
+      "source_role": "官方预发布/产品功能与价格信号",
+      "seller_type": "品牌官方",
+      "availability_signal": "预发布；等待或指向Kickstarter活动",
+      "storefront_type": "品牌官方产品页",
+      "platform_reference": "Arculus Boxx"
+    },
+    {
+      "checked_on": "2026-08-29",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "2026-10（FAQ预计值；需继续核验）",
+      "id": "ARCULUS-BOXX-FAQ",
+      "source_group": "Arculus Boxx官方FAQ",
+      "url": "https://arculusboxx.com/faq/",
+      "scope": "production-ready design/pre-production、IP防护外壳、插座供电、Arculus Protect US$9.99/月、Complete US$14.99/月、预计2026年10月交付和隐私说明",
+      "quality": "B",
+      "source_domain": "arculusboxx.com",
+      "source_channel": "official_support_manual",
+      "source_role": "官方FAQ/订阅/交付边界",
+      "seller_type": "品牌官方",
+      "availability_signal": "预生产/预发布；交付预期未完成核验",
+      "storefront_type": "品牌官方FAQ",
+      "platform_reference": "Arculus Boxx FAQ"
+    },
+    {
+      "checked_on": "2026-08-29",
+      "campaign_status": "官方新闻稿称计划通过Kickstarter；当前活动时间需复核",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "ARCULUS-BOXX-GLOBENEWSWIRE",
+      "source_group": "Arculus Boxx GlobeNewswire官方新闻稿",
+      "url": "https://www.globenewswire.com/news-release/2026/07/29/3335474/0/en/arculus-introduces-new-home-package-protection-ecosystem-though-kickstarter.html",
+      "scope": "品牌发布、Kickstarter计划与包裹保护生态的新闻稿；仅作发布/众筹发现证据，活动日期以官方当前页面复核",
+      "quality": "B",
+      "source_domain": "globenewswire.com",
+      "source_channel": "press_release_distribution",
+      "source_role": "品牌新闻稿/众筹计划证据",
+      "seller_type": "品牌/新闻稿分发",
+      "availability_signal": "Kickstarter计划/预发布",
+      "storefront_type": "GlobeNewswire新闻稿",
+      "platform_reference": "Arculus Boxx"
     }
   ],
   "update_log": [
@@ -667,6 +732,12 @@
       "change": "【智能安防与门禁】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
       "verification": "众筹和电商页面继续作为发现、预售、区域价格/库存和SKU信号；缺少原厂/官方规格/交付证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管和授权渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-29",
+      "change": "新增Arculus Boxx候选：保留官方产品页、FAQ和GlobeNewswire对预发布、Founder价格、订阅、IP外壳、隐私和2026年10月交付预期的记录；官方页面之间Kickstarter日期不一致，因此不计入已上市主表。",
+      "verification": "官方资料足以证明产品计划和预生产状态，但不足以证明当前普遍销售、最终价格和确定交付；不把预发布价格或新闻稿活动日期外推为现货结论。",
+      "next": "继续核对Kickstarter正式活动页、最终硬件规格、库存、区域销售、订阅条款和交付更新。"
     }
   ],
   "source_channel_policy": [
@@ -749,15 +820,18 @@
     }
   ],
   "source_channel_counts": {
-    "official_product": 1,
+    "official_product": 2,
     "official_sales": 7,
-    "official_support_manual": 3
+    "official_support_manual": 4,
+    "press_release_distribution": 1
   },
   "source_domains": [
     "aqara.com",
+    "arculusboxx.com",
     "arlo.com",
     "eu.aqara.com",
     "eufy.com",
+    "globenewswire.com",
     "ring.com",
     "schlage.com",
     "store.google.com",

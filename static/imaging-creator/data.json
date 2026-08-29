@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-28",
+  "checked_on": "2026-08-29",
   "scope_note": "本库覆盖影像与创作设备：运动相机、360相机、云台相机、无人机、手持云台与直播影像设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-08-28"
+      "2026-08-29"
     ]
   ],
   "products": [
@@ -452,6 +452,17 @@
       "reason": "官方页面未披露部分字段",
       "url": "https://www.sony.com/electronics/support/e-mount-body-zv-e-series/zv-e10m2/specifications",
       "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "name": "GoBirding Vision Master / APL-ETF-M1",
+      "brand": "GoBirding / Apexel",
+      "region": "中国/全球众筹候选",
+      "category": "AI观鸟望远镜/智能影像",
+      "status": "官方页面称将于2026年8月上线Kickstarter；尚未核得正式零售",
+      "evidence": "B",
+      "reason": "GoBirding官方产品页称Vision Master为APL-ETF-M1并计划2026年8月在Kickstarter上线，提供900mm焦距、30x光学/最高120x混合变焦、4K、OIS和AI识鸟。当前未核到正式Kickstarter项目页或最终零售价，因此保留候选。",
+      "url": "https://www.gobirding.com/pages/smart-ai-bird-scope-by-gobirding",
+      "alias_or_relation": "GoBirding为Apexel子品牌/产品线；AI观鸟影像候选，不与普通望远镜或户外GPS主表合并。"
     }
   ],
   "sources": [
@@ -675,6 +686,42 @@
       "campaign_status": "未公开",
       "pledge_or_price": "未公开",
       "estimated_delivery": "未公开"
+    },
+    {
+      "checked_on": "2026-08-29",
+      "campaign_status": "未公开",
+      "pledge_or_price": "官方仅显示US$4.99可退VIP订金；最终价格未公开",
+      "estimated_delivery": "未公开",
+      "id": "GOBIRDING-VISION-MASTER",
+      "source_group": "GoBirding Vision Master官方产品页",
+      "url": "https://www.gobirding.com/pages/smart-ai-bird-scope-by-gobirding",
+      "scope": "Vision Master/APL-ETF-M1、900mm焦距、30x光学/最高120x混合变焦、自动对焦/目标跟踪、OIS、4K、离线/云端AI识鸟、重量尺寸和Kickstarter计划",
+      "quality": "B",
+      "source_domain": "gobirding.com",
+      "source_channel": "official_product",
+      "source_role": "官方产品计划/规格发现",
+      "seller_type": "品牌官方",
+      "availability_signal": "计划Kickstarter；VIP订金入口；尚未验证正式零售",
+      "storefront_type": "品牌官方产品页",
+      "platform_reference": "Vision Master / APL-ETF-M1"
+    },
+    {
+      "checked_on": "2026-08-29",
+      "campaign_status": "未公开",
+      "pledge_or_price": "媒体提及早鸟约US$649–699/正式价约US$999；非官方价格，保留为线索",
+      "estimated_delivery": "未公开",
+      "id": "GOBIRDING-VISION-MASTER-TECHRADAR",
+      "source_group": "TechRadar GoBirding Vision Master评测/发现",
+      "url": "https://www.techradar.com/cameras/i-tested-the-worlds-first-ai-spotting-scope-for-birders-and-its-brilliant-in-places-frustrating-in-others",
+      "scope": "第三方评测补充APL-ETF-M1样机体验与价格预期；媒体提及的早鸟/零售价不作为官方主表价格",
+      "quality": "C",
+      "source_domain": "techradar.com",
+      "source_channel": "specialist_media",
+      "source_role": "专业媒体/样机发现与交叉核验",
+      "seller_type": "专业媒体",
+      "availability_signal": "评测样机；Kickstarter计划",
+      "storefront_type": "专业媒体评测",
+      "platform_reference": "APL-ETF-M1"
     }
   ],
   "update_log": [
@@ -707,6 +754,12 @@
       "change": "【影像与创作设备】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
       "verification": "众筹和电商页面继续作为发现、预售、区域价格/库存和SKU信号；缺少原厂/官方规格/交付证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管和授权渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-29",
+      "change": "新增GoBirding Vision Master/APL-ETF-M1候选：官方产品页记录900mm、30x/120x混合变焦、4K、OIS、离线/云端AI识鸟和Kickstarter计划；最终活动页、零售价和正式交付未核实，不计入已上市主表。",
+      "verification": "官方页用于型号和规格发现，TechRadar仅作样机/价格线索；US$4.99是官方可退VIP订金，不等于最终设备价格，媒体价格不写入主表。",
+      "next": "继续核对正式Kickstarter项目、最终奖励档、量产规格、库存、交付和授权销售。"
     }
   ],
   "source_channel_policy": [
@@ -789,12 +842,14 @@
     }
   ],
   "source_channel_counts": {
-    "official_product": 2,
+    "official_product": 3,
     "official_sales": 4,
-    "official_support_manual": 7
+    "official_support_manual": 7,
+    "specialist_media": 1
   },
   "source_domains": [
     "dji.com",
+    "gobirding.com",
     "gopro.com",
     "mevo.com",
     "obsbot.com",
@@ -802,6 +857,7 @@
     "onlinemanual.insta360.com",
     "sony.com",
     "store.dji.com",
-    "store.insta360.com"
+    "store.insta360.com",
+    "techradar.com"
   ]
 }

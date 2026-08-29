@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-28",
+  "checked_on": "2026-08-29",
   "scope_note": "首版优先覆盖全球主要品牌的TWS、主动降噪、AI/录音/翻译耳机与骨传导/开放式运动耳机。按独立型号/代际计数；颜色、充电盒套装和区域SKU不拆行。翻译能力、AI功能与硬件音频能力分开记录；来源没有披露的芯片、传感器、尺寸、重量、防水、续航和订阅字段写“未公开”。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-08-28"
+      "2026-08-29"
     ]
   ],
   "products": [
@@ -955,6 +955,42 @@
       "availability_note": "美国官方页显示预售；官方页/新闻稿显示2026-09-03起发货；地区价格不同",
       "source_note": "Sennheiser美国/英国官方销售页和官方Newsroom；未披露字段不推断",
       "connectivity": "未公开"
+    },
+    {
+      "id": "AUDIO-027",
+      "brand": "PLAUD",
+      "model": "Plaud One Limited Explorer Edition",
+      "country_region": "美国/欧洲部分市场/加拿大；限量全球2,000台",
+      "category": "AI耳机/TWS录音耳机",
+      "form_factor": "半入耳式无线耳机 + 带麦克风充电盒",
+      "use_case": "会议、电话、在线会议录音、转写、摘要、AI Agent、音乐与通话",
+      "status": "预售已结束/等待发货或重新开放",
+      "evidence": "A",
+      "launch_date": "2026-08-28",
+      "launch_date_type": "官方地区发布文章/官方产品页",
+      "price": "US$249.99（官方产品页；限量Explorer Edition）",
+      "official_url": "https://www.plaud.ai/products/plaud-one",
+      "spec_url": "https://www.plaud.ai/pages/plaud-device-comparison",
+      "display": "无屏幕；充电盒带扬声器/按键",
+      "os_platform": "Plaud App/Web/Desktop；地区兼容性按官方页面核验",
+      "audio_drivers": "12mm动态驱动单元",
+      "sensors": "每只耳机3个MEMS + 1个VPU；充电盒4个MEMS + AI波束成形；触控/按键细节未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "Bluetooth 5.4；4G LTE/eSIM；SBC/LDAC；双设备Multipoint；Apple Find My",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "4.5g/只；充电盒62.5g",
+      "battery": "耳机ANC关闭约6h/开启约4.5h；耳机+盒最长约36h；连续录音耳机6h/盒25h；充电盒830mAh；待机约21天",
+      "charging": "USB-C；10分钟约补充2小时使用",
+      "water_resistance": "耳机IP54；充电盒IP52",
+      "subscription": "Starter每月含300分钟转写；Pro US$17.99/月或US$99.99/年；Unlimited US$29.99/月或US$239.99/年；计划与额度可能按地区变化",
+      "privacy": "官方页面称传输与静态数据加密，除非用户明确选择加入，谈话数据不用于模型训练；录音同意和当地法律需自行遵守",
+      "features": "环境/电话/在线录音、AI转写与摘要、Plaud Agent、Gmail/Calendar/Notion/Slack集成、语音激活；充电盒可在约5m/16.4ft范围采集",
+      "availability_note": "官方产品页列出美国、法国、德国、英国、意大利、西班牙、加拿大、荷兰；当前预售已结束并显示候补/等待名单，预计发货在结算时按地区与订单显示，不作为普遍现货结论",
+      "source_note": "Plaud官方产品页、官方设备对比页和官方地区发布文章；未公开芯片、存储、尺寸和实际库存不推断；本条与录音卡片库RC-032为同一硬件的跨品类索引",
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -1145,6 +1181,42 @@
       "campaign_status": "未公开",
       "pledge_or_price": "未公开",
       "estimated_delivery": "未公开"
+    },
+    {
+      "checked_on": "2026-08-29",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$249.99；全球限量2,000台",
+      "estimated_delivery": "结算时按地区/订单显示；当前页面未给统一日期",
+      "id": "PLAUD-ONE-PRODUCT",
+      "source_group": "PLAUD One官方产品页",
+      "url": "https://www.plaud.ai/products/plaud-one",
+      "scope": "限定2,000台、US$249.99、耳机/录音盒形态、12mm驱动、MEMS/VPU麦克风、ANC、Bluetooth 5.4、4G LTE/eSIM、续航、IP等级、订阅和隐私口径；当前预售已结束/候补",
+      "quality": "A",
+      "source_domain": "plaud.ai",
+      "source_channel": "official_product",
+      "source_role": "原厂产品/规格/价格/隐私证据",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "官方预售已结束/候补名单；区域可得性列于产品页",
+      "storefront_type": "品牌官方产品页",
+      "platform_reference": "Plaud One Limited Explorer Edition"
+    },
+    {
+      "checked_on": "2026-08-29",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "PLAUD-ONE-RELEASE",
+      "source_group": "PLAUD官方地区发布文章",
+      "url": "https://plaud.se/es/blog/plaud-lanza-ahora-sus-primeros-auriculares-con-ia-conoce-plaud-one",
+      "scope": "官方地区发布文章确认Plaud One首发、US$249.99、2,000台、4G/eSIM录音盒、麦克风阵列、AI Agent和ANC等特性；作为产品页之外的发布证据",
+      "quality": "A",
+      "source_domain": "plaud.se",
+      "source_channel": "official_news",
+      "source_role": "品牌发布/型号首发证据",
+      "seller_type": "品牌官方",
+      "availability_signal": "官方发布；具体区域预售/候补以产品页为准",
+      "storefront_type": "品牌官方News/Blog",
+      "platform_reference": "Plaud One"
     }
   ],
   "update_log": [
@@ -1177,6 +1249,12 @@
       "change": "【TWS/AI/翻译/降噪/骨传导耳机】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
       "verification": "众筹和电商页面继续作为发现、预售、区域价格/库存和SKU信号；缺少原厂/官方规格/交付证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管和授权渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-29",
+      "change": "新增AUDIO-027 Plaud One Limited Explorer Edition：官方产品页与地区发布文章确认US$249.99、全球限量2,000台、耳机/录音盒、ANC、Bluetooth 5.4、4G/eSIM、麦克风阵列、续航、IP等级、订阅与隐私边界；当前预售已结束/候补，不扩大为普遍现货。",
+      "verification": "核心型号、价格、功能、传感器、续航、防护、区域可得性和隐私来自Plaud官方产品/发布资料；芯片、存储、尺寸和统一发货日未公开。Amazon及其他电商本轮仅作交叉发现，未用第三方页面替代官方上市证据。",
+      "next": "继续追踪Plaud One重新开放、地区库存、实际交付、最终App兼容性、精确芯片/存储和隐私条款变更。"
     }
   ],
   "source_channel_policy": [
@@ -1259,7 +1337,8 @@
     }
   ],
   "source_channel_counts": {
-    "official_product": 1,
+    "official_news": 1,
+    "official_product": 2,
     "official_release": 1,
     "official_sales": 5,
     "official_support_manual": 2
@@ -1268,6 +1347,8 @@
     "apple.com",
     "mi.com",
     "newsroom.sennheiser.com",
+    "plaud.ai",
+    "plaud.se",
     "shokz.com",
     "sony.com",
     "soundcore.com",

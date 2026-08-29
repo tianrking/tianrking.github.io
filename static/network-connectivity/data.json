@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-28",
+  "checked_on": "2026-08-29",
   "scope_note": "本库覆盖网络与移动通信：Wi‑Fi路由器、Mesh、5G CPE、移动热点、随身Wi‑Fi与NAS。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-08-28"
+      "2026-08-29"
     ]
   ],
   "products": [
@@ -343,6 +343,17 @@
       "reason": "官方5G CPE产品线索，具体区域销售需复核",
       "url": "https://www.ztedevices.com/en/products/5g-indoor-cpe/",
       "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "name": "Meshium Local Mesh Communication",
+      "brand": "Meshium",
+      "region": "全球众筹候选",
+      "category": "本地Mesh通信/离线网络",
+      "status": "Kickstarter已获批准/预计2026-08-20上线；原型与交付待核",
+      "evidence": "C",
+      "reason": "Meshium官方页面称已有可工作硬件原型、Kickstarter获批，规划2026年8–9月活动、2027年5–6月预计交付；具体型号Mini/L1/L2、协议/芯片/价格和活动实际状态仍未完整核实，保留候选。",
+      "url": "https://www.meshium.io/",
+      "alias_or_relation": "本地Mesh节点/传感器告警/SOS/设备控制；与蜂窝路由器、Matter网关和普通对讲机分开，待最终产品身份核验。"
     }
   ],
   "sources": [
@@ -481,6 +492,42 @@
       "campaign_status": "未公开",
       "pledge_or_price": "未公开",
       "estimated_delivery": "未公开"
+    },
+    {
+      "checked_on": "2026-08-29",
+      "campaign_status": "官方称Kickstarter已获批；计划2026-08至09",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "2027-05至06（官方规划，非已交付证明）",
+      "id": "MESHIUM-OFFICIAL",
+      "source_group": "Meshium官方项目页",
+      "url": "https://www.meshium.io/",
+      "scope": "Mini/L1/L2、离线本地消息、传感器告警、SOS、设备控制、硬件原型、Kickstarter计划和2027年交付规划",
+      "quality": "B",
+      "source_domain": "meshium.io",
+      "source_channel": "official_product",
+      "source_role": "官方项目/原型/计划证据",
+      "seller_type": "项目方官方",
+      "availability_signal": "功能原型；众筹计划",
+      "storefront_type": "项目官方主页",
+      "platform_reference": "Meshium Mini/L1/L2"
+    },
+    {
+      "checked_on": "2026-08-29",
+      "campaign_status": "官方主页称计划2026-08-20上线；平台状态需继续核对",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "2027-05至06（官方主页规划）",
+      "id": "MESHIUM-KICKSTARTER",
+      "source_group": "Meshium Kickstarter项目页",
+      "url": "https://www.kickstarter.com/projects/meshium/meshium-local-mesh-communication",
+      "scope": "项目链接、众筹平台项目身份和活动状态发现；页面正文信息有限，不补推具体芯片/协议/价格",
+      "quality": "C",
+      "source_domain": "kickstarter.com",
+      "source_channel": "crowdfunding",
+      "source_role": "众筹发现/项目状态信号",
+      "seller_type": "项目方/众筹平台",
+      "availability_signal": "项目页可访问；实际上线/结束状态待复核",
+      "storefront_type": "Kickstarter项目页",
+      "platform_reference": "meshium/meshium-local-mesh-communication"
     }
   ],
   "update_log": [
@@ -513,6 +560,12 @@
       "change": "【网络与移动通信】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
       "verification": "众筹和电商页面继续作为发现、预售、区域价格/库存和SKU信号；缺少原厂/官方规格/交付证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管和授权渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-29",
+      "change": "新增Meshium Local Mesh Communication候选：官方主页与Kickstarter链接记录Mini/L1/L2、本地消息、传感器告警、SOS、设备控制、原型、活动计划和预计2027年交付；未升级为已上市主表。",
+      "verification": "官方项目页可证明原型与项目规划，Kickstarter仅作项目状态发现；精确协议、芯片、价格、实际上线和交付未完整核验。",
+      "next": "继续核对Kickstarter正式活动状态、型号/料号、无线协议、价格档位、区域可得性和交付更新。"
     }
   ],
   "source_channel_policy": [
@@ -595,6 +648,8 @@
     }
   ],
   "source_channel_counts": {
+    "crowdfunding": 1,
+    "official_product": 1,
     "official_sales": 3,
     "official_support_manual": 5
   },
@@ -604,6 +659,8 @@
     "gl-inet.com",
     "global.download.synology.com",
     "kb.netgear.com",
+    "kickstarter.com",
+    "meshium.io",
     "netgear.com",
     "qnap.com",
     "static.tp-link.com"
