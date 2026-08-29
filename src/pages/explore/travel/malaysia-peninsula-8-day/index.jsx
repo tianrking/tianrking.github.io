@@ -19,7 +19,7 @@ const overallRouteStops = routeStops.map((stop) => stop.query);
 
 const budgetInitial = {
   flight: 1200,
-  transit: 500,
+  transit: 330,
   stay: 385,
   tickets: 340,
   food: 378,
@@ -76,8 +76,8 @@ const days = [
     blocks: [
       ['09:00–12:15', '先走青雲亭，再進海事博物館。海事館把葡萄牙、荷蘭、英國與日據時期放在同一條港口史線上；以官方當日開放時間為準。'],
       ['12:45–17:00', '漫步 Heeren Street 老騎樓，吃娘惹叻沙；下午留給補眠、充電、防蚊與整理筆記，夜巴前不要再硬塞一座遠館。'],
-      ['21:30–22:30', '前往 Melaka Sentral 候車，提前確認車次、座位與行李。'],
-      ['22:30–06:00', '搭 KKKL 或 Mayang Sari 豪華夜巴北上檳城。2+1 寬座可以省下一晚住宿，但薄羽絨或抓絨外套一定要放在手邊。'],
+      ['20:15–21:10', '回 Sleep Here 取行李，再以市巴或短程 Grab 到 Melaka Sentral。8 月 30 日先選「直達 Sungai Nibong／Penang Sentral」的已付款車票，寧可早到，不要為省一點錢買凌晨在 KL 轉車的班次。'],
+      ['約 21:30–04:45', '搭直達夜巴北上檳城；目前票務頁可見約 21:30 的直達班次，最終以你買到的票面時間與下車站為準。全程約 7 小時，睡在車上省一晚住宿，外套放手邊。'],
     ],
     stay: '過夜巴士。',
   },
@@ -97,7 +97,7 @@ const days = [
       {label: '姓周橋', query: 'Chew Jetty Penang, Malaysia'},
     ],
     blocks: [
-      ['06:30–08:15', '夜巴抵達後先寄放行李、吃早餐。國慶日的州級活動、封路與人流每年不同，現場不追逐流程，先保留體力。'],
+      ['04:30–08:15', '夜巴抵達後先在車站附近吃早餐、充電與等候天亮，再到住宿寄放行李。國慶日的州級活動、封路與人流每年不同，現場不追逐流程，先保留體力。'],
       ['08:30–11:00', '從 Esplanade、檳城紀念碑走到康華利斯堡。紀念碑把第一次世界大戰、第二次世界大戰、泰緬死亡鐵路與緊急狀態等記憶放在同一處城市節點；國慶日最適合以戶外史跡為主。'],
       ['11:15–13:00', '走 Old Protestant Cemetery 與吉寧甲必丹回教堂，將殖民港口、早期英人墓園與印度穆斯林商業社群放在同一個街區讀。'],
       ['14:30–17:30', '邱公司、姓周橋與周邊街屋擇二深入，不把每個展館都當成打卡。檳城州立博物館在國慶假日不排入這天，留到 Day 4。'],
@@ -127,34 +127,38 @@ const days = [
   {
     day: 5,
     date: '9 月 2 日（三）',
-    route: '檳城 → 布央谷 → 馬當 → 太平',
-    title: '從古吉打走進戰時馬來亞',
-    focus: '布央谷考古遺址、Kota Ngah Ibrahim、太平戰爭公墓',
+    route: '喬治市 → 北海 → 雙溪大年 → 布央谷 → 太平',
+    title: '用渡輪、KTM 與步行接上古吉打',
+    focus: '布央谷考古遺址、半島北段鐵路、太平戰爭公墓',
     mapStops: [
-      {label: '檳城出發點', query: 'George Town, Penang, Malaysia'},
+      {label: '拉惹敦烏達碼頭', query: 'Raja Tun Uda Ferry Terminal, George Town, Penang, Malaysia'},
+      {label: '北海碼頭／Penang Sentral', query: 'Sultan Abdul Halim Ferry Terminal, Butterworth, Penang, Malaysia'},
+      {label: '雙溪大年交通樞紐', query: 'Sungai Petani Bus Terminal, Kedah, Malaysia'},
       {label: '布央谷遺址', query: 'Lembah Bujang Archaeological Museum, Kedah, Malaysia'},
       {label: 'Bukit Batu Pahat 遺址', query: 'Candi Bukit Batu Pahat Lembah Bujang, Kedah, Malaysia'},
-      {label: '馬當博物館', query: 'Matang Museum Perak, Malaysia'},
       {label: '太平戰爭公墓', query: 'Taiping War Cemetery, Perak, Malaysia'},
-      {label: '太平湖花園', query: 'Taiping Lake Gardens, Perak, Malaysia'},
+      {label: '太平車站', query: 'Taiping Railway Station, Perak, Malaysia'},
     ],
     blocks: [
-      ['06:30–09:00', '這天預訂全日包車或有明確報價的跨城司機，從檳城直達布央谷。若只靠公車與臨時 Grab，馬當與太平不應同日硬塞。'],
-      ['09:00–11:00', '進 Lembah Bujang Archaeological Museum 與鄰近 Candi Bukit Batu Pahat。博物館展示吉打地區 3–12 世紀的海上貿易與印度教／佛教遺存；以當日開放安排為準。'],
-      ['11:00–14:00', '包車往南至馬當，途中吃簡單午餐並保留塞車緩衝。這段移動本身就是把古港口、錫礦區與戰時路線連在一起。'],
-      ['14:00–15:30', '參觀 Matang Museum（Kota Ngah Ibrahim）。它曾是錫礦行政空間，1942–1945 年間由日軍作為總部使用；比單一戰爭展館更能讀出權力如何接管既有建築。'],
-      ['16:00–17:15', '到 Taiping War Cemetery，安靜走一圈後再回太平市區住宿。公墓是二戰核心站，不再為了趕怡保而壓縮。'],
+      ['06:45–09:10', '步行到 George Town 的 Raja Tun Uda 碼頭，搭第一批渡輪到 Butterworth；再從 Penang Sentral 轉已預訂的 KTM 北上 Sungai Petani。渡輪是主交通，不叫跨城車。'],
+      ['09:10–10:15', '由 Sungai Petani 巴士總站搭往 Merbok 的接駁；最後約 2.5 km 在白天步行到布央谷。遇暴雨、行李或接駁落空時，只用這一小段短程 Grab 作備援，絕不包全天車。'],
+      ['10:15–12:15', '進 Lembah Bujang Archaeological Museum 與鄰近 Candi Bukit Batu Pahat。它展示 3–12 世紀海上貿易與印度教／佛教遺存；門票免費，開放時間以當日公告為準。'],
+      ['12:15–14:00', '沿原路回 Sungai Petani，吃午餐、在車站等下一班向南的 KTM。不要把馬當疊在今天；它在太平旁邊，明早用固定線路處理才順路。'],
+      ['14:00–17:30', '搭 KTM 向南至 Taiping，入住市區。若車次較晚，戰爭公墓移到明早；不為趕日落在陌生路段拖行李。'],
     ],
-    stay: '太平市區住宿，避免把布央谷、太平與怡保塞進同一晚。',
+    stay: '太平市區住宿；這一晚把跨城移動做完，隔天只處理太平與馬當。',
   },
   {
     day: 6,
     date: '9 月 3 日（四）',
-    route: '太平 → 怡保 → 吉隆坡',
-    title: '把太平與怡保拆開，才有博物館的時間',
-    focus: '霹靂博物館、Han Chin Pet Soo、KTM ETS、KLCC',
+    route: '太平 → 馬當 → 怡保 → 吉隆坡',
+    title: '用 77 號巴士進戰時舊址，再沿鐵路南下',
+    focus: '馬當博物館、霹靂博物館、太平戰爭公墓、KTM ETS',
     mapStops: [
+      {label: '太平巴士站', query: 'Taiping Bus Terminal, Perak, Malaysia'},
+      {label: '馬當博物館', query: 'Matang Museum Perak, Malaysia'},
       {label: '霹靂博物館', query: 'Perak Museum, Taiping, Perak, Malaysia'},
+      {label: '太平戰爭公墓', query: 'Taiping War Cemetery, Perak, Malaysia'},
       {label: '太平車站', query: 'Taiping Railway Station, Perak, Malaysia'},
       {label: 'Han Chin Pet Soo', query: 'Han Chin Pet Soo, Ipoh, Malaysia'},
       {label: '怡保車站', query: 'Ipoh Railway Station, Perak, Malaysia'},
@@ -162,10 +166,10 @@ const days = [
       {label: '雙子塔 / KLCC', query: 'Petronas Twin Towers, Kuala Lumpur, Malaysia'},
     ],
     blocks: [
-      ['09:00–10:45', '進 Perak Museum。它是半島最早的博物館，先用自然史、民族誌與地方史建立霹靂州的長時間框架。'],
-      ['11:00–13:15', '太平前往怡保，吃午餐並移動到舊街場。以 KTM／巴士當日班次選擇，不預設某一班一定能接上。'],
-      ['14:00–15:00', 'Han Chin Pet Soo 需要預約時段；若沒有預約，改走怡保舊街場與車站，不要現場碰運氣。'],
-      ['15:45–18:30', '搭已預訂的 KTM ETS 南下 KL Sentral。抵達後辦入住、補給，晚上看 KLCC。'],
+      ['08:30–11:30', '到 Taiping 巴士站搭 77 號往 Kuala Sepetang 的公車，在 Matang Museum／Kota Ngah Ibrahim 附近下車；上車前先問清回程班次。館舍把錫礦行政、英治與日軍佔領放在同一棟建築裡，是二戰線的核心。'],
+      ['11:30–13:15', '搭同線巴士回太平，進 Perak Museum 或先吃午餐；若 77 號回程班次不合理，才用一次 30 分鐘級短程 Grab 回市區，仍不是全天包車。'],
+      ['13:15–14:30', '走 Taiping War Cemetery；再回車站搭已預訂的 KTM／ETS 往 Ipoh。車票要預留，因為這一段是把北段公共交通接回主幹鐵路的關鍵。'],
+      ['15:30–18:30', 'Han Chin Pet Soo 只在已訂到時段時進入；否則走怡保舊街場、車站與白咖啡，再搭傍晚 ETS 南下 KL Sentral。不要為臨時補一館錯過南下車。'],
       ['19:30–22:00', '在 KLCC 看雙子塔與噴泉夜景，晚餐吃 Roti Canai 與 Teh Tarik。'],
     ],
     stay: '吉隆坡唐人街青旅，預算約 35 MYR。',
@@ -268,8 +272,8 @@ const foodMap = [
 
 const preparation = [
   ['MDAC 入境卡', '出發前 3 天內，使用馬來西亞移民局官方渠道填寫，保存 PDF 或條碼。'],
-  ['先鎖四項', '8 月 30 日夜巴、9 月 2 日全日包車、Han Chin Pet Soo 時段、怡保至 KL 的 ETS；這四項決定路線是否成立。'],
-  ['Day 5 包車', '布央谷、馬當、太平三點同日只適合已預訂的全日司機。公共交通版本應刪馬當或增加一晚，不要臨場硬接。'],
+  ['先鎖五項', '8 月 30 日直達夜巴、9 月 2 日 Butterworth ↔ Sungai Petani 的 KTM、Sungai Petani ↔ Merbok 接駁、77 號巴士回程、怡保至 KL 的 ETS；Han Chin Pet Soo 只在預約成功後加入。'],
+  ['公共交通原則', '布央谷放在 Sungai Petani 的單日支線，馬當放到隔天從太平搭 77 號巴士；不用全日包車。兩個站點的最後 2.5 km 徒步／臨時短程 Grab 只作天氣與班次備援。'],
   ['閉館規則', '檳城州立博物館避開 8 月 31 日國慶假日；警察博物館避開星期一。其餘場館也要在出發前看官方當日公告。'],
   ['導航與通信', '預先準備 Grab、Google Maps 離線地圖、本地 eSIM 與至少一張離線交通備份。'],
   ['空調與裝備', '夜巴、商場與博物館可能很冷；古墓、密林與戰爭遺址要準備驅蚊、長褲與防滑鞋。'],
@@ -279,13 +283,13 @@ const preparation = [
 
 const warPriorityChoices = [
   {
-    title: '已納入：檳城 → 馬當 → 太平 → 吉隆坡',
-    body: '保留檳城戰爭博物館、檳城紀念碑、馬當博物館的日軍佔領脈絡、太平戰爭公墓，以及吉隆坡的皇家警察博物館。這是本次的主方案。',
+    title: '主線：渡輪／KTM／77 號巴士，不包車',
+    body: '保留檳城戰爭博物館、檳城紀念碑、馬當博物館的日軍佔領脈絡、太平戰爭公墓與吉隆坡皇家警察博物館；只把布央谷與馬當拆到相鄰兩天，讓交通順著地理走。',
     tone: 'primary',
   },
   {
-    title: '想再加陸軍博物館：替換 Day 7，不是硬疊',
-    body: 'Port Dickson 的陸軍博物館適合二戰優先者，但需要一整天包車往返。用它替換 Day 7 的吉隆坡博物館走廊，再把警察博物館移到 Day 8；不要在黑風洞後再趕 Port Dickson。',
+    title: '陸軍博物館不放進主線',
+    body: 'Port Dickson 的陸軍博物館值得，但公共交通往返會吃掉一整天；這次不為了再多一館破壞馬六甲—檳城—太平—怡保—吉隆坡的連續路線。',
     href: 'https://www.mkn.gov.my/web/ms/2025/01/03/muzium-tentera-darat-port-dickson-kenakan-bayaran-masuk-mulai-1-januari/',
     linkLabel: '看陸軍博物館開放資訊',
   },
@@ -298,9 +302,14 @@ const officialChecks = [
     href: 'https://penangmuseum.gov.my/',
   },
   {
-    title: '布央谷／馬當／霹靂館',
-    body: '三座由馬來西亞博物館局維護；Day 5 的跨城密度仍以包車保證。',
+    title: '布央谷考古博物館',
+    body: '由 Sungai Petani 巴士總站接駁至 Merbok；最後約 2.5 km 以白天步行為主，雨天才用短程備援。',
     href: 'https://www.jmm.gov.my/en/content/lembah-bujang-archaeological-museum',
+  },
+  {
+    title: '馬當博物館',
+    body: '官方列出從 Taiping 巴士站搭 77 號往 Kuala Sepetang；出發前在站內確認回程班次。',
+    href: 'https://www.jmm.gov.my/en/content/matang-museum',
   },
   {
     title: 'KLIA Transit',
@@ -341,8 +350,8 @@ function BudgetEstimator() {
 
   function applyPreset(type) {
     setValues(type === 'lean'
-      ? {flight: 1200, transit: 460, stay: 385, tickets: 300, food: 378, local: 180}
-      : {flight: 1200, transit: 650, stay: 840, tickets: 500, food: 630, local: 300});
+      ? {flight: 1200, transit: 280, stay: 385, tickets: 300, food: 378, local: 180}
+      : {flight: 1200, transit: 450, stay: 840, tickets: 500, food: 630, local: 300});
   }
 
   return (
@@ -512,7 +521,7 @@ export default function MalaysiaPeninsulaPage() {
             </a>
           </div>
           <div className={styles.callout}>
-            <strong>本次修正：</strong>取消雲頂與凱利古堡，把時間換成檳城州立博物館、馬當博物館、霹靂博物館、皇家警察博物館、國家銀行博物館與國家紡織博物館；Day 5 用包車，才不會把二戰站點做成趕路。
+            <strong>本次修正：</strong>取消雲頂、凱利古堡與 Day 5 全日包車；把布央谷與馬當拆到兩天，以檳城渡輪、KTM、Merbok 接駁與太平 77 號巴士完成，仍保留二戰與博物館主線。
           </div>
         </section>
 
@@ -546,7 +555,7 @@ export default function MalaysiaPeninsulaPage() {
           <div className={styles.sectionHeading}>
             <span className={styles.kicker}>03 / BUDGET</span>
             <Heading as="h2" id="budget-title">歷史強化版預算</Heading>
-            <p>按往返機票 ¥1,200、Day 5 包車與增加館舍計算，9 日基準約 ¥3,003；下面可直接替換成實際價格。</p>
+            <p>按往返機票 ¥1,200、夜巴、渡輪、KTM／ETS、公共接駁與增加館舍計算，9 日基準約 ¥2,833；下面可直接替換成實際價格。</p>
           </div>
           <BudgetEstimator />
           <div className={styles.tableWrap}>
@@ -554,7 +563,7 @@ export default function MalaysiaPeninsulaPage() {
               <thead><tr><th>支出項目</th><th>人民幣基準</th><th>核算思路</th></tr></thead>
               <tbody>
                 <tr><td>國際機票</td><td>約 ¥1,200</td><td>本方案按目前往返票價估算，隨航班、日期與行李規則浮動。</td></tr>
-                <tr><td>城際大交通</td><td>約 ¥500</td><td>機場巴士、夜巴、KTM / ETS，以及 Day 5 跨城包車的基準。</td></tr>
+                <tr><td>城際大交通</td><td>約 ¥330</td><td>機場巴士、夜巴、檳城渡輪、KTM / ETS 與 Merbok 接駁；不含全日包車。</td></tr>
                 <tr><td>住宿</td><td>約 ¥385</td><td>夜巴省 1 晚，其餘 7 晚以青旅床位估算。</td></tr>
                 <tr><td>門票與館舍</td><td>約 ¥340</td><td>檳城戰爭博物館、州立與國家館舍、Han Chin Pet Soo 等；依外籍票價與臨時展調整。</td></tr>
                 <tr><td>餐飲</td><td>約 ¥378</td><td>茶餐室、嘛嘛檔、雞飯粒、肉骨茶與扁擔飯，按 9 日估算。</td></tr>
@@ -651,7 +660,7 @@ export default function MalaysiaPeninsulaPage() {
             <div>
               <span className={styles.kicker}>VERSION 02 / RECHECK BEFORE GO</span>
               <Heading as="h2" id="revision-title">先守住時間，再增加內容。</Heading>
-              <p>出發前重新核對航班、MDAC、館舍開放、國慶活動、夜巴、ETS、Day 5 包車、宗教場所規定、天氣與安全狀況。現場若有延誤，優先保留馬六甲、檳城戰爭博物館、布央谷／馬當／太平與吉隆坡國家館舍；不要犧牲這些核心站點去補一個遠距離打卡。</p>
+              <p>出發前重新核對航班、MDAC、館舍開放、國慶活動、夜巴、渡輪、KTM、Merbok 接駁、77 號巴士、宗教場所規定、天氣與安全狀況。現場若有延誤，優先保留馬六甲、檳城戰爭博物館、布央谷／馬當／太平與吉隆坡國家館舍；不要犧牲這些核心站點去補一個遠距離打卡。</p>
             </div>
             <Link className={styles.backLink} to="/explore/travel">回到行旅誌 <span aria-hidden="true">↗</span></Link>
           </div>
