@@ -25,7 +25,7 @@ export default function TravelSeriesPage() {
           </div>
           <div className={styles.featureGrid}>
             <div>
-              <Heading as="h2" id="first-story-title">馬來西亞西馬半島<br />9 日歷史考古行程</Heading>
+              <Heading as="h2" id="first-story-title">馬來西亞西馬半島<br />9 日博物館與二戰行程</Heading>
               <p>
                 從馬六甲的殖民要塞與華人古墓，到檳城的國慶、二戰地下要塞與宗族街區，
                 再沿北馬鐵路走進布央谷、太平、怡保，最後回到吉隆坡的國家級博物館、清真寺與現代地標。
