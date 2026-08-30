@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-29",
+  "checked_on": "2026-08-30",
   "scope_note": "本库覆盖电子纸与数字办公：电子纸平板、电子书、智能笔、数字纸、便携显示器与扫描设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-08-29"
+      "2026-08-30"
     ]
   ],
   "products": [
@@ -343,6 +343,30 @@
       "reason": "官方支持页可核验，当前销售状态不足以进入主表",
       "url": "https://www.sony.com/electronics/support/digital-paper-notebooks-dpt-series/dpt-rp1",
       "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "name": "Kylendar Mini / KY02",
+      "brand": "Kylendar",
+      "region": "香港/全球候选",
+      "category": "电子纸日历/桌面办公",
+      "status": "Kickstarter众筹结束/等待交付；非普通零售",
+      "evidence": "C",
+      "reason": "官方Kickstarter项目披露4.2英寸单色电子纸、400×300、Google Calendar同步、网页编辑、widgets、USB-C和约半个月连续日常使用；项目于2026-08-14结束。第三方手册镜像补充KY02、约104×90×17mm、约135g、2.4GHz Wi-Fi和3000mAh，但非原厂直链，字段以候选线索保留。",
+      "url": "https://www.kickstarter.com/projects/kylendar-mini/the-next-generation-smart-e-ink-calendar-kylendar-mini/",
+      "alias_or_relation": "KY02/2BTLS-KY-02候选；与Kylendar 2.0项目分开，不当作已上市零售型号",
+      "next_check": "补查官方商店、正式零售价格、交付、FCC/CE和原厂完整规格"
+    },
+    {
+      "name": "Kylendar 2.0",
+      "brand": "Kylendar",
+      "region": "香港/全球候选",
+      "category": "电子纸桌面仪表盘",
+      "status": "Kickstarter众筹结束/等待交付；非普通零售",
+      "evidence": "C",
+      "reason": "官方Kickstarter项目披露7英寸电子纸、39个widgets、AI布局生成器和最多10页；项目于2026-04-30结束，当前仍缺稳定普通零售价格、库存和正式发货证据。",
+      "url": "https://www.kickstarter.com/projects/kylendar-mini/kylendar-20-design-your-perfect-desk-dashboard",
+      "alias_or_relation": "独立于Kylendar Mini；项目/代际不同，不拆奖励档和配件",
+      "next_check": "补查项目更新、官方商店、交付和产品认证"
     }
   ],
   "sources": [
@@ -481,6 +505,78 @@
       "campaign_status": "未公开",
       "pledge_or_price": "未公开",
       "estimated_delivery": "未公开"
+    },
+    {
+      "checked_on": "2026-08-30",
+      "campaign_status": "已结束",
+      "pledge_or_price": "奖励档/项目金额以页面为准",
+      "estimated_delivery": "项目更新/FAQ另核",
+      "id": "KYLENDAR-MINI-KS",
+      "source_group": "Kylendar Mini官方Kickstarter",
+      "url": "https://www.kickstarter.com/projects/kylendar-mini/the-next-generation-smart-e-ink-calendar-kylendar-mini/",
+      "scope": "4.2英寸电子纸、日历同步、网页编辑、widgets、项目金额/支持者/结束日期",
+      "quality": "B",
+      "source_domain": "kickstarter.com",
+      "source_channel": "crowdfunding",
+      "source_role": "官方项目/预售与功能发现证据",
+      "seller_type": "品牌项目方",
+      "storefront_type": "Kickstarter项目页",
+      "availability_signal": "众筹结束；等待交付",
+      "platform_reference": "Kylendar Mini project"
+    },
+    {
+      "checked_on": "2026-08-30",
+      "campaign_status": "已结束",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "结束后15天内发货（FAQ口径）",
+      "id": "KYLENDAR-MINI-FAQ",
+      "source_group": "Kylendar Mini官方Kickstarter FAQ",
+      "url": "https://www.kickstarter.com/projects/kylendar-mini/the-next-generation-smart-e-ink-calendar-kylendar-mini/faqs?lang=de",
+      "scope": "单色电子纸、无背光、USB-C、约半个月使用、结束后发货说明",
+      "quality": "B",
+      "source_domain": "kickstarter.com",
+      "source_channel": "crowdfunding",
+      "source_role": "官方FAQ/规格/交付证据",
+      "seller_type": "品牌项目方",
+      "storefront_type": "Kickstarter FAQ",
+      "availability_signal": "众筹结束/交付说明",
+      "platform_reference": "Kylendar Mini"
+    },
+    {
+      "checked_on": "2026-08-30",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "KYLENDAR-MINI-MANUAL-MIRROR",
+      "source_group": "Kylendar Mini规格手册镜像",
+      "url": "https://device.report/m/1f1a7c3a1d21893b14a3e3243b5252b1bb73e786d9fead983512279fb1fbe76e",
+      "scope": "KY02/2BTLS-KY-02、400×300、尺寸重量、2.4GHz Wi-Fi、3000mAh等辅助字段",
+      "quality": "C",
+      "source_domain": "device.report",
+      "source_channel": "secondary_specs",
+      "source_role": "第三方手册镜像/待原厂回链",
+      "seller_type": "第三方资料镜像",
+      "storefront_type": "规格镜像",
+      "availability_signal": "仅规格线索；不证明在售",
+      "platform_reference": "2BTLS-KY-02/KY02"
+    },
+    {
+      "checked_on": "2026-08-30",
+      "campaign_status": "已结束",
+      "pledge_or_price": "奖励档/项目金额以页面为准",
+      "estimated_delivery": "未公开",
+      "id": "KYLENDAR-2-KS",
+      "source_group": "Kylendar 2.0官方Kickstarter",
+      "url": "https://www.kickstarter.com/projects/kylendar-mini/kylendar-20-design-your-perfect-desk-dashboard",
+      "scope": "7英寸电子纸、39 widgets、AI布局、10页、项目状态与结束日期",
+      "quality": "B",
+      "source_domain": "kickstarter.com",
+      "source_channel": "crowdfunding",
+      "source_role": "官方项目/预售与功能发现证据",
+      "seller_type": "品牌项目方",
+      "storefront_type": "Kickstarter项目页",
+      "availability_signal": "众筹结束；普通零售待核",
+      "platform_reference": "Kylendar 2.0 project"
     }
   ],
   "update_log": [
@@ -519,6 +615,12 @@
       "change": "【电子纸与数字办公】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
       "verification": "Amazon及区域电商用于发现、价格/库存、ASIN/SKU和卖方信号；Kickstarter/Indiegogo用于项目状态和预售线索；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-30",
+      "change": "新增候选Kylendar Mini/KY02与Kylendar 2.0；按Kickstarter项目、FAQ和低等级手册镜像补充电子纸尺寸、连接、电池与交付缺口，未计入主表。",
+      "verification": "官方Kickstarter可证明项目存在、功能、众筹状态和奖励档信号；KY02尺寸/重量/电池来自第三方手册镜像，证据降为C；两个项目均未获得稳定普通零售价格/库存，不标为在售。",
+      "next": "继续寻找Kylendar官方商店、项目更新、原厂手册、认证与实际发货记录，确认是否转为可上市型号。"
     }
   ],
   "source_channel_policy": [
@@ -601,15 +703,19 @@
     }
   ],
   "source_channel_counts": {
+    "crowdfunding": 3,
     "marketplace": 1,
     "official_sales": 6,
-    "official_support_manual": 1
+    "official_support_manual": 1,
+    "secondary_specs": 1
   },
   "source_domains": [
+    "device.report",
     "digprjsurvey.amazon.com",
     "epson.com",
     "fmworld.ne.jp",
     "help.kobo.com",
+    "kickstarter.com",
     "remarkable.com",
     "shop.boox.com",
     "store.bigme.vip",

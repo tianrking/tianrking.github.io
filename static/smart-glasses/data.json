@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-29",
+  "checked_on": "2026-08-30",
   "scope_note": "首版全球智能眼镜／AR眼镜／AI眼镜市场库：主表纳入官方在售、官方明确发售、官方明确预售、企业正式销售/服务中或有官方产品页、手册、规格与交付证据的独立型号/代际。类别覆盖无显示音频眼镜、相机AI眼镜、带显示AI眼镜、消费级AR/XR、企业/工业/医疗/开发者AR。颜色、镜片、处方配置、套装和配件不拆行；不同代际、显示/相机/主机连接方式或关键功能保留独立行。传闻、原型、合作路线、众筹、Coming soon、OEM线索和无法证明交付的项目放入候选与别名表。来源未披露的芯片、传感器、尺寸、重量、电池容量、续航、防水和订阅字段写“未公开”，不从App、AI功能或外观推断。",
   "products": [
     {
@@ -570,7 +570,7 @@
       "country_region": "美国/全球报道上市",
       "category": "AI/相机/开放式音频",
       "form_factor": "眼镜式穿戴",
-      "status": "正式发布/首批交付与库存待核",
+      "status": "在售/官方全球商店",
       "evidence": "B",
       "launch_date": "2026-01",
       "launch_date_type": "CES 2026官方/媒体发布口径",
@@ -593,8 +593,8 @@
       "subscription": "SolosChat 3.0及AI服务按方案变化",
       "privacy": "相机状态/隐私策略待官方完整产品页补证",
       "features": "16MP拍摄、实时视频、SolosChat多模态AI、开放式音频",
-      "availability_note": "有官方/发布报道和价格，但当前官方商品页与实际全球库存需要继续核验",
-      "source_note": "Solos官方站配合T3/Android Central发布信息；硬件完整规格与全球交付证据等级B"
+      "availability_note": "Solos官方发布称AirGo V2已全球上市；价格US$299，地区库存与镜片配置需以官方商店为准",
+      "source_note": "Solos官方全球发布/产品资料；A6另列候选，不回填到V2"
     },
     {
       "id": "AMZ-001",
@@ -3076,6 +3076,18 @@
       "reason": "Indiegogo官方项目页识别Neomix G1为4K/48MP运动相机眼镜；页面显示众筹结束且Pledge Manager开放，预计2026-07-15至2026-12-31分批发货。项目后续交付与普通零售仍需核验，因此不计入已上市主表。",
       "url": "https://www.indiegogo.com/en/projects/beaverlab/neomix-g1",
       "alias_or_relation": "不要与2025年Neomix AI Glasses Kickstarter合并；G1是2026年运动相机项目，具体镜片、配件和后缀继续单独核对。"
+    },
+    {
+      "name": "Solos AirGo A6",
+      "brand": "Solos",
+      "region": "香港发布/全球候选",
+      "category": "AI眼镜/开放式音频",
+      "status": "预发布/官方称在地平线；上市时间与价格待定",
+      "evidence": "B",
+      "reason": "Solos官方新闻稿于2026-07-15发布下一代AirGo A6：约19g（未含镜片）、无相机镜框、完整处方兼容、SolosChat、语音备忘、翻译、通话/消息/日历/提醒与音频调节；官方明确价格和可得性仍待公布，不能当作已上市主表记录。",
+      "url": "https://www.prnewswire.com/apac/news-releases/solos-unveils-next-generation-airgo-a6-and-new-privacy-kit-launches-airgo-v2-worldwide-at-third-annual-ai-smartglasses-symposium-in-hong-kong-302826222.html",
+      "alias_or_relation": "下一代AirGo候选；与AirGo 3、AirGo V2分开；不把新闻稿预告当作零售SKU",
+      "next_check": "补查Solos官方产品页、FCC/CE、精确分料号、首发价格、续航、电池、芯片和正式交付"
     }
   ],
   "sources": [
@@ -4103,6 +4115,23 @@
       "availability_signal": "Pledge Manager/交付待核",
       "storefront_type": "Indiegogo FAQ",
       "platform_reference": "beaverlab/neomix-g1/faq"
+    },
+    {
+      "checked_on": "2026-08-30",
+      "campaign_status": "未公开",
+      "pledge_or_price": "A6价格待定；V2 US$299",
+      "estimated_delivery": "未公开",
+      "id": "SOLOS-AIRGO-A6-V2-PR",
+      "source_group": "Solos AirGo A6/V2官方发布",
+      "url": "https://www.prnewswire.com/apac/news-releases/solos-unveils-next-generation-airgo-a6-and-new-privacy-kit-launches-airgo-v2-worldwide-at-third-annual-ai-smartglasses-symposium-in-hong-kong-302826222.html",
+      "scope": "AirGo A6预发布特征与待定价格/可得性；AirGo V2全球上市与US$299信号",
+      "quality": "B",
+      "source_domain": "prnewswire.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌新闻稿/上市状态与预发布线索",
+      "seller_type": "品牌新闻稿分发",
+      "storefront_type": "官方发布",
+      "availability_signal": "A6 on the horizon；V2 worldwide availability now"
     }
   ],
   "update_log": [
@@ -4153,6 +4182,12 @@
       "change": "新增Neomix G1候选：Indiegogo项目结束但Pledge Manager开放，保留4K/48MP/47g/32GB/AOV/IPX4及2026年分批交付信号；与旧版Neomix AI Glasses分开，不计入已上市主表。",
       "verification": "众筹项目页和FAQ只用于项目身份、奖励/交付和规格发现；未找到足以证明普遍零售和最终稳定SKU的核心证据，未把众筹奖励档当作全球零售价。",
       "next": "继续核对Neomix官方零售页、项目更新、最终固件/规格、实际发货和区域授权销售。"
+    },
+    {
+      "date": "2026-08-30",
+      "change": "新增候选Solos AirGo A6；更新SOL-002 AirGo V2为“在售/官方全球商店”，补充同一官方新闻稿的全球上市与价格证据。",
+      "verification": "A6仍只有品牌发布预告，价格、正式上市日、芯片、续航与监管记录未公开；V2的全球上市/US$299来自Solos官方新闻稿，具体地区库存仍需按官方店核验。",
+      "next": "继续跟踪A6正式产品页、监管认证、精确SKU、镜片/尺寸/电池/芯片和实际发货，不把A6预发布字段回填到AirGo V2。"
     }
   ],
   "source_channel_policy": [
@@ -4237,6 +4272,7 @@
   "source_channel_counts": {
     "crowdfunding": 2,
     "marketplace": 1,
+    "official_newsroom": 1,
     "official_product": 22,
     "official_release": 1,
     "official_sales": 20,

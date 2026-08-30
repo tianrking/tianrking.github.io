@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-29",
+  "checked_on": "2026-08-30",
   "scope_note": "首版优先覆盖全球主要品牌的TWS、主动降噪、AI/录音/翻译耳机与骨传导/开放式运动耳机。按独立型号/代际计数；颜色、充电盒套装和区域SKU不拆行。翻译能力、AI功能与硬件音频能力分开记录；来源没有披露的芯片、传感器、尺寸、重量、防水、续航和订阅字段写“未公开”。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-08-29"
+      "2026-08-30"
     ]
   ],
   "products": [
@@ -991,6 +991,42 @@
       "availability_note": "官方产品页列出美国、法国、德国、英国、意大利、西班牙、加拿大、荷兰；当前预售已结束并显示候补/等待名单，预计发货在结算时按地区与订单显示，不作为普遍现货结论",
       "source_note": "Plaud官方产品页、官方设备对比页和官方地区发布文章；未公开芯片、存储、尺寸和实际库存不推断；本条与录音卡片库RC-032为同一硬件的跨品类索引",
       "connectivity": "未公开"
+    },
+    {
+      "id": "AUDIO-028",
+      "brand": "OPPO",
+      "model": "Enco Clip2 Open Earbuds",
+      "country_region": "中国/日本/新加坡及其他区域市场",
+      "category": "开放式夹耳/AI耳机",
+      "form_factor": "开放式夹耳式无线耳机",
+      "use_case": "音乐、通话、AI翻译、运动与日常佩戴",
+      "status": "在售/区域官方商店与授权渠道",
+      "evidence": "A",
+      "launch_date": "2026-06-25",
+      "launch_date_type": "官方日本销售开始日；新加坡官方发布为2026-04-21",
+      "price": "SGD 259起（官方新加坡发布；地区/渠道不同）",
+      "official_url": "https://www.oppo.com/en/accessories/enco-clip2-open-earbuds/",
+      "spec_url": "https://www.oppo.com/jp/newsroom/press/encoclip2-release/",
+      "display": "无显示屏",
+      "os_platform": "OPPO/ColorOS生态；兼容Android/iOS能力按地区与App版本",
+      "audio_drivers": "双单元开放式音频；11mm+9mm动态驱动单元；Dynaudio调音",
+      "sensors": "三麦克风阵列；骨传导VPU传感器；AI通话清晰度NPU；触控细节未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "Bluetooth 6.1；LHDC 5.0/AAC/SBC；双设备连接",
+      "chip_or_soc": "6nm AI四核芯片 + 独立NPU（官方未公开型号）",
+      "storage": "未公开",
+      "dimensions": "耳机约27.6×25.5×17.6mm；充电盒约61.3×55.3×26.3mm",
+      "weight_g": "耳机约5.2g/只；充电盒约35.9g；日本页面合计约46.3g",
+      "battery": "耳机58mAh/只；盒530mAh；AAC单次最长约9.5h、总计约40h；LHDC约8h",
+      "charging": "USB-C",
+      "water_resistance": "耳机IP55",
+      "subscription": "无硬件强制订阅；AI翻译/生态能力按地区、手机和软件开放",
+      "privacy": "麦克风、通话与AI功能权限依手机系统/App；详细数据保留策略未公开",
+      "features": "开放式夹耳佩戴、Dynaudio音效、AI通话清晰度、AI翻译、双设备连接、低延迟/运动日常使用",
+      "availability_note": "日本官方页面列出OPPO官方店、Amazon OPPO官方店与Rakuten等销售渠道；新加坡发布列出官方店、Amazon旗舰店、Lazada/Shopee/TikTok及授权零售",
+      "source_note": "OPPO全球产品页、日本/新加坡官方发布与销售资料；未公开具体SoC型号、存储和完整隐私字段不推断",
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -1217,6 +1253,75 @@
       "availability_signal": "官方发布；具体区域预售/候补以产品页为准",
       "storefront_type": "品牌官方News/Blog",
       "platform_reference": "Plaud One"
+    },
+    {
+      "checked_on": "2026-08-30",
+      "campaign_status": "未公开",
+      "pledge_or_price": "日本区域价格以官方销售页为准",
+      "estimated_delivery": "未公开",
+      "id": "OPPO-ENCO-CLIP2-JP-NEWS",
+      "source_group": "OPPO Enco Clip2日本官方发布/销售",
+      "url": "https://www.oppo.com/jp/newsroom/press/encoclip2-release/",
+      "scope": "日本销售开始日、官方渠道、驱动、麦克风/VPU、IP55、重量、电池和续航",
+      "quality": "A",
+      "source_domain": "oppo.com",
+      "source_channel": "official_newsroom",
+      "source_role": "原厂地区发布/销售/规格证据",
+      "seller_type": "品牌官方",
+      "storefront_type": "官方商店/Amazon官方店/Rakuten",
+      "availability_signal": "2026-06-25日本销售开始；官方渠道列明",
+      "platform_reference": "未公开"
+    },
+    {
+      "checked_on": "2026-08-30",
+      "campaign_status": "未公开",
+      "pledge_or_price": "SGD 259起",
+      "estimated_delivery": "未公开",
+      "id": "OPPO-ENCO-CLIP2-SG-NEWS",
+      "source_group": "OPPO Enco Clip2新加坡官方发布",
+      "url": "https://www.oppo.com/sg/newsroom/press/oppo-enco-clip2-fashion-forward-design-dynaudio-sound/",
+      "scope": "2026-04-21区域发布、SGD 259起、零售渠道、Bluetooth 6.1、IP55、尺寸重量",
+      "quality": "A",
+      "source_domain": "oppo.com",
+      "source_channel": "official_newsroom",
+      "source_role": "原厂地区发布/价格/渠道证据",
+      "seller_type": "品牌官方与授权零售",
+      "storefront_type": "官方商店/Amazon旗舰/Lazada/Shopee等",
+      "availability_signal": "区域上市及官方/授权渠道销售信号"
+    },
+    {
+      "checked_on": "2026-08-30",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "OPPO-ENCO-CLIP2-GLOBAL",
+      "source_group": "OPPO Enco Clip2全球产品页",
+      "url": "https://www.oppo.com/en/accessories/enco-clip2-open-earbuds/",
+      "scope": "6nm AI四核芯片、独立NPU、VPU骨传导、AI翻译、双设备、Bluetooth 6.1、40小时",
+      "quality": "A",
+      "source_domain": "oppo.com",
+      "source_channel": "official_product",
+      "source_role": "原厂产品/功能/连接规格证据",
+      "seller_type": "芯片/设备品牌官方",
+      "storefront_type": "官方产品页",
+      "availability_signal": "全球产品页已上线；区域供货需按当地站点核验"
+    },
+    {
+      "checked_on": "2026-08-30",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "OPPO-ENCO-CLIP2-JP-PRODUCT",
+      "source_group": "OPPO Enco Clip2日本产品页",
+      "url": "https://www.oppo.com/jp/accessories/enco-clip2-open-earbuds/",
+      "scope": "日本规格页与地区产品信息；用于交叉核验精确型号与电池/防护字段",
+      "quality": "A",
+      "source_domain": "oppo.com",
+      "source_channel": "official_support_manual",
+      "source_role": "原厂地区规格/支持证据",
+      "seller_type": "品牌官方",
+      "storefront_type": "官方规格页",
+      "availability_signal": "官方地区产品页"
     }
   ],
   "update_log": [
@@ -1255,6 +1360,12 @@
       "change": "新增AUDIO-027 Plaud One Limited Explorer Edition：官方产品页与地区发布文章确认US$249.99、全球限量2,000台、耳机/录音盒、ANC、Bluetooth 5.4、4G/eSIM、麦克风阵列、续航、IP等级、订阅与隐私边界；当前预售已结束/候补，不扩大为普遍现货。",
       "verification": "核心型号、价格、功能、传感器、续航、防护、区域可得性和隐私来自Plaud官方产品/发布资料；芯片、存储、尺寸和统一发货日未公开。Amazon及其他电商本轮仅作交叉发现，未用第三方页面替代官方上市证据。",
       "next": "继续追踪Plaud One重新开放、地区库存、实际交付、最终App兼容性、精确芯片/存储和隐私条款变更。"
+    },
+    {
+      "date": "2026-08-30",
+      "change": "新增AUDIO-028：OPPO Enco Clip2 Open Earbuds；补充日本/新加坡官方上市、价格、区域渠道、Bluetooth 6.1、AI四核/NPU、VPU骨传导、驱动、电池、续航、USB-C、IP55与尺寸重量。",
+      "verification": "OPPO全球、日本、新加坡官方产品与发布页互证；AI芯片只记录官方公开的6nm AI四核芯片/独立NPU，不臆造具体型号；区域零售渠道只作为可得性和价格信号。",
+      "next": "继续按地区核验中国大陆、东南亚、欧洲和Amazon区域站的精确SKU、当前库存与税前价格，并区分同系列颜色、套装和配件。"
     }
   ],
   "source_channel_policy": [
@@ -1338,15 +1449,17 @@
   ],
   "source_channel_counts": {
     "official_news": 1,
-    "official_product": 2,
+    "official_newsroom": 2,
+    "official_product": 3,
     "official_release": 1,
     "official_sales": 5,
-    "official_support_manual": 2
+    "official_support_manual": 3
   },
   "source_domains": [
     "apple.com",
     "mi.com",
     "newsroom.sennheiser.com",
+    "oppo.com",
     "plaud.ai",
     "plaud.se",
     "shokz.com",
