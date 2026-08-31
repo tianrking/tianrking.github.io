@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-30",
+  "checked_on": "2026-08-31",
   "scope_note": "本库覆盖家用机器人：扫地、洗地、擦窗、割草、泳池与宠物陪伴机器人；宠物项圈/吊牌另库。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-08-30"
+      "2026-08-31"
     ]
   ],
   "products": [
@@ -686,6 +686,42 @@
       "availability_note": "官方产品页列出S1常规价US$238，但当前显示售罄；不将页面的$0促销/空库存解释为免费销售",
       "source_note": "OlloBot官方产品页/主页；售罄状态和未公开字段按页面原文记录",
       "connectivity": "未公开"
+    },
+    {
+      "id": "ROBOT-015",
+      "brand": "Robotical",
+      "model": "Marty the Robot V2",
+      "country_region": "英国/全球教育与家庭市场",
+      "category": "home-robots/coding STEM",
+      "form_factor": "可编程双足教育机器人",
+      "use_case": "家庭/课堂STEM、机器人编程、动作与传感器实验",
+      "status": "在售/官方站可下单；官方页面预计2026年9月交付",
+      "evidence": "A",
+      "launch_date": "2019-11-26",
+      "launch_date_type": "Robotical官方Kickstarter/博客发布；当前V2销售页为在售依据",
+      "price": "US$449（未含VAT/税）",
+      "official_url": "https://robotical.io/product/marty-the-robot-v2/",
+      "spec_url": "https://public.robotical.io/Product%20Datasheets/marty-v2-tech-specs.pdf",
+      "display": "无显示屏",
+      "os_platform": "Robotical App/R.I.C.；支持Scratch、Python及教育编程工具",
+      "audio_drivers": "未公开",
+      "sensors": "电机位置/力、加速度/倾斜、红外障碍/距离、地面接触；可扩展相机、Raspberry Pi、micro:bit等",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "Bluetooth、Wi-Fi、USB-C、I2C扩展；版本未公开",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "2600mAh Li-Ion；单次充电/运行约2–3小时（官方技术资料）",
+      "charging": "USB-C；内置充电器",
+      "water_resistance": "未公开",
+      "subscription": "无硬件强制订阅；教育软件/服务条款依平台",
+      "privacy": "摄像头、App与云端数据策略未公开",
+      "features": "行走、跳舞、踢球、转向、编程积木/Scratch/Python、App、可加传感器/相机/Raspberry Pi/micro:bit、9个智能舵机",
+      "availability_note": "Robotical官方产品页显示US$449 ex VAT/Tax并提示Order Now for Delivery in September；历史众筹已完成，与当前零售订单分开记录",
+      "source_note": "Robotical官方当前产品页、技术规格PDF、官方历史众筹/博客；未公开芯片、尺寸重量、防水和隐私字段不推断",
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -1276,6 +1312,78 @@
       "seller_type": "品牌官方",
       "storefront_type": "官方主页/预订",
       "availability_signal": "Available on Kickstarter/Pre-Order Now信号"
+    },
+    {
+      "checked_on": "2026-08-31",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$449 ex VAT/Tax",
+      "estimated_delivery": "2026-09",
+      "id": "ROBOTICAL-MARTY-V2-SALES",
+      "source_group": "Robotical Marty V2官方销售页",
+      "url": "https://robotical.io/product/marty-the-robot-v2/",
+      "scope": "US$449未含VAT/税、Order Now、预计2026年9月交付、编程与扩展配件",
+      "quality": "A",
+      "source_domain": "robotical.io",
+      "source_channel": "official_sales",
+      "source_role": "原厂当前销售/价格/交付证据",
+      "seller_type": "机器人品牌官方",
+      "storefront_type": "官方网店",
+      "availability_signal": "可下单；预计9月交付",
+      "platform_reference": "Marty the Robot V2"
+    },
+    {
+      "checked_on": "2026-08-31",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "ROBOTICAL-MARTY-V2-DATASHEET",
+      "source_group": "Robotical Marty V2技术规格PDF",
+      "url": "https://public.robotical.io/Product%20Datasheets/marty-v2-tech-specs.pdf",
+      "scope": "2600mAh Li-Ion、USB-C、2–3小时、R.I.C. Bluetooth/Wi-Fi/USB-C、结构与扩展边界",
+      "quality": "A",
+      "source_domain": "robotical.io",
+      "source_channel": "official_datasheet",
+      "source_role": "原厂技术规格/电池与接口证据",
+      "seller_type": "机器人品牌官方",
+      "storefront_type": "官方规格PDF",
+      "availability_signal": "公开技术资料",
+      "platform_reference": "Marty V2"
+    },
+    {
+      "checked_on": "2026-08-31",
+      "campaign_status": "历史众筹已结束",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "ROBOTICAL-MARTY-V2-CAMPAIGN",
+      "source_group": "Marty V2官方历史众筹与发布记录",
+      "url": "https://www.indiegogo.com/projects/marty-the-robot-v2-where-learning-comes-alive",
+      "scope": "传感器类别、Bluetooth/USB/Wi-Fi、可换电池、9个智能舵机及历史项目状态",
+      "quality": "B",
+      "source_domain": "indiegogo.com",
+      "source_channel": "crowdfunding",
+      "source_role": "众筹历史/功能发现证据，不替代当前销售页",
+      "seller_type": "项目方/众筹平台",
+      "storefront_type": "Indiegogo项目页",
+      "availability_signal": "历史项目；奖励不可用",
+      "platform_reference": "Marty the Robot V2 Indiegogo"
+    },
+    {
+      "checked_on": "2026-08-31",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "ROBOTICAL-MARTY-KICKSTARTER",
+      "source_group": "Robotical Marty官方发布博客",
+      "url": "https://robotical.io/blog/we-wanted-a-real-robot-to-help-learn-how-to-code/",
+      "scope": "2019-11-26 Kickstarter启动与2020年交付历史口径",
+      "quality": "A",
+      "source_domain": "robotical.io",
+      "source_channel": "official_newsroom",
+      "source_role": "原厂历史上市/众筹公告",
+      "seller_type": "机器人品牌官方",
+      "storefront_type": "官方博客",
+      "availability_signal": "历史发布记录",
+      "platform_reference": "Marty V2"
     }
   ],
   "update_log": [
@@ -1320,6 +1428,12 @@
       "change": "新增ROBOT-013 OlloNi L1与ROBOT-014 OlloNi S1（官方列表，分别在售/售罄）；新增候选OlloNi SS1、Xiaomi Robot Vacuum 6/6 Pro/6 Max和Yarbo M Series，保留众筹、规格和区域交付差异。",
       "verification": "OlloBot官方产品页支持L1/S1价格、形态和规格；SS1仅为品牌新闻稿预发布且众筹延期；小米三款有全球产品页和区域规格页但价格/交付不足；Yarbo由官方站、Kickstarter和FAQ支持，M10/M20/M20i按模块配置不拆主表。",
       "next": "继续补充各地区官方Buy页、Amazon/区域电商库存与价格，核验小米/ OlloBot/ Yarbo的精确SKU、认证、芯片、隐私、保修和实际发货。"
+    },
+    {
+      "date": "2026-08-31",
+      "change": "新增ROBOT-015 Robotical Marty the Robot V2；补充官方当前价格/预计交付、技术规格PDF、历史Indiegogo/Kickstarter、传感器、接口和电池。",
+      "verification": "当前官方销售页与官方技术PDF作为主证据；Indiegogo仅用于历史项目和传感器发现，未将历史众筹奖励当作当前零售库存。",
+      "next": "继续核验地区税费/运费、当前库存、精确套装SKU、认证、固件/主控型号和教育服务条款。"
     }
   ],
   "source_channel_policy": [
@@ -1402,10 +1516,11 @@
     }
   ],
   "source_channel_counts": {
-    "crowdfunding": 2,
-    "official_newsroom": 1,
+    "crowdfunding": 3,
+    "official_datasheet": 1,
+    "official_newsroom": 2,
     "official_product": 10,
-    "official_sales": 13,
+    "official_sales": 14,
     "official_support_manual": 4
   },
   "source_domains": [
@@ -1414,10 +1529,12 @@
     "eu.beatbot.com",
     "global.dreametech.com",
     "globenewswire.com",
+    "indiegogo.com",
     "irobot.com",
     "kickstarter.com",
     "mi.com",
     "ollobot.com",
+    "robotical.io",
     "site-static.ecovacs.com",
     "support.mammotion.com",
     "theonlypet.com",

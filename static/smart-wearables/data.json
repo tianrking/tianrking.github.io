@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-30",
+  "checked_on": "2026-08-31",
   "scope_note": "本库覆盖智能服饰与运动装备：智能鞋、智能服装、姿态设备、触觉手环与智能护具；排除已有独立数据库的重复型号。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-08-30"
+      "2026-08-31"
     ]
   ],
   "products": [
@@ -438,6 +438,30 @@
       "reason": "Kickstarter项目页称用于睡眠、周期、活动和血流等健康追踪；2026-04-28至2026-05-28筹资，6,133位支持者、US$2,030,193，页面最近于2026-08-19更新。当前未核到独立官方零售页、最终硬件规格或实际交付证据，因此保留候选。",
       "url": "https://www.kickstarter.com/projects/lumiahealth/lumia-2-smart-earrings-discreet-next-gen-health-tracking/",
       "alias_or_relation": "智能饰品/健康穿戴候选；不与智能指环、耳机或医疗设备主表合并；众筹成功不等同正式上市，需继续核对传感器、芯片、尺码、续航、价格档位和交付。"
+    },
+    {
+      "name": "Lumysi Luxury Fitness Bracelet",
+      "brand": "Lumysi",
+      "region": "美国/全球众筹",
+      "category": "智能服饰/屏幕外健康手环",
+      "status": "Kickstarter已结束；Indiegogo pledge manager履约中，预计2026-08-31至2027-01-30发货",
+      "evidence": "B",
+      "reason": "Lumysi官方站与Kickstarter/Indiegogo项目页披露屏幕外健康手环：光学心率/血氧趋势、皮肤温度趋势、运动数据，PPG绿/红/红外LED，BLE 2.4GHz、典型最长约7天、5ATM、钛材、约31.7×8.9mm、磁吸充电；Kickstarter早鸟US$179、官方描述零售价US$299，Indiegogo页面显示全球发货与2026-08-31至2027-01-30履约区间。官方商店集合当前未列稳定SKU，快速指南仍把型号、电池容量等标为TBC，因此不升级主表。",
+      "url": "https://lumysi.com/",
+      "alias_or_relation": "Kickstarter/Indiegogo项目；与智能手表、指环和耳饰分开；不把众筹档位或颜色当作独立型号",
+      "next_check": "核验正式零售SKU/OPN、最终电池与充电规格、认证、实际发货、官方库存和订阅/隐私条款"
+    },
+    {
+      "name": "Mudra Pro",
+      "brand": "Wearable Devices",
+      "region": "以色列/全球企业与开发者市场",
+      "category": "手势控制智能穿戴",
+      "status": "官方发布预告/计划推出；尚未核到稳定公开零售SKU",
+      "evidence": "B",
+      "reason": "Wearable Devices官方新闻稿预告下一代Mudra Pro旗舰及意图式/生成式AI界面平台，强调商业与企业导入方向；当前公告使用planned introduction等前瞻口径，未形成可核验的公开价格、交付、精确料号和完整规格，因此保持候选。",
+      "url": "https://www.globenewswire.com/news-release/2026/06/15/3311798/0/en/Wearable-Devices-to-Unveil-GenAI-Powered-Intent-Based-Interface-Platform-and-Next-Gen-Mudra-Pro-Flagship-at-AWE-2026.html",
+      "alias_or_relation": "下一代Mudra系列候选；与Mudra Link/开发者套件分开，不把预告当作已上市主表",
+      "next_check": "核验官方产品页、正式上市公告、价格/交付、精确传感器/芯片、FCC/CE和零售/企业采购状态"
     }
   ],
   "sources": [
@@ -610,6 +634,96 @@
       "campaign_status": "已结束；2026-04-28至2026-05-28；6,133位支持者；US$2,030,193/US$10,000目标；最近更新2026-08-19",
       "pledge_or_price": "未公开",
       "estimated_delivery": "未公开"
+    },
+    {
+      "checked_on": "2026-08-31",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$179 Kickstarter early backer；官方描述零售价US$299",
+      "estimated_delivery": "未公开",
+      "id": "LUMYSI-OFFICIAL",
+      "source_group": "Lumysi官方产品站",
+      "url": "https://lumysi.com/",
+      "scope": "屏幕外健康手环、PPG/血氧趋势/皮温趋势/运动、7天、5ATM、尺寸、早鸟/零售价与订阅声明",
+      "quality": "A",
+      "source_domain": "lumysi.com",
+      "source_channel": "official_product",
+      "source_role": "品牌官方产品/功能/价格说明证据",
+      "seller_type": "品牌官方",
+      "storefront_type": "官方产品站",
+      "availability_signal": "项目/众筹导流；稳定零售SKU待核",
+      "platform_reference": "Lumysi"
+    },
+    {
+      "checked_on": "2026-08-31",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "LUMYSI-QUICKSTART",
+      "source_group": "Lumysi官方快速指南",
+      "url": "https://lumysi.com/pages/official-tutorial-lumysi",
+      "scope": "BLE 2.4GHz、磁吸充电、约1小时、最长约7天、5ATM；型号/电池容量/电压等TBC",
+      "quality": "A",
+      "source_domain": "lumysi.com",
+      "source_channel": "official_support_manual",
+      "source_role": "原厂支持/使用与规格边界证据",
+      "seller_type": "品牌官方",
+      "storefront_type": "官方支持页",
+      "availability_signal": "公开快速指南",
+      "platform_reference": "Lumysi"
+    },
+    {
+      "checked_on": "2026-08-31",
+      "campaign_status": "Kickstarter ended",
+      "pledge_or_price": "US$179 early backer等档位；以项目页为准",
+      "estimated_delivery": "项目履约时间需以支持者后台/项目更新为准",
+      "id": "LUMYSI-KICKSTARTER",
+      "source_group": "Lumysi官方Kickstarter项目",
+      "url": "https://www.kickstarter.com/projects/lumysi/lumysi-the-luxury-fitness-bracelet",
+      "scope": "2026-06-24至08-11筹资、US$550,160/2620位支持者、项目档位与项目状态",
+      "quality": "B",
+      "source_domain": "kickstarter.com",
+      "source_channel": "crowdfunding",
+      "source_role": "众筹发现/档位/项目状态证据",
+      "seller_type": "项目方/众筹平台",
+      "storefront_type": "Kickstarter项目页",
+      "availability_signal": "筹资已结束；不等同稳定零售现货",
+      "platform_reference": "Lumysi Kickstarter project"
+    },
+    {
+      "checked_on": "2026-08-31",
+      "campaign_status": "Pledge manager open",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "2026-08-31至2027-01-30（页面区间）",
+      "id": "LUMYSI-INDIEGOGO",
+      "source_group": "Lumysi官方Indiegogo项目",
+      "url": "https://www.indiegogo.com/pl/projects/lumysi/lumysi",
+      "scope": "全球发货、美国仓、pledge manager与预计2026-08-31至2027-01-30履约区间、4mm传感器模块",
+      "quality": "B",
+      "source_domain": "indiegogo.com",
+      "source_channel": "crowdfunding",
+      "source_role": "众筹履约/预计交付/项目状态证据",
+      "seller_type": "项目方/众筹平台",
+      "storefront_type": "Indiegogo项目页",
+      "availability_signal": "Pledge manager open；全球项目履约中",
+      "platform_reference": "Lumysi Indiegogo"
+    },
+    {
+      "checked_on": "2026-08-31",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "MUDRA-PRO-PREVIEW",
+      "source_group": "Wearable Devices Mudra Pro官方预告",
+      "url": "https://www.globenewswire.com/news-release/2026/06/15/3311798/0/en/Wearable-Devices-to-Unveil-GenAI-Powered-Intent-Based-Interface-Platform-and-Next-Gen-Mudra-Pro-Flagship-at-AWE-2026.html",
+      "scope": "Mudra Pro下一代旗舰、意图式/生成式AI界面、企业商业化预告与计划推出口径",
+      "quality": "B",
+      "source_domain": "globenewswire.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方新闻稿分发/预发布线索",
+      "seller_type": "品牌官方新闻稿",
+      "storefront_type": "官方发布",
+      "availability_signal": "planned introduction；尚非稳定零售",
+      "platform_reference": "Mudra Pro"
     }
   ],
   "update_log": [
@@ -654,6 +768,18 @@
       "change": "【智能服饰与运动装备】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
       "verification": "Amazon及区域电商用于发现、价格/库存、ASIN/SKU和卖方信号；Kickstarter/Indiegogo用于项目状态和预售线索；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-31",
+      "change": "新增候选Lumysi Luxury Fitness Bracelet；补充官方站/快速指南、Kickstarter和Indiegogo的PPG、BLE、7天、5ATM、价格档位与履约区间。",
+      "verification": "众筹与官方资料足以保留候选但不足以证明稳定零售上市；官方集合无稳定SKU且快速指南存在TBC字段，未推断型号、电池容量或实际交付。",
+      "next": "继续跟踪正式零售页、最终型号/电池/认证、发货证据、区域价格和隐私订阅条款。"
+    },
+    {
+      "date": "2026-08-31",
+      "change": "新增候选Mudra Pro；保留Wearable Devices官方预告的企业/开发者产品线索，不升级为已上市主表。",
+      "verification": "官方新闻稿采用计划推出的前瞻口径，价格、交付、精确传感器、芯片和零售SKU未核到；未从既有Mudra产品推断下一代参数。",
+      "next": "跟踪正式产品页、发布公告、监管/认证、企业采购和公开价格。"
     }
   ],
   "source_channel_policy": [
@@ -736,13 +862,17 @@
     }
   ],
   "source_channel_counts": {
-    "crowdfunding": 1,
-    "official_product": 4,
+    "crowdfunding": 3,
+    "official_newsroom": 1,
+    "official_product": 5,
     "official_sales": 3,
-    "official_support_manual": 2
+    "official_support_manual": 3
   },
   "source_domains": [
+    "globenewswire.com",
+    "indiegogo.com",
     "kickstarter.com",
+    "lumysi.com",
     "moticon.com",
     "neofect.com",
     "plantiga.com",

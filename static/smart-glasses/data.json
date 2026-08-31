@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-30",
+  "checked_on": "2026-08-31",
   "scope_note": "首版全球智能眼镜／AR眼镜／AI眼镜市场库：主表纳入官方在售、官方明确发售、官方明确预售、企业正式销售/服务中或有官方产品页、手册、规格与交付证据的独立型号/代际。类别覆盖无显示音频眼镜、相机AI眼镜、带显示AI眼镜、消费级AR/XR、企业/工业/医疗/开发者AR。颜色、镜片、处方配置、套装和配件不拆行；不同代际、显示/相机/主机连接方式或关键功能保留独立行。传闻、原型、合作路线、众筹、Coming soon、OEM线索和无法证明交付的项目放入候选与别名表。来源未披露的芯片、传感器、尺寸、重量、电池容量、续航、防水和订阅字段写“未公开”，不从App、AI功能或外观推断。",
   "products": [
     {
@@ -3060,9 +3060,9 @@
       "brand": "Snap",
       "region": "美国/英国/法国首发计划",
       "category": "独立AR/AI眼镜",
-      "status": "预售/预计2026秋季发货",
+      "status": "预售/US$2,195；预计2026秋季向美国/英国/法国发货",
       "evidence": "A",
-      "reason": "Snap官方发布稿确认已开放预订，价格US$2,195、可退订金US$200，预计秋季向美国/英国/法国发货；截至查证日仍不是普遍现货",
+      "reason": "Snap官方投资者发布稿确认SPECS已开放预订，价格US$2,195、可退订金US$200，预计秋季向美国/英国/法国发货；同时披露47mm/52mm两种尺寸、约132/136g、LCOS显示、51°视场角、双Snapdragon处理器、混合使用最长约4小时/配盒约20小时与录制隐私指示灯。截至查证日仍是预售/计划交付，不是普遍现货。",
       "url": "https://investor.snap.com/news/news-details/2026/Snap-Inc--Debuts-SPECS-Augmented-Reality-Glasses-to-Make-Computing-More-Human/default.aspx",
       "alias_or_relation": "与Spectacles (2024)不同代际/平台；不把预订视为全球上市"
     },
@@ -4132,6 +4132,24 @@
       "seller_type": "品牌新闻稿分发",
       "storefront_type": "官方发布",
       "availability_signal": "A6 on the horizon；V2 worldwide availability now"
+    },
+    {
+      "checked_on": "2026-08-31",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$2,195；US$200 refundable deposit",
+      "estimated_delivery": "2026秋季（美国/英国/法国）",
+      "id": "SNAP-SPECS-INVESTOR-2026",
+      "source_group": "Snap SPECS官方投资者发布稿",
+      "url": "https://investor.snap.com/news/news-details/2026/Snap-Inc--Debuts-SPECS-Augmented-Reality-Glasses-to-Make-Computing-More-Human/default.aspx",
+      "scope": "2026-06-16发布、US$2195预订/US$200可退订金、美国英国法国秋季发货、重量尺寸、显示、双Snapdragon、续航与隐私",
+      "quality": "A",
+      "source_domain": "investor.snap.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方上市/预售/规格证据",
+      "seller_type": "设备品牌官方",
+      "storefront_type": "官方投资者新闻稿/SPECS.COM预订",
+      "availability_signal": "开放预订；预计2026秋季发货，非普遍现货",
+      "platform_reference": "Snap SPECS"
     }
   ],
   "update_log": [
@@ -4188,6 +4206,12 @@
       "change": "新增候选Solos AirGo A6；更新SOL-002 AirGo V2为“在售/官方全球商店”，补充同一官方新闻稿的全球上市与价格证据。",
       "verification": "A6仍只有品牌发布预告，价格、正式上市日、芯片、续航与监管记录未公开；V2的全球上市/US$299来自Solos官方新闻稿，具体地区库存仍需按官方店核验。",
       "next": "继续跟踪A6正式产品页、监管认证、精确SKU、镜片/尺寸/电池/芯片和实际发货，不把A6预发布字段回填到AirGo V2。"
+    },
+    {
+      "date": "2026-08-31",
+      "change": "复核既有候选Snap SPECS并新增官方投资者发布稿来源；补充预订价格、订金、两种尺寸/重量、显示、双Snapdragon、续航、隐私和交付地区。",
+      "verification": "Snap官方发布稿作为核心证据；SPECS仍按预售/预计交付候选保存，不与已上市Spectacles混合。",
+      "next": "继续核验SPECS正式订单、监管记录、精确镜框/镜片SKU、存储、充电、区域税费与实际发货。"
     }
   ],
   "source_channel_policy": [
@@ -4272,7 +4296,7 @@
   "source_channel_counts": {
     "crowdfunding": 2,
     "marketplace": 1,
-    "official_newsroom": 1,
+    "official_newsroom": 2,
     "official_product": 22,
     "official_release": 1,
     "official_sales": 20,

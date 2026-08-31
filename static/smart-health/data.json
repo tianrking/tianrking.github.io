@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-30",
+  "checked_on": "2026-08-31",
   "scope_note": "本库覆盖健康与医疗智能设备：体脂秤、血压、心电、睡眠、血糖、体温与康复设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-08-30"
+      "2026-08-31"
     ]
   ],
   "products": [
@@ -362,6 +362,42 @@
       "satellite": "未公开",
       "connectivity": "未公开",
       "storage": "未公开"
+    },
+    {
+      "id": "HEALTH-009",
+      "brand": "DR H / DRHHH",
+      "model": "DRHHH Mind Ease Mask",
+      "country_region": "香港/全球官方网店",
+      "category": "智能健康/睡眠设备",
+      "form_factor": "可穿戴智能睡眠面罩",
+      "use_case": "睡眠放松、温热护理、沉浸式音频与睡眠支持",
+      "status": "在售/官方商店；库存与页面状态需动态复核",
+      "evidence": "A",
+      "launch_date": "2026-08-11",
+      "launch_date_type": "品牌官方发布稿（香港日期）",
+      "price": "US$129.00",
+      "official_url": "https://www.doctorhhh.shop/products/drhhh-mind-ease-mask",
+      "spec_url": "https://www.doctorhhh.shop/products/drhhh-mind-ease-mask",
+      "display": "无显示屏",
+      "os_platform": "DR HHH App；具体兼容平台未公开",
+      "audio_drivers": "内置沉浸式音频；驱动单元型号未公开",
+      "sensors": "半导体温度感测膜；NTC过热保护；其他传感器未公开",
+      "gps_positioning": "无GPS/未公开",
+      "satellite": "未公开",
+      "supported_protocols": "Bluetooth；版本未公开",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "未公开",
+      "water_resistance": "未公开",
+      "subscription": "未公开",
+      "privacy": "App、音频与健康数据处理/保留策略未公开",
+      "features": "3D扫描技术、三档温度、定时器、NTC保护、自动关闭、Bluetooth沉浸式音频、DR HHH App",
+      "availability_note": "官方商品页显示US$129、Add to cart与约97 in stock/1–2个工作日发货信息；页面同时存在模板化Sold out文案，库存状态需重新打开页面核验",
+      "source_note": "DR H官方发布稿与DRHHH官方商店产品页互证；未公开芯片、电池、尺寸重量、防水和隐私字段不推断",
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -688,6 +724,60 @@
       "campaign_status": "未公开",
       "pledge_or_price": "未公开",
       "estimated_delivery": "未公开"
+    },
+    {
+      "checked_on": "2026-08-31",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "DRH-MIND-EASE-LAUNCH",
+      "source_group": "DR H Mind Ease Mask官方发布稿",
+      "url": "https://www.globenewswire.com/news-release/2026/08/11/3342379/0/en/dr-h-launches-mind-ease-mask-to-advance-personalized-sleep-support-through-smart-wearable-innovation.html",
+      "scope": "2026-08-11香港官方上市、3D扫描、半导体温度感测膜、三档温度/定时/NTC/自动关闭、Bluetooth音频与App",
+      "quality": "A",
+      "source_domain": "globenewswire.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方新闻稿分发/上市与功能证据",
+      "seller_type": "品牌官方新闻稿",
+      "storefront_type": "官方发布",
+      "availability_signal": "官方宣布上市；购买链接指向DRHHH官方商店",
+      "platform_reference": "DRHHH Mind Ease Mask"
+    },
+    {
+      "checked_on": "2026-08-31",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$129.00",
+      "estimated_delivery": "未公开",
+      "id": "DRH-MIND-EASE-SHOP",
+      "source_group": "DRHHH Mind Ease Mask官方商店",
+      "url": "https://www.doctorhhh.shop/products/drhhh-mind-ease-mask",
+      "scope": "US$129、Add to cart、库存/发货、退货与保修信息",
+      "quality": "A",
+      "source_domain": "doctorhhh.shop",
+      "source_channel": "official_sales",
+      "source_role": "品牌官方商品/价格/库存证据",
+      "seller_type": "品牌官方",
+      "storefront_type": "官方网店",
+      "availability_signal": "页面快照约97 in stock、1–2个工作日发货；模板化Sold out文案与之冲突，需动态复核",
+      "platform_reference": "DRHHH Mind Ease Mask"
+    },
+    {
+      "checked_on": "2026-08-31",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "DRH-MIND-EASE-CATALOG",
+      "source_group": "DRHHH官方产品集合页",
+      "url": "https://www.doctorhhh.shop/collections/all",
+      "scope": "Mind Ease Mask在官方集合中的产品、价格和品牌店覆盖",
+      "quality": "A",
+      "source_domain": "doctorhhh.shop",
+      "source_channel": "official_sales",
+      "source_role": "品牌官方商品集合/价格交叉核验",
+      "seller_type": "品牌官方",
+      "storefront_type": "官方网店集合页",
+      "availability_signal": "官方商品集合中列出",
+      "platform_reference": "DRHHH Mind Ease Mask"
     }
   ],
   "update_log": [
@@ -732,6 +822,12 @@
       "change": "【健康与医疗智能设备】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
       "verification": "Amazon及区域电商用于发现、价格/库存、ASIN/SKU和卖方信号；Kickstarter/Indiegogo用于项目状态和预售线索；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-31",
+      "change": "新增HEALTH-009 DRHHH Mind Ease Mask；补充官方上市稿、US$129官方店价格、库存/发货信号、3D扫描、温度感测膜、音频与Bluetooth功能。",
+      "verification": "官方新闻稿与官方商店交叉核验；官方商品页库存文本存在模板化Sold out冲突，因此状态保留“需动态复核”；电池、芯片、尺寸重量、防水和隐私未公开。",
+      "next": "继续核验官方App、用户手册、认证、精确温度范围、充电/电池和实际库存；不把睡眠支持宣传解释为医疗诊断。"
     }
   ],
   "source_channel_policy": [
@@ -814,15 +910,18 @@
     }
   ],
   "source_channel_counts": {
+    "official_newsroom": 1,
     "official_product": 7,
-    "official_sales": 8,
+    "official_sales": 10,
     "official_support_manual": 2
   },
   "source_domains": [
     "beurer.com",
     "cdn.alivecor.com",
     "dexcom.com",
+    "doctorhhh.shop",
     "eufy.com",
+    "globenewswire.com",
     "help.tempdrop.com",
     "home.kinsahealth.com",
     "investors.dexcom.com",
