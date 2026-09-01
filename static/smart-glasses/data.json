@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-31",
+  "checked_on": "2026-09-01",
   "scope_note": "首版全球智能眼镜／AR眼镜／AI眼镜市场库：主表纳入官方在售、官方明确发售、官方明确预售、企业正式销售/服务中或有官方产品页、手册、规格与交付证据的独立型号/代际。类别覆盖无显示音频眼镜、相机AI眼镜、带显示AI眼镜、消费级AR/XR、企业/工业/医疗/开发者AR。颜色、镜片、处方配置、套装和配件不拆行；不同代际、显示/相机/主机连接方式或关键功能保留独立行。传闻、原型、合作路线、众筹、Coming soon、OEM线索和无法证明交付的项目放入候选与别名表。来源未披露的芯片、传感器、尺寸、重量、电池容量、续航、防水和订阅字段写“未公开”，不从App、AI功能或外观推断。",
   "products": [
     {
@@ -2909,6 +2909,45 @@
       "privacy": "状态LED指示拍摄；遮挡LED时停止录制；不支持音频录音；照片/视频同步后从眼镜本地移除",
       "features": "12MP拍照、1080p/30fps、稳定、AI降噪、Goya AI、AI Tour Guide、英语/德语/法语/西班牙语/意大利语Live Translation、触控/语音/快门、最多8人intercom strap",
       "source_note": "L'Atitude 52°N官方Berlin/Milan产品页与品牌主页；Berlin/Milan是官方区分的镜框轮廓，颜色、光致变色镜片和纯尺码不拆为独立型号；未公开芯片不采用第三方推断"
+    },
+    {
+      "id": "GLASS-089",
+      "brand": "Xander",
+      "model": "XanderGlasses II",
+      "country_region": "美国/全球辅助听力市场",
+      "category": "辅助字幕/翻译智能眼镜",
+      "form_factor": "双目字幕眼镜+伴随设备",
+      "use_case": "听障/重听实时字幕、离线翻译、面对面交流与教育",
+      "status": "预售/官方接受订单；有库存时即时购买，否则需可退订金，交付动态",
+      "evidence": "A",
+      "launch_date": "2026-08",
+      "launch_date_type": "Xander官方产品页公布的月份；具体日期未公开",
+      "price": "US$2,999；无现货时可付可退US$499订金预订",
+      "official_url": "https://www.xanderglasses.com/purchase",
+      "spec_url": "https://www.xanderglasses.com/xanderglasses-ii-coming-soon",
+      "display": "双目显示；离线实时字幕",
+      "os_platform": "Xander伴随设备/专用软件；版本未公开",
+      "audio_drivers": "重点为字幕；音频输出/驱动未公开",
+      "sensors": "4个降噪麦克风；其他运动/环境传感器未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "眼镜与伴随设备约5–10m；具体无线协议未公开",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "官方称比上一代轻约55%；绝对重量未公开",
+      "battery": "可更换充电电池；官方称全天使用，具体小时数未公开",
+      "charging": "USB-C电池充电",
+      "water_resistance": "未公开",
+      "subscription": "未公开；硬件购买/订金与软件服务条款需按订单核验",
+      "privacy": "官方称离线字幕/翻译、无互联网连接，音频与字幕不存储；完整账户/伴随设备数据策略未公开",
+      "features": "离线字幕、15种语言离线翻译、无互联网工作、4麦克风、双目显示、可选处方镜片插片、可更换USB-C电池、伴随设备",
+      "availability_note": "官方purchase页称按先到先得发货；若库存不足通常需US$499可退订金并等待约4–6周，不能视为稳定现货",
+      "source_note": "Xander官方XanderGlasses II页面和purchase页；官方未公布相机/芯片/尺寸/绝对重量/协议，不从宣传功能推断",
+      "source_refs": [
+        "XANDER-II-COMING",
+        "XANDER-II-PURCHASE"
+      ]
     }
   ],
   "candidates": [
@@ -3088,6 +3127,17 @@
       "url": "https://www.prnewswire.com/apac/news-releases/solos-unveils-next-generation-airgo-a6-and-new-privacy-kit-launches-airgo-v2-worldwide-at-third-annual-ai-smartglasses-symposium-in-hong-kong-302826222.html",
       "alias_or_relation": "下一代AirGo候选；与AirGo 3、AirGo V2分开；不把新闻稿预告当作零售SKU",
       "next_check": "补查Solos官方产品页、FCC/CE、精确分料号、首发价格、续航、电池、芯片和正式交付"
+    },
+    {
+      "name": "Loomos AI Glasses",
+      "brand": "Loomos",
+      "region": "美国/全球众筹",
+      "category": "AI智能眼镜",
+      "status": "历史Kickstarter项目/2026-08-31更新线索；当前稳定零售状态待核验",
+      "evidence": "B",
+      "reason": "Kickstarter项目披露16MP、4K照片/1080p视频、开放式音频、ChatGPT-4o、450mAh、40小时以上待机和约49g；项目于2025年结束，2026-08-31更新不能单独证明当前官方零售或普遍交付。",
+      "url": "https://www.kickstarter.com/projects/loomos/loomos-ai-glasses",
+      "alias_or_relation": "历史众筹/候选；不把项目档位、更新或颜色当作已上市独立型号。"
     }
   ],
   "sources": [
@@ -4150,6 +4200,60 @@
       "storefront_type": "官方投资者新闻稿/SPECS.COM预订",
       "availability_signal": "开放预订；预计2026秋季发货，非普遍现货",
       "platform_reference": "Snap SPECS"
+    },
+    {
+      "checked_on": "2026-09-01",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$2,999；US$499订金",
+      "estimated_delivery": "未公开",
+      "id": "XANDER-II-COMING",
+      "source_group": "XanderGlasses II官方产品页",
+      "url": "https://www.xanderglasses.com/xanderglasses-ii-coming-soon",
+      "scope": "2026年8月可得/预订、US$2,999、55%更轻、可更换电池、离线字幕/15语种翻译、4个降噪麦克风、无音频/字幕存储",
+      "quality": "A",
+      "source_domain": "xanderglasses.com",
+      "source_channel": "official_product",
+      "source_role": "品牌官方产品/功能/隐私/价格证据",
+      "seller_type": "辅助设备品牌官方",
+      "storefront_type": "官方产品页",
+      "availability_signal": "Pre-order today；更多规格待公布",
+      "platform_reference": "XanderGlasses II"
+    },
+    {
+      "checked_on": "2026-09-01",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$2,999；无库存时US$499可退订金",
+      "estimated_delivery": "通常4–6周（以订单页面为准)",
+      "id": "XANDER-II-PURCHASE",
+      "source_group": "XanderGlasses II官方购买页",
+      "url": "https://www.xanderglasses.com/purchase",
+      "scope": "库存有货时立即购买、无库存时US$499可退订金、先到先得、典型4–6周交付、USB-C可更换电池",
+      "quality": "A",
+      "source_domain": "xanderglasses.com",
+      "source_channel": "official_sales",
+      "source_role": "品牌官方订单/价格/交付信号证据",
+      "seller_type": "辅助设备品牌官方",
+      "storefront_type": "官方网店/订购页",
+      "availability_signal": "官方接受订单；库存与交付需动态核验",
+      "platform_reference": "XanderGlasses II"
+    },
+    {
+      "checked_on": "2026-09-01",
+      "campaign_status": "2025-01-28至2025-03-14已结束",
+      "pledge_or_price": "历史项目总额US$2,064,433；当前价格未公开",
+      "estimated_delivery": "历史项目交付口径，当前待核验",
+      "id": "LOOMOS-KS-20260901",
+      "source_group": "Loomos AI Glasses Kickstarter项目",
+      "url": "https://www.kickstarter.com/projects/loomos/loomos-ai-glasses",
+      "scope": "2025历史项目、8,516支持者、16MP、4K/1080p、ChatGPT-4o、450mAh、40小时以上待机、49g及2026-08-31更新",
+      "quality": "B",
+      "source_domain": "kickstarter.com",
+      "source_channel": "crowdfunding",
+      "source_role": "众筹历史/候选发现证据，不替代当前销售",
+      "seller_type": "项目方/众筹平台",
+      "storefront_type": "Kickstarter项目页",
+      "availability_signal": "历史项目；当前零售/交付待核验",
+      "platform_reference": "Loomos AI Glasses Kickstarter"
     }
   ],
   "update_log": [
@@ -4212,6 +4316,12 @@
       "change": "复核既有候选Snap SPECS并新增官方投资者发布稿来源；补充预订价格、订金、两种尺寸/重量、显示、双Snapdragon、续航、隐私和交付地区。",
       "verification": "Snap官方发布稿作为核心证据；SPECS仍按预售/预计交付候选保存，不与已上市Spectacles混合。",
       "next": "继续核验SPECS正式订单、监管记录、精确镜框/镜片SKU、存储、充电、区域税费与实际发货。"
+    },
+    {
+      "date": "2026-09-01",
+      "change": "新增GLASS-089 XanderGlasses II主表记录；新增Loomos AI Glasses历史众筹候选；补充官方预订价格、订金/交付、字幕/翻译、麦克风、可更换电池与隐私边界。",
+      "verification": "Xander官方产品页与purchase页明确接受订单，但库存不足时为订金预订，因此状态写预售/动态交付；Loomos仅保留Kickstarter候选，不将历史项目更新当作当前稳定零售。",
+      "next": "继续核验Xander具体镜框/处方片SKU、监管/认证、绝对重量、协议和实际发货；跟踪Loomos官方零售、最终固件与交付证据。"
     }
   ],
   "source_channel_policy": [
@@ -4294,12 +4404,12 @@
     }
   ],
   "source_channel_counts": {
-    "crowdfunding": 2,
+    "crowdfunding": 3,
     "marketplace": 1,
     "official_newsroom": 2,
-    "official_product": 22,
+    "official_product": 23,
     "official_release": 1,
-    "official_sales": 20,
+    "official_sales": 21,
     "official_support_manual": 13,
     "press_release_distribution": 1
   },
@@ -4320,6 +4430,7 @@
     "inmoxr.com",
     "investor.snap.com",
     "iristick.com",
+    "kickstarter.com",
     "latitude52n.com",
     "learn.microsoft.com",
     "lenovo.com",
@@ -4352,6 +4463,7 @@
     "vueglasses.com",
     "vuzix.com",
     "www.softbank.jp",
+    "xanderglasses.com",
     "xreal.com"
   ]
 }

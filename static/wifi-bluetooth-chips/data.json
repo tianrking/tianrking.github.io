@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-31",
+  "checked_on": "2026-09-01",
   "title": "全球 Wi‑Fi / Bluetooth 芯片选型数据库",
   "subtitle": "面向硬件选型的全球 Wi‑Fi、Bluetooth Classic/BR/EDR、BLE、Wi‑Fi+BT Combo、802.15.4 tri-radio 和无线 MCU/连接协处理器资料库。",
   "scope_note": "本库是消费电子与智能硬件数据库之外的第 25 套独立半导体选型库。主表按芯片/SoC/无线 MCU/连接协处理器计数，不把模块、开发板、OEM 方案或整机重复计入；国家/地区指品牌/公司归属口径，不等同于晶圆制造地。",
@@ -15011,6 +15011,164 @@
         "ESPRESSIF-ESP32-H4-NEWS",
         "ESPRESSIF-ESP32-H4-PRODUCT"
       ]
+    },
+    {
+      "vendor": "Nordic Semiconductor",
+      "vendor_country": "挪威",
+      "family": "nRF54L Series",
+      "entity_type": "裸芯片/无线MCU",
+      "radio_class": "Bluetooth-only / BLE + proprietary 2.4GHz",
+      "status": "官方产品与授权分销已列；库存/量产交期按精确后缀复核",
+      "evidence": "A",
+      "launch_year": 2026,
+      "launch_date": "2026-03-09",
+      "launch_date_type": "Nordic官方产品新闻日期；量产预计2026 Q3",
+      "price_type": "授权分销阶梯价快照/裸芯片",
+      "moq": "1；Tape/Reel通常1000+起",
+      "availability": "DigiKey页面：Active、0 In Stock、16周制造商交期（查证日快照）",
+      "price_platforms": "DigiKey",
+      "price_offer_count": 1,
+      "price_bare_chip_offer_count": 1,
+      "price_module_offer_count": 0,
+      "price_currency_set": "USD",
+      "price_checked_on": "2026-09-01",
+      "price_status": "价格公开但当前零库存/长交期；非原厂MSRP",
+      "price_notes": "精确MPN的授权分销价格快照；税费、运费、账户价和汇率未统一折算；未把DK或模块价格混入裸芯片。",
+      "wifi_support": "否",
+      "wifi_standard": "不支持Wi-Fi",
+      "wifi_bands": "不适用",
+      "wifi_bandwidth_streams": "不适用",
+      "wifi_peak_rate": "不适用",
+      "bluetooth_version": "Bluetooth LE 5.4（DigiKey规格；Nordic公告称第4代Bluetooth LE radio）",
+      "ble_support": "是",
+      "bt_classic_blc": "否",
+      "bluetooth_mode": "BLE-only",
+      "le_audio": "未公开",
+      "mesh_802154": "专有2.4GHz；802.15.4/Thread/Zigbee未公开",
+      "radio_concurrency": "BLE与专有2.4GHz；并发细节未公开",
+      "host_interface": "未公开",
+      "cpu_core": "Arm Cortex-M33",
+      "cpu_frequency": "最高128MHz",
+      "on_chip_flash": "508KB NVM/RRAM",
+      "rom": "未公开",
+      "external_memory": "未公开",
+      "peripherals": "I2C/SPI/UART；精确外设矩阵按官方PS；37 GPIO",
+      "gpio_pin_count": "37",
+      "security": "Nordic官方安全特性/安全启动与加密能力；精确选项按PS复核",
+      "tx_power": "+4dBm",
+      "rx_sensitivity": "-96dBm",
+      "tx_current": "约4.8mA",
+      "rx_current": "约3.4mA",
+      "sleep_current": "约0.6–1.2µA（模式/条件依官方资料）",
+      "power_supply": "1.7–3.6V",
+      "package": "48-QFN",
+      "package_size": "6×6mm",
+      "pin_count": "48",
+      "process_node": "未公开",
+      "operating_temp": "-40–85°C",
+      "applications": "低功耗BLE传感器、可穿戴、无线外设、专有2.4GHz设备",
+      "module_options": "nRF54LS05-DK用于评估；模块/开发板不计入芯片主表",
+      "certifications": "未公开",
+      "notes": "BLE与专有2.4GHz单列；不支持Wi-Fi，也不把专有2.4GHz推断为Bluetooth Classic/BR/EDR或802.15.4。A/B只因RAM和精确料号不同而分行。",
+      "source_note": "Nordic官方产品/新闻/PS与DigiKey精确MPN价格页；未披露字段保留为“未公开”。",
+      "checked_on": "2026-09-01",
+      "id": "WBC-0195",
+      "model": "nRF54LS05A / NRF54LS05A-QFAA-R7",
+      "price": "USD 2.57（1+）至USD 1.54332（5000+），DigiKey阶梯价",
+      "price_current_best": "USD 2.57（1+）至USD 1.54332（5000+），DigiKey",
+      "price_single_piece_usd": 2.57,
+      "price_lowest_visible_usd": 1.54332,
+      "price_lowest_quantity": "5000+",
+      "distributor_url": "https://www.digikey.com/en/products/detail/nordic-semiconductor-asa/NRF54LS05A-QFAA-R7/29293706",
+      "datasheet_url": "https://docs.nordicsemi.com/r/bundle/ps_nrf54ls05a/page/overview.html",
+      "official_product_url": "https://www.nordicsemi.com/Products/nRF54LS05A",
+      "news_url": "https://www.nordicsemi.com/Nordic-news/2026/03/Nordic-Semiconductor-expands-nRF54L-Series-with-entry-level-Bluetooth-LE-SoCs",
+      "on_chip_sram": "64KB",
+      "source_refs": [
+        "NORDIC-LS05-NEWS",
+        "NORDIC-LS05A-PRODUCT",
+        "NORDIC-LS05-PS",
+        "NORDIC-LS05A-DIGIKEY"
+      ]
+    },
+    {
+      "vendor": "Nordic Semiconductor",
+      "vendor_country": "挪威",
+      "family": "nRF54L Series",
+      "entity_type": "裸芯片/无线MCU",
+      "radio_class": "Bluetooth-only / BLE + proprietary 2.4GHz",
+      "status": "官方产品与授权分销已列；库存/量产交期按精确后缀复核",
+      "evidence": "A",
+      "launch_year": 2026,
+      "launch_date": "2026-03-09",
+      "launch_date_type": "Nordic官方产品新闻日期；量产预计2026 Q3",
+      "price_type": "授权分销阶梯价快照/裸芯片",
+      "moq": "1；Tape/Reel通常1000+起",
+      "availability": "DigiKey页面：Active、0 In Stock、16周制造商交期（查证日快照）",
+      "price_platforms": "DigiKey",
+      "price_offer_count": 1,
+      "price_bare_chip_offer_count": 1,
+      "price_module_offer_count": 0,
+      "price_currency_set": "USD",
+      "price_checked_on": "2026-09-01",
+      "price_status": "价格公开但当前零库存/长交期；非原厂MSRP",
+      "price_notes": "精确MPN的授权分销价格快照；税费、运费、账户价和汇率未统一折算；未把DK或模块价格混入裸芯片。",
+      "wifi_support": "否",
+      "wifi_standard": "不支持Wi-Fi",
+      "wifi_bands": "不适用",
+      "wifi_bandwidth_streams": "不适用",
+      "wifi_peak_rate": "不适用",
+      "bluetooth_version": "Bluetooth LE 5.4（DigiKey规格；Nordic公告称第4代Bluetooth LE radio）",
+      "ble_support": "是",
+      "bt_classic_blc": "否",
+      "bluetooth_mode": "BLE-only",
+      "le_audio": "未公开",
+      "mesh_802154": "专有2.4GHz；802.15.4/Thread/Zigbee未公开",
+      "radio_concurrency": "BLE与专有2.4GHz；并发细节未公开",
+      "host_interface": "未公开",
+      "cpu_core": "Arm Cortex-M33",
+      "cpu_frequency": "最高128MHz",
+      "on_chip_flash": "508KB NVM/RRAM",
+      "rom": "未公开",
+      "external_memory": "未公开",
+      "peripherals": "I2C/SPI/UART；精确外设矩阵按官方PS；37 GPIO",
+      "gpio_pin_count": "37",
+      "security": "Nordic官方安全特性/安全启动与加密能力；精确选项按PS复核",
+      "tx_power": "+4dBm",
+      "rx_sensitivity": "-96dBm",
+      "tx_current": "约4.8mA",
+      "rx_current": "约3.4mA",
+      "sleep_current": "约0.6–1.2µA（模式/条件依官方资料）",
+      "power_supply": "1.7–3.6V",
+      "package": "48-QFN",
+      "package_size": "6×6mm",
+      "pin_count": "48",
+      "process_node": "未公开",
+      "operating_temp": "-40–85°C",
+      "applications": "低功耗BLE传感器、可穿戴、无线外设、专有2.4GHz设备",
+      "module_options": "nRF54LS05-DK用于评估；模块/开发板不计入芯片主表",
+      "certifications": "未公开",
+      "notes": "BLE与专有2.4GHz单列；不支持Wi-Fi，也不把专有2.4GHz推断为Bluetooth Classic/BR/EDR或802.15.4。A/B只因RAM和精确料号不同而分行。",
+      "source_note": "Nordic官方产品/新闻/PS与DigiKey精确MPN价格页；未披露字段保留为“未公开”。",
+      "checked_on": "2026-09-01",
+      "id": "WBC-0196",
+      "model": "nRF54LS05B / NRF54LS05B-QFAA-R7",
+      "price": "USD 2.69（1+）至USD 1.61698（5000+），DigiKey阶梯价",
+      "price_current_best": "USD 2.69（1+）至USD 1.61698（5000+），DigiKey",
+      "price_single_piece_usd": 2.69,
+      "price_lowest_visible_usd": 1.61698,
+      "price_lowest_quantity": "5000+",
+      "distributor_url": "https://www.digikey.com/en/products/detail/nordic-semiconductor-asa/NRF54LS05B-QFAA-R7/29293695",
+      "datasheet_url": "https://docs.nordicsemi.com/r/bundle/ps_nrf54ls05a/page/overview.html",
+      "official_product_url": "https://www.nordicsemi.com/Products/nRF54LS05B",
+      "news_url": "https://www.nordicsemi.com/Nordic-news/2026/03/Nordic-Semiconductor-expands-nRF54L-Series-with-entry-level-Bluetooth-LE-SoCs",
+      "on_chip_sram": "96KB",
+      "source_refs": [
+        "NORDIC-LS05-NEWS",
+        "NORDIC-LS05B-PRODUCT",
+        "NORDIC-LS05-PS",
+        "NORDIC-LS05B-DIGIKEY"
+      ]
     }
   ],
   "price_offers": [
@@ -21258,6 +21416,140 @@
       "checked_on": "2026-08-30",
       "evidence": "A",
       "notes": "Mouser页面快照；未把模块、开发板或其他后缀报价混入。"
+    },
+    {
+      "id": "WBCP-0137",
+      "product_id": "WBC-0195",
+      "vendor": "Nordic Semiconductor",
+      "family": "nRF54L Series",
+      "part_number": "NRF54LS05A-QFAA-R7",
+      "entity_level": "bare_chip",
+      "package": "48-QFN 6×6mm",
+      "platform": "DigiKey",
+      "platform_region": "US",
+      "seller_type": "authorized_distributor",
+      "distributor_sku": "4823-NRF54LS05A-QFAA-R7TR-ND / CT-ND / DKR-ND",
+      "currency": "USD",
+      "price_breaks": [
+        {
+          "min_qty": 1,
+          "unit_price": 2.57
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 2.22
+        },
+        {
+          "min_qty": 25,
+          "unit_price": 2.0972
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 1.9274
+        },
+        {
+          "min_qty": 250,
+          "unit_price": 1.82568
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 1.75378
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 1.68599
+        },
+        {
+          "min_qty": 2000,
+          "unit_price": 1.62211
+        },
+        {
+          "min_qty": 3000,
+          "unit_price": 1.58648
+        },
+        {
+          "min_qty": 5000,
+          "unit_price": 1.54332
+        }
+      ],
+      "minimum_order_qty": 1,
+      "standard_pack_qty": "Tape/Reel 1000+；Cut Tape/Digi-Reel可1+、10+、25+、100+、250+、500+",
+      "stock_signal": "0 In Stock；Active；16周制造商交期",
+      "availability": "价格公开但缺货；制造商交期约16周，需订单复核",
+      "price_type": "授权分销阶梯价快照/裸芯片",
+      "price_range": "USD 1.54332–2.57（1–5000+）",
+      "url": "https://www.digikey.com/en/products/detail/nordic-semiconductor-asa/NRF54LS05A-QFAA-R7/29293706",
+      "source_id": "NORDIC-LS05A-DIGIKEY",
+      "checked_on": "2026-09-01",
+      "evidence": "A",
+      "notes": "未把nRF54LS05-DK或模块价格混入；税费、运费、账户价和汇率未统一折算。"
+    },
+    {
+      "id": "WBCP-0138",
+      "product_id": "WBC-0196",
+      "vendor": "Nordic Semiconductor",
+      "family": "nRF54L Series",
+      "part_number": "NRF54LS05B-QFAA-R7",
+      "entity_level": "bare_chip",
+      "package": "48-QFN 6×6mm",
+      "platform": "DigiKey",
+      "platform_region": "US",
+      "seller_type": "authorized_distributor",
+      "distributor_sku": "4823-NRF54LS05B-QFAA-R7TR-ND / CT-ND / DKR-ND",
+      "currency": "USD",
+      "price_breaks": [
+        {
+          "min_qty": 1,
+          "unit_price": 2.69
+        },
+        {
+          "min_qty": 10,
+          "unit_price": 2.325
+        },
+        {
+          "min_qty": 25,
+          "unit_price": 2.1956
+        },
+        {
+          "min_qty": 100,
+          "unit_price": 2.0184
+        },
+        {
+          "min_qty": 250,
+          "unit_price": 1.91208
+        },
+        {
+          "min_qty": 500,
+          "unit_price": 1.83692
+        },
+        {
+          "min_qty": 1000,
+          "unit_price": 1.76609
+        },
+        {
+          "min_qty": 2000,
+          "unit_price": 1.69934
+        },
+        {
+          "min_qty": 3000,
+          "unit_price": 1.66209
+        },
+        {
+          "min_qty": 5000,
+          "unit_price": 1.61698
+        }
+      ],
+      "minimum_order_qty": 1,
+      "standard_pack_qty": "Tape/Reel 1000+；Cut Tape/Digi-Reel可1+、10+、25+、100+、250+、500+",
+      "stock_signal": "0 In Stock；Active；16周制造商交期",
+      "availability": "价格公开但缺货；制造商交期约16周，需订单复核",
+      "price_type": "授权分销阶梯价快照/裸芯片",
+      "price_range": "USD 1.61698–2.69（1–5000+）",
+      "url": "https://www.digikey.com/en/products/detail/nordic-semiconductor-asa/NRF54LS05B-QFAA-R7/29293695",
+      "source_id": "NORDIC-LS05B-DIGIKEY",
+      "checked_on": "2026-09-01",
+      "evidence": "A",
+      "notes": "未把nRF54LS05-DK或模块价格混入；税费、运费、账户价和汇率未统一折算。"
     }
   ],
   "candidates": [
@@ -26089,6 +26381,114 @@
       "storefront_type": "官方产品资料页",
       "availability_signal": "官方产品资料；样品状态以公告为准",
       "platform_reference": "ESP32-H4"
+    },
+    {
+      "checked_on": "2026-09-01",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "NORDIC-LS05-NEWS",
+      "source_group": "Nordic nRF54LS05A/B官方发布新闻",
+      "url": "https://www.nordicsemi.com/Nordic-news/2026/03/Nordic-Semiconductor-expands-nRF54L-Series-with-entry-level-Bluetooth-LE-SoCs",
+      "scope": "2026-03-09发布；A/B入门级BLE SoC、128MHz Cortex-M33、0.5MB NVM、A 64KB/B 96KB RAM、第四代BLE radio、生产预计2026 Q3",
+      "quality": "A",
+      "source_domain": "nordicsemi.com",
+      "source_channel": "official_newsroom",
+      "source_role": "芯片原厂上市/无线能力/上市年份与供货计划证据",
+      "seller_type": "芯片原厂",
+      "storefront_type": "官方新闻室",
+      "availability_signal": "评估/开发；官方预计2026 Q3生产",
+      "platform_reference": "nRF54LS05A/B"
+    },
+    {
+      "checked_on": "2026-09-01",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "NORDIC-LS05A-PRODUCT",
+      "source_group": "Nordic nRF54LS05A官方产品页",
+      "url": "https://www.nordicsemi.com/Products/nRF54LS05A",
+      "scope": "LS05A BLE SoC、射频、低功耗、处理器/存储/安全与产品入口",
+      "quality": "A",
+      "source_domain": "nordicsemi.com",
+      "source_channel": "official_product",
+      "source_role": "芯片原厂产品/规格边界证据",
+      "seller_type": "芯片原厂",
+      "storefront_type": "官方产品页",
+      "availability_signal": "官方产品页；精确后缀供货按分销/订单复核",
+      "platform_reference": "nRF54LS05A"
+    },
+    {
+      "checked_on": "2026-09-01",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "NORDIC-LS05B-PRODUCT",
+      "source_group": "Nordic nRF54LS05B官方产品页",
+      "url": "https://www.nordicsemi.com/Products/nRF54LS05B",
+      "scope": "LS05B BLE SoC、射频、低功耗、处理器/存储/安全与产品入口",
+      "quality": "A",
+      "source_domain": "nordicsemi.com",
+      "source_channel": "official_product",
+      "source_role": "芯片原厂产品/规格边界证据",
+      "seller_type": "芯片原厂",
+      "storefront_type": "官方产品页",
+      "availability_signal": "官方产品页；精确后缀供货按分销/订单复核",
+      "platform_reference": "nRF54LS05B"
+    },
+    {
+      "checked_on": "2026-09-01",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "NORDIC-LS05-PS",
+      "source_group": "Nordic nRF54LS05A官方产品规格文档",
+      "url": "https://docs.nordicsemi.com/r/bundle/ps_nrf54ls05a/page/overview.html",
+      "scope": "BLE与专有2.4GHz、Arm M33 128MHz、NVM/RRAM、外设、安全与电气规格入口",
+      "quality": "A",
+      "source_domain": "nordicsemi.com",
+      "source_channel": "official_datasheet",
+      "source_role": "芯片原厂产品规格/协议边界证据",
+      "seller_type": "芯片原厂",
+      "storefront_type": "官方产品规格文档",
+      "availability_signal": "公开规格资料",
+      "platform_reference": "nRF54LS05A/B"
+    },
+    {
+      "checked_on": "2026-09-01",
+      "campaign_status": "未公开",
+      "pledge_or_price": "USD 2.57@1+；USD 1.54332@5000+",
+      "estimated_delivery": "16周制造商交期",
+      "id": "NORDIC-LS05A-DIGIKEY",
+      "source_group": "DigiKey NRF54LS05A-QFAA-R7精确MPN报价",
+      "url": "https://www.digikey.com/en/products/detail/nordic-semiconductor-asa/NRF54LS05A-QFAA-R7/29293706",
+      "scope": "精确MPN、DigiKey SKU、48-QFN 6×6、508KB NVM、64KB RAM、37 GPIO、1.7–3.6V、+4dBm、-96dBm、4.8/3.4mA、0库存/16周、USD阶梯价",
+      "quality": "A",
+      "source_domain": "digikey.com",
+      "source_channel": "distributor_retail",
+      "source_role": "授权分销精确MPN/裸芯片参数/价格/库存交期证据",
+      "seller_type": "授权电子元件分销商",
+      "storefront_type": "DigiKey区域商城",
+      "availability_signal": "Active；0 In Stock；16周制造商交期",
+      "platform_reference": "4823-NRF54LS05A-QFAA-R7TR-ND / CT-ND / DKR-ND"
+    },
+    {
+      "checked_on": "2026-09-01",
+      "campaign_status": "未公开",
+      "pledge_or_price": "USD 2.69@1+；USD 1.61698@5000+",
+      "estimated_delivery": "16周制造商交期",
+      "id": "NORDIC-LS05B-DIGIKEY",
+      "source_group": "DigiKey NRF54LS05B-QFAA-R7精确MPN报价",
+      "url": "https://www.digikey.com/en/products/detail/nordic-semiconductor-asa/NRF54LS05B-QFAA-R7/29293695",
+      "scope": "精确MPN、DigiKey SKU、48-QFN 6×6、508KB NVM、96KB RAM、37 GPIO、1.7–3.6V、+4dBm、-96dBm、0库存/16周、USD阶梯价",
+      "quality": "A",
+      "source_domain": "digikey.com",
+      "source_channel": "distributor_retail",
+      "source_role": "授权分销精确MPN/裸芯片参数/价格/库存交期证据",
+      "seller_type": "授权电子元件分销商",
+      "storefront_type": "DigiKey区域商城",
+      "availability_signal": "Active；0 In Stock；16周制造商交期",
+      "platform_reference": "4823-NRF54LS05B-QFAA-R7TR-ND / CT-ND / DKR-ND"
     }
   ],
   "source_channel_policy": [
@@ -26149,11 +26549,12 @@
   ],
   "source_channel_counts": {
     "authorized_distributor": 126,
+    "distributor_retail": 2,
     "marketplace_discovery": 2,
-    "official_datasheet": 31,
+    "official_datasheet": 32,
     "official_news": 5,
-    "official_newsroom": 4,
-    "official_product": 84,
+    "official_newsroom": 5,
+    "official_product": 86,
     "official_support_manual": 1
   },
   "source_domains": [
@@ -26180,6 +26581,7 @@
     "lcsc.com",
     "mouser.com",
     "news.silabs.com",
+    "nordicsemi.com",
     "sg.element14.com",
     "sifli.com",
     "special.wch.cn",
@@ -26261,6 +26663,12 @@
       "change": "新增WBC-0191至WBC-0194：Espressif ESP32-E22、ESP32-S31、ESP32-H21HF4、ESP32-H4；补充Wi-Fi/BLE/Bluetooth Classic/802.15.4边界、RISC-V、内存、GPIO、功耗/功率、封装与官方上市/样品口径。",
       "verification": "Espressif官方产品页、公告和数据手册确认无线分类与明确规格；未取得精确裸芯片授权分销公开价格，未把ESP32-S31-WROOM-3等模块或开发板价格混入主表；H21/H4不支持Wi-Fi，BLE与802.15.4单列。",
       "next": "继续搜索ESP32-E22/S31/H21/H4精确后缀、数据手册版本、PCN/EOL、DigiKey/Mouser/LCSC/Arrow/Avnet和国内授权渠道裸芯片价格；核验模块候选与主芯片关系。"
+    },
+    {
+      "date": "2026-09-01",
+      "change": "新增WBC-0195 nRF54LS05A/NRF54LS05A-QFAA-R7与WBC-0196 nRF54LS05B/NRF54LS05B-QFAA-R7；补充BLE 5.4、专有2.4GHz、M33 128MHz、NVM/RAM、封装、电流、供电、生命周期和DigiKey精确MPN阶梯报价。",
+      "verification": "Nordic官方产品页、2026-03-09新闻、官方PS与DigiKey授权分销页互证；A/B按官方RAM差异和精确后缀分行。DigiKey显示Active、0库存、16周制造商交期；严格未把专有2.4GHz当作BLC/Classic，也未把开发板/模块价格混入。",
+      "next": "继续补齐nRF54LS05A/B所有温度/包装后缀、PCN/EOL、Mouser/Arrow/Avnet/LCSC及区域价格；扩大Nordic、Espressif、Realtek、Qualcomm、联发科、珠海杰理、泰凌微等大小厂精确裸芯片报价。"
     }
   ]
 }

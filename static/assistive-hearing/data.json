@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-08-31",
+  "checked_on": "2026-09-01",
   "scope_note": "本库覆盖辅助与听力设备：助听器、字幕设备、个人扩音器、无障碍提醒器与触觉提示设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-08-31"
+      "2026-09-01"
     ]
   ],
   "products": [
@@ -422,6 +422,28 @@
       "reason": "官方页面提供完整规格，但当前页面显示售罄",
       "url": "https://us.bellman.com/products/alerting-signaling-device-portable-receiver",
       "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "name": "XanderGlasses II（GLASS-089跨库索引）",
+      "brand": "Xander",
+      "region": "美国/全球",
+      "category": "辅助字幕/翻译智能眼镜",
+      "status": "已在智能眼镜主表登记；辅助与听力交叉索引，不重复计数",
+      "evidence": "A",
+      "reason": "Xander官方页面明确面向听障/重听字幕与离线翻译，购买页接受订单；实体记录保留在GLASS-089，辅助库仅保留交叉索引以避免同一硬件重复计数。",
+      "url": "https://www.xanderglasses.com/purchase",
+      "alias_or_relation": "主表关联：smart-glasses/GLASS-089；不作为辅助库独立产品行。"
+    },
+    {
+      "name": "Legato AI hearing glasses",
+      "brand": "Legato",
+      "region": "美国/全球眼科与听力渠道",
+      "category": "AI听力眼镜",
+      "status": "预发布；官方称计划2026年稍后通过眼科服务商推出，尚无公开价格/SKU/订单",
+      "evidence": "B",
+      "reason": "Legato官方新闻稿分发披露AI听力眼镜、2026年后续推出计划与融资，但目前没有公开零售产品页、价格、精确规格或可验证交付，因此保留候选。",
+      "url": "https://www.globenewswire.com/news-release/2026/08/26/3351388/0/en/legato-emerges-from-stealth-with-12-million-in-funding-to-pioneer-a-new-era-of-hearing-devices-with-ai-powered-hearing-glasses.html",
+      "alias_or_relation": "官方新闻稿/预发布候选；不计入已上市主表。"
     }
   ],
   "sources": [
@@ -560,6 +582,42 @@
       "campaign_status": "未公开",
       "pledge_or_price": "未公开",
       "estimated_delivery": "未公开"
+    },
+    {
+      "checked_on": "2026-09-01",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "XANDER-II-ASSISTIVE",
+      "source_group": "XanderGlasses II辅助听力交叉来源",
+      "url": "https://www.xanderglasses.com/purchase",
+      "scope": "字幕/翻译眼镜的辅助听力用途、官方接受订单、价格与交付状态；实体主表为GLASS-089",
+      "quality": "A",
+      "source_domain": "xanderglasses.com",
+      "source_channel": "official_sales",
+      "source_role": "辅助用途/交付/交叉索引证据",
+      "seller_type": "辅助设备品牌官方",
+      "storefront_type": "官方网店/订购页",
+      "availability_signal": "官方接受订单；不在辅助库重复计数",
+      "platform_reference": "GLASS-089 / XanderGlasses II"
+    },
+    {
+      "checked_on": "2026-09-01",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "LEGATO-AI-HEARING-NEWS",
+      "source_group": "Legato AI hearing glasses官方新闻稿分发",
+      "url": "https://www.globenewswire.com/news-release/2026/08/26/3351388/0/en/legato-emerges-from-stealth-with-12-million-in-funding-to-pioneer-a-new-era-of-hearing-devices-with-ai-powered-hearing-glasses.html",
+      "scope": "2026-08-26融资/预发布、AI听力眼镜和计划通过眼科服务商推出",
+      "quality": "A",
+      "source_domain": "globenewswire.com",
+      "source_channel": "press_release_distribution",
+      "source_role": "公司官方新闻稿分发/预发布证据",
+      "seller_type": "公司官方新闻稿分发",
+      "storefront_type": "GlobeNewswire",
+      "availability_signal": "计划2026年稍后推出；无公开订单/价格",
+      "platform_reference": "Legato AI hearing glasses"
     }
   ],
   "update_log": [
@@ -610,6 +668,12 @@
       "change": "【辅助与听力设备】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
       "verification": "Amazon及区域电商用于发现、价格/库存、ASIN/SKU和卖方信号；Kickstarter/Indiegogo用于项目状态和预售线索；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-01",
+      "change": "新增XanderGlasses II交叉索引候选ACCESS-侧记录，并新增Legato AI hearing glasses预发布候选；实体Xander仅在GLASS-089主表计数，避免跨库重复。",
+      "verification": "Xander购买页和产品页提供辅助字幕/翻译与订单证据，但按既有跨库规则不在辅助主表复制实体；Legato只有官方新闻稿分发和后续推出计划，价格/SKU/交付未公开，保留候选。",
+      "next": "继续核验Xander监管/认证、镜片SKU和实际订单交付；追踪Legato正式产品页、眼科渠道、价格、规格和上市证据。"
     }
   ],
   "source_channel_policy": [
@@ -693,14 +757,17 @@
   ],
   "source_channel_counts": {
     "official_product": 4,
-    "official_sales": 4
+    "official_sales": 5,
+    "press_release_distribution": 1
   },
   "source_domains": [
     "electronics.sony.com",
+    "globenewswire.com",
     "hamiltoncaptel.com",
     "humantechnik.com",
     "sonicalert.com",
     "us.bellman.com",
-    "williamsav.com"
+    "williamsav.com",
+    "xanderglasses.com"
   ]
 }
