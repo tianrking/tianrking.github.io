@@ -77,7 +77,7 @@ const days = [
       ['09:00–12:15', '先走青雲亭，再進海事博物館。海事館把葡萄牙、荷蘭、英國與日據時期放在同一條港口史線上；以官方當日開放時間為準。'],
       ['12:45–17:00', '漫步 Heeren Street 老騎樓，吃娘惹叻沙；下午留給補眠、充電、防蚊與整理筆記，夜巴前不要再硬塞一座遠館。'],
       ['20:15–21:10', '回 Sleep Here 取行李，再以市巴或短程 Grab 到 Melaka Sentral。8 月 30 日先選「直達 Sungai Nibong／Penang Sentral」的已付款車票，寧可早到，不要為省一點錢買凌晨在 KL 轉車的班次。'],
-      ['約 21:30–04:45', '搭直達夜巴北上檳城；目前票務頁可見約 21:30 的直達班次，最終以你買到的票面時間與下車站為準。全程約 7 小時，睡在車上省一晚住宿，外套放手邊。'],
+      ['約 21:30–05:18', '搭直達夜巴北上檳城；目前票務頁可見約 21:30、翌日清晨抵達的直達班次，最終以你買到的票面時間與下車站為準。全程約 7 小時，睡在車上省一晚住宿，外套放手邊。'],
     ],
     stay: '過夜巴士。',
   },
@@ -97,7 +97,7 @@ const days = [
       {label: '姓周橋', query: 'Chew Jetty Penang, Malaysia'},
     ],
     blocks: [
-      ['04:30–08:15', '夜巴抵達後先在車站附近吃早餐、充電與等候天亮，再到住宿寄放行李。國慶日的州級活動、封路與人流每年不同，現場不追逐流程，先保留體力。'],
+      ['05:20–08:15', '夜巴抵達後先在車站附近吃早餐、充電與等候天亮，再到住宿寄放行李。國慶日的州級活動、封路與人流每年不同，現場不追逐流程，先保留體力。'],
       ['08:30–11:00', '從 Esplanade、檳城紀念碑走到康華利斯堡。紀念碑把第一次世界大戰、第二次世界大戰、泰緬死亡鐵路與緊急狀態等記憶放在同一處城市節點；國慶日最適合以戶外史跡為主。'],
       ['11:15–13:00', '走 Old Protestant Cemetery 與吉寧甲必丹回教堂，將殖民港口、早期英人墓園與印度穆斯林商業社群放在同一個街區讀。'],
       ['14:30–17:30', '邱公司、姓周橋與周邊街屋擇二深入，不把每個展館都當成打卡。檳城州立博物館在國慶假日不排入這天，留到 Day 4。'],
@@ -136,15 +136,15 @@ const days = [
       {label: '雙溪大年交通樞紐', query: 'Sungai Petani Bus Terminal, Kedah, Malaysia'},
       {label: '布央谷遺址', query: 'Lembah Bujang Archaeological Museum, Kedah, Malaysia'},
       {label: 'Bukit Batu Pahat 遺址', query: 'Candi Bukit Batu Pahat Lembah Bujang, Kedah, Malaysia'},
-      {label: '太平戰爭公墓', query: 'Taiping War Cemetery, Perak, Malaysia'},
       {label: '太平車站', query: 'Taiping Railway Station, Perak, Malaysia'},
     ],
     blocks: [
-      ['06:45–09:10', '步行到 George Town 的 Raja Tun Uda 碼頭，搭第一批渡輪到 Butterworth；再從 Penang Sentral 轉已預訂的 KTM 北上 Sungai Petani。渡輪是主交通，不叫跨城車。'],
-      ['09:10–10:15', '由 Sungai Petani 巴士總站搭往 Merbok 的接駁；最後約 2.5 km 在白天步行到布央谷。遇暴雨、行李或接駁落空時，只用這一小段短程 Grab 作備援，絕不包全天車。'],
-      ['10:15–12:15', '進 Lembah Bujang Archaeological Museum 與鄰近 Candi Bukit Batu Pahat。它展示 3–12 世紀海上貿易與印度教／佛教遺存；門票免費，開放時間以當日公告為準。'],
-      ['12:15–14:00', '沿原路回 Sungai Petani，吃午餐、在車站等下一班向南的 KTM。不要把馬當疊在今天；它在太平旁邊，明早用固定線路處理才順路。'],
-      ['14:00–17:30', '搭 KTM 向南至 Taiping，入住市區。若車次較晚，戰爭公墓移到明早；不為趕日落在陌生路段拖行李。'],
+      ['06:25–07:00', '從喬治市核心區往 Raja Tun Uda 碼頭；06:50 前進站，搭 07:00 首班渡輪。帶大行李、下雨或住宿較遠時，只用一次短程 Grab，不能把 07:00 船當成可遲到的班次。'],
+      ['07:00–08:09', '07:00 渡輪到 Butterworth，直接接 07:35 KTM Komuter；08:09 抵達 Sungai Petani。這班車早到只是為了留出 K51 的確定等候時間，不是要在車站硬趕 08:15 班公車。'],
+      ['08:09–10:00', '由車站走到巴士總站、吃早餐、補水與確認 K51。K51 往 Tanjung Dawai 的可執行班次是 10:00；上車時說 Merbok／Lembah Bujang，並再問司機回程上車點。'],
+      ['10:00–13:30', '搭 K51 到 Merbok 一帶；博物館位於 Merbok 鎮外約 2.5 km，白天步行或只補這一段短程 Grab。進 Lembah Bujang Archaeological Museum 與鄰近 Candi Bukit Batu Pahat，重點看 3–12 世紀海上貿易、印度教／佛教遺存；13:30 前離開館區回 Merbok。'],
+      ['13:30–15:30', '搭 K51 回 Sungai Petani，目標 15:30 前回到車站。若 13:45 前仍無法確認可回站的車，不再等下一個循環，直接用一次 Merbok → Sungai Petani 的短程 Grab 保住固定火車。'],
+      ['15:52–18:44', '15:52 KTM Komuter 從 Sungai Petani 到 Butterworth（16:26），17:40 再由 Butterworth 到 Taiping（18:44）。抵達後入住太平市區；不把戰爭公墓塞進日落後。'],
     ],
     stay: '太平市區住宿；這一晚把跨城移動做完，隔天只處理太平與馬當。',
   },
@@ -161,16 +161,18 @@ const days = [
       {label: '太平戰爭公墓', query: 'Taiping War Cemetery, Perak, Malaysia'},
       {label: '太平車站', query: 'Taiping Railway Station, Perak, Malaysia'},
       {label: 'Han Chin Pet Soo', query: 'Han Chin Pet Soo, Ipoh, Malaysia'},
+      {label: '怡保舊街場', query: 'Ipoh Old Town, Perak, Malaysia'},
       {label: '怡保車站', query: 'Ipoh Railway Station, Perak, Malaysia'},
       {label: 'KL Sentral', query: 'Kuala Lumpur Sentral, Malaysia'},
-      {label: '雙子塔 / KLCC', query: 'Petronas Twin Towers, Kuala Lumpur, Malaysia'},
     ],
     blocks: [
-      ['08:30–11:30', '到 Taiping 巴士站搭 77 號往 Kuala Sepetang 的公車，在 Matang Museum／Kota Ngah Ibrahim 附近下車；上車前先問清回程班次。館舍把錫礦行政、英治與日軍佔領放在同一棟建築裡，是二戰線的核心。'],
-      ['11:30–13:15', '搭同線巴士回太平，進 Perak Museum 或先吃午餐；若 77 號回程班次不合理，才用一次 30 分鐘級短程 Grab 回市區，仍不是全天包車。'],
-      ['13:15–14:30', '走 Taiping War Cemetery；再回車站搭已預訂的 KTM／ETS 往 Ipoh。車票要預留，因為這一段是把北段公共交通接回主幹鐵路的關鍵。'],
-      ['15:30–18:30', 'Han Chin Pet Soo 只在已訂到時段時進入；否則走怡保舊街場、車站與白咖啡，再搭傍晚 ETS 南下 KL Sentral。不要為臨時補一館錯過南下車。'],
-      ['19:30–22:00', '在 KLCC 看雙子塔與噴泉夜景，晚餐吃 Roti Canai 與 Teh Tarik。'],
+      ['07:30–08:15', '退房、寄放或帶妥行李後，先走 Taiping War Cemetery；它不需要與館舍搶下午時段。08:15 前抵達 Taiping 巴士站，準備搭 77 號往 Kuala Sepetang。'],
+      ['08:15–10:15', '搭 77 號到 Matang Museum／Kota Ngah Ibrahim 附近；館舍 09:00 開門，重點看錫礦行政、英治與日軍佔領如何共用同一棟建築。上車就問司機哪一班能讓你 11:30 前回太平。'],
+      ['10:15–11:45', '搭同線回太平。若 77 號回程不能在 11:45 前到市區，才用一次短程 Grab 回市區；這是保住 ETS 的備援，不是全天包車。'],
+      ['11:45–13:35', '霹靂博物館只留 45 分鐘，或在 77 號延誤時直接略過、吃午餐與取行李；13:35 前必須到 Taiping 車站。這段的優先序是固定火車 > 補一個館。'],
+      ['13:56–14:40', '搭 ETS EX9109 由 Taiping 到 Ipoh。這一班把馬當、太平與怡保接成同一天；錯過後不要臨時改成公路長途。'],
+      ['14:45–18:40', 'Han Chin Pet Soo 只在預約到時段時進入；否則走怡保舊街場、車站、Birch Memorial Clock Tower 與白咖啡。18:40 前回到怡保車站。'],
+      ['19:00–21:34', '搭 ETS EG9055 由 Ipoh 到 KL Sentral，抵達後直接入住唐人街一帶。KLCC 夜景不排在今晚，避免把一段已經很長的轉移日做成趕場。'],
     ],
     stay: '吉隆坡唐人街青旅，預算約 35 MYR。',
   },
@@ -197,26 +199,29 @@ const days = [
   {
     day: 8,
     date: '9 月 5 日（六）',
-    route: '黑風洞 → 國家館舍 → 獨立廣場 → 廣東義山',
+    route: '黑風洞 → 國家博物館 → 廣東義山 → 獨立廣場',
     title: '用地質、國家館舍與墓園替整條線收束',
     focus: '黑風洞、國家博物館、國家紡織博物館、獨立廣場、廣東義山',
     mapStops: [
       {label: '黑風洞', query: 'Batu Caves, Selangor, Malaysia'},
       {label: '國家博物館', query: 'Muzium Negara, Kuala Lumpur, Malaysia'},
+      {label: '廣東義山', query: 'Kwong Tong Cemetery Kuala Lumpur, Malaysia'},
       {label: '國家紡織博物館', query: 'National Textile Museum Kuala Lumpur, Malaysia'},
+      {label: '音樂博物館（備援）', query: 'Music Museum Kuala Lumpur, Malaysia'},
       {label: '占美清真寺', query: 'Masjid Jamek of Kuala Lumpur, Malaysia'},
       {label: '生命之河', query: 'River of Life Kuala Lumpur, Malaysia'},
       {label: '獨立廣場', query: 'Merdeka Square Kuala Lumpur, Malaysia'},
       {label: '蘇丹阿都沙末大廈', query: 'Sultan Abdul Samad Building Kuala Lumpur, Malaysia'},
-      {label: '廣東義山', query: 'Kwong Tong Cemetery Kuala Lumpur, Malaysia'},
     ],
     blocks: [
-      ['06:45–09:15', '把 Batu Caves 當作清晨的獨立模組：只走主洞與石灰岩地景，遇雨、身體疲勞或交通延誤就略過，直接前往國家博物館。'],
-      ['10:15–12:00', '進 Muzium Negara。這裡把史前、早期馬來王國、殖民與日據時期、獨立後的馬來西亞放在同一條國家敘事中。'],
-      ['12:15–13:15', '走國家紡織博物館。它與獨立廣場同區，適合作為一個短而完整的館舍，不需要為了「數量」停留過久。'],
-      ['14:00–16:15', '走占美清真寺、生命之河、獨立廣場與蘇丹阿都沙末大廈，回看殖民行政、獨立儀式與今天的城市中心。'],
-      ['16:30–18:00', '到 Kwong Tong Cemetery。只在開放、安全且有日光時進入；以華人開埠、南僑機工與日據死難記憶為主線，不在墓區逗留到天黑。'],
-      ['18:00–20:30', '回到 KL Sentral，在市區吃晚餐並整理隔天返程所需的證件、行李與交通方案。'],
+      ['08:12–08:41', '從 KL Sentral 搭 KTM Komuter 到 Batu Caves；若住在唐人街，可在 Kuala Lumpur 站約 08:16 上車。只走主洞與石灰岩地景，遇雨、身體疲勞或交通延誤就略過，直接前往國家博物館。'],
+      ['08:45–10:40', '走 Batu Caves 主洞與石灰岩地景；10:40 開始往車站回程，不再追加遠處寺廟或商場。'],
+      ['11:00–11:31', '由 Batu Caves 搭 KTM 回 KL Sentral，步行往 Muzium Negara。'],
+      ['11:45–13:00', '進 Muzium Negara。這裡把史前、早期馬來王國、殖民與日據時期、獨立後的馬來西亞放在同一條國家敘事中。'],
+      ['13:00–14:55', '快速午餐後以短程 Grab 到 Kwong Tong Cemetery；13:45–14:55 在開放、有日光的時段走葉亞來墓、南僑機工紀念碑與華人開埠脈絡。墓園 16:00 關閉，不把它排到傍晚。'],
+      ['15:15–16:05', '回獨立廣場一帶；國家紡織博物館若當日開放就進，若有臨時閉館，改進免費的音樂博物館，不為補館跨城折返。'],
+      ['16:05–18:00', '走占美清真寺外觀、生命之河、獨立廣場與蘇丹阿都沙末大廈，回看殖民行政、獨立儀式與今天的城市中心。'],
+      ['18:00–20:30', '在市區吃晚餐並整理隔天返程所需的證件、行李與交通方案。'],
     ],
     stay: '吉隆坡青旅，預算約 35 MYR。',
   },
@@ -272,8 +277,8 @@ const foodMap = [
 
 const preparation = [
   ['MDAC 入境卡', '出發前 3 天內，使用馬來西亞移民局官方渠道填寫，保存 PDF 或條碼。'],
-  ['先鎖五項', '8 月 30 日直達夜巴、9 月 2 日 Butterworth ↔ Sungai Petani 的 KTM、Sungai Petani ↔ Merbok 接駁、77 號巴士回程、怡保至 KL 的 ETS；Han Chin Pet Soo 只在預約成功後加入。'],
-  ['公共交通原則', '布央谷放在 Sungai Petani 的單日支線，馬當放到隔天從太平搭 77 號巴士；不用全日包車。兩個站點的最後 2.5 km 徒步／臨時短程 Grab 只作天氣與班次備援。'],
+  ['先鎖五項', '8 月 30 日直達夜巴、9 月 2 日 07:00 渡輪／07:35 Butterworth → Sungai Petani KTM、10:00 K51、15:52 Sungai Petani → Butterworth／17:40 → Taiping KTM、9 月 3 日 13:56 Taiping → Ipoh 與 19:00 Ipoh → KL 的 ETS；Han Chin Pet Soo 只在預約成功後加入。'],
+  ['公共交通原則', '布央谷放在 Sungai Petani 的單日支線，馬當放到隔天從太平搭 77 號巴士；不用全日包車。布央谷最後約 2.5 km、77 號巴士回程失去 ETS 緩衝時，才使用一次短程 Grab，並預留足夠時間給固定列車。'],
   ['閉館規則', '檳城州立博物館避開 8 月 31 日國慶假日；警察博物館避開星期一。其餘場館也要在出發前看官方當日公告。'],
   ['導航與通信', '預先準備 Grab、Google Maps 離線地圖、本地 eSIM 與至少一張離線交通備份。'],
   ['空調與裝備', '夜巴、商場與博物館可能很冷；古墓、密林與戰爭遺址要準備驅蚊、長褲與防滑鞋。'],
@@ -303,13 +308,33 @@ const officialChecks = [
   },
   {
     title: '布央谷考古博物館',
-    body: '由 Sungai Petani 巴士總站接駁至 Merbok；最後約 2.5 km 以白天步行為主，雨天才用短程備援。',
+    body: '官方指向 Sungai Petani → Merbok 的公共接駁；最後約 2.5 km 以白天步行為主，雨天才用短程備援。',
     href: 'https://www.jmm.gov.my/en/content/lembah-bujang-archaeological-museum',
+  },
+  {
+    title: 'K51：雙溪大年 → 丹絨達外',
+    body: '官方路線圖列出 10:00 往丹絨達外班；在 Merbok 下車後再進布央谷，回程不能錯過 15:52 的 KTM。',
+    href: 'https://bas.my/route/K51.png',
   },
   {
     title: '馬當博物館',
     body: '官方列出從 Taiping 巴士站搭 77 號往 Kuala Sepetang；出發前在站內確認回程班次。',
     href: 'https://www.jmm.gov.my/en/content/matang-museum',
+  },
+  {
+    title: '檳城渡輪',
+    body: 'George Town → Butterworth 首班為 07:00；明早到碼頭的硬截止是 06:50。',
+    href: 'https://penangport.gov.my/en/services/service/ferry-services',
+  },
+  {
+    title: 'KTM 與 ETS',
+    body: '渡輪與列車均有固定班次；行前再次核對當日異動，Day 5 及 Day 6 不以「大概能趕上」作規劃。',
+    href: 'https://www.ktmb.com.my/traintime.html',
+  },
+  {
+    title: '廣東義山',
+    body: '公開時段為 08:30–16:00；安排在 13:45–14:55，墓園不排傍晚。',
+    href: 'https://ktc.org.my/wp-content/uploads/2024/03/Cemetery-Rules-Regulations_The-Association-of-Kwong-Tong-Cemetery-Management-KL.pdf',
   },
   {
     title: 'KLIA Transit',
@@ -658,9 +683,9 @@ export default function MalaysiaPeninsulaPage() {
         <section className={`container ${styles.lastSection}`} aria-labelledby="revision-title">
           <div className={styles.revisionCard}>
             <div>
-              <span className={styles.kicker}>VERSION 02 / RECHECK BEFORE GO</span>
+              <span className={styles.kicker}>VERSION 03 / TIMETABLE-CALIBRATED</span>
               <Heading as="h2" id="revision-title">先守住時間，再增加內容。</Heading>
-              <p>出發前重新核對航班、MDAC、館舍開放、國慶活動、夜巴、渡輪、KTM、Merbok 接駁、77 號巴士、宗教場所規定、天氣與安全狀況。現場若有延誤，優先保留馬六甲、檳城戰爭博物館、布央谷／馬當／太平與吉隆坡國家館舍；不要犧牲這些核心站點去補一個遠距離打卡。</p>
+              <p>已將夜巴抵達、9 月 2 日 07:00 渡輪／07:35 KTM／10:00 K51／15:52 返程 KTM、9 月 3 日 13:56 與 19:00 ETS，以及廣東義山 16:00 閉園校正入表。出發前仍要重新核對航班、館舍、渡輪、KTM、77 號巴士、宗教場所、天氣與安全狀況；現場若延誤，優先守住布央谷、馬當、太平與固定列車。</p>
             </div>
             <Link className={styles.backLink} to="/explore/travel">回到行旅誌 <span aria-hidden="true">↗</span></Link>
           </div>
