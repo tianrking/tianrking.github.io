@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-01",
+  "checked_on": "2026-09-02",
   "scope_note": "本库覆盖智能安防与门禁：家庭摄像头、可视门铃、智能门锁、报警器、门窗传感器与智能对讲。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-01"
+      "2026-09-02"
     ]
   ],
   "products": [
@@ -457,6 +457,21 @@
       "reason": "Arculus官方站、FAQ和GlobeNewswire发布资料显示Boxx仍处于Kickstarter前后切换的预发布阶段：页面之间对活动日期存在差异，官方FAQ称production-ready design/pre-production并预计2026年10月交付，不能当作已普遍上市产品。",
       "url": "https://arculusboxx.com/",
       "alias_or_relation": "智能包裹箱/访问控制生态；与普通门铃、摄像头、智能锁分开；Kickstarter状态、订阅和交付继续核对。"
+    },
+    {
+      "id": "RING-DOME-CAM-4K",
+      "vendor": "Ring",
+      "name": "Ring Dome Cam 4K",
+      "brand": "Ring",
+      "region": "美国/全球专业安装与住宅市场计划",
+      "category": "智能安防摄像头",
+      "entity_type": "预发布安防摄像头",
+      "status": "预发布/预计未来数月；FCC授权尚未取得",
+      "evidence": "A",
+      "reason": "Ring官方公告披露US$299.99、Retinal 4K彩色夜视、USB-C/PoE、双频Wi-Fi/以太网、本地存储、24/7录制和隐私功能，但同时明确该设备尚未取得FCC授权且不得在授权前销售，因此保留候选，不计入在售主表。",
+      "url": "https://blog.ring.com/products-innovation/introducing-the-ring-dome-cam-4k-affordable-professional-security-built-for-businesses-of-all-sizes/",
+      "alias_or_relation": "新商用/住宅Dome Cam；不与现有SEC-001至SEC-008和Ring门铃/传感器重复",
+      "next_check": "核验FCC授权、正式产品页、精确分料号、库存/区域价格、尺寸重量、存储容量和订阅条款"
     }
   ],
   "sources": [
@@ -700,6 +715,24 @@
       "availability_signal": "Kickstarter计划/预发布",
       "storefront_type": "GlobeNewswire新闻稿",
       "platform_reference": "Arculus Boxx"
+    },
+    {
+      "checked_on": "2026-09-02",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$299.99",
+      "estimated_delivery": "未公开",
+      "id": "RING-DOME-CAM-4K-NEWS",
+      "source_group": "Ring Dome Cam 4K官方预发布公告",
+      "url": "https://blog.ring.com/products-innovation/introducing-the-ring-dome-cam-4k-affordable-professional-security-built-for-businesses-of-all-sizes/",
+      "scope": "2026-09-01公告、US$299.99、4K彩色夜视、USB-C/PoE、双频Wi-Fi/以太网、本地存储、24/7录制、隐私区、E2E、FCC未授权",
+      "quality": "A",
+      "source_domain": "ring.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方预发布/价格/功能/合规边界证据",
+      "seller_type": "安防设备品牌官方",
+      "storefront_type": "Ring官方博客",
+      "availability_signal": "预计未来数月；官方明确FCC授权前不得销售",
+      "platform_reference": "Ring Dome Cam 4K"
     }
   ],
   "update_log": [
@@ -756,6 +789,12 @@
       "change": "【智能安防与门禁】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
       "verification": "Amazon及区域电商用于发现、价格/库存、ASIN/SKU和卖方信号；Kickstarter/Indiegogo用于项目状态、档位和交付线索；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-02",
+      "change": "新增候选RING-DOME-CAM-4K；补充官方US$299.99、4K彩色夜视、USB-C/PoE、双频Wi-Fi/以太网、本地存储、订阅录制、隐私功能和FCC未授权边界。",
+      "verification": "Ring官方产品创新博客为A等级预发布证据，但页面明确FCC授权尚未取得且不得在授权前销售，因此不进入在售主表；候选与现有Ring门铃/传感器分开。",
+      "next": "跟踪FCC授权、正式产品页/分料号、区域价格与库存、存储容量、尺寸重量和实际销售状态。"
     }
   ],
   "source_channel_policy": [
@@ -838,6 +877,7 @@
     }
   ],
   "source_channel_counts": {
+    "official_newsroom": 1,
     "official_product": 2,
     "official_sales": 7,
     "official_support_manual": 4,

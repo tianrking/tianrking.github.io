@@ -1,6 +1,6 @@
 {
-  "checked_on": "2026-09-01",
-  "scope_note": "首版优先覆盖全球主要品牌的TWS、主动降噪、AI/录音/翻译耳机与骨传导/开放式运动耳机。按独立型号/代际计数；颜色、充电盒套装和区域SKU不拆行。翻译能力、AI功能与硬件音频能力分开记录；来源没有披露的芯片、传感器、尺寸、重量、防水、续航和订阅字段写“未公开”。",
+  "checked_on": "2026-09-02",
+  "scope_note": "首版优先覆盖全球主要品牌的TWS、主动降噪、AI/录音/翻译耳机与骨传导/开放式运动耳机。按独立型号/代际计数；颜色、充电盒套装和区域SKU不拆行。翻译能力、AI功能与硬件音频能力分开记录；来源没有披露的芯片、传感器、尺寸、重量、防水、续航和订阅字段写“未公开”。 本库同时纳入Wi-Fi多房间音箱与联网家庭音频；音箱的扬声器驱动、无线协议和家庭服务与耳机字段分开记录。",
   "field_rules": [
     [
       "形态边界",
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-01"
+      "2026-09-02"
     ]
   ],
   "products": [
@@ -1444,6 +1444,123 @@
         "BOSE-QC2G-SUPPORT"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "display": "无显示",
+      "os_platform": "JBL One App；Alexa Built-in/Alexa+按地区",
+      "audio_drivers": "2×30mm丝膜钕高音单元 + 1×4英寸低音单元",
+      "sensors": "自动房间校准/自调音；具体麦克风与传感器未公开",
+      "gps_positioning": "不支持/不适用",
+      "satellite": "不支持/不适用",
+      "supported_protocols": "Wi-Fi、Bluetooth、AirPlay 2、Google Cast、Roon Ready、Spotify Connect、Tidal Connect、Qobuz Connect；版本未公开",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "无内置电池；官方规格表以“—”列示",
+      "charging": "外接电源；接口/功耗未公开",
+      "water_resistance": "未公开",
+      "subscription": "无公开硬件强制订阅；Alexa+和音乐服务按地区/账户",
+      "privacy": "Alexa/麦克风与音乐服务数据处理按相关服务政策；完整硬件数据路径未公开",
+      "id": "AUDIO-040",
+      "brand": "JBL",
+      "model": "JBL Cove M1",
+      "country_region": "美国品牌/全球多区域",
+      "category": "Wi-Fi多房间音箱/家庭音频",
+      "form_factor": "紧凑型家用Wi-Fi音箱",
+      "use_case": "多房间音乐、家庭影音、单体或立体声播放",
+      "status": "预售/官方公告；2026-09-13起JBL.com可购买",
+      "evidence": "A",
+      "launch_date": "2026-09-01",
+      "launch_date_type": "HARMAN/JBL官方发布稿发布日期",
+      "price": "US$229.95",
+      "official_url": "https://news.harman.com/releases/jbl-launches-jbl-cove-a-new-whole-home-audio-system-to-enjoy-superior-sound-throughout-the-entire-home",
+      "spec_url": "https://news.harman.com/releases/jbl-launches-jbl-cove-a-new-whole-home-audio-system-to-enjoy-superior-sound-throughout-the-entire-home",
+      "features": "JBL One三步设置、Constant Sound Field、Automatic Self-Tuning、AI Sound Boost、立体声配对、全屋分区播放、JBL Bar MK2联动",
+      "availability_note": "HARMAN官方发布稿称三款均于2026-09-13在JBL.com提供黑/白版本；当前为公告后的上市前窗口，库存和区域页面待复核",
+      "source_note": "HARMAN官方发布稿同时给出型号、价格、日期、驱动单元、连接协议和续航/防护表；未公开芯片、尺寸、重量和精确传感器不推断",
+      "source_refs": [
+        "JBL-COVE-NEWS"
+      ],
+      "connectivity": "未公开"
+    },
+    {
+      "display": "无显示",
+      "os_platform": "JBL One App；Alexa Built-in/Alexa+按地区",
+      "audio_drivers": "3×30mm丝膜钕高音单元（1个向上发声） + 1×20mm丝膜钕高音单元 + 1×4英寸低音单元",
+      "sensors": "自动房间校准/自调音；具体麦克风与传感器未公开",
+      "gps_positioning": "不支持/不适用",
+      "satellite": "不支持/不适用",
+      "supported_protocols": "Wi-Fi、Bluetooth、AirPlay 2、Google Cast、Roon Ready、Spotify Connect、Tidal Connect、Qobuz Connect；版本未公开",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "最长约14小时；官方称放回底座即可充电",
+      "charging": "底座充电；接口、时间和功率未公开",
+      "water_resistance": "IP56",
+      "subscription": "无公开硬件强制订阅；Alexa+和音乐服务按地区/账户",
+      "privacy": "Alexa/麦克风与音乐服务数据处理按相关服务政策；完整硬件数据路径未公开",
+      "id": "AUDIO-041",
+      "brand": "JBL",
+      "model": "JBL Cove P1",
+      "country_region": "美国品牌/全球多区域",
+      "category": "Wi-Fi多房间音箱/便携家庭音频",
+      "form_factor": "带电池的便携型家用Wi-Fi音箱",
+      "use_case": "多房间音乐、便携听音、Dolby Atmos家庭影音",
+      "status": "预售/官方公告；2026-09-13起JBL.com可购买",
+      "evidence": "A",
+      "launch_date": "2026-09-01",
+      "launch_date_type": "HARMAN/JBL官方发布稿发布日期",
+      "price": "US$399.95",
+      "official_url": "https://news.harman.com/releases/jbl-launches-jbl-cove-a-new-whole-home-audio-system-to-enjoy-superior-sound-throughout-the-entire-home",
+      "spec_url": "https://news.harman.com/releases/jbl-launches-jbl-cove-a-new-whole-home-audio-system-to-enjoy-superior-sound-throughout-the-entire-home",
+      "features": "JBL One三步设置、Constant Sound Field、Automatic Self-Tuning、AI Sound Boost、立体声配对、全屋分区播放、Dolby Atmos、JBL Bar MK2联动",
+      "availability_note": "HARMAN官方发布稿称2026-09-13在JBL.com提供黑/白版本；P1是系列中唯一官方明确列示电池和IP56的型号",
+      "source_note": "HARMAN官方发布稿同时给出型号、价格、日期、驱动单元、连接协议、14小时电池和IP56；未公开芯片、尺寸、重量和精确传感器不推断",
+      "source_refs": [
+        "JBL-COVE-NEWS"
+      ],
+      "connectivity": "未公开"
+    },
+    {
+      "display": "无显示",
+      "os_platform": "JBL One App；Alexa Built-in/Alexa+按地区",
+      "audio_drivers": "4×30mm丝膜钕高音单元（1个向上发声） + 2×4英寸低音单元",
+      "sensors": "自动房间校准/自调音；具体麦克风与传感器未公开",
+      "gps_positioning": "不支持/不适用",
+      "satellite": "不支持/不适用",
+      "supported_protocols": "Wi-Fi、Bluetooth、AirPlay 2、Google Cast、Roon Ready、Spotify Connect、Tidal Connect、Qobuz Connect；版本未公开",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "无内置电池；官方规格表以“—”列示",
+      "charging": "外接电源；接口/功耗未公开",
+      "water_resistance": "未公开",
+      "subscription": "无公开硬件强制订阅；Alexa+和音乐服务按地区/账户",
+      "privacy": "Alexa/麦克风与音乐服务数据处理按相关服务政策；完整硬件数据路径未公开",
+      "id": "AUDIO-042",
+      "brand": "JBL",
+      "model": "JBL Cove X1",
+      "country_region": "美国品牌/全球多区域",
+      "category": "Wi-Fi多房间音箱/家庭影音",
+      "form_factor": "旗舰型家用Wi-Fi音箱",
+      "use_case": "多房间音乐、Dolby Atmos家庭影音、立体声与音响系统扩展",
+      "status": "预售/官方公告；2026-09-13起JBL.com可购买",
+      "evidence": "A",
+      "launch_date": "2026-09-01",
+      "launch_date_type": "HARMAN/JBL官方发布稿发布日期",
+      "price": "US$449.95",
+      "official_url": "https://news.harman.com/releases/jbl-launches-jbl-cove-a-new-whole-home-audio-system-to-enjoy-superior-sound-throughout-the-entire-home",
+      "spec_url": "https://news.harman.com/releases/jbl-launches-jbl-cove-a-new-whole-home-audio-system-to-enjoy-superior-sound-throughout-the-entire-home",
+      "features": "JBL One三步设置、Constant Sound Field、Automatic Self-Tuning、AI Sound Boost、立体声配对、全屋分区播放、Dolby Atmos、JBL Bar MK2联动",
+      "availability_note": "HARMAN官方发布稿称2026-09-13在JBL.com提供黑/白版本；X1为旗舰型号，连接与调音能力按官方系列资料",
+      "source_note": "HARMAN官方发布稿同时给出型号、价格、日期、驱动单元和连接协议；未公开芯片、尺寸、重量、电池和防护不推断",
+      "source_refs": [
+        "JBL-COVE-NEWS"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -2243,6 +2360,24 @@
       "storefront_type": "官方支持中心",
       "availability_signal": "官方支持页列示Aug 2026-present",
       "platform_reference": "Bose QuietComfort Headphones (2nd Gen)"
+    },
+    {
+      "checked_on": "2026-09-02",
+      "campaign_status": "未公开",
+      "pledge_or_price": "M1 US$229.95；P1 US$399.95；X1 US$449.95",
+      "estimated_delivery": "2026-09-13起可购买",
+      "id": "JBL-COVE-NEWS",
+      "source_group": "JBL Cove官方发布稿",
+      "url": "https://news.harman.com/releases/jbl-launches-jbl-cove-a-new-whole-home-audio-system-to-enjoy-superior-sound-throughout-the-entire-home",
+      "scope": "2026-09-01发布；Cove M1/P1/X1型号、2026-09-13上市、US$229.95/399.95/449.95、Wi-Fi/Bluetooth/AirPlay 2/Google Cast/Roon/Spotify/Tidal/Qobuz、驱动、P1 14小时与IP56",
+      "quality": "A",
+      "source_domain": "harman.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方发布/上市日期/价格/核心规格证据",
+      "seller_type": "设备品牌官方",
+      "storefront_type": "HARMAN官方新闻室",
+      "availability_signal": "官方宣布2026-09-13在JBL.com提供；实际库存和区域结算待复核",
+      "platform_reference": "JBL Cove M1 / P1 / X1"
     }
   ],
   "update_log": [
@@ -2299,6 +2434,12 @@
       "change": "新增AUDIO-036至AUDIO-039：CMF Clip Pro、QCY H6 Ultra、SOUNDPEATS UU2（POP Clip2）和Bose QuietComfort Headphones（2nd Gen）；补充官方价格、预售/发货、驱动、麦克风、Bluetooth/编解码、芯片、续航、电池、充电和防护。",
       "verification": "均有品牌官方产品/销售/发布/支持来源；SOUNDPEATS官方明确UU2与POP Clip2为同一产品，未重复计数；QCY预售与交付日单独记录；未公开芯片、尺寸、重量、防水和隐私字段不推断。",
       "next": "继续核验各区域Amazon/官方旗舰店库存、ASIN/SKU、授权卖方、税费与实际发货；补充更多AI/翻译/骨传导新品和精确音频SoC。"
+    },
+    {
+      "date": "2026-09-02",
+      "change": "新增AUDIO-040至AUDIO-042：JBL Cove M1、Cove P1、Cove X1；将联网家庭音频纳入音频库范围，补充官方价格、2026-09-13上市日、驱动单元、Wi-Fi/蓝牙/多房间协议、P1电池和IP56。",
+      "verification": "HARMAN/JBL官方发布稿一次性互证三款独立型号、区域首发日、价格、驱动、连接能力和P1的14小时/IP56；未公开芯片、尺寸、重量、功耗和精确传感器字段不推断。",
+      "next": "上市日后复核JBL.com各区域产品页、库存、尺寸/重量/功耗、精确无线版本和授权零售价格；继续扩展网络音箱与家庭影音新品。"
     }
   ],
   "source_channel_policy": [
@@ -2382,7 +2523,7 @@
   ],
   "source_channel_counts": {
     "official_news": 1,
-    "official_newsroom": 6,
+    "official_newsroom": 7,
     "official_product": 4,
     "official_release": 2,
     "official_sales": 18,
@@ -2391,6 +2532,7 @@
   "source_domains": [
     "apple.com",
     "bose.com",
+    "harman.com",
     "hmd.com",
     "mi.com",
     "newsroom.sennheiser.com",

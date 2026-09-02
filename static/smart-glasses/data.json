@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-01",
+  "checked_on": "2026-09-02",
   "scope_note": "首版全球智能眼镜／AR眼镜／AI眼镜市场库：主表纳入官方在售、官方明确发售、官方明确预售、企业正式销售/服务中或有官方产品页、手册、规格与交付证据的独立型号/代际。类别覆盖无显示音频眼镜、相机AI眼镜、带显示AI眼镜、消费级AR/XR、企业/工业/医疗/开发者AR。颜色、镜片、处方配置、套装和配件不拆行；不同代际、显示/相机/主机连接方式或关键功能保留独立行。传闻、原型、合作路线、众筹、Coming soon、OEM线索和无法证明交付的项目放入候选与别名表。来源未披露的芯片、传感器、尺寸、重量、电池容量、续航、防水和订阅字段写“未公开”，不从App、AI功能或外观推断。",
   "products": [
     {
@@ -2948,6 +2948,47 @@
         "XANDER-II-COMING",
         "XANDER-II-PURCHASE"
       ]
+    },
+    {
+      "display": "无显示屏；拍摄/状态指示LED",
+      "os_platform": "VIVE Connect/VIVE AI；iOS 17.6+、Android 10+",
+      "audio_drivers": "开放式扬声器；精确驱动单元数量/尺寸未公开",
+      "sensors": "12MP超广角摄像头；四麦克风阵列/指向性麦克风；触控板、AI按钮和佩戴检测；其他传感器未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "Bluetooth；VIVE Connect；手机网络依配对手机；无线版本未公开",
+      "chip_or_soc": "Qualcomm Snapdragon AR1 Gen 1",
+      "storage": "32GB",
+      "dimensions": "未公开",
+      "weight_g": "M：48.8g含镜片/42.8g不含镜片；L：51.5g含镜片/45.5g不含镜片",
+      "battery": "235mAh；音乐播放最长约4.5小时；待机最长约36小时",
+      "charging": "磁吸式充电线；10分钟约充至50%",
+      "water_resistance": "耐水/防泼溅；不防水等级未公开",
+      "subscription": "VIVE AI Plus附24个月试用；日本VIVE AI Notes最多5小时/3个月，额外服务按地区/账户",
+      "privacy": "拍摄时LED指示；未佩戴时相机自动停止；AES-256本地数据保护；官方称数据不出售或用于训练；完整云端保留规则未公开",
+      "id": "GLASS-090",
+      "brand": "HTC VIVE",
+      "model": "VIVE Eagle",
+      "country_region": "中国台湾首发/日本及其他区域官方渠道",
+      "category": "AI智能眼镜/开放式音频智能眼镜",
+      "form_factor": "带摄像头和开放式音频的AI眼镜，M/L两种尺寸",
+      "use_case": "免手持拍摄、音乐/通话、文字翻译、AI助手、语音记录与旅行辅助",
+      "status": "在售/台湾、日本等区域官方渠道；可得性和镜片配置按地区变化",
+      "evidence": "A",
+      "launch_date": "2025-09-01",
+      "launch_date_type": "VIVE官方台湾首发公告；日本区域于2026-04-24销售",
+      "price": "台湾NT$15,600；日本含税¥82,500起（太阳镜/清透）或¥98,000（调光）；香港HK$3,988",
+      "official_url": "https://www.vive.com/us/product/vive-eagle/overview/",
+      "spec_url": "https://www.vive.com/jp/product/vive-eagle/spec/",
+      "features": "12MP照片/视频、开放式音频、语音AI、文字/图片翻译、VIVE AI Notes、说话人识别与摘要、Google Gemini/OpenAI GPT Beta连接、处方镜片支持",
+      "availability_note": "VIVE美国页面当前注明仅台湾可得；日本官方页面和HTC NIPPON公告显示日本已于2026-04-24销售；区域库存、镜片和AI服务范围不能互相外推",
+      "source_note": "VIVE官方台湾发布、美国产品页、日本规格页和HTC NIPPON销售公告互证；Qualcomm Snapdragon AR1 Gen 1来自官方日本规格页，不采用媒体推断；未公开尺寸、防护等级和完整传感器矩阵不推断",
+      "source_refs": [
+        "VIVE-EAGLE-TAIWAN-NEWS",
+        "VIVE-EAGLE-US-PRODUCT",
+        "VIVE-EAGLE-JP-SPEC",
+        "VIVE-EAGLE-JP-RELEASE"
+      ]
     }
   ],
   "candidates": [
@@ -4254,6 +4295,78 @@
       "storefront_type": "Kickstarter项目页",
       "availability_signal": "历史项目；当前零售/交付待核验",
       "platform_reference": "Loomos AI Glasses Kickstarter"
+    },
+    {
+      "checked_on": "2026-09-02",
+      "campaign_status": "未公开",
+      "pledge_or_price": "NT$15,600",
+      "estimated_delivery": "未公开",
+      "id": "VIVE-EAGLE-TAIWAN-NEWS",
+      "source_group": "VIVE Eagle台湾官方发布稿",
+      "url": "https://blog.vive.com/us/introducing-vive-eagle-smart-glasses-built-for-everyday-life/",
+      "scope": "2025-08-15公告；2025-09-01台湾首发、NT$15,600、12MP、32GB、四麦克风、4.5小时、36小时待机、AI/翻译/隐私",
+      "quality": "A",
+      "source_domain": "vive.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方发布/首发日期/价格/核心规格证据",
+      "seller_type": "设备品牌官方",
+      "storefront_type": "VIVE官方博客",
+      "availability_signal": "台湾首发并链接官方产品页；区域可得性另行核验",
+      "platform_reference": "VIVE Eagle"
+    },
+    {
+      "checked_on": "2026-09-02",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "VIVE-EAGLE-US-PRODUCT",
+      "source_group": "VIVE Eagle美国官方产品页",
+      "url": "https://www.vive.com/us/product/vive-eagle/overview/",
+      "scope": "官方产品入口、台湾当前可得性、AI Notes、隐私、VIVE Connect和功能边界",
+      "quality": "A",
+      "source_domain": "vive.com",
+      "source_channel": "official_product",
+      "source_role": "原厂产品/区域可得性/功能边界证据",
+      "seller_type": "设备品牌官方",
+      "storefront_type": "VIVE官方产品页",
+      "availability_signal": "页面当前注明仅台湾可得；区域状态动态",
+      "platform_reference": "VIVE Eagle"
+    },
+    {
+      "checked_on": "2026-09-02",
+      "campaign_status": "未公开",
+      "pledge_or_price": "日本税込¥82,500起/调光¥98,000",
+      "estimated_delivery": "未公开",
+      "id": "VIVE-EAGLE-JP-SPEC",
+      "source_group": "VIVE Eagle日本官方规格页",
+      "url": "https://www.vive.com/jp/product/vive-eagle/spec/",
+      "scope": "Snapdragon AR1 Gen 1、M/L重量、12MP、32GB、235mAh、4.5小时、磁吸快充、颜色和镜片变体",
+      "quality": "A",
+      "source_domain": "vive.com",
+      "source_channel": "official_support_manual",
+      "source_role": "原厂官方规格/芯片/尺寸重量/电池证据",
+      "seller_type": "设备品牌官方",
+      "storefront_type": "VIVE日本规格页",
+      "availability_signal": "公开规格；具体门店库存另行核验",
+      "platform_reference": "VIVE Eagle"
+    },
+    {
+      "checked_on": "2026-09-02",
+      "campaign_status": "未公开",
+      "pledge_or_price": "税込¥82,500（太阳镜/清透）；税込¥98,000（调光）",
+      "estimated_delivery": "未公开",
+      "id": "VIVE-EAGLE-JP-RELEASE",
+      "source_group": "HTC NIPPON VIVE Eagle日本销售公告",
+      "url": "https://prtimes.jp/main/html/rd/p/000000237.000033579.html",
+      "scope": "2026-04-21公告、2026-04-24日本发售、¥82,500/¥98,000、渠道、12语言AI Notes、隐私与235mAh",
+      "quality": "A",
+      "source_domain": "prtimes.jp",
+      "source_channel": "official_release",
+      "source_role": "品牌官方区域销售/上市日期/价格/功能证据",
+      "seller_type": "设备品牌官方",
+      "storefront_type": "官方新闻稿分发",
+      "availability_signal": "HTC在线、KDDI/au、Yamada等日本区域销售渠道",
+      "platform_reference": "VIVE Eagle Japan"
     }
   ],
   "update_log": [
@@ -4322,6 +4435,12 @@
       "change": "新增GLASS-089 XanderGlasses II主表记录；新增Loomos AI Glasses历史众筹候选；补充官方预订价格、订金/交付、字幕/翻译、麦克风、可更换电池与隐私边界。",
       "verification": "Xander官方产品页与purchase页明确接受订单，但库存不足时为订金预订，因此状态写预售/动态交付；Loomos仅保留Kickstarter候选，不将历史项目更新当作当前稳定零售。",
       "next": "继续核验Xander具体镜框/处方片SKU、监管/认证、绝对重量、协议和实际发货；跟踪Loomos官方零售、最终固件与交付证据。"
+    },
+    {
+      "date": "2026-09-02",
+      "change": "新增GLASS-090 HTC VIVE Eagle；补充台湾首发、日本2026-04-24销售、区域价格、Qualcomm Snapdragon AR1 Gen 1、12MP、四麦克风、32GB、235mAh、4.5小时续航、磁吸快充与隐私边界。",
+      "verification": "VIVE台湾官方发布、美国官方产品页、日本规格页和HTC NIPPON官方销售公告互证；芯片字段以官方日本规格页为准。美国页当前注明仅台湾可得，日本页面显示另一套销售状态，区域可得性不合并外推。",
+      "next": "继续核验香港/台湾/日本各镜片和门店SKU、认证、精确防护等级、镜框尺寸、固件版本和VIVE AI服务价格；不把AI功能推断为独立硬件传感器。"
     }
   ],
   "source_channel_policy": [
@@ -4406,11 +4525,11 @@
   "source_channel_counts": {
     "crowdfunding": 3,
     "marketplace": 1,
-    "official_newsroom": 2,
-    "official_product": 23,
-    "official_release": 1,
+    "official_newsroom": 3,
+    "official_product": 24,
+    "official_release": 2,
     "official_sales": 21,
-    "official_support_manual": 13,
+    "official_support_manual": 14,
     "press_release_distribution": 1
   },
   "source_domains": [
@@ -4445,6 +4564,7 @@
     "oakley.com",
     "press.aboutamazon.com",
     "prnewswire.com",
+    "prtimes.jp",
     "ray-ban.com",
     "rayneo.com",
     "shop.realwear.com",
@@ -4460,6 +4580,7 @@
     "tutorials.xreal.com",
     "us.shop.xreal.com",
     "viture.com",
+    "vive.com",
     "vueglasses.com",
     "vuzix.com",
     "www.softbank.jp",
