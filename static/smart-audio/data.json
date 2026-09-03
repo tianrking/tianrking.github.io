@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-02",
+  "checked_on": "2026-09-03",
   "scope_note": "首版优先覆盖全球主要品牌的TWS、主动降噪、AI/录音/翻译耳机与骨传导/开放式运动耳机。按独立型号/代际计数；颜色、充电盒套装和区域SKU不拆行。翻译能力、AI功能与硬件音频能力分开记录；来源没有披露的芯片、传感器、尺寸、重量、防水、续航和订阅字段写“未公开”。 本库同时纳入Wi-Fi多房间音箱与联网家庭音频；音箱的扬声器驱动、无线协议和家庭服务与耳机字段分开记录。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-02"
+      "2026-09-03"
     ]
   ],
   "products": [
@@ -1561,6 +1561,47 @@
         "JBL-COVE-NEWS"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "display": "无显示；充电盒状态指示未详细披露",
+      "os_platform": "HarmonyOS/AI Life；支持跨OS，具体版本按地区页面",
+      "audio_drivers": "Turbo Driver；官方标称10Hz–48kHz；精确单元结构/尺寸未公开",
+      "sensors": "3个麦克风 + 骨传导麦克风；头部控制/佩戴检测相关硬件型号未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "Bluetooth；LDAC最高990kbps；华为设备最高2.3Mbps/48kHz/24-bit无损；版本未公开",
+      "chip_or_soc": "第三代音频芯片；精确型号未公开",
+      "storage": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "约4.8g/只",
+      "battery": "ANC关闭最长约10小时；ANC开启最长约6.5小时；充电盒总续航最长约40小时",
+      "charging": "充电盒充电接口、功率和时间未公开",
+      "water_resistance": "IP55",
+      "subscription": "无公开硬件强制订阅；AI/云服务按地区和账户",
+      "privacy": "通话麦克风、头部控制与AI服务数据规则按地区/服务政策；完整保留策略未公开",
+      "features": "自适应ANC、最高约30dB降噪、空间音频、清晰通话、头部控制、跨OS、LDAC与无损音频",
+      "availability_note": "HUAWEI全球产品页、马来西亚官方页和全球发布活动互证；价格、Bluetooth版本和上市日按区域待复核",
+      "source_note": "官方马来西亚页面提供4.8g、麦克风、驱动频响、LDAC、续航和IP55；第三代音频芯片只记录官方称呼，不补猜型号",
+      "id": "AUDIO-043",
+      "brand": "HUAWEI",
+      "model": "HUAWEI FreeBuds Neo",
+      "country_region": "中国品牌/全球发布；区域上市和服务按国家变化",
+      "category": "TWS/主动降噪/AI音频耳机",
+      "form_factor": "入耳式TWS耳机",
+      "use_case": "音乐、通话、主动降噪、空间音频、头部控制与跨设备使用",
+      "status": "官方发布/区域上市与价格待复核",
+      "evidence": "A",
+      "launch_date": "2026-09-02",
+      "launch_date_type": "HUAWEI官方全球创新产品发布会日期",
+      "price": "未公开/区域销售待复核",
+      "official_url": "https://consumer.huawei.com/en/headphones/freebuds-neo/",
+      "spec_url": "https://consumer.huawei.com/my/headphones/freebuds-neo/",
+      "source_refs": [
+        "HUAWEI-SEP02-LAUNCH-AUDIO",
+        "HUAWEI-FREEBUDS-NEO-GLOBAL",
+        "HUAWEI-FREEBUDS-NEO-MY"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -2378,6 +2419,60 @@
       "storefront_type": "HARMAN官方新闻室",
       "availability_signal": "官方宣布2026-09-13在JBL.com提供；实际库存和区域结算待复核",
       "platform_reference": "JBL Cove M1 / P1 / X1"
+    },
+    {
+      "checked_on": "2026-09-03",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "HUAWEI-SEP02-LAUNCH-AUDIO",
+      "source_group": "HUAWEI 2026-09-02全球创新产品发布会音频清单",
+      "url": "https://consumer.huawei.com/en/press/events/2026/huawei-innovative-product-launch-september-02/",
+      "scope": "官方列出HUAWEI FreeBuds Neo及发布活动日期",
+      "quality": "A",
+      "source_domain": "consumer.huawei.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方发布/型号存在/发布日证据",
+      "seller_type": "设备品牌官方",
+      "storefront_type": "HUAWEI官方活动页",
+      "availability_signal": "官方发布；实际销售/库存另按区域页面核验",
+      "platform_reference": "HUAWEI FreeBuds Neo"
+    },
+    {
+      "checked_on": "2026-09-03",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "HUAWEI-FREEBUDS-NEO-GLOBAL",
+      "source_group": "HUAWEI FreeBuds Neo全球官方产品页",
+      "url": "https://consumer.huawei.com/en/headphones/freebuds-neo/",
+      "scope": "官方产品定位、自适应ANC、空间音频、通话、跨OS和功能入口",
+      "quality": "A",
+      "source_domain": "consumer.huawei.com",
+      "source_channel": "official_product",
+      "source_role": "原厂产品/功能边界/区域入口证据",
+      "seller_type": "设备品牌官方",
+      "storefront_type": "HUAWEI全球官方产品页",
+      "availability_signal": "官方产品页；区域价格和库存动态",
+      "platform_reference": "HUAWEI FreeBuds Neo"
+    },
+    {
+      "checked_on": "2026-09-03",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "HUAWEI-FREEBUDS-NEO-MY",
+      "source_group": "HUAWEI FreeBuds Neo马来西亚官方产品页",
+      "url": "https://consumer.huawei.com/my/headphones/freebuds-neo/",
+      "scope": "4.8g/只、第三代音频芯片（型号未公开）、3麦克风+骨传导麦克风、10Hz–48kHz、LDAC、10/6.5/40小时、IP55和30dB ANC",
+      "quality": "A",
+      "source_domain": "consumer.huawei.com",
+      "source_channel": "official_product",
+      "source_role": "区域官方产品/音频规格/续航/防护证据",
+      "seller_type": "设备品牌官方",
+      "storefront_type": "HUAWEI马来西亚官方产品页",
+      "availability_signal": "官方区域产品页；价格和库存按区域动态",
+      "platform_reference": "HUAWEI FreeBuds Neo"
     }
   ],
   "update_log": [
@@ -2440,6 +2535,12 @@
       "change": "新增AUDIO-040至AUDIO-042：JBL Cove M1、Cove P1、Cove X1；将联网家庭音频纳入音频库范围，补充官方价格、2026-09-13上市日、驱动单元、Wi-Fi/蓝牙/多房间协议、P1电池和IP56。",
       "verification": "HARMAN/JBL官方发布稿一次性互证三款独立型号、区域首发日、价格、驱动、连接能力和P1的14小时/IP56；未公开芯片、尺寸、重量、功耗和精确传感器字段不推断。",
       "next": "上市日后复核JBL.com各区域产品页、库存、尺寸/重量/功耗、精确无线版本和授权零售价格；继续扩展网络音箱与家庭影音新品。"
+    },
+    {
+      "date": "2026-09-03",
+      "change": "新增AUDIO-043：HUAWEI FreeBuds Neo；补充官方发布日、区域产品页、第三代音频芯片（型号未公开）、麦克风/骨传导麦克风、LDAC、ANC、4.8g、10/6.5/40小时续航和IP55。",
+      "verification": "HUAWEI全球发布页、全球产品页和马来西亚官方产品页互证；不把AI/头部控制功能推断为未披露传感器或芯片型号。",
+      "next": "继续复核官方区域Buy页、Bluetooth版本、充电功率、尺寸、驱动器精确结构、AI服务和价格；同步检查授权零售价格但不以第三方页面替代原厂证据。"
     }
   ],
   "source_channel_policy": [
@@ -2523,8 +2624,8 @@
   ],
   "source_channel_counts": {
     "official_news": 1,
-    "official_newsroom": 7,
-    "official_product": 4,
+    "official_newsroom": 8,
+    "official_product": 6,
     "official_release": 2,
     "official_sales": 18,
     "official_support_manual": 12
@@ -2532,6 +2633,7 @@
   "source_domains": [
     "apple.com",
     "bose.com",
+    "consumer.huawei.com",
     "harman.com",
     "hmd.com",
     "mi.com",

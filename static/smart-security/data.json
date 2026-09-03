@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-02",
+  "checked_on": "2026-09-03",
   "scope_note": "本库覆盖智能安防与门禁：家庭摄像头、可视门铃、智能门锁、报警器、门窗传感器与智能对讲。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-02"
+      "2026-09-03"
     ]
   ],
   "products": [
@@ -433,6 +433,116 @@
       "satellite": "未公开",
       "connectivity": "未公开",
       "storage": "未公开"
+    },
+    {
+      "display": "无显示",
+      "os_platform": "Shelly Smart Control/本地API；兼容Home Assistant、Frigate、Alexa、Google Home、SmartThings",
+      "audio_drivers": "扬声器 + 麦克风；双向通话",
+      "sensors": [
+        "4MP图像传感器",
+        "850nm红外LED/黑白夜视",
+        "运动检测；AI对象识别",
+        "隐私遮罩/Privacy Mode"
+      ],
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": [
+        "双频Wi-Fi 2.4/5GHz",
+        "Bluetooth",
+        "RTSP",
+        "WebRTC",
+        "MQTT",
+        "WebSocket"
+      ],
+      "chip_or_soc": "未公开",
+      "storage": "microSD本地存储；容量上限未公开；Shelly Cloud可选",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "无内置电池",
+      "charging": "USB-C 5V/1A；完整功耗未公开",
+      "water_resistance": "未公开",
+      "subscription": "本地功能不等于云订阅；云存储方案官方列€3.99/月单摄、€6.99/月3摄、€10.99/月6摄、€14.99/月10摄，按地区/计划",
+      "privacy": "本地microSD、AI模型、隐私遮罩和Privacy Mode；摄像头/云端保留细节按服务条款",
+      "features": [
+        "1080p Full HD",
+        "黑白夜视",
+        "110°水平/70°垂直视场角",
+        "最多10个运动区域",
+        "本地microSD",
+        "AI对象识别/本地AI模型",
+        "RTSP/WebRTC/MQTT/WebSocket",
+        "隐私遮罩与Privacy Mode"
+      ],
+      "availability_note": "官方商城标为New、预计2026-09-23、当前Out of stock/Notify me；价格是官方欧洲商城含税价格，不代表已经普遍现货",
+      "source_note": "Shelly官方IFA产品新闻、官方产品页和官方云存储页互证；未公开尺寸、重量、芯片、传感器完整料号和防护等级不推断",
+      "id": "SEC-009",
+      "brand": "Shelly",
+      "model": "Shelly Camera",
+      "country_region": "保加利亚品牌/欧洲官方商城；其他区域可得性待复核",
+      "category": "智能安防摄像头",
+      "form_factor": "Wi-Fi室内摄像头/本地AI摄像头",
+      "use_case": "家庭、宠物、儿童与室内安防监控；本地录像和AI识别",
+      "status": "新品/预计2026-09-23；当前缺货",
+      "evidence": "A",
+      "launch_date": "2026-09-03",
+      "launch_date_type": "Shelly官方IFA 2026产品新闻日期",
+      "price": "€39.90（含VAT）",
+      "official_url": "https://www.shelly.com/products/shelly-camera-black?variant=65213718921565",
+      "spec_url": "https://www.shelly.com/products/shelly-camera-black?variant=65213718921565",
+      "source_refs": [
+        "SHELLY-IFA-2026",
+        "SHELLY-CAMERA-PRODUCT",
+        "SHELLY-CAMERA-CLOUD"
+      ],
+      "connectivity": "未公开"
+    },
+    {
+      "display": "无显示",
+      "os_platform": "Shelly/LOQED App；支持Google Home、Alexa、Home Assistant",
+      "audio_drivers": "未公开",
+      "sensors": "未公开；随附Shelly BLU Button Tough 1 ZB作为配件/控制器",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "Wi-Fi + Bluetooth；智能家居平台兼容性按区域/固件",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "可充电电池；最长约1年（官方条件）",
+      "charging": "可充电电池；接口、功率和时间未公开；9V应急供电",
+      "water_resistance": "未公开",
+      "subscription": "无公开硬件强制订阅；远程服务/平台按账户和地区",
+      "privacy": "开锁权限、日志和云端服务策略未公开；使用前应核验区域服务条款",
+      "features": [
+        "约2秒静音锁定",
+        "远程/定时/临时权限",
+        "Euro profile cylinder专用",
+        "SKG***认证声明",
+        "Google Home/Alexa/Home Assistant",
+        "随附Shelly BLU Button Tough 1 ZB",
+        "9V应急供电"
+      ],
+      "availability_note": "Shelly欧洲商城标为New/In stock；页面称订单面向EU，不能外推全球可得性；尺寸重量和精确电池规格待官方支持资料",
+      "source_note": "Shelly官方IFA产品新闻和LOQED Pure官方商城页互证；随附配件不另计主表，未公开字段不推断",
+      "id": "SEC-010",
+      "brand": "LOQED / Shelly",
+      "model": "LOQED Pure",
+      "country_region": "荷兰品牌/欧洲官方商城；订单区域限制为欧盟页面说明",
+      "category": "智能门锁/门禁",
+      "form_factor": "Euro profile cylinder智能门锁",
+      "use_case": "住宅无钥匙进入、远程开锁、临时/定时权限与智能家居联动",
+      "status": "新品/欧洲官方商城在售",
+      "evidence": "A",
+      "launch_date": "2026-09-03",
+      "launch_date_type": "Shelly官方IFA 2026产品新闻日期",
+      "price": "€178.90（含VAT）",
+      "official_url": "https://www.shelly.com/products/loqed-pure-black",
+      "spec_url": "https://www.shelly.com/products/loqed-pure-black",
+      "source_refs": [
+        "SHELLY-IFA-2026",
+        "LOQED-PURE-PRODUCT"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -733,6 +843,78 @@
       "storefront_type": "Ring官方博客",
       "availability_signal": "预计未来数月；官方明确FCC授权前不得销售",
       "platform_reference": "Ring Dome Cam 4K"
+    },
+    {
+      "checked_on": "2026-09-03",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "SHELLY-IFA-2026",
+      "source_group": "Shelly IFA 2026官方产品新闻",
+      "url": "https://www.shelly.com/fr/blogs/media-kit/product-news-ifa-2026",
+      "scope": "2026-09-03 IFA产品新闻；Shelly Camera、Shelly Wall Display X1i、LOQED Pure等新品线索与发布窗口",
+      "quality": "A",
+      "source_domain": "shelly.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方新品/发布窗口/型号存在证据",
+      "seller_type": "智能家居品牌官方",
+      "storefront_type": "Shelly官方媒体/新闻页",
+      "availability_signal": "官方新品新闻；实际库存、价格和交付另按商城页面核验",
+      "platform_reference": "Shelly Camera / Shelly Wall Display X1i / LOQED Pure"
+    },
+    {
+      "checked_on": "2026-09-03",
+      "campaign_status": "未公开",
+      "pledge_or_price": "€39.90含VAT",
+      "estimated_delivery": "预计2026-09-23",
+      "id": "SHELLY-CAMERA-PRODUCT",
+      "source_group": "Shelly Camera官方欧洲产品页",
+      "url": "https://www.shelly.com/products/shelly-camera-black?variant=65213718921565",
+      "scope": "型号S1CM-0DXW00、€39.90含税、New、预计2026-09-23、当前缺货、1080p、视场角、microSD、Wi-Fi双频、Bluetooth、USB-C和协议",
+      "quality": "A",
+      "source_domain": "shelly.com",
+      "source_channel": "official_store",
+      "source_role": "官方商城/精确型号/当前价格/库存/规格证据",
+      "seller_type": "智能家居品牌官方",
+      "storefront_type": "Shelly欧洲官方商城",
+      "availability_signal": "New；预计2026-09-23；Out of stock；Notify me",
+      "platform_reference": "S1CM-0DXW00"
+    },
+    {
+      "checked_on": "2026-09-03",
+      "campaign_status": "未公开",
+      "pledge_or_price": "€3.99–€14.99/月，按摄像头数量",
+      "estimated_delivery": "未公开",
+      "id": "SHELLY-CAMERA-CLOUD",
+      "source_group": "Shelly Camera官方云存储页",
+      "url": "https://www.shelly.com/pages/shelly-cloud-camera-storage",
+      "scope": "Shelly Premium摄像头云存储计划：单摄€3.99/月、3摄€6.99/月、6摄€10.99/月、10摄€14.99/月",
+      "quality": "A",
+      "source_domain": "shelly.com",
+      "source_channel": "official_product",
+      "source_role": "官方服务价格/订阅边界证据",
+      "seller_type": "智能家居品牌官方",
+      "storefront_type": "Shelly官方服务页",
+      "availability_signal": "官方计划页；地区税费、计划资格和条款动态",
+      "platform_reference": "Shelly Premium Camera Storage"
+    },
+    {
+      "checked_on": "2026-09-03",
+      "campaign_status": "未公开",
+      "pledge_or_price": "€178.90含VAT",
+      "estimated_delivery": "未公开",
+      "id": "LOQED-PURE-PRODUCT",
+      "source_group": "LOQED Pure Shelly官方欧洲产品页",
+      "url": "https://www.shelly.com/products/loqed-pure-black",
+      "scope": "€178.90含税、New/In stock、Wi-Fi/Bluetooth、Euro profile cylinder、约2秒锁定、最长约1年电池、9V应急、SKG***、平台兼容和EU订单说明",
+      "quality": "A",
+      "source_domain": "shelly.com",
+      "source_channel": "official_store",
+      "source_role": "官方商城/当前价格/库存/功能/可得性证据",
+      "seller_type": "智能门锁品牌官方",
+      "storefront_type": "Shelly欧洲官方商城",
+      "availability_signal": "New；In stock；订单面向EU页面说明",
+      "platform_reference": "LOQED Pure black"
     }
   ],
   "update_log": [
@@ -795,6 +977,12 @@
       "change": "新增候选RING-DOME-CAM-4K；补充官方US$299.99、4K彩色夜视、USB-C/PoE、双频Wi-Fi/以太网、本地存储、订阅录制、隐私功能和FCC未授权边界。",
       "verification": "Ring官方产品创新博客为A等级预发布证据，但页面明确FCC授权尚未取得且不得在授权前销售，因此不进入在售主表；候选与现有Ring门铃/传感器分开。",
       "next": "跟踪FCC授权、正式产品页/分料号、区域价格与库存、存储容量、尺寸重量和实际销售状态。"
+    },
+    {
+      "date": "2026-09-03",
+      "change": "新增SEC-009 Shelly Camera与SEC-010 LOQED Pure；补充官方IFA新品窗口、欧洲官方价格/库存、摄像头本地AI与云存储价格、门锁协议/续航/应急供电和可得性边界。",
+      "verification": "Shelly官方IFA产品新闻、官方商城与官方云存储页互证；Shelly Camera当前缺货且预计2026-09-23，LOQED Pure为EU页面在售；不把预期交付当成全球现货。",
+      "next": "继续复核FCC/CE/UKCA、精确尺寸重量、存储上限、摄像头功耗/防护、门锁传感器与充电规格，并检查区域授权渠道；订阅价格随服务页动态更新。"
     }
   ],
   "source_channel_policy": [
@@ -877,9 +1065,10 @@
     }
   ],
   "source_channel_counts": {
-    "official_newsroom": 1,
-    "official_product": 2,
+    "official_newsroom": 2,
+    "official_product": 3,
     "official_sales": 7,
+    "official_store": 2,
     "official_support_manual": 4,
     "press_release_distribution": 1
   },
@@ -892,6 +1081,7 @@
     "globenewswire.com",
     "ring.com",
     "schlage.com",
+    "shelly.com",
     "store.google.com",
     "us.aqara.com"
   ]

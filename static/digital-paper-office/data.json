@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-02",
+  "checked_on": "2026-09-03",
   "scope_note": "本库覆盖电子纸与数字办公：电子纸平板、电子书、智能笔、数字纸、便携显示器与扫描设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-02"
+      "2026-09-03"
     ]
   ],
   "products": [
@@ -319,6 +319,47 @@
       "satellite": "未公开",
       "connectivity": "未公开",
       "storage": "未公开"
+    },
+    {
+      "display": "12英寸柔性OLED或PaperMatte；3036×1952；最高1600 nits；最高144Hz；约93%屏占比",
+      "os_platform": "HarmonyOS 6.1",
+      "audio_drivers": "4扬声器/4麦克风（中国官方规格页）；音频单元尺寸未公开",
+      "sensors": "重力、指纹、环境光、霍尔、陀螺仪、指南针",
+      "gps_positioning": "GPS/GNSS；具体系统和频段未公开",
+      "satellite": "未公开",
+      "supported_protocols": "Wi-Fi 7或双频Wi-Fi（按版本/区域页面）、Bluetooth 6.0 BLE/SBC/AAC/LDAC/L2HC、NearLink、USB-C 3.1 Gen 1 DP1.2",
+      "chip_or_soc": "Kirin T93；部分中国版本/畅享版资料列T93A，按版本保留不合并为单一芯片结论",
+      "storage": "RAM 12/16GB；存储256GB/512GB/1TB（按版本）",
+      "dimensions": "厚度约4.7mm",
+      "weight_g": "标准版约439g；PaperMatte版约454g",
+      "battery": "10400mAh；中国官方称本地视频播放最长约18.5小时",
+      "charging": "66W充电；约53分钟充满；40W反向充电；适配器/条件按版本",
+      "water_resistance": "未公开",
+      "subscription": "无公开硬件强制订阅；云服务/生产力应用按地区和账户",
+      "privacy": "HarmonyOS权限、云同步和跨设备数据规则按服务政策；完整硬件数据路径未公开",
+      "features": "柔性OLED/PaperMatte显示、144Hz、高亮、手写与绘画、NearLink、键盘/手写笔生态、办公和多设备协同",
+      "availability_note": "中国官方产品页给出起售价、厚度、重量、芯片、内存/存储、电池和充电；全球页面和区域配置可能不同，不把中国版本参数外推所有SKU",
+      "source_note": "HUAWEI官方全球发布页、中国官方产品页和全球产品页互证；规格冲突按区域/版本并列，未公开字段不推断",
+      "id": "PAPER-009",
+      "brand": "HUAWEI",
+      "model": "HUAWEI MatePad Pro 12",
+      "country_region": "中国品牌/中国已售、全球发布；区域配置和价格按站点变化",
+      "category": "数字办公平板/便携显示与创作设备",
+      "form_factor": "12英寸柔性OLED/PaperMatte平板电脑",
+      "use_case": "数字办公、阅读、绘画、笔记、会议、内容创作与便携显示",
+      "status": "在售/中国官方页；其他区域上市按站点变化",
+      "evidence": "A",
+      "launch_date": "2026-09-02",
+      "launch_date_type": "HUAWEI官方全球创新产品发布会日期；中国官方产品页已售",
+      "price": "中国官方起售价¥5699；其他区域精确价格未公开",
+      "official_url": "https://consumer.huawei.com/cn/tablets/matepad-pro-12/",
+      "spec_url": "https://consumer.huawei.com/en/tablets/matepad-pro-12/",
+      "source_refs": [
+        "HUAWEI-SEP02-LAUNCH-PAPER",
+        "HUAWEI-MATEPAD12-CN",
+        "HUAWEI-MATEPAD12-GLOBAL"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -577,6 +618,60 @@
       "storefront_type": "Kickstarter项目页",
       "availability_signal": "众筹结束；普通零售待核",
       "platform_reference": "Kylendar 2.0 project"
+    },
+    {
+      "checked_on": "2026-09-03",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "HUAWEI-SEP02-LAUNCH-PAPER",
+      "source_group": "HUAWEI 2026-09-02全球创新产品发布会平板清单",
+      "url": "https://consumer.huawei.com/en/press/events/2026/huawei-innovative-product-launch-september-02/",
+      "scope": "官方列出HUAWEI MatePad Pro 12及发布活动日期",
+      "quality": "A",
+      "source_domain": "consumer.huawei.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方发布/型号存在/发布日证据",
+      "seller_type": "设备品牌官方",
+      "storefront_type": "HUAWEI官方活动页",
+      "availability_signal": "官方发布；区域销售/库存另按产品页核验",
+      "platform_reference": "HUAWEI MatePad Pro 12"
+    },
+    {
+      "checked_on": "2026-09-03",
+      "campaign_status": "未公开",
+      "pledge_or_price": "¥5699起",
+      "estimated_delivery": "未公开",
+      "id": "HUAWEI-MATEPAD12-CN",
+      "source_group": "HUAWEI MatePad Pro 12中国官方产品页",
+      "url": "https://consumer.huawei.com/cn/tablets/matepad-pro-12/",
+      "scope": "中国起售价¥5699、4.7mm、439/454g、12英寸OLED/PaperMatte、3036×1952、144Hz、Kirin T93/T93A、12/16GB、256GB/512GB/1TB、10400mAh、66W/53分钟/40W反向充电、传感器和协议",
+      "quality": "A",
+      "source_domain": "consumer.huawei.com",
+      "source_channel": "official_product",
+      "source_role": "原厂产品/中国价格/显示/芯片/内存/电池/接口证据",
+      "seller_type": "设备品牌官方",
+      "storefront_type": "HUAWEI中国官方产品页",
+      "availability_signal": "中国官方产品页已售；配置和库存按版本动态",
+      "platform_reference": "HUAWEI MatePad Pro 12"
+    },
+    {
+      "checked_on": "2026-09-03",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "HUAWEI-MATEPAD12-GLOBAL",
+      "source_group": "HUAWEI MatePad Pro 12全球官方产品页",
+      "url": "https://consumer.huawei.com/en/tablets/matepad-pro-12/",
+      "scope": "全球产品定位、显示/办公/创作功能和区域入口；与中国页面区分版本差异",
+      "quality": "A",
+      "source_domain": "consumer.huawei.com",
+      "source_channel": "official_product",
+      "source_role": "原厂全球产品/功能/区域可得性边界证据",
+      "seller_type": "设备品牌官方",
+      "storefront_type": "HUAWEI全球官方产品页",
+      "availability_signal": "官方产品页；区域价格、库存和配置动态",
+      "platform_reference": "HUAWEI MatePad Pro 12"
     }
   ],
   "update_log": [
@@ -639,6 +734,12 @@
       "change": "【电子纸与数字办公】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-03",
+      "change": "新增PAPER-009：HUAWEI MatePad Pro 12；补充官方发布日、中国起售价、OLED/PaperMatte显示、Kirin T93/T93A版本、内存/存储、传感器、协议、重量、10400mAh、66W充电与40W反向充电。",
+      "verification": "HUAWEI官方全球发布页、中国官方产品页和全球产品页互证；中国版本与区域页面可能存在配置差异，字段按来源注明，不把版本差异抹平。",
+      "next": "继续核验全球各区Buy页的价格、键盘/手写笔套装、无线认证、精确Wi-Fi版本、屏幕版本和上市日期；配件不拆成独立主表型号。"
     }
   ],
   "source_channel_policy": [
@@ -723,11 +824,14 @@
   "source_channel_counts": {
     "crowdfunding": 3,
     "marketplace": 1,
+    "official_newsroom": 1,
+    "official_product": 2,
     "official_sales": 6,
     "official_support_manual": 1,
     "secondary_specs": 1
   },
   "source_domains": [
+    "consumer.huawei.com",
     "device.report",
     "digprjsurvey.amazon.com",
     "epson.com",

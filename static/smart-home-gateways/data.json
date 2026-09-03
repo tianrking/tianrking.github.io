@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-02",
+  "checked_on": "2026-09-03",
   "scope_note": "首版覆盖独立家庭中控、Matter控制器/桥、协议网关，以及音箱/屏/机顶盒/路由器内置的智能家居中枢。通过形态字段区分完整自动化中枢、协议桥、内置中枢与路由器功能，不把所有网关宣传词当成同一类产品。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-02"
+      "2026-09-03"
     ]
   ],
   "products": [
@@ -883,6 +883,47 @@
       "availability_note": "它是路由器，不作为独立自动化中枢混淆",
       "source_note": "Google官方规格/产品页",
       "connectivity": "未公开"
+    },
+    {
+      "display": "4英寸、5点电容触控、720×720；彩色触控显示",
+      "os_platform": "Android 11；Shelly本地控制/场景；与Home Assistant等联动",
+      "audio_drivers": "1W扬声器；麦克风",
+      "sensors": "光线、接近、手势传感器；麦克风；具体器件型号未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "Wi-Fi 6双频2.4/5GHz；Bluetooth 5.0；MQTT；Home Assistant；本地控制",
+      "chip_or_soc": "Rockchip RK3326-S；四核Cortex-A35 1.5GHz",
+      "storage": "1GB RAM；8GB Flash",
+      "dimensions": "带底座86.5×86.5×35.7mm；不带底座86.5×86.5×11mm",
+      "weight_g": "带底座约163g；不带底座约113g",
+      "battery": "无内置电池",
+      "charging": "电源底座100–240V；或USB-C 5V/1A；功耗低于5W；可选一输出5A继电器底座",
+      "water_resistance": "未公开",
+      "subscription": "无公开硬件强制订阅；云服务/平台按账户和地区",
+      "privacy": "支持本地控制；麦克风和智能家居数据处理细节未公开",
+      "features": "4英寸触控、墙面场景控制、光/接近/手势感知、1W扬声器、Wi-Fi 6、Bluetooth 5.0、MQTT、本地Home Assistant联动、可换电源底座",
+      "availability_note": "银色官方商城页面显示€188.90含税并标为New/In stock；黑色页面用于区域SKU/规格复核；不是所有地区均可直接安装或销售",
+      "source_note": "Shelly官方IFA新闻、黑/银官方商城页和合规声明信息互证；未公开Matter认证/精确认证编号不推断，不能把智能家居联动自动等同于Matter网关",
+      "id": "HUB-025",
+      "brand": "Shelly",
+      "model": "Shelly Wall Display X1i",
+      "country_region": "保加利亚品牌/欧洲官方商城；区域电气合规和可得性按国家变化",
+      "category": "家庭中控/墙面智能显示屏/智能家居网关",
+      "form_factor": "墙面嵌入式触控中控；可选一输出电源底座/5A继电器",
+      "use_case": "家庭场景控制、Shelly设备管理、MQTT/Home Assistant本地控制、墙面显示",
+      "status": "新品/欧洲官方商城在售",
+      "evidence": "A",
+      "launch_date": "2026-09-03",
+      "launch_date_type": "Shelly官方IFA 2026产品新闻日期；产品合规声明日期2026-07-08作为辅助证据",
+      "price": "€188.90（含VAT，银色官方商城页面）",
+      "official_url": "https://www.shelly.com/products/shelly-wall-display-x1i-silver",
+      "spec_url": "https://www.shelly.com/products/shelly-wall-display-x1i-black?country=DE&currency=EUR&variant=64933179621725",
+      "source_refs": [
+        "SHELLY-IFA-2026",
+        "SHELLY-WALL-DISPLAY-SILVER",
+        "SHELLY-WALL-DISPLAY-BLACK"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -1022,6 +1063,60 @@
       "campaign_status": "未公开",
       "pledge_or_price": "未公开",
       "estimated_delivery": "未公开"
+    },
+    {
+      "checked_on": "2026-09-03",
+      "campaign_status": "未公开",
+      "pledge_or_price": "€188.90含VAT",
+      "estimated_delivery": "未公开",
+      "id": "SHELLY-WALL-DISPLAY-SILVER",
+      "source_group": "Shelly Wall Display X1i银色官方商城页",
+      "url": "https://www.shelly.com/products/shelly-wall-display-x1i-silver",
+      "scope": "€188.90含税、New/In stock、4英寸720×720触屏、RK3326-S、1GB/8GB、尺寸重量、Wi-Fi 6、Bluetooth 5.0、传感器、扬声器和底座电源",
+      "quality": "A",
+      "source_domain": "shelly.com",
+      "source_channel": "official_store",
+      "source_role": "官方商城/价格/库存/精确规格/硬件配置证据",
+      "seller_type": "智能家居品牌官方",
+      "storefront_type": "Shelly欧洲官方商城",
+      "availability_signal": "New；In stock；区域安装/法规另行核验",
+      "platform_reference": "Shelly Wall Display X1i silver"
+    },
+    {
+      "checked_on": "2026-09-03",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "SHELLY-WALL-DISPLAY-BLACK",
+      "source_group": "Shelly Wall Display X1i黑色官方商城页",
+      "url": "https://www.shelly.com/products/shelly-wall-display-x1i-black?country=DE&currency=EUR&variant=64933179621725",
+      "scope": "黑色区域SKU、尺寸/重量、4英寸显示、RK3326-S、Wi-Fi 6、Bluetooth 5.0、底座和功耗规格；颜色不拆独立型号",
+      "quality": "A",
+      "source_domain": "shelly.com",
+      "source_channel": "official_store",
+      "source_role": "官方商城/区域SKU/规格复核证据",
+      "seller_type": "智能家居品牌官方",
+      "storefront_type": "Shelly德国官方商城",
+      "availability_signal": "官方区域SKU；价格/库存动态",
+      "platform_reference": "Shelly Wall Display X1i black"
+    },
+    {
+      "checked_on": "2026-09-03",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "SHELLY-IFA-2026",
+      "source_group": "Shelly IFA 2026官方产品新闻",
+      "url": "https://www.shelly.com/fr/blogs/media-kit/product-news-ifa-2026",
+      "scope": "2026-09-03 IFA产品新闻；Shelly Wall Display X1i新品窗口与发布信息",
+      "quality": "A",
+      "source_domain": "shelly.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方新品/发布窗口/型号存在证据",
+      "seller_type": "智能家居品牌官方",
+      "storefront_type": "Shelly官方媒体/新闻页",
+      "availability_signal": "官方新品新闻；实际库存、价格和交付另按商城页面核验",
+      "platform_reference": "Shelly Wall Display X1i"
     }
   ],
   "update_log": [
@@ -1084,6 +1179,12 @@
       "change": "【家庭中控/Matter网关/智能家居网关】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-03",
+      "change": "新增HUB-025 Shelly Wall Display X1i；补充官方IFA窗口、欧洲价格/库存、4英寸720×720触控、RK3326-S、1GB/8GB、Wi-Fi 6、Bluetooth 5.0、传感器、尺寸重量和底座供电。",
+      "verification": "Shelly官方IFA新闻、银色/黑色官方商城页互证；按墙面中控与本地智能家居联动收录，未见独立Matter认证时不把它写成已认证Matter网关。",
+      "next": "继续核验CSA Matter/区域电气认证、继电器底座料号、功耗、麦克风隐私设置、精确Wi-Fi/BT认证和其他国家价格。"
     }
   ],
   "source_channel_policy": [
@@ -1166,8 +1267,10 @@
     }
   ],
   "source_channel_counts": {
+    "official_newsroom": 1,
     "official_product": 3,
     "official_sales": 2,
+    "official_store": 2,
     "official_support_manual": 1
   },
   "source_domains": [
@@ -1176,6 +1279,7 @@
     "home-assistant.io",
     "mi.com",
     "news.samsung.com",
+    "shelly.com",
     "us.aqara.com"
   ]
 }
