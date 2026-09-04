@@ -213,7 +213,7 @@ const days = [
     blocks: [
       ['06:50–07:20', '從住宿直接 Grab 到 Batu Caves。這段用一次車換掉清晨兩段轉乘；到站後只帶水、雨具與手機，不帶任何寄存行李。'],
       ['07:20–08:35', '走 Temple Cave 主洞與石灰岩地景。主洞免費、272 級階梯；不加遠處寺廟、商場或攀登支線，08:35 前回 Batu Caves KTM 站。'],
-      ['08:35–10:15', '搭下一班 KTM Komuter 回 KL Sentral；抵達後到 Lower Ground 的 RWT Express 櫃檯，直接買巴士＋Awana SkyWay 的往返組合並鎖定回程，不用 Grab 跨城折返。'],
+      ['08:35–10:15', '搭下一班 KTM Komuter 回 KL Sentral；抵達後到 Lower Ground 的 RWT Express 櫃檯，買上山巴士＋Awana SkyWay 票，並同時鎖定回程 RWT 班次，不用 Grab 跨城折返。'],
       ['10:15–12:15', '搭 KL Sentral → GHPO／Awana 的官方巴士，轉 Awana SkyWay 上山。實際搭乘以櫃檯給出的最近一班為準；若纜車因天候暫停，改走巴士上山或直接回市區，不另買分散的付費設施。'],
       ['12:15–15:45', '以青雲亭為主，利用同一張纜車票中途下車、再回到高原站；午餐後在 SkyAvenue／山頂步行區停留。今天不進賭場、不排付費樂園，保留山景、寺廟與公共接駁這條主線即可。'],
       ['15:45–18:30', '由 Awana／GHPO 搭已鎖定的 RWT Express 回 KL Sentral，再轉 MRT／步行至 Bukit Bintang／TRX 的新住宿。若回程巴士座位或天候變動，以最早可用班次下山，不把晚到風險留給明天航班。'],
@@ -341,7 +341,7 @@ const officialChecks = [
   },
   {
     title: 'RWT Express／Awana SkyWay',
-    body: 'KL Sentral Lower Ground 可接官方巴士；巴士加纜車成人往返組合以現場與官網當日資訊為準，先鎖回程再上山。',
+    body: 'KL Sentral Lower Ground 可接官方巴士；上山巴士加纜車票價以現場與官網當日資訊為準，並在購買時一併鎖定回程班次。',
     href: 'https://www.rwgenting.com/en/getting-here/express-bus.html',
   },
   {
