@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-03",
+  "checked_on": "2026-09-04",
   "scope_note": "本库覆盖家用机器人：扫地、洗地、擦窗、割草、泳池与宠物陪伴机器人；宠物项圈/吊牌另库。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-03"
+      "2026-09-04"
     ]
   ],
   "products": [
@@ -722,6 +722,54 @@
       "availability_note": "Robotical官方产品页显示US$449 ex VAT/Tax并提示Order Now for Delivery in September；历史众筹已完成，与当前零售订单分开记录",
       "source_note": "Robotical官方当前产品页、技术规格PDF、官方历史众筹/博客；未公开芯片、尺寸重量、防水和隐私字段不推断",
       "connectivity": "未公开"
+    },
+    {
+      "display": "未公开",
+      "os_platform": "混合离线-在线情感AI平台；具体系统未公开",
+      "audio_drivers": "未公开",
+      "sensors": "全身触觉系统；10+传感器套件（具体器件、数量和布置未公开）",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "混合离线-在线平台；具体Wi-Fi、Bluetooth或其他协议未公开",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "统一平台陈述约4–5小时；An'An单独测试条件未披露",
+      "charging": "Type-C；具体功率与充电时间未公开",
+      "water_resistance": "未公开",
+      "subscription": "未公开；B2B版本有安全仪表盘口径，服务与合同条款未公开",
+      "privacy": "B2B版本涉及触摸、对话和行为趋势仪表盘；离线/在线数据边界、保留与同意机制未公开，照护场景需额外核验",
+      "features": [
+        "全身触觉感知与情绪反馈",
+        "主动互动、提醒与长期记忆",
+        "面向孤独与老年照护的陪伴能力",
+        "混合离线-在线运行",
+        "德国/比利时渠道合作",
+        "B2B照护与安全仪表盘版本"
+      ],
+      "availability_note": "官方公司新闻稿称2026年9月在欧洲销售，首批生产约100台并与德国、比利时渠道合作；具体订单、库存、保修和区域交付待复核",
+      "source_note": "公司官方产品中心、IFA欧洲发布PRNewswire和CES 2026公司新闻稿互证；除官方公开的触觉/传感器套件与平台电池口径外，芯片、协议、尺寸、重量和防水均未公开",
+      "id": "ROBOT-016",
+      "brand": "Mind with Heart Robotics",
+      "model": "An'An Panda Robot",
+      "country_region": "中国品牌/欧洲发布；德国、比利时渠道合作；海外零售",
+      "category": "家用机器人/陪伴机器人",
+      "form_factor": "熊猫外形情感陪伴机器人",
+      "use_case": "老年人陪伴、情绪互动、提醒、家庭支持、B2B照护场景",
+      "status": "欧洲发布/2026年9月销售；渠道合作与实际库存待复核",
+      "evidence": "A",
+      "launch_date": "2026-09-03",
+      "launch_date_type": "公司PRNewswire发布日与IFA 2026欧洲发布活动",
+      "price": "US$1,000–1,500（海外零售价区间，官方新闻稿）",
+      "official_url": "https://web.wxbionics.com/productCenter?id=15",
+      "spec_url": "https://www.prnewswire.co.uk/news-releases/mind-with-heart-robotics-brings-anan-panda-robot-to-europe-at-ifa-berlin-2026-302864722.html",
+      "source_refs": [
+        "ANAN-PANDA-PRODUCT",
+        "ANAN-PANDA-IFA-EU",
+        "ANAN-PANDA-CES"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -1119,7 +1167,8 @@
       "source_role": "原厂产品/价格/可得性/规格证据",
       "seller_type": "品牌官方商店",
       "storefront_type": "官方电商",
-      "availability_signal": "L1可加入购物车；S1页面售罄；全球配送说明"
+      "availability_signal": "L1可加入购物车；S1页面售罄；全球配送说明",
+      "platform_reference": "未公开"
     },
     {
       "checked_on": "2026-08-30",
@@ -1136,7 +1185,8 @@
       "source_role": "品牌/产品线交叉证据",
       "seller_type": "品牌官方",
       "storefront_type": "官方主页",
-      "availability_signal": "OlloNi品牌与产品路线"
+      "availability_signal": "OlloNi品牌与产品路线",
+      "platform_reference": "未公开"
     },
     {
       "checked_on": "2026-08-30",
@@ -1153,7 +1203,8 @@
       "source_role": "品牌新闻稿/预发布与项目状态",
       "seller_type": "品牌新闻稿分发",
       "storefront_type": "官方发布",
-      "availability_signal": "众筹启动延期；无普通零售交付"
+      "availability_signal": "众筹启动延期；无普通零售交付",
+      "platform_reference": "未公开"
     },
     {
       "checked_on": "2026-08-30",
@@ -1170,7 +1221,8 @@
       "source_role": "原厂全球产品/功能规格证据",
       "seller_type": "品牌官方",
       "storefront_type": "全球产品页",
-      "availability_signal": "官方产品页上线；零售区域待核"
+      "availability_signal": "官方产品页上线；零售区域待核",
+      "platform_reference": "未公开"
     },
     {
       "checked_on": "2026-08-30",
@@ -1205,7 +1257,8 @@
       "source_role": "原厂全球产品/功能规格证据",
       "seller_type": "品牌官方",
       "storefront_type": "全球产品页",
-      "availability_signal": "官方产品页上线；零售区域待核"
+      "availability_signal": "官方产品页上线；零售区域待核",
+      "platform_reference": "未公开"
     },
     {
       "checked_on": "2026-08-30",
@@ -1240,7 +1293,8 @@
       "source_role": "原厂全球产品/功能规格证据",
       "seller_type": "品牌官方",
       "storefront_type": "全球产品页",
-      "availability_signal": "官方产品页上线；零售区域待核"
+      "availability_signal": "官方产品页上线；零售区域待核",
+      "platform_reference": "未公开"
     },
     {
       "checked_on": "2026-08-30",
@@ -1311,7 +1365,8 @@
       "source_role": "品牌官方产品/预订入口",
       "seller_type": "品牌官方",
       "storefront_type": "官方主页/预订",
-      "availability_signal": "Available on Kickstarter/Pre-Order Now信号"
+      "availability_signal": "Available on Kickstarter/Pre-Order Now信号",
+      "platform_reference": "未公开"
     },
     {
       "checked_on": "2026-08-31",
@@ -1384,6 +1439,60 @@
       "storefront_type": "官方博客",
       "availability_signal": "历史发布记录",
       "platform_reference": "Marty V2"
+    },
+    {
+      "checked_on": "2026-09-04",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "ANAN-PANDA-PRODUCT",
+      "source_group": "An'An Panda公司官方产品中心",
+      "url": "https://web.wxbionics.com/productCenter?id=15",
+      "scope": "公司官方产品中心的An'An Panda产品入口；页面动态内容不提供完整规格",
+      "quality": "A",
+      "source_domain": "wxbionics.com",
+      "source_channel": "official_product",
+      "source_role": "品牌官方产品入口/型号存在证据；详细规格以发布稿为准",
+      "seller_type": "机器人品牌官方",
+      "storefront_type": "Mind with Heart Robotics官方产品中心",
+      "availability_signal": "官方产品入口；实际销售与库存按欧洲渠道核验",
+      "platform_reference": "An'An Panda"
+    },
+    {
+      "checked_on": "2026-09-04",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$1,000–1,500海外零售价区间",
+      "estimated_delivery": "2026年9月销售窗口；具体交付未公开",
+      "id": "ANAN-PANDA-IFA-EU",
+      "source_group": "Mind with Heart Robotics An'An Panda欧洲IFA发布稿",
+      "url": "https://www.prnewswire.co.uk/news-releases/mind-with-heart-robotics-brings-anan-panda-robot-to-europe-at-ifa-berlin-2026-302864722.html",
+      "scope": "2026-09-03发布；IFA 2026欧洲上市窗口；全身触觉、情绪反馈、主动互动、长期记忆；德国/比利时渠道合作；2026年9月销售；US$1,000–1,500；首批约100台",
+      "quality": "A",
+      "source_domain": "prnewswire.co.uk",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "公司官方新闻稿/欧洲发布/价格/渠道与销售窗口证据",
+      "seller_type": "机器人品牌官方",
+      "storefront_type": "Mind with Heart Robotics公司PRNewswire发布",
+      "availability_signal": "欧洲IFA发布；2026年9月销售；渠道合作/样机与实际库存待核验",
+      "platform_reference": "An'An Panda Robot"
+    },
+    {
+      "checked_on": "2026-09-04",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "ANAN-PANDA-CES",
+      "source_group": "Mind with Heart Robotics CES 2026官方新闻稿",
+      "url": "https://www.prnewswire.com/news-releases/mind-with-heart-robotics-showcases-emotionally-intelligent-robot-lineup-at-ces-2026-including-ces-innovation-award-honoree-anan-biomimetic-affective-ai-panda-robot-302651524.html",
+      "scope": "An'An旗舰陪伴定位；10+传感器套件/全身触觉、情感AI、混合离线在线、24/7支持、Type-C、统一平台约4–5小时电池；计划2026年3月量产的历史口径",
+      "quality": "A",
+      "source_domain": "prnewswire.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "公司官方新闻稿/传感器与平台电池/产品定位辅助证据",
+      "seller_type": "机器人品牌官方",
+      "storefront_type": "Mind with Heart Robotics公司PRNewswire发布",
+      "availability_signal": "CES展示与量产计划；不能单独证明当前库存",
+      "platform_reference": "An'An biomimetic affective AI panda robot"
     }
   ],
   "update_log": [
@@ -1452,6 +1561,12 @@
       "change": "【家用机器人】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-04",
+      "change": "新增ROBOT-016 An'An Panda Robot；补充官方欧洲IFA发布窗口、海外价格区间、全身触觉、10+传感器套件、情感反馈、长期记忆、渠道合作和4–5小时平台续航口径。",
+      "verification": "公司官方产品中心、PRNewswire欧洲发布稿和CES公司新闻稿互证；产品销售窗口与渠道合作已确认，但订单、库存、精确尺寸/重量/芯片/协议和An'An单独电池测试仍未公开。",
+      "next": "继续核验欧洲授权销售页、CE/UKCA/无线认证、精确传感器和执行器、服务/隐私条款与实际交付；不把新闻稿的销售窗口当作普遍现货。"
     }
   ],
   "source_channel_policy": [
@@ -1537,7 +1652,8 @@
     "crowdfunding": 3,
     "official_datasheet": 1,
     "official_newsroom": 2,
-    "official_product": 10,
+    "official_newsroom_distribution": 2,
+    "official_product": 11,
     "official_sales": 14,
     "official_support_manual": 4
   },
@@ -1552,12 +1668,15 @@
     "kickstarter.com",
     "mi.com",
     "ollobot.com",
+    "prnewswire.co.uk",
+    "prnewswire.com",
     "robotical.io",
     "site-static.ecovacs.com",
     "support.mammotion.com",
     "theonlypet.com",
     "us.roborock.com",
     "us.switch-bot.com",
+    "wxbionics.com",
     "yarbo.com"
   ]
 }

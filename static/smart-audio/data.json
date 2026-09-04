@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-03",
+  "checked_on": "2026-09-04",
   "scope_note": "首版优先覆盖全球主要品牌的TWS、主动降噪、AI/录音/翻译耳机与骨传导/开放式运动耳机。按独立型号/代际计数；颜色、充电盒套装和区域SKU不拆行。翻译能力、AI功能与硬件音频能力分开记录；来源没有披露的芯片、传感器、尺寸、重量、防水、续航和订阅字段写“未公开”。 本库同时纳入Wi-Fi多房间音箱与联网家庭音频；音箱的扬声器驱动、无线协议和家庭服务与耳机字段分开记录。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-03"
+      "2026-09-04"
     ]
   ],
   "products": [
@@ -964,7 +964,7 @@
       "category": "AI耳机/TWS录音耳机",
       "form_factor": "半入耳式无线耳机 + 带麦克风充电盒",
       "use_case": "会议、电话、在线会议录音、转写、摘要、AI Agent、音乐与通话",
-      "status": "预售已结束/等待发货或重新开放",
+      "status": "限量Explorer Edition；官方产品页当前显示Out of Stock/Join Waitlist；发货时间按结算页与地区显示",
       "evidence": "A",
       "launch_date": "2026-08-28",
       "launch_date_type": "官方地区发布文章/官方产品页",
@@ -988,8 +988,11 @@
       "subscription": "Starter每月含300分钟转写；Pro US$17.99/月或US$99.99/年；Unlimited US$29.99/月或US$239.99/年；计划与额度可能按地区变化",
       "privacy": "官方页面称传输与静态数据加密，除非用户明确选择加入，谈话数据不用于模型训练；录音同意和当地法律需自行遵守",
       "features": "环境/电话/在线录音、AI转写与摘要、Plaud Agent、Gmail/Calendar/Notion/Slack集成、语音激活；充电盒可在约5m/16.4ft范围采集",
-      "availability_note": "官方产品页列出美国、法国、德国、英国、意大利、西班牙、加拿大、荷兰；当前预售已结束并显示候补/等待名单，预计发货在结算时按地区与订单显示，不作为普遍现货结论",
-      "source_note": "Plaud官方产品页、官方设备对比页和官方地区发布文章；未公开芯片、存储、尺寸和实际库存不推断；本条与录音卡片库RC-032为同一硬件的跨品类索引",
+      "availability_note": "官方产品页显示Out of Stock并提供Join Waitlist；US$249.99与限量2,000台信息仍保留；不把页面当作普遍现货或已确认交付",
+      "source_note": "Plaud官方产品页、官方设备对比页和官方地区发布文章；未公开芯片、存储、尺寸和实际库存不推断；本条与录音卡片库RC-032为同一硬件的跨品类索引；2026-09-04复核官方产品页状态为Out of Stock/Join Waitlist，未推断交付时间",
+      "source_refs": [
+        "PLAUD-ONE-STATUS-20260904-AUDIO"
+      ],
       "connectivity": "未公开"
     },
     {
@@ -1862,7 +1865,8 @@
       "source_role": "原厂地区发布/价格/渠道证据",
       "seller_type": "品牌官方与授权零售",
       "storefront_type": "官方商店/Amazon旗舰/Lazada/Shopee等",
-      "availability_signal": "区域上市及官方/授权渠道销售信号"
+      "availability_signal": "区域上市及官方/授权渠道销售信号",
+      "platform_reference": "未公开"
     },
     {
       "checked_on": "2026-08-30",
@@ -1879,7 +1883,8 @@
       "source_role": "原厂产品/功能/连接规格证据",
       "seller_type": "芯片/设备品牌官方",
       "storefront_type": "官方产品页",
-      "availability_signal": "全球产品页已上线；区域供货需按当地站点核验"
+      "availability_signal": "全球产品页已上线；区域供货需按当地站点核验",
+      "platform_reference": "未公开"
     },
     {
       "checked_on": "2026-08-30",
@@ -1896,7 +1901,8 @@
       "source_role": "原厂地区规格/支持证据",
       "seller_type": "品牌官方",
       "storefront_type": "官方规格页",
-      "availability_signal": "官方地区产品页"
+      "availability_signal": "官方地区产品页",
+      "platform_reference": "未公开"
     },
     {
       "checked_on": "2026-08-31",
@@ -2473,6 +2479,24 @@
       "storefront_type": "HUAWEI马来西亚官方产品页",
       "availability_signal": "官方区域产品页；价格和库存按区域动态",
       "platform_reference": "HUAWEI FreeBuds Neo"
+    },
+    {
+      "checked_on": "2026-09-04",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$249.99",
+      "estimated_delivery": "未公开",
+      "id": "PLAUD-ONE-STATUS-20260904-AUDIO",
+      "source_group": "Plaud One官方产品页2026-09-04状态复核",
+      "url": "https://www.plaud.ai/products/plaud-one",
+      "scope": "产品页当前显示Out of Stock、Join Waitlist、Plaud One Explorer Edition、US$249.99；规格页仍列2,000台、耳机/盒麦克风与录音能力",
+      "quality": "A",
+      "source_domain": "plaud.ai",
+      "source_channel": "official_store",
+      "source_role": "官方商城/当前库存状态/价格与限量边界复核",
+      "seller_type": "AI录音硬件品牌官方",
+      "storefront_type": "Plaud官方产品商城",
+      "availability_signal": "Out of Stock；Join Waitlist；New",
+      "platform_reference": "Plaud One Explorer Edition"
     }
   ],
   "update_log": [
@@ -2541,6 +2565,12 @@
       "change": "新增AUDIO-043：HUAWEI FreeBuds Neo；补充官方发布日、区域产品页、第三代音频芯片（型号未公开）、麦克风/骨传导麦克风、LDAC、ANC、4.8g、10/6.5/40小时续航和IP55。",
       "verification": "HUAWEI全球发布页、全球产品页和马来西亚官方产品页互证；不把AI/头部控制功能推断为未披露传感器或芯片型号。",
       "next": "继续复核官方区域Buy页、Bluetooth版本、充电功率、尺寸、驱动器精确结构、AI服务和价格；同步检查授权零售价格但不以第三方页面替代原厂证据。"
+    },
+    {
+      "date": "2026-09-04",
+      "change": "复核AUDIO-027 Plaud One Limited Explorer Edition：官方产品页当前显示Out of Stock/Join Waitlist；保留US$249.99、2,000台和原有规格，不扩大为普遍现货。",
+      "verification": "Plaud官方产品页2026-09-04状态复核；当前库存与发货时间未公开，不以历史预售或页面规格推断交付。",
+      "next": "继续追踪重新开放、区域官方商店、实际交付和认证信息；保持与录音卡片库RC-032跨库关联。"
     }
   ],
   "source_channel_policy": [
@@ -2628,6 +2658,7 @@
     "official_product": 6,
     "official_release": 2,
     "official_sales": 18,
+    "official_store": 1,
     "official_support_manual": 12
   },
   "source_domains": [

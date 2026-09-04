@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-03",
+  "checked_on": "2026-09-04",
   "scope_note": "首版覆盖独立家庭中控、Matter控制器/桥、协议网关，以及音箱/屏/机顶盒/路由器内置的智能家居中枢。通过形态字段区分完整自动化中枢、协议桥、内置中枢与路由器功能，不把所有网关宣传词当成同一类产品。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-03"
+      "2026-09-04"
     ]
   ],
   "products": [
@@ -924,6 +924,57 @@
         "SHELLY-WALL-DISPLAY-BLACK"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "display": "无显示；内置扬声器",
+      "os_platform": "Aqara Studio；本地边缘自动化；Matter Controller/Commissioner",
+      "audio_drivers": "扬声器；具体功率与单元未公开",
+      "sensors": "6个红外发射器+1个红外接收器；其他环境/无线传感器详情未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "Wi-Fi 5（IEEE 802.11a/b/g/n/ac，2.4/5GHz，WPA3）、Zigbee、Thread（IEEE 802.15.4）、Bluetooth、Matter Controller/Commissioner、Matter Bridge、Thread Border Router、100Mbps Ethernet、PoE、红外",
+      "chip_or_soc": "未公开",
+      "storage": "64GB eMMC + microSD最高512GB；官方卖点文字另有8GB eMMC表述，容量冲突保留，不取未解释的较小值",
+      "dimensions": "105×105×36.5mm",
+      "weight_g": "160",
+      "battery": "无内置电池",
+      "charging": "USB-C 5V/2A；PoE 48V/0.27A、RJ45 802.3af；100Mbps Ethernet",
+      "water_resistance": "室内使用；不防水",
+      "subscription": "无公开硬件强制订阅；本地自动化/边缘能力与云服务条款按地区核验",
+      "privacy": "支持本地边缘自动化与本地存储；云端、可选4G/5G扩展和数据保留细节未完全公开",
+      "features": [
+        "Aqara Studio本地边缘自动化",
+        "Matter Controller/Commissioner",
+        "Zigbee-Matter Bridge",
+        "Thread Border Router",
+        "2.4/5GHz Wi-Fi 5、Bluetooth、Ethernet与PoE",
+        "64GB eMMC与microSD扩展",
+        "6红外发射器+1红外接收器",
+        "可通过底座连接4G/5G模块"
+      ],
+      "availability_note": "官方英文/中文技术文档列出中国型号ZHWG27LM与全球型号HM-G04D及SKU/条码；官方公告确认发布，具体区域商城价格、库存和4G/5G底座可得性仍按站点复核",
+      "source_note": "Aqara官方英文/中文技术文档、官方发布公告与EAEU合规声明互证；eMMC容量存在官方文本差异，按规格表并列保留；未公开芯片、完整传感器、价格和防水不推断",
+      "id": "HUB-026",
+      "brand": "Aqara",
+      "model": "Aqara Edge Hub M300",
+      "country_region": "中国品牌/中国、北美、欧洲及其他区域型号；制造商深圳绿米联创",
+      "category": "家庭中控/多协议边缘网关",
+      "form_factor": "独立本地边缘家庭/楼宇网关",
+      "use_case": "本地自动化、Matter设备管理、Zigbee桥接、Thread边界路由、红外控制、楼宇/家庭边缘数据处理",
+      "status": "已发布/官方技术文档与区域渠道可核验；官方商城价格与库存按地区待复核",
+      "evidence": "A",
+      "launch_date": "2025-09-03",
+      "launch_date_type": "Aqara官方发布公告日期；精确首次销售日未公开",
+      "price": "未公开",
+      "official_url": "https://docs.aqara.com/docs/aqara-studio/product-knowledge/gateways/edge-hub-m300/",
+      "spec_url": "https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/gateways/edge-hub-m300/",
+      "source_refs": [
+        "AQARA-M300-SPECS",
+        "AQARA-M300-CN-SPECS",
+        "AQARA-M300-LAUNCH",
+        "AQARA-M300-EAEU"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -1117,6 +1168,78 @@
       "storefront_type": "Shelly官方媒体/新闻页",
       "availability_signal": "官方新品新闻；实际库存、价格和交付另按商城页面核验",
       "platform_reference": "Shelly Wall Display X1i"
+    },
+    {
+      "checked_on": "2026-09-04",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "AQARA-M300-SPECS",
+      "source_group": "Aqara Edge Hub M300官方英文技术文档",
+      "url": "https://docs.aqara.com/docs/aqara-studio/product-knowledge/gateways/edge-hub-m300/",
+      "scope": "HM-G04D/ZHWG27LM型号、105×105×36.5mm、160g、Wi-Fi 5、Zigbee/Thread/Bluetooth/Matter、64GB eMMC+microSD、USB-C、PoE、Ethernet、红外与认证",
+      "quality": "A",
+      "source_domain": "docs.aqara.com",
+      "source_channel": "official_support_spec",
+      "source_role": "官方技术文档/精确型号/规格/协议/供电/存储证据",
+      "seller_type": "智能家居品牌官方",
+      "storefront_type": "Aqara官方技术文档",
+      "availability_signal": "官方文档明确列出产品/区域型号；价格与现货另行核验",
+      "platform_reference": "ZHWG27LM / HM-G04D / AG048CNB01 / AG048GLB02"
+    },
+    {
+      "checked_on": "2026-09-04",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "AQARA-M300-CN-SPECS",
+      "source_group": "Aqara Edge Hub M300官方中文技术文档",
+      "url": "https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/gateways/edge-hub-m300/",
+      "scope": "中国/全球型号、产品条码/ID、协议矩阵、本地边缘能力、Thread/Zigbee/Matter、microSD、4G/5G扩展和区域信息",
+      "quality": "A",
+      "source_domain": "docs.aqara.com",
+      "source_channel": "official_support_spec",
+      "source_role": "官方中文技术文档/区域型号/规格与可得性边界证据",
+      "seller_type": "智能家居品牌官方",
+      "storefront_type": "Aqara官方中文技术文档",
+      "availability_signal": "官方文档/区域型号；官方商城价格未公开",
+      "platform_reference": "A01842 / A01841 / 6978350350103 / 6978350350028 / 0192784002803"
+    },
+    {
+      "checked_on": "2026-09-04",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "AQARA-M300-LAUNCH",
+      "source_group": "Aqara Edge Hub M300官方发布公告",
+      "url": "https://www.aqara.com/eu/?p=127754",
+      "scope": "官方发布公告确认Edge Hub M300于2025-09-03推出及其边缘家庭/楼宇自动化定位",
+      "quality": "A",
+      "source_domain": "aqara.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方发布/上市日期/产品定位证据",
+      "seller_type": "智能家居品牌官方",
+      "storefront_type": "Aqara官方新闻/区域站",
+      "availability_signal": "官方发布；区域销售、库存和价格另按产品/经销渠道核验",
+      "platform_reference": "Aqara Edge Hub M300"
+    },
+    {
+      "checked_on": "2026-09-04",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "AQARA-M300-EAEU",
+      "source_group": "Aqara Edge Hub M300 EAEU合规声明记录",
+      "url": "https://xn----7sbajahheyaepn1ca0aveqcb0fxl.xn--p1acf/document/eaes-n-ru-d-cnra10v9797925/",
+      "scope": "EAEU声明中出现HM-G04D/HM-G04E；样品制造时间为2025年9月的辅助合规信号",
+      "quality": "B",
+      "source_domain": "xn----7sbajahheyaepn1ca0aveqcb0fxl.xn--p1acf",
+      "source_channel": "regulatory_certification",
+      "source_role": "EAEU合规/型号存在与样品日期辅助证据，不替代Aqara官方规格",
+      "seller_type": "监管/合规记录",
+      "storefront_type": "EAEU声明记录",
+      "availability_signal": "合规声明辅助信号；实际区域销售与库存未由该记录单独证明",
+      "platform_reference": "HM-G04D / HM-G04E"
     }
   ],
   "update_log": [
@@ -1185,6 +1308,12 @@
       "change": "新增HUB-025 Shelly Wall Display X1i；补充官方IFA窗口、欧洲价格/库存、4英寸720×720触控、RK3326-S、1GB/8GB、Wi-Fi 6、Bluetooth 5.0、传感器、尺寸重量和底座供电。",
       "verification": "Shelly官方IFA新闻、银色/黑色官方商城页互证；按墙面中控与本地智能家居联动收录，未见独立Matter认证时不把它写成已认证Matter网关。",
       "next": "继续核验CSA Matter/区域电气认证、继电器底座料号、功耗、麦克风隐私设置、精确Wi-Fi/BT认证和其他国家价格。"
+    },
+    {
+      "date": "2026-09-04",
+      "change": "新增HUB-026 Aqara Edge Hub M300；补充中国/全球型号、官方发布日、Wi-Fi 5、Zigbee/Thread/Bluetooth/Matter、Aqara Studio、本地自动化、64GB eMMC、microSD、Ethernet/PoE、红外、尺寸、重量和区域可得性边界。",
+      "verification": "Aqara官方英文/中文技术文档、官方发布公告和EAEU合规声明互证；官方文本存在64GB与8GB eMMC容量差异，已在字段中保留冲突，不把商城未公开价格补成估价。",
+      "next": "继续核验官方区域Buy页、CSA Matter/Thread认证、4G/5G底座料号、实际库存、精确SoC和完整隐私/云端条款。"
     }
   ],
   "source_channel_policy": [
@@ -1267,19 +1396,24 @@
     }
   ],
   "source_channel_counts": {
-    "official_newsroom": 1,
+    "official_newsroom": 2,
     "official_product": 3,
     "official_sales": 2,
     "official_store": 2,
-    "official_support_manual": 1
+    "official_support_manual": 1,
+    "official_support_spec": 2,
+    "regulatory_certification": 1
   },
   "source_domains": [
     "apple.com",
+    "aqara.com",
     "bosch-smarthome.com",
+    "docs.aqara.com",
     "home-assistant.io",
     "mi.com",
     "news.samsung.com",
     "shelly.com",
-    "us.aqara.com"
+    "us.aqara.com",
+    "xn----7sbajahheyaepn1ca0aveqcb0fxl.xn--p1acf"
   ]
 }

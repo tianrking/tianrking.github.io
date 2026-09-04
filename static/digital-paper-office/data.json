@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-03",
+  "checked_on": "2026-09-04",
   "scope_note": "本库覆盖电子纸与数字办公：电子纸平板、电子书、智能笔、数字纸、便携显示器与扫描设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-03"
+      "2026-09-04"
     ]
   ],
   "products": [
@@ -360,6 +360,56 @@
         "HUAWEI-MATEPAD12-GLOBAL"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "display": "10.65英寸柔性E-Ink；1920×2560；300ppi",
+      "os_platform": "Android 14；Google Play；iFLYTEK AI能力",
+      "audio_drivers": "4个麦克风；扬声器/音频单元未公开",
+      "sensors": "触控/电磁笔交互；其他传感器未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "Wi-Fi 6；Bluetooth 5.4；USB-C 3.0；pogo pin",
+      "chip_or_soc": "Rockchip RK3576，八核",
+      "storage": "4GB RAM + 64GB ROM",
+      "dimensions": "247×178×4.2mm",
+      "weight_g": "295",
+      "battery": "4000mAh；典型使用最长约14天；飞行模式+深度休眠待机最长约113天",
+      "charging": "USB-C 3.0；官方商城称完整充电低于3小时",
+      "water_resistance": "未公开",
+      "subscription": "无公开硬件强制订阅；AI/云服务与账户、区域和服务条款有关",
+      "privacy": "AI/同步使用AWS云端服务；具体数据保留、训练选择和区域合规条款需按iFLYTEK服务核验",
+      "features": [
+        "10.65英寸柔性E-Ink、300ppi",
+        "会议AI转写支持16种语言",
+        "手写转文字支持133种语言",
+        "翻译支持11种语言",
+        "AI会议摘要、待办、日程与Google Calendar",
+        "GPT-5等AI能力口径",
+        "Wacom无源电磁笔",
+        "Android 14与Google Play"
+      ],
+      "availability_note": "iFLYTEK官方全球商城查证时显示US$649、官方发货2–9个工作日、免费配送、30天退货和1年保修；区域价格、库存和配置可能不同",
+      "source_note": "iFLYTEK官方全球产品页、官方商城和官方MWC/产品索引信息互证；首次销售日、完整传感器、音频单元、防水和云端隐私细节未公开不推断",
+      "id": "PAPER-010",
+      "brand": "iFLYTEK",
+      "model": "iFLYTEK AINOTE 2",
+      "country_region": "中国品牌/全球官方商城；区域配置与销售按站点",
+      "category": "电子纸平板/AI数字办公",
+      "form_factor": "10.65英寸柔性E-Ink数字办公平板",
+      "use_case": "会议录音与转写、手写、文档阅读、翻译、会议总结、日程和AI办公",
+      "status": "在售/官方全球商城；区域库存与配置按站点",
+      "evidence": "A",
+      "launch_date": "2025-11-21",
+      "launch_date_type": "iFLYTEK官方产品索引日期；首次销售日未公开",
+      "price": "US$649（iFLYTEK官方全球商城，查证时）",
+      "official_url": "https://global.iflytek.com/en/products/air/ainote-2.html",
+      "spec_url": "https://store.iflytek.com/en/products/iflytek-ainote-2",
+      "source_refs": [
+        "IFLYTEK-AINOTE2-PRODUCT",
+        "IFLYTEK-AINOTE2-STORE",
+        "IFLYTEK-AINOTE2-INDEX"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -672,6 +722,60 @@
       "storefront_type": "HUAWEI全球官方产品页",
       "availability_signal": "官方产品页；区域价格、库存和配置动态",
       "platform_reference": "HUAWEI MatePad Pro 12"
+    },
+    {
+      "checked_on": "2026-09-04",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "IFLYTEK-AINOTE2-PRODUCT",
+      "source_group": "iFLYTEK AINOTE 2全球官方产品页",
+      "url": "https://global.iflytek.com/en/products/air/ainote-2.html",
+      "scope": "10.65英寸柔性E-Ink、1920×2560、300ppi、RK3576、4GB/64GB、Wi-Fi 6、Bluetooth 5.4、4000mAh、295g、247×178×4.2mm",
+      "quality": "A",
+      "source_domain": "global.iflytek.com",
+      "source_channel": "official_product",
+      "source_role": "原厂产品/规格/芯片/显示/连接/电池证据",
+      "seller_type": "电子纸与AI办公品牌官方",
+      "storefront_type": "iFLYTEK全球官方产品页",
+      "availability_signal": "官方产品页；价格与库存以官方商城为准",
+      "platform_reference": "iFLYTEK AINOTE 2"
+    },
+    {
+      "checked_on": "2026-09-04",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$649",
+      "estimated_delivery": "官方发货2–9个工作日；偏远地区与区域政策可能不同",
+      "id": "IFLYTEK-AINOTE2-STORE",
+      "source_group": "iFLYTEK AINOTE 2官方全球商城",
+      "url": "https://store.iflytek.com/collections/all-products?utm_campaign=mwc&utm_medium=exhibition&utm_source=exhibition",
+      "scope": "US$649；官方可购买；2–9个工作日发货；4个麦克风、USB-C 3.0/pogo pin、低于3小时充电、14天典型使用、113天待机、AI语言支持与保修退货",
+      "quality": "A",
+      "source_domain": "store.iflytek.com",
+      "source_channel": "official_store",
+      "source_role": "官方商城/当前价格/库存/配送/电池与AI功能证据",
+      "seller_type": "电子纸与AI办公品牌官方",
+      "storefront_type": "iFLYTEK全球官方商城",
+      "availability_signal": "官方商城显示可购买；区域库存和配送动态",
+      "platform_reference": "iFLYTEK AINOTE 2"
+    },
+    {
+      "checked_on": "2026-09-04",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "IFLYTEK-AINOTE2-INDEX",
+      "source_group": "iFLYTEK官方产品索引/MWC信息",
+      "url": "https://www.iflytek.com/en/search/p/6.html",
+      "scope": "官方产品索引标注AINOTE 2日期2025-11-21；官方MWC/新闻页描述AINOTE 2升级与全球展示",
+      "quality": "A",
+      "source_domain": "iflytek.com",
+      "source_channel": "official_newsroom",
+      "source_role": "官方产品索引/上市年份日期口径/发布背景证据",
+      "seller_type": "电子纸与AI办公品牌官方",
+      "storefront_type": "iFLYTEK官方新闻/产品索引",
+      "availability_signal": "官方索引与MWC信息；不单独证明当前库存",
+      "platform_reference": "AINOTE 2"
     }
   ],
   "update_log": [
@@ -740,6 +844,12 @@
       "change": "新增PAPER-009：HUAWEI MatePad Pro 12；补充官方发布日、中国起售价、OLED/PaperMatte显示、Kirin T93/T93A版本、内存/存储、传感器、协议、重量、10400mAh、66W充电与40W反向充电。",
       "verification": "HUAWEI官方全球发布页、中国官方产品页和全球产品页互证；中国版本与区域页面可能存在配置差异，字段按来源注明，不把版本差异抹平。",
       "next": "继续核验全球各区Buy页的价格、键盘/手写笔套装、无线认证、精确Wi-Fi版本、屏幕版本和上市日期；配件不拆成独立主表型号。"
+    },
+    {
+      "date": "2026-09-04",
+      "change": "新增PAPER-010 iFLYTEK AINOTE 2；补充官方全球商城US$649、E-Ink显示、RK3576、4GB/64GB、Wi-Fi 6、Bluetooth 5.4、4麦克风、尺寸重量、4000mAh、14天/113天续航和AI办公能力。",
+      "verification": "iFLYTEK官方全球产品页、全球商城与官方产品索引/MWC信息互证；价格和配送为查证时快照，首次销售日、完整传感器、扬声器、防水和云端细节未公开。",
+      "next": "继续核验不同区域官方Buy页、FCC/CE、精确电池额定电压、手写笔/键盘套装、AI服务计划和实际区域库存；不把配件拆成主表型号。"
     }
   ],
   "source_channel_policy": [
@@ -824,9 +934,10 @@
   "source_channel_counts": {
     "crowdfunding": 3,
     "marketplace": 1,
-    "official_newsroom": 1,
-    "official_product": 2,
+    "official_newsroom": 2,
+    "official_product": 3,
     "official_sales": 6,
+    "official_store": 1,
     "official_support_manual": 1,
     "secondary_specs": 1
   },
@@ -836,11 +947,14 @@
     "digprjsurvey.amazon.com",
     "epson.com",
     "fmworld.ne.jp",
+    "global.iflytek.com",
     "help.kobo.com",
+    "iflytek.com",
     "kickstarter.com",
     "remarkable.com",
     "shop.boox.com",
     "store.bigme.vip",
+    "store.iflytek.com",
     "supernote.com"
   ]
 }
