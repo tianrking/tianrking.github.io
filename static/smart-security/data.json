@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-04",
+  "checked_on": "2026-09-05",
   "scope_note": "本库覆盖智能安防与门禁：家庭摄像头、可视门铃、智能门锁、报警器、门窗传感器与智能对讲。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-04"
+      "2026-09-05"
     ]
   ],
   "products": [
@@ -543,6 +543,52 @@
         "LOQED-PURE-PRODUCT"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "display": "无显示；状态灯/Keypad Vision Pro为另列配件，不拆主表",
+      "os_platform": "SwitchBot App；Hub Mini Matter Enabled；支持Apple Home、Home Assistant等Matter生态",
+      "audio_drivers": "未公开",
+      "sensors": "3D结构光人脸/掌静脉识别；高精度磁编码器；指纹/NFC输入；具体传感器器件未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "Bluetooth 4.2或更高；通过随附Hub Mini Matter Enabled接入Matter；Wi-Fi版本未公开",
+      "chip_or_soc": "未公开",
+      "storage": "人脸与掌静脉数据官方称本地AES-128保护；容量与芯片未公开",
+      "dimensions": "122×62.6×66.8mm",
+      "weight_g": "391g",
+      "battery": "官方商品描述称4200mAh可充电主电池、最长约9个月；同页规格块列1400mAh/15.54Wh；CR123A备用最长约95天待机或约500次开锁；保留冲突不擅自取值",
+      "charging": "可拆卸可充电锂电池；CR123A备用电池与超级电容保护；充电接口、额定功率和时间未公开",
+      "water_resistance": "未公开",
+      "subscription": "无公开硬件强制订阅；远程访问/Matter生态按账户、Hub与地区服务条款",
+      "privacy": "3D人脸与掌静脉数据官方称本地保存且不上传云端，AES-128；权限、日志与App云服务保留规则未公开",
+      "features": [
+        "3D人脸/掌静脉免接触识别",
+        "指纹、密码、NFC卡、语音、Apple Watch和App开锁",
+        "160rpm无刷电机；Fast Mode最快约1.1秒；Quiet Mode约56.3dBA",
+        "支持EU Profile、UK Oval、Swiss Round、Night-Latch等适配器路线",
+        "Hub Mini Matter Enabled与Apple Home/Home Assistant联动"
+      ],
+      "availability_note": "官方国际商品页将单品和组合列为不同变体；查证时组合可购买、单品EU/UK变体为不可用，价格和库存按区域动态；Hub/Keypad/颜色/SKU不另计",
+      "source_note": "SwitchBot国际商品页与IFA官方发布稿互证；商品描述与规格块对主电池容量存在4200mAh和1400mAh/15.54Wh差异，数据库保留原文冲突并标待复核",
+      "id": "SEC-011",
+      "brand": "SwitchBot",
+      "model": "SwitchBot Lock Ultra Max",
+      "country_region": "日本品牌/欧洲与国际官方商城；EU/UK型号页面",
+      "category": "智能门锁/门禁",
+      "form_factor": "适配既有门锁的电机式智能门锁",
+      "use_case": "住宅无钥匙进入、远程/临时权限、家庭成员分级开锁与Matter智能家居联动",
+      "status": "新品/国际官方页面组合套装可购买；单品EU/UK变体查证时显示缺货；不把组合套装当作独立型号",
+      "evidence": "A",
+      "launch_date": "2026-09-03",
+      "launch_date_type": "SwitchBot官方IFA 2026发布稿与商品页发布时间口径",
+      "price": "US$189.99 Lock Ultra Max单品国际页面列价但查证时不可用；Lock Ultra Max + Hub Mini Matter + Keypad Vision Pro组合US$339.99；EU/UK组合EUR/GBP339.99",
+      "official_url": "https://www.switch-bot.com/products/switchbot-lock-ultra-max-vision-pro-combo",
+      "spec_url": "https://www.prnewswire.com/news-releases/switchbot-launches-lock-ultra-max-vision-pro-combo-bringing-faster-smarter-multi-way-entry-at-ifa-2026-302864966.html",
+      "source_refs": [
+        "SWITCHBOT-LOCK-ULTRA-MAX-PRODUCT-20260905",
+        "SWITCHBOT-LOCK-ULTRA-MAX-IFA-20260905"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -915,6 +961,42 @@
       "storefront_type": "Shelly欧洲官方商城",
       "availability_signal": "New；In stock；订单面向EU页面说明",
       "platform_reference": "LOQED Pure black"
+    },
+    {
+      "checked_on": "2026-09-05",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$189.99单品列价；US$339.99组合；EU/UK组合EUR/GBP339.99",
+      "estimated_delivery": "未公开",
+      "id": "SWITCHBOT-LOCK-ULTRA-MAX-PRODUCT-20260905",
+      "source_group": "SwitchBot Lock Ultra Max国际官方商品页",
+      "url": "https://www.switch-bot.com/products/switchbot-lock-ultra-max-vision-pro-combo",
+      "scope": "单品US$189.99列价但EU/UK变体查证时不可用；组合US$339.99；122×62.6×66.8mm、391g；Bluetooth 4.2+；3D结构光、AES-128本地数据、4200mAh/9个月商品描述、规格块1400mAh/15.54Wh、CR123A备用、160rpm与1.1秒",
+      "quality": "A",
+      "source_domain": "switch-bot.com",
+      "source_channel": "official_store",
+      "source_role": "官方商城/变体价格/库存/精确尺寸重量/电池冲突/识别与电机规格证据",
+      "seller_type": "智能家居品牌官方",
+      "storefront_type": "SwitchBot国际官方商城",
+      "availability_signal": "组合变体可购买；Lock Ultra Max EU/UK单品变体查证时available=false；页面库存实时变化",
+      "platform_reference": "810224630781（单品）；810224630873（组合）"
+    },
+    {
+      "checked_on": "2026-09-05",
+      "campaign_status": "未公开",
+      "pledge_or_price": "EUR/GBP339.99组合MSRP",
+      "estimated_delivery": "地区页面给出预订/配送信号；精确交付日未公开",
+      "id": "SWITCHBOT-LOCK-ULTRA-MAX-IFA-20260905",
+      "source_group": "SwitchBot Lock Ultra Max IFA官方发布稿",
+      "url": "https://www.prnewswire.com/news-releases/switchbot-launches-lock-ultra-max-vision-pro-combo-bringing-faster-smarter-multi-way-entry-at-ifa-2026-302864966.html",
+      "scope": "2026-09-03发布；Lock Ultra Max、Hub Mini Matter与Keypad Vision Pro组合；EU/UK MSRP EUR/GBP339.99；人脸/掌静脉/指纹/NFC/密码/语音/Apple Watch/App开锁和Matter生态",
+      "quality": "A",
+      "source_domain": "prnewswire.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "品牌官方发布/上市窗口/区域组合价格/功能边界证据",
+      "seller_type": "智能家居品牌官方",
+      "storefront_type": "SwitchBot官方PRNewswire发布",
+      "availability_signal": "EU/UK组合自2026-09-03开放预订；单品与配件按地区变体核验",
+      "platform_reference": "SwitchBot Lock Ultra Max Vision Pro Combo"
     }
   ],
   "update_log": [
@@ -989,6 +1071,12 @@
       "change": "【智能安防与门禁】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-05",
+      "change": "新增SEC-011 SwitchBot Lock Ultra Max；把单品与Hub/Keypad组合、区域变体分开记录，补充官方价格、库存冲突、识别传感、Bluetooth/Matter、尺寸重量、电池原文冲突、隐私与开锁方式。",
+      "verification": "SwitchBot官方商品页和IFA发布稿互证；组合/配件/颜色/SKU不拆主表，4200mAh与1400mAh规格冲突原样保留，单品当前库存不外推为全球现货。",
+      "next": "继续核验EU/UK/US/Japan官方变体、Hub/Keypad精确分料号、CE/FCC/无线认证、锁芯兼容矩阵和电池额定参数。"
     }
   ],
   "source_channel_policy": [
@@ -1072,9 +1160,10 @@
   ],
   "source_channel_counts": {
     "official_newsroom": 2,
+    "official_newsroom_distribution": 1,
     "official_product": 3,
     "official_sales": 7,
-    "official_store": 2,
+    "official_store": 3,
     "official_support_manual": 4,
     "press_release_distribution": 1
   },
@@ -1085,10 +1174,12 @@
     "eu.aqara.com",
     "eufy.com",
     "globenewswire.com",
+    "prnewswire.com",
     "ring.com",
     "schlage.com",
     "shelly.com",
     "store.google.com",
+    "switch-bot.com",
     "us.aqara.com"
   ]
 }

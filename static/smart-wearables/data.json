@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-04",
+  "checked_on": "2026-09-05",
   "scope_note": "本库覆盖智能服饰与运动装备：智能鞋、智能服装、姿态设备、触觉手环与智能护具；排除已有独立数据库的重复型号。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-04"
+      "2026-09-05"
     ]
   ],
   "products": [
@@ -392,6 +392,98 @@
       "satellite": "未公开",
       "connectivity": "未公开",
       "storage": "未公开"
+    },
+    {
+      "display": "无显示；App/AI sidekick交互",
+      "os_platform": "Hypershell App与Shelly AI sidekick；具体手机平台版本未公开",
+      "audio_drivers": "语音/文字AI sidekick；麦克风与扬声器器件未公开",
+      "sensors": "30+运动传感器（HyperSense Pro）；精确传感器类型与数量构成未公开",
+      "gps_positioning": "未公开；可通过App规划路线，但不据此推断机身GNSS",
+      "satellite": "未公开",
+      "supported_protocols": "App连接与AI sidekick；Bluetooth/Wi-Fi具体版本和协议未公开",
+      "chip_or_soc": "HyperCore Pro AI chip；其他MCU/电源芯片未公开",
+      "storage": "未公开",
+      "dimensions": "穿戴系统约2.6kg；折叠体积小于8L；适配身高155–200cm、腰围64–140cm等官方范围；精确长宽高未公开",
+      "weight_g": "约2600（官方页面以不含穿戴系统/机架口径展示2.6kg，整套称重口径待复核）",
+      "battery": "PocketVolt可拆卸电池72Wh；续航/活动范围最长约20km；Origin Edition含额外电池",
+      "charging": "0–100%小于1.5小时；随附65W GaN充电器；接口细节未公开",
+      "water_resistance": "IP54；仅作防尘/泼溅边界，不推断涉水使用",
+      "subscription": "无公开硬件强制订阅；AI/App服务条款按地区与账户核验",
+      "privacy": "动作数据、路线、AI sidekick与账户数据保留规则未完整公开；官方页面注明非医疗辅助且需要自主行走/平衡能力",
+      "features": [
+        "四电机髋/膝统一辅助，HyperDrive Pro峰值1490W",
+        "HyperIntuition 2.0，约200ms动作预测与最高每秒2500次辅助调整",
+        "坐站肌肉疲劳降低最多40%；骑行/步行能耗指标为官方控制条件数据",
+        "20km范围、72Wh可换电池、IP54与全地形结构",
+        "Origin Edition限量200台，额外PocketVolt电池与一年延保"
+      ],
+      "availability_note": "Hypershell全球/英国/欧洲官方页面可下单预售；英国页面显示£2,199并预计11月底发货；美国/加拿大/欧洲/中国区域页面价格与库存按地区动态",
+      "source_note": "Hypershell官方商品页与官方媒体中心互证；动作数据与疲劳/能耗为厂商控制条件数据，精确传感器构成、无线版本、整机尺寸和整套称重口径未公开",
+      "id": "WEAR-009",
+      "brand": "Hypershell",
+      "model": "Hypershell Halo Origin Edition",
+      "country_region": "中国品牌/全球70+国家与地区；美国、加拿大、欧洲、英国、中国大陆首发",
+      "category": "智能服饰与运动装备/消费级外骨骼",
+      "form_factor": "全腿式髋-膝动力外骨骼；Origin Edition限量200台",
+      "use_case": "徒步、爬坡、骑行、步行、深蹲与户外全地形运动辅助；非医疗器械",
+      "status": "Origin Edition官方预售；官方页面预计2026年11月底发货；首200台含额外电池和一年延保",
+      "evidence": "A",
+      "launch_date": "2026-09-03",
+      "launch_date_type": "Hypershell官方IFA 2026发布稿日期",
+      "price": "US$2,299；EUR2,299；GBP2,199（Origin Edition区域页面/官方发布口径）",
+      "official_url": "https://hypershell.tech/en-us/products/hypershell-halo",
+      "spec_url": "https://eu.hypershell.tech/blogs/media-center/hypershell-halo-flagship-full-leg-exoskeleton-built-for-all-terrain-mobility",
+      "source_refs": [
+        "HYPERSHELL-HALO-PRODUCT-20260905",
+        "HYPERSHELL-HALO-IFA-20260905"
+      ],
+      "connectivity": "未公开"
+    },
+    {
+      "display": "无显示；手机、支持的智能手表和手势控制",
+      "os_platform": "ACEMATE App；支持手机/智能手表/手势控制；系统版本未公开",
+      "audio_drivers": "未公开",
+      "sensors": "双4K HDR双目视觉；球跟踪/性能识别所需其他传感器未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "手机App、支持的智能手表、手势控制；Bluetooth/Wi-Fi版本与协议未公开",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "高容量可拆卸电池；最长约5小时运行；容量未公开",
+      "charging": "充电规格、时间与接口未公开",
+      "water_resistance": "未公开；支持硬地、红土、草地球场不等同于整机防水等级",
+      "subscription": "未公开；App、训练计划与AI分析服务条款待核验",
+      "privacy": "训练视频/数据、账户与AI分析保留规则未公开",
+      "features": [
+        "Rally、Drill、Serve、Ball Machine、Battle五种模式",
+        "ACE+ SHOT最高120km/h、水平覆盖180°、发射角7–40°、轨迹1–8m、间隔1–15s",
+        "平击、上旋、下旋与最高100球容量",
+        "Train-Track-Analyze-Review-Improve AI训练闭环与100+训练计划",
+        "适配硬地、红土、草地；手机/手表/手势控制"
+      ],
+      "availability_note": "官方IFA发布稿称正在接受定金；官方定金页列US$50但查证时显示Sold out，因此保留“官方预售口径与页面库存冲突”，不写成可立即交付",
+      "source_note": "ACEMATE官方定金商品页和IFA官方发布稿互证；价格是官方区域MSRP，US$50为定金而非整机价；尺寸、重量、芯片、无线版本和充电规格未公开",
+      "id": "WEAR-010",
+      "brand": "ACEMATE",
+      "model": "S10 Pro AI Tennis Robot",
+      "country_region": "中国/全球市场；美国、欧洲、加拿大、澳大利亚官方定价",
+      "category": "智能运动装备/网球训练机器人",
+      "form_factor": "可移动AI网球训练机器人",
+      "use_case": "网球单人训练、发球/回球、战术模式、数据分析与训练计划",
+      "status": "官方发布/接受定金预售口径；定金页面查证时显示Sold out；首发交付日期未公开",
+      "evidence": "A",
+      "launch_date": "2026-09-03",
+      "launch_date_type": "ACEMATE官方IFA 2026发布稿日期",
+      "price": "US$2,999；EUR2,999；GBP2,999；CAD$3,999；AUD$4,599（区域MSRP）；官方定金页US$50，页面查证时显示Sold out",
+      "official_url": "https://www.acematetennis.com/products/acemate-tennis-robot-s10-pro-deposit",
+      "spec_url": "https://ifa.vporoom.com/2026-09-03-ACEMATE-Introduces-S10-Pro-Flagship-AI-Tennis-Robot-for-High-Performance-Training-at-IFA-2026",
+      "source_refs": [
+        "ACEMATE-S10-PRO-DEPOSIT-20260905",
+        "ACEMATE-S10-PRO-IFA-20260905"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -724,6 +816,78 @@
       "storefront_type": "官方发布",
       "availability_signal": "planned introduction；尚非稳定零售",
       "platform_reference": "Mudra Pro"
+    },
+    {
+      "checked_on": "2026-09-05",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$2,299",
+      "estimated_delivery": "美国/欧洲/英国官方页面预计2026年11月；英国页面为late November",
+      "id": "HYPERSHELL-HALO-PRODUCT-20260905",
+      "source_group": "Hypershell Halo全球官方预售页",
+      "url": "https://hypershell.tech/en-us/products/hypershell-halo",
+      "scope": "Halo Origin Edition；US$2,299；四电机1490W；30+运动传感器；HyperCore Pro；72Wh、20km、0–100%小于1.5h；2.6kg；IP54；适配身高155–200cm；Origin Edition额外电池与一年延保",
+      "quality": "A",
+      "source_domain": "hypershell.tech",
+      "source_channel": "official_store",
+      "source_role": "官方商城/预售价格/发货信号/动力/传感器/芯片/电池/尺寸适配规格证据",
+      "seller_type": "运动科技品牌官方",
+      "storefront_type": "Hypershell全球官方商城",
+      "availability_signal": "Pre-Order；区域页面显示库存/发货时间；非医疗器械声明",
+      "platform_reference": "Hypershell Halo Origin Edition"
+    },
+    {
+      "checked_on": "2026-09-05",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开（价格以官方商城）",
+      "estimated_delivery": "未公开",
+      "id": "HYPERSHELL-HALO-IFA-20260905",
+      "source_group": "Hypershell Halo官方IFA媒体中心",
+      "url": "https://eu.hypershell.tech/blogs/media-center/hypershell-halo-flagship-full-leg-exoskeleton-built-for-all-terrain-mobility",
+      "scope": "2026-09-03 IFA发布；统一架构、四个动力髋膝关节、HyperIntuition 2.0、HyperCore Pro、30+传感器、1490W、20km、2.6kg、IP54、全球70+国家与近200体验点",
+      "quality": "A",
+      "source_domain": "eu.hypershell.tech",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方发布/上市时间/全球覆盖/性能口径证据",
+      "seller_type": "运动科技品牌官方",
+      "storefront_type": "Hypershell欧洲官方媒体中心",
+      "availability_signal": "IFA发布；配合官方商城预售，不单独证明每个国家有现货",
+      "platform_reference": "Hypershell Halo"
+    },
+    {
+      "checked_on": "2026-09-05",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$50定金；非整机售价",
+      "estimated_delivery": "未公开",
+      "id": "ACEMATE-S10-PRO-DEPOSIT-20260905",
+      "source_group": "ACEMATE S10 Pro官方定金页",
+      "url": "https://www.acematetennis.com/products/acemate-tennis-robot-s10-pro-deposit",
+      "scope": "S10 Pro定金商品页；US$50定金；双4K HDR双目视觉、五种模式、最高120km/h、100+训练计划、最高5小时、可拆卸电池、硬地/红土/草地；查证时页面显示Sold out",
+      "quality": "A",
+      "source_domain": "acematetennis.com",
+      "source_channel": "official_store",
+      "source_role": "官方商品/定金价格/页面库存/功能与电池规格证据",
+      "seller_type": "运动科技品牌官方",
+      "storefront_type": "ACEMATE官方商城",
+      "availability_signal": "Deposit商品页；查证时Sold out；交付未公开",
+      "platform_reference": "ACEMATE Tennis Robot S10 Pro Deposit"
+    },
+    {
+      "checked_on": "2026-09-05",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$2,999；EUR2,999；GBP2,999；CAD$3,999；AUD$4,599 MSRP",
+      "estimated_delivery": "未公开",
+      "id": "ACEMATE-S10-PRO-IFA-20260905",
+      "source_group": "ACEMATE S10 Pro IFA官方发布稿",
+      "url": "https://ifa.vporoom.com/2026-09-03-ACEMATE-Introduces-S10-Pro-Flagship-AI-Tennis-Robot-for-High-Performance-Training-at-IFA-2026",
+      "scope": "2026-09-03发布；官方区域MSRP US$2,999/EUR2,999/GBP2,999/CAD$3,999/AUD$4,599；接受定金预售；双4K HDR双目视觉、五种模式、最高5小时、120km/h和AI训练闭环",
+      "quality": "A",
+      "source_domain": "ifa.vporoom.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "公司官方IFA新闻稿/上市日期/区域MSRP/预售窗口/核心功能证据",
+      "seller_type": "运动科技品牌官方",
+      "storefront_type": "ACEMATE官方IFA Virtual Press Office发布",
+      "availability_signal": "官方接受预售定金；交付日期未公开",
+      "platform_reference": "ACEMATE S10 Pro"
     }
   ],
   "update_log": [
@@ -804,6 +968,24 @@
       "change": "【智能服饰与运动装备】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-05",
+      "change": "新增WEAR-009 Hypershell Halo Origin Edition；补充官方预售价格、11月底发货信号、四电机/HyperCore Pro、30+运动传感器、72Wh/20km、2.6kg、IP54、适配范围与非医疗器械边界。",
+      "verification": "Hypershell官方全球商品页与欧洲官方媒体中心互证；Origin Edition限量、价格和交付按区域保留，整套重量、无线协议、精确传感器构成和数据政策未公开。",
+      "next": "继续核验各区域实际库存、Amazon/Best Buy等授权销售、FCC/CE、传感器BOM、电机与App连接细节；不把性能实验室数据写成用户保证。"
+    },
+    {
+      "date": "2026-09-05",
+      "change": "新增WEAR-010 ACEMATE S10 Pro；补充官方区域MSRP、US$50定金信号及Sold out冲突、双4K HDR双目视觉、五模式、ACE+ SHOT参数、可拆卸电池/5小时和训练AI闭环。",
+      "verification": "ACEMATE官方定金商品页与IFA官方发布稿互证；定金不等同于整机价格，页面库存和交付存在缺口，尺寸重量/芯片/无线/充电未公开。",
+      "next": "继续核验正式订单、交付日期、Kickstarter历史履约关联、各区域销售/授权渠道、CE/FCC和完整摄像头/安全规格；不将配件或训练计划拆为产品。"
+    },
+    {
+      "date": "2026-09-05",
+      "change": "本轮同时核验动作捕捉、智能服装、外骨骼与运动装备的官方站、IFA/新闻稿、众筹和销售渠道；已将Hypershell Halo与ACEMATE S10 Pro的主表与未上市线索分开。",
+      "verification": "WEAR-009/WEAR-010已有官方产品/发布与价格证据；其他线索未达到主表标准，不从媒体展示或同系列规格推断。",
+      "next": "继续核验全球运动装备官方商城、Kickstarter/Indiegogo履约、授权渠道和认证/安全资料。"
     }
   ],
   "source_channel_policy": [
@@ -887,13 +1069,19 @@
   ],
   "source_channel_counts": {
     "crowdfunding": 3,
-    "official_newsroom": 1,
+    "official_newsroom": 2,
+    "official_newsroom_distribution": 1,
     "official_product": 5,
     "official_sales": 3,
+    "official_store": 2,
     "official_support_manual": 3
   },
   "source_domains": [
+    "acematetennis.com",
+    "eu.hypershell.tech",
     "globenewswire.com",
+    "hypershell.tech",
+    "ifa.vporoom.com",
     "indiegogo.com",
     "kickstarter.com",
     "lumysi.com",

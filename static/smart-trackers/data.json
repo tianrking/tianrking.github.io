@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-04",
+  "checked_on": "2026-09-05",
   "scope_note": "本库覆盖定位追踪与个人安全：蓝牙标签、GPS追踪器、老人/儿童定位器与车辆追踪设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-04"
+      "2026-09-05"
     ]
   ],
   "products": [
@@ -356,6 +356,22 @@
       "reason": "同一宠物GPS硬件已经在 /smart-pet-collars/ 主表，避免在通用追踪库重复计数。",
       "url": "https://tractive.com/en/pd/gps-tracker-dog?edition=black",
       "alias_or_relation": "转入智能宠物项圈/吊牌数据库"
+    },
+    {
+      "id": "CAND-VENTION-SPOTTAG-POP-20260905",
+      "name": "Vention SpotTag Pop",
+      "brand": "Vention",
+      "region": "全球/IFA发布",
+      "category": "Bluetooth智能追踪器",
+      "status": "候选/官方发布；价格、协议版本、销售和交付未公开",
+      "evidence": "A",
+      "reason": "Vention官方IFA稿仅披露SpotTag Pop为双模智能Bluetooth追踪器，未披露精确版本、网络生态、尺寸、电池、价格或商品页。",
+      "url": "https://ifa.vporoom.com/2026-09-03-Vention-Launches-Vention-H-Series-for-Inclusive-Design,-and-Next-Generation-Dash-Series,-Setting-Standards-for-Power-Bank-Innovations",
+      "alias_or_relation": "双模Bluetooth追踪器候选；不与Vention配件、颜色或套装重复",
+      "source_refs": [
+        "VENTION-SPOTTAG-POP-IFA-20260905"
+      ],
+      "next_check": "核验官方产品页、精确Bluetooth版本/协议生态、价格、CR/可充电电池、IP等级与区域销售"
     }
   ],
   "sources": [
@@ -562,6 +578,24 @@
       "campaign_status": "未公开",
       "pledge_or_price": "未公开",
       "estimated_delivery": "未公开"
+    },
+    {
+      "checked_on": "2026-09-05",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "VENTION-SPOTTAG-POP-IFA-20260905",
+      "source_group": "Vention SpotTag Pop IFA官方发布稿",
+      "url": "https://ifa.vporoom.com/2026-09-03-Vention-Launches-Vention-H-Series-for-Inclusive-Design,-and-Next-Generation-Dash-Series,-Setting-Standards-for-Power-Bank-Innovations",
+      "scope": "2026-09-03发布；Vention SpotTag Pop Dual-Mode Smart Bluetooth Tracker；精确协议、芯片、尺寸、电池、价格、销售和交付未公开",
+      "quality": "A",
+      "source_domain": "ifa.vporoom.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "公司官方IFA型号发现/产品类别证据；不证明当前销售与协议细节",
+      "seller_type": "消费电子配件品牌官方",
+      "storefront_type": "Vention官方IFA Virtual Press Office发布",
+      "availability_signal": "IFA发布；商品页/价格/交付未公开",
+      "platform_reference": "Vention SpotTag Pop"
     }
   ],
   "update_log": [
@@ -633,6 +667,12 @@
     },
     {
       "date": "2026-09-04",
+      "change": "【定位追踪与个人安全】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-05",
       "change": "【定位追踪与个人安全】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
@@ -718,6 +758,7 @@
     }
   ],
   "source_channel_counts": {
+    "official_newsroom_distribution": 1,
     "official_product": 4,
     "official_release": 1,
     "official_sales": 5,
@@ -728,6 +769,7 @@
     "apple.com",
     "chipolo.net",
     "garmin.com",
+    "ifa.vporoom.com",
     "landairsea.com",
     "legal.tile.com",
     "life360.com",

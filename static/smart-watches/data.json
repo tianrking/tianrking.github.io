@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-04",
+  "checked_on": "2026-09-05",
   "scope_note": "首版优先覆盖全球主要品牌的智能手表、GPS运动表、运动手环与儿童手表。按独立型号/代际计数；颜色、容量、套装不拆行。价格保留官方市场原币种；没有明确披露的芯片、尺寸、重量、续航、防水、订阅和隐私字段写“未公开”。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-04"
+      "2026-09-05"
     ]
   ],
   "products": [
@@ -1322,6 +1322,52 @@
         "HUAWEI-WATCH6-CL-PRODUCT"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "display": "1.50英寸pOLED/OLED；精确分辨率与亮度未公开",
+      "os_platform": "Wear OS 6；官方承诺2次系统升级；Google Play、Google Gemini、Motorola Qira",
+      "audio_drivers": "扬声器/麦克风；具体单元未公开",
+      "sensors": "健康与运动追踪传感器；官方产品页未列具体器件、数量或型号",
+      "gps_positioning": "双频GPS；精确GNSS频段与芯片未公开",
+      "satellite": "未公开",
+      "supported_protocols": "LTE/eSIM、双频GPS、NFC/Google Wallet；Bluetooth版本与Wi-Fi规格未公开",
+      "chip_or_soc": "Qualcomm Snapdragon W5+ Gen 1",
+      "storage": "未公开",
+      "dimensions": "46mm不锈钢表壳；厚度与整体长宽未公开；22mm表带",
+      "weight_g": "未公开",
+      "battery": "主动使用最长约2天；电池容量未公开",
+      "charging": "15分钟充电最多支持24小时主动使用；接口、额定功率和完整充电时间未公开",
+      "water_resistance": "IP68 + 5ATM；Gorilla Glass 3；不据此推断潜水等级",
+      "subscription": "无公开硬件强制订阅；服务条款按地区/平台核验",
+      "privacy": "健康、位置、通信和AI服务的数据政策按Wear OS、Google、Motorola与地区账户条款；完整保留边界未公开",
+      "features": [
+        "Polar运动与恢复功能：Serene、Nightly Recharge、Sleep Plus Stages",
+        "活动目标/评分、强度区间、久坐提醒和卡路里估算",
+        "LTE/eSIM通话与消息、Google Play、Google Wallet",
+        "双频GPS与Wear OS 6",
+        "Google Gemini与Motorola Qira语音/AI能力"
+      ],
+      "availability_note": "官方产品页显示美国渠道信息；Motorola发布稿给出美国Motorola.com 2026-09-10、Verizon 2026-09-24和US$349.99 MSRP，区域库存及运营商资费另行核验",
+      "source_note": "Motorola官方产品页和官方IFA发布稿互证；原厂未公开精确电池容量、重量、完整尺寸、存储、Wi-Fi/Bluetooth版本与健康传感器型号，不作推断",
+      "id": "WATCH-036",
+      "brand": "Motorola",
+      "model": "moto watch ultra",
+      "country_region": "美国品牌/全球发布；美国Motorola.com、Verizon及后续运营商",
+      "category": "智能手表/GPS运动表/LTE手表",
+      "form_factor": "46mm圆形腕戴智能手表",
+      "use_case": "健康与睡眠、运动、双频GPS、LTE通话/消息、支付、日常智能手表",
+      "status": "预售/美国Motorola.com预计2026-09-10发售；Verizon预计2026-09-24，其他运营商后续",
+      "evidence": "A",
+      "launch_date": "2026-09-03",
+      "launch_date_type": "Motorola官方IFA 2026发布稿日期",
+      "price": "US$349.99 MSRP",
+      "official_url": "https://www.motorola.com/us/en/p/wearables/moto-watch-ultra-2026/pwipwia11w1",
+      "spec_url": "https://www.prnewswire.com/news-releases/motorola-debuts-the-moto-watch-ultra-at-ifa-2026-302868224.html",
+      "source_refs": [
+        "MOTOROLA-MOTO-WATCH-ULTRA-PRODUCT",
+        "MOTOROLA-MOTO-WATCH-ULTRA-IFA"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -2047,6 +2093,42 @@
       "storefront_type": "HUAWEI智利官方产品页",
       "availability_signal": "官方区域产品页；实际价格与库存动态",
       "platform_reference": "HUAWEI WATCH 6"
+    },
+    {
+      "checked_on": "2026-09-05",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$349.99 MSRP（发布稿）",
+      "estimated_delivery": "未公开",
+      "id": "MOTOROLA-MOTO-WATCH-ULTRA-PRODUCT",
+      "source_group": "Motorola moto watch ultra官方产品页",
+      "url": "https://www.motorola.com/us/en/p/wearables/moto-watch-ultra-2026/pwipwia11w1",
+      "scope": "1.50英寸pOLED、不锈钢、Wear OS 6与2次升级、Snapdragon W5+ Gen1、eSIM、双频GPS、Polar健康/睡眠能力、主动使用最长2天和15分钟充电约24小时",
+      "quality": "A",
+      "source_domain": "motorola.com",
+      "source_channel": "official_product",
+      "source_role": "原厂产品/平台/芯片/显示/续航/连接能力证据",
+      "seller_type": "消费电子品牌官方",
+      "storefront_type": "Motorola美国官方产品页",
+      "availability_signal": "官方产品页展示产品与购买入口；美国具体日期按发布稿",
+      "platform_reference": "moto watch ultra 2026"
+    },
+    {
+      "checked_on": "2026-09-05",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$349.99 MSRP",
+      "estimated_delivery": "Motorola.com预计2026-09-10；Verizon预计2026-09-24",
+      "id": "MOTOROLA-MOTO-WATCH-ULTRA-IFA",
+      "source_group": "Motorola moto watch ultra IFA官方发布稿",
+      "url": "https://www.prnewswire.com/news-releases/motorola-debuts-the-moto-watch-ultra-at-ifa-2026-302868224.html",
+      "scope": "2026-09-03发布；US$349.99 MSRP；Motorola.com 2026-09-10、Verizon 2026-09-24、其他运营商后续；46mm、IP68/5ATM、双频GPS、LTE/eSIM、Polar健康能力",
+      "quality": "A",
+      "source_domain": "prnewswire.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "品牌官方新闻稿/发布日/首发价格/销售窗口与功能证据",
+      "seller_type": "消费电子品牌官方",
+      "storefront_type": "Motorola官方PRNewswire发布",
+      "availability_signal": "预售/分渠道上市窗口；尚未将运营商资费或地区库存外推",
+      "platform_reference": "moto watch ultra"
     }
   ],
   "update_log": [
@@ -2115,6 +2197,12 @@
       "change": "【智能手表/运动手环/GPS运动表/儿童手表】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-05",
+      "change": "新增WATCH-036 Motorola moto watch ultra；补充官方首发价格、美国销售窗口、Wear OS 6、Snapdragon W5+ Gen 1、LTE/eSIM、双频GPS、Polar健康能力、46mm、IP68/5ATM与续航信息。",
+      "verification": "Motorola官方产品页与官方IFA发布稿互证；传感器型号、存储、重量、完整尺寸、电池容量及无线版本未公开，不作推断。",
+      "next": "继续核验Verizon及其他运营商SKU、各区域官方商城价格/库存、FCC/CE、精确传感器矩阵和电池额定参数。"
     }
   ],
   "source_channel_policy": [
@@ -2198,7 +2286,8 @@
   ],
   "source_channel_counts": {
     "official_newsroom": 3,
-    "official_product": 17,
+    "official_newsroom_distribution": 1,
+    "official_product": 18,
     "official_release": 3,
     "official_sales": 5,
     "official_store": 1,
@@ -2211,8 +2300,10 @@
     "garmin.com",
     "hmd.com",
     "honor.com",
+    "motorola.com",
     "news.samsung.com",
     "polar.com",
+    "prnewswire.com",
     "samsung.com",
     "store.google.com",
     "support.google.com"

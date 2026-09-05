@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-04",
+  "checked_on": "2026-09-05",
   "scope_note": "首版全球智能挂坠／挂链市场库：主表纳入官方在售、官方明确发售、官方明确预售、正式服务中或有官方产品/手册/销售规格证据的独立型号/代际。覆盖AI/环境/录音、健康与情绪、医疗报警/PERS、智能珠宝/关系互动、数字记忆、NFC医疗信息和UV/光照等类别。颜色、链长、纯套装和配件不拆行；不同代际、主机连接方式或关键功能保留独立行。传闻、原型、众筹/OEM线索和无法证明交付的项目放入候选与别名表。来源未披露的芯片、传感器、尺寸、重量、电池容量、续航、防水和订阅字段写“未公开”，不做外观或App功能推断。",
   "products": [
     {
@@ -1384,6 +1384,22 @@
       "reason": "历史智能珠宝主机可通过项链配件佩戴，但不是原生挂坠型号；暂不计入主表。",
       "url": "https://misfit.com/",
       "alias_or_relation": "可穿戴主机+项链配件；不与Bellabeat原生珠宝合并"
+    },
+    {
+      "id": "CAND-LINGVERSE-IKAIROS-20260905",
+      "name": "Lingverse iKairos Neural Core",
+      "brand": "Lingverse",
+      "region": "新加坡/全球IFA展示",
+      "category": "AI模块化智能挂坠",
+      "status": "候选/IFA首次公开展示；价格、销售、尺寸和交付未公开",
+      "evidence": "A",
+      "reason": "公司官方发布披露可插入桌面机器人或项链的模块化圆形Neural Core、LifeOS和周期快照/关系上下文能力，但未披露价格、传感器、芯片、电池和订单。",
+      "url": "https://ifa.vporoom.com/2026-09-03-Lingverse-Debuts-Ensouled-AI-Operating-System%2C-LifeOS%2C-in-First-Public-Look-at-Modular-AI-Wearable-iKairos",
+      "alias_or_relation": "挂坠核心/桌面机器人模块；不与项链、机器人底座或配件重复",
+      "source_refs": [
+        "LINGVERSE-IKAIROS-IFA-20260905"
+      ],
+      "next_check": "核验官方产品页、正式形态/分料号、价格、传感器/芯片、电池、隐私和区域销售"
     }
   ],
   "sources": [
@@ -2049,6 +2065,24 @@
       "campaign_status": "未公开",
       "pledge_or_price": "未公开",
       "estimated_delivery": "未公开"
+    },
+    {
+      "checked_on": "2026-09-05",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "LINGVERSE-IKAIROS-IFA-20260905",
+      "source_group": "Lingverse iKairos公司官方IFA发布",
+      "url": "https://ifa.vporoom.com/2026-09-03-Lingverse-Debuts-Ensouled-AI-Operating-System%2C-LifeOS%2C-in-First-Public-Look-at-Modular-AI-Wearable-iKairos",
+      "scope": "新加坡公司2026-09-03 IFA首次公开；模块化圆形Neural Core，可插入桌面机器人/项链；LifeOS、周期快照与关系上下文；价格、销售、尺寸、电池、传感器与交付未公开",
+      "quality": "A",
+      "source_domain": "ifa.vporoom.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "公司官方IFA发布/型号形态与产品定位证据；不证明在售",
+      "seller_type": "AI穿戴品牌官方",
+      "storefront_type": "Lingverse官方IFA Virtual Press Office发布",
+      "availability_signal": "公开展示；销售/订单未公开",
+      "platform_reference": "Lingverse iKairos Neural Core"
     }
   ],
   "update_log": [
@@ -2126,6 +2160,12 @@
     },
     {
       "date": "2026-09-04",
+      "change": "【智能挂坠/挂链】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-05",
       "change": "【智能挂坠/挂链】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
@@ -2211,6 +2251,7 @@
     }
   ],
   "source_channel_counts": {
+    "official_newsroom_distribution": 1,
     "official_product": 16,
     "official_sales": 16,
     "official_support_manual": 2,
@@ -2227,6 +2268,7 @@
     "friend.com",
     "globenewswire.com",
     "icesmarttags.com",
+    "ifa.vporoom.com",
     "invisawear.com",
     "lifealert.com",
     "lifefone.com",

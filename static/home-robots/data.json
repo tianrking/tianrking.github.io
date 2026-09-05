@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-04",
+  "checked_on": "2026-09-05",
   "scope_note": "本库覆盖家用机器人：扫地、洗地、擦窗、割草、泳池与宠物陪伴机器人；宠物项圈/吊牌另库。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-04"
+      "2026-09-05"
     ]
   ],
   "products": [
@@ -770,6 +770,99 @@
         "ANAN-PANDA-CES"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "display": "机器人/基站显示与状态灯；具体显示器件未公开",
+      "os_platform": "Narwal App / Narwal Freo Mind 4.0；支持Hey Nawa语音；手机系统版本未公开",
+      "audio_drivers": "语音控制麦克风/扬声器器件未公开",
+      "sensors": "双RGB摄像头；TwinAI Dodge障碍识别，官方称可识别300+类家居物体；其他传感器未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "Narwal App/家庭网络；Wi-Fi版本、Bluetooth与Matter支持未公开",
+      "chip_or_soc": "未公开；NarMind Pro Autonomous System为系统名称，不等同于芯片型号",
+      "storage": "未公开",
+      "dimensions": "机器人低矮高度约3.74英寸；宽度/深度与基站尺寸未公开",
+      "weight_g": "未公开",
+      "battery": "官方特定测试：从20%开始充电30分钟后可继续清洁最长约86分钟；电池容量未公开",
+      "charging": "自动回基站充电；支持边洗边充；充电功率/时间未公开",
+      "water_resistance": "未公开；拖地/基站涉水能力不等同于整机防水等级",
+      "subscription": "无公开硬件强制订阅；App/云服务与语音功能按地区与账户条款",
+      "privacy": "双摄像头、宠物看护与互动视频功能涉及家庭影像；云端传输、存储与删除机制未完整公开",
+      "features": [
+        "FlowWash实时自清洁扁平滚筒拖布、60°C热水与12N下压力",
+        "31,000Pa吸力、DualFlow防缠绕、EdgeReach",
+        "双RGB摄像头与NarMind Pro自主系统；300+类物体识别口径",
+        "宠物护理/婴儿护理模式、宠物互动视频功能",
+        "基站自动洗拖布、100°C热水自清洁、60°C热风烘干、2.4L尘袋最长约120天"
+      ],
+      "availability_note": "Narwal美国官方发布稿确认2026-08-20上市及MSRP；官方商品页查证时显示Freo 20产品变体缺货并可提醒，不能写成当前美国普遍现货",
+      "source_note": "Narwal美国官方商品页、官方产品博客和IFA官方发布稿互证；吸力/识别/清洁时间为官方测试口径，尺寸、重量、电池容量、芯片和无线版本未公开",
+      "id": "ROBOT-017",
+      "brand": "Narwal",
+      "model": "Freo 20 Robot Vacuum & Mop",
+      "country_region": "中国品牌/美国官方商城与Amazon；欧洲地区逐步上市",
+      "category": "家用机器人/扫地洗地机器人",
+      "form_factor": "带自清洁基站的扫地拖地机器人",
+      "use_case": "家庭地面清洁、宠物毛发、儿童/宠物家庭、自动洗拖布、集尘与烘干",
+      "status": "已上市/美国官方渠道自2026-08-20；美国官方商品变体查证时显示缺货并可提醒；区域库存动态",
+      "evidence": "A",
+      "launch_date": "2026-08-20",
+      "launch_date_type": "Narwal官方发布稿所述美国正式可得日",
+      "price": "US$1,099.99 MSRP；US$899.99官方限时上市价（2026-08-20至2026-09-03；页面当前价格/库存动态）",
+      "official_url": "https://us.narwal.com/products/freo-20-robot-vacuum",
+      "spec_url": "https://us.narwal.com/blogs/press/new-freo-20-bringing-flagship-real-time-self-cleaning-mopping",
+      "source_refs": [
+        "NARWAL-FREO-20-US-PRODUCT-20260905",
+        "NARWAL-FREO-20-PR-20260905",
+        "NARWAL-FREO-20-IFA-20260905"
+      ],
+      "connectivity": "未公开"
+    },
+    {
+      "display": "机器人/基站显示与状态灯；具体显示器件未公开",
+      "os_platform": "Narwal App；具体手机平台版本未公开",
+      "audio_drivers": "语音/提示音器件未公开",
+      "sensors": "隐藏式dToF LiDAR；双侧结构光3D导航；其他传感器未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "Narwal App/家庭网络；Wi-Fi版本、Bluetooth与Matter支持未公开",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "机器人351.2×363.5×95mm；基站360×450×530mm",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "自动回基站充电；功率与时间未公开",
+      "water_resistance": "未公开；拖地/基站涉水能力不等同于整机防水等级",
+      "subscription": "无公开硬件强制订阅；App/云服务按地区与账户",
+      "privacy": "LiDAR/结构光导航及家庭地图数据策略未完整公开",
+      "features": [
+        "FlowWash实时自清洁拖布与31,000Pa吸力",
+        "DualFlow防缠绕与EdgeReach边角清洁",
+        "隐藏dToF LiDAR与双侧结构光3D导航",
+        "9.5cm低矮机身；一体化基站自动集尘、洗拖布与45°C热风烘干",
+        "基站2.5L尘袋最长约120天（官方页面口径）"
+      ],
+      "availability_note": "IFA官方发布稿确认美国2026-09-07可得和US$799.99 MSRP/US$699.99上市价；法国官方页列€799但产品标注缺货，可提醒；区域先后不互相外推",
+      "source_note": "Narwal法国官方商品页和IFA官方发布稿互证；官方披露dToF LiDAR、结构光、尺寸、价格与销售窗口，重量、电池、芯片、无线版本未公开",
+      "id": "ROBOT-018",
+      "brand": "Narwal",
+      "model": "Freo 20 Edge Robot Vacuum & Mop",
+      "country_region": "中国品牌/美国、法国及欧洲官方商城；区域逐步上市",
+      "category": "家用机器人/扫地洗地机器人",
+      "form_factor": "带自清洁基站的低矮扫地拖地机器人",
+      "use_case": "公寓、日常地面清洁、边角清洁、自动洗拖布、集尘与热风烘干",
+      "status": "预发布/美国官方预计2026-09-07；法国官方商品页列价但查证时缺货；欧洲市场2026年9月逐步上市",
+      "evidence": "A",
+      "launch_date": "2026-09-07",
+      "launch_date_type": "Narwal官方IFA发布稿所述美国可得日；法国页面为区域销售先行信号",
+      "price": "US$799.99 MSRP；US$699.99上市价（美国官方预计2026-09-07至2026-09-20）；法国官方页€799含税",
+      "official_url": "https://fr.narwal.com/products/narwal-freo-20-edge?variant=56064641138993",
+      "spec_url": "https://ifa.vporoom.com/2026-09-03-Narwal-Expands-AI-Powered-Cleaning-Across-the-Home-as-IFA-2026-Returns-to-Berlin",
+      "source_refs": [
+        "NARWAL-FREO-20-EDGE-FR-PRODUCT-20260905",
+        "NARWAL-FREO-20-IFA-20260905"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -843,6 +936,55 @@
       "url": "https://www.kickstarter.com/projects/yarbo/yarbo-m-the-universal-modular-yard-robot-1-core-4-jobs",
       "alias_or_relation": "核心平台+模块配置；与普通扫地机器人分开，不拆M10/M20/M20i为独立主表型号",
       "next_check": "核验支持者发货、官方预订转普通零售、区域价格、精确配置和认证"
+    },
+    {
+      "id": "CAND-NAVIMOW-H5-PRO-20260905",
+      "name": "Segway Navimow H5 Pro",
+      "brand": "Segway Navimow",
+      "region": "全球/英国、德国、法国等官方区域页",
+      "category": "户外庭院机器人/割草机器人",
+      "status": "候选/官方预告；预计2027年初可得；价格和订单未公开",
+      "evidence": "A",
+      "reason": "Navimow官方IFA区域页面与发布稿披露EdgeMaestro 7.7cm伸缩边缘割草臂、4WD、LiDAR/NRTK/Vision、360°AI摄像头和红外，但官方页面标注Available Early 2027，尚未给出价格与正式销售SKU。",
+      "url": "https://uk.navimow.com/pages/ifa-2026",
+      "alias_or_relation": "未来H5 Pro；不与X4/H2/i2/Terranox现售系列合并",
+      "source_refs": [
+        "NAVIMOW-H5-PRO-IFA-20260905",
+        "NAVIMOW-H5-PRO-UK-20260905"
+      ],
+      "next_check": "核验正式产品页、价格、区域订购、精确型号/电池/IP/连接、CE/RED与动物安全资料"
+    },
+    {
+      "id": "CAND-PRIMEBOT-T1-20260905",
+      "name": "PrimeBOT T1",
+      "brand": "PrimeBOT",
+      "region": "全球/IFA展示",
+      "category": "家用/教育人形机器人",
+      "status": "候选/IFA展示；价格、销售和交付未公开",
+      "evidence": "A",
+      "reason": "官方IFA新闻披露T1可变形人形/四足、跟随、自动拍摄和15+拍摄模板，但未提供正式零售页、价格、规格、芯片或交付。",
+      "url": "https://ifa.vporoom.com/2026-08-31-PrimeBOT-to-Showcase-PrimeBOT-T1-and-PrimeBOT-Q1-at-IFA-2026-and-ShowStoppers",
+      "alias_or_relation": "IFA展示候选；不与已上市家庭清洁/陪伴机器人合并",
+      "source_refs": [
+        "PRIMEBOT-T1-Q1-IFA-20260905"
+      ],
+      "next_check": "核验官方产品页、价格、尺寸、传感器、电池、应用和区域销售"
+    },
+    {
+      "id": "CAND-PRIMEBOT-Q1-20260905",
+      "name": "PrimeBOT Q1",
+      "brand": "PrimeBOT",
+      "region": "全球/IFA展示",
+      "category": "家用/教育人形机器人",
+      "status": "候选/IFA展示；价格、销售和交付未公开",
+      "evidence": "A",
+      "reason": "官方IFA新闻披露Q1约88cm、22自由度、10+武术动作、编程与定制，但未提供正式零售页、价格、芯片、传感器、电池或交付。",
+      "url": "https://ifa.vporoom.com/2026-08-31-PrimeBOT-to-Showcase-PrimeBOT-T1-and-PrimeBOT-Q1-at-IFA-2026-and-ShowStoppers",
+      "alias_or_relation": "IFA展示候选；不把展示版本当作在售主表型号",
+      "source_refs": [
+        "PRIMEBOT-T1-Q1-IFA-20260905"
+      ],
+      "next_check": "核验官方产品页、价格、尺寸重量、传感器、电池、应用和区域销售"
     }
   ],
   "sources": [
@@ -1493,6 +1635,132 @@
       "storefront_type": "Mind with Heart Robotics公司PRNewswire发布",
       "availability_signal": "CES展示与量产计划；不能单独证明当前库存",
       "platform_reference": "An'An biomimetic affective AI panda robot"
+    },
+    {
+      "checked_on": "2026-09-05",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$899当前页面价；MSRP US$1,099",
+      "estimated_delivery": "未公开",
+      "id": "NARWAL-FREO-20-US-PRODUCT-20260905",
+      "source_group": "Narwal Freo 20美国官方商品页",
+      "url": "https://us.narwal.com/products/freo-20-robot-vacuum",
+      "scope": "US$899当前页面价/US$1,099对比价；产品变体查证时Out of stock/Notify me；FlowWash、31,000Pa、双摄像头TwinAI Dodge、300+物体、2.4L尘袋、3.74英寸、宠物/婴儿模式",
+      "quality": "A",
+      "source_domain": "us.narwal.com",
+      "source_channel": "official_store",
+      "source_role": "官方商城/当前价格/库存/产品规格与功能证据",
+      "seller_type": "家用机器人品牌官方",
+      "storefront_type": "Narwal美国官方商城",
+      "availability_signal": "页面产品变体显示Out of stock/Notify me；区域库存动态",
+      "platform_reference": "Narwal Freo 20 Robot Vacuum & Mop"
+    },
+    {
+      "checked_on": "2026-09-05",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$1,099.99 MSRP；US$899.99上市价",
+      "estimated_delivery": "上市窗口已过；当前交付按商城库存核验",
+      "id": "NARWAL-FREO-20-PR-20260905",
+      "source_group": "Narwal Freo 20官方产品发布博客",
+      "url": "https://us.narwal.com/blogs/press/new-freo-20-bringing-flagship-real-time-self-cleaning-mopping",
+      "scope": "2026-08-06发布；美国2026-08-20官方站/Amazon上市；MSRP US$1,099.99；上市价US$899.99至2026-09-03；FlowWash、60°C、31,000Pa、双RGB相机与300+识别",
+      "quality": "A",
+      "source_domain": "us.narwal.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方发布/上市日期/原始价格/性能与功能证据",
+      "seller_type": "家用机器人品牌官方",
+      "storefront_type": "Narwal美国官方产品博客",
+      "availability_signal": "官方上市窗口与Amazon渠道；不单独证明查证日库存",
+      "platform_reference": "Narwal Freo 20"
+    },
+    {
+      "checked_on": "2026-09-05",
+      "campaign_status": "未公开",
+      "pledge_or_price": "Freo 20 US$1,099.99/US$899.99；Freo 20 Edge US$799.99/US$699.99",
+      "estimated_delivery": "Freo 20 Edge美国预计2026-09-07；欧洲滚动上市",
+      "id": "NARWAL-FREO-20-IFA-20260905",
+      "source_group": "Narwal Freo 20/Freo 20 Edge IFA官方发布稿",
+      "url": "https://ifa.vporoom.com/2026-09-03-Narwal-Expands-AI-Powered-Cleaning-Across-the-Home-as-IFA-2026-Returns-to-Berlin",
+      "scope": "2026-09-03发布；Freo 20与Freo 20 Edge区别、FlowWash、60°C、12N、31,000Pa、双RGB相机/300+识别、dToF LiDAR/双侧结构光、美国销售日期与两档价格",
+      "quality": "A",
+      "source_domain": "ifa.vporoom.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "公司官方IFA新闻稿/代际与型号区分/价格/销售窗口/技术功能证据",
+      "seller_type": "家用机器人品牌官方",
+      "storefront_type": "Narwal官方IFA Virtual Press Office发布",
+      "availability_signal": "Freo 20美国已上市；Freo 20 Edge美国预计2026-09-07；欧洲2026年9月滚动上市",
+      "platform_reference": "Freo 20 / Freo 20 Edge"
+    },
+    {
+      "checked_on": "2026-09-05",
+      "campaign_status": "未公开",
+      "pledge_or_price": "€799含税",
+      "estimated_delivery": "未公开",
+      "id": "NARWAL-FREO-20-EDGE-FR-PRODUCT-20260905",
+      "source_group": "Narwal Freo 20 Edge法国官方商品页",
+      "url": "https://fr.narwal.com/products/narwal-freo-20-edge?variant=56064641138993",
+      "scope": "€799含税；产品查证时标注缺货/提醒；隐藏dToF LiDAR、双侧结构光3D、9.5cm高度、机器人351.2×363.5×95mm、基站360×450×530mm、FlowWash、2.5L尘袋与平均5–7天配送信号",
+      "quality": "A",
+      "source_domain": "fr.narwal.com",
+      "source_channel": "official_store",
+      "source_role": "区域官方商城/价格/库存/尺寸/导航/基站规格证据",
+      "seller_type": "家用机器人品牌官方",
+      "storefront_type": "Narwal法国官方商城",
+      "availability_signal": "€799列价；产品标注Épuisé/缺货并可提醒；平均配送5–7天为页面通用信号",
+      "platform_reference": "Narwal Freo 20 Edge variant 56064641138993"
+    },
+    {
+      "checked_on": "2026-09-05",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "NAVIMOW-H5-PRO-IFA-20260905",
+      "source_group": "Navimow H5 Pro IFA官方发布稿",
+      "url": "https://ifa.vporoom.com/2026-09-03-Breakthrough-in-Garden-Care-Navimow-Redefines-the-Edge-Cutting-Experience-with-H5-Pro-at-IFA-2026",
+      "scope": "2026-09-03发布；EdgeMaestro伸缩臂延伸7.7cm；PanoGuard 360°活体检测、热传感器/低光动物保护、EdgeSense 2.0、边缘割草约58dB(A)",
+      "quality": "A",
+      "source_domain": "ifa.vporoom.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "品牌官方IFA发布/技术与安全线索证据；不证明当前销售",
+      "seller_type": "庭院机器人品牌官方",
+      "storefront_type": "Navimow官方IFA Virtual Press Office发布",
+      "availability_signal": "IFA发布；官方区域页标注2027年初可得",
+      "platform_reference": "Navimow H5 Pro"
+    },
+    {
+      "checked_on": "2026-09-05",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "2027年初计划可得；具体日期未公开",
+      "id": "NAVIMOW-H5-PRO-UK-20260905",
+      "source_group": "Navimow H5 Pro英国官方IFA页面",
+      "url": "https://uk.navimow.com/pages/ifa-2026",
+      "scope": "官方区域页标注Available Early 2027；EdgeMaestro、4WD、LiDAR+NRTK+Vision、360°AI Camera+LiDAR+Infrared",
+      "quality": "A",
+      "source_domain": "uk.navimow.com",
+      "source_channel": "official_product",
+      "source_role": "官方区域产品/可得时间与技术特征证据",
+      "seller_type": "庭院机器人品牌官方",
+      "storefront_type": "Navimow英国官方站",
+      "availability_signal": "Available Early 2027；尚无价格/订购入口",
+      "platform_reference": "Navimow H5 Pro"
+    },
+    {
+      "checked_on": "2026-09-05",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "PRIMEBOT-T1-Q1-IFA-20260905",
+      "source_group": "PrimeBOT T1/Q1 IFA官方发布稿",
+      "url": "https://ifa.vporoom.com/2026-08-31-PrimeBOT-to-Showcase-PrimeBOT-T1-and-PrimeBOT-Q1-at-IFA-2026-and-ShowStoppers",
+      "scope": "2026-08-31发布；T1可变形人形/四足、跟随、自动拍摄、15+模板、教育；Q1约88cm、22DOF、10+武术动作、可编程/可定制",
+      "quality": "A",
+      "source_domain": "ifa.vporoom.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "公司官方IFA展示/型号存在与功能线索证据；不证明销售",
+      "seller_type": "机器人品牌官方",
+      "storefront_type": "PrimeBOT官方IFA Virtual Press Office发布",
+      "availability_signal": "IFA展示；价格、销售、交付未公开",
+      "platform_reference": "PrimeBOT T1 / PrimeBOT Q1"
     }
   ],
   "update_log": [
@@ -1567,6 +1835,12 @@
       "change": "新增ROBOT-016 An'An Panda Robot；补充官方欧洲IFA发布窗口、海外价格区间、全身触觉、10+传感器套件、情感反馈、长期记忆、渠道合作和4–5小时平台续航口径。",
       "verification": "公司官方产品中心、PRNewswire欧洲发布稿和CES公司新闻稿互证；产品销售窗口与渠道合作已确认，但订单、库存、精确尺寸/重量/芯片/协议和An'An单独电池测试仍未公开。",
       "next": "继续核验欧洲授权销售页、CE/UKCA/无线认证、精确传感器和执行器、服务/隐私条款与实际交付；不把新闻稿的销售窗口当作普遍现货。"
+    },
+    {
+      "date": "2026-09-05",
+      "change": "新增ROBOT-017 Narwal Freo 20与ROBOT-018 Freo 20 Edge；补充官方美国/法国商城价格与库存、IFA上市窗口、FlowWash、吸力、视觉/导航传感、尺寸、基站维护和区域状态差异。",
+      "verification": "Narwal官方商品页、官方产品博客、法国区域商城和IFA发布稿互证；Freo 20美国变体与Freo 20 Edge法国页面分别存在缺货/提醒，未外推为全球现货；测试性能与标准规格分开保存。",
+      "next": "继续核验Amazon官方店/授权卖方、各区域上市、FCC/CE、精确芯片/无线/电池与地图隐私条款；不把基站、套装或耗材拆成独立型号。"
     }
   ],
   "source_channel_policy": [
@@ -1651,18 +1925,21 @@
   "source_channel_counts": {
     "crowdfunding": 3,
     "official_datasheet": 1,
-    "official_newsroom": 2,
-    "official_newsroom_distribution": 2,
-    "official_product": 11,
+    "official_newsroom": 3,
+    "official_newsroom_distribution": 5,
+    "official_product": 12,
     "official_sales": 14,
+    "official_store": 2,
     "official_support_manual": 4
   },
   "source_domains": [
     "de.mammotion.com",
     "ecovacs.com",
     "eu.beatbot.com",
+    "fr.narwal.com",
     "global.dreametech.com",
     "globenewswire.com",
+    "ifa.vporoom.com",
     "indiegogo.com",
     "irobot.com",
     "kickstarter.com",
@@ -1674,6 +1951,8 @@
     "site-static.ecovacs.com",
     "support.mammotion.com",
     "theonlypet.com",
+    "uk.navimow.com",
+    "us.narwal.com",
     "us.roborock.com",
     "us.switch-bot.com",
     "wxbionics.com",

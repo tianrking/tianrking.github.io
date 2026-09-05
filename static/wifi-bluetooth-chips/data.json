@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-04",
+  "checked_on": "2026-09-05",
   "title": "全球 Wi‑Fi / Bluetooth 芯片选型数据库",
   "subtitle": "面向硬件选型的全球 Wi‑Fi、Bluetooth Classic/BR/EDR、BLE、Wi‑Fi+BT Combo、802.15.4 tri-radio 和无线 MCU/连接协处理器资料库。",
   "scope_note": "本库是消费电子与智能硬件数据库之外的第 25 套独立半导体选型库。主表按芯片/SoC/无线 MCU/连接协处理器计数，不把模块、开发板、OEM 方案或整机重复计入；国家/地区指品牌/公司归属口径，不等同于晶圆制造地。",
@@ -27302,6 +27302,12 @@
     {
       "date": "2026-09-04",
       "change": "全球Wi-Fi/Bluetooth芯片库本轮继续按原厂产品页、数据手册、生命周期/PCN、Bluetooth SIG、Wi-Fi Alliance、DigiKey、Mouser、LCSC及区域经销商核验；没有足够强的新裸芯片/SoC/无线MCU/连接协处理器主表条目可安全新增。",
+      "verification": "芯片价格、精确封装/温度后缀、生命周期和分料号仍严格区分；模块、开发板、OEM线索和询价/实时分销价格不升级为裸芯片主表条目，未公开字段不推断。",
+      "next": "下一轮继续按厂商族群和分销商料号做分料号级检索，重点补充原厂/授权分销报价、MOQ/包装、封装、功耗、认证、PCN/EOL和规格书来源；BLE、Bluetooth Classic/BR/EDR、2.4GHz proprietary与802.15.4不互相推断。"
+    },
+    {
+      "date": "2026-09-05",
+      "change": "全球Wi-Fi/Bluetooth芯片库本轮继续按原厂产品页、数据手册、PCN/EOL、Bluetooth SIG、Wi-Fi Alliance、DigiKey、Mouser、LCSC及区域经销商核验；没有足够强的新裸芯片/SoC/无线MCU/连接协处理器主表条目可安全新增。",
       "verification": "芯片价格、精确封装/温度后缀、生命周期和分料号仍严格区分；模块、开发板、OEM线索和询价/实时分销价格不升级为裸芯片主表条目，未公开字段不推断。",
       "next": "下一轮继续按厂商族群和分销商料号做分料号级检索，重点补充原厂/授权分销报价、MOQ/包装、封装、功耗、认证、PCN/EOL和规格书来源；BLE、Bluetooth Classic/BR/EDR、2.4GHz proprietary与802.15.4不互相推断。"
     }

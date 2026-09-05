@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-04",
+  "checked_on": "2026-09-05",
   "scope_note": "本库覆盖电源与充电：移动电源、GaN充电器、无线充电、户外电源与太阳能充电设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-04"
+      "2026-09-05"
     ]
   ],
   "products": [
@@ -319,6 +319,53 @@
       "satellite": "未公开",
       "connectivity": "未公开",
       "storage": "未公开"
+    },
+    {
+      "display": "1.3英寸TFT智能显示；显示电流、功率、温度；五种彩色表情状态",
+      "os_platform": "Vention companion app；手机系统版本未公开",
+      "audio_drivers": "无公开音频功能；表情显示提示状态",
+      "sensors": "实时功率、电流、温度与设备状态监测；精确传感器器件未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "USB-C/USB-A、PD 3.1、QC、PPS、UFCS、SCP、AVC等；具体组合按端口分配表",
+      "chip_or_soc": "GaN 5.0功率平台、EnergyCore与FlashCore；精确GaN/控制芯片料号未公开",
+      "storage": "未公开",
+      "dimensions": "69×69×35.8mm",
+      "weight_g": "未公开",
+      "battery": "无内置电池",
+      "charging": "3C1A；总输出最高140W；输入100–240V~50/60Hz、最大2.5A；折叠插脚；240W线材是否随套装取决于变体",
+      "water_resistance": "未公开",
+      "subscription": "无公开硬件强制订阅；App服务条款未公开",
+      "privacy": "App可能处理充电功率、温度、设备状态；数据上传、保留与账户策略未公开",
+      "features": [
+        "140W 4口GaN5.0，3C1A同时充电",
+        "1.3英寸TFT智能显示和五种状态表情",
+        "EnergyCore智能功率分配与FlashCore协议兼容",
+        "100–240V全球输入、折叠插脚、US/EU/UK/KR变体",
+        "官方商城7–12个工作日加急/10–45个工作日标准配送信号"
+      ],
+      "availability_note": "Vention官方商城当前列US$59.90并可加入购物车；TZ-FCOI0-US和插头/颜色/线材套装变体不拆成多个主表型号",
+      "source_note": "Vention官方商品页、官方新闻页与IFA官方发布稿互证；GaN/EnergyCore/FlashCore是平台技术名称，不把它们误写成精确芯片料号；重量、芯片和防水未公开",
+      "id": "PWR-009",
+      "brand": "Vention",
+      "model": "Dash Pro 140W 4-Port GaN5.0 Charger with Smart Display",
+      "country_region": "中国品牌/全球官方商城；US/EU/UK/KR插头变体",
+      "category": "电源与充电/多口GaN充电器",
+      "form_factor": "桌面/旅行多口墙充",
+      "use_case": "笔记本、平板、手机、游戏掌机和多设备旅行充电",
+      "status": "在售/官方商城可购买；区域插头、套装和库存动态",
+      "evidence": "A",
+      "launch_date": "2026-04-27",
+      "launch_date_type": "Vention官方新闻页的发布日期；IFA 2026为全球/区域展示窗口",
+      "price": "US$59.90（官方商城，TZ-FCOI0-US；具体插头/套装变体动态）",
+      "official_url": "https://ventiontech.com/products/dash-pro-series",
+      "spec_url": "https://ifa.vporoom.com/2026-09-03-Vention-Launches-Vention-H-Series-for-Inclusive-Design,-and-Next-Generation-Dash-Series,-Setting-Standards-for-Power-Bank-Innovations",
+      "source_refs": [
+        "VENTION-DASH-PRO-PRODUCT-20260905",
+        "VENTION-DASH-PRO-LAUNCH-20260427",
+        "VENTION-DASH-PRO-IFA-20260905"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -343,6 +390,22 @@
       "reason": "容量和套装差异较大，暂不纳入主表",
       "url": "https://us.ecoflow.com/products/delta-pro-ultra",
       "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "id": "CAND-VENTION-H-SERIES-20260905",
+      "name": "Vention H Series 5,000mAh Power Bank",
+      "brand": "Vention",
+      "region": "全球/IFA发布",
+      "category": "移动电源",
+      "status": "候选/官方发布；商品页、精确SKU、价格与交付未核验",
+      "evidence": "A",
+      "reason": "Vention官方IFA稿披露6.9mm、5000mAh、固液混合电池、135°C热箱/4mm针刺测试和App健康数据，但未提供可核验的正式商品页与价格，颜色不拆型号。",
+      "url": "https://ifa.vporoom.com/2026-09-03-Vention-Launches-Vention-H-Series-for-Inclusive-Design,-and-Next-Generation-Dash-Series,-Setting-Standards-for-Power-Bank-Innovations",
+      "alias_or_relation": "H Series平台/颜色家族；Burgundy Dusk/Cloud White/Midnight Black不拆主表",
+      "source_refs": [
+        "VENTION-DASH-PRO-IFA-20260905"
+      ],
+      "next_check": "核验官方商品页、精确型号/额定Wh/输出功率、价格、认证与区域库存"
     }
   ],
   "sources": [
@@ -481,6 +544,60 @@
       "campaign_status": "未公开",
       "pledge_or_price": "未公开",
       "estimated_delivery": "未公开"
+    },
+    {
+      "checked_on": "2026-09-05",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$59.90",
+      "estimated_delivery": "加急7–12个工作日；标准10–45个工作日（页面通用配送信号）",
+      "id": "VENTION-DASH-PRO-PRODUCT-20260905",
+      "source_group": "Vention Dash Pro官方商城",
+      "url": "https://ventiontech.com/products/dash-pro-series",
+      "scope": "SKU TZ-FCOI0-US；US$59.90；69×69×35.8mm；140W；3C1A；1.3英寸TFT；100–240V、2.5A；PD3.1/QC/PPS/SCP等；CE/FCC/KC/RoHS；官方配送7–12/10–45个工作日",
+      "quality": "A",
+      "source_domain": "ventiontech.com",
+      "source_channel": "official_store",
+      "source_role": "官方商城/当前价格/库存/精确尺寸/端口/输入输出/协议/配送证据",
+      "seller_type": "消费电子配件品牌官方",
+      "storefront_type": "Vention官方商城",
+      "availability_signal": "官方商品页可加入购物车；区域插头与库存动态",
+      "platform_reference": "TZ-FCOI0-US"
+    },
+    {
+      "checked_on": "2026-09-05",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开（价格以商城）",
+      "estimated_delivery": "未公开",
+      "id": "VENTION-DASH-PRO-LAUNCH-20260427",
+      "source_group": "Vention Dash Pro官方发布新闻",
+      "url": "https://ventiontech.com/id",
+      "scope": "Vention官方新闻索引显示2026-04-27发布Dash Pro；140W 4口GaN5.0智能显示充电器与全球品牌商城信息",
+      "quality": "A",
+      "source_domain": "ventiontech.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方新闻/上市日期口径证据",
+      "seller_type": "消费电子配件品牌官方",
+      "storefront_type": "Vention官方站新闻索引",
+      "availability_signal": "官方发布；当前销售由产品页核验",
+      "platform_reference": "Dash Pro 140W 4-Port GaN5.0 Charger"
+    },
+    {
+      "checked_on": "2026-09-05",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开（价格以官方商城）",
+      "estimated_delivery": "未公开",
+      "id": "VENTION-DASH-PRO-IFA-20260905",
+      "source_group": "Vention Dash Pro IFA官方发布稿",
+      "url": "https://ifa.vporoom.com/2026-09-03-Vention-Launches-Vention-H-Series-for-Inclusive-Design,-and-Next-Generation-Dash-Series,-Setting-Standards-for-Power-Bank-Innovations",
+      "scope": "2026-09-03 IFA发布；Dash Pro 140W 4口GaN5.0、EnergyCore、FlashCore、3C1A、100–240V、折叠插脚、PD3.1/QC/PPS/UFCS和App监测；同稿另含H Series与SpotTag候选线索",
+      "quality": "A",
+      "source_domain": "ifa.vporoom.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "品牌官方IFA新闻/技术平台/协议/销售范围补充证据",
+      "seller_type": "消费电子配件品牌官方",
+      "storefront_type": "Vention官方IFA Virtual Press Office发布",
+      "availability_signal": "IFA发布与官方商城在售互证；H Series/SpotTag未以此升级主表",
+      "platform_reference": "Vention Dash Pro"
     }
   ],
   "update_log": [
@@ -555,6 +672,18 @@
       "change": "【电源与充电】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-05",
+      "change": "新增PWR-009 Vention Dash Pro；补充官方US$59.90、TZ-FCOI0-US、69×69×35.8mm、140W/3C1A、1.3英寸TFT、GaN5.0、EnergyCore/FlashCore、协议、输入与配送信息。",
+      "verification": "Vention官方商城、官方新闻索引和IFA官方发布稿互证；插头、颜色、线材套装不拆型号，精确GaN/控制芯片、重量和App数据策略未公开。",
+      "next": "继续核验H Series正式商品页、各区域商城、DigiKey/授权渠道、认证记录、端口分配表和精确功率芯片；保持充电器与移动电源分开。"
+    },
+    {
+      "date": "2026-09-05",
+      "change": "本轮同时核验移动电源、充电器、Vention官方商城、IFA发布与区域配送；H Series仍保留候选，Dash Pro因官方价格、SKU、尺寸和在售页齐备进入主表。",
+      "verification": "充电器、移动电源、套装、颜色和线材配件分开计数；缺少精确料号或商品页的H Series不升级主表。",
+      "next": "继续补充额定Wh、端口分配、GaN/控制芯片、认证、区域价格与授权经销商库存。"
     }
   ],
   "source_channel_policy": [
@@ -637,16 +766,21 @@
     }
   ],
   "source_channel_counts": {
+    "official_newsroom": 1,
+    "official_newsroom_distribution": 1,
     "official_product": 2,
-    "official_sales": 6
+    "official_sales": 6,
+    "official_store": 1
   },
   "source_domains": [
     "belkin.com",
     "goalzero.com",
+    "ifa.vporoom.com",
     "jackery.com",
     "s4.bluettipower.com",
     "service.anker.com",
     "us.ecoflow.com",
-    "us.ugreen.com"
+    "us.ugreen.com",
+    "ventiontech.com"
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-04",
+  "checked_on": "2026-09-05",
   "scope_note": "本库覆盖网络与移动通信：Wi‑Fi路由器、Mesh、5G CPE、移动热点、随身Wi‑Fi与NAS。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-04"
+      "2026-09-05"
     ]
   ],
   "products": [
@@ -354,6 +354,38 @@
       "reason": "Meshium官方页面称已有可工作硬件原型、Kickstarter获批，规划2026年8–9月活动、2027年5–6月预计交付；具体型号Mini/L1/L2、协议/芯片/价格和活动实际状态仍未完整核实，保留候选。",
       "url": "https://www.meshium.io/",
       "alias_or_relation": "本地Mesh节点/传感器告警/SOS/设备控制；与蜂窝路由器、Matter网关和普通对讲机分开，待最终产品身份核验。"
+    },
+    {
+      "id": "CAND-TP-LINK-ARCHER-8-ULTRA-20260905",
+      "name": "TP-Link Archer 8 Ultra",
+      "brand": "TP-Link",
+      "region": "全球/区域预售计划",
+      "category": "Wi-Fi 8路由器",
+      "status": "候选/官方发布；2026-09-30起区域预订；未形成当前普遍在售",
+      "evidence": "A",
+      "reason": "TP-Link官方新闻稿披露基于IEEE 802.11bn的Wi-Fi 8三频路由器、最高19Gbps、10Gbps有线和18根内置天线，但价格、精确MPN、芯片、尺寸与正式库存未公开。",
+      "url": "https://www.tp-link.com/nordic/press/news/22485/",
+      "alias_or_relation": "未来Wi-Fi 8产品；不与当前Archer Wi-Fi 7产品重复",
+      "source_refs": [
+        "TP-LINK-WIFI8-IFA-20260905"
+      ],
+      "next_check": "核验精确硬件型号、产品页、正式价格、区域预订/交付、Wi-Fi Alliance与FCC记录"
+    },
+    {
+      "id": "CAND-TP-LINK-DECO-8-ULTRA-20260905",
+      "name": "TP-Link Deco 8 Ultra",
+      "brand": "TP-Link",
+      "region": "全球/区域预售计划",
+      "category": "Wi-Fi 8 Mesh系统",
+      "status": "候选/官方发布；计划2027年第一季度；价格与销售未公开",
+      "evidence": "A",
+      "reason": "TP-Link官方新闻稿披露三频Wi-Fi 8 Mesh、最高22Gbps、10Gbps有线、三只装约910平方米及200+设备，但未披露价格、精确MPN、芯片、尺寸与交付。",
+      "url": "https://www.tp-link.com/nordic/press/news/22485/",
+      "alias_or_relation": "未来Wi-Fi 8 Mesh；不把三只装拆成多个产品",
+      "source_refs": [
+        "TP-LINK-WIFI8-IFA-20260905"
+      ],
+      "next_check": "核验正式产品页、节点/套装SKU、价格、FCC/Wi-Fi Alliance和区域上市"
     }
   ],
   "sources": [
@@ -528,6 +560,24 @@
       "availability_signal": "项目页可访问；实际上线/结束状态待复核",
       "storefront_type": "Kickstarter项目页",
       "platform_reference": "meshium/meshium-local-mesh-communication"
+    },
+    {
+      "checked_on": "2026-09-05",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "TP-LINK-WIFI8-IFA-20260905",
+      "source_group": "TP-Link Wi-Fi 8官方新闻",
+      "url": "https://www.tp-link.com/nordic/press/news/22485/",
+      "scope": "2026-09-01发布；Archer 8 Ultra最高19Gbps/10Gbps有线/18天线，Deco 8 Ultra最高22Gbps/10Gbps有线/三只装约910平方米/200+设备；Archer区域预订2026-09-30，Deco 8计划2027 Q1",
+      "quality": "A",
+      "source_domain": "tp-link.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方发布/未来型号/上市窗口与性能线索证据；不证明当前在售",
+      "seller_type": "网络设备品牌官方",
+      "storefront_type": "TP-Link北欧官方新闻页",
+      "availability_signal": "Archer 8 Ultra计划2026-09-30区域预订；Deco 8 Ultra计划2027 Q1；价格待公布",
+      "platform_reference": "Archer 8 Ultra / Deco 8 Ultra"
     }
   ],
   "update_log": [
@@ -599,6 +649,18 @@
     },
     {
       "date": "2026-09-04",
+      "change": "【网络与移动通信】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-05",
+      "change": "新增候选TP-Link Archer 8 Ultra与Deco 8 Ultra；保存Wi-Fi 8性能和区域预订/计划上市窗口，未因缺少价格、MPN和当前库存升级主表。",
+      "verification": "TP-Link官方新闻稿为核心证据；未来标准、价格、芯片、尺寸、认证和交付仍未公开，三只装不拆型号。",
+      "next": "继续追踪正式产品页、Amazon/区域官方店、FCC/Wi-Fi Alliance、IEEE 802.11bn状态和精确硬件料号。"
+    },
+    {
+      "date": "2026-09-05",
       "change": "【网络与移动通信】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
@@ -685,6 +747,7 @@
   ],
   "source_channel_counts": {
     "crowdfunding": 1,
+    "official_newsroom": 1,
     "official_product": 1,
     "official_sales": 3,
     "official_support_manual": 5
@@ -699,6 +762,7 @@
     "meshium.io",
     "netgear.com",
     "qnap.com",
-    "static.tp-link.com"
+    "static.tp-link.com",
+    "tp-link.com"
   ]
 }
