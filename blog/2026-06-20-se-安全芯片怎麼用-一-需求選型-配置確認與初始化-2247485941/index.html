@@ -1,0 +1,1050 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>SE 安全芯片怎麼用（一）：需求選型、配置確認與初始化 | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2026-06-20-se-安全芯片怎麼用-一-需求選型-配置確認與初始化-2247485941 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="SE 安全芯片怎麼用（一）：需求選型、配置確認與初始化 | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《SE 安全芯片怎麼用（一）：需求選型、配置確認與初始化》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《SE 安全芯片怎麼用（一）：需求選型、配置確認與初始化》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2026-06-20T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2026-06-20-se-安全芯片怎麼用-一-需求選型-配置確認與初始化-2247485941 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-06-20-se-安全芯片怎麼用-一-需求選型-配置確認與初始化-2247485941 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-06-20-se-安全芯片怎麼用-一-需求選型-配置確認與初始化-2247485941 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2026-06-20-se-安全芯片怎麼用-一-需求選型-配置確認與初始化-2247485941","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2026-06-20T00:00:00.000Z","description":"从微信公众号导入的文章《SE 安全芯片怎麼用（一）：需求選型、配置確認與初始化》，保留原始排版图并提供本地 OCR 转写。","headline":"SE 安全芯片怎麼用（一）：需求選型、配置確認與初始化","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2026-06-20-se-安全芯片怎麼用-一-需求選型-配置確認與初始化-2247485941","name":"SE 安全芯片怎麼用（一）：需求選型、配置確認與初始化","url":"https://w0x7ce.eu/blog/2026-06-20-se-安全芯片怎麼用-一-需求選型-配置確認與初始化-2247485941"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>SE 安全芯片怎麼用（一）：需求選型、配置確認與初始化</h1><div class="container_mt6G margin-vert--md"><time datetime=2026-06-20T00:00:00.000Z>2026年6月20日</time> · <!-- -->閱讀時間約 25 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2026-06-20 02:49:38（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247485941&idx=1&sn=62701f9bb63c210f24d93c71c792e208&chksm=96e11c5fa19695496e6d0d2bb8def7ab7f9999a03248019c3ee3e96670fd9f3ba541ad24911f#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 11784 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>安全芯片容易被误解成“外接一個加密虚”。其實不是。
+SE,也就是SecureElement,更像一個硬件可信根。它的核心價值不是“你算得更快”",
+而是把私编、根密输、證書、授權對象這频敏感瓷放进一個更難被請出的硬件遗界裹,然後只
+關放受控的密碼學動作。
+单说:
+密输偿量不出来
+計算在芯片裹
+外部只拿结果
+运篇不按API手册,也不按涂文富。按真實工程裹窖遇到的間题:</p>
+<ul>
+<li class="">
+<p>什度時候需要SE?</p>
+</li>
+<li class="">
+<p>霉求束了怎魔进SE芯片?</p>
+</li>
+<li class="">
+<p>拿到芯片怎度確潔真實配置?</p>
+</li>
+<li class="">
+<p>芯片支持但默想没闻答的能力怎度滤理?</p>
+</li>
+<li class="">
+<p>初始化到底初始化什?</p>
+</li>
+<li class="">
+<p>密编是在SE裹生成,通是外部生成後端人?</p>
+</li>
+<li class="">
+<p>怎度查完整函数?</p>
+</li>
+<li class="">
+<p>那些紫猜遗合放逾SE,哪些不適合?</p>
+</li>
+<li class="">
+<p>做数字背警包时SE到底做什磨?</p>
+</li>
+</ul>
+<p>先把语境税清整:本文的實联组前主婴以NXPSE05×/SE058套系码例,所以奢反覆
+提到 SSS API、SCP03、AppletConfig、fsl_sss_ftr.h 、APDU、JCOP/Java Card
+applet、prof1le/0EF 遗些概念。
+不同庭商的 SE不一定長這。比如Microchip ATECC668 這類安全超芯片,更像固定
+功能的加密接虚理器,重贴是sLot/zone/configzone,固定命令集和寄存器配置,没有
+SE85x遗種appLet/profile配置谬,也不會用 SS API。两额芯片都能保密编,但
+工程入口不一機:SE05x更像*安全元素+middleware+applet 配置”,ATECC588 更
+像“固定命令集+slot策路+zone 定”。
+SE到底解决什磨問題
+普通 MCU 或 SoC 也能做 AES、SHA、ECDSA、TLS.那爵什度還要 SE?
+因局很多座品真正怕的不是“算不勤”,而是:</p>
+<ul>
+<li class="">
+<p>Flash 被 dump,</p>
+</li>
+<li class="">
+<p>固件被請出。</p>
+</li>
+<li class="">
+<p>私输被理制。</p>
+</li>
+<li class="">
+<p>投催被克隆。</p>
+</li>
+<li class="">
+<p>token 被改。</p>
+</li>
+<li class="">
+<p>外设被仿冒。</p>
+</li>
+<li class="">
+<p>OTA被替换</p>
+</li>
+<li class="">
+<p>交易疑名被用</p>
+</li>
+<li class="">
+<p>線key泄漏後影婴一批設借。</p>
+</li>
+</ul>
+<p>SE的作用就是把键花密和键勤作普通MCU裹隔解出来
+可以把系统分成三屠:
+雲端/手/主碟:负貢案称、烟络、UI、重略
+MCU/50C:典责、驱融、状、交互
+SE:负责密键保存、签名、解密、MAC、健概数、段需身份
+系統架構舆安全交互
+s/
+受APDU
+challenge
+/SSS API</p>
+<p>结果/状您/睡明
+公编/签名/MAC
+/密文
+MCU/SoC
+雲端/手機/主機
+Secure Element(SE)
+禁、络·UI·路
+、驱·状悉·交互</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=五投售mac名陪致>五、投售、MAC、名、陪致<a href=#五投售mac名陪致 class=hash-link aria-label=五、投售、MAC、名、陪致的直接連結 title=五、投售、MAC、名、陪致的直接連結 translate=no>​</a></h2>
+<p>SE不負责理解所有。它不需自動知道“这重交易是不是用户想髓的”,也不鲁自動知道“道
+個OTA包是不是符合務灰度策路”。这些還是系辨要做。
+SE负责的是更底唇的硬语界:
+把私编不能被诵出
+这個签名只整用遗把kcy做
+这钢循能旋自己持有不钢硬件内私编</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=四本地密文只有持有-se的设借能解>四本地密文只有持有 SE的设借能解<a href=#四本地密文只有持有-se的设借能解 class=hash-link aria-label="四本地密文只有持有 SE的设借能解的直接連結" title="四本地密文只有持有 SE的设借能解的直接連結" translate=no>​</a></h2>
+<p>先徙需求選SE,不要先芯片選功能
+逻SE芯片不能只看“支持RSA/ECC/AES"谊種大标题。要先把需求拆開。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第一步問清楚要保掘什座>第一步,問清楚要保掘什座:<a href=#第一步問清楚要保掘什座 class=hash-link aria-label=第一步,問清楚要保掘什座:的直接連結 title=第一步,問清楚要保掘什座:的直接連結 translate=no>​</a></h2>
+<p>需求
+真正要保蕴的束西
+雾端设依身份
+设借私德、设備温害
+配件私编、超鲁、授權信息
+防克隆配件
+AES/HMAC/wrapping key
+本地数據加密
+安全答动/OTA
+固件验箍根、公输hash、安全状魅
+包签名
+包私编、交易签名動作
+License 授槽
+验管公镇、经锚娜定key、授槽token
+身份 key、ECDH key、會話 key 派生
+投備間加密通信</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第二步韶案務需要什度算法>第二步,韶案務需要什度算法:<a href=#第二步韶案務需要什度算法 class=hash-link aria-label=第二步,韶案務需要什度算法:的直接連結 title=第二步,韶案務需要什度算法:的直接連結 translate=no>​</a></h2>
+<p>常見算法
+IoT mTLS
+ECDSA P-256、RSA、害
+ECC、韶雷、challenge response
+Matter/設備能證
+EVK/BTC/TRON 包
+secp256k1 + ECDSA
+Ed25519
+Solana/TON/Stellar
+AES、 HMAC、 CMAC、 HKDF
+本地配置保摄
+ECDH, KDF、 AES-GCM/CTR/CBC
+投備間宝話</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第三步硫韶安全遗界>第三步,硫韶安全遗界:<a href=#第三步硫韶安全遗界 class=hash-link aria-label=第三步,硫韶安全遗界:的直接連結 title=第三步,硫韶安全遗界:的直接連結 translate=no>​</a></h2>
+<ul>
+<li class="">
+<p>私是否必须永不出芯片?</p>
+</li>
+<li class="">
+<p>允許不允链外部生成key後填入?</p>
+</li>
+<li class="">
+<p>需要不需要涩害徒?</p>
+</li>
+<li class="">
+<p>需要不需要安全通道,比如SCP93?</p>
+</li>
+<li class="">
+<p>需要多少回到象?</p>
+</li>
+<li class="">
+<p>到象是否需要policy?</p>
+</li>
+<li class="">
+<p>線能不能安全注入key?</p>
+</li>
+<li class="">
+<p>以後是否要更新key、吊銷證書、恢復出?</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第四步看工程條件>第四步,看工程條件:<a href=#第四步看工程條件 class=hash-link aria-label=第四步,看工程條件:的直接連結 title=第四步,看工程條件:的直接連結 translate=no>​</a></h2>
+<ul>
+<li class="">
+<p>MCU是什座?有有I2C/SPI/NFC7</p>
+</li>
+<li class="">
+<p>RTOS 是什度 ? Zephyr、FreeRTOS、 ESP-IDF、 Linux?</p>
+</li>
+<li class="">
+<p>商有没有 middleware?</p>
+</li>
+<li class="">
+<p>有没有TLS集成参考實现?</p>
+</li>
+<li class="">
+<p>有没有量產工具?</p>
+</li>
+<li class="">
+<p>有没有长期供赁和證要求?</p>
+</li>
+<li class="">
+<p>性能是否翔?签名次数、答勤時间、I2C速率、NVM壽命。</p>
+</li>
+</ul>
+<p>所以選SE不是“谊芯片功能多不多”,而是:
+莱算法匹配
+密编生命迎期匹配
+奎续流程匹配
+件模匹配
+安全通界匹配
+安全芯片(SE)遥選决策流程
+A.至狭丙求
+日.要保履什?、
+格册/tok
+C.有要什算法?
+P-256/R5A/ 5ecp25Gk1/Ed25539/AE</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=0私前防不能出芯片>0.私前防不能出芯片?<a href=#0私前防不能出芯片 class=hash-link aria-label=0.私前防不能出芯片?的直接連結 title=0.私前防不能出芯片?的直接連結 translate=no>​</a></h2>
+<p>可以匆暂出里
+不离
+接先速SE内生成+内即改名/解密/MAC
+F.可考国外部落生/票入/wrapir</p>
+<p>:1.定5F型微则prlle</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一張選型表>一張選型表<a href=#一張選型表 class=hash-link aria-label=一張選型表的直接連結 title=一張選型表的直接連結 translate=no>​</a></h2>
+<p>可以用下面道装表做第一输判断:
+需求
+侵先看什度
+P-256/RSA、整書射象、TLS m1ddleware、SCP63
+黑端mTLS
+包EVK/BTC
+secp256k1、ECDSA、digest s1gning、公编募出
+钱包Solana/TON
+Ed25519/EdDSA是否真實丽答
+本地数保
+AES, HMAC/CMAC、 key wrapp1ng、 NVH 空
+ECC 签名、證害髓、challenge response、封象 policy
+防克隆配件
+OTA/secure boot 辅助
+公编存、验、計数器/铁患保罐
+ECDH、KDF、話 key 派生
+投储間通信
+SCP03、personalizat1on、key rotation、產纵工具
+量產安全
+如果業鸦核心算法是Ed25519,而芯片profile 裹EDDSA圈,就不要硬“可以做”。
+能兼容是一回事,私永不出芯片又是另一回事。
+常見場景通常用哪些算法
+做SE遇型時,最實用的不是青算法名,而是把"場景"和"算法"速起来看。
+設備身份、雲接入、mTLS
+常用:</p>
+<ul>
+<li class="">
+<p>ECDSA P-256</p>
+</li>
+<li class="">
+<p>RSA-2848 / R5A-3072</p>
+</li>
+<li class="">
+<p>SHA-256 / SHA-384</p>
+</li>
+</ul>
+<p>X.569害</p>
+<ul>
+<li class="">
+<p>ECDH/ ECDHE</p>
+</li>
+<li class="">
+<p>TLS PRF 或 HKDF</p>
+</li>
+</ul>
+<p>為什度常用P-256?
+因局霉平、TLSstack、證晋體系、硬件安全芯片都普遇支持它。P-256在IoT設储导份
+裹比sec.pz56k1更常見。5ec255k1在区塊链裹很常見,但不是傅统 IoTmTLS 的默
+路综。
+SE要通常放:</p>
+<ul>
+<li class="">
+<p>設依私端。</p>
+</li>
+<li class="">
+<p>設催湿善。</p>
+</li>
+<li class="">
+<p>根CA或监雷凝</p>
+</li>
+<li class="">
+<p>可谬的 attestation key.</p>
+</li>
+</ul>
+<p>SE 做:</p>
+<ul>
+<li class="">
+<p>TL5 client authentication 裹的私编签名。</p>
+</li>
+<li class="">
+<p>challenge response.</p>
+</li>
+<li class="">
+<p>ECDH/ECDHE 相酮私镇動作。</p>
+</li>
+</ul>
+<p>防克隆配件、耗材、模瑰證
+常用:</p>
+<ul>
+<li class="">
+<p>ECDSA P-256</p>
+</li>
+<li class="">
+<p>RSA</p>
+</li>
+<li class="">
+<p>SHA-256</p>
+</li>
+<li class="">
+<p>X.569监墨</p>
+</li>
+<li class="">
+<p>HMAC/CMAC</p>
+</li>
+</ul>
+<p>如果主楼和配件都是自家體系,HNAC也可以很單高效。但HMAC是到稀密编,主爆端也要
+有同一把secret或封唐派生能力,一旦主機泄漏,整套系會受影。
+这要主機蓬经常是最短板。配件要放了SE,不代表整套防偽就稳了。如果主機只是普通HCU,
+没有 TrustZone、secure boot、Flash 請保或自己的安全存,攻攀者把主機FLash
+dump 出共享HNACKey,後面就可以批量俱造配件塞康。也就是,HMAC 方案便宜、快、
+好做,但主概端密德保疆必须一起设計:否刚配件再安全,系统也舍主概滞期。
+如果配件要被很多第三方主機,或者要做造善,ECC/RSA公私端體系更好。配件SE裹
+放私编,主機只拿公输或CA.
+本地数據保
+常用:</p>
+<ul>
+<li class="">
+<p>AES-CBC / AES-CTR / AES-GCM</p>
+</li>
+<li class="">
+<p>HMAC -SHA256</p>
+</li>
+<li class="">
+<p>AES-CMAC</p>
+</li>
+<li class="">
+<p>HKDF</p>
+</li>
+<li class="">
+<p>key wrapping</p>
+</li>
+</ul>
+<p>這裹要注意,SE不一定適合直接加密大文件。常見做法是:
+SE 保存 root key / wrapping key
+SE 滋生或解包 data key
+MCU用硬件AE5虚理大数搏</p>
+<p>SE負竟保根,MCU 負责吞吐。
+SE其贵保滋履,MCU真贵春吐。
+OTA、secure boot、固件驗籤
+常用:</p>
+<ul>
+<li class="">
+<p>ECDSA P-256</p>
+</li>
+<li class="">
+<p>RSA-2048/ RSA-3072</p>
+</li>
+<li class="">
+<p>Ed25519,取决龄平支持</p>
+</li>
+<li class="">
+<p>SHA-256 / SHA-384</p>
+</li>
+</ul>
+<p>SE 可以保存驰公编、公端hash、設儒密画、安全状感,但secure boot 的第一贡任通
+常仍在 MCU ROM/boot loader.
+如果MCU 没有 secure boot,只SE保存一個公镇,摇不住慕意固件调用SE 做堰事。
+License、功能授權、訂開
+常用:</p>
+<ul>
+<li class="">
+<p>ECDSA/ RSA 签名 license</p>
+</li>
+<li class="">
+<p>HMAC-SHA256</p>
+</li>
+<li class="">
+<p>AES wrapping</p>
+</li>
+<li class="">
+<p>SHA -256</p>
+</li>
+</ul>
+<p>如果license 由霉端额,设備只需要验策,SE裹可以保存验公或公键hash,
+如果License是設借和霉端共享secret 體系,可以用 HMAC。但到稀密端體系要更小心生
+隆和泄漏箱盟。
+設備間安全通信
+常用:</p>
+<ul>
+<li class="">
+<p>ECDH / ECDHE</p>
+</li>
+<li class="">
+<p>ECDSA 监售名</p>
+</li>
+<li class="">
+<p>HKDF</p>
+</li>
+<li class="">
+<p>AES-GCM / AES-CTR + HMAC</p>
+</li>
+</ul>
+<p>長期身份key 放SE,疆时會話key 可以由 MCU使用。不要镶 SE每包数擦都参與大流量
+加解密,除非数據量很小
+数字貨包
+常用:</p>
+<ul>
+<li class="">
+<p>secp256k1 + ECDSA</p>
+</li>
+<li class="">
+<p>Ed25519 / EdDSA</p>
+</li>
+<li class="">
+<p>Schnorr,尤其是 BTC Taproot</p>
+</li>
+<li class="">
+<p>Keccak256,EVM 地址和交易相酮</p>
+</li>
+<li class="">
+<p>SHA-256 / double SHA-256, BTC 相關</p>
+</li>
+<li class="">
+<p>RIPEMD-160,BTC 地址系相關</p>
+</li>
+<li class="">
+<p>Blake2b/ Blake2s,部分巍售用</p>
+</li>
+</ul>
+<p>遗裹SE最媒的是签名算法和曲線。Hash和地址编码不一定非要SE做,很多時候MCU/
+手機做更靈活。
+拿到SE後,第一件事是查真實配置
+SE 家族通常有很多型號、OEF、profile、applet version。宣傅真说支持,不代表手上道
+飘芯片的配置就支持。
+正璀顺序是:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1看絲印型贼訂货信息>1.看絲印、型贼、訂货信息。<a href=#1看絲印型贼訂货信息 class=hash-link aria-label=1.看絲印、型贼、訂货信息。的直接連結 title=1.看絲印、型贼、訂货信息。的直接連結 translate=no>​</a></h2>
+<p>?.ATR,硅银通信键路。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3德gctversion>3.德Gctversion.<a href=#3德gctversion class=hash-link aria-label=3.德Gctversion.的直接連結 title=3.德Gctversion.的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1解析appletconfig>1.解析AppletConfig.<a href=#1解析appletconfig class=hash-link aria-label=1.解析AppletConfig.的直接連結 title=1.解析AppletConfig.的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5readeccurvelist>5.ReadECCurveList<a href=#5readeccurvelist class=hash-link aria-label=5.ReadECCurveList的直接連結 title=5.ReadECCurveList的直接連結 translate=no>​</a></h2>
+<p>.GetFreeMenory</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7像列表crypto-object-liststate>7.像列表、crypto object list、state。<a href=#7像列表crypto-object-liststate class=hash-link aria-label="7.像列表、crypto object list、state。的直接連結" title="7.像列表、crypto object list、state。的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3再跑最小客入测试>3.再跑最小客入测试<a href=#3再跑最小客入测试 class=hash-link aria-label=3.再跑最小客入测试的直接連結 title=3.再跑最小客入测试的直接連結 translate=no>​</a></h2>
+<p>这真有费個概念要分闻。
+芯片硬件支持
+硬件或產品系列可能支持慕期算法,比如ECC、AES、RSA
+Applet/profile支持
+手上运颗芯片的 applet 配置是否答了類算法。比如某些profile裹 EDDSA 可能是
+no,
+曲缐是否已set
+ECC功能支持,不等於某修曲線已經寫进芯片。比如5ecp256k1可能需要先检查,再創建。
+host 端编摄是否打開
+middleware 裹有函数,不代表你的工程编疆配置答用了封癌backend、auth mode、
+SCP03 profile,
+这四屠不要混。</p>
+<p>硬件/虚品系列皮持?</p>
+<p>A pronle / 0EF / 型</p>
+<p>PeedECCurveLsf
+qxgre(goy4)</p>
+<p>為什不把所有算法默開答
+这個問题很自然:既然芯片硬件可能支持很多算法,為什度不全間?局什度退要搞不同
+prof1le, 0EF, AppletConf1g ?
+原因不是庭商故意麻组,面是安全芯片本来就不是“功能越多越好“的普通MCU</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1攻辈面要控制>1.攻辈面要控制<a href=#1攻辈面要控制 class=hash-link aria-label=1.攻辈面要控制的直接連結 title=1.攻辈面要控制的直接連結 translate=no>​</a></h2>
+<p>每多用一算法、曲線、APDU分支、判象類型,就多一增可被攻擎和测鼠的面植。
+安全芯片的目标不是堆功能,而是辖某困安全速界债量小、偿量可验證。一個只需要IoT
+mTLS 的设借,疫必要默露打包由線、EdDSA、MIFARE、I2Cmaster、各种
+personalization 能力。
+功能越多,组合越多,安全部估越。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2不同產品的安全證遗界不同>2.不同產品的安全證遗界不同<a href=#2不同產品的安全證遗界不同 class=hash-link aria-label=2.不同產品的安全證遗界不同的直接連結 title=2.不同產品的安全證遗界不同的直接連結 translate=no>​</a></h2>
+<p>SE往往會做Comon Criteria、FIPS 或威商自己的安全评估,课退不是“芯片裸硬件證</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一下就完事很多時候和applet配置生命逻期可用算法防同控制都有解係>一下就完事",很多時候和appLet、配置、生命逻期、可用算法、防同控制都有解係。<a href=#一下就完事很多時候和applet配置生命逻期可用算法防同控制都有解係 class=hash-link aria-label='一下就完事",很多時候和appLet、配置、生命逻期、可用算法、防同控制都有解係。的直接連結' title='一下就完事",很多時候和appLet、配置、生命逻期、可用算法、防同控制都有解係。的直接連結' translate=no>​</a></h2>
+<p>某些prof1le開了哪些功能,是局了匹配特定植和特定市堤。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3nvm空間和對象資源有限>3.NVM空間和對象資源有限<a href=#3nvm空間和對象資源有限 class=hash-link aria-label=3.NVM空間和對象資源有限的直接連結 title=3.NVM空間和對象資源有限的直接連結 translate=no>​</a></h2>
+<p>安全芯片要面的持久存健不是普通Flash。由综参数、封象、證善、密端、policy都要占空
+“侧
+如果所有曲照、所有算法、所有對象類型都默能塞进去,盲浪費NVM,也會影喜可用對象数
+量。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4業務不需要的算法就是風>4.業務不需要的算法就是風<a href=#4業務不需要的算法就是風 class=hash-link aria-label=4.業務不需要的算法就是風的直接連結 title=4.業務不需要的算法就是風的直接連結 translate=no>​</a></h2>
+<p>比如一個只做雲端mTLS 的较借,只需要 P-256较借證書。默韶打用secp256k1、
+Ed25519、DES、MIFARE、额外 personalization API,封業移澄有收益,反而增加膜用
+可能。
+安全設計裹有個很模素的原则:
+用不到的能力,不要開。
+用不到的對象,不要剂建。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5出貨配置和開發配置不是一回事>5.出貨配置和開發配置不是一回事<a href=#5出貨配置和開發配置不是一回事 class=hash-link aria-label=5.出貨配置和開發配置不是一回事的直接連結 title=5.出貨配置和開發配置不是一回事的直接連結 translate=no>​</a></h2>
+<p>發段可能希望功能多一點,方便測试。出货段反而希望功能少一點,遗界清楚一黏。
+疫板常見状慧:</p>
+<ul>
+<li class="">
+<p>数 SCP03 key.</p>
+</li>
+<li class="">
+<p>deno profile.</p>
+</li>
+<li class="">
+<p>調试日缺多。</p>
+</li>
+<li class="">
+<p>API覆蓄面大</p>
+</li>
+<li class="">
+<p>危险函数源碍可见。</p>
+</li>
+</ul>
+<p>座品状感愿核是:</p>
+<ul>
+<li class="">
+<p>盈品自己的 SCPe3 key.</p>
+</li>
+<li class="">
+<p>明连 profile,</p>
+</li>
+<li class="">
+<p>只provis1on 蒸要的象。</p>
+</li>
+<li class="">
+<p>policy最小權限。</p>
+</li>
+<li class="">
+<p>危院personalization 不在普通回件表。</p>
+</li>
+</ul>
+<p>“口将·</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=6曲線支持和已創建是雨件事>6.曲線“支持"和“已創建”是雨件事<a href=#6曲線支持和已創建是雨件事 class=hash-link aria-label='6.曲線“支持"和“已創建”是雨件事的直接連結' title='6.曲線“支持"和“已創建”是雨件事的直接連結' translate=no>​</a></h2>
+<p>ECC支持是一属,某曲是否set是另一需。
+比如secp256k1,芯片和applet 可能支持,但出离時曲線参数没有set。原因很單:
+不是所有座品都用道條曲線。需要時再剧建,可以颜省資源,也避免默懿暴露不必要能力。
+所以正碴做法不是抱级“奚什塞波默超阴”,而是:
+先查AppletConfig
+两查 ReadECCurveList
+業需要且芯片支持
+再用CreateCurve_xxx
+再制建影度keyobiect</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7有些能力不是用户可自行開答>7.有些能力不是用户可自行開答<a href=#7有些能力不是用户可自行開答 class=hash-link aria-label=7.有些能力不是用户可自行開答的直接連結 title=7.有些能力不是用户可自行開答的直接連結 translate=no>​</a></h2>
+<p>曲综没set,通常可以用創建曲線函敏虑理。
+但 AppLetConfig 裹某個大功能是 no,比如 EDDSA=no,这通常不是暴務固件調用一個函
+数就能打的。那是profile/0EF/applet 面的配置,需要换型號、profile、接供
+愿配置,或者换芯片。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一句話>一句話:<a href=#一句話 class=hash-link aria-label=一句話:的直接連結 title=一句話:的直接連結 translate=no>​</a></h2>
+<p>曲综没初始化,可以按需初始化。
+到象不存在,可以按需provision.
+host 盗编区,可以改工程配置。
+profile根本没则,通常不能答通案我代碼打期。
+安全算法開啟原则及其優勢
+降低攻攀面
+文
+控制理退界
+邮省NVM/object 资源
+国
+不是所有算法
+游免热用
+按创建曲综舆對象
+“芯片支持但没開警”到底怎瓣
+遗句括要拆成频種情况。
+情况A:AppletConfig裹功能就是no
+比如读出来 EDDSA 是no.
+这種情况不能霉調用某回普通函數把它打開。因高道是芯片applet/profile面的能力。
+解决辨法通常是:</p>
+<ul>
+<li class="">
+<p>换支持功能的型號或profile.</p>
+</li>
+<li class="">
+<p>找供座商確OEF配置。</p>
+</li>
+<li class="">
+<p>换支持目棵算法的SE</p>
+</li>
+<li class="">
+<p>改產品算法路综</p>
+</li>
+</ul>
+<p>不要因局显文件要有EdDSA相關API,就离成“芯片支持Ed25519"。工程上要以實利配置
+為弹。
+為准,
+情况B:功能支持,但曲線没有set
+这是最常見的“支持但未初始化”。
+比如芯片支持 ECC,也支持secp256k1,但ReadECCurveList要道條曲银是NOT_SE
+T.
+遍時鹿敲:
+l.ReadECCurveList</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2判断目標曲综是否已经set>2.判断目標曲综是否已经set。<a href=#2判断目標曲综是否已经set class=hash-link aria-label=2.判断目標曲综是否已经set。的直接連結 title=2.判断目標曲综是否已经set。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3如果没set调用到愿創建曲線函敏>3.如果没set,调用到愿創建曲線函敏。<a href=#3如果没set调用到愿創建曲線函敏 class=hash-link aria-label=3.如果没set,调用到愿創建曲線函敏。的直接連結 title=3.如果没set,调用到愿創建曲線函敏。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1制建後再生成key>1.制建後再生成key。<a href=#1制建後再生成key class=hash-link aria-label=1.制建後再生成key。的直接連結 title=1.制建後再生成key。的直接連結 translate=no>​</a></h2>
+<p>SE85x裹频似思路是:
+ReadECCurveList
+>判崖sccp256k1 是否 SET
+如果 NOT_SET, CreateCurve_secp256k1
+>再割建 secp256k1 key object
+注意:创建曲综通常高NVM,不要每次答動都無腥富。鹰敲先查,再决定是否离。
+情况C:host端源碼有函數,但编配置没打開
+種是软件集成問题。
+要機查:</p>
+<ul>
+<li class="">
+<p>fsl_sss_ftr.h</p>
+</li>
+<li class="">
+<p>ex_sss_auth.h</p>
+</li>
+<li class="">
+<p>SCP83 profile 握</p>
+</li>
+<li class="">
+<p>middleware CMake/Kconfig.</p>
+</li>
+<li class="">
+<p>是否答用了 SE85xbackend.</p>
+</li>
+<li class="">
+<p>是否只打醒了一假正确的SSS_PFSCP_ENABLE_XX。</p>
+</li>
+</ul>
+<p>比如使用PlatfornSCPθ3,就要确:
+SSS_HAVE_SE05X_AUTH_PLATFSCP03 = 1
+只通一匹配的 SSS_PFSCP_ENABLE_xXX
+情况D:對象不存在
+道不是芯片能力問题,只是務對象還没provision
+虑理方式:
+CheckobjectExists(object_id)
+>不存在:割建或游入
+存在:用
+包、設借身份、AES wrapping key、HMAC key、證鲁到象,通常都走调运辑
+情况E:policy不允許
+有時key 存在,但不能做某细操作。比如只能签名,不能解密:只能 verify,不能 sign;
+或者需要session。
+遗時不是“函敏境了",而是policy限制要回到對象創建陪段看policy。</p>
+<p>m型t/ yrie/ 0IF</p>
+<p>初始化到底是在初始化什
+SE 初始化不是髓草调用一個1nit()。
+完整初始化至少分四類</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1傅輸初始化>1.傅輸初始化<a href=#1傅輸初始化 class=hash-link aria-label=1.傅輸初始化的直接連結 title=1.傅輸初始化的直接連結 translate=no>​</a></h2>
+<p>旗 MCU 能眼SE 就話:
+IZC/SPI 打用
+reset 即控制
+T=1 over I2c 建键
+ATR 镭取
+这一屠只银明“線通了”</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2安全通道初始化>2.安全通道初始化<a href=#2安全通道初始化 class=hash-link aria-label=2.安全通道初始化的直接連結 title=2.安全通道初始化的直接連結 translate=no>​</a></h2>
+<p>如果使用 SCPB3,需要 host和SE用同一组 ENC/MAC/DEK 建立安全通道。
+露SCPB3profile
+加亚 host ENC/MAC/DEK
+ex_sss_boot_open / session open
+建立 session key
+後APDU受保理
+SCPθ3不是猜私端。它保的是host到SE的通道。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3能力探测初始化>3.能力探测初始化<a href=#3能力探测初始化 class=hash-link aria-label=3.能力探测初始化的直接連結 title=3.能力探测初始化的直接連結 translate=no>​</a></h2>
+<p>这一步是為了知道“這题芯片到底能韩什磨”:
+GetVersion
+AppletConfig
+GctRandom
+1 Un1queID
+ReadECCurveList
+GctFreelerory
+ReadIDL1st
+ReadState
+這一步座敲是流的,可以反覆跑。
+这有很值得餐成的智惯:答助時主勤SE取一段高質量真髓携数,混入
+MCU/RTOS/Linux 的磷池或 DRBG seed,
+很多普通MCU的PRNG婧源很器,常見做法可能只是ADC悬空噪整、上電時間抖动、末
+校潍振器抖動。這些束西在實验室看起来能動,到了量產環境、固定温度、固定供電、固定答
+勤時序下,焰可能比想象中差很多。一旦MCU随機数弱,疆時含話密、nonce、TCP/IP
+序列號、配树chalLenge、token 都會跟着瓷脆。
+SE 的GctRandom不只逸合给SE自己生成key,也很逸合反哺整機:
+SE GetRandon
+2-> 混入 RTos / TLS stack / crypto Library 的 entropy pool</p>
+<ul>
+<li class="">> seed MCu DRBG</li>
+</ul>
+<p>4->後 MCu 生成 nonce、session key、challenge 時更疆
+注意这不是SETRNG要替代所有本地焙源。更好的做法是“混合”:SETRNG、本地硬件
+RNG、答動時序、網络/外設事件一起进入系统焰池。Linux道频系统也不要简單理解成把
+bytes 寫进/dev/random就自勐增加可信,鹰懿走平台支持的 RNG/entropy API 或
+照助接口。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4業務對象初始化>4.業務對象初始化<a href=#4業務對象初始化 class=hash-link aria-label=4.業務對象初始化的直接連結 title=4.業務對象初始化的直接連結 translate=no>​</a></h2>
+<p>遗一步才涉及寡NVM:
+创建曲编
+剂建 key objcct
+募人key
+AES/HMAC key
+寫 binary object
+设量 policy
+星额object I0
+这细陪段要小心,因高它會改芯片持久状服。
+所以初始化不是“高了该程序不报错”,而是為了建立这频件事:
+通信键路可信
+host 读退可信
+芯片整力已知
+副象不在
+列象程限正班
+後酒操作可重框、可恢准、可量產
+為什磨很多key要在SE裹面生成
+最理想的安全遗界是:
+私在 SE 内保存
+兼名在 SE内完成
+私编永运不出 SE
+逼样即使MCU固件被dump,Flash被,普通调试口被攻破,攻聚者也拿不到私键明文。
+典型场景:</p>
+<ul>
+<li class="">
+<p>設储身份私编。</p>
+</li>
+<li class="">
+<p>包私编。</p>
+</li>
+<li class="">
+<p>配件超始私输。</p>
+</li>
+<li class="">
+<p>ECDH长期身份 key.</p>
+</li>
+</ul>
+<p>SE内生成的缺贴是:偏份和恢要單经针。比如接包如果没有助己韧赠系,一旦SE堤了,
+私端就没了。所以“安全”和“可恢復”之間要做座品取据。
+可以外部初始化後導入SE
+可以,但要看风障。
+常見增景足:
+外部系生成 seed/private key
+>通温安全產或安全通道游入5E</p>
+<ul>
+<li class="">>SE娄绩负责保存和名/解密/MAC</li>
+</ul>
+<p>通合:</p>
+<ul>
+<li class="">
+<p>設催监善由CA恤系统一签。</p>
+</li>
+<li class="">
+<p>已有密输锥系要移。</p>
+</li>
+<li class="">
+<p>需雯BIP39/BIP32這规助記韧恢復能力。</p>
+</li>
+<li class="">
+<p>產综HSM统一生成注人。</p>
+</li>
+</ul>
+<p>凰险是:密在进入 SE之前已解在外部出现退。安全等级取决於综、PC、HSM、傅输通
+道、日陆、人員霍限。
+工程上要做:</p>
+<ul>
+<li class="">
+<p>只在受控瑞增生成key。</p>
+</li>
+<li class="">
+<p>用HSM 或安全生產系统。</p>
+</li>
+<li class="">
+<p>使用 SCP83或额外wrapping保接激入。</p>
+</li>
+<li class="">
+<p>蔡止日结打印私锥/seed</p>
+</li>
+<li class="">
+<p>激入後立刻验/验公锥。</p>
+</li>
+<li class="">
+<p>记缝keyversion、公缠、调害序列號,不記鐵私。</p>
+</li>
+</ul>
+<p>所以外部導入不是不能做,但它不是“私未雇开硬件遗界”。
+可以外部派生後放進SE
+也可以。
+比如包常見的HD模型:
+助配制
+seed
+> BIP32/BIP44 派生</p>
+<ul>
+<li class="">>将到案条键某国版户私输</li>
+</ul>
+<p>>源入 SE
+>後额SE只鱼责签名
+运得方案的優贴:
+这種方案的慢點:</p>
+<ul>
+<li class="">
+<p>兼容助记词恢復。</p>
+</li>
+<li class="">
+<p>兼容多服户、多路径。</p>
+</li>
+<li class="">
+<p>用户验接近统战包。</p>
+</li>
+</ul>
+<p>缺陷:
+缺點:</p>
+<ul>
+<li class="">
+<p>派生時 seed/private Kkey 蜜遮入外部環境</p>
+</li>
+<li class="">
+<p>如果派生在MCU上做,KCU RAM會短暂出现敏感材料。</p>
+</li>
+<li class="">
+<p>安全等级低於“SE内部生成且不募出”。</p>
+</li>
+</ul>
+<p>更安全的折中方案是:
+1SE 内保存 wrapping key
+FLash 保存 encrypted seed
+NCU 派生出瑞户 key
+尊入 SE 或癌時策名
+用完清理内存
+这能做兼容,但要诚實描述安全通界:不是所有私德材料都永遗留在SE内。
+SE能不能只做計算
+可以,但要分情况。
+模式A:SE保存key,亚在内部計算
+這是显推剪的:
+SE 内 key +外部 digest/data-> SE 内签名/HAC/解密->部拿結果
+通合:</p>
+<ul>
+<li class="">
+<p>ECDSA 名。</p>
+</li>
+<li class="">
+<p>TLS client auth,</p>
+</li>
+<li class="">
+<p>HMAC,</p>
+</li>
+<li class="">
+<p>AES key wrapping,</p>
+</li>
+<li class="">
+<p>ECDH,</p>
+</li>
+</ul>
+<p>模式B:外部傅入key,SE做一次計算
+這通常不推態,因露key已經到外部了。除非只是测试,或者是受控產综操作。
+模式C:SE保存根key,外部拿派生key做大数據計算
+这是性能折中:
+SE 保存root/wrapping key
+SE 派生/解包 data key
+NCU 用硬件 AES 虑理大文件
+用完清罩data key
+通合:</p>
+<ul>
+<li class="">
+<p>大文件加密。</p>
+</li>
+<li class="">
+<p>日基分片加密。</p>
+</li>
+<li class="">
+<p>本地数捷虚加密。</p>
+</li>
+</ul>
+<p>SE不道合做高吞吐大数流加密。它適合保薄根key和酮键助作。
+完整函数怎查
+不要微项文件第一真開始硬,按唇查。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第一層sssapi>第一層:SSSAPI<a href=#第一層sssapi class=hash-link aria-label=第一層:SSSAPI的直接連結 title=第一層:SSSAPI的直接連結 translate=no>​</a></h2>
+<p>SSS是 NXP middleware 的高唇抽象,通常侵先看:
+fs1_sss_ap1 .h
+fsl_sss_se85x_types.h
+4fsl_sss_policy.h
+网注道些類别:</p>
+<ul>
+<li class="">
+<p>session</p>
+</li>
+<li class="">
+<p>key store</p>
+</li>
+<li class="">
+<p>key object</p>
+</li>
+<li class="">
+<p>asymmetric sign/verify</p>
+</li>
+<li class="">
+<p>symmetr1c encrypt/decrypt</p>
+</li>
+<li class="">
+<p>MAC</p>
+</li>
+<li class="">
+<p>d1gest</p>
+</li>
+<li class="">
+<p>derive key</p>
+</li>
+<li class="">
+<p>policy</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第二層se05xapduapi>第二層:SE05XAPDUAPI<a href=#第二層se05xapduapi class=hash-link aria-label=第二層:SE05XAPDUAPI的直接連結 title=第二層:SE05XAPDUAPI的直接連結 translate=no>​</a></h2>
+<p>常SSS不萄用,或者要查芯片能力、到象列表、由線列表,就看低眉APDU:
+se05x_APDU_ap1s .h
+sc85x_enums .h
+se05x_const.h
+常見函数频别:
+目標
+查什度
+GetVers1on
+版本
+GetExtVers1on
+Ge tRandom
+随機数
+Readobject
+對象
+,ReadIDList
+CheckobjectExists
+查到象
+,ReadobjectAttributes
+查曲综
+ReadECCurveL1st
+創建曲缘
+CreateCurve_*
+DeleteSecureobject
+剩除封象
+,DeleteAll
+TLSGenerateRandon
+TLS 辅助
+, TLSPerformPRF
+Perso_Set_*
+personalization
+SetPlatfornSCPRequest</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第三唇examples>第三唇:examples<a href=#第三唇examples class=hash-link aria-label=第三唇:examples的直接連結 title=第三唇:examples的直接連結 translate=no>​</a></h2>
+<p>真實用法通常在examples爽更容易看懂。重贴搜:
+ex_sss
+se05x_GetInfo
+ecc
+rsa
+aes
+hnac
+tls
+E0ds
+policy</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第四層源碼搜索>第四層:源碼搜索<a href=#第四層源碼搜索 class=hash-link aria-label=第四層:源碼搜索的直接連結 title=第四層:源碼搜索的直接連結 translate=no>​</a></h2>
+<p>置际工程裹最快的方法是用rg:
+1snu-pue-6n1d/ox/yied Idv xseos. 6J
+4snj1-pue-6n1d/o1/4zed orutawu(se sss。 6J
+rg *5ss_key_store" path/to/plug-and-trust
+4snu1-pue-6nd/o/4xed istnanunsoapeog. 6J
+rg <em>Createcurve</em> path/to/plug-and-trust
+查函数時要同時看三件事:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1原文件叠明>1.原文件叠明。<a href=#1原文件叠明 class=hash-link aria-label=1.原文件叠明。的直接連結 title=1.原文件叠明。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2實现文件>2.實现文件。<a href=#2實现文件 class=hash-link aria-label=2.實现文件。的直接連結 title=2.實现文件。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3example-裹怎度傅参敏>3.example 裹怎度傅参敏。<a href=#3example-裹怎度傅参敏 class=hash-link aria-label="3.example 裹怎度傅参敏。的直接連結" title="3.example 裹怎度傅参敏。的直接連結" translate=no>​</a></h2>
+<p>只看聲明很容易用。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第五層安全分级>第五層:安全分级<a href=#第五層安全分级 class=hash-link aria-label=第五層:安全分级的直接連結 title=第五層:安全分级的直接連結 translate=no>​</a></h2>
+<p>查到函敏以後,不要馬上跑。先分级:
+等级
+明
+例子
+Tier
+傅输和 sessi
+I2C、 T=1、 session open
+on
+Tier
+只請查詢
+GetVers1on, GetRandom, ReadECCurveL1st
+1
+Tier
+創建测試key、签名验、删除测試對象
+测試對象寫入
+2
+Tier
+改 SCP03 key、DeleteAll、改 I2C 地址、personaliz
+危隆固性化
+ation
+3
+T1er3不能放进普通demo自動胞。
+SE常見初始化流程</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一個比较穩的流程是>一個比较穩的流程是:<a href=#一個比较穩的流程是 class=hash-link aria-label=一個比较穩的流程是:的直接連結 title=一個比较穩的流程是:的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1-mcu-初始化-i2cspireset>1. MCU 初始化 I2C/SPI/reset<a href=#1-mcu-初始化-i2cspireset class=hash-link aria-label="1. MCU 初始化 I2C/SPI/reset的直接連結" title="1. MCU 初始化 I2C/SPI/reset的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2-打用-t1-ovcr-i2c>2. 打用 T=1 ovcr I2C<a href=#2-打用-t1-ovcr-i2c class=hash-link aria-label="2. 打用 T=1 ovcr I2C的直接連結" title="2. 打用 T=1 ovcr I2C的直接連結" translate=no>​</a></h2>
+<p>3。打用 ss5 scssion</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4建立-scpp3-安全通道>4.建立 SCPP3 安全通道<a href=#4建立-scpp3-安全通道 class=hash-link aria-label="4.建立 SCPP3 安全通道的直接連結" title="4.建立 SCPP3 安全通道的直接連結" translate=no>​</a></h2>
+<p>5。 GctVersion / AppletConfig
+6。镭 UniqucID /GetRandon
+7。 将 SE GetRandom 混人 MCU/0S 池
+8。播 ReadECCurveList / GetFreeMenory / ID list
+9。根城案務判断要不要划建由绩</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=10槽查案務-object-id-是否存在>10.槽查案務 object ID 是否存在<a href=#10槽查案務-object-id-是否存在 class=hash-link aria-label="10.槽查案務 object ID 是否存在的直接連結" title="10.槽查案務 object ID 是否存在的直接連結" translate=no>​</a></h2>
+<p>10</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=11不存在则剧建或募入-keycertdata>11.不存在则剧建或募入 key/cert/data<a href=#11不存在则剧建或募入-keycertdata class=hash-link aria-label="11.不存在则剧建或募入 key/cert/data的直接連結" title="11.不存在则剧建或募入 key/cert/data的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=12投置policy>12.投置policy<a href=#12投置policy class=hash-link aria-label=12.投置policy的直接連結 title=12.投置policy的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=13供一次最小验蜜验mac解密测試>13.供一次最小验蜜/验MAC/解密测試<a href=#13供一次最小验蜜验mac解密测試 class=hash-link aria-label=13.供一次最小验蜜/验MAC/解密测試的直接連結 title=13.供一次最小验蜜/验MAC/解密测試的直接連結 translate=no>​</a></h2>
+<p>ET</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=14記版本objectid公榴鲁序列號>14.記版本、ObjectID、公、榴鲁序列號<a href=#14記版本objectid公榴鲁序列號 class=hash-link aria-label=14.記版本、ObjectID、公、榴鲁序列號的直接連結 title=14.記版本、ObjectID、公、榴鲁序列號的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=15苦通通行模式只用對象不重夜provis1on>15.苦通通行模式只用對象,不重夜provis1on<a href=#15苦通通行模式只用對象不重夜provis1on class=hash-link aria-label=15.苦通通行模式只用對象,不重夜provis1on的直接連結 title=15.苦通通行模式只用對象,不重夜provis1on的直接連結 translate=no>​</a></h2>
+<p>这個流程裹,第1到8步是bring-up和探测,第9到14步是provision,不要混
+在一起。
+MCU / soC
+S5 / Hot.b
+机e化; 0C/9PIirst
+T1 ose GC /.TR
+CO sesis
+etenn/pifs
+Getlandon
+3 SE B数:IA3 / RBG seed
+y / Otjec vist
+[时象不存在说业接来1e]
+ConteCune / Genntekiey /Imgortley/ Wrteet
+set podiry
+记ce代 切/ 公倍/提量序/ ke et
+[家日在]
+最辅度/MAC / 加密
+65 / Ht.b
+raero
+普通設催答勤時,最好是:
+打開 session
+通版本
+检查到象是否存在
+用到象
+战行鸦動作
+不要每次答動都:</p>
+<ul>
+<li class="">
+<p>前建key。</p>
+</li>
+<li class="">
+<p>删除key。</p>
+</li>
+<li class="">
+<p>改 SCP03 key。</p>
+</li>
+<li class="">
+<p>改 policy。</p>
+</li>
+<li class="">
+<p>DeleteAll.</p>
+</li>
+</ul>
+<p>参考資料</p>
+<ul>
+<li class="">NXP SE050 品真: <code>https://ww.nxp.con/pages/edgelock-se05e-plug-and-trust-s</code></li>
+</ul>
+<p>ecure-elenent-fam1ly-enhanced-1ot-security-with-high-flexibilityt3ASE050</p>
+<ul>
+<li class="">NXP SE050 datasheet: https:/<a href=http://www.nxp.com/docs/en/data-sheet/SE058-DATASHEE target=_blank rel="noopener noreferrer" class="">www.nxp.com/docs/en/data-sheet/SE058-DATASHEE</a></li>
+</ul>
+<p>T-pdf</p>
+<ul>
+<li class="">AN12436 - 5E058 configurations: <code>https://ww.nxp.con/docs/en/application-</code></li>
+</ul>
+<p>note/AN12436.pdf</p>
+<ul>
+<li class="">AN14277 - EdgeLock SE05x user guidelines: <code>https://ww.nxp.com/docs/en/a</code></li>
+</ul>
+<p>pplication-note/AN14277. pdf</p>
+<ul>
+<li class="">NXP Plug & Trust Middleware: <code>https://github.con/NXP/plug-and-trust</code></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<blockquote>
+<p>原始导出图超过单张 WebP 的尺寸上限，以下图片按从上到下的顺序连续保存。
+<img decoding=async loading=lazy alt="SE 安全芯片怎麼用（一）：需求選型、配置確認與初始化：微信公众号导出原始排版图（第 1 段，共 2 段）" src=/assets/images/article-01-2ed684256f582fd7c8927517201a6f24.webp width=1280 height=16000 class=img_ev3q />
+<img decoding=async loading=lazy alt="SE 安全芯片怎麼用（一）：需求選型、配置確認與初始化：微信公众号导出原始排版图（第 2 段，共 2 段）" src=/assets/images/article-02-9a5371e5fae1399de5deab9c71d9d54b.webp width=1280 height=10952 class=img_ev3q /></p>
+</blockquote></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2026-06-20-2026-06-20-se-安全芯片怎麼用-一-需求選型-配置確認與初始化-2247485941.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2026-06-21-se-安全芯片怎麼用-二-功能場景-數字貨幣錢包與風險-2247485946><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>SE 安全芯片怎麼用（二）：功能場景、數字貨幣錢包與風險</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2026-05-28-梳理-kucoin-資金費率計算機制-2247485928><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>梳理 KuCoin 資金費率計算機制</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#五投售mac名陪致 class="table-of-contents__link toc-highlight">五、投售、MAC、名、陪致</a><li><a href=#四本地密文只有持有-se的设借能解 class="table-of-contents__link toc-highlight">四本地密文只有持有 SE的设借能解</a><li><a href=#第一步問清楚要保掘什座 class="table-of-contents__link toc-highlight">第一步,問清楚要保掘什座:</a><li><a href=#第二步韶案務需要什度算法 class="table-of-contents__link toc-highlight">第二步,韶案務需要什度算法:</a><li><a href=#第三步硫韶安全遗界 class="table-of-contents__link toc-highlight">第三步,硫韶安全遗界:</a><li><a href=#第四步看工程條件 class="table-of-contents__link toc-highlight">第四步,看工程條件:</a><li><a href=#0私前防不能出芯片 class="table-of-contents__link toc-highlight">0.私前防不能出芯片?</a><li><a href=#一張選型表 class="table-of-contents__link toc-highlight">一張選型表</a><li><a href=#1看絲印型贼訂货信息 class="table-of-contents__link toc-highlight">1.看絲印、型贼、訂货信息。</a><li><a href=#3德gctversion class="table-of-contents__link toc-highlight">3.德Gctversion.</a><li><a href=#1解析appletconfig class="table-of-contents__link toc-highlight">1.解析AppletConfig.</a><li><a href=#5readeccurvelist class="table-of-contents__link toc-highlight">5.ReadECCurveList</a><li><a href=#7像列表crypto-object-liststate class="table-of-contents__link toc-highlight">7.像列表、crypto object list、state。</a><li><a href=#3再跑最小客入测试 class="table-of-contents__link toc-highlight">3.再跑最小客入测试</a><li><a href=#1攻辈面要控制 class="table-of-contents__link toc-highlight">1.攻辈面要控制</a><li><a href=#2不同產品的安全證遗界不同 class="table-of-contents__link toc-highlight">2.不同產品的安全證遗界不同</a><li><a href=#一下就完事很多時候和applet配置生命逻期可用算法防同控制都有解係 class="table-of-contents__link toc-highlight">一下就完事",很多時候和appLet、配置、生命逻期、可用算法、防同控制都有解係。</a><li><a href=#3nvm空間和對象資源有限 class="table-of-contents__link toc-highlight">3.NVM空間和對象資源有限</a><li><a href=#4業務不需要的算法就是風 class="table-of-contents__link toc-highlight">4.業務不需要的算法就是風</a><li><a href=#5出貨配置和開發配置不是一回事 class="table-of-contents__link toc-highlight">5.出貨配置和開發配置不是一回事</a><li><a href=#6曲線支持和已創建是雨件事 class="table-of-contents__link toc-highlight">6.曲線“支持"和“已創建”是雨件事</a><li><a href=#7有些能力不是用户可自行開答 class="table-of-contents__link toc-highlight">7.有些能力不是用户可自行開答</a><li><a href=#一句話 class="table-of-contents__link toc-highlight">一句話:</a><li><a href=#2判断目標曲综是否已经set class="table-of-contents__link toc-highlight">2.判断目標曲综是否已经set。</a><li><a href=#3如果没set调用到愿創建曲線函敏 class="table-of-contents__link toc-highlight">3.如果没set,调用到愿創建曲線函敏。</a><li><a href=#1制建後再生成key class="table-of-contents__link toc-highlight">1.制建後再生成key。</a><li><a href=#1傅輸初始化 class="table-of-contents__link toc-highlight">1.傅輸初始化</a><li><a href=#2安全通道初始化 class="table-of-contents__link toc-highlight">2.安全通道初始化</a><li><a href=#3能力探测初始化 class="table-of-contents__link toc-highlight">3.能力探测初始化</a><li><a href=#4業務對象初始化 class="table-of-contents__link toc-highlight">4.業務對象初始化</a><li><a href=#第一層sssapi class="table-of-contents__link toc-highlight">第一層:SSSAPI</a><li><a href=#第二層se05xapduapi class="table-of-contents__link toc-highlight">第二層:SE05XAPDUAPI</a><li><a href=#第三唇examples class="table-of-contents__link toc-highlight">第三唇:examples</a><li><a href=#第四層源碼搜索 class="table-of-contents__link toc-highlight">第四層:源碼搜索</a><li><a href=#1原文件叠明 class="table-of-contents__link toc-highlight">1.原文件叠明。</a><li><a href=#2實现文件 class="table-of-contents__link toc-highlight">2.實现文件。</a><li><a href=#3example-裹怎度傅参敏 class="table-of-contents__link toc-highlight">3.example 裹怎度傅参敏。</a><li><a href=#第五層安全分级 class="table-of-contents__link toc-highlight">第五層:安全分级</a><li><a href=#一個比较穩的流程是 class="table-of-contents__link toc-highlight">一個比较穩的流程是:</a><li><a href=#1-mcu-初始化-i2cspireset class="table-of-contents__link toc-highlight">1. MCU 初始化 I2C/SPI/reset</a><li><a href=#2-打用-t1-ovcr-i2c class="table-of-contents__link toc-highlight">2. 打用 T=1 ovcr I2C</a><li><a href=#4建立-scpp3-安全通道 class="table-of-contents__link toc-highlight">4.建立 SCPP3 安全通道</a><li><a href=#10槽查案務-object-id-是否存在 class="table-of-contents__link toc-highlight">10.槽查案務 object ID 是否存在</a><li><a href=#11不存在则剧建或募入-keycertdata class="table-of-contents__link toc-highlight">11.不存在则剧建或募入 key/cert/data</a><li><a href=#12投置policy class="table-of-contents__link toc-highlight">12.投置policy</a><li><a href=#13供一次最小验蜜验mac解密测試 class="table-of-contents__link toc-highlight">13.供一次最小验蜜/验MAC/解密测試</a><li><a href=#14記版本objectid公榴鲁序列號 class="table-of-contents__link toc-highlight">14.記版本、ObjectID、公、榴鲁序列號</a><li><a href=#15苦通通行模式只用對象不重夜provis1on class="table-of-contents__link toc-highlight">15.苦通通行模式只用對象,不重夜provis1on</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

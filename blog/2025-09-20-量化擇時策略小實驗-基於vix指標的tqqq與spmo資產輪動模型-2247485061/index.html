@@ -1,0 +1,321 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>量化擇時策略小實驗：基於VIX指標的TQQQ與SPMO資產輪動模型 | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2025-09-20-量化擇時策略小實驗-基於vix指標的tqqq與spmo資產輪動模型-2247485061 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="量化擇時策略小實驗：基於VIX指標的TQQQ與SPMO資產輪動模型 | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《量化擇時策略小實驗：基於VIX指標的TQQQ與SPMO資產輪動模型》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《量化擇時策略小實驗：基於VIX指標的TQQQ與SPMO資產輪動模型》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2025-09-20T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2025-09-20-量化擇時策略小實驗-基於vix指標的tqqq與spmo資產輪動模型-2247485061 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-09-20-量化擇時策略小實驗-基於vix指標的tqqq與spmo資產輪動模型-2247485061 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-09-20-量化擇時策略小實驗-基於vix指標的tqqq與spmo資產輪動模型-2247485061 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2025-09-20-量化擇時策略小實驗-基於vix指標的tqqq與spmo資產輪動模型-2247485061","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2025-09-20T00:00:00.000Z","description":"从微信公众号导入的文章《量化擇時策略小實驗：基於VIX指標的TQQQ與SPMO資產輪動模型》，保留原始排版图并提供本地 OCR 转写。","headline":"量化擇時策略小實驗：基於VIX指標的TQQQ與SPMO資產輪動模型","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2025-09-20-量化擇時策略小實驗-基於vix指標的tqqq與spmo資產輪動模型-2247485061","name":"量化擇時策略小實驗：基於VIX指標的TQQQ與SPMO資產輪動模型","url":"https://w0x7ce.eu/blog/2025-09-20-量化擇時策略小實驗-基於vix指標的tqqq與spmo資產輪動模型-2247485061"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>量化擇時策略小實驗：基於VIX指標的TQQQ與SPMO資產輪動模型</h1><div class="container_mt6G margin-vert--md"><time datetime=2025-09-20T00:00:00.000Z>2025年9月20日</time> · <!-- -->閱讀時間約 11 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2025-09-20 21:51:11（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247485061&idx=1&sn=f1e1d7b7ce5b3763af18af1424de31fa&chksm=96e1132fa1969a392f923df56cc2b52f8da60b5b999119ab71ce1d8e63b275a5b380916cc533#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 3688 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>original we×7ce EI V1ajero 2825年9月20日 21:51 广东
+这個實验打算精建亚回测一個基於波助率指標的系统化资產输助策路,以解决標型ETF在侵期
+持有中所面疆的巨大回撒與耗损問题。透取ProShares三倍做多纳斯谨克100指ETF(TQQQ)
+作為高凰险教益来源,Invesco標普58B動能ETF(SPHO)作为凰险整後的收益来源。通通
+到多種模型的回测與多遇期鲁棒性检验,温實了一個基於VIX招数的助態灰度配置模型,能钩在
+期著降低最大回恭的同時,實现優於基华的周調整後回报。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第一章研究對象的结化属性分析>第一章:研究對象的结化属性分析<a href=#第一章研究對象的结化属性分析 class=hash-link aria-label=第一章:研究對象的结化属性分析的直接連結 title=第一章:研究對象的结化属性分析的直接連結 translate=no>​</a></h2>
+<p>任何有效的量化策略都建立在封底资產结携性特微的深刻理解之上。本實验逼用的雨種核心工
+具具储截然不同的风阶收益来源。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=11tqqq高横悍beta工具的雙刃劍效魔>1.1TQQQ:高横悍Beta工具的雙刃劍效魔<a href=#11tqqq高横悍beta工具的雙刃劍效魔 class=hash-link aria-label=1.1TQQQ:高横悍Beta工具的雙刃劍效魔的直接連結 title=1.1TQQQ:高横悍Beta工具的雙刃劍效魔的直接連結 translate=no>​</a></h3>
+<p>ProSharesULtraPro QQQ(TQQQ)是一種模型ETF,其投资目標是提供纳斯还克100指
+数单日回報的三倍。其核心属性使其在牛市超势中能產生顯著的ALpha,史回测期内(2016
+至今)的年化回報率(CAGR)高達43%
+然而,TQQQ的结精性凰险同梯颐若,主要源於其“每日重新平衡”機制所引發的波助率耗摄
+(Volatility Decay)。在非單逸上泓的震市或照市中,利效愿會加速價值侵姓。歷史
+数表明,规粹真人亚持有TQQ-QQQ策略的最大回撤(MDD)可速-81.66%,这種级别的离描對
+任何投资组合都是毁减性的,因此,到TQQQ的鹿用必须辅以服格的摆時或风险管理械制。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=12spmo一種波勤率調整的因子暴露>1.2SPMO:一種波勤率調整的因子暴露<a href=#12spmo一種波勤率調整的因子暴露 class=hash-link aria-label=1.2SPMO:一種波勤率調整的因子暴露的直接連結 title=1.2SPMO:一種波勤率調整的因子暴露的直接連結 translate=no>​</a></h3>
+<p>Invesco SSP 508 Momentum ETF(SPMo)旨在追标普500勤能指數。其键特徽在
+於,指数的机建不催考虚了成分股的值格動能,逻到其进行了波助率整。這意味著ETF系统
+性地偏好那些呈现定、低波助上弧超的股票,而非懂懂是涨幅最高的股票。
+这種機制事實上為SPMO内嵌了一個隔性的“質量“或“低波勤”因子部远器。其结果是一回风险
+性期著區别於纯慎格動能的投資工具,能购在市增波動加刷時提供相到健的表现。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第二章量化挥時模型的横建與选代>第二章:量化挥時模型的横建與选代<a href=#第二章量化挥時模型的横建與选代 class=hash-link aria-label=第二章:量化挥時模型的横建與选代的直接連結 title=第二章:量化挥時模型的横建與选代的直接連結 translate=no>​</a></h2>
+<p>我們的研究目標是標建一個规则明確的系统,以在TQQQ和SPMO之間进行動魁配置。我們依次测
+試了四種不同度和投計暂學的模型。
+模型一:静態混合再平衡</p>
+<ul>
+<li class="">核心哲学:資產配置優於市場摆時。承超低法完美预测市场,通通固定的资產配置比例和通</li>
+</ul>
+<p>期性再平来獲取南種資塞的長期混合回报。</p>
+<ul>
+<li class="">
+<p>設計理念:再平衡操作内含了“真高置低“的紀律,有望平滑接資翘合的波勤性。</p>
+</li>
+<li class="">
+<p>具體规则:</p>
+</li>
+<li class="">
+<p>始终维持50%TQQQ和56%SPH0的资金橙重。</p>
+</li>
+<li class="">
+<p>每月月底款行再平衡,恢復至初始比例。</p>
+</li>
+<li class="">
+<p>模型评估:作為一個基碰的多元化配置,它愿能显著降低纠TQQQ的屈险,但其固定的標捍幕</p>
+</li>
+</ul>
+<p>露在熊市中仍福成较大威膏。
+模型二:基於相對價格動能的输助</p>
+<ul>
+<li class="">
+<p>核心首学:强者恒强。勤能(Momentum)是金融市场中一個經遥长期驗篮的有效因子。</p>
+</li>
+<li class="">
+<p>設計理念:被模型假設近期表现更侵的資塞在短期未来有更高概率继續跑赢。在熊市中,</p>
+</li>
+</ul>
+<p>接提制有望道遇通捶跌幅更小的资產来實现相對防集。</p>
+<ul>
+<li class="">具體规则:</li>
+</ul>
+<p>■每月月底,計算TQQQ和SPNO在遇去3因月的继回报率。</p>
+<ul>
+<li class="">
+<p>将186%资金配置到回報率更高的ETF,持有一個月。</p>
+</li>
+<li class="">
+<p>模型部估:由於TQQQ的高波勤性和SPMO的穆健性在“節奏”上存在额著差翼,纯慎格動能信</p>
+</li>
+</ul>
+<p>號可能不福定,導致在凰格切换期產生交易摩和错误信號。
+模型三:基於VIX值的二元状慧切换</p>
+<ul>
+<li class="">
+<p>核心哲学:宏飘市場情鳍是决定围险桑露的核心量。</p>
+</li>
+<li class="">
+<p>設計理念:CBOE波助率指数(VIX)被泛视為市場的“恐慌指数”,能终有效衡量市增的预</p>
+</li>
+</ul>
+<p>期波勤性和鼠隆偏好。本模型利用VIX的能封水平来判数惠探取进攻性遗是防票性姿感。</p>
+<ul>
+<li class="">
+<p>具體规则:</p>
+</li>
+<li class="">
+<p>每月月底,取VIX指数的收显价。</p>
+</li>
+<li class="">
+<p>VIX&lt;20:市場虑於低风验區,下個月108%持有TQQQ。</p>
+</li>
+<li class="">
+<p>VIX>=20:市场虑於高风除區,下個月186%持有SPM0</p>
+</li>
+<li class="">
+<p>模型解估:相比前两種模型,引入宏飘指標有望顾著提升策略的凰险管理能力。但固定的二</p>
+</li>
+</ul>
+<p>元值可能在臨界黏附近引發遥於频繁或滞後的交易。
+模型四:基於VIX的勤態灰度配置</p>
+<ul>
+<li class="">
+<p>接心暂学:市場照隐是速绩置化的,策略反鹿也鹰是速读和动感的。</p>
+</li>
+<li class="">
+<p>設計理念:被模型是到模型三的精化改进。它通遥設立一個”退渡區”,使投資组合的風院</p>
+</li>
+</ul>
+<p>暴露能钩根擦VIX水平的警化进行平滑、助熊的调整,而非生硬的二元切换。</p>
+<ul>
+<li class="">
+<p>具體规则:</p>
+</li>
+<li class="">
+<p>VIX&lt;15(低凰险區):100%持有TQQQ。</p>
+</li>
+<li class="">
+<p>VIX>25(高凰险):100%持有SPHO</p>
+</li>
+<li class="">
+<p>VIX介龄15和25之翻(遇區):TQQQ與SPHO的资金重造行综性分配VIX越</p>
+</li>
+</ul>
+<p>高,SPMO的耀重越高。</p>
+<ul>
+<li class="">模型评估:敲模型有望通透更平滑的凰险管理,在保留牛市大部分收益的同時,更有效地题</li>
+</ul>
+<p>到波勤性的逐步提升,可能在周随調整後的回报指标上取得最侵表现。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第三章實證分析與多遇期鲁棒性检驗>第三章:實證分析與多遇期鲁棒性检驗<a href=#第三章實證分析與多遇期鲁棒性检驗 class=hash-link aria-label=第三章:實證分析與多遇期鲁棒性检驗的直接連結 title=第三章:實證分析與多遇期鲁棒性检驗的直接連結 translate=no>​</a></h2>
+<p>我們以516,860美元为初始资金,到上述模型及基举资座进行了回测。
+年化合增長率
+年化夏普比率
+最大回描(ND卡瑪比率(Cal
+期末價值
+(Sharpe)
+D)
+(CAGR)
+mar)
+策略A:VIX</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=3927>39.27%<a href=#3927 class=hash-link aria-label=39.27%的直接連結 title=39.27%的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=098>0.98<a href=#098 class=hash-link aria-label=0.98的直接連結 title=0.98的直接連結 translate=no>​</a></h3>
+<p>$211,183.23</p>
+<ul>
+<li class="">56 .14%</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=970>9.70<a href=#970 class=hash-link aria-label=9.70的直接連結 title=9.70的直接連結 translate=no>​</a></h3>
+<p>值切换
+策略B:VIX
+$199, 465.29</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=090>0.90<a href=#090 class=hash-link aria-label=0.90的直接連結 title=0.90的直接連結 translate=no>​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=72-78>72. 78′%<a href=#72-78 class=hash-link aria-label="72. 78′%的直接連結" title="72. 78′%的直接連結" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=953>9.53<a href=#953 class=hash-link aria-label=9.53的直接連結 title=9.53的直接連結 translate=no>​</a></h3>
+<ul>
+<li class="">超催湿</li>
+</ul>
+<p>乘略C:重勤</p>
+<ul>
+<li class="">69.92%</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=935>9.35<a href=#935 class=hash-link aria-label=9.35的直接連結 title=9.35的直接連結 translate=no>​</a></h3>
+<p>$73,811.14</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=2425>24.25%<a href=#2425 class=hash-link aria-label=24.25%的直接連結 title=24.25%的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=078>0.78<a href=#078 class=hash-link aria-label=0.78的直接連結 title=0.78的直接連結 translate=no>​</a></h3>
+<p>能
+策略D:显陷均
+$95, 487.95</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=098-1>0.98<a href=#098-1 class=hash-link aria-label=0.98的直接連結 title=0.98的直接連結 translate=no>​</a></h3>
+<ul>
+<li class="">48.75%</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=968>9.68<a href=#968 class=hash-link aria-label=9.68的直接連結 title=9.68的直接連結 translate=no>​</a></h3>
+<p>策略E:VIX灰</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=3953>39.53%<a href=#3953 class=hash-link aria-label=39.53%的直接連結 title=39.53%的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=182>1.82<a href=#182 class=hash-link aria-label=1.82的直接連結 title=1.82的直接連結 translate=no>​</a></h3>
+<p>$214, 847.67</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=5181>51.81%<a href=#5181 class=hash-link aria-label=51.81%的直接連結 title=51.81%的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=976>9.76<a href=#976 class=hash-link aria-label=9.76的直接連結 title=9.76的直接連結 translate=no>​</a></h3>
+<p>度配置
+T0Q0
+$269,239.17</p>
+<ul>
+<li class="">81.66%</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=4368>43.68%<a href=#4368 class=hash-link aria-label=43.68%的直接連結 title=43.68%的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=088>0.88<a href=#088 class=hash-link aria-label=0.88的直接連結 title=0.88的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=953-1>9.53<a href=#953-1 class=hash-link aria-label=9.53的直接連結 title=9.53的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=31综合請效分析>3.1综合請效分析<a href=#31综合請效分析 class=hash-link aria-label=3.1综合請效分析的直接連結 title=3.1综合請效分析的直接連結 translate=no>​</a></h3>
+<p>回涮结果清晰地表明:</p>
+<ul>
+<li class="">純粹回报:純TQQQ的CAGR(43.0B%)最高,但伴随著不可接受的最大回撒(-81.66%)</li>
+</ul>
+<p>和较低的卡瑪比率(0.53)。</p>
+<ul>
+<li class="">凰险整後回鞭:模型四(VIX灰度配置)在所有主動策略中表現显為突出。其CAGR</li>
+</ul>
+<p>(39.53%)非常接近纯TQQQ,但最大回撤著侵化至-51.81%,最量要的,其卡瑪比率高
+蓬0.76,在所有模型中位居第一,明了其卓越的风隙回朝效率。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=五释难脂策路植益曲線初始资金10000>五释难脂策路植益曲線(初始资金$10.000)<a href=#五释难脂策路植益曲線初始资金10000 class=hash-link aria-label=五释难脂策路植益曲線(初始资金$10.000)的直接連結 title=五释难脂策路植益曲線(初始资金$10.000)的直接連結 translate=no>​</a></h2>
+<p>邮 T0001年</p>
+<p>策略最大回撒封比</p>
+<p>權益曲線图直地示,模型四在2022年熊市期間,其净值曲線的平缓程度速優於纯TQQQ,这
+是其长期獲膀的鍵。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=32鲁棒性检驗>3.2鲁棒性检驗<a href=#32鲁棒性检驗 class=hash-link aria-label=3.2鲁棒性检驗的直接連結 title=3.2鲁棒性检驗的直接連結 translate=no>​</a></h3>
+<p>為了检驗模型四的有效性是否具有普遍性,我們在雨個不同的市場遇期中進行了獨立回测。</p>
+<ul>
+<li class="">遇期一(2016-2020):强牛市奥V型反轉在此期間,纯TQQQ是最佳逻握。模型四然因</li>
+</ul>
+<p>其避险制而略微跑输,但依然取得了47.51%的CAGR,顯著侵化了新冠衡時的最大回
+撒。
+策略椎益曲综(2016-01-01-2020-12-31)
+线000(年)</p>
+<p>最大回撤(HD卡瑪比率(Cal
+年化福合增長率
+年化夏普比率
+期末價值
+(CAGR)
+(Sharpe)
+D)
+(Jew
+冠軍策略E:VI</p>
+<ul>
+<li class="">51.81%</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=114>1.14<a href=#114 class=hash-link aria-label=1.14的直接連結 title=1.14的直接連結 translate=no>​</a></h3>
+<p>$67, 495.09</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=4751>47.51%<a href=#4751 class=hash-link aria-label=47.51%的直接連結 title=47.51%的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=092>0.92<a href=#092 class=hash-link aria-label=0.92的直接連結 title=0.92的直接連結 translate=no>​</a></h3>
+<p>X灰度配置</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=6577>65.77%<a href=#6577 class=hash-link aria-label=65.77%的直接連結 title=65.77%的直接連結 translate=no>​</a></h3>
+<p>純TQQQ
+$119,718.67</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=112>1.12<a href=#112 class=hash-link aria-label=1.12的直接連結 title=1.12的直接連結 translate=no>​</a></h3>
+<p>%26<em>69-
+b6</em>0
+SPMO
+$22,670.99</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=1813>18.13%<a href=#1813 class=hash-link aria-label=18.13%的直接連結 title=18.13%的直接連結 translate=no>​</a></h3>
+<p>%S6*06-</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=091>0.91<a href=#091 class=hash-link aria-label=0.91的直接連結 title=0.91的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=059>0.59<a href=#059 class=hash-link aria-label=0.59的直接連結 title=0.59的直接連結 translate=no>​</a></h3>
+<p>铺QQQ
+$31,274.90</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=2613>26.13%<a href=#2613 class=hash-link aria-label=26.13%的直接連結 title=26.13%的直接連結 translate=no>​</a></h3>
+<ul>
+<li class="">28.56%</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=117>1.17<a href=#117 class=hash-link aria-label=1.17的直接連結 title=1.17的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=091-1>0.91<a href=#091-1 class=hash-link aria-label=0.91的直接連結 title=0.91的直接連結 translate=no>​</a></h3>
+<p>遇期二(2021-至今):通服熊市與結牛在此期間,纯TQQQ因巨大的回撤而表現不佳
+(CAGR:18.70%,Calmar:0.23)。而模型四藉其出色的凰控制,CAGR高達</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=2818卡瑪比率為056實現了對純tqqq的全面超越>28.18%,卡瑪比率為0.56,實現了對純TQQQ的全面超越。<a href=#2818卡瑪比率為056實現了對純tqqq的全面超越 class=hash-link aria-label=28.18%,卡瑪比率為0.56,實現了對純TQQQ的全面超越。的直接連結 title=28.18%,卡瑪比率為0.56,實現了對純TQQQ的全面超越。的直接連結 translate=no>​</a></h3>
+<p>策略棒益典線(2021-01-01- 2025-09-20)
+冠年美
+路1000
+线,00(图年)</p>
+<p>年化合增長率
+年化夏普比率
+最大回撤(MD卡瑪比率(Cal
+期末俱值
+(Sharpe)
+(CAGR)
+D)
+(Jeu
+冠軍策略E:VI</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=081>0.81<a href=#081 class=hash-link aria-label=0.81的直接連結 title=0.81的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=056>0.56<a href=#056 class=hash-link aria-label=0.56的直接連結 title=0.56的直接連結 translate=no>​</a></h3>
+<p>$31,562.61</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=2818>28.18%<a href=#2818 class=hash-link aria-label=28.18%的直接連結 title=28.18%的直接連結 translate=no>​</a></h3>
+<ul>
+<li class="">50.30%</li>
+</ul>
+<p>X灰度配置</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=1870>18.70%<a href=#1870 class=hash-link aria-label=18.70%的直接連結 title=18.70%的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=059-1>0.59<a href=#059-1 class=hash-link aria-label=0.59的直接連結 title=0.59的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=023>0.23<a href=#023 class=hash-link aria-label=0.23的直接連結 title=0.23的直接連結 translate=no>​</a></h3>
+<p>TQQQ
+$22,110.59</p>
+<ul>
+<li class="">81.66%</li>
+</ul>
+<p>钝SPMO
+$23,844.35</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=2965>29.65%<a href=#2965 class=hash-link aria-label=29.65%的直接連結 title=29.65%的直接連結 translate=no>​</a></h3>
+<ul>
+<li class="">22.74%</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=091-2>0.91<a href=#091-2 class=hash-link aria-label=0.91的直接連結 title=0.91的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=107>1.07<a href=#107 class=hash-link aria-label=1.07的直接連結 title=1.07的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=073>0.73<a href=#073 class=hash-link aria-label=0.73的直接連結 title=0.73的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=043>0.43<a href=#043 class=hash-link aria-label=0.43的直接連結 title=0.43的直接連結 translate=no>​</a></h3>
+<p>純QQQ</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=1591>15.91%<a href=#1591 class=hash-link aria-label=15.91%的直接連結 title=15.91%的直接連結 translate=no>​</a></h3>
+<p>$19,168.77</p>
+<ul>
+<li class="">35.12%</li>
+</ul>
+<p>最終結
+本研究通道對一系列量化握時模型的横建與回测,得出以下结:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1凰险管理的必要性长期来看任何應用於tqqq等高模样工具的策略其能否成功的核心在>1.凰险管理的必要性:长期来看,任何應用於TQQQ等高模样工具的策略,其能否成功的核心在<a href=#1凰险管理的必要性长期来看任何應用於tqqq等高模样工具的策略其能否成功的核心在 class=hash-link aria-label=1.凰险管理的必要性:长期来看,任何應用於TQQQ等高模样工具的策略,其能否成功的核心在的直接連結 title=1.凰险管理的必要性:长期来看,任何應用於TQQQ等高模样工具的策略,其能否成功的核心在的直接連結 translate=no>​</a></h2>
+<p>於凰险管理,而非收益增强。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2宏觀指标的有效性vix指数作為市場風险的代理菱量在建挥時策略中被證明是單且>2.宏觀指标的有效性:VIX指数作為市場風险的代理菱量,在建挥時策略中被證明是單且<a href=#2宏觀指标的有效性vix指数作為市場風险的代理菱量在建挥時策略中被證明是單且 class=hash-link aria-label=2.宏觀指标的有效性:VIX指数作為市場風险的代理菱量,在建挥時策略中被證明是單且的直接連結 title=2.宏觀指标的有效性:VIX指数作為市場風险的代理菱量,在建挥時策略中被證明是單且的直接連結 translate=no>​</a></h2>
+<p>極其有效的。
+行勤態、平滑凰险調整的策略,相比静態配置或二元切换模型,更能適應復雜多变的市場環
+境,亚最终實現最侵的风险调整後长期回報。
+總而言之,模型四為希望利用横捍工具放大收益,同時格控制下行風险的投资者,提供了一個
+经過歷史数據格驗證的、系统化的解决方案。
+免责明:本文所有内容為基於歷史数據的量化研究與教育目的,不橘成任何投資建。遇
+往業绩不预示未来回報。回测未包含交易成本、滑點及税费。投资有凰险,入市需谨慎。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<p><img decoding=async loading=lazy alt=量化擇時策略小實驗：基於VIX指標的TQQQ與SPMO資產輪動模型：微信公众号导出原始排版图 src=/assets/images/article-3d999deb0ea7bff57fc0069decd10f17.webp width=1280 height=6410 class=img_ev3q /></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2025-09-20-2025-09-20-量化擇時策略小實驗-基於vix指標的tqqq與spmo資產輪動模型-2247485061.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2025-09-20-美國核能復興-新時代能源格局中關鍵參與者的投資分析-2247485051><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>美國核能復興：新時代能源格局中關鍵參與者的投資分析</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2025-09-15-amd-nvda-mu-amzn-meta-與-msft-2247485045><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>AMD、NVDA、MU、AMZN、META 與 MSFT</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#第一章研究對象的结化属性分析 class="table-of-contents__link toc-highlight">第一章:研究對象的结化属性分析</a><ul><li><a href=#11tqqq高横悍beta工具的雙刃劍效魔 class="table-of-contents__link toc-highlight">1.1TQQQ:高横悍Beta工具的雙刃劍效魔</a><li><a href=#12spmo一種波勤率調整的因子暴露 class="table-of-contents__link toc-highlight">1.2SPMO:一種波勤率調整的因子暴露</a></ul><li><a href=#第二章量化挥時模型的横建與选代 class="table-of-contents__link toc-highlight">第二章:量化挥時模型的横建與选代</a><li><a href=#第三章實證分析與多遇期鲁棒性检驗 class="table-of-contents__link toc-highlight">第三章:實證分析與多遇期鲁棒性检驗</a><ul><li><a href=#3927 class="table-of-contents__link toc-highlight">39.27%</a><li><a href=#098 class="table-of-contents__link toc-highlight">0.98</a><li><a href=#970 class="table-of-contents__link toc-highlight">9.70</a><li><a href=#090 class="table-of-contents__link toc-highlight">0.90</a></ul><li><a href=#72-78 class="table-of-contents__link toc-highlight">72. 78′%</a><ul><li><a href=#953 class="table-of-contents__link toc-highlight">9.53</a><li><a href=#935 class="table-of-contents__link toc-highlight">9.35</a><li><a href=#2425 class="table-of-contents__link toc-highlight">24.25%</a><li><a href=#078 class="table-of-contents__link toc-highlight">0.78</a><li><a href=#098-1 class="table-of-contents__link toc-highlight">0.98</a><li><a href=#968 class="table-of-contents__link toc-highlight">9.68</a><li><a href=#3953 class="table-of-contents__link toc-highlight">39.53%</a><li><a href=#182 class="table-of-contents__link toc-highlight">1.82</a><li><a href=#5181 class="table-of-contents__link toc-highlight">51.81%</a><li><a href=#976 class="table-of-contents__link toc-highlight">9.76</a><li><a href=#4368 class="table-of-contents__link toc-highlight">43.68%</a><li><a href=#088 class="table-of-contents__link toc-highlight">0.88</a><li><a href=#953-1 class="table-of-contents__link toc-highlight">9.53</a><li><a href=#31综合請效分析 class="table-of-contents__link toc-highlight">3.1综合請效分析</a></ul><li><a href=#五释难脂策路植益曲線初始资金10000 class="table-of-contents__link toc-highlight">五释难脂策路植益曲線(初始资金$10.000)</a><ul><li><a href=#32鲁棒性检驗 class="table-of-contents__link toc-highlight">3.2鲁棒性检驗</a><li><a href=#114 class="table-of-contents__link toc-highlight">1.14</a><li><a href=#4751 class="table-of-contents__link toc-highlight">47.51%</a><li><a href=#092 class="table-of-contents__link toc-highlight">0.92</a><li><a href=#6577 class="table-of-contents__link toc-highlight">65.77%</a><li><a href=#112 class="table-of-contents__link toc-highlight">1.12</a><li><a href=#1813 class="table-of-contents__link toc-highlight">18.13%</a><li><a href=#091 class="table-of-contents__link toc-highlight">0.91</a><li><a href=#059 class="table-of-contents__link toc-highlight">0.59</a><li><a href=#2613 class="table-of-contents__link toc-highlight">26.13%</a><li><a href=#117 class="table-of-contents__link toc-highlight">1.17</a><li><a href=#091-1 class="table-of-contents__link toc-highlight">0.91</a><li><a href=#2818卡瑪比率為056實現了對純tqqq的全面超越 class="table-of-contents__link toc-highlight">28.18%,卡瑪比率為0.56,實現了對純TQQQ的全面超越。</a><li><a href=#081 class="table-of-contents__link toc-highlight">0.81</a><li><a href=#056 class="table-of-contents__link toc-highlight">0.56</a><li><a href=#2818 class="table-of-contents__link toc-highlight">28.18%</a><li><a href=#1870 class="table-of-contents__link toc-highlight">18.70%</a><li><a href=#059-1 class="table-of-contents__link toc-highlight">0.59</a><li><a href=#023 class="table-of-contents__link toc-highlight">0.23</a><li><a href=#2965 class="table-of-contents__link toc-highlight">29.65%</a><li><a href=#091-2 class="table-of-contents__link toc-highlight">0.91</a><li><a href=#107 class="table-of-contents__link toc-highlight">1.07</a><li><a href=#073 class="table-of-contents__link toc-highlight">0.73</a><li><a href=#043 class="table-of-contents__link toc-highlight">0.43</a><li><a href=#1591 class="table-of-contents__link toc-highlight">15.91%</a></ul><li><a href=#1凰险管理的必要性长期来看任何應用於tqqq等高模样工具的策略其能否成功的核心在 class="table-of-contents__link toc-highlight">1.凰险管理的必要性:长期来看,任何應用於TQQQ等高模样工具的策略,其能否成功的核心在</a><li><a href=#2宏觀指标的有效性vix指数作為市場風险的代理菱量在建挥時策略中被證明是單且 class="table-of-contents__link toc-highlight">2.宏觀指标的有效性:VIX指数作為市場風险的代理菱量,在建挥時策略中被證明是單且</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

@@ -1,0 +1,983 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>lark-cli 實戰 02：AI Agent 操作飛書電子表格全流程實測（22 項功能） | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2026-04-15-lark-cli-實戰-02-ai-agent-操作飛書電子表格全流程實測-22-項功能-2247485795 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="lark-cli 實戰 02：AI Agent 操作飛書電子表格全流程實測（22 項功能） | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《lark-cli 實戰 02：AI Agent 操作飛書電子表格全流程實測（22 項功能）》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《lark-cli 實戰 02：AI Agent 操作飛書電子表格全流程實測（22 項功能）》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2026-04-15T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2026-04-15-lark-cli-實戰-02-ai-agent-操作飛書電子表格全流程實測-22-項功能-2247485795 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-04-15-lark-cli-實戰-02-ai-agent-操作飛書電子表格全流程實測-22-項功能-2247485795 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-04-15-lark-cli-實戰-02-ai-agent-操作飛書電子表格全流程實測-22-項功能-2247485795 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2026-04-15-lark-cli-實戰-02-ai-agent-操作飛書電子表格全流程實測-22-項功能-2247485795","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2026-04-15T00:00:00.000Z","description":"从微信公众号导入的文章《lark-cli 實戰 02：AI Agent 操作飛書電子表格全流程實測（22 項功能）》，保留原始排版图并提供本地 OCR 转写。","headline":"lark-cli 實戰 02：AI Agent 操作飛書電子表格全流程實測（22 項功能）","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2026-04-15-lark-cli-實戰-02-ai-agent-操作飛書電子表格全流程實測-22-項功能-2247485795","name":"lark-cli 實戰 02：AI Agent 操作飛書電子表格全流程實測（22 項功能）","url":"https://w0x7ce.eu/blog/2026-04-15-lark-cli-實戰-02-ai-agent-操作飛書電子表格全流程實測-22-項功能-2247485795"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>lark-cli 實戰 02：AI Agent 操作飛書電子表格全流程實測（22 項功能）</h1><div class="container_mt6G margin-vert--md"><time datetime=2026-04-15T00:00:00.000Z>2026年4月15日</time> · <!-- -->閱讀時間約 16 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2026-04-15 23:15:52（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247485795&idx=1&sn=88fcc3a70f8fd67c0b5cb621c541a59b&chksm=96e11cc9a19695df999db310cfbdf8e243cecf2a5b1741b9f4fdd492b3f150f5572346640a10#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 10231 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>(22填功能)
+nalwe×7ce EI V1ajero 2826年4月15日 23:15 日本
+本文記祭了AI Agent(Claude)通遇Lark-cl1 操作飛害電子表格的完整實潮退程。
+每一個命令都在何服器上實除執行過,所有输出為真實返回值。
+工具: Claude Code + Lark-cli v1l.0.9
+和上一篇文檔一樣:不宣程式碼,Agent 直接测用lark-cli令操作你的飛害表格。前提
+是已经完成Lark-cli安装和使用者登錄授權(見上一篇)。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一前置補授權表格權限>一、前置:補授權表格權限<a href=#一前置補授權表格權限 class=hash-link aria-label=一、前置:補授權表格權限的直接連結 title=一、前置:補授權表格權限的直接連結 translate=no>​</a></h2>
+<p>如果之前置時没有授權表格相脚的scope,操作表格會报籍:</p>
+<ul>
+<li class="">
+<p>ok": false,</p>
+</li>
+<li class="">
+<p>error":(</p>
+</li>
+<li class="">
+<p>type": "missing_scope",</p>
+</li>
+</ul>
+<p>"nessage": "nissing required scope(s]: sheets:spreadsheet:crcate, 5</p>
+<p>解決方法-授權(走Dev1ceFLow,和首次登一楼):
+lark-cli auth login --scope shectsspreadshect:create sheetsspreadshe
+返回授槽速结和user_code,在灣震器理础即可。新增的 scope 會增量累精到已有權限
+上,不曾覆盈之前的。
+實际返回:
+0K:登成功!使用者:w8x7ce
+本次新授予 scopes:shccts:sprcadsheet:crcate sheets:sprcadshcct:writc_o
+本次木授予scopes:(空)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=二創建表格>二、創建表格<a href=#二創建表格 class=hash-link aria-label=二、創建表格的直接連結 title=二、創建表格的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=21带表頭和数據一次性創建>2.1带表頭和数據一次性創建<a href=#21带表頭和数據一次性創建 class=hash-link aria-label=2.1带表頭和数據一次性創建的直接連結 title=2.1带表頭和数據一次性創建的直接連結 translate=no>​</a></h3>
+<p>Lark-cl1 sheets +create \</p>
+<ul>
+<li class="">
+<p>-title"lark-cll 表格置测”\</p>
+</li>
+<li class="">
+<p>-headers“[“姓名","部","成",“呼级"]’\</p>
+</li>
+<li class="">
+<p>data“[["张三",“挂蜥部”,95,"A"],[“李四*,<em>斋品部</em>,88,“B”].[“王五”,“超部</p>
+</li>
+</ul>
+<p>實际返回:</p>
+<ul>
+<li class="">
+<p>ok*: trwe,</p>
+</li>
+<li class="">
+<p>data":{</p>
+</li>
+<li class="">
+<p>spreadsheet_token*: "IPxPsm0ILh3ZXmtr7SBcnR8unpg",</p>
+</li>
+</ul>
+<p>"title":“lark-cli 表格言测",
+"url": "<code>https://d7fwkz4t4y.feishu.cn/sheets/IPxPsm0iLh3zXntr7SBcnR8</code></p>
+<p>参数設明:
+参数
+必填</p>
+<ul>
+<li class="">-title</li>
+</ul>
+<p>表格標题
+是
+表额行,JSON 陣列
+晋</p>
+<ul>
+<li class="">
+<p>-headers</p>
+</li>
+<li class="">
+<p>-data</p>
+</li>
+</ul>
+<p>初始數缘,二维JSON 犀列</p>
+<ul>
+<li class="">-folder-token</li>
+</ul>
+<p>目標資料夹token,不填刚創建在個人空間根目錄
+否
+打開ur1就能在飛害裡看到這個表格,表眼和数擦都已經入了。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=三查看表格资訊>三、查看表格资訊<a href=#三查看表格资訊 class=hash-link aria-label=三、查看表格资訊的直接連結 title=三、查看表格资訊的直接連結 translate=no>​</a></h2>
+<p>創建後需要拿到sheet_id才能後缩操作,用+1nfo查看:</p>
+<p>實际返回:</p>
+<ul>
+<li class="">
+<p>ok": true,</p>
+</li>
+<li class="">
+<p>data":{</p>
+</li>
+</ul>
+<p>"sheets": {
+"sheet_1d*: "83d526*,
+"title*:"sheet1",
+"1ndex*: 0,
+"grid_properties*: {
+"colunn_count": 20,
+"frozen_column_count*:</p>
+<p>}:,laauspea,ds,
+"spreadsheet*:{
+"title':"lark-cli 衰格實测",
+"owner_id*: "pu_Hh99fcd3xxx"</p>
+<p>關建资讯:
+sheet Id:83d526-後所有操作都需要個ID</p>
+<ul>
+<li class="">
+<p>预設 Sheet 名:Sheet1</p>
+</li>
+<li class="">
+<p>预設260行×20列</p>
+</li>
+</ul>
+<p>shcct_id不是序號,而是飛書分配的字串ID(如“83d526”)。後绩错离操作必
+须带上它</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=四讀取數據>四、讀取數據<a href=#四讀取數據 class=hash-link aria-label=四、讀取數據的直接連結 title=四、讀取數據的直接連結 translate=no>​</a></h2>
+<p>lark-cli sheets +read \</p>
+<ul>
+<li class="">-sheet-1d83d526*\</li>
+</ul>
+<p>925p58 PT-ias-</p>
+<ul>
+<li class="">-range "A1:D6*</li>
+</ul>
+<p>實际返回:</p>
+<ul>
+<li class="">
+<p>ok": true,</p>
+</li>
+<li class="">
+<p>data":{</p>
+</li>
+</ul>
+<p>):,obuegonleA,
+"range": *83d526!A1:D6′,
+]=,sanleA,
+[“姓名”,“部",“成”,“呼级“],
+["张三",“挂析部”,95,“A"],
+["学四",“品部”,88,“B"],
+[“王五",“般計部",72,“C"],
+[“超六”,“挂斯部”,91,“A”],
+[“猴七”。“品部”,63,“D"]</p>
+<p>坑:range不能只寡“A1:D6,必须加</p>
+<ul>
+<li class="">-sheet-id参,或者range 嘉</li>
+</ul>
+<p>成“83d5261A1:D6”格式.否则报:{error:{message:"-range*A1:D5
+" requires --sheet-id or a ! prefix*J}
+雨種窟法等俱:
+方式一:分肥察
+方式二:合在range經</p>
+<ul>
+<li class="">-range "83d526!A1:D6*</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=五追加行数據>五、追加行数據<a href=#五追加行数據 class=hash-link aria-label=五、追加行数據的直接連結 title=五、追加行数據的直接連結 translate=no>​</a></h2>
+<p>在现有表格末尾追加新行:
+lark-cli sheets +append \</p>
+<ul>
+<li class="">
+<p>-sheet-1d 83d526*\</p>
+</li>
+<li class="">
+<p>-range "A:D* 1</p>
+</li>
+<li class="">
+<p>values·[[“m八",<em>市增部”,85,“B"],[“周九</em>,“技部”,78,"C"]</p>
+</li>
+</ul>
+<p>實际返回:</p>
+<ul>
+<li class="">ok": true。</li>
+</ul>
+<p>“data":{
+"tableRange*:<em>83d526!A7:D8</em>,</p>
+<p>"updatedRows*: 2,
+“updatedRange*:“83d5261A7:D8"</p>
+<p>返回值告新你:数离到了A7:D8(第7-8行),共2行x4列-8個單元格。
+露坑:range 不能寡
+“A1:D1”(只含1行但给了2行数),报籍:
+("err
+or*: ("code": 982o2, "nessage*: "range in request is wrong. rows of value:2
+A:D表示整列箱圍,或碰保range行数≥数撼行數。
+正链腐法:用</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=六寫入單元格覆盖模式>六、寫入單元格(覆盖模式)<a href=#六寫入單元格覆盖模式 class=hash-link aria-label=六、寫入單元格(覆盖模式)的直接連結 title=六、寫入單元格(覆盖模式)的直接連結 translate=no>​</a></h2>
+<p>寓人會面蓝目标區域的已有数。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=61寫入單個單元格>6.1寫入單個單元格<a href=#61寫入單個單元格 class=hash-link aria-label=6.1寫入單個單元格的直接連結 title=6.1寫入單個單元格的直接連結 translate=no>​</a></h3>
+<p>Lark-cll sheets +urite <br/>
+<!-- -->\adungausast1uxzeumrousdxdI. uayos-aauspra.ds.--
+range “83d5261E1*<br/>
+<!-- -->[。ll. sneA--
+返回:
+"updatedcells′: 1,
+'.13.taigzspee. -,abueapatepdn.</p>
+<ul>
+<li class="">updatedRows*: 1</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=62寫入一列数據>6.2寫入一列数據<a href=#62寫入一列数據 class=hash-link aria-label=6.2寫入一列数據的直接連結 title=6.2寫入一列数據的直接連結 translate=no>​</a></h3>
+<p>Lark-cli sheets +write \</p>
+<ul>
+<li class="">range "83d5261E2:E8" \</li>
+</ul>
+<p>[][][,][][][][。]].sA-
+返回:
+uptatedCells*: 7,
+"updatedRange*: <em>83d5261E2:E8</em>,
+updatedRows* : 7</p>
+<p>注意values的格式:寡入一列時,每個值是一個单元素障列[“侵秀"],整體套一
+....</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=七查找和替换>七、查找和替换<a href=#七查找和替换 class=hash-link aria-label=七、查找和替换的直接連結 title=七、查找和替换的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=71查找>7.1查找<a href=#71查找 class=hash-link aria-label=7.1查找的直接連結 title=7.1查找的直接連結 translate=no>​</a></h3>
+<p>lark-cll sheets +find \</p>
+<ul>
+<li class="">
+<p>-sheet-id 83d526*\</p>
+</li>
+<li class="">
+<p>find“技折部”</p>
+</li>
+</ul>
+<p>實际返回:
+回照邀
+}</p>
+<ul>
+<li class="">
+<p>ok": true,</p>
+</li>
+<li class="">
+<p>data": {</p>
+</li>
+<li class="">
+<p>find_resutt*: {</p>
+</li>
+</ul>
+<p>}:,insau putj,
+"matched cells*: ["B2*, <em>85</em>,
+“B8"1
+"rows_count*: 3</p>
+<p>返回匹配到的量元格位置列表,“技怖部”出現在B2、B5、B8三個位置。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=72替换>7.2替换<a href=#72替换 class=hash-link aria-label=7.2替换的直接連結 title=7.2替换的直接連結 translate=no>​</a></h3>
+<p>lark-cli sheets +replace \</p>
+<ul>
+<li class="">
+<p>-sheet-id #83d526*\</p>
+</li>
+<li class="">
+<p>find“技部"\</p>
+</li>
+</ul>
+<p>I。 yuwelda--
+實际返回:</p>
+<ul>
+<li class="">
+<p>ok°: true,</p>
+</li>
+<li class="">
+<p>data":{</p>
+</li>
+</ul>
+<p>1:,linsau aoeldau,
+"matched_cells*:["Bz", <em>B5</em>, *B8"],
+"rows_count’: 3</p>
+<p>替换结果同時告诉你匹配或替换了频虑,打開删害表格可以看到B2、B5、B8的技術部,已
+成“工程部」。
+支援的逾赠遇项:
+福分大小度</p>
+<ul>
+<li class="">
+<p>-natch-case</p>
+</li>
+<li class="">
+<p>-natch-entire-cell</p>
+</li>
+</ul>
+<p>完全四配(不是包含)
+正所匹配</p>
+<ul>
+<li class="">
+<p>-search-by-regex</p>
+</li>
+<li class="">
+<p>- include-formulas</p>
+</li>
+</ul>
+<p>也援导公式中的文本</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=八合供單元格>八、合供單元格<a href=#八合供單元格 class=hash-link aria-label=八、合供單元格的直接連結 title=八、合供單元格的直接連結 translate=no>​</a></h2>
+<p>lark-cli sheets +nerge-cells \</p>
+<ul>
+<li class="">
+<p>-range "83d526!A10:D18" \</p>
+</li>
+<li class="">
+<p>-nerge-type <em>HERGE ALL</em></p>
+</li>
+</ul>
+<p>返回:
+{<em>ok": true, “data</em>: {"spreadsheetToken": *IPxPsnDiLh3ZXmtr7SBcnRBunp
+merge-type三模式:
+模式
+就明
+MERGE_ALL
+合供為一個單元格
+按行合供(每行各自合供)
+MERGE_R0WS
+按列合供(每列各自合供)
+MERGE_COLUMNS
+踩坑:merge-type
+是必填参数,不便會报罐。取消合供用</p>
+<ul>
+<li class="">urnerge-cells.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=九設定單元格様式>九、設定單元格様式<a href=#九設定單元格様式 class=hash-link aria-label=九、設定單元格様式的直接連結 title=九、設定單元格様式的直接連結 translate=no>​</a></h2>
+<p>Lark-cli sheets +set-style \</p>
+<ul>
+<li class="">
+<p>range “83d5261A1:E1"\</p>
+</li>
+<li class="">
+<p>-style ‘{"font*:(<em>bold":true).<em>backColor":</em>#4472c4","fontColor</em>:*#FF</p>
+</li>
+</ul>
+<p>實际返回:</p>
+<ul>
+<li class="">updates":{</li>
+</ul>
+<p>‘5:s11apatepdn,</p>
+<ul>
+<li class="">updatedRange*: <em>B3u526!A1:E1</em>,</li>
+</ul>
+<p>updatcdRous*: 1</p>
+<p>遗把表照(A1:E1)段成了白字蓝底加粗。
+style JSON支援的丽性:</p>
+<ul>
+<li class="">font":{</li>
+</ul>
+<p>"bold°: true,
+"italic°: falsc,
+"s1ze": 14,
+"family": "Arial
+"fontColor":<em>WFFFFFF",
+“backColar</em>: <em>#447224",
+“hAlign":“Center</em>,</p>
+<ul>
+<li class="">
+<p>vAlign": "Middle”,</p>
+</li>
+<li class="">
+<p>borderType*: <em>FULL BORDER</em></p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=十插入和删除行列>十、插入和删除行列<a href=#十插入和删除行列 class=hash-link aria-label=十、插入和删除行列的直接連結 title=十、插入和删除行列的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=101插入行>10.1插入行<a href=#101插入行 class=hash-link aria-label=10.1插入行的直接連結 title=10.1插入行的直接連結 translate=no>​</a></h3>
+<p>在第2行位置插人2行(9-1ndexed,start=1end=3):
+lark-cli shccts +insert-dimension \</p>
+<ul>
+<li class="">-sheet-id 83d526*\</li>
+</ul>
+<p>dincnsion RoWS <br/>
+<!-- -->xaput-1e1s--</p>
+<ul>
+<li class="">-end-index 3\</li>
+</ul>
+<p>inherit-style BEFORE
+返回:
+{“ok”:true,“data:{}}
+数明:
+锐明
+参数
+警数
+ROWS
+SMO8</p>
+<ul>
+<li class="">-dimension</li>
+</ul>
+<p>或COLUMNS
+起始位置(0-indexed,θ表示第1行/列前)</p>
+<ul>
+<li class="">
+<p>-start-index</p>
+</li>
+<li class="">
+<p>end-index</p>
+</li>
+</ul>
+<p>结束位置(θ-indexed,exclusive)
+BEFORE</p>
+<ul>
+<li class="">1nherit-style</li>
+</ul>
+<p>或AFTER,事一行/列承梯式
+注意:insert-dinension 用的是 0-1ndexed,而delete-dinension 用的是
+1-indexed雨個命令的索引醋系不一致,容易搞湿。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=102删除行>10.2删除行<a href=#102删除行 class=hash-link aria-label=10.2删除行的直接連結 title=10.2删除行的直接連結 translate=no>​</a></h3>
+<p>到除第2-3 行(1-indexed,inclusive):</p>
+<ul>
+<li class="">
+<p>sheet-id83d526*</p>
+</li>
+<li class="">
+<p>-dlmension RowS \</p>
+</li>
+<li class="">
+<p>-start-index 2\</p>
+</li>
+<li class="">
+<p>end-index 3</p>
+</li>
+</ul>
+<p>返回:
+{*delCount": 2,<em>najorDimension</em>:*Row5"}
+索引體系對比:
+命令
+索引方式
+start含
+end 含裁
+exclus1ve
+起始位置
+8-1ndexed</p>
+<ul>
+<li class="">1nsert -dimens1on</li>
+</ul>
+<p>起始位置
+1-1ndexed
+inclusive</p>
+<ul>
+<li class="">delete-dimens1.on</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=十一插入圆片到單元格>十一、插入圆片到單元格<a href=#十一插入圆片到單元格 class=hash-link aria-label=十一、插入圆片到單元格的直接連結 title=十一、插入圆片到單元格的直接連結 translate=no>​</a></h2>
+<p>cd /tnp && lark-cli sheets +write-inage</p>
+<ul>
+<li class="">
+<p>-range "83d5261F2*\</p>
+</li>
+<li class="">
+<p>-inage ",/test-ing.png"</p>
+</li>
+</ul>
+<p>實际返回:
+{</p>
+<ul>
+<li class="">
+<p>ok": true,</p>
+</li>
+<li class="">
+<p>data":{</p>
+</li>
+</ul>
+<p>'revision*: 10,</p>
+<ul>
+<li class="">updateRange*: <em>83d526!F2:F2</em></li>
+</ul>
+<p>霖坑1:图片路锂必须用相期路(-/xX-png),不能用韬剩路径(/Lnp/xx-p
+),否则报错“unsafe inagc path"。
+踩坑2:图片必须是有效的PNG/JPG等格式,捐坏的檔案窑報code 95201
+server error.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=十二導出表格>十二、導出表格<a href=#十二導出表格 class=hash-link aria-label=十二、導出表格的直接連結 title=十二、導出表格的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=121薄出為xlsx>12.1薄出為xlsx<a href=#121薄出為xlsx class=hash-link aria-label=12.1薄出為xlsx的直接連結 title=12.1薄出為xlsx的直接連結 translate=no>​</a></h3>
+<p>cd /tnp 55 lark-cli sheets +export \</p>
+<ul>
+<li class="">-file-extension xlsx \</li>
+</ul>
+<p>xsx*4uedxa-1sa4/ . qaed-1ndno--
+實際返回:
+Maiting for cxport task to complete...
+Export complete: f1le_token=I2BNb6T6ao5LAhx6EICcVo7WnDe</p>
+<ul>
+<li class="">ok": true,</li>
+</ul>
+<p>"data":{
+"saved _path*: */tmp/test-export.xlsx",
+"size_bytes': 7746</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=122薄出爲csv>12.2薄出爲cSV<a href=#122薄出爲csv class=hash-link aria-label=12.2薄出爲cSV的直接連結 title=12.2薄出爲cSV的直接連結 translate=no>​</a></h3>
+<p>cd /tnp 5& lark-cli shects +export ↑</p>
+<ul>
+<li class="">- file-extension csv \</li>
+</ul>
+<p>sheet-id83d526</p>
+<ul>
+<li class="">-output-path*./test-export.csv"</li>
+</ul>
+<p>募出的CSV内容:
+姓名,部門,成绩,部级,備注
+张三,工程部,95,A,秀
+李四,產品部,88,B,良好
+王五,缺計部,72,C,一般
+趟六,工程部,91,A,秀
+踏七,產品部,63,D,需改进
+孫八,市场部,85,B,良好
+周九,工程部,78,C,一般
+注意:
+CSV導出需要</p>
+<ul>
+<li class="">-sheet-id警数</li>
+</ul>
+<p>putput-path必须用相對路径</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=十三取消合供單元格>十三、取消合供單元格<a href=#十三取消合供單元格 class=hash-link aria-label=十三、取消合供單元格的直接連結 title=十三、取消合供單元格的直接連結 translate=no>​</a></h2>
+<p>取消之前合供的A10:D10:
+lark-cli sheets +unnerge-cells \</p>
+<ul>
+<li class="">-range "83d5261A10:D18"</li>
+</ul>
+<p>返回:
+{<em>ok": true, “data</em>: {"spreadsheetToken": "IPxPsn01Lh3ZXmtr7SBcnR&unp</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=十四批量設定檬式>十四、批量設定檬式<a href=#十四批量設定檬式 class=hash-link aria-label=十四、批量設定檬式的直接連結 title=十四、批量設定檬式的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一次性對多個區域投定不同檬式>一次性對多個區域投定不同檬式:<a href=#一次性對多個區域投定不同檬式 class=hash-link aria-label=一次性對多個區域投定不同檬式:的直接連結 title=一次性對多個區域投定不同檬式:的直接連結 translate=no>​</a></h2>
+<p>lark-cli sheets +batch-set-style ↑
+Moeq.*(anus+.plog.): 4uo.)+aa1/1s,*av=zvi92spe8...sabue.s1l. e1ep--
+實限返图:</p>
+<ul>
+<li class="">
+<p>ok": true,</p>
+</li>
+<li class="">
+<p>data":{</p>
+</li>
+</ul>
+<p>"responses*: [
+"updatedCells": 7,
+"updatedRange*: <em>83d526!A2:A8"
+"updatedcells</em>: 7,
+"updatedRange*:
+1,
+totalupdatedCel1s": 14</p>
+<p>data是一個 JSON障列,每個元素包含:
+目标區域(字串或障列)
+槎式物件</p>
+<ul>
+<li class="">style</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一次api调用就能設定多细不同區域的不同式比逐個5et-style高效>一次API调用就能設定多细不同區域的不同式,比逐個+5et-style高效。<a href=#一次api调用就能設定多细不同區域的不同式比逐個5et-style高效 class=hash-link aria-label=一次API调用就能設定多细不同區域的不同式,比逐個+5et-style高效。的直接連結 title=一次API调用就能設定多细不同區域的不同式,比逐個+5et-style高效。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=十五在末尾追加行列>十五、在末尾追加行/列<a href=#十五在末尾追加行列 class=hash-link aria-label=十五、在末尾追加行/列的直接連結 title=十五、在末尾追加行/列的直接連結 translate=no>​</a></h2>
+<p>在表格末尾追加3列(不指定位置,只能追加到末尾):
+Lark-cli sheets +add-dimension \</p>
+<ul>
+<li class="">
+<p>sheet-id 83d526*</p>
+</li>
+<li class="">
+<p>-dinension COLUMNS</p>
+</li>
+</ul>
+<p>E q1fua--
+返回:
+{“addcount":3,<em>najorDimension</em>:*COLUMNS")
+射比 +insert-dinension:
+用途
+索引方式
+位量
+只能迪加到末尾
+無需指定位置
+摘展表格容量</p>
+<ul>
+<li class="">add-dimension</li>
+</ul>
+<p>指定位置插入
+在中間插入行/列</p>
+<ul>
+<li class="">insert-dimension</li>
+</ul>
+<p>6-indexed</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=十六設定行高列宽和藏行列>十六、設定行高/列宽和藏行/列<a href=#十六設定行高列宽和藏行列 class=hash-link aria-label=十六、設定行高/列宽和藏行/列的直接連結 title=十六、設定行高/列宽和藏行/列的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=161設定列宽>16.1設定列宽<a href=#161設定列宽 class=hash-link aria-label=16.1設定列宽的直接連結 title=16.1設定列宽的直接連結 translate=no>​</a></h3>
+<p>把A列(第1列)襄度投为158px(1-1ndexed,1nclus1ve):
+lark-cli sheets +update-dimension</p>
+<ul>
+<li class="">
+<p>-spreadsheet-token "IPxPsmo1Lh3ZXntr7SBcmR8unpg*\</p>
+</li>
+<li class="">
+<p>-sheet-id 83d526*\</p>
+</li>
+<li class="">
+<p>dimension COLUMNS</p>
+</li>
+<li class="">
+<p>-start-1ndex 1\</p>
+</li>
+<li class="">
+<p>-end-index 1 \</p>
+</li>
+<li class="">
+<p>fixed-size 150</p>
+</li>
+</ul>
+<p>返回:
+{*ok”: true, “data2:{}}</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=162隐藏列>16.2隐藏列<a href=#162隐藏列 class=hash-link aria-label=16.2隐藏列的直接連結 title=16.2隐藏列的直接連結 translate=no>​</a></h3>
+<p>隐藏G-H列(第7-8列):
+Lark-cli sheets +update-dimension ↑</p>
+<ul>
+<li class="">
+<p>-sheet-1d 83d526*</p>
+</li>
+<li class="">
+<p>-dinension COLUMNS \</p>
+</li>
+<li class="">
+<p>-start-index 7\</p>
+</li>
+<li class="">
+<p>end-1ndex 8</p>
+</li>
+<li class="">
+<p>-visible=false</p>
+</li>
+<li class="">
+<p>visible必猬离成</p>
+</li>
+</ul>
+<p>跟坑:</p>
+<ul>
+<li class="">
+<p>-visible-false(用等號),寓成</p>
+</li>
+<li class="">
+<p>-visible fal</p>
+</li>
+</ul>
+<p>se曹把“false”成位置参數报端。
+update-dimension 支援的操作:
+参数
+效果
+设定行高或列寶為158px</p>
+<ul>
+<li class="">
+<p>fixed-size 150</p>
+</li>
+<li class="">
+<p>-visible=false</p>
+</li>
+</ul>
+<p>限藏行/列</p>
+<ul>
+<li class="">-visible=true</li>
+</ul>
+<p>顾示行/列
+注意:這因命令用的是1-indexedinclusive 索引l。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=十七移動行列>十七、移動行/列<a href=#十七移動行列 class=hash-link aria-label=十七、移動行/列的直接連結 title=十七、移動行/列的直接連結 translate=no>​</a></h2>
+<p>把第7行移到第2行的位置(9-indexed):
+1 Lark-cl1 sheets +nove-dimension <br/>
+<!-- -->sheet-id #83d526*\</p>
+<ul>
+<li class="">-dimens1on RoNS \</li>
+</ul>
+<p>\g xaput-1ye1s--</p>
+<ul>
+<li class="">
+<p>end-index 6\</p>
+</li>
+<li class="">
+<p>-destination-1ndex 1</p>
+</li>
+</ul>
+<p>返回:
+{<em>ok”: true, “data</em>: {} }
+参数就明:
+就明
+参数</p>
+<ul>
+<li class="">-start-index</li>
+</ul>
+<p>源起始位置(0-indexed)
+源结束位置(9-indexed,inclusive)
+end-index</p>
+<ul>
+<li class="">-destination-index</li>
+</ul>
+<p>目標位置(9-1ndexed)
+可以移單行(start=end)或多行(start&lt;end)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=十八数據選>十八、数據選<a href=#十八数據選 class=hash-link aria-label=十八、数據選的直接連結 title=十八、数據選的直接連結 translate=no>​</a></h2>
+<p>速功能通退原生API 用(非shortcut),要四個步:create→get→update</p>
+<ul>
+<li class="">delete,</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=180弹備筛選数據>18.0弹備筛選数據<a href=#180弹備筛選数據 class=hash-link aria-label=18.0弹備筛選数據的直接連結 title=18.0弹備筛選数據的直接連結 translate=no>​</a></h3>
+<p>先高入测试数據:
+Lark-cli sheets +urite \</p>
+<ul>
+<li class="">
+<p>-range “83d5261G1:H8*\</p>
+</li>
+<li class="">
+<p>values“[I“效體”,“情感”],[“微博”,"正面”].[“微博”,“负面”],[“抖音”,"正面”]。</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=181創建筛選>18.1創建筛選<a href=#181創建筛選 class=hash-link aria-label=18.1創建筛選的直接連結 title=18.1創建筛選的直接連結 translate=no>​</a></h3>
+<p>按「媒始:列(G列)餘選微博:
+lark-cli sheets spreadsheet,sheet.filters create</p>
+<ul>
+<li class="">
+<p>-params '{"spreadsheet_token':<em>IPxPsmoiLn3zXntr7SBcmRBunpg</em>,*sheet_1</p>
+</li>
+<li class="">
+<p>-data <em>{"cal</em>:<em>G</em>,<em>condition</em>={"expected":[<em>微w</em>].<em>filter type</em>:*nul</p>
+</li>
+</ul>
+<p>返回:</p>
+<p>坑:range必须覆所有幂要参贝霹逻的列。如果只离“G1:G8",後面想加H
+列條件就不行了,必弧先 delete 再create 重新指定更大的range.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=182取選状態>18.2取選状態<a href=#182取選状態 class=hash-link aria-label=18.2取選状態的直接連結 title=18.2取選状態的直接連結 translate=no>​</a></h3>
+<p>lark-cli sheets spreadsheet sheet.filters get \</p>
+<ul>
+<li class="">params ‘{"spreadsheet_token*:<em>IPxPsmoiLh3zXntr7SBcmRBunpg</em>,*sheet_1</li>
+</ul>
+<p>實际返回:</p>
+<p>"data":{
+"sheet_filter_info:
+"cot′: <em>6</em>,
+"canditions":[{*expected”:["微博"].<em>filter_type:“nultiv
+1,
+"filtered_out_rows</em>: [4, 5, 6, 8].</p>
+<ul>
+<li class="">SH:1ei9zspe8. .obuel.</li>
+</ul>
+<p>返回中可以看到:</p>
+<ul>
+<li class="">
+<p>fiLter_infos-营前所有筛避條件</p>
+</li>
+<li class="">
+<p>被過滤掉的行號(4,5,6,8是抖音和小红署)</p>
+</li>
+<li class="">
+<p>filtered_out_rows</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=183追加選條件>18.3追加選條件<a href=#183追加選條件 class=hash-link aria-label=18.3追加選條件的直接連結 title=18.3追加選條件的直接連結 translate=no>​</a></h3>
+<p>在已有還基上,再加一個“情感,列(H列)="正面“的條件:
+Lark-cli sheets spreadsheet.sheet.filters update
+params ‘{"sprcadshect_token*:<em>IPxPsm0iLh3zxntr75BcmRBunpg</em>,*shcct_i</p>
+<ul>
+<li class="">-data ‘{"col*:<em>H","condition</em>={"expected":[<em>i正m</em>]."fllter_type*:*nul</li>
+</ul>
+<p>返回:
+{ <em>code": 8. "msg</em>: <em>success</em> }
+现在静選终件是:G列="微博”且H列=”正面”。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=184删除筛選>18.4删除筛選<a href=#184删除筛選 class=hash-link aria-label=18.4删除筛選的直接連結 title=18.4删除筛選的直接連結 translate=no>​</a></h3>
+<p>Lark-cll sheets spreadsheet.sheet.filters delete \</p>
+<ul>
+<li class="">-params '{"spreadsheet_token*:<em>IPxPsm0iLh3ZXntr7SBcmRBunpg</em>.*sheet_i</li>
+</ul>
+<p>返回:</p>
+<p>剩除後所有行恢额示。
+筛遥操作流程德结:
+L.create-首次創建薛通(range必须覆蒸所有参與筋通的列)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2get-查看常前解逛像件和被過通的行>2.get-查看常前解逛像件和被過通的行<a href=#2get-查看常前解逛像件和被過通的行 class=hash-link aria-label=2.get-查看常前解逛像件和被過通的行的直接連結 title=2.get-查看常前解逛像件和被過通的行的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3update-在已有部速上添加修改案列的條件不需要range>3.update-在已有部速上添加/修改案列的條件(不需要range)<a href=#3update-在已有部速上添加修改案列的條件不需要range class=hash-link aria-label=3.update-在已有部速上添加/修改案列的條件(不需要range)的直接連結 title=3.update-在已有部速上添加/修改案列的條件(不需要range)的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1delete-清除所有远>1.delete-清除所有远<a href=#1delete-清除所有远 class=hash-link aria-label=1.delete-清除所有远的直接連結 title=1.delete-清除所有远的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=十九踩坑匯總>十九、踩坑匯總<a href=#十九踩坑匯總 class=hash-link aria-label=十九、踩坑匯總的直接連結 title=十九、踩坑匯總的直接連結 translate=no>​</a></h2>
+<p>同题
+原因
+解决方案
+auth login --scope
+没有授表格權限
+missing_scope
+补授(增量,不覆盈之前的)
+requtres
+加--sheet-1d 或用 sheetId!r</p>
+<ul>
+<li class="">-sheet</li>
+</ul>
+<p>range 注带 sheet_id
+ange 格式</p>
+<ul>
+<li class="">1d</li>
+</ul>
+<p>append 时range 行数
+用“A:D"整列航凰
+不钩
+> range
+unsafe inage/out
+cd到目標目錄,用./相封路径
+用了到路径
+put path
+merge-cells 必填参数
+merge-type not s
+加 --nerge-type MERGE_ALL/R
+没傅
+OWS/COLUMNS
+et
+95201 server err
+国片楼案损顷或格式不封
+固片檔案捐坏或格式不對
+確保是有效PNG/JPG
+or
+J0
+insert 0-indexed, delete 1-
+insert/delete索
+雨者索引體系不同
+引湿乱
+引混
+indexed
+寫成--visible=false(用等
+"false"
+寡成</p>
+<ul>
+<li class="">-visible false</li>
+</ul>
+<p>報錯
+號)
+被当成位置参数
+range要包含所有参與筛選的列,
+create時range 没覆
+筛選range太小
+蓝所有筛選列
+如G1:H8
+先delete 再create,或用up
+筛選已存在
+重複create會覆蓄
+date追加條件</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=二十全部功能清單>二十、全部功能清單<a href=#二十全部功能清單 class=hash-link aria-label=二十、全部功能清單的直接連結 title=二十、全部功能清單的直接連結 translate=no>​</a></h2>
+<p>以下是lark-clisheets所有shortcut的測試狀態:
+是否實测
+功能
+Shortcut
+已测
+創建表格(带表頭和数據)</p>
+<ul>
+<li class="">create</li>
+</ul>
+<p>已测</p>
+<ul>
+<li class="">info</li>
+</ul>
+<p>查看表格和sheet資訊
+已测</p>
+<ul>
+<li class="">read</li>
+</ul>
+<p>讀取單元格数據
+已测</p>
+<ul>
+<li class="">write</li>
+</ul>
+<p>寫入單元格(覆蓄模式)</p>
+<ul>
+<li class="">write-image</li>
+</ul>
+<p>已测
+插入圖片到單元格
+puadde+
+追加行数據
+已测
+查找單元格
+已测</p>
+<ul>
+<li class="">find</li>
+</ul>
+<p>查找替换</p>
+<ul>
+<li class="">replace</li>
+</ul>
+<p>已测
+遵出爲xlsx/csv
+已测</p>
+<ul>
+<li class="">export</li>
+</ul>
+<p>合供单元格</p>
+<ul>
+<li class="">merge-cells</li>
+</ul>
+<p>日</p>
+<ul>
+<li class="">unmerge-cells</li>
+</ul>
+<p>日
+取消合供
+已测
+設定单元格様式</p>
+<ul>
+<li class="">
+<p>set-style</p>
+</li>
+<li class="">
+<p>batch-set-style</p>
+</li>
+</ul>
+<p>批量設定多區域檬式
+日</p>
+<ul>
+<li class="">add-dimension</li>
+</ul>
+<p>在末尾追加行/列
+日
+在指定位置插入行/列</p>
+<ul>
+<li class="">insert-dimension</li>
+</ul>
+<p>删除行/列
+已测</p>
+<ul>
+<li class="">delete-dimension</li>
+</ul>
+<p>已测
+設定行高/列實、藏行/列</p>
+<ul>
+<li class="">update-dimension</li>
+</ul>
+<p>移動行/列
+日</p>
+<ul>
+<li class="">move-dimension</li>
+</ul>
+<p>spreadsheet.sheet.filters create
+創建筛選
+已测
+spreadsheet.sheet.filters get
+已测
+獲取筛選狀態
+已测
+spreadsheet.sheet.filters update
+更新筛選條件
+spreadsheet.sheet.filters delete
+删除選
+已测
+全部22個功能均已實测通過。
+本文所有命令和输出均為真實執行结果。實测表格地址:
+https ://d7fwkz4t4y.feishu.cn/sheets/IPxPsm0iLh3ZXmtr7SBcmR8unpg
+附:踩坑匯總(精簡版)
+問题
+解决方案
+原因
+auth login--scope
+没有授權表格權限
+missing_scope
+補授權
+range 没带 sheet
+加--sheet-id 或用sheetId!ran
+requires --sheet-
+ge格式
+id
+id
+append時range
+rows of value:2 >
+用“A:D"
+整列圍
+行数不钧
+range
+unsafe image/outp
+用了對路径
+cd到目標目錄,用./相對路径
+ut path
+merge-cells必填
+merge-type not se
+加--merge-type
+参数没傅
+t
+国片檔案捐堰或格式
+95201 server erro
+確保是有效PNG/JPG
+不對
+r
+insert/delete索引
+insert用0-indexed,delete用
+兩者索引體系不同
+1-indexed
+混勐
+本文所有命令和输出均為真實執行结果。實测表格地址:
+<code>https://d7fwkz4t4y.feishu.cn/sheets/IPxPsm0iLh3ZXmtr7SBcmR8unpg</code></p>
+<p>lark-cli·目录三
+&lt;上一篇
+下一篇>
+lark-cli實03:AIAgent 操作飛害
+lark-cli實载θ1:安装到創建飛書文檔
+完整指南
+幻燈片全流程實测(含XML模板)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<blockquote>
+<p>原始导出图超过单张 WebP 的尺寸上限，以下图片按从上到下的顺序连续保存。
+<img decoding=async loading=lazy alt="lark-cli 實戰 02：AI Agent 操作飛書電子表格全流程實測（22 項功能）：微信公众号导出原始排版图（第 1 段，共 2 段）" src=/assets/images/article-01-769d0dd51548683f80fa8f3421fc4825.webp width=1280 height=16000 class=img_ev3q />
+<img decoding=async loading=lazy alt="lark-cli 實戰 02：AI Agent 操作飛書電子表格全流程實測（22 項功能）：微信公众号导出原始排版图（第 2 段，共 2 段）" src=/assets/images/article-02-8ab88c396a5936e7355d4cdfdf78bc90.webp width=1280 height=6617 class=img_ev3q /></p>
+</blockquote></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2026-04-15-2026-04-15-lark-cli-實戰-02-ai-agent-操作飛書電子表格全流程實測-22-項功能-2247485795.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2026-04-15-lark-cli-實戰-01-從安裝到創建飛書文檔完整指南-2247485791><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>lark-cli 實戰 01：從安裝到創建飛書文檔完整指南</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2026-03-31-開源項目解剖-特斯拉-can-匯流排協議是怎麼被-20-歐元開發板利用的-2247485770><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>開源項目解剖：特斯拉 CAN 匯流排協議是怎麼被 20 歐元開發板利用的</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#一前置補授權表格權限 class="table-of-contents__link toc-highlight">一、前置:補授權表格權限</a><li><a href=#二創建表格 class="table-of-contents__link toc-highlight">二、創建表格</a><ul><li><a href=#21带表頭和数據一次性創建 class="table-of-contents__link toc-highlight">2.1带表頭和数據一次性創建</a></ul><li><a href=#三查看表格资訊 class="table-of-contents__link toc-highlight">三、查看表格资訊</a><li><a href=#四讀取數據 class="table-of-contents__link toc-highlight">四、讀取數據</a><li><a href=#五追加行数據 class="table-of-contents__link toc-highlight">五、追加行数據</a><li><a href=#六寫入單元格覆盖模式 class="table-of-contents__link toc-highlight">六、寫入單元格(覆盖模式)</a><ul><li><a href=#61寫入單個單元格 class="table-of-contents__link toc-highlight">6.1寫入單個單元格</a><li><a href=#62寫入一列数據 class="table-of-contents__link toc-highlight">6.2寫入一列数據</a></ul><li><a href=#七查找和替换 class="table-of-contents__link toc-highlight">七、查找和替换</a><ul><li><a href=#71查找 class="table-of-contents__link toc-highlight">7.1查找</a><li><a href=#72替换 class="table-of-contents__link toc-highlight">7.2替换</a></ul><li><a href=#八合供單元格 class="table-of-contents__link toc-highlight">八、合供單元格</a><li><a href=#九設定單元格様式 class="table-of-contents__link toc-highlight">九、設定單元格様式</a><li><a href=#十插入和删除行列 class="table-of-contents__link toc-highlight">十、插入和删除行列</a><ul><li><a href=#101插入行 class="table-of-contents__link toc-highlight">10.1插入行</a><li><a href=#102删除行 class="table-of-contents__link toc-highlight">10.2删除行</a></ul><li><a href=#十一插入圆片到單元格 class="table-of-contents__link toc-highlight">十一、插入圆片到單元格</a><li><a href=#十二導出表格 class="table-of-contents__link toc-highlight">十二、導出表格</a><ul><li><a href=#121薄出為xlsx class="table-of-contents__link toc-highlight">12.1薄出為xlsx</a><li><a href=#122薄出爲csv class="table-of-contents__link toc-highlight">12.2薄出爲cSV</a></ul><li><a href=#十三取消合供單元格 class="table-of-contents__link toc-highlight">十三、取消合供單元格</a><li><a href=#十四批量設定檬式 class="table-of-contents__link toc-highlight">十四、批量設定檬式</a><li><a href=#一次性對多個區域投定不同檬式 class="table-of-contents__link toc-highlight">一次性對多個區域投定不同檬式:</a><li><a href=#一次api调用就能設定多细不同區域的不同式比逐個5et-style高效 class="table-of-contents__link toc-highlight">一次API调用就能設定多细不同區域的不同式,比逐個+5et-style高效。</a><li><a href=#十五在末尾追加行列 class="table-of-contents__link toc-highlight">十五、在末尾追加行/列</a><li><a href=#十六設定行高列宽和藏行列 class="table-of-contents__link toc-highlight">十六、設定行高/列宽和藏行/列</a><ul><li><a href=#161設定列宽 class="table-of-contents__link toc-highlight">16.1設定列宽</a><li><a href=#162隐藏列 class="table-of-contents__link toc-highlight">16.2隐藏列</a></ul><li><a href=#十七移動行列 class="table-of-contents__link toc-highlight">十七、移動行/列</a><li><a href=#十八数據選 class="table-of-contents__link toc-highlight">十八、数據選</a><ul><li><a href=#180弹備筛選数據 class="table-of-contents__link toc-highlight">18.0弹備筛選数據</a><li><a href=#181創建筛選 class="table-of-contents__link toc-highlight">18.1創建筛選</a><li><a href=#182取選状態 class="table-of-contents__link toc-highlight">18.2取選状態</a><li><a href=#183追加選條件 class="table-of-contents__link toc-highlight">18.3追加選條件</a><li><a href=#184删除筛選 class="table-of-contents__link toc-highlight">18.4删除筛選</a></ul><li><a href=#2get-查看常前解逛像件和被過通的行 class="table-of-contents__link toc-highlight">2.get-查看常前解逛像件和被過通的行</a><li><a href=#3update-在已有部速上添加修改案列的條件不需要range class="table-of-contents__link toc-highlight">3.update-在已有部速上添加/修改案列的條件(不需要range)</a><li><a href=#1delete-清除所有远 class="table-of-contents__link toc-highlight">1.delete-清除所有远</a><li><a href=#十九踩坑匯總 class="table-of-contents__link toc-highlight">十九、踩坑匯總</a><li><a href=#二十全部功能清單 class="table-of-contents__link toc-highlight">二十、全部功能清單</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

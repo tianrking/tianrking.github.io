@@ -1,0 +1,671 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>FFmpeg 深度学习笔记 (三)：Transcoding (转码) 的艺术与实践 - 3_transcoding.c | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2025-05-20-ffmpeg-深度学习笔记-三-transcoding-转码-的艺术与实践-3-transcoding-c-2247484560 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="FFmpeg 深度学习笔记 (三)：Transcoding (转码) 的艺术与实践 - 3_transcoding.c | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《FFmpeg 深度学习笔记 (三)：Transcoding (转码) 的艺术与实践 - 3_transcoding.c》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《FFmpeg 深度学习笔记 (三)：Transcoding (转码) 的艺术与实践 - 3_transcoding.c》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2025-05-20T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2025-05-20-ffmpeg-深度学习笔记-三-transcoding-转码-的艺术与实践-3-transcoding-c-2247484560 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-05-20-ffmpeg-深度学习笔记-三-transcoding-转码-的艺术与实践-3-transcoding-c-2247484560 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-05-20-ffmpeg-深度学习笔记-三-transcoding-转码-的艺术与实践-3-transcoding-c-2247484560 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2025-05-20-ffmpeg-深度学习笔记-三-transcoding-转码-的艺术与实践-3-transcoding-c-2247484560","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2025-05-20T00:00:00.000Z","description":"从微信公众号导入的文章《FFmpeg 深度学习笔记 (三)：Transcoding (转码) 的艺术与实践 - 3_transcoding.c》，保留原始排版图并提供本地 OCR 转写。","headline":"FFmpeg 深度学习笔记 (三)：Transcoding (转码) 的艺术与实践 - 3_transcoding.c","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2025-05-20-ffmpeg-深度学习笔记-三-transcoding-转码-的艺术与实践-3-transcoding-c-2247484560","name":"FFmpeg 深度学习笔记 (三)：Transcoding (转码) 的艺术与实践 - 3_transcoding.c","url":"https://w0x7ce.eu/blog/2025-05-20-ffmpeg-深度学习笔记-三-transcoding-转码-的艺术与实践-3-transcoding-c-2247484560"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>FFmpeg 深度学习笔记 (三)：Transcoding (转码) 的艺术与实践 - 3_transcoding.c</h1><div class="container_mt6G margin-vert--md"><time datetime=2025-05-20T00:00:00.000Z>2025年5月20日</time> · <!-- -->閱讀時間約 32 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2025-05-20 20:37:49（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247484560&idx=1&sn=9273decc49dc9460240ff800bcc826c4&chksm=96e1113aa196982cd9c7913fa2b5053a62a712ac1490d66a40e69ce30dc1ddea8bde1990fca1#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 22034 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>FFmpeg深度学习笔记(三)<!-- -->:Transcoding<!-- -->(转码)的艺术与
+实践-3_transcoding.c
+original wex7ce EI V1ajero 2825年5月20日 28:38美国
+本篇笔记将深入探讨 FFmpeg应用中的核心操作--Transcoding(转码)。我们将
+聚焦于
+的3_transcoding.c示例,详尽解析其核心原理、目标,并对代码实现进行注释风
+格的梳理,力求清晰展现转码的完整流程。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一transcoding转码-核心原理与目标再深化>一、Transcoding(转码)-核心原理与目标再深化<a href=#一transcoding转码-核心原理与目标再深化 class=hash-link aria-label=一、Transcoding(转码)-核心原理与目标再深化的直接連結 title=一、Transcoding(转码)-核心原理与目标再深化的直接連結 translate=no>​</a></h2>
+<p>A.到底什么是Transcoding(转码)?
+.精确定义与过程分解Transcoding(转码)是指将已经编码(压缩)的音视频数据
+流,通过解码(Decoding)还原成原始的未压缩数据(如视频的YUV像素数据,音
+频的PCM采样数据),然后(可选地)进行滤镜处理(Filtering),最后再使用目
+的(或相同的)容暴中的完整过程。这是一个对媒体内容进行“再加工”的流程。
+.与Remuxing(转封装)的根本区别
+。Remuxing(转封装):核心在于不改变音视颜流的编码数据本身,仅仅是更换其
+外部的容器格式(如MP4转MKV)。它不涉及解码和重新编码,因此速度快且
+对音视频质量无损。
+。Transcoding(转码):核心在于改变音视流的编码数据,即对原始音视频内
+容进行“再加工”。它必须经过”解码->(可选滤镜)->量新编码”的步骤。
+B. Transcoding 改变了什么?
+.音视频流的编码格式(Codec):如H.264->H.265,
+.编码参数(EncodingParameters):如码率、分辨率、帧率、GOP结构、像
+素/采样格式等。
+,文件大小。
+:音视频质量(对于有损转码,通常会下降)。
+C.Transcoding 没有改变(或不应显署改变)什么?
+。核心叙事内容与主要的感知信息。
+.总时长(Duration)和相对时间关系、音视频同步。
+,重要的元数据(如果刻意保留和迁移)。
+D.为什么需要Transcoding?—核心驱动力
+.兼容性(CompatibiLity):适配不同播放设备、操作系统、浏览器及编辑软件对
+编码格式和参数的特定支持。
+.带宽与存储效率(Bandwidth&StorageEfficiency):使用更高效编码或
+适当降低参数,在可接受质量前提下,显著减小文件体积。
+.自适应比特率流(Adaptive Bitrate Streaming-ABR):为 HLS、DASH
+等流媒体技术准备同一内容的多个不同码率/分辨率的版本。
+.特定播放或处理需求(Specific Playback/Processing Needs):如为视频
+分析预处理、适配特殊显示设备、或在视频上应用永久性效果如水印、硬字幕(这些
+通常伴随重新编码)。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=二ffmpeg-transcoding-的实现基石api-与流程-精要概述>二、FFmpeg Transcoding 的实现基石(API 与流程)-精要概述<a href=#二ffmpeg-transcoding-的实现基石api-与流程-精要概述 class=hash-link aria-label="二、FFmpeg Transcoding 的实现基石(API 与流程)-精要概述的直接連結" title="二、FFmpeg Transcoding 的实现基石(API 与流程)-精要概述的直接連結" translate=no>​</a></h2>
+<p>FFmpeg通过其核心库协同完成转码,关键阶段和核心API包括:
+.输入处理(解封装与解码):
+。打开
+与
+探测
+avformat_open_input ()
+avformat_find_stream_info()。
+解码器准备与打开:
+avcodec_find_decoder()
+avcodec_alloc_context3(), avcodec_parameters_to_context(),
+avcodec_open2()。
+。解码<!-- -->:av_read_frame<!-- -->()读取
+AVPacket,然后通
+过avcodec_send_packet()和avcodec_receive_frame()解码
+为AVFrame。
+.编码器设置与打开:
+。查找与分配<!-- -->:avcodec_find_encoder_by_name<!-- -->()
+avcodec_alloc_context3()。
+。参数配置:为编码器AVCodecContext设置目标码率、分辨率、帧率、像素/
+采样格式、GOP大小、时间基等:可通过av_opt_set()设置私有选项,
+。打开编码器<!-- -->:avcodec_open2<!-- -->()。
+.输出处理(编码与封装):
+。创建输出上下文与流<!-- -->:avformat_alloc_output_context2<!-- -->(),
+avformat_new_st ream()。
+。参数回传<!-- -->:avcodec_parameters_fron_context<!-- -->()将编码器参数更新到输
+出流。
+。打开输出Io与写头<!-- -->:avio<!-- --> open().avformat_write header()。
+。编码:将AVFrame 通过avcodec_send_frame()送入编码器,然后通
+过 avcodec_receive_packet()获取编码后的 AVPacket,
+。时间调整:对编码后的AVPacket 调用 av_packet_rescale_ts()。
+。写数据包<!-- -->:av_interleaved_write_frame<!-- -->()。
+。Flush编码器与写尾:发送NULL帧给编码器
+(avcodec_send_frame(encoder_ctx,NULL))并持续接收包,最后调
+用 av_write_trailer()。
+时间管理:在解码、编码、封装的整个链条中,精确处理和转换PTS、DTS及
+duration,并确保它们与各阶段正确的 time base 相关联,是保证最终输出音视
+频同步和播放正常的关键。
+A.3_transcoding.c整体处理流程理
+.参数定义与初始化(StreamingParams,StreamingContext):程序首先定义
+了两个核心结构体。StreamingParams用于配置转码任务(如是否复制流、目标
+编解码器等)。StreamingContext 用于聚合与解码器或编码器相关的 FFmpeg
+上下文。main 函数开始时,会初始化一个 StreamingParams 实例(示例中硬
+编码了默认转码行为).并为解码器(decoder_sc)和编码器(encoder_sc)
+分配 StreamingContext 内存。命令行参数被用来设置输人输出文件名。
+.解码端准备:
+。open_media():打开输入文件,初始化
+decoder_sc-
+>avfc(AVFormatContext)并获取流信息。
+。prepare_decoder():运历输入流,为视频和音频流查找并打开解码器,填
+充decoder_sc 中的 AVCodecContext 等成员。
+,编码端与输出准备:
+。若
+转
+码
+调
+:
+用prepare_video_encoder() 或 prepare_audio_encoder()。这些函
+数会在encoder_sc->avfc中创建新流,并查找、配置、打开指定的编码器
+(encoder_sc->video_avcc 或audio_avcc)。编码参数(如分辨率、码
+率、时间基等)在此处设定。
+。若需复制流(remux):调用prepare_copy()。此函数也在输
+出AVFormatContext中创建新流,但直接从输入流复
+制AVCodecParameters,
+oavformat_alloc_output_context2():根据输出文件名创建输
+出 AVFormatContext (encoder_sc->avfc)。
+。遍历输入流,并根据StreamingParams 的设置:
+。处理AVFMT_GLOBALHEADER 标志(如果输出格式需要)。
+。avio_open():打开物理输出文件。
+oav_dict_set():设置muxer 选项(如果StreamingParams 中有定
+义)。
+。avformat_write_header():将文件头信息写入输出文件。
+.核心转码/复制循环:
+。转码路径:调用 transcode_video()或transcode_audio()。这些函数
+>循环接收编码包->调整编码包时间戳->写入输出文件”。
+。复制路径:调用remux(),调整包的时间戳并直接写入输出。
+使用while (av_read_frame(decoder_sc->avfc,input_packet)
+>=θ)从输入文件循环读取AVPacket。
+。判断包的流类型(视频或音频)。
+。根据 StreamingParams 中对应流的copy_标志:
+av_packet_unref()释放输入包。
+.编码器冲洗(Flush):
+。主循环结束后,对所有设置为转码的编码器进行flush 操作。这是通过
+向encode_video(...,NULL)和encode_audio(...,NULL)传
+递NULL帧来实现的,确保编码器内部所有缓冲的数据都被编码并输出。
+,完成与资源清理:
+。av_write_trailer():写入输出文件的尾部信息。
+。细致地释放所有分配的FFmpeg对象和自定义结构体内存,防止内存泄漏。
+B.3_transcoding.c 源代码及注释
+//包含增解码相关的楼心数据结构和函数(
+//包含客器格式处理相关的核心数据结构和退
+#include &lt;libavfornat/av format.h>
+#include &lt;libavutil/timestanp.hx
+//包含时问载处理相关的工具函数(本示例
+//标准输人输出库,用丁printf。fprin
+#include &lt;stdarg.h>
+/用于处理可变数函数如本示例中的1
+#include cstdlib.h>
+//标准库,用于内存分配《malloc,call
+#include &lt;libavutil/opt.hs
+//FFmpeg 选项设置相关的函数(avopt
+//字特串处理函数(strcpy,strcat,5
+#include &lt;string.ha
+//用于跨平台打印确定氨底的整数英型(如
+#include "video debugging.h*
+11款程提供的目定义日志函数头文件(资设
+1211括构体:用于定义转码任务的登致,使得主逻辑更属可配置性
+typedef struct StreamingParams
+char copy_video;
+//标志位:著为1,则音强流被言接复制(remux):若
+char +output_extension;
+//(可造)输出文件的扩展名,如“.ts"。若提供,会
+char *muxer_opt_key;
+//(可进)用于向输出容器的muxer传透特定选项的
+char *muxer_opt_value;
+/ /(可选) 与muxer_opt_key 对应的值,如“frag
+//(著视频转码)目标视频编研暨的各称,如“L1bx26
+char *audio_codec;
+//(老音频转码)目标音须端码整的名称,如“aac"。
+//(可选)用于向绩码器传递私有遮项的键名,如“X24
+char *codec_priv_key;
+//(可遮)与 codec_priv_key 对应的值。
+} 5treamingParans;
+11结构体:币于封装处理一路媒体流(无论是输人解码还是输出编码)所需的FFnpeg上下文
+typedef struct Streaningcontext {
+AVFormatcontext <em>avfc;
+//指向AVFormatContext(输人时足解封装上下
+AVCodec +video_avc;
+/1指向质AVCodec(解码器或缓码露对象)。
+AV5tream <em>video_avs;
+//指向视强AVStrean(输人流或输出流对象)
+AVCndecCantext</em>videa_avcc; // 指向质 AVCodecContext(解码器或编码整剂
+AVCodecContext</em>audio_avcc;// 指向音經AVCodecContext(解码器或缩码器的
+int audia_index;
+//音线流在其 AVFormatContext 的 streass ]
+char filenane;
+11指向与此上下文相关联的爆体文件名(输入或输出
+} Streamingcontext;
+//(微设Logging函致已在video_debugging.h中定义或在本文件其他增方定义)
+//static void Logging(const char +fet,</p>
+<ul>
+<li class="">
+<p>/ 7 (</p>
+</li>
+<li class="">
+<p>/ }</p>
+</li>
+</ul>
+<p>43//函数:为给定的输人流aVS初始化解码器相关的上下文。
+A4//成功时,avc将指向规到的解码器。avcc据向配置并打开的解码器上下文。
+int fill_strean_info(Avstrean *avs, AVCodec **avc, AVCodecContext **a
+/11.根需糖入流的编解码梦数(avs->codecpar)中的 codec_id查找对应的已注册</p>
+<ul>
+<li class="">avc = (AVCodec*}avcodec_find_decoder(avs->codecpar->codec_id) ;</li>
+</ul>
+<p>if (1<em>avc) (logging(“failed to find the codec for strean #ad (id %d
+//2.为找到的解码器</em>avc分配一个新的AVCodecCantext结构体内存。</p>
+<ul>
+<li class="">avcc = avcodec_alloc_context3(*avc):</li>
+</ul>
+<p>1f [!avcc) (loggingi<em>talled to altoc menory for codec context for
+//3.将输入流的编解码致(avs->codccpar)量数到新分配的解码器上下文</em>avcc
+这一步为解码翻上下文提供了必要的初始化参数,例如分辨率,像素格式,采样率等。
+if [avcodec_paraneters_to_context (*avcc, avs->codecpar) &lt; B) {loggi</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=114使用指定的解码器avc打开初始化解码群上下文avcc使其准無好进行解>114.使用指定的解码器<em>avC打开(初始化)解码群上下文</em>aVcC,使其准無好进行解!<a href=#114使用指定的解码器avc打开初始化解码群上下文avcc使其准無好进行解 class=hash-link aria-label=114使用指定的解码器avc打开初始化解码群上下文avcc使其准無好进行解的直接連結 title=114使用指定的解码器avc打开初始化解码群上下文avcc使其准無好进行解的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第三个参数avdictionaryoplions可以传通特定于解码照的进项此处为>第三个参数AVDictionaryopLions可以传通特定于解码照的进项,此处为!<a href=#第三个参数avdictionaryoplions可以传通特定于解码照的进项此处为 class=hash-link aria-label=第三个参数AVDictionaryopLions可以传通特定于解码照的进项,此处为!的直接連結 title=第三个参数AVDictionaryopLions可以传通特定于解码照的进项,此处为!的直接連結 translate=no>​</a></h2>
+<p>/7
+if (avcodec_opcn2(*avcc, <em>avc, NULL] &lt; θ) {logging("failed to opcn
+return0;//初始化成功
+A//函数:打开指定的输人煤体文件In_f1Lename,并获取其格式和流信息,结果存人</em>avf(
+int open_media(const char *in_filenane, AVFornatContext *<em>avfc) {
+//1.分配AVFornotContext 结构体内存。AVFornotContext 用于存储整个赚体文
+avfc = avfornat_alloc_context();
+if [!+avfc) {logging{"failed to alloc menory for AvFornatContext</em>):</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=112打开输入文件并读取文件头以识别容器格式>112.打开输入文件。并读取文件头以识别容器格式。<a href=#112打开输入文件并读取文件头以识别容器格式 class=hash-link aria-label=112.打开输入文件。并读取文件头以识别容器格式。的直接連結 title=112.打开输入文件。并读取文件头以识别容器格式。的直接連結 translate=no>​</a></h2>
+<p>avformat open input 会填充*avfc 中的部分信息。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第三个参数-avinputfornat-fat-传-nullffnpcg-会容动检测轴入格式>第三个参数 AVInputFornat* fat 传 NULL,FFnpcg 会容动检测轴入格式。<a href=#第三个参数-avinputfornat-fat-传-nullffnpcg-会容动检测轴入格式 class=hash-link aria-label="第三个参数 AVInputFornat* fat 传 NULL,FFnpcg 会容动检测轴入格式。的直接連結" title="第三个参数 AVInputFornat* fat 传 NULL,FFnpcg 会容动检测轴入格式。的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第四个参政avdictlonaryoptlons传null表示没有给解封容器传递额外>第四个参政AVDictlonary**optlons传NULL,表示没有给解封容器传递额外<a href=#第四个参政avdictlonaryoptlons传null表示没有给解封容器传递额外 class=hash-link aria-label=第四个参政AVDictlonary**optlons传NULL,表示没有给解封容器传递额外的直接連結 title=第四个参政AVDictlonary**optlons传NULL,表示没有给解封容器传递额外的直接連結 translate=no>​</a></h2>
+<p>//
+if [avformat open input(avfc, in filenane。 NULL, NULL) != B) {loggi
+/13.读取媒体文件的一部分致据包,以获取更洋细的流信息(如精硬能率、编码参数等)
+此函数会填充(*avfc)->streans数组及其每个AVStrean 成员的详级信息。
+/7
+if (avformat_find_strean_info(*avfc, NULL) &lt; B) (logging(failed t0
+return8://打开媒体并获取信息成功
+82//函政:为StreaningContext sc(解码器础)中的音祝频流准解码器,
+日3//它会逾历输人文件中的所有流,并为找到的第一个视频流和第一个音频流初始化解码暨。
+int prepare_decoder(Streamingcontext *sc) {
+//遍历输人 AVFormatContext(sc->avfc)中的所有流(sc->avfc->nb_streams
+for [int i = 0; 1 &lt; sc->avfc->nb_streams; i++) {
+AVStrean current_strean = sc->avfc->streans[i];// 获取当前流的剂针
+//并断当前流的类型(codecpar->codec_type)。
+1f (current_stream->codecpar->codec_type == AVMEDIA_TYPE VIDEO} {
+//此示例只处理规到的第一个视频流,如果sc->video_avs仍为NULL(初始值)
+1f (sc->video_avs -= NULL) {
+sc->video_avs = current_strean; // 保存祝频流据针到 StreamingC
+sc->video_index = i;
+I1保存视频流在其AVFormatConte
+logging(*Found video strean at index ad", 1);
+//为此祝频流初始化解码群相关的AVCodec 和 AVCodecContext
+if (fill_stream_info(sc->videa_avs, &sc->video_avc, 5sc->vi
+}a51a {
+logging(*Found another video strean at 1ndex &d, ignoring a
+} else 1f (current_strean->codecpar->codec_type -= AVMEDIA_TYPE_A)
+11类似地,只处理找到的第一个音频源。
+if (sc->audio_avs == NULL) {
+sc->audio_avs-current_strean;//保存音须流指针
+/1保存音频流索引
+sc->audlo_1ndex = 1;
+logging(<em>Found audia stream at index %d</em>, i);
+11为此音频流初始化解码器
+If (fill_stream_info(sc->audio_avs, 6sc->audio_avc, 6sc->au
+107
+}else {
+logging(*Found another audio strean at index 4d, ignoring a
+}
+1 1(
+el5e{//其他类型的流(如字幕、数据)在此示例中被忽略
+logging(*skipping strean #ad of type ad (e.g. subtitle, data)."
+}
+11检直是否至少执到了一个视额或音颁流进行处理
+If [!sc->vide0_avs 6& !sc->audio_avs] {
+L I c
+logging(*No video ar audio streams found in the input file that
+returne://解码器准备成功
+2 2
+123// 函数:为输出 StreawingContextsc_encoder(编码整端)创建并配置视频编码器。
+124//多数:
+SC_encoder:指向编码群瑞的 StreaaIngContext,其avfc 成员应已分配
+.25//
+decader_V_avcc:指向输入提频解码器的AVCadecContexl,用于获取源视频的一
+input_francrotc:输入提额的能率(AvRationoT类型),用于设置镇码器时何基。
+/7
+sp: StreamingParans。 包含具标视频编码器名称(sp. video codec) 和私有选及
+int prepare_video_encoder{StreamingContext *sc_encoder, AVCodecContex
+/1.在输出 AVFormatContcxt(sc_cncoder->avfc)中创建—个新的祝频流。
+sc_encoder->video_avs = avfornat_new_strean(sc_encoder->avfc, NULL)
+if (1sc_encoder->video_avs) { logging(*Failed to create ncu video 5"
+//2.根癌 StreaingParanms 中指定的视频编码器名称(sp.video codec)重找已
+1f (!sc_encoder->video_avc) {logging("could not find video encoder:
+1/3.为找到的编码器分配 AVCodecContext 内存。
+sc_encoder->video_avcc = avcodec_alloc_context3(sc_encoder->video_a
+if [!sc_encoder->video_avcc) {logging(Could not allocate menory fo</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=114核心设置视额编码器的各项参数>114.<strong>核心:设置视额编码器的各项参数。</strong><a href=#114核心设置视额编码器的各项参数 class=hash-link aria-label=114核心设置视额编码器的各项参数的直接連結 title=114核心设置视额编码器的各项参数的直接連結 translate=no>​</a></h2>
+<p>//使用avopt set设置编码避的私有选项。“preset是x264/x265 等编码器第,
+/1用于在输码速度和压擅效率之间进行权衡。“fast”是一个较快的预设。
+av_opt_set(sc_encoder->video_avcc->priv_data, <em>preset", “fast</em>, );
+//如果StreaningParans中定义了其他针对此确码器的私有选项是值对。则也进行设置
+if (sp,codec_priv_key 5& sp.codec_priv_value)
+av_opt_set(sc_encoder->video_avcc->priv_data, sp.codec_priv_key,
+/1设置输出视频的高度、宽度和采杆宽高比(5AR)。
+//通常,如果转码不改变分折率和SAR,这签值直接从输人握频解码器上下文(decoder_V
+/1如买需要增放或改变SAR,别应在达入编码器的通过滤镜处理。然后这量设置目标值。
+sc_encoder->video_avcc->width - decoder_v_avcc->width;
+11设置输出橙额的像靠格式(pix_fnt)。
+//*关键:<em><em>此像素格式必额是所透视频编码器(sc_encoder->video_avc)支持的
+//可以通过检查sc_encoder->video_avc->pix_fnts数短来确定支持的格式
+11示例中简单地取编码器支持的第一个格式,或者在搞码器未码确列出时,坐试使用输入解
+11重要:如果解码器输出的额的像素格式与此处设置的境码器陷入像素格式不匹配。
+在等航送人端码器(avcodec_send_frane)之前,必须使用 Libswsca
+此示的监化了这一环节,履设格式兼容或编码器内部能处理第些常见转换,
+//
+1f[sc_encoder->v1deo_avc->pix_fmts】//却果编码器明确列出了支持的需素格式
+sc_encoder->video_avcc->pix_fnt = sc_encoder->video_avc->pix_fmts
+el.se//否则,营试使用确入祝频的像索格式
+Sc_encoder->viceo_avcc->pix_fnt = decoder_v_avcc->pix_fnt;
+//设置目标视额码率(bit_rate),单位:比特/秒。示例中硬缤码为2 Mbps。
+sc_encoder->video_avcc->bit_rate = 2 * 1000 * 1088;
+//设置码率控慰桐关的缓冲区大小(rc_buffer_size)、最大码率(rc_max_rate)和
+/1这些每政影响可壶码率(V8R)编码的行为和输出流的期时码率波动。示例中的值可能素:
+sc_encoder->video_avcc->rc_buffer_s1ze = 4 * 10ee + 1000;
+sc_encoder->video_avcc->rc_min_ratc - 1.5</em> 10ee <em>1089;//(正:
+7
+//设置编码器的时间基(tine_base),非常量要(</em></em>
+11它定义了编码器内部处理和标记能时间致的单位。
+//通常与期塑的出额率(Input_tramerate)相关。av_inv_q(r)计算有理数rB
+// 例效, 如果 input_framerate 是 {25, 1} (代表 25fps)。 则 tine_base 是
+//这意味着编码器期望接收到的AVFranc的pts是以1/25秒为单位的(或者需要转:
+11<strong>将新的建的编出视频流的时间基也设置为与编码器上下文的时问基一致。</strong>
+l/这样做可以简化后续对编码后AVPacket 进行时网数调整(av_packet_rescate_ts
+11因为编码器输出的包的时间醛单位将直接与输出流期望的单位相可。
+sc_cncoder->vidco_avs->timc_base = sc_encoder->vidco_avcc->tinc_bas
+//5.打开(初始化)祝频编码器上下文,使其准备好接收赖进行编码。
+if (avcodec_open2(sc_encoder->vidco_avcc, sc_encoder->vidco_avc, NU
+6
+//6.*关键步骤:**将配置完成并已打开的编码器上下文sc_encoder->video_avc
+(这些参致可能在avcodcc_opcn2后被编码器密调或填充了致认值,例如cxtre
+复影到确出视流的编解码数 sc_encoder->VIdeo_avs->codecpar 中。
+这是为了让Muxer能够获取到正确的流搭述信息,并将其写入输出文件的头部。
+avcodec_parancters_from_context(sc_encoder->video_avs->codecpar, 5c
+return0://祝所编码群准备成功
+200//函数:为输出 StreamingContext sc_encoder(端码群瑞)创建并配置音籍端码器。
+//逻辑与preparevideo encoder 非常相似。但设置的是音频相关的参数。
+int prepare_audio_encoder(Streaningcontext *sc_encoder, int input_sam(
+I11.在输出AVFormatContext 中创建新的育频流
+sc_encoder->audio avs = avformat new strean(sc encoder->avfc, NULL)
+if (1sc_encodcr->audio_avs) ( logging(<em>Failed to create ncu audic 5
+//2.根 StreaingParans 中定的音频编码器名称(sp.audio codec)重找壤
+sc_encoder->audio_avc = (AVCodec</em>)avcodec_find_encoder_by_nane(sp,a
+113,分图盘频端码器上下文
+sc_encoder->audlo_avcc = avcodec_alloc_context3(sc_encoder->aud1o_a
+if [!sc_encoder->audio _avcc) {logging( could not allocated memory f.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=114设置育频编码器的各项参验>114.设置育频编码器的各项参验<a href=#114设置育频编码器的各项参验 class=hash-link aria-label=114.设置育频编码器的各项参验的直接連結 title=114.设置育频编码器的各项参验的直接連結 translate=no>​</a></h2>
+<p>: 1 :
+intOUTPUT_CHANNELS=2://示例:硬编码输出为双声道(立体声)
+int OUTPUT_BIT_RATE=196G88;// 示例:硬编玛输出音须到率为196kbps
+sc_encoder ->audlo_avcc->channel.s
+= OUTPUT_CHANNELS;
+/获取双声道的默认声道布局(通常是AV_CHLAYOUT_STEREO)
+sc_encoder->audio_avcc->channel_1ayout = av_get_default_channel_1lay
+//设置输出音额的采样率,通常与输人一致(1nput_sample_rate),除非要进行重采样
+scC_encoder ->audio_avcc->sample_rate = input_sample_rate;
+11设置输出音频的采杆格式。**关提:**必须是所选音频编码器支持的格式之一。
+/示例中简单地取编码照支持的第一个采样格式(sc_encoder->audio_avc->samoe_
+11如买解码题输出的音频额的采样格式与此不匹配。在送入编码避前必须使用Libswresas
+sc_encoder->audio_avcc->sanple_fimt</p>
+<ul>
+<li class="">sc_encoder->audio_avc->5.</li>
+</ul>
+<p>else {
+logging(*Audio encader Ns does not list supported sample format5,
+sc_encoder->aud1o_avcc->sanple_fmt = AV_SAHPLE_FMT_FLTP; // FLTP</p>
+<ul>
+<li class="">OUTPUT_BIT_RATE; // 设置目标</li>
+</ul>
+<p>sc_encoder->audlo_avcc->bit_rate
+/1设置音频编码题的时间基,通常是{1,采样率}。表示时网既的单位是1/sanpTe_rat
+sc_encoder ->audio_avcc ->tine_base
+= (AvRational){1, sc_encoder
+/1对于某些编码器(例如 FFapeg内置的实整性AAC编码器),可能震要设置此符合性线
+/以允许使用一些可能非严格符合特定标准但能工作的特性。
+sC_encoder->audio_avcc->strict_std_conpliance - FF_coMPLIANCE_EXPER
+11将所的建的输出音须流的时间基也设置为与喻码器上下文的时间基一致
+sc_encoder->audio_avs->time_base = sc_encoder->audio_avcc->tine_bas-
+//5.打开(初始化)音频响码器上下文
+if (avcodec_open2(sc_encoder->audio_avcc, sc_encoder->audio_avc, NU
+//6.将配置好的响码器警数复制到缩出音频流的cadecpar
+avcodec_paraneters_from_context (sc_encoder->audio_avs->codecpar, 5c.
+return0://音频编码群准备成功
+52//函数:当流棱设置为直接复剂(remux)时说用。
+// 在输出 AVFarnatContext{output_avfc) 中的建—个新流(*output_avs),
+l/并直接从输人流的缩解码数(dccodcr_input_par)夏影数数。
+Int prepare_copy(AvFormatContext *output_avfc, Avstream **output_avs,
+//1.在输出 AVFormatContext中创建一个新的流。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第二个参致-const-avcodcccodec-在rcnuxing-时通常为-null因为我们>第二个参致 const AVCodcc*codec 在rcnuxing 时通常为 NULL,因为我们<a href=#第二个参致-const-avcodcccodec-在rcnuxing-时通常为-null因为我们 class=hash-link aria-label="第二个参致 const AVCodcc*codec 在rcnuxing 时通常为 NULL,因为我们的直接連結" title="第二个参致 const AVCodcc*codec 在rcnuxing 时通常为 NULL,因为我们的直接連結" translate=no>​</a></h2>
+<ul>
+<li class="">output_avs = avformat_new_strean(output _avfc, NULL):</li>
+</ul>
+<p>if (1*output_avs) ( logging(*Failed allocating output strean for col
+//2.*核心步强:**直接将输人流的缓解码梦数decoder_Input_par完整复制到新的
+这是remuxing操作的关键,因为它告诉muxer输出流的数据包真有何种确码特:
+1f (avcodec_paraneters_copy((<em>output_avs) ->codecpar, decoder_input_
+logging(<em>Failed to copy codec parameters for remuxing strean.</em>):
+returnAVERROR(EINVAL);// EINVAL通常表示无效参数或硬作
+//对于renuxing,通常将输出流的 codec tag 设为θ。
+//这会让muxer根据codcc_id和目标输出容器格式自动选择或生成合通的FourCC/
+11如果不设为9,muxer可能会曾试使用从输人复制过来的旧的codec_tag,这可能与新
+[<em>output avs) ->codecpar->codec_ tag = θ;
+returne;//流复制准备成功
+74//函数:封装了直接复别(renmux)一个AVPacket的核心操作,主要是调整时问致,
+275//参政:
+pkt:据向待处理的 AVPacket 指针的指针。函数会您改(<em>pkt)的时问数和 stree
+output_avfc_ptr:摇向输出 AVFarmatContext 摇针的据针(用</em></em> 是因为函数
+Input_strean_tb:该包原始确入流的时间基。
+27877
+/ /
+int remux(AVPacket **pkt_ptr, AVFormatCantext **output_avfc_ptr, AVRa
+AVPacket</em>pkt-*pkt_ptr;//解引用获联 AVPacket 播针
+AVFormatCantext *output_avfc = *output_avfc_ptr; // 等5/用获取 AVForn
+//*谭整时间群:**将包(*pkt)的PTS(显示时间数),DTS(解码时间群),和
+/1从其原始输人流的时间基input_streantb 转换为目标输出流的时间基output_st
+//av_rescale_q_rnd进行有理数(分数)时间基的糖放,并可据定舍入方式。
+I/AV_ROUND_NEAR_IMF表示四金五人致最近的整数(超向无穷大方向)。
+I/AV_ROUND_PASSMINMAX允许结果超出目标类型的最小/最大值(在某些需要精确保托
+av_packet_rescale_ts{pkt, input_strean_tb, output_strean_tb);
+//(注意:原示例中renux 函数的 encoder_tb参数名可能易误导,它实际应为 outpi
+//格调整好时间致的包写入输出AVFarmatContext。
+I/av_interleaved_write_frane 会负责根据输出容器格式的要求,
+11正确地交织来自不同流的数据包(仍如,先写一些视频包。再写一些音频包,以满足穗放器
+if [av_interleaved_write_frane(output_avfc, pkt) &lt;B) {
+logging(*Error muxing packet during renux operation");
+return-1://写人先败
+//此函政不负责av_packet_unref(*pkt)。调用它的main 循环会在处理完舞个包后
+returne;//renux 单个包成功
+//函数:授收一个解码后的原始榄质领input_frame,将其发送给encoder_sC->video
+然后在一个疆环中诵用avcodec_receive_packet来获取所有可能产生的编码:
+/ /
+对这些包进行必要的时间致调整,并量终通过 av_ntericaved_write_frane
+/ /
+若1nput_frane 为 NULL,则表示稻人结束(fLush模式)。此函数会向编码
+int encode_video (Streamingcontext *decader_sc, StreamingContext *enco
+//如果是实际的强额额(input_franc 不是 NULL,即非 flush 模式),
+//有时需要清除其pict_type(图像类型,如I、P.B帧)。
+//这是因为解码器输出的赖可能带有原始的pict_type,而端码器有白己的GOP决策逻辑头
+I/保留原始 Dict_typc可能会干犹斓码部的决策,将其设为 AV_PICTURE_TYPE_NONE
+If (input_frane) 1nput_frame->pict_type = AV_PICTURE_TYPE_NoNE;
+AVPacket *output_packet = av_packet_alloc();I| 分配—个 AVPacket 用
+If (!output_packet) {logging(*could not allocate memory for output
+//1.将原始握频赖(input_franc,如果为NULL则是flush信号)发送給额码&
+17
+Int response = avcodec_send_frane(encoder_sc->video_avcc, input_fral
+18
+//检查avcadec_send_frame 的返回值。
+//小于o表示错误。AVERROR_EOF 在flush 模式下(input_franc为NULL)是正常
+If [response &lt; 0 6& response I= AVERROR_EOF) {
+logging(*Error sending frame to videa encoder: %s", av_err2str(
+av_packet_free(&output_packetl;// 释放巴分配的包
+return response:// 返回错送码</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=112撕环从擦码器接收编码压擦后的数摄包>112.撕环从擦码器接收编码(压擦)后的数摄包。<a href=#112撕环从擦码器接收编码压擦后的数摄包 class=hash-link aria-label=112.撕环从擦码器接收编码(压擦)后的数摄包。的直接連結 title=112.撕环从擦码器接收编码(压擦)后的数摄包。的直接連結 translate=no>​</a></h2>
+<p>因为编码器可能有内部缓冲。或者一个编入躺可能不立即产生输出包。
+while (responsc >= B){// 只要上—次 send_framc 或receive_packet 没
+response = avcodec_receive_packet(encoder_sc->v1deo_avcc, output_
+if (responsc == AVERROR(EAGAIN) II responsc == AVERROR_EOF) (
+//AVERROR(EAGAIN):接码器当前没有定够的已编码数据来输出一个包。
+833
+它可能需要更多的输入(期果input_frame 不是iUL
+//
+//AVERROR_EOF:输入已结束(之前发送了 NULL就来fLush),且编码器内部所
+这是编码/fLush过程正常结束的标志。
+break: // 退出当鹏的 receive packet 循环。
+I/如果是EAGAIN,上属速细会继统发送下一赖(如黑还有)。
+11如果是EOF,表示此流的编码已完成。
+}else if(response&lt;9)《//其他编码销误
+logging(*Error while receiving packet fron video cncoder: 4s",
+4
+av_packet_free(&output_packet); // 释成包
+return response;// 返回错误码
+//如果response >=9,说哥成功获取个编码后的 output packet
+output_packet->stream_index = encoder_sc->video_index; // 置包的
+//计算编码包的持磷时间(duration)。
+/示例更辑: duration_in_output_tinebase = (I / output_fps)
+//output_fps 可以从 encoder_sc->vldeo_avcc->franerate (如果设置了)
+851
+//encoder_sc->video avs->time_base 通常是 {1, output_fps}。
+//decodcr_sc->video_avs->avg_franc_rate 是输人流的平均然率。
+//公zC (A.den/A. nuo) / (B. nus/B. den) = (A. den * B. den) / (A.nun *
+//所以 (output_timebase_ticks_per_sec) / (input_fps)
+// 更直接:output_packet->duration = av_rescale_q(1, input_fraserat
+11此处示例的计算方式是基于输入流的平均额事来估算每个确出包(贷设对应一能)的持!
+857
+11并将其表示为赔出流时间基的单位数。
+二
+if (decoder_sc->video_avs S5 decoder_sc->video_avs ->avg_frane_rat
+output_packet->duration = (1nt64_t)encoder_sc->video_avs ->tim
+decoder_sc->video_avs->avg_frane_ra
+// This calculatfon needs review, t
+// A siapler and often correct vay
+// output_packet->duration = 1; (If
+// Or, if input_frame had a duratia.
+// output_packet->dtrration - av_res
+//The exanpte's calcutatlon appear
+// For sinplicity。 if the encoder st
+//Let's use a siapler approacih If
+//FFspeg's ovn transcoding CLI oft
+// Keeping the origina? complex cal
+}else{
+output_packet->duration = 0;
+73</p>
+<p>11**调整时间数:**将确码器输出的包的时间最从确码器的时间基转换到输出流的时间。
+//编码器(encoder_sc->video_avcc)输出的包,其pts 和dts 显以编码器白
+//(encoder_sc->VIdeo_avcc->tine_base)为单位的。
+11在写入muxer(encoder_sc->avfc)前,这些时间致需要被转换到其对应的输出
+//(cncoder_sc->video_avs) 8的ey间基 (encoder_sc->video_avs->tine_b6
+l/在prepare_video_encoder 中,这两害通常被设置为相网的否,
+//*encoder_sc->video_avs->fime_base = encorer_sc=>video_avcc->tii
+//因此,如要严格遵守过个设置,这量的rescale误用理论上是将时问登从时问基A
+11数信不会改变。但这是一个好的实践。以防这两奢在某盛复杂情况下不一致,或为了代
+11源时间基应为编码器输出包的原始时问基。
+av_packet_rescale_ts(output_packet,
+encoder_sc->videa_avcc->lime_base。 // 源: 编延
+1将编码完成(并调整好时何)的数癌包写入输出AVFormaIConlexl。
+6
+1/出其内部的muxer负责按格式要求交识和写人文件。
+response = av_interleaved_write_frane(encoder_sc->avfc, output_pa
+6
+if(response = B} {
+logging(*Error sd while writing vidco packet to output: §s",
+av_packet_free(&output_packet):// 放包
+return-1;// 返回得误
+av_packet_unref (output_packet); // 为下—次 avcodec_receive_packet
+av_packet_frce(6output_packet);//放 AVPackct 结构体本身
+I1如果循环是因为AVERROR_EOF(正常fLush结莱)遇出的,则返回O表示成功,
+//如果是因为AVERROR(EAGAIN)(需要更多输入额)。对于flush接式(input 「re
+|/但对于非flush 模式,适画o让上层媒统 send_framC。
+/1为了简单,这需只要不是负致错误,都视为当前批次的包处理完毕。
+return (response == AVERROR EOF) ? : ((response == AVERROR(EAGAIN
+//函数:编码音频额,逻辑与encodevideo非常相似。
+int encode_audio(Streamingcontext *decoder_sc, StreamingContext *enco
+4 11
+//Input_frane 为 NULL 时表示 fLush 螺码数
+//音频领没育pict_type,所以不需雯像视频那样处理input_frame->pict_type
+AVPacket *output_packet = av_packet_alloc();
+If [!output_packet) {logging(*could not allocate memory for output
+Int response = avcodec_send_frane(encoder_sc->audio_avcc, input_fral
+1 7
+if (response &lt; E && response != AVERROR EOF) { // AVERRoR EOF 在 f1
+logging(*Error sending frane to audia encoder: %s", av_errzstr(
+av_packet_free (&output_packet);
+2@
+return response;
+while (response >= B) {
+response = avcodec_receive_packet(encoder_sc->audio_avcc, output_
+break://需变更多输人或已结束
+} else if (response &lt; θ){
+logging(*Error while receiving packet fron audio encoder: as",
+av_packet_free(&output_packet):
+return1;//输码错误
+3 Z
+433
+11成功获取编码包
+34
+output_packet->stream_index = encoder_sc->audio_index; // 设置为输
+l音频包的 duration 通常由编码群权驾其内部的 frane_size 和 sanpte_rate
+136
+1/或者可以不设置,让muxe厂或播放器自行推断。
+//output_pocket->duration -...
+3
+139
+11调整时间面,从输码器时间基转换到输出流时间基
+av_packet_rescale_ts{output_packet,
+4
+encoder_sc->audio_avcc->time_base, // 源: 音舟
+442
+response = av_interleaved_write_frame(encoder_sc->avfc, output_pa
+if {response = B} {
+logging(*Error sd while writing audio packet to output: ss",</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=447>4.47<a href=#447 class=hash-link aria-label=4.47的直接連結 title=4.47的直接連結 translate=no>​</a></h3>
+<p>av_packet_free(&output_packet) :
+return-1;//写入错误
+av_packet_unref(output_packet);// 为下次授收他准盘
+二
+av_packet_frec(6output_packet);// 放包结构
+return (response == AVERROR_EOF) ? e : ((response == AVERROR(EAGAIN
+//函数:处理单个输人音频包的转码流程:解码->(获取所有解出赖)->编码每-写
+int transcode_audio(StreamingContext *decoder_sc, StreamingContext *e
+//1.招输入的压糖音频包input_pockct 发送给音额解码器dccodcr_5c->audio_6
+Int response = avcodec_send_packet(decoder_sc->audlo_avcc, input_pa
+if [respanse &lt; B) {logging(*Error while sending audio packet to der
+//2.确环从解码器接收解码后的原始音操帧Input_frane
+while (response >= B]{ // 只要上—次 send packet 或 receive_frane 没
+responsc = avcodec_reccivc_frane(decoder_sc->audio_avcc, input_fr.
+1/EAGAII:解码器需要更多输人包才能输出当前额。
+//EOF:已到达流末尾(始果之前发送7NULL包fTush),互解码器内部所有缓冲能
+break://道出授收婚环,等待下一个输人包或表示解码完成,
+} else if (response &lt; θ){
+logging(*Error while recciving audio frane from decodcr: ss", a
+return response;//解码错误
+47 2
+47 5
+//如果 response >= 0,说丽成动解码出一能原始育斯数無别input_frame
+if (response >= B} {
+//将此解码得到的原始音频额input_fronc送去编码
+1f (encode_aud1o(decoder_sc, encoder_sc, Input_frame)) return
+478
+//**关键:**在处理完(或差试处理)从解码器接收到的input_frane后,
+1须诉用av_frane_unref来释放其内部酸据缓冲区的引用。
+48 1
+l/使得input frane 结构体可以皱下一次avcodec receive frase 调用安全地
+av_frane_unref(input_frame);
+|如买是因为EAGAIN或EOF退出摄环,对于当煎包的解码尝试算是“正常”结束(可能
+return 8;
+/1函数:处理单个输入视须包的转到流程:解到>(获取所有解出触)>期码每航>写
+//逻辑与transcode_audio 菲常相似
+Int transcode_video(Streamingcontext +decoder_sc, Streamingcontext +e)
+//1.招输入的压糖视频包input_packet 发送给视频解码器 decodcr_sc->video_a
+Int response - avcodec_send_packet(decoder_sc->video_avcc, input_pa
+If [response &lt; e) {logging(*Error while sending video packet to dec:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=112硬环从解码器接收解码后的原始祝额帧input_frane>112.硬环从解码器接收解码后的原始祝额帧Input_frane<a href=#112硬环从解码器接收解码后的原始祝额帧input_frane class=hash-link aria-label=112.硬环从解码器接收解码后的原始祝额帧Input_frane的直接連結 title=112.硬环从解码器接收解码后的原始祝额帧Input_frane的直接連結 translate=no>​</a></h2>
+<p>while (response >= θ) {
+response = avcodec_receive_frane(decoder_sc->video_avcc, input_fr.
+break://需要更多输人包,或已到流末属层解码群已ftush
+}else if (response &lt; θ){
+logging(*Error while receiving video frane from decoder: 4s", a
+return response;//新码错误
+//如果成功解码出一能原始视(response>=9)
+if (response >= B} {
+//将止解码得到的原始视频input_frane送去编码
+1f (encode_vldeo{decoder_sc, encoder_sc, Input_frame)) return -
+11**关键:**释放当的解码的政癌引用
+av_frae_unref (1nput_frame) :
+return θ;
+515}</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=四3_transcodingc的学习价值与拓展精要回顾>四、3_transcoding.c的学习价值与拓展(精要回顾)<a href=#四3_transcodingc的学习价值与拓展精要回顾 class=hash-link aria-label=四、3_transcoding.c的学习价值与拓展(精要回顾)的直接連結 title=四、3_transcoding.c的学习价值与拓展(精要回顾)的直接連結 translate=no>​</a></h2>
+<p>核心学习点:</p>
+<ul>
+<li class="">
+<p>掌握了Demux->Decode->Encode->Mux的完整媒体处理管线。</p>
+</li>
+<li class="">
+<p>理解了解码器和编码器上下文的独立配置与管理。</p>
+</li>
+<li class="">
+<p>学会了如何根据参数动态选择转码或复制流。</p>
+</li>
+<li class="">
+<p>认识到编码器参数设置对输出的关键影响。</p>
+</li>
+<li class="">
+<p>初步接触了复杂流程中时间戳传递与转换的重要性。</p>
+</li>
+<li class="">
+<p>理解了编码器Flush操作的必要性。</p>
+</li>
+<li class="">
+<p>体会到转码流程中资源管理的复杂性与重要性。</p>
+</li>
+</ul>
+<p>可拓展方向:
+.集成滤镜(libavfilter):实现缩放、裁剪、水印等常见转码需求。
+.精细化编码参数控制:允许用户从外部(如命令行、配置文件)更灵活地控制编码
+参数。
+:硬件加速转码:利用GPU等硬件加速编解码过程。
+通过对3_transcoding.c的深入学习和实践,可以为开发更复杂、更专业的音视频
+处理应用打下坚实的基础。
+ffmpeg·目录=
+&lt;上一篇·FFmpeg深度学习笔记(二)<!-- -->:Remuxing<!-- -->(转封装)的艺术-2_remuxing.C...</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<blockquote>
+<p>原始导出图超过单张 WebP 的尺寸上限，以下图片按从上到下的顺序连续保存。
+<img decoding=async loading=lazy alt="FFmpeg 深度学习笔记 (三)：Transcoding (转码) 的艺术与实践 - 3_transcoding.c：微信公众号导出原始排版图（第 1 段，共 2 段）" src=/assets/images/article-01-85ac22c8d511b93d26b10c082560efd2.webp width=1280 height=16000 class=img_ev3q />
+<img decoding=async loading=lazy alt="FFmpeg 深度学习笔记 (三)：Transcoding (转码) 的艺术与实践 - 3_transcoding.c：微信公众号导出原始排版图（第 2 段，共 2 段）" src=/assets/images/article-02-9d2bdd4de91718764619e2d1377e2acd.webp width=1280 height=1618 class=img_ev3q /></p>
+</blockquote></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2025-05-20-2025-05-20-ffmpeg-深度学习笔记-三-transcoding-转码-的艺术与实践-3-transcoding-c-2247484560.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2025-05-22-efr32-simplicity-studio-开发环境与实践笔记-2247484571><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>EFR32 (Simplicity Studio) 开发环境与实践笔记</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2025-05-17-ffmpeg-核心概念与-0-hello-world-c-示例深度解析-系列一-2247484552><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>FFmpeg 核心概念与 `0_hello_world.c` 示例深度解析 系列一</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#一transcoding转码-核心原理与目标再深化 class="table-of-contents__link toc-highlight">一、Transcoding(转码)-核心原理与目标再深化</a><li><a href=#二ffmpeg-transcoding-的实现基石api-与流程-精要概述 class="table-of-contents__link toc-highlight">二、FFmpeg Transcoding 的实现基石(API 与流程)-精要概述</a><li><a href=#114使用指定的解码器avc打开初始化解码群上下文avcc使其准無好进行解 class="table-of-contents__link toc-highlight">114.使用指定的解码器<em>avC打开(初始化)解码群上下文</em>aVcC,使其准無好进行解!</a><li><a href=#第三个参数avdictionaryoplions可以传通特定于解码照的进项此处为 class="table-of-contents__link toc-highlight">第三个参数AVDictionaryopLions可以传通特定于解码照的进项,此处为!</a><li><a href=#112打开输入文件并读取文件头以识别容器格式 class="table-of-contents__link toc-highlight">112.打开输入文件。并读取文件头以识别容器格式。</a><li><a href=#第三个参数-avinputfornat-fat-传-nullffnpcg-会容动检测轴入格式 class="table-of-contents__link toc-highlight">第三个参数 AVInputFornat* fat 传 NULL,FFnpcg 会容动检测轴入格式。</a><li><a href=#第四个参政avdictlonaryoptlons传null表示没有给解封容器传递额外 class="table-of-contents__link toc-highlight">第四个参政AVDictlonary**optlons传NULL,表示没有给解封容器传递额外</a><li><a href=#114核心设置视额编码器的各项参数 class="table-of-contents__link toc-highlight">114.<strong>核心:设置视额编码器的各项参数。</strong></a><li><a href=#114设置育频编码器的各项参验 class="table-of-contents__link toc-highlight">114.设置育频编码器的各项参验</a><li><a href=#第二个参致-const-avcodcccodec-在rcnuxing-时通常为-null因为我们 class="table-of-contents__link toc-highlight">第二个参致 const AVCodcc*codec 在rcnuxing 时通常为 NULL,因为我们</a><li><a href=#112撕环从擦码器接收编码压擦后的数摄包 class="table-of-contents__link toc-highlight">112.撕环从擦码器接收编码(压擦)后的数摄包。</a><ul><li><a href=#447 class="table-of-contents__link toc-highlight">4.47</a></ul><li><a href=#112硬环从解码器接收解码后的原始祝额帧input_frane class="table-of-contents__link toc-highlight">112.硬环从解码器接收解码后的原始祝额帧Input_frane</a><li><a href=#四3_transcodingc的学习价值与拓展精要回顾 class="table-of-contents__link toc-highlight">四、3_transcoding.c的学习价值与拓展(精要回顾)</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

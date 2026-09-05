@@ -1,0 +1,260 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>给 AI 装上大脑的海马体：聊聊 MemU 这个记忆框架 | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2026-02-01-给-ai-装上大脑的海马体-聊聊-memu-这个记忆框架-2247485445 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="给 AI 装上大脑的海马体：聊聊 MemU 这个记忆框架 | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《给 AI 装上大脑的海马体：聊聊 MemU 这个记忆框架》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《给 AI 装上大脑的海马体：聊聊 MemU 这个记忆框架》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2026-02-01T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2026-02-01-给-ai-装上大脑的海马体-聊聊-memu-这个记忆框架-2247485445 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-02-01-给-ai-装上大脑的海马体-聊聊-memu-这个记忆框架-2247485445 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-02-01-给-ai-装上大脑的海马体-聊聊-memu-这个记忆框架-2247485445 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2026-02-01-给-ai-装上大脑的海马体-聊聊-memu-这个记忆框架-2247485445","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2026-02-01T00:00:00.000Z","description":"从微信公众号导入的文章《给 AI 装上大脑的海马体：聊聊 MemU 这个记忆框架》，保留原始排版图并提供本地 OCR 转写。","headline":"给 AI 装上大脑的海马体：聊聊 MemU 这个记忆框架","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2026-02-01-给-ai-装上大脑的海马体-聊聊-memu-这个记忆框架-2247485445","name":"给 AI 装上大脑的海马体：聊聊 MemU 这个记忆框架","url":"https://w0x7ce.eu/blog/2026-02-01-给-ai-装上大脑的海马体-聊聊-memu-这个记忆框架-2247485445"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>给 AI 装上大脑的海马体：聊聊 MemU 这个记忆框架</h1><div class="container_mt6G margin-vert--md"><time datetime=2026-02-01T00:00:00.000Z>2026年2月1日</time> · <!-- -->閱讀時間約 9 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2026-02-01 21:46:05（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247485445&idx=1&sn=becea6c4013c161bba625bc692477dc3&chksm=96e11dafa19694b92c0cad578231b93d78336b7e71612054f571d79dc8d61581b35ee980c71c#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 4232 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>original wex7ce EI V1ajero 2826年2月1日 21:46 中国台湾
+为什么AI总是记不住事情
+你有没有发现,现在市面上那些AI助手,联明是真聪明,健忘也是真健忘。
+昨天你跟它说过你prefer美式咖啡,今天它又开始给你推荐拿铁。上周你跟它讨论过的一个
+技术方案,这周你再提起,它一脸茫然。
+本质上是因为这些AIAgent缺少长期记忆能力。它们像一个患有健忘症的天才,推理能力一
+流,但就是留不住任何东西,
+MenU想解决这个问题。</p>
+<p>Memory for Always-on
+Agents
+ous Al sgents with pers
+user inter
+vaa)s nor agh
+wr Yaur Agar
+View Dour</p>
+<p>简单说,MemU是一个专门给长期运行的AI Agent用的记忆框架。它能让 AI在持续运行
+的过程中,自动学习、自动积累、主动回忆。
+MemU的核心设计</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=三层记忆架构>三层记忆架构<a href=#三层记忆架构 class=hash-link aria-label=三层记忆架构的直接連結 title=三层记忆架构的直接連結 translate=no>​</a></h2>
+<p>MenU最有意思的设计是它的三层记忆架构。
+为什么要分三层?我觉得这个设计挺巧妙的。
+Resource(原始数暴层)
+对话记录、文档、图像、音频等原始交互数据
+↓白动提取
+Iten(记亿事实展)
+用户偏好、重要事件、关系图诺等结构化记忆
+自动分类
+Category(分英摘要层)
+个人信息、消费偏好、社交关系等聚合携要
+最底层是Resource,存的是原始效据一对话记录、文档、图片、音频这些。这层相当于完整
+备份,确保什么信息都不丢。
+中间层是Item,从原始数据里提取出来的结构化事实。比如从一段对话里提取出“用户喜欢题
+美式觀啡”每周一三五去健身房“这些具体信息。
+最上层是Category,自动分类的揭要。个人信息、消费偏好、社交关系这些,会被聚合成更
+高维度的换要。
+这种设计的好处很明显:不同场景可以调用不同精度的记忆。简单问题查Item就够了,复杂
+分析可能需要看Category,要追溯原始信息就去Resource
+代码架构
+整体分层设计
+MenU 的代码组织很清晰,分层很明确:
+Application Layer (左用层)
+MenoryService|MenorizeNixin | RetrieveMixin</p>
+<p>Morkflow Engine (工作流层)
+Pipeline | Step | Runner |Interceptor</p>
+<p>LLM & Embedding (模型层)
+LLM Client I Enbedding Backends
+↓
+Data Storage(存储展)
+SQLite | PostgreSOL I In-Memory
+用到的设计模式
+看完代码,我注意到几个摇有意思的设计选择。
+Mixin 横式用来拆分功能。主服务类继承了三个Mixin:
+1CLass MemoryService(MenorizeMixin, RetrleveMixin, CRUDMixin) :
+“"记亿服务主类...</p>
+<ul>
+<li class="">
+<p>MerorizeMixin:负责记忆的提取和存储</p>
+</li>
+<li class="">
+<p>RetrieveNixin:负责记亿的检素和组装</p>
+</li>
+<li class="">
+<p>CRUDMixin:提供基础的增酬改查操作</p>
+</li>
+</ul>
+<p>这种写法挺 Python1c的,功能拆得干净,测试也好写。
+工厂模式处理多种存储后端:
+def build_databasc(*, config: Databaseconfig, user_nodel: typc[BascMode
+""根据配置动态创键致参库实例"
+内存数据库用于开发测试,SQLite 可以应付轻量级生产环境,PostgreSQL+pgvector
+就能支撑企业级部署。切换后端只需要改配置,代码不用动。
+Pipeline模式把记忆处理流程拆成一串可配置的步强:
+class PipelineManagcr:
+def reglster(self, name: Str, steps: Iterable[MorkflowStep])
+def config step(self, name: str, step id: str, configs: dict)
+处理流程是这样的:接收数据+提取信息一分类组织一建索引+持久化。每个步骤都能独
+立配置和替换,扩展起来很方便。
+Python+Rust 混合
+这个设计提有意思。Python 写业务逻辑和 API,Rust 跑性能关键路径,通过 Py03粘在一
+起。</p>
+<ul>
+<li class="">
+<p>Python:业务速辑、API设计、集成生态</p>
+</li>
+<li class="">
+<p>Rust:性能关键路径、数据处理、向量计算</p>
+</li>
+</ul>
+<p>兼顾了开发效率和运行性舰,这个权衡选得挺务实。
+核心功能
+主动记忆
+主动记亿这个功能我觉得做得摄好。
+传统记亿系统得你显式告诉它”记住这个",但MemlU是真正的持续学习:
+async def memorize(self, *, resource_url: str, nodality: str, user: d1c
+“"持境学习管道·自动从交互中提取记亿
+它蓝听你和AI的交互,自动识别有价值的信息,提取出来结构化,然后更新记忆库,全程不
+需要你手动触发。
+双模式检索
+检索方面有个聪明的双模式设计。
+RAG模式走向量相似度,毫移级响应,几乎没什么成本,适合实时对话:
+ncnory = await scrvice,retrieve(
+query="用户喜效什么类型的咖峰?",
+6pJ,=pou1au
+4
+LLM模式会让大模型深应推理一下,响应恒点成本高点,但能处理复杂问题:
+nenory - awalt service.retrleve(
+query="根据月户最近的购买记录,分析他的消费超势“。
+11=poqau
+)
+两种模式可以灵活切换,这个设计在实际工程里会很实用。
+意图预测
+它还能预测用户意图:
+async def predict_intent(self, context: dict) -> str:
+“"基于当前上下文候翘用户下一步意图“
+比如你问天气,它可能提前准备旅行建议:你提到购物,相关的商品推荐就预加载好了。这
+种“预判“能力能让交互体验好不少。
+多模态支持
+Menl统一处理多种数据模态:
+处理方式
+模态
+记忆提取
+实体提取、关系识别
+文本
+对话、文格分析
+图像
+视觉理解
+场景记忆、物体识别
+音频
+语音转文本
+情感分析、内客记忆
+虽然现在大部分应用还是文本为主,但这个能力储备放在部里,以后要用就很方便。
+成本优化
+成本控制这块他们想得挺细:</p>
+<ul>
+<li class="">
+<p>智能缓存:避免重复的LLM调用</p>
+</li>
+<li class="">
+<p>增量更新:只处理新增或变化的内容</p>
+</li>
+<li class="">
+<p>分层检索:摘单查询用RAG模式省成本</p>
+</li>
+<li class="">
+<p>批量处理:合并多个请求减少API调用</p>
+</li>
+</ul>
+<p>这些优化点说明作者是有实际生产经验的。
+应用场景
+个人AI助手
+这是最直接的应用场景,能记住你的饮食偏好、娱乐习惯、工作日程,重要事项不用重复说,体
+验会好很多。
+用户:我瑟吃晚餐
+AI:根据你之前的偏好,我推荐三意你要欢的意大利餐厅,
+而且今天你生日,其中一家还有生日优通。
+智能客服
+记住客户的历史问题和解决方案,跟踪购买记录和偏好,不用每次都从头问起,股务效率能提升
+不少。
+客户:我的产品又有问题了
+AI:我看到你上周遇到类似问题,我们是通过更换配件解决的,
+这次是同样的问题吗?需要我直接安排更换吗?
+教育辅导
+记录学习进度,识别知识薄器点,生成个性化学习路径。这个比千人一面的教学要强。
+学生:我学不好代
+AI:我注意到你在因式分解方面比较薄弱,这是理解代数的基础,
+让我们从这里开始巩固。
+医疗健康
+跟踪症状变化、治疗效果,分析健康趋势。当然这个领域数据敏感,合规要求会复杂一些。
+更者:我最近头痛顺繁
+AI:对比你这去三个月的记录,头痛频率确实尊却了,
+而且我注意到这与你的睡据质量下降有关。</p>
+<p>工程细节
+从工程角度看,有几个点我觉得做得不错。
+类型安全。全面用Python类型提示,加上Pydantic做数据验证,这种组合在大型项目里
+能省不少坑。
+错误处理也做得挺细,异常定义粒度够细,恢复机制也比较完善。生产环境里这个太重要了。
+配置驱动的设计让灵活性很高,大量行为可以通过配置调整,不用改代码。
+异步优先的设计支撑高并发,这在24/7运行的场景里是刚需。
+Rust扩展这块我还没细看代码,但这个思路是对的。Python写起来舒服,Rust跑起来快,
+各司其职。
+怎么用
+上手挺简单的。
+from memu import MemoryService
+service = MemoryService.from_config("config.yaml")
+#记忆会自动提取和分类
+await service.memorize(
+resource_url="conversation://chat-123",
+modality="text",
+user={"id":"user-456"}
+1 1
+12#检索记忆
+result = await service.retrieve(
+13
+query="用户喜欢什么类型的电影?",
+14
+method="rag"
+15
+16
+配置用YAML,结构清晰:
+llm:
+default:
+provider: "openai"
+model:"gpt-40"
+api_key: "${OPENAI_API_KEY}"
+database:
+backend: "sqlite"
+path:"./memu.db"
+10
+embedding:
+11
+backend:"openai"
+1 2
+model: "text-embedding-3-small"
+13
+14
+workflows:
+15
+16
+memorize:
+1 7
+steps:
+18</p>
+<ul>
+<li class="">
+<p>extract_entities</p>
+</li>
+<li class="">
+<p>classify_items</p>
+</li>
+</ul>
+<p>19
+20</p>
+<ul>
+<li class="">update_categories</li>
+</ul>
+<p>后续可以怎么演进
+我觉得这个框架已经挺完整的,但还是有些可以继续探索的方向。
+短期来看,支持更多向量数据库(Milvus、Qdrant这些)会很有用。多模态处理能力也可以
+继续加强,检索算法和排序策略也还有优化空间。
+长期想的话,跨Agent记忆共享是个有趣的方向,当然得在授权前提下。记忆压缩和遗忘机制
+也很值得探索,模拟人类记忆的遗忘曲线可能是个不错的思路。联邦学习可以在保护隐私的前提
+下做记忆训练,边缘部署则能让方案适用更多场景。
+最后说两句
+MemU这个项目给我的感觉是,它是从实际问题出发的,而不是为了炫技。AI要从工具变成伙
+伴,记忆能力是绕不开的一环。
+代码质量、架构设计、工程实践都做得不错,看得出作者是真的在生产环境踩过坑。如果你在做
+需要长期运行的AIAgent,或者对AI记忆系统感兴趣,这个项目值得看看。
+项目地址:<code>https://github.com/NevaMind-AI/memU</code></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<p><img decoding=async loading=lazy alt="给 AI 装上大脑的海马体：聊聊 MemU 这个记忆框架：微信公众号导出原始排版图" src=/assets/images/article-eee4f68327a1e93fe1947dc8491878c7.webp width=1280 height=8948 class=img_ev3q /></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2026-02-01-2026-02-01-给-ai-装上大脑的海马体-聊聊-memu-这个记忆框架-2247485445.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2026-02-01-moltbook-观察-当-ai-开始自组织-我们看到了什么-2247485439><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>Moltbook 观察：当 AI 开始自组织，我们看到了什么</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2026-01-29-高併發搶票與反爬對抗-基於-flaresolverr-的現代化架構實踐-2247485367><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>高併發搶票與反爬對抗：基於 FlareSolverr 的現代化架構實踐</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#三层记忆架构 class="table-of-contents__link toc-highlight">三层记忆架构</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

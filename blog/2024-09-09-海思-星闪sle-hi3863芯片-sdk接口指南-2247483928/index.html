@@ -1,0 +1,519 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>海思 星闪SLE hi3863芯片 SDK接口指南 | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2024-09-09-海思-星闪sle-hi3863芯片-sdk接口指南-2247483928 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="海思  星闪SLE  hi3863芯片 SDK接口指南 | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《海思  星闪SLE  hi3863芯片 SDK接口指南》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《海思  星闪SLE  hi3863芯片 SDK接口指南》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2024-09-09T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2024-09-09-海思-星闪sle-hi3863芯片-sdk接口指南-2247483928 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2024-09-09-海思-星闪sle-hi3863芯片-sdk接口指南-2247483928 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2024-09-09-海思-星闪sle-hi3863芯片-sdk接口指南-2247483928 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2024-09-09-海思-星闪sle-hi3863芯片-sdk接口指南-2247483928","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2024-09-09T00:00:00.000Z","description":"从微信公众号导入的文章《海思  星闪SLE  hi3863芯片 SDK接口指南》，保留原始排版图并提供本地 OCR 转写。","headline":"海思  星闪SLE  hi3863芯片 SDK接口指南","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2024-09-09-海思-星闪sle-hi3863芯片-sdk接口指南-2247483928","name":"海思  星闪SLE  hi3863芯片 SDK接口指南","url":"https://w0x7ce.eu/blog/2024-09-09-海思-星闪sle-hi3863芯片-sdk接口指南-2247483928"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>海思  星闪SLE  hi3863芯片 SDK接口指南</h1><div class="container_mt6G margin-vert--md"><time datetime=2024-09-09T00:00:00.000Z>2024年9月9日</time> · <!-- -->閱讀時間約 12 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2024-09-09 21:28:10（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247483928&idx=1&sn=4bff5af2b5bc007cd651070dfd0c6313&chksm=96e117b2a1969ea425a03ecc538a0b5e561c3df95cbd34cb13538bcce9e9f5dfde3e3bd05d30#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 5939 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>originalw6x7ce EI V1ajero 2824年9月9日 21:28 波兰</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1引言>1.引言<a href=#1引言 class=hash-link aria-label=1.引言的直接連結 title=1.引言的直接連結 translate=no>​</a></h2>
+<p>本指南详细介绍了SLE(StarLinkExpress)SDK开放的技术组节,包括基本概念、关键接
+口、参敬设置以及与其他无线技术的比较。参考一下链接
+W1kiped1a
+https ://zh. wikipedia org/wik1/%E6%98%9FsE9$97%AA
+BearPi
+<a href=https://gitee.com/bearpi/bearpi-pico_h3863 target=_blank rel="noopener noreferrer" class="">https://gitee.com/bearpi/bearpi-pico_h3863</a>
+海思
+<a href=https://www.his111con.com/cn/products/connectivity/short-range- target=_blank rel="noopener noreferrer" class="">https://www.his111con.com/cn/products/connectivity/short-range-</a>
+IoT/wif1-nearl1nk-ble/H13863V100</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2sle技术概述>2.SLE技术概述<a href=#2sle技术概述 class=hash-link aria-label=2.SLE技术概述的直接連結 title=2.SLE技术概述的直接連結 translate=no>​</a></h2>
+<p>SLE(Star Link Express)是一种专为物联网(IoT)设备设计的低功耗无线通信技术。它
+在某些方面类似于蓝牙低功耗(BLE),但具有独特的特性,使其更适合某些IoT应用场景。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=21-sle-vs-蓝牙-vs-wi-fi>2.1 SLE vs 蓝牙 vs Wi-Fi<a href=#21-sle-vs-蓝牙-vs-wi-fi class=hash-link aria-label="2.1 SLE vs 蓝牙 vs Wi-Fi的直接連結" title="2.1 SLE vs 蓝牙 vs Wi-Fi的直接連結" translate=no>​</a></h3>
+<p>特性
+SLE
+Wi-Fi
+蓝牙低功耗(BLE)
+覆盖范
+中等到长(可达几百
+中等(比BLE稍远)
+短(约10-100米)
+米)
+国
+功耗
+极低
+相对较高
+低
+数据速
+低到中等
+高
+低
+率
+网络拓
+点对点、星型网络
+点对点、广播
+星型网络
+扑
+IoT设备、传感器网可穿戴设备、健康监高速数据传输、视频
+主要应
+络、智能家居
+测、近距离控制
+流、网页浏览
+用场景
+SLE的优势在于它结合了BLE的低功耗特性和Wi-Fi的较强网络能力,使其特别适合幂要长电池
+寿命和稳定连接的IoT应用。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3uart服务器在sle生态系统中的角色>3.UART服务器在SLE生态系统中的角色<a href=#3uart服务器在sle生态系统中的角色 class=hash-link aria-label=3.UART服务器在SLE生态系统中的角色的直接連結 title=3.UART服务器在SLE生态系统中的角色的直接連結 translate=no>​</a></h2>
+<p>UART(Universal Asynchronous Receiver/Transmitter)服务器在SLE网络中扮演着
+关键角色,它作为SLE网络和传统申行设备之间的桥梁,
+UART服务器的主要功能包括:
+L.数据转换:将UART数据格式转换为SLE数据包,反之亦然。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2协议适配处理uart和sle协议之间的差异>2.协议适配:处理UART和SLE协议之间的差异。<a href=#2协议适配处理uart和sle协议之间的差异 class=hash-link aria-label=2.协议适配:处理UART和SLE协议之间的差异。的直接連結 title=2.协议适配:处理UART和SLE协议之间的差异。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3缓冲管理管理效据缓冲确保数据传输的可性>3.缓冲管理:管理效据缓冲,确保数据传输的可性。<a href=#3缓冲管理管理效据缓冲确保数据传输的可性 class=hash-link aria-label=3.缓冲管理:管理效据缓冲,确保数据传输的可性。的直接連結 title=3.缓冲管理:管理效据缓冲,确保数据传输的可性。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1流控制在uart和sle之间实现适当的流控制机制>1.流控制:在UART和SLE之间实现适当的流控制机制<a href=#1流控制在uart和sle之间实现适当的流控制机制 class=hash-link aria-label=1.流控制:在UART和SLE之间实现适当的流控制机制的直接連結 title=1.流控制:在UART和SLE之间实现适当的流控制机制的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4广播数据设置接口>4.广播数据设置接口<a href=#4广播数据设置接口 class=hash-link aria-label=4.广播数据设置接口的直接連結 title=4.广播数据设置接口的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=41-sle_set_adv_local_name>4.1 sle_set_adv_local_name<a href=#41-sle_set_adv_local_name class=hash-link aria-label="4.1 sle_set_adv_local_name的直接連結" title="4.1 sle_set_adv_local_name的直接連結" translate=no>​</a></h3>
+<p>static uint16_t sle_set_adv_local_nane(uint8_t ×adv_data, uint16_t max
+功能描述
+此函数用于设置SLE设备的本地名称,该名称将被包含在广插数据中。
+参数说明</p>
+<ul>
+<li class="">
+<p>acv_data:指向存情广播数据的缓冲区的指针。</p>
+</li>
+<li class="">
+<p>max_Len:广播数据缓冲区的显大长度。</p>
+</li>
+</ul>
+<p>返回值
+函数返回设置的广措数据长度。
+实现细节
+L,函数首先打印本地设备名称的长度和内容,用于调试目的。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2然后它将设备名称的长度和类型信息写入广播数据缓冲区>2.然后,它将设备名称的长度和类型信息写入广播数据缓冲区。<a href=#2然后它将设备名称的长度和类型信息写入广播数据缓冲区 class=hash-link aria-label=2.然后,它将设备名称的长度和类型信息写入广播数据缓冲区。的直接連結 title=2.然后,它将设备名称的长度和类型信息写入广播数据缓冲区。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3使用memcppy_s函数将实际的设条名称复制到广插数据中>3.使用memcpPy_s函数将实际的设条名称复制到广插数据中。<a href=#3使用memcppy_s函数将实际的设条名称复制到广插数据中 class=hash-link aria-label=3.使用memcpPy_s函数将实际的设条名称复制到广插数据中。的直接連結 title=3.使用memcpPy_s函数将实际的设条名称复制到广插数据中。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1最后返回设置后的广播数据总长度>1.最后,返回设置后的广播数据总长度。<a href=#1最后返回设置后的广播数据总长度 class=hash-link aria-label=1.最后,返回设置后的广播数据总长度。的直接連結 title=1.最后,返回设置后的广播数据总长度。的直接連結 translate=no>​</a></h2>
+<p>技术考虑</p>
+<ul>
+<li class="">
+<p>设备名称在SLE网络中用于标识设备,葵似于BLE中的DeviceNane特性。</p>
+</li>
+<li class="">
+<p>名称长应受限于广播数据包的最大长度,通常不超过31字节。</p>
+</li>
+<li class="">
+<p>在资源受限的设备上,应考虑使用较短的名移以节省空间和能源。</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=42-sle_set_adv_data>4.2 sle_set_adv_data<a href=#42-sle_set_adv_data class=hash-link aria-label="4.2 sle_set_adv_data的直接連結" title="4.2 sle_set_adv_data的直接連結" translate=no>​</a></h3>
+<p>static uint16_t sle_set_adv_data(uint8_t *adv_data)
+功能描述
+此函数用于设置SLE设备的广插微据内容。
+参数说明</p>
+<ul>
+<li class="">adv_data:指向存储广摄数据的缓冲区的指针。</li>
+</ul>
+<p>返回值
+函数返回设置的广播数据长度。
+实现细节
+L.设置发现级别(Discovery Level)数据。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2设置访间模式access-mode效据>2.设置访间模式(Access Mode)效据。<a href=#2设置访间模式access-mode效据 class=hash-link aria-label="2.设置访间模式(Access Mode)效据。的直接連結" title="2.设置访间模式(Access Mode)效据。的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3使用metcpy_s函致将这些数据复制到广泄数据缓冲区中>3.使用meTcPy_s函致将这些数据复制到广泄数据缓冲区中。<a href=#3使用metcpy_s函致将这些数据复制到广泄数据缓冲区中 class=hash-link aria-label=3.使用meTcPy_s函致将这些数据复制到广泄数据缓冲区中。的直接連結 title=3.使用meTcPy_s函致将这些数据复制到广泄数据缓冲区中。的直接連結 translate=no>​</a></h2>
+<p>技术考虑</p>
+<ul>
+<li class="">
+<p>广播数据的结构和内容直接影响设备的可发现性和连接性。</p>
+</li>
+<li class="">
+<p>数据应该经过精心设计,以在有限的空间内提供最有用的信息。</p>
+</li>
+<li class="">
+<p>考虑到功耗问题,广插数据应尽可能简洁。</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=43-sle_set_scan_response_data>4.3 sle_set_scan_response_data<a href=#43-sle_set_scan_response_data class=hash-link aria-label="4.3 sle_set_scan_response_data的直接連結" title="4.3 sle_set_scan_response_data的直接連結" translate=no>​</a></h3>
+<p>static uint16_t sle_set_scan_response_data(uint8_t scan_rsp_data)
+功能描述
+此函数用于设置扫指响应数据的内容,提供额外的设备信息。
+参数说明</p>
+<ul>
+<li class="">scan_rsp_data:指向存储扫指响应数据的缓冲区的指针。</li>
+</ul>
+<p>返回值
+函数返回设置的扫措响应数据长度。
+实现细节
+L.设置发送功率级别(Tx Power Level)数据。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2调用sle_set_adv_local_nane函数设置本地设备名称>2.调用sle_set_adv_local_nane函数设置本地设备名称。<a href=#2调用sle_set_adv_local_nane函数设置本地设备名称 class=hash-link aria-label=2.调用sle_set_adv_local_nane函数设置本地设备名称。的直接連結 title=2.调用sle_set_adv_local_nane函数设置本地设备名称。的直接連結 translate=no>​</a></h2>
+<p>技术考虑</p>
+<ul>
+<li class="">
+<p>扫推响应数据提供了一个额外的31字节空间案放置更多设备信息。</p>
+</li>
+<li class="">
+<p>这种两阶段的广播机制(广播数据+扫推响应)允许在保持低功耗的同时提供更多设备信</p>
+</li>
+</ul>
+<p>息。</p>
+<ul>
+<li class="">在设计扫描响应数据时,应考虑哪些信息对于潜在的连接设备显有用。</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5广播参数设置接口>5.广播参数设置接口<a href=#5广播参数设置接口 class=hash-link aria-label=5.广播参数设置接口的直接連結 title=5.广播参数设置接口的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=51-sle_set_default_announce_param>5.1 sle_set_default_announce_param<a href=#51-sle_set_default_announce_param class=hash-link aria-label="5.1 sle_set_default_announce_param的直接連結" title="5.1 sle_set_default_announce_param的直接連結" translate=no>​</a></h3>
+<p>static int sle_set_default_announce_param(void)
+功能描述
+此函数用于设置SLE设备的默认广播参数。
+返回值
+函数返回设置结果,成功返回0,失败返回错误码。
+实现细节
+函数设置以下参效:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1广播模式announce_mode>1.广播模式(announce_mode)<a href=#1广播模式announce_mode class=hash-link aria-label=1.广播模式(announce_mode)的直接連結 title=1.广播模式(announce_mode)的直接連結 translate=no>​</a></h2>
+<p>?.广播句柄(announce_handle)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3主副角色announce_gt_role>3.主副角色(announce_gt_role)<a href=#3主副角色announce_gt_role class=hash-link aria-label=3.主副角色(announce_gt_role)的直接連結 title=3.主副角色(announce_gt_role)的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1广播级别announce_level>1.广播级别(announce_level)<a href=#1广播级别announce_level class=hash-link aria-label=1.广播级别(announce_level)的直接連結 title=1.广播级别(announce_level)的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5广播通道映射announce_channel_map>5.广播通道映射(announce_channel_map)<a href=#5广播通道映射announce_channel_map class=hash-link aria-label=5.广播通道映射(announce_channel_map)的直接連結 title=5.广播通道映射(announce_channel_map)的直接連結 translate=no>​</a></h2>
+<p>. 广播间隔(announce_interval_min/max)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7-连接间隔--conn_interval_minmax>7. 连接间隔 ( conn_interval_min/max)<a href=#7-连接间隔--conn_interval_minmax class=hash-link aria-label="7. 连接间隔 ( conn_interval_min/max)的直接連結" title="7. 连接间隔 ( conn_interval_min/max)的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3最大连接延迟conn_max_latency>3.最大连接延迟(conn_max_Latency)<a href=#3最大连接延迟conn_max_latency class=hash-link aria-label=3.最大连接延迟(conn_max_Latency)的直接連結 title=3.最大连接延迟(conn_max_Latency)的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3连接监替超时conn_supervision_timeout->3.连接监替超时(conn_supervision_timeout )<a href=#3连接监替超时conn_supervision_timeout- class=hash-link aria-label="3.连接监替超时(conn_supervision_timeout )的直接連結" title="3.连接监替超时(conn_supervision_timeout )的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3发送功率announce_tx_power>3.发送功率(announce_tx_power)<a href=#3发送功率announce_tx_power class=hash-link aria-label=3.发送功率(announce_tx_power)的直接連結 title=3.发送功率(announce_tx_power)的直接連結 translate=no>​</a></h2>
+<p>L.本地设备地址(own_addr)
+技术考虑</p>
+<ul>
+<li class="">
+<p>这些参数直接影响设备的功耗、可发现性和连接性能。</p>
+</li>
+<li class="">
+<p>参数应根据具体应用场景和设备能力进行优化。</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=52-sle_set_default_announce_data>5.2 sle_set_default_announce_data<a href=#52-sle_set_default_announce_data class=hash-link aria-label="5.2 sle_set_default_announce_data的直接連結" title="5.2 sle_set_default_announce_data的直接連結" translate=no>​</a></h3>
+<p>static int sle_set_default_announcc_data(void)
+功能描述
+此函数用于设置默认的广播数据和扫描响应数据。
+返回值
+函数返回设置结果,成功返回ERRCCDE_SLE_SUCCES5,失败返回其他错误码。
+实现细节
+L.调用sle set acv data设置广播数据。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2调用sle-set-scan-respnse-data-设置扫描响应数据>2.调用sle set scan respnse data 设置扫描响应数据。<a href=#2调用sle-set-scan-respnse-data-设置扫描响应数据 class=hash-link aria-label="2.调用sle set scan respnse data 设置扫描响应数据。的直接連結" title="2.调用sle set scan respnse data 设置扫描响应数据。的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3使用sle_set_announce_data应用设置的数据>3.使用sle_set_announce_data应用设置的数据。<a href=#3使用sle_set_announce_data应用设置的数据 class=hash-link aria-label=3.使用sle_set_announce_data应用设置的数据。的直接連結 title=3.使用sle_set_announce_data应用设置的数据。的直接連結 translate=no>​</a></h2>
+<p>技术考虑</p>
+<ul>
+<li class="">
+<p>广播数据和扫推响应数据的内容应该互补,共同提供完整的设备信息。</p>
+</li>
+<li class="">
+<p>数据内容应根据应用需求进行定制,以优化设备发现和连接过程。</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=6回调函数>6.回调函数<a href=#6回调函数 class=hash-link aria-label=6.回调函数的直接連結 title=6.回调函数的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=61-sle_announce_enable_cbk>6.1 sle_announce_enable_cbk<a href=#61-sle_announce_enable_cbk class=hash-link aria-label="6.1 sle_announce_enable_cbk的直接連結" title="6.1 sle_announce_enable_cbk的直接連結" translate=no>​</a></h3>
+<p>static void sle_announce_enable_cbk(uint3z_t announce_id, errcode_t sta
+功能描述
+此回调函数在广启用操作完成时被调用。
+参数说明</p>
+<ul>
+<li class="">
+<p>announce_id:广播的唯一标识符。</p>
+</li>
+<li class="">
+<p>status:操作的结果状态。</p>
+</li>
+</ul>
+<p>技术考虑</p>
+<ul>
+<li class="">
+<p>此回调可用于确认广播是否成功启动,并在必要时采取相应的错误处理措施。</p>
+</li>
+<li class="">
+<p>在实际应用中,可以利用此回调来更新用户界面或融发其他系统事件。</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=62-sle_announce_disable_cbk>6.2 sle_announce_disable_cbk<a href=#62-sle_announce_disable_cbk class=hash-link aria-label="6.2 sle_announce_disable_cbk的直接連結" title="6.2 sle_announce_disable_cbk的直接連結" translate=no>​</a></h3>
+<p>static void sle_announce_disable_cbk(uint32_t announce_id, errcode_t st.
+功能描述
+此回调函数在广播禁用操作完成时被调用。
+参数说明</p>
+<ul>
+<li class="">
+<p>announce_1d:广播的唯一标识符。</p>
+</li>
+<li class="">
+<p>status:操作的结果状态,</p>
+</li>
+</ul>
+<p>技术考虑</p>
+<ul>
+<li class="">可用于确认广握是否成功停止,并在必要时进行清理操作或状态更新。</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=63-sle_announce_terminal_cbk>6.3 sle_announce_terminal_cbk<a href=#63-sle_announce_terminal_cbk class=hash-link aria-label="6.3 sle_announce_terminal_cbk的直接連結" title="6.3 sle_announce_terminal_cbk的直接連結" translate=no>​</a></h3>
+<p>static void sle_announce_terminal_cbk(uint32_t announce_id)
+功能描述
+此回调函数在广播终止时被调用
+参数说明
+announcc_id:广播的唯一标识符。
+技术考虑</p>
+<ul>
+<li class="">
+<p>可用于处理意外的广插终止情况,如资源耗尽或系统错误。</p>
+</li>
+<li class="">
+<p>在此回调中,应考虑是否需要重新启动广插或通知上层应用。</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7注册回调函数接口>7.注册回调函数接口<a href=#7注册回调函数接口 class=hash-link aria-label=7.注册回调函数接口的直接連結 title=7.注册回调函数接口的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=71-sle_uart_announce_register_cbks>7.1 sle_uart_announce_register_cbks<a href=#71-sle_uart_announce_register_cbks class=hash-link aria-label="7.1 sle_uart_announce_register_cbks的直接連結" title="7.1 sle_uart_announce_register_cbks的直接連結" translate=no>​</a></h3>
+<p>errcode_t sle_uart_announce_register_cbks(void)
+功能描述
+此函数用于注册广播相关的回调函数。
+返回值
+函数返回注册结果,成功返回ERCCDE_SLE_SUCCES5,失败返回其他错误码。
+实现细节</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1初始化-sle-annaunee-seek-callbackst结构体>1.初始化 sle annaunee seek callbackst结构体。<a href=#1初始化-sle-annaunee-seek-callbackst结构体 class=hash-link aria-label="1.初始化 sle annaunee seek callbackst结构体。的直接連結" title="1.初始化 sle annaunee seek callbackst结构体。的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2设置启用禁用和终止回调函数>2.设置启用、禁用和终止回调函数。<a href=#2设置启用禁用和终止回调函数 class=hash-link aria-label=2.设置启用、禁用和终止回调函数。的直接連結 title=2.设置启用、禁用和终止回调函数。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3-调用-sle_anouncc_scek_register_callbacks-注册回调函数>3. 调用 sle_anouncc_scek_register_callbacks 注册回调函数。<a href=#3-调用-sle_anouncc_scek_register_callbacks-注册回调函数 class=hash-link aria-label="3. 调用 sle_anouncc_scek_register_callbacks 注册回调函数。的直接連結" title="3. 调用 sle_anouncc_scek_register_callbacks 注册回调函数。的直接連結" translate=no>​</a></h2>
+<p>技术考虑</p>
+<ul>
+<li class="">
+<p>正确注册回调函数对于管理广播生命周期和处理异常情况至关重要。</p>
+</li>
+<li class="">
+<p>在多线程环境中,应确保回调函数的线程安全性。</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=8初始化接口>8.初始化接口<a href=#8初始化接口 class=hash-link aria-label=8.初始化接口的直接連結 title=8.初始化接口的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=81-sle_uart_server_adv_init>8.1 sle_uart_server_adv_init<a href=#81-sle_uart_server_adv_init class=hash-link aria-label="8.1 sle_uart_server_adv_init的直接連結" title="8.1 sle_uart_server_adv_init的直接連結" translate=no>​</a></h3>
+<p>crrcode_t sle_uart_scrver_adv_init(void)
+功能描述
+此函数用于初始化SLE UART服务器的广插功能。
+返回值
+函数透回初始化结果,成功返回ERRCODE_SLE_5UCCES5,失败透回其他错误码。
+实现细节
+L.调用 sle set default anaunce paran 设置默认广握参数。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2调用sle-set-default_annaunce-data设置默认广播数据>2.调用sle set default_annaunce data设置默认广播数据。<a href=#2调用sle-set-default_annaunce-data设置默认广播数据 class=hash-link aria-label="2.调用sle set default_annaunce data设置默认广播数据。的直接連結" title="2.调用sle set default_annaunce data设置默认广播数据。的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3调用sle_start_annaunce开始广播>3.调用sle_start_annaunce开始广播。<a href=#3调用sle_start_annaunce开始广播 class=hash-link aria-label=3.调用sle_start_annaunce开始广播。的直接連結 title=3.调用sle_start_annaunce开始广播。的直接連結 translate=no>​</a></h2>
+<p>技术考虑</p>
+<ul>
+<li class="">
+<p>此函数应在系统启动时调用,以确保广播功能正确初始化。</p>
+</li>
+<li class="">
+<p>应检查每个步骤的返回值,以确保初始化过程中没有错误发生。</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=9sle参数详解>9.SLE参数详解<a href=#9sle参数详解 class=hash-link aria-label=9.SLE参数详解的直接連結 title=9.SLE参数详解的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=91广播模式announce_mode>9.1广播模式(announce_mode)<a href=#91广播模式announce_mode class=hash-link aria-label=9.1广播模式(announce_mode)的直接連結 title=9.1广播模式(announce_mode)的直接連結 translate=no>​</a></h3>
+<p>广插模式定义了设备在SLE网络中的可见性和连接性。
+可选模式包括:</p>
+<ul>
+<li class="">
+<p>只可被发现</p>
+</li>
+<li class="">
+<p>只可被连接</p>
+</li>
+<li class="">
+<p>可被发现且可被连接</p>
+</li>
+</ul>
+<p>这些模式影响设备的功耗和安全性。例如,只可被连接模式可能用于已知设备间的安全通信。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=92广播间隔announce_interval_minmax>9.2广播间隔(announce_interval_min/max)<a href=#92广播间隔announce_interval_minmax class=hash-link aria-label=9.2广播间隔(announce_interval_min/max)的直接連結 title=9.2广播间隔(announce_interval_min/max)的直接連結 translate=no>​</a></h3>
+<p>广播间理定义了连续两次广播包发送之间的时间。</p>
+<ul>
+<li class="">
+<p>单位:通常为8.625ms的倍数</p>
+</li>
+<li class="">
+<p>announce_interval_min:最小广播间隔</p>
+</li>
+<li class="">
+<p>announce_interval_max:最大广播间隔</p>
+</li>
+</ul>
+<p>较短的间隔增加设备被快速发现的概率,但会增加功耗。较长的间隔可以节省电量,但可能延长
+设备被发现的时间。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=93连接间隔conn_interval_minmax>9.3连接间隔(conn_interval_min/max)<a href=#93连接间隔conn_interval_minmax class=hash-link aria-label=9.3连接间隔(conn_interval_min/max)的直接連結 title=9.3连接间隔(conn_interval_min/max)的直接連結 translate=no>​</a></h3>
+<p>连接间障定义了主设备与从设备之间逼信事件的频本。</p>
+<ul>
+<li class="">
+<p>单位:通需为1.25ms的倍数</p>
+</li>
+<li class="">
+<p>conn_1nterval_min:最小连接间隔</p>
+</li>
+<li class="">
+<p>conn_interval_max:最大连接间隔</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=94最大连接延迟conn_max_latency>9.4最大连接延迟(conn_max_latency)<a href=#94最大连接延迟conn_max_latency class=hash-link aria-label=9.4最大连接延迟(conn_max_latency)的直接連結 title=9.4最大连接延迟(conn_max_latency)的直接連結 translate=no>​</a></h3>
+<p>显大连接延退允许从设备在不通知主设备的情况下跳过一定数量的连接事件。</p>
+<ul>
+<li class="">单位:连接事件的次数</li>
+</ul>
+<p>较高的延退值可以让从设备在没有数据传输时进入深度睡眠状态,从而节省电量。然而,这也会
+增加通信延迟。
+技术考虑:</p>
+<ul>
+<li class="">
+<p>延迟值应根据应用的实时性需求来设置。</p>
+</li>
+<li class="">
+<p>对于需要快速响应的应用,应使用较低的延退值。</p>
+</li>
+<li class="">
+<p>电池供电的设备可能会受益于较高的延退值,以延长电池寿命。</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=95连接监督超时conn_supervision_timeout>9.5连接监督超时(conn_supervision_timeout)<a href=#95连接监督超时conn_supervision_timeout class=hash-link aria-label=9.5连接监督超时(conn_supervision_timeout)的直接連結 title=9.5连接监督超时(conn_supervision_timeout)的直接連結 translate=no>​</a></h3>
+<p>连接监督超时定义了在宣告连接丢失之前,允许没有成功通信的最长时间,</p>
+<ul>
+<li class="">单位:通常为18ms的倍数</li>
+</ul>
+<p>计算公式<!-- -->:conn<!-- --> supervision timeout>(1+conn_maxlatency)*
+conn_interval_max
+技术考虑:</p>
+<ul>
+<li class="">
+<p>较长的超时值可以增加连接的稳定性,特别是在信号不稳定的环境中。</p>
+</li>
+<li class="">
+<p>过长的超时也可能导致实际断开的连接被维持过久,浪费资源。</p>
+</li>
+<li class="">
+<p>在设置这个值时,需要考虑网络的稳定性和应用的容错能力。</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=96发射功率announce_tx_power>9.6发射功率(announce_tx_power)<a href=#96发射功率announce_tx_power class=hash-link aria-label=9.6发射功率(announce_tx_power)的直接連結 title=9.6发射功率(announce_tx_power)的直接連結 translate=no>​</a></h3>
+<p>发射功率决定了设备发送无线信号的强度。</p>
+<ul>
+<li class="">单位<!-- -->:dBm<!-- -->(分贝毫瓦)</li>
+</ul>
+<p>技术考虑:</p>
+<ul>
+<li class="">
+<p>较高的发射功率可以增加通信范围和可靠性,但会显著增加功耗。</p>
+</li>
+<li class="">
+<p>较低的发射功率可以节省电量和减少对其他无线设备的干扰,但可能减少通信范围。</p>
+</li>
+<li class="">
+<p>发射功率的选择应考虑预期的使用环境(室内/室外,预期的通信距离)和设备的电源能力。</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=10sleuart服务器的实现细节>10.SLEUART服务器的实现细节<a href=#10sleuart服务器的实现细节 class=hash-link aria-label=10.SLEUART服务器的实现细节的直接連結 title=10.SLEUART服务器的实现细节的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=101数据流程>10.1数据流程<a href=#101数据流程 class=hash-link aria-label=10.1数据流程的直接連結 title=10.1数据流程的直接連結 translate=no>​</a></h3>
+<p>SLEUART服务器的数据流程如下:
+I.UART接收数据</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2数据缓冲和处理>2.数据缓冲和处理<a href=#2数据缓冲和处理 class=hash-link aria-label=2.数据缓冲和处理的直接連結 title=2.数据缓冲和处理的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3封装为sle数据包>3.封装为SLE数据包<a href=#3封装为sle数据包 class=hash-link aria-label=3.封装为SLE数据包的直接連結 title=3.封装为SLE数据包的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1通过sle协议栈发送>1.通过SLE协议栈发送<a href=#1通过sle协议栈发送 class=hash-link aria-label=1.通过SLE协议栈发送的直接連結 title=1.通过SLE协议栈发送的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5接收sle数据包>5.接收SLE数据包<a href=#5接收sle数据包 class=hash-link aria-label=5.接收SLE数据包的直接連結 title=5.接收SLE数据包的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5解析sle数据包>5.解析SLE数据包<a href=#5解析sle数据包 class=hash-link aria-label=5.解析SLE数据包的直接連結 title=5.解析SLE数据包的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7通过uart发送数据>7.通过UART发送数据<a href=#7通过uart发送数据 class=hash-link aria-label=7.通过UART发送数据的直接連結 title=7.通过UART发送数据的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=102缓冲管理>10.2缓冲管理<a href=#102缓冲管理 class=hash-link aria-label=10.2缓冲管理的直接連結 title=10.2缓冲管理的直接連結 translate=no>​</a></h3>
+<p>有效的缓冲管理对于SLEUART服务器的性能至关重要:</p>
+<ul>
+<li class="">
+<p>使用循环缓冲区来处理UART和SLE之间的数据流。</p>
+</li>
+<li class="">
+<p>实现适当的溢出处理机制。</p>
+</li>
+<li class="">
+<p>考虑使用双缓冲技术以提高吞吐量。</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=103错误处理>10.3错误处理<a href=#103错误处理 class=hash-link aria-label=10.3错误处理的直接連結 title=10.3错误处理的直接連結 translate=no>​</a></h3>
+<p>健壮的错误处理机制包括:</p>
+<ul>
+<li class="">
+<p>UART通信错误检测和恢复</p>
+</li>
+<li class="">
+<p>SLE连接断开处理</p>
+</li>
+<li class="">
+<p>缓冲区溢出处理</p>
+</li>
+<li class="">
+<p>异常数据包的处理</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=104功耗优化>10.4功耗优化<a href=#104功耗优化 class=hash-link aria-label=10.4功耗优化的直接連結 title=10.4功耗优化的直接連結 translate=no>​</a></h3>
+<p>为了优化SLEUART服务器的功耗:</p>
+<ul>
+<li class="">
+<p>在空闲时使用低功耗模式</p>
+</li>
+<li class="">
+<p>实现动态功率调节</p>
+</li>
+<li class="">
+<p>优化数据传输策略,减少不必要的传输</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=11与其他无线技术的详细比较>11.与其他无线技术的详细比较<a href=#11与其他无线技术的详细比较 class=hash-link aria-label=11.与其他无线技术的详细比较的直接連結 title=11.与其他无线技术的详细比较的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=111-sle-vs-ble>11.1 SLE VS BLE<a href=#111-sle-vs-ble class=hash-link aria-label="11.1 SLE VS BLE的直接連結" title="11.1 SLE VS BLE的直接連結" translate=no>​</a></h3>
+<p>特性
+SLE
+BLE</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=24-ghz>2.4 GHz<a href=#24-ghz class=hash-link aria-label="2.4 GHz的直接連結" title="2.4 GHz的直接連結" translate=no>​</a></h3>
+<p>频段</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=24-ghz-1>2.4 GHz<a href=#24-ghz-1 class=hash-link aria-label="2.4 GHz的直接連結" title="2.4 GHz的直接連結" translate=no>​</a></h3>
+<p>通道数
+40
+40
+GFSK
+GFSK
+调制方式
+2 Mbps
+最大数据率
+2 Mbps (BLE 5.0+)
+点对点、星型
+网络拓扑
+点对点、广播、网状(Mesh)
+安全性
+128-bit AES
+128-bit AES
+功耗
+极低
+低
+技术比较:</p>
+<ul>
+<li class="">
+<p>SLE在某些IoT应用中可能比BLE更节能,但具体取决于实现和使用场景。</p>
+</li>
+<li class="">
+<p>BLE有更广泛的生态系统和设备支持。</p>
+</li>
+<li class="">
+<p>SLE可能在某些特定应用中提供更优化的性能。</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=112-sle-vs-wi-fi>11.2 SLE vs Wi-Fi<a href=#112-sle-vs-wi-fi class=hash-link aria-label="11.2 SLE vs Wi-Fi的直接連結" title="11.2 SLE vs Wi-Fi的直接連結" translate=no>​</a></h3>
+<p>特性
+SLE
+Wi-Fi
+频段</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=24-ghz-2>2.4 GHz<a href=#24-ghz-2 class=hash-link aria-label="2.4 GHz的直接連結" title="2.4 GHz的直接連結" translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=24-ghz-5-ghz-6-ghz>2.4 GHz, 5 GHz, 6 GHz<a href=#24-ghz-5-ghz-6-ghz class=hash-link aria-label="2.4 GHz, 5 GHz, 6 GHz的直接連結" title="2.4 GHz, 5 GHz, 6 GHz的直接連結" translate=no>​</a></h3>
+<p>覆盖范围
+中等(-100m)
+长(可达300m+)
+可达几Gbps
+2 Mbps
+最大数据率
+功耗
+极低
+中等到高
+低
+高
+网络复杂性
+适用场景
+低功耗IoT设备
+高带宽应用,如视频流
+技术比较:</p>
+<ul>
+<li class="">
+<p>SLE更适合电池供电的IoT设备,而Wi-Fi更适合需要高带宽的应用。</p>
+</li>
+<li class="">
+<p>Wi-Fi提供更长的范围和更高的数据率,但功耗较高。</p>
+</li>
+<li class="">
+<p>SLE的网络设置和管理通常比Wi-Fi更简单。</p>
+</li>
+</ul>
+<p>#mcu#国产系列#射频</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<p><img decoding=async loading=lazy alt="海思  星闪SLE  hi3863芯片 SDK接口指南：微信公众号导出原始排版图" src=/assets/images/article-cb49b514163f1d5778bbab319cc8b44b.webp width=1280 height=12933 class=img_ev3q /></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2024-09-09-2024-09-09-海思-星闪sle-hi3863芯片-sdk接口指南-2247483928.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2024-09-23-hdlbits-系列入门题目详解之-vector-2247483948><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>HDLBits 系列入门题目详解之 Vector</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2024-09-06-高云fpga-linux下调制pwm-2247483923><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>高云FPGA Linux下调制PWM</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#1引言 class="table-of-contents__link toc-highlight">1.引言</a><li><a href=#2sle技术概述 class="table-of-contents__link toc-highlight">2.SLE技术概述</a><ul><li><a href=#21-sle-vs-蓝牙-vs-wi-fi class="table-of-contents__link toc-highlight">2.1 SLE vs 蓝牙 vs Wi-Fi</a></ul><li><a href=#3uart服务器在sle生态系统中的角色 class="table-of-contents__link toc-highlight">3.UART服务器在SLE生态系统中的角色</a><li><a href=#2协议适配处理uart和sle协议之间的差异 class="table-of-contents__link toc-highlight">2.协议适配:处理UART和SLE协议之间的差异。</a><li><a href=#3缓冲管理管理效据缓冲确保数据传输的可性 class="table-of-contents__link toc-highlight">3.缓冲管理:管理效据缓冲,确保数据传输的可性。</a><li><a href=#1流控制在uart和sle之间实现适当的流控制机制 class="table-of-contents__link toc-highlight">1.流控制:在UART和SLE之间实现适当的流控制机制</a><li><a href=#4广播数据设置接口 class="table-of-contents__link toc-highlight">4.广播数据设置接口</a><ul><li><a href=#41-sle_set_adv_local_name class="table-of-contents__link toc-highlight">4.1 sle_set_adv_local_name</a></ul><li><a href=#2然后它将设备名称的长度和类型信息写入广播数据缓冲区 class="table-of-contents__link toc-highlight">2.然后,它将设备名称的长度和类型信息写入广播数据缓冲区。</a><li><a href=#3使用memcppy_s函数将实际的设条名称复制到广插数据中 class="table-of-contents__link toc-highlight">3.使用memcpPy_s函数将实际的设条名称复制到广插数据中。</a><li><a href=#1最后返回设置后的广播数据总长度 class="table-of-contents__link toc-highlight">1.最后,返回设置后的广播数据总长度。</a><ul><li><a href=#42-sle_set_adv_data class="table-of-contents__link toc-highlight">4.2 sle_set_adv_data</a></ul><li><a href=#2设置访间模式access-mode效据 class="table-of-contents__link toc-highlight">2.设置访间模式(Access Mode)效据。</a><li><a href=#3使用metcpy_s函致将这些数据复制到广泄数据缓冲区中 class="table-of-contents__link toc-highlight">3.使用meTcPy_s函致将这些数据复制到广泄数据缓冲区中。</a><ul><li><a href=#43-sle_set_scan_response_data class="table-of-contents__link toc-highlight">4.3 sle_set_scan_response_data</a></ul><li><a href=#2调用sle_set_adv_local_nane函数设置本地设备名称 class="table-of-contents__link toc-highlight">2.调用sle_set_adv_local_nane函数设置本地设备名称。</a><li><a href=#5广播参数设置接口 class="table-of-contents__link toc-highlight">5.广播参数设置接口</a><ul><li><a href=#51-sle_set_default_announce_param class="table-of-contents__link toc-highlight">5.1 sle_set_default_announce_param</a></ul><li><a href=#1广播模式announce_mode class="table-of-contents__link toc-highlight">1.广播模式(announce_mode)</a><li><a href=#3主副角色announce_gt_role class="table-of-contents__link toc-highlight">3.主副角色(announce_gt_role)</a><li><a href=#1广播级别announce_level class="table-of-contents__link toc-highlight">1.广播级别(announce_level)</a><li><a href=#5广播通道映射announce_channel_map class="table-of-contents__link toc-highlight">5.广播通道映射(announce_channel_map)</a><li><a href=#7-连接间隔--conn_interval_minmax class="table-of-contents__link toc-highlight">7. 连接间隔 ( conn_interval_min/max)</a><li><a href=#3最大连接延迟conn_max_latency class="table-of-contents__link toc-highlight">3.最大连接延迟(conn_max_Latency)</a><li><a href=#3连接监替超时conn_supervision_timeout- class="table-of-contents__link toc-highlight">3.连接监替超时(conn_supervision_timeout )</a><li><a href=#3发送功率announce_tx_power class="table-of-contents__link toc-highlight">3.发送功率(announce_tx_power)</a><ul><li><a href=#52-sle_set_default_announce_data class="table-of-contents__link toc-highlight">5.2 sle_set_default_announce_data</a></ul><li><a href=#2调用sle-set-scan-respnse-data-设置扫描响应数据 class="table-of-contents__link toc-highlight">2.调用sle set scan respnse data 设置扫描响应数据。</a><li><a href=#3使用sle_set_announce_data应用设置的数据 class="table-of-contents__link toc-highlight">3.使用sle_set_announce_data应用设置的数据。</a><li><a href=#6回调函数 class="table-of-contents__link toc-highlight">6.回调函数</a><ul><li><a href=#61-sle_announce_enable_cbk class="table-of-contents__link toc-highlight">6.1 sle_announce_enable_cbk</a><li><a href=#62-sle_announce_disable_cbk class="table-of-contents__link toc-highlight">6.2 sle_announce_disable_cbk</a><li><a href=#63-sle_announce_terminal_cbk class="table-of-contents__link toc-highlight">6.3 sle_announce_terminal_cbk</a></ul><li><a href=#7注册回调函数接口 class="table-of-contents__link toc-highlight">7.注册回调函数接口</a><ul><li><a href=#71-sle_uart_announce_register_cbks class="table-of-contents__link toc-highlight">7.1 sle_uart_announce_register_cbks</a></ul><li><a href=#1初始化-sle-annaunee-seek-callbackst结构体 class="table-of-contents__link toc-highlight">1.初始化 sle annaunee seek callbackst结构体。</a><li><a href=#2设置启用禁用和终止回调函数 class="table-of-contents__link toc-highlight">2.设置启用、禁用和终止回调函数。</a><li><a href=#3-调用-sle_anouncc_scek_register_callbacks-注册回调函数 class="table-of-contents__link toc-highlight">3. 调用 sle_anouncc_scek_register_callbacks 注册回调函数。</a><li><a href=#8初始化接口 class="table-of-contents__link toc-highlight">8.初始化接口</a><ul><li><a href=#81-sle_uart_server_adv_init class="table-of-contents__link toc-highlight">8.1 sle_uart_server_adv_init</a></ul><li><a href=#2调用sle-set-default_annaunce-data设置默认广播数据 class="table-of-contents__link toc-highlight">2.调用sle set default_annaunce data设置默认广播数据。</a><li><a href=#3调用sle_start_annaunce开始广播 class="table-of-contents__link toc-highlight">3.调用sle_start_annaunce开始广播。</a><li><a href=#9sle参数详解 class="table-of-contents__link toc-highlight">9.SLE参数详解</a><ul><li><a href=#91广播模式announce_mode class="table-of-contents__link toc-highlight">9.1广播模式(announce_mode)</a><li><a href=#92广播间隔announce_interval_minmax class="table-of-contents__link toc-highlight">9.2广播间隔(announce_interval_min/max)</a><li><a href=#93连接间隔conn_interval_minmax class="table-of-contents__link toc-highlight">9.3连接间隔(conn_interval_min/max)</a><li><a href=#94最大连接延迟conn_max_latency class="table-of-contents__link toc-highlight">9.4最大连接延迟(conn_max_latency)</a><li><a href=#95连接监督超时conn_supervision_timeout class="table-of-contents__link toc-highlight">9.5连接监督超时(conn_supervision_timeout)</a><li><a href=#96发射功率announce_tx_power class="table-of-contents__link toc-highlight">9.6发射功率(announce_tx_power)</a></ul><li><a href=#10sleuart服务器的实现细节 class="table-of-contents__link toc-highlight">10.SLEUART服务器的实现细节</a><ul><li><a href=#101数据流程 class="table-of-contents__link toc-highlight">10.1数据流程</a></ul><li><a href=#2数据缓冲和处理 class="table-of-contents__link toc-highlight">2.数据缓冲和处理</a><li><a href=#3封装为sle数据包 class="table-of-contents__link toc-highlight">3.封装为SLE数据包</a><li><a href=#1通过sle协议栈发送 class="table-of-contents__link toc-highlight">1.通过SLE协议栈发送</a><li><a href=#5接收sle数据包 class="table-of-contents__link toc-highlight">5.接收SLE数据包</a><li><a href=#5解析sle数据包 class="table-of-contents__link toc-highlight">5.解析SLE数据包</a><li><a href=#7通过uart发送数据 class="table-of-contents__link toc-highlight">7.通过UART发送数据</a><ul><li><a href=#102缓冲管理 class="table-of-contents__link toc-highlight">10.2缓冲管理</a><li><a href=#103错误处理 class="table-of-contents__link toc-highlight">10.3错误处理</a><li><a href=#104功耗优化 class="table-of-contents__link toc-highlight">10.4功耗优化</a></ul><li><a href=#11与其他无线技术的详细比较 class="table-of-contents__link toc-highlight">11.与其他无线技术的详细比较</a><ul><li><a href=#111-sle-vs-ble class="table-of-contents__link toc-highlight">11.1 SLE VS BLE</a><li><a href=#24-ghz class="table-of-contents__link toc-highlight">2.4 GHz</a><li><a href=#24-ghz-1 class="table-of-contents__link toc-highlight">2.4 GHz</a><li><a href=#112-sle-vs-wi-fi class="table-of-contents__link toc-highlight">11.2 SLE vs Wi-Fi</a><li><a href=#24-ghz-2 class="table-of-contents__link toc-highlight">2.4 GHz</a><li><a href=#24-ghz-5-ghz-6-ghz class="table-of-contents__link toc-highlight">2.4 GHz, 5 GHz, 6 GHz</a></ul><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

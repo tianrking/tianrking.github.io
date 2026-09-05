@@ -1,0 +1,474 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>蓝牙技术联盟：架构篇 (Volume 1, Part A) | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2025-06-27-蓝牙技术联盟-架构篇-volume-1-part-a-2247484654 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="蓝牙技术联盟：架构篇 (Volume 1, Part A) | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《蓝牙技术联盟：架构篇 (Volume 1, Part A)》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《蓝牙技术联盟：架构篇 (Volume 1, Part A)》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2025-06-27T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2025-06-27-蓝牙技术联盟-架构篇-volume-1-part-a-2247484654 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-06-27-蓝牙技术联盟-架构篇-volume-1-part-a-2247484654 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-06-27-蓝牙技术联盟-架构篇-volume-1-part-a-2247484654 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2025-06-27-蓝牙技术联盟-架构篇-volume-1-part-a-2247484654","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2025-06-27T00:00:00.000Z","description":"从微信公众号导入的文章《蓝牙技术联盟：架构篇 (Volume 1, Part A)》，保留原始排版图并提供本地 OCR 转写。","headline":"蓝牙技术联盟：架构篇 (Volume 1, Part A)","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2025-06-27-蓝牙技术联盟-架构篇-volume-1-part-a-2247484654","name":"蓝牙技术联盟：架构篇 (Volume 1, Part A)","url":"https://w0x7ce.eu/blog/2025-06-27-蓝牙技术联盟-架构篇-volume-1-part-a-2247484654"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>蓝牙技术联盟：架构篇 (Volume 1, Part A)</h1><div class="container_mt6G margin-vert--md"><time datetime=2025-06-27T00:00:00.000Z>2025年6月27日</time> · <!-- -->閱讀時間約 10 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2025-06-27 23:24:38（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247484654&idx=1&sn=69eabbadd7f38e206999adec3cbce8e8&chksm=96e11144a1969852f49d25b3f407e95f4ce00b3f9c3ccc4fcdd6a423648ccc1fb9fcd3884a6f#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 5091 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>真正读懂蓝牙,我们必须从它的“宽法“蓝牙核心规格(BluetoothCore
+Specification)—说起。我们日常挂在嘴边的蓝牙4.8、5.2,乃至最新的v6.0,其版本号
+正是源于这份文档。为了便于理解,这部底大的规格被清晰地划分为B卷,这片笔记整理记录
+Volume 1, Part A
+卷(VoLum
+核心内容</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一句话解读>一句话解读<a href=#一句话解读 class=hash-link aria-label=一句话解读的直接連結 title=一句话解读的直接連結 translate=no>​</a></h2>
+<p>e)
+世界地图
+:告诉你整部规格的结构,以及蓝牙产品的基本形
+第日卷
+综合指南与核心配置
+态。
+建筑蓝图
+核心架构
+第1卷
+经典蓝牙(BR/EDR)
+经典蓝牙的心脏
+第2卷
+控制器
+:定义了蓝牙耳机、音箱等技术的底层细节。
+蓝牙的大脑
+第3卷
+主机(Host)
+:定义了所有上层协议,如效据通道、服务发现、
+安全管理等。
+主机控制器接口(HC
+关键的神经中枢
+第4.卷
+I)
+:定义了"大路“和”心脏”之间的标准通信语言。
+(已虚弃)
+第5卷
+(历史档案,已不再使用)
+低功耗蓝牙的灵魂
+低功耗蓝牙(LE)控
+第6卷
+:定义了手环、信标等BLE设备的底层射频和链路
+制器
+逻辑。
+外交策略
+第7卷
+无线共存
+:定义了蓝牙技术如何与W1-F1等其他无线“邻居”
+和平共处。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1概述general-description>1.概述(General description)<a href=#1概述general-description class=hash-link aria-label="1.概述(General description)的直接連結" title="1.概述(General description)的直接連結" translate=no>​</a></h2>
+<p>SOH
+Host
+Host</p>
+<p>LE
+BR/EDR
+BR/EDR
+LE
+Controller
+Controller
+Controller
+Controller</p>
+<ul>
+<li class="">两大系统:蓝牙技术包含两种形态:经典蓝牙(BR/EDR)和低功耗蓝牙(LE)。两者都具备</li>
+</ul>
+<p>设备发现、连接建立和管理机制</p>
+<ul>
+<li class="">BR/EDR:为经典蓝牙,提供同步和异步连接,支持较高的数据速率(BR为721.2</li>
+</ul>
+<p>kb/s,EDR可达2.1Mb/s),适用于音频传输等场景。</p>
+<ul>
+<li class="">LE:为低功耗蓝牙,专为低功耗、低成本、低复杂度的产品设计,适用于数据速率要求</li>
+</ul>
+<p>不高、占空比低的应用场景。LE同样支持可选的2Mb/s物理层速率和创新的同步数据传
+辅机制
+成。</p>
+<ul>
+<li class="">
+<p>主机(Host):逐辑实体,包含了蓝牙协议栈中高于HCI(主机控制器接口)的所有层。</p>
+</li>
+<li class="">
+<p>控制器(ControlLer):逻辑实体,包含了HCI及以下的所有层(如射频、基带)。</p>
+</li>
+<li class="">
+<p>控制器配置:一个蓝牙核心系统只有一个控制器,但控制器可以有三种配置:</p>
+</li>
+<li class="">
+<p>仅BR/EDR控制器。</p>
+</li>
+</ul>
+<p>仅LE控制器。
+BR/EDR+LE 双模控制器。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2核心系统架构core-systemarchitecture>2.核心系统架构(Core systemarchitecture)<a href=#2核心系统架构core-systemarchitecture class=hash-link aria-label="2.核心系统架构(Core systemarchitecture)的直接連結" title="2.核心系统架构(Core systemarchitecture)的直接連結" translate=no>​</a></h2>
+<p>ATT/
+SOP
+SMF
+GAP</p>
+<p>Chernel Manager
+L2cao Resour
+Manage
+L2CAP
+Host
+HCI
+CE
+C/E
+ISO
+ACL
+ACL
+Channel
+Link
+ISOAL
+Manige
+tupunog
++
+Device
+Manager
+Link Controler
+Link Controller
+BR/EDR Rido andLE Rado PH)
+BR/EDR Controller
+LE Controller
+500
+(CE)
+nd/tvent
+p
+Aa
+Aaynchronsus (ACL) dats path
+0
+ea epep pue auee-n
+Conmected bochroneus Stream [CIS]
+蓝牙核心系统架构由一系列功能块和它们之间的通信协议组成,确保不同厂商的设备和组件能够
+互操作。</p>
+<ul>
+<li class="">
+<p>主机功能块(Host Architectural BLocks):</p>
+</li>
+<li class="">
+<p>信道管理器(ChannelManager):负责创建、管理和关闭用于数据传输的L2CAP信</p>
+</li>
+</ul>
+<p>道。</p>
+<ul>
+<li class="">
+<p>L2CAP资源管理器:管理向底层提交数据包的顺序和调度,确保服务质量(QoS)。</p>
+</li>
+<li class="">
+<p>安全管理器协议(SMP):仅用于LE系统,负责生成加密密钥和身份密钥。</p>
+</li>
+<li class="">
+<p>属性协议(ATT):定义客户端与服务器之间的通信协议,用于读写少量数据(即“属</p>
+</li>
+</ul>
+<p>性”)。</p>
+<ul>
+<li class="">通用属性配置文件(GATT):构建于ATT之上,定义了服务、特性等微据层次结构,是</li>
+</ul>
+<p>LE服务发现的基础,</p>
+<ul>
+<li class="">通用访问配置文件(GAP):定义了设备发现、连接模式、安全认证等基础行为,是所有</li>
+</ul>
+<p>蓝牙设备的通用准则。</p>
+<ul>
+<li class="">服务发现协议(SDP):仅用于BR/EDR系统,提供一种机制来发现对端设备提供的服</li>
+</ul>
+<p>务。</p>
+<ul>
+<li class="">
+<p>控制器功能块(Controller Architectural Blocks):</p>
+</li>
+<li class="">
+<p>设备管理器:控制设备的通用行为,如扫描、连接、广播等。</p>
+</li>
+<li class="">
+<p>链路管理器(LinkManager):负责创建、修改和释放運辑错路,通过LMP(BR/EDR)</p>
+</li>
+</ul>
+<p>或LL(LE)协议与对端设备通信。</p>
+<ul>
+<li class="">基带资源管理器:负责所有对无线媒介的访问,核心是调度器,为各个通信任务分配时间</li>
+</ul>
+<p>片。
+°</p>
+<ul>
+<li class="">链路控制器(LinkController):负责蓝牙数据包的编解码和链路控制信令(如应</li>
+</ul>
+<p>答、流控)。</p>
+<ul>
+<li class="">
+<p>物理层(PHY):负责在物理信道上发射和接收信息包。</p>
+</li>
+<li class="">
+<p>同步适配层(ISOAL):使上层能以灵活的尺寸和间隔收发同步数据。</p>
+</li>
+<li class="">
+<p>信道探测(Channel Sounding):负责创建、管理信道探测过程,收集用于距离估算</p>
+</li>
+</ul>
+<p>信道探划
+(ch
+的数据。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3传输架构transport-architecture>3.传输架构(Transport architecture)<a href=#3传输架构transport-architecture class=hash-link aria-label="3.传输架构(Transport architecture)的直接連結" title="3.传输架构(Transport architecture)的直接連結" translate=no>​</a></h2>
+<p>L2CAP
+L2CAP Channels
+Layer
+Logical Links
+Logical
+Layer
+LogicalTransports
+Physical Links
+Physical
+Physical Channels
+Layer
+PhysicalTransports
+ajero</p>
+<p>蓝牙数据传输遵播分层架构,从下至上依次为:物理信道->物理链路->逻疆传输->逻辑
+链路->L2CAP信道</p>
+<ul>
+<li class="">核心传输承载:为不同类型的应用数据(如异步效据、同步流数据)提供标准化的传输通</li>
+</ul>
+<p>道。</p>
+<ul>
+<li class="">
+<p>数据可靠性:</p>
+</li>
+<li class="">
+<p>BR/EDR:在基带层通过CRC校验和ARQ(自动重传请求)机制保证可靠性。L2CAP层还</p>
+</li>
+</ul>
+<p>可提供额外的错误检测和重传。</p>
+<ul>
+<li class="">LE:链路层使用24位CRC,可囊性高,因此L2CAP层无需再提供额外的铺误检测机制。</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4通信拓扑与操作communication-topology-andoperation>4.通信拓扑与操作(Communication topology andoperation)<a href=#4通信拓扑与操作communication-topology-andoperation class=hash-link aria-label="4.通信拓扑与操作(Communication topology andoperation)的直接連結" title="4.通信拓扑与操作(Communication topology andoperation)的直接連結" translate=no>​</a></h2>
+<ul>
+<li class="">
+<p>BR/EDR拓扑:</p>
+</li>
+<li class="">
+<p>微微网(Piconet):一个主设备(Central)和最多七个活动从设备(Peripheral)构</p>
+</li>
+</ul>
+<p>成。主设备的时钟和地址定义了整个微微网的跳频序列。</p>
+<ul>
+<li class="">散射网(Scatternet):由两个或多个共享设备的微微网组成</li>
+</ul>
+<p>A
+?
+?</p>
+<p>Basic picone
+?
+physicel chennel
+(Connectionless
+Peripherel Broadcest
+physical link)
+pufg</p>
+<ul>
+<li class="">
+<p>LE拓扑:</p>
+</li>
+<li class="">
+<p>微微网(Piconet):一个主设备(Central)和一个从设条(Peripheral)构成一个微</p>
+</li>
+</ul>
+<p>微网。主设备可以同时属于多个微微网,从而连接多个从设备。</p>
+<ul>
+<li class="">广播与扫描:设备可以通过广插(Advertising)被发现,或通过扫描(Scanning)发现</li>
+</ul>
+<p>其他设备,这是建立连接或单向通信的基础。
+LE Ade
+5T</p>
+<p>LE Adverising</p>
+<p>/iajero</p>
+<ul>
+<li class="">操作流程:包括设备发现(Inquiry/Discovering)、连接(Paging/Connecting)、连</li>
+</ul>
+<p>接模式下的各种操作(如低功耗模式Sniff/Hold、角色切换等)。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5安全概述security-overview>5.安全概述(Security overview)<a href=#5安全概述security-overview class=hash-link aria-label="5.安全概述(Security overview)的直接連結" title="5.安全概述(Security overview)的直接連結" translate=no>​</a></h2>
+<p>蓝牙安全模型包含五大特性:配对、绑定、设备认证、加密和消息完整性。</p>
+<ul>
+<li class="">
+<p>安全机制演进:</p>
+</li>
+<li class="">
+<p>传统配对(LegacyPairing):BR/EDR早期安全机制</p>
+</li>
+<li class="">
+<p>简单安全配对(Secure Sinple Pairing):BR/EDR引入,使用ECDH公钥密码学,</p>
+</li>
+</ul>
+<p>极大提升了抗窃听能力,并简化了用户操作。</p>
+<ul>
+<li class="">
+<p>LE传统配对(LE Legacy Pairing):LE早期的安全机制</p>
+</li>
+<li class="">
+<p>安全连接(SecureConnections):BR/EDR和LE均支持,是目前最高安全等级,使</p>
+</li>
+</ul>
+<p>用FIPS认可的算法(如P-256圆曲线),强制使用认证加密。</p>
+<ul>
+<li class="">隐私特性(PrivacyFeature):LE支持通过周期性地更换蓝牙地址(使用可解析的私有</li>
+</ul>
+<p>地址)来防止设备被长期追踪。
+DHNayNt</p>
+<p>30A00R
+AU_RAND
+E1 (SAFE)
+RES</p>
+<p>(AES-CMAC-12I)
+5_C
+ES_P
+LE LTK
+MSHIMAC-BH4-255
+E2 (8AFER-)
+AES
+K_enc</p>
+<p>Nonak
+AES-CCA</p>
+<p>LE Secure
+BR/EDR Secure
+LE Legacy Pairing
+Connections Pairing
+Connections Pairing
+BR/EDR Secure
+Connections
+s1(A55-128)
+LESTK
+LE LTK
+legeoy
+LE key
+distnbution:
+LTK, EDIV, RAND.
+RK, CSRK
+L.TKaom
+LE Legac)
+Parirg
+LTK
+BREDR Link.Key
+LE key distribulion IRK, CSRK
+Slored
+Long Tem Key</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=6蓝牙应用架构bluetooth-application-architecture>6.蓝牙应用架构(Bluetooth application architecture)<a href=#6蓝牙应用架构bluetooth-application-architecture class=hash-link aria-label="6.蓝牙应用架构(Bluetooth application architecture)的直接連結" title="6.蓝牙应用架构(Bluetooth application architecture)的直接連結" translate=no>​</a></h2>
+<ul>
+<li class="">配置文件(Profile):是实现应用互操作性的关键。它定义了为完成特定用例(如“免提通</li>
+</ul>
+<p>话”、“心率监测”)所需的所有协议和流程。</p>
+<ul>
+<li class="">GAP(通用访问配置文件):是所有Profile的基础,定义了所有蓝牙设备都必须实现的基</li>
+</ul>
+<p>本功能和行为。</p>
+<ul>
+<li class="">GATT(通用属性配置文件):是所有BLEProfile的基础,定义了基于“服务"和“特性“的</li>
+</ul>
+<p>数据结构,使得不同应用能以标准方式交换数据。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7共存与并置coexistence-and-collocation>7.共存与并置(Coexistence and collocation)<a href=#7共存与并置coexistence-and-collocation class=hash-link aria-label="7.共存与并置(Coexistence and collocation)的直接連結" title="7.共存与并置(Coexistence and collocation)的直接連結" translate=no>​</a></h2>
+<p>由于蓝牙工作在拥挤的2.4GHzISM频段,与Wi-Fi、蜂宽网络(LTE)等技术共存是一个重要议
+题。
+Multi-Radio Terminal (MRT)
+Host
+Buetooch
+Bate
+MVS
+Controller
+Stafion
+Device</p>
+<p>接心共存技术:</p>
+<ul>
+<li class="">自适应跳频(AFH):蓝牙设备能自动检测并避开被其他设备占用的“坏"信道,只在“好”</li>
+</ul>
+<p>信道上跳频通信。</p>
+<ul>
+<li class="">协作式共存:通过标准化的硬件接口(MWSCoex1stence 51gnal1ng),让蓝牙芯片</li>
+</ul>
+<p>和Ni-Fi/LTE芯片能相互通信,协调收发时机,避免“自相残杀”。
+MWS
+Uplink
+Uplink
+One MWS Frame (5ms)-
+Bluerooth is
+Cerntral and is not
+SMW m pou5ge
+ery
+Dovnik
+Downink
+Downink
+udn
+usdn
+MWS
+One MVS Frame (5m8)
+10js qiocienig
+boundery is
+algned wih MAS
+:ame boundary
+MWS F
+Bluetooth
+CENTRAL
+FAILED
+FAILED
+FAILED
+SUCCESS
+MWS
+Downirk
+Upink
+Downlink.</p>
+<p>MRT
+Upirk
+FAILED
+FAILED
+SUCCESS</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=8le方向感知direction-finding-using-bluetooth-low-energy>8.LE方向感知(Direction finding using Bluetooth Low Energy)<a href=#8le方向感知direction-finding-using-bluetooth-low-energy class=hash-link aria-label="8.LE方向感知(Direction finding using Bluetooth Low Energy)的直接連結" title="8.LE方向感知(Direction finding using Bluetooth Low Energy)的直接連結" translate=no>​</a></h2>
+<ul>
+<li class="">技术原理:通过在收发过程中切换天线阵列,测量无线电波到达不同天线时的相位差,从而</li>
+</ul>
+<p>计算出信号的来源方向。</p>
+<ul>
+<li class="">
+<p>两种方法:</p>
+</li>
+<li class="">
+<p>到达角(AngleofArrival,AoA):接收端使用天线阵列,发射端使用单天线。</p>
+</li>
+</ul>
+<p>LE Receiver
+AoA Estimation</p>
+<p>Radio signal</p>
+<p>Antenna 1</p>
+<ul>
+<li class="">出发角(AngleofDeparture,AoD):发射端使用天线阵列,接收端使用单天线。</li>
+</ul>
+<p>AoD
+RF
+Switch
+LE Transmitter</p>
+<p>LE Receiver</p>
+<p>AoD Estimation</p>
+<p>Radio signal</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=9le信道探测channel-sounding-using-bluetooth-low-energy>9.LE信道探测(Channel Sounding using Bluetooth Low Energy)<a href=#9le信道探测channel-sounding-using-bluetooth-low-energy class=hash-link aria-label="9.LE信道探测(Channel Sounding using Bluetooth Low Energy)的直接連結" title="9.LE信道探测(Channel Sounding using Bluetooth Low Energy)的直接連結" translate=no>​</a></h2>
+<ul>
+<li class="">技术原理:通过在两个设备间交换一系列特定的射频信号,精确测量信号的传播特性,从而</li>
+</ul>
+<p>估算设备间的物理距离。
+Poodi
+Ivent</p>
+<ul>
+<li class="">两种方法:</li>
+</ul>
+<p>往返时间(Round-TripTime,RTT):通过测量信号在两个设备间往返一次所需的时
+间来计算距离。</p>
+<ul>
+<li class="">基于相位的测距(Phase-BasedRanging,PBR):通过测量信号在不同频率上的相</li>
+</ul>
+<p>位变化来计算距离,精度更高。
+ToD
+ToA
+Total time oninitiator (Tintater)
+Initiator
+Time used by reflector {Treneaor)
+ToF
+ToF
+Reflector
+1
+ero
+ToA</p>
+<ul>
+<li class="">安全特性:信道探测过程加入了加密随机化机制,以防止距离欺骗攻击。</li>
+</ul>
+<p>收录于蓝牙</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<p><img decoding=async loading=lazy alt="蓝牙技术联盟：架构篇 (Volume 1, Part A)：微信公众号导出原始排版图" src=/assets/images/article-b3bf365a03d0ba96ec65d8475abd816a.webp width=1280 height=13227 class=img_ev3q /></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2025-06-27-2025-06-27-蓝牙技术联盟-架构篇-volume-1-part-a-2247484654.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2025-06-28-2025年fomc票委立场分析-2247484659><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>2025年FOMC票委立场分析</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2025-06-26-robinhood-的蜕变-金融科技与加密货币领域战略扩张分析-2247484628><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>Robinhood 的蜕变：金融科技与加密货币领域战略扩张分析</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#一句话解读 class="table-of-contents__link toc-highlight">一句话解读</a><li><a href=#1概述general-description class="table-of-contents__link toc-highlight">1.概述(General description)</a><li><a href=#2核心系统架构core-systemarchitecture class="table-of-contents__link toc-highlight">2.核心系统架构(Core systemarchitecture)</a><li><a href=#3传输架构transport-architecture class="table-of-contents__link toc-highlight">3.传输架构(Transport architecture)</a><li><a href=#4通信拓扑与操作communication-topology-andoperation class="table-of-contents__link toc-highlight">4.通信拓扑与操作(Communication topology andoperation)</a><li><a href=#5安全概述security-overview class="table-of-contents__link toc-highlight">5.安全概述(Security overview)</a><li><a href=#6蓝牙应用架构bluetooth-application-architecture class="table-of-contents__link toc-highlight">6.蓝牙应用架构(Bluetooth application architecture)</a><li><a href=#7共存与并置coexistence-and-collocation class="table-of-contents__link toc-highlight">7.共存与并置(Coexistence and collocation)</a><li><a href=#8le方向感知direction-finding-using-bluetooth-low-energy class="table-of-contents__link toc-highlight">8.LE方向感知(Direction finding using Bluetooth Low Energy)</a><li><a href=#9le信道探测channel-sounding-using-bluetooth-low-energy class="table-of-contents__link toc-highlight">9.LE信道探测(Channel Sounding using Bluetooth Low Energy)</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

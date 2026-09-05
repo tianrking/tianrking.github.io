@@ -1,0 +1,476 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>BLE 隱私尋址機制:RPA 與 IRK | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2026-07-20-ble-隱私尋址機制-rpa-與-irk-2247486086 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="BLE 隱私尋址機制:RPA 與 IRK | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《BLE 隱私尋址機制:RPA 與 IRK》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《BLE 隱私尋址機制:RPA 與 IRK》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2026-07-20T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2026-07-20-ble-隱私尋址機制-rpa-與-irk-2247486086 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-07-20-ble-隱私尋址機制-rpa-與-irk-2247486086 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-07-20-ble-隱私尋址機制-rpa-與-irk-2247486086 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2026-07-20-ble-隱私尋址機制-rpa-與-irk-2247486086","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2026-07-20T00:00:00.000Z","description":"从微信公众号导入的文章《BLE 隱私尋址機制:RPA 與 IRK》，保留原始排版图并提供本地 OCR 转写。","headline":"BLE 隱私尋址機制:RPA 與 IRK","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2026-07-20-ble-隱私尋址機制-rpa-與-irk-2247486086","name":"BLE 隱私尋址機制:RPA 與 IRK","url":"https://w0x7ce.eu/blog/2026-07-20-ble-隱私尋址機制-rpa-與-irk-2247486086"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>BLE 隱私尋址機制:RPA 與 IRK</h1><div class="container_mt6G margin-vert--md"><time datetime=2026-07-20T00:00:00.000Z>2026年7月20日</time> · <!-- -->閱讀時間約 19 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2026-07-20 22:06:28（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247486086&idx=1&sn=da03517c373078d919b5f960ff85d8e9&chksm=96e11f2ca196963a72e51d472de0ab1b5fd3a4ef0bde59c79fcf246641d10d9552eed6d60d96#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 9870 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一篇以bluetoothlowenergy-规为主線的技药科普本文只封rpairk的理>一篇以BluetoothLowEnergy 规为主線的技药科普。本文只封RPA/IRK的理<a href=#一篇以bluetoothlowenergy-规为主線的技药科普本文只封rpairk的理 class=hash-link aria-label="一篇以BluetoothLowEnergy 规为主線的技药科普。本文只封RPA/IRK的理的直接連結" title="一篇以BluetoothLowEnergy 规为主線的技药科普。本文只封RPA/IRK的理的直接連結" translate=no>​</a></h2>
+<p>输、定位置與工程設計,不绑定任何特定產品或程式碼。
+BluetoothLow Energy 装置必须在用因互相衢突的票求之闻取得平衡:</p>
+<ul>
+<li class="">
+<p>對外不能長期使用同一個無線位址,否则任何拥描器都可能跨時圈、跨地贴追酸它。</p>
+</li>
+<li class="">
+<p>對已完成绑定的封等装置,又必须保有疆定身分,才能自動重速、恢加密與套用原有權</p>
+</li>
+</ul>
+<p>限。
+RPA(Resolvable Private Address,可解析私有位址)是短期、可输暂的無综位址:IRK
+(Identity ResoLvingKey,身分解析金输)别是受信任装置用来把這困短期位址解析回長
+期身分的128位元金。两者共同椭成BLEPrivacy 的核心機制
+国定公司位址
+完全随機且不可解析的位址
+题以运但集法价装置
+重造兴授困施
+陌生操拦基只着到短期代然
+RPA:會婴動的位址
+持有IRK的已绑定装置可通</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1这雨個概念位於蓝牙技術體系的哪裡>1.这雨個概念位於蓝牙技術體系的哪裡?<a href=#1这雨個概念位於蓝牙技術體系的哪裡 class=hash-link aria-label=1.这雨個概念位於蓝牙技術體系的哪裡?的直接連結 title=1.这雨個概念位於蓝牙技術體系的哪裡?的直接連結 translate=no>​</a></h2>
+<p>RPA/IRK 不是GATT 特微值,也不是匯用厝密碼。它們横跨 BLE 的 Host、Controller
+具安全管理流程:
+喷势:角色需统
+预
+AI1/ATT
+可男性·重过具P
+SaP / Seourity iton
+Host Eond Dwab</p>
+<p>K0</p>
+<p>Cortrolier / Links Layer</p>
+<p>/ Ttadlo
+业中量们集性的45 生元位
+各责任可以离化為:
+屋级
+奥RPA/IRK有题的贵任
+定羲 LE Privacy 的使用方式、导分位址翼 Privacy Mode
+GAP
+SMP
+在配封/绑定遇程中協商亚分登IRK奥身分位址资讯
+永久保存每個 Bond的身分、IRK、LTK 與感用權限
+↓50H
+般定 Controller 的 Resolving List, RPA Timeout
+HCI
+舆私模式
+Controler/Link La
+在廣播、描、發起速综等状中奎生或解析RPA
+yer
+惠用屠
+决定解析出的导分是否為Owner、是否有开镇或管理耀限
+因此,RPA/IRK龄BLEPrivacy 奥身分管理:它和 SMP安全糖制合作,但本身不等龄
+加密或授權。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2為什固定蓝牙位址會成為同题>2.為什固定蓝牙位址會成為同题?<a href=#2為什固定蓝牙位址會成為同题 class=hash-link aria-label=2.為什固定蓝牙位址會成為同题?的直接連結 title=2.為什固定蓝牙位址會成為同题?的直接連結 translate=no>​</a></h2>
+<p>假設一支手機每天都以固定的D4:7A:.播。商場、車站炭門口的普通搭器即使不知道使
+用者姓名,仍可把不同時間看到的同一位址串起来,形成移助轨踪。逼是「可速结性:同题:最
+察者不必破解資料,只要判定雨次號来自同一装置,就已经能進行追藏。
+單细每次產生全新的随機位址可以降低追跟能力,但也盲旗已绑定装置無法判断:眼前的陷生位
+址是不是昨天配到遇的同一支手機。BLE因而需要一种對陌生人不標定、對受信任者可恢疆
+定身分的位址。
+BLE常見的装置位址類型
+可否用
+位址频型
+高位類型位元
+是否输替
+IRK解典型用途
+析
+不丽於Rando
+Public Device Add
+公隔、长期装置身
+Address
+通常固定
+不需要
+分
+ress
+子</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一医上電遇>一医上電遇<a href=#一医上電遇 class=hash-link aria-label=一医上電遇的直接連結 title=一医上電遇的直接連結 translate=no>​</a></h2>
+<p>有 Public Add
+Randon Static Add
+期内通常固
+不需要ress時的颗定身
+11
+ress
+定
+分
+Non-Resolvable Pr
+不要求受信任划等
+可输替
+00
+显
+ivate Address ( NR
+端券滋的匿名场景
+PA )
+Bond後仍需自動
+Resolvable Privat
+期翰替
+是辨舆重速的愿私
+θ1
+e Address (RPA)
+场景
+Public Address 奥 Randon Static Address 都可作為 Identity Address(身分位
+址).身分位址是Bond資料重中的長期别资料:敏用Privacy 镂,装置在空中未必直接
+傅送它。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3rpa的48位元究竟如何形成>3.RPA的48位元究竟如何形成?<a href=#3rpa的48位元究竟如何形成 class=hash-link aria-label=3.RPA的48位元究竟如何形成?的直接連結 title=3.RPA的48位元究竟如何形成?的直接連結 translate=no>​</a></h2>
+<p>RPA仍然是一個48位元BLE位址,由两個24位元椭位组成:
+RPA = prand ( 24 bits) 11 hash (24 bits)
+hash = ah(IRK, prand)
+其中:</p>
+<ul>
+<li class="">prand是24位元随糖值:其最高两固频型位元必清為61,用来表示RPA</li>
+</ul>
+<p>hash是把128位元IRK與prand 翰人规箱定款的ah函式後截取的24位元结果。
+ah的核心是AES-128:它不是把IRK直接放进位址,也不是可逆地加密整個位址。
+pnd: 34 y
+R: 48 tias
+llpurr
+RE: 138bhs
+以 AES-09 at0</p>
+<p>.8
+。</p>
+<ul>
+<li class="">EI Viajer</li>
+</ul>
+<p>Bluetooth Core Specification 中的 RPA 格式翼生或公式
+1: Bluetooth SIG 《Core Specification > Link Layer Specification,
+Private device address generation。墨面同时给出 hosh =ah(IRK,prend) 與
+andamiddress = prand Il hasl。来源:Bluetooth Core 6.1 - Link Layer
+Specification
+toth:rom/gcontent/mplsafs/F1tes/5pecf1eat1os/L/Came-61/ut/es/s-energy
+https:/<a href=http://www.b1veto target=_blank rel="noopener noreferrer" class="">www.b1veto</a>
+centrn11er/11nk-1ayer spec1f1ratan htm14uurp-sb77-4r1-5-b139-46f9-1hn32Taf7ef
+為什看到的十六進位位址顺序常令人困惑?
+规范圈、HCI参數、封包嫌取工具买日缺翰出的位元组顺序可能不同。有些工具以人類常见
+的AA:BB:CC:DD:EE:FF形式由高位寡到低位,有些API则直接呈现記體或封包中的
+little-endian 位元组序列。
+工程上鹿先把资料正规化成48位元数值+address type;,再切分prand奥hash;
+不要只靠字串左半、右半指需位。位址值相同但 adress type 不同,在 BLE 中仍是不同
+位址。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4irk是什魔它奥ltk有何差别>4.IRK是什魔?它奥LTK有何差别?<a href=#4irk是什魔它奥ltk有何差别 class=hash-link aria-label=4.IRK是什魔?它奥LTK有何差别?的直接連結 title=4.IRK是什魔?它奥LTK有何差别?的直接連結 translate=no>​</a></h2>
+<p>定的對等端,對等端日後就能判新的RPA是否於这個身分。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一筆典型bond紀至少可能包含>一筆典型Bond紀至少可能包含:<a href=#一筆典型bond紀至少可能包含 class=hash-link aria-label=一筆典型Bond紀至少可能包含:的直接連結 title=一筆典型Bond紀至少可能包含:的直接連結 translate=no>​</a></h2>
+<p>是否直接负责资料加
+资料
+主要用途
+密
+Identity Address + Addres
+侵期索引與楼定身分
+显
+5 Type
+Peer IRK
+解析封方日後使用的 RPA
+香
+盈生本機RPA:必要時提供给
+Local IRK
+香
+到方
+後續速综恢复LinkLayer
+LTK ( Long Term Key)
+是
+加密
+用铃签意,不是速源
+签善末加密ATT资料
+CSRK(若使用)
+加密
+Owner、管理員、防客、撤
+唐用權限
+由惠用决定
+默態等
+最量要的区分是:
+IRK回答這個會變勤的位址是?」;LTK回答如何恢覆與遗图已定身分的加密速
+综?;题用授權回答这個身分可以做什魔?
+IRK在何時交换?
+BLE配对不是一個單一勤作,可概略分成靶力交换、生/確加密材料,以及 Transport
+Spec1f1c Key D1str1but1on.若方商分發 Ident1ty Key,IRK 與 Identity
+AddressInformation會在金锥分壁段交换,面且鳍段匯在已加密的速線上进行。
+Centrsl
+g pg
+Peripheral
+Pairing Request
+Psiring Response
+惊1/0能力·段坦方式舞Key Distr
+位
+融营科交描益建立通综加密材料
+速爆速人加套供趣
+皇分身目 Mdenty Infoaton IRK )
+这分能的Identy Iomaton IRK)
+Identity Addres Informa
+Identy AddressInfomation
+存對方鼻分·Peer RK ·LTK
+留存對方分·Peer IRK· LTK</p>
+<p>BLuetooth Security Manager 中的 IRK 舅身分位址分
+2:Bluetooth SIG《Security Manager Specification》列出IRK透退
+Identity Information command 分. Public / Random Static Identity
+Address 别透通 Identity Address Information command 分發。来源:Bluetooth
+Core 6.3 — Security Manager Specification 53.6.1
+manager -specL fication.htallu10-264a99uB-746b-4ca3-6c94-47cfbc746625
+「配到成功,只表示本次安全程序完成:只有把长期资料保存下来,才形成可跨通银使用
+的 Bond。若潮重殷後 Bond Database 遗失,即使先前曾經交换 IRK,也無法再解析
+封等端。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5收到一個rpa時身分如何被解析>5.收到一個RPA時,身分如何被解析?<a href=#5收到一個rpa時身分如何被解析 class=hash-link aria-label=5.收到一個RPA時,身分如何被解析?的直接連結 title=5.收到一個RPA時,身分如何被解析?的直接連結 translate=no>​</a></h2>
+<p>解析不是解密RPA,而是“拿候逻IRK重新計算一次,看看24位元hash是否相同.
+元
+Addnkm</p>
+<p>披:Pbic / Sgric/NRA开
+代± pand 优近9] hat
+M For K
+soalHlazh * ahPer II,
+prne</p>
+<p>机成 : 胰肤 Bore
+ojofe)/ IG
+這也是為什座Controller的解析清單容量與装置支援的Bond数量有同:最直巍的解析方
+式,必须在候選IRK中寻找匹配者。實晶片可能用硬体加速:例如Nordic的AAR
+(Accelerated Address Resolver)周會IRK 資料结橘逐项管試,成功或失胶後
+生事件。
+nRF5340 Product Specification
+Resolving a resovable address</p>
+<p>Nord1c nRF5340 AAR 硬想解析 RPA 的营方期期
+3:Nordic nRF534e Product Specification 的 AAR 明 硬體 IRK9 起,依
+NIRK 指定的数量逐一解析,最後毫生RESOLVED 或NOTRESOLVED。来源:Nord1c
+Semiconductor - Resolving a resolvable address
+<code>https://decs.</code> nsrdic
+icml,com/bL
+CtentIdFED5CkBH-B44ULU
+24位元hash是否可能碰撞?
+可能。RPA中可供比對的hash只有24位元,因此它不是無碰握的全城易分别碼。實作
+应使用规轮提供的解析结果與完整Bond上下文,不鹿把 24位元hash單指蓄成使用者
+ID、安全過涨或資料虚主键。真正的安全確仍由後缩的LTK加密程序鼠庭用层授完成。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=6resolvinglistcontroller如何知道有哪些可信身分>6.ResolvingList:Controller如何知道有哪些可信身分?<a href=#6resolvinglistcontroller如何知道有哪些可信身分 class=hash-link aria-label=6.ResolvingList:Controller如何知道有哪些可信身分?的直接連結 title=6.ResolvingList:Controller如何知道有哪些可信身分?的直接連結 translate=no>​</a></h2>
+<p>支援Controller-based Privacy 的控制器通需维Resolving List(解析清單)。
+每一筆纪疑到一個已绑定對等端,常見橘位包括:</p>
+<ul>
+<li class="">
+<p>Peer Identity Address S address type</p>
+</li>
+<li class="">
+<p>Peer IRK:用来解析對方的 RPA</p>
+</li>
+<li class="">
+<p>LocalIRK:奥额對等端互釉時,用来秦生或虚理本楼睡私位址</p>
+</li>
+<li class="">
+<p>该身分的 Privacy Node</p>
+</li>
+</ul>
+<p>Host 透遇 HCI 把 Bond Database 中的资料同步到 Controller. Controller Reset
+後,解析清单通常需要重新建立:因此持久化BondDatabase與翔機重建流程同等重要。</p>
+<p>Resolving List 不是 Filter Accept List
+雨者經常一起出现,但用途不同:
+清軍
+解決的同题
+Resolving List
+这個RPA對度到回已知身分?
+哪些位址/易分可以参與指定的质握、操描或速银程序?」
+Filter Accept List
+先解析易分、再套用接受政策,是酸正確的心智模型。只把當下的RPA放进一般白名单,位址
+替後就可能失效。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7controller-based-奥-host-based-privacy>7.Controller-based 奥 Host-based Privacy<a href=#7controller-based-奥-host-based-privacy class=hash-link aria-label="7.Controller-based 奥 Host-based Privacy的直接連結" title="7.Controller-based 奥 Host-based Privacy的直接連結" translate=no>​</a></h2>
+<p>BLE规巅允許疆私功能主要由Host 或Controller執行:</p>
+<p>Controller-based Privacy 的侵黏是反惠快、Host 唤醒少,且可直接参與展插、描與
+Init1at1ng等L1nkLayer 流程;限制则是硬體解析清單容量有限,董且必须正處理
+HCI 同步奥 Reset 後重建。Host-based Privacy 比鞍弹性,但可能增加 CPU、延遮與
+功耗,且控制器在某些诀质點未必来得及等待Host。
+v
+Privaty</p>
+<p>TI BLE5-Stack Host-based ControLLer-based Privacy 官方t用
+4:TI BLE5-Stack User's Guide 戴明 LE Privacy 需通期性毫生新位址以降低長
+期追,亚比较Host-based 與Controller-based Privacy。束源:Texas
+期运浆,
+Instruments BLE5-Stack Privacy
+<code>https://seftsare</code>
+dt1 com/sirptelink/esd/sinpelnk c13kxcc26oxsdk/6.30.0.B4/e
+html/bte-stsck-5:x/prdwacy.tnt</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=8一次完整的位址了但仍能安全重連>8.一次完整的位址了但仍能安全重連<a href=#8一次完整的位址了但仍能安全重連 class=hash-link aria-label=8.一次完整的位址了但仍能安全重連的直接連結 title=8.一次完整的位址了但仍能安全重連的直接連結 translate=no>​</a></h2>
+<p>RPA只完成第一步身分開融。成熟系统的重速路狸感把身分解析、加密恢復與愿用授權分:
+名塞 Cortrslle / L
+Kest 8ord.Narupr
+使异新的 IRA 保究适性
+Renslieg Lit 中 Pee R 基
+时指列其 Pe lHeveity</p>
+<p>拒比受作/要家量所配刻
+未关到等式
+(ortr
+这個顺序揭示三條不能退浠的安全界:
+L.RPA解析成功不等於通退显。它只是指出最可能是娜一董Bond。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2ltk加密成功不等於有全部案務權限愿用仍需检查角色撤状患與敏感操作缘件>2.LTK加密成功不等於有全部案務權限。愿用仍需检查角色、撤状患與敏感操作缘件。<a href=#2ltk加密成功不等於有全部案務權限愿用仍需检查角色撤状患與敏感操作缘件 class=hash-link aria-label=2.LTK加密成功不等於有全部案務權限。愿用仍需检查角色、撤状患與敏感操作缘件。的直接連結 title=2.LTK加密成功不等於有全部案務權限。愿用仍需检查角色、撤状患與敏感操作缘件。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3gatt已速線不等於已授耀ble允許先建立實速線再到特微值存取要求加密韶證或>3.GATT已速線不等於已授耀。BLE允許先建立實速線,再到特微值存取要求加密、韶證或<a href=#3gatt已速線不等於已授耀ble允許先建立實速線再到特微值存取要求加密韶證或 class=hash-link aria-label=3.GATT已速線不等於已授耀。BLE允許先建立實速線,再到特微值存取要求加密、韶證或的直接連結 title=3.GATT已速線不等於已授耀。BLE允許先建立實速線,再到特微值存取要求加密、韶證或的直接連結 translate=no>​</a></h2>
+<p>鹰用添据。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=9rpa是否代表支援多支手機>9.RPA是否代表支援多支手機?<a href=#9rpa是否代表支援多支手機 class=hash-link aria-label=9.RPA是否代表支援多支手機?的直接連結 title=9.RPA是否代表支援多支手機?的直接連結 translate=no>​</a></h2>
+<p>不直接代表。RPA/IRK解决的是多個已期定身分的辨端,而不是同时通線数量。
+如景装置保存了手機A、B、C三筆Bond,亚把三個PeerIRK装入解析清單,那度三支手
+楼即使各自输替RPA,装置仍可判断新的位址分别匾於A、B或C.這可支援多Owner、多
+使用者或家庭成員的自勤量速设計。
+但能記住三支手機;與能同時持三條BLE逼線;是两件事:
+Bond容量
+能保存機固長期身分
+可辨識多少支手機
+Resolving List 容量
+能同時解析固PeerIRK</p>
+<p>Controller線資源
+可同時連線支手機
+排程·記憶體與協定樣上限</p>
+<p>應用政策
+每個身分能做什度
+單一主控·多Owner·防客
+所以部估多手機支援:至少要分别機查 Bond Database 容量、Resolving List 容量、
+同时ACL速综上限,以及Owner/權限葡突政策。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=10privacymode奥位址输替调期>10.PrivacyMode奥位址输替调期<a href=#10privacymode奥位址输替调期 class=hash-link aria-label=10.PrivacyMode奥位址输替调期的直接連結 title=10.PrivacyMode奥位址输替调期的直接連結 translate=no>​</a></h2>
+<p>GAP定差两种與已知對等指互勤時的疆私模式:
+核心行為
+模式
+常见考量
+NetworkPr1到等端感使用可解析的私有位址;不把Id曝私鞍格,遗合希望降低
+apou 人eA
+entity Address 成正常暂代
+导分位址暴露的投計
+封鲁装置/特殊流程较實
+在特定相容情境下,也可接受封等端直接
+Dev1ce Pr1v
+acy Mode
+使用 Identity Address
+容,但身分位址可能暴露
+RPA输替频露,長時照靓察者金難只靠位址申接勒题:代循可能是更多位址更新、控制器工
+作與互通性遗界。输替太慢则降低隐私效果,傅统實作常見15分键的RPATimeout;
+Bluetooth Core 6.1 进一步引入 Randon1zed RPA Updates,使更新時間不再形成遇度
+退律的可觀察特。详見 Bluetooth SIG 的 Randomized RPA Updates 锐明。
+位址响替也不能消除所有追隆線素。如果质播内容長期包含唯一序碱、固定商资料、罕見服務
+祖合,或虞播间隔具有高度揭特性,翻察者仍可能进行指紋胃账:。完整的限私投計必须同時
+检查位址岛 Advertising Data。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=11最常見的實作錯误>11.最常見的實作錯误<a href=#11最常見的實作錯误 class=hash-link aria-label=11.最常見的實作錯误的直接連結 title=11.最常見的實作錯误的直接連結 translate=no>​</a></h2>
+<p>把當下RPA當成永久资料库主键
+位址输替後會被蓄成新装置。永久资料愿以BondRecord/Identity Address/内部不可
+翼ID為索引,RPA只存在於短期速線上下文。
+只保存IRK,没有保存身分位址奥addresstype
+解析成功後仍需要知道它到愿一国標定身分。Address type也是身分的一部分,不能省
+略。
+Local IRK 與Peer IRK 放反</p>
+<ul>
+<li class="">
+<p>Local IRK:本楼身分的IRK,主要用来產生本機RPA</p>
+</li>
+<li class="">
+<p>Peer IRK:對方身分的IRK,主要用来解析對方 RPA。</p>
+</li>
+</ul>
+<p>名耦癌始以目前造一端:為视角。資料康 schema、HCI参数與封包日若湿用视角,很
+容易生方向错织。
+Bond 已存入Flash,但Controller Reset 後没有重建Resolving
+List
+會呈现為「刚配對時可重速,重般後全部炭成陌生手J。感把ResolvingList視為可
+重建的敦行期快取,而不是唯一資料来源。
+解析成功就直接授予敏感操作
+RPA的24位元hash不提供完整虚强度。必须邀完成LTK 加密奥愿用授,敏感命
+令遗应考虚重放防据、時序與使用者在場條件。
+忽略容量、淘汰與撒銷
+Bond Database 與硬禮ResolvingList 可能有不同容量。设計時要明確定瓣:清單滿了
+如何虑理、哪些Bond侵先载入、删除使用者時如何同步移除IRK/LTK、善手機道失後如何
+撤。
+用位址字串直接拆prand/hash
+不同API的byteorder 可能相反。测试向量必须同時固定:48位元数值、顯示字串、對
+包位元组、addresstype、IRK 與预期解析结果。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=12建的工程架構>12.建的工程架構<a href=#12建的工程架構 class=hash-link aria-label=12.建的工程架構的直接連結 title=12.建的工程架構的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一個健的ble身分系统可分成五固明確模组>一個健的BLE身分系统可分成五固明確模组:<a href=#一個健的ble身分系统可分成五固明確模组 class=hash-link aria-label=一個健的BLE身分系统可分成五固明確模组:的直接連結 title=一個健的BLE身分系统可分成五固明確模组:的直接連結 translate=no>​</a></h2>
+<p>Palring Manager
+協商安全等级典金编分报</p>
+<p>Bond Store
+持久化 IdentityIRK
+LTK·舒数器</p>
+<p>Privacy Manager
+RPA Tmeout Prlvacy
+Mode Resolving List 同步</p>
+<p>Link Security Manager
+恢復加密椎查安全等级</p>
+<p>Application Authorization
+Owner/角色/嫩/敏感
+操作政策
+遵守以下設計原则:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1定身分奥空中位址分鹰用層永遗使用内部peer-id-或-bond-handle不直接依銷>1.定身分奥空中位址分。鹰用層永遗使用内部Peer ID 或 Bond Handle,不直接依銷<a href=#1定身分奥空中位址分鹰用層永遗使用内部peer-id-或-bond-handle不直接依銷 class=hash-link aria-label="1.定身分奥空中位址分。鹰用層永遗使用内部Peer ID 或 Bond Handle,不直接依銷的直接連結" title="1.定身分奥空中位址分。鹰用層永遗使用内部Peer ID 或 Bond Handle,不直接依銷的直接連結" translate=no>​</a></h2>
+<p>目前 RPA,</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2irkltk奥權限分保存三者生命通期相圆但磁賣不同便於撤銷通移與稽核>2.IRK、LTK奥權限分保存。三者生命通期相圆但磁賣不同,便於撤銷、通移與稽核。<a href=#2irkltk奥權限分保存三者生命通期相圆但磁賣不同便於撤銷通移與稽核 class=hash-link aria-label=2.IRK、LTK奥權限分保存。三者生命通期相圆但磁賣不同,便於撤銷、通移與稽核。的直接連結 title=2.IRK、LTK奥權限分保存。三者生命通期相圆但磁賣不同,便於撤銷、通移與稽核。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3解析清單可重建以非捶赞bond-store為真實来源開機與-controllerreset-後>3.解析清單可重建。以非捶赞Bond Store為真實来源,開機與 ControllerReset 後<a href=#3解析清單可重建以非捶赞bond-store為真實来源開機與-controllerreset-後 class=hash-link aria-label="3.解析清單可重建。以非捶赞Bond Store為真實来源,開機與 ControllerReset 後的直接連結" title="3.解析清單可重建。以非捶赞Bond Store為真實来源,開機與 ControllerReset 後的直接連結" translate=no>​</a></h2>
+<p>重新同步。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1授權晚於身分解析奥加密確不渡看起来像已知装置直接榮成可敦行敏感命令>1.授權晚於身分解析奥加密確。不渡“看起来像已知装置:直接榮成「可敦行敏感命令」。<a href=#1授權晚於身分解析奥加密確不渡看起来像已知装置直接榮成可敦行敏感命令 class=hash-link aria-label=1.授權晚於身分解析奥加密確。不渡“看起来像已知装置:直接榮成「可敦行敏感命令」。的直接連結 title=1.授權晚於身分解析奥加密確。不渡“看起来像已知装置:直接榮成「可敦行敏感命令」。的直接連結 translate=no>​</a></h2>
+<p>.删除 Bond 必须原子化。同時處理 Flash 紀錄、Resolving List、Filter Accept
+List、快取速線與度用角色。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3把容量奥淘汰政策做成座品需求不要等硬體回报memorycapacityexceeded才臨时>3.把容量奥淘汰政策做成座品需求,不要等硬體回报MemoryCapacityExceeded才臨时<a href=#3把容量奥淘汰政策做成座品需求不要等硬體回报memorycapacityexceeded才臨时 class=hash-link aria-label=3.把容量奥淘汰政策做成座品需求,不要等硬體回报MemoryCapacityExceeded才臨时的直接連結 title=3.把容量奥淘汰政策做成座品需求,不要等硬體回报MemoryCapacityExceeded才臨时的直接連結 translate=no>​</a></h2>
+<p>决定。
+最低限度測試矩陣
+预期结果
+全部解析到同—Peer Identity
+同一手機速續座生多個RPA
+不同手機各自输替 RPA
+分别解析到各自 Bond,不互相串號
+解析失亚套用陌生装置致策
+未知IRK 產生的合法 RPA
+Controller Reset、Host 资料
+重建Resolving List 後可再次解析
+仍在
+RPA不再取得原權限,蓄LTK不能恢復受信任
+删除/撤销Bond
+默慧
+Resolving List 滋载
+有明罐、淘汰或 Host fallback 行為
+位元组顺序與 address type 错
+测試能明確慎测,不出现默误判
+RPA 解析成功但LTK验失胶
+不授權敏感GATT 操作
+隔私测试愿判定仍可被聊,要求修正payLoad
+捶内容保持唯一指紋
+RPA/IRK的本質不是「把MAC位址加密」,而是建立一個可遥選
+性運結的假名系统:</p>
+<ul>
+<li class="">
+<p>對没有IRK的旁者,RPA是通期改曼、鞋以直接串接的短期代號。</p>
+</li>
+<li class="">
+<p>對完成锦定亚持有IRK的到等端,RPA可以映射回概定身分。</p>
+</li>
+<li class="">
+<p>映射身分之後,仍需由LTK恢復速综加密,再由應用盾决定權限。</p>
+</li>
+<li class="">
+<p>多個PeerIRK可以支援辨满多支已绑定手機,但不自動代表可以同時速線多支手機。</p>
+</li>
+<li class="">
+<p>真正完整的實作不只包含ah()演算法,遗包括Pairing Key Distribution、Bond</p>
+</li>
+</ul>
+<p>Store、Resolving List 同步、Reset 重建、撤銷、容量政策與应用授。
+巴期湿的实全理明
+炎界 Pee lbeitit
+允济的建电预代
+延伸開讀</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1-bluetooth-core-61-link-layer-specification-device-address-rpa>1. [Bluetooth Core 6.1 Link Layer Specification: Device Address, RPA<a href=#1-bluetooth-core-61-link-layer-specification-device-address-rpa class=hash-link aria-label="1. [Bluetooth Core 6.1 Link Layer Specification: Device Address, RPA的直接連結" title="1. [Bluetooth Core 6.1 Link Layer Specification: Device Address, RPA的直接連結" translate=no>​</a></h2>
+<p>Generation/ Resolution] <code>https://ww.bluetooth.com/wp-</code>
+content/uploads/Files/Specification/HTML/Core-61/out/en/Low-energy-
+controller/link-layer-specification.htnl
+?. [Bluetooth Core 6.3 - Security Manager Specification: Pairing 奥 Key
+Distr1but1on] <code>https://waw.bluetooth.com/wp-</code>
+content/uploads/F1les/Spec1f1cation/HTML/Core_v6.3/out/en/host/secu
+rity-manager-specification.html</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3-bluetooth-core-62---generic-access-profile-privacy-feature-奥>3. [Bluetooth Core 6.2 - Generic Access Profile: Privacy Feature 奥<a href=#3-bluetooth-core-62---generic-access-profile-privacy-feature-奥 class=hash-link aria-label="3. [Bluetooth Core 6.2 - Generic Access Profile: Privacy Feature 奥的直接連結" title="3. [Bluetooth Core 6.2 - Generic Access Profile: Privacy Feature 奥的直接連結" translate=no>​</a></h2>
+<p>Privacy Mode] <code>https://waw.bluetooth.</code> com/wp-
+content/uploads/Files/Specification/HTML/Core-
+62/out/en/host/generic-access-profile.htnl</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1-bluetooth-sig---bluetooth-security-and-privacy-best-practices>1. [Bluetooth SIG - Bluetooth Security and Privacy Best Practices<a href=#1-bluetooth-sig---bluetooth-security-and-privacy-best-practices class=hash-link aria-label="1. [Bluetooth SIG - Bluetooth Security and Privacy Best Practices的直接連結" title="1. [Bluetooth SIG - Bluetooth Security and Privacy Best Practices的直接連結" translate=no>​</a></h2>
+<p>Guide] <code>https://www.</code> bluetooth. com/download/bluetooth-security-and-
+privacy-best-practices-guide/</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5-bluetooth-sig-enhancing-device-privacy-with-randomized-rpa>5. [Bluetooth SIG Enhancing Device Privacy with Randomized RPA<a href=#5-bluetooth-sig-enhancing-device-privacy-with-randomized-rpa class=hash-link aria-label="5. [Bluetooth SIG Enhancing Device Privacy with Randomized RPA的直接連結" title="5. [Bluetooth SIG Enhancing Device Privacy with Randomized RPA的直接連結" translate=no>​</a></h2>
+<p>Updates] <code>https://www.bluetooth</code> .com/blog/enhancing-device-privacy-
+and-energy-efficiency-with-bluetooth-randomized-rpa-updates/</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5-texas-instruments---ble5-stack-privacy-httpssoftware->5. [Texas Instruments - BLE5-Stack Privacy] <code>https://software-</code><a href=#5-texas-instruments---ble5-stack-privacy-httpssoftware- class=hash-link aria-label=5-texas-instruments---ble5-stack-privacy-httpssoftware-的直接連結 title=5-texas-instruments---ble5-stack-privacy-httpssoftware-的直接連結 translate=no>​</a></h2>
+<p>dl. ti.com/simplelink/esd/simplelink_cc13xx_cc26xx_sdk/6.30.00.84/ex
+ports/docs/ble5stack/ble_user_guide/htnl/ble-stack-5 .x/privacy-html</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7-nordic-semiconductor---accelerated-address-resolver-aar->7. [Nordic Semiconductor - Accelerated Address Resolver (AAR) ]<a href=#7-nordic-semiconductor---accelerated-address-resolver-aar- class=hash-link aria-label="7. [Nordic Semiconductor - Accelerated Address Resolver (AAR) ]的直接連結" title="7. [Nordic Semiconductor - Accelerated Address Resolver (AAR) ]的直接連結" translate=no>​</a></h2>
+<p><code>https://docs.nordicsemi</code> .com/bundle/ps_nrf5348/page/aar.html -
+resolving_resolvable_address?contentId=FE15Ck8QH~X8yB34t4ULUw</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3-silicon-labs-resolving-list-api>3. [Silicon Labs Resolving List API]<a href=#3-silicon-labs-resolving-list-api class=hash-link aria-label="3. [Silicon Labs Resolving List API]的直接連結" title="3. [Silicon Labs Resolving List API]的直接連結" translate=no>​</a></h2>
+<p><code>https://docs</code> .silabs.com/bluetooth/latest/bluetooth-stack-api/sl-bt-
+resolving-l1st</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<blockquote>
+<p>原始导出图超过单张 WebP 的尺寸上限，以下图片按从上到下的顺序连续保存。
+<img decoding=async loading=lazy alt="BLE 隱私尋址機制 與 IRK：微信公众号导出原始排版图（第 1 段，共 2 段）" src=/assets/images/article-01-48837607096c00dd212286229b3073a3.webp width=1280 height=16000 class=img_ev3q />
+<img decoding=async loading=lazy alt="BLE 隱私尋址機制 與 IRK：微信公众号导出原始排版图（第 2 段，共 2 段）" src=/assets/images/article-02-b4d401621fd86aa6d085cfe08bbeaa05.webp width=1280 height=852 class=img_ev3q /></p>
+</blockquote></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2026-07-20-2026-07-20-ble-隱私尋址機制-rpa-與-irk-2247486086.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2026-07-27-qemu-終於補上-windows-3d-加速-triton-如何把-directx-11-帶進-utm-2247486095><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>QEMU 終於補上 Windows 3D 加速：Triton 如何把 DirectX 11 帶進 UTM</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2026-07-16-電話另一端-開始是-ai-xai-voice-agent-的能力-場景與上手方法-2247486066><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>電話另一端，開始是 AI：xAI Voice Agent 的能力、場景與上手方法</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#一篇以bluetoothlowenergy-规为主線的技药科普本文只封rpairk的理 class="table-of-contents__link toc-highlight">一篇以BluetoothLowEnergy 规为主線的技药科普。本文只封RPA/IRK的理</a><li><a href=#1这雨個概念位於蓝牙技術體系的哪裡 class="table-of-contents__link toc-highlight">1.这雨個概念位於蓝牙技術體系的哪裡?</a><li><a href=#2為什固定蓝牙位址會成為同题 class="table-of-contents__link toc-highlight">2.為什固定蓝牙位址會成為同题?</a><li><a href=#一医上電遇 class="table-of-contents__link toc-highlight">一医上電遇</a><li><a href=#3rpa的48位元究竟如何形成 class="table-of-contents__link toc-highlight">3.RPA的48位元究竟如何形成?</a><li><a href=#4irk是什魔它奥ltk有何差别 class="table-of-contents__link toc-highlight">4.IRK是什魔?它奥LTK有何差别?</a><li><a href=#一筆典型bond紀至少可能包含 class="table-of-contents__link toc-highlight">一筆典型Bond紀至少可能包含:</a><li><a href=#5收到一個rpa時身分如何被解析 class="table-of-contents__link toc-highlight">5.收到一個RPA時,身分如何被解析?</a><li><a href=#6resolvinglistcontroller如何知道有哪些可信身分 class="table-of-contents__link toc-highlight">6.ResolvingList:Controller如何知道有哪些可信身分?</a><li><a href=#7controller-based-奥-host-based-privacy class="table-of-contents__link toc-highlight">7.Controller-based 奥 Host-based Privacy</a><li><a href=#8一次完整的位址了但仍能安全重連 class="table-of-contents__link toc-highlight">8.一次完整的位址了但仍能安全重連</a><li><a href=#2ltk加密成功不等於有全部案務權限愿用仍需检查角色撤状患與敏感操作缘件 class="table-of-contents__link toc-highlight">2.LTK加密成功不等於有全部案務權限。愿用仍需检查角色、撤状患與敏感操作缘件。</a><li><a href=#3gatt已速線不等於已授耀ble允許先建立實速線再到特微值存取要求加密韶證或 class="table-of-contents__link toc-highlight">3.GATT已速線不等於已授耀。BLE允許先建立實速線,再到特微值存取要求加密、韶證或</a><li><a href=#9rpa是否代表支援多支手機 class="table-of-contents__link toc-highlight">9.RPA是否代表支援多支手機?</a><li><a href=#10privacymode奥位址输替调期 class="table-of-contents__link toc-highlight">10.PrivacyMode奥位址输替调期</a><li><a href=#11最常見的實作錯误 class="table-of-contents__link toc-highlight">11.最常見的實作錯误</a><li><a href=#12建的工程架構 class="table-of-contents__link toc-highlight">12.建的工程架構</a><li><a href=#一個健的ble身分系统可分成五固明確模组 class="table-of-contents__link toc-highlight">一個健的BLE身分系统可分成五固明確模组:</a><li><a href=#1定身分奥空中位址分鹰用層永遗使用内部peer-id-或-bond-handle不直接依銷 class="table-of-contents__link toc-highlight">1.定身分奥空中位址分。鹰用層永遗使用内部Peer ID 或 Bond Handle,不直接依銷</a><li><a href=#2irkltk奥權限分保存三者生命通期相圆但磁賣不同便於撤銷通移與稽核 class="table-of-contents__link toc-highlight">2.IRK、LTK奥權限分保存。三者生命通期相圆但磁賣不同,便於撤銷、通移與稽核。</a><li><a href=#3解析清單可重建以非捶赞bond-store為真實来源開機與-controllerreset-後 class="table-of-contents__link toc-highlight">3.解析清單可重建。以非捶赞Bond Store為真實来源,開機與 ControllerReset 後</a><li><a href=#1授權晚於身分解析奥加密確不渡看起来像已知装置直接榮成可敦行敏感命令 class="table-of-contents__link toc-highlight">1.授權晚於身分解析奥加密確。不渡“看起来像已知装置:直接榮成「可敦行敏感命令」。</a><li><a href=#3把容量奥淘汰政策做成座品需求不要等硬體回报memorycapacityexceeded才臨时 class="table-of-contents__link toc-highlight">3.把容量奥淘汰政策做成座品需求,不要等硬體回报MemoryCapacityExceeded才臨时</a><li><a href=#1-bluetooth-core-61-link-layer-specification-device-address-rpa class="table-of-contents__link toc-highlight">1. [Bluetooth Core 6.1 Link Layer Specification: Device Address, RPA</a><li><a href=#3-bluetooth-core-62---generic-access-profile-privacy-feature-奥 class="table-of-contents__link toc-highlight">3. [Bluetooth Core 6.2 - Generic Access Profile: Privacy Feature 奥</a><li><a href=#1-bluetooth-sig---bluetooth-security-and-privacy-best-practices class="table-of-contents__link toc-highlight">1. [Bluetooth SIG - Bluetooth Security and Privacy Best Practices</a><li><a href=#5-bluetooth-sig-enhancing-device-privacy-with-randomized-rpa class="table-of-contents__link toc-highlight">5. [Bluetooth SIG Enhancing Device Privacy with Randomized RPA</a><li><a href=#5-texas-instruments---ble5-stack-privacy-httpssoftware- class="table-of-contents__link toc-highlight">5. [Texas Instruments - BLE5-Stack Privacy] <code>https://software-</code></a><li><a href=#7-nordic-semiconductor---accelerated-address-resolver-aar- class="table-of-contents__link toc-highlight">7. [Nordic Semiconductor - Accelerated Address Resolver (AAR) ]</a><li><a href=#3-silicon-labs-resolving-list-api class="table-of-contents__link toc-highlight">3. [Silicon Labs Resolving List API]</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

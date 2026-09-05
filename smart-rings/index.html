@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="../img/favicon.ico">
+<title>全球智能戒指研究库</title>
+<style>
+:root{--ink:#172033;--muted:#667085;--blue:#153e75;--teal:#0f766e;--line:#dbe3ee;--soft:#f6f8fb;--orange:#fff7ed;--green:#f0fdf4}
+*{box-sizing:border-box} body{margin:0;background:#f3f6fa;color:var(--ink);font-family:Segoe UI,Microsoft YaHei,Arial,sans-serif;font-size:14px}
+.wrap{max-width:1800px;margin:0 auto;padding:22px}.hero{background:linear-gradient(135deg,#153e75,#2f6690);color:white;border-radius:16px;padding:26px 30px;box-shadow:0 8px 28px #163b641c}.hero h1{margin:0 0 8px;font-size:28px}.hero p{margin:5px 0;color:#e5edf7}.meta{font-size:13px;opacity:.92}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:16px 0}.card{background:white;border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:0 2px 9px #193b5a0c}.card .label{color:var(--muted);font-size:12px}.card .num{font-size:25px;font-weight:700;color:var(--blue);margin-top:4px}.panel{background:white;border:1px solid var(--line);border-radius:12px;margin:14px 0;padding:16px;box-shadow:0 2px 9px #193b5a0a}.panel h2{font-size:18px;margin:0 0 12px;color:var(--blue)}.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.controls input,.controls select{border:1px solid #cbd5e1;border-radius:8px;padding:9px 11px;background:white;color:var(--ink);min-width:160px}.controls input{min-width:280px;flex:1}.hint{color:var(--muted);font-size:12px;margin-top:9px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:9px}.data-table{border-collapse:separate;border-spacing:0;width:100%;min-width:1450px}.data-table th{position:sticky;top:0;background:#1f4e78;color:#fff;padding:10px 8px;text-align:left;font-size:12px;white-space:nowrap;z-index:2}.data-table td{padding:9px 8px;border-top:1px solid #e7edf5;vertical-align:top;line-height:1.42;max-width:360px}.data-table tr:nth-child(even) td{background:#fbfcfe}.data-table tr:hover td{background:#eef6ff}.data-table a{color:#1769aa;text-decoration:none}.data-table a:hover{text-decoration:underline}.pill{display:inline-block;padding:3px 8px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap}.ev-A{background:#dcfce7;color:#166534}.ev-B{background:#fef3c7;color:#92400e}.ev-C,.ev-D{background:#fee2e2;color:#991b1b}.status{font-size:12px}.detail{display:none;background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:14px;margin-top:12px}.detail.show{display:block}.detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.detail-item{background:#fff;border:1px solid #e5eaf1;border-radius:8px;padding:9px}.detail-item b{display:block;color:var(--muted);font-size:11px;margin-bottom:3px}.detail-item span{white-space:pre-wrap}.note{background:var(--orange);border-color:#f3c892;color:#7c2d12;line-height:1.6}.green{background:var(--green);border-color:#a7d7b4;color:#166534;line-height:1.6}.two-col{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}.small-table{width:100%;border-collapse:collapse}.small-table th,.small-table td{padding:7px;border-bottom:1px solid var(--line);text-align:left}.small-table th{font-size:12px;color:var(--muted)}.footer{color:var(--muted);font-size:12px;padding:14px 2px 30px;line-height:1.6}@media(max-width:900px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.two-col{grid-template-columns:1fr}.detail-grid{grid-template-columns:1fr 1fr}.wrap{padding:12px}.hero h1{font-size:22px}}@media(max-width:520px){.cards{grid-template-columns:1fr 1fr}.detail-grid{grid-template-columns:1fr}.controls input{min-width:100%}}
+</style>
+<style id="catalog-ui-base">
+html,body{max-width:100%;overflow-x:hidden}
+body{min-width:0}
+.wrap,.hero,.panel,.two,.two-col,.cards,.detail,.controls,.table-wrap{min-width:0;max-width:100%;box-sizing:border-box}
+.two>.panel,.two-col>.panel{min-width:0;overflow:hidden}
+.table-wrap{width:100%;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-gutter:stable}
+.controls{min-width:0;align-items:center}
+.controls input,.controls select{max-width:100%}
+.table-wrap:focus-within{outline:2px solid #80b9d6;outline-offset:2px}
+.catalog-clear-filters{border:1px solid #9bb9cf;background:#f8fbfd;color:#1f526f;border-radius:8px;padding:8px 12px;min-height:36px;cursor:pointer;white-space:nowrap;font:inherit;font-size:13px}
+.catalog-clear-filters:hover{background:#e9f4fb;border-color:#5d9ac0}
+.catalog-clear-filters:focus-visible{outline:2px solid #2b78a6;outline-offset:2px}
+.catalog-filter-state{color:#64748b;font-size:12px;line-height:1.4;white-space:nowrap}
+.catalog-detail-row>td{padding:0!important;border:0!important;background:transparent!important}
+.catalog-detail-row .detail{margin-top:10px}
+.catalog-detail-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.catalog-detail-top h3{margin:0;color:var(--blue,#153e75)}
+.catalog-detail-close{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:7px 10px;color:#36506a;cursor:pointer}
+.catalog-detail-close:hover{background:#eef6ff}
+.catalog-detail-row:focus-within{outline:2px solid #80b9d6;outline-offset:2px}
+@media(max-width:760px){
+  .wrap{width:100%;padding:12px;box-sizing:border-box}
+  .hero{padding:20px 16px}
+  .hero h1{font-size:24px;line-height:1.28}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .controls input{grid-column:1/-1;min-width:0;width:100%;flex:initial}
+  .controls select{min-width:0;width:100%;font-size:13px}
+  .catalog-clear-filters,.catalog-filter-state{grid-column:1/-1;width:100%}
+  .catalog-filter-state{white-space:normal}
+  .detail-grid{grid-template-columns:1fr}
+  .detail{padding:12px}
+  .catalog-detail-top{position:sticky;top:0;background:#f8fafc;padding-bottom:8px;z-index:2}
+}
+</style></head>
+<body>
+<div class="wrap">
+  <section class="hero"><h1>全球智能戒指研究库</h1><p>持续追加版：健康/睡眠、睡眠血氧/医疗、NFC支付/门禁/身份、预算/OEM与地区品牌。</p><p class="meta">最后查证：2026-09-05　|　主表按可独立购买型号/代际计数；颜色、材质和纯尺码不拆行。</p></section>
+  <section class="cards">
+    <div class="card"><div class="label">主表记录</div><div class="num" id="statTotal">—</div></div>
+    <div class="card"><div class="label">含“在售”的记录</div><div class="num" id="statLive">—</div></div>
+    <div class="card"><div class="label">医疗/睡眠/血氧类</div><div class="num" id="statMedical">—</div></div>
+    <div class="card"><div class="label">候选/别名</div><div class="num" id="statCandidates">—</div></div>
+  </section>
+  <section class="panel">
+    <h2>主表（可搜索/筛选）</h2>
+    <div class="controls"><input id="search" placeholder="搜索品牌、型号、国家、功能、芯片、传感器…"><select id="status"><option value="">全部上市状态</option></select><select id="category"><option value="">全部类别</option></select><select id="evidence"><option value="">全部证据等级</option><option>A</option><option>B</option><option>C</option><option>D</option></select></div>
+    <div class="hint">价格按原币种保留；“未公开”表示来源未披露。点击任意行查看完整字段。当前显示 <span id="shown">—</span> 条。</div>
+    <div class="table-wrap"><table class="data-table"><thead><tr><th>ID</th><th>品牌/型号</th><th>国家/市场</th><th>类别</th><th>状态</th><th>证据</th><th>发布/首售</th><th>价格</th><th>传感器</th><th>芯片/SoC</th><th>尺寸/重量</th><th>续航</th><th>来源</th></tr></thead><tbody id="rows"></tbody></table></div>
+    <div class="detail" id="detail"></div>
+  </section>
+  <section class="two-col">
+    <div class="panel"><h2>候选与别名（暂不计入主表）</h2><div class="table-wrap"><table class="small-table"><thead><tr><th>名称</th><th>类别/状态</th><th>保留原因</th><th>同源关系</th></tr></thead><tbody id="candidateRows"></tbody></table></div></div>
+    <div class="panel note"><h2>证据与医疗边界</h2><div>A：官方产品/发布/监管/交付链较完整。<br>B：有官方销售或发布，但部分字段靠可信媒体/渠道/手册互证。<br>C/D：集合页、低透明度渠道、预售/候选或同源线索。<br><br>FDA 510(k) 等监管记录只覆盖对应型号和明确用途；消费级睡眠、血压、血糖、呼吸暂停或“medical-grade”营销不能自动当成医疗诊断证明。</div></div>
+  </section>
+  <section class="panel green"><h2>本轮更新与下一步</h2><div id="updates"></div></section>
+  <section class="panel"><h2>来源渠道与证据</h2><div class="hint">Kickstarter、Indiegogo 等众筹页用于发现/预售信号；Amazon 等电商页用于区域价格/库存信号；官方产品、支持、发布和监管证据优先，未披露字段保留“未公开”。</div><div class="table-wrap"><table class="small-table"><thead><tr><th>来源组</th><th>渠道</th><th>角色</th><th>域名</th><th>卖方/项目方</th><th>店铺/项目类型</th><th>可得性信号</th><th>平台标识</th><th>众筹状态</th><th>档位/价格</th><th>预计交付</th><th>链接</th><th>覆盖范围</th><th>查证日期</th><th>质量</th></tr></thead><tbody id="sourceRows"></tbody></table></div></section>
+  <div class="footer">这是 2026-09-05 的研究快照。要持续添加，优先补证“官方产品页、说明书/规格、首发新闻、实际发货/零售”四类来源；对疑似OEM同款保留独立品牌记录，但在候选与别名表标注，避免硬件平台重复计数。</div>
+</div>
+<script>
+let DATA;
+(async function boot() {
+  try {
+    DATA = await fetch('./data.json', {cache: 'no-store'}).then(async (response) => {
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      return response.json();
+    });
+const $ = (id)=>document.getElementById(id);
+const esc = (v)=>String(v??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
+const link = (url,label)=>url && !['未找到当前COLMI独立直售页','未找到品牌独立产品页'].includes(url) ? '<a target="_blank" rel="noopener" href="'+esc(url)+'">'+esc(label||url)+'</a>' : esc(label||url||'未公开');
+const lower=(v)=>String(v??'').toLowerCase();
+const statuses=[...new Set(DATA.products.map(p=>p.status))].sort((a,b)=>a.localeCompare(b,'zh-CN'));
+const categories=[...new Set(DATA.products.map(p=>p.category))].sort((a,b)=>a.localeCompare(b,'zh-CN'));
+for(const v of statuses){const o=document.createElement('option');o.value=v;o.textContent=v;$('status').appendChild(o)}
+for(const v of categories){const o=document.createElement('option');o.value=v;o.textContent=v;$('category').appendChild(o)}
+$('statTotal').textContent=DATA.products.length;
+$('statLive').textContent=DATA.products.filter(p=>p.status.includes('在售')).length;
+$('statMedical').textContent=DATA.products.filter(p=>/医疗|睡眠|血氧|临床/.test(p.category)).length;
+$('statCandidates').textContent=DATA.candidates.length;
+function render(){
+  const q=lower($('search').value), s=$('status').value, c=$('category').value, e=$('evidence').value;
+  const list=DATA.products.filter(p=>(!q||lower(JSON.stringify(p)).includes(q))&&(!s||p.status===s)&&(!c||p.category===c)&&(!e||p.evidence===e));
+  $('shown').textContent=list.length;
+  $('rows').innerHTML=list.map(p=>'<tr data-id="'+esc(p.id)+'"><td>'+esc(p.id)+'</td><td><b>'+esc(p.brand)+'</b><br>'+esc(p.model)+'</td><td>'+esc(p.country_region)+'</td><td>'+esc(p.category)+'</td><td class="status">'+esc(p.status)+'</td><td><span class="pill ev-'+esc(p.evidence)+'">'+esc(p.evidence)+'</span></td><td>'+esc(p.launch_date)+'</td><td>'+esc(p.price)+'</td><td>'+esc(p.sensors)+'</td><td>'+esc(p.chip_or_soc)+'</td><td>'+esc(p.size_range)+'<br>'+esc(p.dimensions)+'<br>'+esc(p.weight_g)+'</td><td>'+esc(p.battery)+'</td><td>'+link(p.official_url,'官方')+'<br>'+link(p.spec_url,'规格/发布')+'</td></tr>').join('');
+  document.querySelectorAll('#rows tr').forEach(tr=>tr.addEventListener('click',()=>showDetail(tr.dataset.id)));
+}
+function showDetail(id){const p=DATA.products.find(x=>x.id===id);if(!p)return;const fields=[['ID',p.id],['品牌',p.brand],['型号/代际',p.model],['国家/市场',p.country_region],['类别',p.category],['上市状态',p.status],['证据等级',p.evidence],['发布/首售时间',p.launch_date],['日期口径',p.launch_date_type],['价格',p.price],['传感器',p.sensors],['芯片/SoC',p.chip_or_soc],['大小/尺码',p.size_range],['外形尺寸',p.dimensions],['重量',p.weight_g],['续航/电池',p.battery],['充电',p.charging],['防水',p.water_resistance],['订阅/服务',p.subscription],['主要功能',p.features],['可用性备注',p.availability_note],['来源说明',p.source_note],['查证日期',DATA.checked_on]];$('detail').innerHTML='<h3>'+esc(p.brand+'｜'+p.model)+'</h3><div class="detail-grid">'+fields.map(x=>'<div class="detail-item"><b>'+esc(x[0])+'</b><span>'+esc(x[1])+'</span></div>').join('')+'</div><p>'+link(p.official_url,'打开官方产品页')+'　'+link(p.spec_url,'打开规格/发布页')+'</p>';$('detail').classList.add('show');$('detail')}
+$('search').addEventListener('input',render);$('status').addEventListener('change',render);$('category').addEventListener('change',render);$('evidence').addEventListener('change',render);
+$('candidateRows').innerHTML=DATA.candidates.map(c=>'<tr><td><b>'+esc(c.name)+'</b><br>'+link(c.url,'来源')+'</td><td>'+esc(c.category)+'<br>'+esc(c.status)+'<br><span class="pill ev-'+esc(c.evidence.slice(-1))+'">'+esc(c.evidence)+'</span></td><td>'+esc(c.reason)+'</td><td>'+esc(c.alias_or_relation)+'</td></tr>').join('');
+$('sourceRows').innerHTML=DATA.sources.slice(0,18).map(s=>'<tr><td>'+esc(s.source_group)+'</td><td>'+esc(s.source_channel)+'</td><td>'+esc(s.source_role)+'</td><td>'+esc(s.source_domain)+'</td><td>'+esc(s.seller_type)+'</td><td>'+esc(s.storefront_type)+'</td><td>'+esc(s.availability_signal)+'</td><td>'+esc(s.platform_reference)+'</td><td>'+esc(s.campaign_status)+'</td><td>'+esc(s.pledge_or_price)+'</td><td>'+esc(s.estimated_delivery)+'</td><td>'+link(s.url,'打开来源')+'</td><td>'+esc(s.scope)+'</td><td>'+esc(s.checked_on)+'</td><td>'+esc(s.quality)+'</td></tr>').join('');
+$('updates').innerHTML=DATA.update_log.map(u=>'<p><b>'+esc(u.date)+'</b>　'+esc(u.change)+'<br><b>核验：</b>'+esc(u.verification)+'<br><b>下一步：</b>'+esc(u.next)+'</p>').join('');
+
+/* catalog-ui-inplace-detail-v1 */
+(function(){
+  const __detail=document.getElementById('detail');
+  if(!__detail || typeof showDetail!=='function' || typeof render!=='function') return;
+  const __originalShowDetail=showDetail;
+  const __originalRender=render;
+  const __originalParent=__detail.parentNode;
+  let __placeholder=null;
+  let __detailRow=null;
+  let __anchor=null;
+  let __activeId=null;
+  function __visible(node){return !!node && node.getClientRects().length>0;}
+  function __findAnchor(id){
+    const nodes=Array.from(document.querySelectorAll('#rows tr[data-id],.record-card[data-id]'));
+    return nodes.find(function(node){return node.dataset.id===id && __visible(node)}) || nodes.find(function(node){return node.dataset.id===id}) || null;
+  }
+  function __restoreDetail(){
+    if(__anchor) __anchor.removeAttribute('aria-expanded');
+    if(__detailRow && __detailRow.parentNode) __detailRow.parentNode.removeChild(__detailRow);
+    if(__placeholder && __placeholder.parentNode){
+      __placeholder.parentNode.insertBefore(__detail,__placeholder);
+      __placeholder.parentNode.removeChild(__placeholder);
+    } else if(__originalParent && !__detail.parentNode){
+      __originalParent.appendChild(__detail);
+    }
+    __placeholder=null;
+    __detailRow=null;
+    __anchor=null;
+  }
+  function __ensureClose(){
+    if(__detail.querySelector('.detail-close,.catalog-detail-close')) return;
+    const heading=__detail.querySelector('h3');
+    const top=document.createElement('div');
+    top.className='catalog-detail-top';
+    if(heading) top.appendChild(heading);
+    const button=document.createElement('button');
+    button.type='button';
+    button.className='catalog-detail-close';
+    button.textContent='关闭详情';
+    button.setAttribute('aria-label','关闭当前详情');
+    top.appendChild(button);
+    __detail.insertBefore(top,__detail.firstChild);
+  }
+  function __mountDetail(anchor){
+    if(!anchor || !__detail.parentNode) return;
+    __placeholder=document.createComment('catalog detail placeholder');
+    __detail.parentNode.insertBefore(__placeholder,__detail.nextSibling);
+    if(anchor.tagName==='TR'){
+      __detailRow=document.createElement('tr');
+      __detailRow.className='catalog-detail-row';
+      const cell=document.createElement('td');
+      const table=anchor.closest('table');
+      cell.colSpan=(table && table.tHead && table.tHead.rows[0] && table.tHead.rows[0].cells.length) || anchor.cells.length || 1;
+      __detailRow.appendChild(cell);
+      cell.appendChild(__detail);
+      anchor.parentNode.insertBefore(__detailRow,anchor.nextSibling);
+    } else {
+      anchor.parentNode.insertBefore(__detail,anchor.nextSibling);
+    }
+    __detail.classList.add('show');
+    __detail.setAttribute('aria-live','polite');
+    anchor.setAttribute('aria-expanded','true');
+    __anchor=anchor;
+  }
+  function __closeDetail(){
+    const x=window.scrollX;
+    const y=window.scrollY;
+    __activeId=null;
+    __restoreDetail();
+    __detail.classList.remove('show');
+    window.scrollTo(x,y);
+  }
+  function __filterFields(root){
+    return Array.from(root.querySelectorAll('input,select,textarea'));
+  }
+  function __updateFilterStates(){
+    document.querySelectorAll('.controls').forEach(function(root){
+      const state=root.querySelector('.catalog-filter-state');
+      if(!state) return;
+      const count=__filterFields(root).filter(function(field){return String(field.value||'').trim()!=='';}).length;
+      state.textContent=count ? '已启用 '+count+' 项筛选' : '当前未筛选 · 显示全部';
+    });
+  }
+  function __installClearButtons(){
+    document.querySelectorAll('.controls').forEach(function(root){
+      const fields=__filterFields(root);
+      if(!fields.length) return;
+      let button=root.querySelector('.catalog-clear-filters');
+      if(!button){
+        button=document.createElement('button');
+        button.type='button';
+        button.className='catalog-clear-filters';
+        button.textContent='显示全部';
+        button.setAttribute('aria-label','清除本组筛选并显示全部数据');
+        button.title='清除本组筛选并显示全部数据';
+        root.appendChild(button);
+        button.addEventListener('click',function(event){
+          event.preventDefault();
+          const x=window.scrollX;
+          const y=window.scrollY;
+          fields.forEach(function(field){field.value='';});
+          render();
+          window.scrollTo(x,y);
+        });
+      }
+      let state=root.querySelector('.catalog-filter-state');
+      if(!state){
+        state=document.createElement('span');
+        state.className='catalog-filter-state';
+        state.setAttribute('aria-live','polite');
+        root.appendChild(state);
+      }
+    });
+    __updateFilterStates();
+  }
+  function __resetFilterDefaults(){
+    document.querySelectorAll('.controls input,.controls select,.controls textarea').forEach(function(field){field.value='';});
+  }
+  showDetail=function(id){
+    const x=window.scrollX;
+    const y=window.scrollY;
+    if(__activeId===id && __detail.classList.contains('show')){
+      __closeDetail();
+      return;
+    }
+    __restoreDetail();
+    __originalShowDetail(id);
+    __ensureClose();
+    const anchor=__findAnchor(id);
+    if(anchor){
+      __mountDetail(anchor);
+      __activeId=id;
+    }
+    window.scrollTo(x,y);
+  };
+  render=function(){
+    const savedId=__activeId;
+    const x=window.scrollX;
+    const y=window.scrollY;
+    __restoreDetail();
+    __originalRender();
+    __bindRows();
+    if(savedId){
+      const anchor=__findAnchor(savedId);
+      if(anchor){
+        __originalShowDetail(savedId);
+        __ensureClose();
+        __mountDetail(anchor);
+        __activeId=savedId;
+      } else {
+        __activeId=null;
+        __detail.classList.remove('show');
+      }
+    }
+    __updateFilterStates();
+    window.scrollTo(x,y);
+  };
+  __detail.addEventListener('click',function(event){
+    if(event.target.closest('.detail-close,.catalog-detail-close')){
+      event.preventDefault();
+      __closeDetail();
+    }
+  });
+  document.addEventListener('keydown',function(event){
+    if(event.key==='Escape' && __detail.classList.contains('show')) __closeDetail();
+  });
+  function __isFilterTarget(target){
+    return !!target && !!target.matches && target.matches('input,select,textarea') && (target.id==='search' || !!target.closest('.controls'));
+  }
+  function __handleFilterEvent(event){
+    if(!__isFilterTarget(event.target)) return;
+    event.stopImmediatePropagation();
+    render();
+  }
+  document.addEventListener('input',__handleFilterEvent,true);
+  document.addEventListener('change',__handleFilterEvent,true);
+  function __bindRows(){
+    document.querySelectorAll('#rows tr[data-id]').forEach(function(row){
+      if(row.dataset.catalogUiBound) return;
+      row.dataset.catalogUiBound='1';
+      row.tabIndex=0;
+      row.addEventListener('keydown',function(event){
+        if(event.target.closest('a,button')) return;
+        if(event.key==='Enter' || event.key===' '){event.preventDefault();showDetail(row.dataset.id);}
+      });
+    });
+    const rowsBody=document.getElementById('rows');
+    if(rowsBody && !rowsBody.dataset.catalogUiLinksBound){
+      rowsBody.dataset.catalogUiLinksBound='1';
+      rowsBody.addEventListener('click',function(event){
+        if(event.target.closest('#detail')) return;
+        if(event.target.closest('a,button')) event.stopPropagation();
+      },true);
+    }
+  }
+  __resetFilterDefaults();
+  __installClearButtons();
+  __bindRows();
+})();
+
+render();
+  } catch (error) {
+    document.body.innerHTML = '<main style="font:16px system-ui;padding:2rem">智能指环数据加载失败：' + String(error?.message || error) + '</main>';
+  }
+})();
+</script>
+</body>
+</html>

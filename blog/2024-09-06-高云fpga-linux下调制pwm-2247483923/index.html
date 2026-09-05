@@ -1,0 +1,357 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>高云FPGA Linux下调制PWM | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2024-09-06-高云fpga-linux下调制pwm-2247483923 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="高云FPGA Linux下调制PWM | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《高云FPGA Linux下调制PWM》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《高云FPGA Linux下调制PWM》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2024-09-06T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2024-09-06-高云fpga-linux下调制pwm-2247483923 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2024-09-06-高云fpga-linux下调制pwm-2247483923 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2024-09-06-高云fpga-linux下调制pwm-2247483923 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2024-09-06-高云fpga-linux下调制pwm-2247483923","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2024-09-06T00:00:00.000Z","description":"从微信公众号导入的文章《高云FPGA Linux下调制PWM》，保留原始排版图并提供本地 OCR 转写。","headline":"高云FPGA Linux下调制PWM","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2024-09-06-高云fpga-linux下调制pwm-2247483923","name":"高云FPGA Linux下调制PWM","url":"https://w0x7ce.eu/blog/2024-09-06-高云fpga-linux下调制pwm-2247483923"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>高云FPGA Linux下调制PWM</h1><div class="container_mt6G margin-vert--md"><time datetime=2024-09-06T00:00:00.000Z>2024年9月6日</time> · <!-- -->閱讀時間約 9 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2024-09-06 20:47:44（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247483923&idx=1&sn=16f2d18ee9223412745477e7a4209cd1&chksm=96e117b9a1969eaf512b4e4115129a2aacbd05fbf959472674f939f3bf0ffed1531845bf9832#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 6344 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>original wex7ce EI V1ajero 2824年9月6日 28:47 波兰</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1引言>1.引言<a href=#1引言 class=hash-link aria-label=1.引言的直接連結 title=1.引言的直接連結 translate=no>​</a></h2>
+<p>本指南提供了FPGAPWM实现的全面分析,特别聚焦于TangNano9K开发板。我们将深人探讨
+PWM的理论基础、代码实现、资源利用、频率限制、占空比调节以及在L1nux环境下的开发流
+程。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2pwm基础理论>2.PWM基础理论<a href=#2pwm基础理论 class=hash-link aria-label=2.PWM基础理论的直接連結 title=2.PWM基础理论的直接連結 translate=no>​</a></h2>
+<p>脉冲宽度调制(PiM)是一种通过调整信号的占空比来控制平均功率的技术。在FPGA中,PWM通
+常通过计数器和比较器来实现。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3fpga-pwm实现>3.FPGA PWM实现<a href=#3fpga-pwm实现 class=hash-link aria-label="3.FPGA PWM实现的直接連結" title="3.FPGA PWM实现的直接連結" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=31pwm生成器代码>3.1PWM生成器代码<a href=#31pwm生成器代码 class=hash-link aria-label=3.1PWM生成器代码的直接連結 title=3.1PWM生成器代码的直接連結 translate=no>​</a></h3>
+<p>nodule pwm_generator (
+1nput clk,
+input [6<!-- -->:e<!-- -->] duty_cycle_in [0:3]. // 新增:外部占空比输人
+output reg [3:0] pwm_out
+7 ;
+localparan TARGET_FREQ = 100_000; // PkM须率: 100 kHz
+1ocalparan CL0CK_FREQ = 27_808_e66; // B时神源率: 27 HHz
+localparan CoUNT_MAX = CLOCK_FREQ / TARGET_FREQ - 1;
+reg[7:θ]count=8;//8位计数器,最大值269
+reg [6<!-- -->:e<!-- -->] duty_cycle[0:3];// 4个7份占登比额存器,兹国e-100
+wlre [7<!-- -->:e<!-- -->] thresh_3 - (couNT_MAx • duty_cycle[2]) / 100;
+always @(posedge clk) begin
+count &lt;= (count &lt; CouNT_MAX) ? count + 1 : ;
+pw_out[0]&lt;= (count &lt; thresh_1];
+pw_out[3]&lt;= (count &lt; thresh_4];
+//更折占空比
+[8]uao&lt;np => [a]a>As&lt;np
+duty_cycle[1] &lt;= duty_cycle_in[1]:
+[]utaoAs&lt;np => [e]aAs&lt;np
+pua
+endnodule</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=32顶层模块实现>3.2顶层模块实现<a href=#32顶层模块实现 class=hash-link aria-label=3.2顶层模块实现的直接連結 title=3.2顶层模块实现的直接連結 translate=no>​</a></h3>
+<p>nodule uart_loop_back (
+input clk,</p>
+<ul>
+<li class="">xen ndu</li>
+</ul>
+<p>output uart_tx,
+output [5<!-- -->:e<!-- -->] led,
+putput [3<!-- -->:e<!-- -->] pun_out,
+output tine_tx
+7 :
+wire [7:8] rxData;
+reg txDatavalid;
+wire txBusy;
+wire current_bit;
+reg [6:8] pun_duty_cycles [9:3]; // PMM占空比存储
+//UART接收模块实例化
+uart_rx #( .DELAY_FRAMES(69)) uart_rx_inst (
+.clk(ctk) , .uart_rx(uart_rx), .rxData(rxData), .rxDataVal1d(rx)
+1:
+//UART发送模块实例化
+uart_Lx #( -DELAY_FRAMES(69)) uart_Lx_inst (
+,clk(clk), .txData{txData), .txbatavalid(txDatavalid),
+.txBusy(txBusy),.uart_tx(uart_tx)
+1:
+//PWM生成器实例化
+,clk(clk),
+.duty_cycle_in( pwm_duty_cycles) ,
+pwtt_out (pwn out)
+//时间发运器实例化
+time_sender #(.CLocK_FREQ(8_eee_eee)) tine_sender_inst (
+clk(clk),
+.uart_tx(tine_tx),
+,current_bit(current_bit)
+reg [7:8] loopback_buffer;
+always @(posedge clk) begin
+1f (rxDataValid) begin
+loopback_buffer &lt;= rxData;
+loopback_ready &lt;= 1;
+//使用接收到的数揭更新PWM占空比
+case (rxData[7:6])
+2′b01: pwm_duty_cycles[1] &lt;= rxData[6:8];
+2′b11: pwm_duty_cycles[3] &lt;= rxData[6:] ;
+endcase
+end
+if (loopback_ready && 1txBusy) begin
+txData &lt;= lopback_buffer;
+txDatavalid &lt;= 1;
+Loopback_ready &lt;= 0;
+end else if (11oopback_ready)1 begin
+txDataValid &lt;= 0;
+end
+led[3:0] &lt;= pMm_out;
+led[5] &lt;= current_bit;
+end
+endnodule</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=33参数计算与配置>3.3参数计算与配置<a href=#33参数计算与配置 class=hash-link aria-label=3.3参数计算与配置的直接連結 title=3.3参数计算与配置的直接連結 translate=no>​</a></h3>
+<p>L.PWM频率计算:
+5 - 1 - 0006 / 0002 - 1 - 0131 / 030 - X10
+COUNT_MAX = CL0CK_FREQ / TARGET_FREQ - 1 = 27,080,808 / 168,699 - 1 = 265
+.占空比计算:
+thresh_x = (CouNT_MAX + duty_cycle[x]) / 100</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=34fpga-pwm的频率限制>3.4FPGA PWM的频率限制<a href=#34fpga-pwm的频率限制 class=hash-link aria-label="3.4FPGA PWM的频率限制的直接連結" title="3.4FPGA PWM的频率限制的直接連結" translate=no>​</a></h3>
+<p>为什么频率不能过低:
+L.资源占用增加:低频PWM需要更大的计数器,这直接影响FPGA资源的使用、例如,对于1Hz
+的PWM领率和27MHz的时钟:
+COUNT_MAX - 27,068,600 / 1 - 1 - 26,999,999
+这需要一个25位的计数器,相比于180kHzPWM的8位计数器,使用了更多的触发器和逻辑
+资源。
+具体影响:</p>
+<ul>
+<li class="">
+<p>更多的触发器(FLip-FLops)用于实现大计数器</p>
+</li>
+<li class="">
+<p>更复杂的比较逻辑,需要更多的LUT资源</p>
+</li>
+<li class="">
+<p>可能需要使用块RAM来存储大型查找表(用于复杂的占空比计算)</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2定时精度低频pwm在高速时钟下可能导致jitter增加影响输出信号的稳定性>2.定时精度:低频PwM在高速时钟下可能导致jitter增加,影响输出信号的稳定性。<a href=#2定时精度低频pwm在高速时钟下可能导致jitter增加影响输出信号的稳定性 class=hash-link aria-label=2.定时精度:低频PwM在高速时钟下可能导致jitter增加,影响输出信号的稳定性。的直接連結 title=2.定时精度:低频PwM在高速时钟下可能导致jitter增加,影响输出信号的稳定性。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3响应时间低频pwm会增加系统响应时间不适合需要快速反应的应用>3.响应时间:低频PWM会增加系统响应时间,不适合需要快速反应的应用。<a href=#3响应时间低频pwm会增加系统响应时间不适合需要快速反应的应用 class=hash-link aria-label=3.响应时间:低频PWM会增加系统响应时间,不适合需要快速反应的应用。的直接連結 title=3.响应时间:低频PWM会增加系统响应时间,不适合需要快速反应的应用。的直接連結 translate=no>​</a></h2>
+<p>为什么频率不能过高:
+L.时序限制<!-- -->:FPGA<!-- -->有最大时钟频率限制,过高的PWM频率可能违反时序要求</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2信号完整性高频pm信号更容易受到噪声和干扰的影响>2.信号完整性:高频PM信号更容易受到噪声和干扰的影响<a href=#2信号完整性高频pm信号更容易受到噪声和干扰的影响 class=hash-link aria-label=2.信号完整性:高频PM信号更容易受到噪声和干扰的影响的直接連結 title=2.信号完整性:高频PM信号更容易受到噪声和干扰的影响的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3功耗增加高频切换会增加动态功耗>3.功耗增加:高频切换会增加动态功耗、<a href=#3功耗增加高频切换会增加动态功耗 class=hash-link aria-label=3.功耗增加:高频切换会增加动态功耗、的直接連結 title=3.功耗增加:高频切换会增加动态功耗、的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=35占空比调节>3.5占空比调节<a href=#35占空比调节 class=hash-link aria-label=3.5占空比调节的直接連結 title=3.5占空比调节的直接連結 translate=no>​</a></h3>
+<p>在本设计中,占空比通过以下方式调节:
+L.顶层模块(uart_Loop_back)中定义了pun_duty_cycLes 数组来存储各个PwM通道的占
+空比值。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2通过uart接收的数据来更新占空比>2.通过UART接收的数据来更新占空比:<a href=#2通过uart接收的数据来更新占空比 class=hash-link aria-label=2.通过UART接收的数据来更新占空比:的直接連結 title=2.通过UART接收的数据来更新占空比:的直接連結 translate=no>​</a></h2>
+<p>case (rxData[7:6]]
+2'b1e: pwm_duty_cycles[2] c- rxata[6:0] ;
+endcase
+这允许通过串口动态调整每个PMM通道的占空比</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3更新后的占空比值传递给pwm生成器模块>3.更新后的占空比值传递给PWM生成器模块:<a href=#3更新后的占空比值传递给pwm生成器模块 class=hash-link aria-label=3.更新后的占空比值传递给PWM生成器模块:的直接連結 title=3.更新后的占空比值传递给PWM生成器模块:的直接連結 translate=no>​</a></h2>
+<p>pMm_generator pMm_gen [
+.clk(clk),
+.duty_cycle_in( pmn_duty_cycles).</p>
+<ul>
+<li class="">Pem_out(pon aut)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1在pwm生成器内部占空比值用于计算比较阅值>1.在PWM生成器内部,占空比值用于计算比较阅值:<a href=#1在pwm生成器内部占空比值用于计算比较阅值 class=hash-link aria-label=1.在PWM生成器内部,占空比值用于计算比较阅值:的直接連結 title=1.在PWM生成器内部,占空比值用于计算比较阅值:的直接連結 translate=no>​</a></h2>
+<p>wire [7<!-- -->:e<!-- -->] thresh_1 = (couNT_HAx * duty_cycle[e]) / 100;
+这种设计允许灵活且动态地调整PnM的占空比,同时保持了模块化的结构。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4linux环境下的tangnano9k开发流程>4.Linux环境下的TangNano9K开发流程<a href=#4linux环境下的tangnano9k开发流程 class=hash-link aria-label=4.Linux环境下的TangNano9K开发流程的直接連結 title=4.Linux环境下的TangNano9K开发流程的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=41环境准备>4.1环境准备<a href=#41环境准备 class=hash-link aria-label=4.1环境准备的直接連結 title=4.1环境准备的直接連結 translate=no>​</a></h3>
+<p>L,安装依赖:
+sudo apt-get install build-essential clang bison flex libreadline-dev
+gawk tcl-dev lihffi-dev git graphviz xdot pkg-confic
+python3 libboost-systen-dev libboost-python-dev <br/>
+<!-- -->Aop-6ta1nz ap-wasAsa1t-1so0qg1
+?.克隆并编译Yosys:
+git clone https=//github.con/YesysHQ/yosys.git
+cd yo5ys
+make -1$(nproc)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3克隆并编译nextpnr-gowin>3.克隆并编译nextpnr-gowin:<a href=#3克隆并编译nextpnr-gowin class=hash-link aria-label=3.克隆并编译nextpnr-gowin:的直接連結 title=3.克隆并编译nextpnr-gowin:的直接連結 translate=no>​</a></h2>
+<p>git clane <a href=https://github-con/YosysHQ/nextpnr.git target=_blank rel="noopener noreferrer" class="">https://github-con/YosysHQ/nextpnr.git</a>
+cd nextpnr
+cnake -DARCH=goMin -DGOWIN_BBA_EXECUTABLE=/usr/local/bin/gowin_bba
+(ooudu)s[- ayeu
+1letsut axeu opns
+cd ..</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1安装openfpgaloader>1.安装OpenFPGALoader:<a href=#1安装openfpgaloader class=hash-link aria-label=1.安装OpenFPGALoader:的直接連結 title=1.安装OpenFPGALoader:的直接連結 translate=no>​</a></h2>
+<p>git clone https=//github.con/trabucayre/openFPGALcader.git
+cd openFPGALoader
+mkdir build &6 cd build
+cnake
+(odu)s[- aou
+llersut ayeu opns
+cd ....</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=42项目结构>4.2项目结构<a href=#42项目结构 class=hash-link aria-label=4.2项目结构的直接連結 title=4.2项目结构的直接連結 translate=no>​</a></h3>
+<p>uart_loophack/
+—1inpl/
+I= src/
+—— pw_generator. v
+T
+time_sender.v
+|——uart_loopback.cst
+uart_tx v
+I—— 9k_uart_loopback,gprj
+I Linux_conplie.nd
+. 2
+L- README_cn.nd</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=43约束文件uart_loopbackcst>4.3约束文件(uart_Loopback.cst)<a href=#43约束文件uart_loopbackcst class=hash-link aria-label=4.3约束文件(uart_Loopback.cst)的直接連結 title=4.3约束文件(uart_Loopback.cst)的直接連結 translate=no>​</a></h3>
+<p>I0_L0c "clk" 52;
+I0 PORT "clk* PULL_MODE=UP;
+t .[9]p. 0noI
+I0_L0c "led[1]* 11;
+I0_L0C
+"led[2]* 13;</p>
+<ul>
+<li class="">[ [≤]p</li>
+</ul>
+<p>"led[4]* 15;
+I0_L0C
+gt .[s1pa1
+10_L0C
+tx4uen.
+I0_PORT "uart_tx* IO_TYPE=LVCNOS33;
+"uart rx* 18;
+I0 L0C
+IO_PORT "uart_rx* IO_TYPE=LVCMO533;
+sz[0]anound
+I0_LOC</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=13>1.3<a href=#13 class=hash-link aria-label=1.3的直接連結 title=1.3的直接連結 translate=no>​</a></h2>
+<p>ccsoA7=3dl 0I [al1no md., Iaod 0I
+I0_L0C
+92 -[t]4no umd.
+16
+"pw_out[2] 27;
+I0_L0C
+I0_PORT "pwm_out[2]* I0_TYPE=LVCH0533;
+I0_LOC
+"pwm_out[3]* 28;
+67
+ccso7=3dl oI [c11no md. Iaod 0I
+:0E ,x>=
+I0_L0C
+I0_PORT "tine_tx* I0_TYPE=LVCM0S33;</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=44编译流程>4.4编译流程<a href=#44编译流程 class=hash-link aria-label=4.4编译流程的直接連結 title=4.4编译流程的直接連結 translate=no>​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1综合>1.综合:<a href=#1综合 class=hash-link aria-label=1.综合:的直接連結 title=1.综合:的直接連結 translate=no>​</a></h2>
+<p>yosys -p <em>read_verilog src/</em>.v; synth_gowin -top uart_loop_back -json inf
+.布局布线:
+nextpnr-govin --1son impl/uart_loopback. 1son --freq 27 --write Impl/uart,</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3生成比特流>3.生成比特流:<a href=#3生成比特流 class=hash-link aria-label=3.生成比特流:的直接連結 title=3.生成比特流:的直接連結 translate=no>​</a></h2>
+<p>2s[ Jud yoeqdoo1 1uen/1duT s,*yoeqdoon 1Jen/ldut 0- 26-NTNo p- yoed utMob</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1烧录fpga>1.烧录FPGA:<a href=#1烧录fpga class=hash-link aria-label=1.烧录FPGA:的直接連結 title=1.烧录FPGA:的直接連結 translate=no>​</a></h2>
+<p>openFPGALoader -b tangnano9k -f 1mol/uart_loopback.fs</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5性能分析与优化>5.性能分析与优化<a href=#5性能分析与优化 class=hash-link aria-label=5.性能分析与优化的直接連結 title=5.性能分析与优化的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=51资源利用分析>5.1资源利用分析<a href=#51资源利用分析 class=hash-link aria-label=5.1资源利用分析的直接連結 title=5.1资源利用分析的直接連結 translate=no>​</a></h3>
+<p>基于编译日志,我们可以分析资源利用信况:
+Sunnary
+Nunber of LUT4s:
+566
+LE6
+194
+Nunber of DFFs:
+79
+14
+Nunber of HUX2_LUT6:
+5
+Nunber of HUX2_LUTB:
+这些微据表明:
+L.LUT利用适中,表明逻辑复杂度合理。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2dff数量较少主要用于状态存储和同步>2.DFF数量较少,主要用于状态存储和同步。<a href=#2dff数量较少主要用于状态存储和同步 class=hash-link aria-label=2.DFF数量较少,主要用于状态存储和同步。的直接連結 title=2.DFF数量较少,主要用于状态存储和同步。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3存在一些复杂的多路选择逐辑mux2_lut5到mux2_lut8这可能是由于pkm通道的多路>3.存在一些复杂的多路选择逐辑(MUX2_LUT5到MUX2_LUT8),这可能是由于PkM通道的多路<a href=#3存在一些复杂的多路选择逐辑mux2_lut5到mux2_lut8这可能是由于pkm通道的多路 class=hash-link aria-label=3.存在一些复杂的多路选择逐辑(MUX2_LUT5到MUX2_LUT8),这可能是由于PkM通道的多路的直接連結 title=3.存在一些复杂的多路选择逐辑(MUX2_LUT5到MUX2_LUT8),这可能是由于PkM通道的多路的直接連結 translate=no>​</a></h2>
+<p>复用和占空比调节逻输造成的。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1alu的使用量较大937个这可能是由于pwm阅值计算和uart通信逻辑引起的可以考>1.ALU的使用量较大(937个),这可能是由于PWM阅值计算和UART通信逻辑引起的。可以考<a href=#1alu的使用量较大937个这可能是由于pwm阅值计算和uart通信逻辑引起的可以考 class=hash-link aria-label=1.ALU的使用量较大(937个),这可能是由于PWM阅值计算和UART通信逻辑引起的。可以考的直接連結 title=1.ALU的使用量较大(937个),这可能是由于PWM阅值计算和UART通信逻辑引起的。可以考的直接連結 translate=no>​</a></h2>
+<p>虑使用查找表(LUT)来优化一些常用的计算结果,以减少ALU使用。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=52时序分析>5.2时序分析<a href=#52时序分析 class=hash-link aria-label=5.2时序分析的直接連結 title=5.2时序分析的直接連結 translate=no>​</a></h3>
+<p>基于编译日志:
+Max frequency for clock pwm_gen.clk: 34.62 MHz (PAS5 at 27.ee MHz)</p>
+<ul>
+<li class="">> posedge pwm_gen.c1k: 2,72 ns</li>
+</ul>
+<p>Max delay &lt;async>
+Hax delay posedge pvn_gen.clk -> &lt;async>
+: 9.56 ns
+这表明:
+L.设计在27MHz时钟下有足够的时序裕度,最高可支持到34.62MHz。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2存在一些异步路径特别是从时钟到异步输出的956ns延迟可能需要进一步优化>2.存在一些异步路径,特别是从时钟到异步输出的9.56ns延迟,可能需要进一步优化。<a href=#2存在一些异步路径特别是从时钟到异步输出的956ns延迟可能需要进一步优化 class=hash-link aria-label=2.存在一些异步路径,特别是从时钟到异步输出的9.56ns延迟,可能需要进一步优化。的直接連結 title=2.存在一些异步路径,特别是从时钟到异步输出的9.56ns延迟,可能需要进一步优化。的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=53优化策略>5.3优化策略<a href=#53优化策略 class=hash-link aria-label=5.3优化策略的直接連結 title=5.3优化策略的直接連結 translate=no>​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1时钟管理>1.时钟管理:<a href=#1时钟管理 class=hash-link aria-label=1.时钟管理:的直接連結 title=1.时钟管理:的直接連結 translate=no>​</a></h2>
+<ul>
+<li class="">
+<p>考虑使用FPGA的PLL资源生成更精确的时钟。</p>
+</li>
+<li class="">
+<p>对于不同功能模块(如PWM和UART),可以使用不同的时钟域以优化性能。</p>
+</li>
+</ul>
+<p>.流水线化:</p>
+<ul>
+<li class="">
+<p>对于PwM阔值计算等复杂逐辑,考虑增加流水线stages以提高最大可能频率。</p>
+</li>
+<li class="">
+<p>示例:</p>
+</li>
+</ul>
+<p>reg [7:0] thresh teip:
+reg [3<!-- -->:e<!-- -->] pmn_out_tenp:
+always o(posedge clk) begin
+thresh_tenp &lt;= (couNT_MAx * duty_cycle[e] / 1ee;
+pwm_out_templo] &lt;= (count &lt; thresh_temp);
+pwn out[e] c= pwn_out_tenp[0];
+end</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3资源共享>3.资源共享:<a href=#3资源共享 class=hash-link aria-label=3.资源共享:的直接連結 title=3.资源共享:的直接連結 translate=no>​</a></h2>
+<ul>
+<li class="">对于多通道PMM,考虑时分复用技术。例如,使用一个高频计数器和比较器,通过多路复</li>
+</ul>
+<p>用器输出到不同通道。</p>
+<ul>
+<li class="">示例:</li>
+</ul>
+<p>rcg [1<!-- -->:e<!-- -->] channol_select = θ;
+always @(posedge clk) begin
+channel_select s= channel _select + 1;
+2'boe: pum_out[e] &lt;= (count &lt; thresh_1);
+2'bll: pum_out[3] &lt;= (count &lt; thresh_4);
+endcase
+end
+10</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1预计算>1.预计算:<a href=#1预计算 class=hash-link aria-label=1.预计算:的直接連結 title=1.预计算:的直接連結 translate=no>​</a></h2>
+<ul>
+<li class="">
+<p>对于固定或较少变化的参数,使用查找表代替实时计算。</p>
+</li>
+<li class="">
+<p>示例:</p>
+</li>
+</ul>
+<p>reg [7:0] duty_to_thresh [0:100];
+initial begin
+for (int i = 0; i &lt;= 100; i++) begin
+duty_to_thresh[i] =(coUNT_MAX * i) / 100;
+end
+wire [7:0] thresh_1 = duty_to_thresh[duty_cycle[o]];</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5异步路径优化>5.异步路径优化:<a href=#5异步路径优化 class=hash-link aria-label=5.异步路径优化:的直接連結 title=5.异步路径优化:的直接連結 translate=no>​</a></h2>
+<ul>
+<li class="">
+<p>检查并优化长延迟的异步路径,可能需要增加寄存器stages来分割长路径。</p>
+</li>
+<li class="">
+<p>确保关键信号使用专用的全局时钟网络。</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5占空比调节优化>5.占空比调节优化:<a href=#5占空比调节优化 class=hash-link aria-label=5.占空比调节优化:的直接連結 title=5.占空比调节优化:的直接連結 translate=no>​</a></h2>
+<ul>
+<li class="">
+<p>考虑使用增量式调节而不是直接赋值,可以减少大幅度变化带来的瞬态影响。</p>
+</li>
+<li class="">
+<p>示例:</p>
+</li>
+</ul>
+<p>always @(posedge clk) begin
+if (duty_cycle[0] &lt; target_duty[0])</p>
+<ul>
+<li class="">[o]ao&lt;n => [o]aon</li>
+</ul>
+<p>else if (duty_cycle[o] > target_duty[o])</p>
+<ul>
+<li class="">[o]an => [o]an</li>
+</ul>
+<p>end</p>
+<p>FPGA·目录三
+&lt;上一篇
+下一篇>
+HDLBits系列入门题目详解之Vector
+FPGA design a UART Loopback
+System</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<p><img decoding=async loading=lazy alt="高云FPGA Linux下调制PWM：微信公众号导出原始排版图" src=/assets/images/article-91b64bb08b5626b9755e2239235f5be5.webp width=1280 height=11284 class=img_ev3q /></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2024-09-06-2024-09-06-高云fpga-linux下调制pwm-2247483923.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2024-09-09-海思-星闪sle-hi3863芯片-sdk接口指南-2247483928><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>海思  星闪SLE  hi3863芯片 SDK接口指南</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2024-09-05-fpga-design-a-uart-loopback-system-2247483918><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>FPGA design a UART Loopback System</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#1引言 class="table-of-contents__link toc-highlight">1.引言</a><li><a href=#2pwm基础理论 class="table-of-contents__link toc-highlight">2.PWM基础理论</a><li><a href=#3fpga-pwm实现 class="table-of-contents__link toc-highlight">3.FPGA PWM实现</a><ul><li><a href=#31pwm生成器代码 class="table-of-contents__link toc-highlight">3.1PWM生成器代码</a><li><a href=#32顶层模块实现 class="table-of-contents__link toc-highlight">3.2顶层模块实现</a><li><a href=#33参数计算与配置 class="table-of-contents__link toc-highlight">3.3参数计算与配置</a><li><a href=#34fpga-pwm的频率限制 class="table-of-contents__link toc-highlight">3.4FPGA PWM的频率限制</a></ul><li><a href=#2定时精度低频pwm在高速时钟下可能导致jitter增加影响输出信号的稳定性 class="table-of-contents__link toc-highlight">2.定时精度:低频PwM在高速时钟下可能导致jitter增加,影响输出信号的稳定性。</a><li><a href=#3响应时间低频pwm会增加系统响应时间不适合需要快速反应的应用 class="table-of-contents__link toc-highlight">3.响应时间:低频PWM会增加系统响应时间,不适合需要快速反应的应用。</a><li><a href=#2信号完整性高频pm信号更容易受到噪声和干扰的影响 class="table-of-contents__link toc-highlight">2.信号完整性:高频PM信号更容易受到噪声和干扰的影响</a><li><a href=#3功耗增加高频切换会增加动态功耗 class="table-of-contents__link toc-highlight">3.功耗增加:高频切换会增加动态功耗、</a><ul><li><a href=#35占空比调节 class="table-of-contents__link toc-highlight">3.5占空比调节</a></ul><li><a href=#2通过uart接收的数据来更新占空比 class="table-of-contents__link toc-highlight">2.通过UART接收的数据来更新占空比:</a><li><a href=#3更新后的占空比值传递给pwm生成器模块 class="table-of-contents__link toc-highlight">3.更新后的占空比值传递给PWM生成器模块:</a><li><a href=#1在pwm生成器内部占空比值用于计算比较阅值 class="table-of-contents__link toc-highlight">1.在PWM生成器内部,占空比值用于计算比较阅值:</a><li><a href=#4linux环境下的tangnano9k开发流程 class="table-of-contents__link toc-highlight">4.Linux环境下的TangNano9K开发流程</a><ul><li><a href=#41环境准备 class="table-of-contents__link toc-highlight">4.1环境准备</a></ul><li><a href=#3克隆并编译nextpnr-gowin class="table-of-contents__link toc-highlight">3.克隆并编译nextpnr-gowin:</a><li><a href=#1安装openfpgaloader class="table-of-contents__link toc-highlight">1.安装OpenFPGALoader:</a><ul><li><a href=#42项目结构 class="table-of-contents__link toc-highlight">4.2项目结构</a><li><a href=#43约束文件uart_loopbackcst class="table-of-contents__link toc-highlight">4.3约束文件(uart_Loopback.cst)</a></ul><li><a href=#13 class="table-of-contents__link toc-highlight">1.3</a><ul><li><a href=#44编译流程 class="table-of-contents__link toc-highlight">4.4编译流程</a></ul><li><a href=#1综合 class="table-of-contents__link toc-highlight">1.综合:</a><li><a href=#3生成比特流 class="table-of-contents__link toc-highlight">3.生成比特流:</a><li><a href=#1烧录fpga class="table-of-contents__link toc-highlight">1.烧录FPGA:</a><li><a href=#5性能分析与优化 class="table-of-contents__link toc-highlight">5.性能分析与优化</a><ul><li><a href=#51资源利用分析 class="table-of-contents__link toc-highlight">5.1资源利用分析</a></ul><li><a href=#2dff数量较少主要用于状态存储和同步 class="table-of-contents__link toc-highlight">2.DFF数量较少,主要用于状态存储和同步。</a><li><a href=#3存在一些复杂的多路选择逐辑mux2_lut5到mux2_lut8这可能是由于pkm通道的多路 class="table-of-contents__link toc-highlight">3.存在一些复杂的多路选择逐辑(MUX2_LUT5到MUX2_LUT8),这可能是由于PkM通道的多路</a><li><a href=#1alu的使用量较大937个这可能是由于pwm阅值计算和uart通信逻辑引起的可以考 class="table-of-contents__link toc-highlight">1.ALU的使用量较大(937个),这可能是由于PWM阅值计算和UART通信逻辑引起的。可以考</a><ul><li><a href=#52时序分析 class="table-of-contents__link toc-highlight">5.2时序分析</a></ul><li><a href=#2存在一些异步路径特别是从时钟到异步输出的956ns延迟可能需要进一步优化 class="table-of-contents__link toc-highlight">2.存在一些异步路径,特别是从时钟到异步输出的9.56ns延迟,可能需要进一步优化。</a><ul><li><a href=#53优化策略 class="table-of-contents__link toc-highlight">5.3优化策略</a></ul><li><a href=#1时钟管理 class="table-of-contents__link toc-highlight">1.时钟管理:</a><li><a href=#3资源共享 class="table-of-contents__link toc-highlight">3.资源共享:</a><li><a href=#1预计算 class="table-of-contents__link toc-highlight">1.预计算:</a><li><a href=#5异步路径优化 class="table-of-contents__link toc-highlight">5.异步路径优化:</a><li><a href=#5占空比调节优化 class="table-of-contents__link toc-highlight">5.占空比调节优化:</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

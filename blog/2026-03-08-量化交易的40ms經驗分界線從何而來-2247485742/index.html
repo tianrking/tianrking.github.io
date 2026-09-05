@@ -1,0 +1,602 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>量化交易的40ms經驗分界線從何而來 | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2026-03-08-量化交易的40ms經驗分界線從何而來-2247485742 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="量化交易的40ms經驗分界線從何而來 | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《量化交易的40ms經驗分界線從何而來》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《量化交易的40ms經驗分界線從何而來》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2026-03-08T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2026-03-08-量化交易的40ms經驗分界線從何而來-2247485742 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-03-08-量化交易的40ms經驗分界線從何而來-2247485742 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-03-08-量化交易的40ms經驗分界線從何而來-2247485742 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2026-03-08-量化交易的40ms經驗分界線從何而來-2247485742","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2026-03-08T00:00:00.000Z","description":"从微信公众号导入的文章《量化交易的40ms經驗分界線從何而來》，保留原始排版图并提供本地 OCR 转写。","headline":"量化交易的40ms經驗分界線從何而來","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2026-03-08-量化交易的40ms經驗分界線從何而來-2247485742","name":"量化交易的40ms經驗分界線從何而來","url":"https://w0x7ce.eu/blog/2026-03-08-量化交易的40ms經驗分界線從何而來-2247485742"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>量化交易的40ms經驗分界線從何而來</h1><div class="container_mt6G margin-vert--md"><time datetime=2026-03-08T00:00:00.000Z>2026年3月8日</time> · <!-- -->閱讀時間約 24 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2026-03-08 17:33:49（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247485742&idx=1&sn=e967a1c3981426cdce0e0676763cd62f&chksm=96e11c84a1969592d415748351070d207c34e52f319d75381622d72d4607a6237fb4c2231185#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 8177 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>EIViajer
+遇末與一位在番港做量化的朋友聊天時提到:“40ms差不多就是限了。再往下墅,不是做不
+到,而是投入出比闻珀得很看。」
+我追間:「為什是46?為什座不是38或58?」
+他:“這是行業的共域,大家都这廖。48ms是正常量化速度的期望值,可以解决一切常
+間盟再快?那就必须上FPGA了。1
+这句活醚起来像是一個單的经脸法则,但如果你仔细追問:為什度是40?為什度跨越道條線
+就「必须:上硬體加速?大多慰人可能答不上来。
+這篇文章就是我和AI聊天後,到遗件事的理解。
+首先必须强一固核心割站:
+46ms不是自然常数,也不是精確的理推導值,而是藏界在长期實中形成的经融共
+饿—-工程上购用、經清上划算、统計上穩定。
+真正問的不是48ms神不神:,而是:為什度行案程更容易把低频十毫秒的目标口径收
+数到49,而不是38?
+答案是:40ms往往對唐普通非共位量化系统在真實生產理境裡做到p95/p99仍然比较
+:的經验遗界:30ns更像是理想值或侵秀值,但不钩宽格,容易被網络抖動、券商路由、顺
+序下罩、系统排原等现實噪臀穿。
+更直接地职:30ms可以做到,但40ms更容易持續做到
+這不是一固魔法数字,而是物理定律、全球斓路拓撰、市場微飘结横、工程噪驾容忍度、以及經
+清事成本效益等多重因素共同作用的结果,
+先搞清楚-—我們在哪一種40?
+在深人之前,必须先肇清一關健概念:界口中的「40其實有需種藏然不同的含義,这也是
+許多初学者感到图密的根源。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=11宏觀的40毫秒40ms地理奥網路的物理遗界>1.1宏觀的40毫秒(40ms):地理奥網路的物理遗界<a href=#11宏觀的40毫秒40ms地理奥網路的物理遗界 class=hash-link aria-label=1.1宏觀的40毫秒(40ms):地理奥網路的物理遗界的直接連結 title=1.1宏觀的40毫秒(40ms):地理奥網路的物理遗界的直接連結 translate=no>​</a></h3>
+<p>遗是大多数人在缺输常规量化:時所指的46ms.它代表的是:</p>
+<ul>
+<li class="">
+<p>跨洲账光傳输的物理限(細约到愉敦约55ms往返)</p>
+</li>
+<li class="">
+<p>主流券商API的回惠時間(通常5-40ms)</p>
+</li>
+<li class="">
+<p>TCP/IP膳楼的工程瓶照</p>
+</li>
+<li class="">
+<p>中低知策略的舒適區</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=12微飄的40微秒40us體架的崩泄點>1.2微飄的40微秒(40us):體架的崩泄點<a href=#12微飄的40微秒40us體架的崩泄點 class=hash-link aria-label=1.2微飄的40微秒(40us):體架的崩泄點的直接連結 title=1.2微飄的40微秒(40us):體架的崩泄點的直接連結 translate=no>​</a></h3>
+<p>当你的鞋場“跨圆網路:缩小到「交易所機房内部:時,皖爭的继度完全改。在运圆微载世
+界程:</p>
+<ul>
+<li class="">
+<p>傅统作業系统的中断處理就需要10-28us</p>
+</li>
+<li class="">
+<p>L1nux核心栈虑理需要20-50us</p>
+</li>
+<li class="">
+<p>款架横的物理限大的就在40-50us左右</p>
+</li>
+</ul>
+<p>小知罐:1 毫秒(ms)= 1009 微秒(μs)- 1,006,060 钠秒(ns)
+这南恒40整然单位差了1080倍,但都代表著各自领域的分水额。本文主要封输的是
+宏载的40毫秒,但也會带你看到微觀世界的精彩。
+40毫秒的物理起源一光速告我們的酷真相</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=21光在光裡跑得有多快>2.1光在光裡跑得有多快?<a href=#21光在光裡跑得有多快 class=hash-link aria-label=2.1光在光裡跑得有多快?的直接連結 title=2.1光在光裡跑得有多快?的直接連結 translate=no>​</a></h3>
+<p>在真空中,光速豹為每秒30离公里。但在我竹日常使用的石英玻璃光中,由於折射率的存
+在,光訊盛的實账他输速度大的只有真空光速的67%,也就是每秒的20萬公里。
+换算下来,一回單的物理常数就此生:
+光訊號在光中每傅输1公里,单向延的為5微秒(μs)</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=22全球金融網路的真實距雕>2.2全球金融網路的真實距雕<a href=#22全球金融網路的真實距雕 class=hash-link aria-label=2.2全球金融網路的真實距雕的直接連結 title=2.2全球金融網路的真實距雕的直接連結 translate=no>​</a></h3>
+<p>以全球最重要的跨大西洋金融航综为例—提美國纽约的EquinixNY4数擦中心到英园愉敦
+的 Equinix LD4 数披中心:</p>
+<ul>
+<li class="">
+<p>地理直線距雕:约5,500公里</p>
+</li>
+<li class="">
+<p>纯物理眉面的單向光延遥限:的27.5毫秒</p>
+</li>
+<li class="">
+<p>往返時間(RTT)+期路設處理闻:48-68毫秒</p>
+</li>
+</ul>
+<p>所以,「48m5在全球跨市场量化套利(例如标普588期货與富時108指数的跨期或跨品
+群动交易)中,代表了地球上雨大接心金融中心之間信息同步的基弹物理時開。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=三大市場的延邂全景一中國美國香港的實载帐本>三大市場的延邂全景一中國、美國、香港的實载帐本<a href=#三大市場的延邂全景一中國美國香港的實载帐本 class=hash-link aria-label=三大市場的延邂全景一中國、美國、香港的實载帐本的直接連結 title=三大市場的延邂全景一中國、美國、香港的實载帐本的直接連結 translate=no>​</a></h2>
+<p>为了你更直觀地理解48ms的由来,我們来算一算全球三大核心市爆的真實延逻帐。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=31中國市场软體優化的自然限>3.1中國市场:软體優化的自然限<a href=#31中國市场软體優化的自然限 class=hash-link aria-label=3.1中國市场:软體優化的自然限的直接連結 title=3.1中國市场:软體優化的自然限的直接連結 translate=no>​</a></h3>
+<p>在中圆市場,延遥的组成结如下:
+就明
+典型延退
+上交所张江機房到券商相樟的钢路延运
+的 2-10ms
+取决於是否使用專線
+券商幅虑理
+的 1-5ms
+包含风控、合规橡查
+CTP等標准介面的敢感理
+行情解码、訂單封装
+策略計算(最策略)
+的 1-10ms
+视部言和夜度而定
+20-45ms
+侵化良好的敢醋系统
+中國市场的特殊性:
+特贴
+项目
+3秒
+A股 Level-1 行情</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一次快照>一次快照<a href=#一次快照 class=hash-link aria-label=一次快照的直接連結 title=一次快照的直接連結 translate=no>​</a></h2>
+<p>期货行情(中金所
+500ms
+等)
+快照通期
+560ms/12,即一图行情遇期内完成决策+敦行+硫韶的往返時
+48ms 的含辨
+这意味著什度?
+如果你的系统延超造48ms:</p>
+<ul>
+<li class="">在同一因行情遇期内,你可能無法完成“接收-决策+下单-確能的刚填</li>
+</ul>
+<p>你可能無法完成接收+决策+下单→雍的阅環
+在同一個行情通期内,</p>
+<ul>
+<li class="">你的策略實上是在用上一個遇期的資訊做决策</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=32美國市場共位機房的致競爭>3.2美國市場:共位機房的致競爭<a href=#32美國市場共位機房的致競爭 class=hash-link aria-label=3.2美國市場:共位機房的致競爭的直接連結 title=3.2美國市場:共位機房的致競爭的直接連結 translate=no>​</a></h3>
+<p>美圆市璟的延运结携截然不同,主要因為其成熟的共位楼房(Colocation)生:
+共位糖房(專業)
+非共位(零售)
+&lt;1ms
+5-48ns
+行情到连延逻
+(同一数據中心)
+5·15ns
+&lt; 1ms
+券商/细闻虎理
+&lt; 1ms
+策略虑理
+1-16ns
+(偿化C++)
+10-30ms
+訂单往返
+&lt; 2ms
+2-5ms
+40-106ms
+美圆市塌的關键数據:
+路径
+往返延通(RTT)
+细的 (NY4 ) 到芝加哥 ( CME)
+約12-15ms(專综)
+细約(NY4)到偷教(LD4)
+的 55-65ms
+细的到加州
+508-9
+為什磨美属量化图也40ms?
+對於非共位的零售量化交易者或中小型機概,使用主流券商(如Interactive Brokers、
+Alpaca 等)的 API 进行交易時:</p>
+<ul>
+<li class="">
+<p>标市場数擦流德输到非共位伺服器的单向延近:5ms到40ms</p>
+</li>
+<li class="">
+<p>訂單往返時圈(透互聯纲、券商網鼠、凰控检查、交易所):在優化良好的VPS架</p>
+</li>
+</ul>
+<p>下,豹 40ms</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=33香港市場連接束西方的橘操>3.3香港市場:連接束西方的橘操<a href=#33香港市場連接束西方的橘操 class=hash-link aria-label=3.3香港市場:連接束西方的橘操的直接連結 title=3.3香港市場:連接束西方的橘操的直接連結 translate=no>​</a></h3>
+<p>香港作為亚洲金融中心,其延逻结橘具有特的地理位置侵:
+典型延逻
+環節
+明
+共位伺服器
+港交所(HKEX)房内部
+&lt; 1ns
+香港本地券商
+2-18ms
+本地網路
+5-15ms
+香港到中属内地(深圳/上海)
+跨境專線
+的 56-78ms
+海底光
+香港到東京
+香港到新加坡
+東南亚福组
+香港到纽约
+的180-220ms
+跨太平洋
+香港市場的40ms视角:
+延通范圈
+48ms是否足购
+場景
+1-5ms
+本地港股交易(共位)
+15-50ns
+本地港股交易(非共位)
+强益
+递界地带
+跨境A股通
+28 -60ms
+跨市場套利(港-日)
+108-150ms
+需要更容的策略</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=34三大市場延運對照總表>3.4三大市場延運對照總表<a href=#34三大市場延運對照總表 class=hash-link aria-label=3.4三大市場延運對照總表的直接連結 title=3.4三大市場延運對照總表的直接連結 translate=no>​</a></h3>
+<p>本地交易(侵化敬醒)
+本地交易(共位)
+市场
+跨市場到主要福纽
+28-45ms
+() su-Z
+N/A(資本管制)
+中国
+2-5ms
+超约=愉敦:55-65ms
+48-188ms
+美國
+15-58ms
+香港=束京:58-70m5
+1-5ms
+键润見:在三大市堤的實中,40ms往往是非共位、純款髓侵化:所能定達到的經
+上限,这不是精確的理涂值,而是多個子延运预算相加後,行普遍可的整数级“安全
+遗界
+為什是40ms而不是30ms?一工程值vs理值
+这是一個至同重要的問题</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=41核心原因一40ms是多個子延運预算相加後的安全遗界>4.1核心原因一:40ms是多個子延運预算相加後的安全遗界<a href=#41核心原因一40ms是多個子延運预算相加後的安全遗界 class=hash-link aria-label=4.1核心原因一:40ms是多個子延運预算相加後的安全遗界的直接連結 title=4.1核心原因一:40ms是多個子延運预算相加後的安全遗界的直接連結 translate=no>​</a></h3>
+<p>自勤交易不是只有「细傅输这一段。技IBKR对自勤交易翘路的拆解,至少包含:行情
+發布、路传輸、路由/交换、朗卡接收、藤處理、内部模组传遂、策略判、訂章反向送
+等多個睛段
+任何一個陪段慢一點,整就含超標。QuantConnect2025年遗等門慢化通单按顺序等
+待確韶再發下一筆:的同题,侵化後才做到18-100倍的提交提速。这恰恰明很多真實系
+统的慢,不是演算法本身,而是整综键路理遍布著管理性和工程性開销。
+於是行業视害更倾向给自已留出5-10ms的缓备,而不是把图值聚到30ms运种更容易被现
+實穿的数字。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=42核心原因二40ms更接近真實世界的尾延预算>4.2核心原因二:40ms更接近真實世界的尾延预算<a href=#42核心原因二40ms更接近真實世界的尾延预算 class=hash-link aria-label=4.2核心原因二:40ms更接近真實世界的尾延预算的直接連結 title=4.2核心原因二:40ms更接近真實世界的尾延预算的直接連結 translate=no>​</a></h3>
+<p>交易系统显怕的不是平均20ms,而是突然摔到68ms。
+網络捷塞、交拍機排隙、券商凰控、TCP重体、进程调度、消息除列阻案,都會把尾部延遥拉
+长。TradersPost的明就明随把絡距解、互聯網路由顾黏和高峰期塞列為外延逻来源
+也就是脱,即便你的理想路径:看起来20多毫秒,生產理也得预留元解。
+团值频型
+数值
+特贴
+理想值
+路径很顺時的漂亮數
+40ms
+可逼警值
+把抖勤也算遍去後的定数
+30ms往往是「路很题時的漂亮数:,40ms则是“把抖勤也算逾去後的可谨管数」。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=43核心原因三40是市場满通上更有意羲的分檔数>4.3核心原因三:40是市場满通上更有意羲的分檔数<a href=#43核心原因三40是市場满通上更有意羲的分檔数 class=hash-link aria-label=4.3核心原因三:40是市場满通上更有意羲的分檔数的直接連結 title=4.3核心原因三:40是市場满通上更有意羲的分檔数的直接連結 translate=no>​</a></h3>
+<p>在非HFT語境程,大家真正想表蓬的是:</p>
+<ul>
+<li class="">
+<p>高於個级别,你已经明顾不足「快系统:</p>
+</li>
+<li class="">
+<p>低於道個级别,你對多数中频/事件驱勤/普通轨行演算法已组翔快」</p>
+</li>
+<li class="">
+<p>再继續往下砸,收益用始快速遇减</p>
+</li>
+</ul>
+<p>所以它更像一個分類圆值,不是侵化問随的一他增数等於零的精硅解。48ms在表连上正好把
+「摊十毫秒可用;和百毫秒太慢:切赋:38ms在實原交流理没有比48ms多出那种决定性
+的分频價值。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=44經驗估算為什30ms不穩>4.4經驗估算:為什30ms不穩?<a href=#44經驗估算為什30ms不穩 class=hash-link aria-label=4.4經驗估算:為什30ms不穩?的直接連結 title=4.4經驗估算:為什30ms不穩?的直接連結 translate=no>​</a></h3>
+<p>假設一個普通非共位量化键路的典型延近分饰:
+環筋
+812ms
+行情到你
+惠用虑理
+15ms
+812ms
+打單送回
+5 -15ms
+细南/排原/凰控抖動
+解斓/排除/凤控抖勤
+22-44ms
+你很容易落在25-35ms这個區間。此時如果把目標定成30ms,系统只要箱有塞就色频露
+越界:定成48ms,才更像一個能覆常見波勤的 SLA
+所以40ms不是“比30ms更科学,而是“比30ms更抗噪整。这是工程题值和理
+愉值的區别。</p>
+<p>策略類型看延需求一需要快?不需要?</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=51量化策略的延分體系>5.1量化策略的延分體系<a href=#51量化策略的延分體系 class=hash-link aria-label=5.1量化策略的延分體系的直接連結 title=5.1量化策略的延分體系的直接連結 translate=no>​</a></h3>
+<p>亚非所有策略都需要種致速度。镶我們用一张表来清楚:
+延速區间
+策略频型
+核心技術方案
+熊爭特點
+&lt;1μs
+纯套利、做市擅單
+纳秒级罩情航瓷
+1·10μs
+统計套利、快速做市
+FPGA+CPU 混合
+微秒级爭
+侵化 CPU+Kernel Bypass
+18μs-1ms
+中高频量化
+毫秒级进界
+1-40ms
+莱路臂量優先
+中频莱略
+優化敬醋方案
+>40ms
+低频/CTA
+普通欧醒系统
+無延逻敏感性</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=52為什魔經大多数策略不需要比40ms更快>5.2為什魔經大多数策略不需要比40ms更快?<a href=#52為什魔經大多数策略不需要比40ms更快 class=hash-link aria-label=5.2為什魔經大多数策略不需要比40ms更快?的直接連結 title=5.2為什魔經大多数策略不需要比40ms更快?的直接連結 translate=no>​</a></h3>
+<p>键在於 Alpha 半衰期(Half-Life of Signal)。
+超大多数專巢量化基金和散户量化投資者所運行的,是中低频统計套利、多因子模型、楼器學智
+预测或基本面量化策略。這些策略的通辑基碰是宏觀经滨数據、公司财稿報表、行業输動逻期或
+酸侵時間跨度内的债格均值回显。
+因此,其讯赋的半衰期通需长逐數小時、数天甚至数遇。
+自文解释:营你的模型预润某支股票在未来三天内有2%的上泓空同时,在10:80:80.080
+翼入类在18:09:09.648(即慢了40m5)買入,其面臨的市堤基镂情格橙大概率是完全相同
+的。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=53alpha衰减的分水嶺>5.3Alpha衰减的分水嶺<a href=#53alpha衰减的分水嶺 class=hash-link aria-label=5.3Alpha衰减的分水嶺的直接連結 title=5.3Alpha衰减的分水嶺的直接連結 translate=no>​</a></h3>
+<p>捕捉的 ALpha 频型
+延速能图
+市場微觀结机產生的ALpha(訂單流、镭差、短期助量)
+48ms 以下
+基本面或中期斑势產生的Alpha(因子、事件驱勤)
+48ms 以上
+在中圆A股和期货市堤,界普遍懿為大多数量化策略属於日内中频:或「低频烦型,
+它們到延还的要求天然在48ms以上。这些策略查ALpha置量(因子、硬型、凰控)而非遗
+应取膝。
+經濟學角度看40ms一遗际收益的退减曲線</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=61投入產出比的拐點>6.1投入產出比的拐點<a href=#61投入產出比的拐點 class=hash-link aria-label=6.1投入產出比的拐點的直接連結 title=6.1投入產出比的拐點的直接連結 translate=no>​</a></h3>
+<p>行案普遍翻察到:延退侵化對执行價格有實質性影答,但际效益遇减明额。
+旗我們看看遗收益的整化:
+侵化方向
+際收益
+成本
+顾著提升
+106ms → 46ms
+相到较低(软禮優化)
+48ms - 18ms
+中等(需要专综等)
+徙 18ms - 1μs
+極小(除非你是套利者)
+橙高(幂要FPGA)
+40ms是性俱比拐贴::</p>
+<ul>
+<li class="">
+<p>在49ns之上優化,投入牵出比很高</p>
+</li>
+<li class="">
+<p>在40ns之下優化(需上FPGA),成本急剧上升,但收益有限</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=62策略濟学看為什40ms成為口頭分界線>6.2策略濟学看,為什40ms成為口頭分界線<a href=#62策略濟学看為什40ms成為口頭分界線 class=hash-link aria-label=6.2策略濟学看,為什40ms成為口頭分界線的直接連結 title=6.2策略濟学看,為什40ms成為口頭分界線的直接連結 translate=no>​</a></h3>
+<p>到於持有透期為分经、小时、天级的策路,决定盈新的往往是预測置量、滑黏控制、容量和囊
+用,而不是把 48ms 整到 36ms 这10ms 的差翼。
+相反,在零售/普通VPS場景性,真正拉圈差距的往往是「是不是已组慢到类十到上百毫
+秒:,而不是38和40这种细小差翼。
+有案例表明:當延遥低水平恶化到的75ms時,语點成本會明顾累。这说明市場上更重</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=63交易摩擦成本的天花板>6.3交易摩擦成本的天花板<a href=#63交易摩擦成本的天花板 class=hash-link aria-label=6.3交易摩擦成本的天花板的直接連結 title=6.3交易摩擦成本的天花板的直接連結 translate=no>​</a></h3>
+<p>阻止常规量化交易者盲目追求低於40ms延运的另一個關鍵因素,是冰冷的交易經清学
+在某些包含高交易税或印花税的市場(例如印度期市场或巴西市場),高须交易的生存空間
+被苛的税制度盈继。實盤工程测试额示,即使将熟行延逻成功靈榨至18ms级别,系统最
+接的滑利湿依然鞋以覆蒸摩擦成本。
+在运种市場璟境下,斥巨资升级硬禮以削减那频毫秒的延运,在级滨学模型上是微底的負收益。
+為什磨40ms以下必须FPGA?-—软體方案的物理限</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=71體架的延組成>7.1體架的延組成<a href=#71體架的延組成 class=hash-link aria-label=7.1體架的延組成的直接連結 title=7.1體架的延組成的直接連結 translate=no>​</a></h3>
+<p>我们把视综拉近到交易所共位爆房(Colocat1on)内部時,戴爭的维度获生了根本性的扭
+曲。傳统款體架机的延运组成:
+環節
+典型延通
+1-10ns
+作案系统上下文切换</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=05-2ms>0.5-2ms<a href=#05-2ms class=hash-link aria-label=0.5-2ms的直接連結 title=0.5-2ms的直接連結 translate=no>​</a></h3>
+<p>TCP/IP機處理</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=01-5ms-超言桐>0.1-5ms (超言桐)<a href=#01-5ms-超言桐 class=hash-link aria-label="0.1-5ms (超言桐)的直接連結" title="0.1-5ms (超言桐)的直接連結" translate=no>​</a></h3>
+<p>配像检分配/GC暂停</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=01-16ms>0.1-16ms<a href=#01-16ms class=hash-link aria-label=0.1-16ms的直接連結 title=0.1-16ms的直接連結 translate=no>​</a></h3>
+<p>演算法計算
+即使致優化(Kernel Bypass、DPDK、RT核心),教糖的础定性下限约蕊 10-2θμs。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=72真正的硬分界毫秒世界切到微秒世界>7.2真正的硬分界:毫秒世界切到微秒世界<a href=#72真正的硬分界毫秒世界切到微秒世界 class=hash-link aria-label=7.2真正的硬分界:毫秒世界切到微秒世界的直接連結 title=7.2真正的硬分界:毫秒世界切到微秒世界的直接連結 translate=no>​</a></h3>
+<p>真正的硬分界,其實不在40ms,而在毫秒世界切到微秒世界。
+Databento和P1co都给出了很清晰的行案口径:款體系统的t1ck-to-trade往往
+受NICCPU的 PCIe 往返主募,做得很致、再配合kernel bypass,显低通常也就是
+略低於2微秒:再往下进入亞微秒甚至纳秒,就得靠FPGA/ASIC这類硬锂路径。
+AMD/Exegy 2824年公開的 STAC-TB 结果是 13.9ns的可裁行延逻。遗才是「為什最
+终宣走向FPGA:的真正技術分界。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=73tick-to-trade微秒競爭的核心指標>7.3Tick-to-Trade:微秒競爭的核心指標<a href=#73tick-to-trade微秒競爭的核心指標 class=hash-link aria-label=7.3Tick-to-Trade:微秒競爭的核心指標的直接連結 title=7.3Tick-to-Trade:微秒競爭的核心指標的直接連結 translate=no>​</a></h3>
+<p>在探微秒级蔗事時,所有焦黏都匯聚在一個終指标上:Tick-to-Trade(T2T)延逻。
+這是高知交易系统的黄金弹,其定薪為:
+交易系统接收到交易所的一個行情更新網路包(Tick的第一個比特抵细卡),到系统
+基龄敲行情做出决策,向交易所發出對鹰訂单数擦包(Trade的第一個比特離别频卡)
+之,所经腰的超到物理時。
+在一個傳统CPU架横的何服器上,T2T的全流程包含:
+L.硬體接收與中断解(10-20us):卡完成光電精换,向CPU送硬障中断</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2核心罐機奥上下文切摘28-58uslinux核心網路接虚理核心空翻到用乒空>2.核心罐機奥上下文切摘(28-58us):Linux核心網路接虚理,核心空翻到用乒空<a href=#2核心罐機奥上下文切摘28-58uslinux核心網路接虚理核心空翻到用乒空 class=hash-link aria-label=2.核心罐機奥上下文切摘(28-58us):Linux核心網路接虚理,核心空翻到用乒空的直接連結 title=2.核心罐機奥上下文切摘(28-58us):Linux核心網路接虚理,核心空翻到用乒空的直接連結 translate=no>​</a></h2>
+<p>周的敏拷貝</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3用通辑行cjava滨算法被唤醒更新訂单薄生成交易决策>3.用通辑行:C++/Java滨算法被唤醒,更新訂单薄,生成交易决策<a href=#3用通辑行cjava滨算法被唤醒更新訂单薄生成交易决策 class=hash-link aria-label=3.用通辑行:C++/Java滨算法被唤醒,更新訂单薄,生成交易决策的直接連結 title=3.用通辑行:C++/Java滨算法被唤醒,更新訂单薄,生成交易决策的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1訂單發送與核心重入数捧再次经歷微用户空同到核心空同的沉重拷貝>1.訂單發送與核心重入:数捧再次经歷微用户空同到核心空同的沉重拷貝<a href=#1訂單發送與核心重入数捧再次经歷微用户空同到核心空同的沉重拷貝 class=hash-link aria-label=1.訂單發送與核心重入:数捧再次经歷微用户空同到核心空同的沉重拷貝的直接連結 title=1.訂單發送與核心重入:数捧再次经歷微用户空同到核心空同的沉重拷貝的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=74抖動jitter吞噬超收益的無形毅手>7.4抖動(Jitter):吞噬超收益的無形毅手<a href=#74抖動jitter吞噬超收益的無形毅手 class=hash-link aria-label=7.4抖動(Jitter):吞噬超收益的無形毅手的直接連結 title=7.4抖動(Jitter):吞噬超收益的無形毅手的直接連結 translate=no>​</a></h3>
+<p>在基於作业系统中翻疆動的传统架横中,最致命的問题甚至不是基砖延逻遇高,而是度缺乏础
+定性所壤致的抖助(Jitter)。
+由於现代通用作業系统的多任務特性,其内部充斥著不可控的觉数:</p>
+<ul>
+<li class="">
+<p>作業系统斓度噪聲</p>
+</li>
+<li class="">
+<p>後台进程干损</p>
+</li>
+<li class="">
+<p>垃圾回收機制</p>
+</li>
+<li class="">
+<p>硬始中风</p>
+</li>
+</ul>
+<p>在凰平浪静的市場中,这套系统可能测出20us的平均延逻;然而,一旦南键宏数擦發布,
+市场瞬耀爆登海量的行情数據包。此時,尾部延运管剧烈抖助到数百微秒基至数毫秒。
+「在低延逻交易中,第二名就是最大的输家。」
+你可能平均延逻是侵晃的15us,但只要在键行情爆發時延遵抖勤到58us,你的訂单就會永
+速落在陈列末尾。
+FPGA的納秒級降維打攀一為什魔它是終武器?</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=81什是fpga>8.1什是FPGA?<a href=#81什是fpga class=hash-link aria-label=8.1什是FPGA?的直接連結 title=8.1什是FPGA?的直接連結 translate=no>​</a></h3>
+<p>FPGA(Field-Programmable Gate Array,现場可程式化逻关障列)奥 CPU或 GPU
+存在本質的區别。它不是用来谨行「敢體代码:的處理器,而是一增可以直接通退硬管描述語言
+(如Verilog 或VHDL)改内部物理速综的砖片。
+在 FPGA 内部:</p>
+<ul>
+<li class="">
+<p>没有作業系统</p>
+</li>
+<li class="">
+<p>没有任務钢度器</p>
+</li>
+<li class="">
+<p>没有後台守罐进程</p>
+</li>
+<li class="">
+<p>没有上下文切换</p>
+</li>
+<li class="">
+<p>甚至没有格意囊上的程式</p>
+</li>
+</ul>
+<p>發者所富的代碼,最被综合工具化為百萬因查找表(LUTs)、解骤器和数位訊號處理
+模組,通遇物理激综硬速線在一起。数在FPGA中不是被“针算:出来的,而是像水流通
+返精心設計的管道铜络一样,物理地流經些遥辑隔電路。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=82fpga的决定性優勢>8.2FPGA的决定性優勢<a href=#82fpga的决定性優勢 class=hash-link aria-label=8.2FPGA的决定性優勢的直接連結 title=8.2FPGA的决定性優勢的直接連結 translate=no>​</a></h3>
+<p>特性
+锐明
+相同的输入数球,必然经通韬對相同数量的遥朝周和時输逻期
+相到確定性</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=零抖助>零抖助<a href=#零抖助 class=hash-link aria-label=零抖助的直接連結 title=零抖助的直接連結 translate=no>​</a></h2>
+<p>尾部抖助微底抹平,每一次决策的時侵固定不
+大规横亚行處理
+可以同時在不同的硬證模组中造行數據包解析、訂单薄重建、风控稳查</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=83篇人的基弹測試数據>8.3篇人的基弹測試数據<a href=#83篇人的基弹測試数據 class=hash-link aria-label=8.3篇人的基弹測試数據的直接連結 title=8.3篇人的基弹測試数據的直接連結 translate=no>​</a></h3>
+<p>在2024年的STAC-TB基率测试中,金融科技商Exegy 聯合AMD,利用配催Virtex
+ULtraScale+ FPGA 架横的 Alveo UL3524 加速卡,實现了破世界紀额的:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=139秒139ns可行性延遍actionable-latency>13.9秒(13.9ns)可行性延遍(Actionable Latency)<a href=#139秒139ns可行性延遍actionable-latency class=hash-link aria-label="13.9秒(13.9ns)可行性延遍(Actionable Latency)的直接連結" title="13.9秒(13.9ns)可行性延遍(Actionable Latency)的直接連結" translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=139纳秒是什磨概念>13.9纳秒是什磨概念?<a href=#139纳秒是什磨概念 class=hash-link aria-label=13.9纳秒是什磨概念?的直接連結 title=13.9纳秒是什磨概念?的直接連結 translate=no>​</a></h3>
+<ul>
+<li class="">
+<p>光在真空理走13.9缺秒只能前进不到4.2公尺</p>
+</li>
+<li class="">
+<p>相较於慢化到致的CPU内核旁路方案的2006纳秒(2us),FPGA將交易运度提升</p>
+</li>
+</ul>
+<p>了上百倍</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=84速度差距的實質影>8.4速度差距的實質影<a href=#84速度差距的實質影 class=hash-link aria-label=8.4速度差距的實質影的直接連結 title=8.4速度差距的實質影的直接連結 translate=no>​</a></h3>
+<p>在纳秒级熊乎的统計套利策略中,CPU系统與FPGA系统的描率可能相差数百甚至上千倍。
+遍種数量级的差距,解疆了為什磨追入微秒/纳秒领球的策略「必酒:依瀚FPGA等硬馈加速方
+案。
+架構演進的完整圖譜</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=91延唇級與技術方案的對應>9.1延唇級與技術方案的對應<a href=#91延唇級與技術方案的對應 class=hash-link aria-label=9.1延唇級與技術方案的對應的直接連結 title=9.1延唇級與技術方案的對應的直接連結 translate=no>​</a></h3>
+<p>典型T2T
+敦行機制
+架级
+延退
+软體中断,核心TCP/IP
+46μs - 10
+橙高(多逵数毫秒尾部
+傅CPU+OS
+核心
+srlg
+延逗)
+橙致CPU+内2μs-18μ
+忙蛤詢,用户想接摄楼航造
+中等
+50
+旁路
+低(纳秒级物理確定
+硬體物理管線,片上直通解
+FPGA純硬定製
+0S - Su0t
+加速
+ens
+性)
+析</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=92混合架橘未来的主流>9.2混合架橘:未来的主流<a href=#92混合架橘未来的主流 class=hash-link aria-label=9.2混合架橘:未来的主流的直接連結 title=9.2混合架橘:未来的主流的直接連結 translate=no>​</a></h3>
+<p>现代最顶尖的量化交易系统亚不将软硬體经封割裂,而是融合為“混合協同架構;:
+重活奥急活:下沉至FPGA硬:</p>
+<ul>
+<li class="">
+<p>所有来自交易所的原始UDP行情组插流,由FPGA揭家接管</p>
+</li>
+<li class="">
+<p>FPGA负责剥雕以太细包显、解墨缩数據、解析二造制</p>
+</li>
+<li class="">
+<p>在片上配憶證中即時维器全市场的深度訂单薄快照</p>
+</li>
+</ul>
+<p>慢活臭深度思考:保留在CPU/GPU:</p>
+<ul>
+<li class="">
+<p>谨行磨大的统計套利矩障</p>
+</li>
+<li class="">
+<p>執行福的機器學智预测模型</p>
+</li>
+<li class="">
+<p>进行全局的跨资產相同性围控分析</p>
+</li>
+</ul>
+<p>推測性敦行奥硬體微解号:</p>
+<ul>
+<li class="">
+<p>CPU预先将交易的扳概:設定在FPGA中</p>
+</li>
+<li class="">
+<p>當市場上突發一個符合解髮修件的價格跳勤時,FPGA内部的物理比较器在10纳秒内眠</p>
+</li>
+</ul>
+<p>闻命中</p>
+<ul>
+<li class="">整個交易沃策和敦行刚完全不需要唤醒主楼CPU</li>
+</ul>
+<p>端波動下的系統性—FPGA的生存價值</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=101體系統在風暴中的脆弱>10.1體系統在風暴中的脆弱<a href=#101體系統在風暴中的脆弱 class=hash-link aria-label=10.1體系統在風暴中的脆弱的直接連結 title=10.1體系統在風暴中的脆弱的直接連結 translate=no>​</a></h3>
+<p>當重大宏觀新聞(如CPI数據、聯會决)發布瞬間,市場行情數據量會呈指數級爆炸,激
+增至平日的數十倍甚至上百倍。
+這種微突發流量是體架構的噩萝:</p>
+<ul>
+<li class="">
+<p>瞬間入的海量網路包導致CPU遭遇「中風暴」</p>
+</li>
+<li class="">
+<p>網卡衡區瞬間溢出,發生大面丢包</p>
+</li>
+<li class="">
+<p>在波動率最高、套利機會最豐厚的時間節點,體系統纷掉線</p>
+</li>
+</ul>
+<p>根據行業調研報告,在高波動性市場環境下,相當比例的量化機構曾遭遇系統穩定性問題,包括
+延逐升、数據丢失甚至系統宕機。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=102fpga在風暴中的坚如磐石>10.2FPGA在風暴中的坚如磐石<a href=#102fpga在風暴中的坚如磐石 class=hash-link aria-label=10.2FPGA在風暴中的坚如磐石的直接連結 title=10.2FPGA在風暴中的坚如磐石的直接連結 translate=no>​</a></h3>
+<p>相反,基於FPGA的硬體流處理系統,由於其每一個時鐘调期都能恒定且行地吞吐固定位宽
+的數據,只要網路線路的物理带寬未達到極限,FPGA就對不會因為「處理能力不足」而引起
+排隧塞和抖動。
+這種在狂風暴雨中依然如磐石的確定性表現,是專業量化機構將FPGA視為終極基石的深層
+原因。
+結語:40ms不是魔法數字,而是行業經驗的沉
+我們用一張總結表來回顧(再次强調:這些是行業經驗總結,而非精確的理界):
+維度
+40ms以上
+40ms以下
+ALpha来源
+因子/模型/風控
+市場微觀結構
+速度
+競爭維度
+策略質量
+技術方案
+體優化即可
+必硬體加速
+速度×機會×資金量
+投資回報遥辑
+Alpha× 資金量
+多数量化私募
+参與者
+頭部做市商/套利者
+40ms作為分界線的核心避(基於行業經驗總結):
+L.物理層面:它大致對應跨洲際光傅输的往返時間,受光速物理限制</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2市場結構層面它與期貨500ms行情调期内完成决策-執行-確開環的時間需求相匹配>2.市場結構層面:它與期貨500mS行情调期内完成决策-執行-確開環的時間需求相匹配<a href=#2市場結構層面它與期貨500ms行情调期内完成决策-執行-確開環的時間需求相匹配 class=hash-link aria-label=2.市場結構層面:它與期貨500mS行情调期内完成决策-執行-確開環的時間需求相匹配的直接連結 title=2.市場結構層面:它與期貨500mS行情调期内完成决策-執行-確開環的時間需求相匹配的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3工程層面它是真實世界的尾延遥预算比30ms更抗噪聲更穩定>3.工程層面:它是「真實世界的尾延遥预算」,比30mS更抗噪聲、更穩定<a href=#3工程層面它是真實世界的尾延遥预算比30ms更抗噪聲更穩定 class=hash-link aria-label=3.工程層面:它是「真實世界的尾延遥预算」,比30mS更抗噪聲、更穩定的直接連結 title=3.工程層面:它是「真實世界的尾延遥预算」,比30mS更抗噪聲、更穩定的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1策略層面它大致劃分了基本面alpha與微觀結構alpha的策略逸界>1.策略層面:它大致劃分了「基本面Alpha」與「微觀結構Alpha」的策略逸界<a href=#1策略層面它大致劃分了基本面alpha與微觀結構alpha的策略逸界 class=hash-link aria-label=1.策略層面:它大致劃分了「基本面Alpha」與「微觀結構Alpha」的策略逸界的直接連結 title=1.策略層面:它大致劃分了「基本面Alpha」與「微觀結構Alpha」的策略逸界的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5經濟層面它代表了投入產出比的經驗拐點>5.經濟層面:它代表了投入產出比的經驗拐點<a href=#5經濟層面它代表了投入產出比的經驗拐點 class=hash-link aria-label=5.經濟層面:它代表了投入產出比的經驗拐點的直接連結 title=5.經濟層面:它代表了投入產出比的經驗拐點的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5技術層面它標著純體優化與需要硬體加速的工程分水嶺>5.技術層面:它標著「純體優化」與「需要硬體加速」的工程分水嶺<a href=#5技術層面它標著純體優化與需要硬體加速的工程分水嶺 class=hash-link aria-label=5.技術層面:它標著「純體優化」與「需要硬體加速」的工程分水嶺的直接連結 title=5.技術層面:它標著「純體優化」與「需要硬體加速」的工程分水嶺的直接連結 translate=no>​</a></h2>
+<p>最後,一個需要謹慎表述的結:
+40ms不是因為30ms做不到。而是因為30ms更像「理想成」,40ms更像「穩定成
+續」。
+40ms不是精確的物理常數,而是業界在工程實、網絡環境、券商路、經濟考量和溝通
+智惯中,長期演化出來的經驗值。
+它之所以被廣泛提及,是因為它在「用、穩定、可複製、成本合理,這個維度上取得了
+较好的平衡。
+而一旦你的策略真的對這10mS的差極度敏感,明你已經不在「40mS世界」裡了-—你進
+入的是微秒競爭。那時讨的重點不該是30還是40ms,而該是2us、500ns。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<p><img decoding=async loading=lazy alt=量化交易的40ms經驗分界線從何而來：微信公众号导出原始排版图 src=/assets/images/article-236be9998fa8ebca039b60ae1178a089.webp width=1280 height=15153 class=img_ev3q /></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2026-03-08-2026-03-08-量化交易的40ms經驗分界線從何而來-2247485742.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2026-03-10-acpx-openclaw-團隊開源的-ai-agent-統一調用層-2247485754><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>acpx：OpenClaw 團隊開源的 AI Agent 統一調用層</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2026-03-04-一個讓人可以對-耶穌降臨-和-戰爭何時爆發-下注的平台-正在重新定義-市場效率-的邊界-2247485734><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>一個讓人可以對「耶穌降臨」和「戰爭何時爆發」下注的平台，正在重新定義「市場效率」的邊界。</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><ul><li><a href=#11宏觀的40毫秒40ms地理奥網路的物理遗界 class="table-of-contents__link toc-highlight">1.1宏觀的40毫秒(40ms):地理奥網路的物理遗界</a><li><a href=#12微飄的40微秒40us體架的崩泄點 class="table-of-contents__link toc-highlight">1.2微飄的40微秒(40us):體架的崩泄點</a><li><a href=#21光在光裡跑得有多快 class="table-of-contents__link toc-highlight">2.1光在光裡跑得有多快?</a><li><a href=#22全球金融網路的真實距雕 class="table-of-contents__link toc-highlight">2.2全球金融網路的真實距雕</a></ul><li><a href=#三大市場的延邂全景一中國美國香港的實载帐本 class="table-of-contents__link toc-highlight">三大市場的延邂全景一中國、美國、香港的實载帐本</a><ul><li><a href=#31中國市场软體優化的自然限 class="table-of-contents__link toc-highlight">3.1中國市场:软體優化的自然限</a></ul><li><a href=#一次快照 class="table-of-contents__link toc-highlight">一次快照</a><ul><li><a href=#32美國市場共位機房的致競爭 class="table-of-contents__link toc-highlight">3.2美國市場:共位機房的致競爭</a><li><a href=#33香港市場連接束西方的橘操 class="table-of-contents__link toc-highlight">3.3香港市場:連接束西方的橘操</a><li><a href=#34三大市場延運對照總表 class="table-of-contents__link toc-highlight">3.4三大市場延運對照總表</a><li><a href=#41核心原因一40ms是多個子延運预算相加後的安全遗界 class="table-of-contents__link toc-highlight">4.1核心原因一:40ms是多個子延運预算相加後的安全遗界</a><li><a href=#42核心原因二40ms更接近真實世界的尾延预算 class="table-of-contents__link toc-highlight">4.2核心原因二:40ms更接近真實世界的尾延预算</a><li><a href=#43核心原因三40是市場满通上更有意羲的分檔数 class="table-of-contents__link toc-highlight">4.3核心原因三:40是市場满通上更有意羲的分檔数</a><li><a href=#44經驗估算為什30ms不穩 class="table-of-contents__link toc-highlight">4.4經驗估算:為什30ms不穩?</a><li><a href=#51量化策略的延分體系 class="table-of-contents__link toc-highlight">5.1量化策略的延分體系</a><li><a href=#52為什魔經大多数策略不需要比40ms更快 class="table-of-contents__link toc-highlight">5.2為什魔經大多数策略不需要比40ms更快?</a><li><a href=#53alpha衰减的分水嶺 class="table-of-contents__link toc-highlight">5.3Alpha衰减的分水嶺</a><li><a href=#61投入產出比的拐點 class="table-of-contents__link toc-highlight">6.1投入產出比的拐點</a><li><a href=#62策略濟学看為什40ms成為口頭分界線 class="table-of-contents__link toc-highlight">6.2策略濟学看,為什40ms成為口頭分界線</a><li><a href=#63交易摩擦成本的天花板 class="table-of-contents__link toc-highlight">6.3交易摩擦成本的天花板</a><li><a href=#71體架的延組成 class="table-of-contents__link toc-highlight">7.1體架的延組成</a><li><a href=#05-2ms class="table-of-contents__link toc-highlight">0.5-2ms</a><li><a href=#01-5ms-超言桐 class="table-of-contents__link toc-highlight">0.1-5ms (超言桐)</a><li><a href=#01-16ms class="table-of-contents__link toc-highlight">0.1-16ms</a><li><a href=#72真正的硬分界毫秒世界切到微秒世界 class="table-of-contents__link toc-highlight">7.2真正的硬分界:毫秒世界切到微秒世界</a><li><a href=#73tick-to-trade微秒競爭的核心指標 class="table-of-contents__link toc-highlight">7.3Tick-to-Trade:微秒競爭的核心指標</a></ul><li><a href=#2核心罐機奥上下文切摘28-58uslinux核心網路接虚理核心空翻到用乒空 class="table-of-contents__link toc-highlight">2.核心罐機奥上下文切摘(28-58us):Linux核心網路接虚理,核心空翻到用乒空</a><li><a href=#3用通辑行cjava滨算法被唤醒更新訂单薄生成交易决策 class="table-of-contents__link toc-highlight">3.用通辑行:C++/Java滨算法被唤醒,更新訂单薄,生成交易决策</a><li><a href=#1訂單發送與核心重入数捧再次经歷微用户空同到核心空同的沉重拷貝 class="table-of-contents__link toc-highlight">1.訂單發送與核心重入:数捧再次经歷微用户空同到核心空同的沉重拷貝</a><ul><li><a href=#74抖動jitter吞噬超收益的無形毅手 class="table-of-contents__link toc-highlight">7.4抖動(Jitter):吞噬超收益的無形毅手</a><li><a href=#81什是fpga class="table-of-contents__link toc-highlight">8.1什是FPGA?</a><li><a href=#82fpga的决定性優勢 class="table-of-contents__link toc-highlight">8.2FPGA的决定性優勢</a></ul><li><a href=#零抖助 class="table-of-contents__link toc-highlight">零抖助</a><ul><li><a href=#83篇人的基弹測試数據 class="table-of-contents__link toc-highlight">8.3篇人的基弹測試数據</a><li><a href=#139秒139ns可行性延遍actionable-latency class="table-of-contents__link toc-highlight">13.9秒(13.9ns)可行性延遍(Actionable Latency)</a><li><a href=#139纳秒是什磨概念 class="table-of-contents__link toc-highlight">13.9纳秒是什磨概念?</a><li><a href=#84速度差距的實質影 class="table-of-contents__link toc-highlight">8.4速度差距的實質影</a><li><a href=#91延唇級與技術方案的對應 class="table-of-contents__link toc-highlight">9.1延唇級與技術方案的對應</a><li><a href=#92混合架橘未来的主流 class="table-of-contents__link toc-highlight">9.2混合架橘:未来的主流</a><li><a href=#101體系統在風暴中的脆弱 class="table-of-contents__link toc-highlight">10.1體系統在風暴中的脆弱</a><li><a href=#102fpga在風暴中的坚如磐石 class="table-of-contents__link toc-highlight">10.2FPGA在風暴中的坚如磐石</a></ul><li><a href=#2市場結構層面它與期貨500ms行情调期内完成决策-執行-確開環的時間需求相匹配 class="table-of-contents__link toc-highlight">2.市場結構層面:它與期貨500mS行情调期内完成决策-執行-確開環的時間需求相匹配</a><li><a href=#3工程層面它是真實世界的尾延遥预算比30ms更抗噪聲更穩定 class="table-of-contents__link toc-highlight">3.工程層面:它是「真實世界的尾延遥预算」,比30mS更抗噪聲、更穩定</a><li><a href=#1策略層面它大致劃分了基本面alpha與微觀結構alpha的策略逸界 class="table-of-contents__link toc-highlight">1.策略層面:它大致劃分了「基本面Alpha」與「微觀結構Alpha」的策略逸界</a><li><a href=#5經濟層面它代表了投入產出比的經驗拐點 class="table-of-contents__link toc-highlight">5.經濟層面:它代表了投入產出比的經驗拐點</a><li><a href=#5技術層面它標著純體優化與需要硬體加速的工程分水嶺 class="table-of-contents__link toc-highlight">5.技術層面:它標著「純體優化」與「需要硬體加速」的工程分水嶺</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

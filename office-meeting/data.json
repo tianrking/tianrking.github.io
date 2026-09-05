@@ -1,0 +1,734 @@
+{
+  "checked_on": "2026-09-05",
+  "scope_note": "本库覆盖办公与会议硬件：摄像头、会议麦克风、会议终端、标签打印、便携投影与智能录入设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
+  "field_rules": [
+    [
+      "类别边界",
+      "摄像头、会议麦克风、会议终端、标签打印、便携投影与智能录入设备。"
+    ],
+    [
+      "跨库去重",
+      "已在其他独立数据库收录的同一硬件不重复计入主表；如有交叉用途，保留候选/别名和原始来源。"
+    ],
+    [
+      "上市状态",
+      "在售、地区在售、预售、历史、售罄、候选和OEM线索分开；官方页面不能证明当前交付的型号不计入主表。"
+    ],
+    [
+      "证据等级",
+      "A为官方产品/规格/销售链较完整；B为官方页面明确但关键字段或当前库存有缺口；C/D为候选、渠道、历史或未充分验证线索。"
+    ],
+    [
+      "字段缺口",
+      "来源未披露统一写“未公开”，尤其不推断芯片、传感器、尺寸、重量、续航、防水、订阅和隐私字段。"
+    ],
+    [
+      "价格",
+      "保留首发/当前价格和原币种；促销、租赁、订阅、押金和服务费在原文中区分，不做无说明汇率换算。"
+    ],
+    [
+      "查证日期",
+      "2026-09-05"
+    ]
+  ],
+  "products": [
+    {
+      "id": "MEET-001",
+      "brand": "Logitech",
+      "model": "Brio 505",
+      "country_region": "瑞士/全球",
+      "category": "office-meeting",
+      "form_factor": "USB 摄像头",
+      "use_case": "个人办公、视频会议",
+      "status": "已上市，可购买",
+      "evidence": "B",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://www.logitech.com/es-es/products/webcams/brio-505-webcam.html",
+      "spec_url": "https://hub.sync.logitech.com/brio505/post/specifications---brio-505-cQKMNGLU7nBxZId",
+      "features": [
+        "1080p/30fps",
+        "自动对焦",
+        "RightLight 4",
+        "自动取景",
+        "隐私遮挡"
+      ],
+      "sensors": [
+        "4MP摄像头",
+        "立体声麦克风"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "USB-C",
+        "Microsoft Teams",
+        "Zoom",
+        "Google Meet"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "110 x 31.55 x 31.5 mm",
+      "weight_g": 121,
+      "battery": "无独立电池",
+      "charging": "USB-C",
+      "water_resistance": "未公开",
+      "subscription": "Logi Tune 基础使用无公开订阅",
+      "privacy": "集成物理隐私遮挡",
+      "availability_note": "官网多地区产品页",
+      "source_note": "官方规格页与产品页",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "MEET-002",
+      "brand": "Jabra",
+      "model": "PanaCast 50",
+      "country_region": "丹麦/全球",
+      "category": "office-meeting",
+      "form_factor": "会议视频条",
+      "use_case": "中小型会议室视频、音频和白板共享",
+      "status": "已上市，官方资料可核验",
+      "evidence": "B",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://www.jabra.com/supportpages/jabra-panacast-50",
+      "spec_url": "https://www.jabra.com/-/media/Images/Products/Jabra-Panacast-50/tech-specs/tech_specs_jabra_pana_cast_50_en-us.pdf",
+      "features": [
+        "180°视场角",
+        "13MP",
+        "Virtual Director",
+        "PeopleCount",
+        "白板共享"
+      ],
+      "sensors": [
+        "三摄像头阵列",
+        "麦克风阵列"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "USB-A",
+        "USB-C",
+        "Ethernet",
+        "Bluetooth LE"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "650 x 80 x 125 mm",
+      "weight_g": 2200,
+      "battery": "无独立电池",
+      "charging": "外部电源",
+      "water_resistance": "未公开",
+      "subscription": "Jabra Xpress 等管理软件条款未公开",
+      "privacy": "PeopleCount 可产生匿名房间占用数据",
+      "availability_note": "官方支持页与规格 PDF",
+      "source_note": "官方规格 PDF",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "MEET-003",
+      "brand": "HP Poly",
+      "model": "Studio R30",
+      "country_region": "美国/全球",
+      "category": "office-meeting",
+      "form_factor": "USB会议视频条",
+      "use_case": "小型会议室视频会议",
+      "status": "已上市，可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://www.hp.com/us-en/poly/video-conferencing/usb/studio-r30.html",
+      "spec_url": "https://support.hp.com/us-en/product/setup-user-guides/studio-r30-series/model/2101740263",
+      "features": [
+        "4K摄像头",
+        "120°视场角",
+        "DirectorAI",
+        "三麦克风阵列",
+        "降噪"
+      ],
+      "sensors": [
+        "摄像头",
+        "三麦克风阵列"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "USB",
+        "Bluetooth 遥控器"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "无独立电池",
+      "charging": "USB/外部供电",
+      "water_resistance": "未公开",
+      "subscription": "未公开",
+      "privacy": "未公开",
+      "availability_note": "HP 官方商店/产品页可核验",
+      "source_note": "HP Poly 官方产品与支持页",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "MEET-004",
+      "brand": "Owl Labs",
+      "model": "Owl Bar",
+      "country_region": "美国/全球",
+      "category": "office-meeting",
+      "form_factor": "前置会议摄像头、麦克风和扬声器一体机",
+      "use_case": "混合会议、小型会议室",
+      "status": "已上市，可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "USD 1,799；页面促销价 USD 1,439",
+      "official_url": "https://owllabs.com/products/owl-bar",
+      "spec_url": "https://resources.owllabs.com/hubfs/Website%20Pages%20-%20Files%20-%20Images/pdp/owl%20bar%20datasheet/US%20English%20CA%20English%20Owl%20Bar%20One-Pager.pdf",
+      "features": [
+        "4K",
+        "AI发言人识别",
+        "自动跟踪",
+        "可与 Meeting Owl 配对",
+        "Teams/Zoom/Meet兼容"
+      ],
+      "sensors": [
+        "摄像头",
+        "麦克风阵列",
+        "扬声器"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "USB-C",
+        "Bluetooth",
+        "Microsoft Teams",
+        "Zoom",
+        "Google Meet",
+        "Webex",
+        "Slack"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "79.6 x 9.7 x 7.6 cm",
+      "weight_g": 1880,
+      "battery": "无独立电池",
+      "charging": "外部电源",
+      "water_resistance": "未公开",
+      "subscription": "Owl Care 可选",
+      "privacy": "AI发言人识别；详细数据保留未公开",
+      "availability_note": "官网显示 2–3 天发货",
+      "source_note": "官方销售页和规格页",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "MEET-005",
+      "brand": "Brother",
+      "model": "P-touch CUBE Plus PTP710BT",
+      "country_region": "日本/美国及全球",
+      "category": "office-meeting",
+      "form_factor": "Bluetooth 标签打印机",
+      "use_case": "办公室、实验室、资产和线缆标签",
+      "status": "已上市，可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "USD 114.99",
+      "official_url": "https://www.brother-usa.com/p/office-home-label-makers/PTP710BT",
+      "spec_url": "https://www.brother-usa.com/product-support/PTP710BT",
+      "features": [
+        "最大 24mm 标签",
+        "手机/平板/PC打印",
+        "自动切刀",
+        "iPrint&Label",
+        "内置锂电池"
+      ],
+      "sensors": "未公开",
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "Bluetooth",
+        "USB"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "内置锂离子电池",
+      "charging": "USB",
+      "water_resistance": "未公开",
+      "subscription": "无公开订阅",
+      "privacy": "未公开",
+      "availability_note": "官网可加入购物车",
+      "source_note": "官方产品页与支持页",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "MEET-006",
+      "brand": "XGIMI",
+      "model": "MoGo 3 Pro",
+      "country_region": "中国/全球",
+      "category": "office-meeting",
+      "form_factor": "便携式智能投影仪",
+      "use_case": "移动办公、会议演示、家庭/户外投影",
+      "status": "已上市，可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "USD 439；部分页面显示 USD 379",
+      "official_url": "https://global.xgimi.com/products/mogo-3-pro",
+      "spec_url": "https://us.xgimi.com/products/mogo-3-pro",
+      "features": [
+        "1080p",
+        "450 ISO流明",
+        "自动对焦",
+        "自动梯形校正",
+        "障碍物规避",
+        "Google TV"
+      ],
+      "sensors": [
+        "ToF传感器"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "Wi-Fi 5",
+        "Bluetooth",
+        "USB-C 65W"
+      ],
+      "chip_or_soc": "CPU CA53x4 1.35GHz；GPU G52 MC1",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "需外接 USB-C 65W 移动电源；内置电池未公开",
+      "charging": "USB-C/电源适配器",
+      "water_resistance": "未公开",
+      "subscription": "Google TV 内容服务按平台规则",
+      "privacy": "未公开",
+      "availability_note": "官网显示可下单，部分地区发货约 7–10 天",
+      "source_note": "官方销售页和规格页",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "MEET-008",
+      "brand": "Zoom",
+      "model": "H1essential",
+      "country_region": "日本/全球",
+      "category": "office-meeting",
+      "form_factor": "便携式数字录音机",
+      "use_case": "会议、采访、讲座和移动录音",
+      "status": "已上市，官方支持页可核验",
+      "evidence": "B",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://zoomcorp.com/en/us/handheld-recorders/handheld-recorders/h1essential/",
+      "spec_url": "https://zoomcorp.com/en/us/handheld-recorders/handheld-recorders/h1essential/H1essential-support/",
+      "features": [
+        "便携录音",
+        "USB连接",
+        "录音/视频同步辅助"
+      ],
+      "sensors": [
+        "立体声麦克风，具体型号未公开"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "USB"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "USB，具体未公开",
+      "water_resistance": "未公开",
+      "subscription": "无公开订阅",
+      "privacy": "未公开",
+      "availability_note": "官方产品与支持页存在；地区售价未核验",
+      "source_note": "官方产品/支持页",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Owl Labs Meeting Owl 4+",
+      "brand": "Owl Labs",
+      "region": "美国/全球",
+      "category": "office-meeting",
+      "status": "候选；会议终端边界型号",
+      "evidence": "B",
+      "reason": "官方生态页面多次确认型号，单独当前销售状态未完整核验",
+      "url": "https://owllabs.com/products/meeting-owl-4-plus",
+      "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "name": "Brother P-touch CUBE XP PT-P910BT",
+      "brand": "Brother",
+      "region": "日本/美国",
+      "category": "office-meeting",
+      "status": "候选；标签打印机同系列型号",
+      "evidence": "A",
+      "reason": "官方产品目录确认型号，未纳入主表以避免同系列过度集中",
+      "url": "https://www.brother-usa.com/label-makers-printers/learn-more/ptouch-workplace",
+      "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "name": "PLAUD NotePin S",
+      "brand": "PLAUD",
+      "region": "中国/全球",
+      "category": "office-meeting",
+      "status": "候选；可穿戴录入设备，办公与智能穿戴边界",
+      "evidence": "B",
+      "reason": "官方品牌/产品生态线索，未单独核验当前型号销售页",
+      "url": "https://www.plaud.ai/",
+      "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "name": "PLAUD Note",
+      "brand": "PLAUD",
+      "region": "中国/全球",
+      "category": "office-meeting",
+      "status": "已在录音卡片/录音硬件数据库收录；跨库去重",
+      "evidence": "A",
+      "reason": "PLAUD Note 已有 /smart-recorders/ 主表，办公库保留来源线索但不重复计数。",
+      "url": "https://www.plaud.ai/products/plaud-note-ai-voice-recorder",
+      "alias_or_relation": "转入录音卡片/录音硬件数据库"
+    }
+  ],
+  "sources": [
+    {
+      "source_group": "office-meeting官方来源1",
+      "url": "https://hub.sync.logitech.com/brio505/post/specifications---brio-505-cQKMNGLU7nBxZId",
+      "scope": "摄像头、尺寸、重量与平台兼容",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "hub.sync.logitech.com",
+      "source_channel": "official_support_manual",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/规格/支持资料",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "office-meeting官方来源2",
+      "url": "https://www.jabra.com/-/media/Images/Products/Jabra-Panacast-50/tech-specs/tech_specs_jabra_pana_cast_50_en-us.pdf",
+      "scope": "会议视频条规格与接口",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "jabra.com",
+      "source_channel": "official_support_manual",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/规格/支持资料",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "office-meeting官方来源3",
+      "url": "https://www.hp.com/us-en/poly/video-conferencing/usb/studio-r30.html",
+      "scope": "摄像头、麦克风、AI与房间定位",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "hp.com",
+      "source_channel": "official_product",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/功能页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "office-meeting官方来源4",
+      "url": "https://owllabs.com/products/owl-bar",
+      "scope": "价格、尺寸、重量和会议平台",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "owllabs.com",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "销售/库存/预售页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "office-meeting官方来源5",
+      "url": "https://www.brother-usa.com/p/office-home-label-makers/PTP710BT",
+      "scope": "价格、标签宽度、蓝牙与电池",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "brother-usa.com",
+      "source_channel": "official_product",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/功能页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "office-meeting官方来源6",
+      "url": "https://global.xgimi.com/products/mogo-3-pro",
+      "scope": "价格、投影规格、ToF与接口",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "global.xgimi.com",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "销售/库存/预售页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "office-meeting官方来源7",
+      "url": "https://www.plaud.ai/products/plaud-note-ai-voice-recorder",
+      "scope": "录音、重点标记和多模态功能",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "plaud.ai",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "销售/库存/预售页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "office-meeting官方来源8",
+      "url": "https://zoomcorp.com/en/us/handheld-recorders/handheld-recorders/h1essential/H1essential-support/",
+      "scope": "官方型号与支持入口",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "zoomcorp.com",
+      "source_channel": "official_product",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/功能页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    }
+  ],
+  "update_log": [
+    {
+      "date": "2026-08-25",
+      "change": "首版新增7条办公与会议硬件主表记录，覆盖多个国家/地区品牌；另保留4条候选、历史、边界或地区线索。",
+      "verification": "优先使用官方产品、规格、支持、发布和销售页面；A/B证据分级，来源未披露字段均写“未公开”。跨库重复型号已转为候选关系，不纳入本库主表。",
+      "next": "继续补充更多国家/地区品牌，逐条复核当前库存、首发日期、原始价格、芯片、传感器、续航、防护和服务条款。"
+    },
+    {
+      "change": "【办公与会议硬件】本轮按官方产品、规格和销售页核验，未发现可可靠新增的主表型号。",
+      "verification": "本轮完成官方产品页、发布公告、规格/支持页、官方销售页及可用监管/认证线索的快速核验；没有可靠交付证据的线索不计入主表，未披露字段不推断。",
+      "next": "继续补充会议摄像、麦克风、会议终端、扫描与打印硬件。",
+      "date": "2026-08-26"
+    },
+    {
+      "date": "2026-08-26",
+      "change": "来源体系升级：新增官方销售、监管/认证、Kickstarter、Indiegogo、Amazon及主要区域电商等渠道维度，并为每条来源补充渠道、证据角色、域名、卖方/项目方、可得性信号和平台标识字段。",
+      "verification": "已对现有来源完成规则化标注；众筹与电商字段未披露处保留“未公开”，不以平台页面单独证明正式上市。",
+      "next": "每日继续按渠道矩阵补查新型号、区域页面、ASIN/SKU/项目ID、卖方身份、库存、众筹状态与实际交付证据。"
+    },
+    {
+      "date": "2026-08-27",
+      "change": "【办公与会议硬件】本轮按官方产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
+      "verification": "众筹和电商页面继续作为发现、预售、区域价格/库存和SKU信号；缺少原厂/官方规格/交付证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管和授权渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-28",
+      "change": "【办公与会议硬件】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
+      "verification": "众筹和电商页面继续作为发现、预售、区域价格/库存和SKU信号；缺少原厂/官方规格/交付证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管和授权渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-29",
+      "change": "【办公与会议硬件】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
+      "verification": "Amazon及区域电商用于发现、价格/库存、ASIN/SKU和卖方信号；Kickstarter/Indiegogo用于项目状态和预售线索；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-30",
+      "change": "【办公与会议硬件】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
+      "verification": "Amazon及区域电商用于发现、价格/库存、ASIN/SKU和卖方信号；Kickstarter/Indiegogo用于项目状态和预售线索；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-31",
+      "change": "【办公与会议硬件】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
+      "verification": "Amazon及区域电商用于发现、价格/库存、ASIN/SKU和卖方信号；Kickstarter/Indiegogo用于项目状态和预售线索；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-01",
+      "change": "【办公与会议硬件】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
+      "verification": "Amazon及区域电商用于发现、价格/库存、ASIN/SKU和卖方信号；Kickstarter/Indiegogo用于项目状态、档位和交付线索；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-02",
+      "change": "【办公与会议硬件】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-03",
+      "change": "【办公与会议硬件】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-04",
+      "change": "【办公与会议硬件】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-05",
+      "change": "【办公与会议硬件】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    }
+  ],
+  "source_channel_policy": [
+    {
+      "channel": "official_product",
+      "label": "品牌官网产品页",
+      "role": "primary_evidence",
+      "sites": "品牌产品页、技术页、产品线页",
+      "rule": "确认型号、功能和产品边界；不能仅凭集合页证明当前库存。"
+    },
+    {
+      "channel": "official_sales",
+      "label": "品牌官方商店/购买页",
+      "role": "primary_evidence",
+      "sites": "品牌官方商城、官方Buy页、官方区域商店",
+      "rule": "确认官方价格、区域库存、预售和交付信号；记录查证日期。"
+    },
+    {
+      "channel": "official_support_manual",
+      "label": "官方支持/手册/规格",
+      "role": "primary_evidence",
+      "sites": "品牌支持中心、用户手册、规格PDF、FAQ",
+      "rule": "补充芯片、传感器、尺寸、电池、协议、防水和服务条款；未披露写“未公开”。"
+    },
+    {
+      "channel": "official_release",
+      "label": "品牌官方发布/新闻室",
+      "role": "primary_evidence",
+      "sites": "品牌Newsroom、官方博客、发布公告",
+      "rule": "确认发布日、首发价、上市计划和功能；与销售/发货状态分开。"
+    },
+    {
+      "channel": "regulatory_certification",
+      "label": "监管/认证/标准数据库",
+      "role": "primary_evidence",
+      "sites": "FDA AccessData、FCC、Bluetooth SIG、CSA Matter、CE/UKCA、UL/TÜV、各国认证库",
+      "rule": "只对登记型号和明确用途作证据，不把认证登记自动当成全球在售。"
+    },
+    {
+      "channel": "crowdfunding",
+      "label": "众筹/项目预售平台",
+      "role": "discovery_or_preorder_signal",
+      "sites": "Kickstarter、Indiegogo、BackerKit、Crowd Supply",
+      "rule": "记录项目状态、目标/金额、档位、预计交付和风险；未有正式产品/交付证据时留候选。"
+    },
+    {
+      "channel": "marketplace",
+      "label": "大型电商平台",
+      "role": "market_signal",
+      "sites": "Amazon/Amazon Business、eBay、Walmart、Best Buy、Target、B&H、Newegg、AliExpress、Alibaba、京东、天猫/淘宝、Rakuten、Mercado Libre、Shopee、Lazada、Flipkart",
+      "rule": "记录区域、ASIN/SKU、卖方身份、库存、价格和抓取日期；严格区分官方旗舰店、授权经销商和第三方卖家。"
+    },
+    {
+      "channel": "distributor_retail",
+      "label": "授权经销/区域零售",
+      "role": "market_signal",
+      "sites": "授权经销商、运营商、区域零售商",
+      "rule": "用于补充区域价格、套餐和交付线索，不能替代品牌或监管证据。"
+    },
+    {
+      "channel": "press_release_distribution",
+      "label": "新闻稿分发平台",
+      "role": "secondary_or_distributed_evidence",
+      "sites": "PR Newswire、GlobeNewswire、Business Wire、PR TIMES、VPO/Room等",
+      "rule": "若稿件可追溯到厂商可作为发布辅助证据；否则标为分发/二手来源。"
+    },
+    {
+      "channel": "secondary_media",
+      "label": "专业媒体/评测/数据库",
+      "role": "discovery_or_cross_check",
+      "sites": "The Verge、TechCrunch、Wired、CNET、Tom’s Guide、Notebookcheck、DC Rainmaker、DPReview等",
+      "rule": "用于发现型号和交叉核验，不覆盖官方缺失字段，不单独证明全球上市。"
+    },
+    {
+      "channel": "community_discovery",
+      "label": "社区/社交/论坛线索",
+      "role": "discovery_only",
+      "sites": "Reddit、论坛、YouTube、社交平台和用户帖子",
+      "rule": "只进入候选/别名或待核验队列，不能直接进入A/B级主表。"
+    }
+  ],
+  "source_channel_counts": {
+    "official_product": 3,
+    "official_sales": 3,
+    "official_support_manual": 2
+  },
+  "source_domains": [
+    "brother-usa.com",
+    "global.xgimi.com",
+    "hp.com",
+    "hub.sync.logitech.com",
+    "jabra.com",
+    "owllabs.com",
+    "plaud.ai",
+    "zoomcorp.com"
+  ]
+}

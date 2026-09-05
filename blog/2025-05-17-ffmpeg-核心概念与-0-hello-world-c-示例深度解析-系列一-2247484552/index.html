@@ -1,0 +1,484 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>FFmpeg 核心概念与 `0_hello_world.c` 示例深度解析 系列一 | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2025-05-17-ffmpeg-核心概念与-0-hello-world-c-示例深度解析-系列一-2247484552 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="FFmpeg 核心概念与 `0_hello_world.c` 示例深度解析 系列一 | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《FFmpeg 核心概念与 `0_hello_world.c` 示例深度解析 系列一》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《FFmpeg 核心概念与 `0_hello_world.c` 示例深度解析 系列一》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2025-05-17T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2025-05-17-ffmpeg-核心概念与-0-hello-world-c-示例深度解析-系列一-2247484552 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-05-17-ffmpeg-核心概念与-0-hello-world-c-示例深度解析-系列一-2247484552 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-05-17-ffmpeg-核心概念与-0-hello-world-c-示例深度解析-系列一-2247484552 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2025-05-17-ffmpeg-核心概念与-0-hello-world-c-示例深度解析-系列一-2247484552","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2025-05-17T00:00:00.000Z","description":"从微信公众号导入的文章《FFmpeg 核心概念与 `0_hello_world.c` 示例深度解析 系列一》，保留原始排版图并提供本地 OCR 转写。","headline":"FFmpeg 核心概念与 `0_hello_world.c` 示例深度解析 系列一","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2025-05-17-ffmpeg-核心概念与-0-hello-world-c-示例深度解析-系列一-2247484552","name":"FFmpeg 核心概念与 `0_hello_world.c` 示例深度解析 系列一","url":"https://w0x7ce.eu/blog/2025-05-17-ffmpeg-核心概念与-0-hello-world-c-示例深度解析-系列一-2247484552"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>FFmpeg 核心概念与 `0_hello_world.c` 示例深度解析 系列一</h1><div class="container_mt6G margin-vert--md"><time datetime=2025-05-17T00:00:00.000Z>2025年5月17日</time> · <!-- -->閱讀時間約 21 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2025-05-17 12:42:42（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247484552&idx=1&sn=2dfd80ace0475dd00ed6a623e8a70a5e&chksm=96e11122a1969834246afcb476fa767e43a6b721fee03b075718aa403ff3db80cae6f9d07254#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 14026 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>original we×7ce EI V1ajero 2825年5月17日 12:43 中国垂港
+FFmpeg是一个强大的开源多媒体处理工具集,其核心库(libav)允许开发者对音
+视却数据进行底层的编解码、格式转换、滤镜处理等操作。本文将通过分
+leandromoreira/ffmpeg-libav-tutorial仓库
+析
+中
+的0_hello_world.c示例,深入探讨FFmpeg的核心概念和基本工作流程。
+0_hello_world.c的目标是:打开一个煤体文件,解析其结构,解码视频流中的最
+初若干数据包,并将解码后的帧保存为PGM(便携式灰度图)图像文件。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一视频压缩与献类型的核心理论>一、视频压缩与献类型的核心理论<a href=#一视频压缩与献类型的核心理论 class=hash-link aria-label=一、视频压缩与献类型的核心理论的直接連結 title=一、视频压缩与献类型的核心理论的直接連結 translate=no>​</a></h2>
+<p>视频压缩技术旨在减少表示视频内容所需的数据量,其基础在于利用视频数据中存在的
+究余信息。
+.1.视频数据的冗余性:
+。·时间冗余(TemporalRedundancy):视频由连续的图像序列构成,相邻帧
+之间通常内容高度相似。
+。·空间余(SpatialRedundancy):单顿图像内部,相邻像素也常具有相
+关性。
+.2.帧类型与压缩:
+为了高效去除时间余,视频编码标准(如H.264,H.265)引I入了不同类型的
+赖:</p>
+<ul>
+<li class="">IDR-帧(Instantaneous Decoder Refresh/即时解码器刷新</li>
+</ul>
+<p>帧)<!-- -->:IDR<!-- -->帧是一种特殊的I-帧。当解码器遇到IDR帧时,它会清空所有参考帧缓
+冲区,意味着IDR帧之后的所有帧都不能参考IDR帧之前的任何赖。IDR帧提供了</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一个绝对的解码刷新点>一个绝对的解码刷新点。<a href=#一个绝对的解码刷新点 class=hash-link aria-label=一个绝对的解码刷新点。的直接連結 title=一个绝对的解码刷新点。的直接連結 translate=no>​</a></h2>
+<ul>
+<li class="">SP-帧(SwitchingP-frames)和SI-帧(SwitchingI-</li>
+</ul>
+<p>frames):用于在不同码率或编码参数的视频流之间平滑切换,常见于自适应流
+煤体(ABR)技术。
+。·视频编码时,帧通常被组织成一个个GOP。一个GOP以一个I-帧开始,后面跟着
+若干P-帧和B-帧(例如IBBPBBPBBPBB)。GOP的长度和结构(如B赖数量)会
+影哺视频的压缩率、随机访问性能和错误恢复能力。
+。·工作原理:利用更充分的时间瓦余,可以同时参考其前面的一个I/P帧和其后
+面的一个I/P帧(未来的参考帧)进行双向预测。编码时记录当前帧与这两个参考
+帧的差异及相应的运动矢量。
+。·特性:解码时需要其前后两个参考帧均已被解码:通常是三种帧中数据量最
+小的,压缩效率最高:由于依赖未来的帧,导致视频码流中帧的解码顺序(DTS</p>
+<ul>
+<li class="">Decode Time Stamp) 和显示顺序 (PTS·Presentation Time</li>
+</ul>
+<p>Stamp)往往不一致,解码器需要进行帧重排:会增加解码器的解码延退。
+。·必要性:在对延迟要求不高的场景下(如视频点播、文件存储),可以最大限
+度地提高压缩率。
+。·工作原理:利用时间瓦余,基于其前面的一个I-帧或P-帧(称为参考帧)进
+行预测编码。编码时,主要记录当前帧与参考帧之间的差异信息(残差)以及描述
+这种差异的运动矢量。
+。·特性:解码时依赖其前面的参考帧:数据量通常远小于I-帧,压缩效率较高。
+。·必要性:大幅提高视频的压缩率。
+。·工作原理:独立编码,不依赖其他任何帧,仅利用当前帧内部的空间瓦余进行
+压缩,类似于一张JPEG图片。
+。·特性:可独立解码,是解码的起始点:作为随机访问点(用于播放器的跳转操
+作):是后续P-帧和B-帧进行预测的参考基础:通常数据量在三种帧类型中最
+大;具有一定的错误恢复能力,解码错误通常不会传播过一个I-帧。
+。·必要性:提供解码入口、实现seek功能、同期性剧新图像以抑制误差累积。
+。·I-帧(Intra-codedPicture/帧内编码帧)·关键帧
+。·P-帧(Predicted Picture/向前预测编码帧)
+。·B-帧(Bi-directionally Predicted Picture/双向预测编码帧)</p>
+<ul>
+<li class="">图像组(GOP-Group of Pictures):</li>
+</ul>
+<p>。·其他帧类型简介:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=二-ffmpeg-核心组件回原>二、 FFmpeg 核心组件回原<a href=#二-ffmpeg-核心组件回原 class=hash-link aria-label="二、 FFmpeg 核心组件回原的直接連結" title="二、 FFmpeg 核心组件回原的直接連結" translate=no>​</a></h2>
+<p>在深入代码之前,再次明确FFmpeg中几个核心结构体的作用:</p>
+<ul>
+<li class="">·AVFormatContext:代表整个媒体文件(容器)的上下文,用于解封装(读取</li>
+</ul>
+<p>文件头、分离流等)。</p>
+<ul>
+<li class="">
+<p>·AVStream:代表容器中的一个具体的数据流(如视频流、音频流、字幕流)。</p>
+</li>
+<li class="">
+<p>·AVCodecParameters:描述一个流的编码参数,例如编解码器类型、分辨率、</p>
+</li>
+</ul>
+<p>帧率、像素格式、采样率、声道数等。</p>
+<ul>
+<li class="">
+<p>·AVCodec:代表一个具体的编解码器实现(例如H.264解码器、AAC解码器)。</p>
+</li>
+<li class="">
+<p>·AVCodecContext:编解码操作的上下文,包含了编解码器实例、运行时参数和</p>
+</li>
+</ul>
+<p>状态信息</p>
+<ul>
+<li class="">·AVPacket:存储从流中读取出来的、已编码(压缩)的数据块,是解码器的输</li>
+</ul>
+<p>入</p>
+<ul>
+<li class="">·AVFrame:存储解码后的、原始的(未压缩)的视频帧(包含像素数据)或音频</li>
+</ul>
+<p>采样(包含PCM数据),是解码器的输出。
+核心解码流程:
+.1.使用 avcodec_send_packet(avctx,pkt)将 AVPacket(压缩数据)
+发送给解码器上下文avctx
+.2.在一个循环中调用 avcodec_receive_frame(avctx,frame)来尝试从
+解码器获取解码后的AVFrame(原始数据)。此函数可能返回:
+。·日:成功获取一帧。
+。·AVERROR(EAGAIN):解码器需要更多的输人包才能输出当前帧,或者当前没
+有立即可用的赖。
+。·AVERROR_EOF:输入流已结束(通过发送NULL包
+给avcodec_send_packet来指示),且解码器内部所有缓冲的帧都已成功取
+出。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=三o_hello_worldc-代码分析>三、o_hello_world.c 代码分析<a href=#三o_hello_worldc-代码分析 class=hash-link aria-label="三、o_hello_world.c 代码分析的直接連結" title="三、o_hello_world.c 代码分析的直接連結" translate=no>​</a></h2>
+<p>以下是对θ_hello_world.c核心逻辑的分析:
+/*</p>
+<ul>
+<li class="">
+<p><a href=http://ffmpeg target=_blank rel="noopener noreferrer" class="">http://ffmpeg</a> org/doxygen/trunk/index.html</p>
+</li>
+<li class="">
+<p>Main components</p>
+</li>
+</ul>
+<ul>
+<li class=""></li>
+</ul>
+<ul>
+<li class="">
+<p>Format (Container) - a wrapper, providing sync, metadata and</p>
+</li>
+<li class="">
+<p>Stream - a continuous stream (audio or video) of data over t</p>
+</li>
+<li class="">
+<p>and DECoded (from Packet to Frame).</p>
+</li>
+<li class="">
+<p>Packet · are the data (kind of slices of the stream data) to</p>
+</li>
+<li class="">
+<p>Frame - a decoded raw frame (to be encoded or filtered).</p>
+</li>
+</ul>
+<ul>
+<li class=""></li>
+</ul>
+<p>#include&lt;libavcodec/avcodec.h>
+#include&lt;stdarg.h>
+#include&lt;stdlib.h>
+#include&lt;inttypes.h>
+//辅助函数:打印日志信息
+staticvoidlogging(constchar *fmt, ...);
+//辅助函数:解码数据包到帧
+staticintdecode_packet(AvPacket *pPacket, AVCodecContext *pCode
+//辅助函数:将灰度帧保存为PGM文件
+staticvoidsave_gray_frame(unsignedchar *buf, int wrap, int xsiz
+intmain(int argc, constchar *argv[])
+//1.检查命令行参数,确保指定了媒体文件
+if (argc &lt; 2){
+printf(*You need to specify a media file.\n");
+return-1;
+logging(*initializing all the containers, codecs and protocol
+//FFmpeg 在早期版本需要调用av_register_all()来注册所有组件。
+//现代版本中,很多组件是自动注册的。
+//2.分配AVFormatContext 结构体内存
+//AVFormatContext用于存储媒体文件的格式信息(容器信息)
+AVFormatContext *pFormatContext = avformat_alloc_context();
+if (!pFormatContext){
+logging(“ERRoR could not allocate memory for Format Context
+return-1;
+//3.打开输入文件并读取文件头
+//argv[1]是命令行传入的媒体文件名
+//第三个参数 AVInputFormat 传NULL,FFmpeg会自动检测输入格式
+//第四个参数AVDictionary传NULL,表示没有给解封装器传递额外选项
+logging(*opening the input file (%s) and loading format (cont
+if (avformat_open_input(&pFormatContext, argv[1], NULL, NULL) !
+logging(“ERROR could not open the file");
+avformat_free_context(pFormatContext):// 打开失败,释放已分配8
+return-1;
+//4.打印容器的基本信息
+//pFormatContext->iformat->name:输入格式的名称(如“mov,mp4,m4a,
+//pFormatContext->duration:文件总时长,单位是 AV_TIME_BASE(通常员
+//pFormatContext->bit_rate:平均码率(比特/秒)
+logging(*format %s, duration %lld us, bit_rate lld”, pFormat
+//5.查找流信息
+//此函数会读取媒体文件的一部分数据包,以获取更详细的流信息,
+//例如精确的帧率、编码参数等,并填充 pFormatContext->streams数组。
+logging(<em>finding stream info from format");
+if (avformat_find_stream_info(pFormatContext,NULL) &lt; θ) {
+logging("ERRoR could not get the stream info");
+avformat_close_input(&pFormatContext);// 出错,关闭已打开的输
+return-1;
+//初始化用于存储视频流信息的变量
+AVCodec</em>pCodec=NULL;// 指向找到的视频解码器
+AVCodecParameters *pCodecParameters=NULL;// 指向视频流的编码
+int video_stream_index = -1;// 视频流在 pFormatContext->streams
+//6.避历文件中的所有流(pFormatContext->nb_streams是流的总数)</p>
+<p>pLocalCodecParameters = pFormatContext->streams[i] ->codecpa
+//打印当前流的一些时问基和帧率信息(解码器打开前)
+logging("AvStream->r_frame_rate before open coded %d/%d", p
+logging("AVStream->start_time %* PRId64, pFormatContext->st
+logging("AVStream->duration %" PRId64, pFormatContext->stre
+logging(<em>finding the proper decoder (coDEc)");
+AVCodec <em>pLocalCodec = NULL;
+//根据编码参数中的codec_id查找对应的已注册的解码器
+pLocalCodec = avcodec_ find_decoder(pLocalCodecParameters->c
+if (pLocalCodec==NULL){
+logging(“ERRoR unsupported codec for stream %d!", i);
+continue;//如果找不到解码器或不支持该编码,则跳过此流
+//判断流的类型,并保存第一个找到的视颜流的相关信息
+if (pLocalCodecParameters ->codec_type == AVMEDIA_TYPE_VIDE0
+if(video_stream_index ==-1){// 只处理第—个视频流
+video_stream_index=i;// 保存视频流的索引
+pCodec=pLocalCodec;//保存视频解码器指针
+pCodecParameters =pLocalCodecParameters;// 保存视频流的
+logging("Video Codec: resolution %d x %d", pLocalCodecPar
+} elseif (pLocalCodecParameters->codec_type == AVMEDIA_TYPE
+logging("Audio Codec: %d channels, sample rate %d", pLoca
+//打印解码器的长名称、ID和流的码率
+logging("\tCodec %s ID %d bit_rate %lld", pLocalCodec->name
+//检查是否找到了视频流
+if (video_stream_index == -1) {
+logging("File %s does not contain a video strean!", argv[1]
+avformat_close_input(&pFormatContext); // 清理
+return-1;
+//7.为视频流准备解码器上下文(AVCodecContext)
+//pCodec是上一步找到的视频解码器
+AVCodecContext <em>pCodecContext = avcodec_alloc_context3(pCodec
+if (!pCodecContext){
+logging("failed to allocated memory for AVCodecContext");
+avformat_close_input(&pFormatContext); // 清理
+return-1;
+//8.从流的编码参数(pCodecParameters)填充解码器上下文
+if (avcodec_parameters_to_context(pCodecContext, pCodecParamete
+logging("failed to copy codec params to codec context");
+avcodec_free_context(&pCodecContext);// 清理
+avformat_close_input(&pFormatContext) ;
+return-1;
+//9.打开解码器
+//使用指定的解码器(pCodec)打开/初始化解码器上下文(pCodecContext)
+//第三个参数可以传递一些解码器特定的选项(AVDictionary)
+if (avcodec_open2(pCodecContext, pCodec, NULL) &lt; θ) {
+logging("failed to open codec through avcodec_open2");
+avcodec_free_context(&pCodecContext): // 清理
+avformat_close_input(&pFormatContext);
+return-1;
+// 16.分配 AVFrame 和 AVPacket 结构体内存
+AVFrame</em>pFrame =av_frame_alloc();//用于存储解码后的原始视频帧姜
+if (!pFrame){
+logging("failed to allocate memory for AVFrame</em>);
+avcodec_free_context(&pCodecContext) ;
+avformat_close_input(&pFormatContext) ;
+return-1;
+上
+AVPacket</em>pPacket=av_packet_alloc():// 用于存储从文件中读取的日
+if (!pPacket){
+logging("failed to allocate memory for AVPacket*);
+av_frane_free(&pFrame);
+avcodec_free_context(&pCodecContext);
+avformat_close_input(SpFormatContext);
+return-1;
+int response=0;// 用于存储 FFmpeg API函数的返回值
+//这个变量控制了main函数尝试向decode_packet发送多少个属于视频流的数
+//初始值为8,但在实验中可以修改此值(例如改为10,20,56)来观察结果
+int how_many_packets_to_process = 8;
+//11,主解码循环:从文件中读取数据包并进行解码
+while (av_read_frame(pFormatContext, pPacket) >= 0){ // 从容器叶
+//检查这个包是否属于我们之前确定的视频流
+if (pPacket->stream_index == video_stream_index) {
+logging("AVPacket->pts %" PRId64, pPacket->pts); // 打印包
+//调用自定义的解码函数来处理这个包
+response = decode_packet(pPacket, pCodecContext, pFrame);
+if(response&lt;B){//如果解码函数返回了不可恢复的错误
+break;//终止主循环
+//每当一个视類包被发送给decode_packet 函数(无论是否成功解码出额
+// how_many_packets_to_process 计数器减—。
+//当处理了指定数量的视频包后,停止从文件读取更多包。
+if (--how_many_packets_to_process &lt;= 0) {
+logging("Processed target number of video packets, stop
+break;
+)
+//**重要:**释放pPacket引用的数据缓冲区,并将其他字段重置为默认促
+//每次av_read_frame 准备读取新的包之前,前一个包必须被unref。
+av_packet_unref (pPacket) ;
+//<strong>提示(Flush Decoder):</strong>
+//当所有需的包都已发送给解码器后(或av_read_frame返回文件尾),
+//解码器内部可能仍有一些缓冲的帧(特别是由于B帧依赖)。
+//为了获取这些剩余的帧,应该向解码器发送一个NULL的AVPacket,
+//这会能发解码器的“flush”(冲洗)模式。
+// logging("Flushing decoder by sending NULL packet to decode_p
+// decode_packet(NULL, pCodecContext,pFrame);// 发送 NULL 包以
+//12.释放所有已分配的资源
+logging(<em>releasing all the resources</em>);
+avformat_close_input(&pFormatContext):// 关闭输入文件并释放 AVF:
+//释放AVPacket结构体
+av_frame_free(&pFrame);
+avcodec_free_context(&pCodecContext):// 释放 AVCodecContext (
+return6;
+//日志函数
+staticvoidlogging(constchar <em>fmt,...)(
+va_list args;
+fprintf( stderr, "L0G: " );
+va_start( args, fmt );
+vfprintf( stderr, fnt, args );
+va_end( args );
+fprintf( stderr, "\n</em> );
+{
+//解码数据包函数
+staticintdecode_packet(AVPacket *pPacket, AVCodecContext <em>pCode
+//步骤1:将压缩的数据包(pPacket)发送给解码器(pCodecContext)
+//如果pPacket 为NULL,则表示输入流结束,要求解码器输出所有内部缓冲的帧
+int response = avcodec_send_packet(pCodecContext, pPacket);
+if (response &lt;0){
+//如果是 AVERROR_EOF 并且是在flush 模式(pPacket为NULL),这是I
+if (response == AVERROR_EOF && pPacket == NULL) {
+logging("Decoder flushed (send_packet returned EoF).");
+//不需要返回错误,因为接收循环仍可能取出缓冲帧。
+}else {
+Logging(“Error sending packet to decoder: %s</em>, av_err2s
+)
+//对于AVERROR_EOF,也返回它,让接收循环知道输入已结束。
+//对于其他错误,直接返回。
+return response;
+//步骤2:循环从解码器接收解码后的帧
+//因为一个包可能不会立即产生帧,或者解码器有内部缓冲(特别是B帧),
+//或者在某些特定情况下(主要是音频),一个包可能产生多个帧。
+//因此,avcodec_receive_frane 需要在一个循环中被调用。
+while (response >= 6){// 只要上—次的 send_packet 或 receive_fre
+response = avcodec_receive_frame(pCodecContext, pFrame); //
+if (response == AVERROR(EAGAIN)) {
+//AVERROR(EAGAIN)表示:解码器当前没有足够的已解码数据来输出一帧。
+//它需要你通过 avcodec_send_packet()发送更多的数据包(如果 pP
+//如果 pPacket 是NULL(flush模式),则理论上不应轻易出现 EAGAI
+// logging("Decoder needs more input or no frame availabl
+break;//退出当前receive_frame循环,等待main函数发送下一个
+}elseif (response == AVERROR_EOF) {
+//AVERROR_EOF表示:输入已经结束(之前通过发送NULLpacket 指示
+//并且解码器内部所有缓冲的帧都已经成功取出了。没有更多赖可以接收了。
+logging("End of stream reached in decoder, no more frames
+break;// 退出当前 receive_frame 循环
+}elseif (response &lt; θ){
+//其他不可恢复的解码错误
+logging("Error receiving frame from decoder: %s", av_err2
+return response;//将错误码返回给调用者(main 函数)
+//如果response>=9,说明成功解码并获取到了一帧!
+)6u66o1
+“Frame %d (type=sc, size=%d bytes, format=sd) pts %lld
+pCodecContext->frame_number,//解码器成功输出的的序号(从
+av_get_picture_type_char(pFrame ->pict_type), // 帧类型(
+pFrame->pkt_size,//生成此帧的原始数据包的大小(仅供参考)
+pFrame->format,//解码后帧的像素格式(例如 AV_PIX_FMT_YU
+(longlong)pFrame->pts,
+//**显示时间(Presentation
+pFrame->key_frame,//是否是关键帧(1表示是,θ表示否)
+(longlong)pFrame->pkt_dts // **解码时间戳(Decode Timesta
+):
+char frame_filename[1024];
+//使用解码器输出的顿序号(pCodecContext->frame_number)来命名P
+snprintf(frame_filename, sizeof(frame_filename), "%s-d.pgm
+//示例视频 smal1_bunny_1080p_60fps.mp4是YUV428P 格式。
+//save_gray_frame 函数只保存Y(亮度)分量。
+if (pFrame->format != AV_PIX_FMT_YUV42oP) {
+logging("Warning: frame format is not YUV42eP, PGM might
+1
+//调用函数将解码后帧的亮度分量保存为PGM图像文件
+save_gray_frame (pFrane->data[] , pFrame->linesize[9], pFram
+//处理完一帧后,通常需要调用av_frame_unref(pFrame)来释放pFram
+//以便pFrame 结构体可以被下一次 avcodec_receive_frame 调用安全
+//此示例中pFrame在main函数中分配并在最后统一释放,依赖于avcod
+//更安全的做法是在这里unref。
+//如果是因为EAGAIN退出的循环,说明当前包已发送,但解码器需要更多包。
+//如果是因为E0F或其他原因(如正常解码完当前包能出的所有帧),也表示当前包
+//返回0表示与当前输入包相关的解码尝试已完成。
+//如果想让上层知道是EAGAIN,可以返回response。这里简化处理。
+return (response == AVERROR(EAGAIN) 1l response == AVERROR_EOF)
+//保存灰度帧为PGMP5文件
+staticvoidsave_gray_frame(unsignedchar <em>buf, int wrap, int xsiz
+FILE <em>f;
+int i;
+f=fopen(filename,“wb");//“wb</em>表示以二进制写模式打开文件
+if (f == NULL) {
+Logging("ERRoR: Could not open file %s for writing.", f
+return:
+//写入PGMP5格式的文件头:
+//“P5”表示二进制灰度图
+//"%d%d”是图像的宽度和高度
+//“d”是最大的灰度值(通常是255,表示8位灰度)
+fprintf(f, "P5\n%d %d\nd\n", xsize, ysize, 255);
+//逐行写人像素数据
+//buf指向帧数据中亮度分量(Yplane)的起始地址
+//wrap(也叫Linesize 或stride)是图像数据中一行的实际字节数,可
+for (i = θ; i &lt; ysize; i++) {
+fwrite(buf+i</em>wrap,1,xsize,f);//每次写人一行的实际
+fclose(f);//关闭文件</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=四how_many_packets_to_process-与pgm-文件数量的深入理解>四、how_many_packets_to_process 与PGM 文件数量的深入理解<a href=#四how_many_packets_to_process-与pgm-文件数量的深入理解 class=hash-link aria-label="四、how_many_packets_to_process 与PGM 文件数量的深入理解的直接連結" title="四、how_many_packets_to_process 与PGM 文件数量的深入理解的直接連結" translate=no>​</a></h2>
+<p>实验中修改 0_hello_world.c 中how_many_packets_to_process 的初始值
+(例如从B改成10、20、58)。并观察到输出PGM文件数量(即pCodecContext-
+>frame_number 的最大值)大致为设定的包数减去一个小的固定值(例如N-2),
+这个现象揭示了视频解码的内在机制。
+.1.how_many_packets_to_process 的角色:
+。·它在main 函数中,用于限制调用 decode_packet 函数来处理从指定视频
+流中读取到的数据包的次数上限。如果设置为N,那么主循环在处理了N个视频
+包后就会停止读取。
+.2.为何输出帧数通常略少于处理的包数(尤其在视频开头)一解码器启动延迟和B
+帧效应
+。·实验中“N个包输出N-X帧”的模式,正是这种解码器启动行为和处理B帧依赖
+在视频起始部分的体现。这个“X”不是一个固定的FFmpeg规则,而是特定于测
+试视频文件(smalL_bunny_1080p_60fps.mp4)的G0P(图像组)结构、起
+始部分的B帧数量和位置,以及0_hello_world.c当前解码逻辑(特别是它没
+有在最后显式地调用decode_packet(NULL,...)来冲洗解玛器缓冲)共同
+作用下的一个经验结果。对于不同的视频文件或视频的不同片段,这个“X”值可
+能会不同。
+。·B帧依赖性<!-- -->:B<!-- -->帧的解码需要其前面和后面的参考帧(I帧或P额)。这意味着
+解码器必须先接收并解码掉B赖所依赖的那个“未来”的P帧(或I帧),然后才能回
+头处理这些B帧。在此期间,即使发送了B赖的包,
+avcodec_receive_frame()也可能因数据不完整而返
+回AVERROR(EAGAIN)。导致这一轮 decode_packet 调用没有保存图像。
+码上下文”、“满足间依赖关系”,或者解码出了一些由于PTS顺序靠后(因B帧
+重排)而暂时不能立即被pCodecContext->frame_number 计的帧。直到
+解码器内部的“流水线“被填满并且依赖关系得到满足,后续的包才能更稳定地产出
+对应的帧。
+。·解码器“预热”/“填补流水线”:视频解码器(特别是处理像H.264这样包含
+帧。
+。·观察到的"N-X"模式:
+.3.帧的“身份"与区分(时间的量要性):
+。·pCodecContext->frame_number(解码器输出帧的流水号):解码器成功
+输出一帧时内部递增的计数器(从1开始)。0_hello_world.c用它来命名
+PGM文件。它代表帧从解码器出来的顺序。
+。·pFrame->pts(显示时间戳-Presentation Timestamp):这是最重要
+的时间,指示该帧应在视频的哪个时间点被显示。单位是流的时间基
+(AVStream->time_base)。PTS的顺序决定了视频的视觉播放顺序。
+。·pFrame->pkt_dts(解码时间戳-Decode Timestamp):指示包含此赖
+(或其主要部分)的数据包应何时被解码。DTS通常是单调递增的,反映了数据在
+原始码流中的顺序。解码器严格按DTS顺序处理包。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=五参数修改建议与应用场景优化与扩展>五、参数修改建议与应用场景(优化与扩展)<a href=#五参数修改建议与应用场景优化与扩展 class=hash-link aria-label=五、参数修改建议与应用场景(优化与扩展)的直接連結 title=五、参数修改建议与应用场景(优化与扩展)的直接連結 translate=no>​</a></h2>
+<p>基于对IBP帧和解码流程的理解,可以对这个基础程序进行多种修改以适应不同需
+求:
+.1.精确提取指定数量的输出帧:
+。·在decode_packet成功保存一帧后,使用一个外部计数器(例如
+在main 中定义并传递指针给decode_packet)来记录实际保存的顿数。当
+达到目标数量时,终止main函数的循环。
+。·关键:在main循环结束后(无论是正常完成还是因达到帧数限制而中
+断),务必调用 decode_packet(NULL,pCodecContext,pFrame);来
+发送一个NULL包给解码器,以“冲洗”(flush)解码器内部缓冲的所有剩余帧。
+这样可以确保得到所有应该输出的赖,特别是视频尾部的帧。
+.2.提取指定时间范围/特定时间点的帧(用于缩略图、预览等):
+o·计算目标时间(如視频总时长的38%)对应的int64_ttarget_pts(注意
+从秒转换为流的时问基单位)。
+。·使用av_seek_frame(pFormatContext,video_stream_index,
+target_pts, AVSEEK FLAG BACKWARD); 定位到 target_pts 之前最近
+的关键帧。
+重要<!-- -->:av_seek_frame<!-- -->之后,必须调
+用avcodec_flush_buffers(pCodecContext):来清空解码器内部的陈旧
+状态和缓冲数据。
+。·然后,循环调用av_read_frame和decode_packet。
+在decode_packet 中,当 avcodec_receive_frame 成功获取一后,
+比较 pFrame->pts 与target_pts。当找到第-个 pFrame->pts >=
+target_pts 的帧时,保存它,然后可以停止这个时间点的提取。
+。·应用:批量缩略图生成器、视频预览条的帧提取。
+.3.保存为彩色图像(PPMP6)或常用格式(JPEG/PNG):
+。·彩色PPM(P6格式):
+。·JPEG/PNG:需要将解码后的AVFrame 再次通过Libavcodec进行图像
+编码(使用MJPEG或PNG编码器),得到包含图像数据的AVPacket,然后将该
+包数据写入文件。
+。·应用:生成高质量的彩色缩略图。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=11将解码后的avframe通常是yuv格式使用libswscale-库转换>1.1.将解码后的AVFrame(通常是YUV格式)使用Libswscale 库转换<a href=#11将解码后的avframe通常是yuv格式使用libswscale-库转换 class=hash-link aria-label="1.1.将解码后的AVFrame(通常是YUV格式)使用Libswscale 库转换的直接連結" title="1.1.将解码后的AVFrame(通常是YUV格式)使用Libswscale 库转换的直接連結" translate=no>​</a></h3>
+<p>为AV_PIX_FMT_RGB24 格式。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=22修改-save_gray_frame-为-save_rgb_ppm_frame写入ppm-p6头>2.2.修改 save_gray_frame 为 save_rgb_ppm_frame,写入PPM P6头<a href=#22修改-save_gray_frame-为-save_rgb_ppm_frame写入ppm-p6头 class=hash-link aria-label="2.2.修改 save_gray_frame 为 save_rgb_ppm_frame,写入PPM P6头的直接連結" title="2.2.修改 save_gray_frame 为 save_rgb_ppm_frame,写入PPM P6头的直接連結" translate=no>​</a></h3>
+<p>("P6\n%d%d\n255\n"),然后写入RGB数据。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4视频内容基础分析>4.视频内容基础分析:<a href=#4视频内容基础分析 class=hash-link aria-label=4.视频内容基础分析:的直接連結 title=4.视频内容基础分析:的直接連結 translate=no>​</a></h2>
+<p>o·解码视频帧后,访问AVFrame->data(Y,U,V分量的像素数据)进行计
+算,如平均亮度、帧间差异等。
+。·应用:视频质量自动化检测、内容标记辅助。
+通过不断地实践、修改代码、观察结果,并对照FFmpeg官方文档深入理解每个API
+函数的行为,就能真正掌握FFmpeg编程的精髓。
+ffmpeg·目录三
+下一篇·FFmpeg深度学习笔记(二)<!-- -->:Remuxing<!-- -->(转封装)的艺术-2_remuxing.C...>
+作者提示:个人观点,仅供参考</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<p><img decoding=async loading=lazy alt="FFmpeg 核心概念与 0_hello_world.c 示例深度解析 系列一：微信公众号导出原始排版图" src=/assets/images/article-0a61b5a42ee3b68cd11343a5dc7cfdeb.webp width=1280 height=13925 class=img_ev3q /></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2025-05-17-2025-05-17-ffmpeg-核心概念与-0-hello-world-c-示例深度解析-系列一-2247484552.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2025-05-20-ffmpeg-深度学习笔记-三-transcoding-转码-的艺术与实践-3-transcoding-c-2247484560><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>FFmpeg 深度学习笔记 (三)：Transcoding (转码) 的艺术与实践 - 3_transcoding.c</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2025-05-17-ffmpeg-深度学习笔记-二-remuxing-转封装-的艺术-2-remuxing-c-详解-2247484556><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>FFmpeg 深度学习笔记 (二)：Remuxing (转封装) 的艺术 - 2_remuxing.c 详解</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#一视频压缩与献类型的核心理论 class="table-of-contents__link toc-highlight">一、视频压缩与献类型的核心理论</a><li><a href=#一个绝对的解码刷新点 class="table-of-contents__link toc-highlight">一个绝对的解码刷新点。</a><li><a href=#二-ffmpeg-核心组件回原 class="table-of-contents__link toc-highlight">二、 FFmpeg 核心组件回原</a><li><a href=#三o_hello_worldc-代码分析 class="table-of-contents__link toc-highlight">三、o_hello_world.c 代码分析</a><li><a href=#四how_many_packets_to_process-与pgm-文件数量的深入理解 class="table-of-contents__link toc-highlight">四、how_many_packets_to_process 与PGM 文件数量的深入理解</a><li><a href=#五参数修改建议与应用场景优化与扩展 class="table-of-contents__link toc-highlight">五、参数修改建议与应用场景(优化与扩展)</a><ul><li><a href=#11将解码后的avframe通常是yuv格式使用libswscale-库转换 class="table-of-contents__link toc-highlight">1.1.将解码后的AVFrame(通常是YUV格式)使用Libswscale 库转换</a><li><a href=#22修改-save_gray_frame-为-save_rgb_ppm_frame写入ppm-p6头 class="table-of-contents__link toc-highlight">2.2.修改 save_gray_frame 为 save_rgb_ppm_frame,写入PPM P6头</a></ul><li><a href=#4视频内容基础分析 class="table-of-contents__link toc-highlight">4.视频内容基础分析:</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

@@ -1,0 +1,292 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Flipper Zero 应用开发教程：从零开始制作多功能工具集 | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2025-01-27-flipper-zero-应用开发教程-从零开始制作多功能工具集-2247484408 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="Flipper Zero 应用开发教程：从零开始制作多功能工具集 | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《Flipper Zero 应用开发教程：从零开始制作多功能工具集》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《Flipper Zero 应用开发教程：从零开始制作多功能工具集》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2025-01-27T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2025-01-27-flipper-zero-应用开发教程-从零开始制作多功能工具集-2247484408 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-01-27-flipper-zero-应用开发教程-从零开始制作多功能工具集-2247484408 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-01-27-flipper-zero-应用开发教程-从零开始制作多功能工具集-2247484408 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2025-01-27-flipper-zero-应用开发教程-从零开始制作多功能工具集-2247484408","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2025-01-27T00:00:00.000Z","description":"从微信公众号导入的文章《Flipper Zero 应用开发教程：从零开始制作多功能工具集》，保留原始排版图并提供本地 OCR 转写。","headline":"Flipper Zero 应用开发教程：从零开始制作多功能工具集","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2025-01-27-flipper-zero-应用开发教程-从零开始制作多功能工具集-2247484408","name":"Flipper Zero 应用开发教程：从零开始制作多功能工具集","url":"https://w0x7ce.eu/blog/2025-01-27-flipper-zero-应用开发教程-从零开始制作多功能工具集-2247484408"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>Flipper Zero 应用开发教程：从零开始制作多功能工具集</h1><div class="container_mt6G margin-vert--md"><time datetime=2025-01-27T00:00:00.000Z>2025年1月27日</time> · <!-- -->閱讀時間約 5 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2025-01-27 17:59:51（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247484408&idx=1&sn=a6160cf230f55dbe38ac87f5beccc717&chksm=96e11652a1969f44ad6a783be2f7d9aad61c266fbe3a3ae0926841b5dde32ecf70a71101bca0#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 3030 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>大家好!今天和大家分享如何在FlipperZero上开发一个
+多功能工具集应用。本教程将带领你从环境搭建到完整应用开发
+的全过程。即使你是初学者,只要跟着教程一步步来,也能轻松
+开发出自己的Flipper应用!</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一开发环境搭建>一、开发环境搭建<a href=#一开发环境搭建 class=hash-link aria-label=一、开发环境搭建的直接連結 title=一、开发环境搭建的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1工具安装>1.工具安装<a href=#1工具安装 class=hash-link aria-label=1.工具安装的直接連結 title=1.工具安装的直接連結 translate=no>​</a></h2>
+<p>在 mac0S上,我们使用urbt (micro FLipper Build Tool)作为主要开发工具。它是</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一个轻量级的构建工具专门为flipper-zero应用开发设计>一个轻量级的构建工具,专门为Flipper Zero应用开发设计。<a href=#一个轻量级的构建工具专门为flipper-zero应用开发设计 class=hash-link aria-label="一个轻量级的构建工具,专门为Flipper Zero应用开发设计。的直接連結" title="一个轻量级的构建工具,专门为Flipper Zero应用开发设计。的直接連結" translate=no>​</a></h2>
+<p>首先,打开终端安装ufbt:
+python3 -m pip install --upgrade ufbt
+然后,初始化 SDK:
+ufbt update</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2创建项目>2.创建项目<a href=#2创建项目 class=hash-link aria-label=2.创建项目的直接連結 title=2.创建项目的直接連結 translate=no>​</a></h2>
+<p>使用以下命令创建新项目:
+ufbt create APPID=ny_app
+这个命令会生成基本的项目结构,包括:</p>
+<ul>
+<li class="">
+<p>application.fam(应用程序配置文件)</p>
+</li>
+<li class="">
+<p>my_app.c(主代码文件)</p>
+</li>
+<li class="">
+<p>my_app.png(应用图标)</p>
+</li>
+<li class="">
+<p>images/(资源文件夹)</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=二应用程序结构设计>二、应用程序结构设计<a href=#二应用程序结构设计 class=hash-link aria-label=二、应用程序结构设计的直接連結 title=二、应用程序结构设计的直接連結 translate=no>​</a></h2>
+<p>我们要开发的是一个多功能工具集,包含以下功能:</p>
+<ul>
+<li class="">
+<p>计数器(Counter)</p>
+</li>
+<li class="">
+<p>随机数生成器(Randon Number)</p>
+</li>
+<li class="">
+<p>计时器(Timer)</p>
+</li>
+<li class="">
+<p>关于页面(About)</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1基础框架>1.基础框架<a href=#1基础框架 class=hash-link aria-label=1.基础框架的直接連結 title=1.基础框架的直接連結 translate=no>​</a></h2>
+<p>首先,我们需要定义应用的基本信息和数据结构:
+#define APP_NAHE <em>wOx7ce Tools</em>
+#define APP_VERSION <em>1.a.9</em>
+11定义应用模式检举
+typedef enun {
+ApprtodeRain,
+//主英单
+AppModeCounter,//计数器
+AppModeRandon,
+//随机数
+//计时器
+AppModeAbout
+//关于
+} AppMode;
+//定义应用状态结构体
+typedef struct {
+// GUI 对象
+5ui* gui;
+ViewPort* view_port;
+/ 视图端口
+NotificationApp*notifications;// 通知系统
+beol running;
+//运行状态
+//计致值
+int counter;
+AppMode current_node;
+//当前式
+//...其他状态变量</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2界面设计>2.界面设计<a href=#2界面设计 class=hash-link aria-label=2.界面设计的直接連結 title=2.界面设计的直接連結 translate=no>​</a></h2>
+<p>FLipper Zero的屏幕是一个128x64的黑白显示屏。我们需要合理规划界面布局:</p>
+<ul>
+<li class="">
+<p>主菜单:显示所有功能选项</p>
+</li>
+<li class="">
+<p>功能界面:每个功能都有独立的界面设计</p>
+</li>
+<li class="">
+<p>导航提示:显示按键操作说明</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=三核心功能实现>三、核心功能实现<a href=#三核心功能实现 class=hash-link aria-label=三、核心功能实现的直接連結 title=三、核心功能实现的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1主菜单设计>1.主菜单设计<a href=#1主菜单设计 class=hash-link aria-label=1.主菜单设计的直接連結 title=1.主菜单设计的直接連結 translate=no>​</a></h2>
+<p>主莫单是应用的入口,我们使用以下代码实现一个简洁的菜单界面:
+static void dras_naln_menu(Canvas* canvas, MyApp* app) {
+canvas_set_font (canvas, FontPrimary) :
+canvas_drau_str(canvas, 2。 10, APP_NAME);
+const char* nenu_items[] = {Counter", “Randon", "Timcr',
+,“About"}
+1nt start_y = 25;
+int iten_height = 9:
+/1培割菜单顶
+canvas_set_font (canvas, FontSecondary) :
+for(int i = 0; i &lt; 4; i++) {
+1nt y = start_y + 1 * iten_helght;
+//地利选中项的边框
+if(i == app->counter 4) {
+canvas_draw_frame(canvas, 6, y - 8, 128, 11);
+}
+canvas_draw_str(canvas, 2, y, menu_itens[i]);</p>
+<p>这段代码实现了:</p>
+<ul>
+<li class="">
+<p>顶部显示应用名称</p>
+</li>
+<li class="">
+<p>垂直列表显示功能选项目</p>
+</li>
+<li class="">
+<p>当前选中项有边框显示</p>
+</li>
+<li class="">
+<p>合理的间距布局</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2功能模块实现>2.功能模块实现<a href=#2功能模块实现 class=hash-link aria-label=2.功能模块实现的直接連結 title=2.功能模块实现的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=21计数器counter>2.1计数器(Counter)<a href=#21计数器counter class=hash-link aria-label=2.1计数器(Counter)的直接連結 title=2.1计数器(Counter)的直接連結 translate=no>​</a></h3>
+<p>static vold drau_counter_mode(Canvas* canvas, HyApp* app) {
+/1显示计数值和操作说明
+char counter_str[32]:
+snprintf(counter_str, s1zeof(counter_str)。 *count: d", app->counte
+canvas_dras_str(canvas, 2, 3o, counter_str):
+特点:</p>
+<ul>
+<li class="">
+<p>使用上下键进行计数</p>
+</li>
+<li class="">
+<p>实时显示计数值图</p>
+</li>
+<li class="">
+<p>支持正负数计数十一</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=22随机数生成器random>2.2随机数生成器(Random)<a href=#22随机数生成器random class=hash-link aria-label=2.2随机数生成器(Random)的直接連結 title=2.2随机数生成器(Random)的直接連結 translate=no>​</a></h3>
+<p>static void drau_random_made(Canvas* canvas, HyApp* app) {
+/1使用硬件随机政生成器
+app->randon_nunber = fur1_hal_random_get():
+特点:</p>
+<ul>
+<li class="">
+<p>使用硬件随机数生成器</p>
+</li>
+<li class="">
+<p>按0K键生成新随机数</p>
+</li>
+<li class="">
+<p>大范围随机数支持</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=23计时器timer>2.3计时器(Timer)<a href=#23计时器timer class=hash-link aria-label=2.3计时器(Timer)的直接連結 title=2.3计时器(Timer)的直接連結 translate=no>​</a></h3>
+<p>static vuid drau_tiner_made(Canvas* canvas, MyApp* app) {
+//计算和显示时间
+uint32_t seconds = app->elapsed_time / 1000;
+uint32_t minutes = seconds / 60;
+uint32_t msec = (opp->elapsed_tinc % 16ee) / 10;
+char timer_str[32]:
+snprintf(tincr_str, sizcof(tiner_str), "so2lu:%e2lu,sa2lu*,
+minutes, seconds 6e, msec);
+特点:</p>
+<ul>
+<li class="">
+<p>精确到百分之一秒</p>
+</li>
+<li class="">
+<p>支持启动/停止功能口</p>
+</li>
+<li class="">
+<p>大字体显示时间</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3按键处理>3.按键处理<a href=#3按键处理 class=hash-link aria-label=3.按键处理的直接連結 title=3.按键处理的直接連結 translate=no>​</a></h2>
+<p>Flipper Zero 有六个按键:</p>
+<ul>
+<li class="">
+<p>0K(确认键)</p>
+</li>
+<li class="">
+<p>Back(返回键)</p>
+</li>
+<li class="">
+<p>Up (上键)</p>
+</li>
+</ul>
+<p>(联)unog ·</p>
+<ul>
+<li class="">
+<p>Left(左键)</p>
+</li>
+<li class="">
+<p>Right(右键)</p>
+</li>
+</ul>
+<p>static void input_callback(InputEvent* input_cvent, void* ctx) (
+1f[input_event->type == InputTypeShort]{
+Swi tch(input_event ->key)
+casc InputKeyok:
+//处理确认键
+break;
+case InputKeyBack:
+1/处洋返回
+break;
+//...其他按键处理</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=四编译和部署>四、编译和部署<a href=#四编译和部署 class=hash-link aria-label=四、编译和部署的直接連結 title=四、编译和部署的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1编译应用>1.编译应用<a href=#1编译应用 class=hash-link aria-label=1.编译应用的直接連結 title=1.编译应用的直接連結 translate=no>​</a></h2>
+<p>在项目目录下运行:
+ufbt
+这将生成.fap 文件(Flipper Application Package)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2部署到设备>2.部署到设备<a href=#2部署到设备 class=hash-link aria-label=2.部署到设备的直接連結 title=2.部署到设备的直接連結 translate=no>​</a></h2>
+<p>连接Flipper Zero 后运行:
+ufbt launch</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=五开发技巧和注意事项>五、开发技巧和注意事项<a href=#五开发技巧和注意事项 class=hash-link aria-label=五、开发技巧和注意事项的直接連結 title=五、开发技巧和注意事项的直接連結 translate=no>​</a></h2>
+<p>内存管理</p>
+<ul>
+<li class="">
+<p>注意资源的分配和释放</p>
+</li>
+<li class="">
+<p>避免内存泄漏</p>
+</li>
+<li class="">
+<p>使用FURI_LOG进行调试</p>
+</li>
+</ul>
+<p>界面设计</p>
+<ul>
+<li class="">
+<p>保持界面简洁清晰</p>
+</li>
+<li class="">
+<p>确保文本不超出屏幕</p>
+</li>
+<li class="">
+<p>添加适当的用户反馈</p>
+</li>
+</ul>
+<p>性能优化</p>
+<ul>
+<li class="">
+<p>减少不必要的刷新</p>
+</li>
+<li class="">
+<p>优化计算密集型操作</p>
+</li>
+<li class="">
+<p>合理使用定时器</p>
+</li>
+</ul>
+<p>结语
+通过这个项目,我们学习了:</p>
+<ul>
+<li class="">
+<p>FlipperZero应用开发基础</p>
+</li>
+<li class="">
+<p>GUI编程和事件处理</p>
+</li>
+<li class="">
+<p>硬件功能的使用</p>
+</li>
+<li class="">
+<p>项目架构设计</p>
+</li>
+</ul>
+<p>完整代码可以私信获取后续上传到GitHub,欢迎关注和交流!
+作者<!-- -->:w0x7ce<!-- -->版本:1.0.0开发平台<!-- -->:mac0S15<!-- -->.3Python3.12flipper1.2.0
+#FlipperZero#开发教程#嵌入式开发</p>
+<p>AI工具·目录三
+&lt;上一篇
+下一篇>
+AIAGENT之:浏览器自动化
+西班牙语TTS与ASR模型及服务产品选择
+browser-use实战指南</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<p><img decoding=async loading=lazy alt="Flipper Zero 应用开发教程：从零开始制作多功能工具集：微信公众号导出原始排版图" src=/assets/images/article-2af4669d2f76ac53d39067467d286218.webp width=1280 height=7967 class=img_ev3q /></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2025-01-27-2025-01-27-flipper-zero-应用开发教程-从零开始制作多功能工具集-2247484408.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2025-01-29-西班牙语tts与asr模型及服务产品选择-2247484413><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>西班牙语TTS与ASR模型及服务产品选择</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2025-01-04-效率飞升-continue插件携手deepseek-v3-代码编写新体验-2247484385><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>效率飞升！Continue插件携手DeepSeek V3，代码编写新体验！</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#一开发环境搭建 class="table-of-contents__link toc-highlight">一、开发环境搭建</a><li><a href=#1工具安装 class="table-of-contents__link toc-highlight">1.工具安装</a><li><a href=#一个轻量级的构建工具专门为flipper-zero应用开发设计 class="table-of-contents__link toc-highlight">一个轻量级的构建工具,专门为Flipper Zero应用开发设计。</a><li><a href=#2创建项目 class="table-of-contents__link toc-highlight">2.创建项目</a><li><a href=#二应用程序结构设计 class="table-of-contents__link toc-highlight">二、应用程序结构设计</a><li><a href=#1基础框架 class="table-of-contents__link toc-highlight">1.基础框架</a><li><a href=#2界面设计 class="table-of-contents__link toc-highlight">2.界面设计</a><li><a href=#三核心功能实现 class="table-of-contents__link toc-highlight">三、核心功能实现</a><li><a href=#1主菜单设计 class="table-of-contents__link toc-highlight">1.主菜单设计</a><li><a href=#2功能模块实现 class="table-of-contents__link toc-highlight">2.功能模块实现</a><ul><li><a href=#21计数器counter class="table-of-contents__link toc-highlight">2.1计数器(Counter)</a><li><a href=#22随机数生成器random class="table-of-contents__link toc-highlight">2.2随机数生成器(Random)</a><li><a href=#23计时器timer class="table-of-contents__link toc-highlight">2.3计时器(Timer)</a></ul><li><a href=#3按键处理 class="table-of-contents__link toc-highlight">3.按键处理</a><li><a href=#四编译和部署 class="table-of-contents__link toc-highlight">四、编译和部署</a><li><a href=#1编译应用 class="table-of-contents__link toc-highlight">1.编译应用</a><li><a href=#2部署到设备 class="table-of-contents__link toc-highlight">2.部署到设备</a><li><a href=#五开发技巧和注意事项 class="table-of-contents__link toc-highlight">五、开发技巧和注意事项</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

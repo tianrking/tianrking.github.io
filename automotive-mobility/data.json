@@ -1,0 +1,762 @@
+{
+  "checked_on": "2026-09-05",
+  "scope_note": "本库覆盖汽车与出行电子：行车记录仪、车载定位、OBD、胎压监测、ADAS配件与车载充电。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
+  "field_rules": [
+    [
+      "类别边界",
+      "行车记录仪、车载定位、OBD、胎压监测、ADAS配件与车载充电。"
+    ],
+    [
+      "跨库去重",
+      "已在其他独立数据库收录的同一硬件不重复计入主表；如有交叉用途，保留候选/别名和原始来源。"
+    ],
+    [
+      "上市状态",
+      "在售、地区在售、预售、历史、售罄、候选和OEM线索分开；官方页面不能证明当前交付的型号不计入主表。"
+    ],
+    [
+      "证据等级",
+      "A为官方产品/规格/销售链较完整；B为官方页面明确但关键字段或当前库存有缺口；C/D为候选、渠道、历史或未充分验证线索。"
+    ],
+    [
+      "字段缺口",
+      "来源未披露统一写“未公开”，尤其不推断芯片、传感器、尺寸、重量、续航、防水、订阅和隐私字段。"
+    ],
+    [
+      "价格",
+      "保留首发/当前价格和原币种；促销、租赁、订阅、押金和服务费在原文中区分，不做无说明汇率换算。"
+    ],
+    [
+      "查证日期",
+      "2026-09-05"
+    ]
+  ],
+  "products": [
+    {
+      "id": "AUTO-001",
+      "brand": "Garmin",
+      "model": "Dash Cam X310",
+      "country_region": "美国/瑞士/全球多地区",
+      "category": "automotive-mobility",
+      "form_factor": "4K车载行车记录仪",
+      "use_case": "行车记录、停车监控、ADAS提醒",
+      "status": "已上市，可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "USD 399.99 起",
+      "official_url": "https://www.garmin.com/en-US/p/1391409/",
+      "spec_url": "https://www8.garmin.com/manuals/webhelp/GUID-D9E2A866-74A8-4380-BE21-F1522E0149BC/EN-US/GUID-1123C64D-D5AD-465A-8DB8-08882C853EB2.html",
+      "features": [
+        "4K",
+        "140°视场角",
+        "Clarity HDR",
+        "语音控制",
+        "碰撞/车道/起步提醒"
+      ],
+      "sensors": [
+        "摄像头",
+        "G-Sensor"
+      ],
+      "gps_positioning": "GPS + Galileo",
+      "supported_protocols": [
+        "Wi-Fi 2.4/5GHz",
+        "Garmin Drive App"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "7.00 x 4.22 x 1.95 cm",
+      "weight_g": 78,
+      "battery": "锂离子电池，最长约 20 分钟",
+      "charging": "USB-C/车辆供电",
+      "water_resistance": "未公开",
+      "subscription": "Vault/停车监控/Live View 需订阅",
+      "privacy": "官网提示各地区隐私与使用法规不同",
+      "availability_note": "官网显示 1–3 个工作日发货",
+      "source_note": "官方销售页、规格页与用户手册",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "AUTO-002",
+      "brand": "Nextbase",
+      "model": "iQ Smart Dash Cam",
+      "country_region": "英国/美国/欧洲",
+      "category": "automotive-mobility",
+      "form_factor": "联网智能行车记录仪",
+      "use_case": "4G远程查看、停车监控、事故求助",
+      "status": "已上市，可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://nextbase.com/smart-dash-cams/iq-smart-dash-cam/",
+      "spec_url": "https://cdn.nextbase.co.uk/web/NEXTBASE_iQ_Announcement.pdf",
+      "features": [
+        "Smart Sense Parking",
+        "事故前后缓冲记录",
+        "SOS",
+        "位置共享",
+        "后摄像头扩展"
+      ],
+      "sensors": [
+        "摄像头",
+        "G-Sensor"
+      ],
+      "gps_positioning": "定位与 what3words 功能",
+      "supported_protocols": [
+        "4G/LTE",
+        "Wi-Fi",
+        "Bluetooth"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "OBD车载供电/硬线供电",
+      "water_resistance": "未公开",
+      "subscription": "联网/云服务方案未公开",
+      "privacy": "事故位置和医疗信息共享功能；详细政策未公开",
+      "availability_note": "官方页面列出 OBD 线、硬线和 64GB 卡",
+      "source_note": "官方产品页与官方发布 PDF",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "AUTO-003",
+      "brand": "OBDLink",
+      "model": "MX+",
+      "country_region": "美国/全球",
+      "category": "automotive-mobility",
+      "form_factor": "OBD-II 蓝牙诊断适配器",
+      "use_case": "车辆诊断、实时参数读取、车队/维修数据",
+      "status": "已上市，可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://www.obdlink.com/products/obdlink-mxp/",
+      "spec_url": "https://www.obdlink.com/products/obdlink-mxp/",
+      "features": [
+        "全 OBD-II 协议",
+        "Ford MS-CAN",
+        "GM SW-CAN",
+        "低功耗模式",
+        "物理配对按钮"
+      ],
+      "sensors": "读取车辆 ECU 数据；本机传感器未公开",
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "OBD-II",
+        "EOBD",
+        "JOBD",
+        "MS-CAN",
+        "SW-CAN"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "无独立电池；车辆 12V",
+      "charging": "OBD-II 供电",
+      "water_resistance": "未公开",
+      "subscription": "无公开订阅",
+      "privacy": "128-bit 数据加密",
+      "availability_note": "官网当前产品页",
+      "source_note": "官方产品/规格页",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "AUTO-004",
+      "brand": "FOBO",
+      "model": "Tire 2",
+      "country_region": "马来西亚/全球",
+      "category": "automotive-mobility",
+      "form_factor": "无线胎压监测传感器套件",
+      "use_case": "汽车胎压与温度监测",
+      "status": "已上市，官方页面可核验",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://www.fobo-bike.com/products/fobotire2",
+      "spec_url": "https://my-fobo.com/manual/FOBO_TIRE_2_User_Manual_1619060167.pdf",
+      "features": [
+        "实时胎压",
+        "温度监测",
+        "低压/高压报警",
+        "手机 App"
+      ],
+      "sensors": [
+        "胎压传感器",
+        "温度传感器"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "Bluetooth 5.0"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "未公开",
+      "water_resistance": "未公开",
+      "subscription": "未公开",
+      "privacy": "未公开",
+      "availability_note": "官方商店/官方手册可核验；地区库存未统一",
+      "source_note": "官方产品商店与用户手册",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "AUTO-005",
+      "brand": "Tracki",
+      "model": "Universal Real-Time GPS Tracker",
+      "country_region": "美国/全球 190+ 国家",
+      "category": "automotive-mobility",
+      "form_factor": "4G LTE 车辆/资产定位器",
+      "use_case": "车辆定位、防盗、地理围栏",
+      "status": "已上市，可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "USD 13.99；数据服务需月费",
+      "official_url": "https://tracki.com/en-br/collections/gps-trackers/products/tracki-gps-tracker",
+      "spec_url": "https://tracki.com/pages/trackipro-ultra",
+      "features": [
+        "实时定位",
+        "地理围栏",
+        "速度/移动提醒",
+        "国际漫游",
+        "App/Web/Alexa"
+      ],
+      "sensors": [
+        "GPS/GNSS",
+        "运动传感器，具体未公开"
+      ],
+      "gps_positioning": "4G LTE + GPS；官方称覆盖 190+ 国家",
+      "supported_protocols": [
+        "4G LTE",
+        "GSM",
+        "Wi-Fi"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "1.81 x 1.5 x 0.6 in",
+      "weight_g": 35.7,
+      "battery": "650mAh；页面同时列出不同省电模式续航",
+      "charging": "未公开",
+      "water_resistance": "未公开",
+      "subscription": "必须订阅蜂窝数据服务",
+      "privacy": "未公开",
+      "availability_note": "官网可加入购物车",
+      "source_note": "官方销售页与官方说明页",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "AUTO-006",
+      "brand": "Vantrue",
+      "model": "Nexus 4 Pro / N4 Pro",
+      "country_region": "中国/美国及全球",
+      "category": "automotive-mobility",
+      "form_factor": "三通道 4K 行车记录仪",
+      "use_case": "前/后/车内录像、停车监控",
+      "status": "已上市，可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "USD 379.99",
+      "official_url": "https://www.vantrue.com/products/n4-pro",
+      "spec_url": "https://www.vantrue.com/pages/n4pro-manual-firmware",
+      "features": [
+        "三通道",
+        "4K",
+        "5GHz Wi-Fi",
+        "语音控制",
+        "缓冲停车监控"
+      ],
+      "sensors": [
+        "摄像头",
+        "G-Sensor"
+      ],
+      "gps_positioning": "GPS，官方产品标题列出",
+      "supported_protocols": [
+        "Wi-Fi 5GHz"
+      ],
+      "chip_or_soc": "Novatek 高端芯片；具体型号未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "超级电容，无普通锂电池",
+      "charging": "车辆 USB/12V 供电",
+      "water_resistance": "未公开",
+      "subscription": "未公开",
+      "privacy": "未公开",
+      "availability_note": "官网可购买；固件页面持续更新",
+      "source_note": "官方产品页与固件/支持页",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "AUTO-007",
+      "brand": "70mai",
+      "model": "Dash Cam Omni X200",
+      "country_region": "中国/全球",
+      "category": "automotive-mobility",
+      "form_factor": "360°旋转智能行车记录仪",
+      "use_case": "全景录像、停车监控、车辆安全",
+      "status": "已上市，地区可售",
+      "evidence": "B",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://www.70mai.com/global/dashcams/",
+      "spec_url": "https://www.70mai.com/instructions/70mai-Dash-Cam-Omni-User-Manual.pdf",
+      "features": [
+        "360°旋转镜头",
+        "AI动作检测",
+        "夜视",
+        "4G兼容",
+        "语音控制"
+      ],
+      "sensors": [
+        "摄像头",
+        "G-Sensor"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "Wi-Fi",
+        "4G兼容，具体版本未公开"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "300mAh 锂聚合物电池",
+      "charging": "5V/2A，车载供电",
+      "water_resistance": "未公开",
+      "subscription": "4G服务条款未公开",
+      "privacy": "未公开",
+      "availability_note": "全球产品页与 X200 官方手册可核验",
+      "source_note": "官方全球产品页与官方用户手册",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "AUTO-008",
+      "brand": "Anker",
+      "model": "Car Charger 167.5W 3 Ports",
+      "country_region": "中国/欧洲及全球",
+      "category": "automotive-mobility",
+      "form_factor": "车载多口 USB-C 充电器",
+      "use_case": "车内笔记本、手机和移动设备充电",
+      "status": "已上市，可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://www.anker.com/eu-en/products/b2737",
+      "spec_url": "https://www.anker.com/eu-en/products/b2737",
+      "features": [
+        "USB-C 100W",
+        "USB-C 45W",
+        "USB-A 22.5W",
+        "三设备同时充电",
+        "过压/过热保护"
+      ],
+      "sensors": "未公开",
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "USB-C Power Delivery，具体版本未公开"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "无独立电池",
+      "charging": "车辆点烟器/车载电源",
+      "water_resistance": "未公开",
+      "subscription": "无公开订阅",
+      "privacy": "未公开",
+      "availability_note": "欧洲官方商店页面",
+      "source_note": "官方产品页",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Mobileye Mobileye 8 Connect",
+      "brand": "Mobileye",
+      "region": "以色列/全球",
+      "category": "automotive-mobility",
+      "status": "候选；ADAS 后装/车队方案，消费零售可得性未确认",
+      "evidence": "B",
+      "reason": "官方产品组合 PDF；未找到稳定的个人消费者销售页",
+      "url": "https://static.mobileye.com/website/corporate/docs/product_portfolio_2024.pdf",
+      "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "name": "Garmin Dash Cam Live",
+      "brand": "Garmin",
+      "region": "美国/全球部分地区",
+      "category": "automotive-mobility",
+      "status": "候选；联网行车记录仪",
+      "evidence": "A",
+      "reason": "官方系列页面列出型号及 LTE/定位/停车提醒",
+      "url": "https://www.garmin.com/en-US/p/1391409/",
+      "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "name": "70mai Dash Cam M500",
+      "brand": "70mai",
+      "region": "中国/全球",
+      "category": "automotive-mobility",
+      "status": "候选；带 GPS/ADAS/TPMS 兼容",
+      "evidence": "A",
+      "reason": "官方全球产品页列出型号功能，但地区购买页未单独核验",
+      "url": "https://www.70mai.com/global/dashcams/",
+      "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    }
+  ],
+  "sources": [
+    {
+      "source_group": "automotive-mobility官方来源1",
+      "url": "https://www.garmin.com/en-US/p/1391409/",
+      "scope": "产品、价格、定位、ADAS 与可售状态",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "garmin.com",
+      "source_channel": "official_product",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/功能页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "automotive-mobility官方来源2",
+      "url": "https://www.obdlink.com/products/obdlink-mxp/",
+      "scope": "OBD 协议、蓝牙、加密与电气规格",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "obdlink.com",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "销售/库存/预售页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "automotive-mobility官方来源3",
+      "url": "https://nextbase.com/smart-dash-cams/iq-smart-dash-cam/",
+      "scope": "联网、停车、SOS 与随附物",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "nextbase.com",
+      "source_channel": "official_product",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/功能页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "automotive-mobility官方来源4",
+      "url": "https://my-fobo.com/manual/FOBO_TIRE_2_User_Manual_1619060167.pdf",
+      "scope": "FOBO TIRE 2 官方型号与 TPMS",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "my-fobo.com",
+      "source_channel": "official_support_manual",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/规格/支持资料",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "automotive-mobility官方来源5",
+      "url": "https://tracki.com/en-br/collections/gps-trackers/products/tracki-gps-tracker",
+      "scope": "价格、蜂窝/GPS、续航和订阅",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "tracki.com",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "销售/库存/预售页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "automotive-mobility官方来源6",
+      "url": "https://www.vantrue.com/products/n4-pro",
+      "scope": "三通道、4K、Wi-Fi、超级电容",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "vantrue.com",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "销售/库存/预售页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "automotive-mobility官方来源7",
+      "url": "https://www.70mai.com/global/dashcams/",
+      "scope": "全球型号和功能目录",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "70mai.com",
+      "source_channel": "official_product",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/功能页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "automotive-mobility官方来源8",
+      "url": "https://www.anker.com/eu-en/products/b2737",
+      "scope": "车载充电输出与安全功能",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "anker.com",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "销售/库存/预售页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    }
+  ],
+  "update_log": [
+    {
+      "date": "2026-08-25",
+      "change": "首版新增8条汽车与出行电子主表记录，覆盖多个国家/地区品牌；另保留3条候选、历史、边界或地区线索。",
+      "verification": "优先使用官方产品、规格、支持、发布和销售页面；A/B证据分级，来源未披露字段均写“未公开”。跨库重复型号已转为候选关系，不纳入本库主表。",
+      "next": "继续补充更多国家/地区品牌，逐条复核当前库存、首发日期、原始价格、芯片、传感器、续航、防护和服务条款。"
+    },
+    {
+      "change": "【汽车与出行电子】本轮按官方产品、发布和销售页核验，未发现可可靠新增的主表型号。",
+      "verification": "本轮完成官方产品页、发布公告、规格/支持页、官方销售页及可用监管/认证线索的快速核验；没有可靠交付证据的线索不计入主表，未披露字段不推断。",
+      "next": "继续补充车载AI、行车记录、充电、导航、骑行和个人出行电子。",
+      "date": "2026-08-26"
+    },
+    {
+      "date": "2026-08-26",
+      "change": "来源体系升级：新增官方销售、监管/认证、Kickstarter、Indiegogo、Amazon及主要区域电商等渠道维度，并为每条来源补充渠道、证据角色、域名、卖方/项目方、可得性信号和平台标识字段。",
+      "verification": "已对现有来源完成规则化标注；众筹与电商字段未披露处保留“未公开”，不以平台页面单独证明正式上市。",
+      "next": "每日继续按渠道矩阵补查新型号、区域页面、ASIN/SKU/项目ID、卖方身份、库存、众筹状态与实际交付证据。"
+    },
+    {
+      "date": "2026-08-27",
+      "change": "【汽车与出行电子】本轮按官方产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
+      "verification": "众筹和电商页面继续作为发现、预售、区域价格/库存和SKU信号；缺少原厂/官方规格/交付证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管和授权渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-28",
+      "change": "【汽车与出行电子】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
+      "verification": "众筹和电商页面继续作为发现、预售、区域价格/库存和SKU信号；缺少原厂/官方规格/交付证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管和授权渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-29",
+      "change": "【汽车与出行电子】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
+      "verification": "Amazon及区域电商用于发现、价格/库存、ASIN/SKU和卖方信号；Kickstarter/Indiegogo用于项目状态和预售线索；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-30",
+      "change": "【汽车与出行电子】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
+      "verification": "Amazon及区域电商用于发现、价格/库存、ASIN/SKU和卖方信号；Kickstarter/Indiegogo用于项目状态和预售线索；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-31",
+      "change": "【汽车与出行电子】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
+      "verification": "Amazon及区域电商用于发现、价格/库存、ASIN/SKU和卖方信号；Kickstarter/Indiegogo用于项目状态和预售线索；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-01",
+      "change": "【汽车与出行电子】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
+      "verification": "Amazon及区域电商用于发现、价格/库存、ASIN/SKU和卖方信号；Kickstarter/Indiegogo用于项目状态、档位和交付线索；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-02",
+      "change": "【汽车与出行电子】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-03",
+      "change": "【汽车与出行电子】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-04",
+      "change": "【汽车与出行电子】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-05",
+      "change": "【汽车与出行电子】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    }
+  ],
+  "source_channel_policy": [
+    {
+      "channel": "official_product",
+      "label": "品牌官网产品页",
+      "role": "primary_evidence",
+      "sites": "品牌产品页、技术页、产品线页",
+      "rule": "确认型号、功能和产品边界；不能仅凭集合页证明当前库存。"
+    },
+    {
+      "channel": "official_sales",
+      "label": "品牌官方商店/购买页",
+      "role": "primary_evidence",
+      "sites": "品牌官方商城、官方Buy页、官方区域商店",
+      "rule": "确认官方价格、区域库存、预售和交付信号；记录查证日期。"
+    },
+    {
+      "channel": "official_support_manual",
+      "label": "官方支持/手册/规格",
+      "role": "primary_evidence",
+      "sites": "品牌支持中心、用户手册、规格PDF、FAQ",
+      "rule": "补充芯片、传感器、尺寸、电池、协议、防水和服务条款；未披露写“未公开”。"
+    },
+    {
+      "channel": "official_release",
+      "label": "品牌官方发布/新闻室",
+      "role": "primary_evidence",
+      "sites": "品牌Newsroom、官方博客、发布公告",
+      "rule": "确认发布日、首发价、上市计划和功能；与销售/发货状态分开。"
+    },
+    {
+      "channel": "regulatory_certification",
+      "label": "监管/认证/标准数据库",
+      "role": "primary_evidence",
+      "sites": "FDA AccessData、FCC、Bluetooth SIG、CSA Matter、CE/UKCA、UL/TÜV、各国认证库",
+      "rule": "只对登记型号和明确用途作证据，不把认证登记自动当成全球在售。"
+    },
+    {
+      "channel": "crowdfunding",
+      "label": "众筹/项目预售平台",
+      "role": "discovery_or_preorder_signal",
+      "sites": "Kickstarter、Indiegogo、BackerKit、Crowd Supply",
+      "rule": "记录项目状态、目标/金额、档位、预计交付和风险；未有正式产品/交付证据时留候选。"
+    },
+    {
+      "channel": "marketplace",
+      "label": "大型电商平台",
+      "role": "market_signal",
+      "sites": "Amazon/Amazon Business、eBay、Walmart、Best Buy、Target、B&H、Newegg、AliExpress、Alibaba、京东、天猫/淘宝、Rakuten、Mercado Libre、Shopee、Lazada、Flipkart",
+      "rule": "记录区域、ASIN/SKU、卖方身份、库存、价格和抓取日期；严格区分官方旗舰店、授权经销商和第三方卖家。"
+    },
+    {
+      "channel": "distributor_retail",
+      "label": "授权经销/区域零售",
+      "role": "market_signal",
+      "sites": "授权经销商、运营商、区域零售商",
+      "rule": "用于补充区域价格、套餐和交付线索，不能替代品牌或监管证据。"
+    },
+    {
+      "channel": "press_release_distribution",
+      "label": "新闻稿分发平台",
+      "role": "secondary_or_distributed_evidence",
+      "sites": "PR Newswire、GlobeNewswire、Business Wire、PR TIMES、VPO/Room等",
+      "rule": "若稿件可追溯到厂商可作为发布辅助证据；否则标为分发/二手来源。"
+    },
+    {
+      "channel": "secondary_media",
+      "label": "专业媒体/评测/数据库",
+      "role": "discovery_or_cross_check",
+      "sites": "The Verge、TechCrunch、Wired、CNET、Tom’s Guide、Notebookcheck、DC Rainmaker、DPReview等",
+      "rule": "用于发现型号和交叉核验，不覆盖官方缺失字段，不单独证明全球上市。"
+    },
+    {
+      "channel": "community_discovery",
+      "label": "社区/社交/论坛线索",
+      "role": "discovery_only",
+      "sites": "Reddit、论坛、YouTube、社交平台和用户帖子",
+      "rule": "只进入候选/别名或待核验队列，不能直接进入A/B级主表。"
+    }
+  ],
+  "source_channel_counts": {
+    "official_product": 3,
+    "official_sales": 4,
+    "official_support_manual": 1
+  },
+  "source_domains": [
+    "70mai.com",
+    "anker.com",
+    "garmin.com",
+    "my-fobo.com",
+    "nextbase.com",
+    "obdlink.com",
+    "tracki.com",
+    "vantrue.com"
+  ]
+}

@@ -1,0 +1,262 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>零知識證明（ZKP）：從理論到實踐 | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2025-07-28-零知識證明-zkp-從理論到實踐-2247484810 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="零知識證明（ZKP）：從理論到實踐 | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《零知識證明（ZKP）：從理論到實踐》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《零知識證明（ZKP）：從理論到實踐》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2025-07-28T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2025-07-28-零知識證明-zkp-從理論到實踐-2247484810 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-07-28-零知識證明-zkp-從理論到實踐-2247484810 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-07-28-零知識證明-zkp-從理論到實踐-2247484810 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2025-07-28-零知識證明-zkp-從理論到實踐-2247484810","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2025-07-28T00:00:00.000Z","description":"从微信公众号导入的文章《零知識證明（ZKP）：從理論到實踐》，保留原始排版图并提供本地 OCR 转写。","headline":"零知識證明（ZKP）：從理論到實踐","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2025-07-28-零知識證明-zkp-從理論到實踐-2247484810","name":"零知識證明（ZKP）：從理論到實踐","url":"https://w0x7ce.eu/blog/2025-07-28-零知識證明-zkp-從理論到實踐-2247484810"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>零知識證明（ZKP）：從理論到實踐</h1><div class="container_mt6G margin-vert--md"><time datetime=2025-07-28T00:00:00.000Z>2025年7月28日</time> · <!-- -->閱讀時間約 14 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2025-07-28 20:55:50（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247484810&idx=1&sn=10b2195ed3e28f18e9b158dd9c00b9da&chksm=96e11020a19699369e3aa87fd7b34e53b1ad1c6de26798ea7efd89eb2ee8f3922d58d48ff800#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 6255 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=零知罐明zero-knowledge-proof是密研學中一项革命性的技街它允許一方明者向>零知罐明(Zero-KnowLedge Proof)是密研學中一项革命性的技街。它允許一方(明者)向<a href=#零知罐明zero-knowledge-proof是密研學中一项革命性的技街它允許一方明者向 class=hash-link aria-label="零知罐明(Zero-KnowLedge Proof)是密研學中一项革命性的技街。它允許一方(明者)向的直接連結" title="零知罐明(Zero-KnowLedge Proof)是密研學中一项革命性的技街。它允許一方(明者)向的直接連結" translate=no>​</a></h2>
+<p>另一方(睡證者)證明白己知道某個秘密,但在整個交互通程中,除了“我知道這個移密“這一事實
+外,不泄靠任何照於秘密本身的内客。
+這项技病的精粹在的解决一個根本矛昏:如何在不交出数據的前提下,罐明数的真實性。本文链偿
+最经典的理输模型人手,结合一咽您可以镜手操作的Python代碼胃验,深入割析ZKP的核心原理。
+生活例[]
+以下有一鼠影知的政事,速结零红批想的的若干重要阻念·盐事最早出JoJaCuc QLisquatr及网事餐
+故事中·小静数现洞穴中某南魔洁严的衡門溶望·六星形入口在一街,射良闲有度法门网断·阿最想
+短小春是否已知族增就,但小静很注重私通,不希望泄露难能予问服·也不想全世界知道涂有增就之事
+南人分9路入口左右雨除通道骤示九A路·日路·首先,阿最在洞口外,待小静速人润内·小筝自行请择行A
+A·
+路成E路·但问基不准扇拥小排所遇为问·特强,阿醋行入洞穴·均句随提城出A路成B路·表期着望小静由
+站方底返团·假老小群值官知道赠·我很基速成,因为团坐越机所属不基同一线路·效也可以鼠門通进
+半境富温中越初小群速入的方度·看面入重推以上进程·比如睡错20次:期小都葵重量全部型巧谈正殖方向
+望目的氨率板小 為2分21
+所以·看小都通植多次提阿层所逼的方肉逐回·所阿鲨可以推斯·小都损可键x道理道·
+以下考准第三方的觀监·国使优选月黎附载温题的胰膜·预影所见的整假进程,键期所见本只有阿能城
+「A1」小基花A落能因:或网最院「B1小聊能B整退回·此精片段授器由需人共误鲁强(耗露小静贝阴酸
+事首商时多次输中网层将语族率入、日的次序),谈百對第三万雨言,不具就服力,即阿出箱此向第三
+小静出
+方避明小都知睡增號·事宽上·即受终形换成现境在网藏身劳董视布周,因角离人可第一早已候调辉拍好·
+但是·若阿聚在前摄硬第·蒸接按质硬第项A碳B,用温定不再零知货·该跌择影可能足以淡第三方,
+群知通踏赋·其小群超初的意旅完全相反·不运,赠码的密端学中,「硬策」以购再惠生成额赏作,期似放一枚范果已陷定好的段
+,仁款范是(由其随提硬子决定)签有疑第主人冠道·名阿最的硬带實擦是以比法速作·财组定又国瘦力零知藏旅定,因为南人又有
+可核共所急造「官聪:结果·情以使册能过趣整生成器调图真使第不网,前者不會向世人老露小静知速赔號
+道有另一楼位法·小群以得一次官陵已可前可着错财自己知通结赋·首不湿露·方法是-雨人一网走人河口·然接同膜目送小群治A路
+走·淘有原逐折返,但得目路油团·如此·小样公特巴肩向最證明自己知道赠殖,直准有告知可脂暗·不类出模指利容非零知诺:若
+效·如出·小都量法控断何人得如始扬有增硬之事</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一核心思想奥三大展性>一、核心思想奥三大展性<a href=#一核心思想奥三大展性 class=hash-link aria-label=一、核心思想奥三大展性的直接連結 title=一、核心思想奥三大展性的直接連結 translate=no>​</a></h2>
+<p>要理解ZKP,最直觀的方式是通通“阿里巴巴润穴”道四逐典故事。
+場景:一個退形润穴。左右南條通道(A路,B路),深處有一扇需麦暗然才能打购的魔法門。</p>
+<ul>
+<li class="">
+<p>證明者(小静):聲械地知道网門的暗號。</p>
+</li>
+<li class="">
+<p>湿者(阿):想璀诏此事,但不想知溢暗號。</p>
+</li>
+</ul>
+<p>盤明额如下:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1阿是在洞外等待小释须自进入洞穴随楼選握a路或b络>1.阿是在洞外等待,小释须自进入洞穴,随楼選握A路或B络。<a href=#1阿是在洞外等待小释须自进入洞穴随楼選握a路或b络 class=hash-link aria-label=1.阿是在洞外等待,小释须自进入洞穴,随楼選握A路或B络。的直接連結 title=1.阿是在洞外等待,小释须自进入洞穴,随楼選握A路或B络。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2阿层跑後走到润口随喊出一储方向例如静促a路出来>2.阿层跑後走到润口,随喊出一储方向,例如“静促A路出来!“<a href=#2阿层跑後走到润口随喊出一储方向例如静促a路出来 class=hash-link aria-label=2.阿层跑後走到润口,随喊出一储方向,例如“静促A路出来!“的直接連結 title=2.阿层跑後走到润口,随喊出一储方向,例如“静促A路出来!“的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3如果小静知道暗然地塘能打需中間的門微网最指定的a路返回>3.如果小静知道暗然,地塘能打需中間的門,微网最指定的A路返回。<a href=#3如果小静知道暗然地塘能打需中間的門微网最指定的a路返回 class=hash-link aria-label=3.如果小静知道暗然,地塘能打需中間的門,微网最指定的A路返回。的直接連結 title=3.如果小静知道暗然,地塘能打需中間的門,微网最指定的A路返回。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4如果她不知道暗號她只有56的模率即她一開始就运了a路能完成挑载>4.如果她不知道暗號,她只有56%的模率(即她一開始就运了A路)能完成挑载。<a href=#4如果她不知道暗號她只有56的模率即她一開始就运了a路能完成挑载 class=hash-link aria-label=4.如果她不知道暗號,她只有56%的模率(即她一開始就运了A路)能完成挑载。的直接連結 title=4.如果她不知道暗號,她只有56%的模率(即她一開始就运了A路)能完成挑载。的直接連結 translate=no>​</a></h2>
+<p>將遗個遥程重桓20次,小静每次都成功的概率,對於一個作驿卷来催有(1/2)20(的百离分之</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一因此阿最可以高度建信小静知道暗號但自始至終网殿没有学到關於暗號的任何信息>一)。因此,阿最可以高度建信小静知道暗號,但自始至終,网殿没有学到關於暗號的任何信息。<a href=#一因此阿最可以高度建信小静知道暗號但自始至終网殿没有学到關於暗號的任何信息 class=hash-link aria-label=一)。因此,阿最可以高度建信小静知道暗號,但自始至終,网殿没有学到關於暗號的任何信息。的直接連結 title=一)。因此,阿最可以高度建信小静知道暗號,但自始至終,网殿没有学到關於暗號的任何信息。的直接連結 translate=no>​</a></h2>
+<p>道個故事揭示了ZKP必须具偏的三大属性:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1完備性completeness若障述为真誠置的明者能成功就服验腿考>1.完備性(Completeness):若障述为真,誠置的明者能成功就服验腿考。<a href=#1完備性completeness若障述为真誠置的明者能成功就服验腿考 class=hash-link aria-label=1.完備性(Completeness):若障述为真,誠置的明者能成功就服验腿考。的直接連結 title=1.完備性(Completeness):若障述为真,誠置的明者能成功就服验腿考。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2健全性soundness若康述為假作整的超明者乎不可噬放骗验者>2.健全性(Soundness):若康述為假,作整的超明者乎不可噬放骗验者。<a href=#2健全性soundness若康述為假作整的超明者乎不可噬放骗验者 class=hash-link aria-label=2.健全性(Soundness):若康述為假,作整的超明者乎不可噬放骗验者。的直接連結 title=2.健全性(Soundness):若康述為假,作整的超明者乎不可噬放骗验者。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3零知鳞性zero-knowledge验退者除了骤述為真外学不到任何额外信息>3.零知鳞性(Zero-KnowLedge):验退者除了“骤述為真"外,学不到任何额外信息。<a href=#3零知鳞性zero-knowledge验退者除了骤述為真外学不到任何额外信息 class=hash-link aria-label='3.零知鳞性(Zero-KnowLedge):验退者除了“骤述為真"外,学不到任何额外信息。的直接連結' title='3.零知鳞性(Zero-KnowLedge):验退者除了“骤述為真"外,学不到任何额外信息。的直接連結' translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=二理输经典来自继基百科的計算例>二、理输经典:来自继基百科的計算例<a href=#二理输经典来自继基百科的計算例 class=hash-link aria-label=二、理输经典:来自继基百科的計算例的直接連結 title=二、理输经典:来自继基百科的計算例的直接連結 translate=no>​</a></h2>
+<p>除了直载的故事,ZKP继立在實的数学瓣题之上、
+额例1:解激剧数用题
+这是身份稳额中的一值提典连用。</p>
+<ul>
+<li class="">
+<p>場景:小静想向同證时她知道密碼×。但不想池露X</p>
+</li>
+<li class="">
+<p>公信息:一個大質数p,一個生成元g,以及小静的公输y=gxpmodp。找到x被為</p>
+</li>
+</ul>
+<p>是計算上困醒的。</p>
+<ul>
+<li class="">明(简化版):</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1承小还握一随握数r計算cgrpmodp逆将c送给阿>1.承:小还握一随握数r,計算C=grpmodp,逆将C送给阿。<a href=#1承小还握一随握数r計算cgrpmodp逆将c送给阿 class=hash-link aria-label="1.承:小还握一随握数r,計算C=grpmodp,逆将C送给阿。的直接連結" title="1.承:小还握一随握数r,計算C=grpmodp,逆将C送给阿。的直接連結" translate=no>​</a></h2>
+<p>2,挑哦:阿题碳地向小释提出一因挑:要么“公限r,要么“公開(x+r)pnodp-1”。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3回离奥脑>3.回离奥脑:<a href=#3回离奥脑 class=hash-link aria-label=3.回离奥脑:的直接連結 title=3.回离奥脑:的直接連結 translate=no>​</a></h2>
+<ul>
+<li class="">
+<p>若间要r,小解就绘出r。闫睡grpmodp是否等於小帮一始给的C.</p>
+</li>
+<li class="">
+<p>若网变(×+r)pmodp-1,小静就给出遗储值(我何稍之為s)。阿聚独</p>
+</li>
+</ul>
+<p>gspnodp 是否等龄 Ccdotypmodp.
+这個家之所以安全,是因為如果小静不知道x,她只能提前测阿碳的挑為之率情。例如,如
+果她弹储回答r,她就無法在被間到(x+r)時给出正確答案。每一输地作算成功的概率只有56%。
+能例2:大面的哈密硬增度题</p>
+<ul>
+<li class="">场景:一個(由很多點和退桶成的纲络),如果能找到一条路程,恰好通签個點一次,遗</li>
+</ul>
+<p>格路就叫*哈密顿琅”。找到这核一跟是NP完全周显,計算上非常困。小孵整科她知道
+圖G的一個哈密畅璃。</p>
+<ul>
+<li class="">量明像:</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1承諾小静创注一阅置g结捐完全相同但贴被打副的折圆h和為同图然>1.承諾:小静创注一阅置G结捐完全相同但贴被打副的折圆H(和為同图)。然<a href=#1承諾小静创注一阅置g结捐完全相同但贴被打副的折圆h和為同图然 class=hash-link aria-label=1.承諾:小静创注一阅置G结捐完全相同但贴被打副的折圆H(和為同图)。然的直接連結 title=1.承諾:小静创注一阅置G结捐完全相同但贴被打副的折圆H(和為同图)。然的直接連結 translate=no>​</a></h2>
+<p>後她對图H的信息造行“加密示诺”,阿照法视,但小蔚白己也思法再慕改。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2挑同醒髓碳提周虚明h和g是同横的或幅展示h的哈密顿環>2.挑:同醒髓碳提周:“虚明H和G是同横的”或“幅展示H的哈密顿環”。<a href=#2挑同醒髓碳提周虚明h和g是同横的或幅展示h的哈密顿環 class=hash-link aria-label=2.挑:同醒髓碳提周:“虚明H和G是同横的”或“幅展示H的哈密顿環”。的直接連結 title=2.挑:同醒髓碳提周:“虚明H和G是同横的”或“幅展示H的哈密顿環”。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3回鹿奥脑量>3.回鹿奥脑量:<a href=#3回鹿奥脑量 class=hash-link aria-label=3.回鹿奥脑量:的直接連結 title=3.回鹿奥脑量:的直接連結 translate=no>​</a></h2>
+<ul>
+<li class="">
+<p>若被問及同性,小耐就解密整因图H亚給出顾贴烈医鼠低,阿能可以验造。</p>
+</li>
+<li class="">
+<p>若被問及哈密顿琅,小只解密横成璟的那些温,阿酸可以看到H中璀置存在一锰璟。</p>
+</li>
+</ul>
+<p>因為小静不知道阿酸會問账困問题,所以她焦法同時终造一惬同机的图和一個不相關的哈密顿璃。而
+對同来整,冬一检他只能得到其中一個信品,永逼焦法游“H的瑞“和*H奥G的對癌“拼须
+起来,谈而焦法得知原圆G的哈密顿環。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=三现代實践一個可助手操作的代码實融>三、现代實践:一個可助手操作的代码實融<a href=#三现代實践一個可助手操作的代码實融 class=hash-link aria-label=三、现代實践:一個可助手操作的代码實融的直接連結 title=三、现代實践:一個可助手操作的代码實融的直接連結 translate=no>​</a></h2>
+<p>理很侵雅,但现代ZKP系(如worLdcoin、zk-RoLLups)是如何谨作的?我何通通一個完整
+的Pythan宽驰来模凝其核心提制:Merkle树和 NuLLifier。
+實驰率信:必裂的 Python 代碍
+請在同一個资料夹中創建以下三但文件。
+文件1:merkle_tree.py
+Python
+qT1useu luodut
+def hash_data(data):
+if not isinstance(data, bytes): data - data.encode['utf-8*)
+return hashlib.sha256(data) hexdigest()
+class MerkleTree:
+def <em>init</em>_(self, leaves):
+self.leaves = sorted([hash_data(leaf) for leaf in leaves])
+def _build_tree(self, leaves):
+if not leaves: return [None]
+tree, current_level = [leaves] , leaves
+while len(current_level) > 1:
+next_Level = []
+left = current_level[1]
+rlght = current_Level[1+1] If 1 + 1 &lt; len{current_leve
+parent = hash_data(left + right) if left &lt; right else
+next_level ,append (parent)
+tree.append (next_Level)
+current_level = next_level
+return tree
+det get_root(selt):
+relurn self.tree[-1l[@] if self.tree and self.tree[-1l else No
+def gct_proof(self, leaf_data):
+leaf_hash = hash_data( Leaf_data)
+Iry: index = self.leaves.index(leaf_hash)
+cxccpt valucError: rcturn Nonc
+proof = []
+[ur level in range{len(self.tree] - 1):
+is_right = index % 2 1= θ
+sibling_1dx = 1ndex - 1 1f 1s_right else 1ndex + 1
+31
+if sibling_idx &lt; len(self.tree[level]): proof.append(self.
+32
+else: proof.append(self.tree[level][index])
+33
+34
+index //= 2
+return proof
+35
+def print_tree(self):
+36
+print(<em>- Merkle Tree Structure ---</em>)
+37
+for i, level in enumerate(self.tree):
+38
+print(f"Level {i} (Leaves):" if i == θ else f"Level {i}:")
+6E
+for node in level: print(f"
+{node}")
+G</p>
+<p>文件2:zkp_simulation.py
+Python
+import os, hashlib
+def hash_data(data):
+if not isinstance(data, bytes): data = data.encode(*utf-8′)
+return hashlib.sha256(data) .hexdigest()
+class Identity:
+def <em>init</em>(self, name) :
+self.name = name
+self.secret = hash_data(os.urandom(32))
+self.commitment = hash_data(self.secret)
+文件3:technical_deep_dive.py(主通行文件)
+Python
+from merkle_tree import MerkleTree, hash_data
+from zkp_simulation import Identity
+# PART l: System Initialization
+print("="*8θ+"\nPART1:如何徙每個人的秘密,計算出「P口的總验證碼(MerkleF
+alice,bob, charlie, david = Identity("Alice"), Identity("Bob"), Ident.
+identities = [alice, bob, charlie, david]
+print("..·系統中的4位合法用户及其數撼
+for id in identities:
+print(f"[{id.name}]\n-私密 secret:{id.secret}\n·公 commitme
+10 tree = MerkleTree([id.secret for id in identities])
+tree.print_tree()
+merkle_root = tree.get_root()
+2
+print(f"\n===>最懿計算出的F口魏驗證碼(MerkleRoot)是:{merkle_root}\n
+14 # PART 2 & 2.5: Membership Proof
+print("="*8θ+"\nPART2:成員資格證明(不同的路徨,相同的山頂)\n"+"=*8θ)
+for user in [alice, bob]:
+16
+17
+user_secret = user.secret
+18
+user_proof_path = tree.get_proof(user_secret)
+print(f"---{user.name}的證明退程---")
+19
+print(f"{user.name} 的私密 secret:{user_secret}")
+20
+21
+current_hash = hash_data(user_secret)
+2 2
+print(f"step θ({user.name}):起始哈希值:{current_hash[:1o]}...")
+23
+for i, sibling_hash in enumerate(user_proof_path):
+2 4
+print(f"step [i+l} ({user.name}):都居 {sibling_hash[:lo]}...
+25
+current_hash = hash_data(current_hash + sibling_hash) if curre
+2 6
+2 7
+print(f"{user.name}的最計算果:{current_hash}")
+28
+print(f"结果是否匹配? ==> {current_hash == merkle_root}\n")
+2 9
+30 # PART 3: Nullifier Logic
+print("="*8θ+"\nPART 3:如何實現「一次性领」(NulLifier)\n"+"="*80)
+used_nullifiers_db = set()
+scenarios=[("VoTE_A",“第一次投票"),("VoTE_A",“再次投票"),("GET_GIFT
+for action_id, desc in scenarios:
+print(f".-场景:Alice {desc}({action_id})-.-")
+36
+nullifier = hash_data(alice.secret + action_id)
+3 7
+print(f"===>計算出的'领粪證’(Nullifier):{nullifier}")
+38
+39
+if nullifier in used_nullifiers_db:
+print(f"植查記薄:{nullifier[:l0]}...已存在。")
+40
+print(“结果:拒!此證已被使用。\n")
+4 1
+42
+else:
+print(f"检查記簿:{nullifier[:l0]}...是全新的。")
+43
+print("果:接受!將其加入記錄簿。\n")
+4 4
+used_nullifiers_db.add(nullifier)
+45
+print(f"最终的記錄簿:{used_nullifiers_db}")
+通行奥解镇
+在終端中運行pythontechnical_deep_dive.py,將看到一個群的計算日,它展示了:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1群體指紋的生成系統如何4位用户的私密信息通遍唇唇哈希最終生成一個代表了整個>1.群體指紋的生成:系統如何4位用户的私密信息,通遍唇唇哈希,最終生成一個代表了整個<a href=#1群體指紋的生成系統如何4位用户的私密信息通遍唇唇哈希最終生成一個代表了整個 class=hash-link aria-label=1.群體指紋的生成:系統如何4位用户的私密信息,通遍唇唇哈希,最終生成一個代表了整個的直接連結 title=1.群體指紋的生成:系統如何4位用户的私密信息,通遍唇唇哈希,最終生成一個代表了整個的直接連結 translate=no>​</a></h2>
+<p>群體的、公闻的Merkle Root。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2匿名成員證明alice和bob如何使用各自完全不同的秘密和證明路径通通相同的計算逛>2.匿名成員證明:Alice和Bob如何使用各自完全不同的秘密和證明路径,通通相同的計算逛<a href=#2匿名成員證明alice和bob如何使用各自完全不同的秘密和證明路径通通相同的計算逛 class=hash-link aria-label=2.匿名成員證明:Alice和Bob如何使用各自完全不同的秘密和證明路径,通通相同的計算逛的直接連結 title=2.匿名成員證明:Alice和Bob如何使用各自完全不同的秘密和證明路径,通通相同的計算逛的直接連結 translate=no>​</a></h2>
+<p>辑,最終都得到了與公開的MerkleRoot完全相同的結果,徙而證明了自己的成員資格,但
+没有暴露自己是。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3防止重復操作nullifier機制如何通遍hash秘密事件id為每一次操作生成一個獨>3.防止重復操作:Nullifier機制如何通遍Hash(秘密+事件ID),為每一次操作生成一個獨<a href=#3防止重復操作nullifier機制如何通遍hash秘密事件id為每一次操作生成一個獨 class=hash-link aria-label=3.防止重復操作:Nullifier機制如何通遍Hash(秘密+事件ID),為每一次操作生成一個獨的直接連結 title=3.防止重復操作:Nullifier機制如何通遍Hash(秘密+事件ID),為每一次操作生成一個獨的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一無二的匿名的一次性票根有效防止了匿名状態下的作行為>一無二的、匿名的“一次性票根”,有效防止了匿名状態下的作行為。<a href=#一無二的匿名的一次性票根有效防止了匿名状態下的作行為 class=hash-link aria-label=一無二的、匿名的“一次性票根”,有效防止了匿名状態下的作行為。的直接連結 title=一無二的、匿名的“一次性票根”,有效防止了匿名状態下的作行為。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<p><img decoding=async loading=lazy alt=零知識證明（ZKP）：從理論到實踐：微信公众号导出原始排版图 src=/assets/images/article-7527275f9f00174e9500bba1d3a96d1f.webp width=1280 height=5945 class=img_ev3q /></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2025-07-28-2025-07-28-零知識證明-zkp-從理論到實踐-2247484810.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2025-07-30-temple-run-explorando-angkor-wat-primera-parte-2247484828><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>Temple Run: Explorando Angkor Wat - Primera Parte</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2025-07-27-waic-2025-深度观察-应用人工智能与地缘政治现实的新纪元-2247484805><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>WAIC 2025 深度观察：应用人工智能与地缘政治现实的新纪元</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#零知罐明zero-knowledge-proof是密研學中一项革命性的技街它允許一方明者向 class="table-of-contents__link toc-highlight">零知罐明(Zero-KnowLedge Proof)是密研學中一项革命性的技街。它允許一方(明者)向</a><li><a href=#一核心思想奥三大展性 class="table-of-contents__link toc-highlight">一、核心思想奥三大展性</a><li><a href=#1阿是在洞外等待小释须自进入洞穴随楼選握a路或b络 class="table-of-contents__link toc-highlight">1.阿是在洞外等待,小释须自进入洞穴,随楼選握A路或B络。</a><li><a href=#2阿层跑後走到润口随喊出一储方向例如静促a路出来 class="table-of-contents__link toc-highlight">2.阿层跑後走到润口,随喊出一储方向,例如“静促A路出来!“</a><li><a href=#3如果小静知道暗然地塘能打需中間的門微网最指定的a路返回 class="table-of-contents__link toc-highlight">3.如果小静知道暗然,地塘能打需中間的門,微网最指定的A路返回。</a><li><a href=#4如果她不知道暗號她只有56的模率即她一開始就运了a路能完成挑载 class="table-of-contents__link toc-highlight">4.如果她不知道暗號,她只有56%的模率(即她一開始就运了A路)能完成挑载。</a><li><a href=#一因此阿最可以高度建信小静知道暗號但自始至終网殿没有学到關於暗號的任何信息 class="table-of-contents__link toc-highlight">一)。因此,阿最可以高度建信小静知道暗號,但自始至終,网殿没有学到關於暗號的任何信息。</a><li><a href=#1完備性completeness若障述为真誠置的明者能成功就服验腿考 class="table-of-contents__link toc-highlight">1.完備性(Completeness):若障述为真,誠置的明者能成功就服验腿考。</a><li><a href=#2健全性soundness若康述為假作整的超明者乎不可噬放骗验者 class="table-of-contents__link toc-highlight">2.健全性(Soundness):若康述為假,作整的超明者乎不可噬放骗验者。</a><li><a href=#3零知鳞性zero-knowledge验退者除了骤述為真外学不到任何额外信息 class="table-of-contents__link toc-highlight">3.零知鳞性(Zero-KnowLedge):验退者除了“骤述為真"外,学不到任何额外信息。</a><li><a href=#二理输经典来自继基百科的計算例 class="table-of-contents__link toc-highlight">二、理输经典:来自继基百科的計算例</a><li><a href=#1承小还握一随握数r計算cgrpmodp逆将c送给阿 class="table-of-contents__link toc-highlight">1.承:小还握一随握数r,計算C=grpmodp,逆将C送给阿。</a><li><a href=#3回离奥脑 class="table-of-contents__link toc-highlight">3.回离奥脑:</a><li><a href=#1承諾小静创注一阅置g结捐完全相同但贴被打副的折圆h和為同图然 class="table-of-contents__link toc-highlight">1.承諾:小静创注一阅置G结捐完全相同但贴被打副的折圆H(和為同图)。然</a><li><a href=#2挑同醒髓碳提周虚明h和g是同横的或幅展示h的哈密顿環 class="table-of-contents__link toc-highlight">2.挑:同醒髓碳提周:“虚明H和G是同横的”或“幅展示H的哈密顿環”。</a><li><a href=#3回鹿奥脑量 class="table-of-contents__link toc-highlight">3.回鹿奥脑量:</a><li><a href=#三现代實践一個可助手操作的代码實融 class="table-of-contents__link toc-highlight">三、现代實践:一個可助手操作的代码實融</a><li><a href=#1群體指紋的生成系統如何4位用户的私密信息通遍唇唇哈希最終生成一個代表了整個 class="table-of-contents__link toc-highlight">1.群體指紋的生成:系統如何4位用户的私密信息,通遍唇唇哈希,最終生成一個代表了整個</a><li><a href=#2匿名成員證明alice和bob如何使用各自完全不同的秘密和證明路径通通相同的計算逛 class="table-of-contents__link toc-highlight">2.匿名成員證明:Alice和Bob如何使用各自完全不同的秘密和證明路径,通通相同的計算逛</a><li><a href=#3防止重復操作nullifier機制如何通遍hash秘密事件id為每一次操作生成一個獨 class="table-of-contents__link toc-highlight">3.防止重復操作:Nullifier機制如何通遍Hash(秘密+事件ID),為每一次操作生成一個獨</a><li><a href=#一無二的匿名的一次性票根有效防止了匿名状態下的作行為 class="table-of-contents__link toc-highlight">一無二的、匿名的“一次性票根”,有效防止了匿名状態下的作行為。</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

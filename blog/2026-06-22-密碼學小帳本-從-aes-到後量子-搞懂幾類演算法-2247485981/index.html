@@ -1,0 +1,569 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>密碼學小帳本：從 AES 到後量子，搞懂幾類演算法 | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2026-06-22-密碼學小帳本-從-aes-到後量子-搞懂幾類演算法-2247485981 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="密碼學小帳本：從 AES 到後量子，搞懂幾類演算法 | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《密碼學小帳本：從 AES 到後量子，搞懂幾類演算法》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《密碼學小帳本：從 AES 到後量子，搞懂幾類演算法》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2026-06-22T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2026-06-22-密碼學小帳本-從-aes-到後量子-搞懂幾類演算法-2247485981 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-06-22-密碼學小帳本-從-aes-到後量子-搞懂幾類演算法-2247485981 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-06-22-密碼學小帳本-從-aes-到後量子-搞懂幾類演算法-2247485981 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2026-06-22-密碼學小帳本-從-aes-到後量子-搞懂幾類演算法-2247485981","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2026-06-22T00:00:00.000Z","description":"从微信公众号导入的文章《密碼學小帳本：從 AES 到後量子，搞懂幾類演算法》，保留原始排版图并提供本地 OCR 转写。","headline":"密碼學小帳本：從 AES 到後量子，搞懂幾類演算法","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2026-06-22-密碼學小帳本-從-aes-到後量子-搞懂幾類演算法-2247485981","name":"密碼學小帳本：從 AES 到後量子，搞懂幾類演算法","url":"https://w0x7ce.eu/blog/2026-06-22-密碼學小帳本-從-aes-到後量子-搞懂幾類演算法-2247485981"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>密碼學小帳本：從 AES 到後量子，搞懂幾類演算法</h1><div class="container_mt6G margin-vert--md"><time datetime=2026-06-22T00:00:00.000Z>2026年6月22日</time> · <!-- -->閱讀時間約 19 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2026-06-22 11:53:25（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247485981&idx=1&sn=6aa24814ef9113dd8920eb41877bdebc&chksm=96e11fb7a19696a1da6f387b777edf2ef6893ae7d876fd37ead6a3ea7e28d2ad4aedddcf9151#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 8196 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>作為开發者,你是不是也普被AES-CCH、ECDSA、Secp256k1这些密码学名词癌得显大?
+硬體品片手册程寡著TF-PSA-CrypLu,上唇匠境随又在减Keccak-256,看起来像一整
+片街翻森林。
+其實,密碼學演算法没那磨鞋入門。先不用急著数學组前,把它們當成一個個「输入、输出、
+用途都很明確的小機器:,就能很快看量:负贡加密,维負贡防鼠改,负责签名,負责生
+key.
+這份筆記就用這個方式来看密碼学:每個演算法都先常成一台小機器。
+你只要先抓住三件事:
+输入是什度
+输出是什层
+帕出享米效什座
+TF-PSA-Crypto這频速的价值,不只是提供 AES、SHA、ECDSA 這些演算法本身,而是把它
+們包成一套統一的密碼服務介面:先建立或匯入key,設定key能做什度,再指定演算法去
+加密、验證、签名、派生密编。
+换句脱,它不是一堆零散工具,而是一個可以放进MCU、手機、OTA、硬险提包、安全通訊程
+的密碼底座。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一张總覺>一张總覺<a href=#一张總覺 class=hash-link aria-label=一张總覺的直接連結 title=一张總覺的直接連結 translate=no>​</a></h2>
+<p>国
+图時可以这样看:蓝色通常是资料,责色是密鸽或秘密,紫色是演算法或分類,绿色是输出结
+果,红色是周隧或拒超状慧。每张图都盘量只表達一件事,细颜放在图下面。
+这些束西在產品橙通常會一起出现。例如雨台設備先用ECDH算出共同秘密,再用HKDF派生
+AES-GCM key,最後用 AEAD 加密通訊内容。固件包则可能先做 SHA-256 摘要,再用
+ECDSA致名,较借端用公端睡额。
+遗份文章後面的分類是按「它在系统程负责什鹰来排的:保密、完整性、身份證明、密筛生命
+遇期、隨楼数来源、未来抗量子。這様看會比單细背演算法名字清楚很多,因為每烟演算法都有
+自己的位置。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1對加密>1.對加密<a href=#1對加密 class=hash-link aria-label=1.對加密的直接連結 title=1.對加密的直接連結 translate=no>​</a></h2>
+<p>對稠加密的核心概念很髓單:同一把密镇负责加密,也负真解密。
+常見演算法有:
+AES
+ARIA
+Canellia
+ChaCha28
+AES、ARIA、Camellia 属於區境加密。它們一次處理固定大小的資料现,例如 AES一次處
+理16 bytes.ChaCha28 是流加密,比鞍像產生一串密罐流,然後和明文混合成密文。</p>
+<p>secrel lkey
+同满算法反向虚理</p>
+<p>key 密</p>
+<p>Input/ output
+输入:用文 + secret key + Iv/nonce/counter
+输出:密文
+解密時:
+输入:出文+同一括 secret key+同一组Iv/nonce/counter
+幢出:原本的明文
+它的作用
+對稀加密就是保密。别人拿到密文,如果没有key,就看不懂原文。
+它需用在:
+本地资料加密
+固件包加密
+鼓循配置加空
+通讯内容加密
+榴案加座
+各演算法怎看
+AES是现代最常用的剩稿加密演算法,很多CPU、MCU、安全晶片都有硬體加速。只要没有特
+别合规要求,AES通需是第一逻报。
+ARIA和Cancllia可以理解成 AES 的同类型罐手。它在某些圆家模弹、善或合规
+场景會出现。平常新设计不一定舍主勤进它们,但虚支提它們代表兼容性更度。
+ChaCha20很通合纯软经境,没有AES硬加速時,它常常跑得又快又,手機、嵌入
+式、现代安全通訊理都很常見。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2區塊加密模式>2.區塊加密模式<a href=#2區塊加密模式 class=hash-link aria-label=2.區塊加密模式的直接連結 title=2.區塊加密模式的直接連結 translate=no>​</a></h2>
+<p>AES這種匠境加密一次只能吃固定大小的資料境,但真實資料通常是一整段。所以需要「模
+式;来决定怎磨把很多资料现申起来。
+常見模式有:
+長資料</p>
+<p>模式</p>
+<p>CFB / OFB
+ECB
+CBC
+CTR
+测试用
+需MAC
+流式
+兼容</p>
+<p>密文
+ECB
+帕入:key+明文
+幢出:座文
+ECB的同题是,相同明文现成相同密文现,资料理的结聘可能被看出来。它遍合测试底屠
+AES是否能跑,不通合保真實資科。
+CBC
+入:key + 明文 + IV
+输出:密文
+CBC每個區埋受到前一個區境影暨,比ECB好很多。問题是CBC只负责保密,不负责
+防察改。真要用CBC,通常逻要措配HMAC或CMAC。</p>
+<p>输入:key +明文+nonce/counter
+帕出:出文
+CTR把显境加密整成類似流加密。它可以平行虚理,也適合串流資料。重黏是同一把key下
+nonce/counter不可以重福,否则管出大事。
+CFB / 0FB
+输入:key +明文 + IV
+幢出:座文
+这两個模式也能把區现加密曼成流式使用,现在更多是為了兼容需。新设计通常直接逐
+AEAD,</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3aead韶證加密>3.AEAD韶證加密<a href=#3aead韶證加密 class=hash-link aria-label=3.AEAD韶證加密的直接連結 title=3.AEAD韶證加密的直接連結 translate=no>​</a></h2>
+<p>AEAD是现代新藤最推的形感。它一次做雨件事:
+加密:别人看不星
+韶證:旗别人改不了
+常見AEAD 有:
+AES -GCM
+ChaCha28 -Poly1365</p>
+<p>Input/output
+加密時:
+输入:明文+key + nonce +AAD
+赣出:密义+tag
+解密時:
+输人:蜜文 + tag + key + nonce + AAD
+输出:明文,或考直接失败
+防震性實作神有很重要的细篇:如果tag验證失败,所有暂時解出的明文都必须立刻去案,
+不能博给上层掌程,特别是多段AEAD 解密時,最好先把输出暂存在内部 buffer,等fin1
+sh/verify成功後再交出去,避免oracle 問题或明文波竭。
+AAD是 Additional Authenticated Data。它不會被加密,但會被超罐。例如 OTA 包
+的版本號、設備ID、header 可以放在AAD 理。别人看得到它,但只要它被改,tag 就验
+不過,
+它的作用
+AEAD適合保错一整包资料:
+图Y10
+借配置
+手橡和设循的通payload
+APDU 指令调料
+本地教系棉案
+密编封装</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=三個常見選项>三個常見選项<a href=#三個常見選项 class=hash-link aria-label=三個常見選项的直接連結 title=三個常見選项的直接連結 translate=no>​</a></h2>
+<p>AE5-GCN在伺服器、PC、手機、有 AES 加速的晶片上很常見。它速度快,但nonce 重褪
+會非常危险。
+AES-CCM在嵌入式、蓝牙、低功耗設借程很常見。很多MCU和安全库都支援它。
+ChaCha2B-Poly1365通合筑敢错瑶境。淀有AES 硬错加速時,遗個组合非常舒服。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4哈希>4.哈希<a href=#4哈希 class=hash-link aria-label=4.哈希的直接連結 title=4.哈希的直接連結 translate=no>​</a></h2>
+<p>哈希不是加密。哈希没有key,也不能解密回原文。
+它更像是在资料做指放。
+完整性</p>
+<p>签名前
+任意資料
+isa8p
+SHA系列
+指放
+指纹</p>
+<p>索引
+ELViajefo
+Input
+触入:任意长度资料
+输出:固定长度 digest
+例如:
+1s61p s1q 2 &lt;- (011a4.195z-5
+原文只要改1bit,d1gest通常就富完全不一樣。
+常見哈希
+SHA-256是目前最常用的安全哈希之一,输出 32 bytes.固件摘要、名前 digest、資
+料指数都常用。
+5HA-384输出 48bytes,常見於更高安全强度的TLS/證書增景。
+SHA-512输出 64 bytes,在64-bit CPU上通常表现不锥。
+SHA-3是另一套现代哈希家族,内部设計和SHA-2不同。
+SHAKE128/SHAKE256是可延体输出函数。一般哈希输出最度固定,SHAKE则可以指定限要
+翰出多少bytes。後量子演算法、KDF、特殊狸常見。
+RIPEHD16B在比特地址證系常見,通用新設計不太會侵先選。
+5HA-1和MD5主要是兼容善或非安全校验。新安全设計如果需要抗碰撞或签名保端,
+通常會改用 SHA-256、SHA-384、SHA-512或 SHA-3.
+例子:固件摘要</p>
+<ul>
+<li class="">/i</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5mac訊息證碼>5.MAC訊息證碼<a href=#5mac訊息證碼 class=hash-link aria-label=5.MAC訊息證碼的直接連結 title=5.MAC訊息證碼的直接連結 translate=no>​</a></h2>
+<p>MAC可以理解成带key 的哈希。普道哈希任何人都能算,MAC 只有持有key 的人能算
+出正碟tag.
+常見MAC:
+CHAC
+Poly1385
+份运方
+HRAC / CAAC
+shared key</p>
+<p>重算MAC</p>
+<p>Input/Output
+输入:证息 ▪ key
+糖出: tag
+验證時:
+输人:赶息-key +牧到的 tag
+输出:真/假
+它的作用
+MAC不负贡睡内客。它负声硅能内容没有被改,而且到方真的有同一把key。
+常用在:
+API 求答名
+故循通計速
+APDU 指令防冠改
+握手流程校融
+固件 manifest 氢强
+密撤派生流程理的 PRF
+哈希和MAC差在哪</p>
+<p>資料->digest
+哈希</p>
+<p>MAC
+資料+key->tag
+key</p>
+<p>常见MAC怎看
+HHAC基铃哈希,最常見是HHAC-SHA256.它定、通用、好塞計。
+CHAC基於盛境加密,常見是AES-CMAC。如果設備上AES 有號锥加速,CMAC 會很自然
+Poly1305通常不单强弧用,而是和 ChaCha29组成ChaCha2e-Poly1305。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=6密派生kdf>6.密派生KDF<a href=#6密派生kdf class=hash-link aria-label=6.密派生KDF的直接連結 title=6.密派生KDF的直接連結 translate=no>​</a></h2>
+<p>KDF 的工作是一恼秘密,生成一個或多国新key。
+它解决的是「同一低秘密,拆成不同用途的key1。
+常見KDF:
+HKDF
+PBKDF2
+TLS PRF</p>
+<p>加密key
+主秘密
+MAC key
+KDF
+salt
+HKDF / PBKDF2
+會話key
+info/参数
+設儒key</p>
+<p>Input/output
+输人:主稀空+salt+info/Label/参数
+输出:折密编
+HKDF
+HKDF 常用在現代協理。尤其是 ECDH算出 shared secret之後,通常不會直接拿
+shared secret 當 AES key, 而是先船 HKDF。</p>
+<p>ECDH
+AES-GCM kery
+shared secret
+封方公销
+slt +in</p>
+<p>PBKDF2
+PBKDF2主要滤理人频密碼
+输人:password+salt+选代次数
+输出:出编
+例如用使用者密碼保本地包樓案,就會先用PBKDF2把密碼成key,再用這個key 加
+密资料。
+TLS PRF
+TLSPRF是TLS1.2性的派生流程。它比鞍偏兼容,不是平常自己段計新藤時第一
+會拿来用的KDF。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7公端名舆驗>7.公端名舆驗<a href=#7公端名舆驗 class=hash-link aria-label=7.公端名舆驗的直接連結 title=7.公端名舆驗的直接連結 translate=no>​</a></h2>
+<p>签名不是加密。签名的目的不是随落内容,而是證明:
+遗份資料確實由某国私蕴持有者殖想過
+常見额名演算法:
+RSA
+ECDSA
+ML -DSA</p>
+<p>Input/output
+签名:
+输入:私编-訊息/摘雯
+帕出:signature
+验签:
+入:公蕴+凯息/摘要+signature
+输出:真/假
+RSA
+RSA是老牌公输演算法,可以签名,也可以加密小段資料。不退现代產品理,它更多出现在證
+害、TLS兼容、固件签名验签运些地方。
+RSA 的特點是key大、通算量。MCU上不是不能用,但要评估速度、RAM,ROM
+ECDSA
+ECDSA是椭曲综签名。它比RSA更小、更滤合嵌入式,也很常見龄設借身份、固件签名、
+境续包
+ECDSA 备名糖入:私德+d1gest+随镜nonce
+ECDSA 名输出:r,s
+這霍的nonce 很重要。如果ECDSAnonce 重或波漏,私可能被推回来。
+包場景
+比特常和以太坊常见的是:
+secp256k1 + ECDSA</p>
+<p>Mcp256k1
+交易名
+ECOSA</p>
+<p>这有個工程细解:標弹ECDSA 通常只给你r,5。以太坊還需要v/recovery id,遗有
+低S规航化、Keccak-256、交易编等细前。這些不是單ECDSA演算法本身窄全部
+虚理好的。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=8公端密端交换>8.公端密端交换<a href=#8公端密端交换 class=hash-link aria-label=8.公端密端交换的直接連結 title=8.公端密端交换的直接連結 translate=no>​</a></h2>
+<p>ECDH、X25519、FFDH不是拿来直接加密资料的。它們是接雨遗在频路上互相交换公後,各
+自算出同一個 shared secret。</p>
+<p>設借A
+設備B
+私籍a
+私籍b
+A_pub
+qnd-g
+ECDH(a, B_pub)
+ECDH(b, A_pub)
+得到shared secret
+得到同一個shared secret
+HKDF -> session key
+HKDF ->
+ession key</p>
+<p>設借A
+設備B</p>
+<p>Input/ output
+入:白己的私输+数方公铺
+输出: shared secret
+蔓方算出来的sharedsecret相同,但任何旁者只看到需個公端,算不出遗秘密。
+它的作用
+密交换通常是安全通讯的第一步。
+ECDH/X25519 -> shared secret
+shared secret -> HKDF -> AEAD key
+AEADkey>加密真正的通讯資料
+如果每次括都使用瞪時的 ECDH/X25519金锥,在會结结束後丢掉session key,還能
+得到前向安全性,白话说,就是以後設催的長期私德就算浊漏,攻醒者也不能拿以前錄下来的通
+机密文回源解用。
+個名字
+ECDH是播置由缓Diffie-HelLman.P-256、P-384、P-521 这些曲線都可以搭 ECDH
+X25519是现代通訊程非常常用的密交换方案,快、简漏、實作鼠险低。
+X449是更高强度版本。
+FFDH是傅统有限域DH很多TLS/協藤泄雷見到,新設計一般更常逻ECDH 或
+X25519.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=9精圆曲線>9.精圆曲線<a href=#9精圆曲線 class=hash-link aria-label=9.精圆曲線的直接連結 title=9.精圆曲線的直接連結 translate=no>​</a></h2>
+<p>桶图曲線本身不是完整稿演算法,它更像是ECDSA、ECDH这些演算法使用的数学平台。
+不同曲级封应不同堤景。</p>
+<p>25519 / X
+投候/ TL5
+型提交换</p>
+<p>P-256 / secp256r1
+这是嵌入式設储、TLS、银善、設借身份露理非常常見的曲線。很多安全晶片、MCU硬耀加速
+器都侵先支援它。
+常見搭配:
+P=256+ECDSA->经签名
+P-256+ECDH->含語密编交摘
+P-384 / P-521
+安全强度更高,但運算更慢、資料更大。需要更高安全等级的超善或长期身份時富看到。
+secp256k1
+这是比特常、以太坊须疑包最關心的曲缘。
+常見搭配:
+secp256k1+ECDSA->区魂疑交易筹名
+Brainpool
+Brainpool是另一组標曲線,常見于某些洲標或特定合规。
+X25519 / X448
+X25519和X448主要用於密給交揽,它們不是享来做ECDSA名的。现代安全通訊程,
+X25519 很常見。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=10髓機数drbg>10.髓機数DRBG<a href=#10髓機数drbg class=hash-link aria-label=10.髓機数DRBG的直接連結 title=10.髓機数DRBG的直接連結 translate=no>​</a></h2>
+<p>密碼系统理的随根数不是普通rand)。它要能抗预测,因為密、nonce、签名nonce 都
+靠它。
+常見DRBG:
+CTR_DRBG</p>
+<p>AES key
+真寶焙源
+私输
+DRBG
+随规位元组
+CTR / HMAC
+低性化資料
+nonce / salt
+俯沟不可靠
+ECDSA nonce
+整套都危障
+Input/Output
+输入:真真烦源+可遇personalization
+幢出:密码级随榜位元组
+CTR_DRBG
+CTR_DRBG基龄AES-CTR.它先吃真實倾源,再携展出很多随位元组。
+HMAC_DRBG
+HMAC_DRBG基龄HMAC,也是一稚的密础级随機数生成器。
+為什它重要
+如果陪機数品質差:
+生成的私体可能可预测
+nonce可能重
+ECDSA 答名可能温漏私端
+加密通計,可能失去安全性
+在 MCu上尤其要殖朗底唇entropy来源是真的TRNG或可辱系统随楼,而不是普通随
+楼。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=11後量子ml-dsapqcp>11.後量子ML-DSA/PQCP<a href=#11後量子ml-dsapqcp class=hash-link aria-label=11.後量子ML-DSA/PQCP的直接連結 title=11.後量子ML-DSA/PQCP的直接連結 translate=no>​</a></h2>
+<p>後量子演算法是為了未来量子電腦也鞋以破解
+这程最值得注意的是:
+ML -DSA
+PQCP / mldsa-native
+ML-DSA是後量子签名方向,也就是Dilithiun棵化後的路综之一
+.8
+ML-DSA
+ML-DSA
+ML-05A B情
+董名
+ML-DSA 公量
+预般团
+需津估真源
+Input/output
+签名:
+输人:HL-DSA私+ 息
+输出:後量子繁名
+验釜:
+入:HL-DSA公+讯息+签名
+输出:真/假
+它適合什
+末来抗量子固件链名
+长期身份想望
+後量子證善耀系研究
+安全座品提物估
+但它不是現在直接塞進MCU童品就能收工的功能。後量子签名通常key 大、签名大、
+RAM/ROM驱力也更明。實察上車前要测稿、速度、记愤禮、谱兼容。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=12產品锂通常怎組合>12.產品锂通常怎組合<a href=#12產品锂通常怎組合 class=hash-link aria-label=12.產品锂通常怎組合的直接連結 title=12.產品锂通常怎組合的直接連結 translate=no>​</a></h2>
+<p>真實座品裡很少只用一個演算法。通常是一串演算法接起来,每個負责自己的部分。</p>
+<p>ECIH / X25519</p>
+<p>签名精
+TEAG DEEG
+84/ 文8
+国件/交是
+生乓
+806/ 30
+EAD key
+snte / sdl</p>
+<p>ECISA FSA
+gaure</p>
+<p>OTA固件保證</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一個常见ota設计可能長运楼>一個常见OTA設计可能長运楼:<a href=#一個常见ota設计可能長运楼 class=hash-link aria-label=一個常见OTA設计可能長运楼:的直接連結 title=一個常见OTA設计可能長运楼:的直接連結 translate=no>​</a></h2>
+<p>固件内容-> SHA-256-> digest
+digest -> ECDSA 私编策名 -> signature
+固件内容->AES-GCM/AES-CCM->密文+tag
+超借->驰tag->解密->算digest->备
+这程每個演算法都有位置:
+SHA-256:蕊内容指纹
+ECDSA:确国件言由發行者签署
+AE5 - GCM/AES-CCH:保据固件内容和防察改
+DRBG:生成 nonce / key
+對愿到PSAAPI時,流程长得像,重贴是初始化、军借key、指定用途,再呼叫演
+算法」:
+psa_crypto_init() ;
+psa_set_key_usage_flags (&attrs, PSA_KEY_uSAGE_DECRYPT):
+psa_set_key_algorithn(&attrs, alg) ;:
+psa_inport_key(6attrs, key_bytes, key_lcn, 6key);
+psa_aead_decrypt(key, alg, nonce, nonce_len,
+aad, aad_len,
+ciphertext_with_tag, ciphertext_with_tag_len,
+plalntext, plaintext_size, &plaintext_len);
+設備安全通訊
+般備和手機建立安全通鼠時,可以遗檬:
+方交换公编
+ECDH/X25519 算出 shared secret
+HKDF 派生 AEAD key
+AES-GCM/AES-CCH/ChaCha2B-Paly1305 加密通讯
+运理ECDH不直接加密讯息,它只负声旗整方享到共同秘密。真正加密資料的是AEAD.
+如果某段資料只需要防察改、不需要保密,PSA理也可以直接用MAC:
+psa_crypto_init() ;
+psa_mac_compute(key . PSA_ALG_HMAC (PSA_ALG_SHA_256),
+essage, message_len,
+tag, tag_size, 6tag_len);
+硬體鐵包名
+硬體包更用心:
+交易资料->编碍->hash
+hash+ secp256k1 私罐-> ECD5A 無名 r,5
+層recovery 1d / v
+输出完整交易链名
+遗理TF-PSA-Crypto可以做一部分:secp256k1+ECD5A的签名引肇。但以太坊需要的
+Keccak-256、交易编、EIP-155/EIP-1559、recovery id、低 S 规鲸化,些丽龄
+包唇,不是光有ECDSA就全部完成。
+快速對照表
+代表演算法
+输入
+输出
+期别
+主要作用
+文+key + n
+AES、ARIA, Camell
+保密
+對橘加密
+密文
+1a, ChaCha20
+once/IV
+長资料+Key+
+CBC、 CTR、 CFB、OF
+區境加密虚理
+區境模式
+密文
+B、 ECB
+IV/nonce
+長資料
+AES-GCM, AES-CC
+明文+key+ n
+密文+tag
+AEAD
+M、 ChaCha20-Poly1
+保密+防窗改
+once + AAD
+305
+SHA-256,
+SHA-3、 S
+资料指纹
+哈希
+任意资料
+digest
+RIPEMD160
+HAKE、
+CMAC, Poly1
+带key 的防院
+蔬惠+ key
+MAC
+tag
+305
+改
+主秘密+salt/
+HKDF、PBKDF2、TLS
+派生不同用途的
+新key
+KDF
+info
+PRF
+密端
+私德+訊息/摘
+RSA, ECDSA, ML-DS
+温明私持有者
+签名
+signature
+链超過
+A
+要
+ECDSA, ML-DS
+訊恩/辆
+RSA、
+公端+
+真/假
+查签名
+要 + s1gnature
+A
+ECDH、X25519、FFD
+自己私键+到方
+shared se
+密输交换
+商共同秘密
+公编
+H
+cret
+P-256.P-384、sec
+到愿安全强
+演算法曲粮
+決定 ECDSA/EC
+杨面曲缘
+p256k1. X25519
+座/用途
+DH的数學平台
+生成 key、non
+CTR_DRBG, HMAC_DR
+随機位元组
+随機数
+烽源
+BG
+ce,salt
+私编/公编+
+签名/真
+ML-DSA / PQCP
+抗量子签名方向
+後量子
+息
+最後的总结
+AES/ChaCha2e:把内容凝起采。
+GCH/CCM/Poly1385:把内容氟起来,顺便防鼠改。
+SHA-256/SHA-3:始内容健指较。
+HHAC/CMAC:用共享key 能内容做防鸽棵。
+HKDF/PBKDF2:提一四秘密整出能月的 key。
+ECDSA/RSA/ML-DSA:用私辅明是我答的
+ECDH/X25519:暨方保商同一国秘密。
+DRBG:壹生密碍级随鳞数。
+如果要放到我們自已的設備、0TA、包專案裡,最常用的組合大概是:
+OTA加密:AES-CCM或AES-GCM
+通訊加密:AES-GCM或ChaCha20-Poly1305
+完整性:HMAC-SHA256
+密派生:HKDF-SHA256
+設備身份:P-256ECDSA
+包名:Secp256k1ECDSA
+會話密:X25519或P-256ECDH
+随機数:CTRDRBG/HMACDRBG+真實橘源
+這樣看,這些演算法就不再是一串名字,而是一套分工很清楚的工具:有的負责藏資料,有的負
+黄防改,有的負黄證明身份,有的負责生key,有的負雨安全地谈出同一把key。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<blockquote>
+<p>原始导出图超过单张 WebP 的尺寸上限，以下图片按从上到下的顺序连续保存。
+<img decoding=async loading=lazy alt="密碼學小帳本：從 AES 到後量子，搞懂幾類演算法：微信公众号导出原始排版图（第 1 段，共 2 段）" src=/assets/images/article-01-9a642d60c2e947ba08e745e1a1fb1752.webp width=1280 height=16000 class=img_ev3q />
+<img decoding=async loading=lazy alt="密碼學小帳本：從 AES 到後量子，搞懂幾類演算法：微信公众号导出原始排版图（第 2 段，共 2 段）" src=/assets/images/article-02-829049840a770bef3988c307fbc2c491.webp width=1280 height=8029 class=img_ev3q /></p>
+</blockquote></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2026-06-22-2026-06-22-密碼學小帳本-從-aes-到後量子-搞懂幾類演算法-2247485981.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2026-07-03-本週-kickstarter-硬體觀察-ai-眼鏡-ai-kvm-與戶外機器人正在重寫產品邏輯-2247486024><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>本週 Kickstarter 硬體觀察：AI 眼鏡、AI KVM 與戶外機器人正在重寫產品邏輯</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2026-06-21-se-安全芯片怎麼用-二-功能場景-數字貨幣錢包與風險-2247485946><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>SE 安全芯片怎麼用（二）：功能場景、數字貨幣錢包與風險</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#一张總覺 class="table-of-contents__link toc-highlight">一张總覺</a><li><a href=#1對加密 class="table-of-contents__link toc-highlight">1.對加密</a><li><a href=#2區塊加密模式 class="table-of-contents__link toc-highlight">2.區塊加密模式</a><li><a href=#3aead韶證加密 class="table-of-contents__link toc-highlight">3.AEAD韶證加密</a><li><a href=#三個常見選项 class="table-of-contents__link toc-highlight">三個常見選项</a><li><a href=#4哈希 class="table-of-contents__link toc-highlight">4.哈希</a><li><a href=#5mac訊息證碼 class="table-of-contents__link toc-highlight">5.MAC訊息證碼</a><li><a href=#6密派生kdf class="table-of-contents__link toc-highlight">6.密派生KDF</a><li><a href=#7公端名舆驗 class="table-of-contents__link toc-highlight">7.公端名舆驗</a><li><a href=#8公端密端交换 class="table-of-contents__link toc-highlight">8.公端密端交换</a><li><a href=#9精圆曲線 class="table-of-contents__link toc-highlight">9.精圆曲線</a><li><a href=#10髓機数drbg class="table-of-contents__link toc-highlight">10.髓機数DRBG</a><li><a href=#11後量子ml-dsapqcp class="table-of-contents__link toc-highlight">11.後量子ML-DSA/PQCP</a><li><a href=#12產品锂通常怎組合 class="table-of-contents__link toc-highlight">12.產品锂通常怎組合</a><li><a href=#一個常见ota設计可能長运楼 class="table-of-contents__link toc-highlight">一個常见OTA設计可能長运楼:</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

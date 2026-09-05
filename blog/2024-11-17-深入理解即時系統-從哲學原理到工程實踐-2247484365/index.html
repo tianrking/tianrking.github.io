@@ -1,0 +1,519 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>深入理解即時系統：從哲學原理到工程實踐 | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2024-11-17-深入理解即時系統-從哲學原理到工程實踐-2247484365 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="深入理解即時系統：從哲學原理到工程實踐 | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《深入理解即時系統：從哲學原理到工程實踐》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《深入理解即時系統：從哲學原理到工程實踐》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2024-11-17T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2024-11-17-深入理解即時系統-從哲學原理到工程實踐-2247484365 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2024-11-17-深入理解即時系統-從哲學原理到工程實踐-2247484365 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2024-11-17-深入理解即時系統-從哲學原理到工程實踐-2247484365 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2024-11-17-深入理解即時系統-從哲學原理到工程實踐-2247484365","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2024-11-17T00:00:00.000Z","description":"从微信公众号导入的文章《深入理解即時系統：從哲學原理到工程實踐》，保留原始排版图并提供本地 OCR 转写。","headline":"深入理解即時系統：從哲學原理到工程實踐","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2024-11-17-深入理解即時系統-從哲學原理到工程實踐-2247484365","name":"深入理解即時系統：從哲學原理到工程實踐","url":"https://w0x7ce.eu/blog/2024-11-17-深入理解即時系統-從哲學原理到工程實踐-2247484365"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>深入理解即時系統：從哲學原理到工程實踐</h1><div class="container_mt6G margin-vert--md"><time datetime=2024-11-17T00:00:00.000Z>2024年11月17日</time> · <!-- -->閱讀時間約 13 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2024-11-17 19:41:41（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247484365&idx=1&sn=d201227975c0b5081520e992152c4f4a&chksm=96e11667a1969f71ac3ce3e4d2f5d5162a753d26ca4c47ac675aec6cbccd504bff1d75e5c380#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 8081 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>originalwex7ce EI V1ajero2024年11月17日19: 41美国
+引言:電腦系統的根本矛盾
+在深入技術细顾之前,深我們思考一個有趣但深刻的同题:為什度在電腦世界程,我們不能同時
+握有「链定性:和「高效率:?就像物理學中的测不華原理」(Heisenberg's
+Uncertainty Principle)一機,這是一個根本性的矛盾。
+哲學面的思考
+你越想精殖地控制铁行時間,就越要放豪到資源的充分利用</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一你越想碎航系挤的每一分性能就越鞋预测它的殖切行为>一你越想碎航系挤的每一分性能,就越鞋预测它的殖切行为<a href=#一你越想碎航系挤的每一分性能就越鞋预测它的殖切行为 class=hash-link aria-label=一你越想碎航系挤的每一分性能,就越鞋预测它的殖切行为的直接連結 title=一你越想碎航系挤的每一分性能,就越鞋预测它的殖切行为的直接連結 translate=no>​</a></h2>
+<p>關係(Dialectical Relationship)
+L.到立统一</p>
+<ul>
+<li class="">
+<p>张定性與效率是一對矛盾</p>
+</li>
+<li class="">
+<p>但它們又必须共存於系统中</p>
+</li>
+</ul>
+<p>?.量到背</p>
+<ul>
+<li class="">
+<p>追求檀致效率-完全失去建定性</p>
+</li>
+<li class="">
+<p>追求组荆確定·效率降至谷底</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3否定之否定>3.否定之否定<a href=#3否定之否定 class=hash-link aria-label=3.否定之否定的直接連結 title=3.否定之否定的直接連結 translate=no>​</a></h2>
+<ul>
+<li class="">
+<p>新技術試图解決这個矛盾</p>
+</li>
+<li class="">
+<p>但往往在更高唇面重现問题</p>
+</li>
+</ul>
+<p>根本矛盾的具體體现
+提高资源利用率必然带来的後果:
+勤惨通源分配(Dynamic Resource Allocation)
+任孩私癌调度(Dynam1c Task ScheduLing)
+快取情制
+(Cache Mechanism)
+预测轨行
+(Speculative Execution)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一所有这些都會引入時留不殖定性>一所有这些都會引入時留不殖定性!<a href=#一所有这些都會引入時留不殖定性 class=hash-link aria-label=一所有这些都會引入時留不殖定性!的直接連結 title=一所有这些都會引入時留不殖定性!的直接連結 translate=no>​</a></h2>
+<p>追求时用破定性必然要求:
+调源分配(Static Resource Allocation)
+目国定调度方案(Fixed ScheduLing)
+X禁用快取
+(Cache Disabled)
+顺序软行
+(Sequential Execution)
+适登那害额名降低系统效率...
+这個矛盾在硬體層面的體現
+现代CPU的雨赠据择:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1流水缘段計-p1peline-design>1.流水缘段計 (P1peline Design)<a href=#1流水缘段計-p1peline-design class=hash-link aria-label="1.流水缘段計 (P1peline Design)的直接連結" title="1.流水缘段計 (P1peline Design)的直接連結" translate=no>​</a></h2>
+<p>好虑:提亮指令董行成
+代盾:轨行持图整得不可预测</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2-分支预测branch-prediction>2. 分支预测(Branch Prediction)<a href=#2-分支预测branch-prediction class=hash-link aria-label="2. 分支预测(Branch Prediction)的直接連結" title="2. 分支预测(Branch Prediction)的直接連結" translate=no>​</a></h2>
+<p>好虑:提前轨行提升性能
+X代债:预潮失致需要回浪。引1入不定性</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3多级快联multi-level-cache>3.多级快联(Multi-level Cache)<a href=#3多级快联multi-level-cache class=hash-link aria-label="3.多级快联(Multi-level Cache)的直接連結" title="3.多级快联(Multi-level Cache)的直接連結" translate=no>​</a></h2>
+<p>好虑:大幅提升防阿逻度
+代值:快取命中率影警轨行時局</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第一部分即時系統的本質與分類>第一部分:即時系統的本質與分類<a href=#第一部分即時系統的本質與分類 class=hash-link aria-label=第一部分:即時系統的本質與分類的直接連結 title=第一部分:即時系統的本質與分類的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1什是真正的即時性>1.什是真正的即時性?<a href=#1什是真正的即時性 class=hash-link aria-label=1.什是真正的即時性?的直接連結 title=1.什是真正的即時性?的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=11打破對即時的解>1.1打破對即時的解<a href=#11打破對即時的解 class=hash-link aria-label=1.1打破對即時的解的直接連結 title=1.1打破對即時的解的直接連結 translate=no>​</a></h3>
+<p>X常见族解:即际=快速
+真相:即=可预测(Predictability)
+就像火平:</p>
+<ul>
+<li class="">竿黏但慢的火平>時快時的胞平</li>
+</ul>
+<p>1ns固定延逻>8.1~16ns随糖延逻</p>
+<ul>
+<li class="">開键是:可预测性(Pred1ctab1Lity) 而非速度(Speed)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=12即時系統的等級>1.2即時系統的等級<a href=#12即時系統的等級 class=hash-link aria-label=1.2即時系統的等級的直接連結 title=1.2即時系統的等級的直接連結 translate=no>​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1-硬即時系hard-real-time-system>1. 硬即時系[Hard Real-time System]<a href=#1-硬即時系hard-real-time-system class=hash-link aria-label="1. 硬即時系[Hard Real-time System]的直接連結" title="1. 硬即時系[Hard Real-time System]的直接連結" translate=no>​</a></h2>
+<p>特黏:</p>
+<ul>
+<li class="">必领照格被時!(Strict Tining Requlrenents)</li>
+</ul>
+<p>次超時=系統失效(Systen Failure)
+要求:18片消足時圆的束
+导例:
+鼎行控剧系统
+汽防癌死系统【ABS)
+工器人控制器</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2即時系5oft-real-tine-system>2.即時系(5oft Real-tine System)<a href=#2即時系5oft-real-tine-system class=hash-link aria-label="2.即時系(5oft Real-tine System)的直接連結" title="2.即時系(5oft Real-tine System)的直接連結" translate=no>​</a></h2>
+<p>特黏:</p>
+<ul>
+<li class="">偶闻超持可以接受 (0ccasional Deadline Misses)</li>
+</ul>
+<p>用统計指量[5tatistical Metrics]</p>
+<ul>
+<li class="">允许一定抖础(Jitter)</li>
+</ul>
+<p>例:
+量控制器
+影片编氏器
+资料保集系统</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3-准即時系best-effort-real-time-systen>3. 准即時系(Best-effort Real-time Systen)<a href=#3-准即時系best-effort-real-time-systen class=hash-link aria-label="3. 准即時系(Best-effort Real-time Systen)的直接連結" title="3. 准即時系(Best-effort Real-time Systen)的直接連結" translate=no>​</a></h2>
+<p>特贴:
+靈力保證即時性[Best Effort)
+湛硬生保(No Guarantees)</p>
+<ul>
+<li class="">注平均效能(Average Perfornance)</li>
+</ul>
+<p>音类播放器
+集面陈用
+手壁康用</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第二部分即時系統的架構特性>第二部分:即時系統的架構特性<a href=#第二部分即時系統的架構特性 class=hash-link aria-label=第二部分:即時系統的架構特性的直接連結 title=第二部分:即時系統的架構特性的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1處理器架構的影響>1.處理器架構的影響<a href=#1處理器架構的影響 class=hash-link aria-label=1.處理器架構的影響的直接連結 title=1.處理器架構的影響的直接連結 translate=no>​</a></h2>
+<p>现代CPU的特性分析:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1-指令流水续-instruction-pipeline>1. 指令流水续 [Instruction Pipeline]<a href=#1-指令流水续-instruction-pipeline class=hash-link aria-label="1. 指令流水续 [Instruction Pipeline]的直接連結" title="1. 指令流水续 [Instruction Pipeline]的直接連結" translate=no>​</a></h2>
+<p>L长流水腺 (Deep Pipeline)
+慢點:香吐量[High Throughput)
+缺贴:延選不定(UnstabLe Latency)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2高速快暇cache-hierarchy>2.高速快暇(Cache Hierarchy)<a href=#2高速快暇cache-hierarchy class=hash-link aria-label="2.高速快暇(Cache Hierarchy)的直接連結" title="2.高速快暇(Cache Hierarchy)的直接連結" translate=no>​</a></h2>
+<p>L多级快联(Multi-level Cache)
+食中:快[Cache Hit: Very Fast]
+缺失:槎慢[Cache Hiss<!-- -->:Very<!-- --> SLow)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3-勤履分支预测-dynamic-branch-prediction>3. 勤履分支预测 (Dynamic Branch Prediction)<a href=#3-勤履分支预测-dynamic-branch-prediction class=hash-link aria-label="3. 勤履分支预测 (Dynamic Branch Prediction)的直接連結" title="3. 勤履分支预测 (Dynamic Branch Prediction)的直接連結" translate=no>​</a></h2>
+<p>预别正:性能提升(Perfornance Boost)
+X预渊误:服重延逻[Significant Delay]</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2時間特性對比>2.時間特性對比<a href=#2時間特性對比 class=hash-link aria-label=2.時間特性對比的直接連結 title=2.時間特性對比的直接連結 translate=no>​</a></h2>
+<p>曹愿时間到比:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1-硬即時系mcufpga>1. 硬即時系(MCU/FPGA)<a href=#1-硬即時系mcufpga class=hash-link aria-label="1. 硬即時系(MCU/FPGA)的直接連結" title="1. 硬即時系(MCU/FPGA)的直接連結" translate=no>​</a></h2>
+<p>管康:&lt;1μs
+s891 >
+可预测性:稀高</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2-蚊即時系胺rt-linux>2. 蚊即時系胺(RT-Linux)<a href=#2-蚊即時系胺rt-linux class=hash-link aria-label="2. 蚊即時系胺(RT-Linux)的直接連結" title="2. 蚊即時系胺(RT-Linux)的直接連結" translate=no>​</a></h2>
+<p>底:&lt;100us
+抖勤: &lt; 19μs
+可预测性:校高</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3盖通系统linux>3.盖通系统(Linux)<a href=#3盖通系统linux class=hash-link aria-label=3.盖通系统(Linux)的直接連結 title=3.盖通系统(Linux)的直接連結 translate=no>​</a></h2>
+<p>唇压:&lt;18ms
+抖租:不键定
+可预测性:低</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3關键技術指標>3.關键技術指標<a href=#3關键技術指標 class=hash-link aria-label=3.關键技術指標的直接連結 title=3.關键技術指標的直接連結 translate=no>​</a></h2>
+<p>// 即原性能萨估据檬(Real-time Performance Metrics)
+struct rt_metrics f
+//臀鹰時間(Response Tine)
+uint32_t response_time;
+// 畸照抖数(Timing Jitter)
+uint32_t jitter;
+uint32_t deadline_miss;
+//超時次数(Deadline Misses)
+//量境執行時間(worst-Case Execution Tim(
+uint32_t wcet;
+//性能激测赋示例(Performance Test Example)
+void measure_realtine_performance(void) {
+uint64_t start, end;
+struct rt_netrics metrics = (0);
+for[int i = θ; i &lt; TEST_couNT; i++] {
+start =get_time_ns();//奈秒级時脂醛
+da_realtine_task();
+//轨行即時任辨
+end = get_tine_ns{);
+update_metrics{&metrics, end - start);
+analyze_results(&metrics); // 分析端果</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第三部分即時系統的實現技術父>第三部分:即時系統的實現技術父<a href=#第三部分即時系統的實現技術父 class=hash-link aria-label=第三部分:即時系統的實現技術父的直接連結 title=第三部分:即時系統的實現技術父的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1即時調度技術>1.即時調度技術<a href=#1即時調度技術 class=hash-link aria-label=1.即時調度技術的直接連結 title=1.即時調度技術的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=11調度算法對比>1.1調度算法對比<a href=#11調度算法對比 class=hash-link aria-label=1.1調度算法對比的直接連結 title=1.1調度算法對比的直接連結 translate=no>​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1-萧通linux国度器-cfs---conpletely-fa1r-scheduler>1. 萧通Linux国度器 (CFS - Conpletely Fa1r Scheduler)<a href=#1-萧通linux国度器-cfs---conpletely-fa1r-scheduler class=hash-link aria-label="1. 萧通Linux国度器 (CFS - Conpletely Fa1r Scheduler)的直接連結" title="1. 萧通Linux国度器 (CFS - Conpletely Fa1r Scheduler)的直接連結" translate=no>​</a></h2>
+<p>日标:公平性(Fairness)
+特影:</p>
+<ul>
+<li class="">
+<p>和癌摄先级(Dynamic Priority]</p>
+</li>
+<li class="">
+<p>红黑宽现[Red-BLack Tree]</p>
+</li>
+</ul>
+<p>虚谨行時(virtualRuntine)
+X同题:不速合即時任務</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2-即時调度器real-tine-scheduler>2. 即時调度器(Real-tine Scheduler]<a href=#2-即時调度器real-tine-scheduler class=hash-link aria-label="2. 即時调度器(Real-tine Scheduler]的直接連結" title="2. 即時调度器(Real-tine Scheduler]的直接連結" translate=no>​</a></h2>
+<p>目檬:填定性(Determinisn)
+特酯:
+固定摄先级[Fixed Priority]</p>
+<ul>
+<li class="">
+<p>0(1)福薪度(Constant Time)</p>
+</li>
+<li class="">
+<p>立即管康(Inmediate Response)</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=12即時調度算法實現>1.2即時調度算法實現<a href=#12即時調度算法實現 class=hash-link aria-label=1.2即時調度算法實現的直接連結 title=1.2即時調度算法實現的直接連結 translate=no>​</a></h3>
+<p>// 固定展先级度器(Fixed Priority Scheduler)
+struct rt_task (
+uint8_t priority;
+//優先级(Priority Level)
+uint32_t deadline;
+/ / 藏止时間(Deadline)
+// 通期 (Period)
+uint32_t period;
+vo1d (*task_func) (void); // 任稀函数 (Task Function)
+// 侵先级期度宽班(Priority Scheduling InpLenentation)
+void rt_scheduler(void) {
+struct rt_task *highest_task = NULL;
+uint8_t max_prlority = 9;
+// 找到量蕊僵先级任務(Find Highest Priority Task)
+for[1nt 1 = 0; 1 &lt; TASK_coUNT; 1++] {
+if{tasks[i1 priority > max_priority 66
+tasks[i] .is_ready) {
+max_prlority = tasks[1] .prlority;
+highest_task = &tasks[i];</p>
+<p>highest_task->task_func():// 行任</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2記憶體管理技術h>2.記憶體管理技術H<a href=#2記憶體管理技術h class=hash-link aria-label=2.記憶體管理技術H的直接連結 title=2.記憶體管理技術H的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=21即時記憶體管理原则>2.1即時記憶體管理原则<a href=#21即時記憶體管理原则 class=hash-link aria-label=2.1即時記憶體管理原则的直接連結 title=2.1即時記憶體管理原则的直接連結 translate=no>​</a></h3>
+<p>禁止使用的特性:</p>
+<ul>
+<li class="">数思記博腰分配(Dynamic Menory Allocation)</li>
+</ul>
+<p>虚记恒腰真面交换(Page Shapping)
+配憶赠碎片蔡理(Memory Defragnentation)
+推需使用的技術:
+起憶键分配(Static Menory Allocation)</p>
+<ul>
+<li class="">配恒腰预留[Memory Reservation]</li>
+</ul>
+<p>记恒睡镇定(Memory Locking)</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=22記憶體優化實現>2.2記憶體優化實現<a href=#22記憶體優化實現 class=hash-link aria-label=2.2記憶體優化實現的直接連結 title=2.2記憶體優化實現的直接連結 translate=no>​</a></h3>
+<p>//配憶腰池實(Memory PooLInplementation)
+struct memory_pool {
+void *pool_start;
+//起橙體油起始位址
+//记恒醒池起始位址
+//区境大小
+size_t block_size;
+/ 魏医遇数
+// 魄匿疡数
+uint32_t total_blocks;
+//空阳医境数
+//空阳区规数
+//医境状照肤射
+uint8_t <em>block_nop;
+//区瑰肽感肤射
+attribute_((aligned{64))):// 快联行肾(Cache Line Aligned)
+// 即持增耀分配器(Real-tine Menory ALlocator)
+void</em> rt_alloc(struct memory_pool *pooll{
+//快速位元图搜 [Fast Bitnap Scarch)
+uint32_t block_1ndex - find_f1rst_free(pool->block_map);
+if[block_index &lt; pool->total blocks]{
+mark_block_used(pool, block_index) ;
+return pool->pool_start + (block_index * pool->block_s1ze);
+return NULL;// 记恒睡耗墨(Out of Menory)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3中断處理策略>3.中断處理策略<a href=#3中断處理策略 class=hash-link aria-label=3.中断處理策略的直接連結 title=3.中断處理策略的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=31中處理優化>3.1中處理優化<a href=#31中處理優化 class=hash-link aria-label=3.1中處理優化的直接連結 title=3.1中處理優化的直接連結 translate=no>​</a></h3>
+<p>键目标:
+最小化中斯延逻[Minimize Interrupt Latency)
+催定生匿特圈[Deterministic Rcsponsc Tinc)</p>
+<ul>
+<li class="">避免中暨嵌套(Avoid Interrupt Nesting)</li>
+</ul>
+<p>父量化技所:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1中管分播interrupt-layer1ng>1.中管分播(Interrupt Layer1ng)<a href=#1中管分播interrupt-layer1ng class=hash-link aria-label="1.中管分播(Interrupt Layer1ng)的直接連結" title="1.中管分播(Interrupt Layer1ng)的直接連結" translate=no>​</a></h2>
+<p>L顶举部{Top Half):快涵窖康
+L底半部(8otton Hal.f):延逻虚理</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2中先级管理interrupt-priority-managenent>2.中先级管理(Interrupt Priority Managenent)<a href=#2中先级管理interrupt-priority-managenent class=hash-link aria-label="2.中先级管理(Interrupt Priority Managenent)的直接連結" title="2.中先级管理(Interrupt Priority Managenent)的直接連結" translate=no>​</a></h2>
+<p>解健中断先级最高
+中市</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=32即時中處理實現>3.2即時中處理實現<a href=#32即時中處理實現 class=hash-link aria-label=3.2即時中處理實現的直接連結 title=3.2即時中處理實現的直接連結 translate=no>​</a></h3>
+<p>// 中暨處理器〔Interrupt Handler]
+void rt_interrupt_handler(void) {
+ulnt32_t start = get_timestanp(); // 記闻始時間
+// 1. 最小化鼠健盈(Mininize Critical Section)
+d1sable_interrupts();// 開中間是短
+// 2. 快速虚理(Quick Processing)
+handle_critical_work() ;
+enable_interrupts();//快快能中
+// 3.延遇非開键處理(Defer Non-critical Mork)
+schedule_deferred_work();
+uint32_t duration = get_tinestanp(1 - start;
+update_interrupt_stats{duration);// 出中滤理間</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第三部分性能優化與實案例>第三部分:性能優化與實案例<a href=#第三部分性能優化與實案例 class=hash-link aria-label=第三部分:性能優化與實案例的直接連結 title=第三部分:性能優化與實案例的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1即時系統性能優化策略>1.即時系統性能優化策略<a href=#1即時系統性能優化策略 class=hash-link aria-label=1.即時系統性能優化策略的直接連結 title=1.即時系統性能優化策略的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=11多次優化方法>1.1多次優化方法<a href=#11多次優化方法 class=hash-link aria-label=1.1多次優化方法的直接連結 title=1.1多次優化方法的直接連結 translate=no>​</a></h3>
+<p>硬體屠慢化 (Hardware Optinization)
+|——CPU配置侵化
+|——镇定CPU频率(Fixcd CPU Frcqucncy)
+|——基用鶴能模式(D1sable Power Saving)
+L核心幕(CPU Isolation)
+快联侵化
+|——快取镇定(Cache Locking)
+L_数對育(Data ALignment)
+DMA提化
+——零博具授(Zero-Copy)
+L直接I/0 (Direct I/0)</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=12程式碼级優化>1.2程式碼级優化<a href=#12程式碼级優化 class=hash-link aria-label=1.2程式碼级優化的直接連結 title=1.2程式碼级優化的直接連結 translate=no>​</a></h3>
+<p>// 1.记恒锂存取化[Memory Access Optinization)
+struct rt_data {
+// 熟数博射育(Hot Data ALignment)
+alignas(64) uint32_t critical_data;
+//按防周率排序成員(0rder by Access Frequency)
+uint3z_t frequently_accessed;
+}attribute_((packed)):
+// 2.瑞慢化(Loop Optinization)
+void optimized_loop(void) {
+// 镭環展冕(Loop Unrolling)
+pragma unroll(4)
+for[int 1 = 0; 1 &lt; couNT; i++) {
+process_data(i) ;
+//爱免分支预测失致{Avaid Branch Misprediction}
+1f(_builtin_expect({condition), 11] {
+handle_connon_case();</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2即時系統測試方法>2.即時系統測試方法<a href=#2即時系統測試方法 class=hash-link aria-label=2.即時系統測試方法的直接連結 title=2.即時系統測試方法的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=21性能测試框架>2.1性能测試框架<a href=#21性能测試框架 class=hash-link aria-label=2.1性能测試框架的直接連結 title=2.1性能测試框架的直接連結 translate=no>​</a></h3>
+<p>// 即持性能激套件 (Real-tine Performance Test Suite)
+1a1ns 1sa1 1 1on1s
+//延逻测试(Latency Test)
+struct{
+//最大延逻
+uint64_t nax_latency;
+//平均延据
+uint64_t jitter;
+// 抖勘
+sesae
+// 调度期抗(Scheduling Test)
+struct (
+ulnt32_t priority_inversions;
+//慢先级反畅次数
+//超时次数
+uint32_t deadline_misses;
+uint32_t context_switches;
+//上下文切换次数
+}scheduling_stats;</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=22壓力测試方法>2.2壓力测試方法<a href=#22壓力测試方法 class=hash-link aria-label=2.2壓力测試方法的直接連結 title=2.2壓力测試方法的直接連結 translate=no>​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1-基率测腻-benchmark-testing>1. 基率测腻 (Benchmark Testing)<a href=#1-基率测腻-benchmark-testing class=hash-link aria-label="1. 基率测腻 (Benchmark Testing)的直接連結" title="1. 基率测腻 (Benchmark Testing)的直接連結" translate=no>​</a></h2>
+<p>期量丽据接标:
+中延逻(Interrupt Latency)
+上下文切時酯(Context Switch Time)</p>
+<ul>
+<li class="">任榜切类延選(Task Svitch Latency)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2黄洲拭load-testing>2.黄洲拭(Load Testing)<a href=#2黄洲拭load-testing class=hash-link aria-label="2.黄洲拭(Load Testing)的直接連結" title="2.黄洲拭(Load Testing)的直接連結" translate=no>​</a></h2>
+<p>潮腻增景:
+I/0密里(I/0 Intensive)</p>
+<ul>
+<li class="">配憶基力[Memory Pressure]</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3實際應用案例分析>3.實際應用案例分析<a href=#3實際應用案例分析 class=hash-link aria-label=3.實際應用案例分析的直接連結 title=3.實際應用案例分析的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=31工機器人控制系統>3.1工機器人控制系統<a href=#31工機器人控制系統 class=hash-link aria-label=3.1工機器人控制系統的直接連結 title=3.1工機器人控制系統的直接連結 translate=no>​</a></h3>
+<p>系统架据:
+|—— 即時控别图(Real -time Control Layer)
+—退期:1ns
+——抖勤雯求:&lt;56μs
+—實现<!-- -->:RT-Linux<!-- -->+厚用驱助
+|—道物烘剔唇 (Motion PLanning Layer)
+|—期:16ms
+算法:轨游规割
+T
+實现:普通Linux连程
+监控界面圈(Monitoring Layer]
+|—速期:1e8ns
+——功能:联够颜示
+L實现<!-- -->:GUI<!-- -->区用程序
+目键性能指棵:
+位置控制精度:±8.1mm
+即警疡:&lt;168μs
+轨静平滑度:速端可遵</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=32高频交易系统>3.2高频交易系统<a href=#32高频交易系统 class=hash-link aria-label=3.2高频交易系统的直接連結 title=3.2高频交易系统的直接連結 translate=no>​</a></h3>
+<p>系统特性:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1延逐曼求latency-requirenents>1.延逐曼求(Latency Requirenents)<a href=#1延逐曼求latency-requirenents class=hash-link aria-label="1.延逐曼求(Latency Requirenents)的直接連結" title="1.延逐曼求(Latency Requirenents)的直接連結" translate=no>​</a></h2>
+<p>市场数博虑理:&lt;1μs
+|—重略計算:&lt;160us
+L—打单镜送:&lt;500μs</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2化技optimization-techniques>2.化技(optimization Techniques)<a href=#2化技optimization-techniques class=hash-link aria-label="2.化技(optimization Techniques)的直接連結" title="2.化技(optimization Techniques)的直接連結" translate=no>​</a></h2>
+<p>——内核雾路(Kernel Bypass)
+——用户磐照路[user-space Networking]
+硬链時罐同步(Hardvarc Clock 5ync)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3-监控指樱monitaring-metrics>3. 监控指樱(Monitaring Metrics)<a href=#3-监控指樱monitaring-metrics class=hash-link aria-label="3. 监控指樱(Monitaring Metrics)的直接連結" title="3. 监控指樱(Monitaring Metrics)的直接連結" translate=no>​</a></h2>
+<p>——巍到挺逻[End-to-cnd Latcncy)
+——抖敏统(Jitter Statist1cs)
+L— 订单感理率 [order Processing Rate)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第四部分最佳實奥未来展望>第四部分:最佳實奥未来展望<a href=#第四部分最佳實奥未来展望 class=hash-link aria-label=第四部分:最佳實奥未来展望的直接連結 title=第四部分:最佳實奥未来展望的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1即時系统設計最佳實>1.即時系统設計最佳實<a href=#1即時系统設計最佳實 class=hash-link aria-label=1.即時系统設計最佳實的直接連結 title=1.即時系统設計最佳實的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=11設計原则>1.1設計原则<a href=#11設計原则 class=hash-link aria-label=1.1設計原则的直接連結 title=1.1設計原则的直接連結 translate=no>​</a></h3>
+<p>核心原则:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1-可预测性摄先predictability-first>1. 可预测性摄先(Predictability First)<a href=#1-可预测性摄先predictability-first class=hash-link aria-label="1. 可预测性摄先(Predictability First)的直接連結" title="1. 可预测性摄先(Predictability First)的直接連結" translate=no>​</a></h2>
+<p>——侵先逛捶定性算法
+——型免勤易行為
+福电</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2-分腊设计-layered-design>2. 分腊设计 (Layered Design)<a href=#2-分腊设计-layered-design class=hash-link aria-label="2. 分腊设计 (Layered Design)的直接連結" title="2. 分腊设计 (Layered Design)的直接連結" translate=no>​</a></h2>
+<p>即時眉s
+只保留阻键功能
+—非即时眉
+—虚理视脏强
+明确眉蜀介面</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3-防显性提defensive-design>3. 防显性提(Defensive Design)<a href=#3-防显性提defensive-design class=hash-link aria-label="3. 防显性提(Defensive Design)的直接連結" title="3. 防显性提(Defensive Design)的直接連結" translate=no>​</a></h2>
+<p>假设最境情况
+预图安全裕庆
+T
+宽现故险隔解</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=12具體實践建父>1.2具體實践建父<a href=#12具體實践建父 class=hash-link aria-label=1.2具體實践建父的直接連結 title=1.2具體實践建父的直接連結 translate=no>​</a></h3>
+<p>// 1.時瘤管理(Time Managenent)
+struct time_manager {
+// 使用照型特置(Absolutc Tine)
+uint64_t absolute_deadLine;
+// 盈免相型特显 (Avoid Rclative Time)
+// X Bad: delay(1e8ms)
+// Good: wait_until(absolute_deadline)
+);
+//2.资源管理(Resource Management)
+void resource_managcnent(void){
+// 静资源分配(Static Resource Allocation)
+static uint8_t buffer[MAX SIZE];
+// 使用资源池[Resource PooL]
+struct resource pool *pool = create static pool[);
+// 慢先级继承[Priority Inheritance)
+nutex lock with inheritance(fmutex]:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2常見陷阱和解决方案>2.常見陷阱和解决方案<a href=#2常見陷阱和解决方案 class=hash-link aria-label=2.常見陷阱和解决方案的直接連結 title=2.常見陷阱和解决方案的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=21典型問题及對策>2.1典型問题及對策<a href=#21典型問题及對策 class=hash-link aria-label=2.1典型問题及對策的直接連結 title=2.1典型問题及對策的直接連結 translate=no>​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1先级反畅priority-inversion>1.先级反畅(Priority Inversion)<a href=#1先级反畅priority-inversion class=hash-link aria-label="1.先级反畅(Priority Inversion)的直接連結" title="1.先级反畅(Priority Inversion)的直接連結" translate=no>​</a></h2>
+<p>L—低很先级任称占用高先级任物所需资源
+解决方案:
+——先级承[Priority Inheritance]
+優先级天花板(Priority Ceiling)
+L-資源分组(Resource Grouping)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2死镇間题deadlock>2.死镇間题(Deadlock)<a href=#2死镇間题deadlock class=hash-link aria-label=2.死镇間题(Deadlock)的直接連結 title=2.死镇間题(Deadlock)的直接連結 translate=no>​</a></h2>
+<p>二
+预防策略:
+——资源排序(Resource Ordering)
+超時机制(Timeout Mechanism)
+死检测(Deadlock Detection)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3快取抖動cache-thrashing>3.快取抖動(Cache Thrashing)<a href=#3快取抖動cache-thrashing class=hash-link aria-label="3.快取抖動(Cache Thrashing)的直接連結" title="3.快取抖動(Cache Thrashing)的直接連結" translate=no>​</a></h2>
+<p>侵化方法:
+数怖局侵化(DataLayoutOptimization)
+快取殖取(CachePrefetching)
+L核心親和性(Core Affinity)</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=22性能陷阱>2.2性能陷阱<a href=#22性能陷阱 class=hash-link aria-label=2.2性能陷阱的直接連結 title=2.2性能陷阱的直接連結 translate=no>​</a></h3>
+<p>//1.常見性能陷阱示例
+void performance_pitfalls(void) {
+//×動態記憶體分配
+void*bad=malloc(size);// 不確定的延
+//静感分配或記憶體池
+static uint8_t good[MAX_SIZE];
+void *better = pool_alloc(&memory_pool);
+//×不受限的圈
+while(condition){//未知的行時間
+1 1
+process_data();
+12
+}</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1-4>1. 4<a href=#1-4 class=hash-link aria-label="1. 4的直接連結" title="1. 4的直接連結" translate=no>​</a></h2>
+<p>//有界圈
+15
+for(int i = 0; i &lt; MAX_ITERATIONS; i++) {</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=16>1.6<a href=#16 class=hash-link aria-label=1.6的直接連結 title=1.6的直接連結 translate=no>​</a></h2>
+<p>process_data();</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1-7>1. 7<a href=#1-7 class=hash-link aria-label="1. 7的直接連結" title="1. 7的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3未來發展趣>3.未來發展趣<a href=#3未來發展趣 class=hash-link aria-label=3.未來發展趣的直接連結 title=3.未來發展趣的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=31技術發展方向>3.1技術發展方向<a href=#31技術發展方向 class=hash-link aria-label=3.1技術發展方向的直接連結 title=3.1技術發展方向的直接連結 translate=no>​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1硬體超势>1.硬體超势<a href=#1硬體超势 class=hash-link aria-label=1.硬體超势的直接連結 title=1.硬體超势的直接連結 translate=no>​</a></h2>
+<p>—專用即時虚理器
+硅定性執行單元
+可预测快取架構
+分區快取技術
+即時细路硬體
+L時間敏感斓路(TSN)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2软體超势>2.软體超势<a href=#2软體超势 class=hash-link aria-label=2.软體超势的直接連結 title=2.软體超势的直接連結 translate=no>​</a></h2>
+<p>——形式化驗證
+即時性證明
+AI辅助侵化
+L—自適愿調度
+L混合關键系统
+L不同等级任務集成</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=32應用领域展>3.2應用领域展<a href=#32應用领域展 class=hash-link aria-label=3.2應用领域展的直接連結 title=3.2應用领域展的直接連結 translate=no>​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1新興用>1.新興用<a href=#1新興用 class=hash-link aria-label=1.新興用的直接連結 title=1.新興用的直接連結 translate=no>​</a></h2>
+<p>自動麗驶
+L—毫秒级决策系统
+—工業元宇宙
+即時数位學生
+智慧機器人
+L—即時協同控制</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2挑贝概遇>2.挑贝概遇<a href=#2挑贝概遇 class=hash-link aria-label=2.挑贝概遇的直接連結 title=2.挑贝概遇的直接連結 translate=no>​</a></h2>
+<p>——確定性AI
+—即時机器學晋
+——遗缘通算
+分布式即時系統
+安全即時
+L即時安全保護
+5
+結語
+即時系統的發展正在經歷深刻革,傳统的工業控制展到更廣图的應用领域。键是要始终
+記住:</p>
+<ul>
+<li class="">
+<p>理解根本矛盾</p>
+</li>
+<li class="">
+<p>把握設計原则</p>
+</li>
+<li class="">
+<p>與時俱進創新</p>
+</li>
+</ul>
+<p>"Predictabilityisbetterthan speed”(可预測性優於速度)</p>
+<p>EE·目录三
+下一篇·HypershelL消费级外骨骼:技术、市场与前景深度分析报告></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<blockquote>
+<p>原始导出图超过单张 WebP 的尺寸上限，以下图片按从上到下的顺序连续保存。
+<img decoding=async loading=lazy alt="深入理解即時系統：從哲學原理到工程實踐：微信公众号导出原始排版图（第 1 段，共 2 段）" src=/assets/images/article-01-6616f08416951389b86403b73720a6a1.webp width=1280 height=16000 class=img_ev3q />
+<img decoding=async loading=lazy alt="深入理解即時系統：從哲學原理到工程實踐：微信公众号导出原始排版图（第 2 段，共 2 段）" src=data:image/webp;base64,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 width=1280 height=164 class=img_ev3q /></p>
+</blockquote></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2024-11-17-2024-11-17-深入理解即時系統-從哲學原理到工程實踐-2247484365.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2024-11-24-esp32-qemu-仿真现代开发指南-2247484373><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>ESP32 QEMU 仿真现代开发指南</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2024-11-16-google-doodle-藝術之旅-獨木舟的前世今生-2024-11-2247484360><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>Google Doodle 藝術之旅:獨木舟的前世今生 2024-11</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#一你越想碎航系挤的每一分性能就越鞋预测它的殖切行为 class="table-of-contents__link toc-highlight">一你越想碎航系挤的每一分性能,就越鞋预测它的殖切行为</a><li><a href=#3否定之否定 class="table-of-contents__link toc-highlight">3.否定之否定</a><li><a href=#一所有这些都會引入時留不殖定性 class="table-of-contents__link toc-highlight">一所有这些都會引入時留不殖定性!</a><li><a href=#1流水缘段計-p1peline-design class="table-of-contents__link toc-highlight">1.流水缘段計 (P1peline Design)</a><li><a href=#2-分支预测branch-prediction class="table-of-contents__link toc-highlight">2. 分支预测(Branch Prediction)</a><li><a href=#3多级快联multi-level-cache class="table-of-contents__link toc-highlight">3.多级快联(Multi-level Cache)</a><li><a href=#第一部分即時系統的本質與分類 class="table-of-contents__link toc-highlight">第一部分:即時系統的本質與分類</a><li><a href=#1什是真正的即時性 class="table-of-contents__link toc-highlight">1.什是真正的即時性?</a><ul><li><a href=#11打破對即時的解 class="table-of-contents__link toc-highlight">1.1打破對即時的解</a><li><a href=#12即時系統的等級 class="table-of-contents__link toc-highlight">1.2即時系統的等級</a></ul><li><a href=#1-硬即時系hard-real-time-system class="table-of-contents__link toc-highlight">1. 硬即時系[Hard Real-time System]</a><li><a href=#2即時系5oft-real-tine-system class="table-of-contents__link toc-highlight">2.即時系(5oft Real-tine System)</a><li><a href=#3-准即時系best-effort-real-time-systen class="table-of-contents__link toc-highlight">3. 准即時系(Best-effort Real-time Systen)</a><li><a href=#第二部分即時系統的架構特性 class="table-of-contents__link toc-highlight">第二部分:即時系統的架構特性</a><li><a href=#1處理器架構的影響 class="table-of-contents__link toc-highlight">1.處理器架構的影響</a><li><a href=#1-指令流水续-instruction-pipeline class="table-of-contents__link toc-highlight">1. 指令流水续 [Instruction Pipeline]</a><li><a href=#2高速快暇cache-hierarchy class="table-of-contents__link toc-highlight">2.高速快暇(Cache Hierarchy)</a><li><a href=#3-勤履分支预测-dynamic-branch-prediction class="table-of-contents__link toc-highlight">3. 勤履分支预测 (Dynamic Branch Prediction)</a><li><a href=#2時間特性對比 class="table-of-contents__link toc-highlight">2.時間特性對比</a><li><a href=#1-硬即時系mcufpga class="table-of-contents__link toc-highlight">1. 硬即時系(MCU/FPGA)</a><li><a href=#2-蚊即時系胺rt-linux class="table-of-contents__link toc-highlight">2. 蚊即時系胺(RT-Linux)</a><li><a href=#3盖通系统linux class="table-of-contents__link toc-highlight">3.盖通系统(Linux)</a><li><a href=#3關键技術指標 class="table-of-contents__link toc-highlight">3.關键技術指標</a><li><a href=#第三部分即時系統的實現技術父 class="table-of-contents__link toc-highlight">第三部分:即時系統的實現技術父</a><li><a href=#1即時調度技術 class="table-of-contents__link toc-highlight">1.即時調度技術</a><ul><li><a href=#11調度算法對比 class="table-of-contents__link toc-highlight">1.1調度算法對比</a></ul><li><a href=#1-萧通linux国度器-cfs---conpletely-fa1r-scheduler class="table-of-contents__link toc-highlight">1. 萧通Linux国度器 (CFS - Conpletely Fa1r Scheduler)</a><li><a href=#2-即時调度器real-tine-scheduler class="table-of-contents__link toc-highlight">2. 即時调度器(Real-tine Scheduler]</a><ul><li><a href=#12即時調度算法實現 class="table-of-contents__link toc-highlight">1.2即時調度算法實現</a></ul><li><a href=#2記憶體管理技術h class="table-of-contents__link toc-highlight">2.記憶體管理技術H</a><ul><li><a href=#21即時記憶體管理原则 class="table-of-contents__link toc-highlight">2.1即時記憶體管理原则</a><li><a href=#22記憶體優化實現 class="table-of-contents__link toc-highlight">2.2記憶體優化實現</a></ul><li><a href=#3中断處理策略 class="table-of-contents__link toc-highlight">3.中断處理策略</a><ul><li><a href=#31中處理優化 class="table-of-contents__link toc-highlight">3.1中處理優化</a></ul><li><a href=#1中管分播interrupt-layer1ng class="table-of-contents__link toc-highlight">1.中管分播(Interrupt Layer1ng)</a><li><a href=#2中先级管理interrupt-priority-managenent class="table-of-contents__link toc-highlight">2.中先级管理(Interrupt Priority Managenent)</a><ul><li><a href=#32即時中處理實現 class="table-of-contents__link toc-highlight">3.2即時中處理實現</a></ul><li><a href=#第三部分性能優化與實案例 class="table-of-contents__link toc-highlight">第三部分:性能優化與實案例</a><li><a href=#1即時系統性能優化策略 class="table-of-contents__link toc-highlight">1.即時系統性能優化策略</a><ul><li><a href=#11多次優化方法 class="table-of-contents__link toc-highlight">1.1多次優化方法</a><li><a href=#12程式碼级優化 class="table-of-contents__link toc-highlight">1.2程式碼级優化</a></ul><li><a href=#2即時系統測試方法 class="table-of-contents__link toc-highlight">2.即時系統測試方法</a><ul><li><a href=#21性能测試框架 class="table-of-contents__link toc-highlight">2.1性能测試框架</a><li><a href=#22壓力测試方法 class="table-of-contents__link toc-highlight">2.2壓力测試方法</a></ul><li><a href=#1-基率测腻-benchmark-testing class="table-of-contents__link toc-highlight">1. 基率测腻 (Benchmark Testing)</a><li><a href=#2黄洲拭load-testing class="table-of-contents__link toc-highlight">2.黄洲拭(Load Testing)</a><li><a href=#3實際應用案例分析 class="table-of-contents__link toc-highlight">3.實際應用案例分析</a><ul><li><a href=#31工機器人控制系統 class="table-of-contents__link toc-highlight">3.1工機器人控制系統</a><li><a href=#32高频交易系统 class="table-of-contents__link toc-highlight">3.2高频交易系统</a></ul><li><a href=#1延逐曼求latency-requirenents class="table-of-contents__link toc-highlight">1.延逐曼求(Latency Requirenents)</a><li><a href=#2化技optimization-techniques class="table-of-contents__link toc-highlight">2.化技(optimization Techniques)</a><li><a href=#3-监控指樱monitaring-metrics class="table-of-contents__link toc-highlight">3. 监控指樱(Monitaring Metrics)</a><li><a href=#第四部分最佳實奥未来展望 class="table-of-contents__link toc-highlight">第四部分:最佳實奥未来展望</a><li><a href=#1即時系统設計最佳實 class="table-of-contents__link toc-highlight">1.即時系统設計最佳實</a><ul><li><a href=#11設計原则 class="table-of-contents__link toc-highlight">1.1設計原则</a></ul><li><a href=#1-可预测性摄先predictability-first class="table-of-contents__link toc-highlight">1. 可预测性摄先(Predictability First)</a><li><a href=#2-分腊设计-layered-design class="table-of-contents__link toc-highlight">2. 分腊设计 (Layered Design)</a><li><a href=#3-防显性提defensive-design class="table-of-contents__link toc-highlight">3. 防显性提(Defensive Design)</a><ul><li><a href=#12具體實践建父 class="table-of-contents__link toc-highlight">1.2具體實践建父</a></ul><li><a href=#2常見陷阱和解决方案 class="table-of-contents__link toc-highlight">2.常見陷阱和解决方案</a><ul><li><a href=#21典型問题及對策 class="table-of-contents__link toc-highlight">2.1典型問题及對策</a></ul><li><a href=#1先级反畅priority-inversion class="table-of-contents__link toc-highlight">1.先级反畅(Priority Inversion)</a><li><a href=#2死镇間题deadlock class="table-of-contents__link toc-highlight">2.死镇間题(Deadlock)</a><li><a href=#3快取抖動cache-thrashing class="table-of-contents__link toc-highlight">3.快取抖動(Cache Thrashing)</a><ul><li><a href=#22性能陷阱 class="table-of-contents__link toc-highlight">2.2性能陷阱</a></ul><li><a href=#1-4 class="table-of-contents__link toc-highlight">1. 4</a><li><a href=#16 class="table-of-contents__link toc-highlight">1.6</a><li><a href=#1-7 class="table-of-contents__link toc-highlight">1. 7</a><li><a href=#3未來發展趣 class="table-of-contents__link toc-highlight">3.未來發展趣</a><ul><li><a href=#31技術發展方向 class="table-of-contents__link toc-highlight">3.1技術發展方向</a></ul><li><a href=#1硬體超势 class="table-of-contents__link toc-highlight">1.硬體超势</a><li><a href=#2软體超势 class="table-of-contents__link toc-highlight">2.软體超势</a><ul><li><a href=#32應用领域展 class="table-of-contents__link toc-highlight">3.2應用领域展</a></ul><li><a href=#1新興用 class="table-of-contents__link toc-highlight">1.新興用</a><li><a href=#2挑贝概遇 class="table-of-contents__link toc-highlight">2.挑贝概遇</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

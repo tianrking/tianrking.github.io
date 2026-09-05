@@ -1,0 +1,461 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Nordic开发生态全景解析：从nRF5 SDK到nRF Connect SDK | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2025-02-28-nordic开发生态全景解析-从nrf5-sdk到nrf-connect-sdk-2247484425 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="Nordic开发生态全景解析：从nRF5 SDK到nRF Connect SDK | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《Nordic开发生态全景解析：从nRF5 SDK到nRF Connect SDK》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《Nordic开发生态全景解析：从nRF5 SDK到nRF Connect SDK》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2025-02-28T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2025-02-28-nordic开发生态全景解析-从nrf5-sdk到nrf-connect-sdk-2247484425 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-02-28-nordic开发生态全景解析-从nrf5-sdk到nrf-connect-sdk-2247484425 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-02-28-nordic开发生态全景解析-从nrf5-sdk到nrf-connect-sdk-2247484425 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2025-02-28-nordic开发生态全景解析-从nrf5-sdk到nrf-connect-sdk-2247484425","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2025-02-28T00:00:00.000Z","description":"从微信公众号导入的文章《Nordic开发生态全景解析：从nRF5 SDK到nRF Connect SDK》，保留原始排版图并提供本地 OCR 转写。","headline":"Nordic开发生态全景解析：从nRF5 SDK到nRF Connect SDK","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2025-02-28-nordic开发生态全景解析-从nrf5-sdk到nrf-connect-sdk-2247484425","name":"Nordic开发生态全景解析：从nRF5 SDK到nRF Connect SDK","url":"https://w0x7ce.eu/blog/2025-02-28-nordic开发生态全景解析-从nrf5-sdk到nrf-connect-sdk-2247484425"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>Nordic开发生态全景解析：从nRF5 SDK到nRF Connect SDK</h1><div class="container_mt6G margin-vert--md"><time datetime=2025-02-28T00:00:00.000Z>2025年2月28日</time> · <!-- -->閱讀時間約 11 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2025-02-28 23:30:34（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247484425&idx=1&sn=9d4b66e5889576a36a22c24eea8f1d7b&chksm=96e111a3a19698b563a3551a2569a9cafb7c64067a610e0057e16bda0cfcede06c3153de1618#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 5112 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>在物联网和低功耗无线通信领域,NordicSemiconductor作为行业领导者,提供了
+两套主要的软件开发工具:传统的nRF5SDK和现代化的nRF Connect SDK。这两套
+开发环境有着不同的架构理念、功能特点和运适用场景。本文将系统地梳理Nordic的开
+发生态,帮助开发者选择最适合自己项目的开发路径。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一nrf5-sdk1702详解>一、nRF5 SDK17.0.2详解<a href=#一nrf5-sdk1702详解 class=hash-link aria-label="一、nRF5 SDK17.0.2详解的直接連結" title="一、nRF5 SDK17.0.2详解的直接連結" translate=no>​</a></h2>
+<p>nRF5 SDK是Nordic较早推出的开发套件。采用传统的单体死构设计。主要针对nRF5系列芯片。为提
+机开发或搭配FreeRTOS使用而设计。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1目录结构与功能组织>1.目录结构与功能组织<a href=#1目录结构与功能组织 class=hash-link aria-label=1.目录结构与功能组织的直接連結 title=1.目录结构与功能组织的直接連結 translate=no>​</a></h2>
+<p>nRF5SDK的目录结构按照功能和协议类型进行分类。清晰直观:</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=11无线协收相关目录>1.1无线协收相关目录<a href=#11无线协收相关目录 class=hash-link aria-label=1.1无线协收相关目录的直接連結 title=1.1无线协收相关目录的直接連結 translate=no>​</a></h3>
+<p>ble_peripheral:外图设备角色的示例应用</p>
+<ul>
+<li class="">
+<p>bleapptenpLate:基酯项目模板</p>
+</li>
+<li class="">
+<p>bleappblinky:简单LED控制示例</p>
+</li>
+</ul>
+<p>bLeappuart: BLE-UART</p>
+<ul>
+<li class="">
+<p>bleapphrs:心率服务</p>
+</li>
+<li class="">
+<p>bleapphics_keyboard/mouse: HID设鲁实现</p>
+</li>
+<li class="">
+<p>其他标准服务实现(血魅、血压、温度计等)</p>
+</li>
+</ul>
+<p>ble_central:中央设备角色的示例应用</p>
+<ul>
+<li class="">blcapphrs_c:心率服务客户端</li>
+</ul>
+<p>bLeappuart_c: UART客户端</p>
+<ul>
+<li class="">blcapmultilink_central:多连接中央设备</li>
+</ul>
+<p>blecentraland_peripheral:混合角色设备</p>
+<ul>
+<li class="">ant<!-- -->:ANT<!-- -->议相关示例</li>
+</ul>
+<p>ant broadcast: 广播功能
+ant_plus: ANT+标准实现
+ant_fs:文件系统功能</p>
+<ul>
+<li class="">
+<p>antsearchsharing等盛级功能</p>
+</li>
+<li class="">
+<p>nfc:近场通信实现</p>
+</li>
+</ul>
+<p>recordtext、recordurl等基强功能</p>
+<ul>
+<li class="">adafruittagrender:标签说取</li>
+</ul>
+<p>802154<!-- -->:IEEE<!-- --> 802.15.4议支持
+proprietary_rf: Nordic专有无线协议
+esb: Enhanced ShockBurst</p>
+<ul>
+<li class="">gzl1: Gazell协议</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=12功能组件与外设目录>1.2功能组件与外设目录<a href=#12功能组件与外设目录 class=hash-link aria-label=1.2功能组件与外设目录的直接連結 title=1.2功能组件与外设目录的直接連結 translate=no>​</a></h3>
+<p>peripheral:丰富的外设驱动示例</p>
+<ul>
+<li class="">uart、sp1、12c、tvi等通信接口</li>
+</ul>
+<p>pm、tiner、rtc等计时控制功能
+flash、qsp1等存储接口</p>
+<ul>
+<li class="">blinky等基础示例</li>
+</ul>
+<p>crypto:加密与安全功能</p>
+<ul>
+<li class="">dfu:设备国件升级</li>
+</ul>
+<p>secure_bcotloader:安全启动</p>
+<ul>
+<li class="">
+<p>open_bootloadcr:开敏式启动</p>
+</li>
+<li class="">
+<p>dtn:直接测试模式</p>
+</li>
+</ul>
+<p>multiprotocol:多诗议并存示例</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=13硬件支持>1.3硬件支持<a href=#13硬件支持 class=hash-link aria-label=1.3硬件支持的直接連結 title=1.3硬件支持的直接連結 translate=no>​</a></h3>
+<p>每个示例通常包含针对不同开发板的子目录:
+pca16640: nRF52832开发板</p>
+<ul>
+<li class="">pca10656<!-- -->:nRF52840<!-- -->开发板</li>
+</ul>
+<p>pca16640e: nRF52818开发板</p>
+<ul>
+<li class="">pca10056e<!-- -->:nRF52811<!-- -->开发板</li>
+</ul>
+<p>pca16859: nRF52840 US8 Dongle</p>
+<ul>
+<li class="">pca10180<!-- -->:nRF52833<!-- -->升发板</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2softdevice详解>2.SoftDevice详解<a href=#2softdevice详解 class=hash-link aria-label=2.SoftDevice详解的直接連結 title=2.SoftDevice详解的直接連結 translate=no>​</a></h2>
+<p>SoftDevice是Nordic的专有协议栈,以预编译二进制形式提供,运行在应用程序之下,提供无线通
+信功能。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=21-5oftdevice-5112-版本728>2.1 5oftDevice 5112 (版本7.2.8)<a href=#21-5oftdevice-5112-版本728 class=hash-link aria-label="2.1 5oftDevice 5112 (版本7.2.8)的直接連結" title="2.1 5oftDevice 5112 (版本7.2.8)的直接連結" translate=no>​</a></h3>
+<p>■定位:内存优化的外图设备专用BLE协议栈</p>
+<ul>
+<li class="">适用芯片: nRF52805、 nRF52818、nRF52811、nRF52820, nRF52832</li>
+</ul>
+<p>■特点:资源占用少,仅支持外围角色</p>
+<ul>
+<li class="">适用场景:葡单客器,遥控器等资源受限设备</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=22-5oftdevice-s113-版本720>2.2 5oftDevice S113 (版本7.2.0)<a href=#22-5oftdevice-s113-版本720 class=hash-link aria-label="2.2 5oftDevice S113 (版本7.2.0)的直接連結" title="2.2 5oftDevice S113 (版本7.2.0)的直接連結" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p>定位:内存优化的外图设备专用BLE协议税</p>
+</li>
+<li class="">
+<p>适用片<!-- -->:nRF52805<!-- -->至nRF52848全系列</p>
+</li>
+<li class="">
+<p>特点:支持更多芯片,功能仍聚焦于外围角色</p>
+</li>
+<li class="">
+<p>适用场景:与S112英似,但硬件选择更灵活</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=23-5oftdevice-5122-版本s08>2.3 5oftDevice 5122 (版本s.0.8)<a href=#23-5oftdevice-5122-版本s08 class=hash-link aria-label="2.3 5oftDevice 5122 (版本s.0.8)的直接連結" title="2.3 5oftDevice 5122 (版本s.0.8)的直接連結" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p>定位:内存优化的中央设备专用BLE协议核</p>
+</li>
+<li class="">
+<p>适用芯片<!-- -->:nRF52811<!-- -->、nRF52828、nRF52833</p>
+</li>
+</ul>
+<p>■特点:针对中央角色优化</p>
+<ul>
+<li class="">适用场景:网关、控制器等需连接多个外围设备的应用</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=24-5oftdevice-5132-版本720>2.4 5oftDevice 5132 (版本7.2.0)<a href=#24-5oftdevice-5132-版本720 class=hash-link aria-label="2.4 5oftDevice 5132 (版本7.2.0)的直接連結" title="2.4 5oftDevice 5132 (版本7.2.0)的直接連結" translate=no>​</a></h3>
+<p>定位:高性能的中央和外图双角色BLE协议栈</p>
+<ul>
+<li class="">适用芯片<!-- -->:nRF52816<!-- -->、nRF52832</li>
+</ul>
+<p>特点:支持同时作为中央和外图设备</p>
+<ul>
+<li class="">适用场景:需要角色切换的设备,如智能手表</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=25-5oftdevice-s14θ-版本720>2.5 5oftDevice S14θ (版本7.2.0)<a href=#25-5oftdevice-s14θ-版本720 class=hash-link aria-label="2.5 5oftDevice S14θ (版本7.2.0)的直接連結" title="2.5 5oftDevice S14θ (版本7.2.0)的直接連結" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p>定位:功能丰富的中央和外围双角色BLE协议栈</p>
+</li>
+<li class="">
+<p>适用著片: nRF52811、 nRF52828、 nRF52833. nRF52840</p>
+</li>
+<li class="">
+<p>特点:5132的增强版,支持更多喜芯片</p>
+</li>
+</ul>
+<p>适用场景:复杂设备,如医疗设备、高端穿敷设备</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=26-5oftdevice-5212-版本611>2.6 5oftDevice 5212 (版本6.1.1)<a href=#26-5oftdevice-5212-版本611 class=hash-link aria-label="2.6 5oftDevice 5212 (版本6.1.1)的直接連結" title="2.6 5oftDevice 5212 (版本6.1.1)的直接連結" translate=no>​</a></h3>
+<ul>
+<li class="">
+<p>定位<!-- -->:ANT<!-- -->协议核实现</p>
+</li>
+<li class="">
+<p>适用片<!-- -->:nRF52816<!-- -->、nRF52832</p>
+</li>
+</ul>
+<p>■特点:支持所有ANT助能和网络拓扑</p>
+<ul>
+<li class="">适用场景:运动健身设备、心率监测器等</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=二nrf-connect-sdk详解>二、nRF Connect SDK详解<a href=#二nrf-connect-sdk详解 class=hash-link aria-label="二、nRF Connect SDK详解的直接連結" title="二、nRF Connect SDK详解的直接連結" translate=no>​</a></h2>
+<p>nRF Connect SDK是Nordic较新的开发套件,基于Zephyr RTOS构建。采用模块化设计。支持更
+广泛的芯片系列和更多的无线协议。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1核心特点>1.核心特点<a href=#1核心特点 class=hash-link aria-label=1.核心特点的直接連結 title=1.核心特点的直接連結 translate=no>​</a></h2>
+<p>从官方文档中可以看出,nRF Connect SDK具有以下核心特点:</p>
+<ul>
+<li class="">
+<p>基于Zephyr RTOS:集成了开源实时操作系统,提供任务调疫、电源管理等功能</p>
+</li>
+<li class="">
+<p>开源基础:与Zephyr一样,基于开源项目构證</p>
+</li>
+<li class="">
+<p>中间件与安全性:包含QTT、CoAP、LaM2M等中间件,以及Trusted Firmare-M等安全组件</p>
+</li>
+<li class="">
+<p>预认证库:提供预认证的优化库,包延SoftDevice、Matter,Thread等</p>
+</li>
+<li class="">
+<p>事富的连接性支持:支持盐牙、Mesh、ANT、LTE-M/NB-IoT、DECT NR+、Matter、Thread、Wi-</p>
+</li>
+</ul>
+<p>F1等</p>
+<ul>
+<li class="">
+<p>远程可观测性:支持远程调试、监控和FOTA(空中固件升级)</p>
+</li>
+<li class="">
+<p>可扩展:支持out-of-tree开发,适用于各种规模的项目</p>
+</li>
+<li class="">
+<p>第三方集成:与An5、nRF Cloud、Mcnfault等集成</p>
+</li>
+<li class="">
+<p>多样化参考设计:从HID设备到音预设备的高级硬件参考设计</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2目录结构>2.目录结构<a href=#2目录结构 class=hash-link aria-label=2.目录结构的直接連結 title=2.目录结构的直接連結 translate=no>​</a></h2>
+<p>从G1tHub仓库可以看出,nRF Connect SDK的月录结构如下:</p>
+<ul>
+<li class="">applications: 成熟的应用示例,如nrf_desktop</li>
+</ul>
+<p>samples:按功能和协议分类的示例代码
+subsys:子系统,是供各和功能模块</p>
+<ul>
+<li class="">
+<p>Lib:可重用的库函数</p>
+</li>
+<li class="">
+<p>include:头文件</p>
+</li>
+<li class="">
+<p>drivers:设备驱动</p>
+</li>
+</ul>
+<p>modules:外部模块。如TF-H</p>
+<ul>
+<li class="">boards:开发板支持文件</li>
+</ul>
+<p>dts:说备树堤范</p>
+<ul>
+<li class="">cmake:构注系统配置</li>
+</ul>
+<p>sysbuild:系统构题工具</p>
+<ul>
+<li class="">config:配置文件</li>
+</ul>
+<p>scripts:构胞和工具即本</p>
+<ul>
+<li class="">doc:文档</li>
+</ul>
+<p>tests:测试用例
+ext:外部依观项</p>
+<ul>
+<li class="">zephyr<!-- -->:Zephyr<!-- --> RTOS聚成</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3支持的硬件平台>3.支持的硬件平台<a href=#3支持的硬件平台 class=hash-link aria-label=3.支持的硬件平台的直接連結 title=3.支持的硬件平台的直接連結 translate=no>​</a></h2>
+<p>nRF Connect SDK支持亚广泛的Nordic芯片系列:
+nRF52系列: nRF52818/820/832/833/848等</p>
+<ul>
+<li class="">
+<p>nRF53系列: nRF5346 (应用核和网络核)</p>
+</li>
+<li class="">
+<p>nRF54系列: nRF54L15、nRF54H2e等新—代芯片</p>
+</li>
+</ul>
+<p>nRF70系9: nRF7802 (IW1-F1)</p>
+<ul>
+<li class="">nRF91系列: nRF916B, nRF9161 (蜂案IoT )</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=三两套sdk的深度对比与选择指南>三、两套SDK的深度对比与选择指南<a href=#三两套sdk的深度对比与选择指南 class=hash-link aria-label=三、两套SDK的深度对比与选择指南的直接連結 title=三、两套SDK的深度对比与选择指南的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1架构理念对比>1.架构理念对比<a href=#1架构理念对比 class=hash-link aria-label=1.架构理念对比的直接連結 title=1.架构理念对比的直接連結 translate=no>​</a></h2>
+<p>nRF5 SDK:</p>
+<ul>
+<li class="">传统的单体架构</li>
+</ul>
+<p>南向视机或轻量缓RTOS(如FreeRTOS)开发</p>
+<ul>
+<li class="">示例代码直接、易于理解</li>
+</ul>
+<p>使用留编译的SoftDevice提供无线物议栈</p>
+<ul>
+<li class="">技示例和协议组织代码</li>
+</ul>
+<p>nRF Connect SDK:</p>
+<ul>
+<li class="">现代化的模块化架构</li>
+</ul>
+<p>基于Zephyr RTOS构腿</p>
+<ul>
+<li class="">使用设备树指述硬件</li>
+</ul>
+<p>■采用Kconfig系统配置软件组件</p>
+<ul>
+<li class="">使用vest工具管睡项目</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2功能能力对比>2.功能能力对比<a href=#2功能能力对比 class=hash-link aria-label=2.功能能力对比的直接連結 title=2.功能能力对比的直接連結 translate=no>​</a></h2>
+<p>nRF5 SDK:</p>
+<ul>
+<li class="">
+<p>专注于nRF5系列芯片</p>
+</li>
+<li class="">
+<p>提供基础的BLE、ANT、NFC等无线协议支持</p>
+</li>
+</ul>
+<p>依额SoftDevice提供协议核功能</p>
+<ul>
+<li class="">示例丰富但集成度较任</li>
+</ul>
+<p>nRF Connect SDK:</p>
+<ul>
+<li class="">支持nRF5/nRF53/nRF54/nRF78/nRF91全系列</li>
+</ul>
+<p>提供更广泛的协议支持。包括Thread,Zigbee、Matter等</p>
+<ul>
+<li class="">集成了Zephyr生态系接的所有功</li>
+</ul>
+<p>■支持蜂寓IaT和Wi-Fi等高级连接方式</p>
+<ul>
+<li class="">提供亚完善的安全特性和认证支持</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3开发流程对比>3.开发流程对比<a href=#3开发流程对比 class=hash-link aria-label=3.开发流程对比的直接連結 title=3.开发流程对比的直接連結 translate=no>​</a></h2>
+<p>nRF5SDK开发流程:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1复制量接近需求的示例项目>1.复制量接近需求的示例项目<a href=#1复制量接近需求的示例项目 class=hash-link aria-label=1.复制量接近需求的示例项目的直接連結 title=1.复制量接近需求的示例项目的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2配置softdevice和应用程序>2.配置SoftDevice和应用程序<a href=#2配置softdevice和应用程序 class=hash-link aria-label=2.配置SoftDevice和应用程序的直接連結 title=2.配置SoftDevice和应用程序的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3修改代码实现自定义功能>3.修改代码实现自定义功能<a href=#3修改代码实现自定义功能 class=hash-link aria-label=3.修改代码实现自定义功能的直接連結 title=3.修改代码实现自定义功能的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4-使用ide-如seskei1iar-编译和调试>4. 使用IDE (如SES、Kei1、IAR) 编译和调试<a href=#4-使用ide-如seskei1iar-编译和调试 class=hash-link aria-label="4. 使用IDE (如SES、Kei1、IAR) 编译和调试的直接連結" title="4. 使用IDE (如SES、Kei1、IAR) 编译和调试的直接連結" translate=no>​</a></h2>
+<p>nRF Connect SDK开发流程:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1使用uest工具初始化工作区>1.使用uest工具初始化工作区<a href=#1使用uest工具初始化工作区 class=hash-link aria-label=1.使用uest工具初始化工作区的直接連結 title=1.使用uest工具初始化工作区的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2选择合适的示例作为起点>2.选择合适的示例作为起点<a href=#2选择合适的示例作为起点 class=hash-link aria-label=2.选择合适的示例作为起点的直接連結 title=2.选择合适的示例作为起点的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3通过kcanfig和设备树配置硬件和软件>3.通过Kcanfig和设备树配置硬件和软件<a href=#3通过kcanfig和设备树配置硬件和软件 class=hash-link aria-label=3.通过Kcanfig和设备树配置硬件和软件的直接連結 title=3.通过Kcanfig和设备树配置硬件和软件的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4使用cmake构建系统编译>4.使用CMake构建系统编译<a href=#4使用cmake构建系统编译 class=hash-link aria-label=4.使用CMake构建系统编译的直接連結 title=4.使用CMake构建系统编译的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5可快用vs-cadenrf-cannect插件或命令行开发>5.可快用vS Cade+nRF Cannect插件或命令行开发<a href=#5可快用vs-cadenrf-cannect插件或命令行开发 class=hash-link aria-label="5.可快用vS Cade+nRF Cannect插件或命令行开发的直接連結" title="5.可快用vS Cade+nRF Cannect插件或命令行开发的直接連結" translate=no>​</a></h2>
+<p>4,适用场景与选择指南
+选择nRF5SDK的场景:
+简单的独立应用。不需要RTOS</p>
+<ul>
+<li class="">资应极其有限的设备</li>
+</ul>
+<p>■学习藏入式开发的初学者</p>
+<ul>
+<li class="">维护已有的基于nRF5 SDK的项目</li>
+</ul>
+<p>■仅需基础LE功能的应用
+选择nRF Connect SDK的场景:</p>
+<ul>
+<li class="">
+<p>需要RTOS功能的复杂应用</p>
+</li>
+<li class="">
+<p>需要支持量斯芯片系列(nRF53/54/76/91)</p>
+</li>
+<li class="">
+<p>需要高级连接胁议(Thread/Natter/Wi-Fi)</p>
+</li>
+<li class="">
+<p>希望利用开源生态系统的优募</p>
+</li>
+<li class="">
+<p>关注安全性和可认证性的产品</p>
+</li>
+</ul>
+<p>■长期维护的商业产品</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=四开发最佳实践>四、开发最佳实践<a href=#四开发最佳实践 class=hash-link aria-label=四、开发最佳实践的直接連結 title=四、开发最佳实践的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1nrf5-sdk开发建议>1.nRF5 SDK开发建议<a href=#1nrf5-sdk开发建议 class=hash-link aria-label="1.nRF5 SDK开发建议的直接連結" title="1.nRF5 SDK开发建议的直接連結" translate=no>​</a></h2>
+<ul>
+<li class="">从简单示例入手:先从blinky等基础示例开始,了解5DK结构</li>
+</ul>
+<p>理解SoftDevice:熟悉SoftDevice的配置和事件处理机制</p>
+<ul>
+<li class="">选择合适的SoftDevice:</li>
+</ul>
+<p>■仅需外图设备功能<!-- -->:S112<!-- -->/S113</p>
+<ul>
+<li class="">
+<p>需要中央设备功能<!-- -->:S122</p>
+</li>
+<li class="">
+<p>需要双角色:5132/S148</p>
+</li>
+<li class="">
+<p>需要ANT物议<!-- -->:S212</p>
+</li>
+<li class="">
+<p>示例驱动开发:基于与需求最接近的示例账改,登免从零开始</p>
+</li>
+<li class="">
+<p>关注事件处理<!-- -->:BLE<!-- -->应用的核心是事件驱动模型,重点注解事件处理流程</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2nrfconnectsdk开发建议>2.nRFConnectSDK开发建议<a href=#2nrfconnectsdk开发建议 class=hash-link aria-label=2.nRFConnectSDK开发建议的直接連結 title=2.nRFConnectSDK开发建议的直接連結 translate=no>​</a></h2>
+<p>■掌握Zephyr基础:学习Zephyr的线程、信号量等RToS概念</p>
+<ul>
+<li class="">
+<p>理解设备树:掌握设备树描述硬件的方法</p>
+</li>
+<li class="">
+<p>熟悉Kconfig系统:了解如何通过Kconfig配置软件组件</p>
+</li>
+<li class="">
+<p>使用West工具:学习West命令管理项目</p>
+</li>
+</ul>
+<p>■从样例学习<!-- -->:nRFConnectSDK<!-- -->有丰富的样例,从中学习各功能模块的使用
+■关注测试用例:测试用例通常包含模块使用的最简实现</p>
+<ul>
+<li class="">善用命令行工具:熟悉构建和烧录的命令行工具,提高效率</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3迁移策略>3.迁移策略<a href=#3迁移策略 class=hash-link aria-label=3.迁移策略的直接連結 title=3.迁移策略的直接連結 translate=no>​</a></h2>
+<p>如果需要从nRF5SDK迁移到nRFConnectSDK:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1先理解应用的核心功能和工作流程>1.先理解应用的核心功能和工作流程<a href=#1先理解应用的核心功能和工作流程 class=hash-link aria-label=1.先理解应用的核心功能和工作流程的直接連結 title=1.先理解应用的核心功能和工作流程的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2寻找nrfconnectsdk中的对应功能模块>2.寻找nRFConnectSDK中的对应功能模块<a href=#2寻找nrfconnectsdk中的对应功能模块 class=hash-link aria-label=2.寻找nRFConnectSDK中的对应功能模块的直接連結 title=2.寻找nRFConnectSDK中的对应功能模块的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3从简单功能开始重构逐步替换复杂功能>3.从简单功能开始重构,逐步替换复杂功能<a href=#3从简单功能开始重构逐步替换复杂功能 class=hash-link aria-label=3.从简单功能开始重构,逐步替换复杂功能的直接連結 title=3.从简单功能开始重构,逐步替换复杂功能的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4利用nrfconnectsdk的示例作为参考>4.利用nRFConnectSDK的示例作为参考<a href=#4利用nrfconnectsdk的示例作为参考 class=hash-link aria-label=4.利用nRFConnectSDK的示例作为参考的直接連結 title=4.利用nRFConnectSDK的示例作为参考的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5适应基于zephyr的事件处理和线程模型>5.适应基于Zephyr的事件处理和线程模型<a href=#5适应基于zephyr的事件处理和线程模型 class=hash-link aria-label=5.适应基于Zephyr的事件处理和线程模型的直接連結 title=5.适应基于Zephyr的事件处理和线程模型的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=6重新设计硬件抽象层利用设备树>6.重新设计硬件抽象层,利用设备树<a href=#6重新设计硬件抽象层利用设备树 class=hash-link aria-label=6.重新设计硬件抽象层,利用设备树的直接連結 title=6.重新设计硬件抽象层,利用设备树的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=五未来发展趋势>五、未来发展趋势<a href=#五未来发展趋势 class=hash-link aria-label=五、未来发展趋势的直接連結 title=五、未来发展趋势的直接連結 translate=no>​</a></h2>
+<p>从Nordic的产品路线来看,未来的发展趋势非常明确:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1nrfconnectsdk是未来主力>1.nRFConnectSDK是未来主力:<a href=#1nrfconnectsdk是未来主力 class=hash-link aria-label=1.nRFConnectSDK是未来主力:的直接連結 title=1.nRFConnectSDK是未来主力:的直接連結 translate=no>​</a></h2>
+<p>■所有新芯片系列(nRF53/54/70/91)只支持nRFConnectSDK
+■新的协议和功能优先添加到nRFConnectSDK</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1nrf5sdk进入维护阶段>1.nRF5SDK进入维护阶段:<a href=#1nrf5sdk进入维护阶段 class=hash-link aria-label=1.nRF5SDK进入维护阶段:的直接連結 title=1.nRF5SDK进入维护阶段:的直接連結 translate=no>​</a></h2>
+<p>■仍会维护以支持已有产品</p>
+<ul>
+<li class="">不会添加重大新功能</li>
+</ul>
+<p>■长期来看将逐渐被淘汰</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1zephyr生态系统的重要性增加>1.Zephyr生态系统的重要性增加:<a href=#1zephyr生态系统的重要性增加 class=hash-link aria-label=1.Zephyr生态系统的重要性增加:的直接連結 title=1.Zephyr生态系统的重要性增加:的直接連結 translate=no>​</a></h2>
+<p>■越来越多的功能将基于Zephyr实现
+■与Zephyr社区的协作将加强</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1更强调安全性和认证>1.更强调安全性和认证:<a href=#1更强调安全性和认证 class=hash-link aria-label=1.更强调安全性和认证:的直接連結 title=1.更强调安全性和认证:的直接連結 translate=no>​</a></h2>
+<ul>
+<li class="">安全启动、加密、安全存储等功能成为标准</li>
+</ul>
+<p>■预认证组件将继续扩展</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1多协议融合>1.多协议融合:<a href=#1多协议融合 class=hash-link aria-label=1.多协议融合:的直接連結 title=1.多协议融合:的直接連結 translate=no>​</a></h2>
+<p>■不同无线技术的协同工作将成为主流
+■统一的软件架构支持多种协议
+结语
+Nordic的开发生态从传统的nRF5SDK向现代化的nRFConnectSDK演进,反映了嵌入式系统开发
+的整体趋势:从简单的裸机编程向基于RTOS的模块化开发转变。
+对于开发者而言,选择合适的开发平台应基于项目需求、团队经验和长期规划。如果是短期项目或学习
+目的,nRF5SDK凭借其简单直观的特点仍是不错的选择;而对于商业产品或需要长期支持的项目,
+nRFConnectSDK无疑是更具前瞻性的选择。
+无论选择哪种开发路径,Nordic都提供了丰富的文档、示例和工具,帮助开发者高效地实现低功耗无
+线应用。了解两套SDK的优缺点和适用场景,就可以在Nordic生态系统中找到最适合自己的开发之
+路。
+最重要的是,持续学习和适应新工具将是在快速发展的嵌入式和IoT领域保持竞争力的关键。Nordic
+的开发生态正在不断演进,紧跟其步伐将为待开发的项目带来更多可能性。</p>
+<p>收录于低功耗</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<p><img decoding=async loading=lazy alt="Nordic开发生态全景解析：从nRF5 SDK到nRF Connect SDK：微信公众号导出原始排版图" src=/assets/images/article-1a8a3577287c7c3fcb4b689dff05ae2c.webp width=1280 height=8379 class=img_ev3q /></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2025-02-28-2025-02-28-nordic开发生态全景解析-从nrf5-sdk到nrf-connect-sdk-2247484425.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2025-03-18-openwrt旁路由桥接-智能空间改造的最佳选择-打造安全-灵活-强大的家居网络系统-2247484436><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>OpenWrt旁路由桥接：智能空间改造的最佳选择，打造安全、灵活、强大的家居网络系统</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2025-02-27-颠覆交互-prompt-工程驱动智能硬件的价值跃迁-2247484420><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>颠覆交互：Prompt 工程驱动智能硬件的价值跃迁</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#一nrf5-sdk1702详解 class="table-of-contents__link toc-highlight">一、nRF5 SDK17.0.2详解</a><li><a href=#1目录结构与功能组织 class="table-of-contents__link toc-highlight">1.目录结构与功能组织</a><ul><li><a href=#11无线协收相关目录 class="table-of-contents__link toc-highlight">1.1无线协收相关目录</a><li><a href=#12功能组件与外设目录 class="table-of-contents__link toc-highlight">1.2功能组件与外设目录</a><li><a href=#13硬件支持 class="table-of-contents__link toc-highlight">1.3硬件支持</a></ul><li><a href=#2softdevice详解 class="table-of-contents__link toc-highlight">2.SoftDevice详解</a><ul><li><a href=#21-5oftdevice-5112-版本728 class="table-of-contents__link toc-highlight">2.1 5oftDevice 5112 (版本7.2.8)</a><li><a href=#22-5oftdevice-s113-版本720 class="table-of-contents__link toc-highlight">2.2 5oftDevice S113 (版本7.2.0)</a><li><a href=#23-5oftdevice-5122-版本s08 class="table-of-contents__link toc-highlight">2.3 5oftDevice 5122 (版本s.0.8)</a><li><a href=#24-5oftdevice-5132-版本720 class="table-of-contents__link toc-highlight">2.4 5oftDevice 5132 (版本7.2.0)</a><li><a href=#25-5oftdevice-s14θ-版本720 class="table-of-contents__link toc-highlight">2.5 5oftDevice S14θ (版本7.2.0)</a><li><a href=#26-5oftdevice-5212-版本611 class="table-of-contents__link toc-highlight">2.6 5oftDevice 5212 (版本6.1.1)</a></ul><li><a href=#二nrf-connect-sdk详解 class="table-of-contents__link toc-highlight">二、nRF Connect SDK详解</a><li><a href=#1核心特点 class="table-of-contents__link toc-highlight">1.核心特点</a><li><a href=#2目录结构 class="table-of-contents__link toc-highlight">2.目录结构</a><li><a href=#3支持的硬件平台 class="table-of-contents__link toc-highlight">3.支持的硬件平台</a><li><a href=#三两套sdk的深度对比与选择指南 class="table-of-contents__link toc-highlight">三、两套SDK的深度对比与选择指南</a><li><a href=#1架构理念对比 class="table-of-contents__link toc-highlight">1.架构理念对比</a><li><a href=#2功能能力对比 class="table-of-contents__link toc-highlight">2.功能能力对比</a><li><a href=#3开发流程对比 class="table-of-contents__link toc-highlight">3.开发流程对比</a><li><a href=#1复制量接近需求的示例项目 class="table-of-contents__link toc-highlight">1.复制量接近需求的示例项目</a><li><a href=#2配置softdevice和应用程序 class="table-of-contents__link toc-highlight">2.配置SoftDevice和应用程序</a><li><a href=#3修改代码实现自定义功能 class="table-of-contents__link toc-highlight">3.修改代码实现自定义功能</a><li><a href=#4-使用ide-如seskei1iar-编译和调试 class="table-of-contents__link toc-highlight">4. 使用IDE (如SES、Kei1、IAR) 编译和调试</a><li><a href=#1使用uest工具初始化工作区 class="table-of-contents__link toc-highlight">1.使用uest工具初始化工作区</a><li><a href=#2选择合适的示例作为起点 class="table-of-contents__link toc-highlight">2.选择合适的示例作为起点</a><li><a href=#3通过kcanfig和设备树配置硬件和软件 class="table-of-contents__link toc-highlight">3.通过Kcanfig和设备树配置硬件和软件</a><li><a href=#4使用cmake构建系统编译 class="table-of-contents__link toc-highlight">4.使用CMake构建系统编译</a><li><a href=#5可快用vs-cadenrf-cannect插件或命令行开发 class="table-of-contents__link toc-highlight">5.可快用vS Cade+nRF Cannect插件或命令行开发</a><li><a href=#四开发最佳实践 class="table-of-contents__link toc-highlight">四、开发最佳实践</a><li><a href=#1nrf5-sdk开发建议 class="table-of-contents__link toc-highlight">1.nRF5 SDK开发建议</a><li><a href=#2nrfconnectsdk开发建议 class="table-of-contents__link toc-highlight">2.nRFConnectSDK开发建议</a><li><a href=#3迁移策略 class="table-of-contents__link toc-highlight">3.迁移策略</a><li><a href=#1先理解应用的核心功能和工作流程 class="table-of-contents__link toc-highlight">1.先理解应用的核心功能和工作流程</a><li><a href=#2寻找nrfconnectsdk中的对应功能模块 class="table-of-contents__link toc-highlight">2.寻找nRFConnectSDK中的对应功能模块</a><li><a href=#3从简单功能开始重构逐步替换复杂功能 class="table-of-contents__link toc-highlight">3.从简单功能开始重构,逐步替换复杂功能</a><li><a href=#4利用nrfconnectsdk的示例作为参考 class="table-of-contents__link toc-highlight">4.利用nRFConnectSDK的示例作为参考</a><li><a href=#5适应基于zephyr的事件处理和线程模型 class="table-of-contents__link toc-highlight">5.适应基于Zephyr的事件处理和线程模型</a><li><a href=#6重新设计硬件抽象层利用设备树 class="table-of-contents__link toc-highlight">6.重新设计硬件抽象层,利用设备树</a><li><a href=#五未来发展趋势 class="table-of-contents__link toc-highlight">五、未来发展趋势</a><li><a href=#1nrfconnectsdk是未来主力 class="table-of-contents__link toc-highlight">1.nRFConnectSDK是未来主力:</a><li><a href=#1nrf5sdk进入维护阶段 class="table-of-contents__link toc-highlight">1.nRF5SDK进入维护阶段:</a><li><a href=#1zephyr生态系统的重要性增加 class="table-of-contents__link toc-highlight">1.Zephyr生态系统的重要性增加:</a><li><a href=#1更强调安全性和认证 class="table-of-contents__link toc-highlight">1.更强调安全性和认证:</a><li><a href=#1多协议融合 class="table-of-contents__link toc-highlight">1.多协议融合:</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

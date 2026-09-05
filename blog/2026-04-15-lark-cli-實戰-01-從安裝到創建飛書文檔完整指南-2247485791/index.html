@@ -1,0 +1,603 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>lark-cli 實戰 01：從安裝到創建飛書文檔完整指南 | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2026-04-15-lark-cli-實戰-01-從安裝到創建飛書文檔完整指南-2247485791 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="lark-cli 實戰 01：從安裝到創建飛書文檔完整指南 | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《lark-cli 實戰 01：從安裝到創建飛書文檔完整指南》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《lark-cli 實戰 01：從安裝到創建飛書文檔完整指南》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2026-04-15T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2026-04-15-lark-cli-實戰-01-從安裝到創建飛書文檔完整指南-2247485791 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-04-15-lark-cli-實戰-01-從安裝到創建飛書文檔完整指南-2247485791 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-04-15-lark-cli-實戰-01-從安裝到創建飛書文檔完整指南-2247485791 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2026-04-15-lark-cli-實戰-01-從安裝到創建飛書文檔完整指南-2247485791","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2026-04-15T00:00:00.000Z","description":"从微信公众号导入的文章《lark-cli 實戰 01：從安裝到創建飛書文檔完整指南》，保留原始排版图并提供本地 OCR 转写。","headline":"lark-cli 實戰 01：從安裝到創建飛書文檔完整指南","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2026-04-15-lark-cli-實戰-01-從安裝到創建飛書文檔完整指南-2247485791","name":"lark-cli 實戰 01：從安裝到創建飛書文檔完整指南","url":"https://w0x7ce.eu/blog/2026-04-15-lark-cli-實戰-01-從安裝到創建飛書文檔完整指南-2247485791"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>lark-cli 實戰 01：從安裝到創建飛書文檔完整指南</h1><div class="container_mt6G margin-vert--md"><time datetime=2026-04-15T00:00:00.000Z>2026年4月15日</time> · <!-- -->閱讀時間約 12 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2026-04-15 00:04:25（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247485791&idx=1&sn=3916cc35a09b6c7f5e68e0a5b8a8528b&chksm=96e11cf5a19695e3a110b37454e234b241249c89e5f340b28e939abad71ee3d2df662eca6f96#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 7192 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>original wex7ce EI V1ajero 2026年4月15日 00:84美国
+這是一份真實操作記,每一個命令和输出都在何服器上實账敦行退。記综了如何在一台
+Linux 何服器上配置lark-cli,读AI Agent(Claude)直接以用户身份调用飛害
+API,實現零代碼操作刑鲁文權。
+工具: Hermes + ClaudeCode + lark-cli vl.0.9
+核心思路:不間發飛書用,不寫代码。直接用Lark-cl1绑定你的飛善畅户,然後据AI
+Agent 用 CLI 命令操作冠害。
+Aaout
+Th atcsl LagFEtu CLIo
+I yme
+ar,IMal, laeks,
+aertings
+cevmanes and 23+IAgeet
+irsm
+tnetct (NX)
+yiseer
+dna
+ay1g9
+heanaga
+合 TB s</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一琅境配置全過程>一、琅境配置全過程<a href=#一琅境配置全過程 class=hash-link aria-label=一、琅境配置全過程的直接連結 title=一、琅境配置全過程的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=11-安装lark-cli>1.1 安装lark-cli<a href=#11-安装lark-cli class=hash-link aria-label="1.1 安装lark-cli的直接連結" title="1.1 安装lark-cli的直接連結" translate=no>​</a></h3>
+<p>伺服器上已有Node.jsv24.14.1,直接安装:
+npn install -g @larksuilte/cl1
+邵
+Lark-cli version 1.0.9</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=12配置飛晋應用證>1.2配置飛晋應用證<a href=#12配置飛晋應用證 class=hash-link aria-label=1.2配置飛晋應用證的直接連結 title=1.2配置飛晋應用證的直接連結 translate=no>​</a></h3>
+<p>lark-cli 幂要一個飛善开放平台的愿用(App ID+App Secret)。有雨種方式:
+围後自動创建)
+配量完後硫:
+sess yane tio-yue s</p>
+<ul>
+<li class="">
+<p>appId": "cli a956xxxxx*</p>
+</li>
+<li class="">
+<p>brand": "feishu*,</p>
+</li>
+<li class="">
+<p>identity": "bot*,</p>
+</li>
+<li class="">
+<p>note": "No user logged in. Only bot (tenant) identity is available."</p>
+</li>
+</ul>
+<p>此時只有bot(愿用)身份,看不到用户的個人资源。要邯定用户易份。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=13用户登錄授權-0authdeviceflow群解>1.3用户登錄授權-0AuthDeviceFLow群解<a href=#13用户登錄授權-0authdeviceflow群解 class=hash-link aria-label=1.3用户登錄授權-0AuthDeviceFLow群解的直接連結 title=1.3用户登錄授權-0AuthDeviceFLow群解的直接連結 translate=no>​</a></h3>
+<p>何服器没有测贸器,所以用Dev1ce FLow模式。道一步是整個配置的核心。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第一步agent起授權請求>第一步:Agent起授權請求<a href=#第一步agent起授權請求 class=hash-link aria-label=第一步:Agent起授權請求的直接連結 title=第一步:Agent起授權請求的直接連結 translate=no>​</a></h2>
+<p>业“回“TM-
+Agent 孰行
+Lark-cl1 auth login --recommend - -donain docs,drive,wiki,im - -no-wait
+返回值(JS0N):</p>
+<ul>
+<li class="">
+<p>device_code*: *oQTl_UBkqutIThCPUFCBjMVxCat2rSBP...",</p>
+</li>
+<li class="">
+<p>verification_url*: "<code>https://accounts.</code> feishu-cn/oauth/v1/device/verif</p>
+</li>
+<li class="">
+<p>user_code": *7JZR-TR4Y",</p>
+</li>
+</ul>
+<p>expires_in*: 600</p>
+<p>谁奎生的
+字段
+含额
+换token的愚證,後續要
+飛善OAuth何服器,通适本命令返
+dev1ce_code
+用
+国
+verif1cat1on_ur
+授權真面翘接
+同上
+1
+user_code
+在授權真面輸入的验證碼
+同上
+有效期686秒(10分
+同上
+expires_in
+键)
+device_code
+是這個命令直接返回的,不是测質器授權後產生的。先拿到devireC
+odc,用户再去测置器授槽,显後用devicc_codc换token。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第二步用户在實器授權>第二步:用户在實器授權<a href=#第二步用户在實器授權 class=hash-link aria-label=第二步:用户在實器授權的直接連結 title=第二步:用户在實器授權的直接連結 translate=no>​</a></h2>
+<p>Agent 把縫接和user_code登给用户。用户在自己電上:
+L. 打用 verification url</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2真面顯示user_cade或手勤输入>2.真面顯示user_cade(或手勤输入)<a href=#2真面顯示user_cade或手勤输入 class=hash-link aria-label=2.真面顯示user_cade(或手勤输入)的直接連結 title=2.真面顯示user_cade(或手勤输入)的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3贴链超授槽>3.贴链超授槽<a href=#3贴链超授槽 class=hash-link aria-label=3.贴链超授槽的直接連結 title=3.贴链超授槽的直接連結 translate=no>​</a></h2>
+<p>飛害伺服器會配:這因dcvicc_codc對庭用户wex7ce,已授權。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第三步agent用device_code完成置錄>第三步:Agent用device_code完成置錄<a href=#第三步agent用device_code完成置錄 class=hash-link aria-label=第三步:Agent用device_code完成置錄的直接連結 title=第三步:Agent用device_code完成置錄的直接連結 translate=no>​</a></h2>
+<p>用户告新Agent 授權完成,Agent 用第一步的device_code敦行:
+lark-cli auth login --device-code "oQTl_uekqutIThcPUFCBjMVxCotzr5BP.."
+實察返回:
+0K:冀赣成功! 用卢:w8x7ce (ou_8b699fcd377ea78ff5e16abb4b8ba397)
+本次求 scopes: docs:docunent.content:read decx:docunent:create docx:c
+本次末授予scopes:(空)
+验最终状部:
+瞻證最终状题:
+S lark-cli auth status</p>
+<p>xxxxxx9s6eT1p...,Idde.</p>
+<ul>
+<li class="">
+<p>identity": “user*,</p>
+</li>
+<li class="">
+<p>userName": "uex7ce",</p>
+</li>
+<li class="">
+<p>tokenstatus*:*valid",</p>
+</li>
+</ul>
+<p>Ldentity徙bot爱成了user。现在Agent 可以用wox7ce的身份操作册
+V
+書了。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=二創建文檔一每種元素的真實命令>二、創建文檔一每種元素的真實命令<a href=#二創建文檔一每種元素的真實命令 class=hash-link aria-label=二、創建文檔一每種元素的真實命令的直接連結 title=二、創建文檔一每種元素的真實命令的直接連結 translate=no>​</a></h2>
+<p>以下是所有文檔能力的實测结果。每個命令都在何服器上實腐執行透,输出是真實的。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=21創建文檔基础>2.1創建文檔基础<a href=#21創建文檔基础 class=hash-link aria-label=2.1創建文檔基础的直接連結 title=2.1創建文檔基础的直接連結 translate=no>​</a></h3>
+<p>Lark-cli docs +create \</p>
+<ul>
+<li class="">-markdown“遭是一段普通文本。</li>
+</ul>
+<p>實际返回:</p>
+<ul>
+<li class="">
+<p>ok": true,</p>
+</li>
+<li class="">
+<p>data":{</p>
+</li>
+<li class="">
+<p>doc_id": "QfqTaXy6AoVRz7xdTNcc6Xgmngb",</p>
+</li>
+</ul>
+<p>"dpc_url": "<code>https://www.</code> feishu.cn/docx/QfqTdxybApvRz7xdTNcc6Xgmngb"
+厚x。obessu</p>
+<p>後绩操作都用
+doc_id来定位道霜文榴。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=22富文本格式>2.2富文本格式<a href=#22富文本格式 class=hash-link aria-label=2.2富文本格式的直接連結 title=2.2富文本格式的直接連結 translate=no>​</a></h3>
+<p>Lark-cli docs +update \</p>
+<ul>
+<li class="">-doc "QfqTdxy6AoVRz7xdTNcc6Xgnngb"</li>
+</ul>
+<p>\ puodde apou-</p>
+<ul>
+<li class="">-markdown“普通文本,支持*加和**、<em>科體</em>、障螺,“行内代碼”。</li>
+</ul>
+<p>返回:</p>
+<ul>
+<li class="">ok": true,</li>
+</ul>
+<p>',puadde,. +,apou.</p>
+<p>對效果:普通文本中的加粗、斜、删除線、行内代疆。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=23高亮塊callout>2.3高亮塊(Callout)<a href=#23高亮塊callout class=hash-link aria-label=2.3高亮塊(Callout)的直接連結 title=2.3高亮塊(Callout)的直接連結 translate=no>​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=三福常用高亮境>三福常用高亮境:<a href=#三福常用高亮境 class=hash-link aria-label=三福常用高亮境:的直接連結 title=三福常用高亮境:的直接連結 translate=no>​</a></h2>
+<p>Lark-c1i docs +update</p>
+<ul>
+<li class="">-doc "QfqTdXy6AoVRz7xdTNcc6Xgnngb"\</li>
+</ul>
+<p>\ puadde apou--
+=1 [cue 4malless, umopyeu-</p>
+<ul>
+<li class="">backgraund-color=-light-hlue"></li>
+</ul>
+<p>亚色提示高亮境。
+/callout>
+ccallout emoji-** background-color-"light-yellow">
+黄色警告高亮场。
+&lt;/callout>
+ccallout emoji=<em>X</em> background-color="light-red*s
+红色危险高亮境。
+&lt;/callout>:
+返回:同上 append 成功.
+到愿效果:带enoji图标、带背景色的高亮场。
+隔性明:
+隔性
+可退值
+脱明
+左例
+enoj1
+任意emoji字符
+light-blue
+背景
+background
+,light-yellow, Light-red, light-green, light-pu
+J0103-
+色
+rple, light-orange, pale-gray
+callout内部可以格式化文本,但不支持代碼现、表格、图片。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=24分grid>2.4分(Grid)<a href=#24分grid class=hash-link aria-label=2.4分(Grid)的直接連結 title=2.4分(Grid)的直接連結 translate=no>​</a></h3>
+<p>雨等宽:
+Lark-cl1 docs +update <br/>
+<!-- -->1puadde opoa
+markdo/n
+,=5]02 p7./6>,
+&lt;column>
+左内容,支持<strong>格式化</strong>。
+列表项1</p>
+<ul>
+<li class="">列表2</li>
+</ul>
+<p>&lt;/column>
+右帽内客。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1有序列表>1.有序列表<a href=#1有序列表 class=hash-link aria-label=1.有序列表的直接連結 title=1.有序列表的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2第二顷>2.第二顷<a href=#2第二顷 class=hash-link aria-label=2.第二顷的直接連結 title=2.第二顷的直接連結 translate=no>​</a></h2>
+<p>&lt;/column>
+&lt;/gr1d></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=三棚自定宽度>三棚自定宽度:<a href=#三棚自定宽度 class=hash-link aria-label=三棚自定宽度:的直接連結 title=三棚自定宽度:的直接連結 translate=no>​</a></h2>
+<p>Lark-cli docs +update <br/>
+<!-- -->70C
+mode append 1
+1puadde opos</p>
+<ul>
+<li class="">,08/ko</li>
+</ul>
+<p>&lt;3=apim ums
+20%真
+&lt;/column>
+&lt;,09,=qapim uuos>
+60%宽
+&lt;/column>
+&lt;,3,=qapim uuas>
+20%真
+&lt;/column>
+&lt;/grid>
+性就明:
+cols
+列数,2到5</p>
+<ul>
+<li class="">width-列寶百分比,铺和必须為160,等实可省略</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=25表格>2.5表格<a href=#25表格 class=hash-link aria-label=2.5表格的直接連結 title=2.5表格的直接連結 translate=no>​</a></h3>
+<p>表格直接用Markdown惩法:
+Lark-cl1 docs +update \</p>
+<ul>
+<li class="">doc"QfqTdXy6AoVR7xdTVc5Xgm</li>
+</ul>
+<p>mode appcnd 1</p>
+<ul>
+<li class="">
+<p>Barkdown°1列 1|列 2|列 3</p>
+</li>
+<li class="">
+<ul>
+<li class=""></li>
+</ul>
+</li>
+</ul>
+<p>1 数 1 | 数域 2 1 数摄 3 |
+数球4|数擦5|数6|
+辩表格(单元格内有列表、代码等)用飛画增强表格:
+Lark-cli docs +update</p>
+<ul>
+<li class="">doc "QfqTdXy6AovRz7xdTNcc6Xgnngb"</li>
+</ul>
+<p>\ puadde apou--</p>
+<ul>
+<li class="">-narkdown *slark-table calumn-widths="2ee,2so,2ee" header-row=*true</li>
+</ul>
+<p>xlark tr>
+zlark-td></p>
+<ul>
+<li class=""><em>功能</em>*</li>
+</ul>
+<p>s/lark-td></p>
+<ul>
+<li class="">部令**</li>
+</ul>
+<p>slark-td></p>
+<ul>
+<li class=""><em>些明</em>*</li>
+</ul>
+<p>&lt;/lark-td>
+clark-tr>
+创建文福
+clark-td>
+docs +create
+&lt;/lark-td>
+Markdown 刨建新文榴
+c/lark-td>
+c/lark-tables'
+lark-table的clark-td标箍内的内容前後必须空行,否则解析失。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=26代碼瑰>2.6代碼瑰<a href=#26代碼瑰 class=hash-link aria-label=2.6代碼瑰的直接連結 title=2.6代碼瑰的直接連結 translate=no>​</a></h3>
+<p>lark-cli docs +update <br/>
+<!-- -->doc "0fqTdXy6AoVRz7xdTVcC</p>
+<ul>
+<li class="">oode append 1</li>
+</ul>
+<p>srkdown“##代碍示例
+python
+def hello() :
+print(“Hello, Feishu!*)
+return True
+支持的語言磁:python,javascript,go,Java,sql,json,yanl,shcl
+L, bash 等。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=27任務列表>2.7任務列表<a href=#27任務列表 class=hash-link aria-label=2.7任務列表的直接連結 title=2.7任務列表的直接連結 translate=no>​</a></h3>
+<p>lark-cli docs +update</p>
+<ul>
+<li class="">doc "QfqTdXy6AoVRz7xdTNcc6Xgmngb"</li>
+</ul>
+<p>\puadde apou--
+markdown"-[]末完成的任称</p>
+<ul>
+<li class="">[x]已完成的任務“</li>
+</ul>
+<p>效果:带勾避框的待群列表,</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=28引用瑰>2.8引用瑰<a href=#28引用瑰 class=hash-link aria-label=2.8引用瑰的直接連結 title=2.8引用瑰的直接連結 translate=no>​</a></h3>
+<p>lark-cli docs +update</p>
+<ul>
+<li class="">
+<p>doc "QfqTdXy6AoVRz7xdTNcc6Xgnngb</p>
+</li>
+<li class="">
+<p>-node append 1</p>
+</li>
+</ul>
+<p>可以跨多行
+支持**加赠*和寂</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=29文字颜色>2.9文字颜色<a href=#29文字颜色 class=hash-link aria-label=2.9文字颜色的直接連結 title=2.9文字颜色的直接連結 translate=no>​</a></h3>
+<p>lark-cli docs +update <br/>
+<!-- -->doc "ofqTdXy6AoVRz7xdTNC
+mode append 1
+Barkdawin‘红色文字暂色文字
+红色文字蓝色文字
+黄色背景高亮
+支持的频色:red,orange,yellow,green,blue,purple,gray。
+支持的颜色:red,
+purple ,
+ef</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=210插入圆片>2.10插入圆片<a href=#210插入圆片 class=hash-link aria-label=2.10插入圆片的直接連結 title=2.10插入圆片的直接連結 translate=no>​</a></h3>
+<p>通過公開URL插人国片(lark-cli自封下载亚上傅到形善):
+Lark-cli docs +update \</p>
+<ul>
+<li class="">doc "0fqTdxy6AoVRz7xdTNcc6Xgnngb"</li>
+</ul>
+<p>\ pusdde apou</p>
+<ul>
+<li class="">-narkdown *&lt;inage url="<code>https://exanple.con/photo.</code> jpg" width=<em>40e</em> al.</li>
+</ul>
+<p>图片插入是具步操作。命令返回的是task_id,不是立即生效。實察测斌中耗時的8
+秒。
+返回示例:</p>
+<ul>
+<li class="">
+<p>status": "running*.</p>
+</li>
+<li class="">
+<p>task_id": "418dcd05=852f-4fa8-bdda-ec231cae3b49*,</p>
+</li>
+<li class="">
+<p>estimated_tine*: *5-15s"</p>
+</li>
+</ul>
+<p>性明:
+隔性
+必填
+就明
+url
+是
+图片的公可防間 URL
+宽度(像素)
+width
+否
+left
+align
+否
+/ center / right
+caption
+否
+图片下方期明文字
+支持格式:PNG/JPG/GIF/WebP/BMP,显大10MB.
+如果是本地图片,流程不同:先用docs+update离文本,再用docs+Hiedla-insert追
+加本地文件。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=211標题颜色和對齊>2.11標题颜色和對齊<a href=#211標题颜色和對齊 class=hash-link aria-label=2.11標题颜色和對齊的直接連結 title=2.11標题颜色和對齊的直接連結 translate=no>​</a></h3>
+<p>lark-cli docs +update ↑</p>
+<ul>
+<li class="">-doc "QtqTdxy6AoVRz7xdTNcc6Xgmngb"\</li>
+</ul>
+<p>puadde apou-
+##红色精题{coLor=red°}
+国中文字{align="center*}</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=212分割線>2.12分割線<a href=#212分割線 class=hash-link aria-label=2.12分割線的直接連結 title=2.12分割線的直接連結 translate=no>​</a></h3>
+<p>Lark-cli docs +updatc</p>
+<ul>
+<li class="">doc "0fqTαXy6AoVRz7xaTVcc6Xgmngb*</li>
+</ul>
+<p>1 puadde apow-</p>
+<p>分割缘下面的内容</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=三文檔更新-六種模式详解>三、文檔更新-六種模式详解<a href=#三文檔更新-六種模式详解 class=hash-link aria-label=三、文檔更新-六種模式详解的直接連結 title=三、文檔更新-六種模式详解的直接連結 translate=no>​</a></h2>
+<p>doc5+update有7种模式,以下是每種模式的實测命令和结果。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=31append-追加到末尾>3.1append-追加到末尾<a href=#31append-追加到末尾 class=hash-link aria-label=3.1append-追加到末尾的直接連結 title=3.1append-追加到末尾的直接連結 translate=no>​</a></h3>
+<p>最常用的模式,在文檀最後追加内容:
+Lark-cli dacs +update <br/>
+<!-- -->xxxuoxopop-
+\ puadde apou--
+返回:
+{
+',puadde., ..apou.
+(puade)x。:,afessau.</p>
+<ul>
+<li class="">success":truc</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=32insert_before-在指定位置前面插入>3.2insert_before-在指定位置前面插入<a href=#32insert_before-在指定位置前面插入 class=hash-link aria-label=3.2insert_before-在指定位置前面插入的直接連結 title=3.2insert_before-在指定位置前面插入的直接連結 translate=no>​</a></h3>
+<p>用标题定位,在标题前面插入内容:
+Lark-cli docs +update <br/>
+<!-- -->xxxuoxopop-</p>
+<ul>
+<li class="">
+<p>-node insert_before \</p>
+</li>
+<li class="">
+<p>-selectian-by-title“目题\</p>
+</li>
+</ul>
+<p>markdown“>这段言出现在目标杨题的南面
+返回:</p>
+<ul>
+<li class="">
+<p>node": "insert before",</p>
+</li>
+<li class="">
+<p>success": true</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=33insert_after-在指定位置後面插入>3.3insert_after-在指定位置後面插入<a href=#33insert_after-在指定位置後面插入 class=hash-link aria-label=3.3insert_after-在指定位置後面插入的直接連結 title=3.3insert_after-在指定位置後面插入的直接連結 translate=no>​</a></h3>
+<p>lark-cli docs +update
+xxxu5xopoop-</p>
+<ul>
+<li class="">-node insert_after \</li>
+</ul>
+<p>selection-by-title“##目题\</p>
+<p>返回:
+"node": "insert_after",</p>
+<ul>
+<li class="">success": true</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=34replace_range-替换整個章節>3.4replace_range-替换整個章節<a href=#34replace_range-替换整個章節 class=hash-link aria-label=3.4replace_range-替换整個章節的直接連結 title=3.4replace_range-替换整個章節的直接連結 translate=no>​</a></h3>
+<p>用标题定位,替换被标题下的整個章的内容:
+Lark-cli docs +update \</p>
+<ul>
+<li class="">doc "doxcnXXX* 1</li>
+</ul>
+<p>mode replace_range 1
+selection-by-title “ 標蹈”</p>
+<ul>
+<li class="">8rkdown“新棵题</li>
+</ul>
+<p>mankcdown
+智换後的全新内容。
+可以包含列表
+可以包含其他格式
+返回:
+"node": "replacc_range",
+success": true</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=35replace_all-全文替换文本>3.5replace_all-全文替换文本<a href=#35replace_all-全文替换文本 class=hash-link aria-label=3.5replace_all-全文替换文本的直接連結 title=3.5replace_all-全文替换文本的直接連結 translate=no>​</a></h3>
+<p>在全文图内查找亚警换文本:
+1 Lark-cl1 docs +update \</p>
+<ul>
+<li class="">-doc"daxcnxxx"\</li>
+</ul>
+<p>11easedou apou-</p>
+<ul>
+<li class="">-markdown“新文本”</li>
+</ul>
+<p>實际返回:
+'11e aseldau, +.apou,
+‘t :,lun agda,
+“ncssage":“文福更新感功(replacc_all模式),共世1虚"</p>
+<p>注意rcplacc_count字段告新你實际替换了袭点。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=36delete_range-删除整個章節>3.6delete_range-删除整個章節<a href=#36delete_range-删除整個章節 class=hash-link aria-label=3.6delete_range-删除整個章節的直接連結 title=3.6delete_range-删除整個章節的直接連結 translate=no>​</a></h3>
+<p>用棵定位,删除敲棵题下的整個童前:
+lark-cli docs +update <br/>
+<!-- -->\xxxuoxopoop--</p>
+<ul>
+<li class="">-node delete_range \</li>
+</ul>
+<p>返回:</p>
+<ul>
+<li class="">node": "delete range",</li>
+</ul>
+<p>“nessage":“文福更斯成功(delctc_rangc模式)",
+'success": true</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=37overwrite-全文覆蓝慎用>3.7overwrite-全文覆蓝(慎用)<a href=#37overwrite-全文覆蓝慎用 class=hash-link aria-label=3.7overwrite-全文覆蓝(慎用)的直接連結 title=3.7overwrite-全文覆蓝(慎用)的直接連結 translate=no>​</a></h3>
+<p>清空文榴重宽。會丢失已有圆片、钾输等。
+lark-cli docs +update <br/>
+<!-- -->xxxuoxopoop--</p>
+<ul>
+<li class="">
+<p>-node overwrite \</p>
+</li>
+<li class="">
+<p>narkdown“全斯的文指内容</p>
+</li>
+</ul>
+<p>更新横式速查表:
+定位方式
+模式
+用途
+围险
+無(末尾)
+追加新内容
+低
+puedde
+低
+标题定位
+在某章顾前插入
+insert before
+标翘定位
+在某章前後插入</p>
+<ul>
+<li class="">低</li>
+</ul>
+<p>insert_after</p>
+<ul>
+<li class="">中</li>
+</ul>
+<p>replace_range
+标题定位
+替换整個章的
+中●
+replace_all
+文本匹配
+全文查找替拍
+delete_range
+标题定位
+删除盈個章筋
+overwrite
+清空重窝
+無
+高</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=四镇取文檔内容>四、镇取文檔内容<a href=#四镇取文檔内容 class=hash-link aria-label=四、镇取文檔内容的直接連結 title=四、镇取文檔内容的直接連結 translate=no>​</a></h2>
+<p>Lark-cli docs +fetch
+返回文樓的 Markdown 内容(Lark-flavored 格式),包含文樓标题、长度、正文。可用
+来检查文檀當前内容後再决定如何更新。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=五踩坑記錄真實遇到的問题>五、踩坑記錄(真實遇到的問题)<a href=#五踩坑記錄真實遇到的問题 class=hash-link aria-label=五、踩坑記錄(真實遇到的問题)的直接連結 title=五、踩坑記錄(真實遇到的問题)的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=51長文槛必须分段寫入>5.1長文槛必须分段寫入<a href=#51長文槛必须分段寫入 class=hash-link aria-label=5.1長文槛必须分段寫入的直接連結 title=5.1長文槛必须分段寫入的直接連結 translate=no>​</a></h3>
+<p>刑晋API对单次寫入有限制實测中發现一篇9章衍的文楼無法一次性寫入,需要:
+别建主经
+lark-cli docscreate --title“棵题--markdown“第—部分
+#逐段通加
+lark-cli docs +update --doc</p>
+<ul>
+<li class="">-narkdown“第二部分”</li>
+</ul>
+<p>"xxx"
+puadde apou-</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=52搜索文檔需要额外權限>5.2搜索文檔需要额外權限<a href=#52搜索文檔需要额外權限 class=hash-link aria-label=5.2搜索文檔需要额外權限的直接連結 title=5.2搜索文檔需要额外權限的直接連結 translate=no>​</a></h3>
+<p>實涮docs +search罐:</p>
+<ul>
+<li class="">
+<p>ok": falsc,</p>
+</li>
+<li class="">
+<p>error":{</p>
+</li>
+</ul>
+<p>"type": "missing scope",
+'nessage*: <em>nissing required scopc(s]: scarch=docs:read</em></p>
+<p>search:docs:read scope:
+需要额外授權
+lark-cli auth login --scope <em>search:docs:read</em></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=53圆片插入是巽步的>5.3圆片插入是巽步的<a href=#53圆片插入是巽步的 class=hash-link aria-label=5.3圆片插入是巽步的的直接連結 title=5.3圆片插入是巽步的的直接連結 translate=no>​</a></h3>
+<p>插入圖片不會立即生效,返回的是task_id:
+"status":"running"
+"task_id":"418dcd05-052f-4fa8-bdda-ec231c0e3b49",
+"estimated_time":"5-15s"</p>
+<p>實測約8秒後圖片才出現在文檔中。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=54bash中---會被解析為flag>5.4bash中---會被解析為flag<a href=#54bash中---會被解析為flag class=hash-link aria-label=5.4bash中---會被解析為flag的直接連結 title=5.4bash中---會被解析為flag的直接連結 translate=no>​</a></h3>
+<p>在shell中通過$(catfile)傅含
+分割線的Markdown時,bash會把
+當作命令行flag,導致報錯。
+解决方案:直接在参数中寫内容,避免用$(cat)
+展開。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=六最終效果>六、最終效果<a href=#六最終效果 class=hash-link aria-label=六、最終效果的直接連結 title=六、最終效果的直接連結 translate=no>​</a></h2>
+<p>配置完成後,我可以直接對Agent:
+“我創建一篇飛書文檔,標題是XXX"
+"我在飛書文檔裡追加一段關於XXX的内容"
+“我把飛書文檔裡那個舊章節替換成新内容“
+“我往飛書文檔裡插一張圖”
+lark-cli完成操作,文檔實時出現在飛書裡。
+Agent會直接調用
+本文所有命令和輸出均為真實執行結果</p>
+<p>lark-cli·目录=
+下一篇·lark-cli實02:AIAgent操作飛書電子表格全流程實測(22頂功能)></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<blockquote>
+<p>原始导出图超过单张 WebP 的尺寸上限，以下图片按从上到下的顺序连续保存。
+<img decoding=async loading=lazy alt="lark-cli 實戰 01：從安裝到創建飛書文檔完整指南：微信公众号导出原始排版图（第 1 段，共 2 段）" src=/assets/images/article-01-874463ddbf716a2484205f4935517c0e.webp width=1280 height=16000 class=img_ev3q />
+<img decoding=async loading=lazy alt="lark-cli 實戰 01：從安裝到創建飛書文檔完整指南：微信公众号导出原始排版图（第 2 段，共 2 段）" src=/assets/images/article-02-848b8fe54b13ba492a509a1e45502ab0.webp width=1280 height=2266 class=img_ev3q /></p>
+</blockquote></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2026-04-15-2026-04-15-lark-cli-實戰-01-從安裝到創建飛書文檔完整指南-2247485791.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2026-04-16-lark-cli-實戰-03-ai-agent-操作飛書幻燈片全流程實測-含-xml-模板-2247485799><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>lark-cli 實戰 03：AI Agent 操作飛書幻燈片全流程實測（含 XML 模板）</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2026-04-15-lark-cli-實戰-02-ai-agent-操作飛書電子表格全流程實測-22-項功能-2247485795><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>lark-cli 實戰 02：AI Agent 操作飛書電子表格全流程實測（22 項功能）</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#一琅境配置全過程 class="table-of-contents__link toc-highlight">一、琅境配置全過程</a><ul><li><a href=#11-安装lark-cli class="table-of-contents__link toc-highlight">1.1 安装lark-cli</a><li><a href=#12配置飛晋應用證 class="table-of-contents__link toc-highlight">1.2配置飛晋應用證</a><li><a href=#13用户登錄授權-0authdeviceflow群解 class="table-of-contents__link toc-highlight">1.3用户登錄授權-0AuthDeviceFLow群解</a></ul><li><a href=#第一步agent起授權請求 class="table-of-contents__link toc-highlight">第一步:Agent起授權請求</a><li><a href=#第二步用户在實器授權 class="table-of-contents__link toc-highlight">第二步:用户在實器授權</a><li><a href=#2真面顯示user_cade或手勤输入 class="table-of-contents__link toc-highlight">2.真面顯示user_cade(或手勤输入)</a><li><a href=#3贴链超授槽 class="table-of-contents__link toc-highlight">3.贴链超授槽</a><li><a href=#第三步agent用device_code完成置錄 class="table-of-contents__link toc-highlight">第三步:Agent用device_code完成置錄</a><li><a href=#二創建文檔一每種元素的真實命令 class="table-of-contents__link toc-highlight">二、創建文檔一每種元素的真實命令</a><ul><li><a href=#21創建文檔基础 class="table-of-contents__link toc-highlight">2.1創建文檔基础</a><li><a href=#22富文本格式 class="table-of-contents__link toc-highlight">2.2富文本格式</a><li><a href=#23高亮塊callout class="table-of-contents__link toc-highlight">2.3高亮塊(Callout)</a></ul><li><a href=#三福常用高亮境 class="table-of-contents__link toc-highlight">三福常用高亮境:</a><ul><li><a href=#24分grid class="table-of-contents__link toc-highlight">2.4分(Grid)</a></ul><li><a href=#1有序列表 class="table-of-contents__link toc-highlight">1.有序列表</a><li><a href=#2第二顷 class="table-of-contents__link toc-highlight">2.第二顷</a><li><a href=#三棚自定宽度 class="table-of-contents__link toc-highlight">三棚自定宽度:</a><ul><li><a href=#25表格 class="table-of-contents__link toc-highlight">2.5表格</a><li><a href=#26代碼瑰 class="table-of-contents__link toc-highlight">2.6代碼瑰</a><li><a href=#27任務列表 class="table-of-contents__link toc-highlight">2.7任務列表</a><li><a href=#28引用瑰 class="table-of-contents__link toc-highlight">2.8引用瑰</a><li><a href=#29文字颜色 class="table-of-contents__link toc-highlight">2.9文字颜色</a><li><a href=#210插入圆片 class="table-of-contents__link toc-highlight">2.10插入圆片</a><li><a href=#211標题颜色和對齊 class="table-of-contents__link toc-highlight">2.11標题颜色和對齊</a><li><a href=#212分割線 class="table-of-contents__link toc-highlight">2.12分割線</a></ul><li><a href=#三文檔更新-六種模式详解 class="table-of-contents__link toc-highlight">三、文檔更新-六種模式详解</a><ul><li><a href=#31append-追加到末尾 class="table-of-contents__link toc-highlight">3.1append-追加到末尾</a><li><a href=#32insert_before-在指定位置前面插入 class="table-of-contents__link toc-highlight">3.2insert_before-在指定位置前面插入</a><li><a href=#33insert_after-在指定位置後面插入 class="table-of-contents__link toc-highlight">3.3insert_after-在指定位置後面插入</a><li><a href=#34replace_range-替换整個章節 class="table-of-contents__link toc-highlight">3.4replace_range-替换整個章節</a><li><a href=#35replace_all-全文替换文本 class="table-of-contents__link toc-highlight">3.5replace_all-全文替换文本</a><li><a href=#36delete_range-删除整個章節 class="table-of-contents__link toc-highlight">3.6delete_range-删除整個章節</a><li><a href=#37overwrite-全文覆蓝慎用 class="table-of-contents__link toc-highlight">3.7overwrite-全文覆蓝(慎用)</a></ul><li><a href=#四镇取文檔内容 class="table-of-contents__link toc-highlight">四、镇取文檔内容</a><li><a href=#五踩坑記錄真實遇到的問题 class="table-of-contents__link toc-highlight">五、踩坑記錄(真實遇到的問题)</a><ul><li><a href=#51長文槛必须分段寫入 class="table-of-contents__link toc-highlight">5.1長文槛必须分段寫入</a><li><a href=#52搜索文檔需要额外權限 class="table-of-contents__link toc-highlight">5.2搜索文檔需要额外權限</a><li><a href=#53圆片插入是巽步的 class="table-of-contents__link toc-highlight">5.3圆片插入是巽步的</a><li><a href=#54bash中---會被解析為flag class="table-of-contents__link toc-highlight">5.4bash中---會被解析為flag</a></ul><li><a href=#六最終效果 class="table-of-contents__link toc-highlight">六、最終效果</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

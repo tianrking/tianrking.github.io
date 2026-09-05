@@ -1,0 +1,685 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>梳理 KuCoin 資金費率計算機制 | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2026-05-28-梳理-kucoin-資金費率計算機制-2247485928 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="梳理 KuCoin 資金費率計算機制 | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《梳理 KuCoin 資金費率計算機制》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《梳理 KuCoin 資金費率計算機制》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2026-05-28T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2026-05-28-梳理-kucoin-資金費率計算機制-2247485928 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-05-28-梳理-kucoin-資金費率計算機制-2247485928 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-05-28-梳理-kucoin-資金費率計算機制-2247485928 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2026-05-28-梳理-kucoin-資金費率計算機制-2247485928","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2026-05-28T00:00:00.000Z","description":"从微信公众号导入的文章《梳理 KuCoin 資金費率計算機制》，保留原始排版图并提供本地 OCR 转写。","headline":"梳理 KuCoin 資金費率計算機制","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2026-05-28-梳理-kucoin-資金費率計算機制-2247485928","name":"梳理 KuCoin 資金費率計算機制","url":"https://w0x7ce.eu/blog/2026-05-28-梳理-kucoin-資金費率計算機制-2247485928"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>梳理 KuCoin 資金費率計算機制</h1><div class="container_mt6G margin-vert--md"><time datetime=2026-05-28T00:00:00.000Z>2026年5月28日</time> · <!-- -->閱讀時間約 23 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2026-05-28 22:47:35（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247485928&idx=1&sn=5d54499f150bcda54bde93253188feca&chksm=96e11c42a1969554a81f6beb7f7ead08e0cfeee260a1e6635e853054947afe4934b903b8e421#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 11735 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>original wex7ce EI V1ajero 2026年5月28日 22:48泰国</p>
+<p>KuCoin 在 2825 年 11 月先針 XRPUSDCM、SUIUSDCM、SOLUSDM、PENGUUSDTM、
+NMRUSDTM、ZRCUSDTM等合約升级資金費率演算法;2026年6月1日G8:B6UTC
+起,又把新演算法摘展到首批140图永绩合的。官方公告给出的理由很直接:镶资金意率更楼
+定、公平、谭確地反映真實市場供需,亚提醒资金套利、跨交易所到冲、大持意與高频策略重新
+部估风阶。
+KUCOIN交W具降行情交量罚生品红全量票马增更多
+通始:升级图的强障注剂过2029 年 6 月 1 日 16:00 [UTC+8]项全看适障期给理用 - 益运签的药强组[全截药量 · 量全得下源算
+资的请参间先自公告
+潜在那置:
+时商金套用和的交易所到冲记成量人形客</p>
+<ul>
+<li class="">安行进据在升级使量挂要形有的交易付</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一曹版资金费率公式同题藏在bid1ask1>一、曹版资金费率公式:同题藏在Bid1/Ask1<a href=#一曹版资金费率公式同题藏在bid1ask1 class=hash-link aria-label=一、曹版资金费率公式:同题藏在Bid1/Ask1的直接連結 title=一、曹版资金费率公式:同题藏在Bid1/Ask1的直接連結 translate=no>​</a></h2>
+<p>KUCON交幕压</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2新资金員率算法升级细蹄>2.新资金員率算法升级细蹄<a href=#2新资金員率算法升级细蹄 class=hash-link aria-label=2.新资金員率算法升级细蹄的直接連結 title=2.新资金員率算法升级细蹄的直接連結 translate=no>​</a></h2>
+<p>新算法(升级额)
+p平均老情数+cla
+黄生竞事-danp</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4资业量审上用货业量审下用>4.资业量审上用,货业量审下用<a href=#4资业量审上用货业量审下用 class=hash-link aria-label=4.资业量审上用,货业量审下用的直接連結 title=4.资业量审上用,货业量审下用的直接連結 translate=no>​</a></h2>
+<p>.不再使用管原的最值用/雷比/蛋</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1号入-甲约注脂值-确量的排>1.号入 [甲约注脂值; (确量的排)<a href=#1号入-甲约注脂值-确量的排 class=hash-link aria-label="1.号入 [甲约注脂值; (确量的排)的直接連結" title="1.号入 [甲约注脂值; (确量的排)的直接連結" translate=no>​</a></h2>
+<p>平内益督指数:平片验
+益式物: (1x
+断,用上糖行期程甲均公式速行叶期-
+KuCoin 版公式可离成:
+FundingRate =
+Clanp(</p>
+<ul>
+<li class="">(x - (ig + 1 1)</li>
+</ul>
+<p>UpperLimit,</p>
+<p>也常被商化高成:
+FundingRate =
+Clanp(
+SMA( (Bid1 + Ask1) / 2 - Index / Index + Interest,
+Max,
+Min
+在指数價格化不大的短窗口内,雨種寒法的直觉相司:先看合的訂單薄的中間债相到指数價格
+有多少溢價,再加入利率分量,最後用上下限限制端值。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1bid1-舆-ask1>1.Bid1 舆 Ask1<a href=#1bid1-舆-ask1 class=hash-link aria-label="1.Bid1 舆 Ask1的直接連結" title="1.Bid1 舆 Ask1的直接連結" translate=no>​</a></h2>
+<p>Bid1是汀单落最高買债,Ask1是最低资债。善機制用:
+M1d = (B1d1 + Ask1) / 2
+这比最新成交價定,因為不會被单筆成交直接拉勤:但它只看最顶唇极,不看核價位後面到
+底有多少真實深度。若基他既流動性合的的最侵楼很薄,一筆很小的排軍就可能成為新的B1d1
+或Ask1.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2index-price>2.Index Price<a href=#2index-price class=hash-link aria-label="2.Index Price的直接連結" title="2.Index Price的直接連結" translate=no>​</a></h2>
+<p>IndexPrice是現貨指数價格,通常由多因现货市场加權得出。它是永续合的鹰接定的「外
+部参考格:。
+若:
+Index = 10.00
+Bid1 = 9.99
+Ask1 =10.61
+则:
+Hid - (9.99 + 10.01) / 2 - 10.00
+Preniun = Mid - Index =
+PreniunRate = 8 / 10.BB = 05
+這理的PremiumRate就是公式中的溢倡部分,代表合的中相對指数借格的偏離比例。在
+这個例子裡,合約中間價刚好等於指数價格,所以:
+PreniunRate = 0%
+接下来還要加人公式中的Inlerest,也就是利率分量。KuCoin官方公告將U本位與本
+位合約的日利率基潭腐成9.93;若鼓合約每8小時结算一次,一天有三個结算遇期,因此
+單次结算使用的利率分量是:
+Interest = 0.03s / 3 = 0.81$
+所以,若8小時利率分量Interest=e.B1s,正常翼金率約為:
+FundingRate = PreniunRate + Interest
+S[θ′3 + % =
+= 0.01%
+换句話,0.01%不是来自訂单薄溢假,而是日利率0.03按8小時结原通期换算後的
+基维利息项。實账交易對若有不同结算間隔或风摊警数,以KuCoin鼓合的页面與官方公告
+為。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3interest003日利率如何變成001>3.Interest:0.03%日利率如何變成0.01%<a href=#3interest003日利率如何變成001 class=hash-link aria-label=3.Interest:0.03%日利率如何變成0.01%的直接連結 title=3.Interest:0.03%日利率如何變成0.01%的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3核心参数定羲>3.核心参数定羲<a href=#3核心参数定羲 class=hash-link aria-label=3.核心参数定羲的直接連結 title=3.核心参数定羲的直接連結 translate=no>​</a></h2>
+<p>(1)利率计算公式
+利率:003%/(24/资全费率结神赞源小对胶例列:月小时障图-利本:0.041%
+(2)溢價指数计算公式
+型氧指数 -[mac,深度加程度入-指致调指)-m
+0,类数:项明-深度加窄资出组/指数调格
+深度加碰值格叶算基例
+深度加糖情格计算价
+能续 :</p>
+<ul>
+<li class="">
+<p>深度加服单位-200</p>
+</li>
+<li class="">
+<p>最大根择·100</p>
+</li>
+<li class="">
+<p>深度加量名雅摄-200×100 = 20,000 USDT</p>
+</li>
+</ul>
+<p>it (usor)
+深度30层成交按量(BTC)
+其人提定
+热量(RTC)
+深度加指成交辣量(RTC)
+(Aosn) +格e)
+50,0
+00
+,800
+0:02
+29,900
+2:06
+7,94
+0:06
+2003-7294 -12806
+21,546</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=016>0.16<a href=#016 class=hash-link aria-label=0.16的直接連結 title=0.16的直接連結 translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=014279-6tc>0.14279 6TC<a href=#014279-6tc class=hash-link aria-label="0.14279 6TC的直接連結" title="0.14279 6TC的直接連結" translate=no>​</a></h3>
+<p>3营加0排B人T = 20.000 USDT / (0.02+0.06+0.14276) BTC = 89.780.8 U8DT
+官方公告中,U本位奥本位合約的日利率均以.B3%為基举,若每8小时结算一次:
+Interest = θ.83s / (24 / 8)</p>
+<ul>
+<li class="">0.034 / 3</li>
+</ul>
+<p>= 0.01%
+若是4小時结算:
+Interest = H.63s / (24 / 4)</p>
+<ul>
+<li class="">8.034 / 6</li>
+</ul>
+<p>= 0.005号</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4clamp上下限不是固定一個数>4.clamp:上下限不是固定一個数<a href=#4clamp上下限不是固定一個数 class=hash-link aria-label=4.clamp:上下限不是固定一個数的直接連結 title=4.clamp:上下限不是固定一個数的直接連結 translate=no>​</a></h2>
+<p>Clamp 函数是限幅器:
+Clanp(x, Upper, Lower) =
+Upper, 1f × > Upper
+if Lower &lt;= × &lt;= Upper
+Lower, if x &lt; Lower
+KuCoin在2826年1月公告中明,上限與下限可由围险参数推:
+LouerLimit = (Mininun Initial Margin - Mininun Maintenance Margin) * -8
+但官方也明提示,不是所有交易對都格使用同一公式,實账上下限以交易對即時資金資率页
+面為举。實移上,主流帮上下限可能较窄,小增種或高凰险合的可能较宣,例如常見封输中
+的±0.30%、±8.75%,甚至座时调整。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=二蓄機制的脆弱點用很薄的表層報價扭曲中周價>二、蓄機制的脆弱點:用很薄的表層報價扭曲中周價<a href=#二蓄機制的脆弱點用很薄的表層報價扭曲中周價 class=hash-link aria-label=二、蓄機制的脆弱點:用很薄的表層報價扭曲中周價的直接連結 title=二、蓄機制的脆弱點:用很薄的表層報價扭曲中周價的直接連結 translate=no>​</a></h2>
+<p>假設某低流勤性山穿需合约:
+现货指数债格。由外部现货市堤加權得到
+Index = 18.88 USDT
+合的打單薄的最高震價
+正常 Bid1 = 9.99
+合约打革第的最低责價
+正常 Ask1 = 10.01
+正常默患下:
+Mid = [9.99 + 10.01) / 2 = 10.09
+PreniunRate = 8s
+FundingRate x 0.01%
+现在假設在一個薄的市場理,前方低價賣單與高價員单已被撒掉或吃掉,攻擎者能用小數量
+排成新的最债買賣赁:
+假 Bid1 = 18.49,数量1 coin, 名羲的 18.49 USDT</p>
+<p>此時落公式看到的不是深度,面是合的訂单薄的表圆债格,計算顺序是:先用合的的B1d1/Ask
+1算出合的中简價Mid,再拿遗個合的中同俱去诚现货招数價格Index:
+Mid = [18.49 + 10.51) / 2 = 19.59
+Prenium = Mid - Indcx
+= 10.50 - 10.00
+= 8.58
+PreniumRate = Prenlun / Index
+= 8.50 / 10.89
+= 5
+所以运理减去的18.60不是另一個合的轻量,而是现货指数借格Index。資金费率本質上
+就是在衡量:合約市場相划现货指愈市场到底贵了多少或便宣了多少。
+这就是概制最危限的地方:資金貢率的翰入炭成了「最上面雨個價位:,而不是真實可成交
+深度」。
+需要特别清:如果10.01附近真的有10,860USDT坚實富單,攻聚者不能只挫10.51
+就漫Ask1成16.51:他必须先把10.01到10.51之間的置量移除或吃撞。因此,道
+频扭曲更常發生在薄、单频繁、最侵槽深度很小的合的,而不是BTC、ETH遗深度市
+場。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=15瞬間溢價到資金費率>1.5%瞬間溢價到資金費率<a href=#15瞬間溢價到資金費率 class=hash-link aria-label=1.5%瞬間溢價到資金費率的直接連結 title=1.5%瞬間溢價到資金費率的直接連結 translate=no>​</a></h3>
+<p>若資金费率只取某一個限同值:
+RauFunding = 5s + 0.B1% = 5.01s
+如果上限是+8.75%:
+FundingRate = Clanp(5.B1%, +0.75%, -f.75%] = +9.75%
+如果某些合的的上限更宣或窗口更短,具常值就更容易把最终资金費率推到很高。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2sma為什磨脆弱>2.SMA為什磨脆弱<a href=#2sma為什磨脆弱 class=hash-link aria-label=2.SMA為什磨脆弱的直接連結 title=2.SMA為什磨脆弱的直接連結 translate=no>​</a></h2>
+<p>SMA的公式是:
+SMA_n = [P1 + P2 + ...
+u /(ud +
+每因贴權重相同。若正常溢情都是6,只有一因舆常贴是5%:
+3 影度口:(5% + 8%+ 0%) / 3 = 1.667
+10贴口:5/10
+= 0.50
+= 0.08335
+68 脂室口: 5% / 68
+488贴度口:5%/ 488
+= 0.01845
+所以,“一個翼常贴:是否足以造成炎,取决於窗口長度奥取概方式,短窗口下,一個端值
+可以支配均值:长窗口下,单點影智小,但若攻者能在多個取样黏维持翼常报價,SMA仍
+盲被累精拉偏。
+例如在66分罐窗口中,若24低取様贴都被拉到5:
+SMA = (24 * 55 + 36 * B%) / 69
+= 2.88%
+RauFunding = 2.00% + 0.01% = 2.91%
+若上下限允,資金費率可能接近+2%;若上限是+9.75%,则富被截暨到+8.75%。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=320usdt排單成本不等於20usdt詹位收益>3.20USDT排單成本,不等於20USDT詹位收益<a href=#320usdt排單成本不等於20usdt詹位收益 class=hash-link aria-label=3.20USDT排單成本,不等於20USDT詹位收益的直接連結 title=3.20USDT排單成本,不等於20USDT詹位收益的直接連結 translate=no>​</a></h3>
+<p>常見解是:「用20USDT 排单就能1,088,98GUSDT0I29,698USDT.J
+更弹硅的职法是:
+排在Bid1/Ask1的假深度可能只需要约20USDT名兼值;但資金查收入按攻整者自已的持
+意名教本金計算,不是按全市堤0I自慰分走。
+若攻者提前持有1.89,083LSDT名戴空单,而资金費率被推到+2,正资金費通常由多
+跟支付给空頭:
+FundingReceived = 1,000,893 * 2$
+= 20, 008 US0T
+若使用50x横择,建立1.089,a00USDT名教意位所需初始保證金的:
+Hargin = 1,080,000 / 50 = 20.000 UsDT
+所以,20USDT是扭曲表报價的單名款值:真正能收取20,8G0USDT資金費的是
+1,080,869USDT的名兼空眼盒位」。这雨者不能混為一。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=三為什磨大多数人知道漏洞也不到>三、為什磨大多数人知道漏洞也不到<a href=#三為什磨大多数人知道漏洞也不到 class=hash-link aria-label=三、為什磨大多数人知道漏洞也不到的直接連結 title=三、為什磨大多数人知道漏洞也不到的直接連結 translate=no>​</a></h2>
+<p>善機制看似有漏洞,但它不容易直接利用。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1被吃單風险假單會變真成交>1.被吃單風险:假單會變真成交<a href=#1被吃單風险假單會變真成交 class=hash-link aria-label=1.被吃單風险:假單會變真成交的直接連結 title=1.被吃單風险:假單會變真成交的直接連結 translate=no>​</a></h2>
+<p>假股:
+Index = 18.68
+攻型者假B101- 10.49
+如是道時有人市價賣出,直接打到10.49,攻者言被迫買入高於指数價格的资座。
+即時浮:
+LossRate = (18.49 - 10.89) / 19.00
+= 4.9%
+若被成交名辨是10,009USDT:
+Pos1t10nL055 - 10,006 * 4.94 - 490 UsDT
+就算道输资金率是-2,同楼10.0C8USDT名微色位最多收:
+1FundingCain = 10,000 * 2% = 200 UsDT
+遇没算手續費舆滑黏,浮结果已經是:
+1050 35- = 06 - 88 = 12N</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2延避與網路抖動晚50ms就是另一個世界>2.延避與網路抖動:晚50ms就是另一個世界<a href=#2延避與網路抖動晚50ms就是另一個世界 class=hash-link aria-label=2.延避與網路抖動:晚50ms就是另一個世界的直接連結 title=2.延避與網路抖動:晚50ms就是另一個世界的直接連結 translate=no>​</a></h2>
+<p>资金费结算贴假股是:
+16:00:08.080
+你的蛋略在本機看似准時送單,但API請求因绣路、交易所網飘排除、鼠控检查、握合引擎塞
+塞等原因,在:
+16:88:88.858
+才到速。你以為自己抓住快照,食原上已错遥结算。
+這時仍要付成本:
+开盒手费:0.05%
+平食于续货:0.05%
+滑购:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=0-19>0. 19%<a href=#0-19 class=hash-link aria-label="0. 19%的直接連結" title="0. 19%的直接連結" translate=no>​</a></h2>
+<p>德成本:
+若预期收益只有0.5%,單次成功看起来仍有利酒;但只要失败率上升,期望值很快化。尤
+其在低流勤性合約,延逻舆滑黏常常一起出现。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3摘交易大家都摘在结算前>3.摘交易:大家都摘在结算前<a href=#3摘交易大家都摘在结算前 class=hash-link aria-label=3.摘交易:大家都摘在结算前的直接連結 title=3.摘交易:大家都摘在结算前的直接連結 translate=no>​</a></h2>
+<p>當市场上很多人都知道同一個機制端贴,结算前會出现同方向擦挤交易。
+假设你的计量是:
+预期连填價=10.00
+真際成交價=10.05
+滑贴:
+Slippage = (18.85 - 18.8B) / 18.88 = H.5%
+若使用56×择,这0.5%的情格不利整動封保罐金的衡墅是:
+HarginImpact - 0.5* 58-25
+也就是说,還没开始收资金费,四分之一保證金已被清贴吃掉,</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4资本需求舆流動性限制>4.资本需求舆流動性限制<a href=#4资本需求舆流動性限制 class=hash-link aria-label=4.资本需求舆流動性限制的直接連結 title=4.资本需求舆流動性限制的直接連結 translate=no>​</a></h2>
+<p>小交易者能影警的往往只有橙薄合的:但橙薄合的同時也有更高的被吃軍、滑點、穿盒與無法平
+食凰险。
+若目棵合的有5.000,003USDT未平他量,想透通资金费率得可载收益,攻者需要足詢
+大的名囊盒位。例如:
+名囊盒位=500,688USDT
+资金费率=1%
+单次收入 = 5,066 USDT
+但560,B08USDT名款愈位在薄验理进出,本身就可能造成敏十到数百個基黏滑點,還會暴
+露在交易所凰控與封手方组整之下。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5交易所反制>5.交易所反制<a href=#5交易所反制 class=hash-link aria-label=5.交易所反制的直接連結 title=5.交易所反制的直接連結 translate=no>​</a></h2>
+<p>交易所不舍只看公式,還营看行為。需見反制包括:</p>
+<ul>
+<li class="">
+<p>API频率限制與下单颜流</p>
+</li>
+<li class="">
+<p>具常撤單率奥 spoofing值测</p>
+</li>
+<li class="">
+<p>對运報价、短時翻排撤、显優檔具常差的凰控</p>
+</li>
+<li class="">
+<p>别端报价、短時间拼藏、最侵樓异常价差的风控</p>
+</li>
+<li class="">
+<p>凰险参数脂時调整</p>
+</li>
+<li class="">
+<p>资金费上下限调整</p>
+</li>
+<li class="">
+<p>快照與计算图口侵化</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=四新機制impactpricetwap利率調整>四、新機制:ImpactPrice+TWAP+利率調整<a href=#四新機制impactpricetwap利率調整 class=hash-link aria-label=四、新機制:ImpactPrice+TWAP+利率調整的直接連結 title=四、新機制:ImpactPrice+TWAP+利率調整的直接連結 translate=no>​</a></h2>
+<p>2025年11月公告中的新公式為:
+FundingRate =
+Clanp(
+AveragePremiunIndex</p>
+<ul>
+<li class="">Clamp (InterestRate - AveragePrem1umIndex, +0.85%, -0.05%),</li>
+</ul>
+<p>UpperLimit,</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=三细核心囊化>三细核心囊化:<a href=#三细核心囊化 class=hash-link aria-label=三细核心囊化:的直接連結 title=三细核心囊化:的直接連結 translate=no>​</a></h2>
+<p>L.用深度加權 Bid/Ask 取代 Best Bid/Best Ask</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2用時间加橙平均溢價指数取代普通masma>2.用時间加橙平均溢價指数取代普通MA/SMA<a href=#2用時间加橙平均溢價指数取代普通masma class=hash-link aria-label=2.用時间加橙平均溢價指数取代普通MA/SMA的直接連結 title=2.用時间加橙平均溢價指数取代普通MA/SMA的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3-加人-interest--preniun-的二次-clamp-调整项>3. 加人 Interest -Preniun 的二次 clamp 调整项<a href=#3-加人-interest--preniun-的二次-clamp-调整项 class=hash-link aria-label="3. 加人 Interest -Preniun 的二次 clamp 调整项的直接連結" title="3. 加人 Interest -Preniun 的二次 clamp 调整项的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=五深度加權衡撃價格看報價成看可成交深度>五、深度加權衡撃價格:看報價成看可成交深度]<a href=#五深度加權衡撃價格看報價成看可成交深度 class=hash-link aria-label=五、深度加權衡撃價格:看報價成看可成交深度]的直接連結 title=五、深度加權衡撃價格:看報價成看可成交深度]的直接連結 translate=no>​</a></h2>
+<p>官方箭例:
+Depth weight unit = 2BB
+Hax Leverage = 160
+Depth-we1ghted Not1onal = 200 * 100 = 20,000 USDT
+意思是系统不再只看Bid1,而是模摄用28.B90USDT名裁值去吃訂单薄,計算平均可成交
+價格。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1btc買盤例>1.BTC買盤例<a href=#1btc買盤例 class=hash-link aria-label=1.BTC買盤例的直接連結 title=1.BTC買盤例的直接連結 translate=no>​</a></h2>
+<p>名羲值
+檔位
+價格
+数量BTC
+Level 1</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=002>0.02<a href=#002 class=hash-link aria-label=0.02的直接連結 title=0.02的直接連結 translate=no>​</a></h3>
+<p>1,886
+90,608
+5,394</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=006>0.06<a href=#006 class=hash-link aria-label=0.06的直接連結 title=0.06的直接連結 translate=no>​</a></h3>
+<p>Level 2
+89,908
+Level 3</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=016-1>0.16<a href=#016-1 class=hash-link aria-label=0.16的直接連結 title=0.16的直接連結 translate=no>​</a></h3>
+<p>14, 352
+89,708
+需要吃满28.080USDT。
+先吃Level 1:
+剩= 20,068 - 1,860 = 18,289
+捶得BTC=6.82
+再吃Level2:
+剩- 16,200 - 5,394 - 12,806
+累 BTC = 0.82 + 0.06 = 0.08
+最後Level3吃掉:
+Level 3 需要 BTC = 12,8D6 / 89,7Hθ
+θ.142764771..
+德BTC:
+TotalBTC = 8.62 + 0.06 + 9.142764771
+= 0.222764771
+深度加權買债:
+InpactBid = 28,000 / 0.222764771
+= 89,780.8 U50T
+善楼制看到的是90,008:新機制看到的是89,780.8,更接近真實吃单成本。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2假單被稀耦的精確計算>2.假單被稀耦的精確計算<a href=#2假單被稀耦的精確計算 class=hash-link aria-label=2.假單被稀耦的精確計算的直接連結 title=2.假單被稀耦的精確計算的直接連結 translate=no>​</a></h2>
+<p>现在有人在買一街假单:
+Fake Bid = 91,888
+5izc - 0.01 BTC
+Notional = 91e USDT
+新訂单簿:
+数量BTC
+名额值
+楼位
+俱格
+Fake
+91,608</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=001>0.01<a href=#001 class=hash-link aria-label=0.01的直接連結 title=0.01的直接連結 translate=no>​</a></h3>
+<p>91e
+Level 1
+90,608</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=002-1>0.02<a href=#002-1 class=hash-link aria-label=0.02的直接連結 title=0.02的直接連結 translate=no>​</a></h3>
+<p>1,886
+5,394
+Level 2
+89,908</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=006-1>0.06<a href=#006-1 class=hash-link aria-label=0.06的直接連結 title=0.06的直接連結 translate=no>​</a></h3>
+<p>Level 3
+89,708
+14,352</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=016-2>0.16<a href=#016-2 class=hash-link aria-label=0.16的直接連結 title=0.16的直接連結 translate=no>​</a></h3>
+<p>吃掉假单後:
+剩= 28,088 - 916 = 19,θ98
+吃 Level 1:
+割= 19,698
+662*41 = 9991 -
+吃 Level 2:
+剩等 - 17,298 - 5,394 - 11,896
+徙Level3吃:
+Level3BTC = 11,896 / B9,709 = 0.132619044
+BTC:
+TotalBTC = 8.81 + 0.02 + 8.86 + 9.132619844
+新的Impact Bid:
+InpactB1d = 20,000 / 0.222619844
+= 89,839.25 US0T
+到比:
+封比:
+正常 InpactBid = 89,780.86
+加人 910 USDT 假举後 = 89,839.25
+化 = 58.45 USDT
+化率 = 58.45 / 89,788.88 = 8.8651%
+善機制下,Bid1會徙90.600直接跳到91,080,表属轻價化1.11%;新機制下,同
+模910USDT假單只深度加權價格化的8.E65%。这不是完全不可操,但操成本具
+被成交围险大幅提高。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=六新premiumindex不再用中間價而是用impact>六、新PremiumIndex:不再用中間價,而是用Impact<a href=#六新premiumindex不再用中間價而是用impact class=hash-link aria-label=六、新PremiumIndex:不再用中間價,而是用Impact的直接連結 title=六、新PremiumIndex:不再用中間價,而是用Impact的直接連結 translate=no>​</a></h2>
+<p>Bid/Ask
+官方新溢價指數公式:
+PreniumIndex =
+[max[H, DepthweightedBid - IndexPrice]
+max(8, IndexPrice - DepthweightedAsk)]
+/ IndexPrice
+遗個公式的直受是:</p>
+<ul>
+<li class="">
+<p>若深度加權置值高於指数,代表買方照意在指数上方承接,溢價為正</p>
+</li>
+<li class="">
+<p>若深度加權實情低於指数,代表實方题意在指数下方挑售,溢價為负</p>
+</li>
+<li class="">
+<p>若翼离雨都没有显著偏魁,Premium接近日</p>
+</li>
+</ul>
+<p>機制問的是:“显上面排多少?
+新制同的是:「拿一董想掌化名差值真的去成交,平均成交價在哪裡?」
+这個問题本身就spoofing更難。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=七twap時間加權平均瞬間操更但也產生記憶拖累>七、TWAP:時間加權平均瞬間操更,但也產生記憶拖累<a href=#七twap時間加權平均瞬間操更但也產生記憶拖累 class=hash-link aria-label=七、TWAP:時間加權平均瞬間操更,但也產生記憶拖累的直接連結 title=七、TWAP:時間加權平均瞬間操更,但也產生記憶拖累的直接連結 translate=no>​</a></h2>
+<p>新機制的 Average Prem1um Index使用時间加權:
+THAP =
+(1 * P1 + 2 * P2 + .., + n * Pn)
+/ (1 + 2 + ..- + n)
+霍的TwAP针算结果就是新公式理的AveragePreniunIncex,也就是「平均溢價指
+数:。它遗不是显資金费率;最结果仍要再經通Intercst·AvcragcPrcmiunIndcx的
+利率调整项,以及资金费率上下限UpperL1m1t/LowerLmit。
+若8小時结算一次,每分經取楼:
+n = 488
+1 + 2 + ... + 488 = 488 * 481 / 2 = 115,448
+越接近结算的数擦權重越高。第480分锥權重是第1分输的4B6倍。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1温和變化例>1.温和變化例<a href=#1温和變化例 class=hash-link aria-label=1.温和變化例的直接連結 title=1.温和變化例的直接連結 translate=no>​</a></h2>
+<p>假設前7小時,也就是420分键:
+P1 -.. P428 = +0.05%:
+最後1小时,也就是66分蕴:
+P421 ... P488 = -0.01%
+權量和:
+前 420分键重- 429421/ 2 -88,419
+後 60 分键硬重 = 115,449 - 88,416 = 27,030
+TWAP:
+THAP =
+(0.05% * 88,416 + (-6.815) * 27,030)
+/ 115, 440
+= (4,428.5 - 276.3) / 115,449
+=0.03595</p>
+<ul>
+<li class="">0.036%</li>
+</ul>
+<p>即使最後1小时已經转负,8小时加權後仍是正值。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2喇烈反轉例動量滞後>2.喇烈反轉例:動量滞後<a href=#2喇烈反轉例動量滞後 class=hash-link aria-label=2.喇烈反轉例:動量滞後的直接連結 title=2.喇烈反轉例:動量滞後的直接連結 translate=no>​</a></h2>
+<p>假設前7小時牛市:
+P1 -.. P428 = +0.10%
+最後1小時前跌:
+P421 ... P488 = -0.05%
+TWAP:
+THAP =
+(0.10% * 88,410 + (-6.05%) * 27,036)
+/ 115, 448
+= (8,841 - 1,351.5) / 115,440
+= 0.06488%
+%6+98°8+ *
+此時即時Premium已握是-8.05%,但TWAP仍是+0.8649%。需要注意的是,运锂的
+TwAP是Average Premium Index,不等於最线FundingRate:最终仍要经返利率调整
+项與上下限。。這就是TWAP類算法的典型取舍:它能降低单點巽常值的影響,但在行情快速
+反轉時曾有液後。
+更格地说,TWAP主要抵抗的是「某一個間的單贴具常:直接决定最资金费率:它不是單
+揭解决所有操同题。真正大幅提高操耀成本的是Depth-WeightedInpact Price+TWA
+的组合:前者旗每一分输的Premium本身更耀被小假单扭曲,後者再證免单一時間贴的翼
+常值支配整個结算遇期</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=八利率调整项把資金費率拉回利率附近>八、利率调整项:把資金費率拉回利率附近<a href=#八利率调整项把資金費率拉回利率附近 class=hash-link aria-label=八、利率调整项:把資金費率拉回利率附近的直接連結 title=八、利率调整项:把資金費率拉回利率附近的直接連結 translate=no>​</a></h2>
+<p>新公式中的整项:
+Adjustment - Clanp(Interest - AvgPrenium, +0.05%, -0.05%)
+FundingRate = Clanp(AvgPremiun + Adjustment, UpperLimit, LowerLinit)
+若8小時结算,Interest =θ.B1%.
+場景A:溢價温和為正
+AvgPrem1um = +0.02%
+Interest = +6.81%
+Adjustment = Clanp(0.01% - 9.92%, +0.e5%, -0.05%)
+= -8.01%
+Fund1ngRate = 0.02% - 0.91%
+= +0.01%
+营溢情没有超出利率太多時,資金党率被拉回接近利率。
+場景B:溢俱端為正
+AvgPrem1um = +0.20%
+Interest = +6.81%
+Adjustment = CLanp(0.01% - 9.20%, +0.05%, -0.05%)
+= Clanp(-0.19%, +0.05%, -0.85%)
+= -6.05%
+FundingRate = 8.20% - B.85%
+= +6.15%
+调整项益多只能抵消0.05%,所以極端溢偏仍會反映到资金费率。
+場景C:溢價端為负
+AvgPrenium = -0.15%
+Interest = +6.61%
+Adjustment = Clanp(0.01% - (-9.15%), +8.85%, -0.05%)
+= Clanp(+0,16%, +0.85%, -θ,65%)
+= +0.05%
+FundingRate = -6.15% + 8,8355
+= -0.10%</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=九同一市場條件下蓄機制vs新機制>九、同一市場條件下:蓄機制VS新機制<a href=#九同一市場條件下蓄機制vs新機制 class=hash-link aria-label=九、同一市場條件下:蓄機制VS新機制的直接連結 title=九、同一市場條件下:蓄機制VS新機制的直接連結 translate=no>​</a></h2>
+<p>假设:
+Index - 10.00
+正常市塔: Bid1/Ask1 = 9.99 / 10.01
+攻票性表黑级:Bid1/Ask1=1θ.49/1B.51
+蓄機制:
+Hid - 18.58
+Pren1unRate = (10.50 - 18.00) / 10.00 = 5
+如是在短窗口内重出现,SMA可能被顯著拉高,最後由上下限截断。
+新機制:
+若假单名值只有典十到百USDT,而深度名羲需求是20,900USDT,这些假单宝被後方真
+實深座稀程、Premium的输人不两是16.59运种表中圈偏,而是ImpactBid/Ask計
+算後的可成交俱格。
+简化比较:
+警機制
+维度
+新機制
+Depth-Weighted Bid / Ask
+Best Bid / Best Ask
+價格翰入
+小假罩影窖
+很大
+被深度需求稀癌
+每分鐘 Premium 的 TwAP
+时間感理
+MA/SMA,窗口通辑较弱
+抗膜操機
+器
+强很多
+發留間题
+表唇报價操
+勤量滞後、跨所差、小常深度不足</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=十新機制下仍然存在的套利機會>十、新機制下仍然存在的套利機會<a href=#十新機制下仍然存在的套利機會 class=hash-link aria-label=十、新機制下仍然存在的套利機會的直接連結 title=十、新機制下仍然存在的套利機會的直接連結 translate=no>​</a></h2>
+<p>蓓的排表唇假单扭曲B1d1/Ask1:基本失效後,機盲没有消失,而是换了形慧:微翻
+spoofing韩向跨市场、腾時酬、跨模型的差具交易。
+这理要先把套利:和操鐵:分鼠,個人交易者通常很難靠自已去拉财KuCoin新機制下的
+資金費率,因為Impact Price 要吃到一段真實深度,TwAP又會把整個结算通期内的
+Prem1um纳入計算。换句話,人很難用一雨肇小章改整最費率;比较現實的做法,是
+察市场上已经出现的費率偏差,透遇跨交易所或现货/合的封冲去吃差。
+所以新機制下的根鲁不是消失,而是轉移了:
+医榜制概音:低成本影警表播B1d1/Ask1
+折榜制橡害:捕捉不同市場、不同时間權重、不同交易所模型之間的编差</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1跨市場资金费率差>1.跨市場资金费率差<a href=#1跨市場资金费率差 class=hash-link aria-label=1.跨市場资金费率差的直接連結 title=1.跨市場资金费率差的直接連結 translate=no>​</a></h2>
+<p>los Arid
+Introduction to Funding Rate
+OC a</p>
+<p>raF Tndeg
+SetX
+taiq fas</p>
+<p>ltiacss
+R生R* ()
+TaFiBTS
+Dyeean
+1事0
+AF1</p>
+<p>88s1;8%8</p>
+<p>使用2精甲约值滨算法·使用姻法一智过其选娠别管前的资骨密数难行析算
+以8小研资企资率影明为例·平均滑惯指款[P)约计算公式如下:(道贯指数,J<em>1+溢使原量,2</em>2 ++潜续综素,480*480)/(1+21.+40]</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=8请金费率上下锈>8.请金费率上下锈<a href=#8请金费率上下锈 class=hash-link aria-label=8.请金费率上下锈的直接連結 title=8.请金费率上下锈的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3资金率上下限>3.资金率上下限<a href=#3资金率上下限 class=hash-link aria-label=3.资金率上下限的直接連結 title=3.资金率上下限的直接連結 translate=no>​</a></h2>
+<p>在市增行情大幅试影码·bot可效身销调型资宝责市上下阳明·未征使水提企的资基区错合医司
+min(给保团全量率-提持保理金率)×0.75,持保递含率)
+追理药冠始保理金率相继持保提金率,现自每候交易到的面接联膜第一程·
+不同交易所的資金費率模型、流動性、用户结横和風控参數不同,同一標的在KuCoin、
+Binance、Bybit等市場上可能出现資金費率差。这種差翼理上可以用一逸做多、一做空
+的方式對冲價格方向,只保留資金費率差。
+但這不是純粹的「看到差值就能」。跨市場策略真正困難的地方在於:雨遗成交價格不一定同
+步,基差可能在平會時大,資金費率下一期可能反轉,手續費和滑點可能吞掉差值,資金也可
+能卡在錯的交易所。對個人来,這類機會通常只有在差值足明顯、持續性足高、雨遗深度
+都足好時,才值得研究。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2twap記憶拖累>2.TWAP記憶拖累<a href=#2twap記憶拖累 class=hash-link aria-label=2.TWAP記憶拖累的直接連結 title=2.TWAP記憶拖累的直接連結 translate=no>​</a></h2>
+<p>前面算遇:
+最後1小時Premium=-0.05%
+3TWAP = +0.0649%
+市場即時已轉空,但資金費率仍可能保持正值。這會創造一種「方向舆資金費同向的機會:</p>
+<ul>
+<li class="">
+<p>若你看空,做空可同時受益於價格下跌</p>
+</li>
+<li class="">
+<p>若資金費率仍為正,空頭還可能收到資金費</p>
+</li>
+</ul>
+<p>但風险也很明顯:</p>
+<ul>
+<li class="">
+<p>市場若反弹,方向彪损會比资金費大很多</p>
+</li>
+<li class="">
+<p>下一期TWAP可能快速下修,費率侵势消失</p>
+</li>
+<li class="">
+<p>做空時,平詹可能踩踏</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3delta中性瓷金策略>3.Delta中性瓷金策略<a href=#3delta中性瓷金策略 class=hash-link aria-label=3.Delta中性瓷金策略的直接連結 title=3.Delta中性瓷金策略的直接連結 translate=no>​</a></h2>
+<p>更穩健的做法不是裸方向,而是:
+KuCoin做空高資金費合约
+2另一交易所或現货做多同等Delta
+這種做法的重點不是追求高悍,而是價格方向盘量抵消,把主要風险集中在資金費率差、基
+差化和執行品質上。它看起来比裸方向更穩,但仍然不是無风险:一遗成交、一遗没成交,或</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一遗流動性突然消失整個delta中性結橘都會形>一遗流動性突然消失,整個Delta中性結橘都會形。<a href=#一遗流動性突然消失整個delta中性結橘都會形 class=hash-link aria-label=一遗流動性突然消失,整個Delta中性結橘都會形。的直接連結 title=一遗流動性突然消失,整個Delta中性結橘都會形。的直接連結 translate=no>​</a></h2>
+<p>苦機制的脆弱性在於:</p>
+<ul>
+<li class="">
+<p>用(Bid1+Ask1)/2代表合約市場價格</p>
+</li>
+<li class="">
+<p>不看最優檔背後有多少真實深度</p>
+</li>
+<li class="">
+<p>SMA在短窗口中容易被極端點拉偏</p>
+</li>
+<li class="">
+<p>薄盤合約的表報價成本很低</p>
+</li>
+</ul>
+<p>新機制的改進在於:</p>
+<ul>
+<li class="">
+<p>用Depth-WeightedBid/Ask逼近真實可成交價格</p>
+</li>
+<li class="">
+<p>用Depth Unit*MaxLeverage設定標化深度</p>
+</li>
+<li class="">
+<p>用TWAP降低单點操维影響</p>
+</li>
+<li class="">
+<p>用Clamp(Interest-AvgPremium,±0.θ5%)平滑利率與溢價偏離</p>
+</li>
+</ul>
+<p>但新機制没有消减所有機會,只是把機會「操表層訂單簿轉移到:</p>
+<ul>
+<li class="">
+<p>跨交易所资金費率差</p>
+</li>
+<li class="">
+<p>TWAP動量滞後</p>
+</li>
+<li class="">
+<p>小種深度不足</p>
+</li>
+<li class="">
+<p>不同交易所模型差巽</p>
+</li>
+<li class="">
+<p>風控與執行能力差距</p>
+</li>
+</ul>
+<p>参考来源</p>
+<ul>
+<li class="">KuCoin: Important: Funding Rate Calculation Update for XRPUSDC,</li>
+</ul>
+<p>SUIUSDC, SOLUSD, PENGUUSDT, NMRUSDT, and ZRCUSDT (2025-11-27)
+<code>https://www.kucoin.com/announcement/bd-important-</code> funding-rate-
+calculation-update-for-xrpusdc-suiusdc-solusd-penguusdt-nmrusdt-
+and-zrcusdt-2025-11-27</p>
+<ul>
+<li class="">KuCoin: Important: Funding Rate Calculation Update for several</li>
+</ul>
+<p>Perpetual Contracts (2026-06-01)
+<code>https://www.kucoin.com/announcement/en-important-funding-rate-</code>
+calculation-update-for-several-perpetual-contracts-2026-06-01</p>
+<ul>
+<li class="">KuCoin: Important Notice: Optimization of the Perpetual Futures</li>
+</ul>
+<p>Funding Rate Calculation Mechanism (01-09)
+<code>https://ww.kucoin.com/announcement/en-important-notice-</code>
+optimization-of-the-perpetual-futures-funding-rate-calculation-
+mechanism-01-09</p>
+<ul>
+<li class="">Bybit: Introduction to Funding Rate / Funding Rate Calculation</li>
+</ul>
+<p><code>https://www.bybit.com/en/help-center/article/What-is-funding-rate-</code>
+and-predicted-rate/</p>
+<ul>
+<li class="">Binance Futures / RCH materials on Premium Index and Impact Bid/Ask</li>
+</ul>
+<p>methodology
+<code>https://bin.bnbstatic.com/static/cms/cg08ou2ak0tn7mcplvfg/file/5319</code>
+7b612332da02c20b5b7d19b81ff53ee5f4938c6330c72a30a1ca4f91049f.pdf</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<blockquote>
+<p>原始导出图超过单张 WebP 的尺寸上限，以下图片按从上到下的顺序连续保存。
+<img decoding=async loading=lazy alt="梳理 KuCoin 資金費率計算機制：微信公众号导出原始排版图（第 1 段，共 2 段）" src=/assets/images/article-01-a058f29a6824257673d94b94b2e27d3c.webp width=1280 height=16000 class=img_ev3q />
+<img decoding=async loading=lazy alt="梳理 KuCoin 資金費率計算機制：微信公众号导出原始排版图（第 2 段，共 2 段）" src=/assets/images/article-02-f7974c2be124e29bbbb9d4594e929efb.webp width=1280 height=6869 class=img_ev3q /></p>
+</blockquote></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2026-05-28-2026-05-28-梳理-kucoin-資金費率計算機制-2247485928.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2026-06-20-se-安全芯片怎麼用-一-需求選型-配置確認與初始化-2247485941><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>SE 安全芯片怎麼用（一）：需求選型、配置確認與初始化</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2026-05-25-特朗普和伊朗談判又提-亞伯拉罕協議-這到底是什麼-2247485914><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>特朗普和伊朗談判又提「亞伯拉罕協議」，這到底是什麼？</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#一曹版资金费率公式同题藏在bid1ask1 class="table-of-contents__link toc-highlight">一、曹版资金费率公式:同题藏在Bid1/Ask1</a><li><a href=#2新资金員率算法升级细蹄 class="table-of-contents__link toc-highlight">2.新资金員率算法升级细蹄</a><li><a href=#4资业量审上用货业量审下用 class="table-of-contents__link toc-highlight">4.资业量审上用,货业量审下用</a><li><a href=#1号入-甲约注脂值-确量的排 class="table-of-contents__link toc-highlight">1.号入 [甲约注脂值; (确量的排)</a><li><a href=#1bid1-舆-ask1 class="table-of-contents__link toc-highlight">1.Bid1 舆 Ask1</a><li><a href=#2index-price class="table-of-contents__link toc-highlight">2.Index Price</a><li><a href=#3interest003日利率如何變成001 class="table-of-contents__link toc-highlight">3.Interest:0.03%日利率如何變成0.01%</a><li><a href=#3核心参数定羲 class="table-of-contents__link toc-highlight">3.核心参数定羲</a><ul><li><a href=#016 class="table-of-contents__link toc-highlight">0.16</a><li><a href=#014279-6tc class="table-of-contents__link toc-highlight">0.14279 6TC</a></ul><li><a href=#4clamp上下限不是固定一個数 class="table-of-contents__link toc-highlight">4.clamp:上下限不是固定一個数</a><li><a href=#二蓄機制的脆弱點用很薄的表層報價扭曲中周價 class="table-of-contents__link toc-highlight">二、蓄機制的脆弱點:用很薄的表層報價扭曲中周價</a><ul><li><a href=#15瞬間溢價到資金費率 class="table-of-contents__link toc-highlight">1.5%瞬間溢價到資金費率</a></ul><li><a href=#2sma為什磨脆弱 class="table-of-contents__link toc-highlight">2.SMA為什磨脆弱</a><ul><li><a href=#320usdt排單成本不等於20usdt詹位收益 class="table-of-contents__link toc-highlight">3.20USDT排單成本,不等於20USDT詹位收益</a></ul><li><a href=#三為什磨大多数人知道漏洞也不到 class="table-of-contents__link toc-highlight">三、為什磨大多数人知道漏洞也不到</a><li><a href=#1被吃單風险假單會變真成交 class="table-of-contents__link toc-highlight">1.被吃單風险:假單會變真成交</a><li><a href=#2延避與網路抖動晚50ms就是另一個世界 class="table-of-contents__link toc-highlight">2.延避與網路抖動:晚50ms就是另一個世界</a><li><a href=#0-19 class="table-of-contents__link toc-highlight">0. 19%</a><li><a href=#3摘交易大家都摘在结算前 class="table-of-contents__link toc-highlight">3.摘交易:大家都摘在结算前</a><li><a href=#4资本需求舆流動性限制 class="table-of-contents__link toc-highlight">4.资本需求舆流動性限制</a><li><a href=#5交易所反制 class="table-of-contents__link toc-highlight">5.交易所反制</a><li><a href=#四新機制impactpricetwap利率調整 class="table-of-contents__link toc-highlight">四、新機制:ImpactPrice+TWAP+利率調整</a><li><a href=#三细核心囊化 class="table-of-contents__link toc-highlight">三细核心囊化:</a><li><a href=#2用時间加橙平均溢價指数取代普通masma class="table-of-contents__link toc-highlight">2.用時间加橙平均溢價指数取代普通MA/SMA</a><li><a href=#3-加人-interest--preniun-的二次-clamp-调整项 class="table-of-contents__link toc-highlight">3. 加人 Interest -Preniun 的二次 clamp 调整项</a><li><a href=#五深度加權衡撃價格看報價成看可成交深度 class="table-of-contents__link toc-highlight">五、深度加權衡撃價格:看報價成看可成交深度]</a><li><a href=#1btc買盤例 class="table-of-contents__link toc-highlight">1.BTC買盤例</a><ul><li><a href=#002 class="table-of-contents__link toc-highlight">0.02</a><li><a href=#006 class="table-of-contents__link toc-highlight">0.06</a><li><a href=#016-1 class="table-of-contents__link toc-highlight">0.16</a></ul><li><a href=#2假單被稀耦的精確計算 class="table-of-contents__link toc-highlight">2.假單被稀耦的精確計算</a><ul><li><a href=#001 class="table-of-contents__link toc-highlight">0.01</a><li><a href=#002-1 class="table-of-contents__link toc-highlight">0.02</a><li><a href=#006-1 class="table-of-contents__link toc-highlight">0.06</a><li><a href=#016-2 class="table-of-contents__link toc-highlight">0.16</a></ul><li><a href=#六新premiumindex不再用中間價而是用impact class="table-of-contents__link toc-highlight">六、新PremiumIndex:不再用中間價,而是用Impact</a><li><a href=#七twap時間加權平均瞬間操更但也產生記憶拖累 class="table-of-contents__link toc-highlight">七、TWAP:時間加權平均瞬間操更,但也產生記憶拖累</a><li><a href=#1温和變化例 class="table-of-contents__link toc-highlight">1.温和變化例</a><li><a href=#2喇烈反轉例動量滞後 class="table-of-contents__link toc-highlight">2.喇烈反轉例:動量滞後</a><li><a href=#八利率调整项把資金費率拉回利率附近 class="table-of-contents__link toc-highlight">八、利率调整项:把資金費率拉回利率附近</a><li><a href=#九同一市場條件下蓄機制vs新機制 class="table-of-contents__link toc-highlight">九、同一市場條件下:蓄機制VS新機制</a><li><a href=#十新機制下仍然存在的套利機會 class="table-of-contents__link toc-highlight">十、新機制下仍然存在的套利機會</a><li><a href=#1跨市場资金费率差 class="table-of-contents__link toc-highlight">1.跨市場资金费率差</a><li><a href=#8请金费率上下锈 class="table-of-contents__link toc-highlight">8.请金费率上下锈</a><li><a href=#3资金率上下限 class="table-of-contents__link toc-highlight">3.资金率上下限</a><li><a href=#2twap記憶拖累 class="table-of-contents__link toc-highlight">2.TWAP記憶拖累</a><li><a href=#3delta中性瓷金策略 class="table-of-contents__link toc-highlight">3.Delta中性瓷金策略</a><li><a href=#一遗流動性突然消失整個delta中性結橘都會形 class="table-of-contents__link toc-highlight">一遗流動性突然消失,整個Delta中性結橘都會形。</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

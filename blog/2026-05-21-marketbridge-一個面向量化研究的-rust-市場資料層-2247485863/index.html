@@ -1,0 +1,1271 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>MarketBridge：一個面向量化研究的 Rust 市場資料層 | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2026-05-21-marketbridge-一個面向量化研究的-rust-市場資料層-2247485863 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="MarketBridge：一個面向量化研究的 Rust 市場資料層 | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《MarketBridge：一個面向量化研究的 Rust 市場資料層》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《MarketBridge：一個面向量化研究的 Rust 市場資料層》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2026-05-21T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2026-05-21-marketbridge-一個面向量化研究的-rust-市場資料層-2247485863 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-05-21-marketbridge-一個面向量化研究的-rust-市場資料層-2247485863 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-05-21-marketbridge-一個面向量化研究的-rust-市場資料層-2247485863 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2026-05-21-marketbridge-一個面向量化研究的-rust-市場資料層-2247485863","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2026-05-21T00:00:00.000Z","description":"从微信公众号导入的文章《MarketBridge：一個面向量化研究的 Rust 市場資料層》，保留原始排版图并提供本地 OCR 转写。","headline":"MarketBridge：一個面向量化研究的 Rust 市場資料層","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2026-05-21-marketbridge-一個面向量化研究的-rust-市場資料層-2247485863","name":"MarketBridge：一個面向量化研究的 Rust 市場資料層","url":"https://w0x7ce.eu/blog/2026-05-21-marketbridge-一個面向量化研究的-rust-市場資料層-2247485863"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>MarketBridge：一個面向量化研究的 Rust 市場資料層</h1><div class="container_mt6G margin-vert--md"><time datetime=2026-05-21T00:00:00.000Z>2026年5月21日</time> · <!-- -->閱讀時間約 27 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2026-05-21 22:13:51（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247485863&idx=1&sn=3ecd2e2f2daba352885907087021fe89&chksm=96e11c0da196951bd7c3d03d3c3d03337d7cc4899c008b8281f855d30eccd95557e8886ccf94#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 15508 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>original wex7ce EI V1ajero 2026年5月21日 22:14 日本
+最近在持绩选代一個專系:MarketBridge。
+<code>https://github.</code> com/okloorcl/MarketBridge
+README
+MarketBridge
+n ,
+sentment data. Marketrdge nmalles pubilc data, caches reh state, mars stale records and expses ne
+stable AP sufcer dwnstremreearch system5.
+Curent vwersion: ve.4.3
+中文文档
+Jcwres NCT
+它的定位很克制:
+MarketBridge是一個面向量化研究的資料服務,目標是把多個公開市场資料源整理成相
+對统一的REST/WebSocket/本地資料湖介面。它只做資料,不做下單。
+遗的“只做資料,很重要。
+MarketBridge不是交易機器人,不是自勐交易框架,也不是策略平台。它不托管資金,不飘
+行打單,不需要交易權限,也不承諾任何收益。
+它更接近量化研究系统前面的一基碳設施:负賣接入公醒資料、棵化资料、继携最新快照、
+提供即時或掌即時资料流、按塞存歷史资料,亚露資料源状患、基监控、品質資訊和AI
+/Agent 友好的上下文介面。
+這篇文童想把它目前能做什座、怎磨用、不能做什座、還存在哪些遗界,债量客地鼓清楚。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一為什磨先做资料唇>一、為什磨先做资料唇<a href=#一為什磨先做资料唇 class=hash-link aria-label=一、為什磨先做资料唇的直接連結 title=一、為什磨先做资料唇的直接連結 translate=no>​</a></h2>
+<p>做量化研究时,大家很容易先时涂策略、模型、回测和行。
+但真正開始勤手後,資料唇往往是第一批瓶颈。
+不同交易所和資料源之同存在很多差异:</p>
+<ul>
+<li class="">
+<p>symbol 命名不一致</p>
+</li>
+<li class="">
+<p>现貨、永續、期貨、期權的資料结橘不一致</p>
+</li>
+<li class="">
+<p>訂單薄、成交、資金率、持逾量、强平等榴位告不相同</p>
+</li>
+<li class="">
+<p>WebSocket 和 REST 的剧新方式不同</p>
+</li>
+<li class="">
+<p>有些来源不需要APIkey,有些来源需要</p>
+</li>
+<li class="">
+<p>有些資料是即時推送,有些資料只能定時输詢</p>
+</li>
+<li class="">
+<p>歷史资料有善通 OHLCV,也有 mark、index、premiumIndex、funding_rate 等特殊</p>
+</li>
+</ul>
+<p>candle</p>
+<ul>
+<li class="">
+<p>資料可能延速、退期、缺失、重视或出现位异常</p>
+</li>
+<li class="">
+<p>下游研究系统需要回放和復算,但即時快取重後就富丢失</p>
+</li>
+</ul>
+<p>如果每一因研究本都自己虑理這些周随,专案很快會费成一堆耀继着的adapter。
+因此,先做一個强立的资料層,把這些重工程集中虚理。後面的研究系统只需要面到相對统一
+的介面,而不是直接面到频十個外部API。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=二marketbridge目前是什磨>二、MarketBridge目前是什磨<a href=#二marketbridge目前是什磨 class=hash-link aria-label=二、MarketBridge目前是什磨的直接連結 title=二、MarketBridge目前是什磨的直接連結 translate=no>​</a></h2>
+<p>MarketBridge 目前是一個 Rust 實现的市场資料服務。
+它主要做展件事:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1设定樓中用不同公開資料源>1.设定樓中用不同公開資料源<a href=#1设定樓中用不同公開資料源 class=hash-link aria-label=1.设定樓中用不同公開資料源的直接連結 title=1.设定樓中用不同公開資料源的直接連結 translate=no>​</a></h2>
+<p>?.執行各類 connector 探集资料</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3将資料送入内部-router-和event-bus>3.将資料送入内部 router 和event bus<a href=#3将資料送入内部-router-和event-bus class=hash-link aria-label="3.将資料送入内部 router 和event bus的直接連結" title="3.将資料送入内部 router 和event bus的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1维薄显新-snapshot>1.维薄显新 snapshot<a href=#1维薄显新-snapshot class=hash-link aria-label="1.维薄显新 snapshot的直接連結" title="1.维薄显新 snapshot的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5透過rest-api-回傅目前快照>5.透過REST API 回傅目前快照<a href=#5透過rest-api-回傅目前快照 class=hash-link aria-label="5.透過REST API 回傅目前快照的直接連結" title="5.透過REST API 回傅目前快照的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3透過websocket-推送即時或掌即時资料>3.透過WebSocket 推送即時或掌即時资料<a href=#3透過websocket-推送即時或掌即時资料 class=hash-link aria-label="3.透過WebSocket 推送即時或掌即時资料的直接連結" title="3.透過WebSocket 推送即時或掌即時资料的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7透過-sqlite-保存工作想kline-和本地翼料湖manifest>7.透過 SQLite 保存工作想kline 和本地翼料湖manifest<a href=#7透過-sqlite-保存工作想kline-和本地翼料湖manifest class=hash-link aria-label="7.透過 SQLite 保存工作想kline 和本地翼料湖manifest的直接連結" title="7.透過 SQLite 保存工作想kline 和本地翼料湖manifest的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3透退parquet-按震存歷史-candle分區>3.透退Parquet 按震存歷史 candle分區<a href=#3透退parquet-按震存歷史-candle分區 class=hash-link aria-label="3.透退Parquet 按震存歷史 candle分區的直接連結" title="3.透退Parquet 按震存歷史 candle分區的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3-暴霉-cataloghealth-prometheus-metrics>3. 暴霉 catalog、health Prometheus metrics<a href=#3-暴霉-cataloghealth-prometheus-metrics class=hash-link aria-label="3. 暴霉 catalog、health Prometheus metrics的直接連結" title="3. 暴霉 catalog、health Prometheus metrics的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3露-universeresearch-featuresagent-context-等研究友好介面>3.露 universe、research features、agent context 等研究友好介面<a href=#3露-universeresearch-featuresagent-context-等研究友好介面 class=hash-link aria-label="3.露 universe、research features、agent context 等研究友好介面的直接連結" title="3.露 universe、research features、agent context 等研究友好介面的直接連結" translate=no>​</a></h2>
+<p>目前版本的重黏是研究資料接入:「统一查詢介面:按需歷史資料保存和"AI/Agent
+可消费的資料上下文:,不是交易執行。
+它比较適合作為:</p>
+<ul>
+<li class="">
+<p>量化研究的资料输入唇</p>
+</li>
+<li class="">
+<p>因子挖掘的資料上下文服務</p>
+</li>
+<li class="">
+<p>多資料源监控與除销工具</p>
+</li>
+<li class="">
+<p>内部研究平台的資料底座</p>
+</li>
+<li class="">
+<p>史candle和資料品置棱查的量本地資料湖</p>
+</li>
+<li class="">
+<p>後因子验證、AI分析流程、Agent工作流的前置服務</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=三目前覆盖的資料型别>三、目前覆盖的資料型别<a href=#三目前覆盖的資料型别 class=hash-link aria-label=三、目前覆盖的資料型别的直接連結 title=三、目前覆盖的資料型别的直接連結 translate=no>​</a></h2>
+<p>下面這张表接照目前專案程式碼能力整理。需要注意:不同資料源的公開能力不同,某些帽位只
+有在交易所或第三方服精實際提供時才會有資料。
+保存方式
+资料型别
+目前能力
+典型用途
+價格基率、
+现货quo
+统一b1d、ask、mid 類行情快照
+記惊快照
+跨交易所比
+te
+较
+衍生品状
+永quo
+perp bid/ask,部分束源包含 mar
+慧、期現廊
+記惊险快照
+k、funding 等位
+te
+侨
+深度、流動
+L2 訂量
+保存最新bids/asks 快照
+性、蟹口圣
+记德快照
+薄
+力
+主勤買页方
+最新快照+滚動
+保存最新trade 事件,亚疆勐order
+向、成交强
+公用成交
+flow
+記慎视窗
+度
+悍成本、
+保存公资会费率快照
+記憶情快照
+Funding
+摄度靓察
+uI uado
+保存公限持意量快照
+记憶体快照
+收缩翻察
+terest
+Liquida
+去悍和凰
+記像快照
+保存公限强平事件
+t1ons
+隆状想翻察
+回测、因子
+SQLite 工作康,
+SQLite 储存 OHLCV; 支援 REST ba
+针算、Un1v
+KL1nes
+可按需窝Parque
+ckfilL 和即時聚合
+erse 髓通
+衍生品雁史
+按需REST
+Binance / OKX 支援 mark、inde
+研究、资金
+特殊歷史
+取,可窝 Parque
+x、 funding_rate: Binance 支握 p
+candles
+資率regim
+remiumIndex
+t
+e
+基玲quote cache 甘算 spot-perp
+期現结横研
+Bas1s
+basis
+究
+buy/sell qty、 notional, delta、
+0rder F
+短通期資金
+滚助配愤错聚合
+VTUe1
+滚勤记憶程聚合
+Low
+CVD、 大单徽、 aggressive ratio
+流察
+price-bin volume profile, bid/
+ask amount, per-price delta、1
+微结概研
+Footpr1
+滚勤配憶帽聚合
+滚动配愉體聚合
+mbalance, stacked imbalance, m
+nt
+究
+1n/max delta
+volume、 percent change, volati
+即时計算+kl1n
+Univers
+lity、 spread、 cross-market、 mar
+e / quote / e
+市場池赣通
+市场池脑通
+e Engin
+ket cap、age, listing、 delist-r
+xternal signa
+isk
+rolling returns, volume, reali
+Researc
+因子前處
+zed vol、z-score, correlation,
+h Featu
+理、研究特
+即時計算
+basis/funding/0I/liquidity reg
+微包
+res
+1me
+Derib1t / 0KX/ Byb1t / B1nanc
+波动率和期
+快取
+Options
+限结碘研究
+e期键快照
+CLOB book、midpoint、 spread、pr
+预测市場和
+快取+ REST wr
+Polymar
+事件研究
+ket
+ice history 等介面
+Jadde
+DeF1 qu
+ote / p
+硬上流封性
+Jupiter、 Raydium, Uniswap、 Para
+記偿快照
+Swap、11nch,DexScreener 等
+参考
+0ol pr1
+ce
+TradF1
+宏regim
+referen
+DXY、VIX、US10Y 等
+记憶快照
+e filter
+ce
+聚合行借
+CoinGecko, CoinCap. CoinMarket
+外部参考资
+quote / exter
+/衍生指
+Cap、 CoinGlass, Custon API
+nal signal
+Fear & Greed, CryptoPanic, San
+external sign
+情绪資料
+情鳍退滤器
+t1ment, LunarCrush
+al
+大颜韩帐和
+Whale Alert、mempool.space、Et
+键上资料
+狮立 store
+包监控
+herscan watched addresses
+AI / Agen
+Agent C
+量目前快照、保存manifest、可用
+即時聚合
+t工作流
+ontext
+能力和推离下一步呼叫
+遗张表不是说每個交易所、每個市場、每图位都端是完整可用。更链地规,MarketBridge
+提供统一的资料接入框架和介面表面;實魔可用資料取决龄段定、APIkey、公阙可達性、第三
+方服释状態,以及封惠资料源是否公開提供旅榈位,</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=四它和ccxthummingbotfreqtrade-的差翼>四、它和CCXT、Hummingbot、Freqtrade 的差翼<a href=#四它和ccxthummingbotfreqtrade-的差翼 class=hash-link aria-label="四、它和CCXT、Hummingbot、Freqtrade 的差翼的直接連結" title="四、它和CCXT、Hummingbot、Freqtrade 的差翼的直接連結" translate=no>​</a></h2>
+<p>MarketBridge 和 CCXT、Hummingbot、Freqtrade 不是同一原工具。
+CCXT更像通用交易所APISDK.它通合在程式直接呼叫交易所介面。使用CCXT時,鹰
+用仍然需要自已虚理資料快取、即時流、一schema、服務化介面、健康检查、监控和歷史资
+料落盟,
+Hummingbot更偏交易機器人和策略行框架,重點是速接交易所亚敦行做市、套利等蛋略。
+Freqtrade更偏完盈策略研究和交易概器人框架,包含pairlist、回测、策略介面、部分
+orderfLow/FreqAI特微工程能力。它對研究很有参考借值,但它的目福不是做立的资
+料服释。
+如是用更直接的一句話區分:
+CCXT是SDK,Freqtrade 是策略框架,MarketBridge 是可通行的资料股和本地
+研究资料湖。
+MarketBridge 的定位更窄,也更明:</p>
+<ul>
+<li class="">
+<p>不模接CCXT</p>
+</li>
+<li class="">
+<p>不依赖 Hummingbot 執行</p>
+</li>
+<li class="">
+<p>不做下单</p>
+</li>
+<li class="">
+<p>不虑理资金</p>
+</li>
+<li class="">
+<p>不需要交易權限</p>
+</li>
+<li class="">
+<p>不做策略回测敦行器</p>
+</li>
+<li class="">
+<p>不做AI模型訓续框架</p>
+</li>
+<li class="">
+<p>重贴是公阅市場資料的探集、模弹化、快照、流式分發、按需歷史保存和研究特微輸出</p>
+</li>
+</ul>
+<p>它不是為了替代這些專,而是作為一個狮立的资料服務,為後缩研究系统提供更统一的资料入
+口</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=五目前架構概>五、目前架構概<a href=#五目前架構概 class=hash-link aria-label=五、目前架構概的直接連結 title=五、目前架構概的直接連結 translate=no>​</a></h2>
+<p>MarketBridge 内部大致可以分成眉。</p>
+<p>图核心模组的酸责如下:
+模组
+磁贵
+敏勤管理各個资料源任務,滤理重速和backoff
+SourceRuntime
+把 connector 生的 DataEvent 送入内部 channel
+SourceContext
+把 source 資料分聚 event bus 和 aggregator
+EventRouter
+维展通道和 snapshot store
+EventBus
+EventSnapshot
+保存显新 quote、funding、OI、trade、order book 等快照
+Store
+OrderFlowStor
+基於trade事件维薄order flowbucket和footprint rol
+Ling buffer
+e
+KlineStore
+SQLite 鳞存 OHLCV,支援 REST backfill 和B即時 tick 聚合
+按需寫 Parquet 分區,亚用 SQLite 保存 manifest 和品質元
+DataLakeStore
+資讯
+提供 REST、history、storage、universe,research、agen
+api/routes/*
+t、WebSocket 等介面
+可選地把事件离入 Redis Strean,亚提供deadletter
+redis_sink
+601e1e3
+catalog
+暴露资料源、domain、instrument 和 API key 默態
+按幂歷史资料湖的离入路径如下:</p>
+<p>公XEVajero
+這径的期键贴是:不用的資料不存;只有請求翻式带persist=true才會寫入本地瓷料湖。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=六個工程設計節>六、個工程設計節<a href=#六個工程設計節 class=hash-link aria-label=六、個工程設計節的直接連結 title=六、個工程設計節的直接連結 translate=no>​</a></h2>
+<p>下面這些是目前程式碼理已提有封应實现的設計黏。這理偿量用潭確表述,不把它说成已經解决
+所有問题。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1慢websocket用户端不會直接阻塞生產者>1.慢WebSocket用户端不會直接阻塞生產者<a href=#1慢websocket用户端不會直接阻塞生產者 class=hash-link aria-label=1.慢WebSocket用户端不會直接阻塞生產者的直接連結 title=1.慢WebSocket用户端不會直接阻塞生產者的直接連結 translate=no>​</a></h2>
+<p>MarketBridge使用tokio:brcadcast给不同消意者分登事件。每图WebSocket 速综
+都有自己的receiver。
+如果某自用户端消费太慢,它营出现Lagged,服務管纪缝warning,亚继绩處理後續讯
+息。WebSocket send 也有超時控制,预设 3000ms,可以造巡段定修改。
+這意味著慢用户端不题敲直接阻塞資料源探集任猜。但如果系统整锥容量不足,仍然需要根擦實
+際吞吐调整行列、部署资漂和订開方式,</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2高频事件做了基硬解耦但還不是完全零製>2.高频事件做了基硬解耦,但還不是完全零製<a href=#2高频事件做了基硬解耦但還不是完全零製 class=hash-link aria-label=2.高频事件做了基硬解耦,但還不是完全零製的直接連結 title=2.高频事件做了基硬解耦,但還不是完全零製的直接連結 translate=no>​</a></h2>
+<p>Eventbus中摘展市场事件使用ArcsDataEventa廣播,这可以减少按訂园者装大物件
+的情况,尤其是訂单薄道频包含bids/asks的事件。
+但目前實現或不是完全零硬聚。router 分验時仍然存在一次DataEventcLone,
+snapshotstore保存最新诗也clone 别愿物件。
+更藏罐的职法是:
+目前已經减少了按訂開者福裂,但打单随熟路径仍有進一步侵化空間。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3redis寫入失有重試和deadletter>3.Redis寫入失有重試和deadletter<a href=#3redis寫入失有重試和deadletter class=hash-link aria-label=3.Redis寫入失有重試和deadletter的直接連結 title=3.Redis寫入失有重試和deadletter的直接連結 translate=no>​</a></h2>
+<p>Redis sink 是可逻功能。
+敏用後,MarketBridge批次离入Redis Stream。如果寫人失胶,重试多次亚試重
+速。多次失後,批次會官入 JSONL deadletter 案,预经路径是:
+data/redis_dead_letters . 1sonl
+棉系入放在blocking task中執行,避免直接阻塞 tokio worker。
+这不是说Redis离入永還不曾丢资料,而是说目前實现不曾在多次寒入失败後静默忽略:它鲁
+留下 dead Letter 記,方便後續排查和捕。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4freshnessstale已覆蓝一部分標化瓷料>4.Freshness/stale已覆蓝一部分標化瓷料<a href=#4freshnessstale已覆蓝一部分標化瓷料 class=hash-link aria-label=4.Freshness/stale已覆蓝一部分標化瓷料的直接連結 title=4.Freshness/stale已覆蓝一部分標化瓷料的直接連結 translate=no>​</a></h2>
+<p>棵化quote 使用DataEnvelope,其中包含:</p>
+<ul>
+<li class="">
+<p>ts_source</p>
+</li>
+<li class="">
+<p>ts rereived</p>
+</li>
+<li class="">
+<p>latency_ns</p>
+</li>
+<li class="">
+<p>stale</p>
+</li>
+</ul>
+<p>期權快取和Polymarket 快取也有stale 标記。
+不遇,目前 funding、open interest、trade、liquidation、order book 等 REST
+快照仍然主要回傅raw snapshot 结,包含ts_ns,還没有全部统一成带完整Freshne
+5s的 envelope,
+所以這理的弹殖設法是:
+quote、options、prediction book 已經有比较明的 freshness / stale 機
+制;其他market snapshot 後續荒要统一.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5apikey缺失會暴露到catalog>5.APIkey缺失會暴露到catalog<a href=#5apikey缺失會暴露到catalog class=hash-link aria-label=5.APIkey缺失會暴露到catalog的直接連結 title=5.APIkey缺失會暴露到catalog的直接連結 translate=no>​</a></h2>
+<p>對需墨 API key 的来源,例如 CoinMarketCap、CoinGlass、FRED、CryptoPanic、
+Santinent、LunarCrush、Whale Alert、Etherscan 等,MarketBridge 鲁在
+catalog 中標记状感。
+如果某個来源已經敏用,但key没有設定,富期示:
+enabled_missing_api_key
+這對谨继和除错很重墨,因為它可以显分“来源故用:和来源敏用了但缺key1。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=6不同domain可以獨立訂>6.不同domain可以獨立訂<a href=#6不同domain可以獨立訂 class=hash-link aria-label=6.不同domain可以獨立訂的直接連結 title=6.不同domain可以獨立訂的直接連結 translate=no>​</a></h2>
+<p>WebSocket/v1/strean 支援技 domain ,例如:</p>
+<ul>
+<li class="">market_quote</li>
+</ul>
+<p>buipurny·
+open_interest
+trade</p>
+<ul>
+<li class="">
+<p>liquidation</p>
+</li>
+<li class="">
+<p>order_book</p>
+</li>
+<li class="">
+<p>external_signal</p>
+</li>
+<li class="">
+<p>prediction_book</p>
+</li>
+</ul>
+<p>如果只訂明單一事件domain,程式走对度 domain channel:如果訂多個domain,
+盲走混合事件流亚做通淘。
+這旗消費者可以只拿自己雨心的资料,而不是接收所有事件後再自己遇湿。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7歷史资料是按需储存不预設全量寫盤>7.歷史资料是按需储存,不预設全量寫盤<a href=#7歷史资料是按需储存不预設全量寫盤 class=hash-link aria-label=7.歷史资料是按需储存,不预設全量寫盤的直接連結 title=7.歷史资料是按需储存,不预設全量寫盤的直接連結 translate=no>​</a></h2>
+<p>目前宽现中,/vi/history/candles和/vl/market/klines都支援persist=true。
+只有额式较定persist=true時,回傅的資料才盲寫人本地 Parquet 資料湖。
+這様做的原因是:</p>
+<ul>
+<li class="">
+<p>不需要的资料不占碰镰</p>
+</li>
+<li class="">
+<p>可以先只储存BTCUSDT、ETHUSDT、SOLUSDT 等重贴標的</p>
+</li>
+<li class="">
+<p>可以按研究任释储存 mark/ index/premiunIndex/ funding_rate candle</p>
+</li>
+<li class="">
+<p>可以透透manifest查看娜些资料已经存在</p>
+</li>
+<li class="">
+<p>可以透透deleteendpoint到除不需要的分區</p>
+</li>
+</ul>
+<p>目前本地Lake结标大致是:
+data/lake/
+/spueugeuop
+donain=candles/
+exchange=binance/
+market=perp/
+5yr bol=BTCUSDT/
+interval=1n/
+/xusad4 a1pue3
+candle_type=mark/
+day-2026-85-21/
+/12-58-9z0z=Aep
+part-*, parquet
+SQLite manifest 記疑:</p>
+<ul>
+<li class="">
+<p>rowS</p>
+</li>
+<li class="">
+<p>bytes</p>
+</li>
+<li class="">
+<p>file path</p>
+</li>
+<li class="">
+<p>first / last timestamp</p>
+</li>
+<li class="">
+<p>latest watermark</p>
+</li>
+<li class="">
+<p>gap count</p>
+</li>
+<li class="">
+<p>duplicate count</p>
+</li>
+<li class="">
+<p>coverage ratio</p>
+</li>
+<li class="">
+<p>latency p5e / p95</p>
+</li>
+<li class="">
+<p>stale count</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=8agentapi是资料的不是交易代理>8.AgentAPI是资料的,不是交易代理<a href=#8agentapi是资料的不是交易代理 class=hash-link aria-label=8.AgentAPI是资料的,不是交易代理的直接連結 title=8.AgentAPI是资料的,不是交易代理的直接連結 translate=no>​</a></h2>
+<p>目前程式码新增了雨個Agent友好介面:</p>
+<ul>
+<li class="">GET /vl/agent/cepabilities</li>
+</ul>
+<p>它們的目棵是AI/Agent 不需要自已拼很多endpoint,就能捶得:</p>
+<ul>
+<li class="">
+<p>目前quote/ funding/ OI快照</p>
+</li>
+<li class="">
+<p>可用能力列表</p>
+</li>
+<li class="">
+<p>推震下一步呼叫</p>
+</li>
+<li class="">
+<p>可選 storage manifest</p>
+</li>
+<li class="">
+<p>明的 data-only 界</p>
+</li>
+</ul>
+<p>这個Agentmode不是自動交易模式,不會握有下单權限,也不會输出策路保證。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=七對外介面>七、對外介面<a href=#七對外介面 class=hash-link aria-label=七、對外介面的直接連結 title=七、對外介面的直接連結 translate=no>​</a></h2>
+<p>常用REST 介面包括:
+介面
+就明
+Systen
+GET /health
+健康榜查
+GET /v1/catalog/sources
+Catalog
+資料源和 APIKey 获
+GET /v1/catalog/source-roadin
+Catalog
+connector 蛋盖和来源路線圈
+ap
+domain/source 记蜂數和新鲜
+Catalog
+GET /v1/catalog/health
+度
+GET /v1/catalog/domains
+Catalog
+已支援的資料domain
+Catalog
+目前可見 instrument
+GET /v1/catalog/instruments
+quote 快照
+GET /v1/market/quotes
+Market
+Market
+GET /v1/market/order -books
+訂單薄快照
+显新公關成交
+Market
+GET /v1/market/trades
+GET /v1/market/funding
+Market
+funding 快照
+Market
+0I快照
+GET /v1/market/open-interest
+GET /v1/market/L1qu1dations
+Market
+11quidat1on 快照
+SQLite kline:可按需腐 Parq
+GET /v1/market/kl1nes
+Market
+uet
+Market
+GET /v1/market/basis
+stseq duad-ods
+0rderflo
+GET /v1/market/order-flow
+單視窗 order flow
+GET /v1/market/order-flow/w1
+0rderflo
+多視窗order flow/ CVD
+ndows
+W
+0rderflo
+GET /v1/market/footprint
+footprint profile
+特殊原史cande,支援按需Par
+History
+GET /v1/history/candles
+quet
+Storage
+本地Lake manifest
+GET /v1/storage/manifest
+DELETE /v1/storage/partit1on
+Storage
+剔除本地lake分區
+5
+Universe
+GET /v1/un1verse/top-volume
+成交量筛遵
+GET /v1/universe/percent-cha
+涨跌帽静溢
+Un1verse
+nge
+Universe
+GET /v1/universe/volatility
+GET /v1/universe/spread-filt
+spread 都選
+Universe
+er
+GET /v1/universe/cross-marke
+spot/perp 和跨市场可用性
+Universe
+t
+GET /v1/universe/market-cap
+市值排序
+Universe
+Universe
+GET /v1/universe/age-filter
+上市年岭薛選
+GET /v1/universe/new-listing
+Universe
+新上市候道
+5
+Universe
+delist risk 觀察
+GET /v1/universe/delist-risk
+GET /v1/research/features
+研究特微包
+Research
+GET /v1/research/market-reg1
+Research
+市堤regime 快照
+ou
+AI / Agent 友好上下文
+GET /v1/agent/context
+Agent
+GET /v1/agent/capabilities
+AI/ Agent 可用能力
+Agent
+GET /v1/opt1ons/cha1ns
+期捷
+Opt1ons
+Predicti
+GET /v1/pred1ct1on/books
+Polynarket book
+on
+GET /v1/external/s1gnals
+聚合、宏觀、情储等外部信號
+External
+ueq -uo
+GET /v1/onchain/transfers
+大额键上轉幅
+Metrics
+GET /metrics
+Prometheus metrics
+事案狸仍然保留了一些莓版相客介面,例如/snapshot、/funding、/Spread、/optian
+5/*、/polymarket/等,方便早期图本耀绩使用;折的研究系统建優先使用/v1/。
+即時流介面:
+WS /v1/strean
+示例:
+npx wscat -c "us://127.o.a.1:8080/vl/stream?donains-market_quote,trade,</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=八一個最小使用流程>八、一個最小使用流程<a href=#八一個最小使用流程 class=hash-link aria-label=八、一個最小使用流程的直接連結 title=八、一個最小使用流程的直接連結 translate=no>​</a></h2>
+<p>原始碼執行:
+cd MarketBridge
+MARKETBRIDGE_coNFIG= /config - yanl cargo run</p>
+<p>或使用编後的二进位楼:
+MARKETBRIDGE_coNFIG= /config yanl /market -bridge
+检查服務:
+Curl -s http: //127.0.0.1:808/health 1 1q
+TERMINAL
+[base)x7cegTienjuiceMecBook-Pro AACC curl s http/127,e,8.1:88e/health 1 jq
+ok": true
+base) uebx7cegTienjuidetlacBookPro AACC a
+查看资料源状据:
+curl -s "<code>http://127.0.e.1:8080/vl/catalog/sources*</code> | 1q</p>
+<p>th": <em>src/connectors/cex</em>,</p>
+<p>查看行侨:
+curl -s "http:/127.0.0.1:8080/v1/market/quotes?synbols=BTcusDT* | jq
+se) vx7cngTierjuideMacBeskro ACC curl s <em><code>http://127,e,8l1:aeea/vl/arket/quetes?symbols=TUSoT</code> 1
+_quote</em>,
+reshness":(
+rypto",</p>
+<p>d“BTC-USDT-PERP*</p>
+<p>查看汀单薄:
+curl -s "<code>http://127.0.</code> e. 1:8080/v1/market/order-books?symbols=BTcUsDT&na</p>
+<p>qtye::.7139.9,</p>
+<p>查看funding:
+curl -s "<code>http://127.0.0.1:8080/v1/market/funding?symbols=BTcUsDT*</code> I 1q</p>
+<p>s: 1779379288669,
+177937211828
+: ssll,</p>
+<p>查看order flow:
+"<code>http://127.0.B.1:8089/v1/market/order-flow7symbol=8TcusDT5wind</code></p>
+<p>查看footprint:
+curl -s "<code>http://127.B.B.1:Hg8a/v1/market/faatprint7exchange=hinance5nar</code></p>
+<p>按幂拉取亚存 Binance mark price candle:
+curl -s "<code>http://127.0.0.1:8080/v1/history/candles?exchange=binanceasymb</code></p>
+<p>按拉取亚存 Binance premiumIndex candle:</p>
+<p>按幂拉取或铺存OKXfunding_rate 愿史:
+curl -s "<code>http://127.0.0.1:8080/v1/history/candles?exchange=okx&amp;amp;synbol=B'</code></p>
+<p>查看本地 Lakemanifest:
+pqu/sgs1pues=utuoe1setueu/afeso1s/ta/0se8:1'a'a zt//:d11u. 5- 1ns</p>
+<p>剩除不需要的本地分區:
+curl -x DELETE *<code>http://127.0.0.1:808e/v1/storage/partitions?donain=cand</code></p>
+<p>查看Agent 上下文:
+curl -s "<code>http://127.6.B.1:8a89/v1/agent/context7synbols=BTcusDT,ETHUSDT.</code></p>
+<p>这些介面回傅的是研究原材料和瓷料特微,不是交易建罐。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=九它可以如何辅助量化研究>九、它可以如何辅助量化研究<a href=#九它可以如何辅助量化研究 class=hash-link aria-label=九、它可以如何辅助量化研究的直接連結 title=九、它可以如何辅助量化研究的直接連結 translate=no>​</a></h2>
+<p>MarketBridge不判暨買實方向,也不验證策略有效性
+它提供的是更容易被研究系统消費的资料。基於运些资料,可以进一步造和验调因子。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1basis-因子>1.Basis 因子<a href=#1basis-因子 class=hash-link aria-label="1.Basis 因子的直接連結" title="1.Basis 因子的直接連結" translate=no>​</a></h2>
+<p>基龄 spot quote 和 perp quote,可以計算現貨和永之周的 bas1s.
+这知因子可以用於截察:</p>
+<ul>
+<li class="">
+<p>期現结横</p>
+</li>
+<li class="">
+<p>资金费率璟境</p>
+</li>
+<li class="">
+<p>跨交易所圾價差具</p>
+</li>
+<li class="">
+<p>捍市場是否過熟</p>
+</li>
+</ul>
+<p>需要注意的是,basis本身不是策略。它退需要结合手續費、滑點、資金貢率、持愈通期和围
+酸约束验。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2fundingoimarkindex歷史研究>2.Funding/OI/Mark/Index歷史研究<a href=#2fundingoimarkindex歷史研究 class=hash-link aria-label=2.Funding/OI/Mark/Index歷史研究的直接連結 title=2.Funding/OI/Mark/Index歷史研究的直接連結 translate=no>​</a></h2>
+<p>新增的/v1/history/candles可以按需拉取:</p>
+<ul>
+<li class="">
+<p>spot</p>
+</li>
+<li class="">
+<p>futures / perp</p>
+</li>
+<li class="">
+<p>mark</p>
+</li>
+<li class="">
+<p>1ndex</p>
+</li>
+<li class="">
+<p>prem1umIndex</p>
+</li>
+<li class="">
+<p>funding_rate</p>
+</li>
+</ul>
+<p>这些资料封衍生品研究很重要。例如:</p>
+<ul>
+<li class="">
+<p>mark 奥index 的偏雕</p>
+</li>
+<li class="">
+<p>premiunIndex 的時司序列曼化</p>
+</li>
+<li class="">
+<p>funding_rate 的 regime 切换</p>
+</li>
+<li class="">
+<p>funding+0I 的组合状想</p>
+</li>
+<li class="">
+<p>便格下跌但0I不降反升時的加横标行為</p>
+</li>
+</ul>
+<p>这些史candle 可以透過persist=true寫入本地 Parquet,後續给回测、特微工程或
+notebook 取</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=30rder-flow和footprint-因子>3.0rder Flow和Footprint 因子<a href=#30rder-flow和footprint-因子 class=hash-link aria-label="3.0rder Flow和Footprint 因子的直接連結" title="3.0rder Flow和Footprint 因子的直接連結" translate=no>​</a></h3>
+<p>基铃trade事件,可以聚合主勤買賣暨力。
+目前order flow支援:</p>
+<ul>
+<li class="">
+<p>buy qty / sell qty</p>
+</li>
+<li class="">
+<p>buy notional / sell notional</p>
+</li>
+<li class="">
+<p>buy trade count / sell trade count</p>
+</li>
+</ul>
+<p>[euotou e1ap / Aqb eap *</p>
+<ul>
+<li class="">
+<p>CVD</p>
+</li>
+<li class="">
+<p>large trade count</p>
+</li>
+</ul>
+<p>0ie1 11as / Anq assau66e .
+Footprint 進一步提供:</p>
+<ul>
+<li class="">
+<p>每根bucket 的raw trade 可選输出</p>
+</li>
+<li class="">
+<p>pr1ce-bin volume prof1le</p>
+</li>
+<li class="">
+<p>bid/ ask amount</p>
+</li>
+<li class="">
+<p>bid / ask notional</p>
+</li>
+<li class="">
+<p>per-price delta</p>
+</li>
+<li class="">
+<p>imbalance</p>
+</li>
+<li class="">
+<p>stacked bid / ask imbalance</p>
+</li>
+<li class="">
+<p>min / max delta</p>
+</li>
+<li class="">
+<p>total trades</p>
+</li>
+</ul>
+<p>这些指标可以用於翻察短退期成交蛋力,但是否有预涮力,需要在不同市场、不同時同视黑上</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4盤口整力和流勤性因子>4.盤口整力和流勤性因子<a href=#4盤口整力和流勤性因子 class=hash-link aria-label=4.盤口整力和流勤性因子的直接連結 title=4.盤口整力和流勤性因子的直接連結 translate=no>​</a></h2>
+<p>基铃L2 order book,可以翻察b1d/ ask depth 的翼化。
+这知资料可能用龄:</p>
+<ul>
+<li class="">
+<p>流動性状照鞭察</p>
+</li>
+<li class="">
+<p>流动性状思凝察</p>
+</li>
+<li class="">
+<p>短期葡整成本估計</p>
+</li>
+<li class="">
+<p>做市研究</p>
+</li>
+<li class="">
+<p>签口不平衡研究</p>
+</li>
+<li class="">
+<p>liquidity score 裸造</p>
+</li>
+</ul>
+<p>但訂单薄资料噪聲很高,也容易受撤單、延逐和交易所握合概制影響,不能直接等同於真實贡賣
+意图。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5universeengine先筛市場池再做研究>5.UniverseEngine:先筛市場池,再做研究<a href=#5universeengine先筛市場池再做研究 class=hash-link aria-label=5.UniverseEngine:先筛市場池,再做研究的直接連結 title=5.UniverseEngine:先筛市場池,再做研究的直接連結 translate=no>​</a></h2>
+<p>Freqtrade 的 PairList 給了一個很好的敏号:研究前先定教universe。
+MarketBridge 目前提供:</p>
+<ul>
+<li class="">
+<p>top volume</p>
+</li>
+<li class="">
+<p>percent change</p>
+</li>
+<li class="">
+<p>volatility</p>
+</li>
+<li class="">
+<p>spread filter</p>
+</li>
+<li class="">
+<p>cross-market availability</p>
+</li>
+<li class="">
+<p>market cap</p>
+</li>
+<li class="">
+<p>age filter</p>
+</li>
+<li class="">
+<p>new listings</p>
+</li>
+<li class="">
+<p>delist risk</p>
+</li>
+</ul>
+<p>遗些介面可以助研究系统先回答:</p>
+<ul>
+<li class="">
+<p>哪些標的成交量足购?</p>
+</li>
+<li class="">
+<p>哪些福的最近波动较大?</p>
+</li>
+<li class="">
+<p>那些福的spread 太寶,不滤合短通期研究?</p>
+</li>
+<li class="">
+<p>曙些標的同時有 spot 和 perp?</p>
+</li>
+<li class="">
+<p>哪些概的愿史上出现遇,但目前quote缺失或通期?</p>
+</li>
+</ul>
+<p>遍裸需要特别锐明雨點:market-cap依莉CoinGecko、CoinMarketCap或其他
+kline存在、但目前quote缺失或遥期,推遵出的資料属提示。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=6researchfeatureapi資料眉输出研究特微包>6.ResearchFeatureAPI:資料眉输出研究特微包<a href=#6researchfeatureapi資料眉输出研究特微包 class=hash-link aria-label=6.ResearchFeatureAPI:資料眉输出研究特微包的直接連結 title=6.ResearchFeatureAPI:資料眉输出研究特微包的直接連結 translate=no>​</a></h2>
+<p>MarketBridge 不做 AI模型凯辣,但可以输出研究特微包:</p>
+<ul>
+<li class="">
+<p>multi-timefrane OHLCV features</p>
+</li>
+<li class="">
+<p>rolling returns</p>
+</li>
+<li class="">
+<p>rolling volume</p>
+</li>
+<li class="">
+<p>real1zed volatility</p>
+</li>
+<li class="">
+<p>z-score</p>
+</li>
+<li class="">
+<p>benchmark correlation</p>
+</li>
+<li class="">
+<p>correlated asset features</p>
+</li>
+<li class="">
+<p>funding / 0I regime</p>
+</li>
+<li class="">
+<p>liquidity score</p>
+</li>
+<li class="">
+<p>exchange disagreement</p>
+</li>
+<li class="">
+<p>market regime snapshot</p>
+</li>
+</ul>
+<p>遗据下游研究系统可以把更多稿力放在因子稳證,而不是重视寫資料预虑理遥朝。
+这些feature 和reg1me Label只是資料特微與研究标,不是買賣信號,也不代表任伺
+策略有效。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=70ptions波動率研究>7.0ptions波動率研究<a href=#70ptions波動率研究 class=hash-link aria-label=7.0ptions波動率研究的直接連結 title=7.0ptions波動率研究的直接連結 translate=no>​</a></h3>
+<p>期權可以為波勤率研究提供資料基。
+例如:</p>
+<ul>
+<li class="">
+<p>不同expiry 的波動率结机</p>
+</li>
+<li class="">
+<p>不同 strike 的偏斜</p>
+</li>
+<li class="">
+<p>期權OI分值</p>
+</li>
+<li class="">
+<p>市场封未来波助的定侵化</p>
+</li>
+</ul>
+<p>目前MarketBridge更帽資料探集和快取;,不是完整的期耀定價平台。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=8polymarket和事件研究>8.Polymarket和事件研究<a href=#8polymarket和事件研究 class=hash-link aria-label=8.Polymarket和事件研究的直接連結 title=8.Polymarket和事件研究的直接連結 translate=no>​</a></h2>
+<p>Polymarket的CLOB资料可以作為预测市場資訊源。
+这频資料可能用於事件翻動研究,例如察某些市场機率是否领先新闻携散。
+但预测市場本身也有流勤性、差、参與者偏差等問题,需要蓬镇使用。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=9宏情和上過器>9.宏、情和上過器<a href=#9宏情和上過器 class=hash-link aria-label=9.宏、情和上過器的直接連結 title=9.宏、情和上過器的直接連結 translate=no>​</a></h2>
+<p>DXY、VIX、US1oY、Fear &Greed、新情络、大翻链上帐等,更遍合作為reg1me
+filter 或上下文数。
+它們不一定直接生交易信號,但可以助研究系统理解市增退境,</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=十agent-友好的資料入口>十、Agent 友好的資料入口<a href=#十agent-友好的資料入口 class=hash-link aria-label="十、Agent 友好的資料入口的直接連結" title="十、Agent 友好的資料入口的直接連結" translate=no>​</a></h2>
+<p>现在很多研究流程會接入LLM或Agent。这性容易出现一個問题:Agent不知道愿該先查娜
+些介面,也不知道資料服稿的遗界。
+MarketBridge 新增了雨個介面:
+GET /v1/agent/context
+/v1/agent/capabilities告新 Agent:</p>
+<ul>
+<li class="">
+<p>有哪些資料能力</p>
+</li>
+<li class="">
+<p>每佰能力對鹿睡endpoint</p>
+</li>
+<li class="">
+<p>道合做什座</p>
+</li>
+<li class="">
+<p>理些操作是read-only</p>
+</li>
+</ul>
+<p>/v1/agent/context會国体一国凑上下文:</p>
+<ul>
+<li class="">
+<p>目前quotes</p>
+</li>
+<li class="">
+<p>funding</p>
+</li>
+</ul>
+<p>ps uo .</p>
+<ul>
+<li class="">
+<p>可 storage manifest</p>
+</li>
+<li class="">
+<p>推藏下一步endpoint</p>
+</li>
+<li class="">
+<p>明硅 data-onty contract</p>
+</li>
+</ul>
+<p>這知介面不是為了Agent下覃,而是為了镇Agent更容易理解目前資料状感,少走增
+路</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一個典型呼叫>一個典型呼叫:<a href=#一個典型呼叫 class=hash-link aria-label=一個典型呼叫:的直接連結 title=一個典型呼叫:的直接連結 translate=no>​</a></h2>
+<p>curl -s "<code>http://127.0.e.1:8080/v1/agent/context?synbols=BTcUsDT,ETHUsDT,</code></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=十一作為下游研究系統的资料入口>十一、作為下游研究系統的资料入口<a href=#十一作為下游研究系統的资料入口 class=hash-link aria-label=十一、作為下游研究系統的资料入口的直接連結 title=十一、作為下游研究系統的资料入口的直接連結 translate=no>​</a></h2>
+<p>MarketBridge更通合放在研究系统前面,作為資料入口,而不是直接承擅因子睡證或策略决
+策。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一個比较自然的分工是>一個比较自然的分工是:<a href=#一個比较自然的分工是 class=hash-link aria-label=一個比较自然的分工是:的直接連結 title=一個比较自然的分工是:的直接連結 translate=no>​</a></h2>
+<p>MarketBridge負青資料接入和整理:</p>
+<ul>
+<li class="">
+<p>即時行情</p>
+</li>
+<li class="">
+<p>口</p>
+</li>
+<li class="">
+<p>成交</p>
+</li>
+<li class="">
+<p>funding</p>
+</li>
+<li class="">
+<p>11qu1dat1on</p>
+</li>
+<li class="">
+<p>史 candles</p>
+</li>
+<li class="">
+<p>mark / index/ premiumIndex / funding_rate candles</p>
+</li>
+<li class="">
+<p>期權</p>
+</li>
+<li class="">
+<p>预测市場</p>
+</li>
+<li class="">
+<p>DeFi</p>
+</li>
+<li class="">
+<p>宏</p>
+</li>
+<li class="">
+<p>情缝</p>
+</li>
+<li class="">
+<p>疑上</p>
+</li>
+<li class="">
+<p>universe 韩選</p>
+</li>
+<li class="">
+<p>research feature package</p>
+</li>
+<li class="">
+<p>本地 Parquet 資科湖</p>
+</li>
+</ul>
+<p>下游研究系统负青研究和验證:</p>
+<ul>
+<li class="">
+<p>因子定羲</p>
+</li>
+<li class="">
+<p>因子分類</p>
+</li>
+<li class="">
+<p>因子验银</p>
+</li>
+<li class="">
+<p>栈本外副试</p>
+</li>
+<li class="">
+<p>黄略歸因</p>
+</li>
+<li class="">
+<p>風险评估</p>
+</li>
+<li class="">
+<p>交易成本和滑點建模</p>
+</li>
+<li class="">
+<p>訓辣资料集概造</p>
+</li>
+<li class="">
+<p>paper trading</p>
+</li>
+<li class="">
+<p>小资金责验验益</p>
+</li>
+</ul>
+<p>也就是就,MarketBridge 提供資料输入;因子是否有效、是否定、是否值得进一步研究,
+需要由下游研究流程自行验源。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=十二目前遗界與可能問题>十二、目前遗界與可能問题<a href=#十二目前遗界與可能問题 class=hash-link aria-label=十二、目前遗界與可能問题的直接連結 title=十二、目前遗界與可能問题的直接連結 translate=no>​</a></h2>
+<p>為了避免误解,这里把目前界腐清楚。
+MarketBridge 目前不是:</p>
+<ul>
+<li class="">
+<p>交易機器人</p>
+</li>
+<li class="">
+<p>下覃系统</p>
+</li>
+<li class="">
+<p>托管資金系统</p>
+</li>
+<li class="">
+<p>自動套利系统</p>
+</li>
+<li class="">
+<p>完整回测软行器</p>
+</li>
+<li class="">
+<p>AI训框架</p>
+</li>
+<li class="">
+<p>低延遍交易所共址行情系统</p>
+</li>
+<li class="">
+<p>保盈利的蛋略系统</p>
+</li>
+</ul>
+<p>MarketBridge目前更接近:</p>
+<ul>
+<li class="">
+<p>公開資料探集服務</p>
+</li>
+<li class="">
+<p>多資料源標维化</p>
+</li>
+<li class="">
+<p>即時快照和流式介面</p>
+</li>
+<li class="">
+<p>按需雁史candle資料湖</p>
+</li>
+<li class="">
+<p>資料品質 manifest</p>
+</li>
+<li class="">
+<p>研究資料入口</p>
+</li>
+<li class="">
+<p>因子研究的前置資料平面</p>
+</li>
+<li class="">
+<p>AI/Agent友好的只词市增上下文服務</p>
+</li>
+</ul>
+<p>目前仍然存在一些需要须虑理的同题:
+L.資料完整性取决龄外部来源外部API、交易所WebSocket、第三方資料股都可能限
+频、變更格式或短暂不可用。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2不是所有资料城都已完全-envelope-化-quoteoptionsprediction-book-的>2.不是所有资料城都已完全 envelope 化 Quote、options、prediction book 的<a href=#2不是所有资料城都已完全-envelope-化-quoteoptionsprediction-book-的 class=hash-link aria-label="2.不是所有资料城都已完全 envelope 化 Quote、options、prediction book 的的直接連結" title="2.不是所有资料城都已完全 envelope 化 Quote、options、prediction book 的的直接連結" translate=no>​</a></h2>
+<p>freshness / stale 结橘比较明锥: funding、0I、trade、Liquidation、order
+book 等raw snapshot 後續遗密要速一步统一.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3特殊睡史candle遇不是全交易所覆蓝目前v1histarycandles重黏支援>3.特殊睡史candle遇不是全交易所覆蓝目前/v1/histary/candles重黏支援<a href=#3特殊睡史candle遇不是全交易所覆蓝目前v1histarycandles重黏支援 class=hash-link aria-label=3.特殊睡史candle遇不是全交易所覆蓝目前/v1/histary/candles重黏支援的直接連結 title=3.特殊睡史candle遇不是全交易所覆蓝目前/v1/histary/candles重黏支援的直接連結 translate=no>​</a></h2>
+<p>Binance 和 OKX Binance 支援 premiumIndex,OKX 没有同名定 public
+candle endpoint,因此 0KX 目前支援 mark、index,funding_rate,</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1public-trades-退没有金量parquet-落璧orderflow-footprint-目前依赖>1.public trades 退没有金量Parquet 落璧Orderflow/ footprint 目前依赖<a href=#1public-trades-退没有金量parquet-落璧orderflow-footprint-目前依赖 class=hash-link aria-label="1.public trades 退没有金量Parquet 落璧Orderflow/ footprint 目前依赖的直接連結" title="1.public trades 退没有金量Parquet 落璧Orderflow/ footprint 目前依赖的直接連結" translate=no>​</a></h2>
+<p>livetrade 事件和勤记憶體視窗。對龄可回放、可復算的长期footprint,需要後
+public trades 的按需 Parquet 储存。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5高频訂单仍有優化空麗目前已使用doma1n-broadcast和arcdataevcntx减少>5.高频訂单仍有優化空麗目前已使用doma1n broadcast和ArcDataEvcntx减少<a href=#5高频訂单仍有優化空麗目前已使用doma1n-broadcast和arcdataevcntx减少 class=hash-link aria-label="5.高频訂单仍有優化空麗目前已使用doma1n broadcast和ArcDataEvcntx减少的直接連結" title="5.高频訂单仍有優化空麗目前已使用doma1n broadcast和ArcDataEvcntx减少的直接連結" translate=no>​</a></h2>
+<p>按订者德,但router 和 snapshot store 仍有必要 clone.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5資料品遇可以續增强-parquet-manifest-已露有-gapduplicatecoverage>5.資料品遇可以續增强 Parquet manifest 已露有 gap、duplicate、coverage、<a href=#5資料品遇可以續增强-parquet-manifest-已露有-gapduplicatecoverage class=hash-link aria-label="5.資料品遇可以續增强 Parquet manifest 已露有 gap、duplicate、coverage、的直接連結" title="5.資料品遇可以續增强 Parquet manifest 已露有 gap、duplicate、coverage、的直接連結" translate=no>​</a></h2>
+<p>latency、stale、watermark,但更细的昊常值機测、source disagreement、自勤
+修復和回補遗可以耀續做。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7研究有效性不由瓷料保整narketbridge提供资科不負责證明某個因子或策路有效>7.研究有效性不由瓷料保整NarketBridge提供资科,不負责證明某個因子或策路有效。<a href=#7研究有效性不由瓷料保整narketbridge提供资科不負责證明某個因子或策路有效 class=hash-link aria-label=7.研究有效性不由瓷料保整NarketBridge提供资科,不負责證明某個因子或策路有效。的直接連結 title=7.研究有效性不由瓷料保整NarketBridge提供资科,不負责證明某個因子或策路有效。的直接連結 translate=no>​</a></h2>
+<p>所有策略都需要狮立回测、槎本外验盈和凰险部估。
+任何基於它橘造的策略,在进入真置交易前仍然需要:</p>
+<ul>
+<li class="">
+<p>史回测</p>
+</li>
+<li class="">
+<p>槎本外继證</p>
+</li>
+<li class="">
+<p>交易成本建模</p>
+</li>
+<li class="">
+<p>滑贴建模</p>
+</li>
+<li class="">
+<p>延近群估</p>
+</li>
+<li class="">
+<p>资金容量辞估</p>
+</li>
+<li class="">
+<p>paper trading</p>
+</li>
+<li class="">
+<p>小资金實验验</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=十三下一步計劃>十三、下一步計劃<a href=#十三下一步計劃 class=hash-link aria-label=十三、下一步計劃的直接連結 title=十三、下一步計劃的直接連結 translate=no>​</a></h2>
+<p>後德可以细續改进费因方向:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1撞摘展更多原生資料connector>1.撞摘展更多原生資料connector<a href=#1撞摘展更多原生資料connector class=hash-link aria-label=1.撞摘展更多原生資料connector的直接連結 title=1.撞摘展更多原生資料connector的直接連結 translate=no>​</a></h2>
+<p>?.將更多raw market snapshot 統一成 envelope 结</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3支援-public-trades-的按需-parquet-落盈回放和-footprint-德算>3.支援 public trades 的按需 Parquet 落盈、回放和 footprint 德算<a href=#3支援-public-trades-的按需-parquet-落盈回放和-footprint-德算 class=hash-link aria-label="3.支援 public trades 的按需 Parquet 落盈、回放和 footprint 德算的直接連結" title="3.支援 public trades 的按需 Parquet 落盈、回放和 footprint 德算的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1增加資料潮retention-policy例如保留7--38-90-天>1.增加資料潮retention policy,例如保留7 / 38/ 90 天<a href=#1增加資料潮retention-policy例如保留7--38-90-天 class=hash-link aria-label="1.增加資料潮retention policy,例如保留7 / 38/ 90 天的直接連結" title="1.增加資料潮retention policy,例如保留7 / 38/ 90 天的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5携展更多交易所的markindexfundingpremiun-類雁史资料>5.携展更多交易所的mark/index/funding/premiun 類雁史资料<a href=#5携展更多交易所的markindexfundingpremiun-類雁史资料 class=hash-link aria-label="5.携展更多交易所的mark/index/funding/premiun 類雁史资料的直接連結" title="5.携展更多交易所的mark/index/funding/premiun 類雁史资料的直接連結" translate=no>​</a></h2>
+<p>. 加强 catalog health、 freshness 和 source disagreement 计</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7提供更方便的-parquet-错取示例和-notebook-research-sdk>7.提供更方便的 Parquet 错取示例和 notebook/ research SDK<a href=#7提供更方便的-parquet-错取示例和-notebook-research-sdk class=hash-link aria-label="7.提供更方便的 Parquet 错取示例和 notebook/ research SDK的直接連結" title="7.提供更方便的 Parquet 错取示例和 notebook/ research SDK的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3完善polymarket-和包地址分析>3.完善Polymarket 和包地址分析<a href=#3完善polymarket-和包地址分析 class=hash-link aria-label="3.完善Polymarket 和包地址分析的直接連結" title="3.完善Polymarket 和包地址分析的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3保持data-only-界不引入下单和交易霍限>3.保持data-only 界,不引入下单和交易霍限<a href=#3保持data-only-界不引入下单和交易霍限 class=hash-link aria-label="3.保持data-only 界,不引入下单和交易霍限的直接連結" title="3.保持data-only 界,不引入下单和交易霍限的直接連結" translate=no>​</a></h2>
+<p>这些都還需要持读工程驰證,不能只停留在文件程。
+總結
+MarketBridge是一個為量化研究場景構建的Rust市場資料層。
+它目前比较明確的用途是:</p>
+<ul>
+<li class="">只做公開資料,不做下單</li>
+</ul>
+<p>将多调市场资科退整理成统一介面</p>
+<ul>
+<li class="">
+<p>將多個市場資料源整理成統一介面</p>
+</li>
+<li class="">
+<p>提供 REST、WebSocket、catalog、health 和 metrics</p>
+</li>
+<li class="">
+<p>支援quote、訂單簿、成交、funding、OI、liquidation、kline、特殊歷史</p>
+</li>
+</ul>
+<p>candle、basis、order flow、footprint、options、Polymarket、DeFi、宏觀、
+情、上等多類資料</p>
+<ul>
+<li class="">
+<p>提供按需Parquet本地資料湖,而不是预設無腦全量落盤</p>
+</li>
+<li class="">
+<p>提供universe、researchfeatures、agent context 等研究友好介面</p>
+</li>
+<li class="">
+<p>可以作為研究系統、内部資料平台或AI分析流程的資料底座</p>
+</li>
+</ul>
+<p>如果用一句話概括:
+MarketBridge想解决的是量化研究前面的資料工程問題:把分散、巽構、難維護的公開
+市場資料,整理成更統一、更容易消費、更容易监控、更容易按需存的資料介面。
+它遗在持續迭代中,仍可能存在不足。
+如果你也在做量化研究、市場資料工程、事件研究,或只是對這類data-only工具有興趣,
+歡迎試用、提isSue、指出問題,或者分享哪些資料源和介面設計最值得優先改進。
+真實使用中的回會非常重要,因為這類基設施只有放到具體研究流程裡,才知道哪些地方真
+的有用,哪些地方還需要重新設計。
+<code>https://github.com/okloorcl/MarketBridge</code></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<blockquote>
+<p>原始导出图超过单张 WebP 的尺寸上限，以下图片按从上到下的顺序连续保存。
+<img decoding=async loading=lazy alt="MarketBridge：一個面向量化研究的 Rust 市場資料層：微信公众号导出原始排版图（第 1 段，共 2 段）" src=/assets/images/article-01-5699ed6a8289a5254e7029e8a25869e7.webp width=1280 height=16000 class=img_ev3q />
+<img decoding=async loading=lazy alt="MarketBridge：一個面向量化研究的 Rust 市場資料層：微信公众号导出原始排版图（第 2 段，共 2 段）" src=/assets/images/article-02-b4ec1d2dde1aca841df07d70d2b3b807.webp width=1280 height=15196 class=img_ev3q /></p>
+</blockquote></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2026-05-21-2026-05-21-marketbridge-一個面向量化研究的-rust-市場資料層-2247485863.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2026-05-23-sec-文件入門-美國上市公司都披露了什麼-去哪裡看-用什麼工具-2247485890><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>SEC 文件入門：美國上市公司都披露了什麼，去哪裡看，用什麼工具</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2026-05-16-一文梳理-clarity-法案-技術豁免-管轄權劃分與反洗錢要求-2247485837><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>一文梳理 CLARITY 法案：技術豁免、管轄權劃分與反洗錢要求</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#一為什磨先做资料唇 class="table-of-contents__link toc-highlight">一、為什磨先做资料唇</a><li><a href=#二marketbridge目前是什磨 class="table-of-contents__link toc-highlight">二、MarketBridge目前是什磨</a><li><a href=#1设定樓中用不同公開資料源 class="table-of-contents__link toc-highlight">1.设定樓中用不同公開資料源</a><li><a href=#3将資料送入内部-router-和event-bus class="table-of-contents__link toc-highlight">3.将資料送入内部 router 和event bus</a><li><a href=#1维薄显新-snapshot class="table-of-contents__link toc-highlight">1.维薄显新 snapshot</a><li><a href=#5透過rest-api-回傅目前快照 class="table-of-contents__link toc-highlight">5.透過REST API 回傅目前快照</a><li><a href=#3透過websocket-推送即時或掌即時资料 class="table-of-contents__link toc-highlight">3.透過WebSocket 推送即時或掌即時资料</a><li><a href=#7透過-sqlite-保存工作想kline-和本地翼料湖manifest class="table-of-contents__link toc-highlight">7.透過 SQLite 保存工作想kline 和本地翼料湖manifest</a><li><a href=#3透退parquet-按震存歷史-candle分區 class="table-of-contents__link toc-highlight">3.透退Parquet 按震存歷史 candle分區</a><li><a href=#3-暴霉-cataloghealth-prometheus-metrics class="table-of-contents__link toc-highlight">3. 暴霉 catalog、health Prometheus metrics</a><li><a href=#3露-universeresearch-featuresagent-context-等研究友好介面 class="table-of-contents__link toc-highlight">3.露 universe、research features、agent context 等研究友好介面</a><li><a href=#三目前覆盖的資料型别 class="table-of-contents__link toc-highlight">三、目前覆盖的資料型别</a><li><a href=#四它和ccxthummingbotfreqtrade-的差翼 class="table-of-contents__link toc-highlight">四、它和CCXT、Hummingbot、Freqtrade 的差翼</a><li><a href=#五目前架構概 class="table-of-contents__link toc-highlight">五、目前架構概</a><li><a href=#六個工程設計節 class="table-of-contents__link toc-highlight">六、個工程設計節</a><li><a href=#1慢websocket用户端不會直接阻塞生產者 class="table-of-contents__link toc-highlight">1.慢WebSocket用户端不會直接阻塞生產者</a><li><a href=#2高频事件做了基硬解耦但還不是完全零製 class="table-of-contents__link toc-highlight">2.高频事件做了基硬解耦,但還不是完全零製</a><li><a href=#3redis寫入失有重試和deadletter class="table-of-contents__link toc-highlight">3.Redis寫入失有重試和deadletter</a><li><a href=#4freshnessstale已覆蓝一部分標化瓷料 class="table-of-contents__link toc-highlight">4.Freshness/stale已覆蓝一部分標化瓷料</a><li><a href=#5apikey缺失會暴露到catalog class="table-of-contents__link toc-highlight">5.APIkey缺失會暴露到catalog</a><li><a href=#6不同domain可以獨立訂 class="table-of-contents__link toc-highlight">6.不同domain可以獨立訂</a><li><a href=#7歷史资料是按需储存不预設全量寫盤 class="table-of-contents__link toc-highlight">7.歷史资料是按需储存,不预設全量寫盤</a><li><a href=#8agentapi是资料的不是交易代理 class="table-of-contents__link toc-highlight">8.AgentAPI是资料的,不是交易代理</a><li><a href=#七對外介面 class="table-of-contents__link toc-highlight">七、對外介面</a><li><a href=#八一個最小使用流程 class="table-of-contents__link toc-highlight">八、一個最小使用流程</a><li><a href=#九它可以如何辅助量化研究 class="table-of-contents__link toc-highlight">九、它可以如何辅助量化研究</a><li><a href=#1basis-因子 class="table-of-contents__link toc-highlight">1.Basis 因子</a><li><a href=#2fundingoimarkindex歷史研究 class="table-of-contents__link toc-highlight">2.Funding/OI/Mark/Index歷史研究</a><ul><li><a href=#30rder-flow和footprint-因子 class="table-of-contents__link toc-highlight">3.0rder Flow和Footprint 因子</a></ul><li><a href=#4盤口整力和流勤性因子 class="table-of-contents__link toc-highlight">4.盤口整力和流勤性因子</a><li><a href=#5universeengine先筛市場池再做研究 class="table-of-contents__link toc-highlight">5.UniverseEngine:先筛市場池,再做研究</a><li><a href=#6researchfeatureapi資料眉输出研究特微包 class="table-of-contents__link toc-highlight">6.ResearchFeatureAPI:資料眉输出研究特微包</a><ul><li><a href=#70ptions波動率研究 class="table-of-contents__link toc-highlight">7.0ptions波動率研究</a></ul><li><a href=#8polymarket和事件研究 class="table-of-contents__link toc-highlight">8.Polymarket和事件研究</a><li><a href=#9宏情和上過器 class="table-of-contents__link toc-highlight">9.宏、情和上過器</a><li><a href=#十agent-友好的資料入口 class="table-of-contents__link toc-highlight">十、Agent 友好的資料入口</a><li><a href=#一個典型呼叫 class="table-of-contents__link toc-highlight">一個典型呼叫:</a><li><a href=#十一作為下游研究系統的资料入口 class="table-of-contents__link toc-highlight">十一、作為下游研究系統的资料入口</a><li><a href=#一個比较自然的分工是 class="table-of-contents__link toc-highlight">一個比较自然的分工是:</a><li><a href=#十二目前遗界與可能問题 class="table-of-contents__link toc-highlight">十二、目前遗界與可能問题</a><li><a href=#2不是所有资料城都已完全-envelope-化-quoteoptionsprediction-book-的 class="table-of-contents__link toc-highlight">2.不是所有资料城都已完全 envelope 化 Quote、options、prediction book 的</a><li><a href=#3特殊睡史candle遇不是全交易所覆蓝目前v1histarycandles重黏支援 class="table-of-contents__link toc-highlight">3.特殊睡史candle遇不是全交易所覆蓝目前/v1/histary/candles重黏支援</a><li><a href=#1public-trades-退没有金量parquet-落璧orderflow-footprint-目前依赖 class="table-of-contents__link toc-highlight">1.public trades 退没有金量Parquet 落璧Orderflow/ footprint 目前依赖</a><li><a href=#5高频訂单仍有優化空麗目前已使用doma1n-broadcast和arcdataevcntx减少 class="table-of-contents__link toc-highlight">5.高频訂单仍有優化空麗目前已使用doma1n broadcast和ArcDataEvcntx减少</a><li><a href=#5資料品遇可以續增强-parquet-manifest-已露有-gapduplicatecoverage class="table-of-contents__link toc-highlight">5.資料品遇可以續增强 Parquet manifest 已露有 gap、duplicate、coverage、</a><li><a href=#7研究有效性不由瓷料保整narketbridge提供资科不負责證明某個因子或策路有效 class="table-of-contents__link toc-highlight">7.研究有效性不由瓷料保整NarketBridge提供资科,不負责證明某個因子或策路有效。</a><li><a href=#十三下一步計劃 class="table-of-contents__link toc-highlight">十三、下一步計劃</a><li><a href=#1撞摘展更多原生資料connector class="table-of-contents__link toc-highlight">1.撞摘展更多原生資料connector</a><li><a href=#3支援-public-trades-的按需-parquet-落盈回放和-footprint-德算 class="table-of-contents__link toc-highlight">3.支援 public trades 的按需 Parquet 落盈、回放和 footprint 德算</a><li><a href=#1增加資料潮retention-policy例如保留7--38-90-天 class="table-of-contents__link toc-highlight">1.增加資料潮retention policy,例如保留7 / 38/ 90 天</a><li><a href=#5携展更多交易所的markindexfundingpremiun-類雁史资料 class="table-of-contents__link toc-highlight">5.携展更多交易所的mark/index/funding/premiun 類雁史资料</a><li><a href=#7提供更方便的-parquet-错取示例和-notebook-research-sdk class="table-of-contents__link toc-highlight">7.提供更方便的 Parquet 错取示例和 notebook/ research SDK</a><li><a href=#3完善polymarket-和包地址分析 class="table-of-contents__link toc-highlight">3.完善Polymarket 和包地址分析</a><li><a href=#3保持data-only-界不引入下单和交易霍限 class="table-of-contents__link toc-highlight">3.保持data-only 界,不引入下单和交易霍限</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

@@ -1,0 +1,555 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Anthropic 駭客松獲獎項目拆解：everything-claude-code | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2026-01-24-anthropic-駭客松獲獎項目拆解-everything-claude-code-2247485331 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="Anthropic 駭客松獲獎項目拆解：everything-claude-code | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《Anthropic 駭客松獲獎項目拆解：everything-claude-code》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《Anthropic 駭客松獲獎項目拆解：everything-claude-code》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2026-01-24T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2026-01-24-anthropic-駭客松獲獎項目拆解-everything-claude-code-2247485331 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-01-24-anthropic-駭客松獲獎項目拆解-everything-claude-code-2247485331 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-01-24-anthropic-駭客松獲獎項目拆解-everything-claude-code-2247485331 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2026-01-24-anthropic-駭客松獲獎項目拆解-everything-claude-code-2247485331","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2026-01-24T00:00:00.000Z","description":"从微信公众号导入的文章《Anthropic 駭客松獲獎項目拆解：everything-claude-code》，保留原始排版图并提供本地 OCR 转写。","headline":"Anthropic 駭客松獲獎項目拆解：everything-claude-code","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2026-01-24-anthropic-駭客松獲獎項目拆解-everything-claude-code-2247485331","name":"Anthropic 駭客松獲獎項目拆解：everything-claude-code","url":"https://w0x7ce.eu/blog/2026-01-24-anthropic-駭客松獲獎項目拆解-everything-claude-code-2247485331"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>Anthropic 駭客松獲獎項目拆解：everything-claude-code</h1><div class="container_mt6G margin-vert--md"><time datetime=2026-01-24T00:00:00.000Z>2026年1月24日</time> · <!-- -->閱讀時間約 15 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2026-01-24 00:27:57（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247485331&idx=1&sn=3e6b7de7faae2ca012f8c67349b3283c&chksm=96e11239a1969b2f3c8a61bbd072bda50fc09b19bd0fe09f11df5a9d17c7086a9c4e7860f3af#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 10163 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>original wex7ce EI V1ajero 2826年1月24日 00:28 中国垂港
+花了點時間把everything-claude-code 这個项目的 Skills系统微底拆解了一遍,现
+裡面有不少值得组聊的設計决策。这個项目是Anthropic骇客松的莫作品,經退 1θ個多
+月的實際使用打离,理面的 agents、skills、hooks、commands、rules 组件硫實是能直
+接上鞋璟的。
+Pinned
+cogsec
+@affaanmustafa 21h
+G
+ANTHROPIC
+HACKATHON
+Claude Code v2.1.11
+Opus 4.5 - Claude API
+WINNER
+/Users/affoon
+TIPS&TRICKSFOR
+CLAUDECODE
+X Article
+TheShorthand Guide to EverythingClaudeCode
+Here's my complete setup after 10 months of daily use: skils hooks,
+subagents, MCPs, plugins, and what actually works.
+Been an avid Claude Code user since the experimental rollout in Feb,
+and won.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=22k>2.2K<a href=#22k class=hash-link aria-label=2.2K的直接連結 title=2.2K的直接連結 translate=no>​</a></h3>
+<p>197
+Q39</p>
+<p>下面就把我对Skills段计的理解、原始碼分析、以及一些慢化思路整理一下。
+目錄
+L.系统架構概置</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2skills的本質知端數體设計>2.Skills的本質:知端數體设計<a href=#2skills的本質知端數體设計 class=hash-link aria-label=2.Skills的本質:知端數體设計的直接連結 title=2.Skills的本質:知端數體设計的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3hooks-事件驱到系统>3.Hooks 事件驱到系统<a href=#3hooks-事件驱到系统 class=hash-link aria-label="3.Hooks 事件驱到系统的直接連結" title="3.Hooks 事件驱到系统的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1跨平台實现技術>1.跨平台實现技術<a href=#1跨平台實现技術 class=hash-link aria-label=1.跨平台實现技術的直接連結 title=1.跨平台實现技術的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5核心skills實现分析>5.核心Skills實现分析<a href=#5核心skills實现分析 class=hash-link aria-label=5.核心Skills實现分析的直接連結 title=5.核心Skills實现分析的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3般計决策的權衡>3.般計决策的權衡<a href=#3般計决策的權衡 class=hash-link aria-label=3.般計决策的權衡的直接連結 title=3.般計决策的權衡的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7性能與可辱性分析>7.性能與可辱性分析<a href=#7性能與可辱性分析 class=hash-link aria-label=7.性能與可辱性分析的直接連結 title=7.性能與可辱性分析的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3侵化建>3.侵化建<a href=#3侵化建 class=hash-link aria-label=3.侵化建的直接連結 title=3.侵化建的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1结瞻>1.结瞻<a href=#1结瞻 class=hash-link aria-label=1.结瞻的直接連結 title=1.结瞻的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1系统架構概>1.系统架構概<a href=#1系统架構概 class=hash-link aria-label=1.系统架構概的直接連結 title=1.系统架構概的直接連結 translate=no>​</a></h2>
+<p>先看整噬结橘,這様後面聊颜的時候不會迷失:
+Claude Code 主系统
+[ 5essionstart]
+|PreToolUse
+|PostToolUse
+I 5essionEnd
+Hook
+Hook
+Hook
+Hook</p>
+<p>Ski11s度贝轨行
+1
+| snonuT1uo3|
+strategic |
+security
+compact
+learning
+reviev</p>
+<p>跨平台独象播(ut1ls.js)
+文件操作·泄程管理·平台检测·Git集成</p>
+<p>Skills 如氮康 (Markdoun + Scripts)
+skills/continuous-learming/SKILL.md
+skills/strategic-compact/SKILL.md
+skills/security-review/SKILL.nd</p>
+<p>整個系统的资料流大概是运檬走的:
+用户操作CLaude 解析意图→登 Hook轨行 SkiLL 本-输出结果 CLaude +
+個架标的健在於分清晰:Hooks負贡酶髮,Skills负贡退辑,而跨平台抽象唇確保一
+切都能在不同系统上炮。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2skills的本質知識载體設計>2.Skills的本質:知識载體設計<a href=#2skills的本質知識载體設計 class=hash-link aria-label=2.Skills的本質:知識载體設計的直接連結 title=2.Skills的本質:知識载體設計的直接連結 translate=no>​</a></h2>
+<p>為何選選Markdown?
+傳统的知递管理有带种常見做法:</p>
+<ul>
+<li class="">
+<p>代磷驻爆:和實现期在一起,改起来麻</p>
+</li>
+<li class="">
+<p>Wiki文檔:需要手勤查找,和執行環境是分雕的</p>
+</li>
+<li class="">
+<p>配置文件:表速能力有限,辩通辑寫不出来</p>
+</li>
+</ul>
+<p>CLaude Code 择 Markdown 作为Ski1ls 的税始,遗圆决策其實挺有道理:
+最计豪务:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1claude-原生理解harkdown-是规語料之一>1.CLaude 原生理解:Harkdown 是规語料之一<a href=#1claude-原生理解harkdown-是规語料之一 class=hash-link aria-label="1.CLaude 原生理解:Harkdown 是规語料之一的直接連結" title="1.CLaude 原生理解:Harkdown 是规語料之一的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2版本控制发好和git-workflow完英集成>2.版本控制发好:和Git workfLow完英集成<a href=#2版本控制发好和git-workflow完英集成 class=hash-link aria-label="2.版本控制发好:和Git workfLow完英集成的直接連結" title="2.版本控制发好:和Git workfLow完英集成的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3语化標记yaml-frontmatter-提供鳞化元慰搏>3.语化標记:YAML frontmatter 提供鳞化元慰搏<a href=#3语化標记yaml-frontmatter-提供鳞化元慰搏 class=hash-link aria-label="3.语化標记:YAML frontmatter 提供鳞化元慰搏的直接連結" title="3.语化標记:YAML frontmatter 提供鳞化元慰搏的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4人额可插生滑者可直接畜题和修改>4.人额可插生:滑者可直接畜题和修改<a href=#4人额可插生滑者可直接畜题和修改 class=hash-link aria-label=4.人额可插生:滑者可直接畜题和修改的直接連結 title=4.人额可插生:滑者可直接畜题和修改的直接連結 translate=no>​</a></h2>
+<p>技術约束:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1惠教行遥相markdown梓是知描述>1.惠教行遥相:Markdown梓是知描述<a href=#1惠教行遥相markdown梓是知描述 class=hash-link aria-label=1.惠教行遥相:Markdown梓是知描述的直接連結 title=1.惠教行遥相:Markdown梓是知描述的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2需要配套卿本實却软行由jssh完成>2.需要配套卿本:實却软行由.js/.sh完成<a href=#2需要配套卿本實却软行由jssh完成 class=hash-link aria-label=2.需要配套卿本:實却软行由.js/.sh完成的直接連結 title=2.需要配套卿本:實却软行由.js/.sh完成的直接連結 translate=no>​</a></h2>
+<p>Skill的標举結
+每個Sk111都长一因樣:
+随符
+nane: skill-nane
+description: Brief description
+Claude理解用的描述
+# Skill Mane
+##when to Use
+[具耀的阐發条件]</p>
+<ul>
+<li class="">* How It Works</li>
+</ul>
+<p>[真现细第]
+[置现细筛]
+##Examples
+[代碍示例]
+Frontnatter不只是装,它能被程序解析用来做家引和匹配:
+//解析frontmatter 的通辑
+的道辑
+const frontmatterRegex = /^---\n([&lt;s\S]+?)\n---/;
+const skillMetadata = parseYAML(frontmatter):
+51/可以用束:
+// 1. 自数生成 SkILLs 索引
+//7.智能匹配相skills</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=113版本控制和经期普理>113、版本控制和经期普理<a href=#113版本控制和经期普理 class=hash-link aria-label=113、版本控制和经期普理的直接連結 title=113、版本控制和经期普理的直接連結 translate=no>​</a></h2>
+<p>知識與辑的分離
+这個設計我觉得挺魄明的:把规什和怎塞做分隔
+skil1s/
+continuous-lcarning/
+—
+—— SKILL.nd
+什惠
+知量:告斯CLaude
+配置赠:定兼行为参款
+—— config- json
+cvaluate-scssion.j5
+韩行层:置现绍何货
+好虚很明:
+维度
+好處
+可维性
+知更新不影答敦行遥辑
+可测腻性
+敦行通潮可狮立單元测试
+可摘展性
+同一知端可有多種實现
+可移植性
+Narkdown可在其他系统復用</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3hooks事件動系统>3.Hooks事件動系统<a href=#3hooks事件動系统 class=hash-link aria-label=3.Hooks事件動系统的直接連結 title=3.Hooks事件動系统的直接連結 translate=no>​</a></h2>
+<p>Hooks架構
+CLaudeCode 的Hooks系統探用嬰明式配置+匹配器模式J:
+"hooks":{
+"PreToolUse":[
+"matcher*:"tool == "Edit" |I tool == -Write"",
+"hooks*:[{
+'spupumas, =,adf1.
+"connand*: "node *$(CLAUDE_PLUGIN_RooT}/scripts/hooks/suggc
+5leAJaiut 1esffol 1e uoriseduos 1enueu 1sa66nsa :suotidru3sap</p>
+<p>这裸的matcher语法有贴像 SQL的WHERE 條件:
+function evaluateMatcher(matcher, context] {
+const conditions = parseMatcher(natcher);
+return conditions.every(c => evaluateCondition(c, context));</p>
+<p>境炭量也做得不错:
+#ClaudeCode鲁注入运些碧境量
+插件想目综
+CLAUDE_PLUGIN_ROOT
+CLAUDE_TRANSCRIPT_PATH路记段文件
+重话想端符
+CLAUDE_SESSION_ID
+Hook類型與時機
+Hook 期型
+解發時機
+典型用途
+性能影春
+加械上下文、榆测瑞境</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一次性低影暮>一次性,低影暮<a href=#一次性低影暮 class=hash-link aria-label=一次性,低影暮的直接連結 title=一次性,低影暮的直接連結 translate=no>​</a></h2>
+<p>Sess1on5tart
+PreToolUse
+工具调用前
+验温、指截、建摄
+每次调用,需高效
+PostToolUse
+格式化、检查、配
+工具用後
+每次调用,需高效
+PreConpact
+低频,可接受
+上下文整销前
+保存状慧
+官話结束
+持久化、评信
+SessionEnd</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一次性低影>一次性,低影<a href=#一次性低影 class=hash-link aria-label=一次性,低影的直接連結 title=一次性,低影的直接連結 translate=no>​</a></h2>
+<p>Stop
+智愿完成後
+清理、部估
+每次答度,需注意
+為何選選Stop而非UserPromptSubmit?
+Continuous Learming Skill 使用 Stop hook 而非 UserPronptSubnit,道個遂
+有理由:
+#hooks/hooks-json 中的驻释
+# why Stop hook instead of UserPromptSubmit:
+Stop runs once at session end (ligitweight)</p>
+<ul>
+<li class="">UserPronptSubmit runs every message (heavy. adds [atency)</li>
+</ul>
+<p>算一下性能差异:
+#UserPromptSubmit:每次 propt 都就行
+5 - uotssssJod sabessou
+execution_time = 100 @s
+total_overhead = 50 * 1H8 = 5G98ms
+Stop:童陆结束际软行一次
+total_overhead = 10Bms
+性能提升:50X
+為何使用stderr?
+所有hook那本都的定用stderr 输出:
+//wtiTs . js:182
+function log(message){
+console.errar(nessage): // 输出别 stderr
+理由很單:
+L.stdout 被保留给返回绘 Claude 的数
+.stderr翻示给用户但不干摄主流程</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3符合-unix-哲学>3.符合 Unix 哲学<a href=#3符合-unix-哲学 class=hash-link aria-label="3.符合 Unix 哲学的直接連結" title="3.符合 Unix 哲学的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4跨平台實現技術>4.跨平台實現技術<a href=#4跨平台實現技術 class=hash-link aria-label=4.跨平台實現技術的直接連結 title=4.跨平台實現技術的直接連結 translate=no>​</a></h2>
+<p>平台检測策略
+// scripts/l.ib/utels . js:II - 14
+Zeum, === uuojneld·ssaooud = saoputmsT isuo3
+1,utip. === eofaeld ssssoud = sosewst 1suos
+,xutl, == Buojseld ssaooud = xnutist isuos
+對铃Hooks這種轻量级场景,prDces5-platforn用了,不需要引l人额外依。
+路径虑理的跨平台抽象
+//問题:硬端码监得在不同平台的表理
+1,s11tMs/apne1o /-, = 4iedpeq 1suos
+上辆法直授工作
+11解决方案:统一抽象
+function getClaudeDir() {
+return path.join(getHomeoir(), <em>.claude</em>);</p>
+<p>環境爱量展間也感理了:
+if (config.learned_skills_path) {</p>
+<p>文件系統操作的統一封装
+跨平台的find實现(替代Unix f1nd命令):
+function findFiles(cir, pattern, options = {)) {
+const { maxAge = null, recursive - false ) = options;
+const results = [1:
+//glob模式精换為正期表遥式
+const regexPattern = pattern
+.replace(/-/g,<em>.</em>)
+.replace(/?/g. <em>.</em>);
+const regex = new RegExpf**${regexPattern}s');
+适障授索實项
+searchoir(dir);
+return results.sort([a, b) => b.ntine - a.ntine);</p>
+<p>投针亮贴:</p>
+<ul>
+<li class="">
+<p>细 Node.js 實现,無需依赖外部命令</p>
+</li>
+<li class="">
+<p>按修改时同排序</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5核心skills實現分析>5.核心Skills實現分析<a href=#5核心skills實現分析 class=hash-link aria-label=5.核心Skills實現分析的直接連結 title=5.核心Skills實現分析的直接連結 translate=no>​</a></h2>
+<p>Continuous Learning Skill
+合話评估退辑:
+// evaTuate- sesslon. js:59 - 66
+const messageCount = countInFile(transcriptPath, /<em>type":"user</em>/g);
+If(nessageCount &lt; ninSessionLength){
+Log[ [ContinuousLearning] Session too shart (S{nessageCount} messages
+process,cxit(θ);</p>
+<p>為何统計user频型消息?因為它更接近用户交互翰次,能更好地反映會話度。</p>
+<ul>
+<li class="">nin_session_length*: 13,</li>
+</ul>
+<p>11太匠:噪音多:太高:混择有价值的短會話</p>
+<ul>
+<li class="">patterns_to_detect": [</li>
+</ul>
+<p>(1额续解洪模式
+1/用户修正模式
+"user_corrections",
+//要通方案
+"workarounds*,
+"debugging techniques*.
+//调赋技巧
+项目转定的定
+"project_specific"</p>
+<p>目前evaluate-5ession-js只做提示,實账的模式提取需要 Claude 手动执行。道部分其
+實可以做得更自動化。
+Strategic Compact Skill
+工具额用計数器的實现:
+Jap, 1l prdd ssaaoad 1l oI NDIss3s 3anvis Aua ssaooud = pIuotssas 1suo:
+const counterFile = path.join(getTenpDir(),*claude-tool-count-s(scssio
+let count = 1;
+const existing = readFile(counterFile);
+1f(existing){
+count = parseInt(existing.trin(), 1e) + 1;
+writeF1le(counterFile, String(count));
+Session ID 的唇级回退策略:
+L.CLAUDE SESSION ID:CLaude 提供的雷括標蝶</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2ppid父准程idclaude-code-逾程>2.PPID:父准程ID(Claude Code 逾程)<a href=#2ppid父准程idclaude-code-逾程 class=hash-link aria-label="2.PPID:父准程ID(Claude Code 逾程)的直接連結" title="2.PPID:父准程ID(Claude Code 逾程)的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3default最後的備逻>3.default':最後的備逻<a href=#3default最後的備逻 class=hash-link aria-label="3.default':最後的備逻的直接連結" title="3.default':最後的備逻的直接連結" translate=no>​</a></h2>
+<p>提示策略也抵有心思:
+166
+50
+75
+125
+首次提示
+周期提示
+周期提示
+遥援25作為周期是因為它大的到鹰一因中等辖度任独的完整流程。
+Security Review Skill
+Security Review Skill是知鳞型Skill,没有配套的敦行群本。它探用正負例對比的
+模式:
+####X NEVER Do This
+typescript
+.xx-faud-ys. = Aaxide isuos
+xxxxx-od-xs.=faxtde isuo
+ALWAYS Do This
+const apiKey = process env.oPENAI_API_KEY</p>
+<p>個模式更符合人频提知智情,Claude也能更好理解禁止贝「签勇的遗界。</p>
+<p>TDDWorkflow定差了完蔡的测就金字塔:</p>
+<p>少量厨链流程
+API/显含
+中等数量
+单元别试|单元现式
+大量雁蓝
+代碍组端也很清晰:
+src/ ——components/|—Button.test.tsx單元润试—app/api/|
+route.test.ts #合潮
+e2e/ markets.spec.ts E2E 式</p>
+<p>#6、段計决策的耀衡
+##SheLL 鄂本vs lode.s 本
+skills目缘中存在”,sh和‘-js’两種言现,而”scripts/hooks/”目缘中全部使用
+10 | 复 | Shel1 | Node.js | 腾出 1
+............</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=12跨平台性丨需要滤理差统一通行時丨node1s>1.2跨平台性丨需要滤理差|统一通行時丨Node.1s|<a href=#12跨平台性丨需要滤理差统一通行時丨node1s class=hash-link aria-label=1.2跨平台性丨需要滤理差|统一通行時丨Node.1s|的直接連結 title=1.2跨平台性丨需要滤理差|统一通行時丨Node.1s|的直接連結 translate=no>​</a></h3>
+<p>13丨JSDN 解析丨需翼 jq丨内建支持丨Node.js|
+|踏换虚理丨校弱丨疆富丨Node.js|
+1般速度|更快|特得|SheLL|
+然赖管理丨無依赖|需要Node.js丨Shel1|
+可语性丨较低|般高丨 Node-js |
+建藏统一使用Node.js。操牲少量欣勤运度换取可体露性。
+著善Hook的蜡联鹰理策略
+所有hook 聊本统一的继误虚理硬式:
+javascript
+nain().catch(err => {
+console,error( [Skillname] Error:', err.message);
+process.exit(e)://键:不阻塞主流程
+}) ;
+這是侵雅降级的策略:Hook失-记錯误-不影赛Claude誓鹰
+但这也有潜在問题:</p>
+<ul>
+<li class="">
+<p>静默失可能隐服重錯误</p>
+</li>
+<li class="">
+<p>用户可能不知道 Skil1未正常工作</p>
+</li>
+</ul>
+<p>可以考虚可配置的錯误虑理模式。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7性能與可靠性分析>7.性能與可靠性分析<a href=#7性能與可靠性分析 class=hash-link aria-label=7.性能與可靠性分析的直接連結 title=7.性能與可靠性分析的直接連結 translate=no>​</a></h2>
+<p>Hook敦行性能
+每次工具铜用的额外闻销:
+PreToolUse Hook</p>
+<ul>
+<li class="">5m5(文件尬)</li>
+</ul>
+<p>|Suggest Conpact;
+~200ms (tsc
+I Type Check:
+Prettier Fornat:
+Jatllaud) su5-
+(2TJA--
+10ms (grep)
+Console Log Chcck:
+谢开:-265ms/工具调用
+TypeScr1pt频型查是性能瓶照。可以考增量频型检查:
+11只检查账改的文件
+const changedFiles - getGitModifledFiles(['-(ts|tsx)$']);
+If(changedFiles.Includes{filePath){
+runTypeCheck(filePath);
+亚發舆航態條件
+suggest-conpact.js有在的航修件:
+//多留Hook 向崎镇离counterFiTe
+// Thread A: readFile() → count = 16
+4// Thread A: writeFITe(II)
+5//Thread 8:writeFile(1I)//愿是 12
+解决方案是使用文件额:
+const lockfile - requiref'proper-lockfile');
+aMait lockfile.lock(counterFile);
+const count - parseInt(readFile(counterFile)) + 1;
+uriteF1le(counterFile, String(count)):
+aMait lockfile.unlock (counterFile);
+内存浊漏風险
+脂時文件未清理的間题:
+11如果會菇据常结束,文件育一言存在
+const counterfile = path.join(getTenpDir(). *claude-tool-count-s{sessi
+11解决方案:定期清理
+function cleanupoldcounters() {
+const tenpnir = getTempoir();
+const files - findFiles(temppir, <em>claude-tool-count-</em>);
+81 4 99 *09 + +=x0 1510
+const now = Date.now[);
+files.forEach( path, mtine ) => {
+if [now - ntine > oneweek) {
+fs.unlinkSync(path) :
+}
+}</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=8優化建>8.優化建<a href=#8優化建 class=hash-link aria-label=8.優化建的直接連結 title=8.優化建的直接連結 translate=no>​</a></h2>
+<p>架眉面
+Skill自勤驻册奥發现
+需前Skills需要手勤在huoks.json中册。可以實現自勤發现:
+function registerskills() {
+const skillsDir = path.join(__dirnane, <em>.</em>, *skills');
+const skillFolders = fs.readdirsync(skillsDir);
+const hooks = ();
+skillFolders. forEach(skillNane => {
+Const skillconfig = loadskillconfig(skillNane);
+const hookFile = path.joln(skillsDir, skilLNane, <em>hook.1s</em>);
+if (fs.existssync(hookfile))(
+//根球skill.json 自黏生成 hook 配置
+hooks.SessionEnd = hooks.5essionEnd 1l []:
+matcher: skillconfig-trigger.matcher 1l +
+hooks: [{
+type: 'conmand',
+1</p>
+<p>: ({</p>
+<p>Skill依赖管理
+skITLs/securty -revfew/skll. j son
+"nane": "security-review",</p>
+<ul>
+<li class="">
+<p>version": "1.0.0*,</p>
+</li>
+<li class="">
+<p>depends_an*: [<em>verification-loop</em>1.</p>
+</li>
+<li class="">
+<p>conflicts_with*: [],</p>
+</li>
+<li class="">
+<p>prlority°: 10</p>
+</li>
+</ul>
+<p>11依频解析闽加载质序
+function resolveloadorder(skills)(
+const graph = bulleDependencyGraph(skills):
+return tapalagical5ort(graph);
+實现唇面
+增量频型检查
+11只检查逐改的文件及其源入键
+async function increnentalTypecheck(changedFite) (
+const dependents - ana lyzeDependents (changedFile);
+const filesToCheck = [changedFile, -..dependents];
+const result = await execsync(
+'npx tsc --noEnit sfilesTocheck.join*)*,
+{ cwd: projectRoot }
+) ;
+return result;</p>
+<p>Hook结果存
+const hookCache = new Map();
+async function executeCachedHook(hookName, context) (
+const cachekey = <em>s[hookName}:s[JsoN.stringity(context)]</em>:
+return hookCache. get(cacheKey):
+const result = avalt executeHook(hookName, context):
+hookCache set(cacheKey, result);
+return resutt;
+签行 Hook敦行
+//强立Hook签行执行
+const independent = hooks. filter(h => 1h.dependencies);
+const results = await Promise-all(
+independent.nap (h => cxecuteHook(h))
+for (const hook of dependent) {
+awalt executeHook(hook, results);</p>
+<p>可觀测性增強
+Hook敦行日
+class HookLogger {
+static lag(hookNane, phase, data) {
+const logentry = {
+timestanp: new Date().toIsostring(),
+hook: hookNane,
+phase: phase,
+data: data,
+duration: data duration
+};
+10
+11
+appendFile(
+path.join(getClaudeDir(),‘hooks.log'),
+1 2
+JSON.stringify(logEntry)+'\n'
+13
+1 4
+);
+:
+15
+16
+性能监控
+class HookMetrics {
+static record(hookName,duration){
+const metricsFile = path.join(getclaudeDir(),‘hook-metrics.json')
+let metrics = readFile(metricsFile) Il {};
+metrics[hookName] = metrics[hookName] Il {
+count:0,
+maxDuration: 0
+10
+11
+metrics[hookName].count++;
+1 2
+13
+1 4
+metrics[hookName].maxDuration,
+15
+duration
+16
+);
+17
+18
+writeFile(metricsFile, JsoN.stringify(metrics,null, 2));
+19
+2 0
+2 1</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=9結>9.結<a href=#9結 class=hash-link aria-label=9.結的直接連結 title=9.結的直接連結 translate=no>​</a></h2>
+<p>这個Skills系统做了一些有意思的誉試:
+做得好的地方:
+L.知識與遥辑分離:Markdown承载知識,本實現邂辑
+?.事件動架構:Hooks提供非侵入式的摘展機制</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3跨平台抽象統一的工具函數封装平台差翼>3.跨平台抽象:統一的工具函數封装平台差翼<a href=#3跨平台抽象統一的工具函數封装平台差翼 class=hash-link aria-label=3.跨平台抽象:統一的工具函數封装平台差翼的直接連結 title=3.跨平台抽象:統一的工具函數封装平台差翼的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1優雅降級hook失败不影響主流程>1.優雅降級:Hook失败不影響主流程<a href=#1優雅降級hook失败不影響主流程 class=hash-link aria-label=1.優雅降級:Hook失败不影響主流程的直接連結 title=1.優雅降級:Hook失败不影響主流程的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5可组合性skills可以组合形成更复雜的工作流>5.可组合性:Skills可以组合形成更复雜的工作流<a href=#5可组合性skills可以组合形成更复雜的工作流 class=hash-link aria-label=5.可组合性:Skills可以组合形成更复雜的工作流的直接連結 title=5.可组合性:Skills可以组合形成更复雜的工作流的直接連結 translate=no>​</a></h2>
+<p>可以改進的地方:
+L.缺乏SkiLl自動發現機制</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2無依赖管理系統>2.無依赖管理系統<a href=#2無依赖管理系統 class=hash-link aria-label=2.無依赖管理系統的直接連結 title=2.無依赖管理系統的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3typescript類型桧查是性能瓶>3.TypeScript類型桧查是性能瓶<a href=#3typescript類型桧查是性能瓶 class=hash-link aria-label=3.TypeScript類型桧查是性能瓶的直接連結 title=3.TypeScript類型桧查是性能瓶的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1文件操作缺乏發安全機制>1.文件操作缺乏發安全機制<a href=#1文件操作缺乏發安全機制 class=hash-link aria-label=1.文件操作缺乏發安全機制的直接連結 title=1.文件操作缺乏發安全機制的直接連結 translate=no>​</a></h2>
+<p>.可觀測性不足
+ClaudeCodeSkills系統代表了一種知工程化的試:將人類的最佳實、模式和經驗
+轉化為可執行、可重用、可進化的组件。然在實現上仍有改進空間,但其設計理念為AI辅
+助開發的未来發展提供了有價值的参考。
+未来可以發展的方向包括:SkillMarketplace、AI生成Skills、版本控制集成、團隧協
+作機制等。
+参考資料
+L.Claude Code Documentation</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2event-driven-architecture-pattern-martin-fowler>2.Event-Driven Architecture Pattern-Martin Fowler<a href=#2event-driven-architecture-pattern-martin-fowler class=hash-link aria-label="2.Event-Driven Architecture Pattern-Martin Fowler的直接連結" title="2.Event-Driven Architecture Pattern-Martin Fowler的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3everything-claudecode-thecompletecollectionofclaude-code>3.Everything ClaudeCode-ThecompletecollectionofClaude Code<a href=#3everything-claudecode-thecompletecollectionofclaude-code class=hash-link aria-label="3.Everything ClaudeCode-ThecompletecollectionofClaude Code的直接連結" title="3.Everything ClaudeCode-ThecompletecollectionofClaude Code的直接連結" translate=no>​</a></h2>
+<p>configs from an Anthropic hackathon winner.Production-ready
+agents,skills,hooks,commands,rules,and McP configurations
+evolvedover 10+ months of intensive daily use buildingreal
+products.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1cross-platform-nodejs-development--nodejs-design-patterns>1.Cross-Platform Node.js Development -Node.js Design Patterns<a href=#1cross-platform-nodejs-development--nodejs-design-patterns class=hash-link aria-label="1.Cross-Platform Node.js Development -Node.js Design Patterns的直接連結" title="1.Cross-Platform Node.js Development -Node.js Design Patterns的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<blockquote>
+<p>原始导出图超过单张 WebP 的尺寸上限，以下图片按从上到下的顺序连续保存。
+<img decoding=async loading=lazy alt="Anthropic 駭客松獲獎項目拆解：everything-claude-code：微信公众号导出原始排版图（第 1 段，共 2 段）" src=/assets/images/article-01-520ed377cdca326db1044a5caca97b61.webp width=1280 height=16000 class=img_ev3q />
+<img decoding=async loading=lazy alt="Anthropic 駭客松獲獎項目拆解：everything-claude-code：微信公众号导出原始排版图（第 2 段，共 2 段）" src=/assets/images/article-02-4bd77edeb0b7df5211101e049afe8bee.webp width=1280 height=2877 class=img_ev3q /></p>
+</blockquote></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2026-01-24-2026-01-24-anthropic-駭客松獲獎項目拆解-everything-claude-code-2247485331.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2026-01-25-superpowers-一個-ai-agent-的控制論操作系統-2247485336><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>Superpowers 一個 AI Agent 的控制論操作系統</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2026-01-22-naiveproxy-深度剖析-基於-chromium-內核的極致流量偽裝藝術-2247485326><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>NaiveProxy 深度剖析：基於 Chromium 內核的極致流量偽裝藝術</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><ul><li><a href=#22k class="table-of-contents__link toc-highlight">2.2K</a></ul><li><a href=#2skills的本質知端數體设計 class="table-of-contents__link toc-highlight">2.Skills的本質:知端數體设計</a><li><a href=#3hooks-事件驱到系统 class="table-of-contents__link toc-highlight">3.Hooks 事件驱到系统</a><li><a href=#1跨平台實现技術 class="table-of-contents__link toc-highlight">1.跨平台實现技術</a><li><a href=#5核心skills實现分析 class="table-of-contents__link toc-highlight">5.核心Skills實现分析</a><li><a href=#3般計决策的權衡 class="table-of-contents__link toc-highlight">3.般計决策的權衡</a><li><a href=#7性能與可辱性分析 class="table-of-contents__link toc-highlight">7.性能與可辱性分析</a><li><a href=#3侵化建 class="table-of-contents__link toc-highlight">3.侵化建</a><li><a href=#1结瞻 class="table-of-contents__link toc-highlight">1.结瞻</a><li><a href=#1系统架構概 class="table-of-contents__link toc-highlight">1.系统架構概</a><li><a href=#2skills的本質知識载體設計 class="table-of-contents__link toc-highlight">2.Skills的本質:知識载體設計</a><li><a href=#1claude-原生理解harkdown-是规語料之一 class="table-of-contents__link toc-highlight">1.CLaude 原生理解:Harkdown 是规語料之一</a><li><a href=#2版本控制发好和git-workflow完英集成 class="table-of-contents__link toc-highlight">2.版本控制发好:和Git workfLow完英集成</a><li><a href=#3语化標记yaml-frontmatter-提供鳞化元慰搏 class="table-of-contents__link toc-highlight">3.语化標记:YAML frontmatter 提供鳞化元慰搏</a><li><a href=#4人额可插生滑者可直接畜题和修改 class="table-of-contents__link toc-highlight">4.人额可插生:滑者可直接畜题和修改</a><li><a href=#1惠教行遥相markdown梓是知描述 class="table-of-contents__link toc-highlight">1.惠教行遥相:Markdown梓是知描述</a><li><a href=#2需要配套卿本實却软行由jssh完成 class="table-of-contents__link toc-highlight">2.需要配套卿本:實却软行由.js/.sh完成</a><li><a href=#113版本控制和经期普理 class="table-of-contents__link toc-highlight">113、版本控制和经期普理</a><li><a href=#3hooks事件動系统 class="table-of-contents__link toc-highlight">3.Hooks事件動系统</a><li><a href=#一次性低影暮 class="table-of-contents__link toc-highlight">一次性,低影暮</a><li><a href=#一次性低影 class="table-of-contents__link toc-highlight">一次性,低影</a><li><a href=#3符合-unix-哲学 class="table-of-contents__link toc-highlight">3.符合 Unix 哲学</a><li><a href=#4跨平台實現技術 class="table-of-contents__link toc-highlight">4.跨平台實現技術</a><li><a href=#5核心skills實現分析 class="table-of-contents__link toc-highlight">5.核心Skills實現分析</a><li><a href=#2ppid父准程idclaude-code-逾程 class="table-of-contents__link toc-highlight">2.PPID:父准程ID(Claude Code 逾程)</a><li><a href=#3default最後的備逻 class="table-of-contents__link toc-highlight">3.default':最後的備逻</a><ul><li><a href=#12跨平台性丨需要滤理差统一通行時丨node1s class="table-of-contents__link toc-highlight">1.2跨平台性丨需要滤理差|统一通行時丨Node.1s|</a></ul><li><a href=#7性能與可靠性分析 class="table-of-contents__link toc-highlight">7.性能與可靠性分析</a><li><a href=#8優化建 class="table-of-contents__link toc-highlight">8.優化建</a><li><a href=#9結 class="table-of-contents__link toc-highlight">9.結</a><li><a href=#3跨平台抽象統一的工具函數封装平台差翼 class="table-of-contents__link toc-highlight">3.跨平台抽象:統一的工具函數封装平台差翼</a><li><a href=#1優雅降級hook失败不影響主流程 class="table-of-contents__link toc-highlight">1.優雅降級:Hook失败不影響主流程</a><li><a href=#5可组合性skills可以组合形成更复雜的工作流 class="table-of-contents__link toc-highlight">5.可组合性:Skills可以组合形成更复雜的工作流</a><li><a href=#2無依赖管理系統 class="table-of-contents__link toc-highlight">2.無依赖管理系統</a><li><a href=#3typescript類型桧查是性能瓶 class="table-of-contents__link toc-highlight">3.TypeScript類型桧查是性能瓶</a><li><a href=#1文件操作缺乏發安全機制 class="table-of-contents__link toc-highlight">1.文件操作缺乏發安全機制</a><li><a href=#2event-driven-architecture-pattern-martin-fowler class="table-of-contents__link toc-highlight">2.Event-Driven Architecture Pattern-Martin Fowler</a><li><a href=#3everything-claudecode-thecompletecollectionofclaude-code class="table-of-contents__link toc-highlight">3.Everything ClaudeCode-ThecompletecollectionofClaude Code</a><li><a href=#1cross-platform-nodejs-development--nodejs-design-patterns class="table-of-contents__link toc-highlight">1.Cross-Platform Node.js Development -Node.js Design Patterns</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

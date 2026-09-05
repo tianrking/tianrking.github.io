@@ -1,0 +1,287 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>RTL8812EU 性能最佳化：5GHz U-NII 頻譜於高通量、低延遲數據鏈路應用 | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2025-10-14-rtl8812eu-性能最佳化-5ghz-u-nii-頻譜於高通量-低延遲數據鏈路應用-2247485174 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="RTL8812EU 性能最佳化：5GHz U-NII 頻譜於高通量、低延遲數據鏈路應用 | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《RTL8812EU 性能最佳化：5GHz U-NII 頻譜於高通量、低延遲數據鏈路應用》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《RTL8812EU 性能最佳化：5GHz U-NII 頻譜於高通量、低延遲數據鏈路應用》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2025-10-14T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2025-10-14-rtl8812eu-性能最佳化-5ghz-u-nii-頻譜於高通量-低延遲數據鏈路應用-2247485174 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-10-14-rtl8812eu-性能最佳化-5ghz-u-nii-頻譜於高通量-低延遲數據鏈路應用-2247485174 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-10-14-rtl8812eu-性能最佳化-5ghz-u-nii-頻譜於高通量-低延遲數據鏈路應用-2247485174 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2025-10-14-rtl8812eu-性能最佳化-5ghz-u-nii-頻譜於高通量-低延遲數據鏈路應用-2247485174","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2025-10-14T00:00:00.000Z","description":"从微信公众号导入的文章《RTL8812EU 性能最佳化：5GHz U-NII 頻譜於高通量、低延遲數據鏈路應用》，保留原始排版图并提供本地 OCR 转写。","headline":"RTL8812EU 性能最佳化：5GHz U-NII 頻譜於高通量、低延遲數據鏈路應用","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2025-10-14-rtl8812eu-性能最佳化-5ghz-u-nii-頻譜於高通量-低延遲數據鏈路應用-2247485174","name":"RTL8812EU 性能最佳化：5GHz U-NII 頻譜於高通量、低延遲數據鏈路應用","url":"https://w0x7ce.eu/blog/2025-10-14-rtl8812eu-性能最佳化-5ghz-u-nii-頻譜於高通量-低延遲數據鏈路應用-2247485174"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>RTL8812EU 性能最佳化：5GHz U-NII 頻譜於高通量、低延遲數據鏈路應用</h1><div class="container_mt6G margin-vert--md"><time datetime=2025-10-14T00:00:00.000Z>2025年10月14日</time> · <!-- -->閱讀時間約 10 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2025-10-14 23:50:24（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247485174&idx=1&sn=b29694ead1aa2a055fbcdcd5dcf93fdf&chksm=96e1135ca1969a4a884e341793f9f07787519442e5117dec75b6f1ba1c9f65ac1ddcdc7a454e#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 3822 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>RTL8812EU性能最佳化:5GHzU-NII频於高通量、低延数
+據路應用
+originalwθ×7ce EI V1ajero 2025年10月14日 23:50 新如坡</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=15ghz频譜结横解析與基碰物理量>1.5GHz频譜结横解析與基碰物理量<a href=#15ghz频譜结横解析與基碰物理量 class=hash-link aria-label=1.5GHz频譜结横解析與基碰物理量的直接連結 title=1.5GHz频譜结横解析與基碰物理量的直接連結 translate=no>​</a></h3>
+<p>5 GHz (8o2.11a/h/n/ac/ax/be) (e)
+Fs ndex
+Frequency
+United
+United
+004
+Gb.
+Fo
+range
+160
+40
+80
+IN-n
+(MHx)
+ZHZH
+bend(s)
+DFSTPC
+DFS/TPC
+140
+138
+57005690-5710
+X
+[nsts I]
+U-NII-
+.142
+144
+0229-01/5
+5720
+2C3
+57305735
+Unknoumt
+57455735-5755
+149
+5755-5775
+5765
+E-IN-n
+155
+SAD
+157
+5775-5795
+fes
+(Ww 02)
+.159
+5795-5815
+9095
+Yes
+163
+5815-5835
+166
+5825
+SAD
+5635-5655
+UHNI-3/4
+159
+5645
+171
+(26 mW)
+Indoons
+173
+555-5875
+5855
+No</p>
+<ul>
+<li class="">IN-n</li>
+</ul>
+<p>5686
+177
+No
+Frequeney
+US FCC
+h
+E
+160
+United
+United
+80
+IN-n
+Australia
+range
+20 MHz
+(ZHW)
+MHz
+(MHaz)
+(s)pun
+<code>https://en.wikipedia.org/wiki/List_of_wLAN_channels</code>
+5GHz频语或非逼额的單一频段,而是被制分為数個具储摄立法规的U-NII波段。封此频游分
+段的精随超知,是所有後續性能侵化工作的基碟。
+表1:U-NII波段分與频道對康
+波段代號
+频率能圆(GHz)
+可用20MHz频道
+U-NII-1
+36, 40, 44, 48</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=5150---5258>5.150 - 5.258<a href=#5150---5258 class=hash-link aria-label="5.150 - 5.258的直接連結" title="5.150 - 5.258的直接連結" translate=no>​</a></h3>
+<p>52, 56, 60, 64
+U-NII-2A</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=5250---5358>5.250 - 5.358<a href=#5250---5358 class=hash-link aria-label="5.250 - 5.358的直接連結" title="5.250 - 5.358的直接連結" translate=no>​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=5470---5725>5.470 - 5.725<a href=#5470---5725 class=hash-link aria-label="5.470 - 5.725的直接連結" title="5.470 - 5.725的直接連結" translate=no>​</a></h3>
+<p>U-NII-2C
+100 至 144
+149, 153, 157, 161, 165
+U-NII-3</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=5725---5858>5.725 - 5.858<a href=#5725---5858 class=hash-link aria-label="5.725 - 5.858的直接連結" title="5.725 - 5.858的直接連結" translate=no>​</a></h3>
+<p>所有性能分析與法规限制,均圆绝一项核心物理量:等效全向辐射功率(EIRP。
+Equivalent Isotropic Radiated Power).EIRP 代表天線系統宽幅射至项中的
+總能量,此為监管機的核心题注重點。其計算公式為:
+EIRPsBm = Prxs + GAenas ICaltg
+其中,Pr為品片组的傅導功率,GArtean為天線的被勤增益,LCale為傅翰線与速接
+器的損耗。法规限制的是EIRP,而非覃纯的传功率。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2各u-nii波段之法规框架奥性能權衡>2.各U-NII波段之法规框架奥性能權衡<a href=#2各u-nii波段之法规框架奥性能權衡 class=hash-link aria-label=2.各U-NII波段之法规框架奥性能權衡的直接連結 title=2.各U-NII波段之法规框架奥性能權衡的直接連結 translate=no>​</a></h2>
+<p>每因波段的法规特性,决定了其在不同鹰用場景下的逸用性舆性能潜力。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=21u-nii-1低功率低干摄频段>2.1U-NII-1:低功率、低干摄频段<a href=#21u-nii-1低功率低干摄频段 class=hash-link aria-label=2.1U-NII-1:低功率、低干摄频段的直接連結 title=2.1U-NII-1:低功率、低干摄频段的直接連結 translate=no>​</a></h3>
+<ul>
+<li class="">
+<p>核心法规:EIRP受限龄低功率通作,通常上限爲200nW(23dBm)。</p>
+</li>
+<li class="">
+<p>性能影:</p>
+</li>
+<li class="">
+<p>正面:無需“動慰频率選捶:(DFS)模制此特性硫保了频道可即時欲用,根本上</p>
+</li>
+</ul>
+<p>排除了因外部需達信赋解發而谱致的键路中断,是维持低延遥通信的基。</p>
+<ul>
+<li class="">正面:由於功率限制,此频段的背景射频噪登基底(Noise Floor)通常酸低,有助</li>
+</ul>
+<p>於在短距魅内實现高信噪比(SNR)的定翘路。</p>
+<ul>
+<li class="">负面:格的EIRP上限,物理定律上限制了其信號传播距罐,故不滤用於速距離康</li>
+</ul>
+<p>用。</p>
+<ul>
+<li class="">鹰用定值:遍用於系统基率测試、實验室瑞境校率,以及在想定性僵先於距的短程部警</li>
+</ul>
+<p>中。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=22-u-nii-2au-nii-2cdfs-限制频段>2.2 U-NII-2A&U-NII-2C:DFS 限制频段<a href=#22-u-nii-2au-nii-2cdfs-限制频段 class=hash-link aria-label="2.2 U-NII-2A&U-NII-2C:DFS 限制频段的直接連結" title="2.2 U-NII-2A&U-NII-2C:DFS 限制频段的直接連結" translate=no>​</a></h3>
+<ul>
+<li class="">核心法规:强制要求實施DFS協,以值测亚规进现有的侵先级服務(如機场都卜勒天氧</li>
+</ul>
+<p>雷速 TDWR)。</p>
+<ul>
+<li class="">
+<p>性能影馨:</p>
+</li>
+<li class="">
+<p>负面(决定性):DFS判高性能数球键路施加了南项不可容忍的限制。其一,频道</p>
+</li>
+</ul>
+<p>可用性检查(CAC),要求設催在放用频道前必须进行長達60秒的静默监随。其二,在
+投监控(In-Service Monitoring),要求設借在慎润到密谨服衡信號後,必须在
+10秒内撤離接频道,且在30分罐的禁止远期内不得返回。</p>
+<ul>
+<li class="">负面:此機制端致键路存在一但不可预测的、由外部因素發的、長调期的中暨周险。</li>
+</ul>
+<p>封於要求持绩速接的愿用而言,此围险是不可接受的。</p>
+<ul>
+<li class="">應用定位:任何以不断、低延近為核心需求的座用,均鹰在系统震微庭规證此频段。</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=23u-nii-3高性能康用频段>2.3U-NII-3:高性能康用频段<a href=#23u-nii-3高性能康用频段 class=hash-link aria-label=2.3U-NII-3:高性能康用频段的直接連結 title=2.3U-NII-3:高性能康用频段的直接連結 translate=no>​</a></h3>
+<ul>
+<li class="">核心法规:為高功率無線愿用而設計,允許(點對多點系统)高谨1W(30dBm)的</li>
+</ul>
+<p>EIRP,</p>
+<ul>
+<li class="">
+<p>性能影窖:</p>
+</li>
+<li class="">
+<p>正面:30dBm的EIRP為實現高功率奥速距雕提供了充足的凝路预算(Link</p>
+</li>
+</ul>
+<p>Budget)。相教於23dBn,7dB的功率提升盒味著理输传输距魁可增加一倍以上。</p>
+<ul>
+<li class="">正面:免除DF5要求,硫保了频道的和时可用性與翘路的定性,是實现低延逻與高</li>
+</ul>
+<p>可靠性的先决修件。</p>
+<ul>
+<li class="">潜在挑瑕:此频段的侵越特性吸引了大量未授權設備,可能增致较高的频游舜挤度。因</li>
+</ul>
+<p>此,部香前的频错分析(Spectrum Analys1s)成為必要步骤。</p>
+<ul>
+<li class="">愿用定位:道是唯一能跨同時满足遗距雕、高通量典低延避需求的渠段。所有後绩的性能侵</li>
+</ul>
+<p>化策略均鹰圍此频段展明。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3rtl8812eu之精密配置與性能調校>3.RTL8812EU之精密配置與性能調校<a href=#3rtl8812eu之精密配置與性能調校 class=hash-link aria-label=3.RTL8812EU之精密配置與性能調校的直接連結 title=3.RTL8812EU之精密配置與性能調校的直接連結 translate=no>​</a></h2>
+<p>在U-NII-3频段的基碟上,必须系统、物理磨及射频前端進行精確配置。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=31系统眉级配置>3.1系统眉级配置<a href=#31系统眉级配置 class=hash-link aria-label=3.1系统眉级配置的直接連結 title=3.1系统眉级配置的直接連結 translate=no>​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1骚勤程式必须探用支援监模式mon1tor-mode與辅注人frameinjection>1.骚勤程式:必须探用支援监模式(Mon1tor Mode)與辅注人(FrameInjection)<a href=#1骚勤程式必须探用支援监模式mon1tor-mode與辅注人frameinjection class=hash-link aria-label="1.骚勤程式:必须探用支援监模式(Mon1tor Mode)與辅注人(FrameInjection)的直接連結" title="1.骚勤程式:必须探用支援监模式(Mon1tor Mode)與辅注人(FrameInjection)的直接連結" translate=no>​</a></h2>
+<p>功能的第三方源疆動程式。棵的OEM醒動程式無法提供必要的底震控制能力。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2监管regulatory-domain主提操作系统如linux的氟级监管域必须被正础>2.监管(ReguLatory Domain):主提操作系统(如Linux)的氟级监管域必须被正础<a href=#2监管regulatory-domain主提操作系统如linux的氟级监管域必须被正础 class=hash-link aria-label="2.监管(ReguLatory Domain):主提操作系统(如Linux)的氟级监管域必须被正础的直接連結" title="2.监管(ReguLatory Domain):主提操作系统(如Linux)的氟级监管域必须被正础的直接連結" translate=no>​</a></h2>
+<p>設定。透通iwreg set 命令董配合crda(Central Regulatory Domain
+Agent)服務,可以告知内核解除剪U-NII-3 频段及其 3θdBm 功率上喂的封额。此为
+放晶片组全部潜能的雨键前置作堂。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=32物理phy参数優化>3.2物理(PHY)参数優化<a href=#32物理phy参数優化 class=hash-link aria-label=3.2物理(PHY)参数優化的直接連結 title=3.2物理(PHY)参数優化的直接連結 translate=no>​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1频道频宽channel-bonding>1.频道频宽(Channel Bonding):<a href=#1频道频宽channel-bonding class=hash-link aria-label="1.频道频宽(Channel Bonding):的直接連結" title="1.频道频宽(Channel Bonding):的直接連結" translate=no>​</a></h2>
+<ul>
+<li class="">
+<p>20MHz:接收震敏座显高,键路显摄健。適用岭排载限距,但會限制幢值吞吐量。</p>
+</li>
+<li class="">
+<p>40MHz:透遇据南個相期的20NHz频道(一個主频道,一個次频道),使理给数</p>
+</li>
+</ul>
+<p>速率加倍。道定高频置與健路穗定性之尚的最佳折衷點。</p>
+<ul>
+<li class="">88MHz:理输速率再次倍增,但會引入約3dB的接收霍敏度衰减,亚顯著增加受带内</li>
+</ul>
+<p>干摄的楼率。催適用龄 SNR桓高(>25dB)的近距魅爆景。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2調與编碼方案mcs风保罐酬隔guard-intervalgi>2.調與编碼方案(MCS)风保罐酬隔(Guard Interval,GI):<a href=#2調與编碼方案mcs风保罐酬隔guard-intervalgi class=hash-link aria-label="2.調與编碼方案(MCS)风保罐酬隔(Guard Interval,GI):的直接連結" title="2.調與编碼方案(MCS)风保罐酬隔(Guard Interval,GI):的直接連結" translate=no>​</a></h2>
+<ul>
+<li class="">MCS:MCS 索引直接唐了调陪数(BPSK,QPSK,16-QAM,64-QAM,256-</li>
+</ul>
+<p>QAM)與编碼率、高MCS提供更高香吐量,但要求更高的SNR,对於追求稳定性的
+继路,鹰蒙用自勤MCS,益手動设定一固定的中低诺MCS(如MCS2-4,封癌16-
+QAM)。以確保罐路在信赋衰减時的韧性,避免因NCS劇烈跳募致的延运抖助,</p>
+<ul>
+<li class="">GuardInterval(GI):保間隔是用於到抗多路径延运据展的機制。短保間隔</li>
+</ul>
+<p>(ShortGI)可提升約18%的香吐量,但對多路径干摄更敏感。在运距雕或非视距
+更敏感。任速距離或非視距
+(NLOS)環境中,應使用長保護間隔(LongGI)以確保数據解碼的正確性,降低封包
+錯误率(PER)。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=33eirp功率预算與天線系統>3.3EIRP功率预算與天線系統<a href=#33eirp功率预算與天線系統 class=hash-link aria-label=3.3EIRP功率预算與天線系統的直接連結 title=3.3EIRP功率预算與天線系統的直接連結 translate=no>​</a></h3>
+<p>實現遠距離傅输的核心在於優化EIRP,而非單纯最大化傅導功率。将RTL8812EU的功率放
+大器(PA)推向和點會導致嚴重的非線性失真(如频譜再生),反而惡化信號品質。
+最佳化策略應為:
+L.將RTL8812EU的傅導功率設定在其線性工作區間内的一個適中值(如17-20dBm)。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2將系統設計的重點轉移至天線系統探用高增益的定向天線如增益為10-13dbi的平板>2.將系統設計的重點轉移至天線系統。探用高增益的定向天線(如增益為10-13dBi的平板<a href=#2將系統設計的重點轉移至天線系統探用高增益的定向天線如增益為10-13dbi的平板 class=hash-link aria-label=2.將系統設計的重點轉移至天線系統。探用高增益的定向天線(如增益為10-13dBi的平板的直接連結 title=2.將系統設計的重點轉移至天線系統。探用高增益的定向天線(如增益為10-13dBi的平板的直接連結 translate=no>​</a></h2>
+<p>天線),可將射能量高度集中。其狭窄的波束宽度(Beamwidth)在提升目標方向信號
+强度的同時,也降低了來自其他方向的干接,而大地改善了接收端的SNR。此策略要求
+精確的天線對。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4結標准化操作協>4.結:標准化操作協<a href=#4結標准化操作協 class=hash-link aria-label=4.結:標准化操作協的直接連結 title=4.結:標准化操作協的直接連結 translate=no>​</a></h2>
+<p>為RTL8812EU系統中獲取可预測的、最佳化的性能,應遵循以下標化操作協:
+L.频段限定:系统操作應格限定於U-NII-3频段(5.725-5.850GHz)。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2部署前勘測必须利用频譜分析工具對作業環境進行描選選u-nii-3段内背景噪聲>2.部署前勘測:必须利用频譜分析工具對作業環境進行描,選選U-NII-3段内背景噪聲<a href=#2部署前勘測必须利用频譜分析工具對作業環境進行描選選u-nii-3段内背景噪聲 class=hash-link aria-label=2.部署前勘測:必须利用频譜分析工具對作業環境進行描,選選U-NII-3段内背景噪聲的直接連結 title=2.部署前勘測:必须利用频譜分析工具對作業環境進行描,選選U-NII-3段内背景噪聲的直接連結 translate=no>​</a></h2>
+<p>最低的類道。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3系統初始化確保主機系統已载入功能完整的動程式已正確配置管域以用高功率>3.系統初始化:確保主機系統已载入功能完整的動程式,已正確配置管域以用高功率<a href=#3系統初始化確保主機系統已载入功能完整的動程式已正確配置管域以用高功率 class=hash-link aria-label=3.系統初始化:確保主機系統已载入功能完整的動程式,已正確配置管域以用高功率的直接連結 title=3.系統初始化:確保主機系統已载入功能完整的動程式,已正確配置管域以用高功率的直接連結 translate=no>​</a></h2>
+<p>模式。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1物理層配置>1.物理層配置:<a href=#1物理層配置 class=hash-link aria-label=1.物理層配置:的直接連結 title=1.物理層配置:的直接連結 translate=no>​</a></h2>
+<ul>
+<li class="">
+<p>基配置:4OMHz道宽度,固定的中MCS,長保護間隔。</p>
+</li>
+<li class="">
+<p>距離優先:20MHz道宽度,固定的低MCS,長保護間隔。</p>
+</li>
+<li class="">
+<p>通量優先(近距):80MHz道寬度,固定的高MCS,短保護間隔(需驗證</p>
+</li>
+</ul>
+<p>SNR)。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5射類前端探用高品質的定向天線系統作為提升路预算的主要手段所有配置必须確保最>5.射類前端:探用高品質的定向天線系統作為提升路预算的主要手段。所有配置必须確保最<a href=#5射類前端探用高品質的定向天線系統作為提升路预算的主要手段所有配置必须確保最 class=hash-link aria-label=5.射類前端:探用高品質的定向天線系統作為提升路预算的主要手段。所有配置必须確保最的直接連結 title=5.射類前端:探用高品質的定向天線系統作為提升路预算的主要手段。所有配置必须確保最的直接連結 translate=no>​</a></h2>
+<p>終的EIRP不超過30dBm的法规上限。
+U-NII-3因其在美國法规下的優越性而成為首選,但在其他地區,需要根據當地法规
+寻找對應的、允許高功率且無需DFS的「黄金频段」。
+例如:</p>
+<ul>
+<li class="">
+<p>美國:FCC(FederalCommunications Commission)</p>
+</li>
+<li class="">
+<p>歐洲:ETSI(European Telecommunications StandardsInstitute)</p>
+</li>
+<li class="">
+<p>日本:MIc(Ministry of InternalAffairs andCommunications)</p>
+</li>
+<li class="">
+<p>中國:MIIT(Ministry ofIndustry andInformation Technology)</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<p><img decoding=async loading=lazy alt="RTL8812EU 性能最佳化：5GHz U-NII 頻譜於高通量、低延遲數據鏈路應用：微信公众号导出原始排版图" src=/assets/images/article-d3c345dea3c764670d8e41db64f04ab9.webp width=1280 height=4735 class=img_ev3q /></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2025-10-14-2025-10-14-rtl8812eu-性能最佳化-5ghz-u-nii-頻譜於高通量-低延遲數據鏈路應用-2247485174.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2025-10-20-libre-en-el-viento-2247485180><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>Libre en el Viento</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2025-10-10-川普政府入股掀起資源賽道熱潮-誰將成為下一個白宮精選-2247485168><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>川普政府入股掀起資源賽道熱潮！誰將成為下一個白宮精選？</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><ul><li><a href=#15ghz频譜结横解析與基碰物理量 class="table-of-contents__link toc-highlight">1.5GHz频譜结横解析與基碰物理量</a><li><a href=#5150---5258 class="table-of-contents__link toc-highlight">5.150 - 5.258</a><li><a href=#5250---5358 class="table-of-contents__link toc-highlight">5.250 - 5.358</a><li><a href=#5470---5725 class="table-of-contents__link toc-highlight">5.470 - 5.725</a><li><a href=#5725---5858 class="table-of-contents__link toc-highlight">5.725 - 5.858</a></ul><li><a href=#2各u-nii波段之法规框架奥性能權衡 class="table-of-contents__link toc-highlight">2.各U-NII波段之法规框架奥性能權衡</a><ul><li><a href=#21u-nii-1低功率低干摄频段 class="table-of-contents__link toc-highlight">2.1U-NII-1:低功率、低干摄频段</a><li><a href=#22-u-nii-2au-nii-2cdfs-限制频段 class="table-of-contents__link toc-highlight">2.2 U-NII-2A&U-NII-2C:DFS 限制频段</a><li><a href=#23u-nii-3高性能康用频段 class="table-of-contents__link toc-highlight">2.3U-NII-3:高性能康用频段</a></ul><li><a href=#3rtl8812eu之精密配置與性能調校 class="table-of-contents__link toc-highlight">3.RTL8812EU之精密配置與性能調校</a><ul><li><a href=#31系统眉级配置 class="table-of-contents__link toc-highlight">3.1系统眉级配置</a></ul><li><a href=#1骚勤程式必须探用支援监模式mon1tor-mode與辅注人frameinjection class="table-of-contents__link toc-highlight">1.骚勤程式:必须探用支援监模式(Mon1tor Mode)與辅注人(FrameInjection)</a><li><a href=#2监管regulatory-domain主提操作系统如linux的氟级监管域必须被正础 class="table-of-contents__link toc-highlight">2.监管(ReguLatory Domain):主提操作系统(如Linux)的氟级监管域必须被正础</a><ul><li><a href=#32物理phy参数優化 class="table-of-contents__link toc-highlight">3.2物理(PHY)参数優化</a></ul><li><a href=#1频道频宽channel-bonding class="table-of-contents__link toc-highlight">1.频道频宽(Channel Bonding):</a><li><a href=#2調與编碼方案mcs风保罐酬隔guard-intervalgi class="table-of-contents__link toc-highlight">2.調與编碼方案(MCS)风保罐酬隔(Guard Interval,GI):</a><ul><li><a href=#33eirp功率预算與天線系統 class="table-of-contents__link toc-highlight">3.3EIRP功率预算與天線系統</a></ul><li><a href=#2將系統設計的重點轉移至天線系統探用高增益的定向天線如增益為10-13dbi的平板 class="table-of-contents__link toc-highlight">2.將系統設計的重點轉移至天線系統。探用高增益的定向天線(如增益為10-13dBi的平板</a><li><a href=#4結標准化操作協 class="table-of-contents__link toc-highlight">4.結:標准化操作協</a><li><a href=#2部署前勘測必须利用频譜分析工具對作業環境進行描選選u-nii-3段内背景噪聲 class="table-of-contents__link toc-highlight">2.部署前勘測:必须利用频譜分析工具對作業環境進行描,選選U-NII-3段内背景噪聲</a><li><a href=#3系統初始化確保主機系統已载入功能完整的動程式已正確配置管域以用高功率 class="table-of-contents__link toc-highlight">3.系統初始化:確保主機系統已载入功能完整的動程式,已正確配置管域以用高功率</a><li><a href=#1物理層配置 class="table-of-contents__link toc-highlight">1.物理層配置:</a><li><a href=#5射類前端探用高品質的定向天線系統作為提升路预算的主要手段所有配置必须確保最 class="table-of-contents__link toc-highlight">5.射類前端:探用高品質的定向天線系統作為提升路预算的主要手段。所有配置必须確保最</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

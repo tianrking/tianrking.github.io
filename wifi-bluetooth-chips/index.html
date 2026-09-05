@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="../img/favicon.ico">
+<title>全球 Wi‑Fi / Bluetooth 芯片选型数据库</title><meta name="description" content="面向硬件选型的全球 Wi‑Fi、Bluetooth Classic/BR/EDR、BLE、Wi‑Fi+BT Combo、802.15.4 tri-radio 和无线 MCU/连接协处理器资料库。"><style>
+:root{--ink:#172033;--muted:#667085;--line:#dbe3ee;--navy:#123b5d;--blue:#1e587d;--canvas:#f3f6fa;--surface:#fff;--green:#166534;--amber:#92400e;--red:#991b1b}*{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--ink);font:14px/1.45 Segoe UI,Microsoft YaHei,Arial,sans-serif}.wrap{max-width:2400px;margin:auto;padding:20px}.hero{background:linear-gradient(135deg,#123b5d,#267f82);color:#fff;border-radius:18px;padding:28px 32px}.hero h1{margin:0 0 8px;font-size:30px}.hero p{max-width:1300px;margin:7px 0;color:#e5edf7;line-height:1.65}.meta{font:12px ui-monospace,SFMono-Regular,Consolas,monospace;color:#dcebf3}.cards{display:grid;grid-template-columns:repeat(12,minmax(120px,1fr));gap:10px;margin:16px 0}.card,.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;box-shadow:0 2px 9px #193b5a0c}.card .label{color:var(--muted);font-size:12px}.card .num{color:var(--navy);font-size:25px;font-weight:700;margin-top:4px}.panel{margin:14px 0}.panel h2{margin:0 0 12px;color:var(--navy);font-size:19px}.controls{display:flex;gap:9px;flex-wrap:wrap}.controls input,.controls select{min-width:148px;border:1px solid #cbd5e1;border-radius:8px;padding:9px 10px;background:#fff}.controls input{min-width:320px;flex:1}.hint{color:var(--muted);font-size:12px;margin:9px 0}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:9px}.data-table{border-collapse:separate;border-spacing:0;width:100%;min-width:3000px}.data-table th{position:sticky;top:0;background:var(--blue);color:#fff;padding:10px 8px;text-align:left;font-size:12px;white-space:nowrap;z-index:2}.data-table td{max-width:390px;padding:9px 8px;border-top:1px solid #e7edf5;vertical-align:top;line-height:1.42}.data-table tr:nth-child(even) td{background:#fbfcfe}.data-table tr:hover td{background:#eef6ff}.data-table a{color:#1769aa}.pill{display:inline-block;padding:3px 8px;border-radius:999px;font-size:11px;font-weight:700}.ev-A{background:#dcfce7;color:var(--green)}.ev-B{background:#fef3c7;color:var(--amber)}.ev-C,.ev-D{background:#fee2e2;color:var(--red)}.detail{display:none;background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:14px;margin-top:12px}.detail.show{display:block}.detail-grid{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:9px}.detail-item{background:#fff;border:1px solid #e5eaf1;border-radius:8px;padding:9px;min-height:58px}.detail-item b{display:block;color:var(--muted);font-size:12px;margin-bottom:3px}.detail-item span{white-space:pre-wrap;word-break:break-word}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.small-table{border-collapse:collapse;width:100%}.small-table th,.small-table td{border-bottom:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}.small-table th{color:var(--navy);font-size:12px}.prose{white-space:pre-wrap;color:#334155;line-height:1.7}.source-table{min-width:2200px}.price-table{min-width:2600px}.price-table td,.price-table th{white-space:normal}.price-breaks{white-space:pre-wrap;min-width:300px}.price-note{color:#7c2d12;background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:10px}@media(max-width:1400px){.cards{grid-template-columns:repeat(6,minmax(120px,1fr))}}@media(max-width:1100px){.cards{grid-template-columns:repeat(4,1fr)}.two{grid-template-columns:1fr}.detail-grid{grid-template-columns:repeat(2,minmax(150px,1fr))}}@media(max-width:600px){.wrap{padding:10px}.cards{grid-template-columns:repeat(2,1fr)}.detail-grid{grid-template-columns:1fr}.hero h1{font-size:24px}}
+</style><style id="catalog-ui-base">
+html,body{max-width:100%;overflow-x:hidden}
+body{min-width:0}
+.wrap,.hero,.panel,.two,.two-col,.cards,.detail,.controls,.table-wrap{min-width:0;max-width:100%;box-sizing:border-box}
+.two>.panel,.two-col>.panel{min-width:0;overflow:hidden}
+.table-wrap{width:100%;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-gutter:stable}
+.controls{min-width:0;align-items:center}
+.controls input,.controls select{max-width:100%}
+.table-wrap:focus-within{outline:2px solid #80b9d6;outline-offset:2px}
+.catalog-clear-filters{border:1px solid #9bb9cf;background:#f8fbfd;color:#1f526f;border-radius:8px;padding:8px 12px;min-height:36px;cursor:pointer;white-space:nowrap;font:inherit;font-size:13px}
+.catalog-clear-filters:hover{background:#e9f4fb;border-color:#5d9ac0}
+.catalog-clear-filters:focus-visible{outline:2px solid #2b78a6;outline-offset:2px}
+.catalog-filter-state{color:#64748b;font-size:12px;line-height:1.4;white-space:nowrap}
+.catalog-detail-row>td{padding:0!important;border:0!important;background:transparent!important}
+.catalog-detail-row .detail{margin-top:10px}
+.catalog-detail-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.catalog-detail-top h3{margin:0;color:var(--blue,#153e75)}
+.catalog-detail-close{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:7px 10px;color:#36506a;cursor:pointer}
+.catalog-detail-close:hover{background:#eef6ff}
+.catalog-detail-row:focus-within{outline:2px solid #80b9d6;outline-offset:2px}
+@media(max-width:760px){
+  .wrap{width:100%;padding:12px;box-sizing:border-box}
+  .hero{padding:20px 16px}
+  .hero h1{font-size:24px;line-height:1.28}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .controls input{grid-column:1/-1;min-width:0;width:100%;flex:initial}
+  .controls select{min-width:0;width:100%;font-size:13px}
+  .catalog-clear-filters,.catalog-filter-state{grid-column:1/-1;width:100%}
+  .catalog-filter-state{white-space:normal}
+  .detail-grid{grid-template-columns:1fr}
+  .detail{padding:12px}
+  .catalog-detail-top{position:sticky;top:0;background:#f8fafc;padding-bottom:8px;z-index:2}
+}
+</style></head><body><main class="wrap"><section class="hero"><h1>全球 Wi‑Fi / Bluetooth 芯片选型数据库</h1><p>面向硬件选型的全球 Wi‑Fi、Bluetooth Classic/BR/EDR、BLE、Wi‑Fi+BT Combo、802.15.4 tri-radio 和无线 MCU/连接协处理器资料库。</p><p>BLC 不是 Bluetooth SIG 的正式协议缩写；为便于检索，本库把 BLC 解释为 Bluetooth Classic，并以 Bluetooth Classic / BR/EDR 作为规范字段。BLE 单列；Bluetooth Classic + BLE 标为双模。</p><div class="meta">查证日期：2026-09-05　｜　主表按芯片/SoC/无线 MCU/连接协处理器计数　｜　未披露字段 = “未公开”</div></section>
+<section class="cards"><div class="card"><div class="label">主表记录</div><div class="num" id="statProducts">—</div></div><div class="card"><div class="label">厂商/品牌</div><div class="num" id="statVendors">—</div></div><div class="card"><div class="label">Wi-Fi记录</div><div class="num" id="statWifi">—</div></div><div class="card"><div class="label">Bluetooth记录</div><div class="num" id="statBt">—</div></div><div class="card"><div class="label">Combo/tri-radio</div><div class="num" id="statCombo">—</div></div><div class="card"><div class="label">BLE-only</div><div class="num" id="statBle">—</div></div><div class="card"><div class="label">BLC双模</div><div class="num" id="statClassic">—</div></div><div class="card"><div class="label">候选线索</div><div class="num" id="statCandidates">—</div></div><div class="card"><div class="label">有价格报价的型号</div><div class="num" id="statPriceProducts">—</div></div><div class="card"><div class="label">裸芯片报价</div><div class="num" id="statBareOffers">—</div></div><div class="card"><div class="label">报价平台/渠道</div><div class="num" id="statPricePlatforms">—</div></div><div class="card"><div class="label">无公开采购价</div><div class="num" id="statNoPrice">—</div></div></section>
+<section class="panel"><h2>芯片选型检索</h2><div class="controls"><input id="search" placeholder="搜索厂商、型号、协议、内存、外设、封装……"><select id="vendor"><option value="">全部厂商</option></select><select id="radio"><option value="">全部无线分类</option></select><select id="wifi"><option value="">Wi-Fi支持</option></select><select id="bt"><option value="">Bluetooth版本</option></select><select id="ble"><option value="">BLE</option></select><select id="classic"><option value="">BLC/Classic</option></select><select id="pricePlatform"><option value="">报价平台</option></select><select id="priceStatus"><option value="">价格状态</option></select><select id="evidence"><option value="">证据等级</option></select><select id="status"><option value="">状态</option></select></div><div class="hint">当前显示 <b id="shown">—</b> 条；点击主表行查看完整字段。BLC = Bluetooth Classic / BR/EDR，BLE 单独统计。价格筛选只作用于主表摘要。</div><div id="detail" class="detail"></div><div class="table-wrap"><table class="data-table"><thead><tr><th>ID</th><th>厂商/型号</th><th>家族/实体</th><th>国家/地区</th><th>无线分类</th><th>状态</th><th>证据</th><th>上市年份</th><th>Wi-Fi</th><th>Bluetooth / BLE / BLC</th><th>CPU/内存</th><th>外设/接口</th><th>封装/尺寸</th><th>价格/类型</th><th>来源</th></tr></thead><tbody id="rows"></tbody></table></div></section>
+<section class="panel"><h2>采购价格快照（裸芯片、模块分开）</h2><p class="hint">每行是一个精确 MPN / 平台 / 地区视图的报价快照；价格是动态页面观察值，不是长期承诺价。缺货价、官方样品参考价和询价会明确标记。当前显示 <b id="priceShown">—</b> 条。</p><div class="controls"><input id="priceSearch" placeholder="搜索精确 MPN、分销 SKU、厂商或平台……"><select id="priceLevel"><option value="">全部实体层级</option></select><select id="priceAvailability"><option value="">全部可得性</option></select></div><div class="table-wrap"><table class="small-table price-table"><thead><tr><th>报价ID</th><th>产品ID</th><th>厂商/精确 MPN</th><th>实体层级</th><th>封装</th><th>平台/地区</th><th>分销 SKU</th><th>币种/阶梯价</th><th>MOQ/标准包装</th><th>库存/可得性</th><th>价格类型</th><th>来源</th><th>查证</th><th>备注</th></tr></thead><tbody id="priceRows"></tbody></table></div></section>
+<section class="two"><div class="panel"><h2>候选与关联实体</h2><p class="hint">候选不等于已验证芯片；模块、开发板、OEM、资料受限和待分料号线索保留在这里。</p><div class="table-wrap"><table class="small-table"><thead><tr><th>厂商/名称</th><th>类别/状态/证据</th><th>保留原因</th><th>来源</th><th>下一步</th></tr></thead><tbody id="candidateRows"></tbody></table></div></div><div class="panel"><h2>来源与证据</h2><div class="table-wrap"><table class="small-table source-table"><thead><tr><th>来源组</th><th>渠道</th><th>角色</th><th>域名</th><th>卖方/项目方</th><th>可得性</th><th>价格/平台</th><th>链接</th><th>覆盖范围</th><th>查证</th><th>质量</th></tr></thead><tbody id="sourceRows"></tbody></table></div></div></section>
+<section class="two"><div class="panel"><h2>字段与方法</h2><p class="prose" id="method"></p><div class="table-wrap"><table class="small-table"><thead><tr><th>字段/规则</th><th>说明</th></tr></thead><tbody id="fieldRows"></tbody></table></div></div><div class="panel"><h2>本轮更新与渠道策略</h2><div id="updates" class="prose"></div><div class="table-wrap"><table class="small-table"><thead><tr><th>渠道</th><th>优先级</th><th>用途</th></tr></thead><tbody id="channelRows"></tbody></table></div></div></section>
+</main><script>let DATA; const DETAIL_FIELDS = [["id","ID"],["vendor","厂商/品牌"],["model","精确型号/分料号"],["family","产品家族"],["vendor_country","厂商国家/地区"],["entity_type","实体类型"],["radio_class","无线分类"],["status","状态"],["evidence","证据等级"],["launch_year","上市年份"],["launch_date","发布/上市日期"],["launch_date_type","日期口径"],["price","价格"],["price_type","价格类型"],["moq","MOQ/包装"],["availability","可得性"],["price_current_best","当前可比价格摘要"],["price_single_piece_usd","USD 1+单价"],["price_lowest_visible_usd","USD最低可见价"],["price_lowest_quantity","最低价档位"],["price_platforms","报价平台"],["price_offer_count","报价条数"],["price_bare_chip_offer_count","裸芯片报价数"],["price_module_offer_count","模块报价数"],["price_currency_set","报价币种"],["price_checked_on","价格查证日期"],["price_status","价格状态"],["price_notes","价格说明"],["wifi_support","Wi-Fi支持"],["wifi_standard","Wi-Fi标准"],["wifi_bands","Wi-Fi频段"],["wifi_bandwidth_streams","带宽/空间流"],["wifi_peak_rate","Wi-Fi峰值/吞吐"],["bluetooth_version","Bluetooth版本"],["ble_support","BLE支持"],["bt_classic_blc","Bluetooth Classic/BLC"],["bluetooth_mode","Bluetooth模式"],["le_audio","LE Audio"],["mesh_802154","Mesh/802.15.4/Thread/Zigbee"],["radio_concurrency","无线并发"],["host_interface","主机接口"],["cpu_core","CPU/内核"],["cpu_frequency","主频"],["on_chip_flash","内置Flash/NVM"],["on_chip_sram","内置SRAM/RAM"],["rom","ROM"],["external_memory","外部存储"],["peripherals","外设"],["gpio_pin_count","GPIO/引脚数"],["security","安全特性"],["tx_power","发射功率"],["rx_sensitivity","接收灵敏度"],["tx_current","发射电流"],["rx_current","接收电流"],["sleep_current","睡眠/待机电流"],["power_supply","供电范围"],["package","封装"],["package_size","封装尺寸"],["pin_count","引脚/球数"],["process_node","工艺节点"],["operating_temp","工作温度"],["applications","应用场景"],["module_options","模块方案"],["certifications","认证/合规"],["notes","备注"],["source_note","来源说明"],["source_refs","来源ID"],["checked_on","查证日期"]];
+(async function boot() {
+  try {
+    DATA = await fetch('./data.json', {cache: 'no-store'}).then(async (response) => {
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      return response.json();
+    });
+const $ = (id) => document.getElementById(id); const low = (v) => String(v ?? '').toLowerCase(); const esc = (v) => String(v ?? '').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;'); const link = (u,l) => u && u !== '未公开' ? '<a target="_blank" rel="noopener" href="'+esc(u)+'">'+esc(l || u)+'</a>' : esc(l || '未公开'); const offers = DATA.price_offers || []; const uniq = (key) => [...new Set(DATA.products.map((p)=>String(p[key] ?? '未公开')))].filter(Boolean).sort((a,b)=>a.localeCompare(b,'zh-CN'));
+const responsiveStyle=document.createElement('style'); responsiveStyle.textContent=[
+'html,body{max-width:100%;overflow-x:hidden}',
+'body{min-width:0}',
+'main.wrap,.wrap,.hero,.panel,.two,.cards,.detail,.controls,.table-wrap{min-width:0;max-width:100%}',
+'.two>.panel{min-width:0;overflow:hidden}',
+'.table-wrap{width:100%;overflow-x:auto;overflow-y:visible;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-gutter:stable}',
+'.controls{min-width:0;max-width:100%}.controls input,.controls select{max-width:100%}',
+'.data-table th:first-child,.data-table td:first-child{position:sticky;left:0;z-index:3;box-shadow:2px 0 0 #dbe3ee}',
+'.data-table th:first-child{z-index:4}.data-table td:first-child{background:#fff}.data-table tr:nth-child(even) td:first-child{background:#fbfcfe}',
+'.table-wrap:focus-within{outline:2px solid #80b9d6;outline-offset:2px}',
+'.mobile-list{display:none}',
+'.data-guide{display:flex;gap:8px;align-items:flex-start;color:#36506a;background:#eef7fb;border:1px solid #cbe4ef;border-radius:9px;padding:9px 11px;margin:10px 0;font-size:12px;line-height:1.6}',
+'.data-guide strong{color:#123b5d;white-space:nowrap}',
+'.record-card,.price-card,.aux-card,.source-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px;box-shadow:0 2px 8px #193b5a0b}',
+'.record-card h3,.price-card h3{margin:3px 0 0;color:var(--navy);font-size:16px;line-height:1.35}',
+'.record-head,.price-card-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}',
+'.record-id,.card-kicker{color:var(--muted);font:11px ui-monospace,SFMono-Regular,Consolas,monospace}',
+'.record-facts,.price-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:11px 0}',
+'.record-fact,.price-fact{min-width:0;background:#f8fafc;border-radius:8px;padding:8px}',
+'.record-fact b,.price-fact b{display:block;color:var(--muted);font-size:11px;margin-bottom:2px}',
+'.record-fact span,.price-fact span{display:block;overflow-wrap:anywhere}',
+'.record-price{border-left:3px solid #2b8292;background:#f0fdfa;border-radius:7px;padding:8px 10px;margin:10px 0;color:#134e4a}',
+'.record-price b{display:block;font-size:11px;color:#166534}.record-price strong{display:block;font-size:15px;margin-top:2px}',
+'.record-actions,.price-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}',
+'.card-action{border:0;border-radius:8px;padding:8px 10px;background:#123b5d;color:#fff;font:inherit;cursor:pointer}',
+'.card-action:hover{background:#1e587d}.card-links{display:flex;gap:8px;flex-wrap:wrap;font-size:12px}.card-links a,.price-actions a{color:#1769aa}',
+'.aux-card h3,.source-card h3{margin:0;color:var(--navy);font-size:15px}.aux-card p,.source-card p{margin:7px 0;overflow-wrap:anywhere}',
+'.aux-meta,.source-meta{color:var(--muted);font-size:12px;line-height:1.6}.source-card details{margin-top:8px}.source-card summary{cursor:pointer;color:#1769aa}',
+'.price-card .price-breaks{display:block;min-width:0;margin-top:3px}.price-card .price-fact{background:#fff7ed;border:1px solid #fed7aa}',
+'.detail-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.detail-top h3{margin:0;color:var(--navy)}.detail-close{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:7px 10px;color:#36506a;cursor:pointer}.detail-close:hover{background:#eef6ff}',
+'.record-card:focus-visible,.card-action:focus-visible,.detail-close:focus-visible{outline:3px solid #80b9d6;outline-offset:2px}',
+'@media(max-width:760px){.wrap{width:100%;padding:10px}.hero{padding:20px 16px}.hero h1{font-size:24px;line-height:1.25}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.card{padding:11px}.card .num{font-size:21px}.controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.controls input{grid-column:1/-1;min-width:0;width:100%;flex:initial}.controls select{min-width:0;width:100%;font-size:13px}.detail-grid{grid-template-columns:1fr}.detail{padding:12px}.desktop-data-wrap,.desktop-price-wrap,.desktop-candidate-wrap,.desktop-source-wrap{display:none!important}.mobile-list{display:grid;gap:10px}.data-guide{display:block}.data-guide strong{display:block;margin-bottom:3px}.record-facts,.price-facts{grid-template-columns:repeat(2,minmax(0,1fr))}.detail .price-table{min-width:0;width:100%;table-layout:fixed}.detail .price-table th,.detail .price-table td{font-size:12px;padding:7px 5px;overflow-wrap:anywhere}.detail .price-breaks{min-width:0}}',
+'@media(max-width:360px){.record-facts,.price-facts{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.card .label{font-size:11px}}'
+].join(''); document.head.appendChild(responsiveStyle);
+const mainTableWrap=document.querySelector('#rows')?.closest('.table-wrap'); const priceTableWrap=document.querySelector('#priceRows')?.closest('.table-wrap'); const candidateTableWrap=document.querySelector('#candidateRows')?.closest('.table-wrap'); const sourceTableWrap=document.querySelector('#sourceRows')?.closest('.table-wrap');
+function createMobileList(id,label){const el=document.createElement('div');el.id=id;el.className='mobile-list';el.setAttribute('aria-label',label);return el;}
+const mobileRows=createMobileList('mobileRows','芯片结果卡片'); const mobilePriceRows=createMobileList('mobilePriceRows','采购报价卡片'); const mobileCandidateRows=createMobileList('mobileCandidateRows','候选与关联实体卡片'); const mobileSourceRows=createMobileList('mobileSourceRows','来源与证据卡片');
+if(mainTableWrap){mainTableWrap.classList.add('desktop-data-wrap');mainTableWrap.after(mobileRows);const guide=document.createElement('div');guide.className='data-guide';guide.innerHTML='<strong>浏览提示</strong><span>桌面/平板可在表格容器内左右拖动查看完整字段；手机自动切换为卡片。点击“查看完整字段”可查看全部规格、原始链接与关联采购报价。</span>';mainTableWrap.parentElement.insertBefore(guide,mainTableWrap);}
+if(priceTableWrap){priceTableWrap.classList.add('desktop-price-wrap');priceTableWrap.after(mobilePriceRows);const guide=document.createElement('div');guide.className='data-guide';guide.innerHTML='<strong>价格层说明</strong><span>每张报价卡对应精确 MPN、分销 SKU、平台/地区和阶梯价；裸芯片、模块、缺货参考价与询价保持分开。</span>';priceTableWrap.parentElement.insertBefore(guide,priceTableWrap);}
+if(candidateTableWrap){candidateTableWrap.classList.add('desktop-candidate-wrap');candidateTableWrap.after(mobileCandidateRows);}
+if(sourceTableWrap){sourceTableWrap.classList.add('desktop-source-wrap');sourceTableWrap.after(mobileSourceRows);}
+const display=(v)=>{const s=String(v??'').trim();return s||'未公开';}; const joinDisplay=(...values)=>{const a=values.map(display).filter((v)=>v!=='未公开');return a.length?a.join(' · '):'未公开';};
+function productCard(p){const price=display(p.price_current_best||p.price||'未公开/询价');const offersText=Number(p.price_offer_count)>0?display(p.price_offer_count)+' 条报价 · '+display(p.price_platforms):'暂无独立采购报价';const facts=[['国家/地区',p.vendor_country],['无线分类',p.radio_class],['Wi-Fi',joinDisplay(p.wifi_standard,p.wifi_bands)],['Bluetooth',joinDisplay(p.bluetooth_version,'BLE '+display(p.ble_support),'BLC '+display(p.bt_classic_blc))],['CPU/内存',joinDisplay(p.cpu_core,p.cpu_frequency,'Flash '+display(p.on_chip_flash),'RAM '+display(p.on_chip_sram))],['外设/接口',joinDisplay(p.host_interface,p.peripherals)],['封装/尺寸',joinDisplay(p.package,p.package_size,p.pin_count)],['电源/功耗',joinDisplay(p.power_supply,p.sleep_current,p.tx_current,p.rx_current)]];return '<article class="record-card" data-id="'+esc(p.id)+'"><div class="record-head"><div><span class="record-id">'+esc(p.id)+'</span><h3>'+esc(p.vendor)+' · '+esc(p.model)+'</h3></div><span class="pill ev-'+esc(p.evidence)+'">证据 '+esc(p.evidence)+'</span></div><div class="aux-meta">'+esc(p.status)+' · 上市年份：'+esc(p.launch_year)+' · '+esc(p.entity_type)+'</div><div class="record-facts">'+facts.map((f)=>'<div class="record-fact"><b>'+esc(f[0])+'</b><span>'+esc(f[1])+'</span></div>').join('')+'</div><div class="record-price"><b>当前价格摘要</b><strong>'+esc(price)+'</strong><span>'+esc(offersText)+'</span></div><div class="record-actions"><button type="button" class="card-action" data-detail-id="'+esc(p.id)+'">查看完整字段</button><span class="card-links">'+link(p.official_product_url,'官方')+' '+link(p.datasheet_url,'规格')+' '+link(p.news_url,'新闻')+'</span></div></article>';}
+function priceCard(o){const owner=DATA.products.find((p)=>p.id===o.product_id);const evidence=display(o.evidence);return '<article class="price-card"><div class="price-card-head"><div><span class="record-id">'+esc(o.id)+' · '+esc(o.product_id||'未关联')+'</span><h3>'+esc(o.vendor)+' · '+esc(o.part_number)+'</h3>'+(owner?'<div class="aux-meta">'+esc(owner.model)+'</div>':'')+'</div><span class="pill ev-'+esc(evidence)+'">'+esc(evidence)+'</span></div><div class="price-facts"><div class="price-fact"><b>实体层级/封装</b><span>'+esc(o.entity_level)+' · '+esc(o.package)+'</span></div><div class="price-fact"><b>平台/地区</b><span>'+esc(o.platform)+' · '+esc(o.platform_region)+'</span></div><div class="price-fact"><b>分销 SKU</b><span>'+esc(o.distributor_sku)+'</span></div><div class="price-fact"><b>MOQ/标准包装</b><span>MOQ '+esc(o.minimum_order_qty)+' · '+esc(o.standard_pack_qty)+'</span></div><div class="price-fact"><b>库存/可得性</b><span>'+esc(o.stock_signal)+' · '+esc(o.availability)+'</span></div><div class="price-fact"><b>查证/价格类型</b><span>'+esc(o.checked_on)+' · '+esc(o.price_type)+'</span></div></div><div class="record-price"><b>币种与阶梯价</b><span class="price-breaks">'+formatBreaks(o)+'</span></div><div class="price-actions">'+link(o.url,'打开报价页')+(owner?'<button type="button" class="card-action" data-detail-id="'+esc(owner.id)+'">查看芯片详情</button>':'')+'</div><p class="aux-meta">'+esc(o.notes)+'</p></article>';}
+function candidateCard(c){return '<article class="aux-card"><h3>'+esc(c.vendor)+' · '+esc(c.name)+'</h3><p class="aux-meta">'+esc(c.category)+' · '+esc(c.entity_type)+' · '+esc(c.status)+' · 证据 '+esc(c.evidence)+'</p><p>'+esc(c.reason)+'</p><p class="card-links">'+link(c.url,'打开来源')+' <span>下一步：'+esc(c.next_check)+'</span></p></article>';}
+function sourceCard(s){return '<article class="source-card"><div class="source-meta">'+esc(s.source_group)+' · '+esc(s.source_channel)+' · 质量 '+esc(s.quality)+'</div><h3>'+esc(s.source_domain)+'</h3><p>'+esc(s.source_role)+' · '+esc(s.seller_type)+' · '+esc(s.availability_signal)+'</p><details><summary>查看覆盖范围、价格与来源</summary><p>'+esc(s.scope)+'</p><p>'+esc(s.pledge_or_price)+' · '+esc(s.platform_reference)+' · 查证 '+esc(s.checked_on)+'</p><p>'+link(s.url,'打开来源')+'</p></details></article>';}
+function getFilteredProducts(){const q=low($('search').value),vendor=$('vendor').value,radio=$('radio').value,wifi=$('wifi').value,bt=$('bt').value,ble=$('ble').value,classic=$('classic').value,pricePlatform=$('pricePlatform').value,priceStatus=$('priceStatus').value,evidence=$('evidence').value,status=$('status').value;return DATA.products.filter((p)=>(!q||low(JSON.stringify(p)).includes(q))&&(!vendor||p.vendor===vendor)&&(!radio||p.radio_class===radio)&&(!wifi||p.wifi_support===wifi)&&(!bt||p.bluetooth_version===bt)&&(!ble||p.ble_support===ble)&&(!classic||p.bt_classic_blc===classic)&&(!pricePlatform||String(p.price_platforms||'').split('；').includes(pricePlatform))&&(!priceStatus||p.price_status===priceStatus)&&(!evidence||p.evidence===evidence)&&(!status||p.status===status));}
+function getFilteredOffers(){const q=low($('priceSearch').value),level=$('priceLevel').value,availability=$('priceAvailability').value;return offers.filter((o)=>(!q||low(JSON.stringify(o)).includes(q))&&(!level||o.entity_level===level)&&(!availability||o.availability===availability));}
+function bindResponsiveInteractions(){mobileRows.querySelectorAll('.record-card').forEach((card)=>card.addEventListener('click',(event)=>{if(event.target.closest('a,button'))return;showDetail(card.dataset.id);}));[mobileRows,mobilePriceRows].forEach((root)=>root.querySelectorAll('[data-detail-id]').forEach((button)=>button.addEventListener('click',()=>showDetail(button.dataset.detailId))));}
+function renderResponsiveCards(){mobileRows.innerHTML=getFilteredProducts().map(productCard).join('');mobilePriceRows.innerHTML=getFilteredOffers().map(priceCard).join('');bindResponsiveInteractions();}
+let mobileStaticRendered=false; function renderStaticMobileLists(){if(mobileStaticRendered)return;mobileCandidateRows.innerHTML=DATA.candidates.map(candidateCard).join('');mobileSourceRows.innerHTML=DATA.sources.map(sourceCard).join('');mobileStaticRendered=true;}
+const showDetailBase=showDetail; showDetail=function(id){showDetailBase(id);const detail=$('detail');if(!detail)return;const heading=detail.querySelector('h3');if(!detail.querySelector('.detail-close')){const top=document.createElement('div');top.className='detail-top';if(heading)top.appendChild(heading);const close=document.createElement('button');close.type='button';close.className='detail-close';close.textContent='关闭详情';close.setAttribute('aria-label','关闭芯片详情');close.addEventListener('click',()=>{detail.classList.remove('show');});top.appendChild(close);detail.insertBefore(top,detail.firstChild);}detail.setAttribute('aria-live','polite');}; document.addEventListener('keydown',(event)=>{if(event.key==='Escape')$('detail').classList.remove('show');});
+const renderDesktop=render; render=function(){renderDesktop();renderStaticMobileLists();renderResponsiveCards();};
+function fill(id, values, label){const select=$(id);const current=select.value;select.innerHTML='';const all=document.createElement('option');all.value='';all.textContent=label||'全部';select.appendChild(all);values.forEach((v)=>{const o=document.createElement('option');o.value=v;o.textContent=v;select.appendChild(o);});if(values.includes(current))select.value=current;else select.value='';}
+fill('vendor',uniq('vendor'),'全部厂商'); fill('radio',uniq('radio_class'),'全部无线分类'); fill('bt',uniq('bluetooth_version'),'全部 Bluetooth 版本'); fill('pricePlatform',[...new Set(offers.map((o)=>String(o.platform || '未公开')))].sort((a,b)=>a.localeCompare(b,'zh-CN')),'全部报价平台'); fill('priceStatus',uniq('price_status'),'全部价格状态'); fill('evidence',uniq('evidence'),'全部证据等级'); fill('status',uniq('status'),'全部上市状态'); fill('priceLevel',[...new Set(offers.map((o)=>String(o.entity_level || '未公开')))].sort((a,b)=>a.localeCompare(b,'zh-CN')),'全部实体层级'); fill('priceAvailability',[...new Set(offers.map((o)=>String(o.availability || '未公开')))].sort((a,b)=>a.localeCompare(b,'zh-CN')),'全部可得性'); fill('wifi',['是','不支持','未公开'],'全部 Wi-Fi 支持状态'); fill('ble',['是','不支持','未公开'],'全部 BLE 状态'); fill('classic',['是','不支持','未公开'],'全部 Bluetooth Classic / BLC 状态');
+const isCombo=(p)=>/combo|tri-radio|Bluetooth + 802.15.4|UWB|companion IC|companion IC/i.test(String(p.radio_class)); $('statProducts').textContent=DATA.products.length; $('statVendors').textContent=new Set(DATA.products.map((p)=>p.vendor)).size; $('statWifi').textContent=DATA.products.filter((p)=>String(p.wifi_support).startsWith('是')).length; $('statBt').textContent=DATA.products.filter((p)=>p.ble_support==='是'||p.bt_classic_blc==='是').length; $('statCombo').textContent=DATA.products.filter(isCombo).length; $('statBle').textContent=DATA.products.filter((p)=>p.bluetooth_mode==='BLE-only').length; $('statClassic').textContent=DATA.products.filter((p)=>p.bt_classic_blc==='是').length; $('statCandidates').textContent=DATA.candidates.length; $('statPriceProducts').textContent=DATA.products.filter((p)=>Number(p.price_offer_count)>0).length; $('statBareOffers').textContent=offers.filter((o)=>o.entity_level==='bare_chip').length; $('statPricePlatforms').textContent=new Set(offers.map((o)=>o.platform)).size; $('statNoPrice').textContent=DATA.products.filter((p)=>!Number(p.price_offer_count)).length;
+function formatBreaks(offer){const rows=Array.isArray(offer.price_breaks)?offer.price_breaks:[]; if(!rows.length)return '询价/未公开'; return rows.map((b)=>esc(String(b.min_qty)+'+ '+String(offer.currency||'未公开')+' '+Number(b.unit_price).toFixed(4))).join('<br>')+(offer.price_range?' <br><small>区间：'+esc(offer.price_range)+'</small>':'');}
+function render(){const q=low($('search').value), vendor=$('vendor').value, radio=$('radio').value, wifi=$('wifi').value, bt=$('bt').value, ble=$('ble').value, classic=$('classic').value, pricePlatform=$('pricePlatform').value, priceStatus=$('priceStatus').value, evidence=$('evidence').value, status=$('status').value; const list=DATA.products.filter((p)=>(!q||low(JSON.stringify(p)).includes(q))&&(!vendor||p.vendor===vendor)&&(!radio||p.radio_class===radio)&&(!wifi||p.wifi_support===wifi)&&(!bt||p.bluetooth_version===bt)&&(!ble||p.ble_support===ble)&&(!classic||p.bt_classic_blc===classic)&&(!pricePlatform||String(p.price_platforms||'').split('；').includes(pricePlatform))&&(!priceStatus||p.price_status===priceStatus)&&(!evidence||p.evidence===evidence)&&(!status||p.status===status)); $('shown').textContent=list.length; $('rows').innerHTML=list.map((p)=>'<tr data-id="'+esc(p.id)+'"><td>'+esc(p.id)+'</td><td><b>'+esc(p.vendor)+'</b><br>'+esc(p.model)+'</td><td>'+esc(p.family)+'<br><small>'+esc(p.entity_type)+'</small></td><td>'+esc(p.vendor_country)+'</td><td>'+esc(p.radio_class)+'</td><td>'+esc(p.status)+'</td><td><span class="pill ev-'+esc(p.evidence)+'">'+esc(p.evidence)+'</span></td><td>'+esc(p.launch_year)+'</td><td>'+esc(p.wifi_standard)+'<br>'+esc(p.wifi_bands)+'</td><td>'+esc(p.bluetooth_version)+'<br>BLE: '+esc(p.ble_support)+'<br>BLC: '+esc(p.bt_classic_blc)+'</td><td>'+esc(p.cpu_core)+'<br>'+esc(p.cpu_frequency)+'<br>Flash: '+esc(p.on_chip_flash)+'<br>RAM: '+esc(p.on_chip_sram)+'</td><td>'+esc(p.peripherals)+'<br>'+esc(p.host_interface)+'</td><td>'+esc(p.package)+'<br>'+esc(p.package_size)+'<br>'+esc(p.pin_count)+'</td><td>'+esc(p.price_current_best||p.price)+'<br>'+esc(p.price_type)+'</td><td>'+link(p.official_product_url,'官方')+'<br>'+link(p.datasheet_url,'规格')+'<br>'+link(p.news_url,'新闻')+'</td></tr>').join(''); document.querySelectorAll('#rows tr').forEach((tr)=>tr.addEventListener('click',()=>showDetail(tr.dataset.id)));
+const priceQ=low($('priceSearch').value), priceLevel=$('priceLevel').value, priceAvailability=$('priceAvailability').value; const shownOffers=offers.filter((o)=>(!priceQ||low(JSON.stringify(o)).includes(priceQ))&&(!priceLevel||o.entity_level===priceLevel)&&(!priceAvailability||o.availability===priceAvailability)); $('priceShown').textContent=shownOffers.length; $('priceRows').innerHTML=shownOffers.map((o)=>{const owner=DATA.products.find((p)=>p.id===o.product_id); return '<tr><td>'+esc(o.id)+'</td><td>'+esc(o.product_id||'未关联')+'</td><td><b>'+esc(o.vendor)+'</b><br>'+esc(o.part_number)+(owner?'<br><small>'+esc(owner.model)+'</small>':'')+'</td><td>'+esc(o.entity_level)+'</td><td>'+esc(o.package)+'</td><td>'+esc(o.platform)+'<br>'+esc(o.platform_region)+'</td><td>'+esc(o.distributor_sku)+'</td><td class="price-breaks">'+formatBreaks(o)+'</td><td>MOQ：'+esc(o.minimum_order_qty)+'<br>标准包装：'+esc(o.standard_pack_qty)+'</td><td>'+esc(o.stock_signal)+'<br>'+esc(o.availability)+'</td><td>'+esc(o.price_type)+'</td><td>'+link(o.url,'打开报价页')+'<br><small>'+esc(o.source_id)+'</small></td><td>'+esc(o.checked_on)+'</td><td>'+esc(o.notes)+'</td></tr>';}).join('');}
+function showDetail(id){const p=DATA.products.find((x)=>x.id===id);if(!p)return; const linked=offers.filter((o)=>o.product_id===p.id); const offerHtml=linked.length?'<h4>关联采购报价</h4><div class="table-wrap"><table class="small-table price-table"><thead><tr><th>平台/精确 SKU</th><th>实体层级</th><th>币种/阶梯价</th><th>库存/可得性</th><th>来源</th></tr></thead><tbody>'+linked.map((o)=>'<tr><td>'+esc(o.platform)+'<br>'+esc(o.part_number)+'<br>'+esc(o.distributor_sku)+'</td><td>'+esc(o.entity_level)+'</td><td>'+formatBreaks(o)+'</td><td>'+esc(o.stock_signal)+'<br>'+esc(o.availability)+'</td><td>'+link(o.url,'打开报价页')+'</td></tr>').join('')+'</tbody></table></div>':'<p class="price-note">当前没有独立采购报价快照；价格字段保持“未公开/询价”，请勿用模块或开发板价格替代。</p>'; $('detail').innerHTML='<h3>'+esc(p.vendor+'｜'+p.model)+'</h3><div class="detail-grid">'+DETAIL_FIELDS.map((x)=>'<div class="detail-item"><b>'+esc(x[1])+'</b><span>'+esc(x[0]==='checked_on'?DATA.checked_on:p[x[0]])+'</span></div>').join('')+'</div><p>'+link(p.official_product_url,'打开官方产品页')+'　'+link(p.datasheet_url,'打开规格书/简报')+'　'+link(p.news_url,'打开新闻/发布')+'　'+link(p.distributor_url,'打开分销/价格页')+'</p>'+offerHtml; $('detail').classList.add('show'); $('detail')}
+ $('candidateRows').innerHTML=DATA.candidates.map((c)=>'<tr><td><b>'+esc(c.vendor)+'</b><br>'+esc(c.name)+'</td><td>'+esc(c.category)+'<br>'+esc(c.entity_type)+'<br>'+esc(c.status)+'<br><span class="pill ev-'+esc(c.evidence)+'">'+esc(c.evidence)+'</span></td><td>'+esc(c.reason)+'</td><td>'+link(c.url,'打开来源')+'</td><td>'+esc(c.next_check)+'</td></tr>').join(''); $('sourceRows').innerHTML=DATA.sources.map((s)=>'<tr><td>'+esc(s.source_group)+'</td><td>'+esc(s.source_channel)+'</td><td>'+esc(s.source_role)+'</td><td>'+esc(s.source_domain)+'</td><td>'+esc(s.seller_type)+'</td><td>'+esc(s.availability_signal)+'</td><td>'+esc(s.pledge_or_price)+'<br>'+esc(s.platform_reference)+'</td><td>'+link(s.url,'打开来源')+'</td><td>'+esc(s.scope)+'</td><td>'+esc(s.checked_on)+'</td><td>'+esc(s.quality)+'</td></tr>').join(''); $('method').textContent=DATA.methodology+'\n\n'+DATA.scope_note+'\n\n'+DATA.interpretation_note; $('fieldRows').innerHTML=DATA.field_rules.map((r)=>'<tr><td>'+esc(r[0])+'</td><td>'+esc(r[1])+'</td></tr>').join(''); $('updates').innerHTML=(DATA.update_log||[]).map((u)=>'<p><b>'+esc(u.date)+'</b>　'+esc(u.change)+'<br><b>核验：</b>'+esc(u.verification)+'<br><b>下一步：</b>'+esc(u.next)+'</p>').join(''); $('channelRows').innerHTML=(DATA.source_channel_policy||[]).map((p)=>'<tr><td>'+esc(p.label)+'<br><code>'+esc(p.channel)+'</code></td><td>'+esc(p.priority)+'</td><td>'+esc(p.use)+'</td></tr>').join(''); ['search','vendor','radio','wifi','bt','ble','classic','pricePlatform','priceStatus','evidence','status'].forEach((id)=>$(id).addEventListener(id==='search'?'input':'change',render)); ['priceSearch'].forEach((id)=>$(id).addEventListener('input',render)); ['priceLevel','priceAvailability'].forEach((id)=>$(id).addEventListener('change',render)); 
+/* catalog-ui-inplace-detail-v1 */
+(function(){
+  const __detail=document.getElementById('detail');
+  if(!__detail || typeof showDetail!=='function' || typeof render!=='function') return;
+  const __originalShowDetail=showDetail;
+  const __originalRender=render;
+  const __originalParent=__detail.parentNode;
+  let __placeholder=null;
+  let __detailRow=null;
+  let __anchor=null;
+  let __activeId=null;
+  function __visible(node){return !!node && node.getClientRects().length>0;}
+  function __findAnchor(id){
+    const nodes=Array.from(document.querySelectorAll('#rows tr[data-id],.record-card[data-id]'));
+    return nodes.find(function(node){return node.dataset.id===id && __visible(node)}) || nodes.find(function(node){return node.dataset.id===id}) || null;
+  }
+  function __restoreDetail(){
+    if(__anchor) __anchor.removeAttribute('aria-expanded');
+    if(__detailRow && __detailRow.parentNode) __detailRow.parentNode.removeChild(__detailRow);
+    if(__placeholder && __placeholder.parentNode){
+      __placeholder.parentNode.insertBefore(__detail,__placeholder);
+      __placeholder.parentNode.removeChild(__placeholder);
+    } else if(__originalParent && !__detail.parentNode){
+      __originalParent.appendChild(__detail);
+    }
+    __placeholder=null;
+    __detailRow=null;
+    __anchor=null;
+  }
+  function __ensureClose(){
+    if(__detail.querySelector('.detail-close,.catalog-detail-close')) return;
+    const heading=__detail.querySelector('h3');
+    const top=document.createElement('div');
+    top.className='catalog-detail-top';
+    if(heading) top.appendChild(heading);
+    const button=document.createElement('button');
+    button.type='button';
+    button.className='catalog-detail-close';
+    button.textContent='关闭详情';
+    button.setAttribute('aria-label','关闭当前详情');
+    top.appendChild(button);
+    __detail.insertBefore(top,__detail.firstChild);
+  }
+  function __mountDetail(anchor){
+    if(!anchor || !__detail.parentNode) return;
+    __placeholder=document.createComment('catalog detail placeholder');
+    __detail.parentNode.insertBefore(__placeholder,__detail.nextSibling);
+    if(anchor.tagName==='TR'){
+      __detailRow=document.createElement('tr');
+      __detailRow.className='catalog-detail-row';
+      const cell=document.createElement('td');
+      const table=anchor.closest('table');
+      cell.colSpan=(table && table.tHead && table.tHead.rows[0] && table.tHead.rows[0].cells.length) || anchor.cells.length || 1;
+      __detailRow.appendChild(cell);
+      cell.appendChild(__detail);
+      anchor.parentNode.insertBefore(__detailRow,anchor.nextSibling);
+    } else {
+      anchor.parentNode.insertBefore(__detail,anchor.nextSibling);
+    }
+    __detail.classList.add('show');
+    __detail.setAttribute('aria-live','polite');
+    anchor.setAttribute('aria-expanded','true');
+    __anchor=anchor;
+  }
+  function __closeDetail(){
+    const x=window.scrollX;
+    const y=window.scrollY;
+    __activeId=null;
+    __restoreDetail();
+    __detail.classList.remove('show');
+    window.scrollTo(x,y);
+  }
+  function __filterFields(root){
+    return Array.from(root.querySelectorAll('input,select,textarea'));
+  }
+  function __updateFilterStates(){
+    document.querySelectorAll('.controls').forEach(function(root){
+      const state=root.querySelector('.catalog-filter-state');
+      if(!state) return;
+      const count=__filterFields(root).filter(function(field){return String(field.value||'').trim()!=='';}).length;
+      state.textContent=count ? '已启用 '+count+' 项筛选' : '当前未筛选 · 显示全部';
+    });
+  }
+  function __installClearButtons(){
+    document.querySelectorAll('.controls').forEach(function(root){
+      const fields=__filterFields(root);
+      if(!fields.length) return;
+      let button=root.querySelector('.catalog-clear-filters');
+      if(!button){
+        button=document.createElement('button');
+        button.type='button';
+        button.className='catalog-clear-filters';
+        button.textContent='显示全部';
+        button.setAttribute('aria-label','清除本组筛选并显示全部数据');
+        button.title='清除本组筛选并显示全部数据';
+        root.appendChild(button);
+        button.addEventListener('click',function(event){
+          event.preventDefault();
+          const x=window.scrollX;
+          const y=window.scrollY;
+          fields.forEach(function(field){field.value='';});
+          render();
+          window.scrollTo(x,y);
+        });
+      }
+      let state=root.querySelector('.catalog-filter-state');
+      if(!state){
+        state=document.createElement('span');
+        state.className='catalog-filter-state';
+        state.setAttribute('aria-live','polite');
+        root.appendChild(state);
+      }
+    });
+    __updateFilterStates();
+  }
+  function __resetFilterDefaults(){
+    document.querySelectorAll('.controls input,.controls select,.controls textarea').forEach(function(field){field.value='';});
+  }
+  showDetail=function(id){
+    const x=window.scrollX;
+    const y=window.scrollY;
+    if(__activeId===id && __detail.classList.contains('show')){
+      __closeDetail();
+      return;
+    }
+    __restoreDetail();
+    __originalShowDetail(id);
+    __ensureClose();
+    const anchor=__findAnchor(id);
+    if(anchor){
+      __mountDetail(anchor);
+      __activeId=id;
+    }
+    window.scrollTo(x,y);
+  };
+  render=function(){
+    const savedId=__activeId;
+    const x=window.scrollX;
+    const y=window.scrollY;
+    __restoreDetail();
+    __originalRender();
+    __bindRows();
+    if(savedId){
+      const anchor=__findAnchor(savedId);
+      if(anchor){
+        __originalShowDetail(savedId);
+        __ensureClose();
+        __mountDetail(anchor);
+        __activeId=savedId;
+      } else {
+        __activeId=null;
+        __detail.classList.remove('show');
+      }
+    }
+    __updateFilterStates();
+    window.scrollTo(x,y);
+  };
+  __detail.addEventListener('click',function(event){
+    if(event.target.closest('.detail-close,.catalog-detail-close')){
+      event.preventDefault();
+      __closeDetail();
+    }
+  });
+  document.addEventListener('keydown',function(event){
+    if(event.key==='Escape' && __detail.classList.contains('show')) __closeDetail();
+  });
+  function __isFilterTarget(target){
+    return !!target && !!target.matches && target.matches('input,select,textarea') && (target.id==='search' || !!target.closest('.controls'));
+  }
+  function __handleFilterEvent(event){
+    if(!__isFilterTarget(event.target)) return;
+    event.stopImmediatePropagation();
+    render();
+  }
+  document.addEventListener('input',__handleFilterEvent,true);
+  document.addEventListener('change',__handleFilterEvent,true);
+  function __bindRows(){
+    document.querySelectorAll('#rows tr[data-id]').forEach(function(row){
+      if(row.dataset.catalogUiBound) return;
+      row.dataset.catalogUiBound='1';
+      row.tabIndex=0;
+      row.addEventListener('keydown',function(event){
+        if(event.target.closest('a,button')) return;
+        if(event.key==='Enter' || event.key===' '){event.preventDefault();showDetail(row.dataset.id);}
+      });
+    });
+    const rowsBody=document.getElementById('rows');
+    if(rowsBody && !rowsBody.dataset.catalogUiLinksBound){
+      rowsBody.dataset.catalogUiLinksBound='1';
+      rowsBody.addEventListener('click',function(event){
+        if(event.target.closest('#detail')) return;
+        if(event.target.closest('a,button')) event.stopPropagation();
+      },true);
+    }
+  }
+  __resetFilterDefaults();
+  __installClearButtons();
+  __bindRows();
+})();
+
+render();
+  } catch (error) {
+    document.body.innerHTML = '<main style="font:16px system-ui;padding:2rem">Wi‑Fi / Bluetooth 芯片数据加载失败：' + String(error?.message || error) + '</main>';
+  }
+})();
+</script></body></html>

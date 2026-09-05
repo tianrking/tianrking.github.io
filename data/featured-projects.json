@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-05T02:59:22.949Z",
+  "source": "GitHub public REST API",
+  "staleRepositories": [],
+  "projects": [
+    {
+      "id": "proxychains-rs",
+      "title": "proxychains-rs",
+      "summary": "以 Rust 重寫的跨平台 process-level proxy chaining，涵蓋 Linux、macOS 與 Windows。",
+      "category": "Infrastructure",
+      "status": "Active",
+      "tags": [
+        "Rust",
+        "Networking",
+        "Cross-platform"
+      ],
+      "github": {
+        "url": "https://github.com/tianrking/proxychains-rs",
+        "stars": 262,
+        "forks": 13,
+        "languages": [
+          "Rust"
+        ],
+        "latestRelease": {
+          "name": "v0.0.10",
+          "tag": "v0.0.10",
+          "publishedAt": "2026-03-20T10:55:01Z",
+          "url": "https://github.com/tianrking/proxychains-rs/releases/tag/v0.0.10"
+        },
+        "latestPushAt": "2026-03-20T10:58:40Z",
+        "stale": false
+      },
+      "repositories": [
+        {
+          "owner": "tianrking",
+          "name": "proxychains-rs",
+          "label": null,
+          "fullName": "tianrking/proxychains-rs",
+          "url": "https://github.com/tianrking/proxychains-rs",
+          "description": null,
+          "isPrivate": false,
+          "isFork": false,
+          "isArchived": false,
+          "stars": 262,
+          "forks": 13,
+          "primaryLanguage": "Rust",
+          "license": null,
+          "defaultBranch": "main",
+          "pushedAt": "2026-03-20T10:58:40Z",
+          "latestRelease": {
+            "name": "v0.0.10",
+            "tag": "v0.0.10",
+            "publishedAt": "2026-03-20T10:55:01Z",
+            "url": "https://github.com/tianrking/proxychains-rs/releases/tag/v0.0.10"
+          },
+          "stale": false
+        }
+      ]
+    },
+    {
+      "id": "edge-mirror",
+      "title": "EdgeMirror",
+      "summary": "建構於 Cloudflare Workers 的唯讀、無快取軟體倉庫與開發資源邊緣鏡像閘道。",
+      "category": "Infrastructure",
+      "status": "Active",
+      "tags": [
+        "Cloudflare Workers",
+        "Edge",
+        "Mirrors"
+      ],
+      "github": {
+        "url": "https://github.com/tianrking/EdgeMirror",
+        "stars": 260,
+        "forks": 41,
+        "languages": [
+          "JavaScript"
+        ],
+        "latestRelease": null,
+        "latestPushAt": "2026-08-11T17:01:46Z",
+        "stale": false
+      },
+      "repositories": [
+        {
+          "owner": "tianrking",
+          "name": "EdgeMirror",
+          "label": null,
+          "fullName": "tianrking/EdgeMirror",
+          "url": "https://github.com/tianrking/EdgeMirror",
+          "description": null,
+          "isPrivate": false,
+          "isFork": false,
+          "isArchived": false,
+          "stars": 260,
+          "forks": 41,
+          "primaryLanguage": "JavaScript",
+          "license": null,
+          "defaultBranch": "main",
+          "pushedAt": "2026-08-11T17:01:46Z",
+          "latestRelease": null,
+          "stale": false
+        }
+      ]
+    },
+    {
+      "id": "dm-gripper",
+      "title": "DM Gripper Control",
+      "summary": "透過 Python、WebSocket 與 React 即時控制 DM-J4310-2EC 馬達的夾爪控制台。",
+      "category": "Robotics",
+      "status": "Active",
+      "tags": [
+        "Robotics",
+        "Python",
+        "React",
+        "WebSocket"
+      ],
+      "github": {
+        "url": "https://github.com/tianrking/DM_Gripper",
+        "stars": 14,
+        "forks": 3,
+        "languages": [
+          "Python"
+        ],
+        "latestRelease": null,
+        "latestPushAt": "2025-11-16T14:05:03Z",
+        "stale": false
+      },
+      "repositories": [
+        {
+          "owner": "tianrking",
+          "name": "DM_Gripper",
+          "label": null,
+          "fullName": "tianrking/DM_Gripper",
+          "url": "https://github.com/tianrking/DM_Gripper",
+          "description": null,
+          "isPrivate": false,
+          "isFork": false,
+          "isArchived": false,
+          "stars": 14,
+          "forks": 3,
+          "primaryLanguage": "Python",
+          "license": null,
+          "defaultBranch": "main",
+          "pushedAt": "2025-11-16T14:05:03Z",
+          "latestRelease": null,
+          "stale": false
+        }
+      ]
+    },
+    {
+      "id": "secure-element-lab",
+      "title": "Secure Element Lab",
+      "summary": "在 Nordic nRF54LM20 與 ESP32-H2 上驗證 NXP SE05x、T=1 over I2C、SCP03 與可移植安全元件堆疊。",
+      "category": "Embedded Security",
+      "status": "Bench verified",
+      "tags": [
+        "nRF54",
+        "ESP32-H2",
+        "NXP SE05x",
+        "SCP03"
+      ],
+      "github": {
+        "url": "https://github.com/tianrking/nrf54lm20-se05x-ncs",
+        "stars": 0,
+        "forks": 0,
+        "languages": [
+          "C"
+        ],
+        "latestRelease": null,
+        "latestPushAt": "2026-06-15T12:04:11Z",
+        "stale": false
+      },
+      "repositories": [
+        {
+          "owner": "tianrking",
+          "name": "nrf54lm20-se05x-ncs",
+          "label": "Nordic NCS",
+          "fullName": "tianrking/nrf54lm20-se05x-ncs",
+          "url": "https://github.com/tianrking/nrf54lm20-se05x-ncs",
+          "description": null,
+          "isPrivate": false,
+          "isFork": false,
+          "isArchived": false,
+          "stars": 0,
+          "forks": 0,
+          "primaryLanguage": "C",
+          "license": null,
+          "defaultBranch": "main",
+          "pushedAt": "2026-06-15T12:04:11Z",
+          "latestRelease": null,
+          "stale": false
+        },
+        {
+          "owner": "tianrking",
+          "name": "esp32-se05x-idf",
+          "label": "ESP-IDF",
+          "fullName": "tianrking/esp32-se05x-idf",
+          "url": "https://github.com/tianrking/esp32-se05x-idf",
+          "description": null,
+          "isPrivate": false,
+          "isFork": false,
+          "isArchived": false,
+          "stars": 0,
+          "forks": 0,
+          "primaryLanguage": "C",
+          "license": null,
+          "defaultBranch": "main",
+          "pushedAt": "2026-06-15T06:09:22Z",
+          "latestRelease": null,
+          "stale": false
+        }
+      ]
+    },
+    {
+      "id": "marcato",
+      "title": "Marcato",
+      "summary": "支援圖表、分享、匯出、GitHub 匯入與行動閱讀流程的 browser-first Markdown studio。",
+      "category": "Developer Tools",
+      "status": "Active",
+      "tags": [
+        "TypeScript",
+        "React",
+        "Markdown",
+        "PWA"
+      ],
+      "github": {
+        "url": "https://github.com/tianrking/Marcato",
+        "stars": 2,
+        "forks": 0,
+        "languages": [
+          "TypeScript"
+        ],
+        "latestRelease": null,
+        "latestPushAt": "2026-09-03T03:08:47Z",
+        "stale": false
+      },
+      "repositories": [
+        {
+          "owner": "tianrking",
+          "name": "Marcato",
+          "label": null,
+          "fullName": "tianrking/Marcato",
+          "url": "https://github.com/tianrking/Marcato",
+          "description": null,
+          "isPrivate": false,
+          "isFork": false,
+          "isArchived": false,
+          "stars": 2,
+          "forks": 0,
+          "primaryLanguage": "TypeScript",
+          "license": null,
+          "defaultBranch": "main",
+          "pushedAt": "2026-09-03T03:08:47Z",
+          "latestRelease": null,
+          "stale": false
+        }
+      ]
+    },
+    {
+      "id": "particle-pair",
+      "title": "ParticlePair",
+      "summary": "以旋轉星系同時提供人類可感知配對提示與相機可驗證光學訊框的互動實驗。",
+      "category": "Experiments",
+      "status": "Experimental",
+      "tags": [
+        "TypeScript",
+        "Computer Vision",
+        "Interaction"
+      ],
+      "github": {
+        "url": "https://github.com/tianrking/ParticlePair",
+        "stars": 3,
+        "forks": 0,
+        "languages": [
+          "TypeScript"
+        ],
+        "latestRelease": null,
+        "latestPushAt": "2026-09-03T04:41:04Z",
+        "stale": false
+      },
+      "repositories": [
+        {
+          "owner": "tianrking",
+          "name": "ParticlePair",
+          "label": null,
+          "fullName": "tianrking/ParticlePair",
+          "url": "https://github.com/tianrking/ParticlePair",
+          "description": null,
+          "isPrivate": false,
+          "isFork": false,
+          "isArchived": false,
+          "stars": 3,
+          "forks": 0,
+          "primaryLanguage": "TypeScript",
+          "license": "NOASSERTION",
+          "defaultBranch": "main",
+          "pushedAt": "2026-09-03T04:41:04Z",
+          "latestRelease": null,
+          "stale": false
+        }
+      ]
+    }
+  ]
+}

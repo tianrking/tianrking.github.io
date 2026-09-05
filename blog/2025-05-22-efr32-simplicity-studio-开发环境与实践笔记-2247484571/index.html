@@ -1,0 +1,396 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>EFR32 (Simplicity Studio) 开发环境与实践笔记 | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2025-05-22-efr32-simplicity-studio-开发环境与实践笔记-2247484571 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="EFR32 (Simplicity Studio) 开发环境与实践笔记 | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《EFR32 (Simplicity Studio) 开发环境与实践笔记》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《EFR32 (Simplicity Studio) 开发环境与实践笔记》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2025-05-22T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2025-05-22-efr32-simplicity-studio-开发环境与实践笔记-2247484571 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-05-22-efr32-simplicity-studio-开发环境与实践笔记-2247484571 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-05-22-efr32-simplicity-studio-开发环境与实践笔记-2247484571 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2025-05-22-efr32-simplicity-studio-开发环境与实践笔记-2247484571","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2025-05-22T00:00:00.000Z","description":"从微信公众号导入的文章《EFR32 (Simplicity Studio) 开发环境与实践笔记》，保留原始排版图并提供本地 OCR 转写。","headline":"EFR32 (Simplicity Studio) 开发环境与实践笔记","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2025-05-22-efr32-simplicity-studio-开发环境与实践笔记-2247484571","name":"EFR32 (Simplicity Studio) 开发环境与实践笔记","url":"https://w0x7ce.eu/blog/2025-05-22-efr32-simplicity-studio-开发环境与实践笔记-2247484571"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>EFR32 (Simplicity Studio) 开发环境与实践笔记</h1><div class="container_mt6G margin-vert--md"><time datetime=2025-05-22T00:00:00.000Z>2025年5月22日</time> · <!-- -->閱讀時間約 15 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2025-05-22 18:58:38（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247484571&idx=1&sn=4e218b6b1d1e23c1b9f20f29da083a1c&chksm=96e11131a19698279444f4293efea6b0d017579f8c854b7a3538ce2149e4fcc6d563c277e3b0#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 8119 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>original wex7ce EI V1ajero 2025年5月22日 18:58 中国垂港</p>
+<p>引言<!-- -->:EFR32<!-- -->系列无线SoC概览
+SiliconLabs的EFR32系列无线片上系统(SoC)是专为现代物联网(IoT)应用设计
+的核心处理单元。这些SoC的关键特点在于其高性能、低功耗、以及强大的多协议无线连接能
+力。EFR32 系列通常集成了一个强大的ARM Cortex-M 系列微控制器核心(如 Cortex-
+M33或Cortex-M4),并配备了丰富的片上外设,包括多种通信接口{USART,I2C,
+SPI)、模拟组件(ADC,DAC)、以及多样化的定时器和脉冲宽度调制(PWM)通道。其突出的
+无线性能支持包括蓝牙低功耗(BLE)、蓝牙Mesh、Zigbee、Thread、Wi-SUN以及专有无
+线协议等多种标准,部分型号甚至支持多协议并发操作。此外,EFR32系列非常注重能源效
+率,提供了多种低功耗模式和快速唤醒机制,使其非常适合电池供电的IoT设备。针对日益增
+长的IoT安全需求,较新的 EFR32 系列还集成了先进的硬件安全功能,如 Secure
+Vault”技术,提供安全启动、加密加速、真随机数生成器和安全调试等特性。正是由于
+EFR32SoC这种高度集成、多功能、多协议以及对低功耗和安全性的极致追求,使得其开发需
+要一个同样强大且高效的集成开发环境,这侵是SimpLicity Studio存在的必要性一它旨
+在简化这种复杂系统的配置和应用开发。
+EFR32MG22 Common Specs
+Loa Power Wrdess 5yitem-n-chp
+Wide Bdectionof HCU Peripherh
+Protoee Buppert</p>
+<p>Bads Parfernarce
+slusgupeodo opM
+1224s 94y @2* 4p 0F5</p>
+<ul>
+<li class="">11Ve3Yarg*po pp</li>
+</ul>
+<p>2dseshb 1Veis u3s
+4°Cb 2
+Pockogu*
+: 024<em>4</em>05
+IsErhur
+: TOFN24mm *4mm 1.30mm
+Seerity Feetures
+282Ginter
+Loa 5yatem Errgy Cenanpthn
+podins ergn2 4iu ive
+UM)
+M022
+36mARxoueK(1MpsGFS)
+19nA FX we (2M ap1 0-0PSH D089)
+an Rot elTuat adi Sw
+g/nve2 1-s
+22nATX czment g dcnx4 powr
+25 gAMHs inAdivw Msds (EV0) xi34VHtc</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=144-paev2-doap>1.44 pA.EV2 Doap<a href=#144-paev2-doap class=hash-link aria-label="1.44 pA.EV2 Doap的直接連結" title="1.44 pA.EV2 Doap的直接連結" translate=no>​</a></h3>
+<p>yyerpou payedeg
+ECOH
+vienden endRTC urshg fen UWCOy</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=017-μaem-sem>0.17 μAEM sEM<a href=#017-μaem-sem class=hash-link aria-label="0.17 μAEM sEM的直接連結" title="0.17 μAEM sEM的直接連結" translate=no>​</a></h3>
+<p>DSSS
+ARIMS
+AE512925,
+1 E021 tb24-1, E003A,rd
+x (TRNO)</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一simplicitystudioide与开发方式概览>一、SimplicityStudioIDE与开发方式概览<a href=#一simplicitystudioide与开发方式概览 class=hash-link aria-label=一、SimplicityStudioIDE与开发方式概览的直接連結 title=一、SimplicityStudioIDE与开发方式概览的直接連結 translate=no>​</a></h2>
+<p>Silicon Labs(Silabs)为其EFR32 系列无线SoC提供的主要集成开发环境
+是SimplicityStudio,这是一个基于Eclipse 的多功能平台,其核心设计理念在于高度
+集成、组件化管理以及配置驱动开发。目标是简化日益复杂的物联网(IoT)应用开发,使开发
+者能够通过图形化工具快速搭建和配置项目,同时保持对底层硬件的控制能力。
+与一些传统嵌入式开发流程不同,Simplicity Studio强调以一个中心化的项目配置文件
+(通需是.sLcp文件)来驱动整个项目的构建。这个文件记录了项目所依赖的SDK版本、
+目标芯片、已安装的软件组件(Software Companents)、引脚分配、外设参数配置等关键
+信息。当开发者通过图形界面修改这些配置并保存时,IDE会自动生成或更新相关的底层配置
+文件和初始化代码,开发者则在这些自动生成的基础上编写应用逻辑。
+主要特点:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1软件组件software-components提供大量预制验的驱动协议栈模块服务和第三方>1.软件组件(Software Components):提供大量预制验的驱动、协议栈模块、服务和第三方<a href=#1软件组件software-components提供大量预制验的驱动协议栈模块服务和第三方 class=hash-link aria-label="1.软件组件(Software Components):提供大量预制验的驱动、协议栈模块、服务和第三方的直接連結" title="1.软件组件(Software Components):提供大量预制验的驱动、协议栈模块、服务和第三方的直接連結" translate=no>​</a></h2>
+<p>库,开发者可以按需“安装“到项目中。IDE会处理组件间的依赖关系。</p>
+<p>@</p>
+<p>@</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2引即工具pin-tool图形化界面用于将芯片的物理引脚分配给特定的外设功能如>2.引即工具(Pin Tool):图形化界面,用于将芯片的物理引脚分配给特定的外设功能(如<a href=#2引即工具pin-tool图形化界面用于将芯片的物理引脚分配给特定的外设功能如 class=hash-link aria-label="2.引即工具(Pin Tool):图形化界面,用于将芯片的物理引脚分配给特定的外设功能(如的直接連結" title="2.引即工具(Pin Tool):图形化界面,用于将芯片的物理引脚分配给特定的外设功能(如的直接連結" translate=no>​</a></h2>
+<p>USART TX/RX,PWM 输出,I2C SCL/SDA,GPI0 中断等),并能检查引脚冲突。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3外设配置器针对已选用的外设如timerusartadci2c进行详细参数配置>3.外设配置器:针对已选用的外设(如TIMER,USART,ADC,I2C)进行详细参数配置<a href=#3外设配置器针对已选用的外设如timerusartadci2c进行详细参数配置 class=hash-link aria-label=3.外设配置器:针对已选用的外设(如TIMER,USART,ADC,I2C)进行详细参数配置的直接連結 title=3.外设配置器:针对已选用的外设(如TIMER,USART,ADC,I2C)进行详细参数配置的直接連結 translate=no>​</a></h2>
+<p>(如时钟源、波特率、PWM频率、ADC分辨率等)。</p>
+<p>Ifedl</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1代码生成基于上述配置自动生成初始化代强配置文件头如sl_conponent_catalo>1.代码生成:基于上述配置,自动生成初始化代强、配置文件头(如sl_conponent_catalo<a href=#1代码生成基于上述配置自动生成初始化代强配置文件头如sl_conponent_catalo class=hash-link aria-label=1.代码生成:基于上述配置,自动生成初始化代强、配置文件头(如sl_conponent_catalo的直接連結 title=1.代码生成:基于上述配置,自动生成初始化代强、配置文件头(如sl_conponent_catalo的直接連結 translate=no>​</a></h2>
+<p>g.h,定义项目中包含的组件)以及外设实例文件(如sL_pMm_Instances.h)。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5集成工具糙内置编译器gccarm调试卷gdb-和-silabs-j-linkstk-调试接>5.集成工具糙:内置编译器(GCCARM)、调试卷(GDB 和 Silabs J-Link/STK 调试接<a href=#5集成工具糙内置编译器gccarm调试卷gdb-和-silabs-j-linkstk-调试接 class=hash-link aria-label="5.集成工具糙:内置编译器(GCCARM)、调试卷(GDB 和 Silabs J-Link/STK 调试接的直接連結" title="5.集成工具糙:内置编译器(GCCARM)、调试卷(GDB 和 Silabs J-Link/STK 调试接的直接連結" translate=no>​</a></h2>
+<p>口)、功耗分析器(Energy Prof1ler)和网络分析器(Network Analyzer)。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=二与其他平台开发方式的对比>二、与其他平台开发方式的对比<a href=#二与其他平台开发方式的对比 class=hash-link aria-label=二、与其他平台开发方式的对比的直接連結 title=二、与其他平台开发方式的对比的直接連結 translate=no>​</a></h2>
+<p>理解SinplicityStudio的开发方式,可以通过与其他流行平台的对比来加深:</p>
+<ul>
+<li class="">
+<p>对比 STM32 (STM32CubeMX / STM32CubeIDE):</p>
+</li>
+<li class="">
+<p>配置起点与流程<!-- -->:STM32CubeMX<!-- -->通常是项目开始的第一步,用于图形化配置MCU的</p>
+</li>
+</ul>
+<p>时钟、外设、引脚和中间件,然后生成一个包含初始化代码的项目框架。开发者基于此框
+架漆加应用逐辑。其流程更偏向于“先配置,后编码,配置基本一次性生成”。</p>
+<ul>
+<li class="">SimpLicity Studio的.slcp文件则在项目的整个生命周期中都扮演着核心角</li>
+</ul>
+<p>色。开发者可以随时通过它调整组件和配置,IDE会动态更新相关代码。启动项目时,
+通常会基于一个示例或模板,然后在其上进行修改和配置。</p>
+<ul>
+<li class="">IDE集成<!-- -->:STM32CubeIDE<!-- --> 将CubeMX 的功能集成到了Eclipse 环境中,体验上</li>
+</ul>
+<p>与 Simplicity Studio 有相似之处,但CubeMX 本身也可以作为独立工具配合其
+他IDE(如 Keil,IAR)使用。Simplicity Studio 则是—个更为封闭和统一的
+生态系统。</p>
+<ul>
+<li class="">HAL/驱动层: STM32 提供 HAL (Hardware Abstraction Layer) 和 LL (Low-</li>
+</ul>
+<p>Layer)驱动.S1labs 提供sl_系列高层 API 和 enlib底层库,概念上类
+似,但具体实现和API风格不同</p>
+<ul>
+<li class="">
+<p>对比 Texas Instruments (TI - 如 Code Composer Studio+ SysConfig):</p>
+</li>
+<li class="">
+<p>TI 的 SysConfig 工具与 Simplicity Studio 的配置理念有诸多相似之处,它也</p>
+</li>
+</ul>
+<p>是一个图形化配置工具,用于配置驱动程序、外设、引脚和软件栈,并生成相应的C代
+码。SysConfig 通需与 TI 的 Code Composer Studio {CCS) IDE 配合使用。</p>
+<ul>
+<li class="">两者都强调通过工具篱化底层配置,让开发者专注于应用,SysConfig的组件化思提也</li>
+</ul>
+<p>比较突出。其设计思路在于提供一个清晰的配置层,减少手动编写初始化代码的需要,与
+Simpl1city Stud1o通过,slcp文件管理组件和配置的思路有共通之处。</p>
+<ul>
+<li class="">
+<p>对比 Espressif (ESP32 - ESP-IDF):</p>
+</li>
+<li class="">
+<p>ESP32 的开发主要依赖 ESP-IDF (Espressif IoT Development</p>
+</li>
+</ul>
+<p>Franework),这是一个基于FreeRTOS 和lwIP 的软件开发框架。</p>
+<ul>
+<li class="">配置方式<!-- -->:ESP-IDF<!-- -->主要使用Kconfig 系统(通过idf-py nenuconfig命令调</li>
+</ul>
+<p>出文本菜单界面)进行项目功据、组件和部分驱动参数的配置。这种方式对于熟悉
+Linux内核配置的开发者可能比较亲切。</p>
+<ul>
+<li class="">引脚/外设初始化:具体的引脚分配和外设初始化更多地是在C代码中通过调用ESP-</li>
+</ul>
+<p>IDF提供的驱动API直接完成,虽然也有配置宏,但其图形化引I脚分配和与IDE集
+成的外设配置工具不如前两者突出(VS Code的ESP-IDF 插件提供了一些辅助功
+能,但核心配置仍在Kconfig和代码层面)。</p>
+<ul>
+<li class="">IDE:官方推荐使用VSCode配合ESP-IDF 插件,或者基于命令行的开发流程。其</li>
+</ul>
+<p>设计思路更们重于提供一个灵活的、以代码和构建系统为中心的框架,开发者对构建过程
+和组件案成有较高的控制力。
+SinplicityStudio的设计思路更倾向于提供一个高度集成的“保娠式"环填,尤其是在管理
+复杂的无线协议栈和众多可配置模块时,通过统一的.slcp文件来维护项目的一致性和可配
+置性。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=三efr32项目代码结构分析以blink_pwm_baremetal为例>三、EFR32项目代码结构分析(以bLink_pwm_baremetal为例)<a href=#三efr32项目代码结构分析以blink_pwm_baremetal为例 class=hash-link aria-label=三、EFR32项目代码结构分析(以bLink_pwm_baremetal为例)的直接連結 title=三、EFR32项目代码结构分析(以bLink_pwm_baremetal为例)的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=一个典型的-efr32裸机bare-metal即不使用rt0s项目通常包含以下几个关键部分>一个典型的 EFR32裸机(bare-metal,即不使用RT0S)项目通常包含以下几个关键部分,<a href=#一个典型的-efr32裸机bare-metal即不使用rt0s项目通常包含以下几个关键部分 class=hash-link aria-label="一个典型的 EFR32裸机(bare-metal,即不使用RT0S)项目通常包含以下几个关键部分,的直接連結" title="一个典型的 EFR32裸机(bare-metal,即不使用RT0S)项目通常包含以下几个关键部分,的直接連結" translate=no>​</a></h2>
+<p>如blink_pum_baretetal示例所展示:
+职责:初始化系统级服务、协议栈(若有)和用户应用程序。随后进入一个永不退出的
+超级循环(super-loop)来调度系统和应用任务。</p>
+<ul>
+<li class="">关键代码分析(nain.c):</li>
+</ul>
+<p>1善include“sl_component_catalog.h"//由IDE 生成,定义项目中包含的短件
+include <em>st_systen_init.h</em>
+1系统初始化函数
+#include <em>app-h</em>
+1应用层接象头文件
+其他条件包含的头文件(知电源管理器)
+int main(vaid) {
+5l_systen_init[):// 初始化 soK 超件、驱动、时钟等
+11调用应用层初始化
+app_init();
+while (1)(
+slL_system_process_actlon(1:// soK 组件的网期性任务处理
+1 1
+11应用层的周期性任务处理
+app process action():
+//... 可熊包含 sl_powcr_sonogcr_slcep(),</p>
+<ul>
+<li class="">sl_systen_init():封装了对所有已安装SDK组件的初始化调用,这些姐件和</li>
+</ul>
+<p>它们的配置均由.51rp文件定义。</p>
+<ul>
+<li class="">
+<p>app_init[1:将控制权交给应用层进行初始化。</p>
+</li>
+<li class="">
+<p>sl_systen_process_action()和 app_process_action(]:在超级循环中,前</p>
+</li>
+</ul>
+<p>者确保SDK内部任务(如蓝牙事件处理)得以执行,后者则留给用户执行应用逻
+辑。
+L.aPp.c·应用层抽象/桥接</p>
+<ul>
+<li class="">职责:作为nin.c和具体业务逻辑模块之间的桥梁,保持main.c的通用性,并</li>
+</ul>
+<p>将具体的应用初始化和处理逻辑委托给下一层。</p>
+<ul>
+<li class="">关键代码分析(app.c):</li>
+</ul>
+<p>include“bL1nk_pMm_app.h//包含具体业务模块的头文件
+)(pTOA)TuT dde PTOA
+bLink_pwm_init();// 语用业务模块的初始化
+1 (PTon)uoTIne ssaooud dde PTOA
+blink_pwm_pracess_actipn();//调用业务模块的思期处理</p>
+<ul>
+<li class="">这种分层设计使得当应用逻辑变得复杂时,可以通过包含不同的业务模块头文件并在</li>
+</ul>
+<p>p.c中调用它们,而无需大幅修改main.c。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2blink_pmm_appc或自定义业务模块-实际应用逻辑>2.blink_pmm_app.c(或自定义业务模块)-实际应用逻辑<a href=#2blink_pmm_appc或自定义业务模块-实际应用逻辑 class=hash-link aria-label=2.blink_pmm_app.c(或自定义业务模块)-实际应用逻辑的直接連結 title=2.blink_pmm_app.c(或自定义业务模块)-实际应用逻辑的直接連結 translate=no>​</a></h2>
+<ul>
+<li class="">职责:实现具体的应用功能。在bLink_pw_barenetal示例中,这里是控制PhM 实</li>
+</ul>
+<p>现LED 呼吸灯效果。</p>
+<ul>
+<li class="">关键代码分析(bLink_pM_app.c):</li>
+</ul>
+<p>//PMM驱动 APT
+include "sl_pmm_instances.h*
+//PM实例(出IDE根遥配置生成)
+//题既定时据API(用于延时)
+5//PMH占空出宣找表(LUT)
+uinta_t pam_lut[] = { /+ .-.
+0-109 的值 ..-*/ }:
+vold blink_pwm_init(void) {
+// 使用在 sT_pw_Instances.h 中声原的 sl_phm_lede 实例
+sl._pwm_start(6sl_pwm_lede) ;
+void blink_pwm_process_action(vcid) (
+//环改变PMH占空比。实现呼吸效果
+for (uinta_t 1 = 0; 1 &lt; 100; 1++) {
+sl_pwm_set_duty_cycle(6sl_pum_lede, pwm_lut[i]);
+sl_sleeptimer_delay_millisecond(6):
+(可能的额外延时)
+(反向据环)</p>
+<p>sl_pwm_instances.h:这个头文件是关键,它通常包含了类似cxtern sl_pan_inst
+ance_tsl_pmm_Leda:这样的声明。sL_pMm_Lede的具体配置(如关联的 TIMER
+外设、输出通道、引脚、PihM疑率、极性等)都是在 S1mpL1c1ty Stud1o 的图形化
+配置工具中完成的,井由IDE自动生成到对应的sl_pwm_led3_config.h(或类似名
+称)和初始化代码中</p>
+<ul>
+<li class="">设计思路:业务逻辑模块直接使用这些由IDE管理和配置好的外设实例,而无需关心</li>
+</ul>
+<p>其底层的具体初始化细节。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=四开发自定义pwm输出流程以blink_pwm_baremetal为基础>四、开发自定义PWM输出流程(以bLink_pwm_baremetal为基础)<a href=#四开发自定义pwm输出流程以blink_pwm_baremetal为基础 class=hash-link aria-label=四、开发自定义PWM输出流程(以bLink_pwm_baremetal为基础)的直接連結 title=四、开发自定义PWM输出流程(以bLink_pwm_baremetal为基础)的直接連結 translate=no>​</a></h2>
+<p>假设目标是基于blink_pwm_barcnctal示例的结构,开发一个新的PwM 输出控制(例如,
+控制另一个LED或一个小型风扇)。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1项目创建与准备>1.项目创建与准备:<a href=#1项目创建与准备 class=hash-link aria-label=1.项目创建与准备:的直接連結 title=1.项目创建与准备:的直接連結 translate=no>​</a></h2>
+<ul>
+<li class="">在 Simplicity Studio中,可以基于一个裸机模板创建一个新项目,或者克隆现有</li>
+</ul>
+<p>的blink_pn_barenetal 示例</p>
+<ul>
+<li class="">确保选择了正确的目标EFR32芯片或开发板。</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2源加并配置pwn软件组件>2.源加并配置PWN软件组件:<a href=#2源加并配置pwn软件组件 class=hash-link aria-label=2.源加并配置PWN软件组件:的直接連結 title=2.源加并配置PWN软件组件:的直接連結 translate=no>​</a></h2>
+<ul>
+<li class="">
+<p>PWM Frequency (Hz): 例如 1HGEa (16 kHz).</p>
+</li>
+<li class="">
+<p>Polarity:通常是 Active High.</p>
+</li>
+<li class="">
+<p>打开项目的slcp配置文件。</p>
+</li>
+<li class="">
+<p>导航到“SOFTWARECOMPONENTS"标签页。</p>
+</li>
+<li class="">
+<p>搜索并安装“PWN”服务(如果尚未安装)。</p>
+</li>
+<li class="">
+<p>为新的 PWM 输出创建一个实例,例如命名为custom_Pam(IDE 可能会自动生成</p>
+</li>
+</ul>
+<p>如sl_pwm_custom_pwm 的实例名)。</p>
+<ul>
+<li class="">点击新创建的PMM实例,在右侧的配置面板中设置:</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3引脚配置pin-tool>3.引脚配置(Pin Tool):<a href=#3引脚配置pin-tool class=hash-link aria-label="3.引脚配置(Pin Tool):的直接連結" title="3.引脚配置(Pin Tool):的直接連結" translate=no>​</a></h2>
+<ul>
+<li class="">在custonpum实例的配置界面,找到引脚配置部分,或直接切换到.slcp编辑器</li>
+</ul>
+<p>顶部的“PIN TOOL"标签页。</p>
+<ul>
+<li class="">
+<p>关键步骤:</p>
+</li>
+<li class="">
+<p>结果<!-- -->:Pin<!-- --> Tool会自动在后台生成或更新配置,例如在sl_pwm_custcm_pwm_confi</p>
+</li>
+</ul>
+<p>g.h(或类似名称的文件)中定义SL_PWH_CUSTOM_PH_PERIPHERAL,SL_PWH_CUSTO
+M_PWM OUTPUT_CHANNEL , SL PHM_CUSTON_ PWM_OUTPUT PORT , SL_PAM_CUSTOM PAM
+_oUTPUT_PIN 等宏。同时 sl_pwm_instanccs.h 中也会出现 sl_pum_custon_pu
+m实例的而明。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1在pin-tool-的外设列表中找到一个可用的-timer外设如timer1timer>1.在Pin Tool 的外设列表中,找到一个可用的 TIMER外设(如TIMER1,TIMER<a href=#1在pin-tool-的外设列表中找到一个可用的-timer外设如timer1timer class=hash-link aria-label="1.在Pin Tool 的外设列表中,找到一个可用的 TIMER外设(如TIMER1,TIMER的直接連結" title="1.在Pin Tool 的外设列表中,找到一个可用的 TIMER外设(如TIMER1,TIMER的直接連結" translate=no>​</a></h2>
+<p>2等,避免与SL_pMm_LedO使用的TIMER冲突,除非该TIMER支持多通道独立
+PWM且通道未被占用)。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2选择该timer-的一个可用输出通道cc-channel>2.选择该TIMER 的一个可用输出通道(CC ChanneL)。<a href=#2选择该timer-的一个可用输出通道cc-channel class=hash-link aria-label="2.选择该TIMER 的一个可用输出通道(CC ChanneL)。的直接連結" title="2.选择该TIMER 的一个可用输出通道(CC ChanneL)。的直接連結" translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3在芯片引脚图中找到一个想要用于pwmm输出的空闲gpi0引脚>3.在芯片引脚图中,找到一个想要用于PWMM输出的空闲GPI0引脚。<a href=#3在芯片引脚图中找到一个想要用于pwmm输出的空闲gpi0引脚 class=hash-link aria-label=3.在芯片引脚图中,找到一个想要用于PWMM输出的空闲GPI0引脚。的直接連結 title=3.在芯片引脚图中,找到一个想要用于PWMM输出的空闲GPI0引脚。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4将选定的tiner通道功能拖拽或分配到这个gpi0引脚上>4.将选定的TINER通道功能拖拽或分配到这个GPI0引脚上。<a href=#4将选定的tiner通道功能拖拽或分配到这个gpi0引脚上 class=hash-link aria-label=4.将选定的TINER通道功能拖拽或分配到这个GPI0引脚上。的直接連結 title=4.将选定的TINER通道功能拖拽或分配到这个GPI0引脚上。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1添加延时功能sleep-tiner>1.添加延时功能(Sleep Tiner):<a href=#1添加延时功能sleep-tiner class=hash-link aria-label="1.添加延时功能(Sleep Tiner):的直接連結" title="1.添加延时功能(Sleep Tiner):的直接連結" translate=no>​</a></h2>
+<ul>
+<li class="">如果应用需要精确延时,确保“SleepTimer”组件已安装在项目中(通常默认存在于</li>
+</ul>
+<p>很多示例中)。
+.编写业务逻辑代码:</p>
+<ul>
+<li class="">
+<p>创建一个新的c文件(例如my_custom_pan_logic.c)和对应的.h文件。</p>
+</li>
+<li class="">
+<p>在ny_custon_pun_logic.c 中:</p>
+</li>
+</ul>
+<p>//这量会包含 sL_pwm_
+_Custoe_p的声别
+#incluie "sl_sleeptiner.h"
+include"my_custom_pwm_Logic.h" // 自己的头文件
+/可以在此定文新的LIT或控别参数
+//static uint8_tcustow_duty_cycle =50;// 示例:固定占空比
+void ny_custom_pm_init(void) {</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=51_pwm_startsl_pwm_custon_pmm---启t款的-phmv-实例>51._pwm_start(&sl_pwm_custon_pmm) : // 启t款的 Phmv 实例<a href=#51_pwm_startsl_pwm_custon_pmm---启t款的-phmv-实例 class=hash-link aria-label="51._pwm_start(&sl_pwm_custon_pmm) : // 启t款的 Phmv 实例的直接連結" title="51._pwm_start(&sl_pwm_custon_pmm) : // 启t款的 Phmv 实例的直接連結" translate=no>​</a></h2>
+<p>//可选:设置初始占空比
+// sl_pu_set_duty_cycle{6sT_pa_custo_psm,
+(=1. fnp aosn:
+void ny_custom_pum_pracess_action(vaid) {
+/1在这重实现自定文的PMM控制通辑
+11例如:根据某个输人改变占空比,或查实现不同的闪炼模式
+// static wint8_± new_duty = B;
+// ncw_duty = (ncv_duty + 10) 161; // 高单增o-109疆环
+// sl_pvm_set_dty_cycLerGst_ou_custon_pwtl, new_duty);
+// sl_steeptimer_delay_millisecond(100);
+11可以漆加其他控别通数,例期:
+void sct_my_custon_pw_duty(uint8_t duty) (
+5l_phm_set_duty_cycle(&sl_pwm_custom_pwm, duty):</p>
+<ul>
+<li class="">在ny_custon_pum_logic.h 中声明 ny_custon_pum_init() 和 my_custon_pwm_</li>
+</ul>
+<p>process_actiont) 等函数
+.集成到应用层(app.c):</p>
+<ul>
+<li class="">
+<p>在 app.c 中 #include <em>my_custon pum_ logic.h</em>.</p>
+</li>
+<li class="">
+<p>修改app_init(1:</p>
+</li>
+</ul>
+<p>void app_init(void) {
+//DLink_pwm_1n1t(); //保留原有示例的初始化(如果需要)
+my_custon_pmm init):// 须加新模块的初始化</p>
+<ul>
+<li class="">改app_process_action(}:</li>
+</ul>
+<p>1(pTon)uotioe ssaoud dde proA
+//DLink_pwm_process_action();// 保留原有示男的处理(如果离变)
+my_custan_pmm_proce actian():// 深加所模块的处理</p>
+<p>■
+■</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7构建烧录与调试>7.构建、烧录与调试:<a href=#7构建烧录与调试 class=hash-link aria-label=7.构建、烧录与调试:的直接連結 title=7.构建、烧录与调试:的直接連結 translate=no>​</a></h2>
+<ul>
+<li class="">
+<p>在SimplicityStudio中点击“Build"(锤子图标)。</p>
+</li>
+<li class="">
+<p>使用调试器逐步执行代码,观察变量状态。</p>
+</li>
+<li class="">
+<p>使用示波器连接到为sl_pwm_custom_pwm配置的GPIO引脚,验证PWM波形是否</p>
+</li>
+</ul>
+<p>符合预期(频率、占空比变化等)。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=五结论>五、结论<a href=#五结论 class=hash-link aria-label=五、结论的直接連結 title=五、结论的直接連結 translate=no>​</a></h2>
+<p>EFR32的开发生态系统通过SimplicityStudio提供了一种高度集成且以配置为驱动的开
+发模式。这种方式对于管理包含复杂无线协议栈和众多外设的SoC项目具有优势,能够让开发
+者快速搭建原型并选代。其设计思路在于通过工具抽象底层细节,使得开发者能更多地关注应用
+层创新。虽然其学习曲线和操作习惯与其他平台(如STM32的CubeMX或ESP32的ESP-
+IDF)有所不同,但一旦熟悉,其组件化和配置化的特点能显著提升特定类型项目的开发效率。
+通过上述以PwM为例的开发流程,可以体会到其“配置优于编码(forhardwaresetup)”
+的设计哲学,尤其是在需要快速适配不同硬件或复用已有软件组件的场景下,这种方法的便利性
+更为突出。
+嵌入式:目录三
+&lt;上一篇
+下一篇>
+Hypershell消费级外骨骼:技术、市场与
+在两个Linux系统上使用OpenHD搭建无线图
+前景深度分析报告
+传和数传链路的完整解决方案</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<p><img decoding=async loading=lazy alt="EFR32 (Simplicity Studio) 开发环境与实践笔记：微信公众号导出原始排版图" src=/assets/images/article-b0516e3272238427fb675e2df61acd6f.webp width=1280 height=11041 class=img_ev3q /></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2025-05-22-2025-05-22-efr32-simplicity-studio-开发环境与实践笔记-2247484571.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2025-05-26-从助记词到以太坊地址-钱包创建全解析-2247484592><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>从助记词到以太坊地址——钱包创建全解析</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2025-05-20-ffmpeg-深度学习笔记-三-transcoding-转码-的艺术与实践-3-transcoding-c-2247484560><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>FFmpeg 深度学习笔记 (三)：Transcoding (转码) 的艺术与实践 - 3_transcoding.c</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><ul><li><a href=#144-paev2-doap class="table-of-contents__link toc-highlight">1.44 pA.EV2 Doap</a><li><a href=#017-μaem-sem class="table-of-contents__link toc-highlight">0.17 μAEM sEM</a></ul><li><a href=#一simplicitystudioide与开发方式概览 class="table-of-contents__link toc-highlight">一、SimplicityStudioIDE与开发方式概览</a><li><a href=#1软件组件software-components提供大量预制验的驱动协议栈模块服务和第三方 class="table-of-contents__link toc-highlight">1.软件组件(Software Components):提供大量预制验的驱动、协议栈模块、服务和第三方</a><li><a href=#2引即工具pin-tool图形化界面用于将芯片的物理引脚分配给特定的外设功能如 class="table-of-contents__link toc-highlight">2.引即工具(Pin Tool):图形化界面,用于将芯片的物理引脚分配给特定的外设功能(如</a><li><a href=#3外设配置器针对已选用的外设如timerusartadci2c进行详细参数配置 class="table-of-contents__link toc-highlight">3.外设配置器:针对已选用的外设(如TIMER,USART,ADC,I2C)进行详细参数配置</a><li><a href=#1代码生成基于上述配置自动生成初始化代强配置文件头如sl_conponent_catalo class="table-of-contents__link toc-highlight">1.代码生成:基于上述配置,自动生成初始化代强、配置文件头(如sl_conponent_catalo</a><li><a href=#5集成工具糙内置编译器gccarm调试卷gdb-和-silabs-j-linkstk-调试接 class="table-of-contents__link toc-highlight">5.集成工具糙:内置编译器(GCCARM)、调试卷(GDB 和 Silabs J-Link/STK 调试接</a><li><a href=#二与其他平台开发方式的对比 class="table-of-contents__link toc-highlight">二、与其他平台开发方式的对比</a><li><a href=#三efr32项目代码结构分析以blink_pwm_baremetal为例 class="table-of-contents__link toc-highlight">三、EFR32项目代码结构分析(以bLink_pwm_baremetal为例)</a><li><a href=#一个典型的-efr32裸机bare-metal即不使用rt0s项目通常包含以下几个关键部分 class="table-of-contents__link toc-highlight">一个典型的 EFR32裸机(bare-metal,即不使用RT0S)项目通常包含以下几个关键部分,</a><li><a href=#2blink_pmm_appc或自定义业务模块-实际应用逻辑 class="table-of-contents__link toc-highlight">2.blink_pmm_app.c(或自定义业务模块)-实际应用逻辑</a><li><a href=#四开发自定义pwm输出流程以blink_pwm_baremetal为基础 class="table-of-contents__link toc-highlight">四、开发自定义PWM输出流程(以bLink_pwm_baremetal为基础)</a><li><a href=#1项目创建与准备 class="table-of-contents__link toc-highlight">1.项目创建与准备:</a><li><a href=#2源加并配置pwn软件组件 class="table-of-contents__link toc-highlight">2.源加并配置PWN软件组件:</a><li><a href=#3引脚配置pin-tool class="table-of-contents__link toc-highlight">3.引脚配置(Pin Tool):</a><li><a href=#1在pin-tool-的外设列表中找到一个可用的-timer外设如timer1timer class="table-of-contents__link toc-highlight">1.在Pin Tool 的外设列表中,找到一个可用的 TIMER外设(如TIMER1,TIMER</a><li><a href=#2选择该timer-的一个可用输出通道cc-channel class="table-of-contents__link toc-highlight">2.选择该TIMER 的一个可用输出通道(CC ChanneL)。</a><li><a href=#3在芯片引脚图中找到一个想要用于pwmm输出的空闲gpi0引脚 class="table-of-contents__link toc-highlight">3.在芯片引脚图中,找到一个想要用于PWMM输出的空闲GPI0引脚。</a><li><a href=#4将选定的tiner通道功能拖拽或分配到这个gpi0引脚上 class="table-of-contents__link toc-highlight">4.将选定的TINER通道功能拖拽或分配到这个GPI0引脚上。</a><li><a href=#1添加延时功能sleep-tiner class="table-of-contents__link toc-highlight">1.添加延时功能(Sleep Tiner):</a><li><a href=#51_pwm_startsl_pwm_custon_pmm---启t款的-phmv-实例 class="table-of-contents__link toc-highlight">51._pwm_start(&sl_pwm_custon_pmm) : // 启t款的 Phmv 实例</a><li><a href=#7构建烧录与调试 class="table-of-contents__link toc-highlight">7.构建、烧录与调试:</a><li><a href=#五结论 class="table-of-contents__link toc-highlight">五、结论</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

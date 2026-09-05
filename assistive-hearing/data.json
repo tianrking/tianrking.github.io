@@ -1,0 +1,797 @@
+{
+  "checked_on": "2026-09-05",
+  "scope_note": "本库覆盖辅助与听力设备：助听器、字幕设备、个人扩音器、无障碍提醒器与触觉提示设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
+  "field_rules": [
+    [
+      "类别边界",
+      "助听器、字幕设备、个人扩音器、无障碍提醒器与触觉提示设备。"
+    ],
+    [
+      "跨库去重",
+      "已在其他独立数据库收录的同一硬件不重复计入主表；如有交叉用途，保留候选/别名和原始来源。"
+    ],
+    [
+      "上市状态",
+      "在售、地区在售、预售、历史、售罄、候选和OEM线索分开；官方页面不能证明当前交付的型号不计入主表。"
+    ],
+    [
+      "证据等级",
+      "A为官方产品/规格/销售链较完整；B为官方页面明确但关键字段或当前库存有缺口；C/D为候选、渠道、历史或未充分验证线索。"
+    ],
+    [
+      "字段缺口",
+      "来源未披露统一写“未公开”，尤其不推断芯片、传感器、尺寸、重量、续航、防水、订阅和隐私字段。"
+    ],
+    [
+      "价格",
+      "保留首发/当前价格和原币种；促销、租赁、订阅、押金和服务费在原文中区分，不做无说明汇率换算。"
+    ],
+    [
+      "查证日期",
+      "2026-09-05"
+    ]
+  ],
+  "products": [
+    {
+      "id": "ACCESS-001",
+      "brand": "Williams AV",
+      "model": "Pocketalker 2.0 PKT 2.0-0",
+      "country_region": "美国/全球",
+      "category": "assistive-hearing",
+      "form_factor": "个人扩音器",
+      "use_case": "面对面交流、电视、车内听力辅助",
+      "status": "已上市，可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "USD 265",
+      "official_url": "https://williamsav.com/product/pocketalker-2-0-personal-amplifier/",
+      "spec_url": "https://williamsav.com/wp-content/uploads/2020/04/pkt_2.0_spec_en.pdf",
+      "features": [
+        "降背景噪声",
+        "大尺寸控制",
+        "T-coil兼容",
+        "内置麦克风",
+        "可充电电池兼容"
+      ],
+      "sensors": [
+        "全向 MEMS 麦克风",
+        "T-coil"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "3.5mm音频",
+        "T-coil"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "124 x 51 x 25 mm",
+      "weight_g": 88,
+      "battery": "2×AAA；典型约 105 小时",
+      "charging": "可选 BAT KT7 充电套件",
+      "water_resistance": "未公开",
+      "subscription": "无公开订阅",
+      "privacy": "未公开",
+      "availability_note": "官网可加入购物车",
+      "source_note": "官方销售页与规格 PDF；官方明确不是个人助听器",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "ACCESS-002",
+      "brand": "Hamilton CapTel",
+      "model": "CapTel 2400i",
+      "country_region": "美国",
+      "category": "assistive-hearing",
+      "form_factor": "字幕电话",
+      "use_case": "听力障碍电话通话实时字幕",
+      "status": "已上市，可申请/购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "符合条件者可免费提供",
+      "official_url": "https://hamiltoncaptel.com/order-captel-phones/?phone=2400i",
+      "spec_url": "https://hamiltoncaptel.com/support-manuals-and-faqs/captioned-telephone-support-2400i/",
+      "features": [
+        "触摸屏",
+        "实时字幕",
+        "内置答录机",
+        "免提",
+        "音量最高约 40dB 增益"
+      ],
+      "sensors": "未公开",
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "高速互联网",
+        "Wi-Fi/Ethernet，具体组合依方案"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "外部供电",
+      "water_resistance": "未公开",
+      "subscription": "字幕服务按美国 IP CTS 规则提供；具体服务条件见官方",
+      "privacy": "通话字幕由自动或人工辅助服务处理",
+      "availability_note": "官网提供订购表和安装支持",
+      "source_note": "官方订购页与支持页",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "ACCESS-003",
+      "brand": "Hamilton CapTel",
+      "model": "CapTel 840i",
+      "country_region": "美国",
+      "category": "assistive-hearing",
+      "form_factor": "大字体字幕电话",
+      "use_case": "听力障碍电话通话与字幕",
+      "status": "已上市，可申请/购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "符合条件者可免费提供",
+      "official_url": "https://hamiltoncaptel.com/solutions/personal-solutions/captioned-telephones/",
+      "spec_url": "https://hamiltoncaptel.com/",
+      "features": [
+        "大字体显示",
+        "实时字幕",
+        "答录机",
+        "扬声器电话",
+        "音量调节"
+      ],
+      "sensors": "未公开",
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "高速互联网",
+        "电话线/互联网，依方案"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "外部供电",
+      "water_resistance": "未公开",
+      "subscription": "字幕服务按美国 IP CTS 规则提供",
+      "privacy": "通话字幕服务隐私细节未公开",
+      "availability_note": "官方个人方案页面列为可用型号",
+      "source_note": "官方个人方案和主页",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "ACCESS-004",
+      "brand": "Sonic Alert",
+      "model": "HomeAware II Disaster Preparedness Kit",
+      "country_region": "美国",
+      "category": "assistive-hearing",
+      "form_factor": "家庭信号/警报系统",
+      "use_case": "门铃、电话、火灾等事件的声光/震动提醒",
+      "status": "已上市，可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "USD 409.99",
+      "official_url": "https://www.sonicalert.com/HomeAware-II-Disaster-Preparedness-Kit",
+      "spec_url": "https://www.sonicalert.com/",
+      "features": [
+        "家庭事件提醒",
+        "灾害准备套件",
+        "声光/震动提示",
+        "可扩展发射器/接收器"
+      ],
+      "sensors": [
+        "事件发射器，具体传感器未公开"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": "HomeAware 无线系统；具体协议未公开",
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "未公开",
+      "water_resistance": "未公开",
+      "subscription": "另有订阅服务套件",
+      "privacy": "未公开",
+      "availability_note": "官方首页列出价格与购买入口",
+      "source_note": "官方商店首页和产品入口",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "ACCESS-005",
+      "brand": "Sonic Alert",
+      "model": "SBP200 Sonic Shaker Battery-Powered Alarm Clock",
+      "country_region": "美国",
+      "category": "assistive-hearing",
+      "form_factor": "便携式震动/大声闹钟",
+      "use_case": "听障或深睡用户的声光震动唤醒",
+      "status": "已上市，官方页面可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://www.sonicalert.com/",
+      "spec_url": "https://www.sonicalert.com/",
+      "features": [
+        "可充电",
+        "高音量",
+        "强震动",
+        "LED显示",
+        "旅行便携"
+      ],
+      "sensors": "未公开",
+      "gps_positioning": "未公开",
+      "supported_protocols": "未公开",
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "内置可充电电池",
+      "charging": "可充电；接口未公开",
+      "water_resistance": "未公开",
+      "subscription": "无公开订阅",
+      "privacy": "未公开",
+      "availability_note": "官方首页列为 Product Spotlight",
+      "source_note": "官方商店首页",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "ACCESS-006",
+      "brand": "Bellman & Symfon",
+      "model": "Visit CO Alarm / BE1555CO",
+      "country_region": "瑞典/美国及全球",
+      "category": "assistive-hearing",
+      "form_factor": "一氧化碳报警发射器",
+      "use_case": "将 CO 警报转换为声光/震动提醒",
+      "status": "已上市，官方产品线可核验",
+      "evidence": "B",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://us.bellman.com/products/alerting-signaling-device-carbon-monoxide-transmitter",
+      "spec_url": "https://bellman.com/globalassets/6---product-support-files/product-datasheets-pdf/co-detector-datasheet-en.pdf",
+      "features": [
+        "CO检测",
+        "本地声音报警",
+        "LED指示",
+        "无线发送至 Visit 接收器"
+      ],
+      "sensors": [
+        "电化学 CO 传感器"
+      ],
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "Bellman Visit 无线系统"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "未公开",
+      "water_resistance": "未公开",
+      "subscription": "无公开订阅",
+      "privacy": "未公开",
+      "availability_note": "官方产品目录与美国页面可核验",
+      "source_note": "官方产品页与数据表",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "ACCESS-007",
+      "brand": "Humantechnik",
+      "model": "lisa-signolux Receiver T Connect",
+      "country_region": "德国/欧洲",
+      "category": "assistive-hearing",
+      "form_factor": "无线家庭提醒接收器",
+      "use_case": "门铃、电话、烟雾、婴儿等事件的手机/声光提醒",
+      "status": "已上市，官方产品页可核验",
+      "evidence": "B",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://www.humantechnik.com/en/products/wireless-alerting-systems/rf-alerting-system-lisa-signolux/receiver-t-connect",
+      "spec_url": "https://www.humantechnik.com/en/service/user-manuals/",
+      "features": [
+        "Wi-Fi转手机通知",
+        "声光提醒",
+        "系统接收器",
+        "可移动使用"
+      ],
+      "sensors": "未公开",
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "868.425MHz RF",
+        "Wi-Fi",
+        "Bluetooth，具体用途见官方页"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "143 x 80 mm",
+      "weight_g": 312,
+      "battery": "4×AAA NiMH",
+      "charging": "7.5V DC 外部电源",
+      "water_resistance": "未公开",
+      "subscription": "无公开订阅",
+      "privacy": "手机通知服务隐私细节未公开",
+      "availability_note": "官方产品与手册目录",
+      "source_note": "官方产品规格与手册页",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "ACCESS-008",
+      "brand": "Humantechnik",
+      "model": "lisa-signolux Receiver Alarm Clock A-2634",
+      "country_region": "德国/欧洲",
+      "category": "assistive-hearing",
+      "form_factor": "无线接收闹钟/震动唤醒设备",
+      "use_case": "听障用户的声光和震动提醒",
+      "status": "已上市，官方产品页可核验",
+      "evidence": "B",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "未公开",
+      "official_url": "https://www.humantechnik.com/en/products/wireless-alerting-systems/rf-alerting-system-lisa-signolux/signolux-receiver-alarm-clock",
+      "spec_url": "https://www.humantechnik.com/downloads/pdf/prospekte/Wecker_EN.pdf",
+      "features": [
+        "大字体显示",
+        "高亮 LED 闪烁",
+        "可接震动垫",
+        "可作为 signolux 接收器"
+      ],
+      "sensors": "未公开",
+      "gps_positioning": "未公开",
+      "supported_protocols": [
+        "lisa-signolux RF"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "备用电源；具体电池未公开",
+      "charging": "外部供电",
+      "water_resistance": "未公开",
+      "subscription": "无公开订阅",
+      "privacy": "未公开",
+      "availability_note": "官方型号清单列出 A-2634-0/A-2634-W",
+      "source_note": "官方产品页与产品手册",
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "Sony CRE-C10",
+      "brand": "Sony",
+      "region": "日本/美国",
+      "category": "assistive-hearing",
+      "status": "候选；官方商店已标记 Item no longer available",
+      "evidence": "B",
+      "reason": "官方产品页仍有规格和价格，但当前不可购买",
+      "url": "https://electronics.sony.com/more/otc-hearing-aid/all-otc-hearing-aid/p/crec10-2",
+      "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "name": "Lexie B2 Plus Powered by Bose",
+      "brand": "Lexie",
+      "region": "美国",
+      "category": "assistive-hearing",
+      "status": "候选；官方公告美国业务 wind-down",
+      "evidence": "B",
+      "reason": "官方公告称美国业务进入 wind-down，后续支持未保证",
+      "url": "https://lexiehearing.com/us",
+      "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "name": "Bellman & Symfon Portable Receiver",
+      "brand": "Bellman & Symfon",
+      "region": "瑞典/美国",
+      "category": "assistive-hearing",
+      "status": "候选；官方页面标记 Sold out",
+      "evidence": "A",
+      "reason": "官方页面提供完整规格，但当前页面显示售罄",
+      "url": "https://us.bellman.com/products/alerting-signaling-device-portable-receiver",
+      "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "name": "XanderGlasses II（GLASS-089跨库索引）",
+      "brand": "Xander",
+      "region": "美国/全球",
+      "category": "辅助字幕/翻译智能眼镜",
+      "status": "已在智能眼镜主表登记；辅助与听力交叉索引，不重复计数",
+      "evidence": "A",
+      "reason": "Xander官方页面明确面向听障/重听字幕与离线翻译，购买页接受订单；实体记录保留在GLASS-089，辅助库仅保留交叉索引以避免同一硬件重复计数。",
+      "url": "https://www.xanderglasses.com/purchase",
+      "alias_or_relation": "主表关联：smart-glasses/GLASS-089；不作为辅助库独立产品行。"
+    },
+    {
+      "name": "Legato AI hearing glasses",
+      "brand": "Legato",
+      "region": "美国/全球眼科与听力渠道",
+      "category": "AI听力眼镜",
+      "status": "预发布；官方称计划2026年稍后通过眼科服务商推出，尚无公开价格/SKU/订单",
+      "evidence": "B",
+      "reason": "Legato官方新闻稿分发披露AI听力眼镜、2026年后续推出计划与融资，但目前没有公开零售产品页、价格、精确规格或可验证交付，因此保留候选。",
+      "url": "https://www.globenewswire.com/news-release/2026/08/26/3351388/0/en/legato-emerges-from-stealth-with-12-million-in-funding-to-pioneer-a-new-era-of-hearing-devices-with-ai-powered-hearing-glasses.html",
+      "alias_or_relation": "官方新闻稿/预发布候选；不计入已上市主表。"
+    }
+  ],
+  "sources": [
+    {
+      "source_group": "assistive-hearing官方来源1",
+      "url": "https://williamsav.com/product/pocketalker-2-0-personal-amplifier/",
+      "scope": "价格、功能、麦克风、尺寸、重量、电池",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "williamsav.com",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "销售/库存/预售页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "assistive-hearing官方来源2",
+      "url": "https://hamiltoncaptel.com/order-captel-phones/?phone=2400i",
+      "scope": "字幕电话型号、申请与服务",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "hamiltoncaptel.com",
+      "source_channel": "official_product",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/功能页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "assistive-hearing官方来源3",
+      "url": "https://hamiltoncaptel.com/solutions/personal-solutions/captioned-telephones/",
+      "scope": "2400i/840i 当前型号和功能",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "hamiltoncaptel.com",
+      "source_channel": "official_product",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/功能页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "assistive-hearing官方来源4",
+      "url": "https://www.sonicalert.com/",
+      "scope": "HomeAware II、SBP200 和价格入口",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "sonicalert.com",
+      "source_channel": "official_product",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/功能页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "assistive-hearing官方来源5",
+      "url": "https://us.bellman.com/products/alerting-signaling-device-carbon-monoxide-transmitter",
+      "scope": "CO 发射器功能",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "us.bellman.com",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "销售/库存/预售页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "assistive-hearing官方来源6",
+      "url": "https://www.humantechnik.com/en/products/wireless-alerting-systems/rf-alerting-system-lisa-signolux/receiver-t-connect",
+      "scope": "RF、Wi-Fi、尺寸、重量与电池",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "humantechnik.com",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "销售/库存/预售页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "assistive-hearing官方来源7",
+      "url": "https://www.humantechnik.com/en/products/wireless-alerting-systems/rf-alerting-system-lisa-signolux/signolux-receiver-alarm-clock",
+      "scope": "接收闹钟型号与提醒方式",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "humantechnik.com",
+      "source_channel": "official_sales",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌官方商店",
+      "availability_signal": "销售/库存/预售页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "source_group": "assistive-hearing官方来源8",
+      "url": "https://electronics.sony.com/more/otc-hearing-aid/all-otc-hearing-aid/p/crec10-2",
+      "scope": "候选停售状态与规格",
+      "checked_on": "2026-08-25",
+      "quality": "A",
+      "source_domain": "electronics.sony.com",
+      "source_channel": "official_product",
+      "source_role": "primary_evidence",
+      "seller_type": "品牌/机构官方",
+      "availability_signal": "产品/功能页面",
+      "storefront_type": "未公开",
+      "platform_reference": "未公开",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开"
+    },
+    {
+      "checked_on": "2026-09-01",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "XANDER-II-ASSISTIVE",
+      "source_group": "XanderGlasses II辅助听力交叉来源",
+      "url": "https://www.xanderglasses.com/purchase",
+      "scope": "字幕/翻译眼镜的辅助听力用途、官方接受订单、价格与交付状态；实体主表为GLASS-089",
+      "quality": "A",
+      "source_domain": "xanderglasses.com",
+      "source_channel": "official_sales",
+      "source_role": "辅助用途/交付/交叉索引证据",
+      "seller_type": "辅助设备品牌官方",
+      "storefront_type": "官方网店/订购页",
+      "availability_signal": "官方接受订单；不在辅助库重复计数",
+      "platform_reference": "GLASS-089 / XanderGlasses II"
+    },
+    {
+      "checked_on": "2026-09-01",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "id": "LEGATO-AI-HEARING-NEWS",
+      "source_group": "Legato AI hearing glasses官方新闻稿分发",
+      "url": "https://www.globenewswire.com/news-release/2026/08/26/3351388/0/en/legato-emerges-from-stealth-with-12-million-in-funding-to-pioneer-a-new-era-of-hearing-devices-with-ai-powered-hearing-glasses.html",
+      "scope": "2026-08-26融资/预发布、AI听力眼镜和计划通过眼科服务商推出",
+      "quality": "A",
+      "source_domain": "globenewswire.com",
+      "source_channel": "press_release_distribution",
+      "source_role": "公司官方新闻稿分发/预发布证据",
+      "seller_type": "公司官方新闻稿分发",
+      "storefront_type": "GlobeNewswire",
+      "availability_signal": "计划2026年稍后推出；无公开订单/价格",
+      "platform_reference": "Legato AI hearing glasses"
+    }
+  ],
+  "update_log": [
+    {
+      "date": "2026-08-25",
+      "change": "首版新增8条辅助与听力设备主表记录，覆盖多个国家/地区品牌；另保留3条候选、历史、边界或地区线索。",
+      "verification": "优先使用官方产品、规格、支持、发布和销售页面；A/B证据分级，来源未披露字段均写“未公开”。跨库重复型号已转为候选关系，不纳入本库主表。",
+      "next": "继续补充更多国家/地区品牌，逐条复核当前库存、首发日期、原始价格、芯片、传感器、续航、防护和服务条款。"
+    },
+    {
+      "change": "【辅助与听力设备】本轮按官方产品、支持、监管和销售页核验，未发现可可靠新增的主表型号。",
+      "verification": "本轮完成官方产品页、发布公告、规格/支持页、官方销售页及可用监管/认证线索的快速核验；没有可靠交付证据的线索不计入主表，未披露字段不推断。",
+      "next": "继续补充助听器、听力辅助、字幕/通信和医疗认证记录。",
+      "date": "2026-08-26"
+    },
+    {
+      "date": "2026-08-26",
+      "change": "来源体系升级：新增官方销售、监管/认证、Kickstarter、Indiegogo、Amazon及主要区域电商等渠道维度，并为每条来源补充渠道、证据角色、域名、卖方/项目方、可得性信号和平台标识字段。",
+      "verification": "已对现有来源完成规则化标注；众筹与电商字段未披露处保留“未公开”，不以平台页面单独证明正式上市。",
+      "next": "每日继续按渠道矩阵补查新型号、区域页面、ASIN/SKU/项目ID、卖方身份、库存、众筹状态与实际交付证据。"
+    },
+    {
+      "date": "2026-08-27",
+      "change": "【辅助与听力设备】本轮按官方产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
+      "verification": "众筹和电商页面继续作为发现、预售、区域价格/库存和SKU信号；缺少原厂/官方规格/交付证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管和授权渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-28",
+      "change": "【辅助与听力设备】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
+      "verification": "众筹和电商页面继续作为发现、预售、区域价格/库存和SKU信号；缺少原厂/官方规格/交付证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管和授权渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-29",
+      "change": "【辅助与听力设备】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
+      "verification": "Amazon及区域电商用于发现、价格/库存、ASIN/SKU和卖方信号；Kickstarter/Indiegogo用于项目状态和预售线索；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-30",
+      "change": "【辅助与听力设备】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
+      "verification": "Amazon及区域电商用于发现、价格/库存、ASIN/SKU和卖方信号；Kickstarter/Indiegogo用于项目状态和预售线索；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-08-31",
+      "change": "【辅助与听力设备】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
+      "verification": "Amazon及区域电商用于发现、价格/库存、ASIN/SKU和卖方信号；Kickstarter/Indiegogo用于项目状态和预售线索；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-01",
+      "change": "新增XanderGlasses II交叉索引候选ACCESS-侧记录，并新增Legato AI hearing glasses预发布候选；实体Xander仅在GLASS-089主表计数，避免跨库重复。",
+      "verification": "Xander购买页和产品页提供辅助字幕/翻译与订单证据，但按既有跨库规则不在辅助主表复制实体；Legato只有官方新闻稿分发和后续推出计划，价格/SKU/交付未公开，保留候选。",
+      "next": "继续核验Xander监管/认证、镜片SKU和实际订单交付；追踪Legato正式产品页、眼科渠道、价格、规格和上市证据。"
+    },
+    {
+      "date": "2026-09-02",
+      "change": "【辅助与听力设备】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号或状态变化可安全写入主表。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-03",
+      "change": "【辅助与听力设备】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做快速核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-04",
+      "change": "【辅助与听力设备】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-05",
+      "change": "【辅助与听力设备】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    }
+  ],
+  "source_channel_policy": [
+    {
+      "channel": "official_product",
+      "label": "品牌官网产品页",
+      "role": "primary_evidence",
+      "sites": "品牌产品页、技术页、产品线页",
+      "rule": "确认型号、功能和产品边界；不能仅凭集合页证明当前库存。"
+    },
+    {
+      "channel": "official_sales",
+      "label": "品牌官方商店/购买页",
+      "role": "primary_evidence",
+      "sites": "品牌官方商城、官方Buy页、官方区域商店",
+      "rule": "确认官方价格、区域库存、预售和交付信号；记录查证日期。"
+    },
+    {
+      "channel": "official_support_manual",
+      "label": "官方支持/手册/规格",
+      "role": "primary_evidence",
+      "sites": "品牌支持中心、用户手册、规格PDF、FAQ",
+      "rule": "补充芯片、传感器、尺寸、电池、协议、防水和服务条款；未披露写“未公开”。"
+    },
+    {
+      "channel": "official_release",
+      "label": "品牌官方发布/新闻室",
+      "role": "primary_evidence",
+      "sites": "品牌Newsroom、官方博客、发布公告",
+      "rule": "确认发布日、首发价、上市计划和功能；与销售/发货状态分开。"
+    },
+    {
+      "channel": "regulatory_certification",
+      "label": "监管/认证/标准数据库",
+      "role": "primary_evidence",
+      "sites": "FDA AccessData、FCC、Bluetooth SIG、CSA Matter、CE/UKCA、UL/TÜV、各国认证库",
+      "rule": "只对登记型号和明确用途作证据，不把认证登记自动当成全球在售。"
+    },
+    {
+      "channel": "crowdfunding",
+      "label": "众筹/项目预售平台",
+      "role": "discovery_or_preorder_signal",
+      "sites": "Kickstarter、Indiegogo、BackerKit、Crowd Supply",
+      "rule": "记录项目状态、目标/金额、档位、预计交付和风险；未有正式产品/交付证据时留候选。"
+    },
+    {
+      "channel": "marketplace",
+      "label": "大型电商平台",
+      "role": "market_signal",
+      "sites": "Amazon/Amazon Business、eBay、Walmart、Best Buy、Target、B&H、Newegg、AliExpress、Alibaba、京东、天猫/淘宝、Rakuten、Mercado Libre、Shopee、Lazada、Flipkart",
+      "rule": "记录区域、ASIN/SKU、卖方身份、库存、价格和抓取日期；严格区分官方旗舰店、授权经销商和第三方卖家。"
+    },
+    {
+      "channel": "distributor_retail",
+      "label": "授权经销/区域零售",
+      "role": "market_signal",
+      "sites": "授权经销商、运营商、区域零售商",
+      "rule": "用于补充区域价格、套餐和交付线索，不能替代品牌或监管证据。"
+    },
+    {
+      "channel": "press_release_distribution",
+      "label": "新闻稿分发平台",
+      "role": "secondary_or_distributed_evidence",
+      "sites": "PR Newswire、GlobeNewswire、Business Wire、PR TIMES、VPO/Room等",
+      "rule": "若稿件可追溯到厂商可作为发布辅助证据；否则标为分发/二手来源。"
+    },
+    {
+      "channel": "secondary_media",
+      "label": "专业媒体/评测/数据库",
+      "role": "discovery_or_cross_check",
+      "sites": "The Verge、TechCrunch、Wired、CNET、Tom’s Guide、Notebookcheck、DC Rainmaker、DPReview等",
+      "rule": "用于发现型号和交叉核验，不覆盖官方缺失字段，不单独证明全球上市。"
+    },
+    {
+      "channel": "community_discovery",
+      "label": "社区/社交/论坛线索",
+      "role": "discovery_only",
+      "sites": "Reddit、论坛、YouTube、社交平台和用户帖子",
+      "rule": "只进入候选/别名或待核验队列，不能直接进入A/B级主表。"
+    }
+  ],
+  "source_channel_counts": {
+    "official_product": 4,
+    "official_sales": 5,
+    "press_release_distribution": 1
+  },
+  "source_domains": [
+    "electronics.sony.com",
+    "globenewswire.com",
+    "hamiltoncaptel.com",
+    "humantechnik.com",
+    "sonicalert.com",
+    "us.bellman.com",
+    "williamsav.com",
+    "xanderglasses.com"
+  ]
+}

@@ -1,0 +1,1013 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>在以太坊测试网上发行ERC-20代币的综合指南：为构建稳定币奠定基础 | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2025-07-15-在以太坊测试网上发行erc-20代币的综合指南-为构建稳定币奠定基础-2247484709 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="在以太坊测试网上发行ERC-20代币的综合指南：为构建稳定币奠定基础 | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《在以太坊测试网上发行ERC-20代币的综合指南：为构建稳定币奠定基础》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《在以太坊测试网上发行ERC-20代币的综合指南：为构建稳定币奠定基础》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2025-07-15T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2025-07-15-在以太坊测试网上发行erc-20代币的综合指南-为构建稳定币奠定基础-2247484709 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-07-15-在以太坊测试网上发行erc-20代币的综合指南-为构建稳定币奠定基础-2247484709 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2025-07-15-在以太坊测试网上发行erc-20代币的综合指南-为构建稳定币奠定基础-2247484709 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2025-07-15-在以太坊测试网上发行erc-20代币的综合指南-为构建稳定币奠定基础-2247484709","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2025-07-15T00:00:00.000Z","description":"从微信公众号导入的文章《在以太坊测试网上发行ERC-20代币的综合指南：为构建稳定币奠定基础》，保留原始排版图并提供本地 OCR 转写。","headline":"在以太坊测试网上发行ERC-20代币的综合指南：为构建稳定币奠定基础","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2025-07-15-在以太坊测试网上发行erc-20代币的综合指南-为构建稳定币奠定基础-2247484709","name":"在以太坊测试网上发行ERC-20代币的综合指南：为构建稳定币奠定基础","url":"https://w0x7ce.eu/blog/2025-07-15-在以太坊测试网上发行erc-20代币的综合指南-为构建稳定币奠定基础-2247484709"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>在以太坊测试网上发行ERC-20代币的综合指南：为构建稳定币奠定基础</h1><div class="container_mt6G margin-vert--md"><time datetime=2025-07-15T00:00:00.000Z>2025年7月15日</time> · <!-- -->閱讀時間約 20 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2025-07-15 22:52:50（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247484709&idx=1&sn=10d2d683a3933d4078eb68c0eaa542ca&chksm=96e1108fa19699999118230e1831e7f7a35c5116a8dc6e1e33d6eaabc04bc40659535b1d8139#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 16600 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>基础
+originalwθx7ce EI V1ajero2825年7月15日 22:53 中国香港</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第一部分数字资产发行的基础概念>第一部分:数字资产发行的基础概念<a href=#第一部分数字资产发行的基础概念 class=hash-link aria-label=第一部分:数字资产发行的基础概念的直接連結 title=第一部分:数字资产发行的基础概念的直接連結 translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=11解构稳定币锚定机制概览>1.1解构稳定币:锚定机制概览<a href=#11解构稳定币锚定机制概览 class=hash-link aria-label=1.1解构稳定币:锚定机制概览的直接連結 title=1.1解构稳定币:锚定机制概览的直接連結 translate=no>​</a></h3>
+<p>法著组甲型定替(Fe-backed tabieoins)
+B次</p>
+<p>加密简带抵押型提定常 (Cnypto-backed Stabiecslna) (m)</p>
+<p>算达展定常(Aigortmlic Stablecolns)</p>
+<p>高星确定常(mR)</p>
+<p>稳定币是一种旨在通过与另一资产挂钩或通过某种稳定机制来维持其价值稳定的数字资
+产。这种稳定性使其能够有效充当加密生态系统内的交换媒介、价值储存工具,并促进商
+业交易,从而在波动剧烈的加密货币与传统金融世界之间聚起一座桥案。尽管我们的初步
+实验仅关注代币的发行,但了解其最终形态稳定币的实现方式至关重要。稳定币主要通过三
+种核心机制来实现其价格稳定:</p>
+<ul>
+<li class="">法币抵押型稳定币(Fiat-ColLateralizedStablecoins):这是目前显普遍且</li>
+</ul>
+<p>显容易理解的模型。这类稳定币(如USDT、USDC)的价值与法定货币(通常是美元)
+以1:1的比例挂钩“。为了维持这种挂钩,发行方会将等值的法币资产存放在受监管的
+金融机构作为储备金。这些储备金由中心化的托管机构持有,并定期接受审计,以确保
+透明度和偿付能力。这类稳定币的稳定性直接取决于其背后的法币价值以及发行方的
+可信度2。</p>
+<ul>
+<li class="">加密资产抵押型稳定币(Crypto-CollateralizedStablecoins):该模型通</li>
+</ul>
+<p>过使用其他加密货币(如以太坊ETH)作为抵押品来提升去中心化程度,其所有操作均
+由链上智能合约管理。为了应对抵押品本身的价格波动风险,这类系统采用了“超额
+抵押”机制。这意味着用户必须锁定价值远超于其希望铸造的稳定币数量的加密资产
+(例如,锁定价值208美元的ETH来铸造180英元的DAI稳定币)°。这些协议依赖于价
+格预言机(PriceOracles)来实时盐控抵押品的价值,并在其价值跌破预设的清算
+阅值时自动触发清算程序3。
+算法稳定币(AlgorithnicStablecoins):这是最具实验性和去中心化理想的模
+型。算法稳定币不依赖任何资产作为抵押,而是通过复杂的算法和智能合约来动态调控
+代币的供应量,以维持其价格锚定。其机制包括直接调整用户钱包余额的“弹性供应
+(Rebas1ng)“模型,或通过多代币系统激励市场参与者进行买卖以稳定价格的“铸
+币税(Se1gn1orage)“模型。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=12erc-20标准以太坊上同质化代币的蓝图>1.2ERC-20标准:以太坊上同质化代币的蓝图<a href=#12erc-20标准以太坊上同质化代币的蓝图 class=hash-link aria-label=1.2ERC-20标准:以太坊上同质化代币的蓝图的直接連結 title=1.2ERC-20标准:以太坊上同质化代币的蓝图的直接連結 translate=no>​</a></h3>
+<p>表1:ERC-20标准的接心函数与事件
+燕述
+类蓝
+名称
+返回代币的名称,例如“My Test Stablecoi
+可选
+()aueu
+函数
+n"。
+(110quAs
+返园代币的符号,例如“MTS”。
+逐回代币支持的小致位致。通掌为18,用于显示日
+decinals()
+的。
+totalSupply()
+返同代币的总俱应量。
+函数
+balanceof (address _owner)
+返图指定地址(_wncr)的代币余额。
+transfer(address _to, uint256
+从消息差递者(nsg -sender )的账户向指定域址
+value1
+(_to)转移特定数量(_value)的代币。
+approve(address
+授权一个地址(_spender)可以从消息发诺账户
+_spender, uin
+中提取不超过特定数量(_value)的代币,这是去
+t258 _value)
+中心化应用交互的核心。
+返厦一个地址(_spender)核授权从另一个隐址
+allovance[address _owner, add
+[apuads sa
+(_ouner)提现的代币余额。
+transferFron(address
+from, a
+在获得提权(通过approve)后,从一个地址(
+fron)向另一个地址(_to)转移特定数量(_va1
+ddress _to, uint256 _value)
+ue ) 的代币,
+Transfer(address indexed _fro
+在代币应功转移时触发的事件日志。
+领制
+章
+(onlen 95
+Approval(address indexed _own
+在 approve 函数成功调用时融发的事件日志。
+(anjen9sz1utn
+数据来源:10</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=13试验场测试网与主网的对比分析>1.3试验场:测试网与主网的对比分析<a href=#13试验场测试网与主网的对比分析 class=hash-link aria-label=1.3试验场:测试网与主网的对比分析的直接連結 title=1.3试验场:测试网与主网的对比分析的直接連結 translate=no>​</a></h3>
+<p>表2:主网与Sepolia测试网的对比概览
+Sepolia测试网(Testnet)
+特性
+以太坊主网(Mainnet)
+真买交易与线上应用
+开发、测试与实验
+目的
+代币价值
+无签币价值(SepollaETH)
+具有真实货币价值(ETH)
+交易成本
+使用免费的测试ETH支付Gas费
+需要支付真实的Gas费
+网络ID
+11155111
+验证者集合
+去中心化、无需许可
+受许可、由楼心团队控制
+数据来源:24</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第二部分准备开发与部署环境>第二部分:准备开发与部署环境<a href=#第二部分准备开发与部署环境 class=hash-link aria-label=第二部分:准备开发与部署环境的直接連結 title=第二部分:准备开发与部署环境的直接連結 translate=no>​</a></h2>
+<p>您的Web3网关:安装与配置MetaMask钱包,亚配置连接到SepoLia测试网
+表3:SepoLia测试网网络配置详情
+字段
+值
+Sepolla Testnet
+网络名称
+新的RPC URL
+https : //ethereum-sepo11a- rpc publ1cnode.con
+11155111
+01
+SepoliaETH
+区块浏览器URL
+https ://sepolia.etherscan.in
+数据来源:
+32</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=23获取测试资本sepoliaeth水龙头指南>2.3获取测试资本:SepoliaETH水龙头指南<a href=#23获取测试资本sepoliaeth水龙头指南 class=hash-link aria-label=2.3获取测试资本:SepoliaETH水龙头指南的直接連結 title=2.3获取测试资本:SepoliaETH水龙头指南的直接連結 translate=no>​</a></h3>
+<p>Ethereum Sepolla Faucet</p>
+<p>FAG</p>
+<p>表4:可露的SepoliaETH水龙头列表
+水龙头名称
+URL
+分发数量
+赛求</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=05-eth>0.5 ETH<a href=#05-eth class=hash-link aria-label="0.5 ETH的直接連結" title="0.5 ETH的直接連結" translate=no>​</a></h3>
+<p>Alcheny Fau
+sepoliafaucet.con
+需雯注册ALcheny
+cet
+/天
+户
+faucet quicknode,con/ethereum/se
+QuickNode F</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=885et>8.85ET<a href=#885et class=hash-link aria-label=8.85ET的直接連結 title=8.85ET的直接連結 translate=no>​</a></h3>
+<p>可能需要主网余额>
+polia</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=0001-eth>0.001 ETH<a href=#0001-eth class=hash-link aria-label="0.001 ETH的直接連結" title="0.001 ETH的直接連結" translate=no>​</a></h3>
+<p>aucet
+H</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=05eth>0.5ETH<a href=#05eth class=hash-link aria-label=0.5ETH的直接連結 title=0.5ETH的直接連結 translate=no>​</a></h3>
+<p>infura,io/faucet/sepolia
+Infura Fauc
+需要注册Infura康户
+et
+/天
+cloud.google.con/appl1cation/veb</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=005et>0.05ET<a href=#005et class=hash-link aria-label=0.05ET的直接連結 title=0.05ET的直接連結 translate=no>​</a></h3>
+<p>Google Clou
+需要Google账户,可
+d Faucet
+3/faucet/ethereum/sepolia
+能范燕主网余额
+H
+lcarnveb3,io/faucets/scpolia
+LearnWeb3 F</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=082et>0.82ET<a href=#082et class=hash-link aria-label=0.82ET的直接連結 title=0.82ET的直接連結 translate=no>​</a></h3>
+<p>需要GitHub账户认证
+aucet
+H/天
+数据来源:29</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第三部分实验逐步发行一枚测试网代币>第三部分:实验:逐步发行一枚测试网代币<a href=#第三部分实验逐步发行一枚测试网代币 class=hash-link aria-label=第三部分:实验:逐步发行一枚测试网代币的直接連結 title=第三部分:实验:逐步发行一枚测试网代币的直接連結 translate=no>​</a></h2>
+<p>21558</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=31使用0penzeppelin构建智能合约>3.1使用0penZeppelin构建智能合约<a href=#31使用0penzeppelin构建智能合约 class=hash-link aria-label=3.1使用0penZeppelin构建智能合约的直接連結 title=3.1使用0penZeppelin构建智能合约的直接連結 translate=no>​</a></h3>
+<p>从零开始编写一个完整的ERC-2日合约既复杂又容易出错。一个关键的最佳实践是使用像
+OpenZeppelin这样经过实战检验和安全审计的合约库。我们将继承OpenZeppeLin的
+ERC20.so1合约,这能极大地降低安全风险井提高开发效率55
+合约代码:
+在Remix IDE的文件浏览器中创建一个新文件,命名为MyTestStablecoin.sol,然后将
+以下代码粘贴进去:
+//contracts/nyTestStabLecoin. sol
+// SPDX-License-Identifier: NIT
+pragna solidity ^o.8.20;
+:105 0zou3/0ua/uayo4/sseusuos/ut1addazuado0g: uodut
+contract MyTestStablecoin is ERC29 {
+constructor(uintz56 initialsupply) ERcze(<em>My Test 5tablecoin</em>, *MT5
+_mint(msg.sender, 1nitialSupply * (10 *- decimals1)));</p>
+<p>代码逐行解析:</p>
+<ul>
+<li class="">//SPDX-License-Identifier:MIT:这是一个机器可读的许可证标识符,对</li>
+</ul>
+<p>于建立信任和通过Etherscan验证至关重要
+55。</p>
+<ul>
+<li class="">1mport *@openzeppel1n/contracts/token/ERC20/ERC20.sol";: 这行代</li>
+</ul>
+<p>钙指示Rem1x直接从0penZeppel1n的G1tHub仓库中获取ERC28.sol合约文件。这
+体现了Web3世界中基础设施的可组合性"。</p>
+<ul>
+<li class="">contract MyTestStablecoin is ERC20{..}:定义了我们的新合约,#</li>
+</ul>
+<p>声明它继承了导入的ERC20合约的所有功能和特性20</p>
+<ul>
+<li class="">constructor(..-)ERC2e(*My Test Stablecoin",“MTS"):这是合约的</li>
+</ul>
+<p>构造函数,只在部署时执行一次。它调用了父合约ERC20的构造函数,来设置我们代
+币的名(name)和符号(symbol)29。</p>
+<ul>
+<li class="">mint(nsg.sender, initialSupply *(10 ** decimals()))::_mint</li>
+</ul>
+<p>是ERC28合约中的一个内部函效,用于创建新代币29。这行代码的作用是将初始供应
+量(
+1n1t1alSupply)的代币铸造给nsg.sender,即部番该合约的地址64</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=32在renix中编译与部署前分析>3.2在Renix中编译与部署前分析<a href=#32在renix中编译与部署前分析 class=hash-link aria-label=3.2在Renix中编译与部署前分析的直接連結 title=3.2在Renix中编译与部署前分析的直接連結 translate=no>​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1编译合约在rem1x中导航到左例插件栏的sol1d1ty-comp1ler插件>1.编译合约:在Rem1x中,导航到左例插件栏的“Sol1d1ty Comp1ler"插件<a href=#1编译合约在rem1x中导航到左例插件栏的sol1d1ty-comp1ler插件 class=hash-link aria-label='1.编译合约:在Rem1x中,导航到左例插件栏的“Sol1d1ty Comp1ler"插件的直接連結' title='1.编译合约:在Rem1x中,导航到左例插件栏的“Sol1d1ty Comp1ler"插件的直接連結' translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2选择编译器确保选择的编译器版本例如0820与您代码中pragma声明的版本>2.选择编译器:确保选择的编译器版本(例如0.8.20)与您代码中pragma声明的版本<a href=#2选择编译器确保选择的编译器版本例如0820与您代码中pragma声明的版本 class=hash-link aria-label=2.选择编译器:确保选择的编译器版本(例如0.8.20)与您代码中pragma声明的版本的直接連結 title=2.选择编译器:确保选择的编译器版本(例如0.8.20)与您代码中pragma声明的版本的直接連結 translate=no>​</a></h2>
+<p>兼容。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3执行编译点击蓝色的compile-myteststablecoinsol按钮-58如果一切>3.执行编译:点击蓝色的*Compile MyTestStablecoin.sol"按钮 58。如果一切<a href=#3执行编译点击蓝色的compile-myteststablecoinsol按钮-58如果一切 class=hash-link aria-label='3.执行编译:点击蓝色的*Compile MyTestStablecoin.sol"按钮 58。如果一切的直接連結' title='3.执行编译:点击蓝色的*Compile MyTestStablecoin.sol"按钮 58。如果一切的直接連結' translate=no>​</a></h2>
+<p>利,插件图标上会出现一个绿色的对勾。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4理解编译产物编译成功后remix会生成两个关键信息>4.理解编译产物:编译成功后,Remix会生成两个关键信息:<a href=#4理解编译产物编译成功后remix会生成两个关键信息 class=hash-link aria-label=4.理解编译产物:编译成功后,Remix会生成两个关键信息:的直接連結 title=4.理解编译产物:编译成功后,Remix会生成两个关键信息:的直接連結 translate=no>​</a></h2>
+<p>。Bytecode(字节码):这是将被实际部要到以太坊虚拟机的低级机器码。
+。ABI(应用二进制接口):一个JSON格式的文件,它定义了如何与合约的函数进行交
+互。它就像一本“用户手册”,告诉钱包或其他应用合约里有哪些函数以及如何调用它
+们*4。</p>
+<p>H</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=33将合约部署到sepolia测试网>3.3将合约部署到Sepolia测试网<a href=#33将合约部署到sepolia测试网 class=hash-link aria-label=3.3将合约部署到Sepolia测试网的直接連結 title=3.3将合约部署到Sepolia测试网的直接連結 translate=no>​</a></h3>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1选择部墨环增导航到deptoyruntransactions插件>1.选择部墨环增:导航到“Deptoy&RunTransactions”插件“<a href=#1选择部墨环增导航到deptoyruntransactions插件 class=hash-link aria-label=1.选择部墨环增:导航到“Deptoy&RunTransactions”插件“的直接連結 title=1.选择部墨环增:导航到“Deptoy&RunTransactions”插件“的直接連結 translate=no>​</a></h2>
+<p>在"ENVIRONMENT"下拉菜单中,选择“Injected Prov1der-MetaMask".这
+会告诉Rem1x使用您的MetaMask钱包来签善和发送交易58.
+连接钱包:MetaMask会弹出一个留口,请求连接到Remix。点击“连接”井批准。成
+2.
+功后,Remix中的"ACCoUNT"字段将显示您的MetaMask钱包地址“1。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3设置部参数>3.设置部参数:<a href=#3设置部参数 class=hash-link aria-label=3.设置部参数:的直接連結 title=3.设置部参数:的直接連結 translate=no>​</a></h2>
+<p>。在“CONTRACT下拉菜单中,确保选择了我们刚刚编写的MyTestStablecoin合
+约。
+。在“Deploy”按钮旁边,会有一个输入框,用于填写构造函数的initialSuppLy参
+效。在此输入一个您想要的初始供应量,例如1080808。
+。点击精色的“Deploy”按钮</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1确认交易metamask会再次弹出显示部署合约的交易详情包括预估的gas费用>1.确认交易:MetaMask会再次弹出,显示部署合约的交易详情,包括预估的Gas费用。<a href=#1确认交易metamask会再次弹出显示部署合约的交易详情包括预估的gas费用 class=hash-link aria-label=1.确认交易:MetaMask会再次弹出,显示部署合约的交易详情,包括预估的Gas费用。的直接連結 title=1.确认交易:MetaMask会再次弹出,显示部署合约的交易详情,包括预估的Gas费用。的直接連結 translate=no>​</a></h2>
+<p>点击“确认”“</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2部署成功等待片刻交易将在sepolia网络上被确认remix的终端会显示交易哈>2.部署成功:等待片刻,交易将在Sepolia网络上被确认。Remix的终端会显示交易哈<a href=#2部署成功等待片刻交易将在sepolia网络上被确认remix的终端会显示交易哈 class=hash-link aria-label=2.部署成功:等待片刻,交易将在Sepolia网络上被确认。Remix的终端会显示交易哈的直接連結 title=2.部署成功:等待片刻,交易将在Sepolia网络上被确认。Remix的终端会显示交易哈的直接連結 translate=no>​</a></h2>
+<p>希和新合约的地址。同时,在“DepLoy&Run”面板的底部,“Deployed
+Contracts“区域会出现您刚刚部署的合约实例4。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第四部分部署后操作与验证>第四部分:部署后操作与验证<a href=#第四部分部署后操作与验证 class=hash-link aria-label=第四部分:部署后操作与验证的直接連結 title=第四部分:部署后操作与验证的直接連結 translate=no>​</a></h2>
+<p>合约部署并验证后,您可以通过多种方式与其交互:</p>
+<ul>
+<li class="">
+<p>使用Renix</p>
+</li>
+<li class="">
+<p>使用Etherscan</p>
+</li>
+</ul>
+<p>为了完成实验闭环,我们需要让新创建的代币在MetaMask钱包中可见。默认情况下,
+MetaMask不会自动显示所有非主流代币,需要手动添加72。
+添加步骤:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1打开metamask确保网络已切换到sepolia测试网>1.打开MetaMask,确保网络已切换到Sepolia测试网。<a href=#1打开metamask确保网络已切换到sepolia测试网 class=hash-link aria-label=1.打开MetaMask,确保网络已切换到Sepolia测试网。的直接連結 title=1.打开MetaMask,确保网络已切换到Sepolia测试网。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=2在资产assets标签页下滚动到展部点击导入代而inport>2.在“资产(Assets)“标签页下,滚动到展部,点击”导入代而(Inport<a href=#2在资产assets标签页下滚动到展部点击导入代而inport class=hash-link aria-label=2.在“资产(Assets)“标签页下,滚动到展部,点击”导入代而(Inport的直接連結 title=2.在“资产(Assets)“标签页下,滚动到展部,点击”导入代而(Inport的直接連結 translate=no>​</a></h2>
+<p>tokens) 72。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3选择自定义代币customtoken标签页>3.选择“自定义代币(CustomToken)"标签页。<a href=#3选择自定义代币customtoken标签页 class=hash-link aria-label='3.选择“自定义代币(CustomToken)"标签页。的直接連結' title='3.选择“自定义代币(CustomToken)"标签页。的直接連結' translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4在代币合约地址字段中粘贴您的代币合约地址>4.在“代币合约地址“字段中,粘贴您的代币合约地址。<a href=#4在代币合约地址字段中粘贴您的代币合约地址 class=hash-link aria-label=4.在“代币合约地址“字段中,粘贴您的代币合约地址。的直接連結 title=4.在“代币合约地址“字段中,粘贴您的代币合约地址。的直接連結 translate=no>​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=5如果您的合约已在etherscan上成功验证metamask应该会自动读取并填充代币>5.如果您的合约已在Etherscan上成功验证,MetaMask应该会自动读取并填充“代币<a href=#5如果您的合约已在etherscan上成功验证metamask应该会自动读取并填充代币 class=hash-link aria-label=5.如果您的合约已在Etherscan上成功验证,MetaMask应该会自动读取并填充“代币的直接連結 title=5.如果您的合约已在Etherscan上成功验证,MetaMask应该会自动读取并填充“代币的直接連結 translate=no>​</a></h2>
+<p>(8)()
+T2
+6,点击“添加自定义代币”,然后点击“导入代币”。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=7现在您的mts代币及其余额例如1080068应该会出现在metamask的资产列>7.现在,您的MTS代币及其余额(例如1,080,068)应该会出现在MetaMask的资产列<a href=#7现在您的mts代币及其余额例如1080068应该会出现在metamask的资产列 class=hash-link aria-label=7.现在,您的MTS代币及其余额(例如1,080,068)应该会出现在MetaMask的资产列的直接連結 title=7.现在,您的MTS代币及其余额(例如1,080,068)应该会出现在MetaMask的资产列的直接連結 translate=no>​</a></h2>
+<p>表中了
+Account1√
+OxFaef0..4774d</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=20359-sepoliaeth>2.0359 SepoliaETH<a href=#20359-sepoliaeth class=hash-link aria-label="2.0359 SepoliaETH的直接連結" title="2.0359 SepoliaETH的直接連結" translate=no>​</a></h3>
+<ul>
+<li class="">US$0 (+0.00%) Portfolio</li>
+</ul>
+<p>C
+K
+Swap
+豫送
+Buy/Sell
+Bridge
+接收
+Tokens
+交易紀錄
+NFTs
+Sepolia V
+尚末有匯率比较值</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=20359-sepoliaeth-1>2.0359 SepoliaETH<a href=#20359-sepoliaeth-1 class=hash-link aria-label="2.0359 SepoliaETH的直接連結" title="2.0359 SepoliaETH的直接連結" translate=no>​</a></h3>
+<p>MTS
+尚未有团率比较值
+1,000,000 MTS</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第五部分高级考量与未来展望>第五部分:高级考量与未来展望<a href=#第五部分高级考量与未来展望 class=hash-link aria-label=第五部分:高级考量与未来展望的直接連結 title=第五部分:高级考量与未来展望的直接連結 translate=no>​</a></h2>
+<p>必须明确指出,我们网刚创建的MyTestStableco1n还不是一个稳定币。它只是一个具有固
+定供应量的标准ERC-20代币,没有任何价格错定机制。要将其转变为真正的稳定币,需要根
+据所选模型进行大量的扩展开发。</p>
+<ul>
+<li class="">通往法币抵押型稳定币的路径:这条路径更多地涉及错下的法律和金融结构。您需要建</li>
+</ul>
+<p>立一个合规的实体来持有储备金“。在智能合约层面,您需要扩展合约,添加
+mint()(铸造)和burn()(销毁)函数,并使用访间控制机制(如0penZeppeLin
+的AccessControl)确保只有受信任的管理员地址才能调用它们。管理员只应在用户
+存入法币时调用mint,在用户赎回法币时调用burn。这是一个高度依赖中心化运营和
+信任的模型。</p>
+<ul>
+<li class="">通往加密资产抵押型稳定币的路径:这是一个复杂得多的链上系统。您需要构建一套</li>
+</ul>
+<p>SepoliaETH)存入金库,然后金库合约被搜权为用户
+mint相应数量的稳定币。该系统还必须集成一个可信的价格预言机来监控抵押品价
+值,以及一个自动化的清算机制,在抵押品价值过低时出售抵押品以保障系统的偿付
+能力。OpenZeppelin库中的
+ERC2θPausable(可暂停)、ERC2eBurnable(可销毁)等扩展将是构建此类系统
+的关键模块2</p>
+<ul>
+<li class="">通往算法稳定币的路径:这条路径要求设计一个极其复杂的、通常是多代币的系统,通</li>
+</ul>
+<p>过链上算法来管理供需关系"。例如,创建一个“股份”或”债券”代币,并编写一个智
+能合约,根据预言机报告的价格偏差,自动铸造/销毁稳定币,或出售/购买股份代
+币。整于历史上的失败案例,这被认为是挑战最大、风险最高的路径13。
+Works cited</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=1-an-introduction-to-stablecoins-i-advisories>1. An Introduction to Stablecoins I Advisories<a href=#1-an-introduction-to-stablecoins-i-advisories class=hash-link aria-label="1. An Introduction to Stablecoins I Advisories的直接連結" title="1. An Introduction to Stablecoins I Advisories的直接連結" translate=no>​</a></h2>
+<p>Arnold&
+Porter,
+accessed
+July
+15,
+2025,
+/2025/05/an-introduct1on-to-stableco1ns
+Overview
+KLRD,
+accessed
+July
+15,
+2.
+2625, <a href=https://klrd.gov/2024/11/15/stableco1n-overv1ew/ target=_blank rel="noopener noreferrer" class="">https://klrd.gov/2024/11/15/stableco1n-overv1ew/</a></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=3bu1ld1ng-stablecoin-protocols>3.Bu1ld1ng Stablecoin Protocols<a href=#3bu1ld1ng-stablecoin-protocols class=hash-link aria-label="3.Bu1ld1ng Stablecoin Protocols的直接連結" title="3.Bu1ld1ng Stablecoin Protocols的直接連結" translate=no>​</a></h2>
+<p>Pyth Network,
+accessed July
+15,
+<a href=https://waw target=_blank rel="noopener noreferrer" class="">https://waw</a>. pyth.network/usecases/stablecoin-
+2025,
+protocols</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4what>4.What<a href=#4what class=hash-link aria-label=4.What的直接連結 title=4.What的直接連結 translate=no>​</a></h2>
+<p>is
+Fiat-Backed Stablecoin?
+Types
+&
+Benefits
+a
+F1reblocks,
+accessed
+July
+15,
+<a href=https://www.fireblocks target=_blank rel="noopener noreferrer" class="">https://www.fireblocks</a> .com/glossary/fiat-backed-
+2025,
+stablecoin/
+Behind crypto's
+asset
+_popular
+most
+15,
+Chainalysis,
+passasse
+Kn
+https: //wuw.cha1nalys1s.com/blog/stableco1ns-most-
+popular-asset/
+Stablecoins: What Are They and How Do They Work? - Kiplinger,
+6 .
+accessed
+July
+15,
+2025, <a href=https://www.kiplinger.com/investing/cryptocurrency/6050 target=_blank rel="noopener noreferrer" class="">https://www.kiplinger.com/investing/cryptocurrency/6050</a>
+96/stableco1ns-detinition-and-how-they-work
+Overview,Uses,Categories,
+Stablecoin
+and Examples
+7.
+Corporate
+Finance
+Institute,
+accessed
+July
+15,
+<a href=https://corporatefinance1nstitute.com/resources/cryptoc target=_blank rel="noopener noreferrer" class="">https://corporatefinance1nstitute.com/resources/cryptoc</a>
+2025,
+urrency/stablecoin/
+Collateralized Stablecoin, Its Types & Examples
+Expla1ned
+Blog,
+NOBI
+passasoe
+July
+15,
+<a href=https://usenob1.com/blog/en/what target=_blank rel="noopener noreferrer" class="">https://usenob1.com/blog/en/what</a> -1s-collateral1zed-
+2025,
+9.
+2025, <a href=https://www.-gemini.com/cryptopedia/what-are- target=_blank rel="noopener noreferrer" class="">https://www.-gemini.com/cryptopedia/what-are-</a>
+July,
+15,
+stablecoins -how-do-they-work
+accessed July
+stablecoins, explained
+10.
+Algorithmic
+Kraken,
+2025,
+<a href=https://wwer.kraken.com/learn/algorithnic- target=_blank rel="noopener noreferrer" class="">https://wwer.kraken.com/learn/algorithnic-</a>
+15,
+stablecoins
+Ledger,
+accessed
+Algorithmic
+Stablecoin
+July
+15,
+11.
+2625,
+https : //<a href=http://www target=_blank rel="noopener noreferrer" class="">www</a>.<!-- --> ledger. com/acadeny/glossary/algorithnic-
+stablecoins
+12.
+it's
+different
+CoinTracker,
+accessed
+July
+15,
+2025, <a href=https://www.cointracker.io/learn/algorithmic-stablecoin target=_blank rel="noopener noreferrer" class="">https://www.cointracker.io/learn/algorithmic-stablecoin</a>
+Algorithnic Stablecoin?
+Koinly.accessed July
+What is an
+13.
+2025,
+<a href=https://koinly.io/crypto-glossary/algorithnic- target=_blank rel="noopener noreferrer" class="">https://koinly.io/crypto-glossary/algorithnic-</a>
+15,
+stablecoin/
+<a href=http://www.gemin1.com target=_blank rel="noopener noreferrer" class="">www.gemin1.com</a>,
+July
+15,
+accessed
+14 .
+nttps://<a href=http://www.gemini.com/cryptopedia/erc20-token- target=_blank rel="noopener noreferrer" class="">www.gemini.com/cryptopedia/erc20-token-</a>
+2025,
+standard-
+ethereum#:~:text=ERC%2D20%20is%20aa20token,Ethereum's$20eco5y
+stemg20ofe20decentralized%20apps.
+WhatCrypto
+UsersNeedto Know:
+The
+ERC28
+Standard
+15.
+July
+15,
+accessed
+<a href=https://www.1nvestopedla.com/tech/why-crypto-users- target=_blank rel="noopener noreferrer" class="">https://www.1nvestopedla.com/tech/why-crypto-users-</a>
+2025,
+need -know-about-erc20-token-standard/
+What
+Coinbase,
+15,
+ERC-20?
+accessed
+July
+16.
+1 5
+https ://<a href=http://www.coinbase target=_blank rel="noopener noreferrer" class="">www.coinbase</a> .com/learn/crypto-glossary/what-15-
+2025,
+erc-20
+What are ERC28 Tokens and How Does
+.Token Metrics,
+1t Work?
+17.
+July
+15,
+2025, <a href=https://www.tokenmetrics.com/blog/erc20-token target=_blank rel="noopener noreferrer" class="">https://www.tokenmetrics.com/blog/erc20-token</a></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=16-ethereums-erc-20-tokens-the-definitive-standard>16. Ethereum's ERC-20 Tokens: The Definitive Standard<a href=#16-ethereums-erc-20-tokens-the-definitive-standard class=hash-link aria-label="16. Ethereum's ERC-20 Tokens: The Definitive Standard的直接連結" title="16. Ethereum's ERC-20 Tokens: The Definitive Standard的直接連結" translate=no>​</a></h2>
+<p>|Gemini,
+accessed
+n
+15,
+<a href=https://ww.gem1n1 target=_blank rel="noopener noreferrer" class="">https://ww.gem1n1</a>. com/cryptoped1a/erc20-token-
+2025,
+standard-ethereun
+AreERC-20
+What
+Tokens
+the
+Ethereum
+Network?
+19.
+on
+accessed
+15,
+Investopedia,
+July
+<a href=https://www.investopedia.com/news/what-erc20-and-what- target=_blank rel="noopener noreferrer" class="">https://www.investopedia.com/news/what-erc20-and-what-</a>
+2025,
+does -1t-mean-ethereum/
+OpenZeppelin
+accessed
+Docs,
+July
+ERC
+28
+15,
+<a href=https://docs.openzeppelin.com/contracts/2.x/api/token/e target=_blank rel="noopener noreferrer" class="">https://docs.openzeppelin.com/contracts/2.x/api/token/e</a>
+2025,
+rc20
+Docs,
+ERC
+OpenZeppelin
+July
+28
+accessed
+15,
+21.
+<a href=https://docs.openzeppelin.com/contracts/3.x/api/token/e target=_blank rel="noopener noreferrer" class="">https://docs.openzeppelin.com/contracts/3.x/api/token/e</a>
+2025,
+rc20
+ERC
+29
+OpenZeppelin
+Docs,
+passasoe
+July
+accessed
+22.
+20
+15,
+<a href=https://docs.openzeppelin.com/contracts/4.x/api/token/e target=_blank rel="noopener noreferrer" class="">https://docs.openzeppelin.com/contracts/4.x/api/token/e</a>
+rc20
+accessed
+kanga.exchange,
+July
+15,
+23.
+2025,
+2025, <a href=https://kanga.exchange/university/en/courses/intermedia target=_blank rel="noopener noreferrer" class="">https://kanga.exchange/university/en/courses/intermedia</a>
+te-course/lessons/22-mainnet-versus-testnet-on-the-
+blockchain-the-complete-
+blockcha:
+guide/#:~:text=The%20testnet%26is426wherea29new,blockchain%20
+projects%20prove426their%28functionality.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=22-mainnet-versus-testnet-on-the-blockchain>22. Mainnet versus Testnet on the Blockchain.<a href=#22-mainnet-versus-testnet-on-the-blockchain class=hash-link aria-label="22. Mainnet versus Testnet on the Blockchain.的直接連結" title="22. Mainnet versus Testnet on the Blockchain.的直接連結" translate=no>​</a></h2>
+<p>The conplete
+24.
+Kanga
+guide!
+University,
+passasse
+15,
+2025,
+<a href=https://kanga.exchange/university/en/courses/1ntermedla target=_blank rel="noopener noreferrer" class="">https://kanga.exchange/university/en/courses/1ntermedla</a>
+te-course/lessons/22-mainnet-versus-testnet-on-the-
+blockchain-the-complete-guide/
+What are Testnet and Mainnet in Blockchain? - Nervos Network,
+25.
+<a href=https://www.nervos.org/knowledge- target=_blank rel="noopener noreferrer" class="">https://www.nervos.org/knowledge-</a>
+accessed
+July
+15,
+2025,
+base/testnet mainnet blockchain (explaincKBot)
+Mainnet,ETH &CRO Testnets|</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=26-all-about-network-settings>26. All about Network Settings<a href=#26-all-about-network-settings class=hash-link aria-label="26. All about Network Settings的直接連結" title="26. All about Network Settings的直接連結" translate=no>​</a></h2>
+<p>Help
+Crypto.com
+Center,
+accessed
+July
+15,
+<a href=https://help.crypto.com/en/art1cles/4578197-all target=_blank rel="noopener noreferrer" class="">https://help.crypto.com/en/art1cles/4578197-all</a> about-
+2025,
+network-settings-mainnet-eth-cro-testnets
+1nWeb3
+Mainnet
+What*s
+Testnet
+Vs
+the
+Difference?
+27.
+July
+15,
+Shardeum,
+accessed
+2025, <a href=https://shardeum.org/blog/testnet-vs-mainnet/ target=_blank rel="noopener noreferrer" class="">https://shardeum.org/blog/testnet-vs-mainnet/</a>
+Blockchain Council, accessed July 15,</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=28-mainnet-vs-testnet>28. Mainnet vs Testnet<a href=#28-mainnet-vs-testnet class=hash-link aria-label="28. Mainnet vs Testnet的直接連結" title="28. Mainnet vs Testnet的直接連結" translate=no>​</a></h2>
+<p>2025:+<a href=https://www.blockchain-council.org/blockchain/mainnet- target=_blank rel="noopener noreferrer" class="">https://www.blockchain-council.org/blockchain/mainnet-</a>
+vs-testnet/
+Goerli vs. Sepolia Testnet Comparison:
+Which is better?
+29 .
+Alchemy.
+accessed
+July
+15,
+2025, <a href="https://www.alchemy.com/overv1ews/goerl1-vs=sepol1a" target=_blank rel="noopener noreferrer" class="">https://www.alchemy.com/overv1ews/goerl1-vs=sepol1a</a>
+Goerli vs. Sepolia Testnet | QuickNode Guides, accessed July
+30.
+<a href=https://www-qu1cknode.com/guides/ethereum- target=_blank rel="noopener noreferrer" class="">https://www-qu1cknode.com/guides/ethereum-</a>
+2025,
+15,
+development/getting-started/goerli-vs-sepolia-a-head-to-head-
+comparison
+Ankr | Blog.
+Transitioning Testnets from Goerli to Sepolia
+31.
+July
+accessed
+15,
+2025,
+<a href=https://www.ankr.com/blog/trans1tioning-testnets-from- target=_blank rel="noopener noreferrer" class="">https://www.ankr.com/blog/trans1tioning-testnets-from-</a>
+goerli-to-sepolia/
+Exploring the Depreciation of Goerli Testnet and the Shift to
+32.
+Sepolia Testnet: A Comprehensive
+.Manisha Nair,
+Guide
+accessed
+July
+15,
+2025,
+<a href=https://manishaa28.hashnode,dev/exploring-the- target=_blank rel="noopener noreferrer" class="">https://manishaa28.hashnode,dev/exploring-the-</a>
+depreciation-of-goerli-testnet-and-the-shift-to-sepolia-
+testnet-a-comprehensive gu1de</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=33-goodbye-goerli-transitioning-from-goerli-to-sepolia-testnet>33. Goodbye Goerli: Transitioning from Goerli to Sepolia Testnet<a href=#33-goodbye-goerli-transitioning-from-goerli-to-sepolia-testnet class=hash-link aria-label="33. Goodbye Goerli: Transitioning from Goerli to Sepolia Testnet的直接連結" title="33. Goodbye Goerli: Transitioning from Goerli to Sepolia Testnet的直接連結" translate=no>​</a></h2>
+<p>July
+15,
+Curvegrid,
+accessed
+<a href=https://www.curvegrid,com/blog/2023-05- target=_blank rel="noopener noreferrer" class="">https://www.curvegrid,com/blog/2023-05-</a> 29-goodbye-
+2025,
+goerli-transitioning-from-goerli-to-sepolia-testnet
+Changes in Supported By Vaultodys
+From Goerli to Sepolia:
+‘E
+Ethe reum
+Testnets,
+accessed
+JuLy
+15,
+<a href=https://vaultody.com/blog/172-from-goerl1-to-sepol1a- target=_blank rel="noopener noreferrer" class="">https://vaultody.com/blog/172-from-goerl1-to-sepol1a-</a>
+2025,
+changes-in-supported-by-vaultodys-othereun-testnets
+35.
+Extension,
+accessed
+July
+15,
+2025, <a href=https://metamask.io/download target=_blank rel="noopener noreferrer" class="">https://metamask.io/download</a>
+Welcome to MetaMask: Your Complete Guide to the Crypto Wallet
+36.
+accessed
+NFT
+Now,
+July
+15,
+<a href=https://nftnow target=_blank rel="noopener noreferrer" class="">https://nftnow</a>. com/guides/how-to-set-up-metamask-
+2025,
+wallet/</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=37-a-complete-beginners-guide-to-using-metamask---coingecko>37. A Complete Beginner’s Guide to Using MetaMask - CoinGecko,<a href=#37-a-complete-beginners-guide-to-using-metamask---coingecko class=hash-link aria-label="37. A Complete Beginner’s Guide to Using MetaMask - CoinGecko,的直接連結" title="37. A Complete Beginner’s Guide to Using MetaMask - CoinGecko,的直接連結" translate=no>​</a></h2>
+<p>accessed
+Anc
+15,
+2025,
+<a href=https://www.coingecko.com/learn/complete-beginners- target=_blank rel="noopener noreferrer" class="">https://www.coingecko.com/learn/complete-beginners-</a>
+guide-to-metamask
+Guide: Secret Recovery Phrase, password,
+User
+and _private
+38.
+keys
+MetaMask
+Help
+Center,
+accessed
+July
+15,
+<a href=https://support.metamask.1o/start/user-guide-secret- target=_blank rel="noopener noreferrer" class="">https://support.metamask.1o/start/user-guide-secret-</a>
+2025,
+Getting
+with MetaMask
+Center,
+Help
+MetaMask
+started
+39 .
+accessed
+Ainc
+15,
+2025, <a href=https://support.metamask.io/start/getting target=_blank rel="noopener noreferrer" class="">https://support.metamask.io/start/getting</a> -started-with-
+metanask/
+How to set up an Ethereum wallet on MetaMask
+Tutorial:
+48.
+CodeHS,
+accessed
+July
+15,
+<a href=https://codehs.com/tutorial/jkeesh/how-to-set-up-an- target=_blank rel="noopener noreferrer" class="">https://codehs.com/tutorial/jkeesh/how-to-set-up-an-</a>
+2025,
+toSet upyour MetaMask
+How
+Wallet
+41.
+Foundation,
+July
+accessed
+15,
+<a href=https://val target=_blank rel="noopener noreferrer" class="">https://val</a> Leyw1sehealthfoundation.org/wp-
+2825,
+content/uploads/2021712/How-to-5et-up-your-Metalask-Wallet-
+step-by-step-snstruct1ons.pdf
+How to Add Sepolia to MetaMask
+Datawallet,
+Anc passaoe
+42.
+<a href=https://www.datawallet.com/crypto/add-sepolia-to- target=_blank rel="noopener noreferrer" class="">https://www.datawallet.com/crypto/add-sepolia-to-</a>
+2625,
+15,
+metanask</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=43-op-sepolia-testnet-rpc---chain-settings-basics--how-to-add>43. OP Sepolia Testnet RPC - Chain Settings, Basics & How to Add<a href=#43-op-sepolia-testnet-rpc---chain-settings-basics--how-to-add class=hash-link aria-label="43. OP Sepolia Testnet RPC - Chain Settings, Basics & How to Add的直接連結" title="43. OP Sepolia Testnet RPC - Chain Settings, Basics & How to Add的直接連結" translate=no>​</a></h2>
+<p>MetaMask
+Metaschool,
+accessed
+July
+to
+15,
+2025, <a href=https://metaschool.so/rpc/oPSepoliaTestnet target=_blank rel="noopener noreferrer" class="">https://metaschool.so/rpc/oPSepoliaTestnet</a>
+Deploy a Snart Contract Using Remix - Hedera Docs, accessed
+44 .
+July
+15,
+<a href=https://docs.hedera.com/hedera/tutorials/smart- target=_blank rel="noopener noreferrer" class="">https://docs.hedera.com/hedera/tutorials/smart-</a>
+2025,
+contracts/deploy-a-smart-contract-us1ng-rem1x
+Sepolia
+Ethereum
+Testnet
+45.
+How
+Metamask
+to
+GetBlock.10,
+accessed
+July
+15,
+<a href=https://getblock.io/blog/add-ethereum-sepolia-testnet- target=_blank rel="noopener noreferrer" class="">https://getblock.io/blog/add-ethereum-sepolia-testnet-</a>
+2025,
+MetaMask
+Wallet Setup Guide
+1s A Metanask
+(2625)
+|what
+46.
+YouTube,
+July
+accessed
+15,
+2025, <a href=https://www target=_blank rel="noopener noreferrer" class="">https://www</a>. youtube.com/watch?v=afuxGTJyqk8
+Add Ethereum Sepolia to MetaMask - Revoke.cash, accessed July
+47.
+<a href=https://revoke.cash/learn/wallets/add- target=_blank rel="noopener noreferrer" class="">https://revoke.cash/learn/wallets/add-</a>
+2025,
+15,
+network/ethereum-sepol1a
+July
+accessed
+15,
+<a href=http://www target=_blank rel="noopener noreferrer" class="">www</a>. genini. com,
+48.
+<a href=https://www.genin1.com/cryptopedia/what-are-gas-fees- target=_blank rel="noopener noreferrer" class="">https://www.genin1.com/cryptopedia/what-are-gas-fees-</a>
+2025,
+gwei-gas-fees-eth-ether-transaction-
+fee#:=:text=Gas%20fees%2Drepresent%z0the%20compensat1on, als0%
+20apply%20across$26otheraz0blockchains.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=49-how-gas-fees-work-on-the-ethereum-blockchain-->49. How Gas Fees Work on the Ethereum Blockchain -<a href=#49-how-gas-fees-work-on-the-ethereum-blockchain-- class=hash-link aria-label="49. How Gas Fees Work on the Ethereum Blockchain -的直接連結" title="49. How Gas Fees Work on the Ethereum Blockchain -的直接連結" translate=no>​</a></h2>
+<p>Investopedia,
+accessed
+July
+15,
+2025, <a href=https://www.investopedia.com/terms/g/gas target=_blank rel="noopener noreferrer" class="">https://www.investopedia.com/terms/g/gas</a> -ethereum.a5p</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=50what-are>50.What are<a href=#50what-are class=hash-link aria-label="50.What are的直接連結" title="50.What are的直接連結" translate=no>​</a></h2>
+<p>Academy,
+gasfees?
+(ETH)
+Bitpanda
+accessed
+July
+15,
+2025,
+<a href=https://ww.bitpanda target=_blank rel="noopener noreferrer" class="">https://ww.bitpanda</a> .com/academy/en/lessons/what-are-
+ethereum-eth-gas-fees
+Metana, accessed
+How to Get Sepolia ETH from a Faucet 2025
+51.
+July 15, 2025,<a href=https://metana.1o/blog/how-to-get-sepolia-eth- target=_blank rel="noopener noreferrer" class="">https://metana.1o/blog/how-to-get-sepolia-eth-</a>
+from-a-faucet-2025/
+GetBlock.i0,
+Ethereum Sepolia
+accessed July 15,
+faucet
+52.
+2025, <a href=https://getblock.io/faucet/eth-sepolia/ target=_blank rel="noopener noreferrer" class="">https://getblock.io/faucet/eth-sepolia/</a>
+SepoliaETH Faucet
+Ethereun Sepolia TestnetlBitbond
+53.
+accessed
+Token
+Tool,
+July
+15,
+2025, <a href=https://tokentool.bitbond.com/faucet/ethereum-sepolia target=_blank rel="noopener noreferrer" class="">https://tokentool.bitbond.com/faucet/ethereum-sepolia</a>
+Google Cloud, accessed July 15,
+Ethereum Sepolia Faucet
+54.
+2025,
+<a href=https://cloud.google.com/application/web3/faucet/ethere target=_blank rel="noopener noreferrer" class="">https://cloud.google.com/application/web3/faucet/ethere</a>
+un/sepoTia
+55.
+Guides,
+accessed
+July
+15,
+2025,
+<a href=https://www.quicknode.com/guides/ethereum- target=_blank rel="noopener noreferrer" class="">https://www.quicknode.com/guides/ethereum-</a>
+development/smart-contracts/how-to-create-and-deploy-an-
+erc20-token
+SepoliaETH
+deliveredstraight to your wallet.
+Infura,
+56.
+July
+accessed
+15,
+2025, <a href=https://www target=_blank rel="noopener noreferrer" class="">https://www</a>. infura.io/zh/faucet/sepolia</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=57-ethereum-sepolia-faucet-free-002-seth-per-day--learnleb3>57. Ethereum Sepolia Faucet |Free 0.02 sETH per day | Learnleb3,<a href=#57-ethereum-sepolia-faucet-free-002-seth-per-day--learnleb3 class=hash-link aria-label="57. Ethereum Sepolia Faucet |Free 0.02 sETH per day | Learnleb3,的直接連結" title="57. Ethereum Sepolia Faucet |Free 0.02 sETH per day | Learnleb3,的直接連結" translate=no>​</a></h2>
+<p>accessed July 15, 2025, <a href=https://learnweb3.1o/faucets/sepol1a/ target=_blank rel="noopener noreferrer" class="">https://learnweb3.1o/faucets/sepol1a/</a>
+Smart
+Contracts.
+Med1um,
+accessed
+July
+15,
+2025,
+<a href=https://medium.com/@ucheblessed/a-step-by-step-guide- target=_blank rel="noopener noreferrer" class="">https://medium.com/@ucheblessed/a-step-by-step-guide-</a>
+on-using-renix-ide-to-write-and-deploy-smart-contracts-
+dfc6e845f38b
+Remix
+Ethereum
+IDE
+59.
+community,
+accessed
+2025, <a href=https://rem1x-project.org/ target=_blank rel="noopener noreferrer" class="">https://rem1x-project.org/</a>
+An Introduction to Remix IDE -DEV Community. accessed July
+60.
+<a href=https://dev.to/shlok2746/an-introduction-to-renix- target=_blank rel="noopener noreferrer" class="">https://dev.to/shlok2746/an-introduction-to-renix-</a>
+15,2025,
+1de - 1610
+Deploy Smart Contracts with Remix | Moonbean Docs, accessed
+61.
+July
+15,
+<a href=https://docs,moonbeam.network/builders/ethereun/dev- target=_blank rel="noopener noreferrer" class="">https://docs,moonbeam.network/builders/ethereun/dev-</a>
+2025,
+env/ren1x/</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=52creating-and-deploying-a-contract--renix>52.Creating and Deploying a Contract -Renix<a href=#52creating-and-deploying-a-contract--renix class=hash-link aria-label="52.Creating and Deploying a Contract -Renix的直接連結" title="52.Creating and Deploying a Contract -Renix的直接連結" translate=no>​</a></h2>
+<ul>
+<li class="">Ethereun IDE 1</li>
+</ul>
+<p><a href=https://renix- target=_blank rel="noopener noreferrer" class="">https://renix-</a>
+accessedJuly15,
+documentation,
+2025,
+1de.readthedocs.1o/en/latest/create_deploy.html
+FullCourse For Beginners
+Learn Remix IDE
+YouTube,
+63.
+<a href=https://m.youtube.com/watch target=_blank rel="noopener noreferrer" class="">https://m.youtube.com/watch</a>?
+July
+2025,
+accessed
+15,
+v=WE4heWD5iu0&pp=0gcJCU8JAYcqIYzv
+July
+Docs,
+accessed
+15,
+ERC28
+64.
+OpenZeppelin
+2025,<a href=https://docs.openzoppelin.com/contracts/4.x/erc20 target=_blank rel="noopener noreferrer" class="">https://docs.openzoppelin.com/contracts/4.x/erc20</a>
+ERC -20
+July
+15,
+OpenZeppelin
+Docs,
+pessasoe
+65.
+<a href=https://docs.openzeppelin.com/contracts- target=_blank rel="noopener noreferrer" class="">https://docs.openzeppelin.com/contracts-</a>
+2025,
+stylus/0.1.8/erc20
+OpenZeppelin
+DoCs,
+July
+ERC -20
+accessed
+15,
+66.
+2025, <a href=https://docs.openzeppelin.com/contracts/5.x/erc20 target=_blank rel="noopener noreferrer" class="">https://docs.openzeppelin.com/contracts/5.x/erc20</a>
+Deploying Your First Snart Contract with Renix - Swan Chain,
+67.
+accessed
+Anc
+15,
+<a href=https://docs target=_blank rel="noopener noreferrer" class="">https://docs</a>. swanchain. 1o/bulders/dapp-
+2825,
+developer/deploying-your-first-smart- contract-with-ren1x
+Verifying Contracts
+Information Center, accessed
+Etherscan ]
+68.
+2025,
+July
+15,
+<a href=https://info.etherscan.com/how-to-verify- target=_blank rel="noopener noreferrer" class="">https://info.etherscan.com/how-to-verify-</a>
+contracts/
+Verifying your contracts
+Ethereum development environnent</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=69verifying>69.Verifying<a href=#69verifying class=hash-link aria-label=69.Verifying的直接連結 title=69.Verifying的直接連結 translate=no>​</a></h2>
+<p>yourcontracts|Ethereumdevelopmentenvironment
+69.
+professionals by Nomic Foundation-
+for
+Foundat1on
+accessed
+2025,
+July
+15,
+<a href=https://hardhat.org/hardhat- target=_blank rel="noopener noreferrer" class="">https://hardhat.org/hardhat-</a>
+runner/docs/guides/verifying
+Address Ownership
+Address
+Etherscan
+70.
+What
+Verify
+Contract
+is
+Information
+July
+accessed
+Center,
+15,
+<a href=https://info.etherscan.com/what-is-verify-address- target=_blank rel="noopener noreferrer" class="">https://info.etherscan.com/what-is-verify-address-</a>
+2025,
+ownership/
+Contract|QuickNodeGuides,
+VerifyaSmart
+71.
+Contract
+1Qu1ckNode
+Gu1des,
+Ways
+5
+to
+accessed
+15,
+July
+<a href=https://www.quicknode.com/guides/ethereum- target=_blank rel="noopener noreferrer" class="">https://www.quicknode.com/guides/ethereum-</a>
+2025,
+development/smart-contracts/different-ways-to-verify-smart-
+contract-code
+How to Import a Token in Metamask-Coin Factory,accessed
+72.
+July 15,
+2025,
+token-in-metamask
+July</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=73supportmetamaskio>73.support.metamask.io,<a href=#73supportmetamaskio class=hash-link aria-label=73.support.metamask.io,的直接連結 title=73.support.metamask.io,的直接連結 translate=no>​</a></h2>
+<p>15,
+accessed
+<a href=https://support.metamask.io/manage-crypto/tokens/how- target=_blank rel="noopener noreferrer" class="">https://support.metamask.io/manage-crypto/tokens/how-</a>
+2025,
+to-display-tokens-in-
+metamask/#:~:text=0nce%20you%20find%20your%20token,'Enter%20t
+oken%20contract%20address</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=74how>74.How<a href=#74how class=hash-link aria-label=74.How的直接連結 title=74.How的直接連結 translate=no>​</a></h2>
+<p>accessed
+July
+display
+MetaMask,
+15,
+tokens
+in
+to
+<a href=https://support.metamask.io/manage-crypto/tokens/how- target=_blank rel="noopener noreferrer" class="">https://support.metamask.io/manage-crypto/tokens/how-</a>
+2025,
+to-display-tokens-in-metamask/
+How to Add Custom Tokens to MetaMask -αlpharithms,accessed</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=75f>75.F<a href=#75f class=hash-link aria-label=75.F的直接連結 title=75.F的直接連結 translate=no>​</a></h2>
+<p>July
+<a href=https://www.alpharithms.com/adding-custom- target=_blank rel="noopener noreferrer" class="">https://www.alpharithms.com/adding-custom-</a>
+15,
+2025,
+tokens-to-metamask-1538217</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<p><img decoding=async loading=lazy alt=在以太坊测试网上发行ERC-20代币的综合指南：为构建稳定币奠定基础：微信公众号导出原始排版图 src=/assets/images/article-62787e039a29e202ad68eb741a12a071.webp width=1280 height=14134 class=img_ev3q /></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2025-07-15-2025-07-15-在以太坊测试网上发行erc-20代币的综合指南-为构建稳定币奠定基础-2247484709.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2025-07-17-智能合約開發核心模式-從查詢到日誌的五種交互實踐-2247484731><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>智能合約開發核心模式：從查詢到日誌的五種交互實踐</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2025-07-14-cryptozombies-lección-2-guía-definitiva-y-código-completo-2247484699><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>CryptoZombies Lección 2: Guía Definitiva y Código Completo</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#第一部分数字资产发行的基础概念 class="table-of-contents__link toc-highlight">第一部分:数字资产发行的基础概念</a><ul><li><a href=#11解构稳定币锚定机制概览 class="table-of-contents__link toc-highlight">1.1解构稳定币:锚定机制概览</a><li><a href=#12erc-20标准以太坊上同质化代币的蓝图 class="table-of-contents__link toc-highlight">1.2ERC-20标准:以太坊上同质化代币的蓝图</a><li><a href=#13试验场测试网与主网的对比分析 class="table-of-contents__link toc-highlight">1.3试验场:测试网与主网的对比分析</a></ul><li><a href=#第二部分准备开发与部署环境 class="table-of-contents__link toc-highlight">第二部分:准备开发与部署环境</a><ul><li><a href=#23获取测试资本sepoliaeth水龙头指南 class="table-of-contents__link toc-highlight">2.3获取测试资本:SepoliaETH水龙头指南</a><li><a href=#05-eth class="table-of-contents__link toc-highlight">0.5 ETH</a><li><a href=#885et class="table-of-contents__link toc-highlight">8.85ET</a><li><a href=#0001-eth class="table-of-contents__link toc-highlight">0.001 ETH</a><li><a href=#05eth class="table-of-contents__link toc-highlight">0.5ETH</a><li><a href=#005et class="table-of-contents__link toc-highlight">0.05ET</a><li><a href=#082et class="table-of-contents__link toc-highlight">0.82ET</a></ul><li><a href=#第三部分实验逐步发行一枚测试网代币 class="table-of-contents__link toc-highlight">第三部分:实验:逐步发行一枚测试网代币</a><ul><li><a href=#31使用0penzeppelin构建智能合约 class="table-of-contents__link toc-highlight">3.1使用0penZeppelin构建智能合约</a><li><a href=#32在renix中编译与部署前分析 class="table-of-contents__link toc-highlight">3.2在Renix中编译与部署前分析</a></ul><li><a href=#1编译合约在rem1x中导航到左例插件栏的sol1d1ty-comp1ler插件 class="table-of-contents__link toc-highlight">1.编译合约:在Rem1x中,导航到左例插件栏的“Sol1d1ty Comp1ler"插件</a><li><a href=#2选择编译器确保选择的编译器版本例如0820与您代码中pragma声明的版本 class="table-of-contents__link toc-highlight">2.选择编译器:确保选择的编译器版本(例如0.8.20)与您代码中pragma声明的版本</a><li><a href=#3执行编译点击蓝色的compile-myteststablecoinsol按钮-58如果一切 class="table-of-contents__link toc-highlight">3.执行编译:点击蓝色的*Compile MyTestStablecoin.sol"按钮 58。如果一切</a><li><a href=#4理解编译产物编译成功后remix会生成两个关键信息 class="table-of-contents__link toc-highlight">4.理解编译产物:编译成功后,Remix会生成两个关键信息:</a><ul><li><a href=#33将合约部署到sepolia测试网 class="table-of-contents__link toc-highlight">3.3将合约部署到Sepolia测试网</a></ul><li><a href=#1选择部墨环增导航到deptoyruntransactions插件 class="table-of-contents__link toc-highlight">1.选择部墨环增:导航到“Deptoy&RunTransactions”插件“</a><li><a href=#3设置部参数 class="table-of-contents__link toc-highlight">3.设置部参数:</a><li><a href=#1确认交易metamask会再次弹出显示部署合约的交易详情包括预估的gas费用 class="table-of-contents__link toc-highlight">1.确认交易:MetaMask会再次弹出,显示部署合约的交易详情,包括预估的Gas费用。</a><li><a href=#2部署成功等待片刻交易将在sepolia网络上被确认remix的终端会显示交易哈 class="table-of-contents__link toc-highlight">2.部署成功:等待片刻,交易将在Sepolia网络上被确认。Remix的终端会显示交易哈</a><li><a href=#第四部分部署后操作与验证 class="table-of-contents__link toc-highlight">第四部分:部署后操作与验证</a><li><a href=#1打开metamask确保网络已切换到sepolia测试网 class="table-of-contents__link toc-highlight">1.打开MetaMask,确保网络已切换到Sepolia测试网。</a><li><a href=#2在资产assets标签页下滚动到展部点击导入代而inport class="table-of-contents__link toc-highlight">2.在“资产(Assets)“标签页下,滚动到展部,点击”导入代而(Inport</a><li><a href=#3选择自定义代币customtoken标签页 class="table-of-contents__link toc-highlight">3.选择“自定义代币(CustomToken)"标签页。</a><li><a href=#4在代币合约地址字段中粘贴您的代币合约地址 class="table-of-contents__link toc-highlight">4.在“代币合约地址“字段中,粘贴您的代币合约地址。</a><li><a href=#5如果您的合约已在etherscan上成功验证metamask应该会自动读取并填充代币 class="table-of-contents__link toc-highlight">5.如果您的合约已在Etherscan上成功验证,MetaMask应该会自动读取并填充“代币</a><li><a href=#7现在您的mts代币及其余额例如1080068应该会出现在metamask的资产列 class="table-of-contents__link toc-highlight">7.现在,您的MTS代币及其余额(例如1,080,068)应该会出现在MetaMask的资产列</a><ul><li><a href=#20359-sepoliaeth class="table-of-contents__link toc-highlight">2.0359 SepoliaETH</a><li><a href=#20359-sepoliaeth-1 class="table-of-contents__link toc-highlight">2.0359 SepoliaETH</a></ul><li><a href=#第五部分高级考量与未来展望 class="table-of-contents__link toc-highlight">第五部分:高级考量与未来展望</a><li><a href=#1-an-introduction-to-stablecoins-i-advisories class="table-of-contents__link toc-highlight">1. An Introduction to Stablecoins I Advisories</a><li><a href=#3bu1ld1ng-stablecoin-protocols class="table-of-contents__link toc-highlight">3.Bu1ld1ng Stablecoin Protocols</a><li><a href=#4what class="table-of-contents__link toc-highlight">4.What</a><li><a href=#16-ethereums-erc-20-tokens-the-definitive-standard class="table-of-contents__link toc-highlight">16. Ethereum's ERC-20 Tokens: The Definitive Standard</a><li><a href=#22-mainnet-versus-testnet-on-the-blockchain class="table-of-contents__link toc-highlight">22. Mainnet versus Testnet on the Blockchain.</a><li><a href=#26-all-about-network-settings class="table-of-contents__link toc-highlight">26. All about Network Settings</a><li><a href=#28-mainnet-vs-testnet class="table-of-contents__link toc-highlight">28. Mainnet vs Testnet</a><li><a href=#33-goodbye-goerli-transitioning-from-goerli-to-sepolia-testnet class="table-of-contents__link toc-highlight">33. Goodbye Goerli: Transitioning from Goerli to Sepolia Testnet</a><li><a href=#37-a-complete-beginners-guide-to-using-metamask---coingecko class="table-of-contents__link toc-highlight">37. A Complete Beginner’s Guide to Using MetaMask - CoinGecko,</a><li><a href=#43-op-sepolia-testnet-rpc---chain-settings-basics--how-to-add class="table-of-contents__link toc-highlight">43. OP Sepolia Testnet RPC - Chain Settings, Basics & How to Add</a><li><a href=#49-how-gas-fees-work-on-the-ethereum-blockchain-- class="table-of-contents__link toc-highlight">49. How Gas Fees Work on the Ethereum Blockchain -</a><li><a href=#50what-are class="table-of-contents__link toc-highlight">50.What are</a><li><a href=#57-ethereum-sepolia-faucet-free-002-seth-per-day--learnleb3 class="table-of-contents__link toc-highlight">57. Ethereum Sepolia Faucet |Free 0.02 sETH per day | Learnleb3,</a><li><a href=#52creating-and-deploying-a-contract--renix class="table-of-contents__link toc-highlight">52.Creating and Deploying a Contract -Renix</a><li><a href=#69verifying class="table-of-contents__link toc-highlight">69.Verifying</a><li><a href=#73supportmetamaskio class="table-of-contents__link toc-highlight">73.support.metamask.io,</a><li><a href=#74how class="table-of-contents__link toc-highlight">74.How</a><li><a href=#75f class="table-of-contents__link toc-highlight">75.F</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>

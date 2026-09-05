@@ -1,0 +1,591 @@
+<!doctype html><html lang=zh-Hant dir=ltr class="blog-wrapper blog-post-page plugin-blog plugin-id-default" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>SE 安全芯片怎麼用（二）：功能場景、數字貨幣錢包與風險 | w0x7ce</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true name=twitter:image content=https://w0x7ce.eu/img/w0x7ce-social-card.png /><meta data-rh=true property=og:url content=https://w0x7ce.eu/blog/2026-06-21-se-安全芯片怎麼用-二-功能場景-數字貨幣錢包與風險-2247485946 /><meta data-rh=true property=og:locale content=zh_Hant /><meta data-rh=true name=docusaurus_locale content=zh-Hant /><meta data-rh=true name=docusaurus_tag content=default /><meta data-rh=true name=docsearch:language content=zh-Hant /><meta data-rh=true name=docsearch:docusaurus_tag content=default /><meta data-rh=true property=og:title content="SE 安全芯片怎麼用（二）：功能場景、數字貨幣錢包與風險 | w0x7ce"/><meta data-rh=true name=description content="从微信公众号导入的文章《SE 安全芯片怎麼用（二）：功能場景、數字貨幣錢包與風險》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:description content="从微信公众号导入的文章《SE 安全芯片怎麼用（二）：功能場景、數字貨幣錢包與風險》，保留原始排版图并提供本地 OCR 转写。"/><meta data-rh=true property=og:type content=article /><meta data-rh=true property=article:published_time content=2026-06-21T00:00:00.000Z /><meta data-rh=true property=article:author content=https://github.com/tianrking /><meta data-rh=true property=article:tag content=微信公眾號 /><link data-rh=true rel=icon href=/img/favicon.svg /><link data-rh=true rel=canonical href=https://w0x7ce.eu/blog/2026-06-21-se-安全芯片怎麼用-二-功能場景-數字貨幣錢包與風險-2247485946 /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-06-21-se-安全芯片怎麼用-二-功能場景-數字貨幣錢包與風險-2247485946 hreflang=zh-Hant /><link data-rh=true rel=alternate href=https://w0x7ce.eu/blog/2026-06-21-se-安全芯片怎麼用-二-功能場景-數字貨幣錢包與風險-2247485946 hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@id":"https://w0x7ce.eu/blog/2026-06-21-se-安全芯片怎麼用-二-功能場景-數字貨幣錢包與風險-2247485946","@type":"BlogPosting","author":{"@type":"Person","description":"MySelf","image":"https://github.com/tianrking.png","name":"w0x7ce","url":"https://github.com/tianrking"},"datePublished":"2026-06-21T00:00:00.000Z","description":"从微信公众号导入的文章《SE 安全芯片怎麼用（二）：功能場景、數字貨幣錢包與風險》，保留原始排版图并提供本地 OCR 转写。","headline":"SE 安全芯片怎麼用（二）：功能場景、數字貨幣錢包與風險","isPartOf":{"@id":"https://w0x7ce.eu/blog","@type":"Blog","name":"Blog"},"keywords":[],"mainEntityOfPage":"https://w0x7ce.eu/blog/2026-06-21-se-安全芯片怎麼用-二-功能場景-數字貨幣錢包與風險-2247485946","name":"SE 安全芯片怎麼用（二）：功能場景、數字貨幣錢包與風險","url":"https://w0x7ce.eu/blog/2026-06-21-se-安全芯片怎麼用-二-功能場景-數字貨幣錢包與風險-2247485946"}</script><link rel=alternate type=application/rss+xml href=/blog/rss.xml title="w0x7ce RSS Feed"><link rel=alternate type=application/atom+xml href=/blog/atom.xml title="w0x7ce Atom Feed"><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><script async src="https://www.googletagmanager.com/gtag/js?id=G-54QBN2XYB9"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-54QBN2XYB9",{anonymize_ip:!0})</script><script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561" async crossorigin=anonymous></script><link rel=stylesheet href=/assets/css/styles.e0a3479d.css /><script src=/assets/js/runtime~main.acdc793f.js defer></script><script src=/assets/js/main.86f9560a.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-377")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/img/logo.svg /><link rel=preload as=image href=https://github.com/tianrking.png /><div role=region aria-label=跳至主要内容><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>跳至主要内容</a></div><nav aria-label=主導航 class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=切換導覽列 aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/><div class=navbar__logo><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/img/logo.svg alt=w0x7ce class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">w0x7ce</b></a><a class="navbar__item navbar__link" href=/tutorial>技術筆記</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/blog>開發誌</a><a class="navbar__item navbar__link" href=/explore>探索</a><a class="navbar__item navbar__link" href=/projects>專案</a><a class="navbar__item navbar__link" href=/databases>資料庫</a><a class="navbar__item navbar__link" href=/labs>實驗場</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="切換淺色/深色模式（當前為system mode）"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=搜尋 aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="container margin-vert--lg"><div class=row><aside class="col col--3"><nav class="sidebar_re4s thin-scrollbar" aria-label=最近部落格文章導覽><div class="sidebarItemTitle_pO2u margin-bottom--md">Recent posts</div><div role=group><h3 class=yearGroupHeading_rMGB>2026</h3><ul class="sidebarItemList_Yudw clean-list"><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/mihomo-tun-cidr-route-exclude-fake-ip-direct>從 CIDR 到 TUN：IPv4 前綴、主機路由與 Mihomo 流量控制的工程解析</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/cat1-audio-upload-http-tls-socket-performance>為何錄音卡的 Cat.1 上傳選擇 HTTP over TLS Socket：從 UART、分片回執到可靠提速</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/smart-wearable-sensor-research>智能穿戴傳感器與介面選型研究：從物理量、器件到系統驗證</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/vpu-contact-vibration-microphone-research>VPU 與接觸式振動拾音器：原理、器件、電話錄音、論文與開源實作</a><li class=sidebarItem__DBe><a class=sidebarItemLink_mo7H href=/blog/esp32s3-25t-ultrasonic-waveform-envelope-microphone-spectrogram>从 GPIO4 到 Actions ATS3085S 模拟 MIC：25T 超声波的波形与采样模型</a></ul></div></nav></aside><main class="col col--7"><article class=""><header><h1 class=title_f1Hy>SE 安全芯片怎麼用（二）：功能場景、數字貨幣錢包與風險</h1><div class="container_mt6G margin-vert--md"><time datetime=2026-06-21T00:00:00.000Z>2026年6月21日</time> · <!-- -->閱讀時間約 15 分鐘</div><div class="margin-top--md margin-bottom--sm row"><div class="col col--12 authorCol_Hf19"><div class="avatar margin-bottom--sm"><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer" class=avatar__photo-link><img class="avatar__photo authorImage_XqGP" src=https://github.com/tianrking.png alt=w0x7ce /></a><div class="avatar__intro authorDetails_lV9A"><div class=avatar__name><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer"><span class=authorName_yefp translate=no>w0x7ce</span></a></div><small class=authorTitle_nd0D title=MySelf>MySelf</small><div class=authorSocials_rSDt></div></div></div></div></div></header><div id=__blog-post-container class=markdown><blockquote>
+<p>发布于 2026-06-21 00:25:15（微信公众号导出记录）。</p>
+<p>本文来自公众号后台的“导出文章内容”功能。博客正文由导出长图进行本地 OCR 转写，并保留原始排版图用于逐段核对。</p>
+<p>原文链接：<a href="http://mp.weixin.qq.com/s?__biz=MzIwMjMyNzIzNw==&mid=2247485946&idx=1&sn=09ef9d1b13f47ddf0fa86afebcbf2a6b&chksm=96e11c50a19695463d81230b4f5f31e6f8662508ba21a890625e24977ebede1972f0a13a2c43#rd" target=_blank rel="noopener noreferrer" class="">查看原文</a></p>
+<p>OCR 转写有效文字约 7245 字；代码、流程图和版式以文末原始排版图为准。</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=正文本地-ocr-转写>正文（本地 OCR 转写）<a href=#正文本地-ocr-转写 class=hash-link aria-label="正文（本地 OCR 转写）的直接連結" title="正文（本地 OCR 转写）的直接連結" translate=no>​</a></h2>
+<p>SE安全芯片怎用(二):功能場景、数字貨包與風险
+original we×7ce EI V1ajero 2826年6月21日 88 :25 广东
+上荒满了SE的进型、配置碟涩、能力醋答、初始化和函数查找,道一前接着看落地场景:娜
+些功能通合放造SE,数字货帮频包核怎廖看算法和key模型,以及量時哪些地方最容易把
+投備做座。
+运篇仍然以NXPSE05×/SE050套精系為主要工程语境,所以會能續出现SSSAPI、
+SCPQ3、AppletConfig、APDU、Object ID、policy 这些。 摄成别的 SE,概念可以類
+比,但具险配置入口要回到對鹰庭商的手册。
+SE適合哪些功能
+設備身份和雲端接入
+SE 襄放设備私鲁和涨害。TLS stack 在MCU 上跑,需要客户端等名時調SE、
+流程:
+1循速授害端
+雲端要求客户端退書
+>HCU提供监票</p>
+<ul>
+<li class="">>TLS stack 需要私签名</li>
+</ul>
+<p>> SE 薇名
+>需端睡證盘善和签名
+运造合IoT、工業设備、飘、傳感器、充電椿、醫痘设氟
+防克隆配件
+配件 SE裹放私编和證書。主機發challenge,配件签名。
+主榜随機challenge</p>
+<ul>
+<li class="">
+<p>>配件 SE 签名</p>
+</li>
+<li class="">
+<p>主概</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=4输查退善裹的型號批次霍限不要只错固定id固定id雪被制本地数據保護se-裹放-aeshmacwrapping-key-flash-裹故密文flash-ciphertext--nonceiv--tagse-rootwrapping-kcyhcu精察缓存场藤如果数據很大-se保根keymcu用硬件aes虚理大敏捕ota和安全答動辅助se-可以保存验策公镇公输hash設備涨害安全获服但-secure-boot-仍然要-mcu-bootloader-他se-不能替代-bootlcader-验原因在龄i2cspi線在pcb上是物理暴露的如果冷答secureboot依行時勤懋微se镇取公输攻整者可以在您線上接一因欺骗器直接回鹰一因恶意公输道就是典型的mitm-攻量所以-secure-boot-的信任根例如固件验籤公端-hash必须物理爆死在-mcu-内部的efuseotprom信任匠裹se可以用来保存未来的升级超書設体證書版本状或者做答動後的助验篮但組不能成系冷答动romboot的唯一信任依赖license和授權license-可以期定設借身份license-功能-期限設備-id-既本薇名se-可以保存融策公编或用設儒身份key向需端證明段借身份設備間安全通信se保存長期身份key做ecdh或名曾结數據用mcu-加密方醒善胎h033-kdfsession-key>4>输查退善裹的型號、批次、霍限
+不要只错固定ID.固定ID雪被制
+本地数據保護
+SE 裹放 AES/HMAC/wrapping key, FLash 裹故密文。
+Flash: ciphertext + nonce/Iv + tag
+SE: root/wrapping kcy
+HCU:精察、缓存、场藤
+如果数據很大, SE保根key,MCU用硬件AES虚理大敏捕。
+OTA和安全答動辅助
+SE 可以保存验策公镇、公输hash、設備涨害、安全获服。
+但 secure boot 仍然要 MCU bootloader 他。SE 不能替代 bootlcader 验。原因
+在龄I2C/SPI線在PCB上是物理暴露的:如果冷答SecureBoot依行時勤懋微
+SE镇取公输,攻整者可以在您線上接一因欺骗器,直接回鹰一因恶意公输,道就是典型的
+MitM 攻量
+所以 Secure Boot 的信任根,例如固件验籤公端 hash,必须物理爆死在 MCU 内部的
+eFuse/OTP/ROM信任匠裹。SE可以用来保存未来的升级超書、設体證書、版本状,或者做
+答動後的助验篮,但組不能成系冷答动ROMBoot的唯一信任依赖。
+License和授權
+License 可以期定設借身份:
+License =功能+ 期限+設備 ID +既本+薇名
+SE 可以保存融策公编,或用設儒身份key向需端證明段借身份。
+設備間安全通信
+SE保存長期身份key,做ECDH或名。曾结數據用MCU 加密。
+方醒善胎
+H033&lt;-
+>KDF
+session key<a href=#4输查退善裹的型號批次霍限不要只错固定id固定id雪被制本地数據保護se-裹放-aeshmacwrapping-key-flash-裹故密文flash-ciphertext--nonceiv--tagse-rootwrapping-kcyhcu精察缓存场藤如果数據很大-se保根keymcu用硬件aes虚理大敏捕ota和安全答動辅助se-可以保存验策公镇公输hash設備涨害安全获服但-secure-boot-仍然要-mcu-bootloader-他se-不能替代-bootlcader-验原因在龄i2cspi線在pcb上是物理暴露的如果冷答secureboot依行時勤懋微se镇取公输攻整者可以在您線上接一因欺骗器直接回鹰一因恶意公输道就是典型的mitm-攻量所以-secure-boot-的信任根例如固件验籤公端-hash必须物理爆死在-mcu-内部的efuseotprom信任匠裹se可以用来保存未来的升级超書設体證書版本状或者做答動後的助验篮但組不能成系冷答动romboot的唯一信任依赖license和授權license-可以期定設借身份license-功能-期限設備-id-既本薇名se-可以保存融策公编或用設儒身份key向需端證明段借身份設備間安全通信se保存長期身份key做ecdh或名曾结數據用mcu-加密方醒善胎h033-kdfsession-key class=hash-link aria-label="4>输查退善裹的型號、批次、霍限
+不要只错固定ID.固定ID雪被制
+本地数據保護
+SE 裹放 AES/HMAC/wrapping key, FLash 裹故密文。
+Flash: ciphertext + nonce/Iv + tag
+SE: root/wrapping kcy
+HCU:精察、缓存、场藤
+如果数據很大, SE保根key,MCU用硬件AES虚理大敏捕。
+OTA和安全答動辅助
+SE 可以保存验策公镇、公输hash、設備涨害、安全获服。
+但 secure boot 仍然要 MCU bootloader 他。SE 不能替代 bootlcader 验。原因
+在龄I2C/SPI線在PCB上是物理暴露的:如果冷答SecureBoot依行時勤懋微
+SE镇取公输,攻整者可以在您線上接一因欺骗器,直接回鹰一因恶意公输,道就是典型的
+MitM 攻量
+所以 Secure Boot 的信任根,例如固件验籤公端 hash,必须物理爆死在 MCU 内部的
+eFuse/OTP/ROM信任匠裹。SE可以用来保存未来的升级超書、設体證書、版本状,或者做
+答動後的助验篮,但組不能成系冷答动ROMBoot的唯一信任依赖。
+License和授權
+License 可以期定設借身份:
+License =功能+ 期限+設備 ID +既本+薇名
+SE 可以保存融策公编,或用設儒身份key向需端證明段借身份。
+設備間安全通信
+SE保存長期身份key,做ECDH或名。曾结數據用MCU 加密。
+方醒善胎
+H033<-
+>KDF
+session key的直接連結" title="4>输查退善裹的型號、批次、霍限
+不要只错固定ID.固定ID雪被制
+本地数據保護
+SE 裹放 AES/HMAC/wrapping key, FLash 裹故密文。
+Flash: ciphertext + nonce/Iv + tag
+SE: root/wrapping kcy
+HCU:精察、缓存、场藤
+如果数據很大, SE保根key,MCU用硬件AES虚理大敏捕。
+OTA和安全答動辅助
+SE 可以保存验策公镇、公输hash、設備涨害、安全获服。
+但 secure boot 仍然要 MCU bootloader 他。SE 不能替代 bootlcader 验。原因
+在龄I2C/SPI線在PCB上是物理暴露的:如果冷答SecureBoot依行時勤懋微
+SE镇取公输,攻整者可以在您線上接一因欺骗器,直接回鹰一因恶意公输,道就是典型的
+MitM 攻量
+所以 Secure Boot 的信任根,例如固件验籤公端 hash,必须物理爆死在 MCU 内部的
+eFuse/OTP/ROM信任匠裹。SE可以用来保存未来的升级超書、設体證書、版本状,或者做
+答動後的助验篮,但組不能成系冷答动ROMBoot的唯一信任依赖。
+License和授權
+License 可以期定設借身份:
+License =功能+ 期限+設備 ID +既本+薇名
+SE 可以保存融策公编,或用設儒身份key向需端證明段借身份。
+設備間安全通信
+SE保存長期身份key,做ECDH或名。曾结數據用MCU 加密。
+方醒善胎
+H033<-
+>KDF
+session key的直接連結" translate=no>​</a></h2>
+<p>>HCU虚理数搏加密
+低功耗段備遗要注意一因很實際的同翘:SE有會話税,也就是sessiontax
+如果設備由電池供電,主機常常會在空間時切SE供電,或者接SE遮入深应休眠。這楼做
+能省電,但代價是SE每次唤醒後,状感機可能已经清空,主機必须重新初始化I2C,重新打
+周 T=1 over I2C,重新健SCP03 的密输派生和握手。
+這遇程窗带来明题延逻和功耗秦值。不要镶每因微小堂稿包都去晚醒SE,也不要把每烟普通
+数擦包都设計成一次SE交互。更合理的做法是:SE只负责長速接建立、設锚身份银明、會活
+key 派生这颈關键勤作:言話建立俊,MCU 筛缓存言話状虑和短期key,用本地硬件
+AES/MAC處理日常流量。需灵重新建立信任时,再喷院 SE。
+真随機数反哺主機系统
+SE 的TRNG是一個很容易被低估的能力。很多設催即使私端放在 SE 裹,MCU佣仍然要生成
+大量陪模材料:</p>
+<ul>
+<li class="">
+<p>醇時 session key.</p>
+</li>
+<li class="">
+<p>協谱token</p>
+</li>
+<li class="">
+<p>TCP/IP序列號</p>
+</li>
+<li class="">
+<p>本地加密 IV/nonce,</p>
+</li>
+<li class="">
+<p>潮试或绿challenge,</p>
+</li>
+</ul>
+<p>如果MCU自己的焰源很,这些更西就會成局整機安全短板。尤其是低成本MCU,所陪機
+数有時只是PRNG加一黏ADC噪聲或時输抖动,瑞境固定後可能很容易被预测。
+更好的做法是答動時就SE抽取一段真髓燥数,用平台正规接口涯人系統池或crypto
+library 的 DRBG:
+SE GetRandom(32/64 bytes)</p>
+<ul>
+<li class="">> entropy_add / rng_seed / mbedTL5 entropy source / RTOs entropy API</li>
+</ul>
+<p>>HCU 侧 PRNG/DRBG 廉生亚可覆的 noncc 和 session kcy
+这個暂情成本很低,但收益很大。它不改曼業務,也不需要销外密,只是把安全芯片已有
+的TRNG用起来。需要注意的是,随機敏不要打印到日瑟,也不要营成长期seCret存起
+来;它的作用是提供痛,混入後就旗系统RNG接管。
+數字貨包裹SE做什
+接包裹显重要的是一句話:
+SE管私和签名,外部管交易薇。
+SE 不愿該負賣解析所有巍的交易格式。它不懂gas、nonce、UTXO、RLP、protobuf、
+Move object。外部系统横造交易、計算digest,SE 负青digest。
+手梗/上位爆
+MCU /提包固件
+手模 / 上拉明
+Seure Demert</p>
+<p>计算行事 dgr:
+智送交易建显具可膜示字险
+椎爵·地址
+含翔·湿阳带格
+比册Ri定 Object ID 资 clgest
+8 ECDSA.DER / sigretuee
+解析 r/s - Io-s-格式脂换
+容 rwt
+>
+手楼/上位姨
+MCU/摄包图作
+常見數字货和公鍵用什算法
+下面這强表不是交易格式表,而是徙SE角度看的“签名算法適配表”。SE显照心的是私曲
+線和名算法,交易编码、地址格式、手費模型通常在外部做。
+常見hash/地
+SE湾配建
+/帮
+常用签名算法
+址相
+ECDSA 路適合;Ta
+double SHA-
+secp256k1 + ECDSA; T
+proot/Schnorr 另
+Bitcoin BTC
+aproot 用 Schnorr
+256,HASH160
+解估
+BTC
+secp256k1
+Litecoin LTC
+適合 ECDSA 路線</p>
+<ul>
+<li class="">ECDSA</li>
+</ul>
+<p>Dogecoin DOG
+secp256k1 +
+類 BTC
+ECDSA
+遗合 ECDSA 路線
+secp256k1 + ECDSA
+Ethereum ETH
+Keccak256
+很適合
+Keccak256
+secp256k1 + ECDSA
+很適合
+BNB Chain
+Poltygon
+Keccak256
+secp256k1 + ECDSA
+很適合
+Arbitrum
+secp256k1
+Keccak256
+很適合</p>
+<ul>
+<li class="">ECDSA</li>
+</ul>
+<p>secp256k1
+Keccak256</p>
+<ul>
+<li class="">ECDSA</li>
+</ul>
+<p>很適合
+0pt1m1sm
+secp256k1 + ECDSA
+Keccak256
+很通合
+Base
+Avalanche C-
+Keccak256
+很適合
+secp256k1</p>
+<ul>
+<li class="">ECDSA</li>
+</ul>
+<p>Cha1n
+TRON TRX/TRC
+Keccak256 +
+secp256k1 + ECDSA
+道合
+28
+Tron 地址编码
+SHA-512Ha1f
+遥secp256k1 路線
+XRP Ledger
+secp256k1
+或Ed25519
+等
+更合
+ECDSA secp256k1 或 E
+Hedera
+依服户频型
+造ECDSA 限户更通合
+d25519
+SHA-256/Bec
+secp256k1 常見,也有
+Cosmos 生慧
+secp256k1 胀户道合
+其他方案
+h32等
+Terra Classi
+secp256k1路综適合
+C等Cosmos
+secp256k1 常貝
+Bech32
+系
+雾要 ED0SA/Ed2551
+Solana SOL
+Ed25519
+SHA-256等
+6
+cell/hash
+Ed25519
+塞要Ed25519支持
+NO1
+系
+Stellar XLM
+Ed25519
+SHA-256
+需要Ed25519
+支持
+SHA-512/256
+Algorand ALG
+需要Ed25519支持
+Ed25519
+0
+等
+Ed25519 / extended
+普通Ed25519 支持
+Cardano ADA
+Blake2b等
+Ed25519體系
+也末必,要單评估
+sr25519 通常不合
+Polkadot / K
+sr25519 常見,也支持
+Blake2等
+普通 SE
+Ed25519/ECDSA 景景
+ewesn
+Ed25519,部分支持 sec
+主線通常需要Ed2551
+p256k1 keyless/其他
+SHA3-256等
+Aptos
+9
+系
+Ed25519 / secp256k1
+/secp256r1多氟名
+Blake2b 等
+可按跟户算法逝SE
+Sui
+系
+Ed25519 派生體系、签
+CryptoNote
+Monero XMR
+不遍合普通SE直接做
+名等
+噬系
+Zcash shield
+多程需用算法
+不遍合普通SE直接做
+zk/银明體系福雜
+ed
+这個表有费因量站。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第一evm-多随不是多套-se-算法ethbnbpolygonbasearbitrumoptimism>第一,EVM 多随不是多套 SE 算法。ETH、BNB、Polygon、Base、Arbitrum、Optimism<a href=#第一evm-多随不是多套-se-算法ethbnbpolygonbasearbitrumoptimism class=hash-link aria-label="第一,EVM 多随不是多套 SE 算法。ETH、BNB、Polygon、Base、Arbitrum、Optimism的直接連結" title="第一,EVM 多随不是多套 SE 算法。ETH、BNB、Polygon、Base、Arbitrum、Optimism的直接連結" translate=no>​</a></h2>
+<p>遗些,微SE看基本都是:
+secp256k1 private kcy
+ECDSA sign digest
+差晃在疑ID、RPC、gas、交易编弱、合約斓用,不在 SE.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第二erc28bep2gusdtusdc-些代也不是新算法它们只是合约用>第二,ERC28、BEP2G、USDT、USDC 些代也不是新算法。它们只是合约用:<a href=#第二erc28bep2gusdtusdc-些代也不是新算法它们只是合约用 class=hash-link aria-label="第二,ERC28、BEP2G、USDT、USDC 些代也不是新算法。它们只是合约用:的直接連結" title="第二,ERC28、BEP2G、USDT、USDC 些代也不是新算法。它们只是合约用:的直接連結" translate=no>​</a></h2>
+<p>同一把 EVM 私
+同一個 ECDSA 签名
+不阿的 to/data/value</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第三btc-的點不是私算法而是sighash-和-utx0se-只需要-32字额>第三,BTC 的點不是私算法,而是sighash 和 UTX0。SE 只需要 32字额<a href=#第三btc-的點不是私算法而是sighash-和-utx0se-只需要-32字额 class=hash-link aria-label="第三,BTC 的點不是私算法,而是sighash 和 UTX0。SE 只需要 32字额的直接連結" title="第三,BTC 的點不是私算法,而是sighash 和 UTX0。SE 只需要 32字额的直接連結" translate=no>​</a></h2>
+<p>d1gest。P2PKH、P2WPKH、P2SH-P2WPKH 的差翼主雯在外部交易横造。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第四ed25519-不能糊弄se-eddsa就不能脱-solanatonstellar-原生支>第四,Ed25519 不能糊弄。SE EDDSA,就不能脱 Solana/ToN/Stellar 原生支<a href=#第四ed25519-不能糊弄se-eddsa就不能脱-solanatonstellar-原生支 class=hash-link aria-label="第四,Ed25519 不能糊弄。SE EDDSA,就不能脱 Solana/ToN/Stellar 原生支的直接連結" title="第四,Ed25519 不能糊弄。SE EDDSA,就不能脱 Solana/ToN/Stellar 原生支的直接連結" translate=no>​</a></h2>
+<p>持。用 SE 包装seed再缓MCU 软件寰名,是兼容方案,不是同等级硬件额名。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第五schnorrsr25519monerozcash-shielded-这類不要輕易承它们不是换>第五,Schnorr、sr25519、Monero、Zcash shielded 这類不要輕易承。它们不是“换<a href=#第五schnorrsr25519monerozcash-shielded-这類不要輕易承它们不是换 class=hash-link aria-label="第五,Schnorr、sr25519、Monero、Zcash shielded 这類不要輕易承。它们不是“换的直接連結" title="第五,Schnorr、sr25519、Monero、Zcash shielded 这類不要輕易承。它们不是“换的直接連結" translate=no>​</a></h2>
+<p>hash"那座單,涉及签名體系、镜明體系或熔结,普通SE未必能原生覆蓝。
+包角度反推SE遥型
+如果目标是EVM/BTC/TRON慢先:
+重胎看 secp256k1 + ECDsA + 公碘源出 + digest signing
+如果目标是 Solana/TON/Stellar:
+重影看Ed25519/EdDSA 是否真真阳答
+如果目概是BTCTaproot:
+重看Schnorr/BIP348是否原生支持
+如昊目棵是全键包:
+不要只看一個SE 能不能 ECDSA
+囊部估 secp256k1、Ed25519、Schnorr、sr25519、HD 派生、seed 保理、恢覆體系
+很多“全键包”显後會整成混合安全模型:
+部分key 在 5E内生成董蚤名
+部分 seed 由 SE 包装
+部分算法由HCU敢件链名
+都分键蛇胞不支持硬件私辅不出芯片
+运不是不能做,但文案和安全遗界要满清楚。
+不要只看“用了ECDSA/Ed25519"这個字
+同一因签名算法,在不同上退有很多银额會影客工程實现:
+细
+易什度影馨SE使用
+曲综
+ECDSA 可能是 secp256kl,也可能是P-256
+digest 長座
+SE 链 digest 前要硫超長度和 hash 规则
+SE 可能返回 DER,硬可能要r||s
+签名格式
+EVM/BTC 生搬通常要感理 ECDSA malleability
+low-5要求
+EVM蒸要v/recovery 1d, SE 通常不直接
+recovery 1d
+地址派生
+SE 给公编,地址编在外部做
+HD 派生
+SE是否支持内部派生,决定 seed 會不霍出现在MCU
+普通SE不一定支持福雜签名
+多籤/门限舞名
+同一修键可能允多種key type
+所以判断一條疑能不能做,不是同:
+SE支不支持ECC?
+而是周:
+这情健需要哪修曲狼?
+需要哪種签名?
+digest 怎磨算?
+签名帽出格式是什度?
+是否需要recovery 1d?
+私蕴是否必须参興HD派生?
+SE 是否能理私编全程不出芯片?
+EVM/BTC/TRON 適合SeCp256k1+ECDSA
+如果 SE 支持 secp256k1/ECDSA,那度 EVM、BTC 傅路線、TRON、部分 XRP/Hedera
+路線都比较通合。
+EVM 地址:
+SE 内 secp255k1 private key
+募出 public key: 04 11 X 11 Y
+>
+Keccak256(X 11 Y)
+>取曼後20字
+签名:
+外部横造交易digest</p>
+<ul>
+<li class="">> SE 嚣 d1gest</li>
+</ul>
+<p>返网 DER ECOSA signature
+外部解析r/5、匠理L.ow-5、恢V
+继装raw transaction
+ERC20/USDT/USDC 不需要 SE 新增算法。它作仍然是EVM交易。
+BTC復瓣點不在SE
+BTC 德的是UTX0、sighash、script、witness.SE 只 digest。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第一陪段建做p2wpkh不要一關始taprootschnorr>第一陪段建做P2WPKH,不要一關始Taproot/Schnorr。<a href=#第一陪段建做p2wpkh不要一關始taprootschnorr class=hash-link aria-label=第一陪段建做P2WPKH,不要一關始Taproot/Schnorr。的直接連結 title=第一陪段建做P2WPKH,不要一關始Taproot/Schnorr。的直接連結 translate=no>​</a></h2>
+<p>Ed25519要誠實虑理
+Solana、TON、Stellar、Algorand、Aptos、Polkadot/Kusana 這规常用 Ed25519
+或相關體系。
+如果SE的EDDSA没,就不能脱“原生硬件额名支持”。
+能做的退择:
+L.换支持 Ed25519 的 SE/prof1le.
+?.SE 只包装 seed, MCU 软件签名。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=第二種是兼容方案不是显高安全方案因為签名时seedprivate-key进人-mcu>第二種是兼容方案,不是显高安全方案。因為签名时seed/private key进人 MCU<a href=#第二種是兼容方案不是显高安全方案因為签名时seedprivate-key进人-mcu class=hash-link aria-label="第二種是兼容方案,不是显高安全方案。因為签名时seed/private key进人 MCU的直接連結" title="第二種是兼容方案,不是显高安全方案。因為签名时seed/private key进人 MCU的直接連結" translate=no>​</a></h2>
+<p>RAM.
+包key到底怎放
+常見三種模型。
+模型A:SE 内生成單眼户key
+SE gcnerate secp256k1 private kcy</p>
+<ul>
+<li class="">>object_id 固定</li>
+</ul>
+<p>源出公编
+算地址
+clgest
+慢點:最乾浮,私续不出 SE.
+缺點:恢復證系要额外投計,不是傅统HD鳞包险号。
+模型B:外部HD派生後導入 SE
+助起制 -> sced -> BIP32/BIP44</p>
+<ul>
+<li class="">派生账户私端</li>
+</ul>
+<p>海入 SE
+>SE签名
+侵路:兼容傅统疑包。
+缺點:派生时私端在外部出现退。
+模型C:SE包装seed,外部派生
+SE 内 wrapping key
+2 Flash 内 encrypted seed
+需要签名時解包seed
+4MCU 派生亚签名或增入 SE
+5用完清内存
+侵贴:兼容多键。
+慢點:兼容多诞,
+缺點:安全遗界弱於SE内生成私端。
+生產段要注意什
+開發板能跑通,不代表能出貨。
+量產時至少要處理:</p>
+<ul>
+<li class="">
+<p>PlatformSCPθ3key替换。</p>
+</li>
+<li class="">
+<p>生產key安全保存。</p>
+</li>
+<li class="">
+<p>Object ID 分配表。</p>
+</li>
+<li class="">
+<p>設備UniqueID、公、證害序列號記錄。</p>
+</li>
+<li class="">
+<p>證害籤發。</p>
+</li>
+<li class="">
+<p>policy 固化.</p>
+</li>
+</ul>
+<p>“口得解·</p>
+<ul>
+<li class="">
+<p>固件策名和防回滚。</p>
+</li>
+<li class="">
+<p>危险API普通固件移除。</p>
+</li>
+<li class="">
+<p>產線日脱敏。</p>
+</li>
+<li class="">
+<p>I2C/SPI寫入後的回請校驗和状熊確。</p>
+</li>
+<li class="">
+<p>失設備如何恢復或報。</p>
+</li>
+</ul>
+<p>尤其是SCPθ3key。改了但没記錄,後面可能再也進不去这颗SE。
+量產寫入遗要防底通信抖動。I2C/SPI總線在治具接觸不稳、線长、供電毛刺、干接、復位
+時序不乾凈時,都可能出現寫入中或返回状態常。寫入SCPθ3key、policy、曲線、證
+害、業務key之後,必须做格的回或验證:確對象存在、objectattributes、
+公、做一次签名/验或MAC測試、記錄最终状。不要只看“寫入函数返回成功”就放
+行。
+否则最麻的不是單台失败,而是在產線上批量裂造出半初始化、半镇定、後續又無法用原
+key或新key登錄的“半"設。安全芯片的持久默態一旦卡在中間,比普通FLash寫堰
+更難救。
+最後的總結
+SE芯片不是“加密函数合集”,而是硬件可信根。
+選SE時先看需求:
+業務要保睡什磨
+協要什磨算法
+3私翁能不能出芯片
+線能不能安全注入
+软件棱能不能接
+6未来要不要恢復、吊銷、升级
+拿到芯片後先查真實配置:
+GetVersion
+AppletConfig
+3 ReadECCurveList
+4 GetFreeMemory
+Object list
+State
+芯片支持但没用警時要分洁:
+Applet/profile 不支持:换型號或配置
+曲線没set:調用CreateCurve類函數初始化
+3host 编用:改fsl_sss_ftr/ auth/ CMake 配置
+4對象不存在:provision key/cert/object
+5policy不允許:回到對象策略設計
+初始化的意羲不是“跑一下init”,而是建立通信、安全通道、能力韶知、業務對象和權限
+界
+密最好在SE内生成。如果業務需要恢復或兼容已有體系,也可以外部派生後導入SE,或者
+SE包装seed,再由外部派生。但這時要誠實承安全遍界弱。
+也就是説SE使用方式是:
+需求疆動遥型
+實测硅韶配置
+3只bring-up 先行
+4曲線和對象按需provision
+policy最小權限
+普通通行只用對象
+危险personalization單揭放座線模式
+参考資料</p>
+<ul>
+<li class="">NXP SE050 產品真:<code>https://www.nxp.com/pages/edgelock-se05e-plug-and-trust-s</code></li>
+</ul>
+<p>ecure-element-family-enhanced-iot-security-with-high-flexibilitys3AsE05e</p>
+<ul>
+<li class="">NXP SE050 datasheet: https:/<a href=http://www.nxp.com/docs/en/data-sheet/SE050-DATASHEE target=_blank rel="noopener noreferrer" class="">www.nxp.com/docs/en/data-sheet/SE050-DATASHEE</a></li>
+</ul>
+<p>T. pdf</p>
+<ul>
+<li class="">AN12436 - SE050 configurations: <code>https://www.nxp.com/docs/en/application-</code></li>
+</ul>
+<p>note/AN12436.pdf</p>
+<ul>
+<li class="">AN14277 - EdgeLock SE05x user guidelines: <code>https://www.nxp.com/docs/en/a</code></li>
+</ul>
+<p>pplication-note/AN14277. pdf</p>
+<ul>
+<li class="">NXP Plug & Trust Middleware: <code>https://github.com/NxP/plug-and-trust</code></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=原始排版图>原始排版图<a href=#原始排版图 class=hash-link aria-label=原始排版图的直接連結 title=原始排版图的直接連結 translate=no>​</a></h2>
+<p><img decoding=async loading=lazy alt="SE 安全芯片怎麼用（二）：功能場景、數字貨幣錢包與風險：微信公众号导出原始排版图" src=/assets/images/article-50e52b471c3fc504125d83bdda209729.webp width=1280 height=12954 class=img_ev3q /></div><footer class=docusaurus-mt-lg><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class=col><b>標籤：</b><ul class="tags_jXut padding--none margin-left--sm"><li class=tag_QGVx><a rel=tag title=從個人微信公眾號整理到博客的文章 class="tag_zVej tagRegular_sFm0" href=/blog/tags/wechat-official-account>微信公眾號</a></ul></div></div><div class="row margin-top--sm theme-blog-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/blog/2026-06-21-2026-06-21-se-安全芯片怎麼用-二-功能場景-數字貨幣錢包與風險-2247485946.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>編輯此頁</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label=部落格文章分頁導覽><a class="pagination-nav__link pagination-nav__link--prev" href=/blog/2026-06-22-密碼學小帳本-從-aes-到後量子-搞懂幾類演算法-2247485981><div class=pagination-nav__sublabel>較新一篇</div><div class=pagination-nav__label>密碼學小帳本：從 AES 到後量子，搞懂幾類演算法</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/blog/2026-06-20-se-安全芯片怎麼用-一-需求選型-配置確認與初始化-2247485941><div class=pagination-nav__sublabel>較舊一篇</div><div class=pagination-nav__label>SE 安全芯片怎麼用（一）：需求選型、配置確認與初始化</div></a></nav></main><div class="col col--2"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#正文本地-ocr-转写 class="table-of-contents__link toc-highlight">正文（本地 OCR 转写）</a><li><a href=#4输查退善裹的型號批次霍限不要只错固定id固定id雪被制本地数據保護se-裹放-aeshmacwrapping-key-flash-裹故密文flash-ciphertext--nonceiv--tagse-rootwrapping-kcyhcu精察缓存场藤如果数據很大-se保根keymcu用硬件aes虚理大敏捕ota和安全答動辅助se-可以保存验策公镇公输hash設備涨害安全获服但-secure-boot-仍然要-mcu-bootloader-他se-不能替代-bootlcader-验原因在龄i2cspi線在pcb上是物理暴露的如果冷答secureboot依行時勤懋微se镇取公输攻整者可以在您線上接一因欺骗器直接回鹰一因恶意公输道就是典型的mitm-攻量所以-secure-boot-的信任根例如固件验籤公端-hash必须物理爆死在-mcu-内部的efuseotprom信任匠裹se可以用来保存未来的升级超書設体證書版本状或者做答動後的助验篮但組不能成系冷答动romboot的唯一信任依赖license和授權license-可以期定設借身份license-功能-期限設備-id-既本薇名se-可以保存融策公编或用設儒身份key向需端證明段借身份設備間安全通信se保存長期身份key做ecdh或名曾结數據用mcu-加密方醒善胎h033-kdfsession-key class="table-of-contents__link toc-highlight">4>输查退善裹的型號、批次、霍限
+不要只错固定ID.固定ID雪被制
+本地数據保護
+SE 裹放 AES/HMAC/wrapping key, FLash 裹故密文。
+Flash: ciphertext + nonce/Iv + tag
+SE: root/wrapping kcy
+HCU:精察、缓存、场藤
+如果数據很大, SE保根key,MCU用硬件AES虚理大敏捕。
+OTA和安全答動辅助
+SE 可以保存验策公镇、公输hash、設備涨害、安全获服。
+但 secure boot 仍然要 MCU bootloader 他。SE 不能替代 bootlcader 验。原因
+在龄I2C/SPI線在PCB上是物理暴露的:如果冷答SecureBoot依行時勤懋微
+SE镇取公输,攻整者可以在您線上接一因欺骗器,直接回鹰一因恶意公输,道就是典型的
+MitM 攻量
+所以 Secure Boot 的信任根,例如固件验籤公端 hash,必须物理爆死在 MCU 内部的
+eFuse/OTP/ROM信任匠裹。SE可以用来保存未来的升级超書、設体證書、版本状,或者做
+答動後的助验篮,但組不能成系冷答动ROMBoot的唯一信任依赖。
+License和授權
+License 可以期定設借身份:
+License =功能+ 期限+設備 ID +既本+薇名
+SE 可以保存融策公编,或用設儒身份key向需端證明段借身份。
+設備間安全通信
+SE保存長期身份key,做ECDH或名。曾结數據用MCU 加密。
+方醒善胎
+H033&lt;-
+>KDF
+session key</a><li><a href=#第一evm-多随不是多套-se-算法ethbnbpolygonbasearbitrumoptimism class="table-of-contents__link toc-highlight">第一,EVM 多随不是多套 SE 算法。ETH、BNB、Polygon、Base、Arbitrum、Optimism</a><li><a href=#第二erc28bep2gusdtusdc-些代也不是新算法它们只是合约用 class="table-of-contents__link toc-highlight">第二,ERC28、BEP2G、USDT、USDC 些代也不是新算法。它们只是合约用:</a><li><a href=#第三btc-的點不是私算法而是sighash-和-utx0se-只需要-32字额 class="table-of-contents__link toc-highlight">第三,BTC 的點不是私算法,而是sighash 和 UTX0。SE 只需要 32字额</a><li><a href=#第四ed25519-不能糊弄se-eddsa就不能脱-solanatonstellar-原生支 class="table-of-contents__link toc-highlight">第四,Ed25519 不能糊弄。SE EDDSA,就不能脱 Solana/ToN/Stellar 原生支</a><li><a href=#第五schnorrsr25519monerozcash-shielded-这類不要輕易承它们不是换 class="table-of-contents__link toc-highlight">第五,Schnorr、sr25519、Monero、Zcash shielded 这類不要輕易承。它们不是“换</a><li><a href=#第一陪段建做p2wpkh不要一關始taprootschnorr class="table-of-contents__link toc-highlight">第一陪段建做P2WPKH,不要一關始Taproot/Schnorr。</a><li><a href=#第二種是兼容方案不是显高安全方案因為签名时seedprivate-key进人-mcu class="table-of-contents__link toc-highlight">第二種是兼容方案,不是显高安全方案。因為签名时seed/private key进人 MCU</a><li><a href=#原始排版图 class="table-of-contents__link toc-highlight">原始排版图</a></ul></div></div></div></div></div><footer class=footer_pkqC><div class="container inner_w9l9"><div class=identity_txwY><a class=brand_EKcE href=/>w0x7ce</a><p>技術筆記、專案和小實驗。<p class=scope_N8OL>Embedded systems · Local AI · Infrastructure</div><nav class=navigation_yoHX aria-label=頁尾導覽><a href=/tutorial>技術筆記</a><a href=/blog>開發誌</a><a href=/projects>專案</a><a href=/labs>實驗場</a></nav><div class=external_UDxs><a href=https://github.com/tianrking target=_blank rel="noopener noreferrer">GitHub ↗</a><a href=mailto:tian.r.king@gmail.com aria-label="Email tian.r.king@gmail.com">Email</a></div></div><div class="container bottom_SvXX"><span>© <!-- -->2026<!-- --> w0x7ce</span><span>Built with Docusaurus</span></div></footer></div></body>
