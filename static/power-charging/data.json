@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-05",
+  "checked_on": "2026-09-06",
   "scope_note": "本库覆盖电源与充电：移动电源、GaN充电器、无线充电、户外电源与太阳能充电设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-05"
+      "2026-09-06"
     ]
   ],
   "products": [
@@ -366,6 +366,55 @@
         "VENTION-DASH-PRO-IFA-20260905"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "无",
+      "sensors": "三重散热与AI温度控制；具体温度传感器型号未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "Qi2.2；MagSafe兼容路径；USB-C有线充电；精确PD/PPS协议版本未公开",
+      "chip_or_soc": "未公开",
+      "storage": "无",
+      "dimensions": "不带线官方页约102×67×16mm；部分官方规格文本列104×68×19mm，内置线变体约102×67×16mm；差异保留待复核",
+      "weight_g": "约196g（不带线）；约202g（内置线变体）",
+      "battery": "10000mAh；官方称内置两节5000mAh电芯；电芯化学与额定Wh未公开",
+      "charging": "25W Qi2.2无线输出；45W USB-C有线输出；30W自充；端口数量与输入电压详见区域页",
+      "water_resistance": "未公开；便携/航运友好描述不等同防水等级",
+      "subscription": "无公开订阅",
+      "privacy": "未公开；AI温控为本地充电控制功能，数据边界未披露",
+      "features": [
+        "官方Qi2.2认证；25W磁吸无线充电",
+        "45W USB-C有线输出；内置线版本提供45W双向快充",
+        "30W快速自充",
+        "三重散热与AI温度控制",
+        "可同时为两台设备供电",
+        "不带线/内置线、颜色和区域价格作为变体，不重复计数"
+      ],
+      "availability_note": "Baseus官方美国/欧洲商城有商品页、SKU、价格与Add to cart/In stock信号；美国基础版US$59.99、内置线版US$69.99，促销与地区价格动态",
+      "source_note": "Baseus美国/欧洲官方商品页与IFA官方发布稿互证；未公开芯片、PD/PPS完整协商、额定Wh、防水和完整温控硬件，不作推断",
+      "id": "PWR-010",
+      "brand": "Baseus",
+      "model": "PicoGo AM52 Qi2.2 Magnetic Power Bank 10000mAh 45W",
+      "country_region": "中国品牌/美国、欧洲及全球Baseus官方商城；区域变体不拆主型号",
+      "category": "电源与充电/磁吸移动电源",
+      "form_factor": "Qi2.2磁吸移动电源；含不带线与内置USB-C线变体",
+      "use_case": "手机/耳机移动供电、Qi2.2磁吸无线充电、USB-C有线快充与双设备充电",
+      "status": "在售/官方美国与欧洲商城；颜色、内置线、折扣与SKU作为变体保留",
+      "evidence": "A",
+      "launch_date": "2026-09-04",
+      "launch_date_type": "Baseus官方IFA 2026发布稿将其列入Dark Cherry/充电新品可得组合；商品页为当前销售证据，不等同于首次上市日",
+      "price": "US$59.99（不带线官方美国页）；US$69.99（内置USB-C线变体）；欧洲官方页列€79.99，价格随区域/促销变化",
+      "official_url": "https://www.baseus.com/products/picogo-am52-qi2-2-magnetic-power-bank-10000mah-45w",
+      "spec_url": "https://www.baseus.com/products/picogo-am52-qi2-2-magnetic-power-bank-with-built-in-cable-10000mah-45w",
+      "source_refs": [
+        "BASEUS-AM52-US-20260906",
+        "BASEUS-AM52-CABLE-US-20260906",
+        "BASEUS-AM52-EU-20260906",
+        "BASEUS-IFA-CHARGING-20260906"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -406,6 +455,22 @@
         "VENTION-DASH-PRO-IFA-20260905"
       ],
       "next_check": "核验官方商品页、精确型号/额定Wh/输出功率、价格、认证与区域库存"
+    },
+    {
+      "id": "CAND-BASEUS-PICOGO-MIX-AT51-20260906",
+      "name": "Baseus PicoGo Mix AT51 Universal 3-in-1 Charge Power Bank",
+      "brand": "Baseus",
+      "region": "全球/IFA 2026预告",
+      "category": "移动电源/旅行充电",
+      "status": "候选/官方预告；价格、正式商品页与上市日期未公开",
+      "evidence": "A",
+      "reason": "Baseus官方IFA稿披露AT51集成10000mAh移动电源、67W快充、US/JP/UK/EU旅行适配器与双内置线，面向全球旅行；官方写明Stay tuned，未列入在售主表。",
+      "url": "https://ifa.vporoom.com/2026-09-04-Dare-to-go-further-Baseus-Brings-New-Charging,-Audio-and-Security-Innovations-to-IFA-2026",
+      "alias_or_relation": "PicoGo Mix AT51；旅行适配器/电源/内置线一体设备，不与AM52重复",
+      "source_refs": [
+        "BASEUS-IFA-CHARGING-20260906"
+      ],
+      "next_check": "核验官方商品页、精确SKU、额定Wh、端口/协议、认证、重量、价格与区域库存"
     }
   ],
   "sources": [
@@ -598,6 +663,78 @@
       "storefront_type": "Vention官方IFA Virtual Press Office发布",
       "availability_signal": "IFA发布与官方商城在售互证；H Series/SpotTag未以此升级主表",
       "platform_reference": "Vention Dash Pro"
+    },
+    {
+      "checked_on": "2026-09-06",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$59.99 MSRP/当前官方页价格；原价US$79.99",
+      "estimated_delivery": "未公开",
+      "platform_reference": "SKU E0028Z00",
+      "id": "BASEUS-AM52-US-20260906",
+      "source_group": "Baseus PicoGo AM52美国官方商品页",
+      "url": "https://www.baseus.com/products/picogo-am52-qi2-2-magnetic-power-bank-10000mah-45w",
+      "scope": "US$59.99、SKU E0028Z00、10000mAh、25W Qi2.2无线、45W USB-C、30W自充、约196g、官方Qi2.2认证与三重散热",
+      "quality": "A",
+      "source_domain": "baseus.com",
+      "source_channel": "official_store",
+      "source_role": "原厂商品页/价格/SKU/规格/购买信号证据",
+      "seller_type": "消费电子配件品牌官方",
+      "storefront_type": "Baseus美国官方商城",
+      "availability_signal": "官方商品页可加入购物车；价格US$59.99（促销可能变化）"
+    },
+    {
+      "checked_on": "2026-09-06",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$69.99；原价US$89.99",
+      "estimated_delivery": "未公开",
+      "platform_reference": "SKU E0029000",
+      "id": "BASEUS-AM52-CABLE-US-20260906",
+      "source_group": "Baseus PicoGo AM52内置线美国官方商品页",
+      "url": "https://www.baseus.com/products/picogo-am52-qi2-2-magnetic-power-bank-with-built-in-cable-10000mah-45w",
+      "scope": "内置USB-C线变体US$69.99、SKU E0029000、10000mAh、25W无线、45W内置线、30W自充、约202g、约102×67×16mm、In stock",
+      "quality": "A",
+      "source_domain": "baseus.com",
+      "source_channel": "official_store",
+      "source_role": "原厂商品页/变体价格/SKU/库存/规格证据；不单独计新主型号",
+      "seller_type": "消费电子配件品牌官方",
+      "storefront_type": "Baseus美国官方商城",
+      "availability_signal": "In stock/Add to cart；区域促销价格动态"
+    },
+    {
+      "checked_on": "2026-09-06",
+      "campaign_status": "未公开",
+      "pledge_or_price": "€79.99",
+      "estimated_delivery": "未公开",
+      "platform_reference": "SKU E0028Z00",
+      "id": "BASEUS-AM52-EU-20260906",
+      "source_group": "Baseus PicoGo AM52欧洲官方商品页",
+      "url": "https://eu.baseus.com/products/picogo-am52-qi2-2-magnetic-power-bank-10000mah-45w",
+      "scope": "欧洲区域官方页列€79.99、SKU E0028Z00、25W Qi2.2、45W USB-C、30W自充与约196g；区域价格不外推",
+      "quality": "A",
+      "source_domain": "eu.baseus.com",
+      "source_channel": "official_store",
+      "source_role": "区域官方商城/价格/可得性/规格交叉证据",
+      "seller_type": "消费电子配件品牌官方",
+      "storefront_type": "Baseus欧洲官方商城",
+      "availability_signal": "官方区域商品页；价格与库存按地区动态"
+    },
+    {
+      "checked_on": "2026-09-06",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开；价格以各区域官方商品页为准",
+      "estimated_delivery": "未公开",
+      "platform_reference": "PicoGo AM52",
+      "id": "BASEUS-IFA-CHARGING-20260906",
+      "source_group": "Baseus IFA 2026官方发布",
+      "url": "https://ifa.vporoom.com/2026-09-04-Dare-to-go-further-Baseus-Brings-New-Charging,-Audio-and-Security-Innovations-to-IFA-2026",
+      "scope": "2026-09-04 Baseus IFA稿将PicoGo AM52列入Dark Cherry/充电组合，并称组合自9月4日起可得；同时披露AH22、AT51、MC2 NC与U2 Pro",
+      "quality": "A",
+      "source_domain": "ifa.vporoom.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "品牌官方IFA发布/可得时间/产品家族关系证据",
+      "seller_type": "消费电子配件品牌官方",
+      "storefront_type": "Baseus官方IFA Virtual Press Office发布",
+      "availability_signal": "Dark Cherry充电组合自2026-09-04可得；AM52商品页提供实际销售证据"
     }
   ],
   "update_log": [
@@ -684,6 +821,18 @@
       "change": "本轮同时核验移动电源、充电器、Vention官方商城、IFA发布与区域配送；H Series仍保留候选，Dash Pro因官方价格、SKU、尺寸和在售页齐备进入主表。",
       "verification": "充电器、移动电源、套装、颜色和线材配件分开计数；缺少精确料号或商品页的H Series不升级主表。",
       "next": "继续补充额定Wh、端口分配、GaN/控制芯片、认证、区域价格与授权经销商库存。"
+    },
+    {
+      "date": "2026-09-06",
+      "change": "【电源与充电】完成本轮新增/变更核验并写入有证据记录；其余线索继续保持候选或历史状态。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-06",
+      "change": "新增PWR-010 Baseus PicoGo AM52；内置线/颜色/区域SKU作为同一产品家族变体保存；PicoGo Mix AT51保持候选。",
+      "verification": "Baseus美国/欧洲官方商城提供价格、SKU、库存与Qi2.2/输出规格，IFA官方稿提供2026-09-04可得和产品家族关系；AT51官方仅预告，未升级主表。",
+      "next": "继续补充AM52不同后缀的额定Wh、认证和授权渠道价格，核验AH22与AT51的精确SKU、协议和区域库存。"
     }
   ],
   "source_channel_policy": [
@@ -767,13 +916,15 @@
   ],
   "source_channel_counts": {
     "official_newsroom": 1,
-    "official_newsroom_distribution": 1,
+    "official_newsroom_distribution": 2,
     "official_product": 2,
     "official_sales": 6,
-    "official_store": 1
+    "official_store": 4
   },
   "source_domains": [
+    "baseus.com",
     "belkin.com",
+    "eu.baseus.com",
     "goalzero.com",
     "ifa.vporoom.com",
     "jackery.com",

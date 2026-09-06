@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-05",
+  "checked_on": "2026-09-06",
   "scope_note": "首版覆盖独立家庭中控、Matter控制器/桥、协议网关，以及音箱/屏/机顶盒/路由器内置的智能家居中枢。通过形态字段区分完整自动化中枢、协议桥、内置中枢与路由器功能，不把所有网关宣传词当成同一类产品。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-05"
+      "2026-09-06"
     ]
   ],
   "products": [
@@ -1010,6 +1010,22 @@
       "reason": "标准版已结束生产，剩余库存和CM模块版本需逐区核验。",
       "url": "https://www.home-assistant.io/blog/2025/10/15/yellow-end-of-life",
       "alias_or_relation": "HUB-002状态和套件变体"
+    },
+    {
+      "id": "CAND-HEIMAN-MATTER-BRIDGE-20260906",
+      "name": "Heiman Matter Bridge solution",
+      "brand": "Heiman",
+      "region": "全球/IFA 2026展示",
+      "category": "Matter网关/智能家居桥接",
+      "status": "候选/官方方案展示；精确型号、价格、销售与交付未公开",
+      "evidence": "A",
+      "reason": "Heiman官方IFA稿披露Matter Bridge方案可打通Matter、Zigbee与Sub-1GHz，使安全传感器成为统一节点；未给出可独立购买的精确产品型号，不计入主表。",
+      "url": "https://www.heimantech.com/news/heimandebutsnewsmartsecurityproductssolutionsatifa2026",
+      "alias_or_relation": "方案/桥接能力，不与具体网关硬件型号重复",
+      "source_refs": [
+        "HEIMAN-IFA-SECURITY-20260906"
+      ],
+      "next_check": "核验Matter Bridge硬件分料号、协议并发、芯片、认证、价格与授权渠道"
     }
   ],
   "sources": [
@@ -1240,6 +1256,24 @@
       "storefront_type": "EAEU声明记录",
       "availability_signal": "合规声明辅助信号；实际区域销售与库存未由该记录单独证明",
       "platform_reference": "HM-G04D / HM-G04E"
+    },
+    {
+      "checked_on": "2026-09-06",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Matter Bridge solution",
+      "id": "HEIMAN-IFA-SECURITY-20260906",
+      "source_group": "Heiman Matter Bridge官方IFA发布",
+      "url": "https://www.heimantech.com/news/heimandebutsnewsmartsecurityproductssolutionsatifa2026",
+      "scope": "Heiman IFA 2026披露Matter Bridge方案可打通Matter、Zigbee与Sub-1GHz；未给出可独立购买的精确型号、价格与销售页",
+      "quality": "A",
+      "source_domain": "heimantech.com",
+      "source_channel": "official_newsroom",
+      "source_role": "原厂IFA方案/协议互通与产品线发现证据；不证明独立网关在售",
+      "seller_type": "消防与智能家居品牌官方",
+      "storefront_type": "Heiman官方公司新闻",
+      "availability_signal": "IFA方案展示；精确硬件、销售、价格与交付未公开"
     }
   ],
   "update_log": [
@@ -1320,6 +1354,18 @@
       "change": "【家庭中控/Matter网关/智能家居网关】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-06",
+      "change": "【家庭中控/Matter网关/智能家居网关】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-06",
+      "change": "Heiman Matter Bridge作为方案级候选保留；没有独立硬件型号、价格和销售证据，未计入主表。",
+      "verification": "来源为Heiman官方IFA公司新闻；Matter/Zigbee/Sub-1GHz互通能力属于方案披露，不等同于可购买网关产品。",
+      "next": "继续核验硬件分料号、Matter认证、协议并发、芯片、价格与授权渠道。"
     }
   ],
   "source_channel_policy": [
@@ -1402,7 +1448,7 @@
     }
   ],
   "source_channel_counts": {
-    "official_newsroom": 2,
+    "official_newsroom": 3,
     "official_product": 3,
     "official_sales": 2,
     "official_store": 2,
@@ -1415,6 +1461,7 @@
     "aqara.com",
     "bosch-smarthome.com",
     "docs.aqara.com",
+    "heimantech.com",
     "home-assistant.io",
     "mi.com",
     "news.samsung.com",

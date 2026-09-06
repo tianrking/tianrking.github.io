@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-05",
+  "checked_on": "2026-09-06",
   "scope_note": "本库覆盖智能安防与门禁：家庭摄像头、可视门铃、智能门锁、报警器、门窗传感器与智能对讲。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-05"
+      "2026-09-06"
     ]
   ],
   "products": [
@@ -589,6 +589,53 @@
         "SWITCHBOT-LOCK-ULTRA-MAX-IFA-20260905"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "display": "无显示；状态指示与报警灯细节未公开",
+      "os_platform": "未公开；官方未说明必须依赖App或云服务",
+      "audio_drivers": "内置声响报警器；声压与器件未公开",
+      "sensors": "光电式烟雾感知；具体光电传感器型号未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "未公开；官方公告未将Matter、Zigbee、Wi-Fi或Bluetooth归因于该HM-629PHS型号，不作推断",
+      "chip_or_soc": "未公开",
+      "storage": "报警记忆功能；存储器件与容量未公开",
+      "dimensions": "直径92mm；最大厚度19.9mm；最薄边缘1.52mm；官方正文另有约1.2mm表述，冲突保留不取舍",
+      "weight_g": "未公开；官方仅以轻量/feather-light描述，不换算重量",
+      "battery": "12年密封电池寿命；电池化学体系、容量和更换方式未公开",
+      "charging": "密封电池供电；未公开充电接口，不能推断可充电",
+      "water_resistance": "室内烟雾报警器；IP等级未公开",
+      "subscription": "无公开硬件强制订阅；报警器本体服务条款未公开",
+      "privacy": "未公开；官方材料未披露联网、数据上传或账户边界",
+      "features": [
+        "Smart Night Mode：非紧急信号静音",
+        "光电式烟雾检测与报警记忆",
+        "寿命终止预警",
+        "磁性支架、免工具安装",
+        "阻燃结构",
+        "EN 14604符合性声明"
+      ],
+      "availability_note": "Heiman官方公告明确写明S2 Edge现已可向欧洲市场分销；官方未公开面向消费者的统一零售价、区域商城SKU与库存",
+      "source_note": "Heiman官方新闻提供精确型号HM-629PHS、92mm、19.9mm/1.52mm、12年密封电池、光电感知、EN 14604和欧洲分销状态；IFA 2026官方报道再次将S2 Edge列为展示新品。通信、芯片、重量、价格等未公开，不作推断",
+      "id": "SEC-012",
+      "brand": "Heiman",
+      "model": "S2 Edge / HM-629PHS ultra-thin smoke alarm",
+      "country_region": "中国品牌/欧洲市场；Heiman称已可向欧洲市场分销",
+      "category": "智能安防与门禁/智能消防报警",
+      "form_factor": "圆形超薄电池式烟雾报警器",
+      "use_case": "住宅、酒店、医疗/养老设施、公寓的烟雾探测与本地报警",
+      "status": "在售/欧洲分销；官方称现已可向欧洲市场分销，零售价格与区域库存未公开",
+      "evidence": "A",
+      "launch_date": "2026-02-25",
+      "launch_date_type": "Heiman官方产品新闻/IF Design Award公告日期；不等同于首次上市日",
+      "price": "未公开",
+      "official_url": "https://www.heimantech.com/news/heiman-hm-629phs-wins-if-design-award-2026-as-worlds-thinnest-battery-powered-smoke-alarm",
+      "spec_url": "https://www.heimantech.com/news/heiman-hm-629phs-wins-if-design-award-2026-as-worlds-thinnest-battery-powered-smoke-alarm",
+      "source_refs": [
+        "HEIMAN-S2-EDGE-ARTICLE-20260906",
+        "HEIMAN-IFA-SECURITY-20260906"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -628,6 +675,38 @@
       "url": "https://blog.ring.com/products-innovation/introducing-the-ring-dome-cam-4k-affordable-professional-security-built-for-businesses-of-all-sizes/",
       "alias_or_relation": "新商用/住宅Dome Cam；不与现有SEC-001至SEC-008和Ring门铃/传感器重复",
       "next_check": "核验FCC授权、正式产品页、精确分料号、库存/区域价格、尺寸重量、存储容量和订阅条款"
+    },
+    {
+      "id": "CAND-IMILAB-SC-SERIES-20260906",
+      "name": "IMILAB SC Series smart cameras（四款）",
+      "brand": "IMILAB",
+      "region": "全球/2026年9月发布与全球渠道首批订单",
+      "category": "智能安防摄像头",
+      "status": "候选/官方宣布9月发布；精确型号、价格、正式商品页和区域库存未公开",
+      "evidence": "A",
+      "reason": "IMILAB官方IFA公告称四款全新SC系列摄像头将在2026年9月发布，覆盖室内/室外、单镜头/双镜头，支持本地AI检测、夜视与清晰录像，核心能力无需订阅；由于未披露精确型号与分料号，不计入主表。",
+      "url": "https://www.imilabglobal.com/blogs/news/ifa-post",
+      "alias_or_relation": "SC系列四款产品；不按室内/室外、单/双镜头或颜色拆分为未确认型号",
+      "source_refs": [
+        "IMILAB-SC-SERIES-IFA-20260906"
+      ],
+      "next_check": "核验四款正式型号、官方商城/授权销售、价格、分辨率、传感器、Wi-Fi、存储、订阅与区域库存"
+    },
+    {
+      "id": "CAND-BASEUS-PRIMESENTINEL-U2-PRO-20260906",
+      "name": "Baseus PrimeSentinel U2 Pro Outdoor 3K Dual Camera",
+      "brand": "Baseus",
+      "region": "全球/IFA 2026；官方称2026年10月可得",
+      "category": "智能安防摄像头",
+      "status": "候选/官方预发布；预计2026年10月上市，价格与正式商品页未公开",
+      "evidence": "A",
+      "reason": "Baseus官方IFA稿披露双3K（固定广角+PTZ）摄像、双PIR、AI识别人/脸/车/宠物、目标跟踪威慑聚光灯、IP65、太阳能辅助长续航、本地存储、双向语音与云端AI订阅；官方明确10月可得，尚未提供正式商品价格/分料号页面。",
+      "url": "https://ifa.vporoom.com/2026-09-04-Dare-to-go-further-Baseus-Brings-New-Charging,-Audio-and-Security-Innovations-to-IFA-2026",
+      "alias_or_relation": "U2 Pro Outdoor 3K Dual Camera；不与Baseus Security X1 Pro或S1 Lite重复",
+      "source_refs": [
+        "BASEUS-IFA-U2-PRO-20260906"
+      ],
+      "next_check": "核验官方商品页、精确SKU/ASIN、价格、太阳能/电池规格、存储容量、云订阅、Wi-Fi与区域销售"
     }
   ],
   "sources": [
@@ -997,6 +1076,78 @@
       "storefront_type": "SwitchBot官方PRNewswire发布",
       "availability_signal": "EU/UK组合自2026-09-03开放预订；单品与配件按地区变体核验",
       "platform_reference": "SwitchBot Lock Ultra Max Vision Pro Combo"
+    },
+    {
+      "checked_on": "2026-09-06",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "HM-629PHS",
+      "id": "HEIMAN-S2-EDGE-ARTICLE-20260906",
+      "source_group": "Heiman S2 Edge / HM-629PHS官方产品新闻",
+      "url": "https://www.heimantech.com/news/heiman-hm-629phs-wins-if-design-award-2026-as-worlds-thinnest-battery-powered-smoke-alarm",
+      "scope": "精确型号HM-629PHS/S2 Edge；92mm直径、19.9mm最大厚度、1.52mm最薄边缘、12年密封电池、光电感知、报警记忆、夜间模式、寿命终止预警、EN 14604及欧洲市场分销",
+      "quality": "A",
+      "source_domain": "heimantech.com",
+      "source_channel": "official_product",
+      "source_role": "原厂产品新闻/精确料号/消防规格/认证与分销可得性证据",
+      "seller_type": "消防与智能安防品牌官方",
+      "storefront_type": "Heiman官方产品新闻",
+      "availability_signal": "官方称现已可向欧洲市场分销；无统一零售价格与库存"
+    },
+    {
+      "checked_on": "2026-09-06",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "S2 Edge / HM-629PHS",
+      "id": "HEIMAN-IFA-SECURITY-20260906",
+      "source_group": "Heiman IFA 2026官方发布",
+      "url": "https://www.heimantech.com/news/heimandebutsnewsmartsecurityproductssolutionsatifa2026",
+      "scope": "2026-09-05 IFA官方报道将S2 Edge列入新品展示，并同时披露5-in-1人体存在传感器、烟雾/CO组合报警器和Matter Bridge方案；未将这些未给出精确料号的项目计入主表",
+      "quality": "A",
+      "source_domain": "heimantech.com",
+      "source_channel": "official_newsroom",
+      "source_role": "原厂IFA新品展示与关联产品线证据；不替代精确型号的销售页",
+      "seller_type": "消防与智能安防品牌官方",
+      "storefront_type": "Heiman官方公司新闻",
+      "availability_signal": "IFA展示/新品发布；关联未命名项目的价格和销售未公开"
+    },
+    {
+      "checked_on": "2026-09-06",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "IMILAB SC Series",
+      "id": "IMILAB-SC-SERIES-IFA-20260906",
+      "source_group": "IMILAB SC Series官方IFA公告",
+      "url": "https://www.imilabglobal.com/blogs/news/ifa-post",
+      "scope": "2026-09-04官方公告；四款SC系列摄像头将在9月发布，室内/室外、单/双镜头，本地AI检测、夜视、清晰录像，核心功能无需订阅",
+      "quality": "A",
+      "source_domain": "imilabglobal.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方发布/产品线发现/订阅与功能信号；未提供精确型号",
+      "seller_type": "智能安防品牌官方",
+      "storefront_type": "IMILAB官方博客/IFA公告",
+      "availability_signal": "2026年9月发布/全球渠道首批订单；正式商品页未公开"
+    },
+    {
+      "checked_on": "2026-09-06",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "2026年10月上市窗口；具体交付未公开",
+      "platform_reference": "PrimeSentinel U2 Pro",
+      "id": "BASEUS-IFA-U2-PRO-20260906",
+      "source_group": "Baseus PrimeSentinel U2 Pro官方IFA发布",
+      "url": "https://ifa.vporoom.com/2026-09-04-Dare-to-go-further-Baseus-Brings-New-Charging,-Audio-and-Security-Innovations-to-IFA-2026",
+      "scope": "U2 Pro 3K固定广角+3K PTZ、目标跟踪威慑聚光灯、双PIR、AI识别人脸车辆宠物、IP65、太阳能辅助、云端AI订阅、本地存储、双向语音、2026年10月可得",
+      "quality": "A",
+      "source_domain": "ifa.vporoom.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "品牌官方IFA预发布/规格与预期上市时间证据；不证明当前在售",
+      "seller_type": "消费电子安防品牌官方",
+      "storefront_type": "Baseus官方IFA Virtual Press Office发布",
+      "availability_signal": "官方称2026年10月可得；商品页与价格未公开"
     }
   ],
   "update_log": [
@@ -1077,6 +1228,18 @@
       "change": "新增SEC-011 SwitchBot Lock Ultra Max；把单品与Hub/Keypad组合、区域变体分开记录，补充官方价格、库存冲突、识别传感、Bluetooth/Matter、尺寸重量、电池原文冲突、隐私与开锁方式。",
       "verification": "SwitchBot官方商品页和IFA发布稿互证；组合/配件/颜色/SKU不拆主表，4200mAh与1400mAh规格冲突原样保留，单品当前库存不外推为全球现货。",
       "next": "继续核验EU/UK/US/Japan官方变体、Hub/Keypad精确分料号、CE/FCC/无线认证、锁芯兼容矩阵和电池额定参数。"
+    },
+    {
+      "date": "2026-09-06",
+      "change": "【智能安防与门禁】完成本轮新增/变更核验并写入有证据记录；其余线索继续保持候选或历史状态。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-06",
+      "change": "新增SEC-012 Heiman S2 Edge / HM-629PHS；同时保留IMILAB SC系列、Baseus PrimeSentinel U2 Pro和Heiman Matter Bridge为候选，不把未上市或未给出精确料号的项目混入主表。",
+      "verification": "Heiman官方产品新闻互证精确型号、消防参数、EN 14604与欧洲分销状态；IMILAB/Baseus/Heiman IFA材料仅支持候选状态。",
+      "next": "继续核验S2 Edge区域分销商价格与库存、HM-629PHS认证文件，以及SC/U2 Pro的正式SKU、商城、ASIN和订阅条款。"
     }
   ],
   "source_channel_policy": [
@@ -1159,9 +1322,9 @@
     }
   ],
   "source_channel_counts": {
-    "official_newsroom": 2,
-    "official_newsroom_distribution": 1,
-    "official_product": 3,
+    "official_newsroom": 4,
+    "official_newsroom_distribution": 2,
+    "official_product": 4,
     "official_sales": 7,
     "official_store": 3,
     "official_support_manual": 4,
@@ -1174,6 +1337,9 @@
     "eu.aqara.com",
     "eufy.com",
     "globenewswire.com",
+    "heimantech.com",
+    "ifa.vporoom.com",
+    "imilabglobal.com",
     "prnewswire.com",
     "ring.com",
     "schlage.com",

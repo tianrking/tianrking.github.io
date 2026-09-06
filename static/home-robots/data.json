@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-05",
+  "checked_on": "2026-09-06",
   "scope_note": "本库覆盖家用机器人：扫地、洗地、擦窗、割草、泳池与宠物陪伴机器人；宠物项圈/吊牌另库。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-05"
+      "2026-09-06"
     ]
   ],
   "products": [
@@ -985,6 +985,38 @@
         "PRIMEBOT-T1-Q1-IFA-20260905"
       ],
       "next_check": "核验官方产品页、价格、尺寸重量、传感器、电池、应用和区域销售"
+    },
+    {
+      "id": "CAND-TUYA-DOOVA-20260906",
+      "name": "Doova AI Home Companion Robot",
+      "brand": "Tuya Smart",
+      "region": "全球/IFA 2026全球首发",
+      "category": "家用机器人/老年陪伴与家庭安全机器人",
+      "status": "候选/官方IFA全球首发；价格、正式商品页、销售与交付未公开",
+      "evidence": "A",
+      "reason": "Tuya官方发布披露Doova面向独居老年人，具备LDS LiDAR、四麦克风声源定位、AI骨骼识别、跌倒/呼救响应、双向视频告警、10.1英寸显示、自动回充、家庭中控与家庭巡检；但未给出精确分料号、价格或在售页面，保留候选。",
+      "url": "https://www.prnewswire.com/news-releases/tuya-smart-unveils-doova-at-ifa-2026-an-ai-home-companion-robot-designed-to-support-independently-living-seniors-302870623.html",
+      "alias_or_relation": "Tuya AI Robot生态中的Doova；不与Tuya Aura宠物陪伴机器人或平台方案重复",
+      "source_refs": [
+        "TUYA-DOOVA-IFA-20260906"
+      ],
+      "next_check": "核验官方产品页、精确型号、价格、尺寸重量、摄像头/传感器规格、隐私政策、区域销售与交付"
+    },
+    {
+      "id": "CAND-DREAME-PANO10-20260906",
+      "name": "Dreame Pano10 Series window-cleaning robot",
+      "brand": "Dreame",
+      "region": "全球/IFA 2026展示",
+      "category": "家用机器人/擦窗机器人",
+      "status": "候选/官方IFA展示；精确型号、价格、正式销售页与交付未核验",
+      "evidence": "A",
+      "reason": "Dreame官方IFA发布披露Pano10系列窗户清洁机器人采用机械臂结构处理边角；未提供精确零售分料号与官方价格，保留候选。",
+      "url": "https://www.prnewswire.com/news-releases/dreame-showcases-three-physical-ai-technology-foundations-across-100-products-at-ifa-2026-302870583.html",
+      "alias_or_relation": "Pano10系列；不按展示机、地区或配件拆分",
+      "source_refs": [
+        "DREAME-IFA-100-PRODUCTS-20260906"
+      ],
+      "next_check": "核验正式产品页、型号后缀、尺寸重量、吸附/安全机制、续航、价格和区域上市"
     }
   ],
   "sources": [
@@ -1761,6 +1793,42 @@
       "storefront_type": "PrimeBOT官方IFA Virtual Press Office发布",
       "availability_signal": "IFA展示；价格、销售、交付未公开",
       "platform_reference": "PrimeBOT T1 / PrimeBOT Q1"
+    },
+    {
+      "checked_on": "2026-09-06",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Doova",
+      "id": "TUYA-DOOVA-IFA-20260906",
+      "source_group": "Tuya Doova官方IFA/PRNewswire发布",
+      "url": "https://www.prnewswire.com/news-releases/tuya-smart-unveils-doova-at-ifa-2026-an-ai-home-companion-robot-designed-to-support-independently-living-seniors-302870623.html",
+      "scope": "Doova 2026-09-05 IFA全球首发；LDS LiDAR、四麦克风、AI骨骼识别、跌倒/紧急响应、双向视频、10.1英寸显示、自动回充、家庭中控与巡检",
+      "quality": "A",
+      "source_domain": "prnewswire.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "品牌官方发布/型号发现与功能规格证据；不证明当前在售",
+      "seller_type": "AIoT平台品牌官方",
+      "storefront_type": "Tuya官方PRNewswire发布",
+      "availability_signal": "IFA全球首发/展示；销售、价格和交付未公开"
+    },
+    {
+      "checked_on": "2026-09-06",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Pano10 Series",
+      "id": "DREAME-IFA-100-PRODUCTS-20260906",
+      "source_group": "Dreame官方IFA 2026产品发布",
+      "url": "https://www.prnewswire.com/news-releases/dreame-showcases-three-physical-ai-technology-foundations-across-100-products-at-ifa-2026-302870583.html",
+      "scope": "Dreame IFA 2026披露100余产品与Pano10系列窗户清洁机器人；官方未提供Pano10精确分料号、价格与销售页",
+      "quality": "A",
+      "source_domain": "prnewswire.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "品牌官方展会/产品系列发现证据；不证明精确型号在售",
+      "seller_type": "家用机器人品牌官方",
+      "storefront_type": "Dreame官方PRNewswire发布",
+      "availability_signal": "IFA展示；Pano10精确销售状态未公开"
     }
   ],
   "update_log": [
@@ -1841,6 +1909,18 @@
       "change": "新增ROBOT-017 Narwal Freo 20与ROBOT-018 Freo 20 Edge；补充官方美国/法国商城价格与库存、IFA上市窗口、FlowWash、吸力、视觉/导航传感、尺寸、基站维护和区域状态差异。",
       "verification": "Narwal官方商品页、官方产品博客、法国区域商城和IFA发布稿互证；Freo 20美国变体与Freo 20 Edge法国页面分别存在缺货/提醒，未外推为全球现货；测试性能与标准规格分开保存。",
       "next": "继续核验Amazon官方店/授权卖方、各区域上市、FCC/CE、精确芯片/无线/电池与地图隐私条款；不把基站、套装或耗材拆成独立型号。"
+    },
+    {
+      "date": "2026-09-06",
+      "change": "【家用机器人】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-06",
+      "change": "新增Tuya Doova和Dreame Pano10 Series候选；两者均有官方IFA/PRNewswire产品线证据，但未给出可售精确分料号与价格。",
+      "verification": "Doova官方披露LiDAR、四麦克风、AI骨骼识别、10.1英寸屏和自动回充；Pano10仅披露机械臂擦窗方向；均不从展会展示推断在售。",
+      "next": "继续核验正式产品页、精确SKU、价格、交付、区域可得性、芯片/传感器与安全说明。"
     }
   ],
   "source_channel_policy": [
@@ -1926,7 +2006,7 @@
     "crowdfunding": 3,
     "official_datasheet": 1,
     "official_newsroom": 3,
-    "official_newsroom_distribution": 5,
+    "official_newsroom_distribution": 7,
     "official_product": 12,
     "official_sales": 14,
     "official_store": 2,

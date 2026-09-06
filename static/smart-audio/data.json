@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-05",
+  "checked_on": "2026-09-06",
   "scope_note": "首版优先覆盖全球主要品牌的TWS、主动降噪、AI/录音/翻译耳机与骨传导/开放式运动耳机。按独立型号/代际计数；颜色、充电盒套装和区域SKU不拆行。翻译能力、AI功能与硬件音频能力分开记录；来源没有披露的芯片、传感器、尺寸、重量、防水、续航和订阅字段写“未公开”。 本库同时纳入Wi-Fi多房间音箱与联网家庭音频；音箱的扬声器驱动、无线协议和家庭服务与耳机字段分开记录。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-05"
+      "2026-09-06"
     ]
   ],
   "products": [
@@ -1640,6 +1640,23 @@
       "reason": "产品页显示不可用，保留状态记录，不作为全球现货结论。",
       "url": "https://vasco-translator.com/translators/vasco-translator-e1",
       "alias_or_relation": "AUDIO-019状态核验"
+    },
+    {
+      "id": "CAND-BASEUS-MC2-NC-20260906",
+      "name": "Baseus Bowie MC2 NC open-ear clip-on ANC earbuds",
+      "brand": "Baseus",
+      "region": "全球/IFA 2026；官方称2026年10月上市",
+      "category": "AI/开放式/降噪耳机",
+      "status": "候选/官方预发布；预计2026年10月上市，价格和正式销售SKU未公开",
+      "evidence": "A",
+      "reason": "Baseus官方IFA稿披露MC2 NC为开放式夹耳ANC耳机，具备Air Ear Wing、双自适应ANC、双气腔结构；官方产品故事补充11mm三磁驱动、四层金属振膜、Hi-Res与LDAC-ready。官方未公开完整价格、芯片、续航、重量与精确分料号，保留候选。",
+      "url": "https://ifa.vporoom.com/2026-09-04-Dare-to-go-further-Baseus-Brings-New-Charging,-Audio-and-Security-Innovations-to-IFA-2026",
+      "alias_or_relation": "Bowie MC2 NC；不与已售Bowie MC2/MC2 Air或颜色变体重复",
+      "source_refs": [
+        "BASEUS-IFA-MC2-NC-20260906",
+        "BASEUS-MC2-NC-OFFICIAL-20260906"
+      ],
+      "next_check": "核验官方商品页、精确SKU/价格、Bluetooth版本、Codec、麦克风数量、续航、充电盒与区域库存"
     }
   ],
   "sources": [
@@ -2497,6 +2514,42 @@
       "storefront_type": "Plaud官方产品商城",
       "availability_signal": "Out of Stock；Join Waitlist；New",
       "platform_reference": "Plaud One Explorer Edition"
+    },
+    {
+      "checked_on": "2026-09-06",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "2026年10月上市窗口；具体交付未公开",
+      "platform_reference": "Bowie MC2 NC",
+      "id": "BASEUS-IFA-MC2-NC-20260906",
+      "source_group": "Baseus MC2 NC官方IFA发布",
+      "url": "https://ifa.vporoom.com/2026-09-04-Dare-to-go-further-Baseus-Brings-New-Charging,-Audio-and-Security-Innovations-to-IFA-2026",
+      "scope": "MC2 NC开放式夹耳ANC耳机；Air Ear Wing、双自适应ANC、双气腔，官方称2026年10月上市",
+      "quality": "A",
+      "source_domain": "ifa.vporoom.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "品牌官方预发布/形态/ANC与上市窗口证据",
+      "seller_type": "音频品牌官方",
+      "storefront_type": "Baseus官方IFA Virtual Press Office发布",
+      "availability_signal": "官方称2026年10月上市；查证日未见正式商品页"
+    },
+    {
+      "checked_on": "2026-09-06",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Bowie MC2 NC",
+      "id": "BASEUS-MC2-NC-OFFICIAL-20260906",
+      "source_group": "Baseus Bowie MC2 NC官方产品故事",
+      "url": "https://www.baseus.com/pages/mc2-grammy-story",
+      "scope": "MC2 NC coming soon；11mm三磁驱动、四层金属振膜、BISA Spatial Audio、SuperBass 3.0、Hi-Res、LDAC-ready、CloudComfort 2.0",
+      "quality": "A",
+      "source_domain": "baseus.com",
+      "source_channel": "official_product",
+      "source_role": "品牌官方产品页/音频结构与功能证据；Coming Soon不证明在售",
+      "seller_type": "音频品牌官方",
+      "storefront_type": "Baseus官方产品故事页",
+      "availability_signal": "Coming Soon"
     }
   ],
   "update_log": [
@@ -2577,6 +2630,18 @@
       "change": "【TWS/AI/翻译/降噪/骨传导耳机】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-06",
+      "change": "【TWS/AI/翻译/降噪/骨传导耳机】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-06",
+      "change": "新增Baseus Bowie MC2 NC候选；官方已披露开放式夹耳、双自适应ANC、11mm三磁驱动、Hi-Res/LDAC-ready和2026年10月上市窗口，但未达到主表在售标准。",
+      "verification": "Baseus官方IFA发布与官方产品故事互证；价格、精确料号、续航、重量、Bluetooth版本和正式商品页未公开。",
+      "next": "上市窗口临近时继续核验官方商城、Amazon/区域站、价格、Codec、麦克风/电池与认证。"
     }
   ],
   "source_channel_policy": [
@@ -2661,7 +2726,8 @@
   "source_channel_counts": {
     "official_news": 1,
     "official_newsroom": 8,
-    "official_product": 6,
+    "official_newsroom_distribution": 1,
+    "official_product": 7,
     "official_release": 2,
     "official_sales": 18,
     "official_store": 1,
@@ -2669,10 +2735,12 @@
   },
   "source_domains": [
     "apple.com",
+    "baseus.com",
     "bose.com",
     "consumer.huawei.com",
     "harman.com",
     "hmd.com",
+    "ifa.vporoom.com",
     "mi.com",
     "newsroom.sennheiser.com",
     "nothing.tech",

@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-05",
+  "checked_on": "2026-09-06",
   "scope_note": "本库覆盖智能家电与环境：空气净化器、除湿机、恒温器、智能插座、漏水传感器、天气站与能耗监测。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-05"
+      "2026-09-06"
     ]
   ],
   "products": [
@@ -319,6 +319,55 @@
       "satellite": "未公开",
       "connectivity": "未公开",
       "storage": "未公开"
+    },
+    {
+      "display": "控制面板；具体显示器件与分辨率未公开",
+      "os_platform": "官方Kickstarter FAQ称配套App支持灯光/压力设置、状态监测、配方和OTA；手机平台与无线协议未公开",
+      "audio_drivers": "未公开",
+      "sensors": "压力控制、空气过滤与PSA氮气分离；具体压力/气体传感器型号未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "配套App与OTA能力有官方众筹FAQ证据；Wi-Fi、Bluetooth及云端协议未公开",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "417×281×169mm（官方Kickstarter FAQ）",
+      "weight_g": "约6kg（官方Kickstarter FAQ）",
+      "battery": "市电台式设备；内置电池未公开",
+      "charging": "官方页面提供Type B、Type C、Type G、Type I电源插头选项；额定输入、功率和接口参数未完整公开",
+      "water_resistance": "未公开；可拆卸部件官方称可放入洗碗机，不等同于整机防水",
+      "subscription": "无公开硬件强制订阅；App/云服务条款未完整公开",
+      "privacy": "配套App/OTA与账户数据保留边界未完整公开",
+      "features": [
+        "无需一次性氮气瓶/气弹，PSA分子筛从环境空气提取最高约95%纯度氮气",
+        "0–8bar数字压力控制",
+        "Fast Mode约25秒；High-Purity Mode约60秒",
+        "Nitro Canister、Nitro-Whip附件与Master Scale生态",
+        "可用于咖啡、鸡尾酒、茶、啤酒、抹茶、果汁与奶油",
+        "内置尘埃过滤器官方称约4–5年更换周期"
+      ],
+      "availability_note": "XBREW官方商品集合页显示EverNitro Lite为在售产品并列US$469；官方IFA稿称全球DTC渠道现货、进入欧洲市场，地区插头/库存仍按站点核验",
+      "source_note": "XBREW官方商品页、官方商品集合页、官方IFA发布及Kickstarter官方FAQ互证；官方未披露芯片、无线协议、功耗、额定输入、完整隐私边界等字段，保持未公开",
+      "id": "HOMEENV-009",
+      "brand": "XBREW",
+      "model": "EverNitro Lite: The Nitro Cold Brew Maker",
+      "country_region": "中国深圳品牌/美国子公司/全球DTC；2026-09-04宣布进入欧洲市场",
+      "category": "智能家电与环境/台式智能饮品设备",
+      "form_factor": "台式无气瓶氮气饮品机",
+      "use_case": "家庭咖啡、鸡尾酒、茶饮、啤酒、抹茶、奶油打发与食材保鲜",
+      "status": "在售/官方DTC商城；官方IFA稿称进入全球量产并在全球DTC渠道现货，区域插头与库存按站点核验",
+      "evidence": "A",
+      "launch_date": "2026-09-04",
+      "launch_date_type": "XBREW官方IFA欧洲市场/量产可得性公告；Kickstarter为此前众筹，不作为首次销售日",
+      "price": "US$469.00（XBREW官方商城EverNitro Lite，电源插头选项按地区）",
+      "official_url": "https://xbrewlab.com/products/evernitro-the-3-in-1-barista-level-nitro-machine-1",
+      "spec_url": "https://www.prnewswire.com/news-releases/xbrew-launches-cartridge-free-nitro-flavor-system-evernitro-in-europe-at-ifa-berlin-2026-302865983.html",
+      "source_refs": [
+        "XBREW-EVERNITRO-LITE-PRODUCT-20260906",
+        "XBREW-EVERNITRO-COLLECTION-20260906",
+        "XBREW-EVERNITRO-IFA-20260906",
+        "XBREW-EVERNITRO-KS-FAQ-20260906"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -343,6 +392,22 @@
       "reason": "空气质量监测覆盖七类传感器，偏环境监测而非家电，暂列候选",
       "url": "https://www.airthings.com/products/indoor-air-quality/view-plus",
       "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "id": "CAND-XBREW-MASTERSCALE-20260906",
+      "name": "XBREW Master Scale smart coffee scale",
+      "brand": "XBREW",
+      "region": "全球/IFA 2026展示",
+      "category": "智能家电与环境/智能咖啡秤",
+      "status": "候选/IFA预览；价格、正式商品页、销售与交付未公开",
+      "evidence": "A",
+      "reason": "XBREW官方IFA稿披露Master Scale具备全彩OLED、0.1g精度、Manual Pour-Over/Guided Pour-Over/Espresso三种模式和Brew Assist曲线；目前是展会预览，不计入在售主表。",
+      "url": "https://www.prnewswire.com/news-releases/xbrew-launches-cartridge-free-nitro-flavor-system-evernitro-in-europe-at-ifa-berlin-2026-302865983.html",
+      "alias_or_relation": "XBREW智能饮品生态配件；不与EverNitro Lite主机或Nitro附件重复",
+      "source_refs": [
+        "XBREW-EVERNITRO-IFA-20260906"
+      ],
+      "next_check": "核验官方商品页、价格、尺寸、重量、电池/供电、App连接、区域上市与精确SKU"
     }
   ],
   "sources": [
@@ -498,6 +563,78 @@
       "campaign_status": "未公开",
       "pledge_or_price": "未公开",
       "estimated_delivery": "未公开"
+    },
+    {
+      "checked_on": "2026-09-06",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未稳定显示；商品集合页列US$469",
+      "estimated_delivery": "未公开",
+      "platform_reference": "EverNitro Lite",
+      "id": "XBREW-EVERNITRO-LITE-PRODUCT-20260906",
+      "source_group": "XBREW EverNitro Lite官方商品页",
+      "url": "https://xbrewlab.com/products/evernitro-the-3-in-1-barista-level-nitro-machine-1",
+      "scope": "EverNitro Lite商品名、台式氮气饮品机、最高95%氮气纯度、0–8bar压力范围、电源插头选项；商品页动态价格未稳定显示",
+      "quality": "A",
+      "source_domain": "xbrewlab.com",
+      "source_channel": "official_store",
+      "source_role": "原厂商品页/在售形态/核心功能与区域插头证据",
+      "seller_type": "饮品设备品牌官方",
+      "storefront_type": "XBREW官方DTC商城",
+      "availability_signal": "商品页可购买/插头选项；页面还保留Ships in July文本，时间口径按最新IFA公告复核"
+    },
+    {
+      "checked_on": "2026-09-06",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$469.00",
+      "estimated_delivery": "未公开",
+      "platform_reference": "EverNitro Lite",
+      "id": "XBREW-EVERNITRO-COLLECTION-20260906",
+      "source_group": "XBREW官方商品集合页",
+      "url": "https://xbrewlab.com/collections/all",
+      "scope": "EverNitro Lite为In stock，官方商城列US$469；其他配件/设备的缺货状态不并入EverNitro主型号",
+      "quality": "A",
+      "source_domain": "xbrewlab.com",
+      "source_channel": "official_store",
+      "source_role": "原厂商城价格/库存与型号去重证据",
+      "seller_type": "饮品设备品牌官方",
+      "storefront_type": "XBREW官方DTC商品集合",
+      "availability_signal": "In stock；价格US$469"
+    },
+    {
+      "checked_on": "2026-09-06",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "EverNitro",
+      "id": "XBREW-EVERNITRO-IFA-20260906",
+      "source_group": "XBREW EverNitro官方IFA发布",
+      "url": "https://www.prnewswire.com/news-releases/xbrew-launches-cartridge-free-nitro-flavor-system-evernitro-in-europe-at-ifa-berlin-2026-302865983.html",
+      "scope": "2026-09-04欧洲市场进入、全球量产、全球DTC现货；PSA氮气提取、最高95%纯度、25秒/60秒模式、0–8bar、可拆部件可洗碗机、Master Scale预览",
+      "quality": "A",
+      "source_domain": "prnewswire.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "品牌官方新闻稿/上市区域/量产与可得性/规格证据",
+      "seller_type": "饮品设备品牌官方",
+      "storefront_type": "XBREW官方PRNewswire发布",
+      "availability_signal": "进入欧洲市场；全球DTC渠道现货/量产公告"
+    },
+    {
+      "checked_on": "2026-09-06",
+      "campaign_status": "未公开",
+      "pledge_or_price": "历史众筹档位；不取代当前US$469商城价格",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Kickstarter project 1871762223",
+      "id": "XBREW-EVERNITRO-KS-FAQ-20260906",
+      "source_group": "XBREW EverNitro Kickstarter官方FAQ",
+      "url": "https://www.kickstarter.com/projects/1871762223/evernitro-the-3-in-1-barista-level-nitro-machine/faqs",
+      "scope": "官方众筹FAQ披露417×281×169mm、约6kg、App控制/状态/配方/OTA、PSA双分子筛与最高95%纯度；众筹档位与零售价格不替代当前商城价格",
+      "quality": "A",
+      "source_domain": "kickstarter.com",
+      "source_channel": "crowdfunding",
+      "source_role": "官方项目FAQ/众筹规格与App能力证据；不单独证明当前在售",
+      "seller_type": "品牌项目方官方众筹",
+      "storefront_type": "Kickstarter官方项目页",
+      "availability_signal": "已结束众筹/交付与后续零售信号；当前在售由XBREW商城与IFA稿互证"
     }
   ],
   "update_log": [
@@ -578,6 +715,18 @@
       "change": "【智能家电与环境】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-06",
+      "change": "【智能家电与环境】完成本轮新增/变更核验并写入有证据记录；其余线索继续保持候选或历史状态。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-06",
+      "change": "新增HOMEENV-009 XBREW EverNitro Lite；将XBREW Master Scale保留为IFA预览候选。",
+      "verification": "XBREW官方商城列EverNitro Lite US$469且In stock；官方IFA稿称全球DTC渠道现货并进入欧洲市场；Master Scale尚未给出销售页与价格。",
+      "next": "继续核验EverNitro区域插头、额定输入、App无线协议与隐私；追踪Master Scale商品页、价格和交付。"
     }
   ],
   "source_channel_policy": [
@@ -660,8 +809,11 @@
     }
   ],
   "source_channel_counts": {
+    "crowdfunding": 1,
+    "official_newsroom_distribution": 1,
     "official_product": 3,
     "official_sales": 5,
+    "official_store": 2,
     "official_support_manual": 1
   },
   "source_domains": [
@@ -670,9 +822,12 @@
     "aqara.com",
     "dyson.com",
     "evehome.com",
+    "kickstarter.com",
     "mi.com",
     "midea.com",
+    "prnewswire.com",
     "store.google.com",
-    "us.shelly.com"
+    "us.shelly.com",
+    "xbrewlab.com"
   ]
 }
