@@ -11,7 +11,7 @@ const routeStops = [
   {label: '布央谷', detail: '4–11 世紀古吉打遺址', query: 'Lembah Bujang Archaeological Museum, Kedah, Malaysia'},
   {label: '太平', detail: '霹靂博物館與北部鐵路轉乘', query: 'Perak Museum, Taiping, Perak, Malaysia'},
   {label: '怡保', detail: '錫礦城市與摩崖古刹', query: 'Ipoh, Perak, Malaysia'},
-  {label: 'KL / KUL', detail: '黑風洞、雲頂、戰時記憶與返程', query: 'Kuala Lumpur International Airport, Sepang, Malaysia'},
+  {label: 'KL / KUL', detail: '黑風洞、義山、國家館舍與返程', query: 'Kuala Lumpur International Airport, Sepang, Malaysia'},
 ];
 
 const overallRouteStops = routeStops.map((stop) => stop.query);
@@ -150,9 +150,9 @@ const days = [
   {
     day: 6,
     date: '9 月 3 日（四）',
-    route: '太平 → 怡保 → 吉隆坡',
+    route: '太平 → 怡保 → Amanjaya → TBS → 吉隆坡',
     title: '把錫礦城市、洞寺與舊街場放在同一天',
-    focus: '清晨 ETS、三寶洞、鏡湖、Han Chin Pet Soo、怡保舊街場、晚間 ETS',
+    focus: '清晨 ETS、三寶洞、鏡湖、Han Chin Pet Soo、怡保舊街場、Amanjaya 巴士',
     mapStops: [
       {label: '太平車站', query: 'Taiping Railway Station, Perak, Malaysia'},
       {label: '三寶洞', query: 'Sam Poh Tong Temple, Ipoh, Perak, Malaysia'},
@@ -161,8 +161,8 @@ const days = [
       {label: '何人可博物館', query: 'Ho Yan Hor Museum, Ipoh, Perak, Malaysia'},
       {label: '怡保戰爭紀念碑', query: 'Cenotaph War Memorial, Ipoh, Perak, Malaysia'},
       {label: '怡保舊街場', query: 'Ipoh Old Town, Perak, Malaysia'},
-      {label: '怡保車站', query: 'Ipoh Railway Station, Perak, Malaysia'},
-      {label: 'KL Sentral', query: 'Kuala Lumpur Sentral, Malaysia'},
+      {label: 'Amanjaya 巴士總站', query: 'Terminal Amanjaya Ipoh, Perak, Malaysia'},
+      {label: 'TBS', query: 'Terminal Bersepadu Selatan Kuala Lumpur, Malaysia'},
     ],
     blocks: [
       ['06:11–06:56', '由 Taiping 搭 ETS 到 Ipoh；先寄放行李、補水與吃早餐。霹靂博物館已於前一日完成，馬當與太平戰爭公墓不為了補一站再折返。'],
@@ -170,10 +170,10 @@ const days = [
       ['11:30–13:40', '回舊街場午餐、整理照片與行李；13:40 前到 Han Chin Pet Soo 報到。'],
       ['14:00–15:00', '依已確認的預約進 Han Chin Pet Soo；以客家錫礦俱樂部、移民社群與礦業財富為主線。'],
       ['15:00–18:20', '先走隔壁何人可博物館（以 16:00 前入館為原則），再到怡保戰爭紀念碑、火車站、市政廳、Birch Memorial Clock Tower、二奶巷與舊街場。怡保市內沒有值得為此繞路的大型二戰墓園；戰爭紀念碑比只有兩座二戰墓的基督教公墓更值得保留。'],
-      ['18:20–20:00', '在舊街場晚餐、取行李，最晚 30 分鐘前回怡保車站。'],
-      ['20:00–22:50', '搭已購到的晚間 ETS 前往 KL Sentral；優先 20:00，若無座位以 20:26 為最後備援，車票與當日異動以 KITS 為準。抵達後直接入住唐人街／Pasar Seni 一帶。'],
+      ['15:15 以後', '舊街場完成後不在車站苦等晚間 ETS，直接到 Terminal Amanjaya，選當時可買到的 Amanjaya → TBS 城際巴士；這是實走的取捨，約 3 小時多。'],
+      ['傍晚', '抵達 TBS 後接軌道交通或短程 Grab 進市中心，入住 Central Market／Pasar Seni 一帶。'],
     ],
-    stay: '吉隆坡唐人街／Pasar Seni 一帶連住 3 晚（9/3 入住、9/6 退房；例如 Space Hotel）。',
+    stay: '吉隆坡市中心住宿；之後依實際動線換到 KLCC／Bukit Bintang 一帶。',
   },
   {
     day: 7,
@@ -199,12 +199,13 @@ const days = [
   {
     day: 8,
     date: '9 月 5 日（六）',
-    route: '黑風洞 → KL Sentral → 青雲亭 → 雲頂高原 → Bukit Bintang／TRX',
-    title: '只走北線：石灰岩、山上宗教空間與高原鐵路接駁',
-    focus: '黑風洞、KTM Komuter、RWT Express、Awana SkyWay、青雲亭、雲頂高原',
+    route: '黑風洞 → KL Sentral → 廣東義山 → KL Sentral → 青雲亭 → 雲頂高原 → Bukit Bintang／TRX',
+    title: '黑風洞、廣東義山與雲頂的高密度日程',
+    focus: '黑風洞、葉亞來墓與抗戰記憶、KTM Komuter、RWT Express、Awana SkyWay、青雲亭、雲頂高原',
     mapStops: [
       {label: '黑風洞', query: 'Batu Caves, Selangor, Malaysia'},
       {label: 'KL Sentral', query: 'Kuala Lumpur Sentral, Malaysia'},
+      {label: '廣東義山', query: 'Kwong Tong Cemetery Kuala Lumpur, Malaysia'},
       {label: 'Awana SkyCentral', query: 'Awana SkyCentral Genting Highlands, Pahang, Malaysia'},
       {label: '青雲亭', query: 'Chin Swee Caves Temple Genting Highlands, Pahang, Malaysia'},
       {label: '雲頂高原', query: 'SkyAvenue Genting Highlands, Pahang, Malaysia'},
@@ -213,35 +214,31 @@ const days = [
     blocks: [
       ['06:50–07:20', '從住宿直接 Grab 到 Batu Caves。這段用一次車換掉清晨兩段轉乘；到站後只帶水、雨具與手機，不帶任何寄存行李。'],
       ['07:20–08:35', '走 Temple Cave 主洞與石灰岩地景。主洞免費、272 級階梯；不加遠處寺廟、商場或攀登支線，08:35 前回 Batu Caves KTM 站。'],
-      ['08:35–10:15', '搭下一班 KTM Komuter 回 KL Sentral；抵達後到 Lower Ground 的 RWT Express 櫃檯，買上山巴士＋Awana SkyWay 票，並同時鎖定回程 RWT 班次，不用 Grab 跨城折返。'],
-      ['10:15–12:15', '搭 KL Sentral → GHPO／Awana 的官方巴士，轉 Awana SkyWay 上山。實際搭乘以櫃檯給出的最近一班為準；若纜車因天候暫停，改走巴士上山或直接回市區，不另買分散的付費設施。'],
-      ['12:15–15:45', '以青雲亭為主，利用同一張纜車票中途下車、再回到高原站；午餐後在 SkyAvenue／山頂步行區停留。今天不進賭場、不排付費樂園，保留山景、寺廟與公共接駁這條主線即可。'],
-      ['15:45–18:30', '由 Awana／GHPO 搭已鎖定的 RWT Express 回 KL Sentral，再轉 MRT／步行至 Bukit Bintang／TRX 的新住宿。若回程巴士座位或天候變動，以最早可用班次下山，不把晚到風險留給明天航班。'],
+      ['08:35–09:35', '錯過 KTM 後不再等下一班，直接 Grab 從黑風洞到廣東義山。這是當天實際採用的補救，不包車，也不為了省轉乘費犧牲墓園時段。'],
+      ['約 09:35–10:40', '走廣東義山：葉亞來墓、南僑機工紀念碑及墓園中的華人開埠與抗戰記憶。墓園公開時段約為 08:30–16:00；只走既有步道與有標示的紀念點。'],
+      ['約 10:40–11:20', 'Grab 回 KL Sentral Lower Ground，到 RWT Express 櫃檯買上山巴士＋Awana SkyWay 票，並同時鎖定回程 RWT 班次。若最近一班超過 30 分鐘，才改查 Terminal Bersepadu Gombak 的官方上山車，不用叫長程 Grab。'],
+      ['約 12:00–14:00', '搭 KL Sentral／Gombak → GHPO／Awana 的官方巴士，轉 Awana SkyWay 上山。實際搭乘以櫃檯給出的最近一班為準；若纜車因天候暫停，改走巴士上山或直接回市區，不另買分散的付費設施。'],
+      ['14:00–16:45', '以青雲亭為主，利用同一張纜車票中途下車、再回到高原站；午餐後在 SkyAvenue／山頂步行區停留。今天不進賭場、不排付費樂園，保留山景、寺廟與公共接駁這條主線即可。'],
+      ['16:45–19:30', '由 Awana／GHPO 搭已鎖定的 RWT Express 回 KL Sentral，再轉 MRT／步行至 Bukit Bintang／TRX 的新住宿。若回程巴士座位或天候變動，以最早可用班次下山，不把晚到風險留給明天航班。'],
     ],
     stay: 'Bukit Bintang／TRX 一帶，9 月 5 日入住、9 月 6 日退房；選可晚到、24 小時櫃檯的住宿。',
   },
   {
     day: 9,
     date: '9 月 6 日（日）',
-    route: 'Cheras → Jalan Dato Onn → 國家銀行 → KL Sentral → KUL T2',
-    title: '戰時記憶、建國檔案、金融制度，然後直接返程',
-    focus: 'Cheras War Cemetery、東姑阿都拉曼紀念館、國家銀行博物館、AK116 16:35 航班',
+    route: '國家銀行博物館 → KL Sentral → KUL T2',
+    title: '金融與貨幣，然後搭機場巴士返程',
+    focus: '國家銀行博物館與藝術館、Aerobus、AK116 16:35 航班',
     mapStops: [
-      {label: 'Cheras War Cemetery', query: 'Cheras War Cemetery Kuala Lumpur, Malaysia'},
-      {label: '東姑阿都拉曼紀念館', query: 'Memorial Tunku Abdul Rahman Putra Kuala Lumpur, Malaysia'},
       {label: '國家銀行博物館', query: 'Bank Negara Malaysia Museum and Art Gallery, Kuala Lumpur, Malaysia'},
       {label: 'KL Sentral', query: 'Kuala Lumpur Sentral, Malaysia'},
       {label: 'KUL T2', query: 'Kuala Lumpur International Airport Terminal 2, Sepang, Malaysia'},
     ],
     blocks: [
-      ['07:35–08:00', '退房後背行李直接 Grab 到 Cheras War Cemetery；墓園 08:00 開門，先走戰爭墓區，不在住宅區四處找未確認的入口。'],
-      ['08:00–08:30', '看 Cheras War Cemetery。它是本次唯一保留的墓園：二戰軍人墓區的時間線清楚，也不必為廣東義山再做一次跨城折返。'],
-      ['08:30–09:00', 'Grab 到 Jalan Dato Onn；09:00 進東姑阿都拉曼紀念館。若此段交通超過預期，直接略過紀念館、保留國家銀行與機場餘量。'],
-      ['09:00–09:40', '看馬來西亞首任首相的故居、獨立與建國文獻、1959 年 Cadillac；這一站與獨立廣場的戶外儀式空間互補。'],
-      ['09:40–10:00', 'Grab 到 Bank Negara Malaysia Museum and Art Gallery。'],
-      ['10:00–10:50', '集中看 Economics、Numismatics 與 Bank Negara 的制度展示；伊斯蘭金融展廳如仍暫停開放，不為它等待。'],
-      ['10:50–12:00', '前往 KL Sentral，搭 KLIA Ekspres 直達機場；以 12:00 前離開 KL Sentral 為硬截止。KLIA Transit 停靠較多，時間不足時優先選 Express。'],
-      ['約 12:35–16:35', '抵達 KUL T2 後完成值機、托運、安檢與登機。AK116 的登機口、行李規則與時間以 AirAsia App 當日頁面為準。'],
+      ['上午', '完成 Bank Negara Malaysia Museum and Art Gallery；以 Economics、Numismatics 與中央銀行制度展示為主，伊斯蘭金融展廳依當日開放狀態取捨。'],
+      ['11:30–12:00', '由國家銀行一帶短程 Grab 到 KL Sentral；不再折返市中心或前往布城粉紅清真寺，把餘量留給航班。'],
+      ['12:00', '搭 Aerobus 從 KL Sentral 直達 KLIA2，票價 15 MYR；這是本次實際使用的機場接駁，不是 KLIA Ekspres。'],
+      ['約 13:00–16:35', '抵達 KUL T2 後完成值機、托運、安檢與登機。AK116 的登機口、行李規則與時間以 AirAsia App 當日頁面為準。'],
     ],
     stay: '返程日。',
   },
@@ -262,10 +259,10 @@ const researchTable = [
   ['皇家馬來西亞警察博物館', '吉隆坡', '殖民警務、日據、緊急狀態與建國後治安史的入口。'],
   ['國家博物館 / 獨立廣場', '吉隆坡', '國家史敘事、殖民行政建築與 1957 年獨立儀式空間；已於 9 月 4 日完成。'],
   ['黑風洞 / 青雲亭', '雪蘭莪／彭亨', '石灰岩聖地與高原華人宗教空間，以 KTM、官方巴士與纜車接成一條北線。'],
-  ['Cheras War Cemetery', '吉隆坡 Cheras', '二戰軍人墓區；保留到返程日上午第一站，避免把墓園塞進高原支線。'],
+  ['Cheras War Cemetery', '吉隆坡 Cheras', '二戰軍人墓區；與廣東義山、南僑機工紀念共同構成吉隆坡的戰爭與華人社群記憶線。'],
   ['東姑阿都拉曼紀念館', 'Jalan Dato Onn', '首任首相故居、獨立及建國檔案，接到獨立廣場之外的國家形成史。'],
-  ['國家銀行博物館', '吉隆坡', '貨幣、中央銀行、經濟危機與金融制度；伊斯蘭金融展廳以當日開放為準。'],
-  ['Kwong Tong Cemetery', '吉隆坡', '葉亞來墓、南僑機工紀念碑與華人開埠及抗戰史；本次不硬塞進黑風洞／雲頂北線，保留給下一次市內專線。'],
+  ['國家銀行博物館', '吉隆坡', '貨幣、中央銀行、經濟危機與金融制度；本次實走到訪，伊斯蘭金融展廳以當日開放為準。'],
+  ['Kwong Tong Cemetery', '吉隆坡', '葉亞來墓、南僑機工紀念碑與華人開埠及抗戰史；本次安排在黑風洞回市區後，以短程 Grab 保留完整內容。'],
 ];
 
 const architecture = [
@@ -284,14 +281,14 @@ const foodMap = [
 
 const preparation = [
   ['MDAC 入境卡', '出發前 3 天內，使用馬來西亞移民局官方渠道填寫，保存 PDF 或條碼。'],
-  ['實走關鍵票券', '8 月 30 日直達夜巴、9 月 2 日 07:00 渡輪／07:35 Butterworth → Sungai Petani KTM、10:00 K51、15:52 Sungai Petani → Butterworth／17:40 → Taiping KTM、9 月 3 日清晨 Taiping → Ipoh ETS、14:00 Han Chin Pet Soo 與晚間 Ipoh → KL Sentral ETS；晚車只以 KITS 實際有位班次為準。'],
+  ['實走關鍵票券', '8 月 30 日直達夜巴、9 月 2 日渡輪／KTM／K51、9 月 3 日清晨 Taiping → Ipoh ETS、14:00 Han Chin Pet Soo、Terminal Amanjaya → TBS 巴士，以及 9 月 6 日 KL Sentral → KLIA2 Aerobus。現場有位的巴士比死等晚間 ETS 更合適。'],
   ['公共交通原則', '布央谷放在 Sungai Petani 的單日支線，太平完成霹靂博物館後清晨進怡保；馬當與太平戰爭公墓不因「看起來順路」就硬塞入同一天。布央谷最後約 2.5 km 與班車失去鐵路緩衝時，才使用一次短程 Grab。'],
   ['閉館規則', '檳城州立博物館避開 8 月 31 日國慶假日；警察博物館避開星期一。其餘場館也要在出發前看官方當日公告。'],
   ['導航與通信', '預先準備 Grab、Google Maps 離線地圖、本地 eSIM 與至少一張離線交通備份。'],
   ['空調與裝備', '夜巴、商場與博物館可能很冷；古墓、密林與戰爭遺址要準備驅蚊、長褲與防滑鞋。'],
   ['宗教禮儀', '清真寺脫鞋、服裝端正，借用長袍與頭巾後按規定歸還；不要把宗教空間當成背景板。'],
-  ['9 月 5 日北線', '黑風洞後回 KL Sentral，再用 RWT Express／Awana SkyWay 上雲頂；不從黑風洞 Grab 到廣東義山再折返雲頂。這樣少一次跨城車資與回頭路。'],
-  ['回程餘量', 'AK116 於 9 月 6 日 16:35 自 KUL T2 起飛；背行李完成 Cheras、東姑紀念館、國家銀行後，以 12:00 前從 KL Sentral 出發為硬截止。'],
+  ['9 月 5 日高密度版', '黑風洞錯過 KTM 後，直接 Grab 到廣東義山、再 Grab 回 KL Sentral，接 RWT Express／Awana SkyWay 走雲頂北線。多兩段 Grab，但不包車，也不刪除葉亞來墓與抗戰記憶。'],
+  ['回程餘量', 'AK116 於 9 月 6 日 16:35 自 KUL T2 起飛；本次實走為國家銀行博物館後到 KL Sentral，12:00 搭 Aerobus 直達 KLIA2，票價 15 MYR。'],
 ];
 
 const warPriorityChoices = [
@@ -350,6 +347,11 @@ const officialChecks = [
     href: 'https://www.rwgenting.com/en/getting-here/cable-car.html',
   },
   {
+    title: '廣東義山',
+    body: '公開規則列出 08:30–16:00；本日安排在上午，以有標示的紀念點和既有步道為主。',
+    href: 'https://ktc.org.my/wp-content/uploads/2024/03/Cemetery-Rules-Regulations_The-Association-of-Kwong-Tong-Cemetery-Management-KL.pdf',
+  },
+  {
     title: 'Cheras War Cemetery',
     body: 'Cheras Christian Cemetery／Crematorium 每日 08:00–16:00；以地圖釘選前往戰爭墓區。',
     href: 'https://www.dbkl.gov.my/en/kesihatan-awam/tanah-perkuburan-dan-krematorium',
@@ -365,9 +367,9 @@ const officialChecks = [
     href: 'https://museum.bnm.gov.my/v2/',
   },
   {
-    title: 'KLIA Ekspres',
-    body: 'KL Sentral 到 T1 約 28 分鐘、再到 T2 約 3 分鐘；返程日優先選不停站的 Express。',
-    href: 'https://www.kliaekspres.com/products-fares/klia-ekspres/',
+    title: 'KL Sentral → KLIA2 實走接駁',
+    body: '本次搭 12:00 Aerobus 前往 KLIA2，票價 15 MYR；車次與上車月台依當日票面及現場看板確認。',
+    href: 'https://www.klia2.info/bus/bus-operators/aerobus/',
   },
 ];
 
@@ -513,24 +515,24 @@ export default function MalaysiaPeninsulaPage() {
 
   return (
     <Layout
-      title="馬來西亞西馬半島 9 日博物館、歷史遺跡與二戰行程"
-      description="以馬六甲、檳城、布央谷、太平、怡保與吉隆坡串起的 9 日歷史行程；同步記錄實走調整、黑風洞／雲頂北線、戰爭墓園與機場前的金融史路線。"
+      title="馬來西亞西馬半島 9 日實走：博物館、歷史遺跡與二戰"
+      description="2026 年 8 月 29 日至 9 月 6 日的馬來西亞西馬半島實走記錄：馬六甲、檳城、布央谷、太平、怡保與吉隆坡，含城際交通、戰爭記憶與實際機場接駁。"
       image="img/w0x7ce-social-card.png">
       <main className={styles.page}>
         <header className={styles.hero}>
           <div className="container">
             <div className={styles.breadcrumb}><Link to="/explore/travel">行旅誌</Link><span>/</span><span>01</span></div>
-            <div className={styles.kicker}>MALAYSIA / PENINSULAR FIELD PLAN</div>
-            <Heading as="h1">馬來西亞西馬半島<br />9 日博物館、歷史遺跡與二戰行程。</Heading>
+            <div className={styles.kicker}>MALAYSIA / PENINSULAR FIELD RECORD</div>
+            <Heading as="h1">馬來西亞西馬半島<br />9 日實走：博物館、歷史遺跡與二戰。</Heading>
             <p className={styles.lead}>
               從馬六甲的殖民要塞與港口史，到檳城的戰爭遺址、州立收藏與公共紀念，
-              再走進布央谷、太平、怡保，最後以吉隆坡的國家館舍與戰時記憶收束。
+              再走進布央谷、太平、怡保，最後以吉隆坡的國家館舍、墓園與金融史收束；交通與最後一日已按實走校正。
             </p>
             <div className={styles.metaRow}>
               <span>2026.08.29 — 2026.09.06</span>
               <span>9 日 / 8 晚</span>
               <span>博物館／歷史遺跡／二戰</span>
-              <span>可執行密度版</span>
+              <span>實走校正</span>
             </div>
           </div>
         </header>
@@ -539,7 +541,7 @@ export default function MalaysiaPeninsulaPage() {
           <div className={styles.sectionHeading}>
             <span className={styles.kicker}>01 / ROUTE LOGIC</span>
             <Heading as="h2" id="route-title">先看路線，再看景點。</Heading>
-            <p>保留逆時針主線，布央谷與太平放在同一天完成，隔天清晨才進怡保；不把馬當與戰爭公墓寫成已走完的「順路站」。</p>
+            <p>實走保留逆時針主線：馬六甲、檳城、布央谷、太平、怡保、吉隆坡。太平 → 怡保之後改由 Amanjaya 巴士進 TBS；未到訪支線不寫成完成。</p>
           </div>
           <div className={styles.routeRail}>
             {routeStops.map((stop, index) => (
@@ -562,7 +564,7 @@ export default function MalaysiaPeninsulaPage() {
             <div>
               <span className={styles.kicker}>GOOGLE MAPS / WHOLE ROUTE</span>
               <Heading as="h3">全程城市順序</Heading>
-              <p>從 KUL 出發，依序經馬六甲、檳城、布央谷、太平、怡保與吉隆坡後回到 KUL；用來看實走的城市順序，跨城交通仍以每日連結與實際班次為準。</p>
+              <p>從 KUL 出發，依序經馬六甲、檳城、布央谷、太平、怡保與吉隆坡後回到 KUL；每日連結保留實走地點與可重用的導航入口。</p>
             </div>
             <a
               className={styles.mapRouteLink}
@@ -574,7 +576,7 @@ export default function MalaysiaPeninsulaPage() {
             </a>
           </div>
           <div className={styles.callout}>
-            <strong>本次修正：</strong>已完成布央谷與太平霹靂博物館；9 月 3 日已改為清晨太平 → 怡保，午後依 Han Chin Pet Soo 預約與舊街場動線，晚間再進吉隆坡。馬當與太平戰爭公墓未到訪，保留給下一次太平專線。
+            <strong>實走校正：</strong>布央谷、太平霹靂博物館、怡保洞寺／鏡湖／舊街場與吉隆坡國家館舍均保留。9 月 3 日改為 Amanjaya → TBS 巴士；9 月 6 日改為國家銀行博物館後，12:00 由 KL Sentral 搭 Aerobus 到 KLIA2。
           </div>
         </section>
 
@@ -629,8 +631,8 @@ export default function MalaysiaPeninsulaPage() {
         <section className="container" aria-labelledby="itinerary-title">
           <div className={styles.sectionHeading}>
             <span className={styles.kicker}>04 / DAILY EXECUTION</span>
-            <Heading as="h2" id="itinerary-title">每天怎麼走，現場看什麼。</Heading>
-            <p>上面的快捷選擇會把焦點移到某一天；下面保留完整的 9 日明細，沒有 JavaScript 時也能直接閱讀。</p>
+            <Heading as="h2" id="itinerary-title">每天怎麼走，現場如何取捨。</Heading>
+            <p>上面的快捷選擇會把焦點移到某一天；下面保留完整的 9 日明細與每一天的 Google Maps 入口，沒有 JavaScript 時也能直接閱讀。</p>
           </div>
           <div className={styles.daySelector} role="tablist" aria-label="選擇行程日">
             {days.map((day) => (
@@ -694,8 +696,8 @@ export default function MalaysiaPeninsulaPage() {
 
         <section className="container" aria-labelledby="preparation-title">
           <div className={styles.sectionHeading}>
-            <span className={styles.kicker}>07 / BEFORE DEPARTURE</span>
-            <Heading as="h2" id="preparation-title">行前準備與避坑。</Heading>
+            <span className={styles.kicker}>07 / FIELD NOTES</span>
+            <Heading as="h2" id="preparation-title">交通與現場備忘。</Heading>
           </div>
           <div className={styles.preparationGrid}>
             {preparation.map(([title, body], index) => (
@@ -711,9 +713,9 @@ export default function MalaysiaPeninsulaPage() {
         <section className={`container ${styles.lastSection}`} aria-labelledby="revision-title">
           <div className={styles.revisionCard}>
             <div>
-              <span className={styles.kicker}>VERSION 05 / LIVE ROUTE SYNC</span>
-              <Heading as="h2" id="revision-title">9 月 5 日不折返，9 月 6 日不壓機場。</Heading>
-              <p>9 月 4 日已完成的館舍與獨立廣場已回寫。9 月 5 日改為黑風洞 → KL Sentral → 雲頂的公共交通北線，不再把廣東義山塞在中間製造昂貴跨城回頭路；廣東義山保留給下次市內專線。9 月 6 日以 Cheras War Cemetery、東姑阿都拉曼紀念館、國家銀行博物館接 KLIA Ekspres，12:00 前離開 KL Sentral。車票、宗教場所、天候、纜車與館舍仍以當日公告為準。</p>
+              <span className={styles.kicker}>VERSION 06 / FIELD RECORD</span>
+              <Heading as="h2" id="revision-title">以實走為準，不把備選寫成完成。</Heading>
+              <p>9 月 3 日的實際轉移為怡保 Amanjaya → TBS 巴士；9 月 5 日保留黑風洞、廣東義山與雲頂北線的完整交通判斷；9 月 6 日已改為國家銀行博物館 → KL Sentral → 12:00 Aerobus → KLIA2。粉紅清真寺與其他未執行備選不列入最後一天的實走線。</p>
             </div>
             <Link className={styles.backLink} to="/explore/travel">回到行旅誌 <span aria-hidden="true">↗</span></Link>
           </div>
