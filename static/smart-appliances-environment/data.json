@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-06",
+  "checked_on": "2026-09-07",
   "scope_note": "本库覆盖智能家电与环境：空气净化器、除湿机、恒温器、智能插座、漏水传感器、天气站与能耗监测。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-06"
+      "2026-09-07"
     ]
   ],
   "products": [
@@ -408,6 +408,102 @@
         "XBREW-EVERNITRO-IFA-20260906"
       ],
       "next_check": "核验官方商品页、价格、尺寸、重量、电池/供电、App连接、区域上市与精确SKU"
+    },
+    {
+      "id": "CAND-AQARA-FLOOR-LAMP-T1-20260907",
+      "name": "Aqara Floor Lamp T1",
+      "reason": "Aqara官方IFA 2026资料披露Floor Lamp T1为智能落地灯，支持Thread、Zigbee、Matter、Aqara Home及主流生态，1420mm、16-bit五通道芯片、18独立分区、2000–9000K和1000流明；尚未给出正式商品页、价格与交付，保留候选。",
+      "brand": "Aqara",
+      "region": "全球/IFA 2026展示",
+      "category": "智能家电与环境/智能照明",
+      "status": "候选/官方IFA展示；正式商品页、价格与区域交付未公开",
+      "evidence": "A",
+      "url": "https://www.aqara.com/en/news/aqara-showcases-immersive-smart-home-experience-ifa-2026/",
+      "alias_or_relation": "Aqara 2026智能照明系列；颜色、长度、套装与区域插头不拆为独立型号",
+      "source_refs": [
+        "AQARA-IFA-LIGHTING-20260907"
+      ],
+      "next_check": "核验官方商品页、Matter/Thread认证、精确SKU、价格、功率、长度/尺寸、防护等级与区域库存"
+    },
+    {
+      "id": "CAND-AQARA-LED-DOWNLIGHT-T2-20260907",
+      "name": "Aqara LED Downlight T2",
+      "reason": "Aqara官方IFA 2026资料披露LED Downlight T2，支持Thread、Zigbee、Matter与主流生态，RGB/CCT、2000–9000K、1600万色、CCT最高1200流明及断电记忆；正式SKU、价格和销售页未公开，保留候选。",
+      "brand": "Aqara",
+      "region": "全球/IFA 2026展示",
+      "category": "智能家电与环境/智能照明",
+      "status": "候选/官方IFA展示；正式商品页、价格与区域交付未公开",
+      "evidence": "A",
+      "url": "https://www.aqara.com/en/news/aqara-showcases-immersive-smart-home-experience-ifa-2026/",
+      "alias_or_relation": "Aqara 2026智能照明系列；颜色、长度、套装与区域插头不拆为独立型号",
+      "source_refs": [
+        "AQARA-IFA-LIGHTING-20260907"
+      ],
+      "next_check": "核验官方商品页、Matter/Thread认证、精确SKU、价格、功率、长度/尺寸、防护等级与区域库存"
+    },
+    {
+      "id": "CAND-AQARA-LED-STRIP-T2-20260907",
+      "name": "Aqara LED Strip T2",
+      "reason": "Aqara官方IFA 2026资料披露LED Strip T2，支持Thread、Zigbee、Matter，108 LEDs/m、16-bit五通道、每3m含18个独立分区、可裁剪/柔性和音乐同步；正式价格、SKU与交付未公开，保留候选。",
+      "brand": "Aqara",
+      "region": "全球/IFA 2026展示",
+      "category": "智能家电与环境/智能照明",
+      "status": "候选/官方IFA展示；正式商品页、价格与区域交付未公开",
+      "evidence": "A",
+      "url": "https://www.aqara.com/en/news/aqara-showcases-immersive-smart-home-experience-ifa-2026/",
+      "alias_or_relation": "Aqara 2026智能照明系列；颜色、长度、套装与区域插头不拆为独立型号",
+      "source_refs": [
+        "AQARA-IFA-LIGHTING-20260907"
+      ],
+      "next_check": "核验官方商品页、Matter/Thread认证、精确SKU、价格、功率、长度/尺寸、防护等级与区域库存"
+    },
+    {
+      "id": "CAND-AQARA-OUTDOOR-STRING-LIGHTS-H1-20260907",
+      "name": "Aqara Outdoor String Lights H1",
+      "reason": "Aqara官方IFA 2026资料披露Outdoor String Lights H1，支持Thread、Zigbee、Matter与生态联动，分区、2000–9000K、天气防护、环境/时间触发；精确规格、价格、长度SKU和上市页未公开，保留候选。",
+      "brand": "Aqara",
+      "region": "全球/IFA 2026展示",
+      "category": "智能家电与环境/智能照明",
+      "status": "候选/官方IFA展示；正式商品页、价格与区域交付未公开",
+      "evidence": "A",
+      "url": "https://www.aqara.com/en/news/aqara-showcases-immersive-smart-home-experience-ifa-2026/",
+      "alias_or_relation": "Aqara 2026智能照明系列；颜色、长度、套装与区域插头不拆为独立型号",
+      "source_refs": [
+        "AQARA-IFA-LIGHTING-20260907"
+      ],
+      "next_check": "核验官方商品页、Matter/Thread认证、精确SKU、价格、功率、长度/尺寸、防护等级与区域库存"
+    },
+    {
+      "id": "CAND-AQARA-PERMANENT-OUTDOOR-LIGHTS-H1-20260907",
+      "name": "Aqara Permanent Outdoor Lights H1",
+      "reason": "Aqara官方IFA 2026资料披露Permanent Outdoor Lights H1，支持Thread、Zigbee、Matter，长期安装、可延长/裁剪、独立LED与天气防护；精确SKU、价格、长度和销售交付未公开，保留候选。",
+      "brand": "Aqara",
+      "region": "全球/IFA 2026展示",
+      "category": "智能家电与环境/智能照明",
+      "status": "候选/官方IFA展示；正式商品页、价格与区域交付未公开",
+      "evidence": "A",
+      "url": "https://www.aqara.com/en/news/aqara-showcases-immersive-smart-home-experience-ifa-2026/",
+      "alias_or_relation": "Aqara 2026智能照明系列；颜色、长度、套装与区域插头不拆为独立型号",
+      "source_refs": [
+        "AQARA-IFA-LIGHTING-20260907"
+      ],
+      "next_check": "核验官方商品页、Matter/Thread认证、精确SKU、价格、功率、长度/尺寸、防护等级与区域库存"
+    },
+    {
+      "id": "CAND-AMADA-AMABB12B-TXL-US-20260907",
+      "name": "Amada AMABB12B-TXL-US Smart Quad-Motor Adjustable Bed Base",
+      "brand": "Amada",
+      "region": "美国/IFA 2026；预计2026年10月",
+      "category": "智能家电与环境/智能家具",
+      "status": "候选/官方发布；美国预计2026年10月，价格US$829.99起，当前无稳定销售页",
+      "evidence": "A",
+      "reason": "Amada官方发布披露精确型号AMABB12B-TXL-US，为Smart Quad-Motor Adjustable Bed Base，支持头/脚/腰调节、睡眠/放松/零重力/唤醒模式与Amada App生态；官方给出美国早期10月上市与US$829.99起，但当前未见可下单商品页，不计入主表。",
+      "url": "https://www.globenewswire.com/news-release/2026/09/04/3356663/0/en/amada-unveils-its-vision-of-smart-comfort-home-at-ifa-2026-where-living-spaces-adapt-to-modern-lifestyles.html",
+      "alias_or_relation": "智能可调床底；不与床垫、床架套装或纯尺寸变体重复",
+      "source_refs": [
+        "AMADA-AMABB12B-TXL-US-20260907"
+      ],
+      "next_check": "核验官方商品页、尺寸/承重/电机规格、App协议、认证、运输范围、实际开售与区域价格"
     }
   ],
   "sources": [
@@ -635,6 +731,42 @@
       "seller_type": "品牌项目方官方众筹",
       "storefront_type": "Kickstarter官方项目页",
       "availability_signal": "已结束众筹/交付与后续零售信号；当前在售由XBREW商城与IFA稿互证"
+    },
+    {
+      "checked_on": "2026-09-07",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Aqara T1/H1 lighting lineup",
+      "id": "AQARA-IFA-LIGHTING-20260907",
+      "source_group": "Aqara智能照明官方IFA 2026发布",
+      "url": "https://www.aqara.com/en/news/aqara-showcases-immersive-smart-home-experience-ifa-2026/",
+      "scope": "Floor Lamp T1、LED Downlight T2、LED Strip T2、Outdoor String Lights H1、Permanent Outdoor Lights H1；Thread/Zigbee/Matter/生态支持及各型号公开功能参数",
+      "quality": "A",
+      "source_domain": "aqara.com",
+      "source_channel": "official_newsroom",
+      "source_role": "原厂IFA产品线/协议/功能/部分规格发现证据；不证明正式销售",
+      "seller_type": "智能家居品牌官方",
+      "storefront_type": "Aqara官方新闻/IFA页面",
+      "availability_signal": "IFA展示；正式商品页、价格与交付未公开"
+    },
+    {
+      "checked_on": "2026-09-07",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$829.99起",
+      "estimated_delivery": "预计2026年10月上市；具体交付未公开",
+      "platform_reference": "AMABB12B-TXL-US",
+      "id": "AMADA-AMABB12B-TXL-US-20260907",
+      "source_group": "Amada AMABB12B-TXL-US官方IFA发布",
+      "url": "https://www.globenewswire.com/news-release/2026/09/04/3356663/0/en/amada-unveils-its-vision-of-smart-comfort-home-at-ifa-2026-where-living-spaces-adapt-to-modern-lifestyles.html",
+      "scope": "AMABB12B-TXL-US Smart Quad-Motor Adjustable Bed Base；头/脚/腰调节、睡眠/放松/零重力/唤醒模式、Amada App生态、美国预计2026年10月、US$829.99起",
+      "quality": "A",
+      "source_domain": "globenewswire.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "品牌官方新闻稿/精确型号/价格/上市窗口与功能证据；不证明当前现货",
+      "seller_type": "智能家具品牌官方",
+      "storefront_type": "Amada官方GlobeNewswire发布",
+      "availability_signal": "官方预计2026年10月美国上市；正式商品页与库存未公开"
     }
   ],
   "update_log": [
@@ -727,6 +859,18 @@
       "change": "新增HOMEENV-009 XBREW EverNitro Lite；将XBREW Master Scale保留为IFA预览候选。",
       "verification": "XBREW官方商城列EverNitro Lite US$469且In stock；官方IFA稿称全球DTC渠道现货并进入欧洲市场；Master Scale尚未给出销售页与价格。",
       "next": "继续核验EverNitro区域插头、额定输入、App无线协议与隐私；追踪Master Scale商品页、价格和交付。"
+    },
+    {
+      "date": "2026-09-07",
+      "change": "【智能家电与环境】完成本轮新增/状态变更核验并写入有证据记录；预发布、预约与系列级线索继续保持候选或历史状态。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-07",
+      "change": "新增Aqara Floor Lamp T1、LED Downlight T2、LED Strip T2、Outdoor String Lights H1、Permanent Outdoor Lights H1及Amada AMABB12B-TXL-US候选；均保留展会/预发布状态。",
+      "verification": "Aqara官方IFA稿提供五个精确型号及Thread/Zigbee/Matter/照明参数；Amada官方稿提供精确床底型号、US$829.99起和美国2026年10月窗口；尚无稳定正式商城页。",
+      "next": "继续核验Aqara/Amada官方商品页、精确SKU、认证、价格、功率/尺寸、库存、交付与App/隐私条款。"
     }
   ],
   "source_channel_policy": [
@@ -810,7 +954,8 @@
   ],
   "source_channel_counts": {
     "crowdfunding": 1,
-    "official_newsroom_distribution": 1,
+    "official_newsroom": 1,
+    "official_newsroom_distribution": 2,
     "official_product": 3,
     "official_sales": 5,
     "official_store": 2,
@@ -822,6 +967,7 @@
     "aqara.com",
     "dyson.com",
     "evehome.com",
+    "globenewswire.com",
     "kickstarter.com",
     "mi.com",
     "midea.com",

@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-06",
+  "checked_on": "2026-09-07",
   "title": "全球 Wi‑Fi / Bluetooth 芯片选型数据库",
   "subtitle": "面向硬件选型的全球 Wi‑Fi、Bluetooth Classic/BR/EDR、BLE、Wi‑Fi+BT Combo、802.15.4 tri-radio 和无线 MCU/连接协处理器资料库。",
   "scope_note": "本库是消费电子与智能硬件数据库之外的第 25 套独立半导体选型库。主表按芯片/SoC/无线 MCU/连接协处理器计数，不把模块、开发板、OEM 方案或整机重复计入；国家/地区指品牌/公司归属口径，不等同于晶圆制造地。",
@@ -27104,6 +27104,24 @@
       "storefront_type": "Quectel官方规格PDF",
       "availability_signal": "公开规格资料；不代表裸芯片可采购",
       "platform_reference": "FCM665D"
+    },
+    {
+      "checked_on": "2026-09-07",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "ESP32-E22 / ESP32-H4 / ESP32-H21",
+      "id": "ESPRESSIF-2026-CATALOG-VERIFY-20260907",
+      "source_group": "Espressif 2026官方公司/产品目录",
+      "url": "https://www.espressif.com/sites/all/themes/espressif/images/about-espressif/About%20Company_2026_EN.pdf?v=2",
+      "scope": "官方2026资料复核ESP32-E22、ESP32-H4、ESP32-H21等Wi-Fi/Bluetooth/多协议产品线；本轮未将未具备新增精确证据的家族重复写入主表",
+      "quality": "A",
+      "source_domain": "espressif.com",
+      "source_channel": "official_support",
+      "source_role": "原厂公司/产品目录与型号复核证据；不替代精确数据手册与价格",
+      "seller_type": "无线MCU品牌官方",
+      "storefront_type": "Espressif官方PDF",
+      "availability_signal": "官方目录/产品线复核；精确新料号与价格需分销页继续核验"
     }
   ],
   "source_channel_policy": [
@@ -27170,6 +27188,7 @@
     "official_news": 5,
     "official_newsroom": 5,
     "official_product": 88,
+    "official_support": 1,
     "official_support_manual": 1
   },
   "source_domains": [
@@ -27322,6 +27341,18 @@
       "change": "全球Wi-Fi/Bluetooth芯片库本轮完成原厂、规格书、PCN/EOL、Bluetooth SIG、Wi-Fi Alliance、DigiKey、Mouser、LCSC及区域经销渠道核验；没有足够强的新裸芯片/SoC/无线MCU/连接协处理器主表条目可安全新增。",
       "verification": "芯片价格、精确封装/温度后缀、生命周期和分料号仍严格区分；模块、开发板、OEM线索和询价/实时分销价格不升级为裸芯片主表条目，未公开字段不推断。",
       "next": "下一轮继续按厂商族群和分销商料号做分料号级检索，重点补充原厂/授权分销报价、MOQ/包装、封装、功耗、认证、PCN/EOL和规格书来源；BLE、Bluetooth Classic/BR/EDR、2.4GHz proprietary与802.15.4不互相推断。"
+    },
+    {
+      "date": "2026-09-07",
+      "change": "【全球Wi-Fi/Bluetooth芯片选型库】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-07",
+      "change": "全球Wi-Fi/Bluetooth芯片库本轮完成Espressif 2026官方目录及原厂/规格/PCN/EOL/认证/授权分销渠道复核；没有足够强的新裸芯片、SoC、无线MCU或连接协处理器主表条目可安全新增。",
+      "verification": "ESP32-E22/H4/H21等已在现有产品线/记录中或缺少本轮新增精确分料号与价格证据；模块、开发板、询价和同系列推断不升级主表，BLE、Bluetooth Classic/BR/EDR、2.4GHz proprietary与802.15.4继续分开。",
+      "next": "下一轮继续按厂商族群、精确OPN、DigiKey/Mouser/LCSC/Arrow/Avnet价格、MOQ/包装、封装、功耗、认证与PCN/EOL做分料号核验。"
     }
   ]
 }

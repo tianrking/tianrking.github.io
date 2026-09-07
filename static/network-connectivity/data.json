@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-06",
+  "checked_on": "2026-09-07",
   "scope_note": "本库覆盖网络与移动通信：Wi‑Fi路由器、Mesh、5G CPE、移动热点、随身Wi‑Fi与NAS。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-06"
+      "2026-09-07"
     ]
   ],
   "products": [
@@ -386,6 +386,54 @@
         "TP-LINK-WIFI8-IFA-20260905"
       ],
       "next_check": "核验正式产品页、节点/套装SKU、价格、FCC/Wi-Fi Alliance和区域上市"
+    },
+    {
+      "id": "CAND-OUKITEL-WP63-20260907",
+      "name": "OUKITEL WP63",
+      "brand": "OUKITEL",
+      "region": "全球/IFA 2026展示",
+      "category": "网络与移动通信/户外移动终端",
+      "status": "候选/官方IFA展示；价格、正式商城SKU与区域库存未公开",
+      "evidence": "A",
+      "reason": "OUKITEL官方IFA新闻稿将WP63列为下一代户外产品，披露20,000mAh、33W、18W反向充电、集成USB-C线、点火器、露营灯与扬声器；当前来源更接近户外移动终端/电源产品线展示，缺少稳定精确销售页，保留候选且不把容量换算为独立电池型号。",
+      "url": "https://www.globenewswire.com/news-release/2026/09/02/3354906/0/en/oukitel-to-showcase-cross-device-ai-and-next-generation-rugged-technology-at-ifa-2026.html",
+      "alias_or_relation": "WP63户外移动终端；不与EP2500家庭储能或其他手机颜色/内存变体重复",
+      "source_refs": [
+        "OUKITEL-IFA-RUGGED-20260907"
+      ],
+      "next_check": "核验官方商品页、网络制式、精确SKU、价格、重量、防护、认证与区域可得性"
+    },
+    {
+      "id": "CAND-OUKITEL-WP70-ULTRA-20260907",
+      "name": "OUKITEL WP70 Ultra",
+      "brand": "OUKITEL",
+      "region": "全球/IFA 2026展示",
+      "category": "网络与移动通信/三防智能手机",
+      "status": "候选/官方IFA展示；价格、正式销售SKU与区域库存未公开",
+      "evidence": "A",
+      "reason": "OUKITEL官方IFA新闻稿披露WP70 Ultra采用16,000mAh硅碳电池、16.4mm机身、6.78英寸120Hz AMOLED和256×192热成像；稿件未提供可下单商品页、网络频段、精确分料号与价格，不计入主表。",
+      "url": "https://www.globenewswire.com/news-release/2026/09/02/3354906/0/en/oukitel-to-showcase-cross-device-ai-and-next-generation-rugged-technology-at-ifa-2026.html",
+      "alias_or_relation": "三防手机/热成像；不与WP600或其他内存/颜色SKU重复",
+      "source_refs": [
+        "OUKITEL-IFA-RUGGED-20260907"
+      ],
+      "next_check": "核验官方商品页、SoC、5G频段、存储/内存、价格、认证、防护等级与销售区域"
+    },
+    {
+      "id": "CAND-OUKITEL-WP600-20260907",
+      "name": "OUKITEL WP600",
+      "brand": "OUKITEL",
+      "region": "全球/IFA 2026展示",
+      "category": "网络与移动通信/高性能三防智能手机",
+      "status": "候选/官方IFA展示；价格、正式销售SKU与区域库存未公开",
+      "evidence": "A",
+      "reason": "OUKITEL官方IFA新闻稿披露WP600采用MediaTek Dimensity 8300、24GB RAM、1TB存储、10,000mAh电池、45W充电、双风扇与RGB；未给出稳定官方商品页、区域网络规格与价格，不计入主表。",
+      "url": "https://www.globenewswire.com/news-release/2026/09/02/3354906/0/en/oukitel-to-showcase-cross-device-ai-and-next-generation-rugged-technology-at-ifa-2026.html",
+      "alias_or_relation": "三防高性能手机；与WP70 Ultra分开，内存/存储/颜色套装不拆分",
+      "source_refs": [
+        "OUKITEL-IFA-RUGGED-20260907"
+      ],
+      "next_check": "核验官方商品页、5G频段、认证、防护、价格、区域SKU、库存与交付"
     }
   ],
   "sources": [
@@ -578,6 +626,24 @@
       "storefront_type": "TP-Link北欧官方新闻页",
       "availability_signal": "Archer 8 Ultra计划2026-09-30区域预订；Deco 8 Ultra计划2027 Q1；价格待公布",
       "platform_reference": "Archer 8 Ultra / Deco 8 Ultra"
+    },
+    {
+      "checked_on": "2026-09-07",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "WP63 / WP70 Ultra / WP600",
+      "id": "OUKITEL-IFA-RUGGED-20260907",
+      "source_group": "OUKITEL官方IFA 2026三防/移动产品发布",
+      "url": "https://www.globenewswire.com/news-release/2026/09/02/3354906/0/en/oukitel-to-showcase-cross-device-ai-and-next-generation-rugged-technology-at-ifa-2026.html",
+      "scope": "WP63 20,000mAh/33W/18W反向充电/集成USB-C/点火器/露营灯/扬声器；WP70 Ultra 16,000mAh硅碳/16.4mm/6.78英寸120Hz AMOLED/256×192热成像；WP600 Dimensity 8300/24GB/1TB/10,000mAh/45W/双风扇/RGB",
+      "quality": "A",
+      "source_domain": "globenewswire.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "品牌官方新闻稿/型号发现/部分规格证据；不证明当前在售",
+      "seller_type": "三防移动设备品牌官方",
+      "storefront_type": "OUKITEL官方GlobeNewswire发布",
+      "availability_signal": "IFA展示；正式商品页、价格与交付未公开"
     }
   ],
   "update_log": [
@@ -670,6 +736,18 @@
       "change": "【网络与移动通信】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-07",
+      "change": "【网络与移动通信】完成本轮新增/状态变更核验并写入有证据记录；预发布、预约与系列级线索继续保持候选或历史状态。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-07",
+      "change": "新增OUKITEL WP63、WP70 Ultra和WP600候选；均来自官方IFA 2026展示，未取得稳定正式商城SKU/价格，因此不计主表。",
+      "verification": "官方GlobeNewswire稿提供WP63电源/户外能力、WP70 Ultra热成像与硅碳电池、WP600 Dimensity 8300/24GB/1TB/10,000mAh；网络制式、精确分料号、销售和交付未公开。",
+      "next": "继续核验官方商品页、网络频段、认证、防护、价格、区域库存，并确认WP63在电源与网络交叉分类中的归属。"
     }
   ],
   "source_channel_policy": [
@@ -754,6 +832,7 @@
   "source_channel_counts": {
     "crowdfunding": 1,
     "official_newsroom": 1,
+    "official_newsroom_distribution": 1,
     "official_product": 1,
     "official_sales": 3,
     "official_support_manual": 5
@@ -763,6 +842,7 @@
     "eero.com",
     "gl-inet.com",
     "global.download.synology.com",
+    "globenewswire.com",
     "kb.netgear.com",
     "kickstarter.com",
     "meshium.io",

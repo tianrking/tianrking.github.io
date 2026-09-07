@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-06",
+  "checked_on": "2026-09-07",
   "scope_note": "本库覆盖办公与会议硬件：摄像头、会议麦克风、会议终端、标签打印、便携投影与智能录入设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-06"
+      "2026-09-07"
     ]
   ],
   "products": [
@@ -417,6 +417,24 @@
       "reason": "PLAUD Note 已有 /smart-recorders/ 主表，办公库保留来源线索但不重复计数。",
       "url": "https://www.plaud.ai/products/plaud-note-ai-voice-recorder",
       "alias_or_relation": "转入录音卡片/录音硬件数据库"
+    },
+    {
+      "id": "CAND-VIOLOOP-20260907",
+      "name": "Violoop AI screen/task assistant",
+      "brand": "Violoop",
+      "region": "全球/官方预约与Kickstarter计划",
+      "category": "办公与会议硬件/AI屏幕助理",
+      "status": "候选/官方预发布；Kickstarter计划2026-09-15；预约金US$10，正式交付待定",
+      "evidence": "A",
+      "reason": "Violoop官方资料披露HDMI 2.0 4K@30采集、USB-HID控制、RK3576八核、26 TOPS AI加速、STM32H563安全MCU、AMOLED触摸屏、2.4/5GHz Wi-Fi 802.11ac/ax、Bluetooth 5.2、Windows/macOS/Linux兼容、90×92×80mm和450g；官方预约页列早期价US$369、零售价US$699并计划2026-09-15启动Kickstarter。由于目前仍是预约/预发布，且官方技术页与checkout页对Hailo-8/内存配置存在冲突，不计入在售主表。",
+      "url": "https://www.violoop.ai/",
+      "alias_or_relation": "AI屏幕/任务助手；Vibe Coding Mic为配件，不单列；不与普通会议摄像头重复",
+      "source_refs": [
+        "VIOLOOP-OFFICIAL-20260907",
+        "VIOLOOP-RESERVE-20260907",
+        "VIOLOOP-TECH-20260907"
+      ],
+      "next_check": "核验Kickstarter实际上线、最终BOM与SoC/加速器、内存/存储SKU、价格档位、交付、FCC/CE、隐私与云端API条款"
     }
   ],
   "sources": [
@@ -555,6 +573,60 @@
       "campaign_status": "未公开",
       "pledge_or_price": "未公开",
       "estimated_delivery": "未公开"
+    },
+    {
+      "checked_on": "2026-09-07",
+      "campaign_status": "未公开",
+      "pledge_or_price": "早期价格与零售价见官方预约页；正式零售未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Violoop",
+      "id": "VIOLOOP-OFFICIAL-20260907",
+      "source_group": "Violoop官方产品页",
+      "url": "https://www.violoop.ai/",
+      "scope": "Violoop硬件、HDMI 2.0 4K@30采集、USB-HID、RK3576八核、26 TOPS、STM32H563、AMOLED、Wi-Fi 2.4/5GHz 802.11ac/ax、Bluetooth 5.2、Windows/macOS/Linux、90×92×80mm、450g；主页面列13GB/128GB",
+      "quality": "A",
+      "source_domain": "violoop.ai",
+      "source_channel": "official_product",
+      "source_role": "原厂产品/硬件规格/预发布形态与平台兼容证据",
+      "seller_type": "AI办公硬件品牌官方",
+      "storefront_type": "Violoop官方产品页",
+      "availability_signal": "官方预发布/预约；尚未形成可交付零售订单"
+    },
+    {
+      "checked_on": "2026-09-07",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$10预约金；早期价US$369起；零售价US$699",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Violoop reservation",
+      "id": "VIOLOOP-RESERVE-20260907",
+      "source_group": "Violoop官方预约页",
+      "url": "https://www.violoop.ai/reserve/",
+      "scope": "预约金US$10；早期价US$369起；零售价US$699；Kickstarter计划；13GB/128GB、RK3576与26 TOPS宣传",
+      "quality": "A",
+      "source_domain": "violoop.ai",
+      "source_channel": "official_store",
+      "source_role": "原厂预约/价格/众筹计划与交付阶段证据；不证明现货",
+      "seller_type": "AI办公硬件品牌官方",
+      "storefront_type": "Violoop官方预约页",
+      "availability_signal": "可退预约金/计划2026-09-15 Kickstarter；正式发货未公开"
+    },
+    {
+      "checked_on": "2026-09-07",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Violoop",
+      "id": "VIOLOOP-TECH-20260907",
+      "source_group": "Violoop官方技术博客",
+      "url": "https://violoop.ai/blog/ai-that-reads-your-screen/",
+      "scope": "官方技术文章披露Qwen 8B Q4、8GB LPDDR4X+5GB 3D stacked DRAM合计13GB、128GB eMMC、STM32H563 USB-HID与本地屏幕/任务历史；云端模型可用自有API key",
+      "quality": "A",
+      "source_domain": "violoop.ai",
+      "source_channel": "official_support",
+      "source_role": "原厂技术说明/内存存储/安全MCU/软件与数据边界证据；预发布资料",
+      "seller_type": "AI办公硬件品牌官方",
+      "storefront_type": "Violoop官方技术博客",
+      "availability_signal": "技术预览；不证明正式销售"
     }
   ],
   "update_log": [
@@ -641,6 +713,18 @@
       "change": "【办公与会议硬件】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-07",
+      "change": "【办公与会议硬件】完成本轮新增/状态变更核验并写入有证据记录；预发布、预约与系列级线索继续保持候选或历史状态。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-07",
+      "change": "新增Violoop AI screen/task assistant候选；官方预约页给出US$10预约金、US$369早期价、US$699零售价与2026-09-15 Kickstarter计划，但未转主表。",
+      "verification": "Violoop官方产品页、预约页和技术博客互证RK3576、STM32H563、26 TOPS、屏幕采集/USB-HID、Wi-Fi/Bluetooth与13GB/128GB宣传；checkout页对Hailo-8、内存/存储存在配置冲突，保留缺口。",
+      "next": "核验Kickstarter实上线、最终SoC/内存/存储BOM、价格档位、交付、认证和云端API隐私条款。"
     }
   ],
   "source_channel_policy": [
@@ -723,8 +807,10 @@
     }
   ],
   "source_channel_counts": {
-    "official_product": 3,
+    "official_product": 4,
     "official_sales": 3,
+    "official_store": 1,
+    "official_support": 1,
     "official_support_manual": 2
   },
   "source_domains": [
@@ -735,6 +821,7 @@
     "jabra.com",
     "owllabs.com",
     "plaud.ai",
+    "violoop.ai",
     "zoomcorp.com"
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-06",
+  "checked_on": "2026-09-07",
   "scope_note": "本库覆盖智能服饰与运动装备：智能鞋、智能服装、姿态设备、触觉手环与智能护具；排除已有独立数据库的重复型号。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-06"
+      "2026-09-07"
     ]
   ],
   "products": [
@@ -554,6 +554,42 @@
       "url": "https://www.globenewswire.com/news-release/2026/06/15/3311798/0/en/Wearable-Devices-to-Unveil-GenAI-Powered-Intent-Based-Interface-Platform-and-Next-Gen-Mudra-Pro-Flagship-at-AWE-2026.html",
       "alias_or_relation": "下一代Mudra系列候选；与Mudra Link/开发者套件分开，不把预告当作已上市主表",
       "next_check": "核验官方产品页、正式上市公告、价格/交付、精确传感器/芯片、FCC/CE和零售/企业采购状态"
+    },
+    {
+      "id": "CAND-SPEEDIANCE-GM3-20260907",
+      "name": "Speediance Gym Monster 3",
+      "brand": "Speediance",
+      "region": "美国/欧洲官方商城",
+      "category": "智能服饰与运动装备/家用智能健身器械（非穿戴）",
+      "status": "候选/官方商品页可核验但当前Sold Out；非穿戴式装备，不计主表",
+      "evidence": "A",
+      "reason": "Speediance官方产品页披露Gym Monster 3为家用智能健身器械，双800W、最大220lb、23.8英寸触摸屏、AI/语音/安全能力与Bluetooth Ring Controller；美国及欧洲官方页出现Sold Out，且它是非穿戴式健身装备，因此保留在智能运动装备候选区，不计入主表。",
+      "url": "https://www.speediance.com/pages/speediance-gym-monster-3",
+      "alias_or_relation": "Gym Monster 3与3S为功率/负载不同产品型号；控制器、颜色和套装不拆分",
+      "source_refs": [
+        "SPEEDIANCE-GM3-OFFICIAL-20260907",
+        "SPEEDIANCE-GM3-EU-20260907"
+      ],
+      "next_check": "核验补货、正式SKU、当前价格、重量/尺寸、订阅、App隐私、Bluetooth协议与区域销售",
+      "model_note": "US$4,099；双800W；220lb；23.8英寸触摸屏；官方页面有Sold Out信号"
+    },
+    {
+      "id": "CAND-SPEEDIANCE-GM3S-20260907",
+      "name": "Speediance Gym Monster 3S",
+      "brand": "Speediance",
+      "region": "美国/欧洲官方商城",
+      "category": "智能服饰与运动装备/家用智能健身器械（非穿戴）",
+      "status": "候选/官方商品页可核验但当前Sold Out；非穿戴式装备，不计主表",
+      "evidence": "A",
+      "reason": "Speediance官方产品页披露Gym Monster 3S为家用智能健身器械，双1000W、最大260lb、23.8英寸触摸屏、AI/语音/安全能力与Bluetooth Ring Controller；美国及欧洲官方页出现Sold Out，且它是非穿戴式健身装备，因此保留在智能运动装备候选区，不计入主表。",
+      "url": "https://www.speediance.com/pages/speediance-gym-monster-3",
+      "alias_or_relation": "Gym Monster 3与3S为功率/负载不同产品型号；控制器、颜色和套装不拆分",
+      "source_refs": [
+        "SPEEDIANCE-GM3-OFFICIAL-20260907",
+        "SPEEDIANCE-GM3-EU-20260907"
+      ],
+      "next_check": "核验补货、正式SKU、当前价格、重量/尺寸、订阅、App隐私、Bluetooth协议与区域销售",
+      "model_note": "US$4,599；双1000W；260lb；23.8英寸触摸屏；官方页面有Sold Out信号"
     }
   ],
   "sources": [
@@ -888,6 +924,42 @@
       "storefront_type": "ACEMATE官方IFA Virtual Press Office发布",
       "availability_signal": "官方接受预售定金；交付日期未公开",
       "platform_reference": "ACEMATE S10 Pro"
+    },
+    {
+      "checked_on": "2026-09-07",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$4,099",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Gym Monster 3",
+      "id": "SPEEDIANCE-GM3-OFFICIAL-20260907",
+      "source_group": "Speediance Gym Monster 3官方产品页",
+      "url": "https://www.speediance.com/pages/speediance-gym-monster-3",
+      "scope": "Gym Monster 3 US$4,099、双800W、220lb、23.8英寸触摸屏、AI/语音/安全、Bluetooth Ring Controller；页面存在Sold Out信号",
+      "quality": "A",
+      "source_domain": "speediance.com",
+      "source_channel": "official_store",
+      "source_role": "原厂商品页/价格/功能/可得性与型号区分证据",
+      "seller_type": "智能健身设备品牌官方",
+      "storefront_type": "Speediance美国官方商城",
+      "availability_signal": "官方页面Sold Out；价格/规格公开，当前库存不足"
+    },
+    {
+      "checked_on": "2026-09-07",
+      "campaign_status": "未公开",
+      "pledge_or_price": "区域价格随页面变化",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Gym Monster 3 / 3S",
+      "id": "SPEEDIANCE-GM3-EU-20260907",
+      "source_group": "Speediance Gym Monster 3欧洲官方商品页",
+      "url": "https://speediance.eu/products/speediance-gym-monster-3",
+      "scope": "Gym Monster 3/3S欧洲区域商品信息、价格与Sold Out状态；区域价格不外推为全球价格",
+      "quality": "A",
+      "source_domain": "speediance.eu",
+      "source_channel": "official_store",
+      "source_role": "区域官方商城/价格/库存/型号交叉证据",
+      "seller_type": "智能健身设备品牌官方",
+      "storefront_type": "Speediance欧洲官方商城",
+      "availability_signal": "官方区域页Sold Out；补货与交付未公开"
     }
   ],
   "update_log": [
@@ -992,6 +1064,18 @@
       "change": "【智能服饰与运动装备】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-07",
+      "change": "【智能服饰与运动装备】完成本轮新增/状态变更核验并写入有证据记录；预发布、预约与系列级线索继续保持候选或历史状态。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-07",
+      "change": "新增Speediance Gym Monster 3与3S候选；官方美国/欧洲页面给出功率、负载、屏幕与价格，但当前Sold Out且属于非穿戴式智能健身装备。",
+      "verification": "Speediance官方商品页及EU页互证GM3/GM3S型号、US$4,099/US$4,599、双800W/1000W与220/260lb；未把控制器、颜色和套装拆成独立产品。",
+      "next": "继续核验补货、精确SKU、尺寸重量、App/订阅、Bluetooth协议和区域价格。"
     }
   ],
   "source_channel_policy": [
@@ -1079,7 +1163,7 @@
     "official_newsroom_distribution": 1,
     "official_product": 5,
     "official_sales": 3,
-    "official_store": 2,
+    "official_store": 4,
     "official_support_manual": 3
   },
   "source_domains": [
@@ -1095,6 +1179,8 @@
     "neofect.com",
     "plantiga.com",
     "shop.xenoma.com",
+    "speediance.com",
+    "speediance.eu",
     "store.sensoriafitness.com",
     "store.uprightpose.com",
     "support.hexoskin.com",

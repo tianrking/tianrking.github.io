@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-06",
+  "checked_on": "2026-09-07",
   "scope_note": "本库覆盖家用机器人：扫地、洗地、擦窗、割草、泳池与宠物陪伴机器人；宠物项圈/吊牌另库。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-06"
+      "2026-09-07"
     ]
   ],
   "products": [
@@ -882,12 +882,16 @@
       "brand": "OlloBot",
       "region": "香港/全球候选",
       "category": "家庭陪伴/赛博宠物机器人",
-      "status": "预发布/众筹延期；上市时间与价格待定",
-      "evidence": "B",
-      "reason": "品牌在2026-08-28新闻稿中介绍SS1：2+1多屏、可拆卸Red Heart模块、4K相机、动作追踪、温湿度/环境光/空间传感器、16GB RAM和64GB本地存储，并称由于美国监管/市场进入环境，众筹启动延期；没有普通零售价格或交付证明。",
+      "status": "候选/IFA 2026展示；众筹延期；上市时间与价格待定",
+      "evidence": "A",
+      "reason": "OlloBot官方IFA 2026发布进一步确认OlloNi SS1精确型号、家庭/宠物识别、相机/麦克风、自主移动、2+1多屏、本地存储与环境传感器；官方仍称Kickstarter延期，未升级主表。",
       "url": "https://www.globenewswire.com/news-release/2026/08/28/3352735/0/en/ollobot-introduces-olloni-ss1-an-ai-companion-cyber-pet-designed-for-everyday-family-interaction.html",
       "alias_or_relation": "SS1新一代原型/项目；与已列L1/S1分开，不把发布稿当作在售",
-      "next_check": "跟踪官方众筹、价格、交付、FCC/CE及正式产品页"
+      "next_check": "继续核验正式商品页、众筹项目、价格、交付、FCC/CE、隐私和最终传感器/芯片",
+      "id": "HIST-OLLONI-SS1-20260907",
+      "source_refs": [
+        "OLLOBOT-OLLONI-SS1-IFA-20260907"
+      ]
     },
     {
       "name": "Xiaomi Robot Vacuum 6",
@@ -1829,6 +1833,24 @@
       "seller_type": "家用机器人品牌官方",
       "storefront_type": "Dreame官方PRNewswire发布",
       "availability_signal": "IFA展示；Pano10精确销售状态未公开"
+    },
+    {
+      "checked_on": "2026-09-07",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "OlloNi SS1",
+      "id": "OLLOBOT-OLLONI-SS1-IFA-20260907",
+      "source_group": "OlloBot OlloNi SS1官方IFA发布",
+      "url": "https://www.globenewswire.com/news-release/2026/09/05/3356870/0/en/ollobot-unveils-olloni-ss1-at-ifa-2026-pioneering-the-cyber-pet-era-to-address-the-growing-household-companionship-gap.html",
+      "scope": "OlloNi SS1精确型号；家庭/宠物识别、摄像头、麦克风、自主移动、2+1多屏、本地存储、环境传感器；官方说明Kickstarter延期",
+      "quality": "A",
+      "source_domain": "globenewswire.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "品牌官方IFA新闻稿/精确型号与功能更新/众筹状态证据；不证明当前在售",
+      "seller_type": "家庭陪伴机器人品牌官方",
+      "storefront_type": "OlloBot官方GlobeNewswire发布",
+      "availability_signal": "IFA展示；Kickstarter延期；价格、销售和交付未公开"
     }
   ],
   "update_log": [
@@ -1921,6 +1943,18 @@
       "change": "新增Tuya Doova和Dreame Pano10 Series候选；两者均有官方IFA/PRNewswire产品线证据，但未给出可售精确分料号与价格。",
       "verification": "Doova官方披露LiDAR、四麦克风、AI骨骼识别、10.1英寸屏和自动回充；Pano10仅披露机械臂擦窗方向；均不从展会展示推断在售。",
       "next": "继续核验正式产品页、精确SKU、价格、交付、区域可得性、芯片/传感器与安全说明。"
+    },
+    {
+      "date": "2026-09-07",
+      "change": "【家用机器人】完成本轮新增/状态变更核验并写入有证据记录；预发布、预约与系列级线索继续保持候选或历史状态。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-07",
+      "change": "更新OlloNi SS1候选至官方IFA 2026状态；新增精确型号与家庭/宠物识别、摄像头/麦克风、自主移动、多屏、本地存储和环境传感器证据，众筹仍延期。",
+      "verification": "OlloBot官方GlobeNewswire发布属于品牌新闻稿证据；没有正式商城、价格、交付或认证，不升级主表。",
+      "next": "继续核验Kickstarter项目、正式产品页、价格、交付、FCC/CE、隐私及最终芯片/传感器。"
     }
   ],
   "source_channel_policy": [
@@ -2006,7 +2040,7 @@
     "crowdfunding": 3,
     "official_datasheet": 1,
     "official_newsroom": 3,
-    "official_newsroom_distribution": 7,
+    "official_newsroom_distribution": 8,
     "official_product": 12,
     "official_sales": 14,
     "official_store": 2,

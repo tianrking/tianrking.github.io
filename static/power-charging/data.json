@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-06",
+  "checked_on": "2026-09-07",
   "scope_note": "本库覆盖电源与充电：移动电源、GaN充电器、无线充电、户外电源与太阳能充电设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-06"
+      "2026-09-07"
     ]
   ],
   "products": [
@@ -415,6 +415,47 @@
         "BASEUS-IFA-CHARGING-20260906"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "display": "本机显示/指示信息未公开；支持智能电表与控制系统",
+      "os_platform": "OUKITEL配套控制/能源管理能力；App平台与版本未公开",
+      "audio_drivers": "未公开",
+      "sensors": "智能电表/能源监测；具体电流、电压、温度传感器型号未公开",
+      "gps_positioning": "无公开GPS规格",
+      "satellite": "不支持/未公开",
+      "supported_protocols": "4路MPPT光伏输入；家庭并网/离网接口；智能电表；精确通信协议未公开",
+      "chip_or_soc": "未公开",
+      "storage": "2048Wh；可扩展至16.384kWh；容量为储能规格而非数据存储",
+      "dimensions": "492×475×287mm",
+      "weight_g": "27.2kg",
+      "battery": "LiFePO4，51.2V（16S）；2048Wh；4000+循环；电芯容量细节未公开",
+      "charging": "4路MPPT；每路12–60V、最大28A；系统转换效率最高约98%；800W并网、2500W离网输出；扩展至7组",
+      "water_resistance": "IP65",
+      "subscription": "未公开；智能能源管理服务条款未完整披露",
+      "privacy": "智能电表/能源数据的云端与账户保留边界未公开",
+      "features": "2500W离网输出、4000W光伏输入、4路MPPT、2.048–16.384kWh扩容、10ms备电切换、智能电表、CE/RED/REACH/RoHS/UN38.3/EN50549/VDE-AR-N4105相关合规信息",
+      "availability_note": "OUKITEL EU官方商品页基础SKU EU-EP2500显示当前€799并可购买；全系列集合页存在€899/€599及缺货展示冲突，保留为来源冲突，不覆盖商品页当前证据",
+      "source_note": "OUKITEL EU官方产品页与官方Intersolar发布文章互证精确型号、价格、尺寸重量、容量、功率、光伏输入、扩容、IP65与合规；集合页价格/缺货冲突已保留，芯片、通信、显示和隐私字段未公开",
+      "id": "PWR-011",
+      "brand": "OUKITEL",
+      "model": "EP2500 Balcony Energy Storage System",
+      "country_region": "中国品牌/欧洲市场；EU官方仓",
+      "category": "电源与充电/家庭储能/阳台光伏",
+      "form_factor": "LiFePO4家庭储能主机；可扩展电池与智能电表/光伏输入",
+      "use_case": "阳台光伏储能、家庭备电、离网供电、并网微型储能",
+      "status": "在售/EU官方商城；基础SKU EU-EP2500可加入购物车，套装/扩展包不拆为新型号",
+      "evidence": "A",
+      "launch_date": "2026-06-25",
+      "launch_date_type": "OUKITEL官方Intersolar 2026发布文章日期；不等同首次零售订单日期",
+      "price": "€799（EU官方商品页当前基础主机价；原价€1,299；套装/促销另计）",
+      "official_url": "https://eu.oukitel.com/products/oukitel-ep2500",
+      "spec_url": "https://eu.oukitel.com/products/oukitel-ep2500",
+      "source_refs": [
+        "OUKITEL-EP2500-EU-PRODUCT-20260907",
+        "OUKITEL-EP2500-EU-LAUNCH-20260907",
+        "OUKITEL-IFA-ENERGY-20260907"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -735,6 +776,60 @@
       "seller_type": "消费电子配件品牌官方",
       "storefront_type": "Baseus官方IFA Virtual Press Office发布",
       "availability_signal": "Dark Cherry充电组合自2026-09-04可得；AM52商品页提供实际销售证据"
+    },
+    {
+      "checked_on": "2026-09-07",
+      "campaign_status": "未公开",
+      "pledge_or_price": "€799；原价€1,299",
+      "estimated_delivery": "未公开",
+      "platform_reference": "EU-EP2500",
+      "id": "OUKITEL-EP2500-EU-PRODUCT-20260907",
+      "source_group": "OUKITEL EP2500 EU官方商品页",
+      "url": "https://eu.oukitel.com/products/oukitel-ep2500",
+      "scope": "基础SKU EU-EP2500、当前€799/原价€1,299、EU仓、2500W输出、2048Wh、2.048–16.384kWh扩容、4路MPPT、492×475×287mm、27.2kg、IP65、10ms切换、认证与Add to cart信号",
+      "quality": "A",
+      "source_domain": "eu.oukitel.com",
+      "source_channel": "official_store",
+      "source_role": "原厂商品页/精确SKU/当前价格/库存购买信号/规格证据",
+      "seller_type": "便携电源与储能品牌官方",
+      "storefront_type": "OUKITEL EU官方商城",
+      "availability_signal": "EU官方商品页可加入购物车；基础SKU价格€799"
+    },
+    {
+      "checked_on": "2026-09-07",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "EP2500",
+      "id": "OUKITEL-EP2500-EU-LAUNCH-20260907",
+      "source_group": "OUKITEL EP2500官方Intersolar发布",
+      "url": "https://eu.oukitel.com/blogs/news/oukitel-ep2500-balcony-energy-storage-system-debuts-at-intersolar-2026-accelerating-home-energy-independence-across-europe",
+      "scope": "官方文章日期2026-06-25；EP2500阳台能源储能系统欧洲发布背景与型号关系；首次上市日期口径不外推",
+      "quality": "A",
+      "source_domain": "eu.oukitel.com",
+      "source_channel": "official_newsroom",
+      "source_role": "原厂发布/上市背景/区域市场证据",
+      "seller_type": "便携电源与储能品牌官方",
+      "storefront_type": "OUKITEL EU官方新闻",
+      "availability_signal": "官方Intersolar发布；当前销售以EU商品页为准"
+    },
+    {
+      "checked_on": "2026-09-07",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "EP2500",
+      "id": "OUKITEL-IFA-ENERGY-20260907",
+      "source_group": "OUKITEL官方IFA 2026能源产品发布",
+      "url": "https://www.globenewswire.com/news-release/2026/09/02/3354906/0/en/oukitel-to-showcase-cross-device-ai-and-next-generation-rugged-technology-at-ifa-2026.html",
+      "scope": "官方发布披露EP2500最高4000W光伏输入、2500W输出、四路MPPT、2.048–16.384kWh扩容；同稿另含WP63/WP70 Ultra/WP600候选",
+      "quality": "A",
+      "source_domain": "globenewswire.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "品牌官方新闻稿/能源产品线规格与关联型号发现证据",
+      "seller_type": "便携电源与储能品牌官方",
+      "storefront_type": "OUKITEL官方GlobeNewswire发布",
+      "availability_signal": "IFA展示/官方产品线说明；EP2500实际购买以EU商城为准"
     }
   ],
   "update_log": [
@@ -833,6 +928,18 @@
       "change": "新增PWR-010 Baseus PicoGo AM52；内置线/颜色/区域SKU作为同一产品家族变体保存；PicoGo Mix AT51保持候选。",
       "verification": "Baseus美国/欧洲官方商城提供价格、SKU、库存与Qi2.2/输出规格，IFA官方稿提供2026-09-04可得和产品家族关系；AT51官方仅预告，未升级主表。",
       "next": "继续补充AM52不同后缀的额定Wh、认证和授权渠道价格，核验AH22与AT51的精确SKU、协议和区域库存。"
+    },
+    {
+      "date": "2026-09-07",
+      "change": "【电源与充电】完成本轮新增/状态变更核验并写入有证据记录；预发布、预约与系列级线索继续保持候选或历史状态。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-07",
+      "change": "新增PWR-011 OUKITEL EP2500；EU官方商品页列基础SKU EU-EP2500、€799与可购买信号；WP63等仅展会展示，保持候选。",
+      "verification": "OUKITEL EU商品页与官方Intersolar/IFA资料互证2048Wh、2500W、4路MPPT、扩容、尺寸重量、IP65与合规；集合页出现缺货/€899/€599冲突已保留，未覆盖当前商品页证据。",
+      "next": "继续补充EP2500区域价格、授权渠道、通信/隐私与精确电池/控制芯片；核验WP63是否应归入电源类正式SKU。"
     }
   ],
   "source_channel_policy": [
@@ -915,16 +1022,18 @@
     }
   ],
   "source_channel_counts": {
-    "official_newsroom": 1,
-    "official_newsroom_distribution": 2,
+    "official_newsroom": 2,
+    "official_newsroom_distribution": 3,
     "official_product": 2,
     "official_sales": 6,
-    "official_store": 4
+    "official_store": 5
   },
   "source_domains": [
     "baseus.com",
     "belkin.com",
     "eu.baseus.com",
+    "eu.oukitel.com",
+    "globenewswire.com",
     "goalzero.com",
     "ifa.vporoom.com",
     "jackery.com",
