@@ -7,7 +7,7 @@
 }
 
 .hero {
-  padding: clamp(5rem, 11vw, 8.5rem) 0 4.5rem;
+  padding: clamp(3rem, 7vw, 5rem) 0 3rem;
   border-bottom: 1px solid var(--site-line);
 }
 
@@ -42,10 +42,10 @@
   max-width: 60rem;
   margin: 1rem 0 1.25rem;
   color: var(--site-ink);
-  font-size: clamp(3rem, 8vw, 6.7rem);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 730;
   letter-spacing: -.075em;
-  line-height: .98;
+  line-height: 1.18;
   text-wrap: balance;
 }
 
@@ -72,6 +72,24 @@
   border: 1px solid var(--site-line);
   border-radius: .45rem;
   background: var(--site-surface-soft);
+}
+
+.pageNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin-top: 1.5rem;
+}
+
+.pageNav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: .55rem .85rem;
+  border: 1px solid var(--site-line-strong);
+  border-radius: .55rem;
+  background: var(--site-surface);
+  font-size: .9rem;
 }
 
 .sectionHeading {
@@ -159,7 +177,7 @@
 
 .routeMapPanel {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   gap: 1.2rem;
   align-items: end;
   margin-top: 1rem;
@@ -200,6 +218,19 @@
   font-weight: 720;
   text-decoration: none;
   transition: transform 160ms ease, filter 160ms ease;
+}
+
+.mapRouteLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  min-width: 0;
+}
+
+.mapRouteLinks .mapRouteLink {
+  flex: 1 1 15rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .mapRouteLink:hover {
@@ -628,7 +659,8 @@
   display: flex;
   justify-content: space-between;
   gap: .8rem;
-  align-items: end;
+  align-items: start;
+  flex-wrap: wrap;
 }
 
 .dayMapHeader > div {
@@ -814,7 +846,51 @@
 }
 
 .lastSection {
-  padding-bottom: 7rem;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.breadcrumb,
+.kicker,
+.metaRow,
+.routeStop > span,
+.routeStop small,
+.routeMapPanel p,
+.mapRouteLink,
+.officialCheckGrid strong,
+.officialCheckGrid span,
+.budgetInputs label,
+.budgetResult > span,
+.budgetResultMeta,
+.workbenchNote,
+.tableWrap th,
+.dayCardTop,
+.dayMeta,
+.dayBlock > span,
+.mapStopLink,
+.stay,
+.fullItinerary summary,
+.fullItinerary summary span,
+.preparationGrid p,
+.presetGroup button,
+.daySelector button {
+  font-size: .875rem;
+}
+
+.inputWithUnit input {
+  font-size: 1rem;
+}
+
+.mapStopLink,
+.mapRouteLink,
+.daySelector button,
+.presetGroup button {
+  min-height: 2.75rem;
+}
+
+.dayCard,
+.sectionHeading h2 {
+  scroll-margin-top: 6rem;
 }
 
 .revisionCard {
@@ -880,7 +956,7 @@
   }
 
   .hero h1 {
-    font-size: clamp(2.8rem, 14vw, 4.3rem);
+    font-size: clamp(2.3rem, 9vw, 3.5rem);
   }
 
   .sectionHeading,

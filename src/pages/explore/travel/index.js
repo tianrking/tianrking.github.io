@@ -8,13 +8,13 @@ export default function TravelSeriesPage() {
   return (
     <Layout
       title="行旅誌"
-      description="旅行規劃、田野筆記與行程復盤。">
+      description="旅行記錄：歷史、博物館、宗教文化、路線與交通。">
       <main className={styles.page}>
         <header className={styles.hero}>
           <div className="container">
             <div className={styles.eyebrow}>EXPLORATION / TRAVEL LOG</div>
-            <Heading as="h1">把旅程寫成一份<br />可以真正執行的記錄。</Heading>
-            <p>路線、歷史、交通、預算、食物與現場風險，集中在同一份行程文件。</p>
+            <Heading as="h1">行旅誌</Heading>
+            <p>博物館、古蹟、宗教文化與城市歷史；每日路線、交通與住宿。</p>
           </div>
         </header>
 
@@ -34,7 +34,7 @@ export default function TravelSeriesPage() {
                 <span>9 日 / 8 晚</span>
                 <span>歷史考古</span>
                 <span>國家級地標</span>
-                <span>最低成本估算</span>
+                <span>公共交通與經濟住宿</span>
               </div>
               <Link className={styles.primaryLink} to="/explore/travel/malaysia-peninsula-8-day">
                 打開完整行程 <span aria-hidden="true">↗</span>
@@ -43,15 +43,15 @@ export default function TravelSeriesPage() {
             <div className={styles.routeCard} aria-label="馬來西亞路線節點">
               <div className={styles.routeCardLabel}>ROUTE / COUNTER-CLOCKWISE</div>
               <div className={styles.routeList}>
-                {['KUL', '馬六甲', '檳城', '布央谷', '太平', '怡保', 'KL / KUL'].map((stop, index) => (
+                {['KUL', '馬六甲', '檳城', '布央谷', '太平', '怡保', '吉隆坡', 'KUL T2'].map((stop, index) => (
                   <div className={styles.routeItem} key={stop}>
                     <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
                     <span>{stop}</span>
-                    {index < 6 && <span className={styles.routeLine} aria-hidden="true" />}
+                    {index < 7 && <span className={styles.routeLine} aria-hidden="true" />}
                   </div>
                 ))}
               </div>
-              <p className={styles.routeNote}>不追求把每個景點塞滿，而是讓每次轉移都能接上下一段歷史。</p>
+              <p className={styles.routeNote}>渡輪、KTM／ETS 與長途巴士串聯西馬半島。</p>
             </div>
           </div>
         </section>
