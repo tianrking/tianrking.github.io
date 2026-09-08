@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-07",
+  "checked_on": "2026-09-08",
   "scope_note": "首版优先覆盖全球主要品牌的TWS、主动降噪、AI/录音/翻译耳机与骨传导/开放式运动耳机。按独立型号/代际计数；颜色、充电盒套装和区域SKU不拆行。翻译能力、AI功能与硬件音频能力分开记录；来源没有披露的芯片、传感器、尺寸、重量、防水、续航和订阅字段写“未公开”。 本库同时纳入Wi-Fi多房间音箱与联网家庭音频；音箱的扬声器驱动、无线协议和家庭服务与耳机字段分开记录。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-07"
+      "2026-09-08"
     ]
   ],
   "products": [
@@ -1605,6 +1605,131 @@
         "HUAWEI-FREEBUDS-NEO-MY"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "display": "无显示；USB-C充电盒状态信息未公开",
+      "os_platform": "Belkin SoundForm App；兼容支持Bluetooth的设备",
+      "audio_drivers": "10mm驱动单元",
+      "sensors": "佩戴/控制传感器型号未公开；Hear-Thru环境声模式",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "Bluetooth；Bluetooth Multipoint双设备连接；版本未公开",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "ANC关闭总计30小时（耳机9小时+充电盒21小时）；ANC开启总计23小时（耳机7小时+充电盒16小时）",
+      "charging": "USB-C充电盒；快充时长未公开",
+      "water_resistance": "官方发布稿称IPX5；美国商品页技术区同时出现IPX4口径，冲突保留",
+      "subscription": "无公开硬件强制订阅；服务条款按地区/平台核验",
+      "privacy": "通话麦克风与SoundForm App数据规则按地区/服务政策；完整保留边界未公开",
+      "features": "主动降噪、Hear-Thru、Clear Call Quality、EQ、自适应/通话体验、Bluetooth Multipoint、USB-C充电盒",
+      "availability_note": "Belkin美国官方商品页AUC018fqBK列US$39.99并提供购买信号；英国官方页列AUC018hqBL/£29.99但显示预计2026-10-14补货；不把颜色后缀拆成独立型号",
+      "source_note": "Belkin官方IFA发布稿与美国/英国官方商品页互证价格、SKU、续航、驱动、IP口径与多点连接；Bluetooth版本、芯片、尺寸重量未公开",
+      "id": "AUDIO-044",
+      "brand": "Belkin",
+      "model": "SoundForm Dot ANC (AUC018)",
+      "country_region": "美国品牌/全球销售；区域价格与库存动态",
+      "category": "TWS/主动降噪/通话耳机",
+      "form_factor": "入耳式TWS耳机/充电盒",
+      "use_case": "音乐、通话、通勤、降噪与双设备切换",
+      "status": "在售/官方商城；美国页可购买；英国页列为新品/预计补货",
+      "evidence": "A",
+      "launch_date": "2026-09-03",
+      "launch_date_type": "Belkin官方IFA 2026发布稿日期；区域零售开始时间按官方页",
+      "price": "US$39.99；英国£29.99；欧元€34.99（官方发布/区域官方页）",
+      "official_url": "https://www.belkin.com/p/noise-cancelling-earbuds/AUC018fqBK.html",
+      "spec_url": "https://www.belkin.com/p/noise-cancelling-earbuds/AUC018fqBK.html",
+      "microphones": "Clear Call Quality麦克风系统；数量未公开",
+      "source_refs": [
+        "BELKIN-SOUNDFORM-IFA-20260908",
+        "BELKIN-AUC018-STORE-20260908",
+        "BELKIN-AUC018-UK-20260908"
+      ],
+      "connectivity": "未公开"
+    },
+    {
+      "display": "无显示；充电盒状态信息未公开",
+      "os_platform": "Belkin SoundForm App；兼容支持Bluetooth的设备",
+      "audio_drivers": "6mm驱动单元（英国官方商品页）",
+      "sensors": "佩戴/控制传感器型号未公开；Hear-Thru环境声模式",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "Bluetooth；Bluetooth Multipoint双设备连接；版本未公开",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "总计30小时（耳机9小时+充电盒21小时）；官方页面同时展示ANC对比口径，非ANC型号不据此推断额外功能",
+      "charging": "USB-C充电盒；快充时间未公开",
+      "water_resistance": "IPX5（英国官方商品页）；美国/其他区域口径待复核",
+      "subscription": "无公开硬件强制订阅；服务条款按地区/平台核验",
+      "privacy": "通话麦克风与SoundForm App数据规则按地区/服务政策；完整保留边界未公开",
+      "features": "Clear Call Quality、EQ、SoundForm Signature Sound、Bluetooth Multipoint、Hear-Thru、USB-C充电盒",
+      "availability_note": "英国官方商城AUC019hqBK列£19.99并可购买；颜色后缀和区域零售SKU不拆为新型号",
+      "source_note": "Belkin官方IFA发布稿与英国官方商品页互证价格、SKU、6mm驱动、续航和连接；Bluetooth版本、芯片、尺寸重量未公开",
+      "id": "AUDIO-045",
+      "brand": "Belkin",
+      "model": "SoundForm Dot (AUC019)",
+      "country_region": "美国品牌/全球销售；区域价格与库存动态",
+      "category": "TWS/开放环境通话耳机",
+      "form_factor": "入耳式TWS耳机/充电盒",
+      "use_case": "日常音乐、通话、双设备连接",
+      "status": "在售/官方英国商城可购买；其他地区库存按站点变化",
+      "evidence": "A",
+      "launch_date": "2026-09-03",
+      "launch_date_type": "Belkin官方IFA 2026发布稿日期；区域零售开始时间按官方页",
+      "price": "US$34.99；英国£19.99；欧元€24.99（官方发布/区域官方页）",
+      "official_url": "https://www.belkin.com/uk/p/wireless-earbuds/AUC019hqBK.html",
+      "spec_url": "https://www.belkin.com/uk/p/wireless-earbuds/AUC019hqBK.html",
+      "microphones": "Clear Call Quality麦克风系统；数量未公开",
+      "source_refs": [
+        "BELKIN-SOUNDFORM-IFA-20260908",
+        "BELKIN-AUC019-UK-20260908"
+      ],
+      "connectivity": "未公开"
+    },
+    {
+      "display": "无显示",
+      "os_platform": "Bluetooth设备；不要求配套App；Focus Boost可离线播放",
+      "audio_drivers": "40mm驱动单元",
+      "sensors": "ANC/Hear-Thru控制；传感器型号未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "Bluetooth 5.4；3.5mm AUX；RockStar有线/无线音频分享",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "ANC关闭最长45小时；ANC开启约35小时；官方发布稿另列最多62小时，口径差异保留",
+      "charging": "USB-C；0–100%低于100分钟；10分钟约5小时播放",
+      "water_resistance": "未公开防水等级；官方支持页提示远离大量水分；耐泼溅/跌落测试口径保留",
+      "subscription": "无公开硬件强制订阅；服务条款按地区/平台核验",
+      "privacy": "儿童产品；麦克风、Bluetooth与Focus Boost不联网播放；完整数据策略按地区/设备端政策核验",
+      "features": "主动降噪、Hear-Thru、85dB Safe Sound限制、Focus Boost内置音景、RockStar分享、EQ、可折叠、3.5mm AUX",
+      "availability_note": "官方AUD013商品页列US$49.99并提供颜色/购买信号；不把颜色与AUD016支持型号拆成独立产品",
+      "source_note": "Belkin官方IFA发布稿、官方商品页与支持FAQ互证价格、AUD013、Bluetooth 5.4、40mm、续航、充电和儿童功能；防水、芯片和重量未公开",
+      "id": "AUDIO-046",
+      "brand": "Belkin",
+      "model": "SoundForm Play ANC (AUD013)",
+      "country_region": "美国品牌/全球销售；儿童音频产品区域可得性动态",
+      "category": "降噪耳机/儿童耳机",
+      "form_factor": "头戴式无线ANC耳机；可折叠",
+      "use_case": "5岁以上儿童学习、旅行、通话、游戏与安静时段",
+      "status": "在售/官方商城；美国官方页可购买，颜色与区域库存动态",
+      "evidence": "A",
+      "launch_date": "2026-09-03",
+      "launch_date_type": "Belkin官方IFA 2026发布稿日期；官方支持/商品页为精确AUD013证据",
+      "price": "US$49.99；英国£39.99；欧元€44.99（官方发布/区域价格）",
+      "official_url": "https://www.belkin.com/p/youth-active-noise-cancelling-headphones/AUD013fqBK.html",
+      "spec_url": "https://www.belkin.com/support-article/?articleNum=337928",
+      "microphones": "内置麦克风；数量未公开",
+      "source_refs": [
+        "BELKIN-SOUNDFORM-IFA-20260908",
+        "BELKIN-AUD013-STORE-20260908",
+        "BELKIN-AUD013-SUPPORT-20260908"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -1657,6 +1782,22 @@
         "BASEUS-MC2-NC-OFFICIAL-20260906"
       ],
       "next_check": "核验官方商品页、精确SKU/价格、Bluetooth版本、Codec、麦克风数量、续航、充电盒与区域库存"
+    },
+    {
+      "id": "CAND-BELKIN-SOUNDFORM-ISOLATE-BUDS-20260908",
+      "name": "Belkin SoundForm Isolate Buds",
+      "brand": "Belkin",
+      "region": "全球/IFA 2026；预计2026年9月开始销售",
+      "category": "TWS/主动降噪耳机",
+      "status": "候选/官方IFA发布；新闻稿给出价格与上市月份，但精确零售SKU/商品页与耳机形态口径待统一",
+      "evidence": "A",
+      "reason": "Belkin官方IFA新闻稿披露SoundForm Isolate Buds、最高45dB ANC、32小时总续航、Bluetooth Multipoint、IPX5、US$59.99起及2026年9月在Belkin/Amazon/全球零售渠道可得；截至查证未取得与该命名对应的稳定官方商品SKU，不把相近SoundForm Isolate头戴式页面强行合并。",
+      "url": "https://www.belkin.com/pr-belkin-expands-soundform-audio-lineup-at-ifa2026.html",
+      "alias_or_relation": "SoundForm Isolate Buds；与SoundForm Isolate头戴式官方旧/现售页面分开",
+      "source_refs": [
+        "BELKIN-SOUNDFORM-IFA-20260908"
+      ],
+      "next_check": "核验Belkin/Amazon各区域商品页、精确SKU/ASIN、驱动、Bluetooth版本、重量、充电与真实库存"
     }
   ],
   "sources": [
@@ -2550,6 +2691,114 @@
       "seller_type": "音频品牌官方",
       "storefront_type": "Baseus官方产品故事页",
       "availability_signal": "Coming Soon"
+    },
+    {
+      "checked_on": "2026-09-08",
+      "campaign_status": "未公开",
+      "pledge_or_price": "Isolate Buds US$59.99；Dot ANC US$39.99；Dot US$34.99；Play ANC US$49.99",
+      "estimated_delivery": "2026年9月起；按地区页面",
+      "platform_reference": "SoundForm Isolate Buds / Dot ANC / Dot / Play ANC",
+      "id": "BELKIN-SOUNDFORM-IFA-20260908",
+      "source_group": "Belkin SoundForm IFA 2026官方发布",
+      "url": "https://www.belkin.com/pr-belkin-expands-soundform-audio-lineup-at-ifa2026.html",
+      "scope": "SoundForm Isolate Buds、SoundForm Dot ANC、SoundForm Dot Wireless、SoundForm Play ANC；价格、续航、ANC、Multipoint、IPX5、儿童功能与2026年9月全球零售窗口",
+      "quality": "A",
+      "source_domain": "belkin.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方发布/型号发现/上市窗口/价格与核心功能证据",
+      "seller_type": "音频品牌官方",
+      "storefront_type": "Belkin官方新闻室",
+      "availability_signal": "官方称2026年9月起在belkin.com、Amazon和全球选定零售商可得；精确区域库存按商品页"
+    },
+    {
+      "checked_on": "2026-09-08",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$39.99",
+      "estimated_delivery": "未公开",
+      "platform_reference": "AUC018fqBK",
+      "id": "BELKIN-AUC018-STORE-20260908",
+      "source_group": "Belkin SoundForm Dot ANC官方美国商品页",
+      "url": "https://www.belkin.com/p/noise-cancelling-earbuds/AUC018fqBK.html",
+      "scope": "AUC018；US$39.99；主动降噪、10mm驱动、Bluetooth Multipoint、30/23小时续航、USB-C、IPX4/IPX5页面口径",
+      "quality": "A",
+      "source_domain": "belkin.com",
+      "source_channel": "official_store",
+      "source_role": "官方商品页/精确SKU/价格/库存/规格证据",
+      "seller_type": "音频品牌官方",
+      "storefront_type": "Belkin美国官方商城",
+      "availability_signal": "官方商品页提供购买信号；颜色/区域库存动态"
+    },
+    {
+      "checked_on": "2026-09-08",
+      "campaign_status": "未公开",
+      "pledge_or_price": "£29.99",
+      "estimated_delivery": "预计2026-10-14补货；不等同已发货",
+      "platform_reference": "AUC018hqBL",
+      "id": "BELKIN-AUC018-UK-20260908",
+      "source_group": "Belkin SoundForm Dot ANC官方英国商品页",
+      "url": "https://www.belkin.com/uk/p/noise-cancelling-earbuds/AUC018hqBL.html",
+      "scope": "AUC018hqBL；£29.99；英国区域新品/预计2026-10-14补货、驱动、续航和IPX4口径",
+      "quality": "A",
+      "source_domain": "belkin.com",
+      "source_channel": "official_store",
+      "source_role": "官方区域商品页/区域价格/库存与交付信号",
+      "seller_type": "音频品牌官方",
+      "storefront_type": "Belkin英国官方商城",
+      "availability_signal": "官方页列新品；显示Out of Stock/预计2026-10-14补货"
+    },
+    {
+      "checked_on": "2026-09-08",
+      "campaign_status": "未公开",
+      "pledge_or_price": "£19.99",
+      "estimated_delivery": "未公开",
+      "platform_reference": "AUC019hqBK",
+      "id": "BELKIN-AUC019-UK-20260908",
+      "source_group": "Belkin SoundForm Dot官方英国商品页",
+      "url": "https://www.belkin.com/uk/p/wireless-earbuds/AUC019hqBK.html",
+      "scope": "AUC019hqBK；£19.99；6mm驱动、30小时总续航、Bluetooth Multipoint、IPX5、官方购买信号",
+      "quality": "A",
+      "source_domain": "belkin.com",
+      "source_channel": "official_store",
+      "source_role": "官方区域商品页/精确SKU/价格/购买/规格证据",
+      "seller_type": "音频品牌官方",
+      "storefront_type": "Belkin英国官方商城",
+      "availability_signal": "官方页提供购买信号；颜色与其他区域库存动态"
+    },
+    {
+      "checked_on": "2026-09-08",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$49.99",
+      "estimated_delivery": "未公开",
+      "platform_reference": "AUD013fqBK",
+      "id": "BELKIN-AUD013-STORE-20260908",
+      "source_group": "Belkin SoundForm Play ANC官方美国商品页",
+      "url": "https://www.belkin.com/p/youth-active-noise-cancelling-headphones/AUD013fqBK.html",
+      "scope": "AUD013fqBK；US$49.99；儿童ANC、85dB限制、62/45小时页面口径、40mm、USB-C、3.5mm、可折叠",
+      "quality": "A",
+      "source_domain": "belkin.com",
+      "source_channel": "official_store",
+      "source_role": "官方商品页/精确SKU/价格/儿童定位/规格证据",
+      "seller_type": "音频品牌官方",
+      "storefront_type": "Belkin美国官方商城",
+      "availability_signal": "官方页提供购买信号；颜色/区域库存动态"
+    },
+    {
+      "checked_on": "2026-09-08",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "AUD013",
+      "id": "BELKIN-AUD013-SUPPORT-20260908",
+      "source_group": "Belkin SoundForm Play ANC官方支持",
+      "url": "https://www.belkin.com/support-article/?articleNum=337928",
+      "scope": "AUD013；Bluetooth 5.4、40mm、ANC/Hear-Thru、85dB限制、Focus Boost、RockStar分享、儿童5–12岁定位、续航与数据/联网边界",
+      "quality": "A",
+      "source_domain": "belkin.com",
+      "source_channel": "official_support_manual",
+      "source_role": "官方支持/FAQ/功能与规格证据",
+      "seller_type": "音频品牌官方",
+      "storefront_type": "Belkin官方支持中心",
+      "availability_signal": "官方支持页列示精确AUD013；销售状态以商品页为准"
     }
   ],
   "update_log": [
@@ -2648,6 +2897,18 @@
       "change": "【TWS/AI/翻译/降噪/骨传导耳机】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-08",
+      "change": "【TWS/AI/翻译/降噪/骨传导耳机】完成本轮官方新品/精确SKU/区域在售与候选核验，并写入有证据记录；预发布与展会级线索继续保持候选。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-08",
+      "change": "新增AUDIO-044 Belkin SoundForm Dot ANC、AUDIO-045 SoundForm Dot和AUDIO-046 SoundForm Play ANC；均有官方精确SKU/价格/购买或区域补货信号；SoundForm Isolate Buds因新闻稿命名与零售SKU未完全对应保留候选。",
+      "verification": "Belkin官方IFA新闻稿、美国/英国商品页与AUD013支持FAQ互证价格、SKU、续航、Bluetooth 5.4、驱动、儿童功能和区域可得性；Isolate Buds的Amazon/零售渠道信号尚无精确ASIN与对应官方SKU。",
+      "next": "继续核验Belkin各区域官方/Amazon商品页、Isolate Buds精确SKU/ASIN、芯片、重量、完整充电规格与真实库存。"
     }
   ],
   "source_channel_policy": [
@@ -2731,17 +2992,18 @@
   ],
   "source_channel_counts": {
     "official_news": 1,
-    "official_newsroom": 8,
+    "official_newsroom": 9,
     "official_newsroom_distribution": 1,
     "official_product": 7,
     "official_release": 2,
     "official_sales": 18,
-    "official_store": 1,
-    "official_support_manual": 12
+    "official_store": 5,
+    "official_support_manual": 13
   },
   "source_domains": [
     "apple.com",
     "baseus.com",
+    "belkin.com",
     "bose.com",
     "consumer.huawei.com",
     "harman.com",

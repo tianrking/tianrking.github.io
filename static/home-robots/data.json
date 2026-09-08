@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-07",
+  "checked_on": "2026-09-08",
   "scope_note": "本库覆盖家用机器人：扫地、洗地、擦窗、割草、泳池与宠物陪伴机器人；宠物项圈/吊牌另库。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-07"
+      "2026-09-08"
     ]
   ],
   "products": [
@@ -1021,6 +1021,102 @@
         "DREAME-IFA-100-PRODUCTS-20260906"
       ],
       "next_check": "核验正式产品页、型号后缀、尺寸重量、吸附/安全机制、续航、价格和区域上市"
+    },
+    {
+      "id": "CAND-ROBOROCK-SAROS20-20260908",
+      "name": "Roborock Saros 20",
+      "brand": "Roborock",
+      "region": "全球/IFA 2026；区域可得性待核验",
+      "category": "家用机器人/扫地拖地机器人",
+      "status": "候选/官方产品页与IFA展示；价格、区域库存和交付未公开",
+      "evidence": "A",
+      "reason": "Roborock全球官方IFA页披露Saros 20、StarSight Autonomous System 2.0、AdaptiLift Chassis 3.0、36,000Pa、低至79.8mm、Matter与自动重洗等规格；当前页面未给出稳定价格/订单，不升级主表。",
+      "url": "https://global.roborock.com/pages/roborock-saros-20",
+      "alias_or_relation": "Saros 20；与Saros 20 Sonic/Neo按官方型号独立保留",
+      "source_refs": [
+        "ROBOROCK-SAROS20-OFFICIAL-20260908"
+      ],
+      "next_check": "核验官方区域商品页、价格、SKU、交付、重量、续航、耗材、认证与实际库存"
+    },
+    {
+      "id": "CAND-ROBOROCK-SAROS20-SONIC-20260908",
+      "name": "Roborock Saros 20 Sonic",
+      "brand": "Roborock",
+      "region": "全球/IFA 2026；区域可得性待核验",
+      "category": "家用机器人/扫地拖地机器人",
+      "status": "候选/官方产品页与IFA展示；价格、区域库存和交付未公开",
+      "evidence": "A",
+      "reason": "Roborock官方IFA页面列出Saros 20 Sonic与VibraRise 5.0、AdaptiLift Chassis 3.0、低至79.5mm等型号级能力；未取得稳定零售SKU/价格/交付，不升级主表。",
+      "url": "https://global.roborock.com/pages/ifa-2026",
+      "alias_or_relation": "Saros 20 Sonic；与Saros 20/Neo分开",
+      "source_refs": [
+        "ROBOROCK-SAROS20-IFA-20260908"
+      ],
+      "next_check": "核验官方商品页、价格、耗材/基站、续航、重量、区域销售与认证"
+    },
+    {
+      "id": "CAND-ROBOROCK-SAROS20-NEO-20260908",
+      "name": "Roborock Saros 20 Neo",
+      "brand": "Roborock",
+      "region": "全球/IFA 2026；区域可得性待核验",
+      "category": "家用机器人/扫地拖地机器人",
+      "status": "候选/官方IFA展示；价格、区域库存和交付未公开",
+      "evidence": "A",
+      "reason": "Roborock官方IFA页面列出Saros 20 Neo与AdaptiLift Chassis 3.0、7.95cm低空间能力；未取得稳定零售SKU/价格/交付，不升级主表。",
+      "url": "https://global.roborock.com/pages/ifa-2026",
+      "alias_or_relation": "Saros 20 Neo；与Saros 20/ Sonic分开",
+      "source_refs": [
+        "ROBOROCK-SAROS20-IFA-20260908"
+      ],
+      "next_check": "核验官方商品页、价格、传感器、续航、耗材、区域销售和认证"
+    },
+    {
+      "id": "CAND-ROBOROCK-ROCKAQUA-P1-20260908",
+      "name": "Roborock RockAqua P1",
+      "brand": "Roborock",
+      "region": "全球/IFA 2026；区域可得性待核验",
+      "category": "家用机器人/泳池清洁机器人",
+      "status": "候选/官方IFA展示；价格、精确SKU、交付未公开",
+      "evidence": "A",
+      "reason": "Roborock官方IFA页面披露RockAqua P1浅水平台、ClearVision Smart Patrol和25,700LPH吸力等型号级卖点；未取得稳定订单/价格，不升级主表。",
+      "url": "https://global.roborock.com/pages/ifa-2026",
+      "alias_or_relation": "RockAqua P1；泳池机器人与室内Saros系列分开",
+      "source_refs": [
+        "ROBOROCK-SAROS20-IFA-20260908"
+      ],
+      "next_check": "核验官方商品页、价格、池深/续航、防水等级、充电、传感器与区域交付"
+    },
+    {
+      "id": "CAND-TCL-AIME-20260908",
+      "name": "TCL AiMe Family Companion Robot",
+      "brand": "TCL",
+      "region": "全球/IFA 2026；面向3岁以上儿童家庭，销售状态待核验",
+      "category": "家用机器人/儿童家庭陪伴机器人",
+      "status": "候选/官方产品介绍与IFA展示；价格、商品SKU、交付和认证未公开",
+      "evidence": "A",
+      "reason": "TCL官方IFA区域页披露AiMe为面向3岁以上儿童家庭的AI陪伴机器人，具备自然多模态交互、真实运动控制和持续演进内容系统；没有可稳定下单商品页，不升级主表。",
+      "url": "https://www.tcl.com/fr/fr/ifa",
+      "alias_or_relation": "AiMe Family Companion Robot；与TCL NXTHOME生态概念保持关联，不按展示配置拆分",
+      "source_refs": [
+        "TCL-AIME-IFA-20260908"
+      ],
+      "next_check": "核验正式产品页、价格、尺寸重量、相机/麦克风/传感器、隐私、家长控制、App和区域上市"
+    },
+    {
+      "id": "CAND-AEG-TRILOBITE8000-GEN2-20260908",
+      "name": "AEG Trilobite 8000 GEN2",
+      "brand": "AEG",
+      "region": "欧洲/IFA 2026；上市区域与价格待核验",
+      "category": "家用机器人/扫地机器人",
+      "status": "候选/官方IFA发布；价格、精确SKU、区域商品页与交付未公开",
+      "evidence": "A",
+      "reason": "Electrolux/AEG官方IFA发布稿披露Trilobite 8000 GEN2为超薄扫地机器人新品；未取得官方商品页、价格与交付证据，保留候选。",
+      "url": "https://www.prnewswire.com/news-releases/ifa-2026-premium-brand-aeg-challenges-the-expected-with-its-first-ever-pasta-hob-and-a-celebration-of-the-art-of-hosting-302865848.html",
+      "alias_or_relation": "Trilobite 8000 GEN2；不与吸尘器/OnePot Pasta等AEG产品混计",
+      "source_refs": [
+        "AEG-IFA-2026-TRILOBITE-20260908"
+      ],
+      "next_check": "核验官方商品页、价格、清洁方式、导航传感器、续航、基站、噪声、认证与上市国家"
     }
   ],
   "sources": [
@@ -1851,6 +1947,78 @@
       "seller_type": "家庭陪伴机器人品牌官方",
       "storefront_type": "OlloBot官方GlobeNewswire发布",
       "availability_signal": "IFA展示；Kickstarter延期；价格、销售和交付未公开"
+    },
+    {
+      "checked_on": "2026-09-08",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Saros 20",
+      "id": "ROBOROCK-SAROS20-OFFICIAL-20260908",
+      "source_group": "Roborock Saros 20官方产品页",
+      "url": "https://global.roborock.com/pages/roborock-saros-20",
+      "scope": "Saros 20；StarSight 2.0、AdaptiLift 3.0、36,000Pa、79.8mm、Matter、语音、尺寸与基站页面入口",
+      "quality": "A",
+      "source_domain": "global.roborock.com",
+      "source_channel": "official_product",
+      "source_role": "原厂产品页/精确型号/核心规格证据；当前页面未给稳定零售价格",
+      "seller_type": "家用机器人品牌官方",
+      "storefront_type": "Roborock全球官方产品页",
+      "availability_signal": "官方产品页；区域商品页、价格、库存和交付待核验"
+    },
+    {
+      "checked_on": "2026-09-08",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Saros 20 / Saros 20 Sonic / Saros 20 Neo / RockAqua P1",
+      "id": "ROBOROCK-SAROS20-IFA-20260908",
+      "source_group": "Roborock IFA 2026官方展会页",
+      "url": "https://global.roborock.com/pages/ifa-2026",
+      "scope": "Saros 20/Sonic/Neo与RockAqua P1；型号级清洁、越障、低空间、泳池平台与吸力卖点",
+      "quality": "A",
+      "source_domain": "global.roborock.com",
+      "source_channel": "official_product",
+      "source_role": "原厂展会产品页/型号发现/规格证据；不证明当前零售",
+      "seller_type": "家用机器人品牌官方",
+      "storefront_type": "Roborock全球官方IFA页面",
+      "availability_signal": "IFA展示/新品栏目；价格、区域SKU与交付未公开"
+    },
+    {
+      "checked_on": "2026-09-08",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "TCL AiMe Family Companion Robot",
+      "id": "TCL-AIME-IFA-20260908",
+      "source_group": "TCL AiMe官方IFA区域产品页",
+      "url": "https://www.tcl.com/fr/fr/ifa",
+      "scope": "AiMe Family Companion Robot；3岁以上儿童家庭、自然多模态交互、真实运动、持续演进内容系统",
+      "quality": "A",
+      "source_domain": "tcl.com",
+      "source_channel": "official_product",
+      "source_role": "品牌官方区域产品页/型号与功能证据；不证明当前销售",
+      "seller_type": "消费电子品牌官方",
+      "storefront_type": "TCL官方IFA区域页",
+      "availability_signal": "IFA产品介绍；价格、商品SKU、库存、交付未公开"
+    },
+    {
+      "checked_on": "2026-09-08",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "AEG Trilobite 8000 GEN2",
+      "id": "AEG-IFA-2026-TRILOBITE-20260908",
+      "source_group": "AEG/ Electrolux IFA 2026官方发布",
+      "url": "https://www.prnewswire.com/news-releases/ifa-2026-premium-brand-aeg-challenges-the-expected-with-its-first-ever-pasta-hob-and-a-celebration-of-the-art-of-hosting-302865848.html",
+      "scope": "AEG Trilobite 8000 GEN2超薄扫地机器人；官方IFA新品发现；未提供价格/销售SKU",
+      "quality": "A",
+      "source_domain": "prnewswire.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "品牌官方新闻稿分发/新品型号发现；不证明当前零售",
+      "seller_type": "家电品牌官方",
+      "storefront_type": "Electrolux Group/AEG官方PR分发",
+      "availability_signal": "IFA展示/新品发布；价格、区域商品页和交付未公开"
     }
   ],
   "update_log": [
@@ -1955,6 +2123,18 @@
       "change": "更新OlloNi SS1候选至官方IFA 2026状态；新增精确型号与家庭/宠物识别、摄像头/麦克风、自主移动、多屏、本地存储和环境传感器证据，众筹仍延期。",
       "verification": "OlloBot官方GlobeNewswire发布属于品牌新闻稿证据；没有正式商城、价格、交付或认证，不升级主表。",
       "next": "继续核验Kickstarter项目、正式产品页、价格、交付、FCC/CE、隐私及最终芯片/传感器。"
+    },
+    {
+      "date": "2026-09-08",
+      "change": "【家用机器人】完成本轮官方新品/精确SKU/区域在售与候选核验，并写入有证据记录；预发布与展会级线索继续保持候选。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-08",
+      "change": "新增Roborock Saros 20/Sonic/Neo、RockAqua P1、TCL AiMe和AEG Trilobite 8000 GEN2候选；均有官方产品页或品牌发布证据，未因展会展示直接升级主表。",
+      "verification": "Roborock官方产品/IFA页给出型号级清洁、越障、低空间和泳池能力；TCL官方IFA页给出AiMe儿童家庭陪伴定位；AEG官方IFA稿仅确认Trilobite 8000 GEN2新品，价格/商品SKU/交付仍缺。",
+      "next": "继续核验正式商城、区域价格/库存、精确料号、续航、重量、传感器、基站、认证与隐私。"
     }
   ],
   "source_channel_policy": [
@@ -2040,8 +2220,8 @@
     "crowdfunding": 3,
     "official_datasheet": 1,
     "official_newsroom": 3,
-    "official_newsroom_distribution": 8,
-    "official_product": 12,
+    "official_newsroom_distribution": 9,
+    "official_product": 15,
     "official_sales": 14,
     "official_store": 2,
     "official_support_manual": 4
@@ -2052,6 +2232,7 @@
     "eu.beatbot.com",
     "fr.narwal.com",
     "global.dreametech.com",
+    "global.roborock.com",
     "globenewswire.com",
     "ifa.vporoom.com",
     "indiegogo.com",
@@ -2064,6 +2245,7 @@
     "robotical.io",
     "site-static.ecovacs.com",
     "support.mammotion.com",
+    "tcl.com",
     "theonlypet.com",
     "uk.navimow.com",
     "us.narwal.com",

@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-07",
+  "checked_on": "2026-09-08",
   "scope_note": "首版覆盖独立家庭中控、Matter控制器/桥、协议网关，以及音箱/屏/机顶盒/路由器内置的智能家居中枢。通过形态字段区分完整自动化中枢、协议桥、内置中枢与路由器功能，不把所有网关宣传词当成同一类产品。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-07"
+      "2026-09-08"
     ]
   ],
   "products": [
@@ -1026,6 +1026,22 @@
         "HEIMAN-IFA-SECURITY-20260906"
       ],
       "next_check": "核验Matter Bridge硬件分料号、协议并发、芯片、认证、价格与授权渠道"
+    },
+    {
+      "id": "CAND-AQARA-M300-GW-20260908",
+      "name": "Aqara Edge Hub M300",
+      "brand": "Aqara",
+      "region": "全球/IFA 2026展示",
+      "category": "家庭中控/Matter网关/边缘智能网关",
+      "status": "候选/官方IFA Spotlight；价格、精确SKU、协议版本与区域销售未公开",
+      "evidence": "A",
+      "reason": "Aqara官方IFA页面披露Edge Hub M300可独立运行或桥接专业智能家居生态，定位为安装级边缘控制中心；未取得本轮稳定商品页与价格，不升级主表。",
+      "url": "https://www.aqara.com/en/pages/ifa-2026/",
+      "alias_or_relation": "Edge Hub M300；与Security Station M410保持独立型号关系",
+      "source_refs": [
+        "AQARA-IFA-2026-SPOTLIGHT-20260908"
+      ],
+      "next_check": "核验Matter/Thread/Zigbee/Wi-Fi/Ethernet、边缘算力、存储、供电、认证、价格和区域交付"
     }
   ],
   "sources": [
@@ -1274,6 +1290,24 @@
       "seller_type": "消防与智能家居品牌官方",
       "storefront_type": "Heiman官方公司新闻",
       "availability_signal": "IFA方案展示；精确硬件、销售、价格与交付未公开"
+    },
+    {
+      "checked_on": "2026-09-08",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Edge Hub M300",
+      "id": "AQARA-IFA-2026-GATEWAY-20260908",
+      "source_group": "Aqara IFA 2026 Edge Hub M300",
+      "url": "https://www.aqara.com/en/pages/ifa-2026/",
+      "scope": "Edge Hub M300边缘网关/独立运行/桥接专业智能家居生态；价格、协议版本与商品SKU未公开",
+      "quality": "A",
+      "source_domain": "aqara.com",
+      "source_channel": "official_product",
+      "source_role": "品牌官方产品页/网关型号发现与功能证据；不证明当前零售",
+      "seller_type": "智能家居品牌官方",
+      "storefront_type": "Aqara官方IFA页面",
+      "availability_signal": "IFA Spotlight/展示；正式商品页、价格、库存和交付未公开"
     }
   ],
   "update_log": [
@@ -1372,6 +1406,18 @@
       "change": "【家庭中控/Matter网关/智能家居网关】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-08",
+      "change": "【家庭中控/Matter网关/智能家居网关】完成本轮官方新品/精确SKU/区域在售与候选核验，并写入有证据记录；预发布与展会级线索继续保持候选。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-08",
+      "change": "新增Aqara Edge Hub M300候选；官方IFA页面确认边缘网关/专业生态桥接定位，正式价格、协议版本与销售SKU仍未公开。",
+      "verification": "仅使用Aqara官方IFA产品页作为发现与功能证据；没有把Security Station M410重复计入网关主表，跨库关系在安防候选中保留。",
+      "next": "继续核验Matter/Thread/Zigbee/Wi-Fi/Ethernet、边缘算力、存储、供电、认证、价格与区域交付。"
     }
   ],
   "source_channel_policy": [
@@ -1455,7 +1501,7 @@
   ],
   "source_channel_counts": {
     "official_newsroom": 3,
-    "official_product": 3,
+    "official_product": 4,
     "official_sales": 2,
     "official_store": 2,
     "official_support_manual": 1,

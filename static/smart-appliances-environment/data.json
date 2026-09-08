@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-07",
+  "checked_on": "2026-09-08",
   "scope_note": "本库覆盖智能家电与环境：空气净化器、除湿机、恒温器、智能插座、漏水传感器、天气站与能耗监测。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-07"
+      "2026-09-08"
     ]
   ],
   "products": [
@@ -504,6 +504,54 @@
         "AMADA-AMABB12B-TXL-US-20260907"
       ],
       "next_check": "核验官方商品页、尺寸/承重/电机规格、App协议、认证、运输范围、实际开售与区域价格"
+    },
+    {
+      "id": "CAND-AIPER-IRRISENSE2SE-20260908",
+      "name": "Aiper IrriSense 2 SE",
+      "brand": "Aiper",
+      "region": "全球/IFA 2026；Smart Yard展示",
+      "category": "智能家居与环境/智能灌溉",
+      "status": "候选/官方IFA产品页；价格、精确SKU、区域销售与交付未公开",
+      "evidence": "A",
+      "reason": "Aiper官方IFA页面披露IrriSense 2 SE为多区域智能灌溉系统，控制器/喷头/阀一体化、EvenRain模拟降雨与节水能力有官方描述；未取得本轮稳定零售证据。",
+      "url": "https://aiper.com/fr/aiper-at-ifa-2026",
+      "alias_or_relation": "IrriSense 2 SE；与EcoSurfer Senti/Scuba V3 Ultra分开",
+      "source_refs": [
+        "AIPER-IFA-2026-SMART-YARD-20260908"
+      ],
+      "next_check": "核验官方商品页、价格、区域SKU、连接方式、传感器、供电、安装与交付"
+    },
+    {
+      "id": "CAND-AIPER-ECOSURFER-SENTI-20260908",
+      "name": "Aiper EcoSurfer Senti",
+      "brand": "Aiper",
+      "region": "全球/IFA 2026；Smart Yard展示",
+      "category": "智能家居与环境/泳池水面机器人",
+      "status": "候选/官方IFA产品页；价格、精确SKU、区域销售与交付未公开",
+      "evidence": "A",
+      "reason": "Aiper官方页面披露EcoSurfer Senti为带AI水质管理的泳池水面清洁设备，含水质测试与巡航清洁描述；未取得稳定商品页与价格。",
+      "url": "https://aiper.com/fr/aiper-at-ifa-2026",
+      "alias_or_relation": "EcoSurfer Senti；不按颜色/配件/套装拆分",
+      "source_refs": [
+        "AIPER-IFA-2026-SMART-YARD-20260908"
+      ],
+      "next_check": "核验水质传感器、续航、充电、防水、协议、价格与区域销售"
+    },
+    {
+      "id": "CAND-AIPER-SCUBA-V3-ULTRA-20260908",
+      "name": "Aiper Scuba V3 Ultra",
+      "brand": "Aiper",
+      "region": "全球/IFA 2026；Smart Yard展示",
+      "category": "智能家居与环境/泳池清洁机器人",
+      "status": "候选/官方IFA产品页；价格、精确SKU、区域销售与交付未公开",
+      "evidence": "A",
+      "reason": "Aiper官方页面披露Scuba V3 Ultra为AI认知的6合1泳池机器人，双摄像头巡航、AI Navium与JellyFloat等描述有官方来源；未取得稳定零售证据。",
+      "url": "https://aiper.com/fr/aiper-at-ifa-2026",
+      "alias_or_relation": "Scuba V3 Ultra；与既有Aiper泳池机器人按精确型号去重",
+      "source_refs": [
+        "AIPER-IFA-2026-SMART-YARD-20260908"
+      ],
+      "next_check": "核验官方商品页、价格、吸力/清洁模式、相机/水质传感器、续航、充电与区域库存"
     }
   ],
   "sources": [
@@ -767,6 +815,24 @@
       "seller_type": "智能家具品牌官方",
       "storefront_type": "Amada官方GlobeNewswire发布",
       "availability_signal": "官方预计2026年10月美国上市；正式商品页与库存未公开"
+    },
+    {
+      "checked_on": "2026-09-08",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "IrriSense 2 SE / EcoSurfer Senti / Scuba V3 Ultra",
+      "id": "AIPER-IFA-2026-SMART-YARD-20260908",
+      "source_group": "Aiper IFA 2026 Smart Yard官方产品页",
+      "url": "https://aiper.com/fr/aiper-at-ifa-2026",
+      "scope": "IrriSense 2 SE、EcoSurfer Senti、Scuba V3 Ultra及Smart Yard AIoT生态；灌溉、水质、泳池机器人与传感能力",
+      "quality": "A",
+      "source_domain": "aiper.com",
+      "source_channel": "official_product",
+      "source_role": "品牌官方展会产品页/精确型号/核心功能证据；不证明当前零售",
+      "seller_type": "智能庭院/泳池机器人品牌官方",
+      "storefront_type": "Aiper官方IFA区域页",
+      "availability_signal": "IFA展示/新品体验；价格、订单、区域库存和交付未公开"
     }
   ],
   "update_log": [
@@ -871,6 +937,18 @@
       "change": "新增Aqara Floor Lamp T1、LED Downlight T2、LED Strip T2、Outdoor String Lights H1、Permanent Outdoor Lights H1及Amada AMABB12B-TXL-US候选；均保留展会/预发布状态。",
       "verification": "Aqara官方IFA稿提供五个精确型号及Thread/Zigbee/Matter/照明参数；Amada官方稿提供精确床底型号、US$829.99起和美国2026年10月窗口；尚无稳定正式商城页。",
       "next": "继续核验Aqara/Amada官方商品页、精确SKU、认证、价格、功率/尺寸、库存、交付与App/隐私条款。"
+    },
+    {
+      "date": "2026-09-08",
+      "change": "【智能家电与环境】完成本轮官方新品/精确SKU/区域在售与候选核验，并写入有证据记录；预发布与展会级线索继续保持候选。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-08",
+      "change": "新增Aiper IrriSense 2 SE、EcoSurfer Senti和Scuba V3 Ultra候选；官方IFA页提供Smart Yard/灌溉/水质/泳池机器人型号与功能，但无稳定零售价格和SKU。",
+      "verification": "Aiper官方区域IFA页为品牌原厂产品证据；不把泳池设备的展会说明当作当前上市，也不按配件、生态网关和颜色拆分。",
+      "next": "继续核验官方商品页、价格、区域销售、连接方式、传感器、供电、防水、续航和交付。"
     }
   ],
   "source_channel_policy": [
@@ -956,12 +1034,13 @@
     "crowdfunding": 1,
     "official_newsroom": 1,
     "official_newsroom_distribution": 2,
-    "official_product": 3,
+    "official_product": 4,
     "official_sales": 5,
     "official_store": 2,
     "official_support_manual": 1
   },
   "source_domains": [
+    "aiper.com",
     "airthings.com",
     "ambientweather.com",
     "aqara.com",
