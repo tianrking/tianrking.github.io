@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-08",
+  "checked_on": "2026-09-09",
   "title": "全球 Wi‑Fi / Bluetooth 芯片选型数据库",
   "subtitle": "面向硬件选型的全球 Wi‑Fi、Bluetooth Classic/BR/EDR、BLE、Wi‑Fi+BT Combo、802.15.4 tri-radio 和无线 MCU/连接协处理器资料库。",
   "scope_note": "本库是消费电子与智能硬件数据库之外的第 25 套独立半导体选型库。主表按芯片/SoC/无线 MCU/连接协处理器计数，不把模块、开发板、OEM 方案或整机重复计入；国家/地区指品牌/公司归属口径，不等同于晶圆制造地。",
@@ -22355,6 +22355,40 @@
       "url": "https://www.quectel.com/product/wi-fi-bluetooth-fcm665d/",
       "alias_or_relation": "模块级产品；可能关联上游无线MCU/SoC，不能把模块规格、价格或认证直接回填到裸芯片主表",
       "next_check": "核验上游芯片精确型号、模块各Flash/PSRAM/天线后缀、LCSC/DigiKey/Mouser价格、认证文件和生命周期"
+    },
+    {
+      "id": "CAND-QUALCOMM-DRAGONWING-Q2390-20260909",
+      "name": "Qualcomm Dragonwing Q-2390",
+      "vendor": "Qualcomm",
+      "region": "美国/全球；early access，评估套件预计2027年初",
+      "category": "智能连接处理器/边缘AI SoC",
+      "entity_type": "application processor/SoC",
+      "status": "候选/官方发布；Wi-Fi/Bluetooth精确规格、料号、价格和评估套件未公开",
+      "evidence": "A",
+      "reason": "Qualcomm官方2026-09-01发布稿披露Dragonwing Q-2390，四核Qualcomm Kryo、Adreno 704、实时RISC-V MCU、LTE Cat 4、GPS、摄像/显示/有线无线连接与安全/I/O能力；未明确Wi-Fi、Bluetooth版本及芯片分料号/价格，因此不计入Wi-Fi/Bluetooth主表。",
+      "url": "https://www.qualcomm.com/news/releases/2026/09/-qualcomm-introduces-dragonwing-q-2390-and-iq-2390-processors--e",
+      "alias_or_relation": "Q-2390；与IQ-2390工业型号分开；不从“无线连接”宣传语推断Wi-Fi/Bluetooth标准",
+      "source_refs": [
+        "QUALCOMM-DRAGONWING-2390-20260909"
+      ],
+      "next_check": "核验Q-2390产品页、数据手册、精确分料号、Wi-Fi/Bluetooth/协议字段、封装、功耗、授权渠道、价格和评估套件"
+    },
+    {
+      "id": "CAND-QUALCOMM-DRAGONWING-IQ2390-20260909",
+      "name": "Qualcomm Dragonwing IQ-2390",
+      "vendor": "Qualcomm",
+      "region": "美国/全球；industrial edge AI，评估套件预计2027年初",
+      "category": "工业边缘AI/智能连接处理器",
+      "entity_type": "industrial application processor/SoC",
+      "status": "候选/官方发布；Wi-Fi/Bluetooth精确规格、料号、价格和评估套件未公开",
+      "evidence": "A",
+      "reason": "Qualcomm官方发布稿披露Dragonwing IQ-2390，四核Qualcomm Kryo、Adreno 704、实时RISC-V MCU、双Gigabit Ethernet TSN、-30°C至+115°C和工业边缘AI定位；未明确Wi-Fi、Bluetooth版本及芯片分料号/价格，因此保留候选。",
+      "url": "https://www.qualcomm.com/news/releases/2026/09/-qualcomm-introduces-dragonwing-q-2390-and-iq-2390-processors--e",
+      "alias_or_relation": "IQ-2390；与Q-2390消费/商业IoT型号分开",
+      "source_refs": [
+        "QUALCOMM-DRAGONWING-2390-20260909"
+      ],
+      "next_check": "核验IQ-2390产品页、数据手册、Wi-Fi/Bluetooth/协议字段、精确分料号、封装、温度、电源、价格与评估套件"
     }
   ],
   "sources": [
@@ -27235,6 +27269,24 @@
       "seller_type": "芯片原厂",
       "storefront_type": "Samsung Electronics官方投资者关系PDF",
       "availability_signal": "2026 Q1报告列已发布；原厂/授权分销供货未公开"
+    },
+    {
+      "checked_on": "2026-09-09",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "评估套件预计2027年初",
+      "platform_reference": "Dragonwing Q-2390 / IQ-2390",
+      "quality": "A",
+      "id": "QUALCOMM-DRAGONWING-2390-20260909",
+      "source_group": "Qualcomm Dragonwing Q-2390/IQ-2390官方发布",
+      "url": "https://www.qualcomm.com/news/releases/2026/09/-qualcomm-introduces-dragonwing-q-2390-and-iq-2390-processors--e",
+      "scope": "Q-2390/IQ-2390；四核Kryo、Adreno 704、实时RISC-V MCU、LTE Cat 4/GPS、摄像/显示/连接、工业Ethernet TSN、评估套件窗口",
+      "source_domain": "qualcomm.com",
+      "source_channel": "official_newsroom",
+      "source_role": "芯片原厂发布/型号发现/应用与上市窗口证据；不替代Wi-Fi/Bluetooth规格书和价格",
+      "seller_type": "芯片原厂",
+      "storefront_type": "Qualcomm官方新闻室",
+      "availability_signal": "官方发布；early access，评估套件预计2027年初，量产/分销价格未公开"
     }
   ],
   "source_channel_policy": [
@@ -27299,7 +27351,7 @@
     "marketplace_discovery": 2,
     "official_datasheet": 35,
     "official_news": 5,
-    "official_newsroom": 5,
+    "official_newsroom": 6,
     "official_product": 89,
     "official_support": 2,
     "official_support_manual": 1
@@ -27480,6 +27532,18 @@
       "change": "新增WBC-0201 Samsung Exynos Connect 6375；官方半导体产品页与Samsung 2026 Q1报告确认Wi-Fi 7/最高6.45Gbps、Bluetooth 6、BLE Audio、5nm BBIC和发布年份；价格与精确分料号未公开。",
       "verification": "按芯片库规则把Exynos Connect 6375作为BBIC/无线连接子系统计入主表；未从BLE Audio推断Bluetooth Classic，未把公开性能描述扩展成未披露封装、功耗、存储、接口或价格。",
       "next": "继续检索Samsung B2B/授权分销、精确OPN、数据手册、封装/引脚、功耗、认证与区域报价；DigiKey/Mouser/LCSC若无可验证结果继续标未公开。"
+    },
+    {
+      "date": "2026-09-09",
+      "change": "【全球Wi-Fi/Bluetooth芯片选型库】完成本轮官方产品、销售、规格、预发布与芯片发布核验，并写入有证据记录；预发布或缺少精确零售证据的项目继续保留候选。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-09",
+      "change": "新增Qualcomm Dragonwing Q-2390与IQ-2390候选；官方发布稿确认处理器型号、CPU/GPU/RISC-V/工业连接能力与评估套件窗口，但未公开Wi-Fi/Bluetooth精确字段、分料号和价格，未进入主表。",
+      "verification": "按芯片库规则，不从“wireless connectivity”宣传语推断Wi-Fi/Bluetooth版本；Q/I两款与模块、开发板、消费整机分开，未披露字段保持未公开。",
+      "next": "继续核验Qualcomm产品页/数据手册、Wi-Fi/Bluetooth协议、精确OPN、封装/功耗/温度、授权分销单价、MOQ和评估套件。"
     }
   ]
 }

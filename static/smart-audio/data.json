@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-08",
+  "checked_on": "2026-09-09",
   "scope_note": "首版优先覆盖全球主要品牌的TWS、主动降噪、AI/录音/翻译耳机与骨传导/开放式运动耳机。按独立型号/代际计数；颜色、充电盒套装和区域SKU不拆行。翻译能力、AI功能与硬件音频能力分开记录；来源没有披露的芯片、传感器、尺寸、重量、防水、续航和订阅字段写“未公开”。 本库同时纳入Wi-Fi多房间音箱与联网家庭音频；音箱的扬声器驱动、无线协议和家庭服务与耳机字段分开记录。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-08"
+      "2026-09-09"
     ]
   ],
   "products": [
@@ -1798,6 +1798,54 @@
         "BELKIN-SOUNDFORM-IFA-20260908"
       ],
       "next_check": "核验Belkin/Amazon各区域商品页、精确SKU/ASIN、驱动、Bluetooth版本、重量、充电与真实库存"
+    },
+    {
+      "id": "CAND-SOUNDCORE-AEROCLIP2-20260909",
+      "name": "soundcore AeroClip 2 (D1105)",
+      "brand": "Anker soundcore",
+      "region": "全球/欧洲预发布；官方购买窗口2026-09-22至2026-10-21",
+      "category": "开放式夹耳耳机/AI耳机",
+      "status": "候选/官方预发布；当前查证日尚未进入正式在售窗口",
+      "evidence": "A",
+      "reason": "Anker德国官方Thus页面披露AeroClip 2、型号D1105、€179.99与2026-09-22至2026-10-21购买阶段；页面还披露GoldenFit、6传感器+AI模型、12mm双磁驱动、AI翻译与Thus AI芯片。因查证日早于购买窗口，不升级主表。",
+      "url": "https://www.anker.com/de/best-clear-calls-earbuds-and-headphones",
+      "alias_or_relation": "AeroClip 2；与现售AeroClip（A3388）分开，不把代际合并",
+      "source_refs": [
+        "SOUNDCOR-THUS-PRELAUNCH-20260909"
+      ],
+      "next_check": "2026-09-22后核验官方商品页、区域库存、ASIN/SKU、规格书、重量、续航和Bluetooth版本"
+    },
+    {
+      "id": "CAND-SOUNDCORE-LIBERTY-BUDS2-20260909",
+      "name": "soundcore Liberty Buds 2 (D1206)",
+      "brand": "Anker soundcore",
+      "region": "全球/欧洲预发布；官方购买窗口2026-09-22至2026-10-21",
+      "category": "TWS/AI耳机",
+      "status": "候选/官方预发布；当前查证日尚未进入正式在售窗口",
+      "evidence": "A",
+      "reason": "Anker德国官方预发布页披露Liberty Buds 2、型号D1206、€149.99及8传感器、6麦克风；因精确商品页和正式销售窗口尚未到达，不升级主表。",
+      "url": "https://www.anker.com/de/best-clear-calls-earbuds-and-headphones",
+      "alias_or_relation": "Liberty Buds 2；与既有Liberty代际按精确型号分开",
+      "source_refs": [
+        "SOUNDCOR-THUS-PRELAUNCH-20260909"
+      ],
+      "next_check": "2026-09-22后核验商品页、区域库存、ASIN/SKU、Bluetooth/LE Audio、续航、重量、充电和价格"
+    },
+    {
+      "id": "CAND-SOUNDCORE-SPACE2-PRO-20260909",
+      "name": "soundcore Space 2 Pro (D1406)",
+      "brand": "Anker soundcore",
+      "region": "全球/欧洲预发布；官方购买窗口2026-09-22至2026-10-21",
+      "category": "头戴式主动降噪耳机/AI耳机",
+      "status": "候选/官方预发布；当前查证日尚未进入正式在售窗口",
+      "evidence": "A",
+      "reason": "Anker德国官方预发布页披露Space 2 Pro、型号D1406、€199.99、自适应ANC 3.0、8麦克风和HearID 5.0；因精确商品页和正式销售窗口尚未到达，不升级主表。",
+      "url": "https://www.anker.com/de/best-clear-calls-earbuds-and-headphones",
+      "alias_or_relation": "Space 2 Pro；与现有Space系列按精确代际分开",
+      "source_refs": [
+        "SOUNDCOR-THUS-PRELAUNCH-20260909"
+      ],
+      "next_check": "2026-09-22后核验商品页、区域库存、ASIN/SKU、驱动、续航、重量、充电和Bluetooth版本"
     }
   ],
   "sources": [
@@ -2799,6 +2847,24 @@
       "seller_type": "音频品牌官方",
       "storefront_type": "Belkin官方支持中心",
       "availability_signal": "官方支持页列示精确AUD013；销售状态以商品页为准"
+    },
+    {
+      "checked_on": "2026-09-09",
+      "campaign_status": "未公开",
+      "pledge_or_price": "AeroClip 2 €179.99；Liberty Buds 2 €149.99；Space 2 Pro €199.99",
+      "estimated_delivery": "2026-09-22起购买窗口；实际交付未公开",
+      "platform_reference": "D1105 / D1206 / D1406",
+      "quality": "A",
+      "id": "SOUNDCOR-THUS-PRELAUNCH-20260909",
+      "source_group": "Anker soundcore Thus系列官方预发布页",
+      "url": "https://www.anker.com/de/best-clear-calls-earbuds-and-headphones",
+      "scope": "AeroClip 2 D1105、Liberty Buds 2 D1206、Space 2 Pro D1406；预发布购买窗口、官方价格、传感器/麦克风、AI翻译、ANC与芯片描述",
+      "source_domain": "anker.com",
+      "source_channel": "official_product",
+      "source_role": "品牌官方预发布/精确型号/未来上市窗口与价格发现；不证明当前在售",
+      "seller_type": "音频品牌官方",
+      "storefront_type": "Anker德国官方产品/预发布页",
+      "availability_signal": "官方页面明确2026-09-22至2026-10-21购买阶段；查证日尚未进入正式销售窗口"
     }
   ],
   "update_log": [
@@ -2909,6 +2975,18 @@
       "change": "新增AUDIO-044 Belkin SoundForm Dot ANC、AUDIO-045 SoundForm Dot和AUDIO-046 SoundForm Play ANC；均有官方精确SKU/价格/购买或区域补货信号；SoundForm Isolate Buds因新闻稿命名与零售SKU未完全对应保留候选。",
       "verification": "Belkin官方IFA新闻稿、美国/英国商品页与AUD013支持FAQ互证价格、SKU、续航、Bluetooth 5.4、驱动、儿童功能和区域可得性；Isolate Buds的Amazon/零售渠道信号尚无精确ASIN与对应官方SKU。",
       "next": "继续核验Belkin各区域官方/Amazon商品页、Isolate Buds精确SKU/ASIN、芯片、重量、完整充电规格与真实库存。"
+    },
+    {
+      "date": "2026-09-09",
+      "change": "【TWS/AI/翻译/降噪/骨传导耳机】完成本轮官方产品、销售、规格、预发布与芯片发布核验，并写入有证据记录；预发布或缺少精确零售证据的项目继续保留候选。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-09",
+      "change": "新增三个soundcore预发布候选：AeroClip 2 D1105、Liberty Buds 2 D1206、Space 2 Pro D1406；官方页给出精确型号、欧元价格和2026-09-22起购买窗口，当前未因预发布直接计入主表。",
+      "verification": "Anker德国官方预发布页为型号、价格、传感器/麦克风、AI翻译/ANC与窗口证据；查证日早于正式购买阶段，暂不把未来窗口当作当前在售。",
+      "next": "2026-09-22后复核各区域官方/Amazon商品页、ASIN/SKU、库存、真实交付、规格书、续航、重量和Bluetooth/LE Audio。"
     }
   ],
   "source_channel_policy": [
@@ -2994,13 +3072,14 @@
     "official_news": 1,
     "official_newsroom": 9,
     "official_newsroom_distribution": 1,
-    "official_product": 7,
+    "official_product": 8,
     "official_release": 2,
     "official_sales": 18,
     "official_store": 5,
     "official_support_manual": 13
   },
   "source_domains": [
+    "anker.com",
     "apple.com",
     "baseus.com",
     "belkin.com",

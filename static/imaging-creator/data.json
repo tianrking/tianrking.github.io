@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-08",
+  "checked_on": "2026-09-09",
   "scope_note": "本库覆盖影像与创作设备：运动相机、360相机、云台相机、无人机、手持云台与直播影像设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-08"
+      "2026-09-09"
     ]
   ],
   "products": [
@@ -439,6 +439,61 @@
       "satellite": "未公开",
       "connectivity": "未公开",
       "storage": "未公开"
+    },
+    {
+      "id": "IMAGE-009",
+      "brand": "eufyMake",
+      "model": "E1 Personal 3D-Texture UV Printer",
+      "country_region": "中国品牌/欧盟、美国、新加坡官方商城可购买",
+      "category": "imaging-creator",
+      "form_factor": "个人UV喷墨/3D纹理打印机",
+      "use_case": "木材、金属、玻璃、塑料等材料的个人创作、定制与浮雕纹理打印",
+      "status": "在售/官方EU、US、SG商城可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "€2,399（EU官方）；US$2,409（US官方）；S$3,499（SG官方）",
+      "official_url": "https://www.eufymake.com/eu-en/products/eufymake-e1",
+      "spec_url": "https://www.eufy.com/sg-en/eufymake-spec",
+      "features": [
+        "1440 DPI",
+        "最高5mm 3D浮雕纹理",
+        "CMYKWG六色/白色/透明色墨水配置",
+        "JetClean自清洁",
+        "8MP相机辅助",
+        "330×420mm打印面",
+        "材料高度自动调节±0.5mm"
+      ],
+      "sensors": [
+        "8MP相机；自动高度调节传感能力，具体传感器型号未公开"
+      ],
+      "gps_positioning": "无GPS",
+      "supported_protocols": [
+        "Wi-Fi IEEE 802.11 b/g/n 2.4GHz",
+        "具体USB/局域网协议未公开"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "590(W)×250(D)×407(H)mm",
+      "weight_g": 20000,
+      "battery": "无内置电池；100–240V AC供电",
+      "charging": "有线供电；最大66W",
+      "water_resistance": "未公开",
+      "subscription": "无公开硬件强制订阅；软件/耗材服务条款未完整公开",
+      "privacy": "8MP相机、Wi-Fi与创作文件数据边界未完整公开",
+      "display": "无公开机身显示规格；App/软件控制",
+      "os_platform": "eufyMake创作软件/App；具体平台版本未公开",
+      "audio_drivers": "不适用",
+      "storage": "内部存储未公开；创作文件存储方式未公开",
+      "availability_note": "EU官方页列€2,399并显示In Stock/1–3天发货；US页列US$2,409；SG页列S$3,499；不把Bundle/耗材套装拆成独立型号",
+      "source_note": "eufyMake EU/US/SG官方产品页与官方规格页互证价格、销售、1440DPI、5mm纹理、尺寸、重量、功耗、8MP相机和2.4GHz Wi-Fi；芯片、内部存储和完整软件/隐私边界未公开",
+      "source_refs": [
+        "EUFYMAKE-E1-EU-20260909",
+        "EUFYMAKE-E1-US-20260909",
+        "EUFYMAKE-E1-SG-20260909",
+        "EUFYMAKE-E1-SPEC-20260909"
+      ],
+      "satellite": "未公开",
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -722,6 +777,78 @@
       "availability_signal": "评测样机；Kickstarter计划",
       "storefront_type": "专业媒体评测",
       "platform_reference": "APL-ETF-M1"
+    },
+    {
+      "checked_on": "2026-09-09",
+      "campaign_status": "未公开",
+      "pledge_or_price": "€2,399",
+      "estimated_delivery": "1–3天发货（官方页口径）",
+      "platform_reference": "eufyMake E1 EU",
+      "quality": "A",
+      "id": "EUFYMAKE-E1-EU-20260909",
+      "source_group": "eufyMake E1欧盟官方商城",
+      "url": "https://www.eufymake.com/eu-en/products/eufymake-e1",
+      "scope": "E1；€2,399、In Stock、1–3天发货、Add to Cart、个人3D纹理UV打印机",
+      "source_domain": "eufymake.com",
+      "source_channel": "official_store",
+      "source_role": "官方区域销售页/价格/库存/交付证据",
+      "seller_type": "创作设备品牌官方",
+      "storefront_type": "eufyMake欧盟官方商城",
+      "availability_signal": "官方页显示In Stock并列1–3天发货"
+    },
+    {
+      "checked_on": "2026-09-09",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$2,409",
+      "estimated_delivery": "未公开",
+      "platform_reference": "eufyMake E1 US",
+      "quality": "A",
+      "id": "EUFYMAKE-E1-US-20260909",
+      "source_group": "eufyMake E1美国官方商城",
+      "url": "https://www.eufymake.com/products/eufymake-e1",
+      "scope": "E1；US$2,409、官方购买与库存信号",
+      "source_domain": "eufymake.com",
+      "source_channel": "official_store",
+      "source_role": "官方区域销售页/价格/购买证据",
+      "seller_type": "创作设备品牌官方",
+      "storefront_type": "eufyMake美国官方商城",
+      "availability_signal": "官方页提供Add to Cart/在售信号"
+    },
+    {
+      "checked_on": "2026-09-09",
+      "campaign_status": "未公开",
+      "pledge_or_price": "S$3,499",
+      "estimated_delivery": "未公开",
+      "platform_reference": "eufyMake E1 SG",
+      "quality": "A",
+      "id": "EUFYMAKE-E1-SG-20260909",
+      "source_group": "eufyMake E1新加坡官方商城",
+      "url": "https://www.eufy.com/sg-en/products/eufymake-e1",
+      "scope": "E1；S$3,499、官方购买与区域价格信号",
+      "source_domain": "eufy.com",
+      "source_channel": "official_store",
+      "source_role": "官方区域销售页/价格/购买证据",
+      "seller_type": "创作设备品牌官方",
+      "storefront_type": "eufy新加坡官方商城",
+      "availability_signal": "官方页提供Add to Cart/Buy Now"
+    },
+    {
+      "checked_on": "2026-09-09",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "eufyMake E1",
+      "quality": "A",
+      "id": "EUFYMAKE-E1-SPEC-20260909",
+      "source_group": "eufyMake E1官方规格页",
+      "url": "https://www.eufy.com/sg-en/eufymake-spec",
+      "scope": "Piezo InkJet、590×250×407mm、20kg、100–240V、66W、1440DPI、330×420mm打印面、5mm纹理、8MP相机、CMYKWG、2.4GHz Wi-Fi、JetClean",
+      "source_domain": "eufy.com",
+      "source_channel": "official_support_manual",
+      "source_role": "官方规格页/尺寸/重量/电源/相机/协议/性能证据",
+      "seller_type": "创作设备品牌官方",
+      "storefront_type": "eufy官方规格中心",
+      "availability_signal": "规格页；销售状态以区域商城为准"
     }
   ],
   "update_log": [
@@ -820,6 +947,18 @@
       "change": "【影像与创作设备】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-09",
+      "change": "【影像与创作设备】完成本轮官方产品、销售、规格、预发布与芯片发布核验，并写入有证据记录；预发布或缺少精确零售证据的项目继续保留候选。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-09",
+      "change": "新增IMAGE-009 eufyMake E1 Personal 3D-Texture UV Printer；EU/US/SG官方商城给出区域价格与购买信号，官方规格页补齐1440DPI、5mm纹理、尺寸、重量、功耗、8MP相机与2.4GHz Wi-Fi。",
+      "verification": "官方EU/US/SG产品页与规格页互证价格、库存、发货、性能与硬件规格；Bundle/耗材不拆为独立型号，芯片、内部存储、完整隐私边界保持未公开。",
+      "next": "继续核验授权经销商价格、耗材/维护成本、区域认证、软件版本、文件存储边界和长期在售状态。"
     }
   ],
   "source_channel_policy": [
@@ -904,11 +1043,14 @@
   "source_channel_counts": {
     "official_product": 3,
     "official_sales": 4,
-    "official_support_manual": 7,
+    "official_store": 3,
+    "official_support_manual": 8,
     "specialist_media": 1
   },
   "source_domains": [
     "dji.com",
+    "eufy.com",
+    "eufymake.com",
     "gobirding.com",
     "gopro.com",
     "mevo.com",

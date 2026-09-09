@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-08",
+  "checked_on": "2026-09-09",
   "scope_note": "本库覆盖电源与充电：移动电源、GaN充电器、无线充电、户外电源与太阳能充电设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-08"
+      "2026-09-09"
     ]
   ],
   "products": [
@@ -671,6 +671,38 @@
         "BASEUS-IFA-CHARGING-20260906"
       ],
       "next_check": "核验官方商品页、精确SKU、额定Wh、端口/协议、认证、重量、价格与区域库存"
+    },
+    {
+      "id": "CAND-ECOFLOW-RIVER4-20260909",
+      "name": "EcoFlow RIVER Series Gen 4 / RIVER 4",
+      "brand": "EcoFlow",
+      "region": "全球/IFA 2026；新品发布与展示",
+      "category": "电源与充电/便携储能电源",
+      "status": "候选/官方IFA发布；精确SKU、零售价格与区域交付未公开",
+      "evidence": "A",
+      "reason": "EcoFlow官方IFA 2026页披露RIVER Series Gen 4/RIVER 4，3.3kg、4.2L占地、自放电一年后低于5%与Guardian Mode等特征；未找到本轮可核验的精确零售SKU/价格，因此保留候选。",
+      "url": "https://www.ecoflow.com/de/ifa-2026",
+      "alias_or_relation": "RIVER Series Gen 4 / RIVER 4；与已在售RIVER系列按精确代际分开",
+      "source_refs": [
+        "ECOFLOW-IFA-2026-20260909"
+      ],
+      "next_check": "核验EcoFlow官方商品页、分料号、容量/输出、价格、重量、电池化学、认证与区域库存"
+    },
+    {
+      "id": "CAND-ECOFLOW-POWERROCK4000-20260909",
+      "name": "EcoFlow PowerRock 4000",
+      "brand": "EcoFlow",
+      "region": "全球/IFA 2026；工业/专业便携储能展示",
+      "category": "电源与充电/工业便携储能",
+      "status": "候选/官方IFA发布；零售SKU、价格与消费级可得性未公开",
+      "evidence": "A",
+      "reason": "EcoFlow官方IFA页披露PowerRock 4000具备4kW持续功率、7.2kW峰值100秒和内置RCD；当前缺少稳定销售页、精确料号与价格，不把展会发布直接当作全球上市。",
+      "url": "https://www.ecoflow.com/de/ifa-2026",
+      "alias_or_relation": "PowerRock 4000；工业/专业产品，不与消费级RIVER/DELTA型号合并",
+      "source_refs": [
+        "ECOFLOW-IFA-2026-20260909"
+      ],
+      "next_check": "核验官方销售页、目标市场、容量、重量、输入输出、价格、认证和交付"
     }
   ],
   "sources": [
@@ -1097,6 +1129,24 @@
       "seller_type": "电源品牌官方",
       "storefront_type": "Belkin美国官方商城",
       "availability_signal": "官方页提供购买信号；颜色/促销与区域库存动态"
+    },
+    {
+      "checked_on": "2026-09-09",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "RIVER Series Gen 4 / RIVER 4 / PowerRock 4000",
+      "quality": "A",
+      "id": "ECOFLOW-IFA-2026-20260909",
+      "source_group": "EcoFlow IFA 2026官方发布页",
+      "url": "https://www.ecoflow.com/de/ifa-2026",
+      "scope": "RIVER Series Gen 4/RIVER 4与PowerRock 4000；重量/体积、自放电、Guardian Mode、4kW持续/7.2kW峰值和RCD等新品信号",
+      "source_domain": "ecoflow.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方展会发布/产品发现/功能证据；不证明当前零售与价格",
+      "seller_type": "便携储能品牌官方",
+      "storefront_type": "EcoFlow德国官方IFA页面",
+      "availability_signal": "IFA 2026新品展示；精确零售SKU、价格、库存和交付未公开"
     }
   ],
   "update_log": [
@@ -1219,6 +1269,18 @@
       "change": "新增PWR-012 BPB044 10K BoostSolid、PWR-013 BPD024 Slim Magnetic 5K，并补录PWR-014 BPB040 27K与PWR-015 BBA019 25K；保留预售、在售、颜色后缀和区域库存边界。",
       "verification": "Belkin官方商品页/支持页/新闻室资料互证精确SKU、容量、功率、价格与交付；BPB044/BPD024预计2026-09-16前后，未把颜色、促销或套装拆为新型号。",
       "next": "继续补齐Belkin及其他原厂/授权分销的实时库存、MOQ、阶梯价、重量、尺寸、精确电芯化学和功率协商；Amazon/区域平台只保留可核验ASIN/SKU。"
+    },
+    {
+      "date": "2026-09-09",
+      "change": "【电源与充电】完成本轮官方产品、销售、规格、预发布与芯片发布核验，并写入有证据记录；预发布或缺少精确零售证据的项目继续保留候选。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-09",
+      "change": "新增EcoFlow RIVER Series Gen 4/RIVER 4与PowerRock 4000两个官方IFA候选；原厂页面给出功能与功率信号，但缺少稳定零售SKU、价格和交付，保留候选。",
+      "verification": "EcoFlow官方IFA页为品牌原厂新品/功能证据；严格区分消费级RIVER与工业/专业PowerRock，不把展会展示当作已上市或由功能宣传推断电池/协议。",
+      "next": "继续核验官方销售页、精确分料号、容量、输入输出、重量、价格、认证、授权分销和区域库存。"
     }
   ],
   "source_channel_policy": [
@@ -1301,7 +1363,7 @@
     }
   ],
   "source_channel_counts": {
-    "official_newsroom": 3,
+    "official_newsroom": 4,
     "official_newsroom_distribution": 3,
     "official_product": 2,
     "official_sales": 6,
@@ -1311,6 +1373,7 @@
   "source_domains": [
     "baseus.com",
     "belkin.com",
+    "ecoflow.com",
     "eu.baseus.com",
     "eu.oukitel.com",
     "globenewswire.com",

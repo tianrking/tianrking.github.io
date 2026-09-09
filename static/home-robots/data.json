@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-08",
+  "checked_on": "2026-09-09",
   "scope_note": "本库覆盖家用机器人：扫地、洗地、擦窗、割草、泳池与宠物陪伴机器人；宠物项圈/吊牌另库。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-08"
+      "2026-09-09"
     ]
   ],
   "products": [
@@ -861,6 +861,265 @@
       "source_refs": [
         "NARWAL-FREO-20-EDGE-FR-PRODUCT-20260905",
         "NARWAL-FREO-20-IFA-20260905"
+      ],
+      "connectivity": "未公开"
+    },
+    {
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "sensors": [
+        "AIVI 3D 4.0视觉/三维感知",
+        "官方未披露的地面/悬崖/碰撞传感器"
+      ],
+      "gps_positioning": "无GPS；室内定位与避障能力由官方系统描述，具体定位传感器未完整披露",
+      "satellite": "未公开",
+      "supported_protocols": [
+        "Wi-Fi/App生态；具体协议版本未公开"
+      ],
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "机器人机身高度3.86英寸；滚刷宽度约27cm；完整长宽未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "全能基站自动回充；热水最高212°F/约100°C清洗",
+      "water_resistance": "未公开",
+      "subscription": "无公开硬件强制订阅；YIKO/应用服务按地区核验",
+      "privacy": "AIVI摄像/环境感知与云端服务数据边界未完整公开",
+      "features": [
+        "OZMO ROLLER 3.0",
+        "53AW/53AW Max",
+        "FocusJet顽渍预溶",
+        "ZeroTangle 4.0",
+        "TruEdge 3.0",
+        "AIVI 3D 4.0",
+        "Agent YIKO 3.0",
+        "PureCyclone 2.0无尘袋基站"
+      ],
+      "availability_note": "美国官方商城列US$999.99并提供Add to Cart/Buy Now；全球产品页用于功能与型号互证",
+      "source_note": "ECOVACS全球产品页与美国官方商城互证型号、价格、OZMO ROLLER 3.0、53AW、AIVI 3D 4.0、无尘袋基站和清洁规格；芯片、重量、完整尺寸与电池未公开",
+      "id": "ROBOT-019",
+      "brand": "ECOVACS",
+      "model": "DEEBOT X12S OmniCyclone",
+      "country_region": "中国品牌/全球销售；美国官方商城可购买",
+      "category": "home-robots",
+      "form_factor": "扫地/拖地机器人与无尘袋全能基站",
+      "use_case": "家庭地面清洁、顽渍处理、地毯/硬地混合清洁与自动维护",
+      "status": "在售/官方美国商城可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "US$999.99（官方美国商城）",
+      "official_url": "https://www.ecovacs.com/us/shop/deebot-robotic-vacuum-cleaner/deebot-x12s-omnicyclone",
+      "spec_url": "https://www.ecovacs.com/global/deebot-robotic-vacuum-cleaner/deebot-x12s-omnicyclone",
+      "source_refs": [
+        "ECOVACS-X12S-GLOBAL-20260909",
+        "ECOVACS-X12S-US-20260909"
+      ],
+      "connectivity": "未公开"
+    },
+    {
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "sensors": [
+        "AI See 3.0 RGB相机",
+        "双线激光",
+        "官方未披露的防跌落/碰撞传感器"
+      ],
+      "gps_positioning": "无GPS；室内AI视觉/激光导航",
+      "satellite": "未公开",
+      "supported_protocols": [
+        "Wi-Fi/App；具体协议版本未公开"
+      ],
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "全能基站自动回充、热洗与热风干燥",
+      "water_resistance": "未公开",
+      "subscription": "无公开硬件强制订阅；eufy服务条款按地区核验",
+      "privacy": "摄像头/地图/App数据边界未完整公开",
+      "features": [
+        "35,000Pa AeroTurbo",
+        "HydroJet滚筒拖布",
+        "1.6kg/16N下压力",
+        "DuoSpiral防缠",
+        "CornerRover",
+        "AI See 3.0 RGB相机+LED+双线激光",
+        "ThermoClean 60°C热洗/55°C热风干燥",
+        "最多60天免手维护"
+      ],
+      "availability_note": "英国官方页列£999.00、NEW并提供购买/配送信号；不把颜色/套装拆成独立型号",
+      "source_note": "eufy英国官方产品页互证精确型号、价格、35,000Pa、AI See 3.0、热洗/干燥和维护能力；芯片、尺寸、重量、电池未公开",
+      "id": "ROBOT-020",
+      "brand": "eufy / Anker",
+      "model": "E35 Omni Robot Vacuum and Mop",
+      "country_region": "中国品牌/全球销售；英国官方商城可购买",
+      "category": "home-robots",
+      "form_factor": "扫地/拖地机器人与全能基站",
+      "use_case": "家庭吸尘、拖地、毛发防缠与自动清洗维护",
+      "status": "在售/英国官方商城可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "£999.00（英国官方商城）",
+      "official_url": "https://www.eufy.com/uk/products/t210mv11",
+      "spec_url": "https://www.eufy.com/uk/products/t210mv11",
+      "source_refs": [
+        "EUFY-E35-UK-20260909"
+      ],
+      "connectivity": "未公开"
+    },
+    {
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "sensors": [
+        "纯视觉感知",
+        "3D避障感知",
+        "GPS；具体传感器型号未公开"
+      ],
+      "gps_positioning": "内置GPS追踪；不依赖RTK",
+      "satellite": "未公开",
+      "supported_protocols": [
+        "Wi-Fi或4G/App；协议版本未公开"
+      ],
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "割草机603×394×318mm；基站727×480×452mm",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "官方系列页标注充电约90–110分钟",
+      "water_resistance": "IPX6",
+      "subscription": "4G服务/地图服务条款按地区核验；无公开硬件强制订阅",
+      "privacy": "摄像头、GPS、地图和云端App数据边界未完整公开",
+      "features": "未公开",
+      "availability_note": "英国官方商品页列£1,499.00并提供购买信号；系列规格页给出800m²、203mm刀盘、25–75mm高度、18°坡度和56dB",
+      "source_note": "eufy英国E15商品页与E系列官方规格页互证价格、最大覆盖、尺寸、IPX6、充电与割草参数；芯片、重量、电池与精确4G服务未公开",
+      "id": "ROBOT-021",
+      "brand": "eufy / Anker",
+      "model": "Robot Lawn Mower E15",
+      "country_region": "中国品牌/英国官方商城；区域可得性动态",
+      "category": "home-robots/智能割草机器人",
+      "form_factor": "无边界线视觉导航智能割草机器人",
+      "use_case": "家庭草坪自动割草、地图管理、边缘修剪与雨天召回",
+      "status": "在售/英国官方商城可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "£1,499.00（英国官方商城）",
+      "official_url": "https://www.eufy.com/uk/products/t28802a2?fliter_category=robot-lawn-mower",
+      "spec_url": "https://www.eufy.com/uk/robot-lawn-mower-e-series",
+      "source_refs": [
+        "EUFY-E15-UK-20260909",
+        "EUFY-E-SERIES-20260909"
+      ],
+      "connectivity": "未公开"
+    },
+    {
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "sensors": [
+        "纯视觉感知",
+        "3D避障感知",
+        "GPS；具体传感器型号未公开"
+      ],
+      "gps_positioning": "内置GPS追踪；不依赖RTK",
+      "satellite": "未公开",
+      "supported_protocols": [
+        "Wi-Fi或4G/App；协议版本未公开"
+      ],
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "割草机603×394×318mm；基站727×480×452mm",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "官方系列页标注充电约90–110分钟",
+      "water_resistance": "IPX6",
+      "subscription": "4G服务/地图服务条款按地区核验；无公开硬件强制订阅",
+      "privacy": "摄像头、GPS、地图和云端App数据边界未完整公开",
+      "features": [
+        "Pure Vision FSD无RTK/边界线",
+        "自动建图",
+        "3D感知避障",
+        "Ride-on-Edge边缘修剪",
+        "GPS追踪",
+        "雨天/低光召回"
+      ],
+      "availability_note": "官方E系列页列E18 £1,799.00、最大覆盖1,200m²、25–75mm高度、18°坡度、56dB和IPX6；精确独立商品URL待区域站点稳定化",
+      "source_note": "eufy官方E系列规格/销售页为E18型号级价格与参数来源；芯片、重量、电池、精确分料号和区域库存未公开",
+      "id": "ROBOT-022",
+      "brand": "eufy / Anker",
+      "model": "Robot Lawn Mower E18",
+      "country_region": "中国品牌/英国官方商城；区域可得性动态",
+      "category": "home-robots/智能割草机器人",
+      "form_factor": "无边界线视觉导航智能割草机器人",
+      "use_case": "更大面积家庭草坪自动割草、地图管理、边缘修剪与雨天召回",
+      "status": "在售/英国官方系列页提供型号级价格与规格",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "£1,799.00（英国官方E系列页）",
+      "official_url": "https://www.eufy.com/uk/robot-lawn-mower-e-series",
+      "spec_url": "https://www.eufy.com/uk/robot-lawn-mower-e-series",
+      "source_refs": [
+        "EUFY-E-SERIES-20260909"
+      ],
+      "connectivity": "未公开"
+    },
+    {
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "sensors": [
+        "纯视觉感知",
+        "3D避障感知；具体传感器型号未公开"
+      ],
+      "gps_positioning": "未公开；官方强调不依赖RTK",
+      "satellite": "未公开",
+      "supported_protocols": [
+        "Wi-Fi/App；协议版本未公开"
+      ],
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "自动回充；时长未公开",
+      "water_resistance": "未公开",
+      "subscription": "无公开硬件强制订阅；App/服务条款按地区核验",
+      "privacy": "摄像头、地图和App数据边界未完整公开",
+      "features": [
+        "Pure Vision FSD",
+        "无边界线/无RTK",
+        "自动建图",
+        "3D避障",
+        "Ride-on-Edge",
+        "动物安全设计",
+        "雨天/低光召回",
+        "App控制"
+      ],
+      "availability_note": "英国官方页列£999.00并提供Add to Cart/Buy Now；58dB为官方商品页信号",
+      "source_note": "eufy英国官方C15商品页互证型号、价格、视觉FSD、自动建图、3D避障、Ride-on-Edge和58dB；芯片、尺寸、重量、电池、防水和协议版本未公开",
+      "id": "ROBOT-023",
+      "brand": "eufy / Anker",
+      "model": "C15 Robot Lawn Mower",
+      "country_region": "中国品牌/英国官方商城；区域可得性动态",
+      "category": "home-robots/智能割草机器人",
+      "form_factor": "无边界线视觉导航智能割草机器人",
+      "use_case": "家庭草坪自动割草、自动建图、边缘修剪与动物安全避障",
+      "status": "在售/英国官方商城可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "£999.00（英国官方商城）",
+      "official_url": "https://www.eufy.com/uk/products/t280bva1",
+      "spec_url": "https://www.eufy.com/uk/products/t280bva1",
+      "source_refs": [
+        "EUFY-C15-UK-20260909"
       ],
       "connectivity": "未公开"
     }
@@ -2019,6 +2278,114 @@
       "seller_type": "家电品牌官方",
       "storefront_type": "Electrolux Group/AEG官方PR分发",
       "availability_signal": "IFA展示/新品发布；价格、区域商品页和交付未公开"
+    },
+    {
+      "checked_on": "2026-09-09",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "DEEBOT X12S OmniCyclone",
+      "quality": "A",
+      "id": "ECOVACS-X12S-GLOBAL-20260909",
+      "source_group": "ECOVACS DEEBOT X12S OmniCyclone全球官方产品页",
+      "url": "https://www.ecovacs.com/global/deebot-robotic-vacuum-cleaner/deebot-x12s-omnicyclone",
+      "scope": "DEEBOT X12S OmniCyclone；OZMO ROLLER 3.0、53AW/53AW Max、AIVI 3D 4.0、Agent YIKO 3.0、PureCyclone 2.0、3.86英寸机身、15mm滚刷抬升、212°F基站热水",
+      "source_domain": "ecovacs.com",
+      "source_channel": "official_product",
+      "source_role": "原厂全球产品页/型号/核心功能与规格证据",
+      "seller_type": "扫地机器人品牌官方",
+      "storefront_type": "ECOVACS全球官方产品页",
+      "availability_signal": "官方产品页已公开；区域订单与价格以销售页为准"
+    },
+    {
+      "checked_on": "2026-09-09",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$999.99",
+      "estimated_delivery": "未公开",
+      "platform_reference": "DEEBOT X12S OmniCyclone",
+      "quality": "A",
+      "id": "ECOVACS-X12S-US-20260909",
+      "source_group": "ECOVACS DEEBOT X12S OmniCyclone美国官方商城",
+      "url": "https://www.ecovacs.com/us/shop/deebot-robotic-vacuum-cleaner/deebot-x12s-omnicyclone",
+      "scope": "DEEBOT X12S；US$999.99、Add to Cart/Buy Now、美国官方在售信号与核心卖点",
+      "source_domain": "ecovacs.com",
+      "source_channel": "official_store",
+      "source_role": "官方销售页/区域价格/库存/购买证据",
+      "seller_type": "扫地机器人品牌官方",
+      "storefront_type": "ECOVACS美国官方商城",
+      "availability_signal": "官方页提供Add to Cart/Buy Now"
+    },
+    {
+      "checked_on": "2026-09-09",
+      "campaign_status": "未公开",
+      "pledge_or_price": "£999.00",
+      "estimated_delivery": "未公开",
+      "platform_reference": "T210MV11 / E35 Omni",
+      "quality": "A",
+      "id": "EUFY-E35-UK-20260909",
+      "source_group": "eufy E35 Omni英国官方产品页",
+      "url": "https://www.eufy.com/uk/products/t210mv11",
+      "scope": "E35 Omni；£999、35,000Pa、HydroJet、1.6kg/16N下压力、AI See 3.0、热洗/热风干燥、60天免维护",
+      "source_domain": "eufy.com",
+      "source_channel": "official_store",
+      "source_role": "官方销售页/精确型号/价格/核心功能与在售证据",
+      "seller_type": "智能家居品牌官方",
+      "storefront_type": "eufy英国官方商城",
+      "availability_signal": "官方页列NEW并提供Add to Cart/Buy Now/配送信号"
+    },
+    {
+      "checked_on": "2026-09-09",
+      "campaign_status": "未公开",
+      "pledge_or_price": "E15 £1,499.00；E18 £1,799.00",
+      "estimated_delivery": "未公开",
+      "platform_reference": "E15 / E18 Robot Lawn Mower",
+      "quality": "A",
+      "id": "EUFY-E-SERIES-20260909",
+      "source_group": "eufy E系列智能割草机器人官方规格页",
+      "url": "https://www.eufy.com/uk/robot-lawn-mower-e-series",
+      "scope": "E15/E18；最大覆盖800/1,200m²、£1,499/£1,799、203mm刀盘、25–75mm高度、18°坡度、56dB、90–110分钟充电、IPX6、机身与基站尺寸",
+      "source_domain": "eufy.com",
+      "source_channel": "official_product",
+      "source_role": "官方产品/规格页/型号级参数与价格证据",
+      "seller_type": "智能庭院设备品牌官方",
+      "storefront_type": "eufy英国官方E系列页",
+      "availability_signal": "官方页提供E15/E18型号、价格和规格；区域订单以商品页为准"
+    },
+    {
+      "checked_on": "2026-09-09",
+      "campaign_status": "未公开",
+      "pledge_or_price": "£1,499.00",
+      "estimated_delivery": "未公开",
+      "platform_reference": "T28802A2 / E15",
+      "quality": "A",
+      "id": "EUFY-E15-UK-20260909",
+      "source_group": "eufy E15英国官方商品页",
+      "url": "https://www.eufy.com/uk/products/t28802a2?fliter_category=robot-lawn-mower",
+      "scope": "E15精确商品页；£1,499、官方购买与配送信号",
+      "source_domain": "eufy.com",
+      "source_channel": "official_store",
+      "source_role": "官方区域销售页/价格/订单证据",
+      "seller_type": "智能庭院设备品牌官方",
+      "storefront_type": "eufy英国官方商城",
+      "availability_signal": "官方页提供Buy/购买信号"
+    },
+    {
+      "checked_on": "2026-09-09",
+      "campaign_status": "未公开",
+      "pledge_or_price": "£999.00",
+      "estimated_delivery": "未公开",
+      "platform_reference": "T280BVA1 / C15",
+      "quality": "A",
+      "id": "EUFY-C15-UK-20260909",
+      "source_group": "eufy C15英国官方商品页",
+      "url": "https://www.eufy.com/uk/products/t280bva1",
+      "scope": "C15；£999、Pure Vision FSD、无RTK/边界线、自动建图、3D避障、Ride-on-Edge、58dB与购买信号",
+      "source_domain": "eufy.com",
+      "source_channel": "official_store",
+      "source_role": "官方区域销售页/精确型号/价格/核心功能与在售证据",
+      "seller_type": "智能庭院设备品牌官方",
+      "storefront_type": "eufy英国官方商城",
+      "availability_signal": "官方页提供Add to Cart/Buy Now"
     }
   ],
   "update_log": [
@@ -2135,6 +2502,18 @@
       "change": "新增Roborock Saros 20/Sonic/Neo、RockAqua P1、TCL AiMe和AEG Trilobite 8000 GEN2候选；均有官方产品页或品牌发布证据，未因展会展示直接升级主表。",
       "verification": "Roborock官方产品/IFA页给出型号级清洁、越障、低空间和泳池能力；TCL官方IFA页给出AiMe儿童家庭陪伴定位；AEG官方IFA稿仅确认Trilobite 8000 GEN2新品，价格/商品SKU/交付仍缺。",
       "next": "继续核验正式商城、区域价格/库存、精确料号、续航、重量、传感器、基站、认证与隐私。"
+    },
+    {
+      "date": "2026-09-09",
+      "change": "【家用机器人】完成本轮官方产品、销售、规格、预发布与芯片发布核验，并写入有证据记录；预发布或缺少精确零售证据的项目继续保留候选。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-09",
+      "change": "新增ROBOT-019 ECOVACS DEEBOT X12S OmniCyclone、ROBOT-020 eufy E35 Omni、ROBOT-021 E15、ROBOT-022 E18和ROBOT-023 C15；均有官方商城/规格页的精确型号与区域价格或购买信号。",
+      "verification": "ECOVACS全球/美国官方页及eufy英国官方商品/规格页互证价格、销售状态、清洁/割草功能、尺寸、IPX6与型号；芯片、若未披露的重量/电池/完整协议保持未公开，不把颜色/套装拆成产品。",
+      "next": "继续核验各区域官方/Amazon/授权零售的库存、ASIN/SKU、阶梯价格、重量、电池、传感器、订阅与隐私；复核E18精确区域商品SKU。"
     }
   ],
   "source_channel_policy": [
@@ -2221,15 +2600,16 @@
     "official_datasheet": 1,
     "official_newsroom": 3,
     "official_newsroom_distribution": 9,
-    "official_product": 15,
+    "official_product": 17,
     "official_sales": 14,
-    "official_store": 2,
+    "official_store": 6,
     "official_support_manual": 4
   },
   "source_domains": [
     "de.mammotion.com",
     "ecovacs.com",
     "eu.beatbot.com",
+    "eufy.com",
     "fr.narwal.com",
     "global.dreametech.com",
     "global.roborock.com",

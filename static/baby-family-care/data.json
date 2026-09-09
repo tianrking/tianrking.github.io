@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-08",
+  "checked_on": "2026-09-09",
   "scope_note": "本库覆盖婴儿与家庭照护：婴儿监视器、智能摇篮、婴儿秤、睡眠监测与家庭照护报警器。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-08"
+      "2026-09-09"
     ]
   ],
   "products": [
@@ -402,6 +402,117 @@
       "satellite": "未公开",
       "connectivity": "未公开",
       "storage": "未公开"
+    },
+    {
+      "id": "BABY-009",
+      "brand": "eufy",
+      "model": "Baby Monitor E21",
+      "country_region": "中国品牌/全球销售；美国、欧盟官方商城可购买",
+      "category": "baby-family-care",
+      "form_factor": "4K婴儿监视器摄像头/本地显示与Wi-Fi混合监控",
+      "use_case": "婴儿视频监控、哭声/温度/噪声告警、夜视与远程查看",
+      "status": "已上市/官方美国与欧盟商城可购买",
+      "evidence": "A",
+      "launch_date": "2024-11-04",
+      "launch_date_type": "eufy官方发布/上市公告",
+      "price": "US$259.99（美国官方）；€249（欧盟官方）",
+      "official_url": "https://www.eufy.com/products/e8354121?fliter_category=baby-monitor",
+      "spec_url": "https://www.eufy.com/products/e8354121?fliter_category=baby-monitor",
+      "features": [
+        "4K UHD",
+        "330°水平旋转",
+        "60°俯仰",
+        "8倍变焦",
+        "混合本地+Wi-Fi监控",
+        "哭声/温度/高噪声告警",
+        "24/7 App录制",
+        "主动降噪20dB"
+      ],
+      "sensors": [
+        "4K摄像头",
+        "温度/声音/哭声检测；具体传感器型号未公开",
+        "红外夜视"
+      ],
+      "gps_positioning": "无GPS",
+      "supported_protocols": [
+        "Wi-Fi可切换远程监控",
+        "本地显示器链路；无线协议版本未公开"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "摄像头电池5000mAh；官方FAQ约9小时，夜视约5.5小时；显示器电池未公开",
+      "charging": "USB/有线充电方式与功率未公开",
+      "water_resistance": "未公开",
+      "subscription": "无公开硬件强制订阅；云/录制服务条款按地区核验",
+      "privacy": "RSA-1024与AES-128加密、唯一密钥；24/7录制与云端/本地存储边界按地区政策核验",
+      "availability_note": "美国官方页列US$259.99、欧盟官方页列€249并提供购买信号；不把颜色、套装和区域SKU拆为独立型号",
+      "source_note": "eufy美国/欧盟官方商品页与官方E20/E21发布页互证价格、E21精确型号、4K、云台、5000mAh、续航、加密和混合监控；芯片、尺寸、重量和完整协议未公开",
+      "source_refs": [
+        "EUFY-E21-US-20260909",
+        "EUFY-E21-EU-20260909",
+        "EUFY-E21-LAUNCH-20260909"
+      ],
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
+    },
+    {
+      "id": "BABY-010",
+      "brand": "eufy",
+      "model": "Wearable Breast Pump S2 Pro",
+      "country_region": "中国品牌/全球销售；美国官方商城可购买",
+      "category": "baby-family-care/母婴智能设备",
+      "form_factor": "可穿戴加热智能吸奶器与充电收纳盒",
+      "use_case": "母乳挤奶、温热按摩、App记录与便携连续使用",
+      "status": "在售/美国官方商城可购买",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "未公开",
+      "price": "US$449.99（美国官方商城）",
+      "official_url": "https://www.eufy.com/products/t600p181-eufy-wearable-breast-pump-s2-pro",
+      "spec_url": "https://release.eufy.com/pages/wearable-breast-pump-s2-pro",
+      "features": [
+        "300mmHg吸力",
+        "12mm深层振动按摩",
+        "360°环绕加热",
+        "7档加热",
+        "10档吸力",
+        "3档按摩强度",
+        "智能传感器",
+        "eufy App",
+        "Charging Case 2.0"
+      ],
+      "sensors": [
+        "智能压力/佩戴/液体或运行状态传感器；官方未披露具体型号"
+      ],
+      "gps_positioning": "无GPS",
+      "supported_protocols": [
+        "Bluetooth/App；版本未公开"
+      ],
+      "chip_or_soc": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "泵体1460mAh；充电盒6300mAh；泵体最长约6.5小时；充电盒官方称可支持最多7天使用",
+      "charging": "磁吸充电；充电盒2.0，完整功率/时间未公开",
+      "water_resistance": "未公开",
+      "subscription": "无公开硬件强制订阅；eufy App服务条款按地区核验",
+      "privacy": "App、挤奶记录与设备数据边界未完整公开",
+      "availability_note": "美国官方页列US$449.99、NEW并提供购买信号；不把配件/套装拆为独立型号",
+      "source_note": "eufy官方商品页与release.eufy.com规格/对比页互证价格、300mmHg、加热、按摩、档位、泵体/充电盒容量和续航；芯片、尺寸、重量、Bluetooth版本与防水未公开",
+      "source_refs": [
+        "EUFY-S2PRO-US-20260909",
+        "EUFY-S2PRO-SPEC-20260909"
+      ],
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
+      "satellite": "未公开",
+      "connectivity": "未公开",
+      "storage": "未公开"
     }
   ],
   "candidates": [
@@ -564,6 +675,96 @@
       "campaign_status": "未公开",
       "pledge_or_price": "未公开",
       "estimated_delivery": "未公开"
+    },
+    {
+      "checked_on": "2026-09-09",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$259.99",
+      "estimated_delivery": "未公开",
+      "platform_reference": "E8354121 / E21",
+      "quality": "A",
+      "id": "EUFY-E21-US-20260909",
+      "source_group": "eufy Baby Monitor E21美国官方商城",
+      "url": "https://www.eufy.com/products/e8354121?fliter_category=baby-monitor",
+      "scope": "E21；US$259.99、4K、330°/60°云台、8倍变焦、5000mAh、20dB主动降噪、告警、24/7录制、RSA-1024/AES-128",
+      "source_domain": "eufy.com",
+      "source_channel": "official_store",
+      "source_role": "官方销售页/精确型号/价格/功能/隐私规格证据",
+      "seller_type": "母婴智能设备品牌官方",
+      "storefront_type": "eufy美国官方商城",
+      "availability_signal": "官方页提供Add to Cart/Buy Now"
+    },
+    {
+      "checked_on": "2026-09-09",
+      "campaign_status": "未公开",
+      "pledge_or_price": "€249",
+      "estimated_delivery": "未公开",
+      "platform_reference": "E8354321 / E21",
+      "quality": "A",
+      "id": "EUFY-E21-EU-20260909",
+      "source_group": "eufy Baby Monitor E21欧盟官方商城",
+      "url": "https://www.eufy.com/eu-en/products/e8354321?fliter_category=baby",
+      "scope": "E21；€249、欧盟官方区域价格与购买信号",
+      "source_domain": "eufy.com",
+      "source_channel": "official_store",
+      "source_role": "官方区域销售页/价格/购买证据",
+      "seller_type": "母婴智能设备品牌官方",
+      "storefront_type": "eufy欧盟官方商城",
+      "availability_signal": "官方页提供Add to Cart/Buy Now"
+    },
+    {
+      "checked_on": "2026-09-09",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "E20 / E21",
+      "quality": "A",
+      "id": "EUFY-E21-LAUNCH-20260909",
+      "source_group": "eufy Baby Monitor E20/E21官方发布页",
+      "url": "https://www.eufy.com/blogs/baby/eufy-baby-monitor-e20-and-e21-released",
+      "scope": "E20/E21发布与上市公告；E21型号与公告日期口径",
+      "source_domain": "eufy.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方发布/上市时间/型号发现证据",
+      "seller_type": "母婴智能设备品牌官方",
+      "storefront_type": "eufy官方博客/发布页",
+      "availability_signal": "官方发布页称E20/E21 released；区域当前库存以商品页为准"
+    },
+    {
+      "checked_on": "2026-09-09",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$449.99",
+      "estimated_delivery": "未公开",
+      "platform_reference": "T600P181 / S2 Pro",
+      "quality": "A",
+      "id": "EUFY-S2PRO-US-20260909",
+      "source_group": "eufy Wearable Breast Pump S2 Pro美国官方商城",
+      "url": "https://www.eufy.com/products/t600p181-eufy-wearable-breast-pump-s2-pro",
+      "scope": "S2 Pro；US$449.99、300mmHg、加热/按摩、App、充电盒、1460mAh泵体与6300mAh盒",
+      "source_domain": "eufy.com",
+      "source_channel": "official_store",
+      "source_role": "官方销售页/精确型号/价格/功能/购买证据",
+      "seller_type": "母婴智能设备品牌官方",
+      "storefront_type": "eufy美国官方商城",
+      "availability_signal": "官方页列NEW并提供购买信号"
+    },
+    {
+      "checked_on": "2026-09-09",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "S2 Pro",
+      "quality": "A",
+      "id": "EUFY-S2PRO-SPEC-20260909",
+      "source_group": "eufy Wearable Breast Pump S2 Pro官方规格页",
+      "url": "https://release.eufy.com/pages/wearable-breast-pump-s2-pro",
+      "scope": "S2 Pro；泵体续航约6.5小时、充电盒最多7天、300mmHg、7档加热/10档吸力/3档按摩、46dB、智能传感器",
+      "source_domain": "release.eufy.com",
+      "source_channel": "official_support_manual",
+      "source_role": "官方规格/发布支持页/性能与电池证据",
+      "seller_type": "母婴智能设备品牌官方",
+      "storefront_type": "eufy官方release规格页",
+      "availability_signal": "规格页；销售状态以官方商城为准"
     }
   ],
   "update_log": [
@@ -662,6 +863,18 @@
       "change": "【婴儿与家庭照护】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-09",
+      "change": "【婴儿与家庭照护】完成本轮官方产品、销售、规格、预发布与芯片发布核验，并写入有证据记录；预发布或缺少精确零售证据的项目继续保留候选。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-09",
+      "change": "新增BABY-009 eufy Baby Monitor E21与BABY-010 Wearable Breast Pump S2 Pro；分别由官方区域商城、发布/规格页互证价格、型号、功能、电池与隐私/告警信息。",
+      "verification": "E21保留2024-11-04官方公告日期；S2 Pro未见可核验精确发布日期则写未公开；未从App或同系列推断芯片、尺寸、重量、Bluetooth版本、防水与完整数据边界。",
+      "next": "继续核验区域销售、授权渠道、ASIN/SKU、保修/订阅、FCC/CE/医疗/母婴合规、耗材价格与电池/传感器细节。"
     }
   ],
   "source_channel_policy": [
@@ -744,15 +957,20 @@
     }
   ],
   "source_channel_counts": {
+    "official_newsroom": 1,
     "official_product": 2,
-    "official_sales": 6
+    "official_sales": 6,
+    "official_store": 3,
+    "official_support_manual": 1
   },
   "source_domains": [
     "beurer.com",
+    "eufy.com",
     "happiestbaby.com",
     "lifeline.com",
     "nanit.com",
     "owletcare.com",
+    "release.eufy.com",
     "shop.sense-u.com",
     "us.getcubo.com",
     "usa.philips.com"
