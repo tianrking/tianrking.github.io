@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-09",
+  "checked_on": "2026-09-10",
   "scope_note": "首版优先覆盖全球主要品牌的智能手表、GPS运动表、运动手环与儿童手表。按独立型号/代际计数；颜色、容量、套装不拆行。价格保留官方市场原币种；没有明确披露的芯片、尺寸、重量、续航、防水、订阅和隐私字段写“未公开”。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-09"
+      "2026-09-10"
     ]
   ],
   "products": [
@@ -1368,6 +1368,100 @@
         "MOTOROLA-MOTO-WATCH-ULTRA-IFA"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "display": "Always-On Retina宽视角OLED、LTPO3、1Hz刷新、2000 nits峰值；42mm 374×446、46mm 416×496",
+      "os_platform": "watchOS 27；Apple Intelligence/Siri AI",
+      "audio_drivers": "扬声器、带Voice Isolation的麦克风；具体单元未公开",
+      "sensors": "第三代电气心率传感器、常亮光学心率传感器、血氧传感器、温度传感器、指南针、常亮高度计、高g加速度计、高动态范围陀螺仪、环境光传感器、6m深度计、水温传感器",
+      "gps_positioning": "L1高精度GPS（GPS、GLONASS、Galileo、QZSS、BeiDou）；指南针、高度计",
+      "satellite": "未公开",
+      "supported_protocols": "2.4/5GHz Wi-Fi、Wi-Fi 4（802.11n）、Bluetooth 5.3、第二代Ultra Wideband；GPS；GPS+Cellular型号支持蜂窝通信；Apple Pay/GymKit",
+      "chip_or_soc": "Apple S11芯片，64位双核处理器；4核Neural Engine",
+      "storage": "64GB",
+      "dimensions": "42mm铝/钛：42×37×9.7mm；46mm铝/钛：46×40×9.7mm；陶瓷对应高度43/47mm、厚度9.85mm；宽度按尺寸/材料组合以官方规格页为准",
+      "weight_g": "42mm：铝GPS 32.2g、铝GPS+Cellular 31.5g、钛36.5g、陶瓷41.7/42.8g；46mm：铝GPS 39.5g、铝GPS+Cellular 38.6g、钛44.9g、陶瓷51.3/52.9g",
+      "battery": "内置可充电锂离子电池；正常使用最长24小时，低电量模式最长38小时，户外运动最长10小时",
+      "charging": "快速充电；约30分钟充至80%；充电15分钟可支持最长12小时正常使用；接口/额定功率未公开",
+      "water_resistance": "50m游泳防水；IP6X防尘",
+      "subscription": "蜂窝运营商套餐、Fitness+、Music等按地区可选；无公开硬件强制订阅",
+      "privacy": "健康数据由Apple Watch、Health与iCloud权限和地区条款控制；Apple Intelligence隐私边界按系统版本核验",
+      "features": [
+        "Health Sensing System与更高频率心率/HRV",
+        "Readiness/Vitals/睡眠/睡眠呼吸暂停/高血压通知",
+        "ECG、血氧、周期追踪",
+        "跌倒与车祸检测、Emergency SOS",
+        "训练负荷、离线地图、骑行/游泳/多运动",
+        "Apple Watch For Your Kids支持"
+      ],
+      "availability_note": "Apple官方发布稿给出US$399起、2026-09-18上市；首批覆盖美国等十多个国家/地区及50多个其他市场；表壳材质、尺寸、颜色、连接方式按配置变化，不拆颜色/表带SKU",
+      "source_note": "Apple官方发布稿与技术规格页互证价格、上市窗口、S11、64GB、传感器、尺寸重量、续航、Wi-Fi/Bluetooth、GPS、IP6X与50m防水；电池容量、精确蜂窝分料号及部分陶瓷宽度未公开",
+      "id": "WATCH-037",
+      "brand": "Apple",
+      "model": "Apple Watch Series 12",
+      "country_region": "美国品牌/全球销售；美国、澳大利亚、加拿大、法国、德国、印度、日本、阿联酋、英国及50多个国家和地区首批预购",
+      "category": "智能手表/运动手表/健康穿戴",
+      "form_factor": "42/46mm腕戴智能手表；铝、钛、陶瓷表壳",
+      "use_case": "健康监测、运动训练、睡眠、通信、日常安全与儿童手表设置",
+      "status": "官方预售；2026-09-18上市",
+      "evidence": "A",
+      "launch_date": "2026-09-09",
+      "launch_date_type": "Apple官方发布日；上市窗口单列",
+      "price": "US$399起（Apple官方发布）",
+      "official_url": "https://www.apple.com/apple-watch-series-12/",
+      "spec_url": "https://www.apple.com/apple-watch-series-12/specs/",
+      "source_refs": [
+        "APPLE-WATCH-SERIES12-NEWS-20260910",
+        "APPLE-WATCH-SERIES12-SPECS-20260910"
+      ],
+      "connectivity": "未公开"
+    },
+    {
+      "display": "Always-On Retina宽视角OLED、LTPO3、1Hz刷新、3000 nits峰值；422×514像素、326ppi、1245mm²显示面积；平面蓝宝石玻璃",
+      "os_platform": "watchOS 27；Apple Intelligence/Siri AI与Audio Intelligence",
+      "audio_drivers": "三麦克风阵列（波束成形/风噪抑制）、双扬声器、警报器",
+      "sensors": "第三代电气心率传感器、常亮光学心率传感器、血氧传感器、温度传感器、指南针、常亮高度计、高g加速度计、高动态范围陀螺仪、环境光传感器、深度计、水温传感器",
+      "gps_positioning": "高精度双频GPS（GPS、Galileo、QZSS、BeiDou）；改进定位与户外轨迹",
+      "satellite": "Emergency SOS via satellite；蜂窝与卫星天线/服务能力按地区与运营商条件提供",
+      "supported_protocols": "2.4/5GHz Wi-Fi、Wi-Fi 4（802.11n）、Bluetooth 5.3、第二代Ultra Wideband；高精度双频GPS；5G RedCap与LTE（型号A3579）；国际漫游；Apple Pay/GymKit",
+      "chip_or_soc": "Apple S11芯片，64位双核处理器；4核Neural Engine",
+      "storage": "64GB",
+      "dimensions": "49×44×12mm",
+      "weight_g": "自然钛63.0g；黑色钛63.1g",
+      "battery": "内置可充电锂离子电池；正常使用最长50小时，低电量模式最长84小时，户外运动最长18小时，Extended Workout最长25小时，Max Extended Workout最长45小时",
+      "charging": "快速充电；约45分钟充至80%；充电15分钟支持最长18小时正常使用，5分钟支持最长10小时睡眠追踪；接口/额定功率未公开",
+      "water_resistance": "WR100；适合游泳、浮潜、休闲水肺潜水和高速水上运动；潜水深度计至40m；IP6X防尘；MIL-STD-810H测试",
+      "subscription": "蜂窝运营商套餐、Fitness+、Music等按地区可选；无公开硬件强制订阅",
+      "privacy": "健康、位置、卫星与蜂窝数据由Apple设备、Health、账户和地区服务条款控制；完整边界未公开",
+      "features": [
+        "Health Sensing System与高频率心率/HRV",
+        "Readiness/Vitals/睡眠/睡眠呼吸暂停/高血压通知",
+        "ECG、血氧、周期追踪",
+        "高精度双频GPS、离线地图、Backtrack",
+        "潜水电脑、深度计与水温传感器",
+        "跌倒/车祸检测、Emergency SOS via satellite、警报器"
+      ],
+      "availability_note": "Apple官方发布稿、官方产品页和商城均给出US$799起与2026-09-18上市；表带颜色/材质和区域蜂窝服务不拆为独立型号",
+      "source_note": "Apple官方发布稿、产品页与技术规格页互证价格、上市窗口、S11、64GB、传感器、尺寸重量、续航、充电、GPS、5G RedCap/LTE、WR100、IP6X与40m潜水能力",
+      "id": "WATCH-038",
+      "brand": "Apple",
+      "model": "Apple Watch Ultra 4",
+      "country_region": "美国品牌/全球销售；美国、澳大利亚、加拿大、法国、德国、印度、日本、阿联酋、英国及50多个国家和地区首批预购",
+      "category": "智能手表/GPS运动表/户外与潜水运动表",
+      "form_factor": "49mm钛金属户外腕戴智能手表；GPS+Cellular",
+      "use_case": "户外运动、健康、GPS导航、潜水、水上运动、卫星安全与通信",
+      "status": "官方预售；2026-09-18上市",
+      "evidence": "A",
+      "launch_date": "2026-09-09",
+      "launch_date_type": "Apple官方发布日；上市窗口单列",
+      "price": "US$799起（Apple官方发布/官方商城）",
+      "official_url": "https://www.apple.com/apple-watch-ultra-4/",
+      "spec_url": "https://www.apple.com/apple-watch-ultra-4/specs/",
+      "source_refs": [
+        "APPLE-WATCH-ULTRA4-NEWS-20260910",
+        "APPLE-WATCH-ULTRA4-SPECS-20260910"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -2129,6 +2223,78 @@
       "storefront_type": "Motorola官方PRNewswire发布",
       "availability_signal": "预售/分渠道上市窗口；尚未将运营商资费或地区库存外推",
       "platform_reference": "moto watch ultra"
+    },
+    {
+      "checked_on": "2026-09-10",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$399起",
+      "estimated_delivery": "2026-09-18起",
+      "platform_reference": "Apple Watch Series 12",
+      "quality": "A",
+      "id": "APPLE-WATCH-SERIES12-NEWS-20260910",
+      "source_group": "Apple Watch Series 12官方发布稿",
+      "url": "https://www.apple.com/newsroom/2026/09/introducing-apple-watch-series-12-with-the-all-new-health-sensing-system/",
+      "scope": "Apple Watch Series 12；2026-09-09发布；US$399起；2026-09-18上市；S11、Health Sensing System、健康功能和全球首发市场",
+      "source_domain": "apple.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方发布/型号发现/原始价格/上市时间/核心功能证据",
+      "seller_type": "穿戴设备品牌官方",
+      "storefront_type": "Apple官方Newsroom",
+      "availability_signal": "官方发布；预购和上市窗口明确"
+    },
+    {
+      "checked_on": "2026-09-10",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Apple Watch Series 12",
+      "quality": "A",
+      "id": "APPLE-WATCH-SERIES12-SPECS-20260910",
+      "source_group": "Apple Watch Series 12技术规格页",
+      "url": "https://www.apple.com/apple-watch-series-12/specs/",
+      "scope": "Series 12；42/46mm表壳、尺寸重量、S11/64GB、传感器、Wi-Fi 4、Bluetooth 5.3、GPS/UWB、24h/38h续航、50m/IP6X",
+      "source_domain": "apple.com",
+      "source_channel": "official_support_manual",
+      "source_role": "官方技术规格/尺寸/重量/传感器/续航/充电/防护/连接证据",
+      "seller_type": "穿戴设备品牌官方",
+      "storefront_type": "Apple官方技术规格页",
+      "availability_signal": "技术规格页；销售状态以发布稿与商城为准"
+    },
+    {
+      "checked_on": "2026-09-10",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$799起",
+      "estimated_delivery": "2026-09-18起",
+      "platform_reference": "Apple Watch Ultra 4",
+      "quality": "A",
+      "id": "APPLE-WATCH-ULTRA4-NEWS-20260910",
+      "source_group": "Apple Watch Ultra 4官方发布稿",
+      "url": "https://www.apple.com/newsroom/2026/09/apple-unveils-apple-watch-ultra-4/",
+      "scope": "Apple Watch Ultra 4；2026-09-09发布；US$799起；2026-09-18上市；S11、45h户外训练、Health Sensing System与全球首发市场",
+      "source_domain": "apple.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方发布/型号发现/原始价格/上市时间/核心功能证据",
+      "seller_type": "穿戴设备品牌官方",
+      "storefront_type": "Apple官方Newsroom",
+      "availability_signal": "官方发布；预购和上市窗口明确"
+    },
+    {
+      "checked_on": "2026-09-10",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Apple Watch Ultra 4",
+      "quality": "A",
+      "id": "APPLE-WATCH-ULTRA4-SPECS-20260910",
+      "source_group": "Apple Watch Ultra 4技术规格页",
+      "url": "https://www.apple.com/apple-watch-ultra-4/specs/",
+      "scope": "Ultra 4；49×44×12mm、63.0/63.1g、S11/64GB、3000 nits、传感器、Wi-Fi 4、Bluetooth 5.3、双频GPS、5G RedCap/LTE、50h/84h/45h、WR100/IP6X/40m",
+      "source_domain": "apple.com",
+      "source_channel": "official_support_manual",
+      "source_role": "官方技术规格/尺寸/重量/传感器/续航/充电/防护/连接证据",
+      "seller_type": "穿戴设备品牌官方",
+      "storefront_type": "Apple官方技术规格页",
+      "availability_signal": "技术规格页；销售状态以发布稿与商城为准"
     }
   ],
   "update_log": [
@@ -2227,6 +2393,18 @@
       "change": "【智能手表/运动手环/GPS运动表/儿童手表】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-10",
+      "change": "【智能手表/运动手环/GPS运动表/儿童手表】完成本轮官方产品、销售、规格、发布与芯片披露核验，并写入有证据记录；预售状态、区域价格和未公开字段按来源口径保留。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-10",
+      "change": "新增WATCH-037 Apple Watch Series 12与WATCH-038 Apple Watch Ultra 4；官方发布稿与技术规格页互证价格、上市窗口、S11、传感器、尺寸重量、续航、充电、防护和连接能力。",
+      "verification": "当前查证日早于2026-09-18正式上市，状态保留为官方预售；表壳材料、尺寸、颜色、蜂窝运营商和表带SKU不拆为独立型号，电池容量和部分区域服务未公开。",
+      "next": "上市后继续核验各区域官方/Amazon/运营商库存、精确型号、蜂窝资费、认证、实际续航与新健康功能的地区可用性。"
     }
   ],
   "source_channel_policy": [
@@ -2309,13 +2487,13 @@
     }
   ],
   "source_channel_counts": {
-    "official_newsroom": 3,
+    "official_newsroom": 5,
     "official_newsroom_distribution": 1,
     "official_product": 18,
     "official_release": 3,
     "official_sales": 5,
     "official_store": 1,
-    "official_support_manual": 10
+    "official_support_manual": 12
   },
   "source_domains": [
     "apple.com",

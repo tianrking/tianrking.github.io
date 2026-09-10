@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-09",
+  "checked_on": "2026-09-10",
   "scope_note": "本库覆盖网络与移动通信：Wi‑Fi路由器、Mesh、5G CPE、移动热点、随身Wi‑Fi与NAS。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-09"
+      "2026-09-10"
     ]
   ],
   "products": [
@@ -319,6 +319,148 @@
       "satellite": "未公开",
       "connectivity": "未公开",
       "storage": "未公开"
+    },
+    {
+      "display": "7.6英寸Super Retina XDR折叠内屏（1878×2670，430ppi）+ 5.4英寸外屏（1398×2034，460ppi）；ProMotion最高120Hz、Always-On、最高3000 nits户外峰值",
+      "os_platform": "iOS 27；Apple Intelligence与Siri AI",
+      "audio_drivers": "立体声扬声器与内置麦克风；具体单元/数量未公开",
+      "sensors": "侧边按钮Touch ID指纹传感器；48MP双Fusion相机、屏下FaceTime相机；其他传感器型号未公开",
+      "gps_positioning": "双频GPS（GPS、GLONASS、Galileo、QZSS、BeiDou、NavIC）、数字指南针、Wi-Fi/蜂窝定位、iBeacon微定位",
+      "satellite": "Emergency SOS、Roadside Assistance、Messages、Find My via satellite；功能按国家/地区、网络和服务条件提供",
+      "supported_protocols": "5G NR（sub-6GHz/mmWave，4×4 MIMO）、Gigabit LTE、Wi-Fi 7（802.11be，2×2 MIMO）、Bluetooth 6、Thread、NFC、USB-C/USB 3、MagSafe与Qi2最高25W；eSIM-only，不兼容实体SIM",
+      "chip_or_soc": "Apple A20 Pro；Apple N1无线网络芯片；Apple C2蜂窝调制解调器；第二代Ultra Wideband芯片",
+      "storage": "256GB、512GB、1TB、2TB",
+      "dimensions": "展开：164.6×117.8×5.2mm；折叠：84.1×117.8×11.3mm",
+      "weight_g": 254,
+      "battery": "双内置可充电锂离子电池；典型使用最长24小时；视频播放最长44小时（外屏）/31小时（内屏）",
+      "charging": "USB-C配60W或更高适配器约20分钟充至50%；MagSafe配35W或更高适配器约30分钟充至50%；电池容量未公开",
+      "water_resistance": "未公开",
+      "subscription": "蜂窝运营商套餐、iCloud+/Apple One等按地区可选；无公开硬件强制订阅",
+      "privacy": "Apple Intelligence/iOS隐私与安全机制；卫星、账户、云端与健康/位置数据的完整边界按地区条款核验",
+      "features": [
+        "钛金属折叠设计",
+        "Dual Fusion 48MP相机系统",
+        "12MP Center Stage前置相机",
+        "Apple Pencil（USB-C）支持",
+        "卫星安全功能",
+        "iOS 27折叠交互与Apple Intelligence"
+      ],
+      "availability_note": "Apple官方发布稿给出US$1,999起、256GB起始容量和70多个国家/地区的预购/上市窗口；Apple日本官方商城提供区域价格与容量颜色SKU；不把颜色、容量和保护壳拆成独立型号",
+      "source_note": "Apple官方发布稿、技术规格页与日本官方商城互证价格、上市窗口、显示、尺寸、重量、电池、无线协议、芯片和摄像头；防水等级与电池容量未公开",
+      "id": "NET-009",
+      "brand": "Apple",
+      "model": "iPhone Duo",
+      "country_region": "美国品牌/全球销售；70多个国家和地区首批预购，28个其他市场后续开放",
+      "category": "network-connectivity/智能手机",
+      "form_factor": "可折叠智能手机",
+      "use_case": "移动通信、移动计算、折叠大屏、卫星应急与AI个人中枢",
+      "status": "官方预售；2026-10-23上市，28个其他国家和地区2026-10-30起",
+      "evidence": "A",
+      "launch_date": "2026-09-09",
+      "launch_date_type": "Apple官方发布日；上市窗口单列",
+      "price": "US$1,999起（256GB，美国官方发布）；日本官方商城256GB ¥364,800起",
+      "official_url": "https://www.apple.com/iphone-duo/",
+      "spec_url": "https://www.apple.com/iphone-duo/specs/",
+      "source_refs": [
+        "APPLE-IPHONEDUO-NEWS-20260910",
+        "APPLE-IPHONEDUO-SPECS-20260910",
+        "APPLE-IPHONEDUO-JP-STORE-20260910"
+      ],
+      "connectivity": "未公开"
+    },
+    {
+      "display": "6.3英寸Super Retina XDR全屏OLED（2622×1206，460ppi）；Always-On、ProMotion最高120Hz、最高3000 nits户外峰值",
+      "os_platform": "iOS 27；Apple Intelligence与Siri AI",
+      "audio_drivers": "立体声扬声器与内置麦克风；具体单元/数量未公开",
+      "sensors": "18MP Center Stage前置相机；48MP Fusion主摄（可变光圈）、48MP Fusion超广角、48MP Fusion长焦；其他传感器型号未公开",
+      "gps_positioning": "双频GPS（GPS、GLONASS、Galileo、QZSS、BeiDou、NavIC）、数字指南针、Wi-Fi/蜂窝定位、iBeacon微定位",
+      "satellite": "卫星SOS、卫星消息、卫星Find My与道路救援能力按地区/服务条件提供",
+      "supported_protocols": "5G NR（sub-6GHz/mmWave，4×4 MIMO）、Gigabit LTE、Wi-Fi 7（802.11be，2×2 MIMO）、Bluetooth 6、Thread、NFC、USB-C/USB 3、MagSafe与Qi2最高25W；eSIM-only区域另行标注",
+      "chip_or_soc": "Apple A20 Pro；Apple N1无线网络芯片；Apple C2蜂窝调制解调器；第二代Ultra Wideband芯片",
+      "storage": "256GB、512GB、1TB、2TB",
+      "dimensions": "150.0×71.9×8.75mm",
+      "weight_g": 211,
+      "battery": "典型使用最长24小时；视频播放最长36小时；eSIM-only型号视频播放最长36小时；电池容量未公开",
+      "charging": "MagSafe与Qi2无线充电最高25W；USB-C支持充电、DisplayPort和USB 3（最高10Gb/s）；Apple发布稿给出约15分钟有线充至50%、约30分钟无线充至50%的测试口径",
+      "water_resistance": "IP68（IEC 60529，最深6米最长30分钟）",
+      "subscription": "蜂窝运营商套餐、iCloud+/Apple One等按地区可选；无公开硬件强制订阅",
+      "privacy": "Apple Intelligence/iOS隐私与安全机制；卫星、账户、云端与位置数据边界按地区条款核验",
+      "features": [
+        "A20 Pro与新一代蒸汽腔",
+        "48MP Pro Fusion三摄系统与可变光圈",
+        "18MP Center Stage前置相机",
+        "Apple Log 2、ProRes RAW与4K Dolby Vision",
+        "Siri AI与Apple Intelligence",
+        "卫星安全功能"
+      ],
+      "availability_note": "Apple官方发布稿给出US$1,199起、2026-09-12预购与2026-09-18上市；首批覆盖65多个国家和地区；容量、颜色和运营商SKU不拆成独立型号",
+      "source_note": "Apple官方发布稿与技术规格页互证价格、上市窗口、尺寸、重量、电池、IP68、N1/C2/A20 Pro、Wi-Fi 7、Bluetooth 6与Thread；电池容量未公开",
+      "id": "NET-010",
+      "brand": "Apple",
+      "model": "iPhone 18 Pro",
+      "country_region": "美国品牌/全球销售；65多个国家和地区首批预购，20个其他市场后续开放",
+      "category": "network-connectivity/智能手机",
+      "form_factor": "高端直板智能手机",
+      "use_case": "移动通信、移动计算、影像创作、AI个人中枢与卫星应急",
+      "status": "官方预售；2026-09-18上市，20个其他国家和地区2026-09-25起",
+      "evidence": "A",
+      "launch_date": "2026-09-09",
+      "launch_date_type": "Apple官方发布日；上市窗口单列",
+      "price": "US$1,199起（美国官方发布，256GB起）",
+      "official_url": "https://www.apple.com/iphone-18-pro/",
+      "spec_url": "https://www.apple.com/iphone-18-pro/specs/",
+      "source_refs": [
+        "APPLE-IPHON18PRO-NEWS-20260910",
+        "APPLE-IPHON18PRO-SPECS-20260910"
+      ],
+      "connectivity": "未公开"
+    },
+    {
+      "display": "6.9英寸Super Retina XDR全屏OLED（2868×1320，460ppi）；Always-On、ProMotion最高120Hz、最高3000 nits户外峰值",
+      "os_platform": "iOS 27；Apple Intelligence与Siri AI",
+      "audio_drivers": "立体声扬声器与内置麦克风；具体单元/数量未公开",
+      "sensors": "18MP Center Stage前置相机；48MP Fusion主摄（可变光圈）、48MP Fusion超广角、48MP Fusion长焦；其他传感器型号未公开",
+      "gps_positioning": "双频GPS（GPS、GLONASS、Galileo、QZSS、BeiDou、NavIC）、数字指南针、Wi-Fi/蜂窝定位、iBeacon微定位",
+      "satellite": "卫星SOS、卫星消息、卫星Find My与道路救援能力按地区/服务条件提供",
+      "supported_protocols": "5G NR（sub-6GHz/mmWave，4×4 MIMO）、Gigabit LTE、Wi-Fi 7（802.11be，2×2 MIMO）、Bluetooth 6、Thread、NFC、USB-C/USB 3、MagSafe与Qi2最高25W；eSIM-only区域另行标注",
+      "chip_or_soc": "Apple A20 Pro；Apple N1无线网络芯片；Apple C2蜂窝调制解调器；第二代Ultra Wideband芯片",
+      "storage": "256GB、512GB、1TB、2TB",
+      "dimensions": "163.4×78.0×8.75mm",
+      "weight_g": 249,
+      "battery": "典型使用最长30小时；视频播放最长45小时；eSIM-only型号电池增容口径由Apple单列；电池容量未公开",
+      "charging": "MagSafe与Qi2无线充电最高25W；USB-C支持充电、DisplayPort和USB 3（最高10Gb/s）；Apple发布稿给出5分钟有线充电约增加7小时视频播放的测试口径",
+      "water_resistance": "IP68（IEC 60529，最深6米最长30分钟）",
+      "subscription": "蜂窝运营商套餐、iCloud+/Apple One等按地区可选；无公开硬件强制订阅",
+      "privacy": "Apple Intelligence/iOS隐私与安全机制；卫星、账户、云端与位置数据边界按地区条款核验",
+      "features": [
+        "A20 Pro与新一代蒸汽腔",
+        "48MP Pro Fusion三摄系统与可变光圈",
+        "18MP Center Stage前置相机",
+        "Apple Log 2、ProRes RAW与4K Dolby Vision",
+        "Siri AI与Apple Intelligence",
+        "卫星安全功能"
+      ],
+      "availability_note": "Apple官方发布稿给出US$1,299起、2026-09-12预购与2026-09-18上市；首批覆盖65多个国家和地区；容量、颜色和运营商SKU不拆成独立型号",
+      "source_note": "Apple官方发布稿与技术规格页互证价格、上市窗口、尺寸、重量、电池、IP68、N1/C2/A20 Pro、Wi-Fi 7、Bluetooth 6与Thread；电池容量未公开",
+      "id": "NET-011",
+      "brand": "Apple",
+      "model": "iPhone 18 Pro Max",
+      "country_region": "美国品牌/全球销售；65多个国家和地区首批预购，20个其他市场后续开放",
+      "category": "network-connectivity/智能手机",
+      "form_factor": "高端大屏直板智能手机",
+      "use_case": "移动通信、移动计算、影像创作、AI个人中枢与卫星应急",
+      "status": "官方预售；2026-09-18上市，20个其他国家和地区2026-09-25起",
+      "evidence": "A",
+      "launch_date": "2026-09-09",
+      "launch_date_type": "Apple官方发布日；上市窗口单列",
+      "price": "US$1,299起（美国官方发布，256GB起）",
+      "official_url": "https://www.apple.com/iphone-18-pro/",
+      "spec_url": "https://www.apple.com/iphone-18-pro/specs/",
+      "source_refs": [
+        "APPLE-IPHON18PRO-NEWS-20260910",
+        "APPLE-IPHON18PRO-SPECS-20260910"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -644,6 +786,96 @@
       "seller_type": "三防移动设备品牌官方",
       "storefront_type": "OUKITEL官方GlobeNewswire发布",
       "availability_signal": "IFA展示；正式商品页、价格与交付未公开"
+    },
+    {
+      "checked_on": "2026-09-10",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$1,999起",
+      "estimated_delivery": "2026-10-23首批上市；28个其他市场2026-10-30起",
+      "platform_reference": "iPhone Duo",
+      "quality": "A",
+      "id": "APPLE-IPHONEDUO-NEWS-20260910",
+      "source_group": "Apple iPhone Duo官方发布稿",
+      "url": "https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/",
+      "scope": "iPhone Duo；2026-09-09发布；US$1,999起；70多个国家/地区2026-10-23上市，28个其他市场10-30；A20 Pro、N1、C2、双电池与卫星功能",
+      "source_domain": "apple.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方发布/型号发现/原始价格/预购与上市时间/芯片和功能证据",
+      "seller_type": "手机品牌官方",
+      "storefront_type": "Apple官方Newsroom",
+      "availability_signal": "官方发布；首批预购与上市日期明确"
+    },
+    {
+      "checked_on": "2026-09-10",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "iPhone Duo",
+      "quality": "A",
+      "id": "APPLE-IPHONEDUO-SPECS-20260910",
+      "source_group": "Apple iPhone Duo技术规格页",
+      "url": "https://www.apple.com/iphone-duo/specs/",
+      "scope": "iPhone Duo；展开/折叠尺寸、254g、7.6/5.4英寸屏幕、双锂电、44h/31h视频、USB-C/MagSafe、Wi-Fi 7、Bluetooth 6、Thread、N1/C2、GPS与Touch ID",
+      "source_domain": "apple.com",
+      "source_channel": "official_support_manual",
+      "source_role": "官方技术规格/尺寸/重量/续航/充电/无线协议/芯片证据",
+      "seller_type": "手机品牌官方",
+      "storefront_type": "Apple官方技术规格页",
+      "availability_signal": "技术规格页；销售状态以官方商城与发布稿为准"
+    },
+    {
+      "checked_on": "2026-09-10",
+      "campaign_status": "未公开",
+      "pledge_or_price": "¥364,800起；容量阶梯价见页面",
+      "estimated_delivery": "未公开",
+      "platform_reference": "iPhone Duo JP",
+      "quality": "A",
+      "id": "APPLE-IPHONEDUO-JP-STORE-20260910",
+      "source_group": "Apple日本官方iPhone Duo商城",
+      "url": "https://www.apple.com/jp/shop/buy-iphone/iphone-duo",
+      "scope": "iPhone Duo；日本区域256GB/512GB/1TB/2TB与颜色SKU，256GB ¥364,800起、512GB ¥399,800、1TB ¥469,800、2TB ¥574,800；预购/上市窗口",
+      "source_domain": "apple.com",
+      "source_channel": "official_store",
+      "source_role": "官方区域销售页/容量SKU/价格与上市窗口证据",
+      "seller_type": "手机品牌官方",
+      "storefront_type": "Apple日本官方商城",
+      "availability_signal": "官方预购准备页；可核验区域价格和SKU，不单独外推全球库存"
+    },
+    {
+      "checked_on": "2026-09-10",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$1,199起 / US$1,299起",
+      "estimated_delivery": "2026-09-18首批上市；20个其他市场2026-09-25起",
+      "platform_reference": "iPhone 18 Pro / iPhone 18 Pro Max",
+      "quality": "A",
+      "id": "APPLE-IPHON18PRO-NEWS-20260910",
+      "source_group": "Apple iPhone 18 Pro/Pro Max官方发布稿",
+      "url": "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/",
+      "scope": "iPhone 18 Pro/Pro Max；2026-09-09发布；US$1,199/1,299起；2026-09-12预购、09-18上市；A20 Pro、N1、C2、Wi-Fi 7、Bluetooth 6、Thread、影像和电池",
+      "source_domain": "apple.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方发布/型号发现/原始价格/预购与上市时间/芯片和功能证据",
+      "seller_type": "手机品牌官方",
+      "storefront_type": "Apple官方Newsroom",
+      "availability_signal": "官方发布；首批65多个国家和地区预购与上市日期明确"
+    },
+    {
+      "checked_on": "2026-09-10",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "iPhone 18 Pro / iPhone 18 Pro Max",
+      "quality": "A",
+      "id": "APPLE-IPHON18PRO-SPECS-20260910",
+      "source_group": "Apple iPhone 18 Pro/Pro Max技术规格页",
+      "url": "https://www.apple.com/iphone-18-pro/specs/",
+      "scope": "iPhone 18 Pro/Pro Max；6.3/6.9英寸、尺寸重量、IP68、24/30h典型使用、36/45h视频、USB-C、MagSafe/Qi2、Wi-Fi 7、Bluetooth 6、Thread、GPS与N1/C2",
+      "source_domain": "apple.com",
+      "source_channel": "official_support_manual",
+      "source_role": "官方技术规格/尺寸/重量/续航/充电/防护/无线协议/芯片证据",
+      "seller_type": "手机品牌官方",
+      "storefront_type": "Apple官方技术规格页",
+      "availability_signal": "技术规格页；销售状态以官方商城与发布稿为准"
     }
   ],
   "update_log": [
@@ -760,6 +992,18 @@
       "change": "【网络与移动通信】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-10",
+      "change": "【网络与移动通信】完成本轮官方产品、销售、规格、发布与芯片披露核验，并写入有证据记录；预售状态、区域价格和未公开字段按来源口径保留。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-10",
+      "change": "新增NET-009 Apple iPhone Duo、NET-010 iPhone 18 Pro与NET-011 iPhone 18 Pro Max；Apple官方发布/技术规格/区域商城互证精确型号、原始价格、上市窗口、无线协议、芯片、尺寸重量与电池信息。",
+      "verification": "Apple官方来源明确iPhone Duo、iPhone 18 Pro/Pro Max均为预售或即将上市；N1/C2/A20 Pro、Wi-Fi 7、Bluetooth 6、Thread等按官方披露记录；不把容量、颜色、运营商SKU、保护壳或区域价格页误计为独立型号。",
+      "next": "继续核验上市后的区域库存、Amazon/授权运营商SKU、监管型号、保修/服务、实际电池与更多国家价格；iPhone Duo防水等级和部分细节仍待官方补充。"
     }
   ],
   "source_channel_policy": [
@@ -843,13 +1087,15 @@
   ],
   "source_channel_counts": {
     "crowdfunding": 1,
-    "official_newsroom": 1,
+    "official_newsroom": 3,
     "official_newsroom_distribution": 1,
     "official_product": 1,
     "official_sales": 3,
-    "official_support_manual": 5
+    "official_store": 1,
+    "official_support_manual": 7
   },
   "source_domains": [
+    "apple.com",
     "asus.com",
     "eero.com",
     "gl-inet.com",

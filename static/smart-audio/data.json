@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-09",
+  "checked_on": "2026-09-10",
   "scope_note": "首版优先覆盖全球主要品牌的TWS、主动降噪、AI/录音/翻译耳机与骨传导/开放式运动耳机。按独立型号/代际计数；颜色、充电盒套装和区域SKU不拆行。翻译能力、AI功能与硬件音频能力分开记录；来源没有披露的芯片、传感器、尺寸、重量、防水、续航和订阅字段写“未公开”。 本库同时纳入Wi-Fi多房间音箱与联网家庭音频；音箱的扬声器驱动、无线协议和家庭服务与耳机字段分开记录。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-09"
+      "2026-09-10"
     ]
   ],
   "products": [
@@ -1730,6 +1730,54 @@
         "BELKIN-AUD013-SUPPORT-20260908"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "display": "无显示；充电盒指示灯；无线充电盒带Find My扬声器",
+      "os_platform": "Apple生态；iOS/iPadOS/macOS/watchOS/tvOS/visionOS；非Apple设备可作为Bluetooth耳机但功能可能受限",
+      "audio_drivers": "定制高振幅Apple驱动器、定制高动态范围放大器；主动降噪、Adaptive Audio、Transparency、个性化空间音频、Adaptive EQ",
+      "sensors": "双波束成形麦克风、内向麦克风、光学入耳传感器、运动检测加速度计、语音检测加速度计、力传感器",
+      "gps_positioning": "未公开；无线充电盒含Find My扬声器但不等同于独立GPS",
+      "satellite": "未公开",
+      "supported_protocols": "Bluetooth 5.3；USB-C充电；无线充电盒支持Apple Watch充电器与Qi认证充电器；Live Translation和Siri AI按语言/地区/系统条件提供",
+      "chip_or_soc": "Apple H2 headphone chip",
+      "storage": "未公开",
+      "dimensions": "单只：30.2×18.3×18.1mm；充电盒：46.2×50.1×21.2mm",
+      "weight_g": "单只4.3g；标准充电盒32.3g；无线充电盒34.7g",
+      "battery": "标准版ANC单次最长4小时、含盒最长20小时；无线充电盒版ANC单次最长5小时、含盒最长22小时；充电5分钟约增加1小时",
+      "charging": "两种版本均支持USB-C；无线充电盒另支持Apple Watch充电器/Qi认证充电器；精确功率未公开",
+      "water_resistance": "IP57防尘、防汗与防水",
+      "subscription": "无公开硬件强制订阅；Apple服务与翻译功能按地区/系统可选",
+      "privacy": "Siri、实时翻译、通话与设备权限遵循Apple系统和地区隐私政策；完整云端处理边界未公开",
+      "features": [
+        "开放式主动降噪，较AirPods 4 ANC最高1.5倍降噪",
+        "Adaptive Audio、Transparency、Conversation Awareness",
+        "Live Translation与Siri AI",
+        "头部手势与Siri Interactions",
+        "个性化空间音频与动态头部追踪",
+        "Voice Isolation、Studio-quality audio recording"
+      ],
+      "availability_note": "Apple官方发布稿和官方商城列出US$129/US$149两个充电盒配置并于2026-09-18上市；标准版与无线充电盒版合并为同一AirPods 5型号，不把充电盒配置误计为独立产品",
+      "source_note": "Apple官方发布稿、技术规格页与官方商城互证价格、上市窗口、H2、传感器、尺寸重量、Bluetooth 5.3、续航、USB-C、Qi/Apple Watch充电与IP57",
+      "id": "AUDIO-047",
+      "brand": "Apple",
+      "model": "AirPods 5",
+      "country_region": "美国品牌/全球销售；多地区官方商城预售",
+      "category": "TWS/开放式主动降噪/AI耳机",
+      "form_factor": "开放式TWS耳机；标准USB-C充电盒或无线充电盒版本",
+      "use_case": "音乐、通话、主动降噪、实时翻译、Siri AI、空间音频与辅助听力",
+      "status": "官方预售；2026-09-18上市",
+      "evidence": "A",
+      "launch_date": "2026-09-09",
+      "launch_date_type": "Apple官方发布日；上市窗口单列",
+      "price": "US$129（标准USB-C充电盒）；US$149（无线充电盒）",
+      "official_url": "https://www.apple.com/airpods-5/",
+      "spec_url": "https://www.apple.com/airpods-5/specs/",
+      "source_refs": [
+        "APPLE-AIRPODS5-NEWS-20260910",
+        "APPLE-AIRPODS5-SPECS-20260910",
+        "APPLE-AIRPODS5-STORE-20260910"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -2865,6 +2913,60 @@
       "seller_type": "音频品牌官方",
       "storefront_type": "Anker德国官方产品/预发布页",
       "availability_signal": "官方页面明确2026-09-22至2026-10-21购买阶段；查证日尚未进入正式销售窗口"
+    },
+    {
+      "checked_on": "2026-09-10",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$129；无线充电盒版US$149",
+      "estimated_delivery": "2026-09-18起",
+      "platform_reference": "AirPods 5",
+      "quality": "A",
+      "id": "APPLE-AIRPODS5-NEWS-20260910",
+      "source_group": "Apple AirPods 5官方发布稿",
+      "url": "https://www.apple.com/newsroom/2026/09/apple-introduces-airpods-5-with-best-in-class-open-ear-active-noise-cancellation/",
+      "scope": "AirPods 5；2026-09-09发布；US$129/US$149；2026-09-18上市；开放式ANC、Adaptive Audio、Siri AI、Live Translation与H2",
+      "source_domain": "apple.com",
+      "source_channel": "official_newsroom",
+      "source_role": "品牌官方发布/型号发现/原始价格/上市时间/核心音频与AI功能证据",
+      "seller_type": "音频设备品牌官方",
+      "storefront_type": "Apple官方Newsroom",
+      "availability_signal": "官方发布；预购与上市窗口明确"
+    },
+    {
+      "checked_on": "2026-09-10",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "AirPods 5",
+      "quality": "A",
+      "id": "APPLE-AIRPODS5-SPECS-20260910",
+      "source_group": "Apple AirPods 5技术规格页",
+      "url": "https://www.apple.com/airpods-5/specs/",
+      "scope": "AirPods 5；H2、驱动器、麦克风/光学/加速度/力传感器、IP57、尺寸重量、Bluetooth 5.3、USB-C/Qi/Apple Watch充电、4/5h ANC与20/22h总续航",
+      "source_domain": "apple.com",
+      "source_channel": "official_support_manual",
+      "source_role": "官方技术规格/传感器/尺寸/重量/续航/充电/防护/连接证据",
+      "seller_type": "音频设备品牌官方",
+      "storefront_type": "Apple官方技术规格页",
+      "availability_signal": "技术规格页；销售状态以发布稿与商城为准"
+    },
+    {
+      "checked_on": "2026-09-10",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$129；US$149",
+      "estimated_delivery": "未公开",
+      "platform_reference": "AirPods 5 / Wireless Charging Case",
+      "quality": "A",
+      "id": "APPLE-AIRPODS5-STORE-20260910",
+      "source_group": "Apple AirPods 5官方商城",
+      "url": "https://www.apple.com/shop/buy-airpods/airpods-5/with-wireless-charging-case",
+      "scope": "AirPods 5官方区域商城；标准版US$129、无线充电盒版US$149；配置比较、ANC、H2、续航与USB-C/无线充电信号",
+      "source_domain": "apple.com",
+      "source_channel": "official_store",
+      "source_role": "官方销售页/区域价格/配置SKU/购买证据",
+      "seller_type": "音频设备品牌官方",
+      "storefront_type": "Apple美国官方商城",
+      "availability_signal": "官方商城预购/购买配置页；上市日期以发布稿为准"
     }
   ],
   "update_log": [
@@ -2987,6 +3089,18 @@
       "change": "新增三个soundcore预发布候选：AeroClip 2 D1105、Liberty Buds 2 D1206、Space 2 Pro D1406；官方页给出精确型号、欧元价格和2026-09-22起购买窗口，当前未因预发布直接计入主表。",
       "verification": "Anker德国官方预发布页为型号、价格、传感器/麦克风、AI翻译/ANC与窗口证据；查证日早于正式购买阶段，暂不把未来窗口当作当前在售。",
       "next": "2026-09-22后复核各区域官方/Amazon商品页、ASIN/SKU、库存、真实交付、规格书、续航、重量和Bluetooth/LE Audio。"
+    },
+    {
+      "date": "2026-09-10",
+      "change": "【TWS/AI/翻译/降噪/骨传导耳机】完成本轮官方产品、销售、规格、发布与芯片披露核验，并写入有证据记录；预售状态、区域价格和未公开字段按来源口径保留。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-10",
+      "change": "新增AUDIO-047 Apple AirPods 5；官方发布稿、技术规格页与美国商城互证US$129/US$149、2026-09-18上市、H2、传感器、IP57、Bluetooth 5.3、续航与充电。",
+      "verification": "标准USB-C充电盒与无线充电盒作为同一AirPods 5型号的配置/价格变体记录，不把充电盒配置拆为独立产品；实时翻译、Siri AI与部分辅助功能按语言/地区/系统条件保留。",
+      "next": "上市后继续核验Amazon各区域、授权经销商库存/ASIN、区域价格、固件与LE Audio/辅助功能实际可用性。"
     }
   ],
   "source_channel_policy": [
@@ -3070,13 +3184,13 @@
   ],
   "source_channel_counts": {
     "official_news": 1,
-    "official_newsroom": 9,
+    "official_newsroom": 10,
     "official_newsroom_distribution": 1,
     "official_product": 8,
     "official_release": 2,
     "official_sales": 18,
-    "official_store": 5,
-    "official_support_manual": 13
+    "official_store": 6,
+    "official_support_manual": 14
   },
   "source_domains": [
     "anker.com",
