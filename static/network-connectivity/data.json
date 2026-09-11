@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-10",
+  "checked_on": "2026-09-11",
   "scope_note": "本库覆盖网络与移动通信：Wi‑Fi路由器、Mesh、5G CPE、移动热点、随身Wi‑Fi与NAS。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-10"
+      "2026-09-11"
     ]
   ],
   "products": [
@@ -461,6 +461,56 @@
         "APPLE-IPHON18PRO-SPECS-20260910"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "display": "6.7英寸FHD+ Dynamic AMOLED 2X；最高120Hz；峰值1900 nits",
+      "os_platform": "Android/One UI；7次OS升级与7年安全更新承诺",
+      "audio_drivers": "立体声扬声器和麦克风；单元未公开",
+      "sensors": [
+        "50MP主摄OIS、12MP超广角、8MP长焦、12MP前置",
+        "加速度计、气压计、指纹、陀螺仪、地磁、光线、距离等按区域规格核验"
+      ],
+      "gps_positioning": "GPS、GLONASS、Galileo、QZSS、BeiDou；区域支持以官方规格为准",
+      "satellite": "未公开",
+      "supported_protocols": "5G/LTE；Wi-Fi 6E；Bluetooth 5.4；USB-C；NFC",
+      "chip_or_soc": "Samsung Exynos 2500；3nm应用处理器",
+      "storage": "128GB、256GB、512GB；内存/存储组合按市场不同",
+      "dimensions": "161.6×76.9×7.4mm",
+      "weight_g": 193,
+      "battery": "4900mAh；视频播放最长约29小时",
+      "charging": "45W有线，约30分钟至69%；15W无线；Wireless PowerShare",
+      "water_resistance": "IP68",
+      "subscription": "Google AI Pro 6个月试用；Samsung Care+等按地区可选；无硬件强制订阅",
+      "privacy": "Samsung Knox/Android安全机制；AI、账户、云端和影像数据边界按地区条款核验",
+      "features": [
+        "Galaxy AI、ProVisual Engine、Photo Assist、My FanCam",
+        "三摄与OIS",
+        "7代OS升级、7年安全更新",
+        "45W有线、无线充电与Wireless PowerShare"
+      ],
+      "availability_note": "全球发布稿、美国官方产品/商城与日本公告互证型号、价格和区域状态；日本上市未决定，不扩展为日本在售",
+      "source_note": "精确区域频段、传感器料号、不同容量SKU和库存继续按市场补充",
+      "id": "NET-012",
+      "brand": "Samsung",
+      "model": "Galaxy S26 FE",
+      "country_region": "韩国品牌/全球区域销售；2026-09-04起部分市场上市，日本上市未决定",
+      "category": "network-connectivity/智能手机",
+      "form_factor": "大屏5G智能手机",
+      "use_case": "移动通信、影像、AI个人助手、移动办公与多设备连接",
+      "status": "在售/部分国家自2026-09-04；美国官方商城可购",
+      "evidence": "A",
+      "launch_date": "2026-08-27",
+      "launch_date_type": "Samsung全球官方发布日；部分市场上市日2026-09-04",
+      "price": "US$699.99 128GB；US$799.99 256GB（Samsung美国官方商城）",
+      "official_url": "https://www.samsung.com/us/smartphones/galaxy-s26-fe/",
+      "spec_url": "https://news.samsung.com/global/samsung-galaxy-s26-fe-delivering-the-latest-flagship-experience-focused-on-what-matters-most",
+      "source_refs": [
+        "SAMSUNG-S26FE-NEWS-20260911",
+        "SAMSUNG-S26FE-US-20260911",
+        "SAMSUNG-S26FE-US-STORE-20260911",
+        "SAMSUNG-S26FE-JP-20260911"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -876,6 +926,78 @@
       "seller_type": "手机品牌官方",
       "storefront_type": "Apple官方技术规格页",
       "availability_signal": "技术规格页；销售状态以官方商城与发布稿为准"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Galaxy S26 FE",
+      "quality": "A",
+      "id": "SAMSUNG-S26FE-NEWS-20260911",
+      "source_group": "Samsung Galaxy S26 FE全球官方发布稿",
+      "url": "https://news.samsung.com/global/samsung-galaxy-s26-fe-delivering-the-latest-flagship-experience-focused-on-what-matters-most",
+      "scope": "2026-08-27发布、2026-09-04部分市场、6.7英寸120Hz、Exynos 2500、4900mAh、45W、相机、IP68、Wi-Fi 6E、Bluetooth 5.4、更新承诺",
+      "source_domain": "news.samsung.com",
+      "source_channel": "official_newsroom",
+      "source_role": "全球发布/日期/核心规格/区域可得性",
+      "seller_type": "手机品牌官方",
+      "storefront_type": "Samsung全球Newsroom",
+      "availability_signal": "官方发布并声明部分市场上市"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Galaxy S26 FE",
+      "quality": "A",
+      "id": "SAMSUNG-S26FE-US-20260911",
+      "source_group": "Samsung Galaxy S26 FE美国官方产品页",
+      "url": "https://www.samsung.com/us/smartphones/galaxy-s26-fe/",
+      "scope": "ProVisual、My FanCam、Photo Assist、Galaxy AI、4900mAh、最长29小时视频、Knox",
+      "source_domain": "samsung.com",
+      "source_channel": "official_product",
+      "source_role": "区域产品页/功能/续航/安全/规格",
+      "seller_type": "手机品牌官方",
+      "storefront_type": "Samsung美国官方产品页",
+      "availability_signal": "官方产品页；库存以Buy页为准"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$699.99 128GB；US$799.99 256GB",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Galaxy S26 FE US",
+      "quality": "A",
+      "id": "SAMSUNG-S26FE-US-STORE-20260911",
+      "source_group": "Samsung Galaxy S26 FE美国官方商城",
+      "url": "https://www.samsung.com/us/smartphones/galaxy-s26-fe/buy/",
+      "scope": "128GB US$699.99、256GB US$799.99、颜色与购买信号",
+      "source_domain": "samsung.com",
+      "source_channel": "official_store",
+      "source_role": "官方商城/价格/容量/区域购买证据",
+      "seller_type": "手机品牌官方",
+      "storefront_type": "Samsung美国官方商城",
+      "availability_signal": "官方商城可购；库存动态"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Galaxy S26 FE",
+      "quality": "A",
+      "id": "SAMSUNG-S26FE-JP-20260911",
+      "source_group": "Samsung日本Galaxy S26 FE官方公告",
+      "url": "https://news.samsung.com/jp/galaxy-s26-fe",
+      "scope": "日本官方区域公告；部分国家上市、颜色与日本上市状态",
+      "source_domain": "news.samsung.com",
+      "source_channel": "official_newsroom",
+      "source_role": "区域发布/上市状态",
+      "seller_type": "手机品牌官方",
+      "storefront_type": "Samsung日本Newsroom",
+      "availability_signal": "日本上市未决定"
     }
   ],
   "update_log": [
@@ -1004,6 +1126,18 @@
       "change": "新增NET-009 Apple iPhone Duo、NET-010 iPhone 18 Pro与NET-011 iPhone 18 Pro Max；Apple官方发布/技术规格/区域商城互证精确型号、原始价格、上市窗口、无线协议、芯片、尺寸重量与电池信息。",
       "verification": "Apple官方来源明确iPhone Duo、iPhone 18 Pro/Pro Max均为预售或即将上市；N1/C2/A20 Pro、Wi-Fi 7、Bluetooth 6、Thread等按官方披露记录；不把容量、颜色、运营商SKU、保护壳或区域价格页误计为独立型号。",
       "next": "继续核验上市后的区域库存、Amazon/授权运营商SKU、监管型号、保修/服务、实际电池与更多国家价格；iPhone Duo防水等级和部分细节仍待官方补充。"
+    },
+    {
+      "date": "2026-09-11",
+      "change": "【网络与移动通信】完成本轮官方产品、销售、规格、发布与上市状态核验，并写入有证据记录；候选、预售、区域价格和未公开字段按来源口径保留。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-11",
+      "change": "新增NET-012 Samsung Galaxy S26 FE；全球发布、美国官方产品/商城与日本公告互证型号、上市窗口、价格、Exynos 2500、显示、相机、尺寸重量、电池、充电、IP68、Wi-Fi 6E与Bluetooth 5.4。",
+      "verification": "美国价格仅代表官方美国配置；日本上市未决定，未将部分市场上市扩展为全球在售；颜色、容量、运营商SKU和区域频段不拆型号。",
+      "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -1087,11 +1221,11 @@
   ],
   "source_channel_counts": {
     "crowdfunding": 1,
-    "official_newsroom": 3,
+    "official_newsroom": 5,
     "official_newsroom_distribution": 1,
-    "official_product": 1,
+    "official_product": 2,
     "official_sales": 3,
-    "official_store": 1,
+    "official_store": 2,
     "official_support_manual": 7
   },
   "source_domains": [
@@ -1105,7 +1239,9 @@
     "kickstarter.com",
     "meshium.io",
     "netgear.com",
+    "news.samsung.com",
     "qnap.com",
+    "samsung.com",
     "static.tp-link.com",
     "tp-link.com"
   ]

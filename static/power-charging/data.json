@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-10",
+  "checked_on": "2026-09-11",
   "scope_note": "本库覆盖电源与充电：移动电源、GaN充电器、无线充电、户外电源与太阳能充电设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-10"
+      "2026-09-11"
     ]
   ],
   "products": [
@@ -615,6 +615,53 @@
         "BELKIN-BBA019-STORE-20260908"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "display": "未公开；App/HEMS管理",
+      "os_platform": "Zendure App/HEMS 2.0；云端边界未公开",
+      "audio_drivers": "不适用",
+      "sensors": "未公开；官方披露双BMS与HEMS，不推断具体传感器",
+      "gps_positioning": "不适用",
+      "satellite": "不适用",
+      "supported_protocols": "LAN；RS485；家庭能源管理接口；其他智能家居协议未公开",
+      "chip_or_soc": "未公开",
+      "storage": "8kWh单机；可扩展至50kWh单机/最多150kWh组合",
+      "dimensions": "未公开",
+      "weight_g": 80000,
+      "battery": "8kWh；10,000次循环至70% EOL SOH；15年寿命、10年质保；电芯化学未公开",
+      "charging": "4kW双向AC；最高13kW太阳能输入；90%往返效率；离网3680W、峰值7.2kW、10ms UPS",
+      "water_resistance": "IP65；-20°C至55°C",
+      "subscription": "无硬件强制订阅；App/HEMS服务和区域并网要求待核",
+      "privacy": "家庭能耗、设备状态与云端/App边界未完整公开",
+      "features": [
+        "4kW双向AC与最高13kW光伏",
+        "AI驱动能源管理与HEMS 2.0",
+        "10ms UPS、离网供电与7.2kW峰值",
+        "8kWh起步并可扩容",
+        "双BMS、IP65、10年质保"
+      ],
+      "availability_note": "Zendure EU商品页列€2,899、SKU、购买按钮与规格；不把IFA奖项或扩容上限当作每个区域库存证明",
+      "source_note": "尺寸、芯片、传感器、电芯化学与区域并网认证未公开",
+      "id": "PWR-016",
+      "brand": "Zendure",
+      "model": "SolarFlow 4000 Mix Pro",
+      "country_region": "中国品牌/欧洲官方商城；区域销售与电网要求不同",
+      "category": "power-charging/家庭储能/阳台光伏",
+      "form_factor": "一体化家庭光储与双向AC储能系统",
+      "use_case": "家庭光伏储能、离网供电、UPS与家庭能源管理",
+      "status": "在售/EU官方商城可购买",
+      "evidence": "A",
+      "launch_date": "2026-09-06",
+      "launch_date_type": "官方IFA奖项新闻稿日期；首次上市日未公开",
+      "price": "€2,899.00（Zendure EU；SKU ZDA2501-gy-eu）",
+      "official_url": "https://zendure.com/products/solarflow-4000-mix-pro",
+      "spec_url": "https://support.zendure.com/portal/en/kb/balcony-solar-energy-system/solarflow-4000-mix-pro",
+      "source_refs": [
+        "ZENDURE-4000MIXPRO-STORE-20260911",
+        "ZENDURE-4000MIXPRO-IFA-20260911",
+        "ZENDURE-4000MIXPRO-SUPPORT-20260911"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -1147,6 +1194,60 @@
       "seller_type": "便携储能品牌官方",
       "storefront_type": "EcoFlow德国官方IFA页面",
       "availability_signal": "IFA 2026新品展示；精确零售SKU、价格、库存和交付未公开"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "€2,899.00",
+      "estimated_delivery": "未公开",
+      "platform_reference": "ZDA2501-gy-eu；EAN 6976552198653",
+      "quality": "A",
+      "id": "ZENDURE-4000MIXPRO-STORE-20260911",
+      "source_group": "Zendure SolarFlow 4000 Mix Pro欧盟官方商品页",
+      "url": "https://zendure.com/products/solarflow-4000-mix-pro",
+      "scope": "€2,899、SKU ZDA2501-gy-eu、EAN 6976552198653、8kWh、4kW双向AC、最高13kW光伏、效率/循环/寿命/UPS/LAN/RS485/IP65/80kg",
+      "source_domain": "zendure.com",
+      "source_channel": "official_store",
+      "source_role": "官方商城/精确SKU/价格/购买/规格与防护",
+      "seller_type": "能源设备品牌官方",
+      "storefront_type": "Zendure EU官方商城",
+      "availability_signal": "官方页可购买；库存与交付动态"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "SolarFlow 4000 Mix Pro",
+      "quality": "A",
+      "id": "ZENDURE-4000MIXPRO-IFA-20260911",
+      "source_group": "Zendure SolarFlow 4000 Mix Pro官方IFA新闻",
+      "url": "https://ifa.vporoom.com/2026-09-06-Zendure-Wins-Double-Honors-at-the-Global-Product-Technology-Innovation-Awards-2026,-with-SolarFlow-4000-Mix-Pro-Taking-Gold",
+      "scope": "4kW双向AC、AI能源管理、最高13kW光伏、8–50kWh单机与150kWh组合、IFA奖项",
+      "source_domain": "ifa.vporoom.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "官方IFA/新闻稿/功能与发布背景；不替代区域商品页",
+      "seller_type": "能源设备品牌官方",
+      "storefront_type": "IFA vporoom品牌新闻稿",
+      "availability_signal": "IFA发布；销售以商城为准"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "SolarFlow 4000 Mix Pro",
+      "quality": "A",
+      "id": "ZENDURE-4000MIXPRO-SUPPORT-20260911",
+      "source_group": "Zendure SolarFlow 4000 Mix Pro官方支持FAQ",
+      "url": "https://support.zendure.com/portal/en/kb/balcony-solar-energy-system/solarflow-4000-mix-pro",
+      "scope": "安装、工作条件、兼容性、维护和后续区域规格核验入口",
+      "source_domain": "support.zendure.com",
+      "source_channel": "official_support_manual",
+      "source_role": "官方支持/规格/安装与认证核验入口",
+      "seller_type": "能源设备品牌官方",
+      "storefront_type": "Zendure支持中心",
+      "availability_signal": "官方支持页；不单独证明库存"
     }
   ],
   "update_log": [
@@ -1287,6 +1388,18 @@
       "change": "【电源与充电】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-11",
+      "change": "【电源与充电】完成本轮官方产品、销售、规格、发布与上市状态核验，并写入有证据记录；候选、预售、区域价格和未公开字段按来源口径保留。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-11",
+      "change": "新增PWR-016 Zendure SolarFlow 4000 Mix Pro；EU商城、官方支持FAQ与IFA新闻互证€2,899、SKU、8kWh、4kW双向AC、最高13kW光伏、UPS、效率、循环寿命、IP65与扩容。",
+      "verification": "价格和购买信号仅代表EU官方商城；首次上市日、尺寸、芯片、传感器、电芯化学、区域并网认证未公开。",
+      "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -1370,11 +1483,11 @@
   ],
   "source_channel_counts": {
     "official_newsroom": 4,
-    "official_newsroom_distribution": 3,
+    "official_newsroom_distribution": 4,
     "official_product": 2,
     "official_sales": 6,
-    "official_store": 9,
-    "official_support_manual": 1
+    "official_store": 10,
+    "official_support_manual": 2
   },
   "source_domains": [
     "baseus.com",
@@ -1388,8 +1501,10 @@
     "jackery.com",
     "s4.bluettipower.com",
     "service.anker.com",
+    "support.zendure.com",
     "us.ecoflow.com",
     "us.ugreen.com",
-    "ventiontech.com"
+    "ventiontech.com",
+    "zendure.com"
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-10",
+  "checked_on": "2026-09-11",
   "scope_note": "首版优先覆盖全球主要品牌的TWS、主动降噪、AI/录音/翻译耳机与骨传导/开放式运动耳机。按独立型号/代际计数；颜色、充电盒套装和区域SKU不拆行。翻译能力、AI功能与硬件音频能力分开记录；来源没有披露的芯片、传感器、尺寸、重量、防水、续航和订阅字段写“未公开”。 本库同时纳入Wi-Fi多房间音箱与联网家庭音频；音箱的扬声器驱动、无线协议和家庭服务与耳机字段分开记录。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-10"
+      "2026-09-11"
     ]
   ],
   "products": [
@@ -1778,6 +1778,57 @@
         "APPLE-AIRPODS5-STORE-20260910"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "display": "无显示；充电盒负责录音与状态交互",
+      "os_platform": "viaim App/viaim Pro；具体系统与云端边界未公开",
+      "audio_drivers": "11mm+6mm双单元；Hi-Res Wireless；LDAC/LHDC",
+      "sensors": [
+        "多麦克风阵列；官方称耳机与充电盒均有3个麦克风",
+        "骨传导VPU；器件料号未公开"
+      ],
+      "gps_positioning": "无公开GPS；不把手机或App定位计为耳机内置GPS",
+      "satellite": "未公开",
+      "supported_protocols": "Bluetooth 5.4；多点连接；LDAC/LHDC；USB-C；兼容MagSafe标准充电器的磁吸无线充电",
+      "chip_or_soc": "未公开；官方仅披露VPU",
+      "storage": "录音存储容量与介质未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "耳机与盒合计最长30小时；容量、单次续航和测试条件未公开",
+      "charging": "USB-C；磁吸无线充电；功率未公开",
+      "water_resistance": "未公开",
+      "subscription": "viaim Pro；Indiegogo支持者含3个月；强制性与区域条款未完整公开",
+      "privacy": "用户主动录音并有可见提示；官方称数据归用户；云端处理/存储边界待核",
+      "features": [
+        "充电盒3麦克风录音，可脱离手机/应用/盒盖",
+        "78种语言、145种口音官方口径",
+        "3D空间音频、ANC、透明/语音透传",
+        "充电盒可通过USB-C作桌面采集设备",
+        "AI Agent、翻译和会议转写按语言/地区提供"
+      ],
+      "availability_note": "官方页、IFA页、品牌稿和Indiegogo互证型号、众筹上线和功能；不把众筹档位当普通零售价或交付证明",
+      "source_note": "芯片、尺寸重量、IP等级、电池容量、精确续航条件和交付未公开",
+      "id": "AUDIO-048",
+      "brand": "viaim",
+      "model": "Rise",
+      "country_region": "美国品牌/全球众筹；常规零售区域待核验",
+      "category": "TWS/AI/翻译/降噪耳机",
+      "form_factor": "AI真无线耳机+可录音充电盒",
+      "use_case": "音乐、通话、主动降噪、翻译、会议录音、转写与AI助手",
+      "status": "Indiegogo众筹进行中；尚未证明常规零售量产交付",
+      "evidence": "A",
+      "launch_date": "2026-09-08",
+      "launch_date_type": "官方Indiegogo上线日；IFA预览日2026-09-04",
+      "price": "US$259 Super Early Bird；计划MSRP US$399；档位/库存动态",
+      "official_url": "https://store.viaim.ai/pages/viamrise-pre-launch-page",
+      "spec_url": "https://www.prnewswire.com/news-releases/viaim-rise-receives-two-2026-ifa-innovation-awards-indiegogo-campaign-launches-september-8-302870702.html",
+      "source_refs": [
+        "VIAIM-RISE-PRELAUNCH-20260911",
+        "VIAIM-RISE-IFA-20260911",
+        "VIAIM-RISE-PR-20260911",
+        "VIAIM-RISE-INDIEGOGO-20260911"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -2967,6 +3018,77 @@
       "seller_type": "音频设备品牌官方",
       "storefront_type": "Apple美国官方商城",
       "availability_signal": "官方商城预购/购买配置页；上市日期以发布稿为准"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "viaim Rise",
+      "quality": "A",
+      "id": "VIAIM-RISE-PRELAUNCH-20260911",
+      "source_group": "viaim Rise官方预发布产品页",
+      "url": "https://store.viaim.ai/pages/viamrise-pre-launch-page",
+      "scope": "Rise AI Agent Earbuds；主动录音、78种语言/145种口音、3D空间音频、3麦克风+骨传导VPU、30小时、磁吸无线充电",
+      "source_domain": "viaim.ai",
+      "source_channel": "official_product",
+      "source_role": "品牌官方产品页/功能、录音、续航、充电与服务证据；不证明普通零售交付",
+      "seller_type": "AI音频品牌官方",
+      "storefront_type": "viaim官方预发布页",
+      "availability_signal": "官方预发布页；Indiegogo上线计划"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "viaim Rise",
+      "quality": "A",
+      "id": "VIAIM-RISE-IFA-20260911",
+      "source_group": "viaim Rise官方IFA活动页",
+      "url": "https://www.ifa-berlin.com/programme/viaim-press-conference2026",
+      "scope": "IFA 2026 viaim Rise；Best in Audio；众筹发布预览",
+      "source_domain": "ifa-berlin.com",
+      "source_channel": "official_event",
+      "source_role": "IFA官方活动/产品发布预览/上市计划证据",
+      "seller_type": "展会/品牌官方",
+      "storefront_type": "IFA官方活动页",
+      "availability_signal": "IFA展示；不证明零售库存"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "Indiegogo已上线",
+      "pledge_or_price": "US$259 Super Early Bird；计划MSRP US$399",
+      "estimated_delivery": "未公开",
+      "platform_reference": "viaim Rise",
+      "quality": "A",
+      "id": "VIAIM-RISE-PR-20260911",
+      "source_group": "viaim Rise官方新闻稿",
+      "url": "https://www.prnewswire.com/news-releases/viaim-rise-receives-two-2026-ifa-innovation-awards-indiegogo-campaign-launches-september-8-302870702.html",
+      "scope": "2026-09-08登陆Indiegogo；US$259档/计划MSRP US$399、双单元、LDAC/LHDC、ANC、录音、VPU、3个月viaim Pro",
+      "source_domain": "prnewswire.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "品牌新闻稿分发/价格档位、功能与上线日期；不替代交付证据",
+      "seller_type": "AI音频品牌官方",
+      "storefront_type": "PR Newswire品牌发布",
+      "availability_signal": "官方宣布众筹上线；普通零售未公开"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "进行中",
+      "pledge_or_price": "US$259 Super Early Bird",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Indiegogo viaim Rise",
+      "id": "VIAIM-RISE-INDIEGOGO-20260911",
+      "source_group": "viaim Rise Indiegogo项目页",
+      "url": "https://www.indiegogo.com/en/projects/viaim/viaim-rise",
+      "scope": "项目状态、支持档位、支持人数和动态筹款信号；动态值不固化为长期统计",
+      "source_domain": "indiegogo.com",
+      "source_channel": "crowdfunding",
+      "source_role": "众筹项目上线/档位/支持状态；不单独证明官方发布、量产、质量或零售",
+      "seller_type": "众筹项目方/平台",
+      "storefront_type": "Indiegogo项目页",
+      "availability_signal": "项目进行中；数据动态"
     }
   ],
   "update_log": [
@@ -3101,6 +3223,18 @@
       "change": "新增AUDIO-047 Apple AirPods 5；官方发布稿、技术规格页与美国商城互证US$129/US$149、2026-09-18上市、H2、传感器、IP57、Bluetooth 5.3、续航与充电。",
       "verification": "标准USB-C充电盒与无线充电盒作为同一AirPods 5型号的配置/价格变体记录，不把充电盒配置拆为独立产品；实时翻译、Siri AI与部分辅助功能按语言/地区/系统条件保留。",
       "next": "上市后继续核验Amazon各区域、授权经销商库存/ASIN、区域价格、固件与LE Audio/辅助功能实际可用性。"
+    },
+    {
+      "date": "2026-09-11",
+      "change": "【TWS/AI/翻译/降噪/骨传导耳机】完成本轮官方产品、销售、规格、发布与上市状态核验，并写入有证据记录；候选、预售、区域价格和未公开字段按来源口径保留。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-11",
+      "change": "新增AUDIO-048 viaim Rise；官方产品页、IFA活动页、品牌稿和Indiegogo互证AI耳机/录音盒、30小时、3麦克风+骨传导VPU、LDAC/LHDC、US$259众筹档/计划MSRP US$399与上线状态。",
+      "verification": "Rise仍以Indiegogo众筹为主，未把众筹档位当普通零售价或量产交付；芯片、尺寸重量、IP等级、电池容量、精确续航条件和交付未公开。",
+      "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -3183,10 +3317,12 @@
     }
   ],
   "source_channel_counts": {
+    "crowdfunding": 1,
+    "official_event": 1,
     "official_news": 1,
     "official_newsroom": 10,
-    "official_newsroom_distribution": 1,
-    "official_product": 8,
+    "official_newsroom_distribution": 2,
+    "official_product": 9,
     "official_release": 2,
     "official_sales": 18,
     "official_store": 6,
@@ -3201,13 +3337,16 @@
     "consumer.huawei.com",
     "harman.com",
     "hmd.com",
+    "ifa-berlin.com",
     "ifa.vporoom.com",
+    "indiegogo.com",
     "mi.com",
     "newsroom.sennheiser.com",
     "nothing.tech",
     "oppo.com",
     "plaud.ai",
     "plaud.se",
+    "prnewswire.com",
     "prtimes.jp",
     "qcy.com",
     "shokz.com",
@@ -3216,6 +3355,7 @@
     "soundpeats.com",
     "timekettle.co",
     "uk.sennheiser-hearing.com",
-    "us.sennheiser-hearing.com"
+    "us.sennheiser-hearing.com",
+    "viaim.ai"
   ]
 }

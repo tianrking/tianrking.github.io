@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-10",
+  "checked_on": "2026-09-11",
   "scope_note": "本库覆盖电子纸与数字办公：电子纸平板、电子书、智能笔、数字纸、便携显示器与扫描设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-10"
+      "2026-09-11"
     ]
   ],
   "products": [
@@ -410,6 +410,52 @@
         "IFLYTEK-AINOTE2-INDEX"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "display": "14英寸LCD WUXGA 1920×1200；350 nits；防眩光",
+      "os_platform": "Windows 11；Galaxy生态与AI PC功能",
+      "audio_drivers": "双阵列麦克风与扬声器；单元未公开",
+      "sensors": "指纹识别；其他传感器未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "Wi-Fi 6E；Bluetooth 5.4；2×USB-C、USB-A、HDMI 1.4、3.5mm",
+      "chip_or_soc": "全球公告：Intel Core 3/Core 5；美国配置：Intel Core Ultra 5/7，精确后缀随SKU",
+      "storage": "8GB/16GB RAM；256GB/512GB/1TB SSD；区域不同",
+      "dimensions": "约313×221×15.7mm",
+      "weight_g": 1350,
+      "battery": "61.2Wh；全球最长约25小时，美国视频播放最长约24小时",
+      "charging": "45W；官方公告称约30分钟补充约33%",
+      "water_resistance": "未公开",
+      "subscription": "无硬件强制订阅；Samsung Care+与软件服务按地区可选",
+      "privacy": "Windows、Samsung账户和AI服务的数据边界按地区条款核验",
+      "features": [
+        "14英寸WUXGA防眩光屏",
+        "Intel处理器与AI PC能力",
+        "Galaxy设备协同、指纹、摄像头与双麦克风会议",
+        "USB-C、USB-A、HDMI与3.5mm"
+      ],
+      "availability_note": "全球公告、美国产品页和官方商城互证起售价、区域配置、无线、尺寸重量、电池与接口；不把单一区域日期视为全球现货",
+      "source_note": "Core 3/Core 5与美国Core Ultra 5/7是区域SKU差异；精确OPN、面板、摄像头、认证和各国库存继续补充",
+      "id": "PAPER-011",
+      "brand": "Samsung",
+      "model": "Galaxy Book6 14-inch",
+      "country_region": "韩国品牌/全球区域销售；美国与其他市场按SKU和日期开放",
+      "category": "digital-paper-office/笔记本电脑",
+      "form_factor": "14英寸Windows轻薄笔记本",
+      "use_case": "移动办公、AI PC、会议、文档处理与多设备协同",
+      "status": "官方在售/区域可得；美国官方口径2026-10-05起可得，不能当作全球现货",
+      "evidence": "A",
+      "launch_date": "2026-09-01",
+      "launch_date_type": "Samsung官方14英寸机型公告日；区域销售日期另计",
+      "price": "US$799全球起售价；美国16GB/512GB/Core Ultra 5 325配置US$1,249.99；区域/SKU不同",
+      "official_url": "https://news.samsung.com/global/samsung-expands-the-galaxy-book6-lineup-making-galaxy-book-more-accessible",
+      "spec_url": "https://www.samsung.com/us/computers/galaxy-book/galaxy-book6/",
+      "source_refs": [
+        "SAMSUNG-BOOK6-NEWS-20260911",
+        "SAMSUNG-BOOK6-US-20260911",
+        "SAMSUNG-BOOK6-US-STORE-20260911"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -776,6 +822,60 @@
       "storefront_type": "iFLYTEK官方新闻/产品索引",
       "availability_signal": "官方索引与MWC信息；不单独证明当前库存",
       "platform_reference": "AINOTE 2"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Galaxy Book6 14-inch",
+      "quality": "A",
+      "id": "SAMSUNG-BOOK6-NEWS-20260911",
+      "source_group": "Samsung Galaxy Book6全球官方公告",
+      "url": "https://news.samsung.com/global/samsung-expands-the-galaxy-book6-lineup-making-galaxy-book-more-accessible",
+      "scope": "14英寸Book6；2026-09-01、US$799起、Core 3/Core 5、最长25小时、45W、尺寸重量、显示与接口",
+      "source_domain": "news.samsung.com",
+      "source_channel": "official_newsroom",
+      "source_role": "官方发布/起售价/窗口/核心规格",
+      "seller_type": "电脑品牌官方",
+      "storefront_type": "Samsung全球Newsroom",
+      "availability_signal": "官方公告；区域日期另核"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Galaxy Book6",
+      "quality": "A",
+      "id": "SAMSUNG-BOOK6-US-20260911",
+      "source_group": "Samsung Galaxy Book6美国官方产品页",
+      "url": "https://www.samsung.com/us/computers/galaxy-book/galaxy-book6/",
+      "scope": "14/16英寸页面；Core Ultra 5/7、Wi-Fi 6E、Bluetooth 5.4、61.2Wh、最长24小时视频、尺寸与重量",
+      "source_domain": "samsung.com",
+      "source_channel": "official_product",
+      "source_role": "区域产品页/配置/无线/续航/尺寸",
+      "seller_type": "电脑品牌官方",
+      "storefront_type": "Samsung美国官方产品页",
+      "availability_signal": "官方页面；购买日期另核"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$1,249.99；US$1,749.99",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Galaxy Book6 US SKU",
+      "quality": "A",
+      "id": "SAMSUNG-BOOK6-US-STORE-20260911",
+      "source_group": "Samsung Galaxy Book6美国官方商城",
+      "url": "https://www.samsung.com/us/computers/galaxy-book/galaxy-book6-series/buy/galaxy-book6-16-intel-core-ultra-5-512gb-gray-sku-np740vjg-ka1us/?modelCode=NP960UJH-XG7US",
+      "scope": "14英寸16GB/512GB/Core Ultra 5 325 US$1,249.99；1TB US$1,749.99；区域SKU/交付",
+      "source_domain": "samsung.com",
+      "source_channel": "official_store",
+      "source_role": "官方商城/配置SKU/价格/购买信号",
+      "seller_type": "电脑品牌官方",
+      "storefront_type": "Samsung美国官方商城",
+      "availability_signal": "官方商城；库存/发货动态"
     }
   ],
   "update_log": [
@@ -886,6 +986,18 @@
       "change": "【电子纸与数字办公】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-11",
+      "change": "【电子纸与数字办公】完成本轮官方产品、销售、规格、发布与上市状态核验，并写入有证据记录；候选、预售、区域价格和未公开字段按来源口径保留。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-11",
+      "change": "新增PAPER-011 Samsung Galaxy Book6 14-inch；全球公告、美国产品页与商城互证US$799起、美国具体配置价格、Core系列、显示、Wi-Fi 6E、Bluetooth 5.4、61.2Wh、续航、尺寸重量与接口。",
+      "verification": "全球公告Core 3/Core 5与美国Core Ultra 5/7属于区域SKU差异；美国日期不能当作全球现货，精确OPN/内存/SSD/认证继续补充。",
+      "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -970,10 +1082,10 @@
   "source_channel_counts": {
     "crowdfunding": 3,
     "marketplace": 1,
-    "official_newsroom": 2,
-    "official_product": 3,
+    "official_newsroom": 3,
+    "official_product": 4,
     "official_sales": 6,
-    "official_store": 1,
+    "official_store": 2,
     "official_support_manual": 1,
     "secondary_specs": 1
   },
@@ -987,7 +1099,9 @@
     "help.kobo.com",
     "iflytek.com",
     "kickstarter.com",
+    "news.samsung.com",
     "remarkable.com",
+    "samsung.com",
     "shop.boox.com",
     "store.bigme.vip",
     "store.iflytek.com",

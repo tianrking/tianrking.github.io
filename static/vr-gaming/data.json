@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-10",
+  "checked_on": "2026-09-11",
   "scope_note": "本库覆盖VR/MR与游戏硬件：VR/MR头显、空间计算设备、掌机、游戏控制器与体感/触觉设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-10"
+      "2026-09-11"
     ]
   ],
   "products": [
@@ -319,6 +319,97 @@
       "satellite": "未公开",
       "connectivity": "未公开",
       "storage": "未公开"
+    },
+    {
+      "display": "无显示；RGB灯效",
+      "os_platform": "Windows/macOS/iOS/Android兼容；驱动版本未公开",
+      "audio_drivers": "不适用",
+      "sensors": "未公开",
+      "gps_positioning": "不适用",
+      "satellite": "不适用",
+      "supported_protocols": "有线/2.4GHz/Bluetooth；Bluetooth版本未公开",
+      "chip_or_soc": "未公开",
+      "storage": "板载配置/固件存储未公开",
+      "dimensions": "325×141×41mm",
+      "weight_g": "872±20g",
+      "battery": "4000mAh；续航未公开",
+      "charging": "USB有线连接/充电；功率和时长未公开",
+      "water_resistance": "未公开",
+      "subscription": "无硬件强制订阅",
+      "privacy": "驱动与宏数据边界未公开",
+      "features": [
+        "75键、PBT、RGB、热插拔",
+        "有线/2.4GHz/Bluetooth三模",
+        "4000mAh",
+        "兼容Windows/macOS/iOS/Android"
+      ],
+      "availability_note": "官方商品页列价格、尺寸重量、电池、三模和预计7–15天配送；颜色、键轴、套装不拆独立型号",
+      "source_note": "芯片、Bluetooth版本、续航、防水与充电功率未公开",
+      "id": "XR-009",
+      "brand": "DAREU",
+      "model": "Flex 75 Tri-Mode Keyboard",
+      "country_region": "中国品牌/全球官方商城",
+      "category": "vr-gaming/游戏外设",
+      "form_factor": "75键三模机械键盘",
+      "use_case": "游戏、桌面办公、移动设备输入",
+      "status": "在售/DAREU官方商城可购买",
+      "evidence": "A",
+      "launch_date": "2026-09-04",
+      "launch_date_type": "官方IFA发布/商品页查证日期；首次上市日未公开",
+      "price": "US$59.99",
+      "official_url": "https://dareu.com/products/dareu-flex-75-tri-mode-keyboard",
+      "spec_url": "https://ifa.vporoom.com/2026-09-04-DAREU-Unveils-a-New-Era-of-Modular-Gaming-Hardware-at-IFA-2026",
+      "source_refs": [
+        "DAREU-FLEX75-STORE-20260911",
+        "DAREU-GAMING-IFA-20260911"
+      ],
+      "connectivity": "未公开"
+    },
+    {
+      "display": "无显示",
+      "os_platform": "Windows/macOS/iOS/Android/Linux；All-in-One App/Web驱动",
+      "audio_drivers": "不适用",
+      "sensors": "AIM-750U；最高42,000 DPI、750 IPS、50G",
+      "gps_positioning": "不适用",
+      "satellite": "不适用",
+      "supported_protocols": "有线/2.4GHz/Bluetooth；无线距离10m；有线与2.4G最高8000Hz",
+      "chip_or_soc": "AIM-750U；DAREU官方规格标为Nordic 54L15/54L15 MCU，不扩展为其他型号",
+      "storage": "板载固件存储未公开",
+      "dimensions": "120.5×69×40.4mm",
+      "weight_g": "约71g",
+      "battery": "300mAh；续航未公开",
+      "charging": "有线连接/充电；功率与时长未公开",
+      "water_resistance": "未公开",
+      "subscription": "无硬件强制订阅",
+      "privacy": "驱动、宏与配置数据边界未公开",
+      "features": [
+        "磁吸模块化与可替换后壳",
+        "后壳15°/10mm可调",
+        "AIM-750U最高42,000 DPI/750 IPS/50G",
+        "三模",
+        "双8000Hz回报率"
+      ],
+      "availability_note": "官方商品页列价格、尺寸重量、电池、连接、传感器、MCU和预计7–15天配送；颜色/接收器/配件不拆独立型号",
+      "source_note": "防水、续航、充电参数与板载存储未公开",
+      "id": "XR-010",
+      "brand": "DAREU",
+      "model": "Ultra 07 Modular Gaming Mouse",
+      "country_region": "中国品牌/全球官方商城",
+      "category": "vr-gaming/游戏外设",
+      "form_factor": "三模模块化无线游戏鼠标",
+      "use_case": "电竞、FPS精准定位、不同握姿与多设备桌面",
+      "status": "在售/DAREU官方商城可购买",
+      "evidence": "A",
+      "launch_date": "2026-09-04",
+      "launch_date_type": "官方IFA发布/商品页查证日期；首次上市日未公开",
+      "price": "US$119.99",
+      "official_url": "https://dareu.com/products/dareu-ultra-07-tri-mode-modular-gaming-mouse",
+      "spec_url": "https://ifa.vporoom.com/2026-09-04-DAREU-Unveils-a-New-Era-of-Modular-Gaming-Hardware-at-IFA-2026",
+      "source_refs": [
+        "DAREU-ULTRA07-STORE-20260911",
+        "DAREU-GAMING-IFA-20260911"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -343,6 +434,22 @@
       "reason": "官方产品页仍可核验，当前区域购买状态需逐国复核",
       "url": "https://www.vive.com/us/product/vive-xr-elite/overview/",
       "alias_or_relation": "候选/历史/OEM线索；不计入主表。"
+    },
+    {
+      "id": "CAND-DAREU-ULTRA09-20260911",
+      "name": "DAREU Ultra 09",
+      "brand": "DAREU",
+      "region": "全球/IFA 2026；后续上市",
+      "category": "VR/MR与游戏硬件/模块化游戏鼠标",
+      "status": "候选/官方IFA预告；价格、SKU与交付未公开",
+      "evidence": "A",
+      "reason": "官方IFA发布披露镁合金外壳、约51g、PAW3950、8K回报率与可拆卸充电电池；尚无稳定商品页、价格、精确分料号与销售窗口。",
+      "url": "https://ifa.vporoom.com/2026-09-04-DAREU-Unveils-a-New-Era-of-Modular-Gaming-Hardware-at-IFA-2026",
+      "alias_or_relation": "Ultra 09；与Ultra 07按精确型号分开，不拆颜色/套装/接收器",
+      "source_refs": [
+        "DAREU-GAMING-IFA-20260911"
+      ],
+      "next_check": "核验商品页、价格、传感器/MCU、尺寸重量、续航、充电、Bluetooth版本、库存与交付"
     }
   ],
   "sources": [
@@ -481,6 +588,60 @@
       "campaign_status": "未公开",
       "pledge_or_price": "未公开",
       "estimated_delivery": "未公开"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$59.99",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Flex 75",
+      "quality": "A",
+      "id": "DAREU-FLEX75-STORE-20260911",
+      "source_group": "DAREU Flex 75官方商品页",
+      "url": "https://dareu.com/products/dareu-flex-75-tri-mode-keyboard",
+      "scope": "US$59.99、325×141×41mm、872±20g、4000mAh、有线/2.4G/Bluetooth、PBT/RGB、热插拔、预计7–15天",
+      "source_domain": "dareu.com",
+      "source_channel": "official_store",
+      "source_role": "官方商品页/价格/销售/尺寸/重量/电池/连接",
+      "seller_type": "游戏外设品牌官方",
+      "storefront_type": "DAREU官方商城",
+      "availability_signal": "官方页可购买；区域配送动态"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$119.99",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Ultra 07",
+      "quality": "A",
+      "id": "DAREU-ULTRA07-STORE-20260911",
+      "source_group": "DAREU Ultra 07官方商品页",
+      "url": "https://dareu.com/products/dareu-ultra-07-tri-mode-modular-gaming-mouse",
+      "scope": "US$119.99、AIM-750U、42,000 DPI/750 IPS/50G、54L15 MCU、尺寸重量、三模、300mAh、双8000Hz",
+      "source_domain": "dareu.com",
+      "source_channel": "official_store",
+      "source_role": "官方商品页/价格/精确规格/芯片与传感器/销售",
+      "seller_type": "游戏外设品牌官方",
+      "storefront_type": "DAREU官方商城",
+      "availability_signal": "官方页可加购；预计7–15天"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Flex 75；Ultra 07；Ultra 09",
+      "quality": "A",
+      "id": "DAREU-GAMING-IFA-20260911",
+      "source_group": "DAREU IFA 2026模块化游戏硬件发布",
+      "url": "https://ifa.vporoom.com/2026-09-04-DAREU-Unveils-a-New-Era-of-Modular-Gaming-Hardware-at-IFA-2026",
+      "scope": "Flex 75/87/98、Ultra 75/68、Ultra 07与Ultra 09产品发现和模块化发布背景",
+      "source_domain": "ifa.vporoom.com",
+      "source_channel": "official_event",
+      "source_role": "官方IFA发布/型号发现/产品关系；销售以商品页为准",
+      "seller_type": "游戏外设品牌官方",
+      "storefront_type": "IFA vporoom品牌新闻稿",
+      "availability_signal": "IFA发布"
     }
   ],
   "update_log": [
@@ -591,6 +752,18 @@
       "change": "【VR/MR与游戏硬件】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-11",
+      "change": "【VR/MR与游戏硬件】完成本轮官方产品、销售、规格、发布与上市状态核验，并写入有证据记录；候选、预售、区域价格和未公开字段按来源口径保留。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-11",
+      "change": "新增XR-009 DAREU Flex 75与XR-010 DAREU Ultra 07；官方商城与IFA发布互证价格、三模、尺寸重量、电池、Ultra 07的AIM-750U、54L15 MCU与8000Hz；新增Ultra 09候选。",
+      "verification": "键盘/鼠标属于游戏硬件外设范围；颜色、键轴、接收器、套装不拆型号；Ultra 09仅IFA预告，保留候选。",
+      "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -673,15 +846,19 @@
     }
   ],
   "source_channel_counts": {
+    "official_event": 1,
     "official_product": 1,
     "official_release": 1,
     "official_sales": 3,
+    "official_store": 2,
     "official_support_manual": 3
   },
   "source_domains": [
     "about.fb.com",
     "apple.com",
     "cdn.bhaptics.com",
+    "dareu.com",
+    "ifa.vporoom.com",
     "meta.com",
     "nintendo.com",
     "picoxr.com",

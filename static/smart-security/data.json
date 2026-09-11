@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-10",
+  "checked_on": "2026-09-11",
   "scope_note": "本库覆盖智能安防与门禁：家庭摄像头、可视门铃、智能门锁、报警器、门窗传感器与智能对讲。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-10"
+      "2026-09-11"
     ]
   ],
   "products": [
@@ -756,6 +756,55 @@
         "AQARA-IFA-2026-SPOTLIGHT-20260908"
       ],
       "next_check": "核验毫米波频段、覆盖距离、协议、供电、Matter/Thread/Zigbee、价格和区域销售"
+    },
+    {
+      "id": "CAND-REOLINK-OMVI-2I-ULTRA-20260911",
+      "name": "Reolink OMVI 2i Ultra",
+      "brand": "Reolink",
+      "region": "全球/IFA 2026；预计两个月内推出",
+      "category": "智能安防与门禁/双视角无线电池摄像机",
+      "status": "候选/官方新品预告；价格、SKU与库存未公开",
+      "evidence": "A",
+      "reason": "官方披露双视角无线电池摄像机：8MP广角+5MP云台、355°水平/50°垂直、SyncTrack、10,000mAh可拆电池、最长约6个月并支持太阳能；预计两个月内推出，尚无价格和商品SKU。",
+      "url": "https://reolink.com/blog/reolink-new-release-at-ifa/",
+      "alias_or_relation": "OMVI系列新品；不与已有型号、电池包或太阳能配件拆算",
+      "source_refs": [
+        "REOLINK-IFA-2026-20260911",
+        "REOLINK-IFA-BLOG-20260911"
+      ],
+      "next_check": "核验商品页、价格、图像传感器/镜头、IP等级、网络协议、库存、认证与交付"
+    },
+    {
+      "id": "CAND-REOLINK-TRACKFLEX-WIFI-20260911",
+      "name": "Reolink TrackFlex WiFi",
+      "brand": "Reolink",
+      "region": "全球/IFA 2026展示",
+      "category": "智能安防与门禁/双镜头Wi-Fi摄像机",
+      "status": "候选/官方IFA新品预告；价格、SKU与交付未公开",
+      "evidence": "A",
+      "reason": "官方IFA发布将TrackFlex WiFi列为双镜头云台摄像机新品；当前缺少稳定商品页、精确规格、价格、认证和正式销售状态。",
+      "url": "https://ifa.vporoom.com/2026-09-04-Reolink-Expands-Award-Winning-OMVI-Series-with-OMVI-2i-Ultra-and-Introduces-New-ReoNeura-TM-AI-Capabilities-at-IFA-2026",
+      "alias_or_relation": "TrackFlex WiFi；按精确型号与OMVI系列分开",
+      "source_refs": [
+        "REOLINK-IFA-2026-20260911"
+      ],
+      "next_check": "核验双镜头分辨率/视场、Wi-Fi版本、供电、防护、价格、库存与交付"
+    },
+    {
+      "id": "CAND-REOLINK-HOME-HUB-2-20260911",
+      "name": "Reolink Home Hub 2",
+      "brand": "Reolink",
+      "region": "全球/IFA 2026展示",
+      "category": "智能安防与门禁/本地存储与AI中枢",
+      "status": "候选/官方IFA新品预告；价格、容量、SKU与交付未公开",
+      "evidence": "A",
+      "reason": "官方IFA发布将Home Hub 2列为本地存储与AI搜索中枢新品；缺少商品页、存储容量、连接协议、价格、认证和正式销售状态。",
+      "url": "https://ifa.vporoom.com/2026-09-04-Reolink-Expands-Award-Winning-OMVI-Series-with-OMVI-2i-Ultra-and-Introduces-New-ReoNeura-TM-AI-Capabilities-at-IFA-2026",
+      "alias_or_relation": "Home Hub 2；不与旧款Home Hub、硬盘或摄像机套装合并",
+      "source_refs": [
+        "REOLINK-IFA-2026-20260911"
+      ],
+      "next_check": "核验硬盘/存储、AI搜索、协议、摄像机兼容性、价格与区域销售"
     }
   ],
   "sources": [
@@ -1233,6 +1282,42 @@
       "seller_type": "智能家居品牌官方",
       "storefront_type": "Aqara官方IFA页面",
       "availability_signal": "IFA Spotlight/展示；正式商品页、价格、库存和交付未公开"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "OMVI 2i Ultra；TrackFlex WiFi；Home Hub 2",
+      "quality": "A",
+      "id": "REOLINK-IFA-2026-20260911",
+      "source_group": "Reolink IFA 2026新品与ReoNeura官方发布",
+      "url": "https://ifa.vporoom.com/2026-09-04-Reolink-Expands-Award-Winning-OMVI-Series-with-OMVI-2i-Ultra-and-Introduces-New-ReoNeura-TM-AI-Capabilities-at-IFA-2026",
+      "scope": "OMVI 2i Ultra、TrackFlex WiFi、Home Hub 2与ReoNeura AI；新品发现与上市计划",
+      "source_domain": "ifa.vporoom.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "官方IFA发布/型号发现/功能与上市计划；不证明当前零售",
+      "seller_type": "安防摄像品牌官方",
+      "storefront_type": "IFA vporoom品牌新闻稿",
+      "availability_signal": "官方发布；价格/SKU/交付部分未公开"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "OMVI 2i Ultra",
+      "quality": "A",
+      "id": "REOLINK-IFA-BLOG-20260911",
+      "source_group": "Reolink官方IFA新品说明",
+      "url": "https://reolink.com/blog/reolink-new-release-at-ifa/",
+      "scope": "OMVI 2i Ultra；8MP广角+5MP云台、355°/50°、SyncTrack、10,000mAh可拆电池、最长约6个月、太阳能、预计两个月内推出",
+      "source_domain": "reolink.com",
+      "source_channel": "official_newsroom",
+      "source_role": "官方博客/型号、电池、功能与上市窗口；不证明价格/现货",
+      "seller_type": "安防摄像品牌官方",
+      "storefront_type": "Reolink官方博客",
+      "availability_signal": "新品预告；预计两个月内推出"
     }
   ],
   "update_log": [
@@ -1361,6 +1446,18 @@
       "change": "【智能安防与门禁】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-11",
+      "change": "【智能安防与门禁】完成本轮官方产品、销售、规格、发布与上市状态核验，并写入有证据记录；候选、预售、区域价格和未公开字段按来源口径保留。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-11",
+      "change": "新增Reolink OMVI 2i Ultra、TrackFlex WiFi与Home Hub 2候选及官方IFA/博客来源；新品状态和功能保留候选，不升级主表。",
+      "verification": "OMVI 2i Ultra虽披露双视角、8MP+5MP、10,000mAh、约6个月与太阳能，但价格、SKU、商品页和交付仍缺；其余两项也只有新品预告。",
+      "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -1443,8 +1540,8 @@
     }
   ],
   "source_channel_counts": {
-    "official_newsroom": 5,
-    "official_newsroom_distribution": 2,
+    "official_newsroom": 6,
+    "official_newsroom_distribution": 3,
     "official_product": 5,
     "official_sales": 7,
     "official_store": 3,
@@ -1462,6 +1559,7 @@
     "ifa.vporoom.com",
     "imilabglobal.com",
     "prnewswire.com",
+    "reolink.com",
     "ring.com",
     "schlage.com",
     "shelly.com",

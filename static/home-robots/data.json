@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-10",
+  "checked_on": "2026-09-11",
   "scope_note": "本库覆盖家用机器人：扫地、洗地、擦窗、割草、泳池与宠物陪伴机器人；宠物项圈/吊牌另库。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-10"
+      "2026-09-11"
     ]
   ],
   "products": [
@@ -1225,13 +1225,15 @@
       "category": "家用/教育人形机器人",
       "status": "候选/IFA展示；价格、销售和交付未公开",
       "evidence": "A",
-      "reason": "官方IFA新闻披露T1可变形人形/四足、跟随、自动拍摄和15+拍摄模板，但未提供正式零售页、价格、规格、芯片或交付。",
+      "reason": "官方IFA新闻披露T1可变形人形/四足、跟随、自动拍摄和15+拍摄模板，但未提供正式零售页、价格、规格、芯片或交付。 2026-09-05官方IFA公告进一步确认该候选获得奖项/荣誉，但未改变其未公开零售价格、SKU与交付状态。",
       "url": "https://ifa.vporoom.com/2026-08-31-PrimeBOT-to-Showcase-PrimeBOT-T1-and-PrimeBOT-Q1-at-IFA-2026-and-ShowStoppers",
       "alias_or_relation": "IFA展示候选；不与已上市家庭清洁/陪伴机器人合并",
       "source_refs": [
-        "PRIMEBOT-T1-Q1-IFA-20260905"
+        "PRIMEBOT-T1-Q1-IFA-20260905",
+        "PRIMEBOT-IFA-AWARDS-20260911"
       ],
-      "next_check": "核验官方产品页、价格、尺寸、传感器、电池、应用和区域销售"
+      "next_check": "继续核验官方商品页、价格、精确型号、尺寸重量、传感器、电池、应用、区域销售与交付；IFA奖项不等同于上市。",
+      "last_checked": "2026-09-11"
     },
     {
       "id": "CAND-PRIMEBOT-Q1-20260905",
@@ -1241,13 +1243,15 @@
       "category": "家用/教育人形机器人",
       "status": "候选/IFA展示；价格、销售和交付未公开",
       "evidence": "A",
-      "reason": "官方IFA新闻披露Q1约88cm、22自由度、10+武术动作、编程与定制，但未提供正式零售页、价格、芯片、传感器、电池或交付。",
+      "reason": "官方IFA新闻披露Q1约88cm、22自由度、10+武术动作、编程与定制，但未提供正式零售页、价格、芯片、传感器、电池或交付。 2026-09-05官方IFA公告进一步确认该候选获得奖项/荣誉，但未改变其未公开零售价格、SKU与交付状态。",
       "url": "https://ifa.vporoom.com/2026-08-31-PrimeBOT-to-Showcase-PrimeBOT-T1-and-PrimeBOT-Q1-at-IFA-2026-and-ShowStoppers",
       "alias_or_relation": "IFA展示候选；不把展示版本当作在售主表型号",
       "source_refs": [
-        "PRIMEBOT-T1-Q1-IFA-20260905"
+        "PRIMEBOT-T1-Q1-IFA-20260905",
+        "PRIMEBOT-IFA-AWARDS-20260911"
       ],
-      "next_check": "核验官方产品页、价格、尺寸重量、传感器、电池、应用和区域销售"
+      "next_check": "继续核验官方商品页、价格、精确型号、尺寸重量、传感器、电池、应用、区域销售与交付；IFA奖项不等同于上市。",
+      "last_checked": "2026-09-11"
     },
     {
       "id": "CAND-TUYA-DOOVA-20260906",
@@ -2386,6 +2390,24 @@
       "seller_type": "智能庭院设备品牌官方",
       "storefront_type": "eufy英国官方商城",
       "availability_signal": "官方页提供Add to Cart/Buy Now"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "PrimeBOT T1；PrimeBOT Q1",
+      "quality": "A",
+      "id": "PRIMEBOT-IFA-AWARDS-20260911",
+      "source_group": "PrimeBOT T1/Q1官方IFA创新奖公告",
+      "url": "https://ifa.vporoom.com/2026-09-05-PrimeBOT-Wins-Official-IFA-Innovation-Awards-as-Personal-Robotics-Moves-Closer-to-the-Home",
+      "scope": "T1获Content Creation Technology奖；Q1获IFA NEXT Honoree；奖项和展示状态，不含零售价格、SKU、交付或完整规格",
+      "source_domain": "ifa.vporoom.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "官方IFA奖项/产品状态更新；不替代销售与规格",
+      "seller_type": "家用机器人品牌官方",
+      "storefront_type": "IFA vporoom品牌新闻稿",
+      "availability_signal": "奖项/展示；销售与交付未公开"
     }
   ],
   "update_log": [
@@ -2520,6 +2542,18 @@
       "change": "【家用机器人】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-11",
+      "change": "【家用机器人】完成本轮官方产品、销售、规格、发布与上市状态核验，并写入有证据记录；候选、预售、区域价格和未公开字段按来源口径保留。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-11",
+      "change": "为既有PrimeBOT T1与Q1候选补充官方IFA奖项来源；T1获Content Creation Technology奖、Q1获IFA NEXT Honoree，候选状态不变。",
+      "verification": "奖项不是销售或交付证据；价格、SKU、芯片、传感器、电池和区域可得性缺口继续保留。",
+      "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -2605,7 +2639,7 @@
     "crowdfunding": 3,
     "official_datasheet": 1,
     "official_newsroom": 3,
-    "official_newsroom_distribution": 9,
+    "official_newsroom_distribution": 10,
     "official_product": 17,
     "official_sales": 14,
     "official_store": 6,

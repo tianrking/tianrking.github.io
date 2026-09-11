@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-10",
+  "checked_on": "2026-09-11",
   "scope_note": "本库覆盖影像与创作设备：运动相机、360相机、云台相机、无人机、手持云台与直播影像设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-10"
+      "2026-09-11"
     ]
   ],
   "products": [
@@ -494,6 +494,96 @@
       ],
       "satellite": "未公开",
       "connectivity": "未公开"
+    },
+    {
+      "display": "原生720p；支持1080p输入；20–120英寸；160 ANSI流明",
+      "os_platform": "Roku TV；AirPlay；流媒体按区域提供",
+      "audio_drivers": "内置3W扬声器",
+      "sensors": "未公开",
+      "gps_positioning": "不适用",
+      "satellite": "不适用",
+      "supported_protocols": "Wi-Fi 2.4GHz/5GHz；Bluetooth 5.2双向；AirPlay",
+      "chip_or_soc": "未公开",
+      "storage": "内部存储未公开",
+      "dimensions": "未公开",
+      "weight_g": "低于1lb；官方未给精确重量",
+      "battery": "未公开；官方未给出内置电池容量",
+      "charging": "外接电源适配器；功率未公开",
+      "water_resistance": "未公开",
+      "subscription": "Roku/流媒体账户按地区可选；无硬件强制订阅",
+      "privacy": "Roku账户、投屏、网络和流媒体数据边界按平台政策核验",
+      "features": [
+        "Roku TV",
+        "720p原生/1080p输入/160流明",
+        "20–120英寸、1.12:1投射比",
+        "180°支架",
+        "3W扬声器、AirPlay、Bluetooth 5.2"
+      ],
+      "availability_note": "官方商品页列价格与购买信号，发布稿确认美国/加拿大销售；不把Amazon价格单独视为全球上市证据",
+      "source_note": "芯片、精确尺寸、电池、防护与存储未公开",
+      "id": "IMAGE-010",
+      "brand": "Aurzen",
+      "model": "EAZZE E1R",
+      "country_region": "中国品牌/美国、加拿大官方商城与Amazon；其他区域按官方公告",
+      "category": "imaging-creator/智能投影",
+      "form_factor": "便携式Roku TV智能迷你投影仪",
+      "use_case": "家庭娱乐、移动大屏、流媒体与AirPlay投屏",
+      "status": "在售/美国加拿大官方商城与Amazon",
+      "evidence": "A",
+      "launch_date": "2026-09-01",
+      "launch_date_type": "Aurzen官方发布稿公布E1/E1R日期",
+      "price": "US$139.99；CAD159.99；促销价按区域动态",
+      "official_url": "https://aurzen.com/collections/portable-projector/products/aurzen-eazze-e1r-portable-roku-tv-smart-projector",
+      "spec_url": "https://aurzen.com/fr/blogs/news-discoveries/aurzen-eazze-e1r-roku-tv-smart-mini-projector",
+      "source_refs": [
+        "AURZEN-E1R-STORE-20260911",
+        "AURZEN-E1-E1R-PR-20260911",
+        "AURZEN-E1R-BLOG-20260911"
+      ],
+      "connectivity": "未公开"
+    },
+    {
+      "display": "官方发布稿称与E1R采用相同硬件；独立规格待商品页复核",
+      "os_platform": "Smart OS；Netflix、Prime Video、YouTube等按区域提供",
+      "audio_drivers": "未公开",
+      "sensors": "未公开",
+      "gps_positioning": "不适用",
+      "satellite": "不适用",
+      "supported_protocols": "未公开；发布稿未单列E1无线协议",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "未公开",
+      "charging": "未公开",
+      "water_resistance": "未公开",
+      "subscription": "流媒体账户按地区可选；无硬件强制订阅",
+      "privacy": "流媒体、账户、投屏与网络数据边界未公开",
+      "features": [
+        "Smart OS与授权流媒体",
+        "官方称与E1R相同硬件、不同流媒体平台",
+        "便携式智能大屏"
+      ],
+      "availability_note": "官方发布稿给出德国/法国/西班牙价格；未取得独立E1商品页，不复制E1R未披露字段",
+      "source_note": "E1直接商品页、SKU、无线、重量、亮度、芯片和续航待核验",
+      "id": "IMAGE-011",
+      "brand": "Aurzen",
+      "model": "EAZZE E1",
+      "country_region": "中国品牌/德国、法国、西班牙官方公告区域；直接零售页待核验",
+      "category": "imaging-creator/智能投影",
+      "form_factor": "便携式智能迷你投影仪",
+      "use_case": "家庭娱乐、移动大屏、流媒体与投屏",
+      "status": "在售/德国、法国、西班牙官方公告区域可得；直接零售页待核验",
+      "evidence": "A",
+      "launch_date": "2026-09-01",
+      "launch_date_type": "Aurzen官方发布稿公布E1/E1R日期",
+      "price": "€129.99；促销价€99.99，按地区动态",
+      "official_url": "https://www.prnewswire.com/news-releases/aurzen-launches-eazze-e1-and-e1r-at-ifa-2026-bringing-smart-big-screen-entertainment-to-everyday-spaces-302860487.html",
+      "spec_url": "https://www.prnewswire.com/news-releases/aurzen-launches-eazze-e1-and-e1r-at-ifa-2026-bringing-smart-big-screen-entertainment-to-everyday-spaces-302860487.html",
+      "source_refs": [
+        "AURZEN-E1-E1R-PR-20260911"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -849,6 +939,60 @@
       "seller_type": "创作设备品牌官方",
       "storefront_type": "eufy官方规格中心",
       "availability_signal": "规格页；销售状态以区域商城为准"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$139.99",
+      "estimated_delivery": "未公开",
+      "platform_reference": "EAZZE E1R",
+      "quality": "A",
+      "id": "AURZEN-E1R-STORE-20260911",
+      "source_group": "Aurzen EAZZE E1R官方商品页",
+      "url": "https://aurzen.com/collections/portable-projector/products/aurzen-eazze-e1r-portable-roku-tv-smart-projector",
+      "scope": "US$139.99、Roku TV、720p/1080p输入、160流明、20–120英寸、1.12:1、180°支架、3W、Wi-Fi、Bluetooth 5.2、低于1lb",
+      "source_domain": "aurzen.com",
+      "source_channel": "official_store",
+      "source_role": "官方商品页/价格/销售/型号/规格",
+      "seller_type": "投影与影像品牌官方",
+      "storefront_type": "Aurzen官方商城",
+      "availability_signal": "官方页可购；配送动态"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "E1R US$139.99/CAD159.99；E1 €129.99",
+      "estimated_delivery": "未公开",
+      "platform_reference": "EAZZE E1 / E1R",
+      "quality": "A",
+      "id": "AURZEN-E1-E1R-PR-20260911",
+      "source_group": "Aurzen EAZZE E1/E1R官方发布稿",
+      "url": "https://www.prnewswire.com/news-releases/aurzen-launches-eazze-e1-and-e1r-at-ifa-2026-bringing-smart-big-screen-entertainment-to-everyday-spaces-302860487.html",
+      "scope": "2026-09-01发布；E1R美国/加拿大价格与E1德国/法国/西班牙价格；E1/E1R平台差异",
+      "source_domain": "prnewswire.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "品牌发布/日期/区域价格/型号关系",
+      "seller_type": "投影与影像品牌官方",
+      "storefront_type": "PR Newswire品牌发布",
+      "availability_signal": "官方公告；E1独立商品页待核验"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "EAZZE E1R",
+      "quality": "A",
+      "id": "AURZEN-E1R-BLOG-20260911",
+      "source_group": "Aurzen EAZZE E1R官方产品文章",
+      "url": "https://aurzen.com/fr/blogs/news-discoveries/aurzen-eazze-e1r-roku-tv-smart-mini-projector",
+      "scope": "E1R便携Roku TV、720p、160流明、投射范围/投射比、支架与无线能力",
+      "source_domain": "aurzen.com",
+      "source_channel": "official_product",
+      "source_role": "官方产品文章/规格补充",
+      "seller_type": "投影与影像品牌官方",
+      "storefront_type": "Aurzen官方博客",
+      "availability_signal": "产品说明；销售以商品页为准"
     }
   ],
   "update_log": [
@@ -965,6 +1109,18 @@
       "change": "【影像与创作设备】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-11",
+      "change": "【影像与创作设备】完成本轮官方产品、销售、规格、发布与上市状态核验，并写入有证据记录；候选、预售、区域价格和未公开字段按来源口径保留。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-11",
+      "change": "新增IMAGE-010 Aurzen EAZZE E1R与IMAGE-011 EAZZE E1；官方商品页、博客和发布稿互证E1R销售/规格、E1区域价格与平台差异，并区分Roku TV与Smart OS。",
+      "verification": "E1R为官方商城可购；E1主要依据官方发布稿，未取得独立商品页和完整SKU，不复制E1R未披露字段。",
+      "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -1047,13 +1203,15 @@
     }
   ],
   "source_channel_counts": {
-    "official_product": 3,
+    "official_newsroom_distribution": 1,
+    "official_product": 4,
     "official_sales": 4,
-    "official_store": 3,
+    "official_store": 4,
     "official_support_manual": 8,
     "specialist_media": 1
   },
   "source_domains": [
+    "aurzen.com",
     "dji.com",
     "eufy.com",
     "eufymake.com",
@@ -1063,6 +1221,7 @@
     "obsbot.com",
     "obsbot.jp",
     "onlinemanual.insta360.com",
+    "prnewswire.com",
     "sony.com",
     "store.dji.com",
     "store.insta360.com",

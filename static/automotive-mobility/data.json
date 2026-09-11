@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-10",
+  "checked_on": "2026-09-11",
   "scope_note": "本库覆盖汽车与出行电子：行车记录仪、车载定位、OBD、胎压监测、ADAS配件与车载充电。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-10"
+      "2026-09-11"
     ]
   ],
   "products": [
@@ -462,6 +462,38 @@
         "XCANBOT-MATE-X-IFA-20260907"
       ],
       "next_check": "核验众筹项目ID、价格/档位、CE/UKCA、最终传感器BOM、速度/载荷/安全等级、区域销售与交付"
+    },
+    {
+      "id": "CAND-SEGWAY-ZT3-MAX-20260911",
+      "name": "Segway ZT3 MAX",
+      "brand": "Segway",
+      "region": "全球/欧洲计划2026年10月",
+      "category": "汽车与出行电子/电动滑板车",
+      "status": "候选/官方IFA预告；价格、SKU与交付未公开",
+      "evidence": "A",
+      "reason": "官方IFA新闻稿披露ZT3 MAX为旗舰eKickScooter并获IFA金奖；仅给出欧洲2026年10月计划，未提供商品页、价格、精确规格或库存。",
+      "url": "https://ifa.vporoom.com/2026-09-07-Segways-Upcoming-Flagship-eKickScooters-Win-Two-Gold-Awards-at-IFA-2026",
+      "alias_or_relation": "ZT3 MAX；与ZT3 Pro及区域SKU分开",
+      "source_refs": [
+        "SEGWAY-IFA-2026-20260911"
+      ],
+      "next_check": "核验电机/电池/续航、重量、IP、认证、价格、库存与交付"
+    },
+    {
+      "id": "CAND-SEGWAY-MAX-G3-PRO-20260911",
+      "name": "Segway Ninebot MAX G3 Pro",
+      "brand": "Segway Ninebot",
+      "region": "全球/欧洲计划2026年10月",
+      "category": "汽车与出行电子/电动滑板车",
+      "status": "候选/官方IFA预告；价格、SKU与交付未公开",
+      "evidence": "A",
+      "reason": "官方IFA新闻稿披露Ninebot MAX G3 Pro为旗舰eKickScooter并获IFA金奖；仅给出欧洲2026年10月计划，未提供商品页、价格、精确规格或库存。",
+      "url": "https://ifa.vporoom.com/2026-09-07-Segways-Upcoming-Flagship-eKickScooters-Win-Two-Gold-Awards-at-IFA-2026",
+      "alias_or_relation": "Ninebot MAX G3 Pro；与MAX G3及区域SKU分开",
+      "source_refs": [
+        "SEGWAY-IFA-2026-20260911"
+      ],
+      "next_check": "核验电机/电池/续航、重量、IP、认证、价格、库存与交付"
     }
   ],
   "sources": [
@@ -636,6 +668,24 @@
       "seller_type": "辅助出行机器人品牌官方",
       "storefront_type": "Xcanbot官方GlobeNewswire发布",
       "availability_signal": "IFA创新奖/众筹计划；销售与交付未公开"
+    },
+    {
+      "checked_on": "2026-09-11",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "ZT3 MAX；Ninebot MAX G3 Pro",
+      "quality": "A",
+      "id": "SEGWAY-IFA-2026-20260911",
+      "source_group": "Segway IFA 2026旗舰电动滑板车官方发布",
+      "url": "https://ifa.vporoom.com/2026-09-07-Segways-Upcoming-Flagship-eKickScooters-Win-Two-Gold-Awards-at-IFA-2026",
+      "scope": "ZT3 MAX与Ninebot MAX G3 Pro；IFA金奖与欧洲2026年10月上市计划；价格、SKU和完整规格待公开",
+      "source_domain": "ifa.vporoom.com",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "官方IFA发布/型号发现/区域上市计划；不证明当前零售",
+      "seller_type": "个人出行品牌官方",
+      "storefront_type": "IFA vporoom品牌新闻稿",
+      "availability_signal": "官方称欧洲2026年10月推出；未核到商品SKU"
     }
   ],
   "update_log": [
@@ -752,6 +802,18 @@
       "change": "【汽车与出行电子】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-11",
+      "change": "【汽车与出行电子】完成本轮官方产品、销售、规格、发布与上市状态核验，并写入有证据记录；候选、预售、区域价格和未公开字段按来源口径保留。",
+      "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-11",
+      "change": "新增Segway ZT3 MAX与Ninebot MAX G3 Pro候选，记录官方IFA金奖与欧洲2026年10月计划；无商品页、价格和完整规格，未升级主表。",
+      "verification": "展会奖项与上市计划只作发现/生命周期信号，不推断电池、电机、续航、IP、重量或认证。",
+      "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -834,7 +896,7 @@
     }
   ],
   "source_channel_counts": {
-    "official_newsroom_distribution": 1,
+    "official_newsroom_distribution": 2,
     "official_product": 4,
     "official_sales": 4,
     "official_support_manual": 1
@@ -844,6 +906,7 @@
     "anker.com",
     "garmin.com",
     "globenewswire.com",
+    "ifa.vporoom.com",
     "launch.xcanbot.com",
     "my-fobo.com",
     "nextbase.com",
