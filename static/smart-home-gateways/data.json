@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-11",
+  "checked_on": "2026-09-12",
   "scope_note": "首版覆盖独立家庭中控、Matter控制器/桥、协议网关，以及音箱/屏/机顶盒/路由器内置的智能家居中枢。通过形态字段区分完整自动化中枢、协议桥、内置中枢与路由器功能，不把所有网关宣传词当成同一类产品。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-11"
+      "2026-09-12"
     ]
   ],
   "products": [
@@ -1042,6 +1042,60 @@
         "AQARA-IFA-2026-SPOTLIGHT-20260908"
       ],
       "next_check": "核验Matter/Thread/Zigbee/Wi-Fi/Ethernet、边缘算力、存储、供电、认证、价格和区域交付"
+    },
+    {
+      "id": "CAND-UGREEN-HOMEAGENT-HA100-20260912",
+      "name": "UGREEN HomeAgent HA100",
+      "brand": "UGREEN",
+      "region": "中国品牌/全球预售；Kickstarter计划",
+      "category": "家庭中控/本地AI家庭服务器/智能家居网关",
+      "status": "候选/官方预售与规格页；尚未证明常规零售量产交付",
+      "evidence": "A",
+      "reason": "官方页面列出RK3588、16GB LPDDR5、64GB eMMC、26 TOPS、3个SATA、M.2 NVMe、2.5GbE、PoE与UGOS Pro；Super Early Bird约$899、MSRP约$1,799，计划2027年1月下旬发货。预售订金、未来Kickstarter和区域页面不能替代已完成常规上市证据，不升级主表。",
+      "url": "https://ai.ugreen.com/pages/ugreen-homeagent-crowdfunding",
+      "alias_or_relation": "HomeAgent系列HA100；不与HA100 Pro/MA100或配件重复",
+      "source_refs": [
+        "UGREEN-HOMEAGENT-CF-20260912",
+        "UGREEN-HOMEAGENT-EU-SPECS-20260912",
+        "UGREEN-HOMEAGENT-PR-20260912"
+      ],
+      "next_check": "核验Kickstarter项目ID、最终SKU、认证、量产交付、区域官方商城、实测功耗与隐私/云端边界"
+    },
+    {
+      "id": "CAND-UGREEN-HOMEAGENT-HA100-PRO-20260912",
+      "name": "UGREEN HomeAgent HA100 Pro",
+      "brand": "UGREEN",
+      "region": "中国品牌/全球预售；Kickstarter计划",
+      "category": "家庭中控/本地AI家庭服务器/智能家居网关",
+      "status": "候选/官方预售与规格页；尚未证明常规零售量产交付",
+      "evidence": "A",
+      "reason": "官方页面列出CIX-P1-CP8180、32GB LPDDR5、128GB M.2 NVMe、205 TOPS、3个SATA、PCIe 4.0 M.2、10GbE、PoE与UGOS Pro；Super Early Bird约$2,999、MSRP约$5,999，计划2027年1月下旬发货。候选保留，不把预售档位当成当前零售价。",
+      "url": "https://ai.ugreen.com/pages/ugreen-homeagent-crowdfunding",
+      "alias_or_relation": "HomeAgent系列HA100 Pro；不与HA100/MA100或配件重复",
+      "source_refs": [
+        "UGREEN-HOMEAGENT-CF-20260912",
+        "UGREEN-HOMEAGENT-EU-SPECS-20260912",
+        "UGREEN-HOMEAGENT-PR-20260912"
+      ],
+      "next_check": "核验Kickstarter项目ID、最终SKU、认证、量产交付、区域官方商城、功耗和软件支持周期"
+    },
+    {
+      "id": "CAND-UGREEN-MASTERAGENT-MA100-20260912",
+      "name": "UGREEN MasterAgent MA100",
+      "brand": "UGREEN",
+      "region": "中国品牌/全球预售；Kickstarter计划",
+      "category": "家庭中控/本地AI家庭服务器/智能家居网关",
+      "status": "候选/官方预售与规格页；尚未证明常规零售量产交付",
+      "evidence": "A",
+      "reason": "官方页面列出NVIDIA Jetson Thor T5000、128GB共享NPU内存、256GB M.2 NVMe、最高2070 TFLOPS FP4 sparse、4个SATA、双PCIe 4.0 M.2、10GbE、PoE与UGOS Pro；Super Early Bird约$9,999、MSRP约$19,999，计划2027年1月下旬发货。高价预售设备保留候选，待实际销售和交付证据。",
+      "url": "https://ai.ugreen.com/pages/ugreen-homeagent-crowdfunding",
+      "alias_or_relation": "MasterAgent MA100；不与HA100/HA100 Pro或配件重复",
+      "source_refs": [
+        "UGREEN-HOMEAGENT-CF-20260912",
+        "UGREEN-HOMEAGENT-EU-SPECS-20260912",
+        "UGREEN-HOMEAGENT-PR-20260912"
+      ],
+      "next_check": "核验Kickstarter项目ID、最终SKU、认证、量产交付、区域官方商城、功耗、热设计和软件支持周期"
     }
   ],
   "sources": [
@@ -1308,6 +1362,63 @@
       "seller_type": "智能家居品牌官方",
       "storefront_type": "Aqara官方IFA页面",
       "availability_signal": "IFA Spotlight/展示；正式商品页、价格、库存和交付未公开"
+    },
+    {
+      "checked_on": "2026-09-12",
+      "campaign_status": "官方预售/众筹前置；Kickstarter计划中",
+      "pledge_or_price": "HA100 $899 Super Early Bird / $1,079 Early Bird / $1,799 MSRP；HA100 Pro $2,999 / $3,599 / $5,999；MA100 $9,999 / $11,999 / $19,999",
+      "estimated_delivery": "官方页面称HA100、HA100 Pro、MA100及相关摄像头计划2027年1月下旬发货",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "UGREEN-HOMEAGENT-CF-20260912",
+      "source_group": "UGREEN HomeAgent",
+      "title": "UGREEN HomeAgent crowdfunding/preorder page",
+      "url": "https://ai.ugreen.com/pages/ugreen-homeagent-crowdfunding",
+      "source_channel": "official_store",
+      "source_role": "preorder_landing_page",
+      "source_domain": "ai.ugreen.com",
+      "seller_type": "brand",
+      "storefront_type": "UGREEN official preorder page",
+      "availability_signal": "预订/订金页面；非普通零售交付证明；Kickstarter计划2026-10-27",
+      "scope": "三个HomeAgent型号、档位价格、MSRP、交付和配件关系"
+    },
+    {
+      "checked_on": "2026-09-12",
+      "campaign_status": "预售/众筹前置",
+      "pledge_or_price": "未公开（价格见全球预售页）",
+      "estimated_delivery": "页面与全球预售页交付口径关联；最终以项目更新为准",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "UGREEN-HOMEAGENT-EU-SPECS-20260912",
+      "source_group": "UGREEN HomeAgent EU",
+      "title": "UGREEN HomeAgent EU technical comparison",
+      "url": "https://ai.ugreen.com/pages/ugreen-homeagent-crowdfunding-eu",
+      "source_channel": "official_product_page",
+      "source_role": "technical_specification_page",
+      "source_domain": "ai.ugreen.com",
+      "seller_type": "brand",
+      "storefront_type": "UGREEN official regional page",
+      "availability_signal": "区域预售/产品规格展示；常规零售状态未确认",
+      "scope": "HA100 RK3588/16GB/64GB/26TOPS；HA100 Pro CIX-P1-CP8180/32GB/128GB/205TOPS；MA100 Jetson Thor T5000/128GB/2070 TFLOPS及接口"
+    },
+    {
+      "checked_on": "2026-09-12",
+      "campaign_status": "预订/众筹计划",
+      "pledge_or_price": "官方稿称订金/折扣机制；最终档位以官方页面为准",
+      "estimated_delivery": "未在新闻稿中独立确认；以官方预售页为准",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "UGREEN-HOMEAGENT-PR-20260912",
+      "source_group": "UGREEN HomeAgent launch",
+      "title": "Bringing Local AI Home: UGREEN introduces privacy-first HomeAgent",
+      "url": "https://www.prnewswire.com/news-releases/bringing-local-ai-home-ugreen-introduces-privacy-first-homeagent-for-smarter-living-302870674.html",
+      "source_channel": "official_newsroom",
+      "source_role": "launch_announcement",
+      "source_domain": "prnewswire.com",
+      "seller_type": "brand",
+      "storefront_type": "official PR distribution",
+      "availability_signal": "官方稿称2026-09-04开放预订；Kickstarter计划2026-10-27",
+      "scope": "本地AI、隐私定位、HomeAgent系列、Matter兼容与预订时间"
     }
   ],
   "update_log": [
@@ -1436,6 +1547,12 @@
       "change": "【家庭中控/Matter网关/智能家居网关】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道核验；没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-12",
+      "change": "新增UGREEN HomeAgent HA100、HA100 Pro、MasterAgent MA100候选；官方预售页、EU规格页和PR互证型号、芯片/算力、内存、接口、价格和2027年交付计划。",
+      "verification": "三款仍是预售/众筹前置，需等待Kickstarter项目ID、量产、认证、实际交付和区域常规销售证据。",
+      "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -1518,15 +1635,17 @@
     }
   ],
   "source_channel_counts": {
-    "official_newsroom": 3,
+    "official_newsroom": 4,
     "official_product": 4,
+    "official_product_page": 1,
     "official_sales": 2,
-    "official_store": 2,
+    "official_store": 3,
     "official_support_manual": 1,
     "official_support_spec": 2,
     "regulatory_certification": 1
   },
   "source_domains": [
+    "ai.ugreen.com",
     "apple.com",
     "aqara.com",
     "bosch-smarthome.com",
@@ -1535,6 +1654,7 @@
     "home-assistant.io",
     "mi.com",
     "news.samsung.com",
+    "prnewswire.com",
     "shelly.com",
     "us.aqara.com",
     "xn----7sbajahheyaepn1ca0aveqcb0fxl.xn--p1acf"

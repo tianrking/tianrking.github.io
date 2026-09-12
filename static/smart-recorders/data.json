@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-11",
+  "checked_on": "2026-09-12",
   "scope_note": "首版全球录音卡片与AI录音设备市场库：主表按可独立购买、官方明确发售或官方明确预售的型号/代际计数；卡片、磁吸手机设备、穿戴式录音器、耳机录音器和桌面会议设备按形态分类。颜色、存储容量选项、配件包不拆行；疑似OEM/贴牌、众筹或只出现于集合页的型号放入候选与别名表。价格保留查证时官方页面原币种，不做未经说明的汇率换算。来源未披露的芯片、精确尺寸、重量、电池容量、采样率和防水等级写“未公开”。",
   "products": [
     {
@@ -1340,6 +1340,41 @@
         "BOYA-NOTRA-NEO-HK-STORE",
         "BOYA-NOTRA-NEO-LAUNCH"
       ]
+    },
+    {
+      "display": "无独立显示；状态反馈方式未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "发射器内置麦克风；扬声器规格不适用/未公开",
+      "sensors": "内置麦克风；具体传感器型号未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "OsmoAudio直连；USB-C；无线协议版本未公开",
+      "chip_or_soc": "未公开",
+      "storage": "约14.5GB；最多约28小时内置录音",
+      "dimensions": "未公开",
+      "weight_g": "单个发射器约12g",
+      "battery": "发射器约11小时；接收器约10小时；充电盒约40小时（官方区域页）",
+      "charging": "USB-C；完整充电输入规格未公开",
+      "water_resistance": "未公开",
+      "subscription": "无公开硬件强制订阅；服务条款按地区/平台核验",
+      "privacy": "录音数据处理、App与云端边界未公开",
+      "features": "32-bit float录音；双级AI降噪；三种人声预设；最多4个发射器配1个接收器；OsmoAudio直连",
+      "availability_note": "按系统型号计数；TX/RX数量、颜色和组合不拆为独立型号",
+      "source_note": "官方来源未披露的字段保持“未公开”，不从同系列、外观或平台页面推断",
+      "id": "RC-035",
+      "brand": "DJI",
+      "model": "Mic Mini 2S",
+      "country_region": "中国品牌/全球市场",
+      "category": "录音硬件/无线麦克风",
+      "form_factor": "无线领夹麦克风系统（发射器、接收器与充电盒）",
+      "use_case": "视频拍摄、采访、会议、直播、移动录音与创作者收音",
+      "status": "官方区域商城在售；区域组合、价格和库存动态",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "官方IFA稿称近期上市；精确全球发布日期未公开",
+      "price": "2TX+1RX+充电盒约US$171；1TX+1RX约US$101（DJI Singapore官方店，动态）；日本2TX+1RX约¥27,720",
+      "official_url": "https://store.dji.com/sg/product/dji-mic-mini-2s",
+      "spec_url": "https://www.dji.com/media-center/announcements/ifa-2026-dji-berlin-osmo-360-2-romo-2-power-system"
     }
   ],
   "candidates": [
@@ -2504,6 +2539,63 @@
       "storefront_type": "Plaud官方产品商城",
       "availability_signal": "Out of Stock；Join Waitlist；New",
       "platform_reference": "Plaud One Explorer Edition"
+    },
+    {
+      "checked_on": "2026-09-12",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开（区域官方商城价格见商品页）",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "DJI-MICMINI2S-IFA-20260912",
+      "source_group": "DJI Mic Mini 2S",
+      "title": "DJI Mic Mini 2S official IFA announcement",
+      "url": "https://www.dji.com/media-center/announcements/ifa-2026-dji-berlin-osmo-360-2-romo-2-power-system",
+      "source_channel": "official_newsroom",
+      "source_role": "product_announcement",
+      "source_domain": "dji.com",
+      "seller_type": "brand",
+      "storefront_type": "DJI official newsroom",
+      "availability_signal": "官方稿称近期已上市；区域商城商品页补充价格和存货",
+      "scope": "28小时内置存储、32-bit float、最多4TX/1RX、双级AI降噪、三种人声预设和OsmoAudio直连"
+    },
+    {
+      "checked_on": "2026-09-12",
+      "campaign_status": "未公开",
+      "pledge_or_price": "2TX+1RX+充电盒约US$171；1TX+1RX约US$101",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "DJI-MICMINI2S-STORE-SG-20260912",
+      "source_group": "DJI Mic Mini 2S Singapore store",
+      "title": "DJI Mic Mini 2S official Singapore store listing",
+      "url": "https://store.dji.com/sg/product/dji-mic-mini-2s",
+      "source_channel": "official_store",
+      "source_role": "regional_product_page",
+      "source_domain": "store.dji.com",
+      "seller_type": "brand",
+      "storefront_type": "DJI Singapore official store",
+      "availability_signal": "Add to Cart；不同TX/RX组合可购，区域库存动态",
+      "scope": "区域价格、约14.5GB存储、28小时录音、发射器/接收器/盒续航和重量"
+    },
+    {
+      "checked_on": "2026-09-12",
+      "campaign_status": "未公开",
+      "pledge_or_price": "2TX+1RX约¥27,720；1TX+1RX约¥14,300",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "DJI-MICMINI2S-STORE-JP-20260912",
+      "source_group": "DJI Mic Mini 2S Japan store",
+      "title": "DJI Mic Mini 2S official Japan store listing",
+      "url": "https://store.dji.com/jp/product/dji-mic-mini-2s",
+      "source_channel": "official_store",
+      "source_role": "regional_price_page",
+      "source_domain": "store.dji.com",
+      "seller_type": "brand",
+      "storefront_type": "DJI Japan official store",
+      "availability_signal": "官方区域商品页；组合和库存动态",
+      "scope": "日本区域价格与组合交叉核验，不把组合、颜色或配件拆成型号"
     }
   ],
   "update_log": [
@@ -2626,6 +2718,12 @@
       "change": "【录音卡片/录音硬件】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道核验；没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-12",
+      "change": "新增RC-035 DJI Mic Mini 2S；官方IFA稿、新加坡和日本官方商城互证内置录音、32-bit float、AI降噪、续航和区域价格。",
+      "verification": "精确发布日期、芯片、IP等级、完整无线协议与录音数据云端边界仍未公开；组合不拆型号。",
+      "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -2710,11 +2808,11 @@
   "source_channel_counts": {
     "crowdfunding": 4,
     "official_news": 1,
-    "official_newsroom": 2,
+    "official_newsroom": 3,
     "official_product": 13,
     "official_release": 1,
     "official_sales": 26,
-    "official_store": 4,
+    "official_store": 6,
     "official_support_manual": 3,
     "press_release_distribution": 4
   },
@@ -2724,6 +2822,7 @@
     "bee.computer",
     "boyamic.com",
     "corp.ankerjapan.com",
+    "dji.com",
     "fieldy.ai",
     "flomem.com",
     "hariox.com",
@@ -2745,6 +2844,7 @@
     "soundcore.com",
     "store.boyamic.com",
     "store.comu.com",
+    "store.dji.com",
     "store.iflytek.com",
     "store.viaim.ai",
     "support.plaud.ai",

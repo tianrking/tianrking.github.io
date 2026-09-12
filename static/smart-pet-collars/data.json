@@ -1,7 +1,7 @@
 {
   "title": "全球上市智能宠物项圈／宠物吊牌研究库",
   "subtitle": "Global smart pet collars, trackers, tags and pet identity devices catalog",
-  "checked_on": "2026-09-11",
+  "checked_on": "2026-09-12",
   "version": "2026-08-25-pet-v3",
   "methodology": "优先官方产品页、官方商店、官方发布稿、官方规格/支持页和监管/认证记录；未披露字段写“未公开”，不从同系列、App功能、外观或OEM推断芯片/传感器/尺寸/续航；通用物品标签可挂宠物但明确标注非宠物专用。",
   "products": [
@@ -4968,6 +4968,23 @@
       "url": "https://www.pawpulse.ai/",
       "alias_or_relation": "关联BackerKit项目；Lucero可能同时是配套BLE信标/充电器名称，不能与最终项圈型号混为一行",
       "next_check": "核验Kickstarter正式上线、最终项圈/信标型号、零售价、订阅、精确传感器/SoC、FCC/CE和首批交付"
+    },
+    {
+      "id": "CAND-CHEERBLE-WICKEDBONE-AIR-20260912",
+      "name": "Cheerble Wickedbone Air",
+      "brand": "Cheerble",
+      "region": "美国/全球线上销售信号",
+      "category": "智能宠物/互动玩具",
+      "status": "候选/官方已发布；商品页型号与重量存在命名冲突，待复核",
+      "evidence": "A",
+      "reason": "官方新闻稿披露2026-09-11上市、预订、US$59.99 introductory/US$65.99 MSRP、App控制、Drive/Auto、本地蓝牙20-50m、可替换E-TPU外壳和246g；但官方商品路线当前检索结果显示Wicked Ball Air/CWQ01、约130g/200mAh等不同命名/重量，不能把两套规格合并，也不升级主表。",
+      "url": "https://cheerble.com/products/wickedbone-air",
+      "alias_or_relation": "Wickedbone Air与Wicked Ball Air可能为不同型号/页面路由；不与替换外壳拆为独立产品",
+      "source_refs": [
+        "CHEERBLE-WICKEDBONE-AIR-PR-20260912",
+        "CHEERBLE-WICKEDBONE-AIR-STORE-20260912"
+      ],
+      "next_check": "核验官方SKU、包装/说明书、FCC或认证记录、实际商品页命名、重量和电池规格后再决定是否进入主表"
     }
   ],
   "sources": [
@@ -6542,6 +6559,44 @@
       "storefront_type": "BackerKit Launch",
       "availability_signal": "预约；非量产现货",
       "platform_reference": "PawPulse Lucero / BackerKit"
+    },
+    {
+      "checked_on": "2026-09-12",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$59.99 introductory；MSRP US$65.99；替换外壳MSRP US$19.99",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "CHEERBLE-WICKEDBONE-AIR-PR-20260912",
+      "source_group": "Cheerble Wickedbone Air",
+      "title": "Cheerble launches Wickedbone Air with app-controlled play",
+      "url": "https://www.prnewswire.com/news-releases/cheerble-launches-wickedbone-air-with-app-controlled-play-and-a-replaceable-e-tpu-shell-302876251.html",
+      "source_channel": "official_newsroom",
+      "source_role": "launch_announcement",
+      "source_domain": "prnewswire.com",
+      "seller_type": "brand",
+      "storefront_type": "official PR distribution",
+      "availability_signal": "官方稿称2026-09-11在cheerble.com上市；2026-09-07开始预订",
+      "scope": "App控制互动、Drive/Auto模式、20-50m蓝牙、本地连接、内置音效、可替换E-TPU外壳、官方发布重量口径"
+    },
+    {
+      "checked_on": "2026-09-12",
+      "campaign_status": "未公开",
+      "pledge_or_price": "页面动态显示约US$56.09促销 / US$65.99常规价；不作为Wickedbone Air精确价格唯一证据",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "CHEERBLE-WICKEDBONE-AIR-STORE-20260912",
+      "source_group": "Cheerble Wickedbone Air product route",
+      "title": "Cheerble Wickedbone Air official product route",
+      "url": "https://cheerble.com/products/wickedbone-air",
+      "source_channel": "official_store",
+      "source_role": "product_page",
+      "source_domain": "cheerble.com",
+      "seller_type": "brand",
+      "storefront_type": "Cheerble official store",
+      "availability_signal": "官方产品路线可访问；当前页面检索结果显示Wicked Ball Air/CWQ01与Wickedbone Air命名存在冲突",
+      "scope": "页面命名、型号CWQ01、130g/80mm/200mAh等信息与PR重量/命名不一致，列为待复核证据"
     }
   ],
   "update_log": [
@@ -6676,6 +6731,12 @@
       "change": "【智能宠物项圈/宠物吊牌】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道核验；没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-12",
+      "change": "新增Cheerble Wickedbone Air候选；官方发布稿确认上市与价格信号，但官方商品路由出现Wickedbone/Wicked Ball、型号和重量冲突，保留候选不升级。",
+      "verification": "核验包装、精确SKU、官方说明书、认证和商品页命名后再判断是否为同一型号。",
+      "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "field_notes": {
@@ -6767,10 +6828,11 @@
   ],
   "source_channel_counts": {
     "crowdfunding": 1,
-    "official_newsroom": 1,
+    "official_newsroom": 2,
     "official_product": 36,
     "official_release": 3,
     "official_sales": 39,
+    "official_store": 1,
     "official_support_manual": 11,
     "press_release_distribution": 1
   },
@@ -6781,6 +6843,7 @@
     "backerkit.com",
     "beitutu.com",
     "captain-india.com",
+    "cheerble.com",
     "chipolo.jp",
     "chipolo.net",
     "cn.bydpet.com",
