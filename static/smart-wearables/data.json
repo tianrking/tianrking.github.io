@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-12",
+  "checked_on": "2026-09-13",
   "scope_note": "本库覆盖智能服饰与运动装备：智能鞋、智能服装、姿态设备、触觉手环与智能护具；排除已有独立数据库的重复型号。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-12"
+      "2026-09-13"
     ]
   ],
   "products": [
@@ -482,6 +482,48 @@
       "source_refs": [
         "ACEMATE-S10-PRO-DEPOSIT-20260905",
         "ACEMATE-S10-PRO-IFA-20260905"
+      ],
+      "connectivity": "未公开"
+    },
+    {
+      "display": "无显示",
+      "os_platform": "Suunto App及兼容运动设备；手机系统版本未公开",
+      "audio_drivers": "不适用",
+      "sensors": "ECG前端、R-R间期采集、六轴运动传感器；精确器件型号由US官方页披露为nRF54L15-QFAA无线SoC，其他模拟前端料号未公开",
+      "gps_positioning": "无内置GPS；由配对运动设备提供定位不计入本产品",
+      "satellite": "未公开/不适用",
+      "supported_protocols": "Bluetooth Low Energy 5.4；2.4GHz 2402–2480MHz；最多3个并发BLE连接；加密/受保护连接",
+      "chip_or_soc": "Nordic nRF54L15-QFAA（Suunto US官方商品页）",
+      "storage": "最多20小时滚动R-R数据内存",
+      "dimensions": "发射器直径36.7mm、厚8.6mm；胸带宽30mm；XS/S 63–86cm，M/L 72.3–104.5cm",
+      "weight_g": "发射器12.4g含电池；胸带31.2g；官方营销页将发射器约写为13g",
+      "battery": "可更换CR2032；官方参考约460小时（单BLE），约210小时（3 BLE并启用跑姿）；待机约3年",
+      "charging": "更换CR2032纽扣电池；无USB充电；电池型号为CR2032",
+      "water_resistance": "发射器防水30m",
+      "subscription": "无公开硬件强制订阅；Suunto App与服务条款按地区核验",
+      "privacy": "心率、R-R、跑姿和账户数据处理边界由配对设备、Suunto App和地区条款决定；完整云端保留规则未公开",
+      "features": "ECG心率与R-R；ZoneSense；跑姿六轴数据；20小时R-R内存；最多3个Bluetooth设备；可脱离手表先缓存数据后同步",
+      "availability_note": "官方US商城可下单并披露精确料号nRF54L15-QFAA；XS/S、M/L、颜色和胸带尺寸不拆为独立型号；nRF54L15芯片已在全球Wi-Fi/Bluetooth芯片库中，未重复新增芯片行",
+      "source_note": "Suunto官方发布稿、官方产品页、参考手册和US商城互证价格、尺寸、重量、ECG/R-R、六轴传感器、BLE 5.4、nRF54L15-QFAA、CR2032、续航、防水和连接；其他模拟前端、充电电路与云端边界未公开",
+      "id": "WEAR-011",
+      "brand": "Suunto",
+      "model": "Suunto Smart Heart Rate Belt 2",
+      "country_region": "芬兰品牌/全球市场；官方US、欧洲和区域商城",
+      "category": "智能服饰与运动装备/胸带心率传感器",
+      "form_factor": "可拆卸发射器+弹性胸带",
+      "use_case": "ECG/R-R心率、ZoneSense训练区、跑姿分析、运动手表和多设备训练",
+      "status": "官方发布/US官方商城可下单；XS/S、M/L和颜色为尺寸/配置变体",
+      "evidence": "A",
+      "launch_date": "2026-09-08",
+      "launch_date_type": "Suunto官方发布稿日期",
+      "price": "US$89（Suunto US官方店；XS/S与M/L页面价格相同，动态）",
+      "official_url": "https://us.suunto.com/products/suunto-smart-heart-rate-belt-2-black-size-xss",
+      "spec_url": "https://www.suunto.com/Support/Product-support/suunto_smart_heart_rate_belt_2/suunto_smart_heart_rate_belt_2/reference/",
+      "source_refs": [
+        "SUUNTO-HR-BELT2-NEWS-20260913",
+        "SUUNTO-HR-BELT2-PRODUCT-20260913",
+        "SUUNTO-HR-BELT2-REFERENCE-20260913",
+        "SUUNTO-HR-BELT2-US-STORE-20260913"
       ],
       "connectivity": "未公开"
     }
@@ -960,6 +1002,82 @@
       "seller_type": "智能健身设备品牌官方",
       "storefront_type": "Speediance欧洲官方商城",
       "availability_signal": "官方区域页Sold Out；补货与交付未公开"
+    },
+    {
+      "checked_on": "2026-09-13",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$89（官方US商城）",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "SUUNTO-HR-BELT2-NEWS-20260913",
+      "source_group": "Suunto Smart Heart Rate Belt 2",
+      "title": "Suunto launches Run 2 alongside the new Suunto Smart Heart Rate Belt 2",
+      "url": "https://www.suunto.com/es-py/Noticias/suunto-launches-run-2-a-35-g-running-watch-for-road-running-and-marathon-training-alongside-the-new-suunto-smart-heart-rate-belt-2/",
+      "source_channel": "official_newsroom",
+      "source_role": "product_launch_announcement",
+      "source_domain": "suunto.com",
+      "seller_type": "brand",
+      "storefront_type": "Suunto official newsroom",
+      "availability_signal": "官方稿称Smart Heart Rate Belt 2随Run 2发布；官方商城可购",
+      "scope": "ECG前端、R-R数据、ZoneSense、跑姿六轴传感器、20小时滚动R-R内存和多设备连接"
+    },
+    {
+      "checked_on": "2026-09-13",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开（区域价格以官方商店为准）",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "SUUNTO-HR-BELT2-PRODUCT-20260913",
+      "source_group": "Suunto Smart Heart Rate Belt 2",
+      "title": "Suunto Smart Heart Rate Belt 2 official product page",
+      "url": "https://www.suunto.com/es-py/Productos/Cinturones-de-frecuencia-cardiaca/suunto-smart-heart-rate-belt-2/suunto-smart-heart-rate-belt-2-black-size-ml/",
+      "source_channel": "official_product_page",
+      "source_role": "primary_product_page",
+      "source_domain": "suunto.com",
+      "seller_type": "brand",
+      "storefront_type": "Suunto official product page",
+      "availability_signal": "官方产品页列出M/L型号；区域购买入口与库存动态",
+      "scope": "发射器尺寸/重量、胸带尺寸、ECG、R-R、ZoneSense、六轴运动传感器和20小时内存"
+    },
+    {
+      "checked_on": "2026-09-13",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "SUUNTO-HR-BELT2-REFERENCE-20260913",
+      "source_group": "Suunto Smart Heart Rate Belt 2",
+      "title": "Suunto Smart Heart Rate Belt 2 reference and user guide",
+      "url": "https://www.suunto.com/Support/Product-support/suunto_smart_heart_rate_belt_2/suunto_smart_heart_rate_belt_2/reference/",
+      "source_channel": "official_support",
+      "source_role": "reference_manual",
+      "source_domain": "suunto.com",
+      "seller_type": "brand",
+      "storefront_type": "Suunto official support",
+      "availability_signal": "官方支持页；用于规格/使用条件核验",
+      "scope": "12.4g含电池、36.7mm直径、8.6mm厚、30m防水、CR2032、460h/210h续航、Bluetooth 5.4与2.4GHz"
+    },
+    {
+      "checked_on": "2026-09-13",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$89",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "SUUNTO-HR-BELT2-US-STORE-20260913",
+      "source_group": "Suunto Smart Heart Rate Belt 2",
+      "title": "Suunto Smart Heart Rate Belt 2 official US store",
+      "url": "https://us.suunto.com/products/suunto-smart-heart-rate-belt-2-black-size-xss",
+      "source_channel": "official_store",
+      "source_role": "regional_price_page",
+      "source_domain": "us.suunto.com",
+      "seller_type": "brand",
+      "storefront_type": "Suunto US official store",
+      "availability_signal": "官方商城可下单；XS/S SKU SS051371000；M/L为不同尺寸SKU，不拆产品",
+      "scope": "US价格、nRF54L15-QFAA、BLE 5.4、加密连接、最多3个BLE设备、CR2032和电池寿命"
     }
   ],
   "update_log": [
@@ -1106,6 +1224,12 @@
       "change": "完成智能服饰与运动装备官方新品、区域商城与众筹核验；本轮没有可靠新增主表型号。",
       "verification": "继续区分服饰、传感器模块、配件和同源OEM，补充尺寸与清洗/耐用性。",
       "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
+    },
+    {
+      "date": "2026-09-13",
+      "change": "新增WEAR-011 Suunto Smart Heart Rate Belt 2；Suunto官方发布稿、产品页、支持参考手册和US商城互证US$89、nRF54L15-QFAA、BLE 5.4、ECG/R-R、六轴传感器、尺寸、重量、CR2032续航和30m防水。",
+      "verification": "nRF54L15已存在于第25套芯片主表，本轮不重复新增；继续补齐其他模拟前端、充电电路、认证、区域SKU和数据保留边界。",
+      "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -1189,11 +1313,13 @@
   ],
   "source_channel_counts": {
     "crowdfunding": 3,
-    "official_newsroom": 2,
+    "official_newsroom": 3,
     "official_newsroom_distribution": 1,
     "official_product": 5,
+    "official_product_page": 1,
     "official_sales": 3,
-    "official_store": 4,
+    "official_store": 5,
+    "official_support": 1,
     "official_support_manual": 3
   },
   "source_domains": [
@@ -1214,6 +1340,8 @@
     "store.sensoriafitness.com",
     "store.uprightpose.com",
     "support.hexoskin.com",
+    "suunto.com",
+    "us.suunto.com",
     "xyn.sony.net"
   ]
 }

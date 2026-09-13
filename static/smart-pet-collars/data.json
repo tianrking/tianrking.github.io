@@ -1,7 +1,7 @@
 {
   "title": "全球上市智能宠物项圈／宠物吊牌研究库",
   "subtitle": "Global smart pet collars, trackers, tags and pet identity devices catalog",
-  "checked_on": "2026-09-12",
+  "checked_on": "2026-09-13",
   "version": "2026-08-25-pet-v3",
   "methodology": "优先官方产品页、官方商店、官方发布稿、官方规格/支持页和监管/认证记录；未披露字段写“未公开”，不从同系列、App功能、外观或OEM推断芯片/传感器/尺寸/续航；通用物品标签可挂宠物但明确标注非宠物专用。",
   "products": [
@@ -6736,6 +6736,12 @@
       "date": "2026-09-12",
       "change": "新增Cheerble Wickedbone Air候选；官方发布稿确认上市与价格信号，但官方商品路由出现Wickedbone/Wicked Ball、型号和重量冲突，保留候选不升级。",
       "verification": "核验包装、精确SKU、官方说明书、认证和商品页命名后再判断是否为同一型号。",
+      "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
+    },
+    {
+      "date": "2026-09-13",
+      "change": "完成智能宠物项圈、吊牌和互动设备官方产品、认证、众筹与区域销售核验；本轮没有可靠新增主表型号。",
+      "verification": "继续核验宠物定位、健康监测、订阅、蜂窝覆盖和隐私；页面命名冲突留在候选。",
       "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],

@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-12",
+  "checked_on": "2026-09-13",
   "scope_note": "首版优先覆盖全球主要品牌的智能手表、GPS运动表、运动手环与儿童手表。按独立型号/代际计数；颜色、容量、套装不拆行。价格保留官方市场原币种；没有明确披露的芯片、尺寸、重量、续航、防水、订阅和隐私字段写“未公开”。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-12"
+      "2026-09-13"
     ]
   ],
   "products": [
@@ -1462,6 +1462,47 @@
         "APPLE-WATCH-ULTRA4-SPECS-20260910"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "display": "1.32英寸LTPS AMOLED，466×466，2000 nits；钢化玻璃/Gorilla Glass",
+      "os_platform": "Suunto App；完整OS名称未公开",
+      "audio_drivers": "未公开",
+      "sensors": "腕部12通道心率；加速度/运动传感器类型与型号未公开",
+      "gps_positioning": "双频多系统GNSS：GPS、GLONASS、Galileo、BeiDou、QZSS；L1+L5；离线地图",
+      "satellite": "未公开",
+      "supported_protocols": "Bluetooth连接；GNSS；离线地图与手机App；Wi-Fi未公开",
+      "chip_or_soc": "未公开",
+      "storage": "标准约4GB；Premium地图/音乐版本约64GB",
+      "dimensions": "约46.5×46.5×11.66mm；官方对照页约46×46×11.7mm",
+      "weight_g": "表体35g；含表带约53g",
+      "battery": "380mAh；智能手表日常官方详细规格最长约13天，商城对照页高使用约10天；双频多系统GNSS约24h，单频约30h，省电约40h",
+      "charging": "未公开（充电接口、时间和功率未披露）",
+      "water_resistance": "5 ATM",
+      "subscription": "无公开硬件强制订阅；Suunto App/地图与服务条款按地区核验",
+      "privacy": "训练、位置、健康和账户数据处理边界按Suunto App及地区条款核验；完整云端保留规则未公开",
+      "features": "2000nit AMOLED；离线地图；跑步训练与马拉松功能；双频GNSS；12通道腕部心率；恢复/睡眠与运动负荷分析",
+      "availability_note": "Suunto US官方商城可下单，官方SKU SS051639000；Run 2 Premium存储、颜色、区域商品页不拆为独立产品",
+      "source_note": "Suunto官方发布稿、US官方商城和APAC官方商城互证全球发布、US$399、35g、显示、存储、GNSS、续航、5 ATM和区域可得性；芯片、Wi-Fi、充电功率、精确传感器型号未公开",
+      "id": "WATCH-039",
+      "brand": "Suunto",
+      "model": "Suunto Run 2",
+      "country_region": "芬兰品牌/全球市场；美国、欧洲、亚太官方区域商城",
+      "category": "智能手表/GPS运动表/跑步运动表",
+      "form_factor": "圆形腕戴GPS运动智能手表；46mm表壳",
+      "use_case": "道路跑步、马拉松训练、户外运动、睡眠恢复、离线地图与训练分析",
+      "status": "官方发布/官方US商城可下单；区域价格、库存和颜色配置动态",
+      "evidence": "A",
+      "launch_date": "2026-09-08",
+      "launch_date_type": "Suunto官方发布稿日期",
+      "price": "US$399（Suunto US官方店）",
+      "official_url": "https://us.suunto.com/products/suunto-run-2-all-black",
+      "spec_url": "https://www.suunto.com/es-py/Noticias/suunto-launches-run-2-a-35-g-running-watch-for-road-running-and-marathon-training-alongside-the-new-suunto-smart-heart-rate-belt-2/",
+      "source_refs": [
+        "SUUNTO-RUN2-NEWS-20260913",
+        "SUUNTO-RUN2-US-STORE-20260913",
+        "SUUNTO-RUN2-APAC-STORE-20260913"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -2295,6 +2336,63 @@
       "seller_type": "穿戴设备品牌官方",
       "storefront_type": "Apple官方技术规格页",
       "availability_signal": "技术规格页；销售状态以发布稿与商城为准"
+    },
+    {
+      "checked_on": "2026-09-13",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$399",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "SUUNTO-RUN2-NEWS-20260913",
+      "source_group": "Suunto Run 2",
+      "title": "Suunto launches Run 2, a 35 g running watch for road running and marathon training",
+      "url": "https://www.suunto.com/es-py/Noticias/suunto-launches-run-2-a-35-g-running-watch-for-road-running-and-marathon-training-alongside-the-new-suunto-smart-heart-rate-belt-2/",
+      "source_channel": "official_newsroom",
+      "source_role": "global_launch_announcement",
+      "source_domain": "suunto.com",
+      "seller_type": "brand",
+      "storefront_type": "Suunto official newsroom",
+      "availability_signal": "官方稿称全球发布；官方区域商城已列商品与购买信号",
+      "scope": "35g、2000nit AMOLED、双频GNSS、约10天/详细规格最长约13天、离线地图和Smart Heart Rate Belt 2联动"
+    },
+    {
+      "checked_on": "2026-09-13",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$399",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "SUUNTO-RUN2-US-STORE-20260913",
+      "source_group": "Suunto Run 2",
+      "title": "Suunto Run 2 All Black official US store",
+      "url": "https://us.suunto.com/products/suunto-run-2-all-black",
+      "source_channel": "official_store",
+      "source_role": "primary_product_page",
+      "source_domain": "us.suunto.com",
+      "seller_type": "brand",
+      "storefront_type": "Suunto US official store",
+      "availability_signal": "官方商城可下单；SKU SS051639000；区域库存动态",
+      "scope": "价格、规格、4GB/64GB存储变体、46.5mm表壳、35g、380mAh、5 ATM、双频GNSS和续航"
+    },
+    {
+      "checked_on": "2026-09-13",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开（区域页面动态）",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "SUUNTO-RUN2-APAC-STORE-20260913",
+      "source_group": "Suunto Run 2",
+      "title": "Suunto Run 2 Aloe Green official APAC store",
+      "url": "https://apac.suunto.com/products/suunto-run-2-aloe-green",
+      "source_channel": "official_store",
+      "source_role": "regional_availability_page",
+      "source_domain": "apac.suunto.com",
+      "seller_type": "brand",
+      "storefront_type": "Suunto APAC official store",
+      "availability_signal": "官方区域商城列出Run 2颜色/商品；库存、地区价格和交付动态",
+      "scope": "跨区域商品路由、型号家族、颜色为同一Run 2；不把颜色或存储配置拆成独立型号"
     }
   ],
   "update_log": [
@@ -2417,6 +2515,12 @@
       "change": "完成手表/运动表/儿童手表官方新品与区域销售核验；本轮没有可靠新增主表型号。",
       "verification": "继续覆盖品牌商城、运营商、电商区域站和认证记录；保留代际与LTE版本关系。",
       "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
+    },
+    {
+      "date": "2026-09-13",
+      "change": "新增WATCH-039 Suunto Run 2；Suunto官方发布稿、US官方商城和APAC官方商城互证US$399、2026-09-08发布、35g、2000nit AMOLED、双频GNSS、离线地图、存储、续航和5 ATM。",
+      "verification": "继续在正式上市后核验区域价格、精确SKU、实际续航、充电规格、无线协议、传感器型号和儿童/运营商版本；Premium存储与颜色不拆型号。",
+      "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -2499,15 +2603,16 @@
     }
   ],
   "source_channel_counts": {
-    "official_newsroom": 5,
+    "official_newsroom": 6,
     "official_newsroom_distribution": 1,
     "official_product": 18,
     "official_release": 3,
     "official_sales": 5,
-    "official_store": 1,
+    "official_store": 3,
     "official_support_manual": 12
   },
   "source_domains": [
+    "apac.suunto.com",
     "apple.com",
     "blog.google",
     "consumer.huawei.com",
@@ -2520,6 +2625,8 @@
     "prnewswire.com",
     "samsung.com",
     "store.google.com",
-    "support.google.com"
+    "support.google.com",
+    "suunto.com",
+    "us.suunto.com"
   ]
 }

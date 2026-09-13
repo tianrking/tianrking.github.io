@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-12",
+  "checked_on": "2026-09-13",
   "title": "全球 Wi‑Fi / Bluetooth 芯片选型数据库",
   "subtitle": "面向硬件选型的全球 Wi‑Fi、Bluetooth Classic/BR/EDR、BLE、Wi‑Fi+BT Combo、802.15.4 tri-radio 和无线 MCU/连接协处理器资料库。",
   "scope_note": "本库是消费电子与智能硬件数据库之外的第 25 套独立半导体选型库。主表按芯片/SoC/无线 MCU/连接协处理器计数，不把模块、开发板、OEM 方案或整机重复计入；国家/地区指品牌/公司归属口径，不等同于晶圆制造地。",
@@ -27687,6 +27687,12 @@
       "date": "2026-09-12",
       "change": "本轮继续核验原厂产品页、新闻、数据手册与授权分销价格；未找到同时具备精确裸芯片料号、规格书、独立价格和供货证据的可靠新增。",
       "verification": "不把模块、开发板、整机或同系列能力替代芯片；BLE、Bluetooth Classic、2.4GHz proprietary和802.15.4继续严格分列；价格按裸芯片、样品、分销、模块和开发板分层。",
+      "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
+    },
+    {
+      "date": "2026-09-13",
+      "change": "本轮继续核验全球Wi-Fi/Bluetooth原厂、数据手册、新闻、认证和DigiKey/Mouser/LCSC等授权分销价格；没有找到同时具备精确裸芯片料号、规格书、独立价格和供货证据的可靠新增主表芯片。Suunto胸带使用的nRF54L15-QFAA已存在，不重复计数。",
+      "verification": "继续严格区分裸芯片、无线MCU、模块、开发板、整机与OEM方案；BLE、Bluetooth Classic/BR/EDR、2.4GHz proprietary和802.15.4不互相推断；价格按单片、样品、授权分销、模块和开发板分层。",
       "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ]
