@@ -35,7 +35,7 @@
     "@docusaurus/module-type-aliases": "3.10.2",
     "@docusaurus/types": "3.10.2",
     "cheerio": "1.0.0-rc.12",
-    "js-yaml": "4.3.1"
+    "js-yaml": "4.3.2"
   },
   "overrides": {
     "serialize-javascript": "7.1.0",
