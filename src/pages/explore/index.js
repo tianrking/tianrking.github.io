@@ -2,7 +2,7 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
-import {travelSeries} from '@site/src/data/explore-series';
+import {travelSeries, indonesiaTravelSeries} from '@site/src/data/explore-series';
 import styles from './styles.module.css';
 
 const categories = [
@@ -11,7 +11,7 @@ const categories = [
     label: '行旅誌',
     title: '旅行規劃與記錄',
     description: '把路線、歷史、交通、預算與現場觀察整理成下一次可以直接使用的旅程。',
-    meta: '1 個系列 · 1 篇完整方案',
+    meta: '2 個系列 · 2 篇完整方案',
     route: '/explore/travel',
     accent: 'travel',
   },
@@ -78,6 +78,17 @@ export default function ExplorePage() {
             <p>{travelSeries.description}</p>
           </div>
           <Link className={styles.featuredLink} to={travelSeries.route}>
+            閱讀行程 <span aria-hidden="true">→</span>
+          </Link>
+        </section>
+
+        <section className={`container ${styles.featuredStrip}`} aria-labelledby="featured-indonesia">
+          <div>
+            <span className={styles.sectionKicker}>{indonesiaTravelSeries.eyebrow}</span>
+            <Heading as="h2" id="featured-indonesia">{indonesiaTravelSeries.title}</Heading>
+            <p>{indonesiaTravelSeries.description}</p>
+          </div>
+          <Link className={styles.featuredLink} to={indonesiaTravelSeries.route}>
             閱讀行程 <span aria-hidden="true">→</span>
           </Link>
         </section>

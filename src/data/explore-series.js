@@ -20,3 +20,12 @@ export const travelSeries = {
   meta: '2026.08.29 — 2026.09.06 · 博物館 · 歷史遺跡 · 二戰',
   route: '/explore/travel/malaysia-peninsula-8-day',
 };
+
+export const indonesiaTravelSeries = {
+  eyebrow: 'TRAVEL SERIES / 02',
+  title: '印度尼西亞爪哇 9 天：雅加達入、日惹古蹟、泗水出',
+  description:
+    '雅加達金融博物館與伊斯蘭文化、日惹兩大寺群、泗水戰爭墓園與獨立革命史；含每日交通、外國遊客票種、住宿、預算與閉館檢查。',
+  meta: '9 日 / 8 晚 · 雅加達 · 日惹 · 泗水',
+  route: '/blog/indonesia-java-9-day-jakarta-yogyakarta-surabaya',
+};
