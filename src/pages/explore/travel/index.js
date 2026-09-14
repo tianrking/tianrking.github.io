@@ -18,6 +18,39 @@ export default function TravelSeriesPage() {
           </div>
         </header>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="indonesia-story-title">
+          <div className={styles.featureTopline}>
+            <span>印度尼西亞 / 旅行計畫</span>
+            <span>9 日 / 8 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="indonesia-story-title">雅加達入、泗水出<br />爪哇歷史文化 9 日</Heading>
+              <p>雅加達金融博物館與清真寺、日惹婆羅浮屠與普蘭巴南、泗水戰爭墓園與獨立革命史。三城各住一處，以兩段白天火車串聯。</p>
+              <div className={styles.featureMeta}>
+                <span>2＋4＋2 晚</span>
+                <span>公共交通</span>
+                <span>外國遊客票種</span>
+                <span>閉館日期檢查</span>
+              </div>
+              <Link className={styles.primaryLink} to="/blog/indonesia-java-9-day-jakarta-yogyakarta-surabaya">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="印度尼西亞路線節點">
+              <div className={styles.routeCardLabel}>雅加達入境 → 泗水出境</div>
+              <div className={styles.routeList}>
+                {['CGK 機場', '雅加達 · 2 晚', '日惹 · 4 晚', '泗水 · 2 晚', 'SUB 機場'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}>
+                    <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{stop}</span>
+                    {index < 4 && <span className={styles.routeLine} aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>每日路線、車站、住宿區域、導航、預算與預約順序；出發日期可自行檢查。</p>
+            </div>
+          </div>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="first-story-title">
           <div className={styles.featureTopline}>
             <span>TRAVEL LOG / 01</span>

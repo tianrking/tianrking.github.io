@@ -1,7 +1,38 @@
 {
   "schemaVersion": 1,
-  "total": 294,
+  "total": 295,
   "documents": [
+    {
+      "id": "blog:2026-09-14-indonesia-java-9-day.mdx",
+      "kind": "blog",
+      "kindLabel": "開發誌",
+      "section": "開發誌",
+      "language": "zh-Hant",
+      "title": "印度尼西亞爪哇 9 天：雅加達入、日惹古蹟、泗水出",
+      "description": "雅加達入、泗水出的爪哇9天8晚完整旅行計畫：金融博物館、伊斯蘭文化、婆羅浮屠、普蘭巴南與戰爭墓園，含每日交通、外國遊客票種、住宿、預算、導航與閉館日期檢查。",
+      "route": "/blog/indonesia-java-9-day-jakarta-yogyakarta-surabaya",
+      "date": "2026-09-14",
+      "year": "2026",
+      "tags": [
+        "旅行",
+        "印度尼西亞",
+        "歷史文化"
+      ],
+      "keywords": [
+        "雅加達",
+        "日惹",
+        "泗水",
+        "爪哇",
+        "婆羅浮屠",
+        "普蘭巴南",
+        "印尼自由行",
+        "火車",
+        "青旅",
+        "伊斯蘭文化",
+        "戰爭墓園"
+      ],
+      "image": "/img/w0x7ce-social-card.png"
+    },
     {
       "id": "blog:2026-08-26-mihomo-tun-cidr-route-exclude-fake-ip-direct.md",
       "kind": "blog",

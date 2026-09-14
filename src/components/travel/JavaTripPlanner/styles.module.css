@@ -1,0 +1,210 @@
+.planner {
+  --planner-alert: #a52222;
+  --planner-prayer: #765013;
+  min-width: 0;
+  margin: 1.75rem 0;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--site-line-strong, var(--ifm-color-emphasis-300));
+  border-bottom: 1px solid var(--site-line-strong, var(--ifm-color-emphasis-300));
+  color: var(--site-ink, var(--ifm-font-color-base));
+}
+
+:global([data-theme='dark']) .planner {
+  --planner-alert: #ffb2b2;
+  --planner-prayer: #edcf96;
+}
+
+.planner h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.intro,
+.status,
+.stays p {
+  margin: 0.5rem 0 1rem;
+  color: var(--site-muted, var(--ifm-color-emphasis-700));
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.controls label {
+  font-weight: 600;
+}
+
+.controls input,
+.controls button {
+  min-height: 2.75rem;
+  max-width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--site-line-strong, var(--ifm-color-emphasis-400));
+  border-radius: 0.3rem;
+  padding: 0.45rem 0.7rem;
+  background: var(--site-surface-solid, var(--ifm-background-surface-color));
+  color: var(--site-ink, var(--ifm-font-color-base));
+  font: inherit;
+  font-size: 1rem;
+}
+
+.controls input {
+  min-width: 0;
+  width: 11rem;
+  color-scheme: light;
+}
+
+:global([data-theme='dark']) .controls input {
+  color-scheme: dark;
+}
+
+.controls button {
+  cursor: pointer;
+}
+
+.controls button:hover:not(:disabled) {
+  border-color: var(--site-muted, var(--ifm-color-emphasis-600));
+}
+
+.controls button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.controls input:focus-visible,
+.controls button:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 3px;
+}
+
+.error,
+.warning {
+  color: var(--planner-alert);
+}
+
+.error {
+  margin-top: 0.65rem;
+  font-size: 0.9375rem;
+}
+
+.days {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.day {
+  display: grid;
+  grid-template-columns: 7.3rem minmax(0, 1fr) 7.5rem;
+  gap: 0.35rem 1rem;
+  align-items: start;
+  margin: 0;
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--site-line, var(--ifm-color-emphasis-200));
+}
+
+.date,
+.route {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 0.15rem;
+}
+
+.date {
+  color: var(--site-muted, var(--ifm-color-emphasis-700));
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.dayNumber {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+.route strong {
+  font-size: 1rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.route span,
+.night {
+  color: var(--site-muted, var(--ifm-color-emphasis-700));
+  font-size: 0.875rem;
+}
+
+.night {
+  margin: 0.15rem 0 0;
+}
+
+.warning,
+.prayer {
+  grid-column: 2 / -1;
+  margin: 0.15rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.prayer {
+  color: var(--planner-prayer);
+}
+
+.stays {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--site-line-strong, var(--ifm-color-emphasis-300));
+}
+
+.stays h4 {
+  margin: 0 0 0.65rem;
+}
+
+.stays ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stays li {
+  margin: 0.35rem 0;
+  font-size: 0.9375rem;
+  overflow-wrap: anywhere;
+}
+
+.stays p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 560px) {
+  .controls label {
+    flex-basis: 100%;
+  }
+
+  .day {
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    column-gap: 0.75rem;
+  }
+
+  .date {
+    grid-row: span 2;
+  }
+
+  .night {
+    grid-column: 2;
+    margin: 0;
+  }
+
+  .warning,
+  .prayer {
+    grid-column: 1 / -1;
+    margin-top: 0.35rem;
+  }
+}
