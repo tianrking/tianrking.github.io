@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-13",
+  "checked_on": "2026-09-14",
   "scope_note": "本库覆盖智能家电与环境：空气净化器、除湿机、恒温器、智能插座、漏水传感器、天气站与能耗监测。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-13"
+      "2026-09-14"
     ]
   ],
   "products": [
@@ -366,6 +366,46 @@
         "XBREW-EVERNITRO-COLLECTION-20260906",
         "XBREW-EVERNITRO-IFA-20260906",
         "XBREW-EVERNITRO-KS-FAQ-20260906"
+      ],
+      "connectivity": "未公开"
+    },
+    {
+      "display": "60英寸Mini-LED；120Hz；quantum-dot color；HDR10+；Dolby Vision",
+      "os_platform": "Google TV",
+      "audio_drivers": "Dolby Atmos；Total Sonics；扬声器单元规格未公开",
+      "sensors": "未公开",
+      "gps_positioning": "不适用",
+      "satellite": "不适用",
+      "supported_protocols": "Google TV/streaming/casting/connected features；Wi-Fi/Bluetooth版本未公开",
+      "chip_or_soc": "SKYWORTH 16-Crystals-LED-Chip lighting technology（官方营销描述，不等同于主SoC）；主SoC未公开",
+      "storage": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开",
+      "battery": "不适用；AC供电规格未公开",
+      "charging": "不适用",
+      "water_resistance": "不适用",
+      "subscription": "无公开硬件强制订阅；Google TV应用/服务按地区",
+      "privacy": "Google TV、账户、流媒体和语音/连接数据边界未公开",
+      "features": "Mini-LED、量子点、120Hz、Dolby Vision、HDR10+、Dolby Atmos、Total Sonics、Find My Remote",
+      "availability_note": "官方PR称9月10日起在Takealot和Amazon可得；未找到精确官方商品页或ASIN，平台开售信号不等于完整全球上市",
+      "source_note": "SKYWORTH官方PR确认型号、南非发布、开售日期、Mini-LED/Google TV/HDR/120Hz/音频和平台渠道；价格、SKU/ASIN、尺寸重量、芯片、存储、功耗、防护与Wi-Fi/Bluetooth未公开",
+      "id": "HOMEENV-010",
+      "brand": "SKYWORTH",
+      "model": "60X6620K Mini-LED TV",
+      "country_region": "中国品牌/南非首发；Takealot与Amazon区域销售信号",
+      "category": "智能家电与环境/智能电视与家庭影音",
+      "form_factor": "60英寸Mini-LED Google TV",
+      "use_case": "家庭影音、体育、游戏和流媒体",
+      "status": "官方公告称2026-09-10南非开售；精确商品页、SKU、价格和库存待核验",
+      "evidence": "A",
+      "launch_date": "2026-09-10",
+      "launch_date_type": "SKYWORTH官方PR发布/开售日期",
+      "price": "未公开",
+      "official_url": "https://www.prnewswire.com/news-releases/see-better-go-bigger-skyworth-unveils-south-africas-first-60-mini-led-tv-302875017.html",
+      "spec_url": "未公开（官方PR仅给摘要规格）",
+      "source_refs": [
+        "SKYWORTH-60X6620K-PR-20260914",
+        "SKYWORTH-REGION-SELECTOR-20260914"
       ],
       "connectivity": "未公开"
     }
@@ -833,6 +873,44 @@
       "seller_type": "智能庭院/泳池机器人品牌官方",
       "storefront_type": "Aiper官方IFA区域页",
       "availability_signal": "IFA展示/新品体验；价格、订单、区域库存和交付未公开"
+    },
+    {
+      "checked_on": "2026-09-14",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "SKYWORTH-60X6620K-PR-20260914",
+      "source_group": "SKYWORTH 60X6620K",
+      "title": "See Better, Go Bigger: SKYWORTH unveils South Africa's first 60-inch Mini-LED TV",
+      "url": "https://www.prnewswire.com/news-releases/see-better-go-bigger-skyworth-unveils-south-africas-first-60-mini-led-tv-302875017.html",
+      "source_channel": "official_newsroom",
+      "source_role": "launch_announcement",
+      "source_domain": "prnewswire.com",
+      "seller_type": "brand",
+      "storefront_type": "SKYWORTH official PR distribution",
+      "availability_signal": "官方稿称2026-09-10起在Takealot和Amazon可得；未给出精确SKU/ASIN",
+      "scope": "60X6620K型号、南非开售日期、Mini-LED、Google TV、量子点、120Hz、Dolby Vision、HDR10+、Dolby Atmos、Total Sonics和Find My Remote"
+    },
+    {
+      "checked_on": "2026-09-14",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "SKYWORTH-REGION-SELECTOR-20260914",
+      "source_group": "SKYWORTH regional sites",
+      "title": "SKYWORTH official regional site selector",
+      "url": "https://www.skyworth.com/language.php",
+      "source_channel": "official_product_page",
+      "source_role": "regional_brand_site",
+      "source_domain": "skyworth.com",
+      "seller_type": "brand",
+      "storefront_type": "SKYWORTH official global site",
+      "availability_signal": "官方区域选择页列出South Africa站点；不单独证明60X6620K库存",
+      "scope": "品牌区域站点与南非官方域名入口，用于区域可得性核验"
     }
   ],
   "update_log": [
@@ -979,6 +1057,12 @@
       "change": "完成智能家电与环境官方新品、IFA/发布稿、区域商城、Amazon和候选线索核验；本轮没有可靠新增主表型号。",
       "verification": "展会新品如缺正式商品页、SKU或交付证据继续保留候选，不臆造规格。",
       "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
+    },
+    {
+      "date": "2026-09-14",
+      "change": "新增HOMEENV-010 SKYWORTH 60X6620K Mini-LED TV；官方PR确认南非2026-09-10开售、Takealot/Amazon渠道、Mini-LED、Google TV、120Hz、HDR和Dolby音频；价格、SKU/ASIN与完整规格待补。",
+      "verification": "优先核对官方产品页、官方发布/支持资料、监管或认证与区域销售信号；平台、媒体、众筹和社区信息仅作为发现或价格/库存辅助，未验证字段保持“未公开”。",
+      "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -1062,9 +1146,10 @@
   ],
   "source_channel_counts": {
     "crowdfunding": 1,
-    "official_newsroom": 1,
+    "official_newsroom": 2,
     "official_newsroom_distribution": 2,
     "official_product": 4,
+    "official_product_page": 1,
     "official_sales": 5,
     "official_store": 2,
     "official_support_manual": 1
@@ -1081,6 +1166,7 @@
     "mi.com",
     "midea.com",
     "prnewswire.com",
+    "skyworth.com",
     "store.google.com",
     "us.shelly.com",
     "xbrewlab.com"

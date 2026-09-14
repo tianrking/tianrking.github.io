@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-13",
+  "checked_on": "2026-09-14",
   "scope_note": "首版全球录音卡片与AI录音设备市场库：主表按可独立购买、官方明确发售或官方明确预售的型号/代际计数；卡片、磁吸手机设备、穿戴式录音器、耳机录音器和桌面会议设备按形态分类。颜色、存储容量选项、配件包不拆行；疑似OEM/贴牌、众筹或只出现于集合页的型号放入候选与别名表。价格保留查证时官方页面原币种，不做未经说明的汇率换算。来源未披露的芯片、精确尺寸、重量、电池容量、采样率和防水等级写“未公开”。",
   "products": [
     {
@@ -1375,6 +1375,46 @@
       "price": "2TX+1RX+充电盒约US$171；1TX+1RX约US$101（DJI Singapore官方店，动态）；日本2TX+1RX约¥27,720",
       "official_url": "https://store.dji.com/sg/product/dji-mic-mini-2s",
       "spec_url": "https://www.dji.com/media-center/announcements/ifa-2026-dji-berlin-osmo-360-2-romo-2-power-system"
+    },
+    {
+      "display": "OLED",
+      "os_platform": "Spectera WebUI / Spectera ecosystem",
+      "audio_drivers": "兼容Sennheiser与Neumann可换麦克风头；支持多种capsule",
+      "sensors": "RF性能、RSSI、电池状态、音频电平、干扰与链路质量监测；精确传感器器件未公开",
+      "gps_positioning": "不适用",
+      "satellite": "不适用",
+      "supported_protocols": "Spectera WMAS；多载波TDMA/TDD；UHF 470–608/630–698MHz或1.4GHz 1350–1400/1435–1525MHz；6或8MHz带宽；AES-256 CTR；OTA firmware；非Wi-Fi/Bluetooth产品",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "长196mm；capsule interface Ø40mm；shaft Ø33.3mm",
+      "weight_g": "约196g（官方技术数据口径；未含BA70，是否含麦克风头需按官方口径复核）",
+      "battery": "BA70或BA70 2.2可充电电池；官方公告>6小时live mode，产品页营销至多7小时",
+      "charging": "通过BA70电池与Spectera充电器；充电时间未公开",
+      "water_resistance": "未公开",
+      "subscription": "无公开硬件强制订阅；Spectera软件/服务条款未公开",
+      "privacy": "AES-256加密音频和控制数据；完整数据/云端边界未公开",
+      "features": "双向音频和控制；低延迟低至1.0ms；每RF channel最多128条音频/移动链路；远程增益/滤波；OTA更新；金属机身",
+      "availability_note": "官方公告称2026-09-10开始发货；UHF与1.4GHz按国家频谱限制；官方产品页动态719g/351×137×68mm物流字段与发布稿技术数据冲突，不采用动态字段",
+      "source_note": "Sennheiser官方shipping公告、官方产品页和SPECTERA产品族页互证型号、article no. 509166、发货、频段、WMAS、AES-256、OLED、尺寸、重量、续航与生态；公开单价、精确内部芯片/传感器、充电时间和完整认证未公开",
+      "id": "RC-036",
+      "brand": "Sennheiser",
+      "model": "SPECTERA SKM (UHF)",
+      "country_region": "德国品牌/全球专业音频市场；UHF与1.4GHz区域变体",
+      "category": "录音硬件/专业无线麦克风",
+      "form_factor": "手持式无线麦克风发射器",
+      "use_case": "现场扩声、剧院、广播、宗教场所、专业录音与无线音频制作",
+      "status": "官方已开始发货；专业B2B生态，区域价格和渠道动态",
+      "evidence": "A",
+      "launch_date": "2026-09-10",
+      "launch_date_type": "Sennheiser官方shipping公告日期",
+      "price": "未公开；官方/专业渠道B2B询价",
+      "official_url": "https://www.sennheiser.com/en-hk/catalog/products/wireless-systems/spectera-skm/spectera-skm-uhf-509166",
+      "spec_url": "https://newsroom.sennheiser.com/sennheisers-spectera-skm-handheld-transmitter-is-now-shipping",
+      "source_refs": [
+        "SENNHEISER-SPECTERA-SKM-SHIPPING-20260914",
+        "SENNHEISER-SPECTERA-SKM-PRODUCT-20260914",
+        "SENNHEISER-SPECTERA-FAMILY-20260914"
+      ]
     }
   ],
   "candidates": [
@@ -2596,6 +2636,63 @@
       "storefront_type": "DJI Japan official store",
       "availability_signal": "官方区域商品页；组合和库存动态",
       "scope": "日本区域价格与组合交叉核验，不把组合、颜色或配件拆成型号"
+    },
+    {
+      "checked_on": "2026-09-14",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开；专业B2B询价",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "SENNHEISER-SPECTERA-SKM-SHIPPING-20260914",
+      "source_group": "Sennheiser SPECTERA SKM",
+      "title": "Sennheiser's Spectera SKM handheld transmitter is now shipping",
+      "url": "https://newsroom.sennheiser.com/sennheisers-spectera-skm-handheld-transmitter-is-now-shipping",
+      "source_channel": "official_newsroom",
+      "source_role": "shipping_announcement_and_specs",
+      "source_domain": "newsroom.sennheiser.com",
+      "seller_type": "brand",
+      "storefront_type": "Sennheiser official newsroom",
+      "availability_signal": "官方公告称2026-09-10开始发货；UHF和1.4GHz按国家频谱限制",
+      "scope": "发货、WMAS、多载波TDMA/TDD、频段、6/8MHz RF信道、128条链路、AES-256 CTR、OLED、尺寸、重量和续航等技术数据"
+    },
+    {
+      "checked_on": "2026-09-14",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开；专业B2B询价",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "SENNHEISER-SPECTERA-SKM-PRODUCT-20260914",
+      "source_group": "Sennheiser SPECTERA SKM",
+      "title": "SPECTERA SKM UHF official product page",
+      "url": "https://www.sennheiser.com/en-hk/catalog/products/wireless-systems/spectera-skm/spectera-skm-uhf-509166",
+      "source_channel": "official_product_page",
+      "source_role": "primary_product_page",
+      "source_domain": "sennheiser.com",
+      "seller_type": "brand",
+      "storefront_type": "Sennheiser official regional product page",
+      "availability_signal": "官方产品页列出SPECTERA SKM UHF和article no. 509166；区域销售和价格动态，页内动态物流字段与技术公告存在冲突",
+      "scope": "型号、article no. 509166、双向音频/控制、1.0ms低延迟、AES-256、OLED、OTA更新、BA70电池、最多7小时营销口径和兼容麦克风头"
+    },
+    {
+      "checked_on": "2026-09-14",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "SENNHEISER-SPECTERA-FAMILY-20260914",
+      "source_group": "Sennheiser SPECTERA",
+      "title": "Sennheiser SPECTERA product family and architect resources",
+      "url": "https://www.sennheiser.com/en-au/product-families/spectera",
+      "source_channel": "official_product_page",
+      "source_role": "family_page_and_architect_specs",
+      "source_domain": "sennheiser.com",
+      "seller_type": "brand",
+      "storefront_type": "Sennheiser official product family page",
+      "availability_signal": "官方产品族页；提供架构资料、麦克风兼容列表和区域入口",
+      "scope": "SPECTERA产品族、架构规格下载、兼容Sennheiser/Neumann麦克风头和专业无线系统边界"
     }
   ],
   "update_log": [
@@ -2730,6 +2827,12 @@
       "change": "完成录音卡片/录音硬件官方新品、区域商城、Kickstarter/Indiegogo与Amazon线索核验；本轮没有新增可靠独立主表型号。",
       "verification": "继续区分无线麦克风、录音卡、充电盒、套装和配件；补齐芯片、存储、隐私与区域价格。",
       "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
+    },
+    {
+      "date": "2026-09-14",
+      "change": "新增RC-036 Sennheiser SPECTERA SKM；官方shipping公告、官方产品页和产品族页互证2026-09-10开始发货、WMAS、频段、AES-256、OLED、尺寸、重量和续航；B2B价格与内部芯片未公开。",
+      "verification": "优先核对官方产品页、官方发布/支持资料、监管或认证与区域销售信号；平台、媒体、众筹和社区信息仅作为发现或价格/库存辅助，未验证字段保持“未公开”。",
+      "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -2814,8 +2917,9 @@
   "source_channel_counts": {
     "crowdfunding": 4,
     "official_news": 1,
-    "official_newsroom": 3,
+    "official_newsroom": 4,
     "official_product": 13,
+    "official_product_page": 2,
     "official_release": 1,
     "official_sales": 26,
     "official_store": 6,
@@ -2839,6 +2943,7 @@
     "iflytek.com",
     "kickstarter.com",
     "lorzor.com",
+    "newsroom.sennheiser.com",
     "notta.ai",
     "omi.me",
     "oss.boyamic.com",
@@ -2846,6 +2951,7 @@
     "plaud.se",
     "prnewswire.com",
     "prtimes.jp",
+    "sennheiser.com",
     "sonal-ai.com",
     "soundcore.com",
     "store.boyamic.com",
