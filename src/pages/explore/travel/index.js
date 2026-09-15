@@ -33,7 +33,7 @@ export default function TravelSeriesPage() {
                 <span>外國遊客票種</span>
                 <span>閉館日期檢查</span>
               </div>
-              <Link className={styles.primaryLink} to="/blog/indonesia-java-9-day-jakarta-yogyakarta-surabaya">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+              <Link className={styles.primaryLink} to="/explore/travel/indonesia-java-9-day-jakarta-yogyakarta-surabaya">打開完整計畫 <span aria-hidden="true">↗</span></Link>
             </div>
             <div className={styles.routeCard} aria-label="印度尼西亞路線節點">
               <div className={styles.routeCardLabel}>雅加達入境 → 泗水出境</div>
