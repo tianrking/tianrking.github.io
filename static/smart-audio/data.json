@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-14",
+  "checked_on": "2026-09-15",
   "scope_note": "首版优先覆盖全球主要品牌的TWS、主动降噪、AI/录音/翻译耳机与骨传导/开放式运动耳机。按独立型号/代际计数；颜色、充电盒套装和区域SKU不拆行。翻译能力、AI功能与硬件音频能力分开记录；来源没有披露的芯片、传感器、尺寸、重量、防水、续航和订阅字段写“未公开”。 本库同时纳入Wi-Fi多房间音箱与联网家庭音频；音箱的扬声器驱动、无线协议和家庭服务与耳机字段分开记录。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-14"
+      "2026-09-15"
     ]
   ],
   "products": [
@@ -1829,6 +1829,48 @@
         "VIAIM-RISE-INDIEGOGO-20260911"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "display": "无内置显示；翻译字幕/音频经手机App或手机扬声器",
+      "os_platform": "Babel OS 3.0；Timekettle App；手机系统完整版本未公开",
+      "audio_drivers": "半入耳式耳机；驱动单元规格未公开；支持音乐与通话",
+      "sensors": "骨传导语音采集/voiceprint sensing；官方PR称双麦克风，产品页技术资料另列4-mic array；精确器件型号未公开",
+      "gps_positioning": "无内置GPS；手机定位不计入设备",
+      "satellite": "不适用",
+      "supported_protocols": "Bluetooth连接；Timekettle App；在线/离线翻译；Zoom、WhatsApp等通话场景；Bluetooth版本未公开",
+      "chip_or_soc": "未公开",
+      "storage": "13个可下载离线语言包；本地存储容量未公开",
+      "dimensions": "未公开",
+      "weight_g": "单耳约5.7g；耳机+充电盒约116.5g（官方PR）",
+      "battery": "每耳连续翻译超过3小时；官方PR称充电盒总翻译时间最多12小时、音乐最多18小时；官方产品页营销写总计18小时，口径存在差异",
+      "charging": "充电盒USB-C；充电时间和输入功率未公开",
+      "water_resistance": "未公开",
+      "subscription": "一次性版无持续订阅；订阅版高级AI、通话/多媒体翻译7天试用后US$14.99/月；基础双人会话与现场聆听永久免费",
+      "privacy": "翻译、录音/语音、账户和云端处理边界未完整公开；官方产品页主张通过App与服务提供功能",
+      "features": "Babel OS 3.0；VoiceFocus；骨传导采集；52种语言、106种口音、13个离线包；双向通话翻译；多媒体翻译；AI术语与上下文；会议自动摘要；半入耳设计",
+      "availability_note": "官方PR称2026-09-06起在Timekettle官网和Amazon可得；官方全球商城在查证日列标准变体In Stock，但提示高订单量预计9月18日或之后发货；颜色和充电盒套装不拆产品",
+      "source_note": "Timekettle官方产品页、IFA官方PR以及澳洲/德国官方区域店互证价格、上市/可得性、功能、语言、传感器采集、重量、续航和订阅；Bluetooth版本、主控芯片、存储容量、尺寸、防护、充电功率和完整隐私边界未公开；续航口径按来源分别保留",
+      "id": "AUDIO-049",
+      "brand": "Timekettle",
+      "model": "W4 Plus AI Interpreter Earbuds",
+      "country_region": "中国品牌/全球市场；官方全球、澳大利亚、德国区域店；Amazon可得性信号",
+      "category": "AI/翻译/降噪耳机",
+      "form_factor": "半入耳式AI翻译耳机+充电盒",
+      "use_case": "面对面交流、旅行、会议、Zoom/WhatsApp通话、视频/课程翻译、会议纪要",
+      "status": "官方已上市；官方全球商城有现货变体；Amazon可得性信号",
+      "evidence": "A",
+      "launch_date": "2026-09-04",
+      "launch_date_type": "IFA 2026官方发布公告日期；官方公告称2026-09-06起可得",
+      "price": "US$379一次性全功能版；US$299订阅版；官方澳洲约AUD$582.07/AUD$459.21；德国€379一次性版",
+      "official_url": "https://www.timekettle.co/products/w4-plus-ai-interpreter-earbuds",
+      "spec_url": "https://www.prnewswire.com/news-releases/timekettle-unveils-w4-plus-ai-interpreter-earbuds-at-ifa-2026-bringing-ai-powered-translation-to-conversations-calls-and-digital-content-302868977.html",
+      "source_refs": [
+        "TIMEKETTLE-W4-PLUS-PRODUCT-20260915",
+        "TIMEKETTLE-W4-PLUS-IFA-20260915",
+        "TIMEKETTLE-W4-PLUS-AU-STORE-20260915",
+        "TIMEKETTLE-W4-PLUS-DE-STORE-20260915"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -3089,6 +3131,82 @@
       "seller_type": "众筹项目方/平台",
       "storefront_type": "Indiegogo项目页",
       "availability_signal": "项目进行中；数据动态"
+    },
+    {
+      "checked_on": "2026-09-15",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$379一次性全功能版；US$299订阅版；高级功能7天试用后US$14.99/月",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "TIMEKETTLE-W4-PLUS-PRODUCT-20260915",
+      "source_group": "Timekettle W4 Plus",
+      "title": "W4 Plus AI Interpreter Earbuds official product page",
+      "url": "https://www.timekettle.co/products/w4-plus-ai-interpreter-earbuds",
+      "source_channel": "official_product_page",
+      "source_role": "primary_product_page_and_price",
+      "source_domain": "timekettle.co",
+      "seller_type": "brand",
+      "storefront_type": "Timekettle official global store",
+      "availability_signal": "官方页列出标准和订阅版本；标准变体在查证时显示In Stock，但提示高订单量，预计2026-09-18或之后发货",
+      "scope": "产品形态、价格、Babel OS 3.0、VoiceFocus、骨传导采集、52种语言/106种口音、13个离线包、3小时连续使用和总计18小时产品页口径、颜色、服务边界"
+    },
+    {
+      "checked_on": "2026-09-15",
+      "campaign_status": "未公开",
+      "pledge_or_price": "US$379全功能版；US$299订阅版；Unlimited Plan US$14.99/月",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "TIMEKETTLE-W4-PLUS-IFA-20260915",
+      "source_group": "Timekettle W4 Plus",
+      "title": "Timekettle unveils W4 Plus AI Interpreter Earbuds at IFA 2026",
+      "url": "https://www.prnewswire.com/news-releases/timekettle-unveils-w4-plus-ai-interpreter-earbuds-at-ifa-2026-bringing-ai-powered-translation-to-conversations-calls-and-digital-content-302868977.html",
+      "source_channel": "official_newsroom",
+      "source_role": "launch_announcement_and_specs",
+      "source_domain": "prnewswire.com",
+      "seller_type": "brand",
+      "storefront_type": "Timekettle official PR distribution",
+      "availability_signal": "官方发布稿称2026-09-06起可在Timekettle官网和Amazon购买",
+      "scope": "2026-09-04 IFA发布、Babel OS 3.0、VoiceFocus、面对面/通话/多媒体翻译、骨传导voiceprint sensing、双麦克风、52种语言/106种口音/13个离线包、5.7g单耳、116.5g耳机加盒、续航和订阅"
+    },
+    {
+      "checked_on": "2026-09-15",
+      "campaign_status": "未公开",
+      "pledge_or_price": "AUD$582.07一次性版；AUD$459.21订阅版；页面原价分别约AUD$612.79/AUD$489.92",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "TIMEKETTLE-W4-PLUS-AU-STORE-20260915",
+      "source_group": "Timekettle W4 Plus",
+      "title": "W4 Plus AI Interpreter Earbuds official Australia store",
+      "url": "https://www.timekettle.co/en-au/products/w4-plus-ai-interpreter-earbuds",
+      "source_channel": "official_store",
+      "source_role": "regional_price_page",
+      "source_domain": "timekettle.co",
+      "seller_type": "brand",
+      "storefront_type": "Timekettle official Australia store",
+      "availability_signal": "官方澳洲区域店列出标准和订阅版本；配送以结账页动态信息为准",
+      "scope": "澳大利亚区域价格、产品变体和区域销售入口"
+    },
+    {
+      "checked_on": "2026-09-15",
+      "campaign_status": "未公开",
+      "pledge_or_price": "€379一次性版",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "TIMEKETTLE-W4-PLUS-DE-STORE-20260915",
+      "source_group": "Timekettle W4 Plus",
+      "title": "W4 Plus KI-Dolmetscher-Ohrhörer official Germany store",
+      "url": "https://de.store.timekettle.co/products/w4-plus-ki-dolmetscher-ohrhorer",
+      "source_channel": "official_store",
+      "source_role": "regional_price_page",
+      "source_domain": "timekettle.co",
+      "seller_type": "brand",
+      "storefront_type": "Timekettle official Germany store",
+      "availability_signal": "官方德国区域店列出一次性版本；库存/配送以页面和结账页动态信息为准",
+      "scope": "德国区域价格、欧洲官方销售入口和型号交叉核验"
     }
   ],
   "update_log": [
@@ -3253,6 +3371,12 @@
       "change": "完成本类别官方产品、发布、规格、区域销售、众筹、电商和授权渠道核验；本轮没有达到证据门槛的新增独立主表型号。",
       "verification": "优先核对官方产品页、官方发布/支持资料、监管或认证与区域销售信号；平台、媒体、众筹和社区信息仅作为发现或价格/库存辅助，未验证字段保持“未公开”。",
       "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
+    },
+    {
+      "date": "2026-09-15",
+      "change": "新增AUDIO-049 Timekettle W4 Plus AI Interpreter Earbuds；Timekettle官方全球/澳大利亚/德国区域店与官方IFA发布稿互证2026-09-06起可得、US$379/US$299商业版本、52语言/106口音/13离线包、骨传导采集、双麦克风、重量、续航和订阅；Bluetooth版本、芯片、尺寸、防护、充电功率和完整隐私边界未公开，续航口径按来源保留差异。",
+      "verification": "优先核对官方产品页、官方发布/支持资料、监管或认证与区域销售信号；平台、媒体、众筹和社区信息仅作为发现或价格/库存辅助，未验证字段保持“未公开”。",
+      "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -3338,12 +3462,13 @@
     "crowdfunding": 1,
     "official_event": 1,
     "official_news": 1,
-    "official_newsroom": 10,
+    "official_newsroom": 11,
     "official_newsroom_distribution": 2,
     "official_product": 9,
+    "official_product_page": 1,
     "official_release": 2,
     "official_sales": 18,
-    "official_store": 6,
+    "official_store": 8,
     "official_support_manual": 14
   },
   "source_domains": [
