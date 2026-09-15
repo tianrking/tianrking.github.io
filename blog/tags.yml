@@ -164,18 +164,3 @@ DNS:
   label: DNS
   permalink: /dns
   description: DNS 解析、Fake-IP 與名稱選路
-
-旅行:
-  label: 旅行
-  permalink: /travel
-  description: 旅行路線、公共交通與住宿規劃
-
-印度尼西亞:
-  label: 印度尼西亞
-  permalink: /indonesia
-  description: 印度尼西亞城市、古蹟與旅行資料
-
-歷史文化:
-  label: 歷史文化
-  permalink: /history-and-culture
-  description: 博物館、歷史遺址與宗教文化
