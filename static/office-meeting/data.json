@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-15",
+  "checked_on": "2026-09-16",
   "scope_note": "本库覆盖办公与会议硬件：摄像头、会议麦克风、会议终端、标签打印、便携投影与智能录入设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-15"
+      "2026-09-16"
     ]
   ],
   "products": [
@@ -422,19 +422,22 @@
       "id": "CAND-VIOLOOP-20260907",
       "name": "Violoop AI screen/task assistant",
       "brand": "Violoop",
-      "region": "全球/官方预约与Kickstarter计划",
+      "region": "全球；Violoop官方站与Kickstarter众筹进行中",
       "category": "办公与会议硬件/AI屏幕助理",
-      "status": "候选/官方预发布；Kickstarter计划2026-09-15；预约金US$10，正式交付待定",
+      "status": "候选/ Kickstarter众筹进行中；计划分批交付，尚未升级为普通在售主表",
       "evidence": "A",
-      "reason": "Violoop官方资料披露HDMI 2.0 4K@30采集、USB-HID控制、RK3576八核、26 TOPS AI加速、STM32H563安全MCU、AMOLED触摸屏、2.4/5GHz Wi-Fi 802.11ac/ax、Bluetooth 5.2、Windows/macOS/Linux兼容、90×92×80mm和450g；官方预约页列早期价US$369、零售价US$699并计划2026-09-15启动Kickstarter。由于目前仍是预约/预发布，且官方技术页与checkout页对Hailo-8/内存配置存在冲突，不计入在售主表。",
-      "url": "https://www.violoop.ai/",
+      "reason": "Violoop官方现行产品页已标注LIVE ON KICKSTARTER和VIOLOOP_V1.0 LIVE；官方Q&A确认US$399 Early Bird、计划零售价US$699、Wave 1计划2026年11月、Wave 2待CE/EN 18031认证。官方资料披露HDMI 2.0 4K@30采集、USB-HID、RK3576八核、26 TOPS、STM32H563安全MCU、AMOLED触摸屏、Wi-Fi/Bluetooth、Windows/macOS/Linux和本地优先隐私。由于仍是众筹及认证/交付阶段，不计入普通在售主表。",
+      "url": "https://violoop.com/",
       "alias_or_relation": "AI屏幕/任务助手；Vibe Coding Mic为配件，不单列；不与普通会议摄像头重复",
       "source_refs": [
         "VIOLOOP-OFFICIAL-20260907",
         "VIOLOOP-RESERVE-20260907",
-        "VIOLOOP-TECH-20260907"
+        "VIOLOOP-TECH-20260907",
+        "VIOLOOP-LIVE-OFFICIAL-20260916",
+        "VIOLOOP-LIVE-QA-20260916",
+        "VIOLOOP-KICKSTARTER-LIVE-20260916"
       ],
-      "next_check": "核验Kickstarter实际上线、最终BOM与SoC/加速器、内存/存储SKU、价格档位、交付、FCC/CE、隐私与云端API条款"
+      "next_check": "继续核验Kickstarter最终档位与项目截止日、Wave 1实际发货、CE/EN 18031/FCC、最终BOM与内存/存储SKU、区域交付和云端条款"
     }
   ],
   "sources": [
@@ -627,6 +630,63 @@
       "seller_type": "AI办公硬件品牌官方",
       "storefront_type": "Violoop官方技术博客",
       "availability_signal": "技术预览；不证明正式销售"
+    },
+    {
+      "checked_on": "2026-09-16",
+      "campaign_status": "LIVE",
+      "pledge_or_price": "官方页面关联Kickstarter；早鸟价格与交付以官方Q&A和Kickstarter档位为准",
+      "estimated_delivery": "未公开",
+      "platform_reference": "未公开",
+      "quality": "A",
+      "id": "VIOLOOP-LIVE-OFFICIAL-20260916",
+      "source_group": "Violoop V1.0",
+      "title": "Violoop official product page — live on Kickstarter",
+      "url": "https://violoop.com/",
+      "source_channel": "official_product_page",
+      "source_role": "live_product_page_and_specs",
+      "source_domain": "violoop.com",
+      "seller_type": "brand",
+      "storefront_type": "Violoop official product website",
+      "availability_signal": "官方页面明确显示LIVE ON KICKSTARTER和VIOLOOP_V1.0 LIVE；仍按众筹交付而非普通现货记录",
+      "scope": "HDMI 2.0、4K@30Hz采集、USB-HID、RK3576八核、26 TOPS、STM32H563安全MCU、AMOLED触摸屏、双屏、Wi-Fi和Bluetooth、Windows/macOS/Linux、隐私与硬件确认键"
+    },
+    {
+      "checked_on": "2026-09-16",
+      "campaign_status": "LIVE",
+      "pledge_or_price": "Kickstarter Early Bird US$399；已有US$10预约金且成功支持者有效价格约US$369；计划零售价US$699",
+      "estimated_delivery": "Wave 1（美国、加拿大、澳大利亚、新西兰、新加坡、香港）计划2026年11月；Wave 2英国、欧盟、瑞士、挪威待CE和EN 18031认证完成后",
+      "platform_reference": "Violoop Kickstarter campaign",
+      "quality": "A",
+      "id": "VIOLOOP-LIVE-QA-20260916",
+      "source_group": "Violoop V1.0",
+      "title": "Violoop official Kickstarter Q&A — pricing, shipping and privacy",
+      "url": "https://violoop.com/qa/",
+      "source_channel": "official_support_manual",
+      "source_role": "official_pricing_shipping_privacy_and_campaign_status",
+      "source_domain": "violoop.com",
+      "seller_type": "brand",
+      "storefront_type": "Violoop official Q&A",
+      "availability_signal": "官方Q&A确认Kickstarter活动与预售交付安排；项目仍为众筹，不等同于常规零售现货",
+      "scope": "Kickstarter价格档、Wave 1/Wave 2交付、一次性激活、隐私、云端文本摘要、文件与屏幕不上传、保修和服务器依赖边界"
+    },
+    {
+      "checked_on": "2026-09-16",
+      "campaign_status": "LIVE",
+      "pledge_or_price": "以官方Q&A披露的US$399 Early Bird为当前可比众筹档位；不当作普通零售价",
+      "estimated_delivery": "官方Q&A给出Wave 1计划2026年11月，其他地区待认证或在pledge manager按地址显示",
+      "platform_reference": "kickstarter.com/projects/bvio/violoop-plug-in-ai-for-your-computer",
+      "quality": "A",
+      "id": "VIOLOOP-KICKSTARTER-LIVE-20260916",
+      "source_group": "Violoop V1.0",
+      "title": "VIOLOOP — PLUG-IN AI FOR YOUR COMPUTER Kickstarter campaign",
+      "url": "https://www.kickstarter.com/projects/bvio/violoop-plug-in-ai-for-your-computer",
+      "source_channel": "crowdfunding",
+      "source_role": "campaign_status_and_pledge_signal",
+      "source_domain": "kickstarter.com",
+      "seller_type": "project_creator",
+      "storefront_type": "Kickstarter campaign",
+      "availability_signal": "Kickstarter campaign page已上线，可查看Campaign、Rewards、Creator、FAQ、Updates和Back this project入口",
+      "scope": "众筹项目上线状态、Rewards入口、项目方与项目交付线索"
     }
   ],
   "update_log": [
@@ -773,6 +833,12 @@
       "change": "完成本类别官方产品、发布、规格、区域销售、众筹、电商和授权渠道核验；本轮没有达到证据门槛的新增独立主表型号。",
       "verification": "优先核对官方产品页、官方发布/支持资料、监管或认证与区域销售信号；平台、媒体、众筹和社区信息仅作为发现或价格/库存辅助，未验证字段保持“未公开”。",
       "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
+    },
+    {
+      "date": "2026-09-16",
+      "change": "更新候选CAND-VIOLOOP-20260907：官方站已显示Kickstarter LIVE；补充官方产品页、官方Q&A和Kickstarter来源，更新US$399 Early Bird、US$699计划零售价、2026年11月Wave 1交付与CE/EN 18031认证条件；仍为众筹候选，不计入普通在售主表。",
+      "verification": "优先核对官方产品页、官方发布/支持资料、监管或认证与区域销售信号；平台、媒体、众筹和社区信息仅作为发现或价格/库存辅助，未验证字段保持“未公开”。",
+      "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -855,11 +921,13 @@
     }
   ],
   "source_channel_counts": {
+    "crowdfunding": 1,
     "official_product": 4,
+    "official_product_page": 1,
     "official_sales": 3,
     "official_store": 1,
     "official_support": 1,
-    "official_support_manual": 2
+    "official_support_manual": 3
   },
   "source_domains": [
     "brother-usa.com",
@@ -867,9 +935,11 @@
     "hp.com",
     "hub.sync.logitech.com",
     "jabra.com",
+    "kickstarter.com",
     "owllabs.com",
     "plaud.ai",
     "violoop.ai",
+    "violoop.com",
     "zoomcorp.com"
   ]
 }

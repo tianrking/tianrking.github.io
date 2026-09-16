@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-15",
+  "checked_on": "2026-09-16",
   "scope_note": "首版优先覆盖全球主要品牌的TWS、主动降噪、AI/录音/翻译耳机与骨传导/开放式运动耳机。按独立型号/代际计数；颜色、充电盒套装和区域SKU不拆行。翻译能力、AI功能与硬件音频能力分开记录；来源没有披露的芯片、传感器、尺寸、重量、防水、续航和订阅字段写“未公开”。 本库同时纳入Wi-Fi多房间音箱与联网家庭音频；音箱的扬声器驱动、无线协议和家庭服务与耳机字段分开记录。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-15"
+      "2026-09-16"
     ]
   ],
   "products": [
@@ -1987,6 +1987,23 @@
         "SOUNDCOR-THUS-PRELAUNCH-20260909"
       ],
       "next_check": "2026-09-22后核验商品页、区域库存、ASIN/SKU、驱动、续航、重量、充电和Bluetooth版本"
+    },
+    {
+      "id": "CAND-DUVA-ONE-20260916",
+      "name": "DUVA ONE",
+      "brand": "DUVA / Fitnexa",
+      "region": "美国、加拿大、英国、欧盟、澳大利亚计划市场",
+      "category": "TWS/睡眠/健康AI耳机",
+      "status": "候选/官方预发布；计划2026年10月上市；当前仅early access",
+      "evidence": "A",
+      "reason": "DUVA官方产品页与官方PR发布稿互证DUVA ONE为实时响应的睡眠耳机系统：入耳PPG和运动传感器估计睡眠阶段并跟踪心率、HRV、睡姿和运动；床头盒检测噪声、光、温度和湿度；可实时调整ANC、遮蔽声和本地睡眠音频。官方披露约3.3g/耳、约9.9mm、最高16小时、目标价US$349.99和计划2026年10月上市。当前官网只收集early access，未达到在售主表标准。",
+      "url": "https://duva.com/",
+      "alias_or_relation": "闭环睡眠系统；耳机与环境传感充电盒成套记录，不与普通TWS重复；品牌由Fitnexa创建",
+      "source_refs": [
+        "DUVA-ONE-OFFICIAL-PRODUCT-20260916",
+        "DUVA-ONE-IFA-20260916"
+      ],
+      "next_check": "核验2026年10月正式购买页、实际发货、价格/地区、Bluetooth版本、芯片、内存音频容量、电池容量、充电功率、认证、App与隐私条款"
     }
   ],
   "sources": [
@@ -3207,6 +3224,44 @@
       "storefront_type": "Timekettle official Germany store",
       "availability_signal": "官方德国区域店列出一次性版本；库存/配送以页面和结账页动态信息为准",
       "scope": "德国区域价格、欧洲官方销售入口和型号交叉核验"
+    },
+    {
+      "checked_on": "2026-09-16",
+      "campaign_status": "未公开",
+      "pledge_or_price": "未公开；官方发布稿目标零售价US$349.99，不当作当前销售价",
+      "estimated_delivery": "官方站未公开；发布稿计划2026年10月上市",
+      "platform_reference": "DUVA ONE",
+      "quality": "A",
+      "id": "DUVA-ONE-OFFICIAL-PRODUCT-20260916",
+      "source_group": "DUVA ONE",
+      "title": "DUVA ONE official product page",
+      "url": "https://duva.com/",
+      "source_channel": "official_product_page",
+      "source_role": "primary_product_page_and_early_access",
+      "source_domain": "duva.com",
+      "seller_type": "brand",
+      "storefront_type": "DUVA official product website",
+      "availability_signal": "官方站提供Get early access和通知入口，未提供当前购买/库存页；保持候选",
+      "scope": "睡眠系统定位、入耳PPG/运动传感、床头充电盒的噪声/光/温度/湿度传感、ANC/遮蔽声/本地音频、9.9mm、约3.3g/耳、隐私描述"
+    },
+    {
+      "checked_on": "2026-09-16",
+      "campaign_status": "未公开",
+      "pledge_or_price": "目标零售价US$349.99；非当前可购买报价",
+      "estimated_delivery": "计划2026年10月上市；具体发货日未公开",
+      "platform_reference": "DUVA ONE",
+      "quality": "A",
+      "id": "DUVA-ONE-IFA-20260916",
+      "source_group": "DUVA ONE",
+      "title": "DUVA introduces DUVA ONE at IFA 2026",
+      "url": "https://www.prnewswire.co.uk/news-releases/duva-introduces-duva-one-at-ifa-2026-personalized-sleep-earbuds-that-respond-in-real-time-302870861.html",
+      "source_channel": "official_newsroom_distribution",
+      "source_role": "launch_announcement_and_target_price",
+      "source_domain": "prnewswire.co.uk",
+      "seller_type": "brand",
+      "storefront_type": "DUVA official PR distribution",
+      "availability_signal": "官方发布稿称计划2026年10月发布，目标市场为美国、加拿大、英国、欧盟和澳大利亚；当前仍为预发布/早期访问",
+      "scope": "Fitnexa背景、实时睡眠响应、PPG/运动/环境传感、混合ANC最高42dB、13小时本地音频/ANC关闭、9.5小时ANC开启、最多五次额外充电、离线闹钟、隐私边界与目标市场"
     }
   ],
   "update_log": [
@@ -3377,6 +3432,12 @@
       "change": "新增AUDIO-049 Timekettle W4 Plus AI Interpreter Earbuds；Timekettle官方全球/澳大利亚/德国区域店与官方IFA发布稿互证2026-09-06起可得、US$379/US$299商业版本、52语言/106口音/13离线包、骨传导采集、双麦克风、重量、续航和订阅；Bluetooth版本、芯片、尺寸、防护、充电功率和完整隐私边界未公开，续航口径按来源保留差异。",
       "verification": "优先核对官方产品页、官方发布/支持资料、监管或认证与区域销售信号；平台、媒体、众筹和社区信息仅作为发现或价格/库存辅助，未验证字段保持“未公开”。",
       "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
+    },
+    {
+      "date": "2026-09-16",
+      "change": "新增候选CAND-DUVA-ONE-20260916：官方产品页与IFA发布稿确认实时睡眠响应耳机、入耳PPG/运动与环境传感、ANC、续航、重量、计划2026年10月上市和目标价US$349.99；当前仅early access，未进入在售主表。",
+      "verification": "优先核对官方产品页、官方发布/支持资料、监管或认证与区域销售信号；平台、媒体、众筹和社区信息仅作为发现或价格/库存辅助，未验证字段保持“未公开”。",
+      "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -3463,9 +3524,9 @@
     "official_event": 1,
     "official_news": 1,
     "official_newsroom": 11,
-    "official_newsroom_distribution": 2,
+    "official_newsroom_distribution": 3,
     "official_product": 9,
-    "official_product_page": 1,
+    "official_product_page": 2,
     "official_release": 2,
     "official_sales": 18,
     "official_store": 8,
@@ -3478,6 +3539,7 @@
     "belkin.com",
     "bose.com",
     "consumer.huawei.com",
+    "duva.com",
     "harman.com",
     "hmd.com",
     "ifa-berlin.com",
@@ -3489,6 +3551,7 @@
     "oppo.com",
     "plaud.ai",
     "plaud.se",
+    "prnewswire.co.uk",
     "prnewswire.com",
     "prtimes.jp",
     "qcy.com",
