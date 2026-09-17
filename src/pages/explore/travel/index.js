@@ -89,6 +89,39 @@ export default function TravelSeriesPage() {
           </div>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="vietnam-story-title">
+          <div className={styles.featureTopline}>
+            <span>越南北部 / 旅行計畫</span>
+            <span>8 日 / 7 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="vietnam-story-title">河內入、沙巴山地<br />寧平古蹟與老街文化 8 日</Heading>
+              <p>以沙巴为核心，串联升龙皇城、Trang An 世界遗产、Hoa Lư 古都、Muong Hoa 梯田、Fansipan 与北河周日市场，按公共交通和天气缓冲安排。</p>
+              <div className={styles.featureMeta}>
+                <span>2＋1＋3 晚</span>
+                <span>自然与古迹</span>
+                <span>山地文化</span>
+                <span>交通与签证核对</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/vietnam-north-8-day-hanoi-ninh-binh-sapa">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="越南北部路線節點">
+              <div className={styles.routeCardLabel}>河內入境 → 沙巴 → 河内出境</div>
+              <div className={styles.routeList}>
+                {['HAN 機場', '河內 · 2 晚', '寧平 · 1 晚', '沙巴 · 3 晚', '老街／北河', 'HAN 機場'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}>
+                    <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{stop}</span>
+                    {index < 5 && <span className={styles.routeLine} aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>世界遺產、梯田、最高峰與周日高地市場；D7 按星期切換北河或沙巴緩衝。</p>
+            </div>
+          </div>
+        </section>
+
       </main>
     </Layout>
   );

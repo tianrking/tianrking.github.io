@@ -1,0 +1,120 @@
+:global(.vietnamNorthArticle) :global(.theme-doc-markdown) {
+  --travel-accent: var(--ifm-color-primary);
+  --travel-accent-soft: color-mix(in srgb, var(--ifm-color-primary) 9%, var(--ifm-background-surface-color));
+  --travel-line: color-mix(in srgb, var(--ifm-font-color-base) 14%, transparent);
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: clamp(.25rem, 1vw, 1rem) clamp(.25rem, 2vw, 1rem) 3rem;
+  color: var(--ifm-font-color-base);
+}
+
+:global(.vietnamNorthArticle) :global(.theme-doc-markdown) > p:first-of-type {
+  margin: 1.4rem 0 .85rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid color-mix(in srgb, var(--travel-accent) 25%, transparent);
+  border-left: .3rem solid var(--travel-accent);
+  border-radius: .8rem;
+  background: var(--travel-accent-soft);
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  line-height: 1.8;
+}
+
+:global(.vietnamNorthArticle) :global(.theme-doc-markdown) :global(h2) {
+  margin-top: 3.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--travel-line);
+  color: var(--ifm-heading-color);
+  letter-spacing: -.025em;
+}
+
+:global(.vietnamNorthArticle) :global(.theme-doc-markdown) :global(h3) {
+  margin-top: 2.15rem;
+  color: var(--ifm-heading-color);
+}
+
+:global(.vietnamNorthArticle) :global(.theme-doc-markdown) :global(h2)::before {
+  display: block;
+  width: 2.2rem;
+  height: .22rem;
+  margin-bottom: .75rem;
+  border-radius: 99px;
+  background: var(--travel-accent);
+  content: '';
+}
+
+:global(.vietnamNorthArticle) :global(.theme-doc-markdown) :global(a) {
+  text-underline-offset: .18em;
+  text-decoration-thickness: .08em;
+}
+
+:global(.vietnamNorthArticle) :global(.theme-doc-markdown) :global(table) {
+  display: table;
+  width: 100%;
+  margin: 1.2rem 0 1.8rem;
+  overflow: hidden;
+  border: 1px solid var(--travel-line);
+  border-radius: .75rem;
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--ifm-color-emphasis-900) 6%, transparent);
+  font-size: .92rem;
+}
+
+:global(.vietnamNorthArticle) :global(.theme-doc-markdown) :global(th) {
+  color: var(--ifm-heading-color);
+  background: var(--travel-accent-soft);
+  font-size: .8rem;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+
+:global(.vietnamNorthArticle) :global(.theme-doc-markdown) :global(td),
+:global(.vietnamNorthArticle) :global(.theme-doc-markdown) :global(th) {
+  border-color: var(--travel-line);
+  padding: .72rem .78rem;
+  vertical-align: top;
+}
+
+:global(.vietnamNorthArticle) :global(.theme-doc-markdown) :global(tbody tr:nth-child(even)) {
+  background: color-mix(in srgb, var(--ifm-background-surface-color) 86%, var(--travel-accent));
+}
+
+:global(.vietnamNorthArticle) :global(.theme-doc-markdown) :global(ul),
+:global(.vietnamNorthArticle) :global(.theme-doc-markdown) :global(ol) {
+  padding-left: 1.45rem;
+}
+
+:global(.vietnamNorthArticle) :global(.theme-doc-markdown) :global(li) {
+  margin: .38rem 0;
+}
+
+@media (max-width: 996px) {
+  :global(.vietnamNorthArticle) :global(.theme-doc-markdown) :global(table) {
+    display: block;
+    overflow-x: auto;
+    white-space: normal;
+  }
+
+  :global(.vietnamNorthArticle) :global(.theme-doc-markdown) :global(table) th,
+  :global(.vietnamNorthArticle) :global(.theme-doc-markdown) :global(table) td {
+    min-width: 9rem;
+  }
+}
+
+@media (max-width: 640px) {
+  :global(.vietnamNorthArticle) :global(.theme-doc-markdown) {
+    padding-inline: .15rem;
+  }
+
+  :global(.vietnamNorthArticle) :global(.theme-doc-markdown) > p:first-of-type {
+    padding: .85rem .9rem;
+    font-size: .96rem;
+  }
+
+  :global(.vietnamNorthArticle) :global(.theme-doc-markdown) :global(h2) {
+    margin-top: 2.7rem;
+    font-size: 1.55rem;
+  }
+
+  :global(.vietnamNorthArticle) :global(.theme-doc-markdown) :global(table) {
+    font-size: .84rem;
+  }
+}
