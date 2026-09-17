@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-16",
+  "checked_on": "2026-09-17",
   "scope_note": "本库覆盖影像与创作设备：运动相机、360相机、云台相机、无人机、手持云台与直播影像设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-16"
+      "2026-09-17"
     ]
   ],
   "products": [
@@ -815,6 +815,47 @@
         "RISION-MAGIC-LAUNCH-PR-20260913"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "id": "IMAGE-018",
+      "brand": "Anker soundcore / Nebula",
+      "model": "Nebula X1 Pro 4K Projector",
+      "country_region": "中国品牌；加拿大、德国等官方区域销售页",
+      "category": "影像与创作设备/移动家庭影院",
+      "form_factor": "可移动一体式4K三色激光投影与无线音频系统",
+      "use_case": "家庭影院、户外影院、娱乐和移动大屏",
+      "status": "在售/区域库存差异；加拿大官方页可购，德国页面存在售罄与变体在售信号",
+      "evidence": "A",
+      "launch_date": "未公开",
+      "launch_date_type": "官方产品页未披露明确首发日；官方博客仅提供产品背景",
+      "price": "CA$6,999.99；德国官方变体页€4,999；区域价格和套装不同",
+      "official_url": "https://www.anker.com/ca/products/d2151-nebula-x1-pro-4k-projector",
+      "spec_url": "https://www.anker.com/de/products/d2151-nebula-x1-pro-4k-projector?variant=56465918394743",
+      "display": "0.47英寸DMD加TI XPR；官方问答/商品页称全4K 3840×2160；40–300英寸",
+      "os_platform": "未公开",
+      "audio_drivers": "400W无线Dolby Atmos 7.1.4；移动影院系统；双麦克风；FlexWave空间声场",
+      "sensors": "自动对焦、自动梯形校正、屏幕适配、障碍物规避、25°微云台、环境/墙色适配；FlexWave使用传感器与空间算法",
+      "gps_positioning": "无",
+      "satellite": "不适用",
+      "supported_protocols": "HDMI含eARC、USB；无线环绕扬声器使用专有5.8GHz Wi-Fi协议；无线麦克风使用2.4GHz Bluetooth；Dolby Vision",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "约32.8kg（官方页面口径，是否含部分附件需继续核验）",
+      "battery": "标准AC供电；户外使用官方建议配额定功率高于335W的便携电源；内置电池容量未公开",
+      "charging": "AC供电；不作为内置电池设备记录",
+      "water_resistance": "未公开",
+      "subscription": "未公开",
+      "privacy": "未公开",
+      "features": "3500 ANSI流明、4K Triple Laser、1.07 billion colors、5000:1原生对比度、56000:1动态对比度、ISF/TÜV/Dolby Vision认证或支持口径、自动设置和可移动滚轮及伸缩拉杆",
+      "availability_note": "官方加拿大店显示CA$6,999.99和购买入口；官方德国无变体页显示售罄，带变体页显示€4,999；不能用单一区域页面推断全球库存",
+      "source_note": "Anker soundcore官方加拿大和德国商品页、官方博客互证产品、价格、规格和区域库存信号；上市日期、SoC、内存、尺寸、订阅、隐私和防护等级未公开",
+      "source_refs": [
+        "ANKER-NEBULA-X1-PRO-CA-STORE-20260917",
+        "ANKER-NEBULA-X1-PRO-DE-STORE-20260917",
+        "ANKER-NEBULA-X1-PRO-BLOG-20260917"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -856,6 +897,44 @@
         "RISION-MAGIC-PRO-PR-20260913"
       ],
       "next_check": "2026-09-28后核验官方/Amazon各区域商品页、ASIN/SKU、实际库存与交付、精确传感器/芯片、认证、隐私边界和长期价格"
+    },
+    {
+      "id": "CAND-XGIMI-AURA3-MAX-20260917",
+      "name": "AURA 3 Max",
+      "brand": "XGIMI",
+      "region": "全球官方预约；IFA 2026公开展示；Kickstarter计划2026-10-20",
+      "category": "影像与创作设备/4K超短焦激光投影",
+      "status": "候选/官方预发布预约；Kickstarter计划2026-10-20，预计2026-12开始发货",
+      "evidence": "A",
+      "reason": "XGIMI官方预约页、IFA发布文章和官方活动页互证AURA 3 Max为4K超短焦三色激光投影：4K UHD、4K 120Hz、5700 ISO流明、8000:1原生对比度、Dual Dynamic Iris加DBLE、X-VISION AI图像处理、IMAX Enhanced和Dolby Vision。官方提供€50可退预约金，Super Early Bird US$2,199，标称MSRP US$4,999，并写明Kickstarter计划2026-10-20、预计2026年12月发货。当前仍是预约和预发布，不计入普通在售主表。",
+      "price": "US$2,199 Super Early Bird；MSRP US$4,999；另有€50可退预约金",
+      "url": "https://de.xgimi.com/pages/aura-3-max",
+      "alias_or_relation": "AURA 3 Series同平台兄弟型号；与已售XGIMI其他投影分开；预约金、Kickstarter档位和MSRP不等同于当前普通零售价",
+      "source_refs": [
+        "XGIMI-AURA3-OFFICIAL-PAGE-20260917",
+        "XGIMI-AURA3-IFA-BLOG-20260917",
+        "XGIMI-AURA3-IFA-PAGE-20260917"
+      ],
+      "next_check": "2026-10-20后核验Kickstarter项目页、Campaign状态、最终档位、量产与实际发货；补齐精确SKU、尺寸、重量、SoC、内存、系统、接口、电源、认证和各区域库存"
+    },
+    {
+      "id": "CAND-XGIMI-AURA3-PRO-20260917",
+      "name": "AURA 3 Pro",
+      "brand": "XGIMI",
+      "region": "全球官方预约；IFA 2026公开展示；Kickstarter计划2026-10-20",
+      "category": "影像与创作设备/4K超短焦激光投影",
+      "status": "候选/官方预发布预约；Kickstarter计划2026-10-20，预计2026-12开始发货",
+      "evidence": "A",
+      "reason": "XGIMI官方预约页、IFA发布文章和官方活动页互证AURA 3 Pro为AURA 3系列的另一型号：4K UHD、4K 120Hz、4100 ISO流明、7000:1原生对比度、RGB三色激光、Dual Dynamic Iris加DBLE、X-VISION AI图像处理、IMAX Enhanced和Dolby Vision。官方提供€50可退预约金，Super Early Bird US$1,999，标称MSRP US$3,999，并写明Kickstarter计划2026-10-20、预计2026年12月发货。当前仍是预约和预发布，不计入普通在售主表。",
+      "price": "US$1,999 Super Early Bird；MSRP US$3,999；另有€50可退预约金",
+      "url": "https://de.xgimi.com/pages/aura-3-max",
+      "alias_or_relation": "AURA 3 Series同平台兄弟型号；与已售XGIMI其他投影分开；预约金、Kickstarter档位和MSRP不等同于当前普通零售价",
+      "source_refs": [
+        "XGIMI-AURA3-OFFICIAL-PAGE-20260917",
+        "XGIMI-AURA3-IFA-BLOG-20260917",
+        "XGIMI-AURA3-IFA-PAGE-20260917"
+      ],
+      "next_check": "2026-10-20后核验Kickstarter项目页、Campaign状态、最终档位、量产与实际发货；补齐精确SKU、尺寸、重量、SoC、内存、系统、接口、电源、认证和各区域库存"
     }
   ],
   "sources": [
@@ -1507,6 +1586,120 @@
       "storefront_type": "official PR distribution",
       "availability_signal": "官方稿称2026-09-10开放预订；2026-09-28官方商城/Amazon计划开放销售；英国Magic 09-15、Pro 10-13计划",
       "scope": "预售状态、价格、开售计划、原生256×192/超分辨率512×384、尺寸重量、功耗与5–8小时手机供电口径"
+    },
+    {
+      "checked_on": "2026-09-17",
+      "campaign_status": "未公开",
+      "pledge_or_price": "CA$6,999.99；区域货币和套装价格不同",
+      "estimated_delivery": "未公开",
+      "platform_reference": "D2151",
+      "quality": "A",
+      "id": "ANKER-NEBULA-X1-PRO-CA-STORE-20260917",
+      "source_group": "soundcore Nebula X1 Pro",
+      "title": "soundcore Nebula X1 Pro 4K Projector official Canada store",
+      "url": "https://www.anker.com/ca/products/d2151-nebula-x1-pro-4k-projector",
+      "source_channel": "official_store",
+      "source_role": "official_product_page_and_regional_price",
+      "source_domain": "anker.com",
+      "seller_type": "brand",
+      "storefront_type": "Anker soundcore official Canada store",
+      "availability_signal": "官方加拿大商品页显示CA$6,999.99并提供Add to Cart和Buy Now；区域库存与套装按站点变化",
+      "scope": "400W无线Dolby Atmos 7.1.4、3500 ANSI流明、4K Triple Laser、5000:1原生对比度、56000:1动态对比度、双麦克风、25°微云台、自动对焦/梯形/避障/色彩适配、0.47英寸DMD和户外供电说明"
+    },
+    {
+      "checked_on": "2026-09-17",
+      "campaign_status": "未公开",
+      "pledge_or_price": "€4,999；区域价格和库存动态",
+      "estimated_delivery": "未公开",
+      "platform_reference": "D2151 / variant=56465918394743",
+      "quality": "A",
+      "id": "ANKER-NEBULA-X1-PRO-DE-STORE-20260917",
+      "source_group": "soundcore Nebula X1 Pro",
+      "title": "Nebula X1 Pro 4K official Germany store listing",
+      "url": "https://www.anker.com/de/products/d2151-nebula-x1-pro-4k-projector?variant=56465918394743",
+      "source_channel": "official_store",
+      "source_role": "official_regional_store_and_availability_signal",
+      "source_domain": "anker.com",
+      "seller_type": "brand",
+      "storefront_type": "Anker soundcore official Germany store",
+      "availability_signal": "官方德国变体页显示4,999欧元和购买入口；无变体商品页曾显示售罄，保留区域库存冲突",
+      "scope": "官方区域销售价格、在售或售罄差异、400W无线Dolby Atmos 7.1.4、3500 ANSI流明、4K Triple Laser和移动家庭影院定位"
+    },
+    {
+      "checked_on": "2026-09-17",
+      "campaign_status": "未公开",
+      "pledge_or_price": "官方博客未单独给出当前区域价格",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Nebula X1 Pro",
+      "quality": "A",
+      "id": "ANKER-NEBULA-X1-PRO-BLOG-20260917",
+      "source_group": "soundcore Nebula X1 Pro",
+      "title": "Anker official product overview for Nebula X1 Pro",
+      "url": "https://www.anker.com/de/blogs/projectors/best-beamer-heimkino-4k-hdr-lens-shift-x1-pro-test",
+      "source_channel": "official_newsroom",
+      "source_role": "official_blog_product_context",
+      "source_domain": "anker.com",
+      "seller_type": "brand",
+      "storefront_type": "Anker official blog",
+      "availability_signal": "官方博客确认X1 Pro为已发布的移动一体式家庭影院产品；具体库存以区域商店为准",
+      "scope": "4K三色激光、Dolby Atmos、移动影院一体化设计与官方产品定位；不替代区域商品页的价格或库存证据"
+    },
+    {
+      "checked_on": "2026-09-17",
+      "campaign_status": "预发布；Kickstarter计划2026-10-20",
+      "pledge_or_price": "AURA 3 Max Super Early Bird US$2,199，MSRP US$4,999；AURA 3 Pro US$1,999，MSRP US$3,999；另有€50预约金",
+      "estimated_delivery": "官方页面称预计2026年12月开始发货，按Kickstarter订单顺序",
+      "platform_reference": "AURA 3 Max / AURA 3 Pro",
+      "quality": "A",
+      "id": "XGIMI-AURA3-OFFICIAL-PAGE-20260917",
+      "source_group": "XGIMI AURA 3 Series",
+      "title": "XGIMI AURA 3 Max official reservation page",
+      "url": "https://de.xgimi.com/pages/aura-3-max",
+      "source_channel": "official_product_page",
+      "source_role": "official_prelaunch_product_page_and_reservation",
+      "source_domain": "xgimi.com",
+      "seller_type": "brand",
+      "storefront_type": "XGIMI official regional product page",
+      "availability_signal": "官方页面提供€50可退预约金和AURA 3 Max/Pro预发布价格；页面指向后续Kickstarter，不是普通现货",
+      "scope": "4K UHD、RGB Triple Laser、4K 120Hz、5700或4100 ISO流明、8000:1或7000:1原生对比度、Dual Dynamic Iris加DBLE、X-VISION AI图像处理、IMAX Enhanced和Dolby Vision、预约和交付流程"
+    },
+    {
+      "checked_on": "2026-09-17",
+      "campaign_status": "预发布；Kickstarter计划待执行",
+      "pledge_or_price": "官方文章同时披露Max US$2,199 Super Early Bird或Pro US$1,999 Super Early Bird，均不等同于当前普通零售价",
+      "estimated_delivery": "官方预约页给出预计2026年12月开始发货，发布文章未独立确认",
+      "platform_reference": "AURA 3 Max / AURA 3 Pro",
+      "quality": "A",
+      "id": "XGIMI-AURA3-IFA-BLOG-20260917",
+      "source_group": "XGIMI AURA 3 Series",
+      "title": "XGIMI AURA 3 Series official IFA 2026 launch article",
+      "url": "https://uk.xgimi.com/blogs/news/meet-xgimi-aura-3-series-at-ifa-2026",
+      "source_channel": "official_newsroom",
+      "source_role": "official_launch_announcement_and_model_comparison",
+      "source_domain": "xgimi.com",
+      "seller_type": "brand",
+      "storefront_type": "XGIMI official UK blog",
+      "availability_signal": "官方文章确认AURA 3 Max和AURA 3 Pro于IFA 2026公开展示；更多规格和价格按官方后续页面",
+      "scope": "型号区分、4K 120Hz、RGB三色激光、亮度、对比度、Dual Dynamic Iris、X-VISION AI和IMAX Enhanced/Dolby Vision"
+    },
+    {
+      "checked_on": "2026-09-17",
+      "campaign_status": "预发布",
+      "pledge_or_price": "未公开；价格和预约条件以AURA 3官方预约页为准",
+      "estimated_delivery": "未公开",
+      "platform_reference": "AURA 3 Series",
+      "quality": "A",
+      "id": "XGIMI-AURA3-IFA-PAGE-20260917",
+      "source_group": "XGIMI AURA 3 Series",
+      "title": "XGIMI official IFA 2026 page",
+      "url": "https://uk.xgimi.com/pages/ifa",
+      "source_channel": "official_product_page",
+      "source_role": "official_event_and_prelaunch_signal",
+      "source_domain": "xgimi.com",
+      "seller_type": "brand",
+      "storefront_type": "XGIMI official IFA page",
+      "availability_signal": "官方IFA页面将AURA 3 Series列为下一代4K激光电视并提供Reserve AURA 3入口；尚未形成普通购买SKU",
+      "scope": "IFA 2026首发公开展示、AURA 3系列定位和官方预约入口"
     }
   ],
   "update_log": [
@@ -1665,6 +1858,12 @@
       "change": "完成本类别官方产品、发布、规格、区域销售、众筹、电商和授权渠道核验；本轮没有达到证据门槛的新增独立主表型号。",
       "verification": "优先核对官方产品页、官方发布/支持资料、监管或认证与区域销售信号；平台、媒体、众筹和社区信息仅作为发现或价格/库存辅助，未验证字段保持“未公开”。",
       "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
+    },
+    {
+      "date": "2026-09-17",
+      "change": "新增主表IMAGE-018 soundcore Nebula X1 Pro：官方加拿大和德国商店及官方博客确认4K三色激光、400W无线Dolby Atmos 7.1.4、价格和区域库存信号；新增候选XGIMI AURA 3 Max与AURA 3 Pro，官方预约和IFA资料确认规格、预约价、Kickstarter计划2026-10-20及预计2026-12发货，仍不计普通在售主表。",
+      "verification": "优先核对官方产品页、官方发布或支持资料、监管或认证与区域销售信号；平台、媒体、众筹和社区信息仅作为发现或价格库存辅助，未验证字段保持“未公开”。",
+      "next": "下一轮继续补充官方产品或销售或支持、监管认证、Kickstarter、Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -1747,17 +1946,18 @@
     }
   ],
   "source_channel_counts": {
-    "official_newsroom": 4,
+    "official_newsroom": 6,
     "official_newsroom_distribution": 1,
     "official_product": 4,
-    "official_product_page": 1,
+    "official_product_page": 3,
     "official_sales": 4,
-    "official_store": 12,
+    "official_store": 14,
     "official_support": 1,
     "official_support_manual": 8,
     "specialist_media": 1
   },
   "source_domains": [
+    "anker.com",
     "aurzen.com",
     "dji.com",
     "eufy.com",
@@ -1774,6 +1974,7 @@
     "sony.com",
     "store.dji.com",
     "store.insta360.com",
-    "techradar.com"
+    "techradar.com",
+    "xgimi.com"
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-16",
+  "checked_on": "2026-09-17",
   "scope_note": "首版优先覆盖全球主要品牌的TWS、主动降噪、AI/录音/翻译耳机与骨传导/开放式运动耳机。按独立型号/代际计数；颜色、充电盒套装和区域SKU不拆行。翻译能力、AI功能与硬件音频能力分开记录；来源没有披露的芯片、传感器、尺寸、重量、防水、续航和订阅字段写“未公开”。 本库同时纳入Wi-Fi多房间音箱与联网家庭音频；音箱的扬声器驱动、无线协议和家庭服务与耳机字段分开记录。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-16"
+      "2026-09-17"
     ]
   ],
   "products": [
@@ -2004,6 +2004,24 @@
         "DUVA-ONE-IFA-20260916"
       ],
       "next_check": "核验2026年10月正式购买页、实际发货、价格/地区、Bluetooth版本、芯片、内存音频容量、电池容量、充电功率、认证、App与隐私条款"
+    },
+    {
+      "id": "CAND-SOUNDCORE-SLEEPLAB-PRO-20260917",
+      "name": "Anker soundcore SleepLab Pro",
+      "brand": "Anker soundcore",
+      "region": "全球官方预发布预约；正式区域发售待定",
+      "category": "音频设备/智能睡眠声学",
+      "status": "候选/官方预发布；US$1预约金；当前未确认正式零售发货",
+      "evidence": "A",
+      "reason": "Anker soundcore官方产品页和官方睡眠产品对比文章互证SleepLab Pro为床头非穿戴式睡眠声学设备：使用60GHz毫米波雷达进行无接触睡眠感知，另有温度和光照传感器；通过双扬声器、空间音频、180+睡眠声音、环境光、呼吸训练和日出式唤醒构成睡眠流程。官方页面标注Reserve for $1、No subscription，最终零售价、正式发货和完整硬件规格仍未公开，因此保留候选。",
+      "price": "US$1预约金；官方称Save $30；最终零售价未公开",
+      "url": "https://www.soundcore.com/sleeplab-sleep-sound-machine",
+      "alias_or_relation": "床头声学加睡眠感知设备，不是TWS或耳戴设备；与soundcore Sleep Earbuds 4分开记录",
+      "source_refs": [
+        "SOUNDCORE-SLEEPLAB-PRO-OFFICIAL-20260917",
+        "SOUNDCORE-SLEEPLAB-PRO-BLOG-20260917"
+      ],
+      "next_check": "核验正式价格、上市和发货、尺寸重量、AC规格与备用电池、Wi-Fi/Bluetooth、芯片、App数据模型和隐私条款"
     }
   ],
   "sources": [
@@ -3262,6 +3280,44 @@
       "storefront_type": "DUVA official PR distribution",
       "availability_signal": "官方发布稿称计划2026年10月发布，目标市场为美国、加拿大、英国、欧盟和澳大利亚；当前仍为预发布/早期访问",
       "scope": "Fitnexa背景、实时睡眠响应、PPG/运动/环境传感、混合ANC最高42dB、13小时本地音频/ANC关闭、9.5小时ANC开启、最多五次额外充电、离线闹钟、隐私边界与目标市场"
+    },
+    {
+      "checked_on": "2026-09-17",
+      "campaign_status": "预发布预约",
+      "pledge_or_price": "US$1预约金；官方称Save $30，最终零售价未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "SleepLab Pro",
+      "quality": "A",
+      "id": "SOUNDCORE-SLEEPLAB-PRO-OFFICIAL-20260917",
+      "source_group": "Anker soundcore SleepLab Pro",
+      "title": "Anker soundcore SleepLab Pro official reservation page",
+      "url": "https://www.soundcore.com/sleeplab-sleep-sound-machine",
+      "source_channel": "official_product_page",
+      "source_role": "official_prelaunch_product_page_and_reservation",
+      "source_domain": "soundcore.com",
+      "seller_type": "brand",
+      "storefront_type": "Anker soundcore official product page",
+      "availability_signal": "官方页面显示Pre-Launch Offer和Reserve for $1；未提供普通购买库存或正式发货日期",
+      "scope": "床头非穿戴式睡眠声学设备、60GHz毫米波接触式睡眠感知、温度与光照传感、双扬声器、环境光、呼吸训练、无订阅和隐私说明"
+    },
+    {
+      "checked_on": "2026-09-17",
+      "campaign_status": "预发布预约",
+      "pledge_or_price": "官方文章未给出正式零售价",
+      "estimated_delivery": "未公开",
+      "platform_reference": "SleepLab Pro",
+      "quality": "A",
+      "id": "SOUNDCORE-SLEEPLAB-PRO-BLOG-20260917",
+      "source_group": "Anker soundcore SleepLab Pro",
+      "title": "Anker soundcore official SleepLab Pro comparison and sensing guide",
+      "url": "https://www.soundcore.com/blogs/sleep/sleep-earbuds-vs-sleep-sound-machine",
+      "source_channel": "official_newsroom",
+      "source_role": "official_feature_and_sensor_detail",
+      "source_domain": "soundcore.com",
+      "seller_type": "brand",
+      "storefront_type": "Anker soundcore official blog",
+      "availability_signal": "官方文章将SleepLab Pro列为睡眠声学设备并明确与Sleep Earbuds 4区分；发售状态仍以预约页为准",
+      "scope": "60GHz毫米波雷达、温度和光照传感、180+睡眠声音、双扬声器、环境光、日出唤醒、连续供电和无穿戴场景；明确为wellness设备而非医疗诊断设备"
     }
   ],
   "update_log": [
@@ -3438,6 +3494,12 @@
       "change": "新增候选CAND-DUVA-ONE-20260916：官方产品页与IFA发布稿确认实时睡眠响应耳机、入耳PPG/运动与环境传感、ANC、续航、重量、计划2026年10月上市和目标价US$349.99；当前仅early access，未进入在售主表。",
       "verification": "优先核对官方产品页、官方发布/支持资料、监管或认证与区域销售信号；平台、媒体、众筹和社区信息仅作为发现或价格/库存辅助，未验证字段保持“未公开”。",
       "next": "下一轮继续补充官方产品/销售/支持、监管认证、Kickstarter/Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
+    },
+    {
+      "date": "2026-09-17",
+      "change": "新增候选CAND-SOUNDCORE-SLEEPLAB-PRO-20260917：官方预约页和官方文章确认60GHz毫米波、温度/光照传感、双扬声器、无订阅和US$1预约金；正式价格、发货和完整规格未公开。",
+      "verification": "优先核对官方产品页、官方发布或支持资料、监管或认证与区域销售信号；平台、媒体、众筹和社区信息仅作为发现或价格库存辅助，未验证字段保持“未公开”。",
+      "next": "下一轮继续补充官方产品或销售或支持、监管认证、Kickstarter、Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -3523,10 +3585,10 @@
     "crowdfunding": 1,
     "official_event": 1,
     "official_news": 1,
-    "official_newsroom": 11,
+    "official_newsroom": 12,
     "official_newsroom_distribution": 3,
     "official_product": 9,
-    "official_product_page": 2,
+    "official_product_page": 3,
     "official_release": 2,
     "official_sales": 18,
     "official_store": 8,
