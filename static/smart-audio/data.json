@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-17",
+  "checked_on": "2026-09-18",
   "scope_note": "首版优先覆盖全球主要品牌的TWS、主动降噪、AI/录音/翻译耳机与骨传导/开放式运动耳机。按独立型号/代际计数；颜色、充电盒套装和区域SKU不拆行。翻译能力、AI功能与硬件音频能力分开记录；来源没有披露的芯片、传感器、尺寸、重量、防水、续航和订阅字段写“未公开”。 本库同时纳入Wi-Fi多房间音箱与联网家庭音频；音箱的扬声器驱动、无线协议和家庭服务与耳机字段分开记录。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-17"
+      "2026-09-18"
     ]
   ],
   "products": [
@@ -2022,6 +2022,44 @@
         "SOUNDCORE-SLEEPLAB-PRO-BLOG-20260917"
       ],
       "next_check": "核验正式价格、上市和发货、尺寸重量、AC规格与备用电池、Wi-Fi/Bluetooth、芯片、App数据模型和隐私条款"
+    },
+    {
+      "id": "CAND-BOSE-SPORT-OPEN-20260918",
+      "name": "Bose Sport Open Earbuds",
+      "brand": "Bose",
+      "region": "全球发布；美国、日本官方页面；预订和正式上市日期按区域核验",
+      "category": "音频设备/开放式耳机",
+      "status": "候选/官方已发布但查证日处于预售阶段；预计2026-10-01正式发售",
+      "evidence": "A",
+      "reason": "Bose官方美国和日本发布稿、官方商品页互证Sport Open Earbuds为新的开放式运动耳机：US$199，日本¥29,700；美国官方稿为2026-09-19开启预订、2026-10-01发售，日本官方稿称2026-09-18开始预订。官方产品页披露开放耳、OpenAudio、SpeechClarity、IP54、2个麦克风、Bluetooth与BLE、7小时单次续航、充电盒最多额外22小时、USB-C和无线充电。由于查证日仍处于预售前后、正式交付尚未发生，保留候选。",
+      "price": "US$199；日本¥29,700",
+      "url": "https://www.bose.com/p/earbuds/bose-open-earbuds/SPORTOPN26-HEADPHONEOPN.html",
+      "alias_or_relation": "与Bose既有Ultra Open及其他开放式型号分开；颜色、限定配色、充电盒和销售套装不拆为独立型号",
+      "source_refs": [
+        "BOSE-OPEN-AUDIO-PR-20260918",
+        "BOSE-SPORT-OPEN-PRODUCT-20260918",
+        "BOSE-JP-OPEN-AUDIO-PR-20260918"
+      ],
+      "next_check": "核验2026-10-01实际发货、其他国家官方销售页、精确固件、充电盒电池容量、芯片、重量和完整隐私条款；颜色不拆独立型号。"
+    },
+    {
+      "id": "CAND-BOSE-ULTRA-OPEN-2-20260918",
+      "name": "Bose Ultra Open Earbuds (2nd Gen)",
+      "brand": "Bose",
+      "region": "全球发布；美国、日本官方页面；预订和正式上市日期按区域核验",
+      "category": "音频设备/开放式耳机",
+      "status": "候选/官方已发布但查证日处于预售阶段；预计2026-10-01正式发售",
+      "evidence": "A",
+      "reason": "Bose官方美国和日本发布稿、官方商品页互证Ultra Open Earbuds (2nd Gen)为新一代开放式旗舰：US$299，日本¥39,600；美国官方稿为2026-09-19开启预订、2026-10-01发售，日本官方稿称2026-09-18开始预订。官方产品页披露OpenAudio、TrueSpatial、Cinema Mode、SpeechClarity、IPX4、2个麦克风、Bluetooth 5.4、9小时续航、充电盒额外约19.5小时、USB-C和无线充电；官方未披露SoC和芯片型号。由于查证日仍处于预售阶段，保留候选。",
+      "price": "US$299；日本¥39,600",
+      "url": "https://www.bose.com/p/earbuds/bose-ultra-open-earbuds-2nd-gen/ULT2-HEADPHONEOPN.html",
+      "alias_or_relation": "与Bose既有Ultra Open及其他开放式型号分开；颜色、限定配色、充电盒和销售套装不拆为独立型号",
+      "source_refs": [
+        "BOSE-OPEN-AUDIO-PR-20260918",
+        "BOSE-ULTRA-OPEN-2-PRODUCT-20260918",
+        "BOSE-JP-OPEN-AUDIO-PR-20260918"
+      ],
+      "next_check": "核验2026-10-01实际发货、其他国家官方销售页、精确固件、充电盒电池容量、芯片、重量和完整隐私条款；限定颜色不拆独立型号。"
     }
   ],
   "sources": [
@@ -3318,6 +3356,82 @@
       "storefront_type": "Anker soundcore official blog",
       "availability_signal": "官方文章将SleepLab Pro列为睡眠声学设备并明确与Sleep Earbuds 4区分；发售状态仍以预约页为准",
       "scope": "60GHz毫米波雷达、温度和光照传感、180+睡眠声音、双扬声器、环境光、日出唤醒、连续供电和无穿戴场景；明确为wellness设备而非医疗诊断设备"
+    },
+    {
+      "checked_on": "2026-09-18",
+      "campaign_status": "已发布；预售",
+      "pledge_or_price": "Sport Open US$199；Ultra Open 2nd Gen US$299",
+      "estimated_delivery": "2026-10-01官方上市日期",
+      "platform_reference": "SPORTOPN26-HEADPHONEOPN / ULT2-HEADPHONEOPN",
+      "quality": "A",
+      "id": "BOSE-OPEN-AUDIO-PR-20260918",
+      "source_group": "Bose Sport Open Earbuds and Ultra Open Earbuds (2nd Gen)",
+      "title": "Bose official announcement for Sport Open and Ultra Open 2nd Gen",
+      "url": "https://www.bose.com/pressroom/bose-sport-open-earbuds-and-bose-ultra-open-earbuds-2nd-gen",
+      "source_channel": "official_newsroom",
+      "source_role": "official_launch_announcement_price_and_availability",
+      "source_domain": "bose.com",
+      "seller_type": "brand",
+      "storefront_type": "Bose official pressroom",
+      "availability_signal": "官方新闻稿称两款产品2026-10-01上市、2026-09-19开启预订；两款均为预发布待发货",
+      "scope": "开放式音频、价格、上市日、颜色、Google Find Hub、Alexa+和Apple Music快捷入口后续固件计划"
+    },
+    {
+      "checked_on": "2026-09-18",
+      "campaign_status": "预售前已发布",
+      "pledge_or_price": "US$199",
+      "estimated_delivery": "2026-10-01",
+      "platform_reference": "SPORTOPN26-HEADPHONEOPN",
+      "quality": "A",
+      "id": "BOSE-SPORT-OPEN-PRODUCT-20260918",
+      "source_group": "Bose Sport Open Earbuds",
+      "title": "Bose Sport Open Earbuds official product page",
+      "url": "https://www.bose.com/p/earbuds/bose-open-earbuds/SPORTOPN26-HEADPHONEOPN.html",
+      "source_channel": "official_product_page",
+      "source_role": "official_product_page_and_specification",
+      "source_domain": "bose.com",
+      "seller_type": "brand",
+      "storefront_type": "Bose official product page",
+      "availability_signal": "官方页面提供US$199商品页和Add to Cart路径；配合新闻稿记录为2026-09-19预订、2026-10-01正式发售",
+      "scope": "开放耳设计、OpenAudio、SpeechClarity、IP54、7小时续航、充电盒最多额外22小时、无线充电、USB-C、2麦克风、Bluetooth/BLE和Bose App"
+    },
+    {
+      "checked_on": "2026-09-18",
+      "campaign_status": "预售前已发布",
+      "pledge_or_price": "US$299",
+      "estimated_delivery": "2026-10-01",
+      "platform_reference": "ULT2-HEADPHONEOPN",
+      "quality": "A",
+      "id": "BOSE-ULTRA-OPEN-2-PRODUCT-20260918",
+      "source_group": "Bose Ultra Open Earbuds (2nd Gen)",
+      "title": "Bose Ultra Open Earbuds (2nd Gen) official product page",
+      "url": "https://www.bose.com/p/earbuds/bose-ultra-open-earbuds-2nd-gen/ULT2-HEADPHONEOPN.html",
+      "source_channel": "official_product_page",
+      "source_role": "official_product_page_and_specification",
+      "source_domain": "bose.com",
+      "seller_type": "brand",
+      "storefront_type": "Bose official product page",
+      "availability_signal": "官方页面提供US$299商品页；配合发布稿记录为2026-09-19预订、2026-10-01正式发售",
+      "scope": "开放耳、OpenAudio、TrueSpatial、Cinema Mode、SpeechClarity、IPX4、9小时续航、充电盒额外约19.5小时、无线充电、USB-C、2麦克风、Bluetooth 5.4和Bose App"
+    },
+    {
+      "checked_on": "2026-09-18",
+      "campaign_status": "预售",
+      "pledge_or_price": "Sport Open ¥29,700；Ultra Open 2nd Gen ¥39,600",
+      "estimated_delivery": "2026-10-01",
+      "platform_reference": "Sport Open Earbuds / Ultra Open Earbuds 2nd Gen",
+      "quality": "A",
+      "id": "BOSE-JP-OPEN-AUDIO-PR-20260918",
+      "source_group": "Bose Sport Open Earbuds and Ultra Open Earbuds (2nd Gen)",
+      "title": "Bose Japan official announcement for Sport Open and Ultra Open 2nd Gen",
+      "url": "https://www.bose.co.jp/pressroom/bose-sport-open-earbuds-and-bose-ultra-open-earbuds-2nd-gen",
+      "source_channel": "official_newsroom",
+      "source_role": "official_regional_price_release_date_and_battery_detail",
+      "source_domain": "bose.co.jp",
+      "seller_type": "brand",
+      "storefront_type": "Bose Japan official pressroom",
+      "availability_signal": "日本官方稿称2026-09-18开始预订、2026-10-01发售，并提供官方站及部分经销商渠道",
+      "scope": "日本区域价格和日期；Sport Open单次最长7小时、无线充电盒额外最多22小时；限定颜色和开放式运动/日常定位"
     }
   ],
   "update_log": [
@@ -3500,6 +3614,12 @@
       "change": "新增候选CAND-SOUNDCORE-SLEEPLAB-PRO-20260917：官方预约页和官方文章确认60GHz毫米波、温度/光照传感、双扬声器、无订阅和US$1预约金；正式价格、发货和完整规格未公开。",
       "verification": "优先核对官方产品页、官方发布或支持资料、监管或认证与区域销售信号；平台、媒体、众筹和社区信息仅作为发现或价格库存辅助，未验证字段保持“未公开”。",
       "next": "下一轮继续补充官方产品或销售或支持、监管认证、Kickstarter、Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
+    },
+    {
+      "date": "2026-09-18",
+      "change": "新增候选CAND-BOSE-SPORT-OPEN-20260918和CAND-BOSE-ULTRA-OPEN-2-20260918：Bose美国、日本官方发布稿和商品页确认US$199/¥29,700与US$299/¥39,600、2026-09-18或19预订、2026-10-01发售、开放式音频、IP54或IPX4、Bluetooth、续航和无线充电；仍处于预售阶段，不计普通在售主表。",
+      "verification": "优先核对官方产品页、官方发布或支持资料、监管或认证与区域销售信号；平台、媒体、众筹和社区信息仅作为发现或价格库存辅助，未验证字段保持“未公开”。",
+      "next": "下一轮继续补充官方产品或销售或支持、监管认证、Kickstarter、Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -3585,10 +3705,10 @@
     "crowdfunding": 1,
     "official_event": 1,
     "official_news": 1,
-    "official_newsroom": 12,
+    "official_newsroom": 14,
     "official_newsroom_distribution": 3,
     "official_product": 9,
-    "official_product_page": 3,
+    "official_product_page": 5,
     "official_release": 2,
     "official_sales": 18,
     "official_store": 8,
@@ -3599,6 +3719,7 @@
     "apple.com",
     "baseus.com",
     "belkin.com",
+    "bose.co.jp",
     "bose.com",
     "consumer.huawei.com",
     "duva.com",

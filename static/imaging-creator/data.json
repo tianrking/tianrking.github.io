@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-17",
+  "checked_on": "2026-09-18",
   "scope_note": "本库覆盖影像与创作设备：运动相机、360相机、云台相机、无人机、手持云台与直播影像设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-17"
+      "2026-09-18"
     ]
   ],
   "products": [
@@ -854,6 +854,48 @@
         "ANKER-NEBULA-X1-PRO-CA-STORE-20260917",
         "ANKER-NEBULA-X1-PRO-DE-STORE-20260917",
         "ANKER-NEBULA-X1-PRO-BLOG-20260917"
+      ],
+      "connectivity": "未公开"
+    },
+    {
+      "id": "IMAGE-019",
+      "brand": "Samsung",
+      "model": "The Freestyle+ Full HD Portable Projector (2026)",
+      "country_region": "韩国品牌；美国、法国、英国、加拿大及更多区域官方页面",
+      "category": "影像与创作设备/便携AI智能投影",
+      "form_factor": "圆柱形便携式投影；180度旋转投影",
+      "use_case": "移动家庭影院、旅行、户外观看、流媒体和云游戏",
+      "status": "官方已发布；法国官方稿称区域可购，美国和英国官方页查证时出现不可用或库存差异",
+      "evidence": "A",
+      "launch_date": "2026-09-03",
+      "launch_date_type": "法国官方新闻稿区域可用日期；官方全球公告为2026年上半年分阶段上市计划，日期口径分开保留",
+      "price": "US$1,199.99官方US商品页；英国官方页另有£2,399标价但查证时显示不再可用；区域价格和库存动态",
+      "official_url": "https://www.samsung.com/us/projectors/the-freestyle/the-freestyle-portable-projector-sku-sp-lff3hlaxxza/",
+      "spec_url": "https://news.samsung.com/fr/samsung-lance-le-videoprojecteur-intelligent-ia-the-freestyle",
+      "display": "Full HD；最高100英寸；430 ISO流明；AI OptiScreen；3D Auto Keystone、实时对焦、Screen Fit和Wall Calibration",
+      "os_platform": "Samsung智能投影平台；Samsung TV Plus、OTT服务、Gaming Hub；底层OS版本未公开",
+      "audio_drivers": "内置360度扬声器；支持Samsung Q-Symphony；声学单元规格未公开",
+      "sensors": "AI OptiScreen基于环境、投影面和障碍物进行自动调整；具体物理传感器型号未公开",
+      "gps_positioning": "无",
+      "satellite": "不适用",
+      "supported_protocols": "Tap View、Smart View、Apple AirPlay 2；外接接口和Wi-Fi/Bluetooth版本未公开",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "未公开",
+      "weight_g": "未公开；官方仅称轻量便携",
+      "battery": "无公开内置电池；可连接官方Freestyle Battery Base或兼容USB-C外接电池",
+      "charging": "外接USB-C兼容电池；官方电池为另售附件；整机电源规格未公开",
+      "water_resistance": "未公开",
+      "subscription": "官方未披露硬件强制订阅；网络智能服务需要Samsung账户和互联网，Gaming Hub及流媒体内容可能需要各服务订阅",
+      "privacy": "官方提示AI请求可能被记录并与第三方服务商共享；需要Samsung账户、Viewing Information Service同意和年龄条件，完整保留周期未公开",
+      "features": "Point and Play、430 ISO流明、Full HD、最高100英寸、180度旋转、AI OptiScreen、3D Auto Keystone、实时对焦、Wall Calibration、Obstacle Avoidance、Samsung TV Plus、Gaming Hub、Bixby和Gemini、360度音频",
+      "availability_note": "官方US页给出US$1,199.99但查证时配送与门店自取不可用；法国官方稿称已在Samsung.com和专业零售商可购；不同区域不等同于全球现货",
+      "source_note": "Samsung官方US商品页、全球Newsroom、法国区域Newsroom和官方支持页互证精确型号、上市/区域可得性、价格、亮度、显示、AI调整、音频、投屏、外接电池和隐私提示；SoC、存储、尺寸、重量、防护等级与无线版本未公开",
+      "source_refs": [
+        "SAMSUNG-FREESTYLE-PLUS-US-STORE-20260918",
+        "SAMSUNG-FREESTYLE-PLUS-GLOBAL-NEWS-20260918",
+        "SAMSUNG-FREESTYLE-PLUS-FR-NEWS-20260918",
+        "SAMSUNG-FREESTYLE-PLUS-SUPPORT-20260918"
       ],
       "connectivity": "未公开"
     }
@@ -1700,6 +1742,82 @@
       "storefront_type": "XGIMI official IFA page",
       "availability_signal": "官方IFA页面将AURA 3 Series列为下一代4K激光电视并提供Reserve AURA 3入口；尚未形成普通购买SKU",
       "scope": "IFA 2026首发公开展示、AURA 3系列定位和官方预约入口"
+    },
+    {
+      "checked_on": "2026-09-18",
+      "campaign_status": "已发布；区域可得性不一致",
+      "pledge_or_price": "US$1,199.99；区域价格和库存动态",
+      "estimated_delivery": "未公开",
+      "platform_reference": "SP-LFF3HLAX / SP-LFF3HLAXXZA",
+      "quality": "A",
+      "id": "SAMSUNG-FREESTYLE-PLUS-US-STORE-20260918",
+      "source_group": "Samsung The Freestyle+",
+      "title": "Samsung The Freestyle+ Full HD official US product page",
+      "url": "https://www.samsung.com/us/projectors/the-freestyle/the-freestyle-portable-projector-sku-sp-lff3hlaxxza/",
+      "source_channel": "official_store",
+      "source_role": "official_product_page_and_regional_price",
+      "source_domain": "samsung.com",
+      "seller_type": "brand",
+      "storefront_type": "Samsung official US store",
+      "availability_signal": "官方US商品页列出SP-LFF3HLAXXZA和US$1,199.99；查证时页面同时显示Delivery与In-Store Pickup不可用，保留区域库存差异",
+      "scope": "2026 Full HD便携AI投影、430 ISO流明、最高100英寸、Point and Play、AI OptiScreen和官方区域价格/库存信号"
+    },
+    {
+      "checked_on": "2026-09-18",
+      "campaign_status": "已发布；全球分阶段上市",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "2026上半年分阶段上市计划，区域实际发货以商店为准",
+      "platform_reference": "The Freestyle+ / LFF3H",
+      "quality": "A",
+      "id": "SAMSUNG-FREESTYLE-PLUS-GLOBAL-NEWS-20260918",
+      "source_group": "Samsung The Freestyle+",
+      "title": "Samsung official newsroom announcement for The Freestyle+",
+      "url": "https://news.samsung.com/us/samsung-unveils-freestyle-ces-2026-showcasing-smart-ai-portable-screen/",
+      "source_channel": "official_newsroom",
+      "source_role": "official_global_launch_announcement",
+      "source_domain": "news.samsung.com",
+      "seller_type": "brand",
+      "storefront_type": "Samsung official newsroom",
+      "availability_signal": "官方新闻稿确认全球发布和2026上半年分阶段上市计划；不替代区域商店的实际库存",
+      "scope": "AI OptiScreen、3D Auto Keystone、Real-time Focus、Screen Fit、Wall Calibration、430 ISO流明、180度旋转、Samsung TV Plus、Gaming Hub、360度扬声器和Q-Symphony"
+    },
+    {
+      "checked_on": "2026-09-18",
+      "campaign_status": "区域已上市",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "The Freestyle+ / LFF3H",
+      "quality": "A",
+      "id": "SAMSUNG-FREESTYLE-PLUS-FR-NEWS-20260918",
+      "source_group": "Samsung The Freestyle+",
+      "title": "Samsung France official availability announcement for The Freestyle+",
+      "url": "https://news.samsung.com/fr/samsung-lance-le-videoprojecteur-intelligent-ia-the-freestyle",
+      "source_channel": "official_newsroom",
+      "source_role": "official_regional_availability_feature_and_privacy_detail",
+      "source_domain": "news.samsung.com",
+      "seller_type": "brand",
+      "storefront_type": "Samsung France official newsroom",
+      "availability_signal": "法国官方新闻稿称The Freestyle+已在Samsung.com和主要专业零售商可购；页面日期按法国格式记录为2026-09-03",
+      "scope": "Full HD最高100英寸、360度声音、Bixby和Gemini、Tap View、Smart View、Apple AirPlay 2、可选Freestyle Battery Base、USB-C兼容外接电池；AI请求可能被记录并与第三方服务商共享的官方提示"
+    },
+    {
+      "checked_on": "2026-09-18",
+      "campaign_status": "已发布",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "SP-LFF3HLAX / SP-LFF3HLAXXXH",
+      "quality": "A",
+      "id": "SAMSUNG-FREESTYLE-PLUS-SUPPORT-20260918",
+      "source_group": "Samsung The Freestyle+",
+      "title": "Samsung official support page for SP-LFF3HLAX",
+      "url": "https://www.samsung.com/pl/support/model/SP-LFF3HLAXXXH/",
+      "source_channel": "official_support",
+      "source_role": "official_support_and_manual_signal",
+      "source_domain": "samsung.com",
+      "seller_type": "brand",
+      "storefront_type": "Samsung official support",
+      "availability_signal": "官方支持中心存在精确型号SP-LFF3HLAX，并公开2026-09-15更新的用户手册和2026-06-26固件条目",
+      "scope": "精确型号、官方支持、用户手册和固件可得性；不从支持页推断未公开硬件参数"
     }
   ],
   "update_log": [
@@ -1864,6 +1982,12 @@
       "change": "新增主表IMAGE-018 soundcore Nebula X1 Pro：官方加拿大和德国商店及官方博客确认4K三色激光、400W无线Dolby Atmos 7.1.4、价格和区域库存信号；新增候选XGIMI AURA 3 Max与AURA 3 Pro，官方预约和IFA资料确认规格、预约价、Kickstarter计划2026-10-20及预计2026-12发货，仍不计普通在售主表。",
       "verification": "优先核对官方产品页、官方发布或支持资料、监管或认证与区域销售信号；平台、媒体、众筹和社区信息仅作为发现或价格库存辅助，未验证字段保持“未公开”。",
       "next": "下一轮继续补充官方产品或销售或支持、监管认证、Kickstarter、Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
+    },
+    {
+      "date": "2026-09-18",
+      "change": "新增主表IMAGE-019 Samsung The Freestyle+ Full HD Portable Projector (2026)：Samsung官方US商品页、全球及法国官方新闻稿、支持页互证430 ISO流明、Full HD最高100英寸、AI OptiScreen、360度音频、外接电池、US$1,199.99和区域库存差异；补充AI请求可能记录并与第三方服务商共享的官方隐私提示。",
+      "verification": "优先核对官方产品页、官方发布或支持资料、监管或认证与区域销售信号；平台、媒体、众筹和社区信息仅作为发现或价格库存辅助，未验证字段保持“未公开”。",
+      "next": "下一轮继续补充官方产品或销售或支持、监管认证、Kickstarter、Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
     }
   ],
   "source_channel_policy": [
@@ -1946,13 +2070,13 @@
     }
   ],
   "source_channel_counts": {
-    "official_newsroom": 6,
+    "official_newsroom": 8,
     "official_newsroom_distribution": 1,
     "official_product": 4,
     "official_product_page": 3,
     "official_sales": 4,
-    "official_store": 14,
-    "official_support": 1,
+    "official_store": 15,
+    "official_support": 2,
     "official_support_manual": 8,
     "specialist_media": 1
   },
@@ -1966,11 +2090,13 @@
     "gopro.com",
     "insta360.com",
     "mevo.com",
+    "news.samsung.com",
     "obsbot.com",
     "obsbot.jp",
     "onlinemanual.insta360.com",
     "prnewswire.com",
     "rision.com",
+    "samsung.com",
     "sony.com",
     "store.dji.com",
     "store.insta360.com",
