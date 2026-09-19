@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-18",
+  "checked_on": "2026-09-19",
   "scope_note": "首版优先覆盖全球主要品牌的TWS、主动降噪、AI/录音/翻译耳机与骨传导/开放式运动耳机。按独立型号/代际计数；颜色、充电盒套装和区域SKU不拆行。翻译能力、AI功能与硬件音频能力分开记录；来源没有披露的芯片、传感器、尺寸、重量、防水、续航和订阅字段写“未公开”。 本库同时纳入Wi-Fi多房间音箱与联网家庭音频；音箱的扬声器驱动、无线协议和家庭服务与耳机字段分开记录。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-18"
+      "2026-09-19"
     ]
   ],
   "products": [
@@ -1871,6 +1871,88 @@
         "TIMEKETTLE-W4-PLUS-DE-STORE-20260915"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "id": "AUDIO-050",
+      "brand": "Sonos",
+      "model": "Beam Ultra",
+      "country_region": "美国、英国、法国、德国及Sonos多区域市场",
+      "category": "联网家庭音频/电视音响",
+      "form_factor": "紧凑型智能Soundbar",
+      "use_case": "家庭影院、电视音频、音乐、Sonos多房间系统",
+      "status": "官方预售；2026-09-29预计发货/上市",
+      "evidence": "A",
+      "launch_date": "2026-09-01",
+      "launch_date_type": "Sonos官方发布/预订日期",
+      "price": "US$699；欧元区€699；英国£699",
+      "official_url": "https://www.sonos.com/en-us/shop/beam-ultra-black",
+      "spec_url": "https://www.sonos.com/en-us/guides/sonosbeamultra",
+      "display": "无屏幕；状态LED",
+      "os_platform": "Sonos系统/应用",
+      "audio_drivers": "9个驱动器：5个高音单元、2个侧向中高音、2个向上发声高音、4个低音单元；9个Class-D放大器",
+      "sensors": "远场麦克风阵列；Trueplay房间调音；具体传感器型号未公开",
+      "gps_positioning": "不适用",
+      "satellite": "不适用",
+      "supported_protocols": "Wi-Fi 6；Bluetooth 5.3；HDMI eARC/ARC；Apple AirPlay 2；Sonos多房间连接",
+      "chip_or_soc": "Quad Core 4×A55 1.9GHz CPU；完整SoC型号未公开",
+      "storage": "未公开",
+      "dimensions": "750×105×65mm",
+      "weight_g": "约2.88kg",
+      "battery": "无内置电池",
+      "charging": "100-240V 50/60Hz内置电源；HDMI线随附",
+      "water_resistance": "未公开",
+      "subscription": "Sonos服务与第三方流媒体按地区/账户提供；硬件无强制订阅",
+      "privacy": "麦克风可通过背部开关断开；语音服务可用性按国家和语言变化，完整数据保留未公开",
+      "features": "真实7.1.2 Dolby Atmos、Speech Enhancement、Night Sound、Trueplay、Wi-Fi/Bluetooth、HDMI eARC、可扩展环绕系统",
+      "availability_note": "官方商店为Preorder并预计2026-09-29发货；不同区域价格和税费不同",
+      "source_note": "Sonos官方Newsroom、美国产品规格页、官方指南和商店互证价格、预售、交付、声学架构、尺寸重量、网络、CPU和连接；存储、防护与完整传感器型号未公开",
+      "source_refs": [
+        "SONOS-BEAM-ACE-NEWS-20260919",
+        "SONOS-BEAM-PRODUCT-20260919",
+        "SONOS-STORE-PREORDER-20260919"
+      ],
+      "connectivity": "未公开"
+    },
+    {
+      "id": "AUDIO-051",
+      "brand": "Sonos",
+      "model": "Sonos Ace Ultra",
+      "country_region": "美国、英国、法国、德国及Sonos多区域市场",
+      "category": "无线降噪耳机/联网家庭音频",
+      "form_factor": "头戴式无线耳机",
+      "use_case": "音乐、电视私享音频、通话、空间音频、Sonos家庭系统",
+      "status": "官方预售；2026-09-29预计发货/上市",
+      "evidence": "A",
+      "launch_date": "2026-09-01",
+      "launch_date_type": "Sonos官方发布/预订日期",
+      "price": "US$449；欧元区€449",
+      "official_url": "https://www.sonos.com/en-us/shop/sonos-ace-ultra-sand",
+      "spec_url": "https://newsroom.sonos.com/269788-sonos-welcomes-beam-ultra-and-sonos-ace-ultra-to-its-system/",
+      "display": "无屏幕；状态LED",
+      "os_platform": "Sonos app；支持Sonos家庭系统Wi-Fi音频",
+      "audio_drivers": "每侧定制40mm驱动器；10个麦克风用于降噪、通话、Aware和TrueCinema",
+      "sensors": "头部运动处理/动态头部追踪；麦克风阵列；具体传感器型号未公开",
+      "gps_positioning": "不适用",
+      "satellite": "不适用",
+      "supported_protocols": "Bluetooth 6.0；Wi-Fi家庭系统连接；USB-C；3.5mm音频；Sonos Content Key电视音频切换",
+      "chip_or_soc": "未公开",
+      "storage": "未公开",
+      "dimensions": "单体约193×163mm；耳罩宽约90.8mm、深约45mm",
+      "weight_g": "约322g",
+      "battery": "1060mAh锂离子；ANC或Aware开启最高35小时；3分钟快充约3小时",
+      "charging": "USB-C；0至满约3小时，电源适配器未随附口径以官方页面为准；电池可更换设计",
+      "water_resistance": "未公开",
+      "subscription": "Sonos系统与第三方流媒体按地区/账户提供；硬件无强制订阅",
+      "privacy": "10麦克风、语音助手与Sonos App数据处理边界未完全公开；Content Key为可选早期体验",
+      "features": "自适应ANC、Aware、TrueCinema、空间音频、Dolby头部追踪、Sonos系统直连、电视音频切换、可更换电池和耳罩",
+      "availability_note": "官方商店为Preorder并预计2026-09-29发货；官方页面列出多色，颜色不拆独立型号",
+      "source_note": "Sonos官方Newsroom、美国产品规格页和商店互证价格、预售、交付、40mm驱动器、10麦克风、Bluetooth 6.0、Wi-Fi、1060mAh、35小时和322g；SoC、防护等级与完整隐私字段未公开",
+      "source_refs": [
+        "SONOS-BEAM-ACE-NEWS-20260919",
+        "SONOS-ACE-PRODUCT-20260919",
+        "SONOS-STORE-PREORDER-20260919"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -3432,6 +3514,82 @@
       "storefront_type": "Bose Japan official pressroom",
       "availability_signal": "日本官方稿称2026-09-18开始预订、2026-10-01发售，并提供官方站及部分经销商渠道",
       "scope": "日本区域价格和日期；Sport Open单次最长7小时、无线充电盒额外最多22小时；限定颜色和开放式运动/日常定位"
+    },
+    {
+      "checked_on": "2026-09-19",
+      "quality": "A",
+      "campaign_status": "官方预售",
+      "pledge_or_price": "Beam Ultra US$699；Sonos Ace Ultra US$449",
+      "estimated_delivery": "2026-09-29",
+      "platform_reference": "Beam Ultra / Sonos Ace Ultra",
+      "id": "SONOS-BEAM-ACE-NEWS-20260919",
+      "source_group": "Sonos Beam Ultra and Sonos Ace Ultra",
+      "title": "Sonos official introduction of Beam Ultra and Ace Ultra",
+      "url": "https://newsroom.sonos.com/269788-sonos-welcomes-beam-ultra-and-sonos-ace-ultra-to-its-system/",
+      "source_channel": "official_newsroom",
+      "source_role": "official_launch_price_and_availability",
+      "source_domain": "newsroom.sonos.com",
+      "seller_type": "品牌",
+      "storefront_type": "Sonos official newsroom",
+      "availability_signal": "官方新闻稿确认2026-09-01开启预订，2026-09-29一般可用",
+      "scope": "Beam Ultra 7.1.2 Dolby Atmos、9驱动器；Ace Ultra 40mm驱动器、10麦克风、自适应ANC、35小时"
+    },
+    {
+      "checked_on": "2026-09-19",
+      "quality": "A",
+      "campaign_status": "官方预售",
+      "pledge_or_price": "US$699",
+      "estimated_delivery": "2026-09-29",
+      "platform_reference": "Beam Ultra",
+      "id": "SONOS-BEAM-PRODUCT-20260919",
+      "source_group": "Sonos Beam Ultra",
+      "title": "Sonos Beam Ultra official product page and technical specifications",
+      "url": "https://www.sonos.com/en-us/shop/beam-ultra-black",
+      "source_channel": "official_product_page",
+      "source_role": "official_product_page_and_specification",
+      "source_domain": "sonos.com",
+      "seller_type": "品牌",
+      "storefront_type": "Sonos official US store",
+      "availability_signal": "官方商店预订；预计2026-09-29发货",
+      "scope": "9个Class-D放大器、5高音单元、4低音单元、远场麦克风阵列、750×105×65mm、2.88kg、Wi-Fi 6、Bluetooth 5.3、HDMI eARC、CPU Quad Core 4×A55 1.9GHz"
+    },
+    {
+      "checked_on": "2026-09-19",
+      "quality": "A",
+      "campaign_status": "官方预售",
+      "pledge_or_price": "US$449",
+      "estimated_delivery": "2026-09-29",
+      "platform_reference": "Sonos Ace Ultra",
+      "id": "SONOS-ACE-PRODUCT-20260919",
+      "source_group": "Sonos Ace Ultra",
+      "title": "Sonos Ace Ultra official product page and technical specifications",
+      "url": "https://www.sonos.com/en-us/shop/sonos-ace-ultra-sand",
+      "source_channel": "official_product_page",
+      "source_role": "official_product_page_and_specification",
+      "source_domain": "sonos.com",
+      "seller_type": "品牌",
+      "storefront_type": "Sonos official US store",
+      "availability_signal": "官方商店预订；预计2026-09-29发货",
+      "scope": "40mm驱动器、10麦克风、自适应ANC、TrueCinema、Wi-Fi系统连接、Bluetooth 6.0、1060mAh、35小时、322g、可更换电池/耳罩"
+    },
+    {
+      "checked_on": "2026-09-19",
+      "quality": "A",
+      "campaign_status": "预售",
+      "pledge_or_price": "Beam Ultra US$699；Sonos Ace Ultra US$449",
+      "estimated_delivery": "2026-09-29",
+      "platform_reference": "Beam Ultra / Sonos Ace Ultra",
+      "id": "SONOS-STORE-PREORDER-20260919",
+      "source_group": "Sonos Beam Ultra and Sonos Ace Ultra",
+      "title": "Sonos official store preorder and estimated shipping page",
+      "url": "https://www.sonos.com/en-us/sonos-pro/checkout",
+      "source_channel": "official_store",
+      "source_role": "official_regional_price_and_shipping_signal",
+      "source_domain": "sonos.com",
+      "seller_type": "品牌",
+      "storefront_type": "Sonos official store",
+      "availability_signal": "官方商店显示两款Preorder和预计2026-09-29发货；不是当前稳定现货",
+      "scope": "区域商店价格、预订和预计发货信号；套装与配件不计入独立型号"
     }
   ],
   "update_log": [
@@ -3620,6 +3778,12 @@
       "change": "新增候选CAND-BOSE-SPORT-OPEN-20260918和CAND-BOSE-ULTRA-OPEN-2-20260918：Bose美国、日本官方发布稿和商品页确认US$199/¥29,700与US$299/¥39,600、2026-09-18或19预订、2026-10-01发售、开放式音频、IP54或IPX4、Bluetooth、续航和无线充电；仍处于预售阶段，不计普通在售主表。",
       "verification": "优先核对官方产品页、官方发布或支持资料、监管或认证与区域销售信号；平台、媒体、众筹和社区信息仅作为发现或价格库存辅助，未验证字段保持“未公开”。",
       "next": "下一轮继续补充官方产品或销售或支持、监管认证、Kickstarter、Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
+    },
+    {
+      "date": "2026-09-19",
+      "change": "新增智能音频主表：AUDIO-050、AUDIO-051；补充官方发布、预售/预约、区域价格、规格、交付和未公开字段边界。",
+      "verification": "优先使用品牌/平台官方产品页、官方商店、官方新闻稿、官方支持/开发者文档和区域页面；预售、预约队列、预计发货与稳定现货分开记录，颜色、存储、套装和配件不拆为独立型号。",
+      "next": "继续核验各区域官方/Amazon/授权零售库存、精确SKU、认证、固件、实际交付、价格变化和仍未公开的芯片/传感器/隐私字段。"
     }
   ],
   "source_channel_policy": [
@@ -3705,13 +3869,13 @@
     "crowdfunding": 1,
     "official_event": 1,
     "official_news": 1,
-    "official_newsroom": 14,
+    "official_newsroom": 15,
     "official_newsroom_distribution": 3,
     "official_product": 9,
-    "official_product_page": 5,
+    "official_product_page": 7,
     "official_release": 2,
     "official_sales": 18,
-    "official_store": 8,
+    "official_store": 9,
     "official_support_manual": 14
   },
   "source_domains": [
@@ -3730,6 +3894,7 @@
     "indiegogo.com",
     "mi.com",
     "newsroom.sennheiser.com",
+    "newsroom.sonos.com",
     "nothing.tech",
     "oppo.com",
     "plaud.ai",
@@ -3739,6 +3904,7 @@
     "prtimes.jp",
     "qcy.com",
     "shokz.com",
+    "sonos.com",
     "sony.com",
     "soundcore.com",
     "soundpeats.com",

@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-18",
+  "checked_on": "2026-09-19",
   "scope_note": "本库覆盖网络与移动通信：Wi‑Fi路由器、Mesh、5G CPE、移动热点、随身Wi‑Fi与NAS。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-18"
+      "2026-09-19"
     ]
   ],
   "products": [
@@ -510,6 +510,48 @@
         "SAMSUNG-S26FE-US-STORE-20260911",
         "SAMSUNG-S26FE-JP-20260911"
       ],
+      "connectivity": "未公开"
+    },
+    {
+      "id": "NET-013",
+      "brand": "Clicks",
+      "model": "Clicks Communicator",
+      "country_region": "全球预约；当前重点美国、加拿大、英国；具体蜂窝频段与服务按地区",
+      "category": "network-connectivity",
+      "form_factor": "Android 17 5G通信手机/实体键盘手机",
+      "use_case": "消息处理、语音输入、移动通信、第二手机、轻量移动办公",
+      "status": "官方预售/预约；2026年12月开始发货",
+      "evidence": "A",
+      "launch_date": "2026-09-18最终规格与配置确认；最初发布日另有官方记录",
+      "launch_date_type": "官方最终规格更新/预售配置日期",
+      "price": "US$199预约订金；US$499发布价至2026-09-30；2026-10-01起MSRP US$649",
+      "official_url": "https://app.clicks.tech/en/communicator",
+      "spec_url": "https://discover.clicks.tech/big-updates-clicks-communicator",
+      "features": "消息中心、实体触感键盘、语音转文字/录音/会议转写Prompt Key、指纹解锁、通知Signal LED、侧边物理Kill Switch、Gemini入口、可更换后盖",
+      "sensors": "指纹传感器；气压传感器；摄像头/麦克风；具体型号未公开",
+      "gps_positioning": "未公开",
+      "satellite": "未公开",
+      "supported_protocols": "5G/4G LTE/3G/2G全球解锁；Wi-Fi 802.11a/b/g/n/ac/ax（Wi-Fi 6）；Bluetooth版本官方最终稿标为5.4；NFC；nanoSIM+eSIM",
+      "chip_or_soc": "MediaTek Dimensity 8300（MT8883），4nm 5G IoT SoC",
+      "storage": "256GB内置；microSD最高2TB；RAM 12GB",
+      "dimensions": "130.5×78.63×12mm",
+      "weight_g": "170g",
+      "battery": "4,350mAh锂离子；官方生产更新标称800+充电循环；续航时长未公开；产品页仍显示旧的4,450mAh硅碳字段，冲突保留",
+      "charging": "USB-C；Qi2无线充电、MagSafe兼容；Charging Cover另售并含无线充电/NFC",
+      "water_resistance": "未公开",
+      "subscription": "Clicks Mobile可选；US/UK合资格用户激活后前两个月免费；Clicks Care为可选付费保障",
+      "privacy": "Android Strongbox ready；录音、转写、eSIM和通信数据的完整处理与保留政策未公开",
+      "availability_note": "官方页面可预约并可配置颜色、键盘布局、后盖和配件；订单确认与实际交付分开，官方预计2026年12月发货",
+      "source_note": "Clicks官方产品页、2026-09-18最终规格更新、电池更新和Mobile更新互证价格、交付、SoC、内存、电池化学、网络、存储、尺寸、重量、充电和区域服务；产品页旧电池字段与最新生产更新冲突，未强行覆盖历史口径",
+      "source_refs": [
+        "CLICKS-COMMUNICATOR-PRODUCT-20260919",
+        "CLICKS-COMMUNICATOR-UPDATES-20260919",
+        "CLICKS-COMMUNICATOR-BATTERY-20260919",
+        "CLICKS-COMMUNICATOR-MOBILE-20260919"
+      ],
+      "display": "未公开",
+      "os_platform": "未公开",
+      "audio_drivers": "未公开",
       "connectivity": "未公开"
     }
   ],
@@ -998,6 +1040,82 @@
       "seller_type": "手机品牌官方",
       "storefront_type": "Samsung日本Newsroom",
       "availability_signal": "日本上市未决定"
+    },
+    {
+      "checked_on": "2026-09-19",
+      "quality": "A",
+      "campaign_status": "官方预售/预约",
+      "pledge_or_price": "US$199预约订金；US$499全额预约价；页面显示含运费/关税的付款选项，条款与最终结算分开保留",
+      "estimated_delivery": "2026年12月开始发货，官方公告口径",
+      "platform_reference": "Clicks Communicator",
+      "id": "CLICKS-COMMUNICATOR-PRODUCT-20260919",
+      "source_group": "Clicks Communicator",
+      "title": "Clicks official Communicator product and reservation page",
+      "url": "https://app.clicks.tech/en/communicator",
+      "source_channel": "official_product_page",
+      "source_role": "official_product_page_reservation_and_specification",
+      "source_domain": "clicks.tech",
+      "seller_type": "品牌",
+      "storefront_type": "Clicks official product/reservation page",
+      "availability_signal": "官方页面开放预约；页面注明稍后发货，具体订单配置与地区费用另行确认",
+      "scope": "Android 17实体键盘通信手机、5G、Wi-Fi 6、蓝牙、NFC、256GB+microSD、尺寸重量、屏幕、电池、相机和SIM信息"
+    },
+    {
+      "checked_on": "2026-09-19",
+      "quality": "A",
+      "campaign_status": "官方预售；配置确认",
+      "pledge_or_price": "US$499发布价至2026-09-30；2026-10-01起MSRP US$649",
+      "estimated_delivery": "2026年12月开始发货",
+      "platform_reference": "Clicks Communicator",
+      "id": "CLICKS-COMMUNICATOR-UPDATES-20260919",
+      "source_group": "Clicks Communicator",
+      "title": "Clicks official September 18 final specifications and configuration update",
+      "url": "https://discover.clicks.tech/big-updates-clicks-communicator",
+      "source_channel": "official_newsroom",
+      "source_role": "official_final_spec_price_and_delivery_update",
+      "source_domain": "clicks.tech",
+      "seller_type": "品牌",
+      "storefront_type": "Clicks official updates",
+      "availability_signal": "官方2026-09-18确认订单配置开启、12GB RAM、4,350mAh电池、12月开始发货",
+      "scope": "最终内存、电池、材料和颜色/键盘布局配置流程；预售价格和交付窗口"
+    },
+    {
+      "checked_on": "2026-09-19",
+      "quality": "A",
+      "campaign_status": "预售准备/生产规格更新",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "2026年12月发货口径沿用官方公告",
+      "platform_reference": "Clicks Communicator",
+      "id": "CLICKS-COMMUNICATOR-BATTERY-20260919",
+      "source_group": "Clicks Communicator",
+      "title": "Clicks official production battery safety and longevity update",
+      "url": "https://discover.clicks.tech/production-communicator-battery-prioritizes-safety-and-longevity",
+      "source_channel": "official_support",
+      "source_role": "official_battery_lifecycle_and_material_update",
+      "source_domain": "clicks.tech",
+      "seller_type": "品牌",
+      "storefront_type": "Clicks official updates",
+      "availability_signal": "官方2026-09-18生产电池更新",
+      "scope": "4,350mAh电池、800+充电循环、最终采用锂离子而非早期硅碳方案；用于覆盖产品页旧规格冲突"
+    },
+    {
+      "checked_on": "2026-09-19",
+      "quality": "A",
+      "campaign_status": "预售配套服务",
+      "pledge_or_price": "套餐价格未公开；US/UK前两个月免费信号",
+      "estimated_delivery": "2026年12月发货",
+      "platform_reference": "Clicks Mobile / nanoSIM + eSIM",
+      "id": "CLICKS-COMMUNICATOR-MOBILE-20260919",
+      "source_group": "Clicks Communicator",
+      "title": "Clicks official Mobile plan update",
+      "url": "https://discover.clicks.tech/add-voice-and-data-communicator-clicks-mobile",
+      "source_channel": "official_newsroom",
+      "source_role": "official_connectivity_plan_and_region_update",
+      "source_domain": "clicks.tech",
+      "seller_type": "品牌",
+      "storefront_type": "Clicks official updates",
+      "availability_signal": "US/UK用户可使用Clicks Mobile；合资格用户激活后前两个月免费，具体计划价格待临近发货公布",
+      "scope": "美国AT&T网络、英国Vodafone网络、物理nanoSIM与eSIM、区域服务边界"
     }
   ],
   "update_log": [
@@ -1180,6 +1298,12 @@
       "change": "完成本类别官方产品、发布、规格、区域销售、众筹、电商和授权渠道核验；本轮没有达到证据门槛的新增独立主表型号。",
       "verification": "优先核对官方产品页、官方发布或支持资料、监管或认证与区域销售信号；平台、媒体、众筹和社区信息仅作为发现或价格库存辅助，未验证字段保持“未公开”。",
       "next": "下一轮继续补充官方产品或销售或支持、监管认证、Kickstarter、Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
+    },
+    {
+      "date": "2026-09-19",
+      "change": "新增网络与移动通信主表：NET-013；补充官方发布、预售/预约、区域价格、规格、交付和未公开字段边界。",
+      "verification": "优先使用品牌/平台官方产品页、官方商店、官方新闻稿、官方支持/开发者文档和区域页面；预售、预约队列、预计发货与稳定现货分开记录，颜色、存储、套装和配件不拆为独立型号。",
+      "next": "继续核验各区域官方/Amazon/授权零售库存、精确SKU、认证、固件、实际交付、价格变化和仍未公开的芯片/传感器/隐私字段。"
     }
   ],
   "source_channel_policy": [
@@ -1263,16 +1387,19 @@
   ],
   "source_channel_counts": {
     "crowdfunding": 1,
-    "official_newsroom": 5,
+    "official_newsroom": 7,
     "official_newsroom_distribution": 1,
     "official_product": 2,
+    "official_product_page": 1,
     "official_sales": 3,
     "official_store": 2,
+    "official_support": 1,
     "official_support_manual": 7
   },
   "source_domains": [
     "apple.com",
     "asus.com",
+    "clicks.tech",
     "eero.com",
     "gl-inet.com",
     "global.download.synology.com",

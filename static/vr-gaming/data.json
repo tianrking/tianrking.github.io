@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-18",
+  "checked_on": "2026-09-19",
   "scope_note": "本库覆盖VR/MR与游戏硬件：VR/MR头显、空间计算设备、掌机、游戏控制器与体感/触觉设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-18"
+      "2026-09-19"
     ]
   ],
   "products": [
@@ -410,6 +410,47 @@
         "DAREU-GAMING-IFA-20260911"
       ],
       "connectivity": "未公开"
+    },
+    {
+      "id": "XR-011",
+      "brand": "Valve",
+      "model": "Steam Frame",
+      "country_region": "美国、加拿大、英国、欧盟、澳大利亚；日本、中国台湾、中国香港由KOMODO授权渠道；韩国待定",
+      "category": "vr-gaming",
+      "form_factor": "无线VR头显+双控制器",
+      "use_case": "VR游戏、非VR Steam游戏、PC串流、独立运行",
+      "status": "官方已发布；预约/分批购买邀请",
+      "evidence": "A",
+      "launch_date": "2026-09-14",
+      "launch_date_type": "Steam Hardware官方公告开启预约日期",
+      "price": "256GB：US$1,059；1TB：US$1,299；其他官方区域价格已在来源中保留",
+      "official_url": "https://store.steampowered.com/hardware/steamframe",
+      "spec_url": "https://partner.steamgames.com/doc/steamhardware/steamframe/compatibility",
+      "display": "双LCD；每眼2160×2160；72/90/120Hz，144Hz为实验性信息；Pancake光学；水平视场角最高约110度",
+      "os_platform": "SteamOS；Proton、Lepton和FEX兼容层；支持Steam库串流与部分独立运行",
+      "audio_drivers": "头带集成双驱动立体声扬声器；麦克风规格未公开",
+      "sensors": "外部单色计算机视觉摄像头和内部眼动摄像头；精确传感器型号未公开",
+      "gps_positioning": "未公开",
+      "satellite": "不适用",
+      "supported_protocols": "Wi-Fi 7 2×2；Bluetooth版本未公开；USB-C及无线串流能力；控制器各使用1节AA电池",
+      "chip_or_soc": "Qualcomm Snapdragon 8 Gen 3；官方Steamworks文档确认",
+      "storage": "256GB或1TB；扩展存储/卡槽未在本轮官方核心来源中确认",
+      "dimensions": "未公开",
+      "weight_g": "未公开；官方产品页动态规格本轮未稳定抓取",
+      "battery": "21.6Wh（官方规格报道/待产品页复核）；官方续航时间未公开",
+      "charging": "45W电源适配器为另售配件；头显充电接口和完整充电规格未公开",
+      "water_resistance": "未公开",
+      "subscription": "无硬件强制订阅；Steam生态服务按账户和内容适用",
+      "privacy": "未公开；眼动和摄像头数据处理边界待官方隐私/支持页补充",
+      "features": "无线VR、非VR游戏、Steam库串流、独立运行、Steam Frame Standalone Verified、Half-Life: Alyx随设备兑换",
+      "availability_note": "官方公告确认预约、区域价格和首批购买邮件时间；预约队列、实际发货和各区域库存不等同于稳定现货",
+      "source_note": "Steam Hardware官方公告、Steam官方商店和Steamworks文档互证产品身份、价格、地区、预约、SoC和平台能力；显示、相机、重量、电池等部分规格仍待官方产品页稳定可读后复核",
+      "source_refs": [
+        "VALVE-STEAM-FRAME-ANNOUNCEMENT-20260919",
+        "VALVE-STEAM-FRAME-COMPAT-20260919",
+        "VALVE-STEAM-FRAME-STORE-20260919"
+      ],
+      "connectivity": "未公开"
     }
   ],
   "candidates": [
@@ -642,6 +683,63 @@
       "seller_type": "游戏外设品牌官方",
       "storefront_type": "IFA vporoom品牌新闻稿",
       "availability_signal": "IFA发布"
+    },
+    {
+      "checked_on": "2026-09-19",
+      "quality": "A",
+      "campaign_status": "官方预约；分批购买邀请",
+      "pledge_or_price": "256GB US$1,059 / CA$1,529 / €1,049 / £889 / AU$1,609 / PLN4,539；1TB US$1,299 / CA$1,859 / €1,279 / £1,089 / AU$1,969 / PLN5,549",
+      "estimated_delivery": "具体发货日未公开；首批购买邮件自2026-09-18开始",
+      "platform_reference": "Steam Frame 256GB / Steam Frame 1TB",
+      "id": "VALVE-STEAM-FRAME-ANNOUNCEMENT-20260919",
+      "source_group": "Valve Steam Frame",
+      "title": "Steam Hardware official Steam Frame launch and reservation announcement",
+      "url": "https://steamcommunity.com/groups/steam_hardware",
+      "source_channel": "official_newsroom",
+      "source_role": "official_launch_price_region_and_reservation_status",
+      "source_domain": "steamcommunity.com",
+      "seller_type": "品牌官方社区",
+      "storefront_type": "Steam Hardware official group",
+      "availability_signal": "官方公告确认2026-09-14开启预约；256GB和1TB价格、地区渠道、预约队列和首批购买邮件从2026-09-18开始",
+      "scope": "无线VR头显、控制器、VR和非VR游戏、Steam库串流、独立运行、美国/加拿大/英国/欧盟/澳大利亚直销及日本/中国台湾/中国香港KOMODO授权渠道"
+    },
+    {
+      "checked_on": "2026-09-19",
+      "quality": "A",
+      "campaign_status": "已发布；预约销售",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Steam Frame / Steam Frame Standalone Verified",
+      "id": "VALVE-STEAM-FRAME-COMPAT-20260919",
+      "source_group": "Valve Steam Frame",
+      "title": "Steamworks official Steam Frame standalone compatibility documentation",
+      "url": "https://partner.steamgames.com/doc/steamhardware/steamframe/compatibility",
+      "source_channel": "official_support_manual",
+      "source_role": "official_soc_and_platform_documentation",
+      "source_domain": "partner.steamgames.com",
+      "seller_type": "平台官方",
+      "storefront_type": "Steamworks official documentation",
+      "availability_signal": "官方开发者文档公开Steam Frame原生Snapdragon 8 Gen 3与SteamOS/Linux架构兼容层信息",
+      "scope": "Snapdragon 8 Gen 3、Arm64、SteamOS、Proton、Lepton和FEX运行路径；不从开发文档推断未公开硬件参数"
+    },
+    {
+      "checked_on": "2026-09-19",
+      "quality": "A",
+      "campaign_status": "预约",
+      "pledge_or_price": "区域价格由Steam Hardware官方公告列出",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Steam Frame",
+      "id": "VALVE-STEAM-FRAME-STORE-20260919",
+      "source_group": "Valve Steam Frame",
+      "title": "Steam official Steam Frame product page",
+      "url": "https://store.steampowered.com/hardware/steamframe",
+      "source_channel": "official_store",
+      "source_role": "official_product_page_and_reservation_entry",
+      "source_domain": "store.steampowered.com",
+      "seller_type": "品牌官方商店",
+      "storefront_type": "Steam official store",
+      "availability_signal": "官方商品页提供Steam Frame预约入口；实际可购买资格取决于预约队列与区域",
+      "scope": "官方产品身份与预约入口；页面动态内容未用于推断规格"
     }
   ],
   "update_log": [
@@ -806,6 +904,12 @@
       "change": "完成本类别官方产品、发布、规格、区域销售、众筹、电商和授权渠道核验；本轮没有达到证据门槛的新增独立主表型号。",
       "verification": "优先核对官方产品页、官方发布或支持资料、监管或认证与区域销售信号；平台、媒体、众筹和社区信息仅作为发现或价格库存辅助，未验证字段保持“未公开”。",
       "next": "下一轮继续补充官方产品或销售或支持、监管认证、Kickstarter、Indiegogo、Amazon区域站与授权分销；有可靠证据再升级，不臆造。"
+    },
+    {
+      "date": "2026-09-19",
+      "change": "新增VR/MR与游戏硬件主表：XR-011；补充官方发布、预售/预约、区域价格、规格、交付和未公开字段边界。",
+      "verification": "优先使用品牌/平台官方产品页、官方商店、官方新闻稿、官方支持/开发者文档和区域页面；预售、预约队列、预计发货与稳定现货分开记录，颜色、存储、套装和配件不拆为独立型号。",
+      "next": "继续核验各区域官方/Amazon/授权零售库存、精确SKU、认证、固件、实际交付、价格变化和仍未公开的芯片/传感器/隐私字段。"
     }
   ],
   "source_channel_policy": [
@@ -889,11 +993,12 @@
   ],
   "source_channel_counts": {
     "official_event": 1,
+    "official_newsroom": 1,
     "official_product": 1,
     "official_release": 1,
     "official_sales": 3,
-    "official_store": 2,
-    "official_support_manual": 3
+    "official_store": 3,
+    "official_support_manual": 4
   },
   "source_domains": [
     "about.fb.com",
@@ -903,8 +1008,11 @@
     "ifa.vporoom.com",
     "meta.com",
     "nintendo.com",
+    "partner.steamgames.com",
     "picoxr.com",
     "playstation.com",
-    "steamdeck.com"
+    "steamcommunity.com",
+    "steamdeck.com",
+    "store.steampowered.com"
   ]
 }
