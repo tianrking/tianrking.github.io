@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-19",
+  "checked_on": "2026-09-20",
   "scope_note": "本库覆盖定位追踪与个人安全：蓝牙标签、GPS追踪器、老人/儿童定位器与车辆追踪设备。按独立型号/代际计数；颜色、容量、套装、配件和同一型号的区域SKU不拆行。优先保留官方产品页、规格/支持页、发布公告、监管记录和官方销售证据；未披露字段写“未公开”，不从功能或同系列推断。",
   "field_rules": [
     [
@@ -28,7 +28,7 @@
     ],
     [
       "查证日期",
-      "2026-09-19"
+      "2026-09-20"
     ]
   ],
   "products": [
@@ -372,6 +372,24 @@
         "VENTION-SPOTTAG-POP-IFA-20260905"
       ],
       "next_check": "核验官方产品页、精确Bluetooth版本/协议生态、价格、CR/可充电电池、IP等级与区域销售"
+    },
+    {
+      "id": "CAND-GOOGLE-PIXEL-TAG-20260920",
+      "name": "Google Pixel Tag",
+      "brand": "Google",
+      "region": "美国/全球计划上市；区域销售待确认",
+      "category": "Bluetooth/UWB物品追踪器",
+      "status": "候选/官方已发布；Google Store显示2026年11月到货，官方博客给出2026-11-11；查证日未上市",
+      "evidence": "A",
+      "reason": "Google官方博客、Google Store商品页互证Pixel Tag的型号、US$29/US$99价格、Find Hub网络、Bluetooth Channel Sounding、UWB、IP67、CR2032一年以上续航、尺寸重量和加速度计；由于商店页仍显示Coming November 2026，不计入当前已上市主表。",
+      "price": "US$29（1-Pack）；US$99（4-Pack）",
+      "url": "https://store.google.com/product/pixel_tag?hl=en-US",
+      "alias_or_relation": "Google Find Hub生态官方追踪器；不与第三方Find Hub兼容标签、Pixel手机或配件套装重复",
+      "source_refs": [
+        "GOOGLE-PIXEL-TAG-STORE-20260920",
+        "GOOGLE-PIXEL-TAG-BLOG-20260920"
+      ],
+      "next_check": "2026-11-11后核验实际发货、各区域SKU/库存、Bluetooth版本、UWB兼容设备、隐私说明、套装与授权零售价格；颜色和包装不拆型号。"
     }
   ],
   "sources": [
@@ -596,6 +614,44 @@
       "storefront_type": "Vention官方IFA Virtual Press Office发布",
       "availability_signal": "IFA发布；商品页/价格/交付未公开",
       "platform_reference": "Vention SpotTag Pop"
+    },
+    {
+      "checked_on": "2026-09-20",
+      "quality": "A",
+      "campaign_status": "官方预发布/计划上市",
+      "pledge_or_price": "US$29（1-Pack）；US$99（4-Pack）",
+      "estimated_delivery": "2026年11月；官方博客给出2026-11-11，商店页仅写November 2026",
+      "platform_reference": "Google Pixel Tag 1-Pack / 4-Pack",
+      "id": "GOOGLE-PIXEL-TAG-STORE-20260920",
+      "source_group": "Google Pixel Tag",
+      "title": "Google Store official Pixel Tag product page",
+      "url": "https://store.google.com/product/pixel_tag?hl=en-US",
+      "source_channel": "official_store",
+      "source_role": "官方商品页、价格、预售窗口和硬件规格证据",
+      "source_domain": "store.google.com",
+      "seller_type": "品牌官方商店",
+      "storefront_type": "Google Store US",
+      "availability_signal": "官方商品页显示Coming November 2026；1-Pack/4-Pack选择；尚未形成当前可交付现货",
+      "scope": "Find Hub、Bluetooth Channel Sounding、UWB、IP67、CR2032、电池寿命、尺寸重量、加速度计、扬声器和Android兼容性"
+    },
+    {
+      "checked_on": "2026-09-20",
+      "quality": "A",
+      "campaign_status": "官方预发布；计划上市",
+      "pledge_or_price": "US$29（单只）；US$99（4只装）",
+      "estimated_delivery": "2026-11-11（官方博客口径）",
+      "platform_reference": "Google Pixel Tag",
+      "id": "GOOGLE-PIXEL-TAG-BLOG-20260920",
+      "source_group": "Google Pixel Tag",
+      "title": "Google official Pixel Tag launch announcement",
+      "url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-tag/",
+      "source_channel": "official_newsroom",
+      "source_role": "官方发布、网络生态、上市日期和价格证据",
+      "source_domain": "blog.google",
+      "seller_type": "设备品牌官方",
+      "storefront_type": "Google官方博客",
+      "availability_signal": "官方2026-08-12发布；说明2026-11-11上市；使用Find Hub全球网络",
+      "scope": "Google首款Finder Tag、超过10亿Android设备Find Hub网络、UWB/Channel Sounding、1年电池和价格；不证明2026-09-20已交付"
     }
   ],
   "update_log": [
@@ -760,6 +816,18 @@
       "change": "完成【trackers】官方产品、发布、规格、区域销售、众筹、电商和授权渠道核验；本轮没有达到证据门槛的新增独立主表型号。",
       "verification": "众筹与电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-20",
+      "change": "【定位追踪与个人安全】完成本轮新增/状态变更核验并写入有证据记录；预发布、预约与系列级线索继续保持候选或历史状态。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-20",
+      "change": "新增Google Pixel Tag候选；官方Google Store和官方博客互证US$29单只/US$99四只装、Find Hub、Bluetooth Channel Sounding、UWB、IP67、CR2032一年以上、尺寸重量与2026-11-11计划上市；因查证日仍显示Coming November 2026，未计入已上市主表。",
+      "verification": "Google官方商品页和发布博客达到A等级型号与规格证据，但计划上市不等同当前可交付现货；保留候选、价格和预计上市日期，颜色/包装不拆型号。",
+      "next": "2026-11-11后复核各区域实际发货、库存、SKU、Bluetooth版本、UWB兼容设备、隐私支持页与授权零售价格。"
     }
   ],
   "source_channel_policy": [
@@ -842,15 +910,18 @@
     }
   ],
   "source_channel_counts": {
+    "official_newsroom": 1,
     "official_newsroom_distribution": 1,
     "official_product": 4,
     "official_release": 1,
     "official_sales": 5,
+    "official_store": 1,
     "official_support_manual": 2
   },
   "source_domains": [
     "angelsense.com",
     "apple.com",
+    "blog.google",
     "chipolo.net",
     "garmin.com",
     "ifa.vporoom.com",
@@ -858,6 +929,7 @@
     "legal.tile.com",
     "life360.com",
     "samsung.com",
+    "store.google.com",
     "support.apple.com",
     "tractive.com"
   ]
