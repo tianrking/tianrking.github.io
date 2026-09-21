@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-20",
+  "checked_on": "2026-09-21",
   "scope_note": "第一版全球市场盘点：按可独立购买的产品代际/型号纳入；颜色、尺寸和纯外观材质不单独计数。疑似同一OEM硬件的品牌别名放入候选与别名表。价格保留产品页面所在市场币种，未做汇率换算。",
   "products": [
     {
@@ -294,11 +294,11 @@
       "model": "RingConn Gen 3",
       "country_region": "中国/全球",
       "category": "健康/睡眠",
-      "status": "在售/官网缺货",
+      "status": "在售产品线/官方商城本轮显示缺货",
       "evidence": "A",
       "launch_date": "2026-05-29",
       "launch_date_type": "官方预售页首发发货日期",
-      "price": "US$349；官方预售价曾US$314（2026-05-05至05-28）",
+      "price": "US$349；官方历史预售价曾US$314（2026-05-05至05-28）",
       "official_url": "https://ringconn.com/products/ringconn-gen-3",
       "spec_url": "https://ringconn.com/pages/product-compare",
       "sensors": "光学传感器（心率/血氧）；体温传感器；三轴加速度计；振动马达",
@@ -311,8 +311,14 @@
       "water_resistance": "IP68/ATM10；100m",
       "subscription": "无订阅",
       "features": "血管健康趋势、睡眠与睡眠呼吸暂停模式洞察、女性全周期预测、振动提醒、数据稳定性改进",
-      "availability_note": "RingConn官方产品页本轮仍显示US$349且Out of stock；型号仍在官方商城，尺码6–15、Gen 3规格和官方预售发货口径保持不变；库存需继续复核",
-      "source_note": "RingConn官方产品页、预售页、产品对比页及官方发布稿；2026-08-24复核当前官方商城缺货状态"
+      "availability_note": "RingConn官方商品页本轮仍显示US$349且Out of stock；型号、尺码6–15与Gen 3规格仍在官方商城/功能页，实际区域库存与交付需结算页复核",
+      "source_note": "RingConn官方商品页、Gen 3功能页、官方发布/更新页、产品对比页及既有预售资料；当前库存、区域SKU和芯片仍未公开",
+      "source_refs": [
+        "RINGCONN-GEN3-PRODUCT-20260921",
+        "RINGCONN-GEN3-FEATURE-20260921",
+        "RINGCONN-GEN3-ANNOUNCE-20260921"
+      ],
+      "checked_on": "2026-09-21"
     },
     {
       "id": "SR-013",
@@ -6022,6 +6028,63 @@
       "storefront_type": "TechCrunch报道",
       "availability_signal": "IFA预告/预计未来上市；未证明当前销售",
       "platform_reference": "Circular Ring 3 Pro / Ring 3 Slim"
+    },
+    {
+      "checked_on": "2026-09-21",
+      "quality": "A",
+      "campaign_status": "官方在售产品线/当前库存不确定",
+      "pledge_or_price": "US$349",
+      "estimated_delivery": "未公开；以官方区域结算页为准",
+      "platform_reference": "RingConn Gen 3 / variant 49061926928692",
+      "id": "RINGCONN-GEN3-PRODUCT-20260921",
+      "source_group": "RingConn Gen 3",
+      "title": "RingConn official Gen 3 product page",
+      "url": "https://ringconn.com/products/ringconn-gen-3?variant=49061926928692",
+      "source_channel": "official_sales",
+      "source_role": "官方商品页、价格、库存、尺寸、重量、传感器、续航和防水证据",
+      "source_domain": "ringconn.com",
+      "seller_type": "品牌官方商店",
+      "storefront_type": "RingConn官方商城",
+      "availability_signal": "官方商品页保留US$349产品与尺码选择；本轮页面快照显示Out of stock，实际库存需按区域复核",
+      "scope": "尺码6–15、2.3mm、2.5–3.5g、光学心率/血氧、体温、三轴加速度、振动反馈、10–14天续航、无线充电盒、IP68/ATM10/100m、无订阅"
+    },
+    {
+      "checked_on": "2026-09-21",
+      "quality": "A",
+      "campaign_status": "官方在售产品线",
+      "pledge_or_price": "US$349（商城口径）",
+      "estimated_delivery": "未公开",
+      "platform_reference": "RingConn Gen 3",
+      "id": "RINGCONN-GEN3-FEATURE-20260921",
+      "source_group": "RingConn Gen 3",
+      "title": "RingConn official Gen 3 feature page",
+      "url": "https://ringconn.com/pages/ringconn-gen-3",
+      "source_channel": "official_product_page",
+      "source_role": "官方功能、传感与充电方案证据",
+      "source_domain": "ringconn.com",
+      "seller_type": "品牌官方",
+      "storefront_type": "RingConn官方产品页",
+      "availability_signal": "官方产品功能页；销售库存需另由商城核验",
+      "scope": "Vascular Health Insights、Smart Vibration Alerts、Next-Gen Sensing、最长14天、universal wireless charging case"
+    },
+    {
+      "checked_on": "2026-09-21",
+      "quality": "A",
+      "campaign_status": "官方发布/在售产品线",
+      "pledge_or_price": "US$349（商城口径）",
+      "estimated_delivery": "未公开；官方文章称完整充电约90分钟",
+      "platform_reference": "RingConn Gen 3",
+      "id": "RINGCONN-GEN3-ANNOUNCE-20260921",
+      "source_group": "RingConn Gen 3",
+      "title": "RingConn official Gen 3 announcement and product update",
+      "url": "https://ringconn.com/blogs/news/ringconn-gen-3-whats-new",
+      "source_channel": "official_newsroom",
+      "source_role": "官方发布/上市节奏和功能交叉证据",
+      "source_domain": "ringconn.com",
+      "seller_type": "品牌官方",
+      "storefront_type": "RingConn官方博客",
+      "availability_signal": "官方发布/现售产品线；本轮不以新闻稿单独证明库存",
+      "scope": "Gen 3旗舰定位、约90分钟充满、无订阅与功能更新；缺失字段继续写未公开"
     }
   ],
   "update_log": [
@@ -6228,6 +6291,18 @@
       "change": "【智能指环】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-21",
+      "change": "【智能指环】完成本轮新增/状态变更核验并写入有证据记录；预发布、预约与系列级线索继续保持候选或历史状态。",
+      "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
+      "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-21",
+      "change": "更新SR-012 RingConn Gen 3：官方商城当前快照仍为US$349且Out of stock；补充官方Gen 3功能页和发布/更新页，保留10–14天续航、无线充电盒、IP68/ATM10、传感器、无订阅和尺码6–15等已核验字段。",
+      "verification": "RingConn官方商品页、功能页、发布/更新页与既有官方对比/预售资料互证；产品线仍存在不等于本轮有现货，库存按区域和结算页继续复核，未披露芯片与精确区域SKU不推断。",
+      "next": "继续核验RingConn Gen 3各地区库存、交付、分料号/颜色是否同源、无线充电规格、芯片和官方支持页；颜色与纯尺码不拆独立型号。"
     }
   ],
   "source_channel_policy": [
@@ -6313,9 +6388,11 @@
     "community_discovery": 1,
     "crowdfunding": 2,
     "marketplace": 1,
+    "official_newsroom": 1,
     "official_product": 32,
+    "official_product_page": 1,
     "official_release": 3,
-    "official_sales": 49,
+    "official_sales": 50,
     "official_support_manual": 5,
     "press_release_distribution": 5,
     "regulatory_certification": 3,
