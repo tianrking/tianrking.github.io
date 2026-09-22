@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-21",
+  "checked_on": "2026-09-22",
   "scope_note": "首版优先覆盖全球主要品牌的TWS、主动降噪、AI/录音/翻译耳机与骨传导/开放式运动耳机。按独立型号/代际计数；颜色、充电盒套装和区域SKU不拆行。翻译能力、AI功能与硬件音频能力分开记录；来源没有披露的芯片、传感器、尺寸、重量、防水、续航和订阅字段写“未公开”。 本库同时纳入Wi-Fi多房间音箱与联网家庭音频；音箱的扬声器驱动、无线协议和家庭服务与耳机字段分开记录。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-21"
+      "2026-09-22"
     ]
   ],
   "products": [
@@ -2034,7 +2034,8 @@
       "url": "https://www.anker.com/de/best-clear-calls-earbuds-and-headphones",
       "alias_or_relation": "AeroClip 2；与现售AeroClip（A3388）分开，不把代际合并",
       "source_refs": [
-        "SOUNDCOR-THUS-PRELAUNCH-20260909"
+        "SOUNDCOR-THUS-PRELAUNCH-20260909",
+        "ANKER-IFA-AUDIO-20260922"
       ],
       "next_check": "2026-09-22后核验官方商品页、区域库存、ASIN/SKU、规格书、重量、续航和Bluetooth版本"
     },
@@ -2050,7 +2051,8 @@
       "url": "https://www.anker.com/de/best-clear-calls-earbuds-and-headphones",
       "alias_or_relation": "Liberty Buds 2；与既有Liberty代际按精确型号分开",
       "source_refs": [
-        "SOUNDCOR-THUS-PRELAUNCH-20260909"
+        "SOUNDCOR-THUS-PRELAUNCH-20260909",
+        "ANKER-IFA-AUDIO-20260922"
       ],
       "next_check": "2026-09-22后核验商品页、区域库存、ASIN/SKU、Bluetooth/LE Audio、续航、重量、充电和价格"
     },
@@ -2066,7 +2068,8 @@
       "url": "https://www.anker.com/de/best-clear-calls-earbuds-and-headphones",
       "alias_or_relation": "Space 2 Pro；与现有Space系列按精确代际分开",
       "source_refs": [
-        "SOUNDCOR-THUS-PRELAUNCH-20260909"
+        "SOUNDCOR-THUS-PRELAUNCH-20260909",
+        "ANKER-IFA-AUDIO-20260922"
       ],
       "next_check": "2026-09-22后核验商品页、区域库存、ASIN/SKU、驱动、续航、重量、充电和Bluetooth版本"
     },
@@ -2101,7 +2104,8 @@
       "alias_or_relation": "床头声学加睡眠感知设备，不是TWS或耳戴设备；与soundcore Sleep Earbuds 4分开记录",
       "source_refs": [
         "SOUNDCORE-SLEEPLAB-PRO-OFFICIAL-20260917",
-        "SOUNDCORE-SLEEPLAB-PRO-BLOG-20260917"
+        "SOUNDCORE-SLEEPLAB-PRO-BLOG-20260917",
+        "ANKER-IFA-AUDIO-20260922"
       ],
       "next_check": "核验正式价格、上市和发货、尺寸重量、AC规格与备用电池、Wi-Fi/Bluetooth、芯片、App数据模型和隐私条款"
     },
@@ -3590,6 +3594,25 @@
       "storefront_type": "Sonos official store",
       "availability_signal": "官方商店显示两款Preorder和预计2026-09-29发货；不是当前稳定现货",
       "scope": "区域商店价格、预订和预计发货信号；套装与配件不计入独立型号"
+    },
+    {
+      "checked_on": "2026-09-22",
+      "quality": "A",
+      "campaign_status": "官方公告/部分型号预发布",
+      "pledge_or_price": "未公开；不以IFA页面代替型号商品页价格",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Anker soundcore audio / SleepLab",
+      "id": "ANKER-IFA-AUDIO-20260922",
+      "source_group": "Anker IFA 2026 audio and sleep products",
+      "title": "Anker official IFA 2026 audio product announcement",
+      "url": "https://www.anker-in.com/posts/ifa2026",
+      "source_channel": "official_newsroom",
+      "source_role": "官方产品线与预发布型号/功能发现证据",
+      "source_domain": "anker-in.com",
+      "seller_type": "品牌官方",
+      "storefront_type": "Anker官方IFA页面",
+      "availability_signal": "官方IFA页面列出AeroClip 2 Pro、AeroClip 2、Liberty Buds 2、Space 2 Pro、SleepLab/SleepLab Pro等；各精确商品页、库存、价格和交付需按型号复核",
+      "scope": "官方页面提到THUS AI芯片、AI语音记录、AeroClip系列、Liberty Buds 2、Space 2 Pro以及SleepLab/SleepLab Pro；不将THUS AI芯片当作Wi-Fi/Bluetooth裸芯片记录"
     }
   ],
   "update_log": [
@@ -3796,6 +3819,12 @@
       "change": "【TWS/AI/翻译/降噪/骨传导耳机】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-22",
+      "change": "【音频设备】用Anker官方IFA页面补充既有AeroClip 2、Liberty Buds 2、Space 2 Pro和SleepLab Pro候选来源；不把公告当作稳定现货。",
+      "verification": "固定渠道矩阵已核验：原厂/品牌页、官方销售/支持、监管/认证、Kickstarter/Indiegogo/BackerKit/Crowd Supply、Amazon及区域电商、授权分销和专业媒体；众筹/平台/媒体线索不能替代核心官方或监管证据，未公开字段不推断。",
+      "next": "继续扩展不同国家和语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道；新线索先进入候选/来源区，取得精确型号、价格、状态和交付证据后再升级主表。"
     }
   ],
   "source_channel_policy": [
@@ -3881,7 +3910,7 @@
     "crowdfunding": 1,
     "official_event": 1,
     "official_news": 1,
-    "official_newsroom": 15,
+    "official_newsroom": 16,
     "official_newsroom_distribution": 3,
     "official_product": 9,
     "official_product_page": 7,
@@ -3891,6 +3920,7 @@
     "official_support_manual": 14
   },
   "source_domains": [
+    "anker-in.com",
     "anker.com",
     "apple.com",
     "baseus.com",

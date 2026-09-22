@@ -1,7 +1,7 @@
 {
   "title": "全球上市智能宠物项圈／宠物吊牌研究库",
   "subtitle": "Global smart pet collars, trackers, tags and pet identity devices catalog",
-  "checked_on": "2026-09-21",
+  "checked_on": "2026-09-22",
   "version": "2026-08-25-pet-v3",
   "methodology": "优先官方产品页、官方商店、官方发布稿、官方规格/支持页和监管/认证记录；未披露字段写“未公开”，不从同系列、App功能、外观或OEM推断芯片/传感器/尺寸/续航；通用物品标签可挂宠物但明确标注非宠物专用。",
   "products": [
@@ -4985,6 +4985,22 @@
         "CHEERBLE-WICKEDBONE-AIR-STORE-20260912"
       ],
       "next_check": "核验官方SKU、包装/说明书、FCC或认证记录、实际商品页命名、重量和电池规格后再决定是否进入主表"
+    },
+    {
+      "id": "CAND-PETVARA-DOG-COLLAR-20260922",
+      "name": "Petvara Dog Collar",
+      "brand": "PETVARA",
+      "region": "美国/众筹；交付与当前销售待核验",
+      "category": "智能宠物项圈/训练",
+      "status": "历史众筹完成/产品交付与当前销售未公开",
+      "evidence": "B",
+      "reason": "Kickstarter页面显示项目于2026-01-20至2026-02-19完成，157位支持者、筹资US$14,318，项目宣称语音召回约1,600ft、智能围栏约3,200ft、IPX8和4种训练模式；当前未取得品牌官方商品页、量产交付、精确型号、价格、GPS/无线制式、电池或库存证据，保留历史候选，不计入在售主表。",
+      "url": "https://www.kickstarter.com/projects/1143911029/petvara-dog-collar-long-range-voice-recall-and-training",
+      "alias_or_relation": "Kickstarter项目；不与同名宠物用品、纯牵引/训练配件或OEM项圈合并",
+      "source_refs": [
+        "PETVARA-KICKSTARTER-20260922"
+      ],
+      "next_check": "核验项目方官网、交付/退款更新、正式零售页、SKU、GPS/无线方案、传感器、电池、防水认证与区域可得性"
     }
   ],
   "sources": [
@@ -6597,6 +6613,25 @@
       "storefront_type": "Cheerble official store",
       "availability_signal": "官方产品路线可访问；当前页面检索结果显示Wicked Ball Air/CWQ01与Wickedbone Air命名存在冲突",
       "scope": "页面命名、型号CWQ01、130g/80mm/200mAh等信息与PR重量/命名不一致，列为待复核证据"
+    },
+    {
+      "checked_on": "2026-09-22",
+      "quality": "A",
+      "campaign_status": "completed Kickstarter campaign (2026-01-20 to 2026-02-19)",
+      "pledge_or_price": "campaign total US$14,318 / goal US$2,000；具体奖励档位价格未从当前抓取文本确认",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Kickstarter project 1143911029/petvara-dog-collar-long-range-voice-recall-and-training",
+      "id": "PETVARA-KICKSTARTER-20260922",
+      "source_group": "PETVARA Dog Collar",
+      "title": "Petvara Dog Collar Kickstarter campaign",
+      "url": "https://www.kickstarter.com/projects/1143911029/petvara-dog-collar-long-range-voice-recall-and-training",
+      "source_channel": "crowdfunding",
+      "source_role": "众筹项目状态、筹资、功能和交付线索发现证据",
+      "source_domain": "kickstarter.com",
+      "seller_type": "众筹项目方",
+      "storefront_type": "Kickstarter campaign",
+      "availability_signal": "campaign completed；页面显示157 backers、US$14,318 pledged；当前零售库存/交付未验证",
+      "scope": "语音召回约1,600ft、智能围栏约3,200ft、IPX8、4种训练模式和连接稳定性宣传；GPS/无线制式、传感器、电池、量产交付与当前销售待核验"
     }
   ],
   "update_log": [
@@ -6791,6 +6826,12 @@
       "change": "【智能宠物项圈/吊牌】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-22",
+      "change": "【智能宠物项圈/吊牌】新增Petvara已完成Kickstarter历史候选；交付、正式SKU和当前销售未验证，不计入主表。",
+      "verification": "固定渠道矩阵已核验：原厂/品牌页、官方销售/支持、监管/认证、Kickstarter/Indiegogo/BackerKit/Crowd Supply、Amazon及区域电商、授权分销和专业媒体；众筹/平台/媒体线索不能替代核心官方或监管证据，未公开字段不推断。",
+      "next": "继续扩展不同国家和语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道；新线索先进入候选/来源区，取得精确型号、价格、状态和交付证据后再升级主表。"
     }
   ],
   "field_notes": {
@@ -6881,7 +6922,7 @@
     }
   ],
   "source_channel_counts": {
-    "crowdfunding": 1,
+    "crowdfunding": 2,
     "official_newsroom": 2,
     "official_product": 36,
     "official_release": 3,
@@ -6917,6 +6958,7 @@
     "invisiblefence.com",
     "invoxia.com",
     "jiobit.com",
+    "kickstarter.com",
     "kuyrapet.com.pe",
     "learn.whistle.com",
     "life360.com",

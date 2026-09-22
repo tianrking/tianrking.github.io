@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-21",
+  "checked_on": "2026-09-22",
   "scope_note": "第一版全球市场盘点：按可独立购买的产品代际/型号纳入；颜色、尺寸和纯外观材质不单独计数。疑似同一OEM硬件的品牌别名放入候选与别名表。价格保留产品页面所在市场币种，未做汇率换算。",
   "products": [
     {
@@ -4061,11 +4061,17 @@
       "brand": "KiWear",
       "region": "美国/全球众筹计划",
       "category": "手势输入/健康",
-      "status": "已发布/众筹待启动或交付待核",
-      "evidence": "B/C",
-      "reason": "官方发布稿称2026-06在AWE USA展示并计划Kickstarter；官网现为campaign coming/priority deposit，尚未形成稳定销售和最终规格。",
-      "url": "https://www.globenewswire.com/news-release/2026/06/17/3313240/0/en/kiwear-launches-industry-s-first-touchless-smart-ring-controller-at-awe-usa-2026.html",
-      "alias_or_relation": "下一代原型提到Qualcomm Snapdragon S7+ Gen 1；不把原型SoC归给最终消费版"
+      "status": "Kickstarter campaign/FAQ live；奖励价格、实际交付和零售状态待核验",
+      "evidence": "A/B",
+      "reason": "KiWear官方Kickstarter FAQ披露最多8个Bluetooth设备、同时2个活动连接、手势/Air Mouse、HR/SpO2/活动/睡眠、典型3–5天续航、充电盒+USB-C、约3mm锆陶瓷/环氧结构、无NFC/支付、无显示、无计划订阅；campaign页面存在但当前抓取未取得奖励价格与交付日期，因此仍为候选。此前发布稿提到的Snapdragon S7+ Gen 1属于下一代原型线索，不归给最终消费版。",
+      "url": "https://www.kickstarter.com/projects/kiwear/kiwear-ring-control-every-device-with-a-gesture",
+      "alias_or_relation": "下一代原型提到Qualcomm Snapdragon S7+ Gen 1；不把原型SoC归给最终消费版",
+      "id": "CAND-KIWEAR-SMART-RING-20260922",
+      "source_refs": [
+        "KIWEAR-KICKSTARTER-FAQ-20260922",
+        "KIWEAR-KICKSTARTER-20260922"
+      ],
+      "next_check": "奖励价格、campaign筹资/结束状态、生产和交付、最终尺寸/料号、传感器和SoC；不把原型SoC推断为最终版"
     },
     {
       "name": "OASIS Smart Ring",
@@ -4127,11 +4133,17 @@
       "brand": "Spark Ring",
       "region": "全球众筹/预购",
       "category": "语音记录/AI笔记/提醒",
-      "status": "预发布/计划2026年11月全球发货",
-      "evidence": "B",
-      "reason": "官方页面开放US$5 early-bird reservation并称计划2026年11月全球发货；公开3–5m拾音、低于3g、最长7天、20分钟充满和IP68，但尚未形成实际在售和交付证明。",
-      "url": "https://sparkring.ai/",
-      "alias_or_relation": "输入型AI智能戒指；核心功能无需订阅，Pro计划为可选增值服务；暂不计入在售主表"
+      "status": "Kickstarter campaign live/预售；Super Early Bird US$159；全球发货预计2026-12；不计入当前已上市主表",
+      "evidence": "A/B",
+      "reason": "项目方PR Newswire与Kickstarter FAQ互证campaign已上线、US$5 reservation、Super Early Bird起价US$159、8个尺码、无月费、加密与离线录音等信息；PR披露2.8g、低于8mm、IP68、3–5m拾音、BLE 5.0、NFC、最高8小时连续录音和约30分钟充满，FAQ另给约6小时连续录音和约1小时充电，规格存在差异。全球发货预计2026年12月，仍属于众筹预售，未形成当前零售现货证据。",
+      "url": "https://www.kickstarter.com/projects/sparkring/spark-ring-the-smart-ring-built-to-capture-ideas-instantly",
+      "alias_or_relation": "输入型AI智能戒指；核心功能无需订阅，Pro计划为可选增值服务；暂不计入在售主表",
+      "id": "CAND-SPARK-RING-20260922",
+      "source_refs": [
+        "SPARK-RING-KICKSTARTER-20260922",
+        "SPARK-RING-PR-20260922"
+      ],
+      "next_check": "campaign结束、生产/交付、最终SKU、实际零售价格、App/隐私、录音续航与充电规格；核对PR与FAQ的续航/充电差异后再决定是否升级主表"
     },
     {
       "name": "VOLERA Smart Ring / Core",
@@ -6085,6 +6097,82 @@
       "storefront_type": "RingConn官方博客",
       "availability_signal": "官方发布/现售产品线；本轮不以新闻稿单独证明库存",
       "scope": "Gen 3旗舰定位、约90分钟充满、无订阅与功能更新；缺失字段继续写未公开"
+    },
+    {
+      "checked_on": "2026-09-22",
+      "quality": "A",
+      "campaign_status": "live Kickstarter campaign",
+      "pledge_or_price": "Super Early Bird from US$159；另有US$5 reservation信号",
+      "estimated_delivery": "全球发货预计2026年12月；FAQ称add-ons预计2026年12月发货",
+      "platform_reference": "Kickstarter project sparkring/spark-ring-the-smart-ring-built-to-capture-ideas-instantly",
+      "id": "SPARK-RING-KICKSTARTER-20260922",
+      "source_group": "Spark Ring",
+      "title": "Spark Ring official Kickstarter campaign",
+      "url": "https://www.kickstarter.com/projects/sparkring/spark-ring-the-smart-ring-built-to-capture-ideas-instantly",
+      "source_channel": "crowdfunding",
+      "source_role": "众筹项目状态、奖励/预售、尺码、发货与功能FAQ证据",
+      "source_domain": "kickstarter.com",
+      "seller_type": "众筹项目方",
+      "storefront_type": "Kickstarter campaign/FAQ",
+      "availability_signal": "campaign live；属于奖励/预售，不等同于当前零售现货",
+      "scope": "FAQ披露8个尺码7–14、最高约6小时连续录音/约1小时充电、无月费、端到端加密、离线录音约45分钟、Bluetooth同步和iOS15+/Android10+；具体功能/时间以项目方最新页面为准"
+    },
+    {
+      "checked_on": "2026-09-22",
+      "quality": "A",
+      "campaign_status": "live Kickstarter campaign",
+      "pledge_or_price": "US$5 early-bird reservation；Super Early Bird from US$159",
+      "estimated_delivery": "全球发货预计2026年12月",
+      "platform_reference": "Spark Ring / Kickstarter",
+      "id": "SPARK-RING-PR-20260922",
+      "source_group": "Spark Ring",
+      "title": "Spark Ring launches on Kickstarter official press release",
+      "url": "https://www.prnewswire.com/news-releases/spark-ring-launches-on-kickstarter-ai-smart-ring-that-captures-ideas-instantly-302878387.html",
+      "source_channel": "press_release_distribution",
+      "source_role": "项目方产品公告、规格、预售价格与预计发货证据",
+      "source_domain": "prnewswire.com",
+      "seller_type": "品牌/项目方",
+      "storefront_type": "PR Newswire",
+      "availability_signal": "2026-09-14官方公告；Kickstarter campaign live；不是当前稳定零售库存",
+      "scope": "锆陶瓷、2.8g、宽度低于8mm、IP68、3–5m降噪麦克风、触觉反馈与LED、最高8小时连续录音/1周待机、约30分钟充满、BLE 5.0与NFC、手机本地转录；与Kickstarter FAQ的6小时/约1小时充电表述存在差异，保留为待核验区间"
+    },
+    {
+      "checked_on": "2026-09-22",
+      "quality": "A",
+      "campaign_status": "Kickstarter campaign/FAQ live",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Kickstarter project kiwear/kiwear-ring-control-every-device-with-a-gesture",
+      "id": "KIWEAR-KICKSTARTER-FAQ-20260922",
+      "source_group": "KiWear Smart Ring",
+      "title": "KiWear Ring official Kickstarter FAQ",
+      "url": "https://www.kickstarter.com/projects/kiwear/kiwear-ring-control-every-device-with-a-gesture/faqs",
+      "source_channel": "crowdfunding",
+      "source_role": "众筹FAQ、手势输入、兼容性、健康功能、续航、充电、材料与订阅证据",
+      "source_domain": "kickstarter.com",
+      "seller_type": "众筹项目方",
+      "storefront_type": "Kickstarter FAQ",
+      "availability_signal": "Kickstarter campaign/FAQ live；奖励价格、交付和最终零售状态未从当前页面确认",
+      "scope": "最多连接8个Bluetooth设备、同时2个活动连接；Air Mouse/手势自定义；健康功能包括HR、SpO2、活动和睡眠；无NFC/支付、无触觉提醒、无显示；典型续航约3–5天/连续约20小时；充电盒+USB-C；约3mm厚，锆陶瓷外壳与环氧内层；无计划订阅；与部分智能眼镜测试兼容"
+    },
+    {
+      "checked_on": "2026-09-22",
+      "quality": "A",
+      "campaign_status": "Kickstarter campaign/FAQ live",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Kickstarter project kiwear/kiwear-ring-control-every-device-with-a-gesture",
+      "id": "KIWEAR-KICKSTARTER-20260922",
+      "source_group": "KiWear Smart Ring",
+      "title": "KiWear Ring official Kickstarter campaign",
+      "url": "https://www.kickstarter.com/projects/kiwear/kiwear-ring-control-every-device-with-a-gesture",
+      "source_channel": "crowdfunding",
+      "source_role": "众筹项目状态与奖励价格发现证据",
+      "source_domain": "kickstarter.com",
+      "seller_type": "众筹项目方",
+      "storefront_type": "Kickstarter campaign",
+      "availability_signal": "campaign page exists；当前抓取文本未取得奖励价格/交付日期",
+      "scope": "手势控制、Air Mouse、多设备与健康功能项目入口；最终价格、精确SKU、生产和交付待核验"
     }
   ],
   "update_log": [
@@ -6303,6 +6391,12 @@
       "change": "更新SR-012 RingConn Gen 3：官方商城当前快照仍为US$349且Out of stock；补充官方Gen 3功能页和发布/更新页，保留10–14天续航、无线充电盒、IP68/ATM10、传感器、无订阅和尺码6–15等已核验字段。",
       "verification": "RingConn官方商品页、功能页、发布/更新页与既有官方对比/预售资料互证；产品线仍存在不等于本轮有现货，库存按区域和结算页继续复核，未披露芯片与精确区域SKU不推断。",
       "next": "继续核验RingConn Gen 3各地区库存、交付、分料号/颜色是否同源、无线充电规格、芯片和官方支持页；颜色与纯尺码不拆独立型号。"
+    },
+    {
+      "date": "2026-09-22",
+      "change": "【智能指环】新增Spark Ring与KiWear Kickstarter当前状态、预售价格/规格与交付缺口；均保留候选，不升级主表。",
+      "verification": "固定渠道矩阵已核验：原厂/品牌页、官方销售/支持、监管/认证、Kickstarter/Indiegogo/BackerKit/Crowd Supply、Amazon及区域电商、授权分销和专业媒体；众筹/平台/媒体线索不能替代核心官方或监管证据，未公开字段不推断。",
+      "next": "继续扩展不同国家和语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道；新线索先进入候选/来源区，取得精确型号、价格、状态和交付证据后再升级主表。"
     }
   ],
   "source_channel_policy": [
@@ -6386,7 +6480,7 @@
   ],
   "source_channel_counts": {
     "community_discovery": 1,
-    "crowdfunding": 2,
+    "crowdfunding": 5,
     "marketplace": 1,
     "official_newsroom": 1,
     "official_product": 32,
@@ -6394,7 +6488,7 @@
     "official_release": 3,
     "official_sales": 50,
     "official_support_manual": 5,
-    "press_release_distribution": 5,
+    "press_release_distribution": 6,
     "regulatory_certification": 3,
     "secondary_media": 2
   },

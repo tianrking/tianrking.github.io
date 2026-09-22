@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-21",
+  "checked_on": "2026-09-22",
   "scope_note": "首版覆盖独立家庭中控、Matter控制器/桥、协议网关，以及音箱/屏/机顶盒/路由器内置的智能家居中枢。通过形态字段区分完整自动化中枢、协议桥、内置中枢与路由器功能，不把所有网关宣传词当成同一类产品。",
   "field_rules": [
     [
@@ -16,7 +16,7 @@
     ],
     [
       "查证日期",
-      "2026-09-21"
+      "2026-09-22"
     ]
   ],
   "products": [
@@ -1096,6 +1096,22 @@
         "UGREEN-HOMEAGENT-PR-20260912"
       ],
       "next_check": "核验Kickstarter项目ID、最终SKU、认证、量产交付、区域官方商城、功耗、热设计和软件支持周期"
+    },
+    {
+      "id": "CAND-ANKER-MINDBASE-20260922",
+      "name": "Anker MindBase",
+      "brand": "Anker",
+      "region": "全球/IFA 2026；销售与交付待核验",
+      "category": "本地AI家庭中枢/智能家居网关",
+      "status": "候选/官方IFA发布；价格、精确SKU、正式商品页、销售与交付未公开",
+      "evidence": "A",
+      "reason": "Anker官方IFA页面确认MindBase为本地AI家庭中枢，面向家庭设备连接、本地AI决策和家庭数据处理，并概括connection/local intelligence/memory三项能力；当前未公开精确商品页、价格、SKU、无线协议、存储、芯片、库存和交付信息，不把品牌定位推断成Matter/Thread/Zigbee兼容。",
+      "url": "https://www.anker-in.com/posts/ifa2026",
+      "alias_or_relation": "Anker生态新中枢；与eufy、soundcore及现有Home Assistant/Homey/Aqara网关按实体和协议分开，不把品牌整合宣传当作同一硬件",
+      "source_refs": [
+        "ANKER-MINDBASE-IFA-20260922"
+      ],
+      "next_check": "核验正式产品页、价格、精确SKU、Matter/Thread/Zigbee/Wi-Fi协议、CPU/存储、尺寸、电源、隐私条款、区域库存与交付"
     }
   ],
   "sources": [
@@ -1419,6 +1435,25 @@
       "storefront_type": "official PR distribution",
       "availability_signal": "官方稿称2026-09-04开放预订；Kickstarter计划2026-10-27",
       "scope": "本地AI、隐私定位、HomeAgent系列、Matter兼容与预订时间"
+    },
+    {
+      "checked_on": "2026-09-22",
+      "quality": "A",
+      "campaign_status": "官方公告/正式销售状态待核验",
+      "pledge_or_price": "未公开",
+      "estimated_delivery": "未公开",
+      "platform_reference": "Anker MindBase",
+      "id": "ANKER-MINDBASE-IFA-20260922",
+      "source_group": "Anker MindBase",
+      "title": "Anker official IFA 2026 MindBase announcement",
+      "url": "https://www.anker-in.com/posts/ifa2026",
+      "source_channel": "official_newsroom",
+      "source_role": "官方产品公告、本地AI家庭中枢和数据处理定位证据",
+      "source_domain": "anker-in.com",
+      "seller_type": "品牌官方",
+      "storefront_type": "Anker官方IFA页面",
+      "availability_signal": "2026-09-17官方IFA页面介绍MindBase；精确商品页、价格、SKU、协议、库存和交付未公开",
+      "scope": "本地AI家庭中枢；连接家庭设备、在本地做AI决策并处理家庭数据；官方概括能力为connection、local intelligence、memory；不把宣传定位推断为Matter/Thread/Zigbee支持"
     }
   ],
   "update_log": [
@@ -1607,6 +1642,12 @@
       "change": "【家庭中控/Matter网关/智能家居网关】本轮按原厂产品/销售/支持/发布、监管/认证、Kickstarter、Indiegogo、Amazon及区域电商、授权分销和专业媒体渠道做定向核验；截至本轮没有足够强的新增独立型号、精确料号或状态变化可安全写入主表。",
       "verification": "众筹和电商用于发现、预售、区域价格/库存、ASIN/SKU和卖方信号；缺少原厂/官方规格/交付或监管核心证据的线索不升级主表，历史、候选、OEM/贴牌、模块和未验证字段保持分开。",
       "next": "下一轮继续扩大不同国家/语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道检索；有可靠新增再补产品、来源、价格和生命周期，不臆造。"
+    },
+    {
+      "date": "2026-09-22",
+      "change": "【家庭中控/网关】新增Anker MindBase官方IFA候选；补充Tuya官方Matter生态与Doova关联证据，协议和商品销售状态待核验。",
+      "verification": "固定渠道矩阵已核验：原厂/品牌页、官方销售/支持、监管/认证、Kickstarter/Indiegogo/BackerKit/Crowd Supply、Amazon及区域电商、授权分销和专业媒体；众筹/平台/媒体线索不能替代核心官方或监管证据，未公开字段不推断。",
+      "next": "继续扩展不同国家和语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道；新线索先进入候选/来源区，取得精确型号、价格、状态和交付证据后再升级主表。"
     }
   ],
   "source_channel_policy": [
@@ -1689,7 +1730,7 @@
     }
   ],
   "source_channel_counts": {
-    "official_newsroom": 4,
+    "official_newsroom": 5,
     "official_product": 4,
     "official_product_page": 1,
     "official_sales": 2,
@@ -1700,6 +1741,7 @@
   },
   "source_domains": [
     "ai.ugreen.com",
+    "anker-in.com",
     "apple.com",
     "aqara.com",
     "bosch-smarthome.com",

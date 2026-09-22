@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-09-21",
+  "checked_on": "2026-09-22",
   "title": "全球 Wi‑Fi / Bluetooth 芯片选型数据库",
   "subtitle": "面向硬件选型的全球 Wi‑Fi、Bluetooth Classic/BR/EDR、BLE、Wi‑Fi+BT Combo、802.15.4 tri-radio 和无线 MCU/连接协处理器资料库。",
   "scope_note": "本库是消费电子与智能硬件数据库之外的第 25 套独立半导体选型库。主表按芯片/SoC/无线 MCU/连接协处理器计数，不把模块、开发板、OEM 方案或整机重复计入；国家/地区指品牌/公司归属口径，不等同于晶圆制造地。",
@@ -28098,6 +28098,12 @@
       "change": "新增WBC-0205 Nordic nRF54LC10A；Nordic官方新闻、产品页和nRF54LC10-DK页互证2026-09-15发布、Early Sampling、量产预计2027 Q2、Bluetooth LE/802.15.4协议、1MB NVM、192KB RAM、128MHz Cortex-M33/RISC-V、封装与功耗；价格仍为原厂询价。",
       "verification": "官方原厂来源达到A等级；nRF54LC10A主表状态明确写为早期采样，不把开发套件价格当芯片价格，不把BLE或802.15.4推断为Wi-Fi/Bluetooth Classic/BR/EDR；精确温度后缀、生命周期细则和授权分销报价仍待核验。",
       "next": "继续核验nRF54LC10A精确数据表/分料号、封装温度后缀、授权分销上架与单价、DK交付、PCN/EOL和区域可得性。"
+    },
+    {
+      "date": "2026-09-22",
+      "change": "【Wi-Fi/Bluetooth芯片】本轮核验原厂产品、规格、生命周期与授权分销价格渠道；未发现足够强的新裸芯片/SoC/无线MCU与公开授权单价可安全新增，保留既有nRF54LC10A早期采样记录。",
+      "verification": "固定渠道矩阵已核验：原厂/品牌页、官方销售/支持、监管/认证、Kickstarter/Indiegogo/BackerKit/Crowd Supply、Amazon及区域电商、授权分销和专业媒体；众筹/平台/媒体线索不能替代核心官方或监管证据，未公开字段不推断。",
+      "next": "继续扩展不同国家和语言的官方产品、销售、支持、监管、认证、授权分销和众筹渠道；新线索先进入候选/来源区，取得精确型号、价格、状态和交付证据后再升级主表。"
     }
   ]
 }
