@@ -57,6 +57,39 @@ export default function TravelSeriesPage() {
           </div>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="nepal-story-title">
+          <div className={styles.featureTopline}>
+            <span>尼泊爾 / 旅行計畫</span>
+            <span>10 日 / 9 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="nepal-story-title">加德滿都谷地遺產<br />與博卡拉山湖 10 日</Heading>
+              <p>四天慢走加德滿都谷地七處 UNESCO 紀念區，再飛往博卡拉看費瓦湖與安納普爾納山麓；回程預留兩晚緩衝，不把季風山路或國內航班延誤推給國際離境日。</p>
+              <div className={styles.featureMeta}>
+                <span>加德滿都 7 晚</span>
+                <span>博卡拉 2 晚</span>
+                <span>世界遺產</span>
+                <span>雨季安全閘門</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/nepal-10-day-kathmandu-pokhara-heritage-mountains">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="尼泊爾路線節點">
+              <div className={styles.routeCardLabel}>10 DAYS / KTM ROUND TRIP</div>
+              <div className={styles.routeList}>
+                {['KTM · 加德滿都 5 晚', '谷地七處遺產區', 'PKR · 博卡拉 2 晚', 'KTM · 緩衝 2 晚', 'KTM 出境'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}>
+                    <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{stop}</span>
+                    {index < 4 && <span className={styles.routeLine} aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>國內往返航班非準點保證；D8 回 KTM、D9 留作延誤緩衝。</p>
+            </div>
+          </div>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="first-story-title">
           <div className={styles.featureTopline}>
             <span>TRAVEL LOG / 01</span>
