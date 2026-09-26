@@ -18,17 +18,23 @@ export default function TravelSeriesPage() {
           </div>
         </header>
 
+        <section className="container" aria-label="亞洲十日旅行系列">
+          <p style={{margin: '1.4rem 0 0', color: 'var(--site-muted)', fontSize: '.9rem'}}>
+            一國一篇，逐步補齊亞洲 10 天路線： <Link to="/explore/travel/asia-10-day-series">查看系列目錄與進度 ↗</Link>
+          </p>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="indonesia-story-title">
           <div className={styles.featureTopline}>
             <span>印度尼西亞 / 旅行計畫</span>
-            <span>9 日 / 8 晚</span>
+            <span>10 日 / 9 晚</span>
           </div>
           <div className={styles.featureGrid}>
             <div>
-              <Heading as="h2" id="indonesia-story-title">雅加達入、泗水出<br />爪哇歷史文化 9 日</Heading>
-              <p>雅加達金融博物館與清真寺、日惹婆羅浮屠與普蘭巴南、泗水戰爭墓園與獨立革命史。三城各住一處，以兩段白天火車串聯。</p>
+              <Heading as="h2" id="indonesia-story-title">雅加達入、泗水出<br />爪哇歷史文化 10 日</Heading>
+              <p>雅加達多留一日，日惹分開看婆羅浮屠與普蘭巴南，最後走進泗水港城、戰爭墓園與獨立革命史。三城各住一處，以兩段白天火車串聯；布羅莫與 Tumpak Sewu 留作加日支線，不壓縮安全緩衝。</p>
               <div className={styles.featureMeta}>
-                <span>2＋4＋2 晚</span>
+                <span>3＋4＋2 晚</span>
                 <span>公共交通</span>
                 <span>外國遊客票種</span>
                 <span>閉館日期檢查</span>
@@ -36,9 +42,9 @@ export default function TravelSeriesPage() {
               <Link className={styles.primaryLink} to="/explore/travel/indonesia-java-9-day-jakarta-yogyakarta-surabaya">打開完整計畫 <span aria-hidden="true">↗</span></Link>
             </div>
             <div className={styles.routeCard} aria-label="印度尼西亞路線節點">
-              <div className={styles.routeCardLabel}>雅加達入境 → 泗水出境</div>
+              <div className={styles.routeCardLabel}>10 DAYS / CGK → SUB</div>
               <div className={styles.routeList}>
-                {['CGK 機場', '雅加達 · 2 晚', '日惹 · 4 晚', '泗水 · 2 晚', 'SUB 機場'].map((stop, index) => (
+                {['CGK 機場', '雅加達 · 3 晚', '日惹 · 4 晚', '泗水 · 2 晚', 'SUB 機場'].map((stop, index) => (
                   <div className={styles.routeItem} key={stop}>
                     <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
                     <span>{stop}</span>
@@ -46,7 +52,7 @@ export default function TravelSeriesPage() {
                   </div>
                 ))}
               </div>
-              <p className={styles.routeNote}>每日路線、車站、住宿區域、導航、預算與預約順序；出發日期可自行檢查。</p>
+              <p className={styles.routeNote}>10 日 9 晚；歷史古蹟與城市文化主線，不將多日火山瀑布轉場塞進一週多的行程。</p>
             </div>
           </div>
         </section>
@@ -118,6 +124,58 @@ export default function TravelSeriesPage() {
                 ))}
               </div>
               <p className={styles.routeNote}>世界遺產、梯田、最高峰與周日高地市場；D7 按星期切換北河或沙巴緩衝。</p>
+            </div>
+          </div>
+        </section>
+
+        <section className={`container ${styles.feature}`} aria-labelledby="sri-lanka-story-title">
+          <div className={styles.featureTopline}>
+            <span>斯里蘭卡 / 旅行計畫</span>
+            <span>10 日 / 9 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="sri-lanka-story-title">古代王國、茶山鐵路<br />與南岸古城 10 日</Heading>
+              <p>科倫坡機場進出，串聯獅子岩、丹布勒、波隆納魯沃、康提、中央高地、埃勒與加勒；為山地降雨、鐵路中斷和末日返機場預留實際緩衝。</p>
+              <div className={styles.featureMeta}>
+                <span>文化三角</span><span>高地自然</span><span>世界遺產</span><span>天氣備案</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/sri-lanka-10-day-cultural-highlands-south">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="斯里蘭卡路線節點">
+              <div className={styles.routeCardLabel}>10 DAYS / CMB ROUND TRIP</div>
+              <div className={styles.routeList}>
+                {['CMB／尼甘布 · 1 晚', '錫吉里耶 · 3 晚', '康提 · 1 晚', '茶山／埃勒 · 2 晚', '加勒 · 2 晚', 'CMB'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}><span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span><span>{stop}</span>{index < 5 && <span className={styles.routeLine} aria-hidden="true" />}</div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>文化三角 → 中央高地 → 南部海岸；鐵路依當日天氣與營運狀態確認。</p>
+            </div>
+          </div>
+        </section>
+
+        <section className={`container ${styles.feature}`} aria-labelledby="myanmar-story-title">
+          <div className={styles.featureTopline}>
+            <span>緬甸 / 條件式旅行預案</span>
+            <span>10 日框架 · 暫緩出發</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="myanmar-story-title">先把安全警示放在路線之前</Heading>
+              <p>截至 2026 年 9 月，多國政府仍對緬甸發布嚴重旅行警示。頁面提供未來形勢改善後的文化路線框架與明確取消門檻，不把當前狀況包裝成可直接預訂的觀光行程。</p>
+              <div className={styles.featureMeta}>
+                <span>仰光</span><span>蒲甘</span><span>曼德勒</span><span>官方風險核對</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/myanmar-10-day-conditional-heritage">閱讀安全條件與預案 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="緬甸條件式路線框架">
+              <div className={styles.routeCardLabel}>TRAVEL ADVISORY FIRST</div>
+              <div className={styles.routeList}>
+                {['先查本國警示', '仰光 · 4 晚', '蒲甘 · 3 晚', '曼德勒 · 2 晚*', '只在可行時轉場'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}><span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span><span>{stop}</span>{index < 4 && <span className={styles.routeLine} aria-hidden="true" />}</div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>*所有地點與交通均受出發當日官方警示、管制與保險條款約束；不符條件即延期。</p>
             </div>
           </div>
         </section>
