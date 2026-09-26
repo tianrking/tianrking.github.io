@@ -123,6 +123,39 @@ export default function TravelSeriesPage() {
           </div>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="bangladesh-story-title">
+          <div className={styles.featureTopline}>
+            <span>孟加拉 / 旅行計畫</span>
+            <span>10 日 / 9 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="bangladesh-story-title">達卡、錫爾赫特與<br />斯里曼加爾 10 日</Heading>
+              <p>從老達卡與索納爾岡一路向東北，走入濕地、茶園與森林；按洪水、水位和道路狀況設安全備案，離境前回達卡住一晚。</p>
+              <div className={styles.featureMeta}>
+                <span>達卡 5 晚</span>
+                <span>錫爾赫特 2 晚</span>
+                <span>斯里曼加爾 2 晚</span>
+                <span>白天鐵路轉場</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/bangladesh-10-day-dhaka-sylhet-sreemangal">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="孟加拉十日路線節點">
+              <div className={styles.routeCardLabel}>10 DAYS / DAC ROUND TRIP</div>
+              <div className={styles.routeList}>
+                {['DAC · 達卡 4 晚', '索納爾岡一日往返', 'ZYL · 錫爾赫特 2 晚', '斯里曼加爾 2 晚', 'DAC · 離境緩衝 1 晚'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}>
+                    <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{stop}</span>
+                    {index < 4 && <span className={styles.routeLine} aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>拉塔古爾／傑夫隆依天氣、水位與道路條件二選一；D9 回達卡。</p>
+            </div>
+          </div>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="first-story-title">
           <div className={styles.featureTopline}>
             <span>TRAVEL LOG / 01</span>
