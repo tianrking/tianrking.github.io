@@ -345,6 +345,36 @@ export default function TravelSeriesPage() {
           </div>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="afghanistan-story-title">
+          <div className={styles.featureTopline}>
+            <span>阿富汗 / 条件式旅行预案</span>
+            <span>10 日框架 · 暂缓出发</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="afghanistan-story-title">先确认安全警示<br />再谈阿富汗文化路线</Heading>
+              <p>中国领事提醒暂勿前往，英国 FCDO 仍建议避免一切旅行。本篇保留喀布尔与巴米扬的未来文化路线框架，但明列签证、交通、保险与安全门槛；目前不是可预订行程。</p>
+              <div className={styles.featureMeta}>
+                <span>喀布尔</span><span>巴米扬世界遗产</span><span>交通闸门</span><span>暂缓预订</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/afghanistan-10-day-conditional-heritage">阅读条件与安全门槛 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="阿富汗条件式路线框架">
+              <div className={styles.routeCardLabel}>TRAVEL ADVISORY FIRST</div>
+              <div className={styles.routeList}>
+                {['先查本国官方警示', '喀布尔 · 4 晚*', '巴米扬 · 4 晚*', '喀布尔 · 离境缓冲 1 晚', '所有转场未确认前不出发'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}>
+                    <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{stop}</span>
+                    {index < 4 && <span className={styles.routeLine} aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>*僅為警示、簽證、保險、景區准入與合規交通均獲重新確認後的假設性住宿分配；目前建議暫緩前往。</p>
+            </div>
+          </div>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="philippines-story-title">
           <div className={styles.featureTopline}>
             <span>菲律賓 / 旅行計畫</span>
