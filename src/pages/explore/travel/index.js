@@ -375,6 +375,36 @@ export default function TravelSeriesPage() {
           </div>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="iran-story-title">
+          <div className={styles.featureTopline}>
+            <span>伊朗 / 條件式旅行預案</span>
+            <span>10 日框架 · 暫緩出發</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="iran-story-title">先等官方警示解除<br />再走波斯遺產路線</Heading>
+              <p>中國外交部提醒暫勿前往，英國 FCDO 與澳洲 Smartraveller 仍有嚴重旅行警示。本篇整理德黑蘭、伊斯法罕、亞茲德與設拉子的未來文化路線，並將航班、簽證、保險和離境緩衝列為前置條件。</p>
+              <div className={styles.featureMeta}>
+                <span>波斯遺產</span><span>四城文化線</span><span>航空風險</span><span>暫緩預訂</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/iran-10-day-conditional-culture">閱讀條件與路線框架 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="伊朗條件式路線框架">
+              <div className={styles.routeCardLabel}>TRAVEL ADVISORY FIRST</div>
+              <div className={styles.routeList}>
+                {['先查本國官方警示', '德黑蘭 · 3 晚', '伊斯法罕 · 2 晚', '亞茲德 · 2 晚', '設拉子 · 2 晚*'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}>
+                    <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{stop}</span>
+                    {index < 4 && <span className={styles.routeLine} aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>*國際航班若由德黑蘭出發，需另加回城緩衝日；目前警示未解除，不應按此表訂票。</p>
+            </div>
+          </div>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="philippines-story-title">
           <div className={styles.featureTopline}>
             <span>菲律賓 / 旅行計畫</span>
