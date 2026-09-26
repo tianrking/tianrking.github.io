@@ -123,6 +123,39 @@ export default function TravelSeriesPage() {
           </div>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="bhutan-story-title">
+          <div className={styles.featureTopline}>
+            <span>不丹 / 旅行計畫</span>
+            <span>10 日 / 9 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="bhutan-story-title">帕羅、廷布與<br />普那卡山谷 10 日</Heading>
+              <p>用西不丹經典環線串起山谷宗堡與多楚拉山口，另留一整天走虎穴寺；全程導遊與山路轉場均照實納入規劃。</p>
+              <div className={styles.featureMeta}>
+                <span>帕羅 5 晚</span>
+                <span>廷布 2 晚</span>
+                <span>普那卡 2 晚</span>
+                <span>SDF 費用提示</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/bhutan-10-day-paro-thimphu-punakha">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="不丹十日路線節點">
+              <div className={styles.routeCardLabel}>10 DAYS / PBH ROUND TRIP</div>
+              <div className={styles.routeList}>
+                {['PBH · 帕羅 2 晚', 'THIMPHU · 廷布 2 晚', 'PUNAKHA · 普那卡 2 晚', 'PARO · 回程與虎穴寺 3 晚', 'PBH · 離境'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}>
+                    <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{stop}</span>
+                    {index < 4 && <span className={styles.routeLine} aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>US$100／人／晚 SDF 按官方現行費率估算；全程須由持證當地導遊陪同。</p>
+            </div>
+          </div>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="bangladesh-story-title">
           <div className={styles.featureTopline}>
             <span>孟加拉 / 旅行計畫</span>
