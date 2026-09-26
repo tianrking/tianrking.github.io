@@ -180,6 +180,39 @@ export default function TravelSeriesPage() {
           </div>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="philippines-story-title">
+          <div className={styles.featureTopline}>
+            <span>菲律賓 / 旅行計畫</span>
+            <span>10 日 / 9 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="philippines-story-title">馬尼拉入出<br />宿務與薄荷島歷史自然 10 日</Heading>
+              <p>從王城與國家博物館走到宿務殖民史，再到薄荷島的巧克力山、眼鏡猴保育區與河谷；把海島天候緩衝和離境前一晚留在路線裡。</p>
+              <div className={styles.featureMeta}>
+                <span>3＋2＋3＋1 晚</span>
+                <span>歷史文化</span>
+                <span>喀斯特地貌</span>
+                <span>渡船天氣備案</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/philippines-10-day-manila-cebu-bohol">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="菲律賓路線節點">
+              <div className={styles.routeCardLabel}>10 DAYS / MNL ROUND TRIP</div>
+              <div className={styles.routeList}>
+                {['MNL · 馬尼拉 3 晚', 'CEB · 宿務 2 晚', 'TAG · 薄荷島 3 晚', 'MNL · 機場側 1 晚', 'MNL 出境'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}>
+                    <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{stop}</span>
+                    {index < 4 && <span className={styles.routeLine} aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>10 日 9 晚；D9 回馬尼拉，避免客船與國際航班同日銜接。</p>
+            </div>
+          </div>
+        </section>
+
       </main>
     </Layout>
   );
