@@ -24,6 +24,39 @@ export default function TravelSeriesPage() {
           </p>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="macao-story-title">
+          <div className={styles.featureTopline}>
+            <span>澳門 / 旅行計畫</span>
+            <span>10 日 / 9 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="macao-story-title">世界遺產街巷、離島聚落<br />與海岸慢旅 10 日</Heading>
+              <p>以澳門半島為單一住宿基地，分區慢走歷史城區、媽閣與內港、氹仔村落和路環漁村；加入博物館、步道及颱風備案，不為湊天數塞滿賭場或購物行程。</p>
+              <div className={styles.featureMeta}>
+                <span>半島 9 晚</span>
+                <span>公共巴士＋步行</span>
+                <span>22 座遺產建築</span>
+                <span>颱風季備案</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/macao-10-day-heritage-peninsula-taipa-coloane">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="澳門十日路線節點">
+              <div className={styles.routeCardLabel}>10 DAYS / MFM ROUND TRIP</div>
+              <div className={styles.routeList}>
+                {['MFM · 抵達', '澳門半島 · 9 晚基地', '氹仔 · 日歸', '路環 · 日歸', 'MFM · 離境'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}>
+                    <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{stop}</span>
+                    {index < 4 && <span className={styles.routeLine} aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>十天九晚固定住宿；半島為基地，氹仔與路環按天往返，免搬行李。</p>
+            </div>
+          </div>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="indonesia-story-title">
           <div className={styles.featureTopline}>
             <span>印度尼西亞 / 旅行計畫</span>
