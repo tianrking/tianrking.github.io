@@ -537,6 +537,39 @@ export default function TravelSeriesPage() {
           </div>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="china-story-title">
+          <div className={styles.featureTopline}>
+            <span>中國 / 歷史文化旅行計畫</span>
+            <span>10 日 / 9 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="china-story-title">北京、西安與上海<br />古都到現代城市 10 日</Heading>
+              <p>北京進、上海出，以白天高鐵串聯故宮與長城、秦始皇帝陵及上海港城文化；把實名預約、閉館日和跨城車站都列進行程。</p>
+              <div className={styles.featureMeta}>
+                <span>北京 4 晚</span>
+                <span>西安 3 晚</span>
+                <span>上海 2 晚</span>
+                <span>白天高鐵</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/china-10-day-beijing-xian-shanghai">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="中國十日路線節點">
+              <div className={styles.routeCardLabel}>10 DAYS / PEK → PVG OR SHA</div>
+              <div className={styles.routeList}>
+                {['PEK／PKX · 北京 4 晚', '北京西 → 西安北', '西安 · 3 晚', '西安北 → 上海虹橋', '上海 · 2 晚，離境'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}>
+                    <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{stop}</span>
+                    {index < 4 && <span className={styles.routeLine} aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>故宮、兵馬俑與熱門館舍需按官方規則預約；城際日只排交通與入住。</p>
+            </div>
+          </div>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="uzbekistan-story-title">
           <div className={styles.featureTopline}>
             <span>烏茲別克斯坦 / 絲路古城旅行計畫</span>
