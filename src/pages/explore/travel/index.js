@@ -57,6 +57,32 @@ export default function TravelSeriesPage() {
           </div>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="north-korea-story-title">
+          <div className={styles.featureTopline}>
+            <span>北韓 / 條件式旅行預案</span>
+            <span>10 日框架 · 暫緩出發</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="north-korea-story-title">先確認旅遊資格<br />再談平壤與古蹟路線</Heading>
+              <p>一般國際旅遊尚未全面恢復；2026 年 9 月業者資訊稱有限簽證仍受國籍限制。本篇只保留平壤、妙香山與開城的未來條件式框架，並把護照資格、正式旅行團與官方警示列為先決條件。</p>
+              <div className={styles.featureMeta}>
+                <span>平壤</span><span>妙香山</span><span>開城世界遺產</span><span>暫緩預訂</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/north-korea-10-day-conditional-tour-framework">閱讀條件與路線框架 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="北韓條件式十日路線框架">
+              <div className={styles.routeCardLabel}>TRAVEL ADVISORY FIRST</div>
+              <div className={styles.routeList}>
+                {['先核實護照資格', '平壤 · 7 晚*', '妙香山 · 2 晚*', '開城 · 團體日歸', '獲准組織團全程安排'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}><span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span><span>{stop}</span>{index < 4 && <span className={styles.routeLine} aria-hidden="true" />}</div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>*假設性住宿配置；一般旅遊資格與團體許可尚未確認前，不訂票、不付款、不出發。</p>
+            </div>
+          </div>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="japan-story-title">
           <div className={styles.featureTopline}>
             <span>日本 / 旅行計畫</span>
