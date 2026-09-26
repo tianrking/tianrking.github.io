@@ -90,6 +90,39 @@ export default function TravelSeriesPage() {
           </div>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="india-story-title">
+          <div className={styles.featureTopline}>
+            <span>印度 / 旅行計畫</span>
+            <span>10 日 / 9 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="india-story-title">德里往返、阿格拉與<br />齋浦爾金三角 10 日</Heading>
+              <p>德里三晚起步，向南看泰姬陵與阿格拉堡，再到齋浦爾古城、琥珀堡與天文台；按泰姬陵週五閉館彈性調整參觀日，離境前一晚回德里留交通緩衝。</p>
+              <div className={styles.featureMeta}>
+                <span>德里 4 晚</span>
+                <span>阿格拉 2 晚</span>
+                <span>齋浦爾 3 晚</span>
+                <span>白天城際鐵路</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/india-10-day-delhi-agra-jaipur">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="印度金三角路線節點">
+              <div className={styles.routeCardLabel}>10 DAYS / DEL ROUND TRIP</div>
+              <div className={styles.routeList}>
+                {['DEL · 德里 3 晚', 'AGC · 阿格拉 2 晚', 'JP · 齋浦爾 3 晚', 'DEL · 機場區 1 晚', 'DEL 出境'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}>
+                    <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{stop}</span>
+                    {index < 4 && <span className={styles.routeLine} aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>泰姬陵周五閉館；D9 回德里住宿，避免城際延誤直撞國際航班。</p>
+            </div>
+          </div>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="first-story-title">
           <div className={styles.featureTopline}>
             <span>TRAVEL LOG / 01</span>
