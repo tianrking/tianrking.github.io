@@ -537,6 +537,39 @@ export default function TravelSeriesPage() {
           </div>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="hongkong-story-title">
+          <div className={styles.featureTopline}>
+            <span>香港 / 城市、古村與離島旅行計畫</span>
+            <span>10 日 / 9 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="hongkong-story-title">港島城市史、新界古村<br />與離島山海 10 日</Heading>
+              <p>九晚住同一家市區旅館，按區串起中環、九龍、屏山、大嶼山、長洲與西貢；戶外日依海況與天氣彈性調整，澳門另列一篇。</p>
+              <div className={styles.featureMeta}>
+                <span>九龍單點住宿</span>
+                <span>港鐵＋渡輪</span>
+                <span>新界文物徑</span>
+                <span>戶外天氣備案</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/hong-kong-10-day-island-heritage-city">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="香港十日路線節點">
+              <div className={styles.routeCardLabel}>10 DAYS / HKG ROUND TRIP</div>
+              <div className={styles.routeList}>
+                {['HKG · 抵達／九龍 9 晚', '港島與九龍城市史', '大嶼山 · 長洲', '西貢地質公園', '屏山 · 港島南區 · 離境'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}>
+                    <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{stop}</span>
+                    {index < 4 && <span className={styles.routeLine} aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>離島船班依天候運行；九晚固定住宿，戶外日可與博物館日互換。</p>
+            </div>
+          </div>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="china-story-title">
           <div className={styles.featureTopline}>
             <span>中國 / 歷史文化旅行計畫</span>
