@@ -24,6 +24,39 @@ export default function TravelSeriesPage() {
           </p>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="mongolia-story-title">
+          <div className={styles.featureTopline}>
+            <span>蒙古 / 旅行計畫</span>
+            <span>10 日 / 9 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="mongolia-story-title">烏蘭巴托、哈拉和林、鄂爾渾河谷<br />與特勒吉草原 10 日</Heading>
+              <p>首都往返，從蒙古帝國舊都走入鄂爾渾河谷文化景觀，再回城市與特勒吉草原。中部環線需由本地司機確認燃油與路況後出發，並預留可取消方案。</p>
+              <div className={styles.featureMeta}>
+                <span>烏蘭巴托 4 晚</span>
+                <span>哈拉和林 3 晚</span>
+                <span>鄂爾渾 2 晚</span>
+                <span>燃油風險閘門</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/mongolia-10-day-ulaanbaatar-kharkhorin-orkhon-terelj">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="蒙古十日路線節點">
+              <div className={styles.routeCardLabel}>10 DAYS / UBN ROUND TRIP</div>
+              <div className={styles.routeList}>
+                {['UBN · 烏蘭巴托 2 晚', '哈拉和林 · 3 晚', '鄂爾渾河谷 · 2 晚', 'UB · 緩衝與特勒吉 2 晚', 'UBN · 離境'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}>
+                    <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{stop}</span>
+                    {index < 4 && <span className={styles.routeLine} aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>10 天 9 晚；鄉間採白天四驅車移動，若燃油／路況不穩即切換城市＋近郊備案。</p>
+            </div>
+          </div>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="japan-story-title">
           <div className={styles.featureTopline}>
             <span>日本 / 旅行計畫</span>
