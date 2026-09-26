@@ -24,6 +24,39 @@ export default function TravelSeriesPage() {
           </p>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="japan-story-title">
+          <div className={styles.featureTopline}>
+            <span>日本 / 旅行計畫</span>
+            <span>10 日 / 9 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="japan-story-title">東京、鎌倉、京都、奈良<br />與大阪經典文化線 10 日</Heading>
+              <p>東京進、關西機場出，九晚住三站，沿鐵路一路向西；以東京街區、鎌倉寺院、京都古都、奈良遺產與大阪城下町組成第一次訪日的文化主線。</p>
+              <div className={styles.featureMeta}>
+                <span>東京 4 晚</span>
+                <span>京都 4 晚</span>
+                <span>大阪 1 晚</span>
+                <span>不走回頭路</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/japan-10-day-tokyo-kyoto-nara-osaka">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="日本十日路線節點">
+              <div className={styles.routeCardLabel}>10 DAYS / HND OR NRT → KIX</div>
+              <div className={styles.routeList}>
+                {['東京 · 4 晚', '鎌倉 · 日歸', '京都 · 4 晚', '奈良 · 日歸', '大阪 · 1 晚 → KIX'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}>
+                    <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{stop}</span>
+                    {index < 4 && <span className={styles.routeLine} aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>東進西出；東京—京都只安排一段長距離新幹線，KIX 離境前留在大阪。</p>
+            </div>
+          </div>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="macao-story-title">
           <div className={styles.featureTopline}>
             <span>澳門 / 旅行計畫</span>
