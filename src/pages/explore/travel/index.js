@@ -537,6 +537,39 @@ export default function TravelSeriesPage() {
           </div>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="uzbekistan-story-title">
+          <div className={styles.featureTopline}>
+            <span>烏茲別克斯坦 / 絲路古城旅行計畫</span>
+            <span>10 日 / 9 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="uzbekistan-story-title">塔什干、撒馬爾罕、布哈拉<br />與希瓦 10 日</Heading>
+              <p>火車串聯絲路四城，末段由 Urgench 搭國內航班回塔什干；列清新開的布哈拉—希瓦列車運行日與離境緩衝。中國普通護照免簽停留最多 30 天。</p>
+              <div className={styles.featureMeta}>
+                <span>TAS 往返</span>
+                <span>3 處 UNESCO 古城</span>
+                <span>Afrosiyob 火車</span>
+                <span>UGC 回城緩衝</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/uzbekistan-10-day-silk-road-tashkent-khiva">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="烏茲別克斯坦十日路線節點">
+              <div className={styles.routeCardLabel}>10 DAYS / TAS ROUND TRIP</div>
+              <div className={styles.routeList}>
+                {['塔什干 · 2 晚', '撒馬爾罕 · 2 晚', '布哈拉 · 2 晚', '希瓦 · 2 晚', '塔什干 · 離境緩衝 1 晚'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}>
+                    <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{stop}</span>
+                    {index < 4 && <span className={styles.routeLine} aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>火車與國內航班均先按旅行日期核對；D9 回首都，不以同日接國際航班。</p>
+            </div>
+          </div>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="philippines-story-title">
           <div className={styles.featureTopline}>
             <span>菲律賓 / 旅行計畫</span>
