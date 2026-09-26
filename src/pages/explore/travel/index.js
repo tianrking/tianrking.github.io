@@ -24,6 +24,32 @@ export default function TravelSeriesPage() {
           </p>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="taiwan-story-title">
+          <div className={styles.featureTopline}>
+            <span>臺灣 / 旅行計畫</span>
+            <span>10 日 / 9 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="taiwan-story-title">臺北、花蓮、臺東與高雄<br />鐵道山海線 10 日</Heading>
+              <p>桃園進、高雄出，沿臺鐵走花東海岸、在高雄固定住三晚；太魯閣依震後開放公告調整，並把赴臺資格放在訂票之前。</p>
+              <div className={styles.featureMeta}>
+                <span>臺北 3 晚</span><span>花蓮 2 晚</span><span>臺東 1 晚</span><span>高雄 3 晚</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/taiwan-10-day-taipei-hualien-taitung-kaohsiung">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="臺灣十日路線節點">
+              <div className={styles.routeCardLabel}>10 DAYS / TPE → KHH</div>
+              <div className={styles.routeList}>
+                {['臺北 · 3 晚', '臺鐵 → 花蓮 · 2 晚', '臺鐵 → 臺東 · 1 晚', '高雄 · 3 晚 + 臺南日歸', 'KHH · 離境'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}><span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span><span>{stop}</span>{index < 4 && <span className={styles.routeLine} aria-hidden="true" />}</div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>山海路段以臺鐵與查核過的公車接駁為主；太魯閣不假設景點必定開放。</p>
+            </div>
+          </div>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="mongolia-story-title">
           <div className={styles.featureTopline}>
             <span>蒙古 / 旅行計畫</span>
