@@ -1,15 +1,16 @@
 const DAY_MS = 24 * 60 * 60 * 1000;
 const WEEKDAYS = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
 
-export const MAX_START_DATE = '9999-12-23';
+export const MAX_START_DATE = '9999-12-22';
 
 const ITINERARY = [
   { title: '抵達雅加達', city: '雅加達 Jakarta', stay: '雅加達' },
   { title: '銀行博物館、老城與獨立清真寺', city: '雅加達 Jakarta', stay: '雅加達' },
+  { title: 'Glodok 華人街區與 Sunda Kelapa 舊港', city: '雅加達 Jakarta', stay: '雅加達' },
   { title: '火車前往日惹', city: '雅加達 → 日惹', stay: '日惹' },
   { title: '婆羅浮屠與周邊小寺', city: '日惹 → 馬格朗 → 日惹', stay: '日惹' },
   { title: '蘇丹王宮、水宮與歷史博物館', city: '日惹 Yogyakarta', stay: '日惹' },
-  { title: '普蘭巴南、Sewu 與 Kotagede', city: '日惹與普蘭巴南', stay: '日惹' },
+  { title: '普蘭巴南與 Sewu 寺群', city: '日惹與普蘭巴南', stay: '日惹' },
   { title: '火車前往泗水', city: '日惹 → 泗水', stay: '泗水' },
   { title: '戰爭墓園、獨立史與 Ampel', city: '泗水 Surabaya', stay: '泗水' },
   { title: '前往 SUB 機場返程', city: '泗水 → 朱安達機場', stay: null },
@@ -49,20 +50,20 @@ function alertsForDay(day, weekday) {
       severity: 'closure',
       text: '週一閉館衝突：印尼銀行博物館與國家博物館不適合排在今天。調整出發日，或把館舍安排到抵達當天的開放時段；不要直接照原順序走。',
     }];
-    if (day === 5) return [{
+    if (day === 6) return [{
       code: 'yogyakarta-monday',
       severity: 'closure',
-      text: '週一閉館衝突：王宮與歷史博物館的安排需調整。建議交換 D4、D5，把週一留給婆羅浮屠；目前婆羅浮屠每日開放登塔，仍須預訂對應日期的票。',
+      text: '週一閉館衝突：王宮與歷史博物館的安排需調整。建議交換 D5、D6，把週一留給婆羅浮屠；仍須預訂對應日期的票。',
     }];
-    if (day === 6) return [{
+    if (day === 7) return [{
       code: 'prambanan-monday',
       severity: 'closure',
-      text: '週一參觀限制：普蘭巴南主寺台院 Zone 1 不開放，只能參觀園區 Zone 2。建議交換 D4、D6，把週一留給婆羅浮屠。',
+      text: '週一參觀限制：普蘭巴南主寺台院 Zone 1 不開放，只能參觀園區 Zone 2。建議交換 D5、D7，把週一留給婆羅浮屠。',
     }];
-    if (day === 8) return [{
+    if (day === 9) return [{
       code: 'surabaya-monday',
       severity: 'closure',
-      text: '週一閉館衝突：十一月十日博物館閉館。若 D7 火車抵達時間足夠，可把博物館移到 D7；否則調整出發日。墓園與老城不能代替館內參觀。',
+      text: '週一閉館衝突：十一月十日博物館閉館。調整出發日或確認館方是否有特別開放；墓園與老城不能代替館內參觀。',
     }];
   }
   if (day === 2 && weekday === 5) return [{
@@ -97,9 +98,9 @@ export function buildCalendar(startValue) {
     };
   });
   const stays = [
-    { city: '雅加達', startOffset: 0, nights: 2 },
-    { city: '日惹', startOffset: 2, nights: 4 },
-    { city: '泗水', startOffset: 6, nights: 2 },
+    { city: '雅加達', startOffset: 0, nights: 3 },
+    { city: '日惹', startOffset: 3, nights: 4 },
+    { city: '泗水', startOffset: 7, nights: 2 },
   ].map(({ city, startOffset, nights }) => ({
     city,
     nights,

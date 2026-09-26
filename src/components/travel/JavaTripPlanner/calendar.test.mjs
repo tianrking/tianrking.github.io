@@ -31,11 +31,11 @@ test('handles leap years and century rules', () => {
   ]);
 });
 
-test('crosses month and year boundaries with nine consecutive UTC dates', () => {
+test('crosses month and year boundaries with ten consecutive UTC dates', () => {
   for (const start of ['2026-01-29', '2026-02-25', '2026-12-28', '2026-03-07', '2026-10-31']) {
     const result = buildCalendar(start);
     assert.equal(result.status, 'ready');
-    assert.equal(result.days.length, 9);
+    assert.equal(result.days.length, 10);
     assert.equal(result.days[0].date, start);
     for (let index = 1; index < result.days.length; index += 1) {
       assert.equal(
@@ -44,21 +44,21 @@ test('crosses month and year boundaries with nine consecutive UTC dates', () => 
       );
     }
   }
-  assert.equal(buildCalendar('2026-12-28').days.at(-1).date, '2027-01-05');
+  assert.equal(buildCalendar('2026-12-28').days.at(-1).date, '2027-01-06');
 });
 
 test('keeps the complete trip within the supported four-digit year range', () => {
   assert.equal(buildCalendar(MAX_START_DATE).days.at(-1).date, '9999-12-31');
-  assert.equal(buildCalendar('9999-12-24').status, 'invalid');
+  assert.equal(buildCalendar('9999-12-23').status, 'invalid');
 });
 
 test('all seven departure weekdays produce the exact closure and prayer warnings', () => {
   const cases = [
-    ['2026-09-13', ['jakarta-monday']],
-    ['2026-09-14', ['surabaya-monday']],
-    ['2026-09-15', []],
-    ['2026-09-16', ['prambanan-monday']],
-    ['2026-09-17', ['jakarta-friday', 'yogyakarta-monday']],
+    ['2026-09-13', ['jakarta-monday', 'surabaya-monday']],
+    ['2026-09-14', []],
+    ['2026-09-15', ['prambanan-monday']],
+    ['2026-09-16', ['yogyakarta-monday']],
+    ['2026-09-17', ['jakarta-friday']],
     ['2026-09-18', []],
     ['2026-09-19', []],
   ];
@@ -71,30 +71,30 @@ test('all seven departure weekdays produce the exact closure and prayer warnings
 });
 
 test('Monday alternatives stay advisory and preserve the original day order', () => {
-  const palaceMonday = buildCalendar('2026-09-17');
-  assert.equal(palaceMonday.days[4].weekday, 1);
-  assert.match(palaceMonday.days[4].alerts[0].text, /D4、D5/);
-  const templeMonday = buildCalendar('2026-09-16');
-  assert.equal(templeMonday.days[5].weekday, 1);
-  assert.match(templeMonday.days[5].alerts[0].text, /Zone 1/);
-  assert.match(templeMonday.days[5].alerts[0].text, /D4、D6/);
-  assert.match(templeMonday.days[3].title, /婆羅浮屠/);
-  assert.match(templeMonday.days[5].title, /普蘭巴南/);
+  const palaceMonday = buildCalendar('2026-09-16');
+  assert.equal(palaceMonday.days[5].weekday, 1);
+  assert.match(palaceMonday.days[5].alerts[0].text, /D5、D6/);
+  const templeMonday = buildCalendar('2026-09-15');
+  assert.equal(templeMonday.days[6].weekday, 1);
+  assert.match(templeMonday.days[6].alerts[0].text, /Zone 1/);
+  assert.match(templeMonday.days[6].alerts[0].text, /D5、D7/);
+  assert.match(templeMonday.days[4].title, /婆羅浮屠/);
+  assert.match(templeMonday.days[6].title, /普蘭巴南/);
 });
 
-test('hotel intervals are contiguous 2 + 4 + 2 nights, ending on D9', () => {
+test('hotel intervals are contiguous 3 + 4 + 2 nights, ending on D10', () => {
   for (let day = 13; day <= 19; day += 1) {
     const result = buildCalendar(`2026-09-${day}`);
-    assert.deepEqual(result.stays.map((stay) => stay.nights), [2, 4, 2]);
-    assert.equal(result.totalNights, 8);
+    assert.deepEqual(result.stays.map((stay) => stay.nights), [3, 4, 2]);
+    assert.equal(result.totalNights, 9);
     assert.equal(result.stays[0].checkIn, result.days[0].date);
-    assert.equal(result.stays[0].checkOut, result.days[2].date);
+    assert.equal(result.stays[0].checkOut, result.days[3].date);
     assert.equal(result.stays[1].checkIn, result.stays[0].checkOut);
-    assert.equal(result.stays[1].checkOut, result.days[6].date);
+    assert.equal(result.stays[1].checkOut, result.days[7].date);
     assert.equal(result.stays[2].checkIn, result.stays[1].checkOut);
-    assert.equal(result.stays[2].checkOut, result.days[8].date);
+    assert.equal(result.stays[2].checkOut, result.days[9].date);
     assert.deepEqual(result.days.map((entry) => entry.stay), [
-      '雅加達', '雅加達', '日惹', '日惹', '日惹', '日惹', '泗水', '泗水', null,
+      '雅加達', '雅加達', '雅加達', '日惹', '日惹', '日惹', '日惹', '泗水', '泗水', null,
     ]);
     for (const stay of result.stays) {
       assert.equal((parseISODate(stay.checkOut) - parseISODate(stay.checkIn)) / 86_400_000, stay.nights);

@@ -9,7 +9,7 @@ export default function JavaTripPlanner() {
   const invalid = calendar.status === 'invalid';
   const ready = calendar.status === 'ready';
   const statusText = ready
-    ? `已排出 9 天、${calendar.totalNights} 晚住宿。${calendar.alerts.length ? `有 ${calendar.alerts.length} 項閉館或禮拜提醒，請查看對應日期。` : '仍請核對公共假期與臨時開放公告。'}`
+    ? `已排出 10 天、${calendar.totalNights} 晚住宿。${calendar.alerts.length ? `有 ${calendar.alerts.length} 項閉館或禮拜提醒，請查看對應日期。` : '仍請核對公共假期與臨時開放公告。'}`
     : invalid ? calendar.error : '選擇 D1 抵達雅加達的日期，即可查看完整日期與住宿區間。';
 
   return (
@@ -44,7 +44,7 @@ export default function JavaTripPlanner() {
       </p>
       {ready ? (
         <>
-          <ol className={styles.days} aria-label="九天日期、所在城市與住宿" role="list">
+        <ol className={styles.days} aria-label="十天日期、所在城市與住宿" role="list">
             {calendar.days.map((day) => (
               <li className={styles.day} key={day.day}>
                 <div className={styles.date}>
@@ -69,7 +69,7 @@ export default function JavaTripPlanner() {
             ))}
           </ol>
           <div className={styles.stays}>
-            <h4>每城一間酒店，2＋4＋2 晚</h4>
+            <h4>每城一間酒店，3＋4＋2 晚</h4>
             <ul>
               {calendar.stays.map((stay) => (
                 <li key={stay.city}>
