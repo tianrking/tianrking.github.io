@@ -83,6 +83,32 @@ export default function TravelSeriesPage() {
           </div>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="south-korea-story-title">
+          <div className={styles.featureTopline}>
+            <span>韓國 / 旅行計畫</span>
+            <span>10 日 / 9 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="south-korea-story-title">首爾、慶州與釜山<br />古都海港線 10 日</Heading>
+              <p>仁川進、釜山出，九晚由首爾王朝街區一路南下到新羅古都與海港城市；包含中國普通護照簽證提醒、KTX銜接與首爾往返備案。</p>
+              <div className={styles.featureMeta}>
+                <span>首爾 4 晚</span><span>慶州 2 晚</span><span>釜山 3 晚</span><span>不走回頭路</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/south-korea-10-day-seoul-gyeongju-busan">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="韓國十日路線節點">
+              <div className={styles.routeCardLabel}>10 DAYS / ICN → PUS</div>
+              <div className={styles.routeList}>
+                {['首爾 · 4 晚', 'KTX → 慶州 · 2 晚', '城際巴士／KTX → 釜山 · 3 晚', '海港歷史與海岸', 'PUS · 離境'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}><span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span><span>{stop}</span>{index < 4 && <span className={styles.routeLine} aria-hidden="true" />}</div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>單向南下不折返；若首爾往返，按文內備案於 D9 回首爾住一晚。</p>
+            </div>
+          </div>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="japan-story-title">
           <div className={styles.featureTopline}>
             <span>日本 / 旅行計畫</span>
