@@ -504,6 +504,39 @@ export default function TravelSeriesPage() {
           </div>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="turkmenistan-story-title">
+          <div className={styles.featureTopline}>
+            <span>土庫曼斯坦 / 絲路與沙漠旅行計畫</span>
+            <span>10 日 / 9 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="turkmenistan-story-title">阿什哈巴德、古代梅爾夫<br />與卡拉庫姆沙漠 10 日</Heading>
+              <p>以邀請函、移民登記和跨區批准為先決條件，串聯帕提亞尼薩、古代梅爾夫與有條件的達瓦札沙漠；不把高度受限的目的地寫成即興自由行。</p>
+              <div className={styles.featureMeta}>
+                <span>ASB 往返</span>
+                <span>UNESCO 古城</span>
+                <span>跨區許可核查</span>
+                <span>沙漠段可取消</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/turkmenistan-10-day-ashgabat-mary-darvaza">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="土庫曼斯坦十日路線節點">
+              <div className={styles.routeCardLabel}>10 DAYS / ASB ROUND TRIP</div>
+              <div className={styles.routeList}>
+                {['阿什哈巴德 · 3 晚', '馬雷／古代梅爾夫 · 2 晚', '阿什哈巴德 · 3 晚', '達瓦札選配 · 1 晚', '阿什哈巴德離境緩衝'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}>
+                    <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{stop}</span>
+                    {index < 4 && <span className={styles.routeLine} aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>首都外每段由邀請方確認許可、交通與住宿；達瓦札火勢和營地條件不保證。</p>
+            </div>
+          </div>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="philippines-story-title">
           <div className={styles.featureTopline}>
             <span>菲律賓 / 旅行計畫</span>
