@@ -156,6 +156,39 @@ export default function TravelSeriesPage() {
           </div>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="maldives-story-title">
+          <div className={styles.featureTopline}>
+            <span>馬爾地夫 / 旅行計畫</span>
+            <span>10 日 / 9 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="maldives-story-title">馬列、馬夫西與古麗<br />居民島慢旅 10 日</Heading>
+              <p>以居民島旅宿和公共渡輪為主，串聯首都文化、馬夫西與古麗海岸；渡輪週五停航、海況取消和機場緩衝都列入行程，不把度假村或水上飛機當作預設。</p>
+              <div className={styles.featureMeta}>
+                <span>居民島住宿</span>
+                <span>公共渡輪</span>
+                <span>浮潛自選</span>
+                <span>天候備案</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/maldives-10-day-male-maafushi-gulhi">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="馬爾地夫十日路線節點">
+              <div className={styles.routeCardLabel}>10 DAYS / MLE ROUND TRIP</div>
+              <div className={styles.routeList}>
+                {['MLE · 胡魯馬列 1 晚', 'Maafushi · 馬夫西 5 晚', 'Gulhi · 古麗 2 晚', '胡魯馬列 · 緩衝 1 晚', 'MLE 出境'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}>
+                    <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{stop}</span>
+                    {index < 4 && <span className={styles.routeLine} aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>若週五停航或海況取消，古麗段改為馬夫西連住；D9 回機場側，避免外島渡輪直撞國際班機。</p>
+            </div>
+          </div>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="bangladesh-story-title">
           <div className={styles.featureTopline}>
             <span>孟加拉 / 旅行計畫</span>
