@@ -471,6 +471,39 @@ export default function TravelSeriesPage() {
           </div>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="tajikistan-story-title">
+          <div className={styles.featureTopline}>
+            <span>塔吉克斯坦 / 山湖与丝路旅行计划</span>
+            <span>10 日 / 9 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="tajikistan-story-title">杜尚别、伊斯坎达尔湖<br />彭吉肯特与七湖 10 日</Heading>
+              <p>从希萨尔古城到范山山湖，再到粟特遗址与七湖；路线明确避开塔阿边境与 GBAO，逐段留出山路交通和离境缓冲，并标明中国普通护照签证条件。</p>
+              <div className={styles.featureMeta}>
+                <span>杜尚别往返</span>
+                <span>UNESCO 萨拉子目</span>
+                <span>七湖山谷</span>
+                <span>边境安全闸门</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/tajikistan-10-day-dushanbe-fann-haftkul">打开完整计划 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="塔吉克斯坦十日路线节点">
+              <div className={styles.routeCardLabel}>10 DAYS / DYU ROUND TRIP</div>
+              <div className={styles.routeList}>
+                {['杜尚别 · 3 晚', '伊斯坎达尔湖 · 1 晚', '彭吉肯特 · 3 晚', '七湖与萨拉子目', '杜尚别 · 2 晚缓冲'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}>
+                    <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{stop}</span>
+                    {index < 4 && <span className={styles.routeLine} aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>山路仅在官方警示、当地通行与保险条件均允许时安排；路线不进入塔阿边境或 GBAO。</p>
+            </div>
+          </div>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="philippines-story-title">
           <div className={styles.featureTopline}>
             <span>菲律賓 / 旅行計畫</span>
