@@ -438,6 +438,39 @@ export default function TravelSeriesPage() {
           </div>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="kyrgyzstan-story-title">
+          <div className={styles.featureTopline}>
+            <span>吉爾吉斯 / 夏季旅行計畫</span>
+            <span>10 日 / 9 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="kyrgyzstan-story-title">比什凱克、伊塞克湖<br />與松庫爾草原 10 日</Heading>
+              <p>由布拉納塔絲路遺址往東到伊塞克湖，再循南岸分宿至松庫爾牧場；明列季節和山口條件，也特別說清中國普通護照個人旅行的簽證要求。</p>
+              <div className={styles.featureMeta}>
+                <span>比什凱克往返</span>
+                <span>湖泊與峽谷</span>
+                <span>高山氈房</span>
+                <span>6–9 月季節線</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/kyrgyzstan-10-day-bishkek-issyk-kul-song-kol">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="吉爾吉斯十日路線節點">
+              <div className={styles.routeCardLabel}>10 DAYS / BSZ ROUND TRIP</div>
+              <div className={styles.routeList}>
+                {['比什凱克 · 2 晚', '布拉納塔', '喬爾蓬阿塔 · 1 晚', '卡拉科爾 · 2 晚', '博孔巴耶沃／科奇科爾 · 2 晚', '松庫爾 · 1 晚', '比什凱克緩衝 · 1 晚'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}>
+                    <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{stop}</span>
+                    {index < 6 && <span className={styles.routeLine} aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>松庫爾僅在道路與營地季節開放、司機確認可通行時安排；D9 留整天回城。</p>
+            </div>
+          </div>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="philippines-story-title">
           <div className={styles.featureTopline}>
             <span>菲律賓 / 旅行計畫</span>
