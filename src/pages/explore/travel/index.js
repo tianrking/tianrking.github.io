@@ -213,6 +213,39 @@ export default function TravelSeriesPage() {
           </div>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="thailand-story-title">
+          <div className={styles.featureTopline}>
+            <span>泰國 / 旅行計畫</span>
+            <span>10 日 / 9 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="thailand-story-title">曼谷入、清邁出<br />王城、古都與蘭納文化 10 日</Heading>
+              <p>從曼谷王城與阿瑜陀耶古都一路向北，接上清邁蘭納街區、素貼山與因他暖山自然線；避開遠距離折返，並替空氣品質與天候留出替代日。</p>
+              <div className={styles.featureMeta}>
+                <span>曼谷 4 晚</span>
+                <span>清邁 5 晚</span>
+                <span>世界遺產</span>
+                <span>國內航班緩衝</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/thailand-10-day-bangkok-ayutthaya-chiang-mai">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="泰國路線節點">
+              <div className={styles.routeCardLabel}>10 DAYS / BKK → CNX</div>
+              <div className={styles.routeList}>
+                {['BKK · 曼谷 4 晚', '阿瑜陀耶 · 一日往返', 'CNX · 清邁 5 晚', '素貼山', '因他暖山', '清邁出境'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}>
+                    <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{stop}</span>
+                    {index < 5 && <span className={styles.routeLine} aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>曼谷往返機票可改 D9 回曼谷，住機場側一晚後離境。</p>
+            </div>
+          </div>
+        </section>
+
       </main>
     </Layout>
   );
