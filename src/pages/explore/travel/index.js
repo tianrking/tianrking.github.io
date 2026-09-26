@@ -405,6 +405,39 @@ export default function TravelSeriesPage() {
           </div>
         </section>
 
+        <section className={`container ${styles.feature}`} aria-labelledby="kazakhstan-story-title">
+          <div className={styles.featureTopline}>
+            <span>哈薩克 / 旅行計畫</span>
+            <span>10 日 / 9 晚</span>
+          </div>
+          <div className={styles.featureGrid}>
+            <div>
+              <Heading as="h2" id="kazakhstan-story-title">阿拉木圖山湖、恰倫峽谷<br />與阿斯塔納 10 日</Heading>
+              <p>從天山山麓出發，在薩蒂村連住兩晚走恰倫、科爾賽與凱恩迪，再飛往阿斯塔納看新首都軸線；以實際道路、季節和機票銜接決定景點取捨。</p>
+              <div className={styles.featureMeta}>
+                <span>ALA 入 / NQZ 出</span>
+                <span>山湖三日</span>
+                <span>村落民宿</span>
+                <span>天候備案</span>
+              </div>
+              <Link className={styles.primaryLink} to="/explore/travel/kazakhstan-10-day-almaty-saty-astana">打開完整計畫 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className={styles.routeCard} aria-label="哈薩克十日路線節點">
+              <div className={styles.routeCardLabel}>10 DAYS / ALA → NQZ</div>
+              <div className={styles.routeList}>
+                {['阿拉木圖 · 3 晚', '恰倫峽谷', '薩蒂 · 2 晚', '阿拉木圖 · 1 晚', '阿斯塔納 · 3 晚'].map((stop, index) => (
+                  <div className={styles.routeItem} key={stop}>
+                    <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{stop}</span>
+                    {index < 4 && <span className={styles.routeLine} aria-hidden="true" />}
+                  </div>
+                ))}
+              </div>
+              <p className={styles.routeNote}>自然區以合規接送與當日道路公告為先；薩蒂往返不放在國際航班當天。</p>
+            </div>
+          </div>
+        </section>
+
         <section className={`container ${styles.feature}`} aria-labelledby="philippines-story-title">
           <div className={styles.featureTopline}>
             <span>菲律賓 / 旅行計畫</span>
