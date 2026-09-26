@@ -32,10 +32,10 @@ export default function TravelSeriesPage() {
           <div className={styles.featureGrid}>
             <div>
               <Heading as="h2" id="indonesia-story-title">雅加達入、泗水出<br />爪哇歷史文化 10 日</Heading>
-              <p>雅加達多留一日，日惹分開看婆羅浮屠與普蘭巴南，最後走進泗水港城、戰爭墓園與獨立革命史。三城各住一處，以兩段白天火車串聯；布羅莫與 Tumpak Sewu 留作加日支線，不壓縮安全緩衝。</p>
+              <p>雅加達加住一晚；婆羅浮屠與普蘭巴南同日走主寺及 Sewu，省下的一天留給首都。三城各住一處，以兩段白天火車串聯；想慢看寺群可在日惹加一晚，不硬塞布羅莫與 Tumpak Sewu。</p>
               <div className={styles.featureMeta}>
-                <span>3＋4＋2 晚</span>
-                <span>公共交通</span>
+                <span>4＋3＋2 晚</span>
+                <span>公共交通＋寺庙日包车</span>
                 <span>外國遊客票種</span>
                 <span>閉館日期檢查</span>
               </div>
@@ -44,7 +44,7 @@ export default function TravelSeriesPage() {
             <div className={styles.routeCard} aria-label="印度尼西亞路線節點">
               <div className={styles.routeCardLabel}>10 DAYS / CGK → SUB</div>
               <div className={styles.routeList}>
-                {['CGK 機場', '雅加達 · 3 晚', '日惹 · 4 晚', '泗水 · 2 晚', 'SUB 機場'].map((stop, index) => (
+                {['CGK 機場', '雅加達 · 4 晚', '日惹 · 3 晚', '泗水 · 2 晚', 'SUB 機場'].map((stop, index) => (
                   <div className={styles.routeItem} key={stop}>
                     <span className={styles.routeIndex}>{String(index + 1).padStart(2, '0')}</span>
                     <span>{stop}</span>
@@ -52,7 +52,7 @@ export default function TravelSeriesPage() {
                   </div>
                 ))}
               </div>
-              <p className={styles.routeNote}>10 日 9 晚；歷史古蹟與城市文化主線，不將多日火山瀑布轉場塞進一週多的行程。</p>
+              <p className={styles.routeNote}>10 日 9 晚；雅加達 4 晚、日惹 3 晚、泗水 2 晚；一日寺廟線需預約登塔時段與可靠接送。</p>
             </div>
           </div>
         </section>

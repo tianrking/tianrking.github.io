@@ -7,10 +7,10 @@ const ITINERARY = [
   { title: '抵達雅加達', city: '雅加達 Jakarta', stay: '雅加達' },
   { title: '銀行博物館、老城與獨立清真寺', city: '雅加達 Jakarta', stay: '雅加達' },
   { title: 'Glodok 華人街區與 Sunda Kelapa 舊港', city: '雅加達 Jakarta', stay: '雅加達' },
+  { title: 'Monas、獨立廣場與金融軸', city: '雅加達 Jakarta', stay: '雅加達' },
   { title: '火車前往日惹', city: '雅加達 → 日惹', stay: '日惹' },
-  { title: '婆羅浮屠與周邊小寺', city: '日惹 → 馬格朗 → 日惹', stay: '日惹' },
+  { title: '婆羅浮屠、普蘭巴南與 Sewu', city: '日惹 → 馬格朗 → 普蘭巴南 → 日惹', stay: '日惹' },
   { title: '蘇丹王宮、水宮與歷史博物館', city: '日惹 Yogyakarta', stay: '日惹' },
-  { title: '普蘭巴南與 Sewu 寺群', city: '日惹與普蘭巴南', stay: '日惹' },
   { title: '火車前往泗水', city: '日惹 → 泗水', stay: '泗水' },
   { title: '戰爭墓園、獨立史與 Ampel', city: '泗水 Surabaya', stay: '泗水' },
   { title: '前往 SUB 機場返程', city: '泗水 → 朱安達機場', stay: null },
@@ -50,15 +50,20 @@ function alertsForDay(day, weekday) {
       severity: 'closure',
       text: '週一閉館衝突：印尼銀行博物館與國家博物館不適合排在今天。調整出發日，或把館舍安排到抵達當天的開放時段；不要直接照原順序走。',
     }];
+    if (day === 4) return [{
+      code: 'monas-monday',
+      severity: 'closure',
+      text: '週一閉園提醒：Monas 園區不開放；改走 Bundaran HI 與市中心公共街區，並在出發前核實塔體是否已恢復開放。',
+    }];
     if (day === 6) return [{
       code: 'yogyakarta-monday',
       severity: 'closure',
-      text: '週一閉館衝突：王宮與歷史博物館的安排需調整。建議交換 D5、D6，把週一留給婆羅浮屠；仍須預訂對應日期的票。',
+      text: '週一參觀限制：婆羅浮屠登塔雖每日開放，普蘭巴南主寺區 Zone 1 有限制。合併寺廟日請改到非週一，並按預約時段安排接送。',
     }];
     if (day === 7) return [{
-      code: 'prambanan-monday',
+      code: 'yogyakarta-culture-monday',
       severity: 'closure',
-      text: '週一參觀限制：普蘭巴南主寺台院 Zone 1 不開放，只能參觀園區 Zone 2。建議交換 D5、D7，把週一留給婆羅浮屠。',
+      text: '週一閉館衝突：王宮與 Vredeburg 歷史博物館不適合排在今天。改做城市街區散步，並將兩處館舍安排到其他開館日。',
     }];
     if (day === 9) return [{
       code: 'surabaya-monday',
@@ -98,8 +103,8 @@ export function buildCalendar(startValue) {
     };
   });
   const stays = [
-    { city: '雅加達', startOffset: 0, nights: 3 },
-    { city: '日惹', startOffset: 3, nights: 4 },
+    { city: '雅加達', startOffset: 0, nights: 4 },
+    { city: '日惹', startOffset: 4, nights: 3 },
     { city: '泗水', startOffset: 7, nights: 2 },
   ].map(({ city, startOffset, nights }) => ({
     city,

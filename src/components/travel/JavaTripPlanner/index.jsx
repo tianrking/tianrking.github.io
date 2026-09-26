@@ -69,7 +69,7 @@ export default function JavaTripPlanner() {
             ))}
           </ol>
           <div className={styles.stays}>
-            <h4>每城一間酒店，3＋4＋2 晚</h4>
+            <h4>每城一間酒店，4＋3＋2 晚</h4>
             <ul>
               {calendar.stays.map((stay) => (
                 <li key={stay.city}>
