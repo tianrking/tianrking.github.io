@@ -15,8 +15,8 @@
   },
   {
     "issue": 2,
-    "slug": "indonesia-java-9-day-jakarta-yogyakarta-surabaya",
-    "route": "/explore/travel/indonesia-java-9-day-jakarta-yogyakarta-surabaya",
+    "slug": "indonesia-java-10-day-jakarta-yogyakarta-surabaya",
+    "route": "/explore/travel/indonesia-java-10-day-jakarta-yogyakarta-surabaya",
     "title": "印度尼西亞爪哇 10 天：雅加達入、日惹古蹟、泗水出",
     "description": "雅加達入、泗水出的爪哇10天9晚旅行計畫：增加雅加達完整城市日，串聯婆羅浮屠、普蘭巴南、日惹王宮、泗水殖民港城與戰爭記憶。",
     "destination": "印度尼西亞",
@@ -351,42 +351,6 @@
   },
   {
     "issue": 21,
-    "slug": "hong-kong-10-day-island-heritage-city",
-    "route": "/explore/travel/hong-kong-10-day-island-heritage-city",
-    "title": "香港 10 天：港島城市史、新界古村與離島山海",
-    "description": "香港國際機場進出、九晚住同一區，深走港島、九龍、新界、長洲、大嶼山與西貢；含入境文件、渡輪交通、步道天氣備案與住宿建議。",
-    "destination": "香港",
-    "days": 10,
-    "nights": 9,
-    "tags": [
-      "城市文化",
-      "離島",
-      "徒步"
-    ],
-    "featured": false,
-    "companionRoutes": [],
-    "conditional": false
-  },
-  {
-    "issue": 22,
-    "slug": "macao-10-day-heritage-peninsula-taipa-coloane",
-    "route": "/explore/travel/macao-10-day-heritage-peninsula-taipa-coloane",
-    "title": "澳門 10 天：世界遺產街巷、離島聚落與海岸慢旅",
-    "description": "澳門國際機場進出、九晚住一處，分區走完半島歷史城區、氹仔舊城、路環漁村與步道；含入境、巴士、博物館休館日和颱風備案。",
-    "destination": "澳門",
-    "days": 10,
-    "nights": 9,
-    "tags": [
-      "世界遺產",
-      "城市步行",
-      "離島"
-    ],
-    "featured": false,
-    "companionRoutes": [],
-    "conditional": false
-  },
-  {
-    "issue": 23,
     "slug": "china-10-day-beijing-xian-shanghai",
     "route": "/explore/travel/china-10-day-beijing-xian-shanghai",
     "title": "中國 10 天：北京、西安與上海的古都到現代城市線",
@@ -403,7 +367,7 @@
     "conditional": false
   },
   {
-    "issue": 24,
+    "issue": 22,
     "slug": "japan-10-day-tokyo-kyoto-nara-osaka",
     "route": "/explore/travel/japan-10-day-tokyo-kyoto-nara-osaka",
     "title": "日本 10 天：東京、鎌倉、京都、奈良與大阪經典文化線",
@@ -421,7 +385,7 @@
     "conditional": false
   },
   {
-    "issue": 25,
+    "issue": 23,
     "slug": "south-korea-10-day-seoul-gyeongju-busan",
     "route": "/explore/travel/south-korea-10-day-seoul-gyeongju-busan",
     "title": "韓國 10 天：首爾、慶州與釜山的古都海港線",
@@ -439,7 +403,7 @@
     "conditional": false
   },
   {
-    "issue": 26,
+    "issue": 24,
     "slug": "mongolia-10-day-ulaanbaatar-kharkhorin-orkhon-terelj",
     "route": "/explore/travel/mongolia-10-day-ulaanbaatar-kharkhorin-orkhon-terelj",
     "title": "蒙古 10 天：烏蘭巴托、哈拉和林、鄂爾渾河谷與特勒吉草原",
@@ -457,7 +421,7 @@
     "conditional": false
   },
   {
-    "issue": 27,
+    "issue": 25,
     "slug": "north-korea-10-day-conditional-tour-framework",
     "route": "/explore/travel/north-korea-10-day-conditional-tour-framework",
     "title": "北韓 10 日文化行程構想：平壤、妙香山與開城",
@@ -475,7 +439,7 @@
     "conditional": true
   },
   {
-    "issue": 28,
+    "issue": 26,
     "slug": "kazakhstan-10-day-almaty-saty-astana",
     "route": "/explore/travel/kazakhstan-10-day-almaty-saty-astana",
     "title": "哈薩克 10 天：阿拉木圖山湖、恰倫峽谷與阿斯塔納",
@@ -493,7 +457,7 @@
     "conditional": false
   },
   {
-    "issue": 29,
+    "issue": 27,
     "slug": "kyrgyzstan-10-day-bishkek-issyk-kul-song-kol",
     "route": "/explore/travel/kyrgyzstan-10-day-bishkek-issyk-kul-song-kol",
     "title": "吉爾吉斯 10 天：比什凱克、伊塞克湖與松庫爾草原",
@@ -511,7 +475,7 @@
     "conditional": false
   },
   {
-    "issue": 30,
+    "issue": 28,
     "slug": "tajikistan-10-day-dushanbe-fann-haftkul",
     "route": "/explore/travel/tajikistan-10-day-dushanbe-fann-haftkul",
     "title": "塔吉克斯坦 10 天：杜尚别、伊斯坎达尔湖、彭吉肯特與七湖",
@@ -529,7 +493,7 @@
     "conditional": false
   },
   {
-    "issue": 31,
+    "issue": 29,
     "slug": "turkmenistan-10-day-ashgabat-mary-darvaza",
     "route": "/explore/travel/turkmenistan-10-day-ashgabat-mary-darvaza",
     "title": "土庫曼斯坦 10 天：阿什哈巴德、古代梅爾夫與卡拉庫姆沙漠",
@@ -546,7 +510,7 @@
     "conditional": false
   },
   {
-    "issue": 32,
+    "issue": 30,
     "slug": "uzbekistan-10-day-silk-road-tashkent-khiva",
     "route": "/explore/travel/uzbekistan-10-day-silk-road-tashkent-khiva",
     "title": "烏茲別克斯坦 10 天：塔什干、撒馬爾罕、布哈拉與希瓦",
@@ -563,7 +527,7 @@
     "conditional": false
   },
   {
-    "issue": 33,
+    "issue": 31,
     "slug": "armenia-10-day-yerevan-dilijan-gyumri",
     "route": "/explore/travel/armenia-10-day-yerevan-dilijan-gyumri",
     "title": "亞美尼亞 10 天：埃里溫、塞凡湖、迪利然與久姆里",
@@ -580,7 +544,7 @@
     "conditional": false
   },
   {
-    "issue": 34,
+    "issue": 32,
     "slug": "azerbaijan-10-day-baku-sheki-gobustan",
     "route": "/explore/travel/azerbaijan-10-day-baku-sheki-gobustan",
     "title": "亞塞拜然 10 天：巴庫、戈布斯坦與舍基的絲路文化線",
@@ -597,7 +561,7 @@
     "conditional": false
   },
   {
-    "issue": 35,
+    "issue": 33,
     "slug": "georgia-10-day-tbilisi-kazbegi-kakheti",
     "route": "/explore/travel/georgia-10-day-tbilisi-kazbegi-kakheti",
     "title": "喬治亞 10 天：第比利斯、卡茲別克與卡赫季山河文化線",
@@ -615,7 +579,7 @@
     "conditional": false
   },
   {
-    "issue": 36,
+    "issue": 34,
     "slug": "cyprus-10-day-larnaca-nicosia-troodos-paphos",
     "route": "/explore/travel/cyprus-10-day-larnaca-nicosia-troodos-paphos",
     "title": "塞浦路斯 10 日：拉纳卡、尼科西亚、特罗多斯与帕福斯",
@@ -633,7 +597,7 @@
     "conditional": false
   },
   {
-    "issue": 37,
+    "issue": 35,
     "slug": "turkiye-10-day-istanbul-cappadocia-ephesus",
     "route": "/explore/travel/turkiye-10-day-istanbul-cappadocia-ephesus",
     "title": "土耳其 10 天：伊斯坦堡、卡帕多奇亞與以弗所",
@@ -651,7 +615,7 @@
     "conditional": false
   },
   {
-    "issue": 38,
+    "issue": 36,
     "slug": "iran-10-day-conditional-culture",
     "route": "/explore/travel/iran-10-day-conditional-culture",
     "title": "伊朗 10 日文化路線：德黑蘭、伊斯法罕、亞茲德與設拉子",
@@ -669,7 +633,7 @@
     "conditional": true
   },
   {
-    "issue": 39,
+    "issue": 37,
     "slug": "iraq-10-day-conditional-heritage",
     "route": "/explore/travel/iraq-10-day-conditional-heritage",
     "title": "伊拉克 10 日文化路线：巴格达、巴比伦与纳杰夫",
@@ -687,7 +651,7 @@
     "conditional": true
   },
   {
-    "issue": 40,
+    "issue": 38,
     "slug": "israel-10-day-tel-aviv-haifa-jerusalem",
     "route": "/explore/travel/israel-10-day-tel-aviv-haifa-jerusalem",
     "title": "以色列 10 日文化路線：特拉維夫、海法與耶路撒冷",
@@ -705,7 +669,7 @@
     "conditional": true
   },
   {
-    "issue": 41,
+    "issue": 39,
     "slug": "palestine-10-day-west-bank-heritage",
     "route": "/explore/travel/palestine-10-day-west-bank-heritage",
     "title": "巴勒斯坦约旦河西岸 10 日文化路线：杰里科、拉姆安拉与伯利恒",
@@ -722,7 +686,7 @@
     "conditional": true
   },
   {
-    "issue": 42,
+    "issue": 40,
     "slug": "lebanon-10-day-beirut-byblos-qadisha",
     "route": "/explore/travel/lebanon-10-day-beirut-byblos-qadisha",
     "title": "黎巴嫩 10 日文化路线：贝鲁特、腓尼基海岸与卡迪沙山谷",
@@ -739,7 +703,7 @@
     "conditional": true
   },
   {
-    "issue": 43,
+    "issue": 41,
     "slug": "jordan-10-day-amman-jerash-petra-wadi-rum",
     "route": "/explore/travel/jordan-10-day-amman-jerash-petra-wadi-rum",
     "title": "約旦 10 日：安曼、傑拉什、佩特拉與月亮谷",
@@ -757,7 +721,7 @@
     "conditional": false
   },
   {
-    "issue": 44,
+    "issue": 42,
     "slug": "syria-10-day-damascus-aleppo-conditional",
     "route": "/explore/travel/syria-10-day-damascus-aleppo-conditional",
     "title": "叙利亚 10 日文化路线：大马士革与阿勒颇",
@@ -774,7 +738,7 @@
     "conditional": true
   },
   {
-    "issue": 45,
+    "issue": 43,
     "slug": "saudi-arabia-10-day-riyadh-alula-jeddah",
     "route": "/explore/travel/saudi-arabia-10-day-riyadh-alula-jeddah",
     "title": "沙特阿拉伯 10 天：利雅得、欧拉与吉达的古文明和红海城市",
@@ -791,7 +755,7 @@
     "conditional": false
   },
   {
-    "issue": 46,
+    "issue": 44,
     "slug": "uae-10-day-dubai-abu-dhabi-al-ain",
     "route": "/explore/travel/uae-10-day-dubai-abu-dhabi-al-ain",
     "title": "阿聯酋 10 天：杜拜、沙迦、阿布達比與艾因",
@@ -809,7 +773,7 @@
     "conditional": true
   },
   {
-    "issue": 47,
+    "issue": 45,
     "slug": "qatar-10-day-doha-north-desert",
     "route": "/explore/travel/qatar-10-day-doha-north-desert",
     "title": "卡塔尔 10 天：多哈城市文化、北部采珠古港与沙漠海岸",
@@ -827,7 +791,7 @@
     "conditional": false
   },
   {
-    "issue": 48,
+    "issue": 46,
     "slug": "bahrain-10-day-manama-dilmun-pearling",
     "route": "/explore/travel/bahrain-10-day-manama-dilmun-pearling",
     "title": "巴林 10 日：迪尔蒙古文明、採珠之路與海灣島國生活",
@@ -845,7 +809,7 @@
     "conditional": false
   },
   {
-    "issue": 49,
+    "issue": 47,
     "slug": "kuwait-10-day-kuwait-city-failaka-heritage",
     "route": "/explore/travel/kuwait-10-day-kuwait-city-failaka-heritage",
     "title": "科威特 10 日：海灣城市史、島嶼遺址與沙漠邊界",
@@ -863,7 +827,7 @@
     "conditional": false
   },
   {
-    "issue": 50,
+    "issue": 48,
     "slug": "oman-10-day-muscat-sur-nizwa",
     "route": "/explore/travel/oman-10-day-muscat-sur-nizwa",
     "title": "阿曼 10 天：马斯喀特、海龟海岸、沙漠与尼兹瓦",
@@ -881,7 +845,7 @@
     "conditional": false
   },
   {
-    "issue": 51,
+    "issue": 49,
     "slug": "yemen-10-day-sanaa-hadramaut-conditional",
     "route": "/explore/travel/yemen-10-day-sanaa-hadramaut-conditional",
     "title": "葉門 10 日文化路線：薩那古城與哈德拉毛希巴姆",
