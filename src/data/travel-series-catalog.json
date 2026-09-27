@@ -861,5 +861,23 @@
     "featured": false,
     "companionRoutes": [],
     "conditional": true
+  },
+  {
+    "issue": 50,
+    "slug": "russia-10-day-siberia-baikal",
+    "route": "/explore/travel/russia-10-day-siberia-baikal",
+    "title": "俄羅斯亞洲部分 10 日：伊爾庫茨克、貝加爾湖與烏蘭烏德",
+    "description": "從伊爾庫茨克沿貝加爾湖西岸到布里亞特首府烏蘭烏德，以城市史、湖沼生態、佛教文化串成十日路線；含交通、住宿、季節、預算與目前旅行警示。",
+    "destination": "俄羅斯",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "西伯利亞",
+      "貝加爾湖",
+      "布里亞特"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": true
   }
 ]
