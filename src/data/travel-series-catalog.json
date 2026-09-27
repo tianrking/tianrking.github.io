@@ -752,7 +752,7 @@
     ],
     "featured": false,
     "companionRoutes": [],
-    "conditional": false
+    "conditional": true
   },
   {
     "issue": 44,
@@ -788,7 +788,7 @@
     ],
     "featured": false,
     "companionRoutes": [],
-    "conditional": false
+    "conditional": true
   },
   {
     "issue": 46,
@@ -806,7 +806,7 @@
     ],
     "featured": false,
     "companionRoutes": [],
-    "conditional": false
+    "conditional": true
   },
   {
     "issue": 47,
@@ -824,7 +824,7 @@
     ],
     "featured": false,
     "companionRoutes": [],
-    "conditional": false
+    "conditional": true
   },
   {
     "issue": 48,
@@ -842,7 +842,7 @@
     ],
     "featured": false,
     "companionRoutes": [],
-    "conditional": false
+    "conditional": true
   },
   {
     "issue": 49,

@@ -9,6 +9,17 @@ const order = JSON.parse(
   await fs.readFile(path.join(rootDirectory, 'src/data/travel-series-order.json'), 'utf8'),
 );
 
+// These destinations currently have explicit regional security/airspace caveats
+// in their article bodies. Keep the catalog badges aligned with that guidance;
+// review this set whenever the dated advisories in those articles are refreshed.
+const conditionalTravelSlugs = new Set([
+  'saudi-arabia-10-day-riyadh-alula-jeddah',
+  'qatar-10-day-doha-north-desert',
+  'bahrain-10-day-manama-dilmun-pearling',
+  'kuwait-10-day-kuwait-city-failaka-heritage',
+  'oman-10-day-muscat-sur-nizwa',
+]);
+
 function frontMatterField(frontMatter, field) {
   const match = frontMatter.match(new RegExp(`^${field}:\\s*["']?(.*?)["']?\\s*$`, 'm'));
   return match?.[1]?.trim() ?? '';
@@ -72,7 +83,8 @@ for (const [index, slug] of order.entries()) {
     companionRoutes: slug === 'vietnam-north-10-day-hanoi-ninh-binh-sapa'
       ? ['/explore/travel/vietnam-north-8-day-hanoi-ninh-binh-sapa']
       : [],
-    conditional: /conditional|條件式路線|条件式路线|暫緩|暂缓|暫不出發|暂不出发|未來條件|未来条件|暫勿前往|暂勿前往|旅行警示|不作現時出行建議|不作现时出行建议/.test(`${slug} ${title} ${description} ${tags.join(' ')}`)
+    conditional: conditionalTravelSlugs.has(slug)
+      || /conditional|條件式路線|条件式路线|暫緩|暂缓|暫不出發|暂不出发|未來條件|未来条件|暫勿前往|暂勿前往|旅行警示|不作現時出行建議|不作现时出行建议/.test(`${slug} ${title} ${description} ${tags.join(' ')}`)
       || /未來條件式路線|未来条件式路线|不作現時出行建議|不作现时出行建议/.test(source.slice(0, 2200)),
   };
   if (!title || !description) throw new Error(`Missing title or description: ${articlePath}`);
