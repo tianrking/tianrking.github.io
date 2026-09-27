@@ -72,7 +72,7 @@ for (const [index, slug] of order.entries()) {
     companionRoutes: slug === 'vietnam-north-10-day-hanoi-ninh-binh-sapa'
       ? ['/explore/travel/vietnam-north-8-day-hanoi-ninh-binh-sapa']
       : [],
-    conditional: /conditional|暫緩|安全條件|暫不出發|未來條件/.test(`${slug} ${title} ${description}`),
+    conditional: /conditional|條件式路線|条件式路线|暫緩|暂缓|暫不出發|暂不出发|未來條件|未来条件|暫勿前往|暂勿前往|旅行警示|不作現時出行建議|不作现时出行建议/.test(`${slug} ${title} ${description} ${tags.join(' ')}`),
   };
   if (!title || !description) throw new Error(`Missing title or description: ${articlePath}`);
   entries.push(entry);

@@ -275,7 +275,7 @@
     ],
     "featured": false,
     "companionRoutes": [],
-    "conditional": true
+    "conditional": false
   },
   {
     "issue": 17,
@@ -770,7 +770,7 @@
     ],
     "featured": false,
     "companionRoutes": [],
-    "conditional": true
+    "conditional": false
   },
   {
     "issue": 45,
