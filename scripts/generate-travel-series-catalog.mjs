@@ -13,6 +13,7 @@ const order = JSON.parse(
 // in their article bodies. Keep the catalog badges aligned with that guidance;
 // review this set whenever the dated advisories in those articles are refreshed.
 const conditionalTravelSlugs = new Set([
+  'uae-10-day-dubai-abu-dhabi-al-ain',
   'russia-10-day-siberia-baikal',
   'saudi-arabia-10-day-riyadh-alula-jeddah',
   'qatar-10-day-doha-north-desert',
