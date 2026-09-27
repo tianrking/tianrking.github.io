@@ -133,14 +133,6 @@ const config = {
             to: '/explore/travel/malaysia-peninsula-9-day',
           },
           {
-            from: '/explore/travel/hong-kong-10-day-island-heritage-city',
-            to: '/explore/travel',
-          },
-          {
-            from: '/explore/travel/macao-10-day-heritage-peninsula-taipa-coloane',
-            to: '/explore/travel',
-          },
-          {
             from: '/explore/travel/indonesia-java-9-day-jakarta-yogyakarta-surabaya',
             to: '/explore/travel/indonesia-java-10-day-jakarta-yogyakarta-surabaya',
           },
