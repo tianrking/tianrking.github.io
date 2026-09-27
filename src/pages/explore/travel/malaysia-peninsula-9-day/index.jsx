@@ -705,9 +705,16 @@ export default function MalaysiaPeninsulaPage() {
           </div>
         </section>
 
-        <footer className={`container ${styles.lastSection}`}>
-          <Link to="/explore/travel">← 回到全部旅行專題</Link>
-        </footer>
+        <nav className={`container ${styles.seriesNav}`} aria-label="相鄰旅行專題">
+          <Link to="/explore/travel">
+            <span>← 旅行專題目錄</span>
+            <strong>返回全部 Travel Series</strong>
+          </Link>
+          <Link to="/explore/travel/indonesia-java-10-day-jakarta-yogyakarta-surabaya">
+            <span>TRAVEL SERIES / 02 →</span>
+            <strong>印度尼西亞爪哇 10 天：雅加達入、日惹古蹟、泗水出</strong>
+          </Link>
+        </nav>
       </main>
     </Layout>
   );

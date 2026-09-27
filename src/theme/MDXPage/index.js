@@ -43,6 +43,8 @@ export default function MDXPage({content: MDXPageContent}) {
   const slug = pathParts[2];
   const seriesEntry = seriesCatalog.find((entry) => entry.slug === slug);
   const issueIndex = seriesEntry ? seriesEntry.issue - 1 : -1;
+  const previousIssue = issueIndex > 0 ? seriesCatalog[issueIndex - 1] : null;
+  const nextIssue = issueIndex >= 0 ? seriesCatalog[issueIndex + 1] ?? null : null;
   const companionIssue = companionIssues[slug];
   const issueNumber = issueIndex >= 0 ? issueIndex + 1 : companionIssue;
   const isCompanion = issueIndex < 0 && Boolean(companionIssue);
@@ -119,7 +121,25 @@ export default function MDXPage({content: MDXPageContent}) {
             )}
           </div>
           {isTravelArticle && (
-            <div className={styles.returnLink}><Link to="/explore/travel">← 回到全部旅行專題</Link></div>
+            <>
+              {seriesEntry && (previousIssue || nextIssue) && (
+                <nav className={styles.seriesNav} aria-label="相鄰旅行專題">
+                  {previousIssue ? (
+                    <Link className={styles.seriesNavPrevious} to={previousIssue.route}>
+                      <span>← TRAVEL SERIES / {String(previousIssue.issue).padStart(2, '0')}</span>
+                      <strong>{previousIssue.title}</strong>
+                    </Link>
+                  ) : <span />}
+                  {nextIssue ? (
+                    <Link className={styles.seriesNavNext} to={nextIssue.route}>
+                      <span>TRAVEL SERIES / {String(nextIssue.issue).padStart(2, '0')} →</span>
+                      <strong>{nextIssue.title}</strong>
+                    </Link>
+                  ) : <span />}
+                </nav>
+              )}
+              <div className={styles.returnLink}><Link to="/explore/travel">← 回到全部旅行專題</Link></div>
+            </>
           )}
         </main>
       </Layout>

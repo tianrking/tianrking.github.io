@@ -92,6 +92,47 @@
   font-size: .9rem;
 }
 
+.seriesNav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .8rem;
+  margin: 2rem auto 0;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--site-line);
+}
+
+.seriesNav a {
+  display: grid;
+  align-content: space-between;
+  gap: .7rem;
+  min-height: 6rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--site-line);
+  border-radius: var(--site-radius-md);
+  color: var(--site-ink);
+  background: var(--site-surface);
+  text-decoration: none;
+  transition: border-color 160ms ease, transform 160ms ease, background-color 160ms ease;
+}
+
+.seriesNav a:hover,
+.seriesNav a:focus-visible {
+  border-color: color-mix(in srgb, var(--ifm-color-primary) 48%, var(--site-line));
+  background: color-mix(in srgb, var(--ifm-color-primary) 4%, var(--site-surface));
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.seriesNav a span {
+  color: var(--ifm-color-primary);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: .65rem;
+  letter-spacing: .07em;
+}
+
+.seriesNav a strong { font-size: .9rem; line-height: 1.5; }
+.seriesNav a:first-child { align-content: center; }
+
 .sectionHeading {
   max-width: 52rem;
   padding-top: 5.5rem;
@@ -964,6 +1005,8 @@
   .lastSection {
     padding-inline: .75rem;
   }
+
+  .seriesNav { grid-template-columns: 1fr; }
 
   .budgetInputs,
   .preparationGrid,
