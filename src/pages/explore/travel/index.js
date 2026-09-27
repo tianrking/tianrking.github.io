@@ -57,13 +57,13 @@ export default function TravelSeriesPage() {
   return (
     <Layout
       title="旅行專題"
-      description="獨立編號的亞洲旅行專題：每篇從路線與歷史脈絡，到交通住宿、預算、安全與實用資料完整規劃。">
+      description="獨立編號的亞洲旅行專題，整理路線與歷史脈絡、交通住宿、預算及必要安全資訊；高風險目的地會明確標示限制，並非可直接預訂。">
       <main className={styles.page}>
         <header className={styles.hero}>
           <div className={`container ${styles.heroInner}`}>
             <div className={styles.eyebrow}>EXPLORATION / TRAVEL SERIES</div>
             <Heading as="h1">旅行專題</Heading>
-            <p>每一篇都是獨立目的地計畫：從路線和歷史脈絡，到交通、住宿、預算與現場取捨。</p>
+            <p>每篇聚焦一個目的地，整理路線、歷史脈絡、交通、住宿、預算與實際限制；有條件的旅程會在文首說明。</p>
             <div className={styles.heroFacts}>
               <span><strong>{issues.length.toString().padStart(2, '0')}</strong> 篇亞洲目的地專題</span>
               <span>一篇一條完整路線</span>
@@ -77,7 +77,7 @@ export default function TravelSeriesPage() {
             <div className={styles.sectionIntro}>
               <span className={styles.sectionEyebrow}>THE SERIES / 01—{String(issues.length).padStart(2, '0')}</span>
               <Heading as="h2" id="library-heading">一篇一條路線。</Heading>
-              <p>01 馬來西亞、02 印度尼西亞，之後按系列編號展開；每篇都可單獨閱讀與規劃。</p>
+              <p>01 馬來西亞、02 印度尼西亞，後續專題依序編號；高風險地區的文章只作安全條件改善後的路線參考。</p>
             </div>
             <label className={styles.searchBox}>
               <span className={styles.visuallyHidden}>搜尋旅行專題</span>

@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import {travelSeries, indonesiaTravelSeries} from '@site/src/data/explore-series';
+import travelCatalog from '@site/src/data/travel-series-catalog.json';
 import styles from './styles.module.css';
 
 const categories = [
@@ -11,7 +12,7 @@ const categories = [
     label: '行旅誌',
     title: '旅行規劃與記錄',
     description: '把路線、歷史、交通、預算與現場觀察整理成下一次可以直接使用的旅程。',
-    meta: '2 個系列 · 2 篇完整方案',
+    meta: `${travelCatalog.length} 篇目的地專題`,
     route: '/explore/travel',
     accent: 'travel',
   },

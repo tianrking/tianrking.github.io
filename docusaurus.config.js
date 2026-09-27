@@ -129,6 +129,10 @@ const config = {
       {
         redirects: [
           {
+            from: '/explore/travel/malaysia-peninsula-8-day',
+            to: '/explore/travel/malaysia-peninsula-9-day',
+          },
+          {
             from: '/explore/travel/asia-10-day-series',
             to: '/explore/travel',
           },
