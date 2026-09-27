@@ -1,228 +1,308 @@
 .page {
   min-height: 100vh;
+  padding-bottom: 5rem;
   color: var(--site-ink);
   background:
-    radial-gradient(circle at 82% 0%, color-mix(in srgb, var(--ifm-color-primary) 11%, transparent), transparent 30rem),
+    radial-gradient(ellipse at 82% -4%, color-mix(in srgb, var(--ifm-color-primary) 10%, transparent), transparent 38rem),
     var(--site-canvas);
 }
 
 .hero {
-  padding: clamp(5.5rem, 12vw, 9rem) 0 4rem;
+  padding: clamp(4.75rem, 9vw, 7.75rem) 0 2.6rem;
   border-bottom: 1px solid var(--site-line);
 }
 
-.eyebrow {
+.heroInner { max-width: 78rem; }
+
+.eyebrow,
+.sectionEyebrow,
+.issueNumber,
+.companionGrid a > span {
   color: var(--ifm-color-primary);
   font-family: var(--ifm-font-family-monospace);
   font-size: .68rem;
-  font-weight: 700;
-  letter-spacing: .12em;
+  font-weight: 720;
+  letter-spacing: .13em;
+  text-transform: uppercase;
 }
 
 .hero h1 {
-  max-width: 58rem;
-  margin: 1rem 0 1.1rem;
+  margin: .85rem 0 .8rem;
   color: var(--site-ink);
-  font-size: clamp(3rem, 8vw, 6.6rem);
-  font-weight: 730;
-  letter-spacing: -.07em;
+  font-size: clamp(3.1rem, 8vw, 6rem);
+  font-weight: 740;
+  letter-spacing: -.075em;
   line-height: .98;
   text-wrap: balance;
 }
 
 .hero p {
-  max-width: 44rem;
+  max-width: 46rem;
   margin: 0;
   color: var(--site-muted);
-  font-size: 1.05rem;
+  font-size: clamp(1rem, 1.7vw, 1.15rem);
   line-height: 1.8;
 }
 
-.feature {
-  padding-top: 3rem;
-}
-
-.featureTopline,
-.featureMeta,
-.routeCardLabel {
+.heroFacts {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .8rem 1.5rem;
+  margin-top: 1.7rem;
   color: var(--site-muted);
-  font-family: var(--ifm-font-family-monospace);
-  font-size: .68rem;
-  letter-spacing: .04em;
+  font-size: .82rem;
 }
 
-.featureTopline {
-  justify-content: space-between;
-  margin-bottom: 1rem;
+.heroFacts strong { color: var(--site-ink); font-size: 1rem; }
+.heroFacts a { color: var(--site-ink); font-weight: 650; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+.featuredSection,
+.librarySection,
+.companions { padding-top: clamp(2.7rem, 5vw, 4.5rem); }
+
+.sectionIntro { margin-bottom: 1.25rem; }
+
+.sectionIntro h2,
+.companions h2 {
+  margin: .45rem 0 .55rem;
+  color: var(--site-ink);
+  font-size: clamp(1.85rem, 4.5vw, 3rem);
+  font-weight: 710;
+  letter-spacing: -.06em;
+  line-height: 1.05;
+  text-wrap: balance;
 }
 
-.featureTopline span:first-child,
-.routeCardLabel {
-  color: var(--ifm-color-primary);
+.sectionIntro p,
+.companions > div:first-child > p {
+  max-width: 49rem;
+  margin: 0;
+  color: var(--site-muted);
+  font-size: .94rem;
+  line-height: 1.75;
 }
 
-.featureGrid {
+.featuredGrid {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(18rem, .75fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
-.featureGrid > div:first-child,
-.routeCard {
-  padding: clamp(1.35rem, 4vw, 2.4rem);
+.featuredItem { min-width: 0; }
+
+.issueGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .9rem;
+}
+
+.issueCard {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 1.25rem 1.25rem 1.1rem;
   border: 1px solid var(--site-line);
   border-radius: var(--site-radius-lg);
   background: var(--site-surface);
   box-shadow: var(--site-shadow-sm);
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
-.featureGrid > div:first-child {
-  background:
-    linear-gradient(135deg, color-mix(in srgb, var(--ifm-color-primary) 8%, transparent), transparent 64%),
-    var(--site-surface);
-}
-
-.featureGrid h2 {
-  margin: 0 0 1rem;
-  color: var(--site-ink);
-  font-size: clamp(2rem, 4vw, 3.7rem);
-  font-weight: 710;
-  letter-spacing: -.065em;
-  line-height: 1.02;
-}
-
-.featureGrid p {
-  max-width: 48rem;
-  margin: 0;
-  color: var(--site-muted);
-  line-height: 1.8;
-}
-
-.featureMeta {
-  flex-wrap: wrap;
-  margin: 1.4rem 0 1.65rem;
-}
-
-.featureMeta span {
-  padding: .35rem .52rem;
-  border: 1px solid var(--site-line);
-  border-radius: .45rem;
-  color: var(--site-muted);
-  background: var(--site-surface-soft);
-}
-
-.primaryLink {
-  display: inline-flex;
-  align-items: center;
-  gap: .45rem;
-  min-height: 2.8rem;
-  padding: .7rem 1rem;
-  border-radius: .75rem;
-  color: var(--site-canvas);
-  background: var(--site-ink);
-  font-size: .84rem;
-  font-weight: 720;
-  text-decoration: none;
-  transition: transform 180ms ease, background-color 180ms ease;
-}
-
-.primaryLink:hover,
-.primaryLink:focus-visible {
-  color: var(--site-canvas);
-  background: var(--ifm-color-primary);
-  text-decoration: none;
+.issueCard:hover {
+  border-color: color-mix(in srgb, var(--ifm-color-primary) 34%, var(--site-line));
+  box-shadow: var(--site-shadow-md);
   transform: translateY(-2px);
 }
 
-.primaryLink:focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--ifm-color-primary) 28%, transparent);
-  outline-offset: 3px;
-}
+.issueCardConditional { background: linear-gradient(145deg, color-mix(in srgb, #c87852 6%, transparent), var(--site-surface) 58%); }
 
-.routeCard {
+.issueCardTop {
   display: flex;
-  flex-direction: column;
-  background: var(--site-surface-soft);
+  min-height: 1.35rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: .7rem;
 }
 
-.routeList {
-  display: grid;
-  gap: .1rem;
-  margin: 1.25rem 0;
+.issueNumber { font-size: .61rem; letter-spacing: .1em; }
+
+.conditionalFlag {
+  padding: .2rem .42rem;
+  border: 1px solid color-mix(in srgb, #c87852 30%, transparent);
+  border-radius: 999px;
+  color: color-mix(in srgb, #bc6542 78%, var(--site-ink));
+  font-size: .66rem;
+  font-weight: 680;
+  white-space: nowrap;
 }
 
-.routeItem {
-  position: relative;
-  display: grid;
-  grid-template-columns: 2rem 1fr;
-  align-items: center;
-  min-height: 2.1rem;
+.issueCard h3 {
+  margin: .85rem 0 .6rem;
   color: var(--site-ink);
-  font-size: .9rem;
+  font-size: 1.16rem;
+  font-weight: 680;
+  letter-spacing: -.035em;
+  line-height: 1.4;
 }
 
-.routeIndex {
+.issueCard h3 a { color: inherit; text-decoration: none; }
+.issueCard h3 a:hover { color: var(--ifm-color-primary); }
+
+.issueDescription {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0;
   color: var(--site-muted);
-  font-family: var(--ifm-font-family-monospace);
+  font-size: .83rem;
+  line-height: 1.72;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.issueMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-top: 1rem;
+}
+
+.issueMeta span {
+  padding: .27rem .48rem;
+  border: 1px solid var(--site-line);
+  border-radius: .42rem;
+  color: var(--site-muted);
+  background: var(--site-surface-soft);
   font-size: .68rem;
 }
 
-.routeLine {
-  position: absolute;
-  top: 2rem;
-  left: .29rem;
-  width: 1px;
-  height: 1rem;
-  background: var(--site-line-strong);
-}
-
-.routeNote {
-  margin-top: auto !important;
+.readLink {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  align-self: flex-start;
+  margin-top: auto;
   padding-top: 1rem;
-  border-top: 1px solid var(--site-line);
-  font-size: .8rem !important;
-  line-height: 1.65 !important;
+  color: var(--site-ink);
+  font-size: .8rem;
+  font-weight: 700;
+  text-decoration: none;
 }
 
-@media (max-width: 900px) {
-  .featureGrid {
-    grid-template-columns: 1fr;
-  }
+.readLink:hover { color: var(--ifm-color-primary); }
+.companionLinks { display: flex; flex-wrap: wrap; gap: .5rem .9rem; margin-top: .75rem; }
+.companionLinks a { color: var(--site-muted); font-size: .72rem; text-decoration: underline; text-underline-offset: 3px; }
+
+.libraryHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 26rem);
+  align-items: end;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
-@media (max-width: 700px) {
-  .hero {
-    padding-top: 4.6rem;
-  }
+.searchBox {
+  display: flex;
+  min-height: 3.1rem;
+  align-items: center;
+  gap: .65rem;
+  padding: 0 .95rem;
+  border: 1px solid var(--site-line);
+  border-radius: .9rem;
+  background: var(--site-surface);
+  box-shadow: var(--site-shadow-sm);
+}
 
-  .hero h1 {
-    font-size: clamp(2.9rem, 14vw, 4.3rem);
-  }
+.searchBox:focus-within {
+  border-color: color-mix(in srgb, var(--ifm-color-primary) 52%, var(--site-line));
+  outline: 3px solid color-mix(in srgb, var(--ifm-color-primary) 12%, transparent);
+}
 
-  .feature {
-    padding-inline: .75rem;
-  }
+.searchIcon { color: var(--site-muted); font-size: 1.5rem; line-height: 1; transform: rotate(-20deg); }
+.searchBox input { width: 100%; min-width: 0; border: 0; outline: 0; color: var(--site-ink); background: transparent; font: inherit; font-size: .84rem; }
+.searchBox input::placeholder { color: var(--site-muted); opacity: .78; }
+.searchBox button { border: 0; color: var(--site-muted); background: transparent; cursor: pointer; font-size: 1.2rem; }
 
-  .featureTopline {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: .35rem;
-  }
+.filterBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+  margin: 0 0 1rem;
+}
 
-  .featureGrid h2 {
-    font-size: 2.45rem;
-  }
+.filterBar button {
+  min-height: 2.2rem;
+  padding: .42rem .8rem;
+  border: 1px solid var(--site-line);
+  border-radius: 999px;
+  color: var(--site-muted);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: .73rem;
+  font-weight: 620;
+}
 
-  .primaryLink {
-    justify-content: center;
-    width: 100%;
-  }
+.filterBar button:hover,
+.filterBar .filterActive { border-color: var(--site-ink); color: var(--site-canvas); background: var(--site-ink); }
+.resultCount { margin-left: auto; color: var(--site-muted); font-size: .75rem; }
+
+.emptyState {
+  display: grid;
+  justify-items: start;
+  gap: .45rem;
+  padding: 2rem;
+  border: 1px dashed var(--site-line-strong);
+  border-radius: var(--site-radius-lg);
+  color: var(--site-muted);
+}
+
+.emptyState strong { color: var(--site-ink); }
+.emptyState button { margin-top: .5rem; padding: .55rem .8rem; border: 0; border-radius: .55rem; color: var(--site-canvas); background: var(--site-ink); cursor: pointer; }
+
+.companions {
+  display: grid;
+  grid-template-columns: minmax(14rem, .7fr) minmax(0, 1.3fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.companionGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
+
+.companionGrid a {
+  display: grid;
+  gap: .6rem;
+  padding: 1rem;
+  border: 1px solid var(--site-line);
+  border-radius: var(--site-radius-lg);
+  color: var(--site-ink);
+  background: var(--site-surface-soft);
+  text-decoration: none;
+}
+
+.companionGrid a:hover { border-color: var(--ifm-color-primary); }
+.companionGrid a > span { font-size: .58rem; }
+.companionGrid strong { font-size: .93rem; }
+.companionGrid small { color: var(--site-muted); font-size: .72rem; line-height: 1.55; }
+.visuallyHidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+
+@media (max-width: 1050px) {
+  .issueGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  .hero { padding-top: 4.5rem; }
+  .featuredGrid,
+  .issueGrid,
+  .companionGrid { grid-template-columns: 1fr; }
+  .libraryHeader,
+  .companions { grid-template-columns: 1fr; }
+  .libraryHeader { align-items: start; }
+  .heroFacts { gap: .7rem 1rem; }
+  .resultCount { width: 100%; margin: .15rem 0 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .primaryLink {
-    transition: none;
-  }
+  .issueCard { transition: none; }
 }

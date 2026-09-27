@@ -1,0 +1,901 @@
+[
+  {
+    "issue": 1,
+    "slug": "malaysia-peninsula-8-day",
+    "route": "/explore/travel/malaysia-peninsula-8-day",
+    "title": "馬來西亞西馬半島 9 日：博物館、歷史遺跡與二戰",
+    "description": "從馬六甲、檳城到布央谷、太平、怡保與吉隆坡；把殖民港口、博物館、戰爭遺址、公共交通、預算與現場風險放進同一份可執行計畫。",
+    "destination": "馬來西亞",
+    "days": 9,
+    "nights": 8,
+    "featured": true,
+    "companionRoutes": [
+      "/explore/travel/malaysia-10-day-kuala-lumpur-melaka-ipoh-taiping-penang"
+    ]
+  },
+  {
+    "issue": 2,
+    "slug": "indonesia-java-9-day-jakarta-yogyakarta-surabaya",
+    "route": "/explore/travel/indonesia-java-9-day-jakarta-yogyakarta-surabaya",
+    "title": "印度尼西亞爪哇 10 天：雅加達入、日惹古蹟、泗水出",
+    "description": "雅加達入、泗水出的爪哇10天9晚旅行計畫：增加雅加達完整城市日，串聯婆羅浮屠、普蘭巴南、日惹王宮、泗水殖民港城與戰爭記憶。",
+    "destination": "印度尼西亞",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "歷史文化"
+    ],
+    "featured": true,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 3,
+    "slug": "sri-lanka-10-day-cultural-highlands-south",
+    "route": "/explore/travel/sri-lanka-10-day-cultural-highlands-south",
+    "title": "斯里兰卡 10 天：文化三角、康提高地与南岸古城",
+    "description": "科伦坡进出，串联狮子岩、丹布勒、波隆纳鲁沃、康提、茶山铁路、埃勒与加勒的斯里兰卡 10 天路线；含交通取舍、天气备选和住宿节奏。",
+    "destination": "斯里兰卡",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "世界遗产",
+      "自然"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 4,
+    "slug": "myanmar-10-day-conditional-heritage",
+    "route": "/explore/travel/myanmar-10-day-conditional-heritage",
+    "title": "緬甸 10 天旅行規劃：安全條件未滿足前暫不出發",
+    "description": "一份負責任的緬甸十日旅行預案：先說明目前安全警示，再列出未來形勢改善後的文化路線框架、取消條件與核對清單；不是目前可直接預訂的行程。",
+    "destination": "缅甸",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "旅行安全",
+      "历史文化"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": true
+  },
+  {
+    "issue": 5,
+    "slug": "vietnam-north-10-day-hanoi-ninh-binh-sapa",
+    "route": "/explore/travel/vietnam-north-10-day-hanoi-ninh-binh-sapa",
+    "title": "越南北部 10 天：河内、宁平與沙巴山地慢行",
+    "description": "河内往返的 10 天 9 晚北越路線，串聯升龍皇城、寧平喀斯特與船行、沙巴梯田村落及番西邦；含交通、住宿、安全節奏與簽證核對。",
+    "destination": "越南",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "沙巴",
+      "宁平",
+      "自然"
+    ],
+    "featured": false,
+    "companionRoutes": [
+      "/explore/travel/vietnam-north-8-day-hanoi-ninh-binh-sapa"
+    ],
+    "conditional": false
+  },
+  {
+    "issue": 6,
+    "slug": "cambodia-10-day-phnom-penh-battambang-angkor",
+    "route": "/explore/travel/cambodia-10-day-phnom-penh-battambang-angkor",
+    "title": "柬埔寨 10 天：金边记忆、马德望街城与吴哥古都",
+    "description": "金边进、暹粒出（或加一晚回金边）的柬埔寨 10 天 9 晚路线：纪念遗址、殖民街城、吴哥窟三日票与实用交通、安全边界。",
+    "destination": "柬埔寨",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "世界遗产",
+      "历史文化"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 7,
+    "slug": "laos-10-day-vientiane-vang-vieng-luang-prabang",
+    "route": "/explore/travel/laos-10-day-vientiane-vang-vieng-luang-prabang",
+    "title": "老挝 10 天：万象、万荣与琅勃拉邦的铁路山河线",
+    "description": "万象进、琅勃拉邦出，10 天 9 晚串联首都寺庙与近代史、万荣喀斯特山水、世界遗产古城与光西瀑布；含铁路、住宿、签证和季风／未爆弹安全安排。",
+    "destination": "老挝",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "世界遗产",
+      "铁路",
+      "自然风光"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 8,
+    "slug": "philippines-10-day-manila-cebu-bohol",
+    "route": "/explore/travel/philippines-10-day-manila-cebu-bohol",
+    "title": "菲律宾 10 天：马尼拉、宿务与薄荷岛历史自然线",
+    "description": "马尼拉入出，串联王城、国家博物馆、宿务殖民史与薄荷岛地质景观的 10 天菲律宾路线；含岛际交通、住宿分区、签证与天气备选。",
+    "destination": "菲律宾",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "历史文化",
+      "海岛自然"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 9,
+    "slug": "thailand-10-day-bangkok-ayutthaya-chiang-mai",
+    "route": "/explore/travel/thailand-10-day-bangkok-ayutthaya-chiang-mai",
+    "title": "泰国 10 天：曼谷、阿瑜陀耶与清迈历史文化线",
+    "description": "曼谷入、清迈出，串联拉达那哥欣王城、阿瑜陀耶古都、兰纳文化与泰北山地的泰国 10 天路线；含交通、住宿、签证与季节备选。",
+    "destination": "泰国",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "历史文化",
+      "世界遗产",
+      "自然"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 10,
+    "slug": "brunei-10-day-bandar-temburong-tutong-belait",
+    "route": "/explore/travel/brunei-10-day-bandar-temburong-tutong-belait",
+    "title": "文莱 10 天：水上村落、婆罗洲雨林与油田海岸",
+    "description": "文莱国际机场 BWN 往返，10 天 9 晚走访斯里巴加湾市、淡布隆雨林、都东黑水湖与马来奕油田海岸；含跨区交通、签证、清真寺礼仪与雨季备选。",
+    "destination": "文莱",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "婆罗洲",
+      "雨林",
+      "文化遗产"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 11,
+    "slug": "singapore-10-day-city-heritage-nature",
+    "route": "/explore/travel/singapore-10-day-city-heritage-nature",
+    "title": "新加坡 10 天：港口史、多元街區、金融城市與島嶼自然",
+    "description": "新加坡樟宜機場往返，10 天 9 晚以一間市區住宿為基地，走讀市民區、華人／馬來／印度社群歷史、金融區、植物園、二戰遺址、南部山徑與烏敏島。",
+    "destination": "新加坡",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "城市史",
+      "自然",
+      "二戰"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 12,
+    "slug": "timor-leste-10-day-dili-atauro-baucau",
+    "route": "/explore/travel/timor-leste-10-day-dili-atauro-baucau",
+    "title": "東帝汶 10 天：帝力、阿陶羅島與包考高原海岸",
+    "description": "帝力 DIL 往返，10 天 9 晚以首都為主要基地，搭官方渡輪住阿陶羅島兩晚，白天公路往返葡萄牙殖民舊城包考；附簽證、美元現金、道路與海上安全備案。",
+    "destination": "東帝汶",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "帝力",
+      "阿陶羅島",
+      "包考"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 13,
+    "slug": "india-10-day-delhi-agra-jaipur",
+    "route": "/explore/travel/india-10-day-delhi-agra-jaipur",
+    "title": "印度北部 10 天：德里、阿格拉與齋浦爾金三角",
+    "description": "德里往返，串聯舊德里、莫臥兒遺產、泰姬陵與齋浦爾古城的10天9晚初訪路線；含週五閉館排期、城際交通、住宿、簽證與安全備選。",
+    "destination": "印度",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "世界遺產",
+      "歷史文化"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 14,
+    "slug": "nepal-10-day-kathmandu-pokhara-heritage-mountains",
+    "route": "/explore/travel/nepal-10-day-kathmandu-pokhara-heritage-mountains",
+    "title": "尼泊尔 10 天：加德满都谷地遗产与博卡拉山湖",
+    "description": "加德满都往返，走完加德满都谷地七处 UNESCO 古迹群，再飞往博卡拉看安纳普尔纳山景与费瓦湖；含签证、交通、住宿、季风安全与航班延误预案。",
+    "destination": "尼泊尔",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "世界遗产",
+      "喜马拉雅",
+      "自然"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 15,
+    "slug": "bangladesh-10-day-dhaka-sylhet-sreemangal",
+    "route": "/explore/travel/bangladesh-10-day-dhaka-sylhet-sreemangal",
+    "title": "孟加拉 10 天：達卡、錫爾赫特與斯里曼加爾",
+    "description": "以達卡往返，串聯首都歷史、索納爾岡古城、錫爾赫特河谷與斯里曼加爾茶園森林；含中國護照簽證、安全、季節與交通備案。",
+    "destination": "孟加拉",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "歷史文化",
+      "自然"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 16,
+    "slug": "pakistan-10-day-islamabad-taxila-lahore",
+    "route": "/explore/travel/pakistan-10-day-islamabad-taxila-lahore",
+    "title": "巴基斯坦 10 天文化線：伊斯蘭堡、塔克西拉與拉合爾",
+    "description": "一份以安全條件為先的巴基斯坦 10 天 9 晚文化路線框架：伊斯蘭堡進、拉合爾出，串聯塔克西拉犍陀羅遺址與莫臥兒遺產；不代表目前可安全出發。",
+    "destination": "巴基斯坦",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "旅行安全",
+      "世界遗产",
+      "历史文化"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": true
+  },
+  {
+    "issue": 17,
+    "slug": "bhutan-10-day-paro-thimphu-punakha",
+    "route": "/explore/travel/bhutan-10-day-paro-thimphu-punakha",
+    "title": "不丹 10 天：帕羅、廷布與普那卡山谷",
+    "description": "帕羅 PBH 往返的 10 天 9 晚西不丹行程，串聯宗堡、山口與虎穴寺；列明簽證、每晚 SDF、全程導遊規定、包車和季風備案。",
+    "destination": "不丹",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "喜馬拉雅",
+      "宗教文化",
+      "山地"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 18,
+    "slug": "maldives-10-day-male-maafushi-gulhi",
+    "route": "/explore/travel/maldives-10-day-male-maafushi-gulhi",
+    "title": "馬爾地夫 10 天：馬列、馬夫西與古麗居民島慢旅",
+    "description": "以居民島旅宿和公共渡輪規劃馬爾地夫 10 天 9 晚：馬列文化、馬夫西與古麗海島生活、浮潛和天候／船班備案，不把度假村或水上飛機當成預設。",
+    "destination": "馬爾地夫",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "海島",
+      "浮潛",
+      "公共交通"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 19,
+    "slug": "afghanistan-10-day-conditional-heritage",
+    "route": "/explore/travel/afghanistan-10-day-conditional-heritage",
+    "title": "阿富汗 10 天行程框架：安全条件满足前不要出发",
+    "description": "阿富汗历史文化路线的条件式预案：当前官方警示优先，不建议前往；仅在警示、交通、签证、保险与景区准入均重新核验后，才可评估喀布尔与巴米扬的十日安排。",
+    "destination": "阿富汗",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "旅行安全",
+      "世界遗产",
+      "历史文化"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": true
+  },
+  {
+    "issue": 20,
+    "slug": "taiwan-10-day-taipei-hualien-taitung-kaohsiung",
+    "route": "/explore/travel/taiwan-10-day-taipei-hualien-taitung-kaohsiung",
+    "title": "臺灣 10 天：臺北、花蓮、臺東與高雄的鐵道山海線",
+    "description": "桃園進、高雄出，九晚串聯臺北城市史、花東海岸鐵道、花蓮與臺東自然、高雄港灣和臺南古城；含赴臺資格提醒、太魯閣震後開放限制與交通住宿備案。",
+    "destination": "臺灣",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "臺北",
+      "花蓮",
+      "臺東"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 21,
+    "slug": "hong-kong-10-day-island-heritage-city",
+    "route": "/explore/travel/hong-kong-10-day-island-heritage-city",
+    "title": "香港 10 天：港島城市史、新界古村與離島山海",
+    "description": "香港國際機場進出、九晚住同一區，深走港島、九龍、新界、長洲、大嶼山與西貢；含入境文件、渡輪交通、步道天氣備案與住宿建議。",
+    "destination": "香港",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "城市文化",
+      "離島",
+      "徒步"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 22,
+    "slug": "macao-10-day-heritage-peninsula-taipa-coloane",
+    "route": "/explore/travel/macao-10-day-heritage-peninsula-taipa-coloane",
+    "title": "澳門 10 天：世界遺產街巷、離島聚落與海岸慢旅",
+    "description": "澳門國際機場進出、九晚住一處，分區走完半島歷史城區、氹仔舊城、路環漁村與步道；含入境、巴士、博物館休館日和颱風備案。",
+    "destination": "澳門",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "世界遺產",
+      "城市步行",
+      "離島"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 23,
+    "slug": "china-10-day-beijing-xian-shanghai",
+    "route": "/explore/travel/china-10-day-beijing-xian-shanghai",
+    "title": "中國 10 天：北京、西安與上海的古都到現代城市線",
+    "description": "北京進、上海出，白天高鐵串聯故宮與長城、秦始皇兵馬俑及上海城市文化；含 10 天 9 晚安排、住宿區域、預約門檻和交通緩衝。",
+    "destination": "中國",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "歷史文化",
+      "高鐵"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 24,
+    "slug": "japan-10-day-tokyo-kyoto-nara-osaka",
+    "route": "/explore/travel/japan-10-day-tokyo-kyoto-nara-osaka",
+    "title": "日本 10 天：東京、鎌倉、京都、奈良與大阪經典文化線",
+    "description": "東京進、關西機場出，九晚住三站；以公共交通串起東京街區、鎌倉古都、京都寺社、奈良遺產與大阪城下町。",
+    "destination": "日本",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "城市文化",
+      "世界遺產",
+      "鐵道"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 25,
+    "slug": "south-korea-10-day-seoul-gyeongju-busan",
+    "route": "/explore/travel/south-korea-10-day-seoul-gyeongju-busan",
+    "title": "韓國 10 天：首爾、慶州與釜山的古都海港線",
+    "description": "仁川進、釜山出，九晚串聯首爾宮殿與城市史、慶州新羅遺產、釜山港灣與海岸；含中國普通護照簽證提醒、KTX交通、住宿分區與首爾往返備案。",
+    "destination": "韓國",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "首爾",
+      "慶州",
+      "釜山"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 26,
+    "slug": "mongolia-10-day-ulaanbaatar-kharkhorin-orkhon-terelj",
+    "route": "/explore/travel/mongolia-10-day-ulaanbaatar-kharkhorin-orkhon-terelj",
+    "title": "蒙古 10 天：烏蘭巴托、哈拉和林、鄂爾渾河谷與特勒吉草原",
+    "description": "烏蘭巴托往返，九晚三處住宿，從首都博物館走到蒙古帝國舊都、鄂爾渾河谷與特勒吉國家公園；含電子簽證、48 小時住宿登記與燃油／路況風險閘門。",
+    "destination": "蒙古",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "草原",
+      "世界遺產",
+      "文化景觀"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 27,
+    "slug": "north-korea-10-day-conditional-tour-framework",
+    "route": "/explore/travel/north-korea-10-day-conditional-tour-framework",
+    "title": "北韓 10 天行程框架：一般旅遊恢復前暫不出發",
+    "description": "以平壤、妙香山與開城世界遺產規劃北韓 10 天條件式文化路線；先核實目前一般旅遊仍未恢復、護照資格、官方警示、旅行團與交通准入。",
+    "destination": "北韓",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "朝鮮",
+      "旅行安全",
+      "世界遺產"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": true
+  },
+  {
+    "issue": 28,
+    "slug": "kazakhstan-10-day-almaty-saty-astana",
+    "route": "/explore/travel/kazakhstan-10-day-almaty-saty-astana",
+    "title": "哈薩克 10 天：阿拉木圖山湖、恰倫峽谷與阿斯塔納",
+    "description": "阿拉木圖進、阿斯塔納出，10 天 9 晚串起哈薩克南部山湖與首都建築；含薩蒂村住宿、恰倫峽谷、科爾賽湖、凱恩迪湖及季節／道路備案。",
+    "destination": "哈薩克",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "中亞",
+      "自然",
+      "歷史文化"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 29,
+    "slug": "kyrgyzstan-10-day-bishkek-issyk-kul-song-kol",
+    "route": "/explore/travel/kyrgyzstan-10-day-bishkek-issyk-kul-song-kol",
+    "title": "吉爾吉斯 10 天：比什凱克、伊塞克湖與松庫爾草原",
+    "description": "夏季版比什凱克往返 10 天 9 晚路線，串起布拉納塔、伊塞克湖北岸、卡拉科爾、南岸峽谷與松庫爾氈房；含中國護照簽證、山路季節與高海拔備案。",
+    "destination": "吉爾吉斯",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "中亞",
+      "自然",
+      "絲綢之路"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 30,
+    "slug": "tajikistan-10-day-dushanbe-fann-haftkul",
+    "route": "/explore/travel/tajikistan-10-day-dushanbe-fann-haftkul",
+    "title": "塔吉克斯坦 10 天：杜尚别、伊斯坎达尔湖、彭吉肯特與七湖",
+    "description": "杜尚别往返，10 天 9 晚走首都、希萨尔古城、伊斯坎达尔湖、彭吉肯特與 UNESCO 萨拉子目；含中国护照签证、包车住宿、山路季节和边境安全检查。",
+    "destination": "塔吉克斯坦",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "中亞",
+      "絲綢之路",
+      "山湖"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 31,
+    "slug": "turkmenistan-10-day-ashgabat-mary-darvaza",
+    "route": "/explore/travel/turkmenistan-10-day-ashgabat-mary-darvaza",
+    "title": "土庫曼斯坦 10 天：阿什哈巴德、古代梅爾夫與卡拉庫姆沙漠",
+    "description": "阿什哈巴德往返的土庫曼斯坦十日文化路線：帕提亞尼薩、馬雷古城與梅爾夫、達瓦札沙漠；簽證邀請函、區域許可和交通由合規機構預先核實。",
+    "destination": "土庫曼斯坦",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "絲綢之路",
+      "世界遺產"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 32,
+    "slug": "uzbekistan-10-day-silk-road-tashkent-khiva",
+    "route": "/explore/travel/uzbekistan-10-day-silk-road-tashkent-khiva",
+    "title": "烏茲別克斯坦 10 天：塔什干、撒馬爾罕、布哈拉與希瓦",
+    "description": "塔什干進出、火車串聯絲路四城的烏茲別克斯坦十日行程：含中國普通護照免簽、Afrosiyob 預訂、布哈拉至希瓦新列車、住宿區域與離境緩衝。",
+    "destination": "烏茲別克斯坦",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "絲綢之路",
+      "世界遺產"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 33,
+    "slug": "armenia-10-day-yerevan-dilijan-gyumri",
+    "route": "/explore/travel/armenia-10-day-yerevan-dilijan-gyumri",
+    "title": "亞美尼亞 10 天：埃里溫、塞凡湖、迪利然與久姆里",
+    "description": "埃里溫進出，10 天 9 晚串聯亞美尼亞首都、加尼與格加爾德、埃奇米阿津、南部修道院、塞凡湖森林和久姆里；含中國普通護照免簽、邊境避讓與交通住宿節奏。",
+    "destination": "亞美尼亞",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "高加索",
+      "歷史文化"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 34,
+    "slug": "azerbaijan-10-day-baku-sheki-gobustan",
+    "route": "/explore/travel/azerbaijan-10-day-baku-sheki-gobustan",
+    "title": "亞塞拜然 10 天：巴庫、戈布斯坦與舍基的絲路文化線",
+    "description": "巴庫進出、10 天 9 晚；串聯巴庫城牆古城、阿布歇隆火祠、戈布斯坦岩畫與舍基汗宮。附中國普通護照免簽、區域安全邊界、城際巴士和旅行備案。",
+    "destination": "亞塞拜然",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "高加索",
+      "歷史文化"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 35,
+    "slug": "georgia-10-day-tbilisi-kazbegi-kakheti",
+    "route": "/explore/travel/georgia-10-day-tbilisi-kazbegi-kakheti",
+    "title": "喬治亞 10 天：第比利斯、卡茲別克與卡赫季山河文化線",
+    "description": "第比利斯進出，10 天 9 晚；走訪第比利斯舊城、姆茨赫塔世界遺產、格魯吉亞軍事公路與卡茲別克高山、卡赫季酒鄉。附中國護照免簽、2026 強制旅遊保險、道路及示威安全提醒。",
+    "destination": "喬治亞",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "高加索",
+      "歷史文化",
+      "自然"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 36,
+    "slug": "cyprus-10-day-larnaca-nicosia-troodos-paphos",
+    "route": "/explore/travel/cyprus-10-day-larnaca-nicosia-troodos-paphos",
+    "title": "塞浦路斯 10 日：拉纳卡、尼科西亚、特罗多斯与帕福斯",
+    "description": "从拉纳卡进、帕福斯出，十天九晚串起新石器遗址、分界线城市、特罗多斯山地教堂与帕福斯古迹；含中国护照签证、巴士取舍、住宿和安全边界。",
+    "destination": "塞浦路斯",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "亚洲",
+      "世界遗产",
+      "地中海"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 37,
+    "slug": "turkiye-10-day-istanbul-cappadocia-ephesus",
+    "route": "/explore/travel/turkiye-10-day-istanbul-cappadocia-ephesus",
+    "title": "土耳其 10 天：伊斯坦堡、卡帕多奇亞與以弗所",
+    "description": "伊斯坦堡進、伊茲密爾出，10 天 9 晚串聯拜占庭與鄂圖曼古城、卡帕多奇亞岩窟景觀、塞爾丘克與以弗所；含簽證、安全、轉場、住宿和熱氣球備案。",
+    "destination": "土耳其",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "歷史文化",
+      "世界遺產",
+      "自然"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 38,
+    "slug": "iran-10-day-conditional-culture",
+    "route": "/explore/travel/iran-10-day-conditional-culture",
+    "title": "伊朗 10 天行程框架：官方警示解除前暫不出發",
+    "description": "以德黑蘭、伊斯法罕、亞茲德與設拉子文化遺產串成伊朗 10 天條件式路線；先列中國領事、英國與澳洲旅行警示，明確標示目前不建議前往。",
+    "destination": "伊朗",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "旅行安全",
+      "世界遺產",
+      "歷史文化"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": true
+  },
+  {
+    "issue": 39,
+    "slug": "iraq-10-day-conditional-heritage",
+    "route": "/explore/travel/iraq-10-day-conditional-heritage",
+    "title": "伊拉克 10 天文化路线框架：官方旅行警示解除前暂不出发",
+    "description": "以巴格达、巴比伦、卡尔巴拉、纳杰夫与乌尔古城构想伊拉克 10 天文化路线；先列中国领事提醒及多国旅行警示，明确说明目前不建议前往。",
+    "destination": "伊拉克",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "旅行安全",
+      "世界遗产",
+      "历史文化"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": true
+  },
+  {
+    "issue": 40,
+    "slug": "israel-10-day-tel-aviv-haifa-jerusalem",
+    "route": "/explore/travel/israel-10-day-tel-aviv-haifa-jerusalem",
+    "title": "以色列 10 日：特拉維夫、海法與耶路撒冷｜安全條件恢復後",
+    "description": "以特拉維夫進出，串聯包浩斯城市、海法巴哈伊花園、阿卡港城與耶路撒冷多宗教遺產；附中國普通護照 B/2 簽證、安全風險閘門及安息日交通備案。",
+    "destination": "以色列",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "亞洲",
+      "世界遺產",
+      "歷史文化"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": true
+  },
+  {
+    "issue": 41,
+    "slug": "palestine-10-day-west-bank-heritage",
+    "route": "/explore/travel/palestine-10-day-west-bank-heritage",
+    "title": "巴勒斯坦约旦河西岸 10 天：杰里科、拉姆安拉与伯利恒｜仅作未来条件式路线",
+    "description": "以杰里科进出框架串联古城、巴勒斯坦博物馆、伯利恒与希伯伦；中国外交部当前提醒近期暂勿前往，本文不是现时出行建议。",
+    "destination": "巴勒斯坦",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "世界遗产",
+      "条件式路线"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 42,
+    "slug": "lebanon-10-day-beirut-byblos-qadisha",
+    "route": "/explore/travel/lebanon-10-day-beirut-byblos-qadisha",
+    "title": "黎巴嫩 10 天：贝鲁特、腓尼基海岸与卡迪沙山谷｜安全条件恢复后",
+    "description": "以贝鲁特进出串联首都历史、朱拜勒、巴特伦、卡迪沙圣谷与黎巴嫩雪松；依据实时地区警示设置出发门槛，巴勒贝克、安杰尔和南部遗址不纳入当前路线。",
+    "destination": "黎巴嫩",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "世界遗产",
+      "条件式路线"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 43,
+    "slug": "jordan-10-day-amman-jerash-petra-wadi-rum",
+    "route": "/explore/travel/jordan-10-day-amman-jerash-petra-wadi-rum",
+    "title": "約旦 10 日：安曼、傑拉什、佩特拉與月亮谷",
+    "description": "以安曼入出，串聯傑拉什、薩爾特、馬達巴、死海、卡拉克、佩特拉與月亮谷；含當前區域風險閘門、中國護照簽證、Jordan Pass、交通與住宿安排。",
+    "destination": "約旦",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "亞洲",
+      "世界遺產",
+      "歷史文化"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 44,
+    "slug": "syria-10-day-damascus-aleppo-conditional",
+    "route": "/explore/travel/syria-10-day-damascus-aleppo-conditional",
+    "title": "叙利亚 10 天文化路线框架：安全建议解除前不要出发",
+    "description": "大马士革与阿勒颇的未来条件式文化路线；中国领事服务网现列红色极高风险，本文不是当前出行建议，不应据此订票。",
+    "destination": "叙利亚",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "旅行安全",
+      "历史文化"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": true
+  },
+  {
+    "issue": 45,
+    "slug": "saudi-arabia-10-day-riyadh-alula-jeddah",
+    "route": "/explore/travel/saudi-arabia-10-day-riyadh-alula-jeddah",
+    "title": "沙特阿拉伯 10 天：利雅得、欧拉与吉达的古文明和红海城市",
+    "description": "利雅得进、吉达出，10 天 9 晚串联迪里耶、希吉拉古城、欧拉绿洲与吉达老城；含国内航段、住宿区、签证与当前安全条件。",
+    "destination": "沙特阿拉伯",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "历史文化",
+      "世界遗产"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 46,
+    "slug": "uae-10-day-dubai-abu-dhabi-al-ain",
+    "route": "/explore/travel/uae-10-day-dubai-abu-dhabi-al-ain",
+    "title": "阿聯酋 10 天：杜拜、沙迦、阿布達比與艾因",
+    "description": "杜拜 DXB 進、阿布達比 AUH 出，十天九晚串聯海灣港口史、當代城市、清真寺與羅浮宮、沙迦文化區和艾因綠洲；附當前區域安全條件、跨城巴士與公共交通規劃。",
+    "destination": "阿聯酋",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "阿拉伯半島",
+      "城市文化",
+      "歷史"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": true
+  },
+  {
+    "issue": 47,
+    "slug": "qatar-10-day-doha-north-desert",
+    "route": "/explore/travel/qatar-10-day-doha-north-desert",
+    "title": "卡塔尔 10 天：多哈城市文化、北部采珠古港与沙漠海岸",
+    "description": "多哈进出、九晚固定住宿，以地铁串联博物馆与老城，分日走访祖巴拉、豪尔红树林、西部岩岸和内海沙漠。",
+    "destination": "卡塔尔",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "海湾",
+      "世界遗产",
+      "博物馆"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 48,
+    "slug": "bahrain-10-day-manama-dilmun-pearling",
+    "route": "/explore/travel/bahrain-10-day-manama-dilmun-pearling",
+    "title": "巴林 10 日：迪尔蒙古文明、採珠之路與海灣島國生活",
+    "description": "以麥納麥為單一住宿基地，走訪巴林堡、穆哈拉格採珠之路、迪爾蒙墓塚、阿里陶藝與南部自然景觀；附交通、簽證、安全、預算與閉館日安排。",
+    "destination": "巴林",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "亞洲",
+      "世界遺產",
+      "歷史文化"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 49,
+    "slug": "kuwait-10-day-kuwait-city-failaka-heritage",
+    "route": "/explore/travel/kuwait-10-day-kuwait-city-failaka-heritage",
+    "title": "科威特 10 日：海灣城市史、島嶼遺址與沙漠邊界",
+    "description": "以科威特城單一住宿為基地，安排老城、海事與石油現代史、博物館、海岸及可取消的費萊凱島日；含當前安全閘門、中國普通護照簽證核查與交通備案。",
+    "destination": "科威特",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "亞洲",
+      "海灣",
+      "歷史文化"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 50,
+    "slug": "oman-10-day-muscat-sur-nizwa",
+    "route": "/explore/travel/oman-10-day-muscat-sur-nizwa",
+    "title": "阿曼 10 天：马斯喀特、海龟海岸、沙漠与尼兹瓦",
+    "description": "马斯喀特进出，沿东北海岸到苏尔与拉斯金兹，再穿越沙漠、尼兹瓦和阿赫达尔山；含阿曼 14 天免签条件、4WD 交通取舍与山洪安全备选。",
+    "destination": "阿曼",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "海湾",
+      "沙漠",
+      "历史文化"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 51,
+    "slug": "yemen-10-day-sanaa-hadramaut-conditional",
+    "route": "/explore/travel/yemen-10-day-sanaa-hadramaut-conditional",
+    "title": "葉門 10 天：薩那與哈德拉毛古城｜安全條件解除後",
+    "description": "只作未來條件式文化路線框架：薩那古城與哈德拉毛希巴姆泥磚高樓；目前葉門仍屬極高風險，外交部提醒暫勿前往，本文不是現時旅行建議。",
+    "destination": "葉門",
+    "days": 10,
+    "nights": 9,
+    "tags": [
+      "阿拉伯半島",
+      "世界遺產",
+      "條件式行程"
+    ],
+    "featured": false,
+    "companionRoutes": [],
+    "conditional": true
+  }
+]

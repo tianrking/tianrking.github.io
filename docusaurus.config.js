@@ -129,6 +129,10 @@ const config = {
       {
         redirects: [
           {
+            from: '/explore/travel/asia-10-day-series',
+            to: '/explore/travel',
+          },
+          {
             from: '/blog/telink-tlsr8258-firmware-development-guide',
             to: '/embedded/telink/tlsr8258/sws-build-flash-verify',
           },

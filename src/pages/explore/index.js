@@ -85,7 +85,7 @@ export default function ExplorePage() {
         <section className={`container ${styles.featuredStrip}`} aria-labelledby="featured-indonesia">
           <div>
             <span className={styles.sectionKicker}>{indonesiaTravelSeries.eyebrow}</span>
-            <Heading as="h2" id="featured-indonesia">{indonesiaTravelSeries.title}</Heading>
+            <Heading as="h2" id="featured-indonesia">第二篇：{indonesiaTravelSeries.title}</Heading>
             <p>{indonesiaTravelSeries.description}</p>
           </div>
           <Link className={styles.featuredLink} to={indonesiaTravelSeries.route}>

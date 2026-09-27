@@ -521,7 +521,7 @@ export default function MalaysiaPeninsulaPage() {
         <header className={styles.hero}>
           <div className="container">
             <div className={styles.breadcrumb}><Link to="/explore/travel">行旅誌</Link><span>/</span><span>01</span></div>
-            <div className={styles.kicker}>MALAYSIA / PENINSULAR</div>
+            <div className={styles.kicker}>TRAVEL SERIES / 01</div>
             <Heading as="h1">馬來西亞西馬半島<br />9 日：博物館、歷史遺跡與二戰。</Heading>
             <p className={styles.lead}>
               從馬六甲的殖民要塞與港口史，到檳城的戰爭遺址、州立收藏與公共紀念，
@@ -706,7 +706,7 @@ export default function MalaysiaPeninsulaPage() {
         </section>
 
         <footer className={`container ${styles.lastSection}`}>
-          <Link to="/explore/travel">← 回到行旅誌</Link>
+          <Link to="/explore/travel">← 回到全部旅行專題</Link>
         </footer>
       </main>
     </Layout>
