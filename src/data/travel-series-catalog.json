@@ -770,7 +770,7 @@
     ],
     "featured": false,
     "companionRoutes": [],
-    "conditional": false
+    "conditional": true
   },
   {
     "issue": 45,
