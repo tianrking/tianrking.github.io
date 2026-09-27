@@ -76,11 +76,11 @@ export default function MDXPage({content: MDXPageContent}) {
               <div className={styles.eyebrowRow}>
                 <span className={styles.eyebrow}>{issueNumber ? issueLabel : 'TRAVEL NOTES / ROUTE GUIDE'}</span>
                 {duration && <span className={styles.duration}>{duration} 日 / {Math.max(0, duration - 1)} 晚</span>}
-                {isConditional && <span className={styles.safetyLabel}>先核對安全條件</span>}
+                {isConditional && <span className={styles.safetyLabel}>條件式行程</span>}
               </div>
               <h1>{title}</h1>
               <p className={styles.description}>{description}</p>
-              {isConditional && <p className={styles.safetyNote}>本篇只在官方旅行警示與安全條件允許時供規劃參考；請先看文首警示，不代表建議目前前往。</p>}
+              {isConditional && <p className={styles.safetyNote}>路線是否適用，取決於官方開放安排、旅客本人入境資格與當地安全形勢；正文列有現行限制。</p>}
             </div>
           </header>
         ) : null}
