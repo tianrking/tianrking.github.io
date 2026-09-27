@@ -91,6 +91,19 @@ for (const [index, slug] of order.entries()) {
   entries.push(entry);
 }
 
+// Hong Kong and Macau are intentionally excluded as standalone destinations
+// from this country-by-country travel series. Keep their legacy travel diaries
+// in the blog archive; only reject them if they are reintroduced as series items.
+const excludedSeriesDestinations = new Set(['香港', '澳門', '澳门', 'Hong Kong', 'Macau', 'Macao']);
+const excludedSeriesSlug = /(?:^|[-/])(?:hong-kong|macau|macao)(?:[-/]|$)/i;
+const excludedEntry = entries.find((entry) =>
+  excludedSeriesDestinations.has(entry.destination)
+  || excludedSeriesSlug.test(entry.slug)
+  || excludedSeriesSlug.test(entry.route));
+if (excludedEntry) {
+  throw new Error(`Excluded standalone destination in travel series: ${excludedEntry.slug}`);
+}
+
 const output = path.join(rootDirectory, 'src/data/travel-series-catalog.json');
 await fs.writeFile(output, `${JSON.stringify(entries, null, 2)}\n`, 'utf8');
 console.log(`Generated ${entries.length} numbered travel-series articles.`);
