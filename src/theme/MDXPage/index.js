@@ -21,6 +21,10 @@ const companionIssues = {
   'vietnam-north-8-day-hanoi-ninh-binh-sapa': 5,
 };
 
+function flattenToc(toc = []) {
+  return toc.flatMap((item) => [item, ...flattenToc(item.children)]);
+}
+
 export default function MDXPage({content: MDXPageContent}) {
   const location = useLocation();
   const {metadata, assets} = MDXPageContent;
@@ -48,6 +52,13 @@ export default function MDXPage({content: MDXPageContent}) {
   const companionIssue = companionIssues[slug];
   const issueNumber = issueIndex >= 0 ? issueIndex + 1 : companionIssue;
   const isCompanion = issueIndex < 0 && Boolean(companionIssue);
+  const dayLinks = isTravelArticle
+    ? flattenToc(MDXPageContent.toc)
+        .map((item) => ({...item, match: item.value.match(/^D\s*(\d+)\b/i)}))
+        .filter((item) => item.match)
+        .map((item) => ({...item, day: Number(item.match[1])}))
+        .sort((left, right) => left.day - right.day)
+    : [];
   const durationMatch = title.match(/(\d+)\s*(?:日|天)/);
   const duration = durationMatch ? Number(durationMatch[1]) : null;
   const issueLabel = isCompanion
@@ -81,6 +92,18 @@ export default function MDXPage({content: MDXPageContent}) {
               <h1>{title}</h1>
               <p className={styles.description}>{description}</p>
               {isConditional && <p className={styles.safetyNote}>路線是否適用，取決於官方開放安排、旅客本人入境資格與當地安全形勢；正文列有現行限制。</p>}
+              {dayLinks.length > 0 && (
+                <nav className={styles.dayJump} aria-label="逐日行程快速跳轉">
+                  <span className={styles.dayJumpLabel}>DAY BY DAY</span>
+                  <div className={styles.dayJumpLinks}>
+                    {dayLinks.map((day) => (
+                      <Link key={day.id} to={`#${day.id}`} aria-label={`跳到第 ${day.day} 天`}>
+                        D{String(day.day).padStart(2, '0')}
+                      </Link>
+                    ))}
+                  </div>
+                </nav>
+              )}
             </div>
           </header>
         ) : null}
