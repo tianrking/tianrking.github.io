@@ -52,15 +52,6 @@ const config = {
     },
   },
 
-  // Add scripts to all pages
-  scripts: [
-    {
-      src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8741919641227561',
-      async: true,
-      crossorigin: 'anonymous',
-    },
-  ],
-
   markdown: {
     mermaid: true,
     // Keep all content on native MDX syntax instead of the legacy MDX 1
