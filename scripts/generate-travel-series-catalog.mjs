@@ -12,6 +12,7 @@ const order = JSON.parse(
 const malaysiaGuidePath = path.join(travelDirectory, 'malaysia-peninsula-9-day/index.jsx');
 const malaysiaGuide = await fs.readFile(malaysiaGuidePath, 'utf8');
 const malaysiaDays = [...malaysiaGuide.matchAll(/^\s+day:\s*(\d+),$/gm)].map((match) => Number(match[1]));
+const malaysiaChineseCharacterBaseline = [...malaysiaGuide].filter((character) => /\p{Script=Han}/u.test(character)).length;
 if (malaysiaDays.join(',') !== '1,2,3,4,5,6,7,8,9') {
   throw new Error(`Travel Series / 01 must contain nine complete daily records: ${malaysiaGuidePath}`);
 }
@@ -162,6 +163,32 @@ for (const [index, slug] of order.entries()) {
     throw new Error(
       `Travel issue ${String(index + 1).padStart(2, '0')} must contain exactly D1–D${duration.days} in order: ${articlePath}`,
     );
+  }
+
+  const articleBody = source.replace(/^---\s*\r?\n[\s\S]*?\r?\n---\s*\r?\n/, '');
+  const chineseCharacters = [...articleBody].filter((character) => /\p{Script=Han}/u.test(character)).length;
+  if (chineseCharacters < malaysiaChineseCharacterBaseline) {
+    throw new Error(
+      `Travel issue ${String(index + 1).padStart(2, '0')} has ${chineseCharacters} Han characters; `
+      + `the Malaysia / 01 benchmark is ${malaysiaChineseCharacterBaseline}: ${articlePath}`,
+    );
+  }
+
+  const dailySections = [...source.matchAll(/^###\s+D\d+\b.*$/gm)];
+  for (const [dayIndex, dayHeading] of dailySections.entries()) {
+    const sectionEnd = dailySections[dayIndex + 1]?.index ?? source.length;
+    const nextTopLevelSection = source.indexOf('\n## ', dayHeading.index);
+    const end = nextTopLevelSection >= 0 && nextTopLevelSection < sectionEnd
+      ? nextTopLevelSection
+      : sectionEnd;
+    const dayText = source.slice(dayHeading.index, end);
+    const dayChineseCharacters = [...dayText].filter((character) => /\p{Script=Han}/u.test(character)).length;
+    if (dayChineseCharacters < 60) {
+      throw new Error(
+        `Travel issue ${String(index + 1).padStart(2, '0')} D${dayIndex + 1} is too brief `
+        + `(${dayChineseCharacters} Han characters; minimum 60): ${articlePath}`,
+      );
+    }
   }
 
   const contentRequirements = [
