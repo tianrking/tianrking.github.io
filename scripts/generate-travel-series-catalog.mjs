@@ -207,6 +207,12 @@ for (const [index, slug] of order.entries()) {
 // and this country-by-country series. Reject them if reintroduced as series items.
 const excludedSeriesDestinations = new Set(['香港', '澳門', '澳门', 'Hong Kong', 'Macau', 'Macao']);
 const excludedSeriesSlug = /(?:^|[-/])(?:hong-kong|macau|macao)(?:[-/]|$)/i;
+const travelDirectories = await fs.readdir(travelDirectory, {withFileTypes: true});
+const excludedStandalonePage = travelDirectories.find((entry) =>
+  entry.isDirectory() && excludedSeriesSlug.test(entry.name));
+if (excludedStandalonePage) {
+  throw new Error(`Excluded standalone destination page in Explore → Travel: ${excludedStandalonePage.name}`);
+}
 const excludedEntry = entries.find((entry) =>
   excludedSeriesDestinations.has(entry.destination)
   || excludedSeriesSlug.test(entry.slug)
