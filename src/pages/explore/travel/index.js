@@ -132,9 +132,9 @@ export default function TravelSeriesPage() {
               <small>以 01 為基礎，多留一天給古城與館舍 ↗</small>
             </Link>
             <Link to="/explore/travel/vietnam-north-8-day-hanoi-ninh-binh-sapa">
-              <span>TRAVEL COMPANION / VIETNAM · 08 DAYS</span>
+              <span>TRAVEL COMPANION / VIETNAM · 08 DAYS + BUFFER NIGHT</span>
               <strong>越南北部精簡版</strong>
-              <small>河內、寧平與沙巴的短假期版本 ↗</small>
+              <small>8 天游覽主線，回河內住一晚後第 9 天離境 ↗</small>
             </Link>
           </div>
         </section>
