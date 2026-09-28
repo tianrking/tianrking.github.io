@@ -5,9 +5,15 @@ import Heading from '@theme/Heading';
 import issues from '@site/src/data/travel-series-catalog.json';
 import styles from './styles.module.css';
 
-const defaultFilters = [
-  {id: 'all', label: '全部專題'},
-  {id: 'conditional', label: '需先核對安全條件'},
+const regionFilters = [
+  {id: 'all', label: '全部區域'},
+  {id: '東南亞', label: '東南亞'},
+  {id: '南亞', label: '南亞'},
+  {id: '東亞', label: '東亞'},
+  {id: '中亞', label: '中亞'},
+  {id: '高加索與東地中海', label: '高加索／東地中海'},
+  {id: '西亞', label: '西亞'},
+  {id: '歐亞', label: '歐亞'},
 ];
 
 function IssueCard({issue}) {
@@ -21,6 +27,7 @@ function IssueCard({issue}) {
       <p className={styles.issueDescription}>{issue.description}</p>
       <div className={styles.issueMeta}>
         <span>{issue.destination}</span>
+        <span>{issue.region}</span>
         <span>{issue.days} 日 / {issue.nights} 晚</span>
       </div>
       {issue.companionRoutes.length > 0 && (
@@ -45,7 +52,8 @@ function IssueCard({issue}) {
 
 export default function TravelSeriesPage() {
   const [query, setQuery] = useState('');
-  const [filter, setFilter] = useState('all');
+  const [region, setRegion] = useState('all');
+  const [conditionalOnly, setConditionalOnly] = useState(false);
   const visibleIssues = useMemo(() => {
     const normalizedQuery = query.trim().toLocaleLowerCase();
     return issues.filter((issue) => {
@@ -53,10 +61,11 @@ export default function TravelSeriesPage() {
         `${issue.title} ${issue.description} ${issue.destination} ${issue.slug} ${(issue.tags ?? []).join(' ')}`
           .toLocaleLowerCase()
           .includes(normalizedQuery);
-      const matchesFilter = filter !== 'conditional' || issue.conditional;
-      return matchesQuery && matchesFilter;
+      const matchesRegion = region === 'all' || issue.region === region;
+      const matchesSafety = !conditionalOnly || issue.conditional;
+      return matchesQuery && matchesRegion && matchesSafety;
     });
-  }, [filter, query]);
+  }, [conditionalOnly, query, region]);
 
   return (
     <Layout
@@ -97,16 +106,23 @@ export default function TravelSeriesPage() {
           </div>
 
           <div className={styles.filterBar} role="group" aria-label="篩選旅行專題">
-            {defaultFilters.map((item) => (
+            {regionFilters.map((item) => (
               <button
                 key={item.id}
                 type="button"
-                className={filter === item.id ? styles.filterActive : ''}
-                aria-pressed={filter === item.id}
-                onClick={() => setFilter(item.id)}>
+                className={region === item.id ? styles.filterActive : ''}
+                aria-pressed={region === item.id}
+                onClick={() => setRegion(item.id)}>
                 {item.label}
               </button>
             ))}
+            <button
+              type="button"
+              className={conditionalOnly ? styles.filterActive : ''}
+              aria-pressed={conditionalOnly}
+              onClick={() => setConditionalOnly((current) => !current)}>
+              僅看條件式規劃
+            </button>
             <span className={styles.resultCount} aria-live="polite">{visibleIssues.length} 篇</span>
           </div>
 
@@ -118,7 +134,7 @@ export default function TravelSeriesPage() {
             <div className={styles.emptyState}>
               <strong>沒有找到相符的旅程。</strong>
               <span>試試目的地名稱，或清除搜尋條件。</span>
-              <button type="button" onClick={() => {setQuery(''); setFilter('all');}}>顯示全部專題</button>
+              <button type="button" onClick={() => {setQuery(''); setRegion('all'); setConditionalOnly(false);}}>顯示全部專題</button>
             </div>
           )}
         </section>

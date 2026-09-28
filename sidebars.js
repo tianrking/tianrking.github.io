@@ -224,7 +224,6 @@ const sidebars = {
           items: [
             'uni-notes/2018-09-03-introduction',
             'uni-notes/2018-09-06-city-urbanization',
-            'uni-notes/2018-10-08-hong-kong-trip',
             'uni-notes/2019-03-23-insurance-contract',
             'uni-notes/2020-02-24-circuits-1-1',
           ],
