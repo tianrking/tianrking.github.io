@@ -27,7 +27,11 @@ function IssueCard({issue}) {
         <div className={styles.companionLinks}>
           {issue.companionRoutes.map((route) => (
             <Link key={route} to={route}>
-              {route.includes('malaysia-10-day') ? '另有 10 日慢遊版' : '另有 8 日精簡版'} <span aria-hidden="true">↗</span>
+              {route.includes('malaysia-10-day')
+                ? '另有 10 日慢遊版'
+                : route.includes('vietnam-north-8-day')
+                  ? '另有 9 日版（含離境緩衝）'
+                  : '另有精簡版'} <span aria-hidden="true">↗</span>
             </Link>
           ))}
         </div>
