@@ -86,6 +86,8 @@ export default function MDXPage({content: MDXPageContent}) {
               </nav>
               <div className={styles.eyebrowRow}>
                 <span className={styles.eyebrow}>{issueNumber ? issueLabel : 'TRAVEL NOTES / ROUTE GUIDE'}</span>
+                {seriesEntry?.destination && <span className={styles.routeMeta}>{seriesEntry.destination}</span>}
+                {seriesEntry?.region && <span className={styles.routeMeta}>{seriesEntry.region}</span>}
                 {duration && <span className={styles.duration}>{duration} 日 / {Math.max(0, duration - 1)} 晚</span>}
                 {isConditional && <span className={styles.safetyLabel}>條件式行程</span>}
               </div>

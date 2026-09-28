@@ -38,12 +38,19 @@
 }
 
 .duration,
+.routeMeta,
 .safetyLabel {
   padding: .28rem .5rem;
   border: 1px solid var(--site-line);
   border-radius: 999px;
   color: var(--site-muted);
   font-size: .68rem;
+}
+
+.routeMeta {
+  border-color: color-mix(in srgb, var(--ifm-color-primary) 22%, var(--site-line));
+  color: var(--ifm-color-primary);
+  background: color-mix(in srgb, var(--ifm-color-primary) 4%, var(--site-surface));
 }
 
 .safetyLabel {
