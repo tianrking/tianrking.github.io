@@ -9,8 +9,8 @@ const ITINERARY = [
   { title: '銀行博物館、Glodok、海事館與舊港', city: '雅加達 Jakarta', stay: '雅加達' },
   { title: '國家博物館、獨立清真寺與金融軸', city: '雅加達 Jakarta', stay: '雅加達' },
   { title: '白天火車前往日惹', city: '雅加達 → 日惹', stay: '日惹' },
-  { title: '蘇丹王宮、水宮與歷史博物館', city: '日惹 Yogyakarta', stay: '日惹' },
-  { title: '婆羅浮屠、普蘭巴南與 Sewu', city: '日惹 → 馬格朗 → 普蘭巴南 → 日惹', stay: '日惹' },
+  { title: '婆羅浮屠登塔，Mendut／Pawon 條件支線', city: '日惹 → 馬格朗 → 日惹', stay: '日惹' },
+  { title: '上午王宮，下午普蘭巴南與 Sewu', city: '日惹 → 普蘭巴南 → 日惹', stay: '日惹' },
   { title: '白天火車前往瑪琅', city: '日惹 → 瑪琅 Malang', stay: '瑪琅' },
   { title: 'Tumpak Sewu 瀑布，夜宿布羅莫山腳', city: '瑪琅 → Tumpak Sewu → 布羅莫', stay: '布羅莫山腳' },
   { title: '布羅莫日出，下午返回泗水', city: '布羅莫 → 泗水 Surabaya', stay: '泗水' },
@@ -59,12 +59,7 @@ function alertsForDay(day, weekday) {
     if (day === 6) return [{
       code: 'yogyakarta-monday',
       severity: 'closure',
-      text: '週一參觀限制：婆羅浮屠登塔雖每日開放，普蘭巴南主寺區 Zone 1 有限制。合併寺廟日請改到非週一，並按預約時段安排接送。',
-    }];
-    if (day === 5) return [{
-      code: 'yogyakarta-culture-monday',
-      severity: 'closure',
-      text: '週一閉館衝突：王宮與 Vredeburg 歷史博物館不適合排在今天。改做城市街區散步，並將兩處館舍安排到其他開館日。',
+      text: '週一參觀衝突：上午王宮閉館，下午普蘭巴南主寺區 Zone 1 有限制。調整文化與寺群日；婆羅浮屠登塔每日開放仍須選票面時段。',
     }];
     if (day === 10) return [{
       code: 'surabaya-monday',

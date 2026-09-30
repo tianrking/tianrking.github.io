@@ -58,7 +58,7 @@ test('all seven departure weekdays produce the exact closure and prayer warnings
     ['2026-09-14', []],
     ['2026-09-15', []],
     ['2026-09-16', ['jakarta-friday', 'yogyakarta-monday']],
-    ['2026-09-17', ['yogyakarta-culture-monday']],
+    ['2026-09-17', []],
     ['2026-09-18', []],
     ['2026-09-19', ['jakarta-national-monday', 'surabaya-monday']],
   ];
@@ -70,14 +70,16 @@ test('all seven departure weekdays produce the exact closure and prayer warnings
   });
 });
 
-test('Monday warnings identify the combined temple day and culture-day closures', () => {
+test('Monday warnings follow the split temple days and the palace on D6', () => {
   const templeMonday = buildCalendar('2026-09-16');
   assert.equal(templeMonday.days[5].weekday, 1);
   assert.match(templeMonday.days[5].alerts[0].text, /普蘭巴南主寺區/);
-  assert.match(templeMonday.days[5].title, /婆羅浮屠、普蘭巴南與 Sewu/);
-  const cultureMonday = buildCalendar('2026-09-17');
-  assert.equal(cultureMonday.days[4].weekday, 1);
-  assert.match(cultureMonday.days[4].alerts[0].text, /王宮與 Vredeburg/);
+  assert.match(templeMonday.days[5].title, /上午王宮，下午普蘭巴南與 Sewu/);
+  assert.match(templeMonday.days[5].alerts[0].text, /王宮閉館/);
+  const borobudurMonday = buildCalendar('2026-09-17');
+  assert.equal(borobudurMonday.days[4].weekday, 1);
+  assert.match(borobudurMonday.days[4].title, /婆羅浮屠登塔/);
+  assert.deepEqual(borobudurMonday.days[4].alerts, []);
 });
 
 test('hotel intervals are contiguous 3 + 3 + 1 + 1 + 1 nights, ending on D10', () => {
@@ -109,6 +111,9 @@ test('fixed flight dates keep museums off Monday and finish outdoors before the 
   assert.equal(result.days[0].date, '2026-10-30');
   assert.equal(result.days.at(-1).date, '2026-11-08');
   assert.deepEqual(result.alerts, []);
+  assert.match(result.days[4].title, /婆羅浮屠登塔/);
+  assert.doesNotMatch(result.days[4].title, /普蘭巴南/);
+  assert.match(result.days[5].title, /普蘭巴南與 Sewu/);
   assert.deepEqual(result.days.slice(7, 9).map((day) => day.date), ['2026-11-06', '2026-11-07']);
   assert.match(result.days[7].title, /Tumpak Sewu/);
   assert.match(result.days[8].title, /布羅莫日出/);
