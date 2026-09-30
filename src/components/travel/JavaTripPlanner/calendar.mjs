@@ -2,18 +2,19 @@ const DAY_MS = 24 * 60 * 60 * 1000;
 const WEEKDAYS = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
 
 export const MAX_START_DATE = '9999-12-22';
+export const TRIP_START_DATE = '2026-10-30';
 
 const ITINERARY = [
   { title: '抵達雅加達', city: '雅加達 Jakarta', stay: '雅加達' },
-  { title: '銀行博物館、老城與獨立清真寺', city: '雅加達 Jakarta', stay: '雅加達' },
-  { title: 'Glodok 華人街區與 Sunda Kelapa 舊港', city: '雅加達 Jakarta', stay: '雅加達' },
-  { title: 'Monas、獨立廣場與金融軸', city: '雅加達 Jakarta', stay: '雅加達' },
-  { title: '火車前往日惹', city: '雅加達 → 日惹', stay: '日惹' },
-  { title: '婆羅浮屠、普蘭巴南與 Sewu', city: '日惹 → 馬格朗 → 普蘭巴南 → 日惹', stay: '日惹' },
+  { title: '銀行博物館、Glodok、海事館與舊港', city: '雅加達 Jakarta', stay: '雅加達' },
+  { title: '國家博物館、獨立清真寺與金融軸', city: '雅加達 Jakarta', stay: '雅加達' },
+  { title: '白天火車前往日惹', city: '雅加達 → 日惹', stay: '日惹' },
   { title: '蘇丹王宮、水宮與歷史博物館', city: '日惹 Yogyakarta', stay: '日惹' },
-  { title: '火車前往泗水', city: '日惹 → 泗水', stay: '泗水' },
-  { title: '戰爭墓園、獨立史與 Ampel', city: '泗水 Surabaya', stay: '泗水' },
-  { title: '前往 SUB 機場返程', city: '泗水 → 朱安達機場', stay: null },
+  { title: '婆羅浮屠、普蘭巴南與 Sewu', city: '日惹 → 馬格朗 → 普蘭巴南 → 日惹', stay: '日惹' },
+  { title: '白天火車前往瑪琅', city: '日惹 → 瑪琅 Malang', stay: '瑪琅' },
+  { title: 'Tumpak Sewu 瀑布，夜宿布羅莫山腳', city: '瑪琅 → Tumpak Sewu → 布羅莫', stay: '布羅莫山腳' },
+  { title: '布羅莫日出，下午返回泗水', city: '布羅莫 → 泗水 Surabaya', stay: '泗水' },
+  { title: '泗水戰爭墓園與老城，22:00 飛香港', city: '泗水 → SUB → 香港 HKG', stay: null },
 ];
 
 // A round-trip check rejects impossible dates instead of normalising them.
@@ -46,35 +47,35 @@ function dateAtOffset(start, offset) {
 function alertsForDay(day, weekday) {
   if (weekday === 1) {
     if (day === 2) return [{
-      code: 'jakarta-monday',
+      code: 'jakarta-oldtown-monday',
       severity: 'closure',
-      text: '週一閉館衝突：印尼銀行博物館與國家博物館不適合排在今天。調整出發日，或把館舍安排到抵達當天的開放時段；不要直接照原順序走。',
+      text: '週一閉館衝突：印尼銀行博物館與海事博物館閉館。這是移動日期後的衝突，須重排雅加達館舍日。',
     }];
-    if (day === 4) return [{
-      code: 'monas-monday',
+    if (day === 3) return [{
+      code: 'jakarta-national-monday',
       severity: 'closure',
-      text: '週一閉園提醒：Monas 園區不開放；改走 Bundaran HI 與市中心公共街區，並在出發前核實塔體是否已恢復開放。',
+      text: '週一閉館衝突：國家博物館閉館。Monas 也不能作為保證開放的替補，須核對管理方公告。',
     }];
     if (day === 6) return [{
       code: 'yogyakarta-monday',
       severity: 'closure',
       text: '週一參觀限制：婆羅浮屠登塔雖每日開放，普蘭巴南主寺區 Zone 1 有限制。合併寺廟日請改到非週一，並按預約時段安排接送。',
     }];
-    if (day === 7) return [{
+    if (day === 5) return [{
       code: 'yogyakarta-culture-monday',
       severity: 'closure',
       text: '週一閉館衝突：王宮與 Vredeburg 歷史博物館不適合排在今天。改做城市街區散步，並將兩處館舍安排到其他開館日。',
     }];
-    if (day === 9) return [{
+    if (day === 10) return [{
       code: 'surabaya-monday',
       severity: 'closure',
       text: '週一閉館衝突：十一月十日博物館閉館。調整出發日或確認館方是否有特別開放；墓園與老城不能代替館內參觀。',
     }];
   }
-  if (day === 2 && weekday === 5) return [{
+  if (day === 3 && weekday === 5) return [{
     code: 'jakarta-friday',
     severity: 'prayer',
-    text: '週五禮拜提醒：獨立清真寺遊客參觀需避開聚禮，依當日接待安排；銀行博物館的午間休息也可能較長。',
+    text: '週五禮拜提醒：獨立清真寺遊客參觀需避開聚禮，依當日接待安排，不把午後接待當成已確認預約。',
   }];
   return [];
 }
@@ -86,7 +87,7 @@ export function buildCalendar(startValue) {
   if (!start || startValue > MAX_START_DATE) return {
     ...blank,
     status: 'invalid',
-    error: '請選擇有效的出發日期，且日期不晚於 9999-12-23。',
+    error: `請選擇有效的出發日期，且日期不晚於 ${MAX_START_DATE}。`,
   };
 
   const days = ITINERARY.map((item, index) => {
@@ -103,9 +104,11 @@ export function buildCalendar(startValue) {
     };
   });
   const stays = [
-    { city: '雅加達', startOffset: 0, nights: 4 },
-    { city: '日惹', startOffset: 4, nights: 3 },
-    { city: '泗水', startOffset: 7, nights: 2 },
+    { city: '雅加達', startOffset: 0, nights: 3 },
+    { city: '日惹', startOffset: 3, nights: 3 },
+    { city: '瑪琅', startOffset: 6, nights: 1 },
+    { city: '布羅莫山腳', startOffset: 7, nights: 1 },
+    { city: '泗水', startOffset: 8, nights: 1 },
   ].map(({ city, startOffset, nights }) => ({
     city,
     nights,

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { buildCalendar, formatISODate, MAX_START_DATE, parseISODate } from './calendar.mjs';
+import { buildCalendar, formatISODate, MAX_START_DATE, parseISODate, TRIP_START_DATE } from './calendar.mjs';
 
 test('empty input keeps the planner unselected', () => {
   assert.deepEqual(buildCalendar(''), {
@@ -54,13 +54,13 @@ test('keeps the complete trip within the supported four-digit year range', () =>
 
 test('all seven departure weekdays produce the exact closure and prayer warnings', () => {
   const cases = [
-    ['2026-09-13', ['jakarta-monday', 'surabaya-monday']],
+    ['2026-09-13', ['jakarta-oldtown-monday']],
     ['2026-09-14', []],
-    ['2026-09-15', ['yogyakarta-culture-monday']],
-    ['2026-09-16', ['yogyakarta-monday']],
-    ['2026-09-17', ['jakarta-friday']],
-    ['2026-09-18', ['monas-monday']],
-    ['2026-09-19', []],
+    ['2026-09-15', []],
+    ['2026-09-16', ['jakarta-friday', 'yogyakarta-monday']],
+    ['2026-09-17', ['yogyakarta-culture-monday']],
+    ['2026-09-18', []],
+    ['2026-09-19', ['jakarta-national-monday', 'surabaya-monday']],
   ];
   cases.forEach(([start, expectedCodes], startWeekday) => {
     const result = buildCalendar(start);
@@ -75,29 +75,45 @@ test('Monday warnings identify the combined temple day and culture-day closures'
   assert.equal(templeMonday.days[5].weekday, 1);
   assert.match(templeMonday.days[5].alerts[0].text, /普蘭巴南主寺區/);
   assert.match(templeMonday.days[5].title, /婆羅浮屠、普蘭巴南與 Sewu/);
-  const cultureMonday = buildCalendar('2026-09-15');
-  assert.equal(cultureMonday.days[6].weekday, 1);
-  assert.match(cultureMonday.days[6].alerts[0].text, /王宮與 Vredeburg/);
+  const cultureMonday = buildCalendar('2026-09-17');
+  assert.equal(cultureMonday.days[4].weekday, 1);
+  assert.match(cultureMonday.days[4].alerts[0].text, /王宮與 Vredeburg/);
 });
 
-test('hotel intervals are contiguous 4 + 3 + 2 nights, ending on D10', () => {
+test('hotel intervals are contiguous 3 + 3 + 1 + 1 + 1 nights, ending on D10', () => {
   for (let day = 13; day <= 19; day += 1) {
     const result = buildCalendar(`2026-09-${day}`);
-    assert.deepEqual(result.stays.map((stay) => stay.nights), [4, 3, 2]);
+    assert.deepEqual(result.stays.map((stay) => stay.nights), [3, 3, 1, 1, 1]);
     assert.equal(result.totalNights, 9);
     assert.equal(result.stays[0].checkIn, result.days[0].date);
-    assert.equal(result.stays[0].checkOut, result.days[4].date);
+    assert.equal(result.stays[0].checkOut, result.days[3].date);
     assert.equal(result.stays[1].checkIn, result.stays[0].checkOut);
-    assert.equal(result.stays[1].checkOut, result.days[7].date);
+    assert.equal(result.stays[1].checkOut, result.days[6].date);
     assert.equal(result.stays[2].checkIn, result.stays[1].checkOut);
-    assert.equal(result.stays[2].checkOut, result.days[9].date);
+    assert.equal(result.stays[2].checkOut, result.days[7].date);
+    assert.equal(result.stays[3].checkIn, result.stays[2].checkOut);
+    assert.equal(result.stays[3].checkOut, result.days[8].date);
+    assert.equal(result.stays[4].checkIn, result.stays[3].checkOut);
+    assert.equal(result.stays[4].checkOut, result.days[9].date);
     assert.deepEqual(result.days.map((entry) => entry.stay), [
-      '雅加達', '雅加達', '雅加達', '雅加達', '日惹', '日惹', '日惹', '泗水', '泗水', null,
+      '雅加達', '雅加達', '雅加達', '日惹', '日惹', '日惹', '瑪琅', '布羅莫山腳', '泗水', null,
     ]);
     for (const stay of result.stays) {
       assert.equal((parseISODate(stay.checkOut) - parseISODate(stay.checkIn)) / 86_400_000, stay.nights);
     }
   }
+});
+
+test('fixed flight dates keep museums off Monday and finish outdoors before the flight day', () => {
+  const result = buildCalendar(TRIP_START_DATE);
+  assert.equal(result.days[0].date, '2026-10-30');
+  assert.equal(result.days.at(-1).date, '2026-11-08');
+  assert.deepEqual(result.alerts, []);
+  assert.deepEqual(result.days.slice(7, 9).map((day) => day.date), ['2026-11-06', '2026-11-07']);
+  assert.match(result.days[7].title, /Tumpak Sewu/);
+  assert.match(result.days[8].title, /布羅莫日出/);
+  assert.match(result.days[9].title, /22:00 飛香港/);
+  assert.equal(result.totalNights, 9);
 });
 
 test('results do not leak mutations between calculations and clear restores initial state', () => {

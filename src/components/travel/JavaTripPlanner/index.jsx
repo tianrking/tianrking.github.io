@@ -1,9 +1,9 @@
 import React, { useId, useState } from 'react';
-import { buildCalendar, MAX_START_DATE } from './calendar.mjs';
+import { buildCalendar, MAX_START_DATE, TRIP_START_DATE } from './calendar.mjs';
 import styles from './styles.module.css';
 
 export default function JavaTripPlanner() {
-  const [startDate, setStartDate] = useState('');
+  const [startDate, setStartDate] = useState(TRIP_START_DATE);
   const id = useId();
   const calendar = buildCalendar(startDate);
   const invalid = calendar.status === 'invalid';
@@ -14,9 +14,9 @@ export default function JavaTripPlanner() {
 
   return (
     <section className={styles.planner} aria-labelledby={`${id}-title`}>
-      <h3 id={`${id}-title`}>出發日期檢查</h3>
+      <h3 id={`${id}-title`}>十天日曆與九晚住宿</h3>
       <p className={styles.intro} id={`${id}-help`}>
-        以 D1 抵達雅加達的當地日期計算。只檢查日期與固定週休，不查車票、機票或住宿庫存，也不會自動改動行程。
+        預設本次 2026-10-30 出發日期。以 D1 抵達雅加達的當地日期計算；改日期只重算週休與住宿，不會改動正文的固定航班，也不查即時庫存、天氣或火山開放狀態。
       </p>
       <div className={styles.controls}>
         <label htmlFor={`${id}-date`}>D1 抵達日期</label>
@@ -32,6 +32,9 @@ export default function JavaTripPlanner() {
         />
         <button type="button" onClick={() => setStartDate('')} disabled={!startDate}>
           清空日期
+        </button>
+        <button type="button" onClick={() => setStartDate(TRIP_START_DATE)} disabled={startDate === TRIP_START_DATE}>
+          本次航班日期
         </button>
       </div>
       <p
@@ -69,7 +72,7 @@ export default function JavaTripPlanner() {
             ))}
           </ol>
           <div className={styles.stays}>
-            <h4>每城一間酒店，4＋3＋2 晚</h4>
+            <h4>五處住宿，3＋3＋1＋1＋1 晚</h4>
             <ul>
               {calendar.stays.map((stay) => (
                 <li key={stay.city}>
@@ -78,7 +81,7 @@ export default function JavaTripPlanner() {
                 </li>
               ))}
             </ul>
-            <p>以上是規劃日期，不代表已完成預訂；如果跨城交通改成夜車，住宿晚數需要重新計算。</p>
+            <p>山腳一晚若已包含在兩天一晚團費中，不另訂、不重複計費；以上日期不代表已完成預訂。</p>
           </div>
         </>
       ) : null}

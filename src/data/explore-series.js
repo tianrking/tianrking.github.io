@@ -23,9 +23,9 @@ export const travelSeries = {
 
 export const indonesiaTravelSeries = {
   eyebrow: 'TRAVEL SERIES / 02',
-  title: '印度尼西亞爪哇 10 天：雅加達入、日惹古蹟、泗水出',
+  title: '印度尼西亞爪哇 10 天：雅加達、日惹、瀑布與布羅莫，泗水出',
   description:
-    '雅加達金融博物館與伊斯蘭文化、日惹兩大寺群、泗水戰爭墓園與獨立革命史；含每日交通、外國遊客票種、住宿、預算與閉館檢查。',
-  meta: '10 日 / 9 晚 · 雅加達 · 日惹 · 泗水',
+    '10 月 30 日廣州飛雅加達、11 月 8 日泗水飛香港；銀行館、兩大寺群、Tumpak Sewu、布羅莫與戰爭史，含固定日期、九晚住宿及接送預算。',
+  meta: '2026.10.30 — 11.08 · 10 日 / 9 晚 · 古蹟 · 火山瀑布',
   route: '/explore/travel/indonesia-java-10-day-jakarta-yogyakarta-surabaya',
 };
