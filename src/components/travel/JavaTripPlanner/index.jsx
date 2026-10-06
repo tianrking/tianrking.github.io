@@ -9,12 +9,12 @@ export default function JavaTripPlanner() {
   const invalid = calendar.status === 'invalid';
   const ready = calendar.status === 'ready';
   const statusText = ready
-    ? `已排出 10 天、${calendar.totalNights} 晚住宿。${calendar.alerts.length ? `有 ${calendar.alerts.length} 項閉館或禮拜提醒，請查看對應日期。` : '仍請核對公共假期與臨時開放公告。'}`
+    ? `已排出 10 天、${calendar.hotelNights} 晚酒店＋${calendar.trainNights} 晚夜火車。${calendar.alerts.length ? `有 ${calendar.alerts.length} 項閉館或禮拜提醒，請查看對應日期。` : '列車時間、餘票與臨時開放仍須核對。'}`
     : invalid ? calendar.error : '選擇 D1 抵達雅加達的日期，即可查看完整日期與住宿區間。';
 
   return (
     <section className={styles.planner} aria-labelledby={`${id}-title`}>
-      <h3 id={`${id}-title`}>十天日曆與九晚住宿</h3>
+      <h3 id={`${id}-title`}>十天日曆：七晚酒店、兩晚夜火車</h3>
       <p className={styles.intro} id={`${id}-help`}>
         預設本次 2026-10-30 出發日期。以 D1 抵達雅加達的當地日期計算；改日期只重算週休與住宿，不會改動正文的固定航班，也不查即時庫存、天氣或火山開放狀態。
       </p>
@@ -59,7 +59,7 @@ export default function JavaTripPlanner() {
                   <strong>{day.title}</strong>
                   <span>{day.city}</span>
                 </div>
-                <p className={styles.night}>{day.stay ? `住宿：${day.stay}` : '返程日，不住宿'}</p>
+                <p className={styles.night}>{day.overnight ? `車上過夜：${day.overnight}（待訂）` : day.stay ? `住宿：${day.stay}` : '返程日，不住宿'}</p>
                 {day.alerts.map((alert) => (
                   <p
                     key={alert.code}
@@ -72,7 +72,7 @@ export default function JavaTripPlanner() {
             ))}
           </ol>
           <div className={styles.stays}>
-            <h4>五處住宿，3＋3＋1＋1＋1 晚</h4>
+            <h4>五處住宿，2＋2＋1＋1＋1 晚</h4>
             <ul>
               {calendar.stays.map((stay) => (
                 <li key={stay.city}>
@@ -81,7 +81,16 @@ export default function JavaTripPlanner() {
                 </li>
               ))}
             </ul>
-            <p>山腳一晚若已包含在兩天一晚團費中，不另訂、不重複計費；以上日期不代表已完成預訂。</p>
+            <h4>兩次車上過夜，不重訂酒店</h4>
+            <ul>
+              {calendar.overnightTransfers.map((transfer) => (
+                <li key={transfer.route}>
+                  <strong>{transfer.route}</strong>：{transfer.nightDate} 夜間至 {transfer.arrivalDate} 清晨；
+                  目標票面日期 {transfer.targetTicketDate}（依實際出發時刻核對）。
+                </li>
+              ))}
+            </ul>
+            <p>第二段優先凌晨出發、清晨抵達：零點後的車票要選下一個日期。夜車不合適可恢復白天車並補前晚酒店；山腳房若含在團費中不重訂。工具不查庫存，日期不代表已完成預訂。</p>
           </div>
         </>
       ) : null}

@@ -25,7 +25,7 @@ export const indonesiaTravelSeries = {
   eyebrow: 'TRAVEL SERIES / 02',
   title: '印度尼西亞爪哇 10 天：雅加達、日惹、瀑布與布羅莫，泗水出',
   description:
-    '10 月 30 日廣州飛雅加達、11 月 8 日泗水飛香港；兩大寺群分兩天深讀，串聯唐人街、博物館、瀑布與布羅莫，附省錢交通與逐項預算。',
-  meta: '2026.10.30 — 11.08 · 10 日 / 9 晚 · 古蹟 · 火山瀑布',
+    '10 月 30 日廣州飛雅加達、11 月 8 日泗水飛香港；兩段夜火車、七晚酒店，兩大寺群分日深讀，串聯唐人街、博物館、瀑布與布羅莫，附省錢預算。',
+  meta: '2026.10.30 — 11.08 · 7 晚酒店＋2 晚夜車 · 古蹟 · 火山瀑布',
   route: '/explore/travel/indonesia-java-10-day-jakarta-yogyakarta-surabaya',
 };

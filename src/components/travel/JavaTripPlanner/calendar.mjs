@@ -6,12 +6,12 @@ export const TRIP_START_DATE = '2026-10-30';
 
 const ITINERARY = [
   { title: '抵達雅加達', city: '雅加達 Jakarta', stay: '雅加達' },
-  { title: '銀行博物館、Glodok、海事館與舊港', city: '雅加達 Jakarta', stay: '雅加達' },
-  { title: '國家博物館、獨立清真寺與金融軸', city: '雅加達 Jakarta', stay: '雅加達' },
-  { title: '白天火車前往日惹', city: '雅加達 → 日惹', stay: '日惹' },
+  { title: '海事館、Kota Tua、銀行館與 Glodok', city: '雅加達 Jakarta', stay: '雅加達' },
+  { title: '國家博物館、宗教建築與金融軸，晚間夜車', city: '雅加達 → 日惹', stay: null, overnight: '雅加達 → 日惹夜火車' },
+  { title: '清晨到日惹，水宮與老街、休整', city: '日惹 Yogyakarta', stay: '日惹' },
   { title: '婆羅浮屠登塔，Mendut／Pawon 條件支線', city: '日惹 → 馬格朗 → 日惹', stay: '日惹' },
-  { title: '上午王宮，下午普蘭巴南與 Sewu', city: '日惹 → 普蘭巴南 → 日惹', stay: '日惹' },
-  { title: '白天火車前往瑪琅', city: '日惹 → 瑪琅 Malang', stay: '瑪琅' },
+  { title: '上午王宮，下午普蘭巴南與 Sewu，深夜夜車', city: '日惹 → 普蘭巴南 → 日惹 → 瑪琅', stay: null, overnight: '日惹 → 瑪琅夜火車' },
+  { title: '清晨到瑪琅，休整與市內歷史街區', city: '瑪琅 Malang', stay: '瑪琅' },
   { title: 'Tumpak Sewu 瀑布，夜宿布羅莫山腳', city: '瑪琅 → Tumpak Sewu → 布羅莫', stay: '布羅莫山腳' },
   { title: '布羅莫日出，下午返回泗水', city: '布羅莫 → 泗水 Surabaya', stay: '泗水' },
   { title: '泗水戰爭墓園與老城，22:00 飛香港', city: '泗水 → SUB → 香港 HKG', stay: null },
@@ -76,7 +76,7 @@ function alertsForDay(day, weekday) {
 }
 
 export function buildCalendar(startValue) {
-  const blank = { days: [], stays: [], alerts: [], totalNights: 0 };
+  const blank = { days: [], stays: [], overnightTransfers: [], alerts: [], totalNights: 0, hotelNights: 0, trainNights: 0 };
   if (startValue === '') return { ...blank, status: 'empty', error: '' };
   const start = parseISODate(startValue);
   if (!start || startValue > MAX_START_DATE) return {
@@ -99,8 +99,8 @@ export function buildCalendar(startValue) {
     };
   });
   const stays = [
-    { city: '雅加達', startOffset: 0, nights: 3 },
-    { city: '日惹', startOffset: 3, nights: 3 },
+    { city: '雅加達', startOffset: 0, nights: 2 },
+    { city: '日惹', startOffset: 3, nights: 2 },
     { city: '瑪琅', startOffset: 6, nights: 1 },
     { city: '布羅莫山腳', startOffset: 7, nights: 1 },
     { city: '泗水', startOffset: 8, nights: 1 },
@@ -111,12 +111,26 @@ export function buildCalendar(startValue) {
     checkOut: formatISODate(dateAtOffset(start, startOffset + nights)),
   }));
 
+  const overnightTransfers = [
+    { route: '雅加達 → 日惹', startOffset: 2, ticketOffset: 2 },
+    { route: '日惹 → 瑪琅', startOffset: 5, ticketOffset: 6 },
+  ].map(({ route, startOffset, ticketOffset }) => ({
+    route,
+    nightDate: formatISODate(dateAtOffset(start, startOffset)),
+    arrivalDate: formatISODate(dateAtOffset(start, startOffset + 1)),
+    targetTicketDate: formatISODate(dateAtOffset(start, ticketOffset)),
+  }));
+  const hotelNights = stays.reduce((sum, stay) => sum + stay.nights, 0);
+
   return {
     status: 'ready',
     error: '',
     days,
     stays,
+    overnightTransfers,
     alerts: days.flatMap(({ day, date, alerts }) => alerts.map((alert) => ({ ...alert, day, date }))),
-    totalNights: stays.reduce((sum, stay) => sum + stay.nights, 0),
+    hotelNights,
+    trainNights: overnightTransfers.length,
+    totalNights: hotelNights + overnightTransfers.length,
   };
 }

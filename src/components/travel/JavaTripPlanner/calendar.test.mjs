@@ -4,7 +4,7 @@ import { buildCalendar, formatISODate, MAX_START_DATE, parseISODate, TRIP_START_
 
 test('empty input keeps the planner unselected', () => {
   assert.deepEqual(buildCalendar(''), {
-    status: 'empty', error: '', days: [], stays: [], alerts: [], totalNights: 0,
+    status: 'empty', error: '', days: [], stays: [], overnightTransfers: [], alerts: [], totalNights: 0, hotelNights: 0, trainNights: 0,
   });
 });
 
@@ -82,26 +82,34 @@ test('Monday warnings follow the split temple days and the palace on D6', () => 
   assert.deepEqual(borobudurMonday.days[4].alerts, []);
 });
 
-test('hotel intervals are contiguous 3 + 3 + 1 + 1 + 1 nights, ending on D10', () => {
+test('seven hotel nights and two train nights cover each trip night exactly once', () => {
   for (let day = 13; day <= 19; day += 1) {
     const result = buildCalendar(`2026-09-${day}`);
-    assert.deepEqual(result.stays.map((stay) => stay.nights), [3, 3, 1, 1, 1]);
+    assert.deepEqual(result.stays.map((stay) => stay.nights), [2, 2, 1, 1, 1]);
+    assert.equal(result.hotelNights, 7);
+    assert.equal(result.trainNights, 2);
     assert.equal(result.totalNights, 9);
     assert.equal(result.stays[0].checkIn, result.days[0].date);
-    assert.equal(result.stays[0].checkOut, result.days[3].date);
-    assert.equal(result.stays[1].checkIn, result.stays[0].checkOut);
-    assert.equal(result.stays[1].checkOut, result.days[6].date);
-    assert.equal(result.stays[2].checkIn, result.stays[1].checkOut);
+    assert.equal(result.stays[0].checkOut, result.days[2].date);
+    assert.equal(result.stays[1].checkIn, result.days[3].date);
+    assert.equal(result.stays[1].checkOut, result.days[5].date);
+    assert.equal(result.stays[2].checkIn, result.days[6].date);
     assert.equal(result.stays[2].checkOut, result.days[7].date);
     assert.equal(result.stays[3].checkIn, result.stays[2].checkOut);
     assert.equal(result.stays[3].checkOut, result.days[8].date);
     assert.equal(result.stays[4].checkIn, result.stays[3].checkOut);
     assert.equal(result.stays[4].checkOut, result.days[9].date);
     assert.deepEqual(result.days.map((entry) => entry.stay), [
-      '雅加達', '雅加達', '雅加達', '日惹', '日惹', '日惹', '瑪琅', '布羅莫山腳', '泗水', null,
+      '雅加達', '雅加達', null, '日惹', '日惹', null, '瑪琅', '布羅莫山腳', '泗水', null,
     ]);
     for (const stay of result.stays) {
       assert.equal((parseISODate(stay.checkOut) - parseISODate(stay.checkIn)) / 86_400_000, stay.nights);
+    }
+    for (const day of result.days.slice(0, 9)) {
+      const hotelCount = result.stays.filter((stay) => day.date >= stay.checkIn && day.date < stay.checkOut).length;
+      const trainCount = result.overnightTransfers.filter((transfer) => transfer.nightDate === day.date).length;
+      assert.equal(hotelCount + trainCount, 1, day.date);
+      assert.equal(Boolean(day.overnight), trainCount === 1);
     }
   }
 });
@@ -119,6 +127,12 @@ test('fixed flight dates keep museums off Monday and finish outdoors before the 
   assert.match(result.days[8].title, /布羅莫日出/);
   assert.match(result.days[9].title, /22:00 飛香港/);
   assert.equal(result.totalNights, 9);
+  assert.equal(result.hotelNights, 7);
+  assert.equal(result.trainNights, 2);
+  assert.deepEqual(result.overnightTransfers.map((transfer) => transfer.targetTicketDate), ['2026-11-01', '2026-11-05']);
+  assert.deepEqual(result.overnightTransfers.map((transfer) => transfer.arrivalDate), ['2026-11-02', '2026-11-05']);
+  assert.match(result.days[3].title, /水宮/);
+  assert.match(result.days[6].title, /休整/);
 });
 
 test('results do not leak mutations between calculations and clear restores initial state', () => {
