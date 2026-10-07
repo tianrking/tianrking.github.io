@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import {useLocation} from '@docusaurus/router';
@@ -13,8 +13,11 @@ import TOC from '@theme/TOC';
 import ContentVisibility from '@theme/ContentVisibility';
 import EditMetaRow from '@theme/EditMetaRow';
 import TOCCollapsible from '@theme/TOCCollapsible';
+import TOCItems from '@theme/TOCItems';
 import seriesCatalog from '@site/src/data/travel-series-catalog.json';
 import styles from './styles.module.css';
+import useGuideLanguage from '@site/src/components/travel/JavaGuide/language';
+import GuideControls from '@site/src/components/travel/JavaGuide/controls';
 
 const companionIssues = {
   'malaysia-10-day-kuala-lumpur-melaka-ipoh-taiping-penang': 1,
@@ -27,15 +30,32 @@ function flattenToc(toc = []) {
 
 export default function MDXPage({content: MDXPageContent}) {
   const location = useLocation();
+  const requestedLanguage = useGuideLanguage();
+  const bilingual = MDXPageContent.bilingual;
+  const isEnglish = Boolean(bilingual) && requestedLanguage === 'en';
+  const contentToc = isEnglish ? bilingual.toc : MDXPageContent.toc;
+  const ArticleContent = isEnglish ? bilingual.component : MDXPageContent;
+  // A direct English deep link first hydrates the static Chinese page. Re-anchor
+  // after the language changes so different text lengths cannot land mid-section.
+  useEffect(() => {
+    if (!bilingual || !location.hash) return;
+    try {
+      document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
+    } catch {
+      // A malformed external hash should not break reading the article.
+    }
+  }, [bilingual, isEnglish, location.hash]);
   const {metadata, assets} = MDXPageContent;
   const {
-    title,
+    title: originalTitle,
     editUrl,
-    description,
+    description: originalDescription,
     frontMatter,
     lastUpdatedBy,
     lastUpdatedAt,
   } = metadata;
+  const title = isEnglish ? bilingual.title : originalTitle;
+  const description = isEnglish ? bilingual.description : originalDescription;
   const {
     keywords,
     wrapperClassName,
@@ -53,13 +73,13 @@ export default function MDXPage({content: MDXPageContent}) {
   const issueNumber = issueIndex >= 0 ? issueIndex + 1 : companionIssue;
   const isCompanion = issueIndex < 0 && Boolean(companionIssue);
   const dayLinks = isTravelArticle
-    ? flattenToc(MDXPageContent.toc)
+    ? flattenToc(contentToc)
         .map((item) => ({...item, match: item.value.match(/^D\s*(\d+)\b/i)}))
         .filter((item) => item.match)
         .map((item) => ({...item, day: Number(item.match[1])}))
         .sort((left, right) => left.day - right.day)
     : [];
-  const durationMatch = title.match(/(\d+)\s*(?:日|天)/);
+  const durationMatch = originalTitle.match(/(\d+)\s*(?:日|天)/);
   const duration = durationMatch ? Number(durationMatch[1]) : null;
   const issueLabel = isCompanion
     ? `TRAVEL COMPANION / SERIES ${String(issueNumber).padStart(2, '0')}`
@@ -77,29 +97,30 @@ export default function MDXPage({content: MDXPageContent}) {
       <Layout>
         <PageMetadata title={title} description={description} keywords={keywords} image={image} />
         {isTravelArticle ? (
-          <header className={styles.hero}>
+          <header className={clsx(styles.hero, isEnglish && styles.englishHero)} lang={isEnglish ? 'en' : undefined}>
             <div className={`container ${styles.heroInner}`}>
-              <nav className={styles.breadcrumb} aria-label="麵包屑導覽">
-                <Link to="/explore">探索</Link><span aria-hidden="true">/</span>
-                <Link to="/explore/travel">旅行專題</Link><span aria-hidden="true">/</span>
+              <nav className={styles.breadcrumb} aria-label={isEnglish ? 'Breadcrumb' : '麵包屑導覽'}>
+                <Link to="/explore">{isEnglish ? 'Explore' : '探索'}</Link><span aria-hidden="true">/</span>
+                <Link to="/explore/travel">{isEnglish ? 'Travel series' : '旅行專題'}</Link><span aria-hidden="true">/</span>
                 <span>{issueNumber ? String(issueNumber).padStart(2, '0') : '補充路線'}</span>
               </nav>
               <div className={styles.eyebrowRow}>
                 <span className={styles.eyebrow}>{issueNumber ? issueLabel : 'TRAVEL NOTES / ROUTE GUIDE'}</span>
-                {seriesEntry?.destination && <span className={styles.routeMeta}>{seriesEntry.destination}</span>}
-                {seriesEntry?.region && <span className={styles.routeMeta}>{seriesEntry.region}</span>}
-                {duration && <span className={styles.duration}>{duration} 日 / {Math.max(0, duration - 1)} 晚</span>}
+                {seriesEntry?.destination && <span className={styles.routeMeta}>{isEnglish ? bilingual.destination : seriesEntry.destination}</span>}
+                {seriesEntry?.region && <span className={styles.routeMeta}>{isEnglish ? bilingual.region : seriesEntry.region}</span>}
+                {duration ? <span className={styles.duration}>{isEnglish ? `${duration} days / ${duration - 1} nights` : `${duration} 日 / ${Math.max(0, duration - 1)} 晚`}</span> : null}
                 {isConditional && <span className={styles.safetyLabel}>條件式行程</span>}
               </div>
               <h1>{title}</h1>
               <p className={styles.description}>{description}</p>
+              {bilingual ? <GuideControls language={isEnglish ? 'en' : 'zh'} /> : null}
               {isConditional && <p className={styles.safetyNote}>路線是否適用，取決於官方開放安排、旅客本人入境資格與當地安全形勢；正文列有現行限制。</p>}
               {dayLinks.length > 0 && (
-                <nav className={styles.dayJump} aria-label="逐日行程快速跳轉">
+                <nav className={styles.dayJump} aria-label={isEnglish ? 'Day-by-day shortcuts' : '逐日行程快速跳轉'}>
                   <span className={styles.dayJumpLabel}>DAY BY DAY</span>
                   <div className={styles.dayJumpLinks}>
                     {dayLinks.map((day) => (
-                      <Link key={day.id} to={`#${day.id}`} aria-label={`跳到第 ${day.day} 天`}>
+                      <Link key={day.id} to={`#${day.id}`} aria-label={isEnglish ? `Jump to day ${day.day}` : `跳到第 ${day.day} 天`}>
                         D{String(day.day).padStart(2, '0')}
                       </Link>
                     ))}
@@ -110,21 +131,24 @@ export default function MDXPage({content: MDXPageContent}) {
           </header>
         ) : null}
         <main className={clsx('container', 'container--fluid', 'margin-vert--lg', isTravelArticle && 'travelGuidePage_main')}>
-          {isTravelArticle && !hideTableOfContents && MDXPageContent.toc.length > 0 && (
-            <div className="travelGuidePage_mobileToc" aria-label="本文目錄">
-              <TOCCollapsible
-                toc={MDXPageContent.toc}
+          {isTravelArticle && !hideTableOfContents && contentToc.length > 0 && (
+            <div className="travelGuidePage_mobileToc" aria-label={isEnglish ? 'Contents' : '本文目錄'} lang={isEnglish ? 'en' : undefined}>
+              {isEnglish ? <details className={styles.englishMobileToc}>
+                <summary>On this page</summary>
+                <TOCItems toc={contentToc} minHeadingLevel={frontMatter.toc_min_heading_level} maxHeadingLevel={frontMatter.toc_max_heading_level} />
+              </details> : <TOCCollapsible
+                toc={contentToc}
                 minHeadingLevel={frontMatter.toc_min_heading_level}
                 maxHeadingLevel={frontMatter.toc_max_heading_level}
                 className="travelGuidePage_mobileTocCollapsible"
-              />
+              />}
             </div>
           )}
           <div className={clsx('row', 'travelGuidePage_contentRow')}>
             <div className={clsx('col', !hideTableOfContents && 'col--8', isTravelArticle && styles.articleColumn)}>
               <ContentVisibility metadata={metadata} />
-              <article className={isTravelArticle ? 'travelGuidePage_article' : undefined}>
-                <MDXContent><MDXPageContent /></MDXContent>
+              <article className={isTravelArticle ? 'travelGuidePage_article' : undefined} lang={bilingual ? (isEnglish ? 'en' : 'zh-Hant') : undefined}>
+                <MDXContent><ArticleContent /></MDXContent>
               </article>
               {canDisplayEditMetaRow && (
                 <EditMetaRow
@@ -135,10 +159,10 @@ export default function MDXPage({content: MDXPageContent}) {
                 />
               )}
             </div>
-            {!hideTableOfContents && MDXPageContent.toc.length > 0 && (
-              <aside className={clsx('col', 'col--2', isTravelArticle && 'travelGuidePage_tocColumn')} aria-label="本文目錄">
+            {!hideTableOfContents && contentToc.length > 0 && (
+              <aside className={clsx('col', 'col--2', isTravelArticle && 'travelGuidePage_tocColumn')} aria-label={isEnglish ? 'Contents' : '本文目錄'} lang={isEnglish ? 'en' : undefined}>
                 <TOC
-                  toc={MDXPageContent.toc}
+                  toc={contentToc}
                   minHeadingLevel={frontMatter.toc_min_heading_level}
                   maxHeadingLevel={frontMatter.toc_max_heading_level}
                 />
@@ -163,7 +187,7 @@ export default function MDXPage({content: MDXPageContent}) {
                   ) : <span />}
                 </nav>
               )}
-              <div className={styles.returnLink}><Link to="/explore/travel">← 回到全部旅行專題</Link></div>
+              <div className={styles.returnLink}><Link to="/explore/travel">{isEnglish ? '← All travel guides' : '← 回到全部旅行專題'}</Link></div>
             </>
           )}
         </main>

@@ -70,6 +70,14 @@
   text-wrap: balance;
 }
 
+.englishHero h1 {letter-spacing: -.045em; font-size: clamp(2.3rem, 5.3vw, 4.6rem); line-height: 1.08;}
+.englishMobileToc {border:1px solid var(--site-line);border-radius:.8rem;background:var(--site-surface);padding:.6rem 1rem;}
+.englishMobileToc summary {min-height:44px;display:list-item;align-content:center;cursor:pointer;font-size:.9rem;font-weight:600;}
+.englishMobileToc summary:focus-visible {outline:2px solid var(--ifm-color-primary);outline-offset:3px;}
+.englishMobileToc ul {padding-left:1rem;}
+:global(.javaLegacyAnchor) {display:block;height:0;scroll-margin-top:6rem;}
+:global(html.indonesiaArticle) .dayJumpLinks a {min-height:44px;min-width:44px;}
+
 .description {
   max-width: 54rem;
   margin: 0;

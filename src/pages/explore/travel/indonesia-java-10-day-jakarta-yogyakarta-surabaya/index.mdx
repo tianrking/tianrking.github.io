@@ -12,6 +12,10 @@ wrapperClassName: indonesiaArticle
 ---
 
 import JavaTripPlanner from '@site/src/components/travel/JavaTripPlanner';
+import MapDirectory from '@site/src/components/travel/JavaGuide/MapDirectory';
+import EnglishGuide, {toc as englishToc} from '@site/src/content/travel/indonesia-java.en.mdx';
+
+export const bilingual = {component: EnglishGuide, toc: englishToc, title: 'Java in 10 days: Jakarta, Yogyakarta, waterfalls and Bromo — out via Surabaya', description: '30 October–8 November 2026. Guangzhou to Jakarta, Surabaya to Hong Kong at 22:00. Two night trains, seven hotel nights, separate Borobudur and Prambanan days, Malang recovery and a waterfall-to-Bromo route, with dated booking priorities and a solo budget.', destination: 'Indonesia', region: 'Southeast Asia'};
 
 <strong>2026.10.30—11.08，廣州 → 雅加達 CGK → 日惹 → 瑪琅 → Tumpak Sewu → 布羅莫 → 泗水 SUB → 香港 HKG。</strong> 十天九晚，以<strong>七晚酒店＋兩晚夜火車</strong>串起爪哇。雅加達兩晚連住，用 10/31、11/01 兩個白天走唐人街、老城、博物館與現代中心；11/01 晚乘車去日惹。婆羅浮屠和普蘭巴南留約一天半、分兩天參觀，11/04 遊覽後深夜乘車去瑪琅，隔日先休整。瀑布與火山用兩天一晚接起，11/07 到泗水睡一晚，隔天才飛香港。
 
@@ -85,7 +89,9 @@ import JavaTripPlanner from '@site/src/components/travel/JavaTripPlanner';
   </div>
 </section>
 
-## 路線與時間分配
+<span id="路線與時間分配" className="javaLegacyAnchor" aria-hidden="true" />
+
+## 路線與時間分配 {/* #route */}
 
 | 日期 | 日程 | 當日主線 | 當晚住宿 |
 |---|---|---|---|
@@ -108,7 +114,9 @@ import JavaTripPlanner from '@site/src/components/travel/JavaTripPlanner';
 
 閱讀順序沿地理展開：殖民銀行與港口 → 群島考古與現代國家 → 佛教、印度教及蘇丹國 → 東爪哇火山地形 → 二戰與獨立革命。婆羅浮屠屬佛教建築；普蘭巴南主要是印度教寺群，Sewu 是同區佛教對照，不把三者統稱為同類古廟。[UNESCO：婆羅浮屠](https://whc.unesco.org/en/list/592/) · [普蘭巴南](https://whc.unesco.org/en/list/642/)
 
-## 日曆與住宿
+<span id="日曆與住宿" className="javaLegacyAnchor" aria-hidden="true" />
+
+## 日曆與住宿 {/* #calendar */}
 
 下方已填入這次出發日；正文按固定航班日期執行。工具只核對週休與晚數，臨時閉館、天氣、票額和山區開放按當日公告。
 
@@ -124,7 +132,9 @@ import JavaTripPlanner from '@site/src/components/travel/JavaTripPlanner';
 
 共<strong>七晚酒店：2＋2＋1＋1＋1；另兩晚夜火車</strong>。城市六晚，山腳一晚由兩天一晚產品含入；若不含房，再訂團商指定位置。11/01 與 11/04 夜間不另訂酒店，前提是已買到合適夜車。第二段凌晨出發的票面日期可能是 11/05，不是 11/04；無合適夜車就補前晚酒店、恢復白天車，不同時占用兩種方案。
 
-### 雅加達兩晚：首晚已訂，第二晚續住
+<span id="雅加達兩晚首晚已訂第二晚續住" className="javaLegacyAnchor" aria-hidden="true" />
+
+### 雅加達兩晚：首晚已訂，第二晚續住 {/* #jakarta-stay */}
 
 首晚訂單為 **10/30 14:00 後入住、10/31 12:00 前退房**；地址對應 **Asyana Kemayoran Jakarta**，最終酒店名稱與房型以訂單為準。地點靠近 Pasar Senen，適合後續夜車，不必只為換環境再搬一家。**第二晚補訂 10/31 → 11/01**，不是延住到 11/02；尚未收到第二晚訂單，不寫成已訂。[酒店官方地址](https://asyana-group.com/properti/2/asyana-kemayoran-jakarta) · [酒店定位](https://www.google.com/maps/search/?api=1&query=Asyana+Kemayoran+Jakarta)
 
@@ -138,9 +148,13 @@ import JavaTripPlanner from '@site/src/components/travel/JavaTripPlanner';
 
 山腳不追豪華：洗熱水澡、睡幾小時、接上吉普更重要。Sukapura 不等於火山口步行距離，住得較遠就由團商按路程提前接人。火山後在泗水睡一晚，是返程最有價值的緩衝。
 
-## 每日完整安排
+<span id="每日完整安排" className="javaLegacyAnchor" aria-hidden="true" />
 
-### D1｜10 月 30 日週五：廣州飛雅加達
+## 每日完整安排 {/* #daily */}
+
+<span id="d110-月-30-日週五廣州飛雅加達" className="javaLegacyAnchor" aria-hidden="true" />
+
+### D1｜10 月 30 日週五：廣州飛雅加達 {/* #d1 */}
 
 廣州航班 **17:00 起飛**，按航司要求提前到 CAN 辦理國際出境。這晚只排 **CGK 入境 → 提款／上網 → 進城 → 入住與簡餐**，不預訂晚間景點，不把未提供的落地時刻寫成承諾。訂 10/30 的房並告知可能深夜到店；如果票面在 10/31 才落地，確認是否保留前一晚房間供清晨入住。
 
@@ -150,7 +164,9 @@ CGK 是 **Soekarno-Hatta International Airport**，不是 Halim。正常情況�
 
 只在正式上車區乘車，核對車牌與訂單；不接受陌生人代操作提款機。住宿辦好後買水、充電、睡覺。導航：[CGK](https://www.google.com/maps/search/?api=1&query=Soekarno+Hatta+International+Airport) → [已訂酒店地址](https://www.google.com/maps/search/?api=1&query=Asyana+Kemayoran+Jakarta)
 
-### D2｜10 月 31 日週六：貨幣、華人商業與殖民港口
+<span id="d210-月-31-日週六貨幣華人商業與殖民港口" className="javaLegacyAnchor" aria-hidden="true" />
+
+### D2｜10 月 31 日週六：貨幣、華人商業與殖民港口 {/* #d2 */}
 
 完整走北部，**海事館／舊港 → Kota Tua／銀行館 → Glodok**，從北向南減少折返；不回市中心穿插國家館或清真寺。老城看重點，不另疊歷史館、陶瓷館與木偶館三座室內展覽。第二晚續住同一家，出門前先處理兩張訂單的連住手續。
 
@@ -171,7 +187,9 @@ CGK 是 **Soekarno-Hatta International Airport**，不是 Halim。正常情況�
 
 導航：[Museum Bahari](https://www.google.com/maps/search/?api=1&query=Museum+Bahari+Jakarta) · [Sunda Kelapa](https://www.google.com/maps/search/?api=1&query=Sunda+Kelapa+Harbour+Jakarta) → [Kota Tua](https://www.google.com/maps/search/?api=1&query=Taman+Fatahillah+Jakarta) → [Museum BI](https://www.google.com/maps/search/?api=1&query=Museum+Bank+Indonesia+Jakarta) → [Glodok](https://www.google.com/maps/search/?api=1&query=Petak+Sembilan+Glodok+Jakarta)
 
-### D3｜11 月 1 日週日：國家館、宗教與金融城市
+<span id="d311-月-1-日週日國家館宗教與金融城市" className="javaLegacyAnchor" aria-hidden="true" />
+
+### D3｜11 月 1 日週日：國家館、宗教與金融城市 {/* #d3 */}
 
 上午國家博物館，午後去相互面對的 Istiqlal 清真寺與大教堂，傍晚短走商業軸，之後取包赴 Pasar Senen 乘夜火車。**早上辦退房，先確認寄存和取包時間；11/01 晚不另訂酒店。**避開週五聚禮不代表週日每個宗教時段都允許遊客入內。
 
@@ -195,7 +213,9 @@ Thamrin 已是合理城市樣本，不在上車前另往 Sudirman 延長路線�
 
 普通座席是坐著睡，不是床鋪；選可接受的椅背與座位，不為省房費升級昂貴 Luxury。到站留時間核驗護照、票面與登乘口。導航：[國家館](https://www.google.com/maps/search/?api=1&query=Museum+Nasional+Indonesia+Jakarta) → [Istiqlal](https://www.google.com/maps/search/?api=1&query=Istiqlal+Mosque+Jakarta) → [大教堂](https://www.google.com/maps/search/?api=1&query=Jakarta+Cathedral) → [Bundaran HI](https://www.google.com/maps/search/?api=1&query=Bundaran+HI+Jakarta) → [酒店取包](https://www.google.com/maps/search/?api=1&query=Asyana+Kemayoran+Jakarta) → [Pasar Senen](https://www.google.com/maps/search/?api=1&query=Pasar+Senen+Station+Jakarta)
 
-### D4｜11 月 2 日週一：清晨到日惹，水宮與老街
+<span id="d411-月-2-日週一清晨到日惹水宮與老街" className="javaLegacyAnchor" aria-hidden="true" />
+
+### D4｜11 月 2 日週一：清晨到日惹，水宮與老街 {/* #d4 */}
 
 夜車目標清晨抵達，先辨認 **Lempuyangan（LPN）或 Yogyakarta（YK，Tugu）**，依所購車票下車；兩站不能互用。到站先早餐、寄存、休息，再決定上午能走多少。住 Malioboro 北段／Sosrowijayan 可兼顧市內步行與之後到 YK 接夜車，LPN 抵達另留短途接駁。
 
@@ -212,7 +232,9 @@ Thamrin 已是合理城市樣本，不在上車前另往 Sudirman 延長路線�
 
 確認 11/03 接人地址與登塔時段，準備薄外套、飲水、簡餐，護照與貴重物品隨身。若列車延誤，先刪 Kotagede 和逛店，不把婆羅浮屠搬到疲累的到達日。導航：[LPN](https://www.google.com/maps/search/?api=1&query=Lempuyangan+Station+Yogyakarta) · [YK](https://www.google.com/maps/search/?api=1&query=Yogyakarta+Tugu+Station) → [水宮](https://www.google.com/maps/search/?api=1&query=Taman+Sari+Yogyakarta) · [Malioboro](https://www.google.com/maps/search/?api=1&query=Jalan+Malioboro+Yogyakarta) · [Kotagede](https://www.google.com/maps/search/?api=1&query=Kotagede+Yogyakarta)
 
-### D5｜11 月 3 日週二：婆羅浮屠，佛教建築與浮雕
+<span id="d511-月-3-日週二婆羅浮屠佛教建築與浮雕" className="javaLegacyAnchor" aria-hidden="true" />
+
+### D5｜11 月 3 日週二：婆羅浮屠，佛教建築與浮雕 {/* #d5 */}
 
 <strong>這一天只向西北走婆羅浮屠方向，不跨城趕普蘭巴南。</strong> 先選上午 Temple Structure 登塔時段，再安排交通。一般登塔產品以官方分時導覽管理，不是買票後可以在塔上自由待一整天；園區、外觀與閱讀時間另留。
 
@@ -233,7 +255,9 @@ Thamrin 已是合理城市樣本，不在上車前另往 Sudirman 延長路線�
 
 主線不買另收費的日出產品：這次布羅莫已有日出，婆羅浮屠先把登塔做好。導航：[Borobudur](https://www.google.com/maps/search/?api=1&query=Borobudur+Temple) · [Mendut](https://www.google.com/maps/search/?api=1&query=Candi+Mendut) · [Pawon](https://www.google.com/maps/search/?api=1&query=Candi+Pawon) · [Jombor](https://www.google.com/maps/search/?api=1&query=Terminal+Jombor+Yogyakarta) · [Borobudur Terminal](https://www.google.com/maps/search/?api=1&query=Terminal+Borobudur)
 
-### D6｜11 月 4 日週三：上午蘇丹王宮，下午普蘭巴南
+<span id="d611-月-4-日週三上午蘇丹王宮下午普蘭巴南" className="javaLegacyAnchor" aria-hidden="true" />
+
+### D6｜11 月 4 日週三：上午蘇丹王宮，下午普蘭巴南 {/* #d6 */}
 
 <strong>上午 Kedhaton → 午飯 → 公交往普蘭巴南 → 下午主寺與 Sewu → 回城晚餐、取包 → 深夜夜車去瑪琅。</strong> 早上辦退房並確認寄存至夜間；水宮已在 D4，不重訪。午後寺群不可被市內加點侵占，晚間不加遠郊或演出。
 
@@ -258,7 +282,9 @@ Thamrin 已是合理城市樣本，不在上車前另往 Sudirman 延長路線�
 
 導航：[Kedhaton](https://www.google.com/maps/search/?api=1&query=Kagungan+Dalem+Kedhaton+Yogyakarta) → [Terminal Prambanan](https://www.google.com/maps/search/?api=1&query=Terminal+Prambanan) → [Prambanan](https://www.google.com/maps/search/?api=1&query=Prambanan+Temple) → [Sewu](https://www.google.com/maps/search/?api=1&query=Candi+Sewu) → 住宿取包 → [YK 車站](https://www.google.com/maps/search/?api=1&query=Yogyakarta+Tugu+Station)
 
-### D7｜11 月 5 日週四：清晨到瑪琅，歷史街區與休整
+<span id="d711-月-5-日週四清晨到瑪琅歷史街區與休整" className="javaLegacyAnchor" aria-hidden="true" />
+
+### D7｜11 月 5 日週四：清晨到瑪琅，歷史街區與休整 {/* #d7 */}
 
 夜車目標清晨到 **Malang（ML）**，先早餐、寄存、休息。**今天不接 05:00 瀑布團，團在隔日 11/06 才出發。**這一天讓夜車與高強度自然段隔開，既能補城市史，也能恢復睡眠；未充分休息就不追遠郊。
 
@@ -277,7 +303,9 @@ Malang 主站與 **Malang Kotalama** 不同，票面、住宿與接人站名一�
 
 導航：[Malang 主站](https://www.google.com/maps/search/?api=1&query=Stasiun+Malang) · [Tugu 廣場](https://www.google.com/maps/search/?api=1&query=Alun+Alun+Tugu+Malang) · [Eng An Kiong](https://www.google.com/maps/search/?api=1&query=Klenteng+Eng+An+Kiong+Malang) · [Jodipan](https://www.google.com/maps/search/?api=1&query=Kampung+Warna+Warni+Jodipan+Malang) · [Kayutangan](https://www.google.com/maps/search/?api=1&query=Kayutangan+Heritage+Malang)
 
-### D8｜11 月 6 日週五：Tumpak Sewu，午後夜宿山腳
+<span id="d811-月-6-日週五tumpak-sewu午後夜宿山腳" className="javaLegacyAnchor" aria-hidden="true" />
+
+### D8｜11 月 6 日週五：Tumpak Sewu，午後夜宿山腳 {/* #d8 */}
 
 <strong>約 05:00 瑪琅接人 → 07:00–08:00 到瀑布區 → 上午看上方全景、安全才下谷 → 11:30–12:00 左右離開 → 午後轉山腳 → 傍晚入住、早睡。</strong> 須預安排車與導覽，不能把「瑪琅到瀑布兩小時」理解成下午去火山也只兩小時。
 
@@ -295,7 +323,9 @@ Malang 主站與 **Malang Kotalama** 不同，票面、住宿與接人站名一�
 
 主線是瀑布後住山腳，不是回瑪琅午夜再長途出發。團商可能安排不同入口與住宿，要求寫明路線，不按導航走未批准捷徑。導航：[Tumpak Sewu](https://www.google.com/maps/search/?api=1&query=Tumpak+Sewu+Waterfall) · [Cemoro Lawang](https://www.google.com/maps/search/?api=1&query=Cemoro+Lawang+Bromo) · [Sukapura](https://www.google.com/maps/search/?api=1&query=Sukapura+Probolinggo)
 
-### D9｜11 月 7 日週六：布羅莫日出，午後泗水
+<span id="d911-月-7-日週六布羅莫日出午後泗水" className="javaLegacyAnchor" aria-hidden="true" />
+
+### D9｜11 月 7 日週六：布羅莫日出，午後泗水 {/* #d9 */}
 
 按住宿距離約 **02:30–03:30** 接吉普，到獲准開放的 Pananjakan／King Kong Hill 等觀景點。觀賞窗口先留 **04:30–06:00**，實際日出、雲霧與入口按當日安排；<strong>買到團不代表必能看見雲海或晴朗日出</strong>。
 
@@ -312,7 +342,9 @@ Malang 主站與 **Malang Kotalama** 不同，票面、住宿與接人站名一�
 
 送達的是 **泗水市中心酒店，不是機場**，睡一晚作恢復與延誤緩衝。下午 Tunjungan 與 Hotel Majapahit 外觀接回殖民城市及革命記憶，內部按酒店規定。晚餐找 Rawon，早休息。導航：[布羅莫](https://www.google.com/maps/search/?api=1&query=Mount+Bromo) · [Tunjungan](https://www.google.com/maps/search/?api=1&query=Jalan+Tunjungan+Surabaya) · [Hotel Majapahit](https://www.google.com/maps/search/?api=1&query=Hotel+Majapahit+Surabaya)
 
-### D10｜11 月 8 日週日：泗水歷史日，22:00 飛香港
+<span id="d1011-月-8-日週日泗水歷史日2200-飛香港" className="javaLegacyAnchor" aria-hidden="true" />
+
+### D10｜11 月 8 日週日：泗水歷史日，22:00 飛香港 {/* #d10 */}
 
 **22:00 泗水起飛**，白天還能走城市歷史主線，但只在市內，不從山區直接趕機場。確認酒店退房、存包／延退，早上帶護照輕包，下午回取大包。
 
@@ -340,7 +372,9 @@ Kembang Kuning 每日 **07:00–17:00** 參訪；週日不在所列員工工作�
 
 導航：[戰爭墓園](https://www.google.com/maps/search/?api=1&query=Ereveld+Kembang+Kuning+Surabaya) → [革命史館](https://www.google.com/maps/search/?api=1&query=Museum+Sepuluh+Nopember+Surabaya) → [紅橋](https://www.google.com/maps/search/?api=1&query=Jembatan+Merah+Surabaya) → [Ampel](https://www.google.com/maps/search/?api=1&query=Masjid+Ampel+Surabaya) · [SUB](https://www.google.com/maps/search/?api=1&query=Juanda+International+Airport)
 
-## 東爪哇兩天一晚：產品與主線一致才訂
+<span id="東爪哇兩天一晚產品與主線一致才訂" className="javaLegacyAnchor" aria-hidden="true" />
+
+## 東爪哇兩天一晚：產品與主線一致才訂 {/* #nature-tour */}
 
 需要<strong>11/06 約 05:00 瑪琅酒店接人 → 瀑布全景及安全條件下谷底導覽 → 山腳一晚 → 11/07 日出吉普 → 泗水酒店送達</strong>。已有同向產品證明有執行方式，但指定日期、單人名額與最終價未確認，不等於已預訂。
 
@@ -362,7 +396,9 @@ Kembang Kuning 每日 **07:00–17:00** 參訪；週日不在所列員工工作�
 
 只有回瑪琅廉價團，就算第二晚瑪琅、午夜長車與瑪琅→泗水接駁再比價，不能先付訂金才發現不送泗水。本次優先保留山腳睡眠、返程前泗水一晚；不為第三座火山推銷拉遠路線。
 
-## 火車、交通與支付速查
+<span id="火車交通與支付速查" className="javaLegacyAnchor" aria-hidden="true" />
+
+## 火車、交通與支付速查 {/* #transport */}
 
 | 日期／區段 | 搜尋名稱 | 執行策略 |
 |---|---|---|
@@ -378,7 +414,9 @@ KAI 一般中長途城際票目前 **H-45 開售**，填護照姓名、號碼，
 
 10/07 網頁實查可進官方查票表單，提交路線後遇網站驗證限制，未取得指定日班次與餘票；因此兩段均保留「候選／待訂」。遇同樣情況使用 Access by KAI 或其官方合作售票渠道，不把搜尋失敗當作售罄。兩段票面落實之前，不把七晚酒店視為已鎖定的住宿總數。
 
-### 夜車的省錢判斷與備案
+<span id="夜車的省錢判斷與備案" className="javaLegacyAnchor" aria-hidden="true" />
+
+### 夜車的省錢判斷與備案 {/* #night-train-fallback */}
 
 兩晚夜車至少間隔兩晚酒店，後續瑪琅、山腳、泗水仍各睡一晚，不安排第三次車上過夜。帶薄外套、眼罩、耳塞，護照與貴重物品貼身；車站和酒店是否可寄存以現場／書面確認，不能預設所有車站有可用儲物櫃。
 
@@ -392,7 +430,9 @@ KAI 一般中長途城際票目前 **H-45 開售**，填護照姓名、號碼，
 
 長途巴士只作後備：比較上車點、終點、夜間接駁、總價與可接受的抵達時間，不認為車票便宜就整體便宜。雅加達郊外總站與日惹終點可能增加車費；未查指定日班次，不提供虛構巴士時間。主線優先城際火車，不用疲勞夜車直接接 05:00 山區團。
 
-### 城市走路，跨區乘車
+<span id="城市走路跨區乘車" className="javaLegacyAnchor" aria-hidden="true" />
+
+### 城市走路，跨區乘車 {/* #city-transport */}
 
 | 城市／區段 | 優先方式 | 一人交通預留與節奏 |
 |---|---|---|
@@ -421,7 +461,9 @@ KAI 一般中長途城際票目前 **H-45 開售**，填護照姓名、號碼，
 6. **簽證、申報、通信、保險。** 離線憑證；保險核對徒步／火山觀景、醫療與撤離承保及除外。
 7. **出發前 72 小時與自然段前晚重查。** 航司、列車、場館、BMKG、公園與 MAGMA 通知。
 
-## 一人預算：含兩個自然點，不重算山腳房費
+<span id="一人預算含兩個自然點不重算山腳房費" className="javaLegacyAnchor" aria-hidden="true" />
+
+## 一人預算：含兩個自然點，不重算山腳房費 {/* #budget */}
 
 按**單人城市青旅、經濟席、簡餐、寺群拼車與合適自然接送產品**作詢價預留，不是 11 月已取得報價。無拼團名額、單人私車與房差可能超範圍，按總價重算；最低數字不是可直接買的套餐。
 
@@ -440,7 +482,9 @@ KAI 一般中長途城際票目前 **H-45 開售**，填護照姓名、號碼，
 | 機動金 | Rp500,000–900,000 | 差價、手續費、臨時車與延誤 |
 | **地面合計** | **Rp6,905,000–12,030,000** | 七晚酒店＋兩晚夜車，一晚山腳在團費；不含國際機票，已訂酒店與實際夜車價需替換 |
 
-### 省錢目標與支出上限
+<span id="省錢目標與支出上限" className="javaLegacyAnchor" aria-hidden="true" />
+
+### 省錢目標與支出上限 {/* #budget-controls */}
 
 <strong>雙夜車、城市床位模型先以 Rp8,880,000 作工作預算。</strong> 這不是成交價，是控制訂單的分配：六晚床位 780,000、餐飲 1,000,000、夜火車 750,000、機場城市交通 600,000、兩寺交通 500,000、兩寺票 950,000、其他館舍 450,000、自然全程 2,500,000、簽證 500,000、通信 150,000、機動 700,000。含機動金，不把備用錢當必花支出；未知雅加達首晚實付、第二晚報價，不把床位模型寫成已訂酒店總價。
 
@@ -466,7 +510,9 @@ KAI 一般中長途城際票目前 **H-45 開售**，填護照姓名、號碼，
 
 省錢優先順序：**城市同區步行與鐵路／公交、合適經濟席、可取消青旅、完整自然拼團包含項**。不靠危險瀑布自走、陌生山路摩托與卡點機場巴士壓價。主要成本在大寺外國票與合規山區交通，不是每瓶飲水。
 
-## 用餐、藝術與城市日常
+<span id="用餐藝術與城市日常" className="javaLegacyAnchor" aria-hidden="true" />
+
+## 用餐、藝術與城市日常 {/* #food */}
 
 | 地點 | 找什麼 | 放在哪天 |
 |---|---|---|
@@ -480,7 +526,9 @@ Gudeg 是甜味燉菠蘿蜜，配菜依店；Rawon 是東爪哇代表湯飯之�
 
 手工藝留日惹日常逛店；正式蠟染、銀器課、表演須單獨時間與已公布場次。寺群日後不強塞晚場。十天得到的是城市、王國與地形的不同層次，不是買足每種套餐。
 
-## 天氣、火山與徒步安全
+<span id="天氣火山與徒步安全" className="javaLegacyAnchor" aria-hidden="true" />
+
+## 天氣、火山與徒步安全 {/* #safety */}
 
 11 月不能視作穩定乾季，也不能只憑月份說每天必下雨。BMKG 已有 **2026 年 11 月月度降雨預測**；它是季節背景，不是 11/06 瀑布上游或 11/07 山頂的逐日安全判斷。出發前及當天查短期預報與預警，保留因雨、雲霧、管理方決定縮短的空間。[BMKG 月度](https://www.bmkg.go.id/iklim/prediksi-hujan-bulanan/curah-hujan-deterministik/3) · [天氣預警](https://www.bmkg.go.id/cuaca/peringatan-dini-cuaca)
 
@@ -498,7 +546,9 @@ Gudeg 是甜味燉菠蘿蜜，配菜依店；Rawon 是東爪哇代表湯飯之�
 
 核對保險活動與海拔除外、醫療及撤離，不把一般城市保單當涵蓋山區。警方 **110**、醫療 **119**；保存保險、住宿、團商號碼，漫遊不通請當地人員協助。[警方](https://polri.go.id/kontak/call-center-110) · [衛生部資料](https://keslan.kemkes.go.id/unduhan/fileunduhan_1661490033_323814.pdf) · [中國外交部安全資訊](https://cs.mfa.gov.cn/zggmcg/ljmdd/yz_645708/ydnxy_648376/aqff_648394/)
 
-## 入境與隨身準備
+<span id="入境與隨身準備" className="javaLegacyAnchor" aria-hidden="true" />
+
+## 入境與隨身準備 {/* #entry */}
 
 中國大陸普通護照短期旅遊按 **B1 落地簽／e-VoA**準備，初次最多 30 天、官費 **Rp500,000**，護照入境至少六個月有效；備 SUB→HKG 離境票與首晚地址。適用 VOA 不等於免簽。[官方 eVisa](https://evisa.imigrasi.go.id/) · [B1 條件](https://bontang.imigrasi.go.id/layanan-publik/kategori/wna/sub/informasi-visa-republik-indonesia) · [資格名單](https://bontang.imigrasi.go.id/layanan-publik/kategori/wna/sub/daftar-subjek-voa-bvk-calling-visa)
 
@@ -506,7 +556,9 @@ Gudeg 是甜味燉菠蘿蜜，配菜依店；Rawon 是東爪哇代表湯飯之�
 
 手機保存護照、簽證、航班、火車、寺票、房、接送、保險離線副本。城市和寺廟遮肩、長褲、舒適鞋；瀑布換衣與防水袋，山區保暖、頭燈、手套，不只帶熱帶短袖。充電寶、液體、托運公斤與尺寸按航司，莫將城際車允許行李當飛機規則。
 
-## 延誤、名額與天氣備案
+<span id="延誤名額與天氣備案" className="javaLegacyAnchor" aria-hidden="true" />
+
+## 延誤、名額與天氣備案 {/* #alternatives */}
 
 - **10/30 晚到：** 只入住；次日睡不足刪港口／塔樓，保住銀行、Glodok、海事館，不把國家館搬到週一。
 - **11/01 雅加達夜車不理想：** 比另一站、席等、抵達時間；沒有合適車就補 11/01 酒店、11/02 白天車，取消到達日水宮／老街，兩大寺日期不動。不用航班落地直接接不可退活動。
@@ -518,7 +570,13 @@ Gudeg 是甜味燉菠蘿蜜，配菜依店；Rawon 是東爪哇代表湯飯之�
 - **11/08 塞車／巴士不明：** 提早或叫車；Ampel 和咖啡可刪，值機不可賭。
 - **同日期想更舒服：** 少一個自然點就回收一次早起與轉場；兩個保留按緊湊主線，不加其他遠郊。多一天才有空拆寺慢遊。
 
-## 參考資料
+## Google Maps：全線地點導航 {/* #maps */}
+
+<MapDirectory />
+
+<span id="參考資料" className="javaLegacyAnchor" aria-hidden="true" />
+
+## 參考資料 {/* #sources */}
 
 官方資料用於規則、票種與歷史；商業頁只證明產品路線與差異，不代表背書或確認名額。地圖是搜尋，核對城市、名稱、入口；以出行日公告和已購票面為最終依據。
 
