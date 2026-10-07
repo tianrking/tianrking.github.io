@@ -143,6 +143,148 @@ html.travelGuidePage .travelGuidePage_article a {
 
 html.travelGuidePage .travelGuidePage_article a:hover { text-decoration-thickness: 2px; }
 
+/* The fixed-flight Java checklist stays separate from the adjustable calendar. */
+html.indonesiaArticle .javaBooking {
+  margin: 1.25rem 0 2rem;
+  border: 1px solid var(--site-line);
+  border-radius: var(--site-radius-md);
+  background: var(--site-surface-soft);
+  overflow: hidden;
+}
+
+html.indonesiaArticle .javaBooking__intro,
+html.indonesiaArticle .javaBooking__footer {
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+html.indonesiaArticle .javaBooking__eyebrow {
+  display: block;
+  margin-bottom: .65rem;
+  color: var(--ifm-color-primary);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+html.travelGuidePage.indonesiaArticle .javaBooking__intro p,
+html.travelGuidePage.indonesiaArticle .javaBooking__footer p {
+  margin: 0;
+  font-size: .88rem;
+  line-height: 1.75;
+}
+
+html.indonesiaArticle .javaBooking__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .8rem;
+  padding: 0 clamp(.8rem, 2vw, 1.2rem);
+}
+
+html.indonesiaArticle .javaBooking__card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.1rem;
+  border: 1px solid var(--site-line);
+  border-radius: var(--site-radius-md);
+  background: var(--site-surface);
+  overflow-wrap: anywhere;
+}
+
+html.indonesiaArticle .javaBooking__status {
+  align-self: flex-start;
+  padding: .24rem .6rem;
+  border-radius: 999px;
+  color: var(--ifm-color-primary);
+  background: color-mix(in srgb, var(--ifm-color-primary) 9%, var(--site-surface));
+  font-size: .7rem;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+html.indonesiaArticle .javaBooking__status--confirmed {
+  color: var(--site-ink);
+  background: var(--site-surface-soft);
+}
+
+html.indonesiaArticle .javaBooking__card h3 {
+  margin: .8rem 0 .35rem;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+html.travelGuidePage.indonesiaArticle .javaBooking__card p {
+  margin: 0 0 .8rem;
+  font-size: .9rem;
+  line-height: 1.8;
+}
+
+html.travelGuidePage.indonesiaArticle .javaBooking__card .javaBooking__date {
+  margin-bottom: .9rem;
+  color: var(--site-ink);
+  font-size: .88rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+html.indonesiaArticle .javaBooking__warning {
+  padding: .7rem .8rem;
+  border-inline-start: 2px solid var(--ifm-color-primary);
+  border-radius: 0 .5rem .5rem 0;
+  background: var(--site-surface-soft);
+}
+
+html.indonesiaArticle .javaBooking__action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: auto;
+  padding: .65rem .8rem;
+  border: 1px solid var(--site-line-strong);
+  border-radius: .65rem;
+  color: var(--site-ink);
+  background: var(--site-surface-soft);
+  font-size: .82rem;
+  font-weight: 650;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.55;
+}
+
+html.indonesiaArticle .javaBooking__action:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+html.indonesiaArticle .javaBooking__action:focus-visible,
+html.indonesiaArticle .javaBooking__secondary:focus-visible,
+html.indonesiaArticle .javaBooking__footer a:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 3px;
+}
+
+html.indonesiaArticle .javaBooking__secondary {
+  display: block;
+  margin-top: .65rem;
+  font-size: .73rem;
+  line-height: 1.7;
+}
+
+html.indonesiaArticle .javaBooking__footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: .5rem;
+  font-size: .82rem;
+  font-weight: 650;
+}
+
+@media (max-width: 700px) {
+  html.indonesiaArticle .javaBooking__grid { grid-template-columns: minmax(0, 1fr); }
+}
+
 html.travelGuidePage .travelGuidePage_tocColumn .table-of-contents {
   padding: .75rem .85rem;
   border: 1px solid var(--site-line);

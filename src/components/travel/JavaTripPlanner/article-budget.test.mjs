@@ -48,3 +48,18 @@ test('article aligns booked first night, proposed extension, overnight ticket da
   assert.match(article, /提前入住／日間房費/);
   assert.doesNotMatch(article, /八晚城市床位|雅加達三晚|日惹三晚|共九晚：/);
 });
+
+test('advance booking checklist exposes dated actions without asserting live availability', () => {
+  const checklist = article.split('## 提前預訂')[1].split('## 路線與時間分配')[0];
+  assert.equal((checklist.match(/className="javaBooking__card"/g) ?? []).length, 6);
+  assert.match(checklist, /11\/01 晚 · 11\/05 凌晨/);
+  assert.match(checklist, /零點後出發買 11\/05 的票/);
+  assert.match(checklist, /Foreign Tourist → Borobudur Temple／Temple Structure/);
+  assert.match(checklist, /產品存在不等於 11\/06 有單人拼團/);
+  assert.match(checklist, /只有雅加達首晚已收到訂單/);
+  assert.match(checklist, /固定行程清單不會跟著改/);
+  assert.match(checklist, /href="#booking-details"/);
+  assert.match(article, /\{\/\* #booking-details \*\/\}/);
+  assert.doesNotMatch(article, /115001439191|115001439291/);
+  assert.match(article, /08:30–17:00 WIB/);
+});
