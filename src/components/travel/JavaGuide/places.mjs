@@ -29,6 +29,8 @@ const rows = [
   ['jakarta','Sarinah 商場','Sarinah','Sarinah Thamrin Jakarta','optional'],
   ['jakarta','晚餐街','Jalan Sabang','Jalan Haji Agus Salim Jakarta','optional'],
   ['jakarta','Sudirman 商業軸','Jalan Jenderal Sudirman','Jalan Jenderal Sudirman Jakarta','optional'],
+  ['jakarta','當期藝術展／可選','ROH gallery','ROH Jalan Surabaya 66 Menteng Jakarta','optional'],
+  ['jakarta','週末文化節／可選','Plaza Parkir Timur GBK Senayan','Plaza Parkir Timur Gelora Bung Karno Senayan Jakarta','optional'],
   ['yogyakarta','到達車站 LPN','Lempuyangan Station','Stasiun Lempuyangan Yogyakarta','transport'],
   ['yogyakarta','夜車出發站 YK','Yogyakarta / Tugu Station','Stasiun Yogyakarta Tugu','transport'],
   ['yogyakarta','住宿區','Sosrowijayan / Malioboro north','Jalan Sosrowijayan Yogyakarta','stay'],

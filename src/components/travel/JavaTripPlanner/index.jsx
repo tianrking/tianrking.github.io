@@ -12,18 +12,18 @@ export default function JavaTripPlanner({language = 'zh'}) {
   const ready = calendar.status === 'ready';
   const statusText = en ? (ready
     ? `10 days, ${calendar.hotelNights} hotel nights and ${calendar.trainNights} overnight trains. ${calendar.alerts.length ? `${calendar.alerts.length} closure or prayer reminders: check the corresponding days.` : 'Confirm actual train times, availability and temporary opening notices.'}`
-    : invalid ? `Choose a valid arrival date no later than ${MAX_START_DATE}.` : 'Choose the local D1 arrival date in Jakarta to see dates and stays.') : ready
+    : invalid ? `Choose a valid departure date no later than ${MAX_START_DATE}.` : 'Choose the D1 departure date to see dates and stays.') : ready
     ? `已排出 10 天、${calendar.hotelNights} 晚酒店＋${calendar.trainNights} 晚夜火車。${calendar.alerts.length ? `有 ${calendar.alerts.length} 項閉館或禮拜提醒，請查看對應日期。` : '列車時間、餘票與臨時開放仍須核對。'}`
-    : invalid ? calendar.error : '選擇 D1 抵達雅加達的日期，即可查看完整日期與住宿區間。';
+    : invalid ? calendar.error : '選擇 D1 廣州出發日期，即可查看完整日期與住宿區間。';
 
   return (
     <section className={styles.planner} aria-labelledby={`${id}-title`}>
       <h3 id={`${id}-title`}>{en ? 'Ten-day calendar: seven hotel nights, two night trains' : '十天日曆：七晚酒店、兩晚夜火車'}</h3>
       <p className={styles.intro} id={`${id}-help`}>
-        {en ? 'Default: 2026-10-30. Calculated from the local D1 arrival date in Jakarta. Changing this date recalculates weekly closures and stays only; it does not change the fixed flights or check live inventory, weather or volcano access.' : '預設本次 2026-10-30 出發日期。以 D1 抵達雅加達的當地日期計算；改日期只重算週休與住宿，不會改動正文的固定航班，也不查即時庫存、天氣或火山開放狀態。'}
+        {en ? 'Default: 30 Oct departure, 31 Oct Jakarta arrival; the first hotel room is held from 30 Oct. Changing D1 shifts this planning template, closures and stays only, not the fixed flights. No live inventory, weather or volcano access is checked.' : '預設 10/30 廣州出發、10/31 抵達雅加達，首晚房間從 10/30 預留。改 D1 只平移規劃模板、週休與住宿，不改正文固定航班，也不查即時庫存、天氣或火山開放。'}
       </p>
       <div className={styles.controls}>
-        <label htmlFor={`${id}-date`}>{en ? 'D1 arrival date' : 'D1 抵達日期'}</label>
+        <label htmlFor={`${id}-date`}>{en ? 'D1 departure date' : 'D1 出發日期'}</label>
         <input
           id={`${id}-date`}
           type="date"

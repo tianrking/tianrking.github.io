@@ -19,10 +19,12 @@ export default function GuideControls({language}) {
     </div>
     <nav className={styles.shortcuts} aria-label={en ? 'Practical sections' : '實用章節'}>
       {[
+        ['departure-kit', en ? 'Departure kit' : '行前卡'],
         ['advance-booking', en ? 'Book ahead' : '提前預訂'],
         ['route', en ? 'Itinerary' : '行程總覽'],
         ['calendar', en ? 'Stays' : '住宿日曆'],
         ['budget', en ? 'Budget' : '一人預算'],
+        ['seasonal', en ? 'What’s on' : '當期活動'],
         ['maps', en ? 'Google Maps' : '地圖導航'],
       ].map(([id, label]) => <a key={id} href={`#${id}`}>{label}</a>)}
     </nav>

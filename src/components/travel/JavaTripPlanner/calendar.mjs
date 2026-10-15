@@ -5,7 +5,7 @@ export const MAX_START_DATE = '9999-12-22';
 export const TRIP_START_DATE = '2026-10-30';
 
 const ITINERARY = [
-  { title: '抵達雅加達', city: '雅加達 Jakarta', stay: '雅加達' },
+  { title: '廣州出發，雅加達房間預留；次日抵達', city: '廣州 → 雅加達 Jakarta', stay: '雅加達' },
   { title: '海事館、Kota Tua、銀行館與 Glodok', city: '雅加達 Jakarta', stay: '雅加達' },
   { title: '國家博物館、宗教建築與金融軸，晚間夜車', city: '雅加達 → 日惹', stay: null, overnight: '雅加達 → 日惹夜火車' },
   { title: '清晨到日惹，水宮與老街、休整', city: '日惹 Yogyakarta', stay: '日惹' },

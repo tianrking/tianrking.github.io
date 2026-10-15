@@ -140,7 +140,7 @@ test('results do not leak mutations between calculations and clear restores init
   first.days[0].title = 'changed';
   first.days[1].alerts[0].text = 'changed';
   const second = buildCalendar('2026-09-13');
-  assert.equal(second.days[0].title, '抵達雅加達');
+  assert.equal(second.days[0].title, '廣州出發，雅加達房間預留；次日抵達');
   assert.notEqual(second.days[1].alerts[0].text, 'changed');
   assert.equal(buildCalendar('').status, 'empty');
   assert.deepEqual(buildCalendar('').stays, []);

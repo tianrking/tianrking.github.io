@@ -4,6 +4,7 @@ import {readFileSync} from 'node:fs';
 import {CITIES, PLACES, filterPlaces, mapsUrl} from './places.mjs';
 import {DAY_TITLES, DAY_CITIES, ALERTS} from '../JavaTripPlanner/english.mjs';
 import {buildCalendar} from '../JavaTripPlanner/calendar.mjs';
+import {HOTEL_ADDRESS, READINESS_KEY, TASKS, readTasks} from './readiness.mjs';
 
 const zh = readFileSync(new URL('../../../pages/explore/travel/indonesia-java-10-day-jakarta-yogyakarta-surabaya/index.mdx', import.meta.url), 'utf8');
 const en = readFileSync(new URL('../../../content/travel/indonesia-java.en.mdx', import.meta.url), 'utf8');
@@ -77,4 +78,42 @@ test('English calendar translates every day and every possible closure/prayer re
   for (let date = 1; date <= 7; date++) {
     for (const alert of buildCalendar(`2026-10-0${date}`).alerts) assert.ok(ALERTS[alert.code]);
   }
+});
+
+test('readiness saves only known unique checklist ids, not arbitrary order or passport data', () => {
+  assert.match(READINESS_KEY, /2026.*v1$/);
+  assert.equal(TASKS.length, 6);
+  assert.equal(new Set(TASKS.map(({id}) => id)).size, 6);
+  for (const raw of [null, '', '{', '{}', 'true', '"trains"']) assert.deepEqual(readTasks(raw), []);
+  assert.deepEqual(readTasks('["trains","trains","passport-number","entry",{}]'), ['trains','entry']);
+  for (const task of TASKS) {
+    assert.ok(task.en && task.zh);
+    assert.ok(headingIds(zh).includes(task.anchor));
+    assert.ok(headingIds(en).includes(task.anchor));
+  }
+  assert.match(HOTEL_ADDRESS, /79-81.*Kemayoran.*Jakarta/);
+});
+
+test('arrival correction leaves all later fixed dates, seven hotel nights and two trains unchanged', () => {
+  const calendar = buildCalendar('2026-10-30');
+  assert.equal(calendar.hotelNights, 7);
+  assert.equal(calendar.trainNights, 2);
+  assert.equal(calendar.days[1].date, '2026-10-31');
+  assert.equal(calendar.days[4].date, '2026-11-03');
+  assert.equal(calendar.days[5].date, '2026-11-04');
+  assert.equal(calendar.overnightTransfers[1].targetTicketDate, '2026-11-05');
+  assert.equal(calendar.days.at(-1).date, '2026-11-08');
+  for (const body of [zh,en]) {
+    assert.match(body, /#departure-kit/);
+    assert.match(body, /#seasonal/);
+    assert.match(body, /rohprojects\.net\/exhibitions\/wet/);
+    assert.match(body, /jakjapanmatsuri\.id\/en\/tickets/);
+    assert.match(body, /beacukai\.go\.id\/ecd/);
+  }
+  assert.match(zh, /10\/28/);
+  assert.match(en, /28 Oct/);
+  assert.match(en, /domestic-only/);
+  assert.match(en, /historical snapshots/);
+  assert.ok(PLACES.some(({query}) => query.includes('ROH Jalan Surabaya 66')));
+  assert.ok(PLACES.some(({query}) => query.includes('Plaza Parkir Timur')));
 });
