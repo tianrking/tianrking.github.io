@@ -23,9 +23,9 @@ export const travelSeries = {
 
 export const indonesiaTravelSeries = {
   eyebrow: 'TRAVEL SERIES / 02',
-  title: '印度尼西亞爪哇 10 天：雅加達、日惹、瀑布與布羅莫，泗水出',
+  title: '印度尼西亞爪哇 10 天：兩大寺與布羅莫，接新加坡過夜半日遊',
   description:
-    '10 月 30 日廣州飛雅加達、11 月 8 日泗水飛香港；兩段夜火車、七晚酒店，兩大寺群分日深讀，串聯唐人街、博物館、瀑布與布羅莫，附省錢預算。',
-  meta: '2026.10.30 — 11.08 · 7 晚酒店＋2 晚夜車 · 古蹟 · 火山瀑布',
+    '婆羅浮屠登塔、普蘭巴南必去。11/08 16:00 前到泗水 T2，19:10 飛新加坡；11/09 上午短遊、16:00 飛香港。印尼七晚酒店＋兩晚夜車，新加坡另住一晚。',
+  meta: '2026.10.30 — 11.09 · 爪哇 10 天＋新加坡過夜半日 · 兩寺必去',
   route: '/explore/travel/indonesia-java-10-day-jakarta-yogyakarta-surabaya',
 };

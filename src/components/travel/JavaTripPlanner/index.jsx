@@ -11,16 +11,16 @@ export default function JavaTripPlanner({language = 'zh'}) {
   const invalid = calendar.status === 'invalid';
   const ready = calendar.status === 'ready';
   const statusText = en ? (ready
-    ? `10 days, ${calendar.hotelNights} hotel nights and ${calendar.trainNights} overnight trains. ${calendar.alerts.length ? `${calendar.alerts.length} closure or prayer reminders: check the corresponding days.` : 'Confirm actual train times, availability and temporary opening notices.'}`
+    ? `Indonesia: 10 days, ${calendar.hotelNights} hotel nights and ${calendar.trainNights} overnight trains. Singapore overnight is separate. ${calendar.alerts.length ? `${calendar.alerts.length} closure or prayer reminders: check the corresponding days.` : 'Confirm actual train times, availability and temporary opening notices.'}`
     : invalid ? `Choose a valid departure date no later than ${MAX_START_DATE}.` : 'Choose the D1 departure date to see dates and stays.') : ready
-    ? `已排出 10 天、${calendar.hotelNights} 晚酒店＋${calendar.trainNights} 晚夜火車。${calendar.alerts.length ? `有 ${calendar.alerts.length} 項閉館或禮拜提醒，請查看對應日期。` : '列車時間、餘票與臨時開放仍須核對。'}`
+    ? `印尼段 10 天、${calendar.hotelNights} 晚酒店＋${calendar.trainNights} 晚夜火車；新加坡一晚另計。${calendar.alerts.length ? `有 ${calendar.alerts.length} 項閉館或禮拜提醒，請查看對應日期。` : '列車時間、餘票與臨時開放仍須核對。'}`
     : invalid ? calendar.error : '選擇 D1 廣州出發日期，即可查看完整日期與住宿區間。';
 
   return (
     <section className={styles.planner} aria-labelledby={`${id}-title`}>
-      <h3 id={`${id}-title`}>{en ? 'Ten-day calendar: seven hotel nights, two night trains' : '十天日曆：七晚酒店、兩晚夜火車'}</h3>
+      <h3 id={`${id}-title`}>{en ? 'Indonesia calendar: seven hotel nights, two night trains' : '印尼十天日曆：七晚酒店、兩晚夜火車'}</h3>
       <p className={styles.intro} id={`${id}-help`}>
-        {en ? 'Default: 30 Oct departure, 31 Oct Jakarta arrival; the first hotel room is held from 30 Oct. Changing D1 shifts this planning template, closures and stays only, not the fixed flights. No live inventory, weather or volcano access is checked.' : '預設 10/30 廣州出發、10/31 抵達雅加達，首晚房間從 10/30 預留。改 D1 只平移規劃模板、週休與住宿，不改正文固定航班，也不查即時庫存、天氣或火山開放。'}
+        {en ? 'Protect Borobudur structure access on 3 Nov and Prambanan on 4 Nov. The template provisionally follows the earlier 30 Oct departure / 31 Oct arrival record; confirm arrival and the hotel hold against the ticket. Changing D1 shifts the template, not flight bookings or the fixed dates in the article. No live inventory, weather or volcano access is checked.' : '保留 11/03 婆羅浮屠登塔、11/04 普蘭巴南必去。模板暫按原記錄 10/30 出發、10/31 抵達，落地與首晚房保留仍須核對機票。改 D1 只平移模板，不改機票或正文固定日期，也不查即時庫存、天氣或火山開放。'}
       </p>
       <div className={styles.controls}>
         <label htmlFor={`${id}-date`}>{en ? 'D1 departure date' : 'D1 出發日期'}</label>
@@ -63,7 +63,7 @@ export default function JavaTripPlanner({language = 'zh'}) {
                   <strong>{en ? DAY_TITLES[day.day - 1] : day.title}</strong>
                   <span>{en ? DAY_CITIES[day.day - 1] : day.city}</span>
                 </div>
-                <p className={styles.night}>{en ? (day.overnight ? `Overnight train: ${DAY_CITIES[day.day - 1]} (not booked)` : day.stay ? `Stay: ${CITY_NAMES[day.stay]}` : 'Departure day; no overnight stay') : day.overnight ? `車上過夜：${day.overnight}（待訂）` : day.stay ? `住宿：${day.stay}` : '返程日，不住宿'}</p>
+                <p className={styles.night}>{en ? (day.overnight ? `Overnight train: ${DAY_CITIES[day.day - 1]} (not booked)` : day.stay ? `Stay: ${CITY_NAMES[day.stay]}` : 'Leave Indonesia; arrange one Singapore night separately') : day.overnight ? `車上過夜：${day.overnight}（待訂）` : day.stay ? `住宿：${day.stay}` : '離開印尼；另確認新加坡一晚住宿'}</p>
                 {day.alerts.map((alert) => (
                   <p
                     key={alert.code}
@@ -75,6 +75,7 @@ export default function JavaTripPlanner({language = 'zh'}) {
               </li>
             ))}
           </ol>
+          <p>{en ? 'Issued onward dates stay fixed when this template shifts: 8 Nov SQ929 19:10 SUB T2 → 22:30 SIN; 9 Nov SQ8670 / Scoot TR982 16:00 SIN T1 → 20:35 HKG T1. Singapore offers a short morning, with T1 return before 13:00.' : '平移模板不改已出票後續航段：11/08 SQ929 19:10 SUB T2 → 22:30 SIN；11/09 SQ8670／酷航 TR982 16:00 SIN T1 → 20:35 HKG T1。新加坡只排上午短遊，13:00 前回 T1。'} <a href="#singapore-stopover">{en ? 'Singapore details →' : '新加坡銜接詳情 →'}</a></p>
           <div className={styles.stays}>
             <h4>{en ? 'Five bases: 2 + 2 + 1 + 1 + 1 nights' : '五處住宿，2＋2＋1＋1＋1 晚'}</h4>
             <ul>

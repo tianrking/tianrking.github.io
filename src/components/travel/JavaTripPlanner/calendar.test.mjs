@@ -125,7 +125,9 @@ test('fixed flight dates keep museums off Monday and finish outdoors before the 
   assert.deepEqual(result.days.slice(7, 9).map((day) => day.date), ['2026-11-06', '2026-11-07']);
   assert.match(result.days[7].title, /Tumpak Sewu/);
   assert.match(result.days[8].title, /布羅莫日出/);
-  assert.match(result.days[9].title, /22:00 飛香港/);
+  assert.match(result.days[9].title, /16:00 前到 SUB T2/);
+  assert.match(result.days[9].title, /19:10 飛新加坡/);
+  assert.match(result.days[9].city, /新加坡 SIN/);
   assert.equal(result.totalNights, 9);
   assert.equal(result.hotelNights, 7);
   assert.equal(result.trainNights, 2);

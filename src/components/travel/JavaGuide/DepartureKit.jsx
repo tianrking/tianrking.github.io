@@ -25,15 +25,17 @@ export default function DepartureKit({language = 'zh'}) {
   }
   return <section className={styles.kit} aria-labelledby={`${id}-title`}>
     <div className={styles.kitHeading}>
-      <div><span className={styles.eyebrow}>DEPARTURE NOTES · 15 OCT 2026</span>
-        <h3 id={`${id}-title`}>{en ? 'Keep the route. Secure the essentials.' : '路線不變，把關鍵預訂落實。'}</h3></div>
-      <span className={styles.kitTag}>{en ? '30 Oct departure · 31 Oct arrival' : '10/30 出發 · 10/31 抵達'}</span>
+      <div><span className={styles.eyebrow}>DEPARTURE NOTES · 21 OCT 2026</span>
+        <h3 id={`${id}-title`}>{en ? 'Borobudur and Prambanan first.' : '婆羅浮屠登塔、普蘭巴南必去。'}</h3></div>
+      <span className={styles.kitTag}>{en ? 'Solo Java + Singapore overnight' : '爪哇獨行＋新加坡過夜半日'}</span>
     </div>
-    <p className={styles.note}>{en ? 'The booked 30 Oct room is retained. The ten-day calendar starts with departure, not ten full days on the ground. On 31 Oct, start after arrival and rest; shorten the harbour/tower stops if needed, protecting Museum BI before closing.' : '保留已訂 10/30 房間。十天日曆包含出發日，不是十個完整當地遊覽日；10/31 入境、到店與休息後再出門，必要時縮短港口／塔樓，保住銀行館關門前的時間。'}</p>
+    <p className={styles.note}>{en ? 'Protect 3 Nov Borobudur structure access and 4 Nov Prambanan; drop palace, small temples, city extras or waterfall first. An 08:30 structure session needs departure about 05:30–05:45, or choose a later session with matching transport. Retain the 30 Oct room provisionally and confirm the actual arrival date and any room hold from the flight ticket.' : '保留 11/03 婆羅浮屠登塔、11/04 普蘭巴南；先刪王宮、小寺、城市加點或瀑布。08:30 登塔場約 05:30–05:45 出發，或選較晚場次配合接送。暫保留 10/30 房，按機票確認真正落地日期與是否須保留房。'}</p>
     <div className={styles.deadlines}>
-      <p><strong>{en ? 'Book now' : '現在落實'}</strong><span>{en ? 'Two night trains · Borobudur Structure · 6–7 Nov nature transfer. Prices checked on 7 Oct are historical, not live stock.' : '雙夜車、婆羅浮屠 Structure、11/06–07 自然接送。10/07 查價是歷史記錄，不是即時庫存。'}</span></p>
-      <p><strong>{en ? 'From 28 Oct' : '10/28 起'}</strong><span>{en ? 'All Indonesia for 31 Oct arrival; free declaration, separate from the visa. Follow the form’s allowed arrival dates.' : '按 10/31 抵達填免費 All Indonesia，與簽證分開；以表單允許的抵達日期為準。'}</span></p>
-      <p><strong>{en ? '5–6 Nov' : '11/05–06'}</strong><span>{en ? 'Recheck park access, waterfall conditions, weather, pickup and cancellation terms. An open park is not permission for every trail.' : '再查公園開放、瀑布水況、天氣、接人與退改。公園開放不等於每條步道都可走。'}</span></p>
+      <p><strong>{en ? 'Book now' : '現在落實'}</strong><span>{en ? 'Both temple tickets and transport first, then trains and a solo nature quote. Prices checked on 7 Oct are historical, not live stock.' : '先兩寺票與接送，再落實列車及單人自然段報價。10/07 查價是歷史記錄，不是即時庫存。'}</span></p>
+      <p><strong>{en ? 'Arrival H−3' : '抵達前 H−3'}</strong><span>{en ? 'For 31 Oct arrival, from 28 Oct; recalculate for the actual ticketed date. All Indonesia is free and separate from the visa; follow the form’s allowed dates.' : '若 10/31 抵達，從 10/28 起；實際抵達日不同就重算。All Indonesia 免費，與簽證分開，以表單允許日期為準。'}</span></p>
+      <p><strong>{en ? '4–5 Nov' : '11/04–05'}</strong><span>{en ? 'While still in Yogyakarta, confirm entrance, viewpoint, sand roads, crater permissions, solo total and closure refunds. Recheck weather and access before the 6 Nov departure and 7 Nov jeep pickup.' : '仍在日惹時確認入口、日出點、沙海道路、火山口許可、單人總價與關閉退款。11/06 出發前、11/07 吉普接人前再查天氣與開放。'}</span></p>
+      <p><strong>{en ? '8 Nov · by 16:00' : '11/08 · 16:00 前到'}</strong><span>{en ? 'Leave central Surabaya about 13:00–13:30; reach SUB T2 by 16:00. SQ929 departs 19:10 and arrives SIN 22:30. Pack overnight cabin essentials; confirm bags tagged through to HKG.' : '約 13:00–13:30 離開泗水，16:00 前到 SUB T2；SQ929 19:10 飛、22:30 到 SIN。隔夜用品放隨身包，櫃檯確認行李直掛 HKG。'}</span></p>
+      <p><strong>{en ? '9 Nov · T1 before 13:00' : '11/09 · 13:00 前回 T1'}</strong><span>{en ? 'Short morning visit only: finish activities by 10:30, leave the city by 11:00; allow for the T1 terminal transfer. SQ8670, operated by Scoot TR982, departs SIN T1 16:00 and arrives HKG T1 20:35.' : '只排上午短遊：10:30 結束活動、11:00 前離城，另留 T1 換樓時間。SQ8670 由酷航 TR982 執飛，16:00 SIN T1 出發、20:35 抵 HKG T1。'} <a href="#singapore-stopover">{en ? 'Overnight, entry and morning route →' : '住宿、入境與半日路線 →'}</a></span></p>
     </div>
     <details className={styles.checklist}>
       <summary>{en ? `My departure checklist · ${checked.length}/${TASKS.length}` : `我的行前清單 · ${checked.length}/${TASKS.length}`}</summary>

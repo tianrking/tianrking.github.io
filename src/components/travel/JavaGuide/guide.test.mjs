@@ -69,6 +69,9 @@ test('map filtering works in both languages, case-insensitively and with empty r
   assert.equal(filterPlaces('surabaya', 'Borobudur').length, 0);
   assert.ok(filterPlaces('all', 'PSE').some((p) => p.name.includes('Senen')));
   assert.equal(filterPlaces('jakarta', 'hotel').length, 1);
+  assert.equal(filterPlaces('singapore', '鱼尾狮').length, 1);
+  assert.ok(filterPlaces('singapore', 'T1').some((p) => p.name.includes('Changi')));
+  assert.equal(filterPlaces('hongkong', 'Singapore').length, 0);
   for (const [city] of CITIES) assert.ok(filterPlaces(city, '').every((p) => p.city === city));
 });
 
@@ -82,8 +85,8 @@ test('English calendar translates every day and every possible closure/prayer re
 
 test('readiness saves only known unique checklist ids, not arbitrary order or passport data', () => {
   assert.match(READINESS_KEY, /2026.*v1$/);
-  assert.equal(TASKS.length, 6);
-  assert.equal(new Set(TASKS.map(({id}) => id)).size, 6);
+  assert.equal(TASKS.length, 7);
+  assert.equal(new Set(TASKS.map(({id}) => id)).size, 7);
   for (const raw of [null, '', '{', '{}', 'true', '"trains"']) assert.deepEqual(readTasks(raw), []);
   assert.deepEqual(readTasks('["trains","trains","passport-number","entry",{}]'), ['trains','entry']);
   for (const task of TASKS) {
@@ -106,6 +109,9 @@ test('arrival correction leaves all later fixed dates, seven hotel nights and tw
   for (const body of [zh,en]) {
     assert.match(body, /#departure-kit/);
     assert.match(body, /#seasonal/);
+    assert.match(body, /#singapore-stopover/);
+    for (const flight of ['SQ929', 'SQ8670', 'TR982']) assert.ok(body.includes(flight));
+    for (const time of ['19:10', '22:30', '16:00', '20:35']) assert.ok(body.includes(time));
     assert.match(body, /rohprojects\.net\/exhibitions\/wet/);
     assert.match(body, /jakjapanmatsuri\.id\/en\/tickets/);
     assert.match(body, /beacukai\.go\.id\/ecd/);

@@ -9,12 +9,12 @@ const ITINERARY = [
   { title: '海事館、Kota Tua、銀行館與 Glodok', city: '雅加達 Jakarta', stay: '雅加達' },
   { title: '國家博物館、宗教建築與金融軸，晚間夜車', city: '雅加達 → 日惹', stay: null, overnight: '雅加達 → 日惹夜火車' },
   { title: '清晨到日惹，水宮與老街、休整', city: '日惹 Yogyakarta', stay: '日惹' },
-  { title: '婆羅浮屠登塔，Mendut／Pawon 條件支線', city: '日惹 → 馬格朗 → 日惹', stay: '日惹' },
-  { title: '上午王宮，下午普蘭巴南與 Sewu，深夜夜車', city: '日惹 → 普蘭巴南 → 日惹 → 瑪琅', stay: null, overnight: '日惹 → 瑪琅夜火車' },
+  { title: '婆羅浮屠登塔必去，Mendut／Pawon 可刪；早場提早接送', city: '日惹 → 馬格朗 → 日惹', stay: '日惹' },
+  { title: '上午王宮，下午普蘭巴南與 Sewu；主寺必去，王宮及 Sewu 可刪，深夜夜車', city: '日惹 → 普蘭巴南 → 日惹 → 瑪琅', stay: null, overnight: '日惹 → 瑪琅夜火車' },
   { title: '清晨到瑪琅，休整與市內歷史街區', city: '瑪琅 Malang', stay: '瑪琅' },
-  { title: 'Tumpak Sewu 瀑布，夜宿布羅莫山腳', city: '瑪琅 → Tumpak Sewu → 布羅莫', stay: '布羅莫山腳' },
-  { title: '布羅莫日出，下午返回泗水', city: '布羅莫 → 泗水 Surabaya', stay: '泗水' },
-  { title: '泗水戰爭墓園與老城，22:00 飛香港', city: '泗水 → SUB → 香港 HKG', stay: null },
+  { title: 'Tumpak Sewu 瀑布按天氣可取消，夜宿布羅莫山腳', city: '瑪琅 → Tumpak Sewu → 布羅莫', stay: '布羅莫山腳' },
+  { title: '布羅莫日出按開放確認，下午返回泗水', city: '布羅莫 → 泗水 Surabaya', stay: '泗水' },
+  { title: '泗水精簡歷史線，16:00 前到 SUB T2，19:10 飛新加坡', city: '泗水 → SUB T2 → 新加坡 SIN', stay: null },
 ];
 
 // A round-trip check rejects impossible dates instead of normalising them.
