@@ -1,8 +1,6 @@
 name: Refresh public GitHub project snapshot
 
 on:
-  schedule:
-    - cron: '17 1 * * *'
   workflow_dispatch:
 
 permissions:
