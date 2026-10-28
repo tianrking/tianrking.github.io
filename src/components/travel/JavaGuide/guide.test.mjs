@@ -70,6 +70,9 @@ test('map filtering works in both languages, case-insensitively and with empty r
   assert.equal(filterPlaces('surabaya', 'Borobudur').length, 0);
   assert.ok(filterPlaces('all', 'PSE').some((p) => p.name.includes('Senen')));
   assert.equal(filterPlaces('jakarta', 'hotel').length, 1);
+  assert.equal(filterPlaces('singapore', '鱼尾狮').length, 1);
+  assert.ok(filterPlaces('singapore', 'T1').some((p) => p.name.includes('Changi')));
+  assert.equal(filterPlaces('hongkong', 'Singapore').length, 0);
   for (const [city] of CITIES) assert.ok(filterPlaces(city, '').every((p) => p.city === city));
 });
 
@@ -90,7 +93,7 @@ test('heritage cards have complete bilingual access rules and preserve core days
   assert.equal(HERITAGE_STOPS.length, 13);
   assert.equal(new Set(HERITAGE_STOPS.map(({id}) => id)).size, 13);
   for (const stop of HERITAGE_STOPS) {
-    assert.ok([3,4,6,7,10].includes(stop.day));
+    assert.ok([3,4,6,7,9,10].includes(stop.day));
     assert.ok(CITIES.some(([city]) => city === stop.city));
     assert.ok(['main','optional','alternative'].includes(stop.kind));
     for (const key of ['history','hours','rule','duration']) {
@@ -101,10 +104,11 @@ test('heritage cards have complete bilingual access rules and preserve core days
     assert.ok(PLACES.some(({query}) => query === stop.query) || stop.id === 'vredeburg-exterior');
   }
   for (const body of [zh,en]) {
-    for (const day of [3,4,6,7,10]) assert.match(body, new RegExp(`<HeritageStops day=\\{${day}\\}`));
+    for (const day of [3,4,6,7,9,10]) assert.match(body, new RegExp(`<HeritageStops day=\\{${day}\\}`));
     assert.match(body, /#heritage/);
     assert.match(body, /Sumur Gumuling/);
-    assert.match(body, /17:00–17:30/);
+    assert.match(body, /16:00/);
+    assert.match(body, /19:10/);
   }
   assert.match(HERITAGE_STOPS.find(({id}) => id === 'kotagede-tombs').hours[1], /Mon.*10:00–13:00/);
   assert.match(HERITAGE_STOPS.find(({id}) => id === 'vredeburg-exterior').hours[1], /closes Mondays/);
@@ -123,8 +127,8 @@ test('English calendar translates every day and every possible closure/prayer re
 
 test('readiness saves only known unique checklist ids, not arbitrary order or passport data', () => {
   assert.match(READINESS_KEY, /2026.*v1$/);
-  assert.equal(TASKS.length, 6);
-  assert.equal(new Set(TASKS.map(({id}) => id)).size, 6);
+  assert.equal(TASKS.length, 7);
+  assert.equal(new Set(TASKS.map(({id}) => id)).size, 7);
   for (const raw of [null, '', '{', '{}', 'true', '"trains"']) assert.deepEqual(readTasks(raw), []);
   assert.deepEqual(readTasks('["trains","trains","passport-number","entry",{}]'), ['trains','entry']);
   for (const task of TASKS) {
@@ -147,6 +151,9 @@ test('arrival correction leaves all later fixed dates, seven hotel nights and tw
   for (const body of [zh,en]) {
     assert.match(body, /#departure-kit/);
     assert.match(body, /#seasonal/);
+    assert.match(body, /#singapore-stopover/);
+    for (const flight of ['SQ929', 'SQ8670', 'TR982']) assert.ok(body.includes(flight));
+    for (const time of ['19:10', '22:30', '16:00', '20:35']) assert.ok(body.includes(time));
     assert.match(body, /rohprojects\.net\/exhibitions\/wet/);
     assert.match(body, /jakjapanmatsuri\.id\/en\/tickets/);
     assert.match(body, /beacukai\.go\.id\/ecd/);

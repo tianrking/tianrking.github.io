@@ -6,6 +6,8 @@ export const CITIES = [
   ['malang', '瑪琅', 'Malang'],
   ['nature', '瀑布與布羅莫', 'Waterfall & Bromo'],
   ['surabaya', '泗水', 'Surabaya'],
+  ['singapore', '新加坡過夜半日', 'Singapore overnight & morning'],
+  ['hongkong', '香港抵達', 'Hong Kong arrival'],
 ];
 
 // Local names and cities disambiguate searches. These are not verified gate pins.
@@ -80,6 +82,15 @@ const rows = [
   ['surabaya','潛艇博物館，替代 Ampel','Monumen Kapal Selam','Monumen Kapal Selam Surabaya','alternative'],
   ['surabaya','機場巴士換乘總站','Purabaya / Bungurasih','Terminal Purabaya Bungurasih Sidoarjo','transport'],
   ['surabaya','朱安達機場 SUB','Juanda International Airport','Juanda International Airport SUB Sidoarjo','transport'],
+  ['singapore','樟宜機場 T1，TR982 出發','Changi Airport Terminal 1','Singapore Changi Airport Terminal 1','transport'],
+  ['singapore','市政廳 MRT／住宿區','City Hall MRT','City Hall MRT Station Singapore','stay'],
+  ['singapore','武吉士 MRT／住宿區','Bugis MRT','Bugis MRT Station Singapore','stay'],
+  ['singapore','魚尾獅公園','Merlion Park','Merlion Park Singapore','main'],
+  ['singapore','濱海灣公共步道','Marina Bay promenade','Marina Bay Waterfront Promenade Singapore','main'],
+  ['singapore','市民區外觀短走','Civic District','Civic District Singapore','main'],
+  ['singapore','新加坡河岸','Singapore River','Singapore River Boat Quay','main'],
+  ['singapore','牛車水，替代市民區','Chinatown, alternative to Civic District','Chinatown Singapore','alternative'],
+  ['hongkong','香港機場 T1，20:35 抵達','Hong Kong International Airport Terminal 1','Hong Kong International Airport Terminal 1','transport'],
 ];
 // Retain legacy rows/IDs; heritage records deliberately use more specific queries.
 const heritageRows = HERITAGE_STOPS.filter((stop) => stop.id !== 'vredeburg-exterior').map(({city, zh, name, query, kind}) => [city, zh, name, query, kind]);
@@ -88,12 +99,12 @@ export function mapsUrl(query) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 }
 export function directionsUrl(query) {
-  // Google handles the starting location and travel mode; this site reads no GPS.
+  // Google handles starting location and mode; this site reads no GPS.
   return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(query)}`;
 }
-const SEARCH_CHARACTERS = {'羅':'罗','蘭':'兰','達':'达','瑪':'玛','烏':'乌','圖':'图','國':'国','館':'馆','銀':'银','戰':'战','爭':'争','園':'园','橋':'桥','獨':'独','門':'门','場':'场','頭':'头','廟':'庙','亞':'亚','廣':'广','車':'车','機':'机','總':'总','轉':'转','舊':'旧','華':'华','區':'区','優':'优','備':'备','選':'选','賽':'赛','傳':'传','統':'统','線':'线','觀':'观','點':'点','樓':'楼','務':'务'};
+const SEARCH_CHARACTERS = {'羅':'罗','蘭':'兰','達':'达','瑪':'玛','烏':'乌','圖':'图','國':'国','館':'馆','銀':'银','戰':'战','爭':'争','園':'园','橋':'桥','獨':'独','門':'门','場':'场','頭':'头','廟':'庙','亞':'亚','廣':'广','車':'车','機':'机','總':'总','轉':'转','舊':'旧','華':'华','區':'区','優':'优','備':'备','選':'选','賽':'赛','傳':'传','統':'统','線':'线','觀':'观','點':'点','樓':'楼','務':'务','魚':'鱼','獅':'狮','濱':'滨','灣':'湾'};
 function normalizeSearch(value) {
-  return value.toLocaleLowerCase().replace(/銘/g, '铭').replace(/歐/g, '欧').replace(/獄/g, '狱').replace(/[羅蘭達瑪烏圖國館銀戰爭園橋獨門場頭廟亞廣車機總轉舊華區優備選賽傳統線觀點樓務]/g, (character) => SEARCH_CHARACTERS[character]);
+  return value.toLocaleLowerCase().replace(/銘/g, '铭').replace(/歐/g, '欧').replace(/獄/g, '狱').replace(/[羅蘭達瑪烏圖國館銀戰爭園橋獨門場頭廟亞廣車機總轉舊華區優備選賽傳統線觀點樓務魚獅濱灣]/g, (character) => SEARCH_CHARACTERS[character]);
 }
 export function filterPlaces(city, search) {
   const term = normalizeSearch(search.trim());
