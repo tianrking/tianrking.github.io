@@ -7,8 +7,8 @@ export const TRIP_START_DATE = '2026-10-30';
 const ITINERARY = [
   { title: '廣州出發，雅加達房間預留；次日抵達', city: '廣州 → 雅加達 Jakarta', stay: '雅加達' },
   { title: '海事館、Kota Tua、銀行館與 Glodok', city: '雅加達 Jakarta', stay: '雅加達' },
-  { title: '國家博物館、宗教建築與金融軸，晚間夜車', city: '雅加達 → 日惹', stay: null, overnight: '雅加達 → 日惹夜火車' },
-  { title: '清晨到日惹，水宮與老街、休整', city: '日惹 Yogyakarta', stay: '日惹' },
+  { title: '碑銘公園、國家館、宗教建築，晚間夜車', city: '雅加達 → 日惹', stay: null, overnight: '雅加達 → 日惹夜火車' },
+  { title: '日惹休整，Kotagede 條件支線、水宮與老街', city: '日惹 Yogyakarta', stay: '日惹' },
   { title: '婆羅浮屠登塔，Mendut／Pawon 條件支線', city: '日惹 → 馬格朗 → 日惹', stay: '日惹' },
   { title: '上午王宮，下午普蘭巴南與 Sewu，深夜夜車', city: '日惹 → 普蘭巴南 → 日惹 → 瑪琅', stay: null, overnight: '日惹 → 瑪琅夜火車' },
   { title: '清晨到瑪琅，休整與市內歷史街區', city: '瑪琅 Malang', stay: '瑪琅' },

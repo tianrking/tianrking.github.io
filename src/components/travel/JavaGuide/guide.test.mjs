@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {CITIES, PLACES, filterPlaces, mapsUrl} from './places.mjs';
+import {CITIES, PLACES, filterPlaces, mapsUrl, directionsUrl} from './places.mjs';
+import {HERITAGE_STOPS} from './heritage.mjs';
 import {DAY_TITLES, DAY_CITIES, ALERTS} from '../JavaTripPlanner/english.mjs';
 import {buildCalendar} from '../JavaTripPlanner/calendar.mjs';
 import {HOTEL_ADDRESS, READINESS_KEY, TASKS, readTasks} from './readiness.mjs';
@@ -70,6 +71,46 @@ test('map filtering works in both languages, case-insensitively and with empty r
   assert.ok(filterPlaces('all', 'PSE').some((p) => p.name.includes('Senen')));
   assert.equal(filterPlaces('jakarta', 'hotel').length, 1);
   for (const [city] of CITIES) assert.ok(filterPlaces(city, '').every((p) => p.city === city));
+});
+
+test('directions use cross-platform Maps URLs without requesting a location or fixing a mode', () => {
+  for (const place of PLACES) {
+    const url = new URL(directionsUrl(place.query));
+    assert.equal(url.origin, 'https://www.google.com');
+    assert.equal(url.pathname, '/maps/dir/');
+    assert.equal(url.searchParams.get('api'), '1');
+    assert.equal(url.searchParams.get('destination'), place.query);
+    assert.equal(url.searchParams.has('origin'), false);
+    assert.equal(url.searchParams.has('key'), false);
+    assert.equal(url.searchParams.has('travelmode'), false);
+  }
+});
+
+test('heritage cards have complete bilingual access rules and preserve core days', () => {
+  assert.equal(HERITAGE_STOPS.length, 13);
+  assert.equal(new Set(HERITAGE_STOPS.map(({id}) => id)).size, 13);
+  for (const stop of HERITAGE_STOPS) {
+    assert.ok([3,4,6,7,10].includes(stop.day));
+    assert.ok(CITIES.some(([city]) => city === stop.city));
+    assert.ok(['main','optional','alternative'].includes(stop.kind));
+    for (const key of ['history','hours','rule','duration']) {
+      assert.equal(stop[key].length, 2);
+      assert.ok(stop[key].every((value) => typeof value === 'string' && value.trim().length));
+    }
+    assert.equal(new URL(stop.source).protocol, 'https:');
+    assert.ok(PLACES.some(({query}) => query === stop.query) || stop.id === 'vredeburg-exterior');
+  }
+  for (const body of [zh,en]) {
+    for (const day of [3,4,6,7,10]) assert.match(body, new RegExp(`<HeritageStops day=\\{${day}\\}`));
+    assert.match(body, /#heritage/);
+    assert.match(body, /Sumur Gumuling/);
+    assert.match(body, /17:00–17:30/);
+  }
+  assert.match(HERITAGE_STOPS.find(({id}) => id === 'kotagede-tombs').hours[1], /Mon.*10:00–13:00/);
+  assert.match(HERITAGE_STOPS.find(({id}) => id === 'vredeburg-exterior').hours[1], /closes Mondays/);
+  assert.match(HERITAGE_STOPS.find(({id}) => id === 'plaosan').rule[1], /default.*leaves no room/);
+  assert.equal(filterPlaces('jakarta', '碑铭').length, 1);
+  assert.equal(filterPlaces('surabaya', '欧人').length, 1);
 });
 
 test('English calendar translates every day and every possible closure/prayer reminder', () => {

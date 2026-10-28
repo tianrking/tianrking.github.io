@@ -1,3 +1,5 @@
+import {HERITAGE_STOPS} from './heritage.mjs';
+
 export const CITIES = [
   ['jakarta', '雅加達', 'Jakarta'],
   ['yogyakarta', '日惹與大寺', 'Yogyakarta & temples'],
@@ -79,13 +81,19 @@ const rows = [
   ['surabaya','機場巴士換乘總站','Purabaya / Bungurasih','Terminal Purabaya Bungurasih Sidoarjo','transport'],
   ['surabaya','朱安達機場 SUB','Juanda International Airport','Juanda International Airport SUB Sidoarjo','transport'],
 ];
-export const PLACES = rows.map(([city, zh, name, query, kind], index) => ({id: `java-place-${index + 1}`, city, zh, name, query, kind}));
+// Retain legacy rows/IDs; heritage records deliberately use more specific queries.
+const heritageRows = HERITAGE_STOPS.filter((stop) => stop.id !== 'vredeburg-exterior').map(({city, zh, name, query, kind}) => [city, zh, name, query, kind]);
+export const PLACES = [...rows, ...heritageRows].map(([city, zh, name, query, kind], index) => ({id: `java-place-${index + 1}`, city, zh, name, query, kind}));
 export function mapsUrl(query) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 }
+export function directionsUrl(query) {
+  // Google handles the starting location and travel mode; this site reads no GPS.
+  return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(query)}`;
+}
 const SEARCH_CHARACTERS = {'羅':'罗','蘭':'兰','達':'达','瑪':'玛','烏':'乌','圖':'图','國':'国','館':'馆','銀':'银','戰':'战','爭':'争','園':'园','橋':'桥','獨':'独','門':'门','場':'场','頭':'头','廟':'庙','亞':'亚','廣':'广','車':'车','機':'机','總':'总','轉':'转','舊':'旧','華':'华','區':'区','優':'优','備':'备','選':'选','賽':'赛','傳':'传','統':'统','線':'线','觀':'观','點':'点','樓':'楼','務':'务'};
 function normalizeSearch(value) {
-  return value.toLocaleLowerCase().replace(/[羅蘭達瑪烏圖國館銀戰爭園橋獨門場頭廟亞廣車機總轉舊華區優備選賽傳統線觀點樓務]/g, (character) => SEARCH_CHARACTERS[character]);
+  return value.toLocaleLowerCase().replace(/銘/g, '铭').replace(/歐/g, '欧').replace(/獄/g, '狱').replace(/[羅蘭達瑪烏圖國館銀戰爭園橋獨門場頭廟亞廣車機總轉舊華區優備選賽傳統線觀點樓務]/g, (character) => SEARCH_CHARACTERS[character]);
 }
 export function filterPlaces(city, search) {
   const term = normalizeSearch(search.trim());

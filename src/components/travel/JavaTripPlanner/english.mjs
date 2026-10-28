@@ -1,7 +1,7 @@
 export const DAY_TITLES = [
   'Depart Guangzhou; Jakarta room held for next-day arrival', 'Bahari, Kota Tua, Bank Indonesia and Glodok',
-  'National Museum, religious quarter and financial axis; night train',
-  'Arrive in Yogyakarta; Taman Sari, old streets and rest',
+  'Prasasti, National Museum and religious quarter; night train',
+  'Yogyakarta recovery; conditional Kotagede, Taman Sari and old streets',
   'Borobudur structure visit; Mendut / Pawon if time allows',
   'Palace, Prambanan and Sewu; overnight train',
   'Arrive in Malang; recovery and heritage streets',

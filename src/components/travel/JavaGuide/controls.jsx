@@ -22,6 +22,7 @@ export default function GuideControls({language}) {
         ['departure-kit', en ? 'Departure kit' : '行前卡'],
         ['advance-booking', en ? 'Book ahead' : '提前預訂'],
         ['route', en ? 'Itinerary' : '行程總覽'],
+        ['heritage', en ? 'Heritage' : '古蹟支線'],
         ['calendar', en ? 'Stays' : '住宿日曆'],
         ['budget', en ? 'Budget' : '一人預算'],
         ['seasonal', en ? 'What’s on' : '當期活動'],
