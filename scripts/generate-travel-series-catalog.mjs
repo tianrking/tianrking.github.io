@@ -221,6 +221,8 @@ for (const [index, slug] of order.entries()) {
     featured: index === 1,
     companionRoutes: slug === 'vietnam-north-10-day-hanoi-ninh-binh-sapa'
       ? ['/explore/travel/vietnam-north-8-day-hanoi-ninh-binh-sapa']
+      : slug === 'philippines-cebu-9-day-heritage-coast-highlands'
+        ? ['/explore/travel/philippines-manila-corregidor-travel-notes']
       : [],
     conditional: conditionalTravelSlugs.has(slug)
       || /conditional|條件式路線|条件式路线|暫緩|暂缓|暫不出發|暂不出发|未來條件|未来条件|暫勿前往|暂勿前往|旅行警示|不作現時出行建議|不作现时出行建议/.test(`${slug} ${title} ${description} ${tags.join(' ')}`)

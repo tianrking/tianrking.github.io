@@ -22,6 +22,7 @@ import GuideControls from '@site/src/components/travel/JavaGuide/controls';
 const companionIssues = {
   'malaysia-10-day-kuala-lumpur-melaka-ipoh-taiping-penang': 1,
   'vietnam-north-8-day-hanoi-ninh-binh-sapa': 5,
+  'philippines-manila-corregidor-travel-notes': 8,
 };
 
 function flattenToc(toc = []) {
@@ -106,6 +107,7 @@ export default function MDXPage({content: MDXPageContent}) {
               </nav>
               <div className={styles.eyebrowRow}>
                 <span className={styles.eyebrow}>{issueNumber ? issueLabel : 'TRAVEL NOTES / ROUTE GUIDE'}</span>
+                {bilingual?.recordLabelZh && <span className={styles.routeMeta}>{isEnglish ? bilingual.recordLabelEn : bilingual.recordLabelZh}</span>}
                 {seriesEntry?.destination && <span className={styles.routeMeta}>{isEnglish ? bilingual.destination : seriesEntry.destination}</span>}
                 {seriesEntry?.region && <span className={styles.routeMeta}>{isEnglish ? bilingual.region : seriesEntry.region}</span>}
                 {duration ? <span className={styles.duration}>{isEnglish ? `${duration} days / ${duration - 1} nights` : `${duration} 日 / ${Math.max(0, duration - 1)} 晚`}</span> : null}

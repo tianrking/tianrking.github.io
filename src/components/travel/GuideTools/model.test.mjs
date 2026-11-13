@@ -4,6 +4,7 @@ import test from 'node:test';
 import {filterPlaces, mapUrl, restoreChecks} from './model.mjs';
 import {cebu} from '../../../content/travel/cebu.mjs';
 import {cambodia} from '../../../content/travel/cambodia.mjs';
+import {VISITED_DESTINATIONS, HISTORY_CONTEXT, manilaCorregidor} from '../../../content/travel/manila-corregidor.mjs';
 
 function verifyPublishedBudget(source) {
   const section = source.split('/* #budget */}')[1]?.split('\n## ')[0] ?? '';
@@ -13,6 +14,35 @@ function verifyPublishedBudget(source) {
   const total = rows.at(-1);
   for (let column = 0; column < 2; column++) assert.equal(rows.slice(0,-1).reduce((sum,row)=>sum+row[column],0), total[column], 'Published budget does not sum');
 }
+
+test('Manila and Corregidor actual travel remains separate from the future Cebu proposal', () => {
+  const zh = fs.readFileSync('src/pages/explore/travel/philippines-manila-corregidor-travel-notes/index.mdx','utf8');
+  const en = fs.readFileSync('src/content/travel/manila-corregidor.en.mdx','utf8');
+  const anchors = (source) => [...source.matchAll(/^#{2,3} .*?\{\/\* #([\w-]+) \*\/\}/gm)].map((m)=>m[1]);
+  assert.deepEqual(VISITED_DESTINATIONS.map((place)=>place.id),['manila','corregidor']);
+  assert.deepEqual(anchors(zh),anchors(en));
+  assert.equal(new Set(anchors(zh)).size,anchors(zh).length);
+  assert.ok(anchors(zh).includes('trip-record') && anchors(zh).includes('maps'));
+  for (const body of [zh,en]) {
+    assert.ok(!/^### D\d+\b/m.test(body),'An unconfirmed daily diary must not be invented');
+    assert.ok(body.includes('manilaCorregidor.visited') && body.includes('manilaCorregidor.context'));
+    assert.ok(body.includes('/explore/travel/philippines-cebu-9-day-heritage-coast-highlands'));
+    assert.ok(!/\\\*|&#x[0-9a-f]+;/i.test(body));
+  }
+  assert.ok(zh.includes('completed:true'));
+  for (const place of [...VISITED_DESTINATIONS,...HISTORY_CONTEXT]) {
+    for (const field of ['id','zh','en','query','day','area']) assert.ok(place[field]);
+    for (const field of ['date','hotelNights','price']) assert.equal(Object.hasOwn(place,field),false);
+  }
+  assert.equal(new Set([...VISITED_DESTINATIONS,...HISTORY_CONTEXT].map((p)=>p.id)).size,14);
+  assert.ok(HISTORY_CONTEXT.every((place)=>place.day.includes('CONTEXT') && !place.day.includes('VISITED')));
+  assert.equal(filterPlaces(manilaCorregidor.visited.places,'Corregidor').length,1);
+  const config = fs.readFileSync('docusaurus.config.js','utf8');
+  assert.match(config,/from: '\/explore\/travel\/philippines-10-day-manila-cebu-bohol',\s+to: '\/explore\/travel\/philippines-manila-corregidor-travel-notes'/);
+  assert.equal(fs.existsSync('src/pages/explore/travel/philippines-10-day-manila-cebu-bohol/index.mdx'),false);
+  const catalog = JSON.parse(fs.readFileSync('src/data/travel-series-catalog.json','utf8'));
+  assert.ok(catalog.find((entry)=>entry.issue===8).companionRoutes.includes('/explore/travel/philippines-manila-corregidor-travel-notes'));
+});
 
 test('map searches encode place names without treating them as verified entrances', () => {
   const url = new URL(mapUrl('Argao & Cebu / 教堂'));

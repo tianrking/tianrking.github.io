@@ -38,7 +38,9 @@ function IssueCard({issue}) {
                 ? '另有 10 日慢遊版'
                 : route.includes('vietnam-north-8-day')
                   ? '另有 9 日版（含離境緩衝）'
-                  : '另有精簡版'} <span aria-hidden="true">↗</span>
+                  : route.includes('philippines-manila-corregidor')
+                    ? '已完成：馬尼拉與科雷希多島旅行筆記'
+                    : '另有精簡版'} <span aria-hidden="true">↗</span>
             </Link>
           ))}
         </div>

@@ -131,7 +131,7 @@
     "slug": "philippines-cebu-9-day-heritage-coast-highlands",
     "route": "/explore/travel/philippines-cebu-9-day-heritage-coast-highlands",
     "title": "菲律賓宿務 9 日：港口歷史、沿海古鎮與山海自然",
-    "description": "宿務進出、不自駕的 9 日 8 晚深度路線：兩日博物館與殖民港口、墨寶海岸、Boljoon、Argao、Carcar 與 Dalaguete 高地；含巴士換乘、住宿區、一人預算、浮潛風險及手機地圖。",
+    "description": "尚未出發的宿務 9 日 8 晚規劃：博物館、墨寶海岸、Boljoon、Argao、Carcar 與 Dalaguete 高地，含公共巴士、住宿與預算；已完成的馬尼拉、科雷希多島二戰旅行另有獨立筆記。",
     "destination": "菲律賓",
     "region": "東南亞",
     "days": 9,
@@ -141,7 +141,9 @@
       "山海自然"
     ],
     "featured": false,
-    "companionRoutes": [],
+    "companionRoutes": [
+      "/explore/travel/philippines-manila-corregidor-travel-notes"
+    ],
     "conditional": false
   },
   {
