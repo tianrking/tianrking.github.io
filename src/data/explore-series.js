@@ -23,9 +23,9 @@ export const travelSeries = {
 
 export const indonesiaTravelSeries = {
   eyebrow: 'TRAVEL SERIES / 02',
-  title: '印度尼西亞爪哇 10 天：兩大寺與布羅莫，接新加坡過夜半日遊',
+  title: '爪哇旅行記：雅加達、萬隆、日惹、瑪琅，從泗水到新加坡',
   description:
-    '婆羅浮屠登塔、普蘭巴南必去。11/08 16:00 前到泗水 T2，19:10 飛新加坡；11/09 上午短遊、16:00 飛香港。印尼七晚酒店＋兩晚夜車，新加坡另住一晚。',
-  meta: '2026.10.30 — 11.09 · 爪哇 10 天＋新加坡過夜半日 · 兩寺必去',
+    '已完成的爪哇旅行：加入萬隆與覆舟火山，走過婆羅浮屠、普蘭巴南、Tumpak Sewu、布羅莫，以及城市、古蹟與墓地；最後從泗水前往新加坡。',
+  meta: '2026 · 實走紀錄 · 城市深度遊 · 大寺、火山與瀑布',
   route: '/explore/travel/indonesia-java-10-day-jakarta-yogyakarta-surabaya',
 };

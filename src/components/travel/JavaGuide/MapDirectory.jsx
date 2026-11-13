@@ -8,9 +8,10 @@ export default function MapDirectory({language = 'zh'}) {
   const [city, setCity] = useState('all');
   const [search, setSearch] = useState('');
   const places = filterPlaces(city, search);
-  const kinds = en ? {main:'Main route', optional:'Conditional stop', alternative:'Alternative', transport:'Transport', stay:'Stay area / reference'}
-    : {main:'主線', optional:'條件支線', alternative:'備選，非額外必到', transport:'交通', stay:'住宿區／比較'};
+  const kinds = en ? {visited:'Visited', main:'Original main route', optional:'Conditional stop', alternative:'Alternative', transport:'Transport', stay:'Stay area / reference'}
+    : {visited:'已走訪', main:'原方案主線', optional:'條件支線', alternative:'備選，非額外必到', transport:'交通', stay:'住宿區／比較'};
   return <section className={styles.directory} aria-label={en ? 'Place directory' : '地點導航目錄'}>
+    <p className={styles.note}>{en ? 'This directory combines the original planning references with the completed-trip additions. A listing is not proof of a visit; the trip record at the top identifies the confirmed route and highlights.' : '此目錄合併原先規劃參考與實走新增地點；列在地圖中不等於全部去過。已走訪的城市與重點以文章開頭實走紀錄為準。'}</p>
     <p className={styles.note}>{en ? 'Search by Chinese or local name. View place checks the destination; Directions lets Google Maps choose your starting point and travel mode. Links open a new tab; this site reads no GPS. These are name searches, not verified gate pins. Confirm the entrance, terminal and access before leaving; stay references are not confirmed bookings.' : '可搜中文或當地名稱。「查看地點」核對目的地；「導航」由 Google Maps 選起點與交通方式，本站不讀取定位。連結開新分頁，均為名稱搜尋而非已核實入口座標；先核對入口、航站樓與參訪許可。住宿比較不代表已訂房。'}</p>
     <div className={styles.filters} role="group" aria-label={en ? 'Filter by area' : '按區域篩選'}>
       {[['all','全部','All places'], ...CITIES].map(([key, zh, english]) => <button key={key} type="button" aria-pressed={city === key} onClick={() => setCity(key)}>{en ? english : zh}</button>)}

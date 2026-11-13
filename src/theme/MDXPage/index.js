@@ -116,8 +116,8 @@ export default function MDXPage({content: MDXPageContent}) {
               {bilingual ? <GuideControls language={isEnglish ? 'en' : 'zh'} /> : null}
               {isConditional && <p className={styles.safetyNote}>路線是否適用，取決於官方開放安排、旅客本人入境資格與當地安全形勢；正文列有現行限制。</p>}
               {dayLinks.length > 0 && (
-                <nav className={styles.dayJump} aria-label={isEnglish ? 'Day-by-day shortcuts' : '逐日行程快速跳轉'}>
-                  <span className={styles.dayJumpLabel}>DAY BY DAY</span>
+                <nav className={styles.dayJump} aria-label={bilingual?.completed ? (isEnglish ? 'Original plan day shortcuts' : '原行前方案逐日跳轉') : (isEnglish ? 'Day-by-day shortcuts' : '逐日行程快速跳轉')}>
+                  <span className={styles.dayJumpLabel}>{bilingual?.completed ? (isEnglish ? 'ORIGINAL PLAN' : '原行前方案') : 'DAY BY DAY'}</span>
                   <div className={styles.dayJumpLinks}>
                     {dayLinks.map((day) => (
                       <Link key={day.id} to={`#${day.id}`} aria-label={isEnglish ? `Jump to day ${day.day}` : `跳到第 ${day.day} 天`}>

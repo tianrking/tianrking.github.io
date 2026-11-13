@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {CITIES, PLACES, filterPlaces, mapsUrl, directionsUrl} from './places.mjs';
 import {HERITAGE_STOPS} from './heritage.mjs';
+import {COMPLETED_ROUTE, VISITED_HIGHLIGHTS} from './trip-record.mjs';
 import {DAY_TITLES, DAY_CITIES, ALERTS} from '../JavaTripPlanner/english.mjs';
 import {buildCalendar} from '../JavaTripPlanner/calendar.mjs';
 import {HOTEL_ADDRESS, READINESS_KEY, TASKS, readTasks} from './readiness.mjs';
@@ -10,6 +11,26 @@ import {HOTEL_ADDRESS, READINESS_KEY, TASKS, readTasks} from './readiness.mjs';
 const zh = readFileSync(new URL('../../../pages/explore/travel/indonesia-java-10-day-jakarta-yogyakarta-surabaya/index.mdx', import.meta.url), 'utf8');
 const en = readFileSync(new URL('../../../content/travel/indonesia-java.en.mdx', import.meta.url), 'utf8');
 const headingIds = (text) => [...text.matchAll(/^#{2,3} .*?\{\/\* #([\w-]+) \*\/\}/gm)].map((match) => match[1]);
+
+test('completed travel record preserves supplied route and five visited highlights without inventing dates', () => {
+  assert.deepEqual(COMPLETED_ROUTE.map(({id}) => id), ['jakarta','bandung','yogyakarta','malang','surabaya','singapore']);
+  assert.deepEqual(VISITED_HIGHLIGHTS.map(({id}) => id), ['tangkuban-perahu','borobudur','prambanan','tumpak-sewu','bromo']);
+  for (const place of [...COMPLETED_ROUTE,...VISITED_HIGHLIGHTS]) {
+    assert.ok(place.zh && place.en && place.query);
+    assert.ok(CITIES.some(([key]) => key === place.city));
+    assert.equal(Object.hasOwn(place,'date'), false);
+    assert.equal(Object.hasOwn(place,'hotelNights'), false);
+  }
+  for (const body of [zh,en]) {
+    assert.ok(headingIds(body).indexOf('trip-record') < headingIds(body).indexOf('planning-archive'));
+    assert.ok(headingIds(body).indexOf('planning-archive') < headingIds(body).indexOf('departure-kit'));
+    assert.match(body, /<TripRecord/);
+  }
+  assert.match(zh, /completed: true/);
+  assert.match(en, /not the actual daily log/);
+  assert.equal(filterPlaces('bandung','万隆').length, 2);
+  assert.ok(filterPlaces('bandung','Tangkuban').some(({kind}) => kind === 'visited'));
+});
 
 test('both language versions have exactly the same stable sections and ten daily anchors', () => {
   assert.deepEqual(headingIds(zh), headingIds(en));

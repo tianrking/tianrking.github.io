@@ -63,3 +63,16 @@
 .mapActions a:hover {border-color:var(--ifm-color-primary);background:color-mix(in srgb,var(--ifm-color-primary) 6%,var(--site-surface));text-decoration:none;}
 .heritage :is(a,summary):focus-visible,.mapActions a:focus-visible {outline:2px solid var(--ifm-color-primary);outline-offset:3px;}
 @media(max-width:390px) {.heritageCard .mapActions {display:grid;grid-template-columns:1fr;}.mapActions a {text-align:center;}}
+.tripRecord {margin:1.5rem 0 2rem;padding:clamp(1rem,3vw,1.8rem);border:1px solid var(--site-line-strong);border-radius:1.25rem;background:var(--site-surface);min-width:0;}
+.recordHeading {display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.7rem;font-size:.8rem;color:var(--site-muted);}
+.recordRoute {list-style:none;padding:0!important;margin:1.25rem 0 2rem!important;}
+.recordRoute li {display:grid;grid-template-columns:2rem minmax(0,1fr);gap:.7rem;margin:0!important;padding:1rem 0;border-bottom:1px solid var(--site-line);}
+.recordNumber {font-size:.75rem;color:var(--ifm-color-primary);font-variant-numeric:tabular-nums;padding-top:.2rem;}
+.recordRoute h3 {margin:0!important;font-size:1.15rem!important;line-height:1.5!important;}
+.recordRoute h3 span {display:block;margin-top:.2rem;color:var(--site-muted);font-size:.85rem;font-weight:400;}
+.recordRoute p {margin:.6rem 0 .2rem!important;font-size:.92rem!important;line-height:1.8!important;}
+.recordMap {display:inline-flex;align-items:center;min-height:44px;font-size:.82rem;}
+.recordHighlights {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;}
+.tripRecord>h3 {font-size:1.1rem!important;line-height:1.6!important;margin:1rem 0!important;}
+.tripRecord a:focus-visible {outline:2px solid var(--ifm-color-primary);outline-offset:3px;}
+@media(max-width:560px) {.recordHighlights {grid-template-columns:1fr;}}

@@ -19,6 +19,8 @@ export default function GuideControls({language}) {
     </div>
     <nav className={styles.shortcuts} aria-label={en ? 'Practical sections' : '實用章節'}>
       {[
+        ['trip-record', en ? 'Trip record' : '實走紀錄'],
+        ['planning-archive', en ? 'Planning archive' : '行前參考'],
         ['departure-kit', en ? 'Departure kit' : '行前卡'],
         ['advance-booking', en ? 'Book ahead' : '提前預訂'],
         ['route', en ? 'Itinerary' : '行程總覽'],
