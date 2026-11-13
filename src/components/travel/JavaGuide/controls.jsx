@@ -2,7 +2,7 @@ import React from 'react';
 import {useHistory, useLocation} from '@docusaurus/router';
 import styles from './styles.module.css';
 
-export default function GuideControls({language}) {
+export default function GuideControls({language, sectionIds}) {
   const location = useLocation();
   const history = useHistory();
   const en = language === 'en';
@@ -29,7 +29,7 @@ export default function GuideControls({language}) {
         ['budget', en ? 'Budget' : '一人預算'],
         ['seasonal', en ? 'What’s on' : '當期活動'],
         ['maps', en ? 'Google Maps' : '地圖導航'],
-      ].map(([id, label]) => <a key={id} href={`#${id}`}>{label}</a>)}
+      ].filter(([id]) => !sectionIds || sectionIds.includes(id)).map(([id, label]) => <a key={id} href={`#${id}`}>{label}</a>)}
     </nav>
   </div>;
 }

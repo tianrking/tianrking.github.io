@@ -113,7 +113,7 @@ export default function MDXPage({content: MDXPageContent}) {
               </div>
               <h1>{title}</h1>
               <p className={styles.description}>{description}</p>
-              {bilingual ? <GuideControls language={isEnglish ? 'en' : 'zh'} /> : null}
+              {bilingual ? <GuideControls language={isEnglish ? 'en' : 'zh'} sectionIds={flattenToc(contentToc).map((item) => item.id)} /> : null}
               {isConditional && <p className={styles.safetyNote}>路線是否適用，取決於官方開放安排、旅客本人入境資格與當地安全形勢；正文列有現行限制。</p>}
               {dayLinks.length > 0 && (
                 <nav className={styles.dayJump} aria-label={bilingual?.completed ? (isEnglish ? 'Original plan day shortcuts' : '原行前方案逐日跳轉') : (isEnglish ? 'Day-by-day shortcuts' : '逐日行程快速跳轉')}>

@@ -125,8 +125,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 2.7rem;
-  min-height: 2rem;
+  min-width: 44px;
+  min-height: 44px;
   padding: .35rem .52rem;
   border: 1px solid var(--site-line);
   border-radius: 999px;

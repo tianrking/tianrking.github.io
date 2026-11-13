@@ -120,6 +120,10 @@ const config = {
       {
         redirects: [
           {
+            from: '/explore/travel/philippines-10-day-manila-cebu-bohol',
+            to: '/explore/travel/philippines-cebu-9-day-heritage-coast-highlands',
+          },
+          {
             from: '/explore/travel/malaysia-peninsula-8-day',
             to: '/explore/travel/malaysia-peninsula-9-day',
           },
