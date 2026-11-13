@@ -120,6 +120,10 @@ const config = {
       {
         redirects: [
           {
+            from: '/explore/travel/cambodia-10-day-phnom-penh-battambang-angkor',
+            to: '/explore/travel/cambodia-10-day-phnom-penh-siem-reap-angkor',
+          },
+          {
             from: '/explore/travel/philippines-10-day-manila-cebu-bohol',
             to: '/explore/travel/philippines-cebu-9-day-heritage-coast-highlands',
           },

@@ -91,17 +91,17 @@
   },
   {
     "issue": 6,
-    "slug": "cambodia-10-day-phnom-penh-battambang-angkor",
-    "route": "/explore/travel/cambodia-10-day-phnom-penh-battambang-angkor",
-    "title": "柬埔寨 10 天：金边记忆与吴哥古都深度行",
-    "description": "金边进、暹粒出（或加一晚回金边）的柬埔寨 10 天 9 晚路线：纪念遗址、吴哥三日票、城市文化、城际交通、预算与现场安全安排。",
+    "slug": "cambodia-10-day-phnom-penh-siem-reap-angkor",
+    "route": "/explore/travel/cambodia-10-day-phnom-penh-siem-reap-angkor",
+    "title": "柬埔寨 10 日：金邊記憶、暹粒街巷與吳哥深讀",
+    "description": "金邊、暹粒與吳哥旅行筆記的深度底稿：國家博物館、王宮、近現代紀念地與四個吳哥入園日，整理建築與浮雕、寺院水系、導覽交通、九晚住宿、預算和手機地圖。",
     "destination": "柬埔寨",
     "region": "東南亞",
     "days": 10,
     "nights": 9,
     "tags": [
-      "世界遗产",
-      "历史文化"
+      "世界遺產",
+      "歷史考古"
     ],
     "featured": false,
     "companionRoutes": [],

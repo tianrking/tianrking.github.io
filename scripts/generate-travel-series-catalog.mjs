@@ -41,7 +41,7 @@ const regionSlugs = new Map([
     'indonesia-java-10-day-jakarta-yogyakarta-surabaya',
     'myanmar-10-day-conditional-heritage',
     'vietnam-north-10-day-hanoi-ninh-binh-sapa',
-    'cambodia-10-day-phnom-penh-battambang-angkor',
+    'cambodia-10-day-phnom-penh-siem-reap-angkor',
     'laos-10-day-vientiane-vang-vieng-luang-prabang',
     'philippines-cebu-9-day-heritage-coast-highlands',
     'thailand-10-day-bangkok-ayutthaya-chiang-mai',

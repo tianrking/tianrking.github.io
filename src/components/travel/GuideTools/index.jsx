@@ -56,7 +56,7 @@ export function PlaceDirectory({guide, language = 'zh'}) {
   return <section className={styles.directory} aria-label={en ? 'Searchable Google Maps directory' : 'Google Maps 地點目錄'}>
     <label className={styles.search}>
       <span>{en ? 'Find a place or day' : '搜尋地點、地區或日程'}</span>
-      <input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder={en ? 'Museum, Moalboal, D2…' : '博物館、古鎮、D2…'} />
+      <input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder={en ? 'Museum, heritage, D2…' : '博物館、古蹟、D2…'} />
     </label>
     <p className={styles.count} role="status">{places.length} / {guide.places.length} {en ? 'places' : '個地點'}</p>
     <div className={styles.places}>
