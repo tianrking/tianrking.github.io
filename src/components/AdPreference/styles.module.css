@@ -1,0 +1,66 @@
+.button {
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 0.35rem;
+  align-items: center;
+  min-height: 44px;
+  margin-inline: 0.15rem;
+  padding: 0 0.4rem;
+  border: 0;
+  border-radius: 0.65rem;
+  color: var(--site-ink);
+  background: transparent;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 650;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button:hover:not(:disabled) {
+  background: var(--site-surface-soft);
+}
+
+.button:disabled {
+  cursor: default;
+}
+
+.track {
+  position: relative;
+  display: inline-block;
+  width: 1.8rem;
+  height: 1.05rem;
+  border: 1px solid var(--site-line-strong);
+  border-radius: 999px;
+  background: var(--ifm-color-emphasis-300);
+}
+
+.track::after {
+  position: absolute;
+  inset-block-start: 0.13rem;
+  inset-inline-start: 0.13rem;
+  width: 0.67rem;
+  height: 0.67rem;
+  border-radius: 50%;
+  background: var(--site-surface-solid);
+  box-shadow: 0 0 0 1px var(--site-line-strong);
+  content: '';
+}
+
+.button[aria-checked='true'] .track {
+  background: var(--ifm-color-primary);
+}
+
+.button[aria-checked='true'] .track::after {
+  inset-inline: auto 0.13rem;
+}
+
+@media (forced-colors: active) {
+  .track {
+    border-color: ButtonText;
+  }
+
+  .track::after {
+    background: ButtonText;
+  }
+}

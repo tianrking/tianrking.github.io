@@ -590,6 +590,14 @@ main .card:active {
     padding-inline: max(.75rem, env(safe-area-inset-left));
   }
 
+  .navbar__items--right > :has(> .navbar__search) {
+    position: static;
+  }
+
+  .navbar__search {
+    min-width: 0;
+  }
+
   .navbar-sidebar {
     width: min(88vw, 23rem);
     min-height: 100dvh;

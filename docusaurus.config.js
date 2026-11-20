@@ -238,6 +238,7 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          {type: 'custom-adPreference', position: 'right'},
         ],
       },
       footer: {
