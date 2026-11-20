@@ -2,6 +2,10 @@ export function mapUrl(query) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 }
 
+export function directionsUrl(query) {
+  return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(query)}`;
+}
+
 export function filterPlaces(places, query) {
   const needle = query.trim().toLocaleLowerCase();
   return places.filter((place) => !needle || `${place.zh} ${place.en} ${place.area} ${place.day}`.toLocaleLowerCase().includes(needle));

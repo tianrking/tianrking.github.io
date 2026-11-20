@@ -71,10 +71,15 @@
 }
 
 .englishHero h1 {letter-spacing: -.045em; font-size: clamp(2.3rem, 5.3vw, 4.6rem); line-height: 1.08;}
-.englishMobileToc {border:1px solid var(--site-line);border-radius:.8rem;background:var(--site-surface);padding:.6rem 1rem;}
-.englishMobileToc summary {min-height:44px;display:list-item;align-content:center;cursor:pointer;font-size:.9rem;font-weight:600;}
-.englishMobileToc summary:focus-visible {outline:2px solid var(--ifm-color-primary);outline-offset:3px;}
-.englishMobileToc ul {padding-left:1rem;}
+.mobileToc {border:1px solid var(--site-line-strong);border-radius:var(--site-radius-md);background:var(--site-surface-solid);padding:0 .9rem;box-shadow:var(--site-shadow-sm);}
+.mobileToc summary {min-height:48px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-size:.87rem;font-weight:650;list-style:none;}
+.mobileToc summary::-webkit-details-marker {display:none;}
+.mobileToc summary span:last-child {color:var(--ifm-color-primary);transition:transform 150ms var(--site-ease);}
+.mobileToc[open] summary span:last-child {transform:rotate(180deg);}
+.mobileTocList {max-height:44dvh;overflow:auto;overscroll-behavior:contain;border-top:1px solid var(--site-line);}
+.mobileTocList ul {padding-left:.85rem;}
+.mobileTocList > ul {padding-left:0;border:0;margin:0;}
+.mobileTocList a {display:flex;align-items:center;min-height:44px;padding:.3rem .2rem;}
 :global(.javaLegacyAnchor) {display:block;height:0;scroll-margin-top:6rem;}
 :global(html.indonesiaArticle) .dayJumpLinks a {min-height:44px;min-width:44px;}
 
@@ -204,9 +209,9 @@
 }
 
 @media (max-width: 640px) {
-  .hero { padding-top: 4.35rem; padding-bottom: 2.3rem; }
+  .hero { padding-top: 2.35rem; padding-bottom: 1.8rem; }
   .breadcrumb { margin-bottom: 1.2rem; }
-  .hero h1 { font-size: clamp(2.35rem, 11vw, 3.6rem); }
+  .hero h1 { font-size: clamp(2rem, 8.3vw, 3.2rem); line-height:1.13; letter-spacing:-.035em; }
   .dayJump { display: block; }
   .dayJumpLabel { display: block; padding-top: 0; margin-bottom: .55rem; }
   .dayJumpLinks { flex-wrap: nowrap; overflow-x: auto; padding: 0 0 .3rem; scrollbar-width: thin; }

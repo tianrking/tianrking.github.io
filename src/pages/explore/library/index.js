@@ -1,12 +1,25 @@
-import React, {useMemo, useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import {useLocation} from '@docusaurus/router';
 import contentIndex from '@site/src/data/content-index.json';
-import {travelDocument} from '@site/src/data/explore-series';
+import travelCatalog from '@site/src/data/travel-series-catalog.json';
 import styles from '../styles.module.css';
 
-const documents = [travelDocument, ...(contentIndex.documents || [])];
+const travelDocuments = travelCatalog.map((item) => ({
+  id: item.slug,
+  route: item.route,
+  title: item.title,
+  description: item.description,
+  section: '行旅誌',
+  kind: 'explore',
+  kindLabel: item.kind === 'record' ? '實走紀錄' : '行前規劃',
+  tags: [item.destination, ...(item.tags ?? [])],
+  keywords: item.slug.split('-'),
+}));
+const documents = [...travelDocuments, ...(contentIndex.documents || [])];
+const batchSize = 24;
 
 function uniqueValues(key) {
   return [...new Set(documents.flatMap((document) => document[key] || []).filter(Boolean))]
@@ -20,7 +33,7 @@ const years = [...new Set(documents.map((document) => document.year).filter(Bool
   .sort((left, right) => right.localeCompare(left));
 
 function formatDate(date) {
-  return date ? date.replaceAll('-', '.') : '未標日期';
+  return date?.replaceAll('-', '.');
 }
 
 function searchableText(document) {
@@ -39,7 +52,7 @@ function ContentCard({document}) {
     <Link className={styles.card} to={document.route}>
       <div className={styles.cardMeta}>
         <span>{document.kindLabel}</span>
-        <time dateTime={document.date || undefined}>{formatDate(document.date)}</time>
+        {document.date && <time dateTime={document.date}>{formatDate(document.date)}</time>}
       </div>
       <Heading as="h2">{document.title}</Heading>
       <p>{document.description || '這篇內容尚未提供摘要。'}</p>
@@ -52,11 +65,17 @@ function ContentCard({document}) {
 }
 
 export default function ExploreLibraryPage() {
+  const {search} = useLocation();
+  const routeQuery = new URLSearchParams(search).get('q')?.slice(0, 120) ?? '';
+  // Static HTML is generated without a query string; apply the URL after hydration.
   const [query, setQuery] = useState('');
+  useEffect(() => {setQuery(routeQuery);}, [routeQuery]);
   const [kind, setKind] = useState('all');
   const [section, setSection] = useState('all');
   const [tag, setTag] = useState('all');
   const [year, setYear] = useState('all');
+  const [limit, setLimit] = useState(batchSize);
+  useEffect(() => {setLimit(batchSize);}, [query, kind, section, tag, year]);
 
   const filteredDocuments = useMemo(() => {
     const normalizedQuery = query.trim().toLocaleLowerCase();
@@ -128,7 +147,10 @@ export default function ExploreLibraryPage() {
             <p aria-live="polite">顯示 <strong>{filteredDocuments.length}</strong> / {documents.length} 篇內容</p>
           </div>
           {filteredDocuments.length ? (
-            <div className={styles.grid}>{filteredDocuments.map((document) => <ContentCard key={document.id} document={document} />)}</div>
+            <>
+              <div className={styles.grid}>{filteredDocuments.slice(0, limit).map((document) => <ContentCard key={document.id} document={document} />)}</div>
+              {limit < filteredDocuments.length && <button className={styles.clearButton} style={{marginTop:'1.25rem'}} type="button" onClick={() => setLimit((count) => count + batchSize)}>顯示更多（已列出 {limit} 篇）</button>}
+            </>
           ) : (
             <div className={styles.emptyState} role="status">
               <Heading as="h2">找不到符合的內容。</Heading>

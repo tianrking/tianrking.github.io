@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import test from 'node:test';
-import {filterPlaces, mapUrl, restoreChecks} from './model.mjs';
+import {directionsUrl, filterPlaces, mapUrl, restoreChecks} from './model.mjs';
 import {cebu} from '../../../content/travel/cebu.mjs';
 import {cambodia} from '../../../content/travel/cambodia.mjs';
 import {VISITED_DESTINATIONS, HISTORY_CONTEXT, manilaCorregidor} from '../../../content/travel/manila-corregidor.mjs';
@@ -54,6 +54,14 @@ test('map searches encode place names without treating them as verified entrance
   const url = new URL(mapUrl('Argao & Cebu / 教堂'));
   assert.equal(url.origin, 'https://www.google.com');
   assert.equal(url.searchParams.get('query'), 'Argao & Cebu / 教堂');
+});
+
+test('map directions encode only the destination without collecting a user location', () => {
+  const url = new URL(directionsUrl('Argao & Cebu / 教堂'));
+  assert.equal(url.origin, 'https://www.google.com');
+  assert.equal(url.pathname, '/maps/dir/');
+  assert.equal(url.searchParams.get('destination'), 'Argao & Cebu / 教堂');
+  assert.equal(url.searchParams.has('origin'), false);
 });
 
 test('Cambodia preserves four park days, seven-day pass and a separate travel-notes status', () => {

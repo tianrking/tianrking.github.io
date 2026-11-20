@@ -1,5 +1,5 @@
 import React, {useEffect, useMemo, useState} from 'react';
-import {filterPlaces, mapUrl, restoreChecks} from './model.mjs';
+import {directionsUrl, filterPlaces, mapUrl, restoreChecks} from './model.mjs';
 import styles from './styles.module.css';
 
 export function RouteSummary({facts, language = 'zh'}) {
@@ -54,18 +54,24 @@ export function PlaceDirectory({guide, language = 'zh'}) {
   const [query, setQuery] = useState('');
   const places = useMemo(() => filterPlaces(guide.places, query), [guide.places, query]);
   return <section className={styles.directory} aria-label={en ? 'Searchable Google Maps directory' : 'Google Maps 地點目錄'}>
-    <label className={styles.search}>
-      <span>{en ? 'Find a place or day' : '搜尋地點、地區或日程'}</span>
-      <input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder={en ? 'Museum, heritage, D2…' : '博物館、古蹟、D2…'} />
-    </label>
+    <div className={styles.mapSearch}>
+      <label className={styles.search}>
+        <span>{en ? 'Find a place or day' : '搜尋地點、地區或日程'}</span>
+        <input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder={en ? 'Museum, heritage, D2…' : '博物館、古蹟、D2…'} />
+      </label>
+      <button type="button" disabled={!query} onClick={() => setQuery('')}>{en ? 'Clear' : '清除搜尋'}</button>
+    </div>
     <p className={styles.count} role="status">{places.length} / {guide.places.length} {en ? 'places' : '個地點'}</p>
     <div className={styles.places}>
-      {places.map((place) => <a className={styles.place} key={place.id} href={mapUrl(place.query)} target="_blank" rel="noopener noreferrer">
+      {places.map((place) => <div className={styles.place} key={place.id}>
         <span className={styles.placeMeta}>{place.day} · {place.area}</span>
         <strong>{en ? place.en : place.zh}</strong>
         {!en && <span className={styles.placeEnglish}>{place.en}</span>}
-        <span className={styles.mapAction}>{en ? 'Open Google Maps' : '開啟 Google Maps'} ↗</span>
-      </a>)}
+        <div className={styles.mapActions}>
+          <a href={mapUrl(place.query)} target="_blank" rel="noopener noreferrer" aria-label={en ? `View ${place.en} in Google Maps (new tab)` : `在 Google Maps 查看${place.zh}（新分頁）`}>{en ? 'View place' : '查看地點'} <span aria-hidden="true">↗</span></a>
+          <a href={directionsUrl(place.query)} target="_blank" rel="noopener noreferrer" aria-label={en ? `Directions to ${place.en} in Google Maps (new tab)` : `在 Google Maps 導航至${place.zh}（新分頁）`}>{en ? 'Directions' : '開始導航'} <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>)}
     </div>
     {!places.length && <p>{en ? 'No matching place. Clear the search to see all locations.' : '沒有符合的地點，清除搜尋即可顯示全部。'}</p>}
     <p className={styles.note}>{en ? 'Search pins are navigation starting points, not verified entrances, bus stops or pickup positions. Check the exact gate and meeting point with the venue or operator.' : '搜尋定位是導航起點，不是已核實的入口、巴士站或上車點；實際大門與集合位置仍須向場館或承運人確認。'}</p>

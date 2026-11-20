@@ -625,7 +625,7 @@
   .primaryAction:hover,
   .secondaryAction:hover {
     border-color: var(--home-accent);
-    color: #f7fbf9;
+    color: var(--site-canvas);
     background: var(--home-accent);
     box-shadow: 0 13px 34px color-mix(in srgb, var(--home-accent) 22%, transparent);
     text-decoration: none;
@@ -782,7 +782,7 @@
 /* Editorial polish: fewer equal-weight cards, calmer spacing, clearer
    hierarchy. The particle field remains the only expressive motion layer. */
 .hero {
-  min-height: 38rem;
+  min-height: 0;
 }
 
 .heroInner {
@@ -792,9 +792,39 @@
 
 .hero h1 {
   max-width: 44rem;
-  font-size: clamp(2.75rem, 5.2vw, 4.35rem);
-  line-height: 1.045;
+  font-size: clamp(2.75rem, 5.7vw, 5.25rem);
+  line-height: 1.12;
+  letter-spacing: -.055em;
 }
+
+.hero h1 > span {display:block;color:var(--home-accent);}
+.heroSearch {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  max-width:32rem;
+  margin-top:1.4rem;
+  border:1px solid var(--site-line-strong);
+  border-radius:var(--site-radius-md);
+  background:var(--site-surface-solid);
+  box-shadow:var(--site-shadow-sm);
+}
+.heroSearch:focus-within {border-color:var(--home-accent);}
+.searchLabel {position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
+.heroSearch input {width:100%;min-width:0;min-height:3.15rem;border:0;border-radius:inherit;padding:.75rem 1rem;color:var(--site-ink);background:transparent;font:inherit;font-size:.94rem;}
+.heroSearch input::placeholder {color:var(--site-muted);}
+.heroSearch button {min-height:44px;margin:.25rem;padding:.4rem .85rem;border:0;border-radius:.7rem;color:var(--home-accent);background:color-mix(in srgb,var(--home-accent) 9%,var(--site-surface-solid));font:inherit;font-size:.83rem;font-weight:700;cursor:pointer;}
+.heroSearch button:hover {background:color-mix(in srgb,var(--home-accent) 16%,var(--site-surface-solid));}
+.latestList {position:relative;z-index:1;list-style:none;margin:0;padding:0;}
+.latestList li {border-bottom:1px solid var(--site-line);}
+.latestList a {display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.28rem .8rem;padding:1rem 1.15rem;color:var(--site-ink);text-decoration:none;transition:background 150ms var(--site-ease);}
+.latestList a:focus-visible {outline-offset:-3px;}
+.latestList a:hover {background:color-mix(in srgb,var(--home-accent) 7%,transparent);}
+.latestList small {grid-column:1/-1;color:var(--site-muted);font-size:.72rem;font-variant-numeric:tabular-nums;}
+.latestList strong {font-size:.98rem;line-height:1.5;font-weight:650;}
+.latestArrow,.panelFooter a {color:var(--home-accent);}
+.panelFooter a {display:inline-flex;gap:.6rem;align-items:center;min-height:44px;font-size:.85rem;font-weight:650;}
+.panelFooter {padding-block:.35rem;}
 
 .lead {
   max-width: 36rem;
@@ -1110,14 +1140,15 @@
 
 @media (max-width: 700px) {
   .heroInner {
-    padding-top: 4.25rem;
-    padding-bottom: 4.25rem;
+    gap:1.8rem;
+    padding-top: 3rem;
+    padding-bottom: 2.25rem;
   }
 
   .hero h1 {
     max-width: 23rem;
-    font-size: clamp(2.55rem, 12vw, 3.45rem);
-    line-height: 1.06;
+    font-size: clamp(2.35rem, 11vw, 3.45rem);
+    line-height: 1.12;
   }
 
   .lead {

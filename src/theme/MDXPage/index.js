@@ -12,7 +12,6 @@ import MDXContent from '@theme/MDXContent';
 import TOC from '@theme/TOC';
 import ContentVisibility from '@theme/ContentVisibility';
 import EditMetaRow from '@theme/EditMetaRow';
-import TOCCollapsible from '@theme/TOCCollapsible';
 import TOCItems from '@theme/TOCItems';
 import seriesCatalog from '@site/src/data/travel-series-catalog.json';
 import styles from './styles.module.css';
@@ -136,15 +135,17 @@ export default function MDXPage({content: MDXPageContent}) {
         <main className={clsx('container', 'container--fluid', 'margin-vert--lg', isTravelArticle && 'travelGuidePage_main')}>
           {isTravelArticle && !hideTableOfContents && contentToc.length > 0 && (
             <div className="travelGuidePage_mobileToc" aria-label={isEnglish ? 'Contents' : '本文目錄'} lang={isEnglish ? 'en' : undefined}>
-              {isEnglish ? <details className={styles.englishMobileToc}>
-                <summary>On this page</summary>
-                <TOCItems toc={contentToc} minHeadingLevel={frontMatter.toc_min_heading_level} maxHeadingLevel={frontMatter.toc_max_heading_level} />
-              </details> : <TOCCollapsible
-                toc={contentToc}
-                minHeadingLevel={frontMatter.toc_min_heading_level}
-                maxHeadingLevel={frontMatter.toc_max_heading_level}
-                className="travelGuidePage_mobileTocCollapsible"
-              />}
+              <details className={styles.mobileToc}
+                onClick={(event) => {if (event.target.closest('a[href^="#"]')) event.currentTarget.open = false;}}
+                onKeyDown={(event) => {
+                  if (event.key === 'Escape' && event.currentTarget.open) {
+                    event.currentTarget.open = false;
+                    event.currentTarget.querySelector('summary')?.focus();
+                  }
+                }}>
+                <summary><span>{isEnglish ? 'On this page' : '本文目錄'}</span><span aria-hidden="true">⌄</span></summary>
+                <div className={styles.mobileTocList}><TOCItems toc={contentToc} minHeadingLevel={frontMatter.toc_min_heading_level} maxHeadingLevel={frontMatter.toc_max_heading_level} /></div>
+              </details>
             </div>
           )}
           <div className={clsx('row', 'travelGuidePage_contentRow')}>

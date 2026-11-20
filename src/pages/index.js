@@ -2,13 +2,13 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import {useHistory} from '@docusaurus/router';
 import ProjectCard, {
   getCategoryLabel,
   getProjectLanguages,
   getStatusLabel,
   useFeaturedProjects,
 } from '@site/src/components/ProjectCard';
-import ParticleField from '@site/src/components/ParticleField';
 import contentIndex from '@site/src/data/content-index.json';
 import styles from './index.module.css';
 
@@ -65,54 +65,51 @@ function SectionHeading({eyebrow, title, description, action}) {
 }
 
 function HomepageHero() {
+  const history = useHistory();
   return (
     <header className={styles.hero}>
-      <div className={styles.heroGrid} aria-hidden="true" />
-      <ParticleField />
       <div className={`container ${styles.heroInner}`}>
         <div className={styles.heroCopy}>
-          <span className={styles.identity}>w0x7ce / 個人技術筆記</span>
-          <Heading as="h1">Embedded Systems · Local AI · Infrastructure</Heading>
+          <span className={styles.identity}>W0X7CE / 個人網站</span>
+          <Heading as="h1">工程筆記<span>與旅途紀錄。</span></Heading>
           <p className={styles.lead}>
-            技術筆記、專案與實驗。
+            記下嵌入式系統、在地 AI 與基礎設施的實作，也整理走過的城市、博物館與古蹟。
           </p>
           <div className={styles.heroActions}>
-            <Link className={styles.primaryAction} to="/projects">
-              查看專案 <span aria-hidden="true">→</span>
+            <Link className={styles.primaryAction} to="/tutorial">
+              閱讀技術筆記 <span aria-hidden="true">→</span>
             </Link>
-            <Link className={styles.secondaryAction} to="/tutorial">
-              閱讀技術筆記
+            <Link className={styles.secondaryAction} to="/explore/travel/#completed-heading">
+              瀏覽旅行紀錄
             </Link>
           </div>
-          <div className={styles.disciplines} aria-label="主要領域">
-            <span>Embedded Systems</span>
-            <span>Local AI</span>
-            <span>Infrastructure</span>
-          </div>
+          <form className={styles.heroSearch} role="search" aria-label="搜尋全站索引" action="/explore/library" onSubmit={(event) => {
+            event.preventDefault();
+            const query = String(new FormData(event.currentTarget).get('q') ?? '').trim();
+            history.push(query ? `/explore/library?${new URLSearchParams({q: query})}` : '/explore/library');
+          }}>
+            <label htmlFor="home-site-search" className={styles.searchLabel}>搜尋文章標題、摘要與地點</label>
+            <input id="home-site-search" name="q" type="search" maxLength={120} placeholder="例如：BLE、爪哇、Corregidor" />
+            <button type="submit">搜尋 <span aria-hidden="true">↗</span></button>
+          </form>
         </div>
 
-        <aside className={styles.signalPanel} aria-label="網站內容">
+        <aside className={styles.signalPanel} aria-label="最新文章">
           <div className={styles.panelHeader}>
-            <span>內容索引</span>
-            <span className={styles.liveIndicator}>現在</span>
+            <span>最新文章</span>
+            <span lang="en">LATEST</span>
           </div>
-          <ol className={styles.evidenceList}>
-            <li>
-              <span>01</span>
-              <div><strong>技術筆記</strong><small>流程 · 除錯 · 參考資料</small></div>
-            </li>
-            <li>
-              <span>02</span>
-              <div><strong>專案</strong><small>硬體 · 軟體 · 工具</small></div>
-            </li>
-            <li>
-              <span>03</span>
-              <div><strong>實驗場</strong><small>服務 · Demo · 實驗</small></div>
-            </li>
-          </ol>
+          <ul className={styles.latestList}>
+            {recentWork.slice(0, 3).map((item) => <li key={item.to}>
+              <Link to={item.to}>
+                <small>{item.kind} <span aria-hidden="true">·</span> {item.date}</small>
+                <strong>{item.title}</strong>
+                <span className={styles.latestArrow} aria-hidden="true">↗</span>
+              </Link>
+            </li>)}
+          </ul>
           <div className={styles.panelFooter}>
-            <span>最新筆記</span>
-            <strong>TLSR8258 開發與燒錄筆記</strong>
+            <Link to="/explore/library">瀏覽全站索引 <span aria-hidden="true">→</span></Link>
           </div>
         </aside>
       </div>
@@ -183,13 +180,13 @@ export default function Home() {
 
         <section className={styles.nowSection} aria-labelledby="now-heading">
           <div className={`container ${styles.nowInner}`}>
-            <span className={styles.nowLabel}>現在</span>
+            <span className={styles.nowLabel}>選讀</span>
             <div>
               <Heading id="now-heading" as="h2">TLSR8258 開發與燒錄</Heading>
               <p>包含工具鏈、接線、常見錯誤與實板測試記錄。</p>
             </div>
             <Link to="/embedded/telink/tlsr8258/sws-build-flash-verify">
-              查看目前筆記 <span aria-hidden="true">↗</span>
+              閱讀完整筆記 <span aria-hidden="true">↗</span>
             </Link>
           </div>
         </section>

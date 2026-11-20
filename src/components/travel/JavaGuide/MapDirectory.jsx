@@ -18,7 +18,10 @@ export default function MapDirectory({language = 'zh'}) {
     </div>
     <label className={styles.searchLabel} htmlFor={`${id}-search`}>{en ? 'Find a place' : '搜尋地點'}</label>
     <input className={styles.search} id={`${id}-search`} type="search" value={search} placeholder={en ? 'e.g. Borobudur, PSE, hotel…' : '例如：婆羅浮屠、PSE、酒店…'} onChange={(event) => setSearch(event.target.value)} />
-    <p className={styles.count} aria-live="polite">{en ? `${places.length} ${places.length === 1 ? 'place' : 'places'}` : `${places.length} 個地點`}</p>
+    <div className={styles.resultBar}>
+      <p className={styles.count} aria-live="polite">{en ? `${places.length} ${places.length === 1 ? 'place' : 'places'}` : `${places.length} 個地點`}</p>
+      <button type="button" disabled={city === 'all' && !search} onClick={() => {setCity('all'); setSearch('');}}>{en ? 'Reset filters' : '重設篩選'}</button>
+    </div>
     {places.length > 0 ? <ul className={styles.places} role="list">
       {places.map((place) => <li key={place.id}>
         <div className={styles.placeCard}>
@@ -31,6 +34,6 @@ export default function MapDirectory({language = 'zh'}) {
           </div>
         </div>
       </li>)}
-    </ul> : <div className={styles.empty}><p>{en ? 'No matching places. Try another name or area.' : '沒有匹配地點，試試其他名稱或區域。'}</p><button type="button" onClick={() => {setCity('all'); setSearch('');}}>{en ? 'Reset filters' : '重設篩選'}</button></div>}
+    </ul> : <div className={styles.empty}><p>{en ? 'No matching places. Try another name or area.' : '沒有匹配地點，試試其他名稱或區域。'}</p></div>}
   </section>;
 }

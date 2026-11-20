@@ -229,7 +229,11 @@ const config = {
             label: '技術筆記',
           },
           {to: '/blog', label: '開發誌', position: 'left'},
-          {to: '/explore', label: '探索', position: 'left'},
+          {label: '探索', position: 'left', items: [
+            {to: '/explore', label: '探索首頁', exact: true},
+            {to: '/explore/travel', label: '旅行專題'},
+            {to: '/explore/library', label: '全站內容索引'},
+          ]},
           {to: '/projects', label: '專案', position: 'left'},
           {to: '/databases', label: '資料庫', position: 'left'},
           {to: '/labs', label: '實驗場', position: 'left'},

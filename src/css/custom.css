@@ -1,5 +1,6 @@
 @import './travel-series.css';
 @import 'katex/dist/katex.min.css';
+@import './editorial.css';
 
 :root {
   --ifm-color-primary: #167a5c;
