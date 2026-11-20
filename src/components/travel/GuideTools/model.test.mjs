@@ -41,7 +41,13 @@ test('Manila and Corregidor actual travel remains separate from the future Cebu 
   assert.match(config,/from: '\/explore\/travel\/philippines-10-day-manila-cebu-bohol',\s+to: '\/explore\/travel\/philippines-manila-corregidor-travel-notes'/);
   assert.equal(fs.existsSync('src/pages/explore/travel/philippines-10-day-manila-cebu-bohol/index.mdx'),false);
   const catalog = JSON.parse(fs.readFileSync('src/data/travel-series-catalog.json','utf8'));
-  assert.ok(catalog.find((entry)=>entry.issue===8).companionRoutes.includes('/explore/travel/philippines-manila-corregidor-travel-notes'));
+  const manila = catalog.find((entry)=>entry.issue===8);
+  assert.equal(manila.slug,'philippines-manila-corregidor-travel-notes');
+  assert.equal(manila.kind,'record');
+  assert.equal(manila.days,null);
+  assert.equal(manila.nights,null);
+  assert.equal(catalog.find((entry)=>entry.slug==='philippines-cebu-9-day-heritage-coast-highlands').kind,'plan');
+  assert.ok(catalog.every((entry)=>!entry.companionRoutes.includes(manila.route)));
 });
 
 test('map searches encode place names without treating them as verified entrances', () => {

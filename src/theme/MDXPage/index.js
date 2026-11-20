@@ -22,7 +22,6 @@ import GuideControls from '@site/src/components/travel/JavaGuide/controls';
 const companionIssues = {
   'malaysia-10-day-kuala-lumpur-melaka-ipoh-taiping-penang': 1,
   'vietnam-north-8-day-hanoi-ninh-binh-sapa': 5,
-  'philippines-manila-corregidor-travel-notes': 8,
 };
 
 function flattenToc(toc = []) {
@@ -86,6 +85,8 @@ export default function MDXPage({content: MDXPageContent}) {
     ? `TRAVEL COMPANION / SERIES ${String(issueNumber).padStart(2, '0')}`
     : `TRAVEL SERIES / ${String(issueNumber).padStart(2, '0')}`;
   const isConditional = Boolean(seriesEntry?.conditional);
+  const recordLabelZh = bilingual?.recordLabelZh ?? (seriesEntry?.kind === 'record' ? '已完成旅行紀錄' : seriesEntry?.kind === 'plan' ? '未實走規劃' : null);
+  const recordLabelEn = bilingual?.recordLabelEn ?? (seriesEntry?.kind === 'record' ? 'COMPLETED JOURNEY' : 'UNTRAVELLED PLAN');
   const canDisplayEditMetaRow = !!(editUrl || lastUpdatedAt || lastUpdatedBy);
 
   return (
@@ -107,7 +108,7 @@ export default function MDXPage({content: MDXPageContent}) {
               </nav>
               <div className={styles.eyebrowRow}>
                 <span className={styles.eyebrow}>{issueNumber ? issueLabel : 'TRAVEL NOTES / ROUTE GUIDE'}</span>
-                {bilingual?.recordLabelZh && <span className={styles.routeMeta}>{isEnglish ? bilingual.recordLabelEn : bilingual.recordLabelZh}</span>}
+                {recordLabelZh && <span className={styles.routeMeta}>{isEnglish ? recordLabelEn : recordLabelZh}</span>}
                 {seriesEntry?.destination && <span className={styles.routeMeta}>{isEnglish ? bilingual.destination : seriesEntry.destination}</span>}
                 {seriesEntry?.region && <span className={styles.routeMeta}>{isEnglish ? bilingual.region : seriesEntry.region}</span>}
                 {duration ? <span className={styles.duration}>{isEnglish ? `${duration} days / ${duration - 1} nights` : `${duration} 日 / ${Math.max(0, duration - 1)} 晚`}</span> : null}

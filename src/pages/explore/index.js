@@ -2,7 +2,7 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
-import {travelSeries, indonesiaTravelSeries} from '@site/src/data/explore-series';
+import {travelSeries, indonesiaTravelSeries, manilaTravelSeries} from '@site/src/data/explore-series';
 import travelCatalog from '@site/src/data/travel-series-catalog.json';
 import styles from './styles.module.css';
 
@@ -12,7 +12,7 @@ const categories = [
     label: '行旅誌',
     title: '旅行規劃與記錄',
     description: '把路線、歷史、交通、預算與現場觀察整理成下一次可以直接使用的旅程。',
-    meta: `${travelCatalog.length} 篇目的地專題`,
+    meta: `${travelCatalog.filter((entry) => entry.kind === 'record').length} 篇旅行紀錄 · ${travelCatalog.filter((entry) => entry.kind === 'plan').length} 篇行前規劃`,
     route: '/explore/travel',
     accent: 'travel',
   },
@@ -42,7 +42,7 @@ export default function ExplorePage() {
               </Link>
             </div>
             <Heading as="h1">探索系列</Heading>
-            <p>旅行規劃與非技術專題。選擇一個系列。</p>
+            <p>真實旅行記錄、行前規劃與非技術專題，分開整理。</p>
           </div>
         </header>
 
@@ -91,6 +91,17 @@ export default function ExplorePage() {
           </div>
           <Link className={styles.featuredLink} to={indonesiaTravelSeries.route}>
             閱讀行程 <span aria-hidden="true">→</span>
+          </Link>
+        </section>
+
+        <section className={`container ${styles.featuredStrip}`} aria-labelledby="featured-manila">
+          <div>
+            <span className={styles.sectionKicker}>{manilaTravelSeries.eyebrow}</span>
+            <Heading as="h2" id="featured-manila">{manilaTravelSeries.title}</Heading>
+            <p>{manilaTravelSeries.description}</p>
+          </div>
+          <Link className={styles.featuredLink} to={manilaTravelSeries.route}>
+            閱讀旅行紀錄 <span aria-hidden="true">→</span>
           </Link>
         </section>
 

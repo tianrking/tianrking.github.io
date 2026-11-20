@@ -29,3 +29,11 @@ export const indonesiaTravelSeries = {
   meta: '2026 · 實走紀錄 · 城市深度遊 · 大寺、火山與瀑布',
   route: '/explore/travel/indonesia-java-10-day-jakarta-yogyakarta-surabaya',
 };
+
+export const manilaTravelSeries = {
+  eyebrow: 'TRAVEL SERIES / 08',
+  title: '馬尼拉與科雷希多島：城市旅行與二戰記憶',
+  description: '已完成的菲律賓旅行：馬尼拉城市旅行與科雷希多島二戰歷史，將真實足跡與史料導讀分開整理。宿務九日另列為未出發規劃。',
+  meta: '實走紀錄 · 馬尼拉 · 科雷希多島 · 二戰歷史',
+  route: '/explore/travel/philippines-manila-corregidor-travel-notes',
+};

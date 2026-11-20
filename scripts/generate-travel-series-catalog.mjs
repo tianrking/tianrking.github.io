@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {travelPublicationKind} from '../src/data/travel-publication.mjs';
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const rootDirectory = path.resolve(scriptDirectory, '..');
@@ -44,6 +45,7 @@ const regionSlugs = new Map([
     'cambodia-10-day-phnom-penh-siem-reap-angkor',
     'laos-10-day-vientiane-vang-vieng-luang-prabang',
     'philippines-cebu-9-day-heritage-coast-highlands',
+    'philippines-manila-corregidor-travel-notes',
     'thailand-10-day-bangkok-ayutthaya-chiang-mai',
     'brunei-10-day-bandar-temburong-tutong-belait',
     'singapore-10-day-city-heritage-nature',
@@ -132,7 +134,8 @@ for (const [index, slug] of order.entries()) {
       slug,
       route: `/explore/travel/${slug}`,
       title: '馬來西亞西馬半島 9 日：博物館、歷史遺跡與二戰',
-      description: '從馬六甲、檳城到布央谷、太平、怡保與吉隆坡；把殖民港口、博物館、戰爭遺址、公共交通、預算與現場風險放進同一份可執行計畫。',
+      description: '已完成的馬來西亞旅行：從馬六甲、檳城到布央谷、太平、怡保與吉隆坡，保留博物館、歷史遺跡、二戰主題與沿途交通記錄。',
+      kind: 'record',
       destination: '馬來西亞',
       region: travelRegionBySlug.get(slug),
       days: 9,
@@ -156,7 +159,16 @@ for (const [index, slug] of order.entries()) {
   const title = frontMatterField(frontMatter, 'title');
   const description = frontMatterField(frontMatter, 'description');
   const tags = parseTags(frontMatter);
-  const duration = durationFrom(title, slug);
+  const kind = travelPublicationKind(slug);
+  const thematicRecord = frontMatterField(frontMatter, 'travel_format') === 'thematic-record';
+  const duration = thematicRecord ? {days: null, nights: null} : durationFrom(title, slug);
+  if (thematicRecord && kind !== 'record') throw new Error(`A thematic travel record must be explicitly confirmed: ${slug}`);
+  if (thematicRecord) {
+    for (const feature of ['#trip-record */}', 'completed:true', 'PlaceDirectory', '#sources */}']) {
+      if (!source.includes(feature)) throw new Error(`Thematic travel record is missing ${feature}: ${slug}`);
+    }
+    if (/^###\s+D\d+\b/m.test(source)) throw new Error(`Thematic record must not invent a daily diary: ${slug}`);
+  }
   const dayHeadings = [...source.matchAll(/^###\s+D(\d+)\b/gm)].map((match) => Number(match[1]));
   const expectedDayHeadings = Array.from({length: duration.days}, (_, day) => day + 1);
   if (dayHeadings.join(',') !== expectedDayHeadings.join(',')) {
@@ -167,10 +179,11 @@ for (const [index, slug] of order.entries()) {
 
   const articleBody = source.replace(/^---\s*\r?\n[\s\S]*?\r?\n---\s*\r?\n/, '');
   const chineseCharacters = [...articleBody].filter((character) => /\p{Script=Han}/u.test(character)).length;
-  if (chineseCharacters < malaysiaChineseCharacterBaseline) {
+  const minimumCharacters = thematicRecord ? 1200 : malaysiaChineseCharacterBaseline;
+  if (chineseCharacters < minimumCharacters) {
     throw new Error(
       `Travel issue ${String(index + 1).padStart(2, '0')} has ${chineseCharacters} Han characters; `
-      + `the Malaysia / 01 benchmark is ${malaysiaChineseCharacterBaseline}: ${articlePath}`,
+      + `the required content benchmark is ${minimumCharacters}: ${articlePath}`,
     );
   }
 
@@ -191,7 +204,11 @@ for (const [index, slug] of order.entries()) {
     }
   }
 
-  const contentRequirements = [
+  const contentRequirements = thematicRecord ? [
+    ['confirmed travel record', /#trip-record/],
+    ['historical context', /#heritage/],
+    ['place directory', /PlaceDirectory/],
+  ] : [
     ['transport/logistics', /交通|鐵路|铁路|公車|巴士|火車|火车|轉場|转场|接駁|接驳|transport|transfer|rail|bus/i],
     ['accommodation', /住宿|酒店|旅宿|過夜|过夜|accommodation|lodging|hotel/i],
     ['budget/costs', /預算|预算|費用|费用|成本|花費|花费|budget|cost/i],
@@ -213,16 +230,15 @@ for (const [index, slug] of order.entries()) {
     route: `/explore/travel/${slug}`,
     title,
     description,
+    kind,
     destination: tags.find((tag) => tag !== '旅行') || title.split(/[：:，,\s]/)[0],
     region: travelRegionBySlug.get(slug),
     days: duration.days,
     nights: duration.nights,
     tags: tags.filter((tag) => tag !== '旅行').slice(1, 4),
-    featured: index === 1,
+    featured: kind === 'record',
     companionRoutes: slug === 'vietnam-north-10-day-hanoi-ninh-binh-sapa'
       ? ['/explore/travel/vietnam-north-8-day-hanoi-ninh-binh-sapa']
-      : slug === 'philippines-cebu-9-day-heritage-coast-highlands'
-        ? ['/explore/travel/philippines-manila-corregidor-travel-notes']
       : [],
     conditional: conditionalTravelSlugs.has(slug)
       || /conditional|條件式路線|条件式路线|暫緩|暂缓|暫不出發|暂不出发|未來條件|未来条件|暫勿前往|暂勿前往|旅行警示|不作現時出行建議|不作现时出行建议/.test(`${slug} ${title} ${description} ${tags.join(' ')}`)

@@ -15,12 +15,15 @@ const regionFilters = [
   {id: '西亞', label: '西亞'},
   {id: '歐亞', label: '歐亞'},
 ];
+const completedIssues = issues.filter((issue) => issue.kind === 'record');
+const plannedIssues = issues.filter((issue) => issue.kind === 'plan');
 
 function IssueCard({issue}) {
   return (
     <article className={`${styles.issueCard} ${issue.conditional ? styles.issueCardConditional : ''}`}>
       <div className={styles.issueCardTop}>
         <span className={styles.issueNumber}>TRAVEL SERIES / {String(issue.issue).padStart(2, '0')}</span>
+        <span className={styles.statusFlag}>{issue.kind === 'record' ? '已完成旅行' : '行前規劃'}</span>
         {issue.conditional && <span className={styles.conditionalFlag}>條件式規劃</span>}
       </div>
       <Heading as="h3"><Link to={issue.route}>{issue.title}</Link></Heading>
@@ -28,7 +31,7 @@ function IssueCard({issue}) {
       <div className={styles.issueMeta}>
         <span>{issue.destination}</span>
         <span>{issue.region}</span>
-        <span>{issue.days} 日 / {issue.nights} 晚</span>
+        {issue.kind === 'plan' && issue.days != null && <span>{issue.days} 日 / {issue.nights} 晚</span>}
       </div>
       {issue.companionRoutes.length > 0 && (
         <div className={styles.companionLinks}>
@@ -38,15 +41,13 @@ function IssueCard({issue}) {
                 ? '另有 10 日慢遊版'
                 : route.includes('vietnam-north-8-day')
                   ? '另有 9 日版（含離境緩衝）'
-                  : route.includes('philippines-manila-corregidor')
-                    ? '已完成：馬尼拉與科雷希多島旅行筆記'
-                    : '另有精簡版'} <span aria-hidden="true">↗</span>
+                  : '另有精簡版'} <span aria-hidden="true">↗</span>
             </Link>
           ))}
         </div>
       )}
       <Link className={styles.readLink} to={issue.route}>
-        閱讀完整專題 <span aria-hidden="true">↗</span>
+        {issue.kind === 'record' ? '閱讀旅行紀錄' : '閱讀行前規劃'} <span aria-hidden="true">↗</span>
       </Link>
     </article>
   );
@@ -68,20 +69,22 @@ export default function TravelSeriesPage() {
       return matchesQuery && matchesRegion && matchesSafety;
     });
   }, [conditionalOnly, query, region]);
+  const visibleRecords = visibleIssues.filter((issue) => issue.kind === 'record');
+  const visiblePlans = visibleIssues.filter((issue) => issue.kind === 'plan');
 
   return (
     <Layout
       title="旅行專題"
-      description="獨立編號的亞洲旅行專題，整理路線與歷史脈絡、交通住宿、預算及必要安全資訊；高風險目的地會明確標示限制，並非可直接預訂。">
+      description="馬來西亞、印尼與馬尼拉／科雷希多島的真實旅行紀錄並列呈現；其餘尚未實走的路線另列行前規劃，不混作親歷。">
       <main className={styles.page}>
         <header className={styles.hero}>
           <div className={`container ${styles.heroInner}`}>
             <div className={styles.eyebrow}>EXPLORATION / TRAVEL SERIES</div>
             <Heading as="h1">旅行專題</Heading>
-            <p>每篇聚焦一個目的地，整理路線、歷史脈絡、交通、住宿、預算與實際限制；有條件的旅程會在文首說明。</p>
+            <p>走過的旅程，留下真實記錄；尚未實走的路線，另作行前規劃。兩種文章分開閱讀。</p>
             <div className={styles.heroFacts}>
-              <span><strong>{issues.length.toString().padStart(2, '0')}</strong> 篇亞洲目的地專題</span>
-              <span>一篇一條完整路線</span>
+              <span><strong>{completedIssues.length}</strong> 篇旅行紀錄</span>
+              <span><strong>{plannedIssues.length}</strong> 篇行前規劃</span>
               <Link to="/explore/library">探索全部內容 <span aria-hidden="true">↗</span></Link>
             </div>
           </div>
@@ -91,8 +94,8 @@ export default function TravelSeriesPage() {
           <div className={styles.libraryHeader}>
             <div className={styles.sectionIntro}>
               <span className={styles.sectionEyebrow}>THE SERIES / 01—{String(issues.length).padStart(2, '0')}</span>
-              <Heading as="h2" id="library-heading">一篇一條路線。</Heading>
-              <p>01 馬來西亞、02 印度尼西亞，後續專題依序編號；高風險地區的文章只作安全條件改善後的路線參考。</p>
+              <Heading as="h2" id="library-heading">實走與規劃，分開閱讀。</Heading>
+              <p>馬來西亞、印度尼西亞、馬尼拉與科雷希多島是已完成旅行的主文章，同級呈現。其他路線列為尚未實走的行前規劃。</p>
             </div>
             <label className={styles.searchBox}>
               <span className={styles.visuallyHidden}>搜尋旅行專題</span>
@@ -129,8 +132,23 @@ export default function TravelSeriesPage() {
           </div>
 
           {visibleIssues.length > 0 ? (
-            <div className={styles.issueGrid}>
-              {visibleIssues.map((issue) => <IssueCard key={issue.slug} issue={issue} />)}
+            <div>
+              {visibleRecords.length > 0 && <section aria-labelledby="completed-heading">
+                <div className={styles.sectionIntro}>
+                  <span className={styles.sectionEyebrow}>TRAVEL JOURNALS</span>
+                  <Heading as="h2" id="completed-heading">已完成的旅行紀錄</Heading>
+                  <p>真實足跡與現場記憶；史料導讀和保留的行前參考不自動視為到訪清單。</p>
+                </div>
+                <div className={styles.issueGrid}>{visibleRecords.map((issue) => <IssueCard key={issue.slug} issue={issue} />)}</div>
+              </section>}
+              {visiblePlans.length > 0 && <section className={styles.plannedSection} aria-labelledby="plans-heading">
+                <div className={styles.sectionIntro}>
+                  <span className={styles.sectionEyebrow}>FUTURE ROUTES</span>
+                  <Heading as="h2" id="plans-heading">尚未實走的行前規劃</Heading>
+                  <p>用於研究下一趟旅行，不是已完成遊記，也不代表本人已按這條路線出發；部分文章仍是待補親歷的底稿。</p>
+                </div>
+                <div className={styles.issueGrid}>{visiblePlans.map((issue) => <IssueCard key={issue.slug} issue={issue} />)}</div>
+              </section>}
             </div>
           ) : (
             <div className={styles.emptyState}>

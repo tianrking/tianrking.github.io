@@ -126,6 +126,9 @@
 }
 
 .issueNumber { font-size: .61rem; letter-spacing: .1em; }
+.issueCardTop {flex-wrap:wrap;}
+.statusFlag {color:var(--site-muted);font-size:.66rem;white-space:nowrap;}
+.plannedSection {margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid var(--site-line);}
 
 .conditionalFlag {
   padding: .2rem .42rem;
