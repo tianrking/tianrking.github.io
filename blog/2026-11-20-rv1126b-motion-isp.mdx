@@ -1,0 +1,47 @@
+---
+title: "運動相機 ISP 實測｜先鎖住曝光，再驗證 HDR 與 3DNR"
+slug: /rv1126b-motion-isp
+description: "從 IMX415 的曝光、增益與幀率原始讀值出發，建立運動 AE、雙曝光 HDR 和時域降噪的實驗順序。"
+authors: [tianrking]
+tags: [rv1126b, camera-engineering]
+image: /img/blog/rv1126b-camera/isp-baseline.png
+---
+
+低光下，傳統自動曝光會拉長曝光時間。運動相機需要把曝光時長、感光增益和輸出幀率放在一起看。這次先在 **K12S-C + IMX415** 上以 1080p30 讀 32 組曝光、增益和編碼幀率，為後續明暗交替、快速移動和 HDR 留一條可核對的基線。
+
+{/* truncate */}
+
+<figure className="camera-lab-figure">
+  <img src="/img/blog/rv1126b-camera/isp-baseline.png" alt="實板 32 次取樣。編碼幀率在 30 fps 附近，感光元件回讀的曝光值是 675 行，類比增益值是 7。" />
+  <figcaption>固定室內場景的實板讀值。橫軸是樣本序號，感光元件曝光以驅動行數表示。</figcaption>
+</figure>
+
+## 先驗證正在運行的模式
+
+線性模式下，`rkaiq_3A_server` 使用已部署的 IMX415 運動 IQ。設定目標 30 fps，曝光表配置上限 10 ms。約 8 秒輪詢期間，編碼幀率讀值為 **29.98–30.03 fps**。感光元件回報 **675 行的曝光計數、類比增益控制值 7，以及垂直消隱 58**。675 行需按對應感光元件模式和實測行週期換算。後續明暗轉場實驗應逐幀採樣並用幀序號關聯。
+
+子裝置編號可能隨裝置拓撲變動，先從 `media-ctl -p` 找到活動中的 IMX415。
+
+```sh
+media-ctl -p
+v4l2-ctl -d /dev/v4l-subdev5 --get-ctrl=exposure,analogue_gain,vertical_blanking
+radian-control 127.0.0.1 STATUS
+```
+
+[32 組實板資料](/research/rv1126b-camera/isp-baseline.csv) · [Linux V4L2 感光元件文件](https://www.kernel.org/doc/html/latest/userspace-api/media/drivers/camera-sensor.html)
+
+## 把 AE、AWB 和 AF 分開驗收
+
+先在固定照明和固定轉速下比較曝光上限 `1/120 s` 與 `1/240 s`。用同一畫面邊緣看模糊寬度，記錄暗部噪聲和實際幀率。快門較短能壓低運動模糊，逐行曝光時間的幾何偏差要單獨標定。再做亮到暗、暗到亮的切換，記錄每一幀的實際曝光和增益，量光源頻閃及亮度過渡。
+
+實板的 RKAIQ 頭文件有 `rk_aiq_uapi2_setExpTimeRange` 和 `rk_aiq_uapi2_setExpGainRange`。驗證時先讀回參數，再確認感光元件和編碼畫面的反應。AWB 用灰卡和定照度光源量穩定時間。AF 需先確認鏡頭模組有可控制的 VCM，目前參考板媒體拓撲未看到該致動器。 [Rockchip RV1126B 資料手冊](https://opensource.rock-chips.com/images/8/82/Rockchip_RV1126B_Datasheet_V1.4-20250930_%28public%29.pdf)
+
+## 2-frame HDR 與 3DNR 的測試順序
+
+**HDR** 先確認 IMX415 驅動的雙曝光模式、長短曝光幀配置和對應的 RKAIQ IQ。當前實板日誌為 `hdr: 0`。用靜止高對比畫面驗證亮部與暗部資料後，再拍快速橫移的燈杆或測試圖。對照線性模式的高光、重影、延遲及幀率。
+
+**3DNR** 在相同亮度、曝光和增益下，比較不同時域融合設定。靜止灰板量時間噪聲，重複移動的高對比邊緣量拖尾長度。水下再加入懸浮顆粒與潛燈掃光。高 ISO 與強運動分成不同測試組，同一組內固定銳化和編碼碼率。
+
+交付時把 AE、HDR、3DNR 分列，附原片、光照、感光元件模式、曝光和增益讀值，以及 p95/p99 幀間隔。這輪完成的是線性模式靜態場景基線。明暗轉場、雙曝光融合及顆粒拖影還要用獨立素材驗收。
+
+延伸閱讀 [EIS 的時間偏移和逐行讀出](/blog/rv1126b-eis-gyroflow) · [水下白平衡與去散射](/blog/rv1126b-underwater-color)

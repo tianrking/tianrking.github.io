@@ -164,3 +164,15 @@ DNS:
   label: DNS
   permalink: /dns
   description: DNS 解析、Fake-IP 與名稱選路
+rv1126b:
+  label: RV1126B
+  permalink: /rv1126b
+  description: 瑞芯微 RV1126B 的相機、NPU 與實機測試
+camera-engineering:
+  label: 攝影工程
+  permalink: /camera-engineering
+  description: 光學、感光元件、影像處理與視訊系統
+underwater-imaging:
+  label: 水下攝影
+  permalink: /underwater-imaging
+  description: 水下色彩、去散射與裝殼標定

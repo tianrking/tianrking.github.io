@@ -678,3 +678,58 @@ main .card:active {
     border-color: currentColor;
   }
 }
+.camera-lab-figure {
+  margin: 1.75rem 0;
+}
+
+.camera-lab-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--site-line);
+  border-radius: 12px;
+}
+
+.camera-lab-figure figcaption {
+  margin-top: 0.65rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.camera-timing-calculator {
+  margin: 1.5rem 0;
+  padding: 0.75rem 1.15rem 1rem;
+  border: 1px solid var(--site-line-strong);
+  border-radius: 12px;
+  background: var(--site-surface-solid);
+}
+
+.camera-timing-calculator legend {
+  padding: 0 0.35rem;
+  font-weight: 650;
+}
+
+.camera-timing-calculator label,
+.camera-timing-calculator output {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.2rem 0.75rem;
+}
+
+.camera-timing-calculator label + label,
+.camera-timing-calculator output {
+  margin-top: 0.7rem;
+}
+
+.camera-timing-calculator input {
+  flex: 0 0 100%;
+  accent-color: var(--ifm-color-primary);
+}
+
+.camera-timing-calculator label span,
+.camera-timing-calculator output strong {
+  font-variant-numeric: tabular-nums;
+}

@@ -1,7 +1,80 @@
 {
   "schemaVersion": 1,
-  "total": 290,
+  "total": 294,
   "documents": [
+    {
+      "id": "blog:2026-11-20-rv1126b-underwater-color.mdx",
+      "kind": "blog",
+      "kindLabel": "開發誌",
+      "section": "開發誌",
+      "language": "zh-Hant",
+      "title": "水下色彩實驗｜MS5837 與去散射",
+      "description": "用 NOAA 樣片和距離模型分辨偏色、紅通道衰減與背向散射，設計 RV1126B 的深度輔助校色。",
+      "route": "/blog/rv1126b-underwater-color",
+      "date": "2026-11-20",
+      "year": "2026",
+      "tags": [
+        "rv1126b",
+        "camera-engineering",
+        "underwater-imaging"
+      ],
+      "keywords": [],
+      "image": "/img/blog/rv1126b-camera/noaa-comparison.jpg"
+    },
+    {
+      "id": "blog:2026-11-20-rv1126b-eis-gyroflow.mdx",
+      "kind": "blog",
+      "kindLabel": "開發誌",
+      "section": "開發誌",
+      "language": "zh-Hant",
+      "title": "運動相機 EIS 實驗｜從同步 IMU 到 Gyroflow 和 FEC",
+      "description": "拆開 IMU 時鐘、鏡頭內參與逐行曝光，量化時間偏移造成的誤差，再為 RV1126B 驗證逐幀 FEC。",
+      "route": "/blog/rv1126b-eis-gyroflow",
+      "date": "2026-11-20",
+      "year": "2026",
+      "tags": [
+        "rv1126b",
+        "camera-engineering"
+      ],
+      "keywords": [],
+      "image": "/img/blog/rv1126b-camera/eis-offset.png"
+    },
+    {
+      "id": "blog:2026-11-20-rv1126b-motion-isp.mdx",
+      "kind": "blog",
+      "kindLabel": "開發誌",
+      "section": "開發誌",
+      "language": "zh-Hant",
+      "title": "運動相機 ISP 實測｜先鎖住曝光，再驗證 HDR 與 3DNR",
+      "description": "從 IMX415 的曝光、增益與幀率原始讀值出發，建立運動 AE、雙曝光 HDR 和時域降噪的實驗順序。",
+      "route": "/blog/rv1126b-motion-isp",
+      "date": "2026-11-20",
+      "year": "2026",
+      "tags": [
+        "rv1126b",
+        "camera-engineering"
+      ],
+      "keywords": [],
+      "image": "/img/blog/rv1126b-camera/isp-baseline.png"
+    },
+    {
+      "id": "blog:2026-11-20-rv1126b-ai-isp.mdx",
+      "kind": "blog",
+      "kindLabel": "開發誌",
+      "section": "開發誌",
+      "language": "zh-Hant",
+      "title": "RV1126B AI-ISP 實驗｜從 RKNN 記憶體到 ISP2NPU",
+      "description": "用 RKNN 輸入對照和 4K 頻寬估算，拆開專用 AI-ISP、通用 NPU 與整條相機管線的性能。",
+      "route": "/blog/rv1126b-ai-isp",
+      "date": "2026-11-20",
+      "year": "2026",
+      "tags": [
+        "rv1126b",
+        "camera-engineering"
+      ],
+      "keywords": [],
+      "image": "/img/blog/rv1126b-camera/rknn-memory.png"
+    },
     {
       "id": "blog:2026-08-26-mihomo-tun-cidr-route-exclude-fake-ip-direct.md",
       "kind": "blog",
