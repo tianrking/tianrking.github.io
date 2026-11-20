@@ -86,7 +86,12 @@ function asDate(value, filename, kind) {
   }
 
   if (value) {
-    const match = String(value).match(/\d{4}-\d{2}-\d{2}/);
+    const text = String(value).trim();
+    if (/^\d{4}-\d{2}-\d{2}T.+(?:Z|[+-]\d{2}:\d{2})$/i.test(text)) {
+      const instant = new Date(text);
+      if (!Number.isNaN(instant.getTime())) return instant.toISOString().slice(0, 10);
+    }
+    const match = text.match(/\d{4}-\d{2}-\d{2}/);
     if (match) return match[0];
   }
 

@@ -1,7 +1,80 @@
 {
   "schemaVersion": 1,
-  "total": 290,
+  "total": 294,
   "documents": [
+    {
+      "id": "blog:2026-11-20-rv1126b-underwater-color.mdx",
+      "kind": "blog",
+      "kindLabel": "開發誌",
+      "section": "開發誌",
+      "language": "zh-Hant",
+      "title": "水下成像｜紅光衰減、背向散射與色彩恢復",
+      "description": "從水下光的傳播推導偏色、散射和噪聲，對照白平衡、CCM、物理反演與學習式增強，設計 MS5837、RKAIQ 和水槽驗收。",
+      "route": "/blog/rv1126b-underwater-color",
+      "date": "2026-11-20",
+      "year": "2026",
+      "tags": [
+        "rv1126b",
+        "camera-engineering",
+        "underwater-imaging"
+      ],
+      "keywords": [],
+      "image": "/img/blog/rv1126b-camera/noaa-comparison.jpg"
+    },
+    {
+      "id": "blog:2026-11-20-rv1126b-motion-isp.mdx",
+      "kind": "blog",
+      "kindLabel": "開發誌",
+      "section": "開發誌",
+      "language": "zh-Hant",
+      "title": "運動相機 ISP｜快門、HDR 與時域降噪",
+      "description": "從光子噪聲與曝光積分推導運動模糊，理解 3A、雙曝光 HDR、3DNR 及閃爍，再用 IMX415 實測建立調校與驗收流程。",
+      "route": "/blog/rv1126b-motion-isp",
+      "date": "2026-11-20",
+      "year": "2026",
+      "tags": [
+        "rv1126b",
+        "camera-engineering"
+      ],
+      "keywords": [],
+      "image": "/img/blog/rv1126b-camera/isp-exposure-tradeoff.png"
+    },
+    {
+      "id": "blog:2026-11-20-rv1126b-eis-gyroflow.mdx",
+      "kind": "blog",
+      "kindLabel": "開發誌",
+      "section": "開發誌",
+      "language": "zh-Hant",
+      "title": "運動相機電子防抖｜IMU 時序、果凍效應與 FEC",
+      "description": "從針孔投影推導抖動、逐行畸變和時間誤差，對照陀螺儀、影像穩定與硬體網格，給出 Gyroflow 和 RV1126B 的獨立驗收方法。",
+      "route": "/blog/rv1126b-eis-gyroflow",
+      "date": "2026-11-20",
+      "year": "2026",
+      "tags": [
+        "rv1126b",
+        "camera-engineering"
+      ],
+      "keywords": [],
+      "image": "/img/blog/rv1126b-camera/eis-rolling-timing.png"
+    },
+    {
+      "id": "blog:2026-11-20-rv1126b-ai-isp.mdx",
+      "kind": "blog",
+      "kindLabel": "開發誌",
+      "section": "開發誌",
+      "language": "zh-Hant",
+      "title": "RV1126B AI-ISP｜算力、頻寬與零拷貝",
+      "description": "用 RAW 與 YUV 管線、算術強度和 INT8 量化解釋即時畫質的成本，附 RKNN 實板對照與 ISP2NPU 驗收矩陣。",
+      "route": "/blog/rv1126b-ai-isp",
+      "date": "2026-11-20",
+      "year": "2026",
+      "tags": [
+        "rv1126b",
+        "camera-engineering"
+      ],
+      "keywords": [],
+      "image": "/img/blog/rv1126b-camera/ai-isp-data-path.png"
+    },
     {
       "id": "blog:2026-08-26-mihomo-tun-cidr-route-exclude-fake-ip-direct.md",
       "kind": "blog",
