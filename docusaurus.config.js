@@ -6,6 +6,8 @@
 
 import {themes as prismThemes} from 'prism-react-renderer';
 import clsx from 'clsx';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'w0x7ce',
@@ -95,6 +97,8 @@ const config = {
         },
         blog: {
           showReadingTime: true,
+          remarkPlugins: [[remarkMath, {singleDollarTextMath: false}]],
+          rehypePlugins: [rehypeKatex],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:

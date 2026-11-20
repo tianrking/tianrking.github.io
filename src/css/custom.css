@@ -1,4 +1,5 @@
 @import './travel-series.css';
+@import 'katex/dist/katex.min.css';
 
 :root {
   --ifm-color-primary: #167a5c;
@@ -732,4 +733,15 @@ main .card:active {
 .camera-timing-calculator label span,
 .camera-timing-calculator output strong {
   font-variant-numeric: tabular-nums;
+}
+
+/* Keep wide formulae scrollable on narrow article columns. */
+.markdown .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.35rem 0 0.55rem;
+}
+
+.markdown .katex-display > .katex {
+  min-width: max-content;
 }
