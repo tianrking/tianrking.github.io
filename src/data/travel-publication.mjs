@@ -4,6 +4,11 @@ export const COMPLETED_TRAVEL_SLUGS = Object.freeze([
   'malaysia-peninsula-9-day',
   'indonesia-java-10-day-jakarta-yogyakarta-surabaya',
   'philippines-manila-corregidor-travel-notes',
+  'thailand-bangkok-ayutthaya-chiang-mai-travel-notes',
+  'vietnam-mong-cai-ha-long-da-nang-ho-chi-minh-travel-notes',
+  'russia-vladivostok-travel-notes',
+  'south-korea-seoul-dmz-incheon-travel-notes',
+  'japan-tokyo-mount-fuji-travel-notes',
 ]);
 
 export function travelPublicationKind(slug) {

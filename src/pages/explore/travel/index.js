@@ -19,7 +19,7 @@ const regionFilters = [
 const completedIssues = issues.filter((issue) => issue.kind === 'record');
 const plannedIssues = issues.filter((issue) => issue.kind === 'plan');
 const issueIndex = makeSearchIndex(issues.map((issue) => ({
-  ...issue, keywords: [issue.destination, ...issue.slug.split('-')],
+  ...issue, keywords: [...(issue.keywords ?? []), issue.destination, ...issue.slug.split('-')],
 })));
 
 function IssueCard({issue}) {
@@ -27,7 +27,7 @@ function IssueCard({issue}) {
     <article className={`${styles.issueCard} ${issue.conditional ? styles.issueCardConditional : ''}`}>
       <div className={styles.issueCardTop}>
         <span className={styles.issueNumber}>TRAVEL SERIES / {String(issue.issue).padStart(2, '0')}</span>
-        <span className={styles.statusFlag}>{issue.kind === 'record' ? '已完成旅行' : '行前規劃'}</span>
+        <span className={styles.statusFlag}>{issue.format === 'field-notes' ? '旅行手記 · 初版' : issue.kind === 'record' ? '已完成旅行' : '行前規劃'}</span>
         {issue.conditional && <span className={styles.conditionalFlag}>條件式規劃</span>}
       </div>
       <Heading as="h3"><Link to={issue.route}>{issue.title}</Link></Heading>
@@ -72,7 +72,7 @@ export default function TravelSeriesPage() {
   return (
     <Layout
       title="旅行專題"
-      description="馬來西亞、印尼與馬尼拉／科雷希多島的真實旅行紀錄並列呈現；其餘尚未實走的路線另列行前規劃，不混作親歷。">
+      description="已完成的旅行紀錄與尚未實走的行前規劃分開呈現；旅行手記初版保留已確認足跡，其餘細節待補。">
       <main className={styles.page}>
         <header className={styles.hero}>
           <div className={`container ${styles.heroInner}`}>
@@ -92,7 +92,7 @@ export default function TravelSeriesPage() {
             <div className={styles.sectionIntro}>
               <span className={styles.sectionEyebrow}>THE SERIES / 01—{String(issues.length).padStart(2, '0')}</span>
               <Heading as="h2" id="library-heading">實走與規劃，分開閱讀。</Heading>
-              <p>馬來西亞、印度尼西亞、馬尼拉與科雷希多島是已完成旅行的主文章，同級呈現。其他路線列為尚未實走的行前規劃。</p>
+              <p>走過的地方收錄於旅行紀錄；初版手記只寫已確認的足跡。未實走的路線留在行前規劃。</p>
             </div>
             <label className={styles.searchBox}>
               <span className={styles.visuallyHidden}>搜尋旅行專題</span>

@@ -21,6 +21,17 @@ test('multiple terms may match separate fields, but every term is required', () 
   assert.equal(findDocuments(index,'Cebu',(article)=>article.kind==='record')[0].slug,'philippines-manila-corregidor-travel-notes');
 });
 
+test('field notes are searchable by alternate, English, and unaccented place names', () => {
+  for (const [query, expected] of [
+    ['海参崴', 'russia-vladivostok-travel-notes'],
+    ['岘港', 'vietnam-mong-cai-ha-long-da-nang-ho-chi-minh-travel-notes'],
+    ['Mong Cai', 'vietnam-mong-cai-ha-long-da-nang-ho-chi-minh-travel-notes'],
+    ['Seoul DMZ', 'south-korea-seoul-dmz-incheon-travel-notes'],
+    ['Mount Fuji', 'japan-tokyo-mount-fuji-travel-notes'],
+    ['Kanchanaburi', 'thailand-bangkok-ayutthaya-chiang-mai-travel-notes'],
+  ]) assert.equal(findDocuments(index, query)[0]?.slug, expected);
+});
+
 test('empty queries preserve chosen browse order; title relevance beats partial metadata', () => {
   const docs = [
     {id:1,title:'Boot notes',keywords:['ble'],description:'BLE testing'},

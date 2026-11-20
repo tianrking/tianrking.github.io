@@ -47,6 +47,8 @@ const regionSlugs = new Map([
     'philippines-cebu-9-day-heritage-coast-highlands',
     'philippines-manila-corregidor-travel-notes',
     'thailand-10-day-bangkok-ayutthaya-chiang-mai',
+    'thailand-bangkok-ayutthaya-chiang-mai-travel-notes',
+    'vietnam-mong-cai-ha-long-da-nang-ho-chi-minh-travel-notes',
     'brunei-10-day-bandar-temburong-tutong-belait',
     'singapore-10-day-city-heritage-nature',
     'timor-leste-10-day-dili-atauro-baucau',
@@ -66,6 +68,8 @@ const regionSlugs = new Map([
     'china-10-day-beijing-xian-shanghai',
     'japan-10-day-tokyo-kyoto-nara-osaka',
     'south-korea-10-day-seoul-gyeongju-busan',
+    'south-korea-seoul-dmz-incheon-travel-notes',
+    'japan-tokyo-mount-fuji-travel-notes',
     'mongolia-10-day-ulaanbaatar-kharkhorin-orkhon-terelj',
     'north-korea-10-day-conditional-tour-framework',
   ]],
@@ -99,7 +103,7 @@ const regionSlugs = new Map([
     'oman-10-day-muscat-sur-nizwa',
     'yemen-10-day-sanaa-hadramaut-conditional',
   ]],
-  ['歐亞', ['russia-10-day-siberia-baikal']],
+  ['歐亞', ['russia-10-day-siberia-baikal', 'russia-vladivostok-travel-notes']],
 ]);
 const travelRegionBySlug = new Map(
   [...regionSlugs].flatMap(([region, slugs]) => slugs.map((slug) => [slug, region])),
@@ -160,11 +164,13 @@ for (const [index, slug] of order.entries()) {
   const description = frontMatterField(frontMatter, 'description');
   const tags = parseTags(frontMatter);
   const kind = travelPublicationKind(slug);
-  const thematicRecord = frontMatterField(frontMatter, 'travel_format') === 'thematic-record';
+  const format = frontMatterField(frontMatter, 'travel_format');
+  const fieldNotes = format === 'field-notes';
+  const thematicRecord = fieldNotes || format === 'thematic-record';
   const duration = thematicRecord ? {days: null, nights: null} : durationFrom(title, slug);
   if (thematicRecord && kind !== 'record') throw new Error(`A thematic travel record must be explicitly confirmed: ${slug}`);
   if (thematicRecord) {
-    for (const feature of ['#trip-record */}', 'completed:true', 'PlaceDirectory', '#sources */}']) {
+    for (const feature of ['#trip-record */}', 'completed:true', fieldNotes ? 'https://www.google.com/maps/search/' : 'PlaceDirectory', '#sources */}']) {
       if (!source.includes(feature)) throw new Error(`Thematic travel record is missing ${feature}: ${slug}`);
     }
     if (/^###\s+D\d+\b/m.test(source)) throw new Error(`Thematic record must not invent a daily diary: ${slug}`);
@@ -179,7 +185,7 @@ for (const [index, slug] of order.entries()) {
 
   const articleBody = source.replace(/^---\s*\r?\n[\s\S]*?\r?\n---\s*\r?\n/, '');
   const chineseCharacters = [...articleBody].filter((character) => /\p{Script=Han}/u.test(character)).length;
-  const minimumCharacters = thematicRecord ? 1200 : malaysiaChineseCharacterBaseline;
+  const minimumCharacters = fieldNotes ? 500 : thematicRecord ? 1200 : malaysiaChineseCharacterBaseline;
   if (chineseCharacters < minimumCharacters) {
     throw new Error(
       `Travel issue ${String(index + 1).padStart(2, '0')} has ${chineseCharacters} Han characters; `
@@ -207,7 +213,7 @@ for (const [index, slug] of order.entries()) {
   const contentRequirements = thematicRecord ? [
     ['confirmed travel record', /#trip-record/],
     ['historical context', /#heritage/],
-    ['place directory', /PlaceDirectory/],
+    [fieldNotes ? 'place-search links' : 'place directory', fieldNotes ? /www\.google\.com\/maps\/search\// : /PlaceDirectory/],
   ] : [
     ['transport/logistics', /交通|鐵路|铁路|公車|巴士|火車|火车|轉場|转场|接駁|接驳|transport|transfer|rail|bus/i],
     ['accommodation', /住宿|酒店|旅宿|過夜|过夜|accommodation|lodging|hotel/i],
@@ -218,8 +224,10 @@ for (const [index, slug] of order.entries()) {
   const missingContent = contentRequirements
     .filter(([, pattern]) => !pattern.test(source))
     .map(([name]) => name);
-  const citedLinks = [...source.matchAll(/https?:\/\//g)].length;
-  if (citedLinks < 5) missingContent.push(`authoritative sources (found ${citedLinks} links)`);
+  const citedLinks = fieldNotes
+    ? [...articleBody.matchAll(/\]\(https:\/\/(?!www\.google\.com\/maps\/)/g)].length
+    : [...source.matchAll(/https?:\/\//g)].length;
+  if (citedLinks < (fieldNotes ? 2 : 5)) missingContent.push(`authoritative sources (found ${citedLinks} links)`);
   if (missingContent.length > 0) {
     throw new Error(`Travel issue ${String(index + 1).padStart(2, '0')} is missing required guide content: ${missingContent.join(', ')}: ${articlePath}`);
   }
@@ -236,6 +244,10 @@ for (const [index, slug] of order.entries()) {
     days: duration.days,
     nights: duration.nights,
     tags: tags.filter((tag) => tag !== '旅行').slice(1, 4),
+    ...(fieldNotes && {
+      format,
+      keywords: frontMatterField(frontMatter, 'keywords').slice(1, -1).split(',').map((keyword) => keyword.trim()).filter(Boolean),
+    }),
     featured: kind === 'record',
     companionRoutes: slug === 'vietnam-north-10-day-hanoi-ninh-binh-sapa'
       ? ['/explore/travel/vietnam-north-8-day-hanoi-ninh-binh-sapa']

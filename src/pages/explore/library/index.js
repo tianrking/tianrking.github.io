@@ -17,7 +17,7 @@ const travelDocuments = travelCatalog.map((item) => ({
   kind: 'explore',
   kindLabel: item.kind === 'record' ? '實走紀錄' : '行前規劃',
   tags: [item.destination, ...(item.tags ?? [])],
-  keywords: item.slug.split('-'),
+  keywords: [...(item.keywords ?? []), ...item.slug.split('-')],
 }));
 const documents = [...travelDocuments.filter((document) => document.kindLabel === '實走紀錄'),
   ...(contentIndex.documents || []), ...travelDocuments.filter((document) => document.kindLabel === '行前規劃')];

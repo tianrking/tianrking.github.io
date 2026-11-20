@@ -999,5 +999,149 @@
     "featured": false,
     "companionRoutes": [],
     "conditional": false
+  },
+  {
+    "issue": 52,
+    "slug": "thailand-bangkok-ayutthaya-chiang-mai-travel-notes",
+    "route": "/explore/travel/thailand-bangkok-ayutthaya-chiang-mai-travel-notes",
+    "title": "泰國手記｜從曼谷讀到大城與清邁",
+    "description": "曼谷、大城、清邁與北碧：從王城、古都和蘭納寺院，讀到泰緬鐵路的戰爭記憶。",
+    "kind": "record",
+    "destination": "泰國",
+    "region": "東南亞",
+    "days": null,
+    "nights": null,
+    "tags": [
+      "旅行手記"
+    ],
+    "format": "field-notes",
+    "keywords": [
+      "曼谷",
+      "大城",
+      "清邁",
+      "清迈",
+      "北碧",
+      "Bangkok",
+      "Ayutthaya",
+      "Chiang Mai",
+      "Kanchanaburi"
+    ],
+    "featured": true,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 53,
+    "slug": "vietnam-mong-cai-ha-long-da-nang-ho-chi-minh-travel-notes",
+    "route": "/explore/travel/vietnam-mong-cai-ha-long-da-nang-ho-chi-minh-travel-notes",
+    "title": "越南手記｜由東興過境，沿海岸向南",
+    "description": "從東興過境至芒街，串起下龍灣、峴港與胡志明市的地理和歷史；實際分段待補。",
+    "kind": "record",
+    "destination": "越南",
+    "region": "東南亞",
+    "days": null,
+    "nights": null,
+    "tags": [
+      "旅行手記"
+    ],
+    "format": "field-notes",
+    "keywords": [
+      "東興",
+      "芒街",
+      "下龍灣",
+      "峴港",
+      "岘港",
+      "胡志明市",
+      "Dongxing",
+      "Móng Cái",
+      "Ha Long Bay",
+      "Đà Nẵng",
+      "Ho Chi Minh City"
+    ],
+    "featured": true,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 54,
+    "slug": "russia-vladivostok-travel-notes",
+    "route": "/explore/travel/russia-vladivostok-travel-notes",
+    "title": "俄羅斯遠東手記｜符拉迪沃斯托克，一座面向太平洋的港城",
+    "description": "俄羅斯遠東的單城手記。以符拉迪沃斯托克（海參崴）的港口、鐵路與要塞理解這座太平洋港城。",
+    "kind": "record",
+    "destination": "俄羅斯",
+    "region": "歐亞",
+    "days": null,
+    "nights": null,
+    "tags": [
+      "旅行手記"
+    ],
+    "format": "field-notes",
+    "keywords": [
+      "海參崴",
+      "海参崴",
+      "符拉迪沃斯托克",
+      "Vladivostok",
+      "金角灣",
+      "西伯利亞鐵路"
+    ],
+    "featured": true,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 55,
+    "slug": "south-korea-seoul-dmz-incheon-travel-notes",
+    "route": "/explore/travel/south-korea-seoul-dmz-incheon-travel-notes",
+    "title": "韓國手記｜首爾、DMZ 與仁川",
+    "description": "從首爾、DMZ 一帶到仁川，分開閱讀王都、半島分界與港城的開港和戰爭史。",
+    "kind": "record",
+    "destination": "韓國",
+    "region": "東亞",
+    "days": null,
+    "nights": null,
+    "tags": [
+      "旅行手記"
+    ],
+    "format": "field-notes",
+    "keywords": [
+      "首爾",
+      "首尔",
+      "仁川",
+      "非軍事區",
+      "Seoul",
+      "DMZ",
+      "Incheon"
+    ],
+    "featured": true,
+    "companionRoutes": [],
+    "conditional": false
+  },
+  {
+    "issue": 56,
+    "slug": "japan-tokyo-mount-fuji-travel-notes",
+    "route": "/explore/travel/japan-tokyo-mount-fuji-travel-notes",
+    "title": "日本手記｜東京與富士山之間",
+    "description": "東京與富士山一帶的實走手記：一邊讀東京的街廓，一邊從山麓地景理解富士山。",
+    "kind": "record",
+    "destination": "日本",
+    "region": "東亞",
+    "days": null,
+    "nights": null,
+    "tags": [
+      "旅行手記"
+    ],
+    "format": "field-notes",
+    "keywords": [
+      "東京",
+      "东京",
+      "富士山",
+      "Tokyo",
+      "Mount Fuji",
+      "Fujisan"
+    ],
+    "featured": true,
+    "companionRoutes": [],
+    "conditional": false
   }
 ]
