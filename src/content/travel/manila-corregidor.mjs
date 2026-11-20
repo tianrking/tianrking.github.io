@@ -27,6 +27,6 @@ export const manilaCorregidor = {
     {id:'scope',labelZh:'記錄方式',labelEn:'RECORD FORMAT',zh:'按地點與主題整理，不編造日期與日序',en:'Places and themes, without invented dates or daily order'},
     {id:'next',labelZh:'下一趟',labelEn:'NEXT JOURNEY',zh:'宿務 9 日另列為未出發規劃',en:'Cebu in 9 days remains a separate future plan'},
   ],
-  visited: {places:VISITED_DESTINATIONS},
-  context: {places:HISTORY_CONTEXT},
+  visited: {status:'visited', places:VISITED_DESTINATIONS},
+  context: {status:'context', places:HISTORY_CONTEXT},
 };

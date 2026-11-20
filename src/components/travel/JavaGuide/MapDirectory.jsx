@@ -7,7 +7,9 @@ export default function MapDirectory({language = 'zh'}) {
   const id = useId();
   const [city, setCity] = useState('all');
   const [search, setSearch] = useState('');
-  const places = filterPlaces(city, search);
+  const [status, setStatus] = useState('all');
+  const places = filterPlaces(city, search).filter((place) => status === 'all'
+    || (status === 'reference' ? place.kind !== 'visited' : place.kind === status));
   const kinds = en ? {visited:'Visited', main:'Original main route', optional:'Conditional stop', alternative:'Alternative', transport:'Transport', stay:'Stay area / reference'}
     : {visited:'已走訪', main:'原方案主線', optional:'條件支線', alternative:'備選，非額外必到', transport:'交通', stay:'住宿區／比較'};
   return <section className={styles.directory} aria-label={en ? 'Place directory' : '地點導航目錄'}>
@@ -16,11 +18,18 @@ export default function MapDirectory({language = 'zh'}) {
     <div className={styles.filters} role="group" aria-label={en ? 'Filter by area' : '按區域篩選'}>
       {[['all','全部','All places'], ...CITIES].map(([key, zh, english]) => <button key={key} type="button" aria-pressed={city === key} onClick={() => setCity(key)}>{en ? english : zh}</button>)}
     </div>
+    <div className={styles.filters} role="group" aria-label={en ? 'Filter by place status' : '按地點狀態篩選'}>
+      {[
+        ['all',en ? 'All statuses' : '全部狀態'],
+        ['visited',en ? 'Visited' : '已走訪'],
+        ['reference',en ? 'Planning references' : '原規劃參考'],
+      ].map(([value,label]) => <button key={value} type="button" aria-pressed={status === value} onClick={() => setStatus(value)}>{label}</button>)}
+    </div>
     <label className={styles.searchLabel} htmlFor={`${id}-search`}>{en ? 'Find a place' : '搜尋地點'}</label>
     <input className={styles.search} id={`${id}-search`} type="search" value={search} placeholder={en ? 'e.g. Borobudur, PSE, hotel…' : '例如：婆羅浮屠、PSE、酒店…'} onChange={(event) => setSearch(event.target.value)} />
     <div className={styles.resultBar}>
       <p className={styles.count} aria-live="polite">{en ? `${places.length} ${places.length === 1 ? 'place' : 'places'}` : `${places.length} 個地點`}</p>
-      <button type="button" disabled={city === 'all' && !search} onClick={() => {setCity('all'); setSearch('');}}>{en ? 'Reset filters' : '重設篩選'}</button>
+      <button type="button" disabled={city === 'all' && !search && status === 'all'} onClick={() => {setCity('all'); setSearch(''); setStatus('all');}}>{en ? 'Reset filters' : '重設篩選'}</button>
     </div>
     {places.length > 0 ? <ul className={styles.places} role="list">
       {places.map((place) => <li key={place.id}>

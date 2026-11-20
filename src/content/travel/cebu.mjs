@@ -1,4 +1,5 @@
 export const cebu = {
+  timeZone: 'Asia/Manila',
   id: 'cebu-south-9-day',
   facts: [
     {id: 'length', labelZh: '旅程結構', labelEn: 'DURATION', zh: '9 日 8 晚 · 宿務進出', en: '9 days / 8 nights · CEB return'},

@@ -2,9 +2,10 @@ import React, {useEffect, useMemo, useState} from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
-import {useLocation} from '@docusaurus/router';
+import {useHistory, useLocation} from '@docusaurus/router';
 import contentIndex from '@site/src/data/content-index.json';
 import travelCatalog from '@site/src/data/travel-series-catalog.json';
+import {findDocuments, makeSearchIndex} from '@site/src/data/content-search.mjs';
 import styles from '../styles.module.css';
 
 const travelDocuments = travelCatalog.map((item) => ({
@@ -18,7 +19,9 @@ const travelDocuments = travelCatalog.map((item) => ({
   tags: [item.destination, ...(item.tags ?? [])],
   keywords: item.slug.split('-'),
 }));
-const documents = [...travelDocuments, ...(contentIndex.documents || [])];
+const documents = [...travelDocuments.filter((document) => document.kindLabel === '實走紀錄'),
+  ...(contentIndex.documents || []), ...travelDocuments.filter((document) => document.kindLabel === '行前規劃')];
+const searchIndex = makeSearchIndex(documents);
 const batchSize = 24;
 
 function uniqueValues(key) {
@@ -34,17 +37,6 @@ const years = [...new Set(documents.map((document) => document.year).filter(Bool
 
 function formatDate(date) {
   return date?.replaceAll('-', '.');
-}
-
-function searchableText(document) {
-  return [
-    document.title,
-    document.description,
-    document.section,
-    document.kindLabel,
-    ...(document.tags || []),
-    ...(document.keywords || []),
-  ].join(' ').toLocaleLowerCase();
 }
 
 function ContentCard({document}) {
@@ -65,29 +57,33 @@ function ContentCard({document}) {
 }
 
 export default function ExploreLibraryPage() {
-  const {search} = useLocation();
-  const routeQuery = new URLSearchParams(search).get('q')?.slice(0, 120) ?? '';
+  const location = useLocation();
+  const history = useHistory();
   // Static HTML is generated without a query string; apply the URL after hydration.
   const [query, setQuery] = useState('');
-  useEffect(() => {setQuery(routeQuery);}, [routeQuery]);
   const [kind, setKind] = useState('all');
   const [section, setSection] = useState('all');
   const [tag, setTag] = useState('all');
   const [year, setYear] = useState('all');
   const [limit, setLimit] = useState(batchSize);
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    setQuery(params.get('q')?.slice(0, 120) ?? '');
+    const selected = params.get('type');
+    setKind(['docs', 'blog', 'explore'].includes(selected) ? selected : 'all');
+    setSection(sections.includes(params.get('section')) ? params.get('section') : 'all');
+    setTag(tags.includes(params.get('tag')) ? params.get('tag') : 'all');
+    setYear(years.includes(params.get('year')) ? params.get('year') : 'all');
+  }, [location.search]);
   useEffect(() => {setLimit(batchSize);}, [query, kind, section, tag, year]);
 
-  const filteredDocuments = useMemo(() => {
-    const normalizedQuery = query.trim().toLocaleLowerCase();
-    return documents.filter((document) => {
+  const filteredDocuments = useMemo(() => findDocuments(searchIndex, query, (document) => {
       if (kind !== 'all' && document.kind !== kind) return false;
       if (section !== 'all' && document.section !== section) return false;
       if (tag !== 'all' && !document.tags?.includes(tag)) return false;
       if (year !== 'all' && document.year !== year) return false;
-      if (normalizedQuery && !searchableText(document).includes(normalizedQuery)) return false;
       return true;
-    });
-  }, [kind, query, section, tag, year]);
+  }), [kind, query, section, tag, year]);
 
   const hasFilters = Boolean(query || kind !== 'all' || section !== 'all' || tag !== 'all' || year !== 'all');
 
@@ -97,6 +93,16 @@ export default function ExploreLibraryPage() {
     setSection('all');
     setTag('all');
     setYear('all');
+    history.replace({...location, search: ''});
+  }
+
+  function submitSearch(event) {
+    event.preventDefault();
+    const params = new URLSearchParams();
+    for (const [name, value] of Object.entries({q:query.trim(), type:kind, section, tag, year})) {
+      if (value && value !== 'all') params.set(name, value);
+    }
+    history.replace({...location, search: params.size ? `?${params}` : ''});
   }
 
   return (
@@ -111,23 +117,26 @@ export default function ExploreLibraryPage() {
             </div>
             <span className={styles.eyebrow}>CONTENT INDEX</span>
             <Heading as="h1">全站內容索引</Heading>
-            <p>依關鍵字、類型、領域、標籤與年份篩選。</p>
+            <p>找技術筆記、開發誌與旅行專題。可用簡繁中文、常用地名別稱，或輸入多個關鍵字。</p>
           </div>
         </header>
 
         <section className="container" aria-labelledby="library-controls">
           <h2 id="library-controls" className={styles.visuallyHidden}>內容篩選</h2>
-          <div className={styles.controls}>
-            <label className={styles.searchField}>
-              <span>搜尋內容</span>
-              <input
+          <form className={styles.controls} role="search" aria-label="全站索引搜尋" onSubmit={submitSearch}>
+            <div className={styles.searchField}>
+              <label htmlFor="library-query">搜尋內容</label>
+              <div className={styles.searchPair}><input
+                id="library-query"
                 type="search"
+                maxLength={120}
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
-                placeholder="例如：BLE、RP2040、Docker、AI…"
+                placeholder="例如：宿务 博物馆、BLE、Corregidor"
                 aria-label="搜尋內容標題、摘要與標籤"
               />
-            </label>
+              <button className={styles.searchSubmit} type="submit" title="更新可分享的搜尋網址">搜尋 <span aria-hidden="true">↗</span></button></div>
+            </div>
             <label><span>類型</span><select value={kind} onChange={(event) => setKind(event.target.value)}>
               <option value="all">全部類型</option><option value="docs">技術筆記</option>
               <option value="blog">開發誌</option><option value="explore">探索系列</option>
@@ -142,7 +151,14 @@ export default function ExploreLibraryPage() {
               <option value="all">全部年份</option>{years.map((value) => <option key={value} value={value}>{value}</option>)}
             </select></label>
             <button className={styles.clearButton} type="button" onClick={clearFilters} disabled={!hasFilters}>清除篩選</button>
-          </div>
+          </form>
+          <nav className={styles.quickQueries} aria-label="快速瀏覽">
+            <span>快速瀏覽</span>
+            <Link to="?type=docs">技術筆記</Link>
+            <Link to="?type=blog">開發誌</Link>
+            <Link to="?type=explore">旅行專題</Link>
+            <Link to="?q=Corregidor">科雷希多島</Link>
+          </nav>
           <div className={styles.resultsHeader}>
             <p aria-live="polite">顯示 <strong>{filteredDocuments.length}</strong> / {documents.length} 篇內容</p>
           </div>

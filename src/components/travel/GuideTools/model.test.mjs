@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import test from 'node:test';
-import {directionsUrl, filterPlaces, mapUrl, restoreChecks} from './model.mjs';
+import {dateInZone, directionsUrl, filterPlaces, itineraryDay, mapUrl, placeDays, placeStatus, restoreChecks} from './model.mjs';
 import {cebu} from '../../../content/travel/cebu.mjs';
 import {cambodia} from '../../../content/travel/cambodia.mjs';
 import {VISITED_DESTINATIONS, HISTORY_CONTEXT, manilaCorregidor} from '../../../content/travel/manila-corregidor.mjs';
@@ -62,6 +62,27 @@ test('map directions encode only the destination without collecting a user locat
   assert.equal(url.pathname, '/maps/dir/');
   assert.equal(url.searchParams.get('destination'), 'Argao & Cebu / 教堂');
   assert.equal(url.searchParams.has('origin'), false);
+});
+
+test('itinerary facets handle ranges, exact days, city and status together', () => {
+  assert.deepEqual(placeDays('D1–D3 / D9'),[1,2,3,9]);
+  assert.deepEqual(placeDays('D1-D03, D6 evening'),[1,2,3,6]);
+  assert.deepEqual(placeDays('已到訪 / VISITED'),[]);
+  assert.deepEqual(filterPlaces(cebu.places,'',{day:2,area:'Cebu City'}).map(p=>p.id),['fuente','national','fort','plaza','cross','basilica','cathedral','colon']);
+  assert.ok(!filterPlaces(cambodia.places,'D1').some(p=>p.day==='D10'));
+  assert.ok(filterPlaces(cebu.places,'宿务 博物馆').some(p=>p.id==='national'));
+  assert.equal(placeStatus(cebu.places.find(p=>p.id==='mactan')),'optional');
+  assert.equal(placeStatus(HISTORY_CONTEXT[0],manilaCorregidor.context.status),'context');
+  assert.equal(placeStatus(VISITED_DESTINATIONS[0],manilaCorregidor.visited.status),'visited');
+});
+
+test('today uses destination calendar dates, rejecting invalid and out-of-trip dates', () => {
+  const now = new Date('2026-11-20T16:15:00Z');
+  assert.equal(dateInZone('Asia/Manila',now),'2026-11-21');
+  assert.equal(dateInZone('Asia/Phnom_Penh',now),'2026-11-20');
+  assert.equal(itineraryDay('2026-11-20',dateInZone('Asia/Manila',now),[1,2,3]),2);
+  assert.equal(itineraryDay('2026-02-30','2026-03-02',[1,2,3]),0);
+  assert.equal(itineraryDay('2026-11-01','2026-11-21',[1,2,3]),0);
 });
 
 test('Cambodia preserves four park days, seven-day pass and a separate travel-notes status', () => {

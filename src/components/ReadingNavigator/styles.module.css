@@ -1,0 +1,19 @@
+.wrap {display:none;}
+@media (max-width:996px) {
+  .wrap {display:block;}
+  .dock {position:fixed;z-index:200;inset-inline-end:max(1rem,env(safe-area-inset-right));bottom:calc(.8rem + env(safe-area-inset-bottom));max-width:calc(100vw - 2rem);display:flex;gap:.3rem;padding:.3rem;border:1px solid var(--site-line-strong);border-radius:1rem;background:var(--site-surface-solid);box-shadow:var(--site-shadow-lg);}
+  .dock button,.sheet button {min-height:44px;display:inline-flex;align-items:center;gap:.5rem;border:0;border-radius:.65rem;background:transparent;padding:.55rem .72rem;color:var(--site-ink);font:inherit;font-size:.8rem;font-weight:650;cursor:pointer;}
+  .dock button:hover,.sheet button:hover {background:var(--site-line);}
+  .icon,.sheet button {color:var(--ifm-color-primary);}
+  .current {max-width:min(37vw,12rem);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--site-muted);font-weight:450;}
+  .sheet {width:min(100% - 1.25rem,34rem);max-height:75dvh;margin:auto auto max(.6rem,env(safe-area-inset-bottom));padding:0;border:1px solid var(--site-line-strong);border-radius:1.25rem;background:var(--site-surface-solid);color:var(--site-ink);box-shadow:var(--site-shadow-lg);}
+  .sheet[open] {display:grid;grid-template-rows:auto minmax(0,1fr) auto;}
+  .sheet::backdrop {background:rgb(0 0 0 / 42%);}
+  .sheetHead,.sheetFoot {display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.25rem .7rem;padding:.65rem 1rem;}
+  .sheetHead {border-bottom:1px solid var(--site-line);}
+  .sheetFoot {border-top:1px solid var(--site-line);color:var(--site-muted);}
+  .sheet nav {overflow:auto;overscroll-behavior:contain;padding:.4rem .6rem;}
+  .sheet nav a {min-height:44px;display:flex;align-items:center;padding:.45rem .7rem;border-radius:.6rem;color:var(--site-ink);font-size:.88rem;text-decoration:none;}
+  .sheet nav a[data-level='H3'] {padding-inline-start:1.45rem;color:var(--site-muted);}
+  .sheet nav a[aria-current],.sheet nav a:hover {color:var(--ifm-color-primary);background:color-mix(in srgb,var(--ifm-color-primary) 10%,transparent);}
+}

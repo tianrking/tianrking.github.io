@@ -14,15 +14,19 @@ import styles from './index.module.css';
 
 const recentWork = (contentIndex.documents || [])
   .filter((document) => document.date)
-  .slice(0, 4)
+  .slice(0, 3)
   .map((document) => ({
     kind: document.kindLabel,
     date: document.date.replaceAll('-', '.'),
     title: document.title,
-    description: document.description,
     to: document.route,
-    tags: (document.tags || []).slice(0, 2),
   }));
+
+const editorPicks = [
+  {kind:'技術筆記',title:'TLSR8258 開發與燒錄',description:'從工具鏈、SWS 接線到燒錄驗證，把硬體實作的關鍵細節一次對齊。',to:'/embedded/telink/tlsr8258/sws-build-flash-verify'},
+  {kind:'代表專案',title:'EdgeMirror',description:'以 Cloudflare Workers 建置軟體倉庫鏡像，從邊緣轉送與快取取捨理解專案架構。',to:'https://github.com/tianrking/EdgeMirror'},
+  {kind:'實走遊記',title:'馬尼拉與科雷希多島',description:'從馬尼拉城市旅行走到海灣口，分開整理親身足跡、二戰歷史與地點導讀。',to:'/explore/travel/philippines-manila-corregidor-travel-notes'},
+];
 
 const entrances = [
   {
@@ -169,7 +173,7 @@ function ProjectRow({project, index}) {
 
 export default function Home() {
   const {projects, snapshotState} = useFeaturedProjects();
-  const featured = projects.slice(0, 6);
+  const featured = projects.filter((project) => project.id !== 'edge-mirror').slice(0, 5);
 
   return (
     <Layout
@@ -178,16 +182,20 @@ export default function Home() {
       <main className={styles.page}>
         <HomepageHero />
 
-        <section className={styles.nowSection} aria-labelledby="now-heading">
-          <div className={`container ${styles.nowInner}`}>
-            <span className={styles.nowLabel}>選讀</span>
-            <div>
-              <Heading id="now-heading" as="h2">TLSR8258 開發與燒錄</Heading>
-              <p>包含工具鏈、接線、常見錯誤與實板測試記錄。</p>
+        <section className={`${styles.section} ${styles.editorSection}`} aria-labelledby="output-heading">
+          <div className="container">
+            <SectionHeading eyebrow="SELECTED WORK" title={<span id="output-heading">編輯精選</span>}
+              description="從一篇筆記、一個專案、一段旅程開始。"
+              action={<Link className={styles.textAction} to="/explore/library">全站索引 <span aria-hidden="true">→</span></Link>} />
+            <div className={styles.editorGrid}>
+              {editorPicks.map((pick, index) => (
+                <Link key={pick.to} to={pick.to} className={styles.editorCard}>
+                  <span className={styles.editorMeta}><span>0{index + 1} / {pick.kind}</span><span aria-hidden="true">↗</span></span>
+                  <Heading as="h3">{pick.title}</Heading>
+                  <p>{pick.description}</p>
+                </Link>
+              ))}
             </div>
-            <Link to="/embedded/telink/tlsr8258/sws-build-flash-verify">
-              閱讀完整筆記 <span aria-hidden="true">↗</span>
-            </Link>
           </div>
         </section>
 
@@ -224,37 +232,6 @@ export default function Home() {
                 ? '目前顯示網站內建的專案快照。'
                 : 'Stars、語言與版本資訊由公開 GitHub 快照定期更新。'}
             </p>
-          </div>
-        </section>
-
-        <section className={`${styles.section} ${styles.outputSection}`} aria-labelledby="output-heading">
-          <div className="container">
-            <SectionHeading
-              eyebrow="最近更新"
-              title={<span id="output-heading">最近發布</span>}
-              description="按日期排列的技術筆記與開發誌。"
-            />
-            <div className={styles.outputList}>
-              {recentWork.map((item, index) => (
-                <Link key={item.to} to={item.to} className={styles.outputCard}>
-                  <span className={styles.outputIndex}>{String(index + 1).padStart(2, '0')}</span>
-                  <div className={styles.outputBody}>
-                    <div className={styles.outputMeta}>
-                      <span>{item.kind}</span>
-                      <time>{item.date}</time>
-                    </div>
-                    <Heading as="h3">{item.title}</Heading>
-                    <p>{item.description}</p>
-                    {item.tags.length ? (
-                      <div className={styles.outputTags} aria-label="文章標籤">
-                        {item.tags.map((tag) => <span key={tag}>{tag}</span>)}
-                      </div>
-                    ) : null}
-                  </div>
-                  <span className={styles.outputArrow} aria-hidden="true">↗</span>
-                </Link>
-              ))}
-            </div>
           </div>
         </section>
 

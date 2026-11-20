@@ -1,4 +1,5 @@
 export const cambodia = {
+  timeZone: 'Asia/Phnom_Penh',
   id: 'cambodia-phnom-penh-siem-reap-angkor',
   facts: [
     {id:'length',labelZh:'閱讀與重訪路線',labelEn:'READING / RETURN ROUTE',zh:'10 日 9 晚 · 金邊 3 晚＋暹粒 6 晚',en:'10 days / 9 nights · Phnom Penh 3 + Siem Reap 6'},

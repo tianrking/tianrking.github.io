@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import issues from '@site/src/data/travel-series-catalog.json';
+import {findDocuments, makeSearchIndex} from '@site/src/data/content-search.mjs';
 import styles from './styles.module.css';
 
 const regionFilters = [
@@ -17,6 +18,9 @@ const regionFilters = [
 ];
 const completedIssues = issues.filter((issue) => issue.kind === 'record');
 const plannedIssues = issues.filter((issue) => issue.kind === 'plan');
+const issueIndex = makeSearchIndex(issues.map((issue) => ({
+  ...issue, keywords: [issue.destination, ...issue.slug.split('-')],
+})));
 
 function IssueCard({issue}) {
   return (
@@ -57,18 +61,11 @@ export default function TravelSeriesPage() {
   const [query, setQuery] = useState('');
   const [region, setRegion] = useState('all');
   const [conditionalOnly, setConditionalOnly] = useState(false);
-  const visibleIssues = useMemo(() => {
-    const normalizedQuery = query.trim().toLocaleLowerCase();
-    return issues.filter((issue) => {
-      const matchesQuery = !normalizedQuery ||
-        `${issue.title} ${issue.description} ${issue.destination} ${issue.slug} ${(issue.tags ?? []).join(' ')}`
-          .toLocaleLowerCase()
-          .includes(normalizedQuery);
+  const visibleIssues = useMemo(() => findDocuments(issueIndex, query, (issue) => {
       const matchesRegion = region === 'all' || issue.region === region;
       const matchesSafety = !conditionalOnly || issue.conditional;
-      return matchesQuery && matchesRegion && matchesSafety;
-    });
-  }, [conditionalOnly, query, region]);
+      return matchesRegion && matchesSafety;
+  }), [conditionalOnly, query, region]);
   const visibleRecords = visibleIssues.filter((issue) => issue.kind === 'record');
   const visiblePlans = visibleIssues.filter((issue) => issue.kind === 'plan');
 
