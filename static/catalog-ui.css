@@ -1,0 +1,43 @@
+html,body{max-width:100%;overflow-x:hidden}
+body{min-width:0}
+.wrap,.hero,.panel,.two,.two-col,.cards,.detail,.controls,.table-wrap{min-width:0;max-width:100%;box-sizing:border-box}
+.two>.panel,.two-col>.panel{min-width:0;overflow:hidden}
+.table-wrap{width:100%;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-gutter:stable}
+.controls{min-width:0;align-items:center}
+.controls input,.controls select{max-width:100%}
+.table-wrap:focus-within{outline:2px solid #80b9d6;outline-offset:2px}
+.catalog-clear-filters{border:1px solid #9bb9cf;background:#f8fbfd;color:#1f526f;border-radius:8px;padding:8px 12px;min-height:36px;cursor:pointer;white-space:nowrap;font:inherit;font-size:13px}
+.catalog-clear-filters:hover{background:#e9f4fb;border-color:#5d9ac0}
+.catalog-clear-filters:focus-visible{outline:2px solid #2b78a6;outline-offset:2px}
+.catalog-filter-state{color:#64748b;font-size:12px;line-height:1.4;white-space:nowrap}
+.catalog-detail-row>td{padding:0!important;border:0!important;background:transparent!important}
+.catalog-detail-row .detail{margin-top:10px}
+.catalog-detail-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.catalog-detail-top h3{margin:0;color:var(--blue,#153e75)}
+.catalog-detail-close{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:7px 10px;color:#36506a;cursor:pointer}
+.catalog-detail-close:hover{background:#eef6ff}
+.catalog-detail-row:focus-within{outline:2px solid #80b9d6;outline-offset:2px}
+@media(max-width:760px){
+  .wrap{width:100%;padding:12px;box-sizing:border-box}
+  .hero{padding:20px 16px}
+  .hero h1{font-size:24px;line-height:1.28}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .controls input{grid-column:1/-1;min-width:0;width:100%;flex:initial}
+  .controls select{min-width:0;width:100%;font-size:13px}
+  .catalog-clear-filters,.catalog-filter-state{grid-column:1/-1;width:100%}
+  .catalog-filter-state{white-space:normal}
+  .detail-grid{grid-template-columns:1fr}
+  .detail{padding:12px}
+  .catalog-detail-top{position:sticky;top:0;background:#f8fafc;padding-bottom:8px;z-index:2}
+}
+
+/* Keep source links tappable in densely packed data rows. */
+.table-wrap a {
+  display: inline-block;
+  min-inline-size: 24px;
+  min-block-size: 24px;
+  line-height: max(1.4em, 24px);
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+}

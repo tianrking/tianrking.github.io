@@ -121,11 +121,11 @@ export default function MDXPage({content: MDXPageContent}) {
                 <nav className={styles.dayJump} aria-label={bilingual?.completed ? (isEnglish ? 'Original plan day shortcuts' : '原行前方案逐日跳轉') : (isEnglish ? 'Day-by-day shortcuts' : '逐日行程快速跳轉')}>
                   <span className={styles.dayJumpLabel}>{bilingual?.completed ? (isEnglish ? 'ORIGINAL PLAN' : '原行前方案') : 'DAY BY DAY'}</span>
                   <div className={styles.dayJumpLinks}>
-                    {dayLinks.map((day) => (
-                      <Link key={day.id} to={`#${day.id}`} aria-label={isEnglish ? `Jump to day ${day.day}` : `跳到第 ${day.day} 天`}>
-                        D{String(day.day).padStart(2, '0')}
-                      </Link>
-                    ))}
+                    {dayLinks.map((day) => {
+                      const label = `D${String(day.day).padStart(2, '0')}`;
+                      const dayLabel = isEnglish ? `Day ${day.day}` : `第 ${day.day} 天`;
+                      return <Link key={day.id} to={`#${day.id}`} aria-label={`${label} · ${dayLabel}`}>{label}</Link>;
+                    })}
                   </div>
                 </nav>
               )}
@@ -134,7 +134,7 @@ export default function MDXPage({content: MDXPageContent}) {
         ) : null}
         <main className={clsx('container', 'container--fluid', 'margin-vert--lg', isTravelArticle && 'travelGuidePage_main')}>
           {isTravelArticle && !hideTableOfContents && contentToc.length > 0 && (
-            <div className="travelGuidePage_mobileToc" aria-label={isEnglish ? 'Contents' : '本文目錄'} lang={isEnglish ? 'en' : undefined}>
+            <div className="travelGuidePage_mobileToc" lang={isEnglish ? 'en' : undefined}>
               <details className={styles.mobileToc}
                 onClick={(event) => {if (event.target.closest('a[href^="#"]')) event.currentTarget.open = false;}}
                 onKeyDown={(event) => {
@@ -144,7 +144,9 @@ export default function MDXPage({content: MDXPageContent}) {
                   }
                 }}>
                 <summary><span>{isEnglish ? 'On this page' : '本文目錄'}</span><span aria-hidden="true">⌄</span></summary>
-                <div className={styles.mobileTocList}><TOCItems toc={contentToc} minHeadingLevel={frontMatter.toc_min_heading_level} maxHeadingLevel={frontMatter.toc_max_heading_level} /></div>
+                <nav className={styles.mobileTocList} aria-label={isEnglish ? 'Contents' : '本文目錄'}>
+                  <TOCItems toc={contentToc} minHeadingLevel={frontMatter.toc_min_heading_level} maxHeadingLevel={frontMatter.toc_max_heading_level} />
+                </nav>
               </details>
             </div>
           )}

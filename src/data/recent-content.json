@@ -1,0 +1,20 @@
+[
+  {
+    "kindLabel": "開發誌",
+    "date": "2026-11-20",
+    "title": "水下成像｜紅光衰減、背向散射與色彩恢復",
+    "route": "/blog/rv1126b-underwater-color"
+  },
+  {
+    "kindLabel": "開發誌",
+    "date": "2026-11-20",
+    "title": "運動相機 ISP｜快門、HDR 與時域降噪",
+    "route": "/blog/rv1126b-motion-isp"
+  },
+  {
+    "kindLabel": "開發誌",
+    "date": "2026-11-20",
+    "title": "運動相機電子防抖｜IMU 時序、果凍效應與 FEC",
+    "route": "/blog/rv1126b-eis-gyroflow"
+  }
+]

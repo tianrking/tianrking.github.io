@@ -226,6 +226,14 @@ async function buildIndex() {
     path.join(siteRoot, 'src', 'data', 'content-index.json'),
     `${JSON.stringify(output, null, 2)}\n`,
   );
+  const recentContent = documents
+    .filter(({date}) => date)
+    .slice(0, 3)
+    .map(({kindLabel, date, title, route}) => ({kindLabel, date, title, route}));
+  await fs.writeFile(
+    path.join(siteRoot, 'src', 'data', 'recent-content.json'),
+    `${JSON.stringify(recentContent, null, 2)}\n`,
+  );
   console.log(`Generated content index: ${documents.length} documents`);
 }
 

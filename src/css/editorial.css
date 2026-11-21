@@ -1,3 +1,21 @@
+.blog-list-title {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.blog-toc-landmark {
+  position: sticky;
+  inset-block-start: calc(var(--ifm-navbar-height) + 1rem);
+}
+
+@media (max-width: 996px) {
+  .blog-toc-landmark {display: none;}
+}
+
 /* Shared reading surfaces use the same system typography and contrast tokens. */
 .navbar .dropdown__menu {
   min-width: 13rem;
@@ -22,17 +40,17 @@
 .navbar .navbar__search-input::placeholder {color:var(--site-muted);opacity:1;}
 
 html .theme-doc-markdown.markdown,
-html .theme-blog-markdown.markdown,
+html .plugin-blog article > .markdown.markdown,
 html.travelGuidePage .travelGuidePage_article {
   font-size:clamp(1rem,.975rem + .14vw,1.08rem);
   line-height:1.85;
   overflow-wrap:anywhere;
 }
 .theme-doc-markdown > p,
-.theme-blog-markdown > p,
+.plugin-blog article > .markdown > p,
 html.travelGuidePage .travelGuidePage_article > p {max-inline-size:72ch;}
 .theme-doc-markdown > p + p,
-.theme-blog-markdown > p + p,
+.plugin-blog article > .markdown > p + p,
 html.travelGuidePage .travelGuidePage_article > p + p {margin-block-start:1.05em;}
 .theme-doc-toc-mobile {background:var(--site-surface-solid);border:1px solid var(--site-line);border-radius:var(--site-radius-md);}
 .theme-doc-toc-mobile button {min-height:44px;}

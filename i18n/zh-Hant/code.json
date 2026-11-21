@@ -1,4 +1,5 @@
 {
+  "theme.blog.post.readMoreLabel": {"message": "閱讀更多：{title}"},
   "theme.SearchBar.label": {"message": "搜尋"},
   "theme.SearchBar.seeAll": {"message": "查看全部結果"},
   "theme.SearchBar.noResultsText": {"message": "找不到內容"},

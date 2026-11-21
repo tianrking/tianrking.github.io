@@ -197,6 +197,7 @@ summary {
 }
 
 .navbar__logo img {
+  inline-size: auto;
   border-radius: .55rem;
   box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
 }
@@ -308,14 +309,14 @@ summary {
 }
 
 .theme-doc-markdown.markdown,
-.theme-blog-markdown.markdown {
+.plugin-blog article > .markdown.markdown {
   color: var(--ifm-font-color-base);
   font-size: clamp(1rem, .985rem + .08vw, 1.045rem);
   line-height: 1.82;
 }
 
 .theme-doc-markdown > h1:first-child,
-.theme-blog-markdown > h1:first-child,
+.plugin-blog article > .markdown > h1:first-child,
 article header h1 {
   color: var(--site-ink);
   font-size: clamp(2.35rem, 5vw, 4.25rem);
@@ -325,7 +326,7 @@ article header h1 {
 }
 
 .theme-doc-markdown h2,
-.theme-blog-markdown h2 {
+.plugin-blog article > .markdown h2 {
   margin-top: 2.8em;
   padding-bottom: .48em;
   border-bottom: 1px solid var(--site-line);
@@ -335,7 +336,7 @@ article header h1 {
 }
 
 .theme-doc-markdown h3,
-.theme-blog-markdown h3 {
+.plugin-blog article > .markdown h3 {
   margin-top: 2.2em;
   color: var(--site-ink);
   letter-spacing: -.02em;
@@ -343,38 +344,41 @@ article header h1 {
 
 .theme-doc-markdown h2[id],
 .theme-doc-markdown h3[id],
-.theme-blog-markdown h2[id],
-.theme-blog-markdown h3[id] {
+.plugin-blog article > .markdown h2[id],
+.plugin-blog article > .markdown h3[id] {
   scroll-margin-top: calc(var(--ifm-navbar-height) + 1.5rem);
 }
 
 .theme-doc-markdown p,
-.theme-blog-markdown p {
+.plugin-blog article > .markdown p {
   text-wrap: pretty;
 }
 
 .theme-doc-markdown a,
-.theme-blog-markdown a {
+.plugin-blog article > .markdown a {
   text-decoration-color: color-mix(in srgb, currentColor 38%, transparent);
   text-decoration-thickness: 1px;
   text-underline-offset: .18em;
   transition: color 160ms var(--site-ease), text-decoration-color 160ms var(--site-ease);
 }
 
-.theme-doc-markdown a:hover,
-.theme-blog-markdown a:hover {
+.theme-doc-markdown :is(p, li, td) a,
+.plugin-blog article > .markdown :is(p, li, td) a,
+.travelGuidePage_article :is(p, li, td) a {
+  text-decoration-line: underline;
   text-decoration-color: currentColor;
+  text-underline-offset: .18em;
 }
 
 .theme-doc-markdown img,
-.theme-blog-markdown img {
+.plugin-blog article > .markdown img {
   border: 1px solid var(--site-line);
   border-radius: var(--site-radius-lg);
   box-shadow: var(--site-shadow-md);
 }
 
 .theme-doc-markdown blockquote,
-.theme-blog-markdown blockquote {
+.plugin-blog article > .markdown blockquote {
   margin-block: 1.75rem;
   padding: .25rem 0 .25rem 1.25rem;
   border-left: 2px solid color-mix(in srgb, var(--ifm-color-primary) 68%, transparent);
@@ -382,7 +386,7 @@ article header h1 {
 }
 
 .theme-doc-markdown hr,
-.theme-blog-markdown hr {
+.plugin-blog article > .markdown hr {
   margin-block: 3rem;
   border-color: var(--site-line);
 }
@@ -542,19 +546,15 @@ main .card:active {
   box-shadow: 0 8px 24px rgb(18 108 81 / 18%);
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+html {
+  scrollbar-color: var(--site-muted) var(--site-canvas);
+  scrollbar-width: auto;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--site-canvas);
-}
-
-::-webkit-scrollbar-thumb {
-  border: 3px solid var(--site-canvas);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--site-ink) 27%, transparent);
+@media (forced-colors: active) {
+  html {
+    scrollbar-color: auto;
+  }
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -648,7 +648,7 @@ main .card:active {
   }
 
   .theme-doc-markdown > h1:first-child,
-  .theme-blog-markdown > h1:first-child,
+  .plugin-blog article > .markdown > h1:first-child,
   article header h1 {
     font-size: clamp(2.15rem, 11vw, 3.2rem);
   }

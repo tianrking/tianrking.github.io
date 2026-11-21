@@ -6,7 +6,7 @@ const storagePrefix = 'w0x7ce:reading:v1:';
 const selectors = [
   '.travelGuidePage_article',
   '.theme-doc-markdown',
-  '.blog-post-page .theme-blog-markdown',
+  '.blog-post-page article > .markdown',
 ].join(',');
 
 function findCurrent(headings, line) {

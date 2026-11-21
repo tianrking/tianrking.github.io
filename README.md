@@ -30,8 +30,12 @@ npm run build
 
 ## 增加與更新內容
 
+首頁近期文章和資料庫統計由建置腳本從內容與各資料庫的 `data.json` 產生。獨立資料庫共用 `static/catalog-ui.css`。
+
+微信歸檔的大圖可在原始檔旁放置同名的 `.reading.webp` 預覽，例如 `article.webp` 和 `article.reading.webp`。文章會顯示預覽，點擊圖片可開啟原始檔；原始檔路徑也是既有的公開連結。
+
 1. 長期指南放進 `docs/`，並在 `sidebars.js` 指定清楚的分類與順序。
-2. 有日期脈絡的內容放進 `blog/`，保留作者、標籤、摘要與可分享圖片。
+2. 有日期脈絡的內容放進 `blog/`，保留作者、標籤、摘要與可分享圖片。以 `{/* truncate */}` 標記列表摘要的結尾。
 3. 首頁與專案頁顯示的專案只修改 `src/data/featured-projects.json`；腳本只允許 `tianrking` 名下、明確列入白名單的公開倉庫。
 4. 新增公開工具或服務時更新 `src/pages/labs/index.jsx`，並確認入口、說明與示例指令仍然有效。
 5. 移動或刪除既有頁面時，在 `docusaurus.config.js` 補上 redirect，避免舊連結失效。

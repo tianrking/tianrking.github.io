@@ -11,7 +11,7 @@ export default function TripRecord({language = 'zh'}) {
       {COMPLETED_ROUTE.map((stop, index) => <li key={stop.id}>
         <span className={styles.recordNumber} aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
         <div><h3>{en ? stop.en : stop.zh}<span>{en ? stop.zh : stop.en}</span></h3><p>{en ? stop.enText : stop.zhText}</p>
-          <a className={styles.recordMap} href={mapsUrl(stop.query)} target="_blank" rel="noopener noreferrer" aria-label={`${en ? stop.en : stop.zh} · Google Maps`}>{en ? 'View city on Google Maps ↗' : 'Google Maps 查看城市 ↗'}</a>
+          <a className={styles.recordMap} href={mapsUrl(stop.query)} target="_blank" rel="noopener noreferrer" aria-label={`${en ? 'View city on Google Maps' : 'Google Maps 查看城市'}：${en ? stop.en : stop.zh}`}>{en ? 'View city on Google Maps' : 'Google Maps 查看城市'} <span aria-hidden="true">↗</span></a>
         </div>
       </li>)}
     </ol>
@@ -20,8 +20,8 @@ export default function TripRecord({language = 'zh'}) {
       {VISITED_HIGHLIGHTS.map((place) => <div className={styles.placeCard} key={place.id}>
         <strong>{en ? place.en : place.zh}</strong><span className={styles.localName}>{en ? place.zh : place.en}</span>
         <div className={styles.mapActions}>
-          <a href={mapsUrl(place.query)} target="_blank" rel="noopener noreferrer" aria-label={`${en ? place.en : place.zh} · ${en ? 'view place' : '查看地點'}`}>{en ? 'View place ↗' : '查看地點 ↗'}</a>
-          <a href={directionsUrl(place.query)} target="_blank" rel="noopener noreferrer" aria-label={`${en ? place.en : place.zh} · ${en ? 'directions' : '導航'}`}>{en ? 'Directions ↗' : '導航 ↗'}</a>
+          <a href={mapsUrl(place.query)} target="_blank" rel="noopener noreferrer" aria-label={`${en ? 'View place' : '查看地點'}：${en ? place.en : place.zh}`}>{en ? 'View place' : '查看地點'} <span aria-hidden="true">↗</span></a>
+          <a href={directionsUrl(place.query)} target="_blank" rel="noopener noreferrer" aria-label={`${en ? 'Directions' : '導航'}：${en ? place.en : place.zh}`}>{en ? 'Directions' : '導航'} <span aria-hidden="true">↗</span></a>
         </div>
       </div>)}
     </div>

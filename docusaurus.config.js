@@ -8,6 +8,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import clsx from 'clsx';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import rehypeTaskLabels from './scripts/rehype-task-labels.mjs';
+import {preferArchivePreviews, deferArchiveImages} from './scripts/remark-archive-images.mjs';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'w0x7ce',
@@ -97,14 +99,18 @@ const config = {
         },
         blog: {
           showReadingTime: true,
-          remarkPlugins: [[remarkMath, {singleDollarTextMath: false}]],
-          rehypePlugins: [rehypeKatex],
+          // Existing WeChat exports share an introductory note and an OCR heading.
+          // The listing only needs the note, while the article keeps the full text.
+          truncateMarker: /<!--\s*truncate\s*-->|\{\/\*\s*truncate\s*\*\/\}|^## 正文（本地 OCR 转写）\r?$/m,
+          beforeDefaultRemarkPlugins: [preferArchivePreviews],
+          remarkPlugins: [deferArchiveImages, [remarkMath, {singleDollarTextMath: false}]],
+          rehypePlugins: [rehypeKatex, rehypeTaskLabels],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/tianrking/tianrking.github.io/tree/V3.10.2/',
           onInlineAuthors: 'ignore',
-          onUntruncatedBlogPosts: 'ignore',
+          onUntruncatedBlogPosts: 'warn',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -218,7 +224,9 @@ const config = {
       navbar: {
         title: 'w0x7ce',
         logo: {
-          alt: 'w0x7ce',
+          alt: '',
+          width: 96,
+          height: 96,
           src: 'img/logo.svg',
         },
         items: [
@@ -298,8 +306,21 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} w0x7ce.`,
       },
       prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        theme: {
+          ...prismThemes.github,
+          styles: [
+            ...prismThemes.github.styles,
+            {types: ['comment', 'prolog', 'doctype', 'cdata'], style: {color: '#57606a'}},
+            {types: ['entity', 'url', 'symbol', 'number', 'boolean', 'variable', 'constant', 'property', 'regex', 'inserted'], style: {color: '#11635e'}},
+            {types: ['atrule', 'attr-name'], style: {color: '#075985'}},
+            {types: ['string', 'attr-value'], style: {color: '#a81b58'}},
+            {types: ['function', 'deleted'], style: {color: '#a62335'}},
+          ],
+        },
+        darkTheme: {
+          ...prismThemes.dracula,
+          styles: [...prismThemes.dracula.styles, {types: ['comment'], style: {color: '#a4aed1'}}],
+        },
       },
     }),
 };

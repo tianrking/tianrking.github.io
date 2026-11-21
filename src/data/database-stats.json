@@ -1,0 +1,127 @@
+{
+  "/assistive-hearing/data.json": {
+    "products": 8,
+    "candidates": 5,
+    "sources": 10
+  },
+  "/automotive-mobility/data.json": {
+    "products": 8,
+    "candidates": 6,
+    "sources": 11
+  },
+  "/baby-family-care/data.json": {
+    "products": 10,
+    "candidates": 2,
+    "sources": 13
+  },
+  "/digital-paper-office/data.json": {
+    "products": 11,
+    "candidates": 4,
+    "sources": 21
+  },
+  "/home-robots/data.json": {
+    "products": 25,
+    "candidates": 17,
+    "sources": 63
+  },
+  "/imaging-creator/data.json": {
+    "products": 19,
+    "candidates": 5,
+    "sources": 46
+  },
+  "/network-connectivity/data.json": {
+    "products": 13,
+    "candidates": 8,
+    "sources": 25
+  },
+  "/office-meeting/data.json": {
+    "products": 7,
+    "candidates": 5,
+    "sources": 14
+  },
+  "/outdoor-sports/data.json": {
+    "products": 26,
+    "candidates": 4,
+    "sources": 9
+  },
+  "/power-charging/data.json": {
+    "products": 19,
+    "candidates": 6,
+    "sources": 32
+  },
+  "/smart-appliances-environment/data.json": {
+    "products": 10,
+    "candidates": 12,
+    "sources": 18
+  },
+  "/smart-audio/data.json": {
+    "products": 51,
+    "candidates": 12,
+    "sources": 81
+  },
+  "/smart-glasses/data.json": {
+    "products": 93,
+    "candidates": 20,
+    "sources": 87
+  },
+  "/smart-health/data.json": {
+    "products": 9,
+    "candidates": 3,
+    "sources": 23
+  },
+  "/smart-home-gateways/data.json": {
+    "products": 26,
+    "candidates": 9,
+    "sources": 19
+  },
+  "/smart-pendants/data.json": {
+    "products": 41,
+    "candidates": 11,
+    "sources": 40
+  },
+  "/smart-pet-collars/data.json": {
+    "products": 135,
+    "candidates": 34,
+    "sources": 95
+  },
+  "/smart-recorders/data.json": {
+    "products": 36,
+    "candidates": 15,
+    "sources": 64
+  },
+  "/smart-rings/data.json": {
+    "products": 150,
+    "candidates": 31,
+    "sources": 110
+  },
+  "/smart-security/data.json": {
+    "products": 12,
+    "candidates": 11,
+    "sources": 29
+  },
+  "/smart-trackers/data.json": {
+    "products": 6,
+    "candidates": 5,
+    "sources": 15
+  },
+  "/smart-watches/data.json": {
+    "products": 39,
+    "candidates": 3,
+    "sources": 48
+  },
+  "/smart-wearables/data.json": {
+    "products": 11,
+    "candidates": 8,
+    "sources": 25
+  },
+  "/vr-gaming/data.json": {
+    "products": 11,
+    "candidates": 3,
+    "sources": 14
+  },
+  "/wifi-bluetooth-chips/data.json": {
+    "products": 205,
+    "candidates": 24,
+    "sources": 280
+  }
+}

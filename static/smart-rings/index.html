@@ -11,43 +11,9 @@
 *{box-sizing:border-box} body{margin:0;background:#f3f6fa;color:var(--ink);font-family:Segoe UI,Microsoft YaHei,Arial,sans-serif;font-size:14px}
 .wrap{max-width:1800px;margin:0 auto;padding:22px}.hero{background:linear-gradient(135deg,#153e75,#2f6690);color:white;border-radius:16px;padding:26px 30px;box-shadow:0 8px 28px #163b641c}.hero h1{margin:0 0 8px;font-size:28px}.hero p{margin:5px 0;color:#e5edf7}.meta{font-size:13px;opacity:.92}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:16px 0}.card{background:white;border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:0 2px 9px #193b5a0c}.card .label{color:var(--muted);font-size:12px}.card .num{font-size:25px;font-weight:700;color:var(--blue);margin-top:4px}.panel{background:white;border:1px solid var(--line);border-radius:12px;margin:14px 0;padding:16px;box-shadow:0 2px 9px #193b5a0a}.panel h2{font-size:18px;margin:0 0 12px;color:var(--blue)}.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.controls input,.controls select{border:1px solid #cbd5e1;border-radius:8px;padding:9px 11px;background:white;color:var(--ink);min-width:160px}.controls input{min-width:280px;flex:1}.hint{color:var(--muted);font-size:12px;margin-top:9px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:9px}.data-table{border-collapse:separate;border-spacing:0;width:100%;min-width:1450px}.data-table th{position:sticky;top:0;background:#1f4e78;color:#fff;padding:10px 8px;text-align:left;font-size:12px;white-space:nowrap;z-index:2}.data-table td{padding:9px 8px;border-top:1px solid #e7edf5;vertical-align:top;line-height:1.42;max-width:360px}.data-table tr:nth-child(even) td{background:#fbfcfe}.data-table tr:hover td{background:#eef6ff}.data-table a{color:#1769aa;text-decoration:none}.data-table a:hover{text-decoration:underline}.pill{display:inline-block;padding:3px 8px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap}.ev-A{background:#dcfce7;color:#166534}.ev-B{background:#fef3c7;color:#92400e}.ev-C,.ev-D{background:#fee2e2;color:#991b1b}.status{font-size:12px}.detail{display:none;background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:14px;margin-top:12px}.detail.show{display:block}.detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.detail-item{background:#fff;border:1px solid #e5eaf1;border-radius:8px;padding:9px}.detail-item b{display:block;color:var(--muted);font-size:11px;margin-bottom:3px}.detail-item span{white-space:pre-wrap}.note{background:var(--orange);border-color:#f3c892;color:#7c2d12;line-height:1.6}.green{background:var(--green);border-color:#a7d7b4;color:#166534;line-height:1.6}.two-col{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}.small-table{width:100%;border-collapse:collapse}.small-table th,.small-table td{padding:7px;border-bottom:1px solid var(--line);text-align:left}.small-table th{font-size:12px;color:var(--muted)}.footer{color:var(--muted);font-size:12px;padding:14px 2px 30px;line-height:1.6}@media(max-width:900px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.two-col{grid-template-columns:1fr}.detail-grid{grid-template-columns:1fr 1fr}.wrap{padding:12px}.hero h1{font-size:22px}}@media(max-width:520px){.cards{grid-template-columns:1fr 1fr}.detail-grid{grid-template-columns:1fr}.controls input{min-width:100%}}
 </style>
-<style id="catalog-ui-base">
-html,body{max-width:100%;overflow-x:hidden}
-body{min-width:0}
-.wrap,.hero,.panel,.two,.two-col,.cards,.detail,.controls,.table-wrap{min-width:0;max-width:100%;box-sizing:border-box}
-.two>.panel,.two-col>.panel{min-width:0;overflow:hidden}
-.table-wrap{width:100%;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-gutter:stable}
-.controls{min-width:0;align-items:center}
-.controls input,.controls select{max-width:100%}
-.table-wrap:focus-within{outline:2px solid #80b9d6;outline-offset:2px}
-.catalog-clear-filters{border:1px solid #9bb9cf;background:#f8fbfd;color:#1f526f;border-radius:8px;padding:8px 12px;min-height:36px;cursor:pointer;white-space:nowrap;font:inherit;font-size:13px}
-.catalog-clear-filters:hover{background:#e9f4fb;border-color:#5d9ac0}
-.catalog-clear-filters:focus-visible{outline:2px solid #2b78a6;outline-offset:2px}
-.catalog-filter-state{color:#64748b;font-size:12px;line-height:1.4;white-space:nowrap}
-.catalog-detail-row>td{padding:0!important;border:0!important;background:transparent!important}
-.catalog-detail-row .detail{margin-top:10px}
-.catalog-detail-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
-.catalog-detail-top h3{margin:0;color:var(--blue,#153e75)}
-.catalog-detail-close{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:7px 10px;color:#36506a;cursor:pointer}
-.catalog-detail-close:hover{background:#eef6ff}
-.catalog-detail-row:focus-within{outline:2px solid #80b9d6;outline-offset:2px}
-@media(max-width:760px){
-  .wrap{width:100%;padding:12px;box-sizing:border-box}
-  .hero{padding:20px 16px}
-  .hero h1{font-size:24px;line-height:1.28}
-  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-  .controls input{grid-column:1/-1;min-width:0;width:100%;flex:initial}
-  .controls select{min-width:0;width:100%;font-size:13px}
-  .catalog-clear-filters,.catalog-filter-state{grid-column:1/-1;width:100%}
-  .catalog-filter-state{white-space:normal}
-  .detail-grid{grid-template-columns:1fr}
-  .detail{padding:12px}
-  .catalog-detail-top{position:sticky;top:0;background:#f8fafc;padding-bottom:8px;z-index:2}
-}
-</style></head>
+<link rel="stylesheet" href="../catalog-ui.css"></head>
 <body>
-<div class="wrap">
+<main class="wrap">
   <section class="hero"><h1>全球智能戒指研究库</h1><p>持续追加版：健康/睡眠、睡眠血氧/医疗、NFC支付/门禁/身份、预算/OEM与地区品牌。</p><p class="meta">最后查证：2026-09-22　|　主表按可独立购买型号/代际计数；颜色、材质和纯尺码不拆行。</p></section>
   <section class="cards">
     <div class="card"><div class="label">主表记录</div><div class="num" id="statTotal">—</div></div>
@@ -57,7 +23,7 @@ body{min-width:0}
   </section>
   <section class="panel">
     <h2>主表（可搜索/筛选）</h2>
-    <div class="controls"><input id="search" placeholder="搜索品牌、型号、国家、功能、芯片、传感器…"><select id="status"><option value="">全部上市状态</option></select><select id="category"><option value="">全部类别</option></select><select id="evidence"><option value="">全部证据等级</option><option>A</option><option>B</option><option>C</option><option>D</option></select></div>
+    <div class="controls"><input id="search" placeholder="搜索品牌、型号、国家、功能、芯片、传感器…" aria-label="搜索产品" type="search"><select id="status" aria-label="上市状态"><option value="">全部上市状态</option></select><select id="category" aria-label="产品类别"><option value="">全部类别</option></select><select id="evidence" aria-label="证据等级"><option value="">全部证据等级</option><option>A</option><option>B</option><option>C</option><option>D</option></select></div>
     <div class="hint">价格按原币种保留；“未公开”表示来源未披露。点击任意行查看完整字段。当前显示 <span id="shown">—</span> 条。</div>
     <div class="table-wrap"><table class="data-table"><thead><tr><th>ID</th><th>品牌/型号</th><th>国家/市场</th><th>类别</th><th>状态</th><th>证据</th><th>发布/首售</th><th>价格</th><th>传感器</th><th>芯片/SoC</th><th>尺寸/重量</th><th>续航</th><th>来源</th></tr></thead><tbody id="rows"></tbody></table></div>
     <div class="detail" id="detail"></div>
@@ -69,12 +35,12 @@ body{min-width:0}
   <section class="panel green"><h2>本轮更新与下一步</h2><div id="updates"></div></section>
   <section class="panel"><h2>来源渠道与证据</h2><div class="hint">Kickstarter、Indiegogo 等众筹页用于发现/预售信号；Amazon 等电商页用于区域价格/库存信号；官方产品、支持、发布和监管证据优先，未披露字段保留“未公开”。</div><div class="table-wrap"><table class="small-table"><thead><tr><th>来源组</th><th>渠道</th><th>角色</th><th>域名</th><th>卖方/项目方</th><th>店铺/项目类型</th><th>可得性信号</th><th>平台标识</th><th>众筹状态</th><th>档位/价格</th><th>预计交付</th><th>链接</th><th>覆盖范围</th><th>查证日期</th><th>质量</th></tr></thead><tbody id="sourceRows"></tbody></table></div></section>
   <div class="footer">这是 2026-09-22 的研究快照。要持续添加，优先补证“官方产品页、说明书/规格、首发新闻、实际发货/零售”四类来源；对疑似OEM同款保留独立品牌记录，但在候选与别名表标注，避免硬件平台重复计数。</div>
-</div>
+</main>
 <script>
 let DATA;
 (async function boot() {
   try {
-    DATA = await fetch('./data.json', {cache: 'no-store'}).then(async (response) => {
+    DATA = await fetch('./data.json', {cache: 'no-cache'}).then(async (response) => {
       if (!response.ok) throw new Error('HTTP ' + response.status);
       return response.json();
     });
@@ -142,7 +108,6 @@ $('updates').innerHTML=DATA.update_log.map(u=>'<p><b>'+esc(u.date)+'</b>　'+esc
     button.type='button';
     button.className='catalog-detail-close';
     button.textContent='关闭详情';
-    button.setAttribute('aria-label','关闭当前详情');
     top.appendChild(button);
     __detail.insertBefore(top,__detail.firstChild);
   }

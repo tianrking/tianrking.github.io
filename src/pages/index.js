@@ -9,18 +9,8 @@ import ProjectCard, {
   getStatusLabel,
   useFeaturedProjects,
 } from '@site/src/components/ProjectCard';
-import contentIndex from '@site/src/data/content-index.json';
+import recentContent from '@site/src/data/recent-content.json';
 import styles from './index.module.css';
-
-const recentWork = (contentIndex.documents || [])
-  .filter((document) => document.date)
-  .slice(0, 3)
-  .map((document) => ({
-    kind: document.kindLabel,
-    date: document.date.replaceAll('-', '.'),
-    title: document.title,
-    to: document.route,
-  }));
 
 const editorPicks = [
   {kind:'技術筆記',title:'TLSR8258 開發與燒錄',description:'從工具鏈、SWS 接線到燒錄驗證，把硬體實作的關鍵細節一次對齊。',to:'/embedded/telink/tlsr8258/sws-build-flash-verify'},
@@ -104,9 +94,9 @@ function HomepageHero() {
             <span lang="en">LATEST</span>
           </div>
           <ul className={styles.latestList}>
-            {recentWork.slice(0, 3).map((item) => <li key={item.to}>
-              <Link to={item.to}>
-                <small>{item.kind} <span aria-hidden="true">·</span> {item.date}</small>
+            {recentContent.map((item) => <li key={item.route}>
+              <Link to={item.route}>
+                <small>{item.kindLabel} <span aria-hidden="true">·</span> <time dateTime={item.date}>{item.date.replaceAll('-', '.')}</time></small>
                 <strong>{item.title}</strong>
                 <span className={styles.latestArrow} aria-hidden="true">↗</span>
               </Link>
@@ -152,12 +142,12 @@ function ProjectRow({project, index}) {
         </div>
         <Heading as="h3">{project.title}</Heading>
         <p>{project.summary || project.description}</p>
-        <div className={styles.projectRowTags} aria-label="技術標籤">
+        <div className={styles.projectRowTags}>
           {[...languages.slice(0, 2), ...tags].map((tag) => <span key={tag}>{tag}</span>)}
         </div>
       </div>
       <div className={styles.projectRowAside}>
-        <div className={styles.projectRowMetrics} aria-label="GitHub 專案資料">
+        <div className={styles.projectRowMetrics}>
           {stars !== undefined && stars !== null ? <span><strong>{stars}</strong> stars</span> : null}
           {latestRelease ? <span>{latestRelease}</span> : null}
         </div>

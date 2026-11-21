@@ -254,22 +254,15 @@
 }
 
 .commandRow code {
-  width: 0;
-  min-width: 0;
-  overflow-x: auto;
-  flex: 1 1 0;
+  min-inline-size: 0;
+  flex: 1;
   border: 0;
   background: transparent;
   color: var(--lab-muted);
   font-size: .68rem;
-  scrollbar-width: none;
+  overflow-wrap: anywhere;
   user-select: all;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-}
-
-.commandRow code::-webkit-scrollbar {
-  display: none;
+  white-space: pre-wrap;
 }
 
 .commandRow button {

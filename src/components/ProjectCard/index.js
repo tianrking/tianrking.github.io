@@ -195,7 +195,7 @@ export default function ProjectCard({project, compact = false, accentColor}) {
         <h3 id={titleId} className={styles.title}>{project.title}</h3>
         <p className={styles.summary}>{summary}</p>
 
-        <div className={styles.tags} aria-label="技術標籤">
+        <div className={styles.tags}>
           {languages.map((language) => (
             <span key={language} className={styles.language}>{language}</span>
           ))}
@@ -206,7 +206,7 @@ export default function ProjectCard({project, compact = false, accentColor}) {
       </div>
 
       <div className={styles.cardFooter}>
-        <div className={styles.metrics} aria-label="GitHub 專案資料">
+        <div className={styles.metrics}>
           <ProjectMetric label="Stars" value={stars} />
           <ProjectMetric label="Forks" value={forks} />
           <ProjectMetric label="Release" value={latestRelease} />

@@ -194,7 +194,7 @@
 
 .readLink:hover { color: var(--ifm-color-primary); }
 .companionLinks { display: flex; flex-wrap: wrap; gap: .5rem .9rem; margin-top: .75rem; }
-.companionLinks a { color: var(--site-muted); font-size: .72rem; text-decoration: underline; text-underline-offset: 3px; }
+.companionLinks a { display: inline-flex; align-items: center; min-block-size: 24px; color: var(--site-muted); font-size: .72rem; text-decoration: underline; text-underline-offset: 3px; }
 
 .libraryHeader {
   display: grid;

@@ -1,6 +1,6 @@
-import {useEffect, useState} from 'react';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import databaseStats from '@site/src/data/database-stats.json';
 import styles from './styles.module.css';
 
 const DATABASES = [
@@ -281,8 +281,8 @@ const DATABASES = [
   },
 ];
 
-function DatabaseCard({database, stats}) {
-  const summary = stats[database.id];
+function DatabaseCard({database}) {
+  const summary = databaseStats[database.data];
 
   return (
     <article className={styles.card} style={{'--database-accent': database.accent}}>
@@ -295,7 +295,7 @@ function DatabaseCard({database, stats}) {
       </a>
       <p className={styles.description}>{database.description}</p>
       <p className={styles.focus}>{database.focus}</p>
-      <div className={styles.cardStats} aria-label={`${database.title} 即時統計`}>
+      <div className={styles.cardStats}>
         <div>
           <strong>{summary ? summary.products : '—'}</strong>
           <span>已收錄</span>
@@ -322,33 +322,7 @@ function DatabaseCard({database, stats}) {
 }
 
 export default function DatabasesPage() {
-  const [stats, setStats] = useState({});
-
-  useEffect(() => {
-    let cancelled = false;
-
-    Promise.all(DATABASES.map(async (database) => {
-      try {
-        const response = await fetch(database.data, {cache: 'no-store'});
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const data = await response.json();
-        return [database.id, {
-          products: data.products?.length ?? 0,
-          candidates: data.candidates?.length ?? 0,
-          sources: data.sources?.length ?? 0,
-        }];
-      } catch {
-        return [database.id, null];
-      }
-    })).then((entries) => {
-      if (!cancelled) setStats(Object.fromEntries(entries));
-    });
-
-    return () => { cancelled = true; };
-  }, []);
-
-  const loaded = DATABASES.filter((database) => stats[database.id]).length;
-  const totalProducts = DATABASES.reduce((total, database) => total + (stats[database.id]?.products ?? 0), 0);
+  const totalProducts = DATABASES.reduce((total, database) => total + (databaseStats[database.data]?.products ?? 0), 0);
 
   return (
     <Layout
@@ -367,14 +341,14 @@ export default function DatabasesPage() {
               </div>
               <aside className={styles.heroAside} aria-label="資料庫概覽">
                 <div className={styles.heroAsideTop}>
-                  <span>LIVE INDEX</span>
+                  <span>DATABASE INDEX</span>
                   <span className={styles.liveDot}>●</span>
                 </div>
                 <div className={styles.heroMetric}>
-                  <strong>{loaded ? totalProducts : '—'}</strong>
+                  <strong>{totalProducts}</strong>
                   <span>已收錄型號</span>
                 </div>
-                <p>二十五組資料各自更新，數字會跟著最新 JSON 自動變化。</p>
+                <p>統計依本次網站建置所收錄的資料。</p>
               </aside>
             </div>
           </div>
@@ -391,7 +365,7 @@ export default function DatabasesPage() {
             </div>
             <div className={styles.grid}>
               {DATABASES.map((database) => (
-                <DatabaseCard key={database.id} database={database} stats={stats} />
+                <DatabaseCard key={database.id} database={database} />
               ))}
             </div>
           </div>

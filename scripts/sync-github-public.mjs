@@ -310,7 +310,10 @@ async function main() {
           repository,
         );
         if (!previous) {
-          throw new Error(`${fullName} could not be refreshed and has no last-known-good entry: ${error.message}`);
+          throw new Error(
+          `${fullName} could not be refreshed and has no last-known-good entry: ${error.message}`,
+          {cause: error},
+        );
         }
         repositories.push(previous);
         staleRepositories.push(fullName);

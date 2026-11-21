@@ -275,7 +275,7 @@ async function discoverArticles(inputRoot) {
 
   const candidates = [];
   for (const [parent, group] of groups) {
-    const sorted = [...group].sort((left, right) => {
+    const sorted = group.toSorted((left, right) => {
       const leftName = path.basename(left).toLowerCase();
       const rightName = path.basename(right).toLowerCase();
       const leftRank = PREFERRED_CONTENT_NAMES.indexOf(leftName);
