@@ -8,7 +8,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import clsx from 'clsx';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
-import rehypeTaskLabels from './scripts/rehype-task-labels.mjs';
+import rehypeBlogAccessibility from './scripts/rehype-blog-accessibility.mjs';
 import {preferArchivePreviews, deferArchiveImages} from './scripts/remark-archive-images.mjs';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -99,12 +99,14 @@ const config = {
         },
         blog: {
           showReadingTime: true,
+          blogSidebarTitle: '近期文章',
+          blogArchiveComponent: '@site/src/components/BlogArchive',
           // Existing WeChat exports share an introductory note and an OCR heading.
           // The listing only needs the note, while the article keeps the full text.
           truncateMarker: /<!--\s*truncate\s*-->|\{\/\*\s*truncate\s*\*\/\}|^## 正文（本地 OCR 转写）\r?$/m,
           beforeDefaultRemarkPlugins: [preferArchivePreviews],
           remarkPlugins: [deferArchiveImages, [remarkMath, {singleDollarTextMath: false}]],
-          rehypePlugins: [rehypeKatex, rehypeTaskLabels],
+          rehypePlugins: [rehypeKatex, rehypeBlogAccessibility],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:

@@ -90,8 +90,7 @@ function HomepageHero() {
 
         <aside className={styles.signalPanel} aria-label="最新文章">
           <div className={styles.panelHeader}>
-            <span>最新文章</span>
-            <span lang="en">LATEST</span>
+            <h2>最新文章</h2>
           </div>
           <ul className={styles.latestList}>
             {recentContent.map((item) => <li key={item.route}>
@@ -175,7 +174,6 @@ export default function Home() {
         <section className={`${styles.section} ${styles.editorSection}`} aria-labelledby="output-heading">
           <div className="container">
             <SectionHeading eyebrow="SELECTED WORK" title={<span id="output-heading">編輯精選</span>}
-              description="從一篇筆記、一個專案、一段旅程開始。"
               action={<Link className={styles.textAction} to="/explore/library">全站索引 <span aria-hidden="true">→</span></Link>} />
             <div className={styles.editorGrid}>
               {editorPicks.map((pick, index) => (
