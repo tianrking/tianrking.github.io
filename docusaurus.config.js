@@ -244,6 +244,7 @@ const config = {
             {to: '/explore/travel', label: '旅行專題'},
             {to: '/explore/library', label: '全站內容索引'},
           ]},
+          {to: '/quant', label: '量化', position: 'left'},
           {to: '/projects', label: '專案', position: 'left'},
           {to: '/databases', label: '資料庫', position: 'left'},
           {to: '/labs', label: '實驗場', position: 'left'},

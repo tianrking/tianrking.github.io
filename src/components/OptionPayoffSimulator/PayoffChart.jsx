@@ -1,10 +1,10 @@
 import React, {useEffect, useId, useRef, useState} from 'react';
 import styles from './styles.module.css';
 
-export const formatNumber = new Intl.NumberFormat('zh-CN', {maximumFractionDigits: 2}).format;
-const formatAxis = new Intl.NumberFormat('zh-CN', {notation: 'compact', maximumFractionDigits: 2}).format;
+export const formatNumber = new Intl.NumberFormat('zh-Hant', {maximumFractionDigits: 2}).format;
+const formatAxis = new Intl.NumberFormat('zh-Hant', {notation: 'compact', maximumFractionDigits: 2}).format;
 export function formatMoney(value) {
-  if (!Number.isFinite(value)) return '无上限';
+  if (!Number.isFinite(value)) return '無上限';
   const sign = value < -0.005 ? '−' : value > 0.005 ? '+' : '';
   return `${sign}$${formatNumber(Math.abs(value))}`;
 }
@@ -59,8 +59,8 @@ export default function PayoffChart({model, low, high, probe}) {
   return (
     <div className={styles.chart} ref={container}>
       <svg className={styles.plot} viewBox={`0 0 ${width} 283`} role="img" aria-labelledby={`${id}-title ${id}-desc`}>
-        <title id={`${id}-title`}>{model.estimates ? '组合估值曲线' : '组合到期盈亏曲线'}</title>
-        <desc id={`${id}-desc`}>横轴为标的价格，纵轴为组合盈亏，单位为美元。曲线数据可在图下查看。</desc>
+        <title id={`${id}-title`}>{model.estimates ? '組合估值曲線' : '組合到期損益曲線'}</title>
+        <desc id={`${id}-desc`}>橫軸為標的價格，縱軸為組合損益，單位為美元。曲線資料可在圖下查看。</desc>
         <defs>
           <linearGradient id={`${id}-area`} gradientUnits="userSpaceOnUse" x1="0" x2="0" y1={frame.top} y2={frame.bottom}>
             <stop stopColor="var(--payoff-gain)" stopOpacity=".12" />
@@ -69,7 +69,7 @@ export default function PayoffChart({model, low, high, probe}) {
             <stop offset="1" stopColor="var(--payoff-loss)" stopOpacity=".12" />
           </linearGradient>
         </defs>
-        <text x={frame.left} y="17">盈亏（美元）</text>
+        <text x={frame.left} y="17">損益（美元）</text>
         {yTicks.map((value) => (
           <g key={value}>
             <line x1={frame.left} x2={frame.right} y1={yPos(value)} y2={yPos(value)}
@@ -85,7 +85,7 @@ export default function PayoffChart({model, low, high, probe}) {
             </text>
           </g>
         ))}
-        <text x={(frame.left + frame.right) / 2} y="275" textAnchor="middle">标的价格（美元）</text>
+        <text x={(frame.left + frame.right) / 2} y="275" textAnchor="middle">標的價格（美元）</text>
         <path d={fill} fill={`url(#${id}-area)`} />
         <path d={curve} className={styles.curve} />
         {showProbe && (
@@ -96,10 +96,10 @@ export default function PayoffChart({model, low, high, probe}) {
         )}
       </svg>
       <details className={styles.chartDetails}>
-        <summary>查看曲线数据</summary>
+        <summary>查看曲線資料</summary>
         <table>
-          <caption>图区端点、采样价与可见行权价对应的盈亏</caption>
-          <thead><tr><th scope="col">标的价格（美元）</th><th scope="col">组合盈亏（美元）</th></tr></thead>
+          <caption>圖區端點、取樣價與可見履約價對應的損益</caption>
+          <thead><tr><th scope="col">標的價格（美元）</th><th scope="col">組合損益（美元）</th></tr></thead>
           <tbody>
             {dataSpots.map((spot) => <tr key={spot}><td>{formatNumber(spot)}</td><td>{formatMoney(model.profitAt(spot))}</td></tr>)}
           </tbody>
