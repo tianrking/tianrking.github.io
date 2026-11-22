@@ -1,0 +1,3 @@
+method,input_p50_ms,input_p95_ms,total_p50_ms,total_p95_ms,measured_frames
+native_passthrough,0.425,0.613,15.663,17.301,60
+bound_input_with_copy,0.385,0.542,15.610,18.693,60
