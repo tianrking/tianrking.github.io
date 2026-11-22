@@ -4,6 +4,8 @@ description: 查阅多腿期权组合订单、券商 API、加密期权 RFQ、�
 hide_table_of_contents: true
 ---
 
+import OptionPayoffSimulator from '@site/src/components/OptionPayoffSimulator';
+
 <div className="container markdown" lang="zh-Hans">
 
 # 原子多腿期权官方资源汇总
@@ -16,6 +18,7 @@ hide_table_of_contents: true
     <li><a href="#crypto-rfq">加密期权与 RFQ</a></li>
     <li><a href="#access-etfs">内地准入与港美 ETF</a></li>
     <li><a href="#put-settlement">Put 教育与结算</a></li>
+    <li><a href="#strategy-simulator">期权策略盈亏仿真</a></li>
   </ul>
 </nav>
 
@@ -187,5 +190,7 @@ hide_table_of_contents: true
   />
   <figcaption>横轴为 ETF 到期价格，纵轴为每组 100 股的到期盈亏。实线为现金担保卖 Put，虚线为牛市 Put 价差。</figcaption>
 </figure>
+
+<OptionPayoffSimulator />
 
 </div>
