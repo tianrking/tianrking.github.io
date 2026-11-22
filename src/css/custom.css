@@ -586,6 +586,18 @@ html {
   }
 }
 
+@media (min-width: 997px) and (max-width: 1100px) {
+  .navbar__items:not(.navbar__items--right) > .navbar__link,
+  .navbar__items:not(.navbar__items--right) > .dropdown > .navbar__link {
+    padding-inline: .55rem;
+    white-space: nowrap;
+  }
+
+  .navbar .navbar__search-input {
+    inline-size: 10rem;
+  }
+}
+
 @media (max-width: 996px) {
   .navbar {
     padding-inline: max(.75rem, env(safe-area-inset-left));
